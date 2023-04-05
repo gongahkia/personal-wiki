@@ -1,4 +1,4 @@
-# University
+# SMU C&L NOTES
 
 > Heavily emulating folder structure taken from [here](https://castel.dev/post/lecture-notes-3/).
 
