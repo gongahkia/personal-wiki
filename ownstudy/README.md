@@ -21,4 +21,4 @@ Markdown notes made while learning different languages. If not happy, please don
 
 ## To continue 
 
-* [Rust](rust.md)
+* [Rust](Rust.md)
