@@ -6,6 +6,5 @@
 
 Gong's *private repo* for AY 2023-2027.
 
-<p align="right">
-    <img src="" height="160">
-</p>
+<img src="https://user-images.githubusercontent.com/117062305/230006500-b6b862da-7263-4012-88ec-8506328541a5.png">
+
