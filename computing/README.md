@@ -8,7 +8,7 @@
 
 * Python
 * Javascript
-* HTML & CSS
+* [HTML & CSS](bachelor-1/HTMLCSS.md)
 * [PHP](bachelor-1/PHP.md)
 * SQL
 
