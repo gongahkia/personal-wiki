@@ -1,4 +1,4 @@
-# Law notes 🧑‍🎓
+# LAW NOTES
 
 [Table of contents]()
 
