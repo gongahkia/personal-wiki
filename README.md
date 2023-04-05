@@ -6,11 +6,11 @@ Gong's *private repo* for AY 2023-2027.
 
 ## Current course 📌
 
-### Law
+#### Law
 
 *
 
-### Computing
+#### Computing
 
 *
 
