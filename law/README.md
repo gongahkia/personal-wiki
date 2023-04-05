@@ -1,6 +1,6 @@
 # LAW NOTES
 
-[Table of contents]()
+## [Table of contents]()
 
 ![](https://pbs.twimg.com/media/BywEyvPIIAALQ-C.jpg)
 
