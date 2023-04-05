@@ -2,7 +2,7 @@
 
 > Heavily emulating folder structure taken from [here](https://castel.dev/post/lecture-notes-3/).
 
-### [Current course]()
+## [Current course]()
 
 Gong's *private repo* for AY 2023-2027.
 
