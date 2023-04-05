@@ -13,7 +13,7 @@ Gong's *private repo* for AY 2023-2027.
 
 ## Table of contents
 
-<img src="https://user-images.githubusercontent.com/117062305/230006500-b6b862da-7263-4012-88ec-8506328541a5.png" height="500" align="right">
+<img src="https://user-images.githubusercontent.com/117062305/230006500-b6b862da-7263-4012-88ec-8506328541a5.png" height="450" align="right">
 
 
 * [Computing notes](computing)
