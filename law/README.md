@@ -1,6 +1,17 @@
 # LAW NOTES
 
-## [Table of contents]()
+## Table of contents
 
-![](https://pbs.twimg.com/media/BywEyvPIIAALQ-C.jpg)
+<img src="https://pbs.twimg.com/media/BywEyvPIIAALQ-C.jpg" align="right" height="300">
 
+### Contract law
+
+*
+*
+*
+
+### Criminal law
+
+*
+*
+*
