@@ -12,6 +12,6 @@
 
 ### Criminal law
 
-* [Law 103](bachelor-1/Crim/law-103)
+* [Law 103](bachelor-1/Crim/law-103.md)
 *
 *
