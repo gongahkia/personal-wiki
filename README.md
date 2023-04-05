@@ -1,6 +1,6 @@
 # University
 
-> Heavily emulating structure taken from [here](https://castel.dev/post/lecture-notes-3/).
+> Heavily emulating folder structure taken from [here](https://castel.dev/post/lecture-notes-3/).
 
 ### [Current course]()
 
