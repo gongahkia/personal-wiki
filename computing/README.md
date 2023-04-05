@@ -1,4 +1,4 @@
-# COMPUTING NOTES 💻
+# COMPUTING NOTES
 
 ## Table of contents 📑
 
