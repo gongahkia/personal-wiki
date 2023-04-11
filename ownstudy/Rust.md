@@ -1,5 +1,5 @@
 > *Edit on 11 April 2023:*
-> * Continue making notes off [Learn Rust in 30 mins](https://fasterthanli.me/articles/a-half-hour-to-learn-rust) from "Dots" section
+> * Continue making notes off [Learn Rust in 30 mins](https://fasterthanli.me/articles/a-half-hour-to-learn-rust) from "Structs" section
 > * Make notes off [Learn Rust in Y minutes](https://learnxinyminutes.com/docs/rust/)
 > * Read through [Rust book](https://doc.rust-lang.org/stable/book/) [Chapter 0/21], follow along w projects in [Rust lang playground](https://play.rust-lang.org/?version=stable&mode=debug&edition=2021), add relevant notes and minimal bloat here
 > * Make notes off this video (https://www.youtube.com/watch?v=zF34dRivLOw)
