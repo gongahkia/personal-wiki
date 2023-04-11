@@ -322,14 +322,14 @@ fn unfair_dice_roll() -> i32 {
 * `::`
     * indicates the hierachy of crates, modules and symbols within a **namespace** *(similar to C++)*
 
+        > In the below example...
+        > * `std` is a ***CRATE*** *(a library)*
+        > * `cmp` is a ***MODULE*** *(a source file)*
+        > * `min` is a ***FUNCTION***
+
 ```Rust
 let least = std::cmp::min(3,8); // this assigns i32 value of 3 to the variable least
 ```
-
-> In the above example...
-> * `std` is a ***CRATE*** *(a library)*
-> * `cmp` is a ***MODULE*** *(a source file)*
-> * `min` is a ***FUNCTION***
 
 * `use`
     * brings names from other namespaces *into scope* in your program
