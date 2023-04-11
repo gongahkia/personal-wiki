@@ -28,6 +28,7 @@
 * [Equality](#equality)
 * [Loops](#loops)
 * [Functions](#functions)
+* [Namespaces](#namespaces)
 * [Macros](#macros)
 * [Object-oriented programming](#object-oriented-programming)
     * [Objects](#objects)
@@ -217,7 +218,7 @@ println!("{}", SECONDS_IN_MINUTES);
 ```Rust
 let eg_array:[i32; 10] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-println!("{}", eg_array[7]); // access array elements via square bracket notation
+println!("{}", eg_array[7]);
 ```
 
 * Vectors
@@ -239,7 +240,7 @@ vector.push(5); // appends the integer i32 of 5 to the vector
 ```Rust
 let eg_tuple:(i32, bool, char) = (1, true, 'A');
 
-println!("{}", eg_tuple.1); // access tuple elements via dot notation
+println!("{}", eg_tuple.1);
 ```
 
 ### Conditional flow
@@ -314,6 +315,52 @@ fn fair_dice_roll() -> i32 {
 fn unfair_dice_roll() -> i32 {
     10 // this is also legal
 }
+```
+
+### Namespaces
+
+* `::`
+    * indicates the hierachy of crates, modules and symbols within a **namespace** *(similar to C++)*
+
+```Rust
+let least = std::cmp::min(3,8); // this assigns i32 value of 3 to the variable least
+```
+
+> In the above example...
+> * `std` is a ***CRATE*** *(a library)*
+> * `cmp` is a ***MODULE*** *(a source file)*
+> * `min` is a ***FUNCTION***
+
+* `use`
+    * brings names from other namespaces *into scope* in your program
+
+```Rust
+use std::cmp::min;
+
+let least = min(7,1); // this assigns i32 value of 1 to the variable least
+```
+
+* `{}` 
+    * curly braces in the context of namespaces are called **globs**, and allow us to import multiple functions from other namespaces easily
+
+```Rust
+// this is valid code
+use std::cmp::min;
+use std::cmp::max;
+
+// this is also valid code
+use std::cmp::{min, max};
+
+// this too is valid code
+use std::{cmp::min, cmp::max};
+```
+
+* `*`
+    * wildcard operator that imports **every symbol** from a namespace
+
+```Rust
+// this brings min, max and many other symbols from the std::cmp namespace into scope
+use std::cmp::*;
 ```
 
 ### Macros
