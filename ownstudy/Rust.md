@@ -1,5 +1,5 @@
 > *Edit on 11 April 2023:*
-> * Continue making notes off [Learn Rust in 30 mins](https://fasterthanli.me/articles/a-half-hour-to-learn-rust) from "Structs" section
+> * Continue making notes off [Learn Rust in 30 mins](https://fasterthanli.me/articles/a-half-hour-to-learn-rust) from "Functions can be generic" section.
 > * Make notes off [Learn Rust in Y minutes](https://learnxinyminutes.com/docs/rust/)
 > * Read through [Rust book](https://doc.rust-lang.org/stable/book/) [Chapter 0/21], follow along w projects in [Rust lang playground](https://play.rust-lang.org/?version=stable&mode=debug&edition=2021), add relevant notes and minimal bloat here
 > * Make notes off this video (https://www.youtube.com/watch?v=zF34dRivLOw)
@@ -43,6 +43,7 @@
     * [Borrowing](#borrowing)
 * [Smart pointers](#smart-pointers)
 * [Structs](#structs)
+    * [Traits](#traits)
 * [Enums](#enums)
 * [Pattern matching](#pattern-matching)
 * [Generics](#generics)
@@ -172,7 +173,9 @@ const SECONDS_IN_MINUTES:u32 = 60; // const creates a constant, whose value cann
 println!("{}", SECONDS_IN_MINUTES);
 ```
 
-> On the [differences](https://stackoverflow.com/questions/37877381/what-is-the-difference-between-immutable-and-const-variables-in-rust) between `let` and `const`.
+Also see:
+
+* On the [differences](https://stackoverflow.com/questions/37877381/what-is-the-difference-between-immutable-and-const-variables-in-rust) between `let` and `const`.
 
 ### Data types
 
@@ -188,7 +191,7 @@ println!("{}", SECONDS_IN_MINUTES);
 
 * `f32`, `f64` 
     * Floats 
-    * `f32` is **single precision**, `f64` is **double precision**  
+    * `f32` is a 32-bit floating point *(single precision)*, `f64` is a 64-bit floating point *(double precision)*  
 
 * `bool`
     * Boolean
@@ -375,9 +378,9 @@ use std::cmp::*;
 
 ### Methods
 
-### Underscore
+### [Underscore](https://runrust.miraheze.org/wiki/Underscore)
 
-* `_` is a special character that indicates to Rust to **throw that value away**.
+* `_` is a special character that indicates to Rust to **throw that value away** *(and acts as a catch-all pattern in match constructs)*.
 
 ```Rust
 let _ = get_thing(); // calls the function but throws away its result that is returned to _
@@ -389,11 +392,21 @@ let (_, right) = slice.split_at(middle); // throw away the left side of the dest
 
 ### Destructuring
 
-Effectively the same concept as in *Typescript*, where we **extract values from data structures**.
+Effectively the same concept as in *Typescript*, where we **extract values from data structures** *(arrays, tuples, vectors, structs, objects)*.
 
 ```Rust
 // here is destructuring on a tuple, where some_char is now 'a' and some_int is now 17
 let (some_char, some_int) = ('a', 17);
+
+struct Vec2 {
+    x:f64,
+    y:f64,
+}
+
+let v = Vec2 { x:3.0, y:6.0 };
+
+// struct destructuring, where x is now 3.0 and y is now 6.0
+let Vec2 {x,y} = v;
 ```
 
 ### Blocks && Scope
@@ -420,7 +433,50 @@ let x = {
 
 ### Smart pointers
 
-### Structs
+### [Structs](https://doc.rust-lang.org/book/ch05-01-defining-structs.html)
+
+Structs are somewhat similar to objects in *Typescript*.
+
+* declared with the `struct` keyword
+* intialized using **struct literals**
+* user-defined **methods** and [**traits**](#traits) implemented with the [`impl`](https://doc.rust-lang.org/std/keyword.impl.html) keyword
+    * `self` referenceable in type methods
+
+```Rust
+struct Vec2 { // struct declaration
+    x:f64,
+    y:f64,
+}
+
+let v1 = Vec2 { x:1.0, y:3.0 }; // a struct literal
+let v2 = Vec2 { y:2.0, x:4.0 }; // another struct literal, peep that the order does not matter
+
+impl Vec2 { // implementing a method on a struct 
+    fn is_strictly_positive(self) -> bool {
+        self.value > 0
+    }
+}
+
+println!("{}", v1.is_strictly_positive());
+```
+
+Also see:
+
+* On [struct update syntax](https://users.rust-lang.org/t/the-struct-update-syntax/16519).  
+
+#### Traits
+
+> Add more here.  
+
+Traits are somewhat similar to interfaces in *Java*.
+
+* On [traits](https://doc.rust-lang.org/rust-by-example/trait.html).
+* Also on [traits](https://doc.rust-lang.org/book/ch10-02-traits.html).  
+* On [Rust's orphan rules](https://github.com/Ixrec/rust-orphan-rules).  
+    * Can implement one of your traits on anyone's type
+    * Can implement anyone's traits on one of your types
+    * Cannot implement a foreign trait on a foreign type
+* Read and add portion of [this article](https://fasterthanli.me/articles/a-half-hour-to-learn-rust) that talks about traits.
 
 ### Enums
 
