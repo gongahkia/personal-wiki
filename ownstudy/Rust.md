@@ -1,4 +1,6 @@
 > *Edit on 11 April 2023:*
+> * Continue making notes off [Learn Rust in 30 mins](https://fasterthanli.me/articles/a-half-hour-to-learn-rust)
+> * Make notes off [Learn Rust in Y minutes](https://learnxinyminutes.com/docs/rust/)
 > * Read through [Rust book](https://doc.rust-lang.org/stable/book/) [Chapter 0/21], follow along w projects in [Rust lang playground](https://play.rust-lang.org/?version=stable&mode=debug&edition=2021), add relevant notes and minimal bloat here
 > * Make notes off this video (https://www.youtube.com/watch?v=zF34dRivLOw)
 
@@ -13,9 +15,13 @@
     * [Installation](#installation)
     * [Usage](#usage)
 * [Printing to the console && Comments](#printing-to-the-console--comments)
+* [Compile time vs Runtime](#compile-time-vs-runtime)
+    * [Compile time ⚙️](#compile-time-)
+    * [Runtime 🏃](#runtime-)
 * [Variables && Constants](#variables--constants)
 * [Data types](#data-types)
     * [Primitive data types](#primitive-data-types)
+* [Strings 🧵](#strings-)
 * [Data structures](#data-structures)
 * [Conditional flow](#conditional-flow)
 * [Equality](#equality)
@@ -26,6 +32,8 @@
     * [Objects](#objects)
     * [Classes](#classes)
     * [Inheritance](#inheritance)
+* [Methods](#methods)
+* [Destructuring](#destructuring)
 * [Ownership](#ownership)
     * [References](#references)
     * [Borrowing](#borrowing)
@@ -45,7 +53,7 @@
 
 ### What is Rust?
 
-Rust is a **strongly** and **statically-typed** compiled language, that can be used for *Systems programming* and *Web development* alike.
+Rust is a **strongly** and **statically-typed** compiled language developed by Mozilla Research, that can be used for *Systems programming* and *Web development* alike.
 
 ### Quick start
 
@@ -118,14 +126,33 @@ let x:i32 = 40;
 println!("x is: {}", x); // formatted strings in Rust look like this
 ```
 
+### Compile time vs Runtime
+
+Before we learn about variable declaration in Rust, we need to be aware of the [distinction](https://stackoverflow.com/questions/846103/runtime-vs-compile-time) between **Compile time** and **Runtime**.
+
+#### Compile time ⚙️
+
+* Period when program has been written, and is compiling *(using `rustc` / `g++` / `gcc` / `clangd`)*.
+* Syntax errors, typechecking errors, compiler crashes can occur at this stage.
+* If program succesfully compiled withput error messages, **assembly code** / **object code** / **executable file** created and can be run.
+
+#### Runtime 🏃
+
+* Period when **executable file** is run *(after compilation)*.
+* Logical errors, Memory errors, File path and URL errors can occur at this stage *(ie. whatever errors that were not caught by the compiler)*.
+* If program succesfully runs, it will output whatever the programmer intended for initially.
+
 ### Variables && Constants
 
 > ***Cardinal Rule No. 1 🧛***   
 > Variables in Rust are ***immutable*** by default.
 
-* `let` declares and creates a variable *(explicitly declare the variable's data type with a `:` colon)*.
-* `mut` keyword indicates that a variable is **mutable** *(its value can now be changed later in the program)*.
-* `const` declares and creates a **constant**, whose **value** and **data type** cannot be changed throughout the program
+* `let` initializes a variable, whose *value* and *data type* are immutable ***(at RUNTIME)***, relating to runtime computed values.
+    * *Explicitly declare the variable's data type with a `:` colon*.
+
+* `mut` keyword indicates that a variable is **mutable** *(its value can be changed later in the program)*.  
+
+* `const` initializes a **constant**, whose *value* and *data type* are immutable ***(at COMPILE TIME)***.
 
 ```Rust
 let x:i32 = 10; // variable values are immutable by default
@@ -137,6 +164,8 @@ println!("y is: {}:, y");
 const SECONDS_IN_MINUTES:u32 = 60; // const creates a constant, whose value cannot be changed
 println!("{}", SECONDS_IN_MINUTES);
 ```
+
+> On the [differences](https://stackoverflow.com/questions/37877381/what-is-the-difference-between-immutable-and-const-variables-in-rust) between `let` and `const`.
 
 ### Data types
 
@@ -162,14 +191,21 @@ println!("{}", SECONDS_IN_MINUTES);
     * Character
     * single characters are surrounded by `''` *single quotation marks*  
 
+### Strings 🧵
+
+* `&str`
+    * **String literal**
+    * strings surrounded by `""` *double quotation marks*
+
+* `String`
+    * **Heap-allocated string**
+    * Stored as a `Vec<u8>` that holds a *valid UTF-8 sequence* that is not null-terminated
+
 ### Data structures
 
-* String
-    > *add more notes on this later from Rust book*
-
 * Arrays
-    * Rust arrays are intialized with `[]` square brackets.
     * **Fixed length** sequence of elements that are all the **same data type**.
+    * Rust arrays are intialized with `[]` square brackets.
     * Statically define the data type of the array *(like in C++)*.
 
 ```Rust
@@ -178,9 +214,20 @@ let eg_array:[i32; 10] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 println!("{}", eg_array[7]); // access array elements via square bracket notation
 ```
 
+* Vectors
+    * Arrays with dynamic length.
+    * Rust vectors are initialized with `vec![]` and square brackets.
+    * Statically define the data type of the vector *(like in C++)*.
+
+```Rust
+let mut eg_vector:Vec<i32> = vec![1,2,3,4,5,59,132];
+
+vector.push(5); // appends the integer i32 of 5 to the vector
+```
+
 * Tuples
-    * Rust tuples are initialized with `()` normal brackets.
     * Arrays that can hold elements of **different data types**.
+    * Rust tuples are initialized with `()` normal brackets.
     * Statically define the data type of each element in the tuple.
 
 ```Rust
@@ -191,9 +238,48 @@ println!("{}", eg_tuple.1); // access tuple elements via dot notation
 
 ### Conditional flow
 
-### Equality
+Unlike many other languages, the **boolean condition** is not surrounded by brackets.
 
-### Loops
+* `if`
+* `else`
+* `else if`
+
+### [Equality](https://doc.rust-lang.org/book/appendix-02-operators.html)
+
+* `==` checks for equality in **value**
+* `!=` checks for inequality in **value**
+
+### [Loops](https://doc.rust-lang.org/reference/expressions/loop-expr.html)
+
+Unlike many other languages, the **loop condition** is not surrounded by brackets.
+
+* `while` loop
+* `loop`
+* `for`, `in` loop
+* `break`
+* `continue`
+
+```Rust
+while 1 == 1 {
+    println!("It works how you would expect, but this is an infinite loop my man!");
+}
+
+loop {
+    println!("Alahoo"); // you can also create infinite loops easily with the loop keyword
+}
+
+// --- 
+
+let an_array:[i32;3] = [1,2,3];
+for i:i32 in an_array { // classic for in loop
+    println!("{}", i);
+}
+
+// this can be applied to ranges too
+for i in 0u32..10 {
+    println!("{}", i); // this would print 0123456789 to the console
+} 
+```
 
 ### Functions
 
@@ -206,6 +292,10 @@ println!("{}", eg_tuple.1); // access tuple elements via dot notation
 #### Classes
 
 #### Inheritance
+
+### Methods
+
+### Destructuring
 
 ### Ownership
 
