@@ -1,5 +1,5 @@
 > *Edit on 11 April 2023:*
-> * Continue making notes off [Learn Rust in 30 mins](https://fasterthanli.me/articles/a-half-hour-to-learn-rust)
+> * Continue making notes off [Learn Rust in 30 mins](https://fasterthanli.me/articles/a-half-hour-to-learn-rust) from "Dots" section
 > * Make notes off [Learn Rust in Y minutes](https://learnxinyminutes.com/docs/rust/)
 > * Read through [Rust book](https://doc.rust-lang.org/stable/book/) [Chapter 0/21], follow along w projects in [Rust lang playground](https://play.rust-lang.org/?version=stable&mode=debug&edition=2021), add relevant notes and minimal bloat here
 > * Make notes off this video (https://www.youtube.com/watch?v=zF34dRivLOw)
@@ -24,6 +24,7 @@
 * [Strings 🧵](#strings-)
 * [Data structures](#data-structures)
 * [Conditional flow](#conditional-flow)
+    * [Match construct](#match-construct)
 * [Equality](#equality)
 * [Loops](#loops)
 * [Functions](#functions)
@@ -33,7 +34,9 @@
     * [Classes](#classes)
     * [Inheritance](#inheritance)
 * [Methods](#methods)
+* [Underscore](#underscore)
 * [Destructuring](#destructuring)
+* [Blocks && Scope](#blocks--scope)
 * [Ownership](#ownership)
     * [References](#references)
     * [Borrowing](#borrowing)
@@ -155,6 +158,9 @@ Before we learn about variable declaration in Rust, we need to be aware of the [
 * `const` initializes a **constant**, whose *value* and *data type* are immutable ***(at COMPILE TIME)***.
 
 ```Rust
+let x; // declaration and 
+x = 100; // assignment can occur on two different lines!
+
 let x:i32 = 10; // variable values are immutable by default
 
 let mut y:i32 = 45; // mut creates a mutable variable
@@ -244,6 +250,19 @@ Unlike many other languages, the **boolean condition** is not surrounded by brac
 * `else`
 * `else if`
 
+#### [Match construct](https://doc.rust-lang.org/book/ch06-02-match.html)
+
+Rust also has the powerful `match` construct *(which functions similarly to `switch`, `case` statements in Typescript)*.
+
+```Rust
+fn im_feeling_lucky() -> i32 {
+    match feeling_lucky {
+        true => 6,
+        false => 4,
+    }
+}
+```
+
 ### [Equality](https://doc.rust-lang.org/book/appendix-02-operators.html)
 
 * `==` checks for equality in **value**
@@ -283,6 +302,20 @@ for i in 0u32..10 {
 
 ### Functions
 
+* `fn` **declares** a function
+* `->` indicates the **return type** of said function
+* `return` indicates the **return value** *(though it is optional since the function block evaluates to its tail regardless)*
+
+```Rust
+fn fair_dice_roll() -> i32 {
+    return 4; // this is legal
+}
+
+fn unfair_dice_roll() -> i32 {
+    10 // this is also legal
+}
+```
+
 ### Macros
 
 ### Object-oriented programming
@@ -295,7 +328,42 @@ for i in 0u32..10 {
 
 ### Methods
 
+### Underscore
+
+* `_` is a special character that indicates to Rust to **throw that value away**.
+
+```Rust
+let _ = get_thing(); // calls the function but throws away its result that is returned to _
+
+let _x = 42; // compiler will NOT warn about an unused variable if it is prefixed with an _
+
+let (_, right) = slice.split_at(middle); // throw away the left side of the destructured tuple and only return the right
+```
+
 ### Destructuring
+
+Effectively the same concept as in *Typescript*, where we **extract values from data structures**.
+
+```Rust
+// here is destructuring on a tuple, where some_char is now 'a' and some_int is now 17
+let (some_char, some_int) = ('a', 17);
+```
+
+### Blocks && Scope
+
+Generally, **scope** is defined by a **block of code**.
+
+* Blocks are expressions, that evaluate to a value called the **tail** *(indicated by omission of semicolon)*.
+* Blocks can have multiple initialization and assignment statements.
+* Blocks exist anywhere in Rust there is code enclosed by `{}` curly braces *(functions, conditional and match statements, loops, objects)*.
+
+```Rust
+let x = {
+    let y = 1;
+    let z = 20;
+    y + z // the tail, which evaluates to the int32 value of 21, assigned to x
+};
+```
 
 ### Ownership
 
