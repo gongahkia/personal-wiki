@@ -18,3 +18,13 @@
 *
 *
 
+---
+
+### Note ❗
+
+Create new markdown computing notes with `com` command to echo existing template into the file.
+
+```console
+$ com someExampleNotes.md
+$ nvim someExampleNotes.md
+```
