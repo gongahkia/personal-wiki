@@ -1,6 +1,4 @@
-> *Edit on 11 April 2023:*
-> * Continue making notes off [Learn Rust in 30 mins](https://fasterthanli.me/articles/a-half-hour-to-learn-rust) from "Functions can be generic" section.
-> * Make notes off [Learn Rust in Y minutes](https://learnxinyminutes.com/docs/rust/)
+> *Edit on 13 April 2023:*
 > * Read through [Rust book](https://doc.rust-lang.org/stable/book/) [Chapter 0/21], follow along w projects in [Rust lang playground](https://play.rust-lang.org/?version=stable&mode=debug&edition=2021), add relevant notes and minimal bloat here
 > * Make notes off this video (https://www.youtube.com/watch?v=zF34dRivLOw)
 
@@ -30,26 +28,25 @@
 * [Functions](#functions)
 * [Namespaces](#namespaces)
 * [Macros](#macros)
-* [Object-oriented programming](#object-oriented-programming)
-    * [Objects](#objects)
-    * [Classes](#classes)
-    * [Inheritance](#inheritance)
-* [Methods](#methods)
 * [Underscore](#underscore)
 * [Destructuring](#destructuring)
 * [Blocks && Scope](#blocks--scope)
+* [Lifetimes](#lifetimes)
 * [Ownership](#ownership)
     * [References](#references)
     * [Borrowing](#borrowing)
 * [Smart pointers](#smart-pointers)
-* [Structs](#structs)
+* [Object-oriented programming](#object-oriented-programming)
+    * [Structs](#structs)
     * [Traits](#traits)
 * [Enums](#enums)
+    * [Option](#option)
+    * [Result](#result)
 * [Pattern matching](#pattern-matching)
 * [Generics](#generics)
 * [Package management](#package-management)
 * [Error Handling](#error-handling)
-* [Concurrency](#concurrency)
+* [Concurrency 👥](#concurrency-)
 * [Resources](#resources)
 
 <!-- vim-markdown-toc -->
@@ -74,7 +71,7 @@ Rust files end with the `.rs` extension.
 
 1. `rustc`
     * Calls the ***Rust compiler*** that compiles our program, creating a **binary executable file**.
-        > The binary executable will be created with the same name as your Rust file/ Rust package.
+> The binary executable will be created with the same name as your Rust file/ Rust package.
 
 ```console
 $ rustc main.rs
@@ -85,14 +82,14 @@ $ ./main
 
 2. `cargo`
     * `cargo new {project name}` creates a new Rust package.
-        > All Rust program code is written inside the `main.rs` file *(found inside the `src` folder)*.
+> All Rust program code is written inside the `main.rs` file *(found inside the `src` folder)*.
 
 ```console
 $ cargo new exampleProject
 ```
 3. `cargo build` 
     * **Compiles** and **builds** the Rust project *(creating the corresponding executable file)*.
-        > The executable file can be found inside the `/target/debug` file path.
+> The executable file can be found inside the `/target/debug` file path.
 
 ```console
 $ cargo build
@@ -113,6 +110,8 @@ $ cargo run
 ```console
 $ cargo check
 ```
+
+---
 
 ### Printing to the console && Comments
 
@@ -211,7 +210,7 @@ Also see:
     * **Heap-allocated string**
     * Stored as a `Vec<u8>` that holds a *valid UTF-8 sequence* that is not null-terminated
 
-### Data structures
+### [Data structures](https://doc.rust-lang.org/std/collections/index.html)
 
 * Arrays
     * **Fixed length** sequence of elements that are all the **same data type**.
@@ -257,6 +256,8 @@ Unlike many other languages, the **boolean condition** is not surrounded by brac
 #### [Match construct](https://doc.rust-lang.org/book/ch06-02-match.html)
 
 Rust also has the powerful `match` construct *(which functions similarly to `switch`, `case` statements in Typescript)*.
+
+* `match` and `=>` *(match arms)* syntax
 
 ```Rust
 fn im_feeling_lucky() -> i32 {
@@ -366,17 +367,7 @@ use std::{cmp::min, cmp::max};
 use std::cmp::*;
 ```
 
-### Macros
-
-### Object-oriented programming
-
-#### Objects
-
-#### Classes
-
-#### Inheritance
-
-### Methods
+### [Macros](https://doc.rust-lang.org/book/ch19-06-macros.html)
 
 ### [Underscore](https://runrust.miraheze.org/wiki/Underscore)
 
@@ -425,22 +416,42 @@ let x = {
 };
 ```
 
-### Ownership
+### [Lifetimes](https://doc.rust-lang.org/rust-by-example/scope/lifetime.html)
 
-#### References
+***Variables*** and ***References*** *(including in function arguments)* have a fixed lifetime determined by the **scope** of curly braces they are within.
 
-#### Borrowing
+Also see:
 
-### Smart pointers
+* [Lifetimes in Rust for beginners](https://anooppoommen.medium.com/lifetimes-in-rust-7f2331be998b)
+* [Understanding Lifetimes in Rust](https://blog.logrocket.com/understanding-lifetimes-in-rust/)
+* [Lifetime elision](https://doc.rust-lang.org/nomicon/lifetime-elision.html)
 
-### [Structs](https://doc.rust-lang.org/book/ch05-01-defining-structs.html)
+### [Ownership](https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html)
 
-Structs are somewhat similar to objects in *Typescript*.
+#### [References](C++/pointers-references.md)
+
+#### [Borrowing](https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html)
+
+### [Smart pointers](https://doc.rust-lang.org/book/ch15-00-smart-pointers.html)
+
+### Object-oriented programming
+
+Rust **does not** have 'classes' or 'objects' *(in the conventional sense)*, and instead has [structs](#structs) and [traits](#traits).
+
+Also see:
+
+* On [complete rundown of Rust's implementation of OOP](https://stevedonovan.github.io/rust-gentle-intro/object-orientation.html)
+* Another shorter article on [Rust's version of OOP](https://blog.devgenius.io/object-oriented-programming-in-rust-691baf4d2996)
+
+#### [Structs](https://doc.rust-lang.org/rust-by-example/custom_types/structs.html)
+
+Structs are somewhat similar to objects in *Typescript*, often referred to as **Types** in Rust *(and are Rust's provision for OOP patterns)*.
 
 * declared with the `struct` keyword
-* intialized using **struct literals**
-* user-defined **methods** and [**traits**](#traits) implemented with the [`impl`](https://doc.rust-lang.org/std/keyword.impl.html) keyword
-    * `self` referenceable in type methods
+    * intialized using **struct literals**
+* user-defined **values** simply added to the struct
+* user-defined **methods** and **traits** implemented with the [`impl`](https://doc.rust-lang.org/std/keyword.impl.html) keyword *(always used for a Type)*
+    * `self` references the given Type
 
 ```Rust
 struct Vec2 { // struct declaration
@@ -462,38 +473,80 @@ println!("{}", v1.is_strictly_positive());
 
 Also see:
 
-* On [struct update syntax](https://users.rust-lang.org/t/the-struct-update-syntax/16519).  
+* On [struct update syntax](https://users.rust-lang.org/t/the-struct-update-syntax/16519)
+* On [structs as a whole](https://doc.rust-lang.org/book/ch05-01-defining-structs.html)
 
 #### Traits
 
-> Add more here.  
+Traits are similar to interfaces in *Java*, allowing us to **declare** attributes and methods a type must have without defining them *(and allowing for OOP inheritance in Rust)*.
 
-Traits are somewhat similar to interfaces in *Java*.
+* declared with the `trait` keyword
+* implement traits on types with the `impl` keyword *(`impl`, `for` syntax)*
 
-* On [traits](https://doc.rust-lang.org/rust-by-example/trait.html).
-* Also on [traits](https://doc.rust-lang.org/book/ch10-02-traits.html).  
-* On [Rust's orphan rules](https://github.com/Ixrec/rust-orphan-rules).  
-    * Can implement one of your traits on anyone's type
-    * Can implement anyone's traits on one of your types
-    * Cannot implement a foreign trait on a foreign type
-* Read and add portion of [this article](https://fasterthanli.me/articles/a-half-hour-to-learn-rust) that talks about traits.
+```Rust
+struct Number { // previously declared struct
+    odd: bool;
+    value: i32;
+}
 
-### Enums
+trait Signed {
+    fn isStrictlyNegative(self) -> bool; // all this does is specify that the type must have a function called isStrictlyNegative that takes self as an argument and returns a boolean
+}
 
-### Pattern matching
+impl Signed for Number { // implementing trait for a type
+    fn isStrictlyNegative(self) -> (bool) {
+        self.value < 0
+    }
+}
 
-### Generics
+fn main() { // main function
+    let n = Number { odd:false, value:-44 };
+    println!("{}", n.isStrictlyNegative()); // this prints out true to the console
+}
+```
 
-### Package management
+> Return to this in the future when I have more experience in Rust to try and understand the Orphan rules.
 
-### Error Handling
+**[Rust's Orphan Rules](https://github.com/Ixrec/rust-orphan-rules):**
+* Can implement one of your traits on foreign and primitive types *(like i32)* ✅
+* Can implement other Rust-defined traits on one of our types ✅
+* Cannot implement a foreign trait on a foreign type ❎
 
-### Concurrency
+Also see:
+
+* On [traits](https://doc.rust-lang.org/book/ch10-02-traits.html)
+* On [marker traits](https://doc.rust-lang.org/std/marker/index.html)
+* On [derive](https://doc.rust-lang.org/rust-by-example/trait/derive.html)
+
+### [Enums](https://doc.rust-lang.org/book/ch06-01-defining-an-enum.html)
+
+#### [Option](https://doc.rust-lang.org/rust-by-example/std/option.html)
+
+#### [Result](https://doc.rust-lang.org/std/result/)
+
+### [Pattern matching](https://doc.rust-lang.org/book/ch18-00-patterns.html)
+
+Also see:
+
+* On [pattern syntax](https://doc.rust-lang.org/book/ch18-03-pattern-syntax.html)
+
+### [Generics](https://doc.rust-lang.org/rust-by-example/generics.html)
+
+### [Package management](https://doc.rust-lang.org/cargo/)
+
+### [Error Handling](https://doc.rust-lang.org/book/ch09-00-error-handling.html)
+
+### [Concurrency 👥](https://doc.rust-lang.org/book/ch16-00-concurrency.html)
+
+---
 
 ### Resources
 
-* [Rust quickies](https://fasterthanli.me/articles/a-half-hour-to-learn-rust)
-* [Rust Lang Book](https://doc.rust-lang.org/stable/book/)
-* [Rust Crash Course](https://www.youtube.com/watch?v=zF34dRivLOw)
+> Return to these in a few months to see how much more Rust code I can understand.
+
+* [Rust in 30 minutes](https://fasterthanli.me/articles/a-half-hour-to-learn-rust)
 * [Learn Rust in Y minutes](https://learnxinyminutes.com/docs/rust/)
+* [Rust Lang Book](https://doc.rust-lang.org/stable/book/)
+* [Rust by example](https://doc.rust-lang.org/stable/rust-by-example/)
+* [Rust Crash Course](https://www.youtube.com/watch?v=zF34dRivLOw)
 * [Rust lang playground](https://play.rust-lang.org/?version=stable&mode=debug&edition=2021)
