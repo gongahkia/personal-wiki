@@ -14,12 +14,10 @@ Markdown notes made while learning different languages. If not happy, please don
 * [Java](Java.md)
 * [Typescript](Typescript.md)
 * [Nim](Nim.md)
+* [Rust](Rust.md)
 
 ### Frameworks
 
 *
 
 ## To continue 
-
-* [Rust](Rust.md)
-
