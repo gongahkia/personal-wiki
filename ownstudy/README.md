@@ -11,7 +11,7 @@ Markdown notes made while learning different languages. If not happy, please don
 * [C](C.md)
 * [C++](C++)
 * [Bash](Bash.md)
-* [Java](Java.md)
+* [Java](Java/Java.md)
 * [Typescript](Typescript.md)
 * [Nim](Nim.md)
 * [Rust](Rust.md)
