@@ -15,3 +15,14 @@
 * [Law 103](bachelor-1/Crim/law-103.md)
 *
 *
+
+---
+
+### Note ❗
+
+Create new markdown law notes with `law` command to echo existing template into the file.
+
+```console
+$ law exampleNotes.md
+$ nvim exampleNotes.md
+```
