@@ -1,4 +1,4 @@
-# Language/Framework name
+# Language / Framework name
 
 > **Class:** *class name*  
 > **Subject:** *subject name*  
@@ -12,3 +12,7 @@
 ### Of interest:
 
 * Additional links
+
+### Resources:
+
+* Additional resources
