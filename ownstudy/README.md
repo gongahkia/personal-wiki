@@ -8,13 +8,13 @@ Markdown notes made while learning different languages. If not happy, please don
 
 ### Languages
 
-* [C](C.md)
-* [C++](C++)
-* [Bash](Bash.md)
-* [Java](Java/Java.md)
-* [Typescript](Typescript.md)
-* [Nim](Nim.md)
-* [Rust](Rust.md)
+* [C](ownstudy.C.md)
+* [C++](ownstudy.CPP.md)
+* [Bash](ownstudy.Bash.md)
+* [Java](ownstudy.Java.md)
+* [Typescript](ownstudy.Typescript.md)
+* [Nim](ownstudy.Nim.md)
+* [Rust](ownstudy.Rust.md)
 
 ### Frameworks
 
