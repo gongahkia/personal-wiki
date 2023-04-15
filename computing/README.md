@@ -8,8 +8,8 @@
 
 * Python
 * Javascript
-* [HTML & CSS](bachelor-1/HTMLCSS.md)
-* [PHP](bachelor-1/PHP.md)
+* [HTML & CSS](bach1.htmlcss.md)
+* [PHP](bach1.php.md)
 * SQL
 
 ### Frameworks
@@ -22,7 +22,7 @@
 
 ### Note ❗
 
-Create new markdown computing notes with `com` command to echo existing template into the file.
+Create new markdown computing notes with `com` command to copy existing template into the file.
 
 ```console
 $ com someExampleNotes.md

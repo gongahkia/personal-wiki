@@ -712,61 +712,47 @@ For all of these **Graphical User Interface** *(GUI)* libraries, we have to `imp
 
 1. `javax.swing.JOptionPane`
     * Brings up small dialog boxes that also accept user input and display system messages.
-    * [Example project](java-projects/name-proj/Main.java)  
   
 2. `javax.sound.sampled.*`
     * Allows us to play `.wav` files *(music)* from our Java program.
-    * [Example project](java-projects/music-proj/Main.java)
 
 > Many of the core components we will use to build GUI come from the `javax.swing` package.
 
 3. `javax.swing.JFrame`
     * Creates a Java frame that we can then populate with different elements.
-        * [Example project](java-projects/jframe-proj/Main.java)
-            * `.setDefaultCloseOperation()`, `.setSize()`, `.setLayout()`, `.setVisible()` are all default methods we normally call on a JFrame object upon initialization.
+        * `.setDefaultCloseOperation()`, `.setSize()`, `.setLayout()`, `.setVisible()` are all default methods we normally call on a JFrame object upon initialization.
     * We can also create a **parent class** off the `JFrame` class with specific default configurations, and instantiate *child classes* off the parent.
-        * [Example project](java-projects/parentchild-jframe-proj/Main.java)
-            * `.pack()` method dynamically resizes the JFrame object based on the components stored within it.
+        * `.pack()` method dynamically resizes the JFrame object based on the components stored within it.
     * We can also **launch new GUI windows** by creating another class off the `JFrame` class.
-        * [Example project](java-projects/window-proj/Main.java)
-            * Opens up a new GUI launch window, which we can then place components within *(similar to a `JFrame`)*.
-        * [Example project](java-projects/window-proj/LaunchPage.java)
-            * `.dispose()` method called on `JFrame` object to **close** the specified frame.
+        * Opens up a new GUI launch window, which we can then place components within *(similar to a `JFrame`)*.
+        * `.dispose()` method called on `JFrame` object to **close** the specified frame.
 
 4. `javax.swing.ImageIcon`
     * Allows for import of image assets (`.jpg`/`.png` format) into project.
-    * [Example project](java-projects/jframe-proj/Main.java)
 
 5. `javax.swing.border.Border`
     * Allows us to create a **border** around our JFrame label.
-    * [Example project](java-projects/jlabel-proj/Main.java)
 
 6. `javax.swing.JLabel`
     * Allows us to display text and images inside our JFrame, and customize their positions and color accordingly.
-    * [Example project](java-projects/jlabel-proj/Main.java)
 
 7. `javax.swing.JPanel`
     * House different UI elements *(JLabels, JButtons etc)* while still being able to divide the entire JFrame into different sections.
-    * [Example project](java-projects/panel-proj/Main.java)
 
 8. `javax.swing.JButton`
     * Implements a **clickable** button within the JFrame or JPanel.
-    * [Example project](java-projects/button-proj/Main.java)
 
 9. `javax.swing.JLayeredPane`
     * Similar to *Jpanels*, but we can **layer** *JLayers* to create a 3D effect.
         * By default, the first component added is placed on the *top-most* level, and the last component added is placed at the *bottom-most* level.
             * Each layer in `JLayeredPane` has a unique name, that can be referenced using **dot notation** to specify the exact layer we want to add a component to.
             * Each layer also has a **corresponding Integer value**, higher value rises to the **top layer**, lower value is at the **bottom layer**.
-    * [Example project](java-projects/layered-proj/Main.java)
 
 10. `java.awt.Color`
     * Allows for usage of different colors in your Java project.
-    * [Example project](java-projects/jframe-proj/Main.java)
 
 11. `java.awt.Font`
     * Allows for usage of different fonts in your Java project.
-    * [Example project](java-projects/jframe-proj/Main.java)
 
 12. `java.awt.Dimension`
     * Required to call specific dimensions within the `.setPreferredSize()` method *(alongside other methods)*
@@ -778,16 +764,13 @@ For all of these **Graphical User Interface** *(GUI)* libraries, we have to `imp
 13. `java.awt.BorderLayout`
     * Segments a screen by **formatting** JPanels and JLabels accordingly, useful for governing the relative position of UI elements on screen.
         * Called within the `.setLayout()` method of the `JFrame` class *(as one of the possible layout managers)*.
-    * [Example project](java-projects/border-proj/Main.java)
 
 14. `java.awt.FlowLayout`
     * Arranges components in a *row* at their preferred size, and shifts components to the next row if the *horizontal container space* is too small.
-    * [Example project](java-projects/flow-proj/Main.java)
 
 15. `java.awt.GridLayout`
     * Arranges components in a *grid* of the specified size *(by default, all components in a single-row grid)*.
         * `GridLayout()` takes in 4 *arguments*, number of **rows**, number of **columns**, **length** of border spaces, **height** of border spaces.
-    * [Example project](java-projects/grid-proj/Main.java)
 
 Additional functionality can be found within the `javax.swing` library.
 
@@ -805,7 +788,6 @@ Additional functionality can be found within the `javax.swing` library.
             * `.YES_OPTION` creates the **one** specified button.
         * `.showInputDialog()` method is called on the `JOptionPane` object, allowing for user to **type** in their input into a text field, which then returns us that user input.
         * `.showOptionDialog()` method is called on the `JOptionPane` object, and it **combines all the three previous types of prompts**, with [each unique argument](https://docs.oracle.com/javase/7/docs/api/javax/swing/JOptionPane.html) customizing the look and function of the prompt.
-    * [Example project](java-projects/dialog-proj/Main.java)
     
 18. `javax.swing.JTextField`
     * Creates a GUI **textbox** component that a user can input *a single line of text* into.
@@ -814,7 +796,6 @@ Additional functionality can be found within the `javax.swing` library.
 19. `javax.swing.JTextArea`
     * Functions similarly to a `JTextField`, except that a user can input *multiple lines of text* into it.
     * `ActionListener` or `KeyListener` has to be added to the `JTextArea` to **detect user input**.
-    * [Example project](https://github.com/gongahkia/shed/blob/main/for-testing/test.java)
 
 20. `javax.swing.JCheckBox`
     * Creates a **clickable** check box that the user can interact with.
@@ -842,7 +823,6 @@ Additional functionality can be found within the `javax.swing` library.
 24. `javax.swing.JProgressBar`
     * Creates a **progress bar** that ticks down as time passes to reflect flow of time in the GUI.
         * Note that to do things like **filling the progress bar** *(which we implement using `.setValue()` method)*, we can create another public method called `fill()` to do this for us *(seen in the example project below)*.
-    * [Example project](java-projects/progressBar-proj/Main.java)
         * There are also a [bunch of methods](https://docs.oracle.com/javase/tutorial/uiswing/components/progress.html) that can be called on the `JProgressBar` object.
 
 25. `javax.swing.JMenuBar`, `javax.swing.JMenu`, `javax.swing.JMenuItem`
@@ -851,7 +831,6 @@ Additional functionality can be found within the `javax.swing` library.
             * To add `JMenuItem` to the `JMenu` object, we first assign each *menu item* to a `JMenuItem` object, then call the `.add()` method on the `JMenu` object and add each *menu item* individually.
                 * Note that to detect user input via `ActionListener` interface, we must call the `.addActionListener()` method on **every single** `JMenuItem` object within our project *(since each of them qualify as a button)*.
         * To add a ***keybind*** to a given `JMenu` or `JMenuItem`, we call the `.setMnemonic()` method on the `JMenu` or `JMenuItem` object respectively.
-    * [Example project](java-projects/menuBar-proj/MenuBar.java)
 
 26. `javax.swing.JFileChooser`
     * Creates a GUI that allows the user to choose a selected file from the local machine's file directory.

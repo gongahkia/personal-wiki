@@ -14,8 +14,6 @@ Gong's *private repo* for AY 2023-2027.
 
 *
 
->> Regularly update the above!
-
 ---
 
 ## Table of contents 📑
@@ -28,4 +26,4 @@ Gong's *private repo* for AY 2023-2027.
 
 ---
 
-> Credits to [this guy](https://castel.dev/post/lecture-notes-3/) for the file structure of these notes.
+> Credits to [this](https://forum.obsidian.md/t/dendron-style-notes-in-obsidian/47291) [guy](https://www.kevinslin.com/notes/3dd58f62-fee5-4f93-b9f1-b0f0f59a9b64/) for the Dendron-style structure of these notes.

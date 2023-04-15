@@ -12,7 +12,7 @@
 
 ### Criminal law
 
-* [Law 103](bachelor-1/Crim/law-103.md)
+* [Law 103](bach1.crim.law-103.md)
 *
 *
 
