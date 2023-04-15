@@ -15,6 +15,7 @@ Markdown notes made while learning different languages. If not happy, please don
 * [Typescript](ownstudy.Typescript.md)
 * [Nim](ownstudy.Nim.md)
 * [Rust](ownstudy.Rust.md)
+* [Go](ownstudy.Go.md)
 
 ### Frameworks
 
