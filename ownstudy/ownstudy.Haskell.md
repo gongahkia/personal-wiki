@@ -262,7 +262,7 @@ $$S = \{2.x|x\in N,x<=10\}$$
 
 Wherein <u>each component</u> is as follows.
 
-$$S = \{Output function|Variable\&Input set,Predicate\}$$
+$$S = \{OutputFunction|VariableAndInputSet,Predicate\}$$
 
 > * **Output function:** Transformation applied on each value before it is output.  
 > * **Variable:** Variable that iterates over the input set.  
