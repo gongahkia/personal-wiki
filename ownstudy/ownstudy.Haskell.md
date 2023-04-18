@@ -1,4 +1,4 @@
-> Referencing *Learn you a Haskell for Great Good!* pg 15
+> Referencing *Learn you a Haskell for Great Good!* Chapter 3 start
 
 # The Haskell programming language
 
@@ -212,6 +212,26 @@ isItPartOfList = 4 `elem` [3,4,5,6] -- returns True
 isItAlsoPartOfList = 10 `elem` [3,4,5,6] -- returns False
 ```
 
+#### Tuples
+
+Tuples are a **non-homogenous** data structure *(storing elements of <u>different types</u>)* that can store a <u>**fixed** number of elements</u>.
+
+* Tuples are denoted by `()` normal brackets and elements are *comma-seperated*.
+
+```Haskell
+someTuple = (8, 11) -- a definition of the tuple someTuple
+```
+  
+> Tuples are differentiated based on the **<u>size</u> of the tuple** and the **<u>data type</u> of its elements**, and each permutation of those two factors is its own *data type*.
+
+<h4 align="center">Other Tuple functions to look into</h4>
+
+* [`fst`](http://zvon.org/other/haskell/Outputprelude/fst_f.html)
+* [`snd`](http://zvon.org/other/haskell/Outputprelude/snd_f.html)
+* [`zip`](http://zvon.org/other/haskell/Outputprelude/zip_f.html)
+
+> See pg 18 of *Learn you a Haskell for Great Good!* for a fantastic example on tuples and list comprehension.
+
 ---
 
 <h3 align="center">Ranges</h3>
@@ -240,7 +260,7 @@ rangeOfOneToTWentyButMultiplesOfThree = [3,6,20] -- returns a complete list of [
 firstTwentyFourElementsOfThirteen = take 24 [13,26] -- since Haskell lazily evaluates, it only calculates what is needed when specified by us in the program
 ```
 
-<h4 align="center">Other range functions to look into:</h4>
+<h4 align="center">Other Range functions to look into</h4>
 
 * [`cycle`](https://livebook.manning.com/concept/haskell/cycle)
 * [`repeat`](http://zvon.org/other/haskell/Outputprelude/repeat_f.html)
@@ -304,8 +324,12 @@ boomBangs [7..13] -- this will return the complete list ["Boom!", "Boom!", "Bang
 length` xs = sum [1 | _ <- xs] -- this function replaces every element of the list with 1, and sums up the values of that list
 ```
 
-> About 200 lines ago, we established that **Strings** are *lists of characters*.
->
-> As such, we can similarly apply *list comprehension* on Strings.
+About 200 lines ago, we established that **Strings** are *lists of characters*. Therefore, *list comprehension* can similarly be applied on Strings.
+
+```Haskell
+removeNonUppercase inputString = [ c | c <- inputString, c `elem` ['A'..'Z']] -- removes all non-uppercase letters from a string
+```
+
+> **Nested list comprehension** is also possible.
 
 ---
