@@ -16,6 +16,7 @@ Markdown notes made while learning different languages. If not happy, please don
 * [Nim](ownstudy.Nim.md)
 * [Rust](ownstudy.Rust.md)
 * [Go](ownstudy.Go.md)
+* [Haskell](ownstudy.Haskell.md)
 
 ### Frameworks
 

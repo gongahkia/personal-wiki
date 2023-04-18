@@ -1,4 +1,4 @@
-> Referencing *Learn you a Haskell for Great Good!* pg 12
+> Referencing *Learn you a Haskell for Great Good!* pg 15
 
 # The Haskell programming language
 
@@ -29,7 +29,7 @@ Haskell is <u>**statically typed**</u>, but supports *type inference*. This enta
 
 ### Usage
 
-Read the second chapter of [*Learn you a Haskell for Great Good!*](http://learnyouahaskell.com/)
+> Read the second chapter of [*Learn you a Haskell for Great Good!*](http://learnyouahaskell.com/)
 
 --- 
 
@@ -211,5 +211,101 @@ productOfValues = product [2,3,10,4] -- returns 240
 isItPartOfList = 4 `elem` [3,4,5,6] -- returns True
 isItAlsoPartOfList = 10 `elem` [3,4,5,6] -- returns False
 ```
+
+---
+
+<h3 align="center">Ranges</h3>
+
+Ranges let us make lists that are *arithmetic sequences of elements* which can be enumerated.
+
+> **Numbers** and **Characters** can be enumerated.
+
+* `..` **creates a range** that can be enumerated over.
+
+```Haskell
+rangeOfOneToTwenty = [1..20] -- returns a complete list of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+rangeOfaToz = ['a'..'z'] -- returns a complete list of letters (string) of "abcdefghijklmnopqrstuvwxyz"
+```
+
+* We can **specify steps** in ranges as well.
+
+```Haskell
+rangeOfOneToTwentyButEvenOnly = [2,4..20] -- returns a complete list of even numbers [2,4,6,8,10,12,14,16,18,20]
+rangeOfOneToTWentyButMultiplesOfThree = [3,6,20] -- returns a complete list of [3,6,9,12,15,18]
+```
+
+* We can also obtain **infinite lists** using ranges.
+
+```Haskell
+firstTwentyFourElementsOfThirteen = take 24 [13,26] -- since Haskell lazily evaluates, it only calculates what is needed when specified by us in the program
+```
+
+<h4 align="center">Other range functions to look into:</h4>
+
+* [`cycle`](https://livebook.manning.com/concept/haskell/cycle)
+* [`repeat`](http://zvon.org/other/haskell/Outputprelude/repeat_f.html)
+* [`replicate`](http://zvon.org/other/haskell/Outputprelude/replicate_f.html)
+
+---
+
+<h3 align="center">List comprehension</h3>
+
+We can implement list comprehension within Haskell, and it functions the same as in mathematical set theory.
+
+The structure for list comprehension is as follows.
+
+***Example:***
+
+*A comprehension for a set that contains the first 10 even natural numbers.*
+
+$$S = \{2.x|x\in N,x<=10\}$$
+
+Wherein <u>each component</u> is as follows.
+
+$$S = \{Output function|Variable\&Input set,Predicate\}$$
+
+> * **Output function:** Transformation applied on each value before it is output.  
+> * **Variable:** Variable that iterates over the input set.  
+> * **Input set:** Input set which the variable can iterate over, can be expressed as a range.  
+> * **Predicate:** Conditions *imposed on the variable* that limit what values from the input set can be output.  
+
+The same concept *(and terminology)* can be applied in Haskell's list comprehension, with `[{Output function} | {Variable & Input set}, {Predicate}]` in the same format.
+
+* `<-` signals the relationship between the **variable** and **input set**.
+
+```Haskell
+desiredList = [x*2 | x <- [1..10]] -- returns the complete list [2,4,6,8,10,12,14,16,18,20]
+anotherDesiredList = [x*2 | x <- [1..10], x*2 >= 12] -- returns the complete list [12,14,16,18,20]
+yetAnotherDesiredList = [x | x <- [50..100], x `mod` 7 == 3] -- returns the compleye list of numbers from 50 to 100 whose remainder when divided by 7 is 3, [52,59,66,73,80,87,94]
+```
+
+* `,` commas can be used to seperate **multiple predicates**.
+
+```Haskell
+okAndHere'sAnotherList = [x | x <- [10..20], x /= 13, x /= 15, x /= 19] -- multiple predicates that state we don't want 13, 15, 19 from our input set
+```
+
+* `,` commas can also be used to seperate **multiple variables and input sets**.
+
+```Haskell
+ShagLaBro = [x*y | x <- [2,5,10] , y <- [8,10,11], x*y > 50] -- this returns a list of all the possible products from a list that are more than 50, which is [55,80,100,110]
+```
+
+We can embed list comprehension inside *functions* as well.
+
+```Haskell
+boomBangs userInput = [if x < 10 then "Boom!" else "Bang!" | x <- userInput, odd x] -- where odd and even are functions that return True or False depending on whether said number is true or false
+boomBangs [7..13] -- this will return the complete list ["Boom!", "Boom!", "Bang!", "Bang!"]
+```
+
+* `_` can be used as a **throwaway** variable that will not be referenced in the future.
+
+```Haskell
+length` xs = sum [1 | _ <- xs] -- this function replaces every element of the list with 1, and sums up the values of that list
+```
+
+> About 200 lines ago, we established that **Strings** are *lists of characters*.
+>
+> As such, we can similarly apply *list comprehension* on Strings.
 
 ---

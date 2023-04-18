@@ -10,7 +10,7 @@
 * Javascript
 * [HTML & CSS](bach1.htmlcss.md)
 * [PHP](bach1.php.md)
-* SQL
+* [SQL](bach1.sql.md)
 
 ### Frameworks
 
