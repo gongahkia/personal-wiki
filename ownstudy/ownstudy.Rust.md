@@ -1,6 +1,6 @@
-> *Edit on 13 April 2023:*
-> * Read through [Rust book](https://doc.rust-lang.org/stable/book/) [Chapter 0/21], follow along w projects in [Rust lang playground](https://play.rust-lang.org/?version=stable&mode=debug&edition=2021), add relevant notes and minimal bloat here
-> * Make notes off this video (https://www.youtube.com/watch?v=zF34dRivLOw)
+> *Edit on 18 April 2023:*
+> * Read through [Rust book](https://doc.rust-lang.org/stable/book/) [Chapter 0/21], follow along w projects in [Rust lang playground](https://play.rust-lang.org/?version=stable&mode=debug&edition=2021), continue adding notes here.
+> * Make notes off this video (https://www.youtube.com/watch?v=zF34dRivLOw).
 
 # The Rust programming language 🦀
 
@@ -127,9 +127,9 @@ const SECONDS_IN_MINUTES:u32 = 60; // const creates a constant, whose value cann
 println!("{}", SECONDS_IN_MINUTES);
 ```
 
-Also see:
-
-* On the [differences](https://stackoverflow.com/questions/37877381/what-is-the-difference-between-immutable-and-const-variables-in-rust) between `let` and `const`.
+> Also see:
+> 
+> * On the [differences](https://stackoverflow.com/questions/37877381/what-is-the-difference-between-immutable-and-const-variables-in-rust) between `let` and `const`.
 
 ---
 
@@ -206,7 +206,7 @@ println!("{}", eg_tuple.1);
 
 ---
 
-### Conditional flow
+<h3 align="center">Conditional flow</h3>
 
 Unlike many other languages, the **boolean condition** is not surrounded by brackets.
 
@@ -229,12 +229,12 @@ fn im_feeling_lucky() -> i32 {
 }
 ```
 
-### [Equality](https://doc.rust-lang.org/book/appendix-02-operators.html)
+<h3 align="center"><a href="https://doc.rust-lang.org/book/appendix-02-operators.html">Equality</a></h3>
 
 * `==` checks for equality in **value**
 * `!=` checks for inequality in **value**
 
-### [Loops](https://doc.rust-lang.org/reference/expressions/loop-expr.html)
+<h3 align="center"><a href="https://doc.rust-lang.org/reference/expressions/loop-expr.html">Loops</a></h3>
 
 Unlike many other languages, the **loop condition** is not surrounded by brackets.
 
@@ -266,7 +266,7 @@ for i in 0u32..10 {
 } 
 ```
 
-### Functions
+<h3 align="center">Functions</h3>
 
 * `fn` **declares** a function
 * `->` indicates the **return type** of said function
@@ -282,7 +282,7 @@ fn unfair_dice_roll() -> i32 {
 }
 ```
 
-### Namespaces
+<h3 align="center">Namespaces</h3>
 
 * `::`
     * indicates the hierachy of crates, modules and symbols within a **namespace** *(similar to C++)*
@@ -328,9 +328,9 @@ use std::{cmp::min, cmp::max};
 use std::cmp::*;
 ```
 
-### [Macros](https://doc.rust-lang.org/book/ch19-06-macros.html)
+<h3 align="center"><a href="https://doc.rust-lang.org/book/ch19-06-macros.html">Macros</a></h3>
 
-### [Underscore](https://runrust.miraheze.org/wiki/Underscore)
+<h3 align="center"><a href="https://runrust.miraheze.org/wiki/Underscore">Underscore</a></h3>
 
 * `_` is a special character that indicates to Rust to **throw that value away** *(and acts as a catch-all pattern in match constructs)*.
 
@@ -342,9 +342,9 @@ let _x = 42; // compiler will NOT warn about an unused variable if it is prefixe
 let (_, right) = slice.split_at(middle); // throw away the left side of the destructured tuple and only return the right
 ```
 
-### Destructuring
+<h3 align="center">Destructuring</h3>
 
-Effectively the same concept as in *Typescript*, where we **extract values from data structures** *(arrays, tuples, vectors, structs, objects)*.
+Effectively the same concept as in *Typescript*, where we **extract values from data structures** *(arrays, tuples, vectors, structs)*.
 
 ```Rust
 // here is destructuring on a tuple, where some_char is now 'a' and some_int is now 17
@@ -361,13 +361,15 @@ let v = Vec2 { x:3.0, y:6.0 };
 let Vec2 {x,y} = v;
 ```
 
-### Blocks && Scope
+---
+
+<h3 align="center">Blocks && Scope</h3>
 
 Generally, **scope** is defined by a **block of code**.
 
-* Fundamentally, <u>all blocks are expressions</u>, and all expressions evaluate to a value called the **tail** *(indicated by omission of semicolon)*, similar to Haskell.
+* Fundamentally, all blocks are expressions, and all expressions evaluate to a value called the **tail** *(indicated by omission of semicolon)*, similar to Haskell.
 * Blocks can have multiple initialization and assignment statements.
-* Blocks exist anywhere in Rust there is code enclosed by `{}` curly braces *(functions, conditional and match statements, loops, objects)*.
+* Blocks exist anywhere in Rust there is code enclosed by `{}` curly braces *(functions, conditional and match statements, loops, structs)*.
 
 ```Rust
 let x = {
@@ -377,34 +379,38 @@ let x = {
 };
 ```
 
-### [Lifetimes](https://doc.rust-lang.org/rust-by-example/scope/lifetime.html)
+---
+
+<h3 align="center"><a href="https://doc.rust-lang.org/rust-by-example/scope/lifetime.html">Lifetimes</a></h3>
 
 ***Variables*** and ***References*** *(including in function arguments)* have a fixed lifetime determined by the **scope** of curly braces they are within.
 
-Also see:
+> Also see:
+> 
+> * [Lifetimes in Rust for beginners](https://anooppoommen.medium.com/lifetimes-in-rust-7f2331be998b)
+> * [Understanding Lifetimes in Rust](https://blog.logrocket.com/understanding-lifetimes-in-rust/)
+> * [Lifetime elision](https://doc.rust-lang.org/nomicon/lifetime-elision.html)
 
-* [Lifetimes in Rust for beginners](https://anooppoommen.medium.com/lifetimes-in-rust-7f2331be998b)
-* [Understanding Lifetimes in Rust](https://blog.logrocket.com/understanding-lifetimes-in-rust/)
-* [Lifetime elision](https://doc.rust-lang.org/nomicon/lifetime-elision.html)
+<h3 align="center"><a href="https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html">Ownership</a></h3>
 
-### [Ownership](https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html)
+<h3 align="center"><a href="C++/pointers-references.md">References</a></h3>
 
-#### [References](C++/pointers-references.md)
+<h3 align="center"><a href="https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html">Borrowing</a></h3>
 
-#### [Borrowing](https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html)
+<h3 align="center"><a href="https://doc.rust-lang.org/book/ch15-00-smart-pointers.html">Smart pointers</a></h3>
 
-### [Smart pointers](https://doc.rust-lang.org/book/ch15-00-smart-pointers.html)
+---
 
-### Object-oriented programming
+<h3 align="center">Object-oriented programming 🏗️</h3>
 
 Rust **does not** have 'classes' or 'objects' *(in the conventional sense)*, and instead has [structs](#structs) and [traits](#traits).
 
-Also see:
+> Also see:
+> 
+> * On [complete rundown of Rust's implementation of OOP](https://stevedonovan.github.io/rust-gentle-intro/object-orientation.html)
+> * Another shorter article on [Rust's version of OOP](https://blog.devgenius.io/object-oriented-programming-in-rust-691baf4d2996)
 
-* On [complete rundown of Rust's implementation of OOP](https://stevedonovan.github.io/rust-gentle-intro/object-orientation.html)
-* Another shorter article on [Rust's version of OOP](https://blog.devgenius.io/object-oriented-programming-in-rust-691baf4d2996)
-
-#### [Structs](https://doc.rust-lang.org/rust-by-example/custom_types/structs.html)
+<h3 align="center"><a href="https://doc.rust-lang.org/rust-by-example/custom_types/structs.html">Structs 🏛️</a></h3>
 
 Structs are somewhat similar to objects in *Typescript*, often referred to as **Types** in Rust *(and are Rust's provision for OOP patterns)*.
 
@@ -432,12 +438,12 @@ impl Vec2 { // implementing a method on a struct
 println!("{}", v1.is_strictly_positive());
 ```
 
-Also see:
+> Also see:
+> 
+> * On [struct update syntax](https://users.rust-lang.org/t/the-struct-update-syntax/16519)
+> * On [structs as a whole](https://doc.rust-lang.org/book/ch05-01-defining-structs.html)
 
-* On [struct update syntax](https://users.rust-lang.org/t/the-struct-update-syntax/16519)
-* On [structs as a whole](https://doc.rust-lang.org/book/ch05-01-defining-structs.html)
-
-#### Traits
+<h3 align="center">Traits 🧒</h3>
 
 Traits are similar to interfaces in *Java*, allowing us to **declare** attributes and methods a type must have without defining them *(and allowing for OOP inheritance in Rust)*.
 
@@ -464,46 +470,48 @@ fn main() { // main function
     let n = Number { odd:false, value:-44 };
     println!("{}", n.isStrictlyNegative()); // this prints out true to the console
 }
-```
+```  
+  
+<h4 align="center"><a href="https://github.com/Ixrec/rust-orphan-rules">Rust's Orphan Rules</a></h4>
+<p align="center"
+   <ul>
+      <li>Can implement one of your traits on foreign and primitive types <i>(like i32)</i> ✅</li>
+      <li>Can implement other Rust-defined traits on one of our types ✅</li>
+      <li>Cannot implement a foreign trait on a foreign type ❎</li>
+   </ul>
+</p>
 
-> Return to this in the future when I have more experience in Rust to try and understand the Orphan rules.
+> Also see:
+> 
+> * On [traits](https://doc.rust-lang.org/book/ch10-02-traits.html)
+> * On [marker traits](https://doc.rust-lang.org/std/marker/index.html)
+> * On [derive](https://doc.rust-lang.org/rust-by-example/trait/derive.html)
 
-**[Rust's Orphan Rules](https://github.com/Ixrec/rust-orphan-rules):**
-* Can implement one of your traits on foreign and primitive types *(like i32)* ✅
-* Can implement other Rust-defined traits on one of our types ✅
-* Cannot implement a foreign trait on a foreign type ❎
+---
 
-Also see:
+<h3 align="center"><a href="https://doc.rust-lang.org/book/ch06-01-defining-an-enum.html">Enums</a></h3>
 
-* On [traits](https://doc.rust-lang.org/book/ch10-02-traits.html)
-* On [marker traits](https://doc.rust-lang.org/std/marker/index.html)
-* On [derive](https://doc.rust-lang.org/rust-by-example/trait/derive.html)
+<h3 align="center"><a href="https://doc.rust-lang.org/rust-by-example/std/option.html">Option</a></h3>
 
-### [Enums](https://doc.rust-lang.org/book/ch06-01-defining-an-enum.html)
+<h3 align="center"><a href="https://doc.rust-lang.org/std/result/">Result</a></h3>
 
-#### [Option](https://doc.rust-lang.org/rust-by-example/std/option.html)
+<h3 align="center"><a href="https://doc.rust-lang.org/book/ch18-00-patterns.html">Pattern matching</a></h3>
 
-#### [Result](https://doc.rust-lang.org/std/result/)
+> Also see:
+> > 
+> * On [pattern syntax](https://doc.rust-lang.org/book/ch18-03-pattern-syntax.html)
 
-### [Pattern matching](https://doc.rust-lang.org/book/ch18-00-patterns.html)
+<h3 align="center"><a href="https://doc.rust-lang.org/rust-by-example/generics.html">Generics</a></h3>
 
-Also see:
+<h3 align="center"><a href="https://doc.rust-lang.org/cargo/">Package management</a></h3>
 
-* On [pattern syntax](https://doc.rust-lang.org/book/ch18-03-pattern-syntax.html)
+<h3 align="center"><a href="https://doc.rust-lang.org/book/ch09-00-error-handling.html">Error Handling</a></h3>
 
-### [Generics](https://doc.rust-lang.org/rust-by-example/generics.html)
-
-### [Package management](https://doc.rust-lang.org/cargo/)
-
-### [Error Handling](https://doc.rust-lang.org/book/ch09-00-error-handling.html)
-
-### [Concurrency 👥](https://doc.rust-lang.org/book/ch16-00-concurrency.html)
+<h3 align="center"><a href="https://doc.rust-lang.org/book/ch16-00-concurrency.html">Concurrency 👥</a></h3>
 
 ---
 
 ### Resources
-
-> Return to these in a few months to see how much more Rust code I can understand.
 
 * [Rust in 30 minutes](https://fasterthanli.me/articles/a-half-hour-to-learn-rust)
 * [Learn Rust in Y minutes](https://learnxinyminutes.com/docs/rust/)
