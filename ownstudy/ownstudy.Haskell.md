@@ -1,10 +1,10 @@
-> Referencing *Learn you a Haskell for Great Good!* pg 11
+> Referencing *Learn you a Haskell for Great Good!* pg 12
 
 # The Haskell programming language
 
 ![](https://upload.wikimedia.org/wikipedia/en/thumb/4/4d/Logo_of_the_Haskell_programming_language.svg/2560px-Logo_of_the_Haskell_programming_language.svg.png)
 
-## What is Haskell?
+<h2 align="center">What is Haskell?</h2>
 
 Haskell is a <u>strictly **functional**</u> programming language. This entails...
 
@@ -23,7 +23,7 @@ Haskell is <u>**statically typed**</u>, but supports *type inference*. This enta
 
 ---
 
-## Quickstart
+<h2 align="center">Quickstart</h2>
 
 ### [Installation](https://www.haskell.org/downloads/)
 
@@ -33,7 +33,7 @@ Read the second chapter of [*Learn you a Haskell for Great Good!*](http://learny
 
 --- 
 
-### Functions in Haskell
+<h3 align="center">Functions in Haskell</h3>
 
 Haskell is built around functions *(which are built upon expressions)*, so let's start there.
 
@@ -72,7 +72,7 @@ doubleSmallNumber' x = (if x > 100 then x else x*2) + 1 -- the backtick ' denote
 
 ---
 
-### Data Types
+<h3 align="center">Data Types</h3>
 
 * Characters *(`''` single quotes)*
 * Strings == Lists of Characters *(`""` double quotes)*
@@ -80,7 +80,7 @@ doubleSmallNumber' x = (if x > 100 then x else x*2) + 1 -- the backtick ' denote
 
 ---
 
-### Data Structures
+<h3 align="center">Data Structures</h3>
 
 #### Lists 
 
@@ -120,7 +120,7 @@ theHero = "Steve Buscemi" !! 6 -- this returns character 'B', which has an index
 booleanYesOrNo = [3,4,2] > [3,2] -- returns True
 ```
 
-##### Other List functions
+<h4 align="center">Other List functions</h4>
 
 * `head` returns a **list's head**.
 
@@ -162,7 +162,54 @@ anotherNullCheck = null [1,2,3] -- returns False
 * `reverse` **reverses a list**.
 
 ```Haskell
-theReversedString = reverse [5,4,3,2,1] -- returns [1,2,3,4,5] as a list
+theReversedList = reverse [5,4,3,2,1] -- returns [1,2,3,4,5] as a list
+```
+
+* `take` **extracts** a specified number of elements from the start of a list.
+
+```Haskell
+extractedList = take 3 [1,2,3,4,5] -- returns [1,2,3]
+anotherExtractedList = take 0 [6,6,6] -- returns [] an empty list
+yetAnotherExtractedList = take 5 [1,2] e-- returns [1,2], the entire list
+```
+
+* `drop` **drops** a specified number of elements from the start of a list, and returns the remaining elements.
+
+```Haskell
+droppedList = drop 3 [1,2,3,4,5,6,7,8] -- returns [4,5,6,7,8]
+anotherDroppedList = drop 0 [1,2,3,4] -- returns [1,2,3,4], the entire list
+yetAnotherDroppedList = drop 100 [1,2,3,4] -- returns [], an empty list
+```
+
+* `maximum` returns element of **maximum value** in a list.
+
+```Haskell
+maximumValue = maximum [1,2,3,4,5,83,10] -- returns 83
+```
+
+* `minimum` returns element of **minimum value** in a list.
+
+```Haskell
+minimumValue = minimum [0,2,200,1,7] -- returns 0
+```
+
+* `sum` returns the **sum** of all elements in a list.
+
+```Haskell
+sumOfValues = sum [2,3,5,129] -- returns 139
+```
+
+* `product` returns the **product** of all elements in a list.
+
+```Haskell
+productOfValues = product [2,3,10,4] -- returns 240
+```
+
+* `elem` checks whether an element is **part of a list** *(returns a boolean value)*.
+
+```Haskell
+isItPartOfList = 4 `elem` [3,4,5,6] -- returns True
+isItAlsoPartOfList = 10 `elem` [3,4,5,6] -- returns False
 ```
 
 ---
