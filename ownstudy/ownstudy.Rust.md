@@ -4,68 +4,19 @@
 
 # The Rust programming language 🦀
 
-## Table of contents:
 <img src="https://preview.redd.it/oifjvyix1us41.jpg?auto=webp&s=169dd56f3eb24adda52abc83cc98bce5765c8538" height="250px" align="right"/>
-<!-- vim-markdown-toc GFM -->
 
-* [What is Rust?](#what-is-rust)
-* [Quick start](#quick-start)
-    * [Installation](#installation)
-    * [Usage](#usage)
-* [Printing to the console && Comments](#printing-to-the-console--comments)
-* [Compile time vs Runtime](#compile-time-vs-runtime)
-    * [Compile time ⚙️](#compile-time-)
-    * [Runtime 🏃](#runtime-)
-* [Variables && Constants](#variables--constants)
-* [Data types](#data-types)
-    * [Primitive data types](#primitive-data-types)
-* [Strings 🧵](#strings-)
-* [Data structures](#data-structures)
-* [Conditional flow](#conditional-flow)
-    * [Match construct](#match-construct)
-* [Equality](#equality)
-* [Loops](#loops)
-* [Functions](#functions)
-* [Namespaces](#namespaces)
-* [Macros](#macros)
-* [Underscore](#underscore)
-* [Destructuring](#destructuring)
-* [Blocks && Scope](#blocks--scope)
-* [Lifetimes](#lifetimes)
-* [Ownership](#ownership)
-    * [References](#references)
-    * [Borrowing](#borrowing)
-* [Smart pointers](#smart-pointers)
-* [Object-oriented programming](#object-oriented-programming)
-    * [Structs](#structs)
-    * [Traits](#traits)
-* [Enums](#enums)
-    * [Option](#option)
-    * [Result](#result)
-* [Pattern matching](#pattern-matching)
-* [Generics](#generics)
-* [Package management](#package-management)
-* [Error Handling](#error-handling)
-* [Concurrency 👥](#concurrency-)
-* [Resources](#resources)
-
-<!-- vim-markdown-toc -->
-
---- 
-
-### What is Rust?
+<h3 align="center">What is Rust?</h3>
 
 Rust is a **strongly** and **statically-typed** compiled language developed by Mozilla Research, that can be used for *Systems programming* and *Web development* alike.
 
-### Quick start
+<h2 align="center">Quick start</h2>
 
-#### Installation
-
-Refer [here](https://www.rust-lang.org/tools/install) for instructions on installation to your respective machine.
+### [Installation](https://www.rust-lang.org/tools/install)
 
 ---
 
-#### Usage
+### Usage
 
 Rust files end with the `.rs` extension.
 
@@ -113,6 +64,26 @@ $ cargo check
 
 ---
 
+<h2 align="center">Compile time vs Runtime</h2>
+
+Before we learn about variable declaration in Rust, we need to be aware of the [distinction](https://stackoverflow.com/questions/846103/runtime-vs-compile-time) between **Compile time** and **Runtime**.
+
+<h4 align="center">Compile time ⚙️</h4>
+
+* Period when program has been written, and is compiling *(using `rustc` / `g++` / `gcc` / `clangd`)*.
+* Syntax errors, typechecking errors, compiler crashes can occur at this stage.
+* If program succesfully compiled withput error messages, **assembly code** / **object code** / **executable file** created and can be run.
+
+<h4 align="center">Runtime 🏃</h4>
+
+* Period when **executable file** is run *(after compilation)*.
+* Logical errors, Memory errors, File path and URL errors can occur at this stage *(ie. whatever errors that were not caught by the compiler)*.
+* If program succesfully runs, it will output whatever the programmer intended for initially.
+
+---
+
+<h2 align="center">I love Rust ❤️</h2>
+
 ### Printing to the console && Comments
 
 All Rust code to be executed is placed within the `fn main()` main function *(similar to C and Java)*.
@@ -129,22 +100,6 @@ fn main() {
 let x:i32 = 40;
 println!("x is: {}", x); // formatted strings in Rust look like this
 ```
-
-### Compile time vs Runtime
-
-Before we learn about variable declaration in Rust, we need to be aware of the [distinction](https://stackoverflow.com/questions/846103/runtime-vs-compile-time) between **Compile time** and **Runtime**.
-
-#### Compile time ⚙️
-
-* Period when program has been written, and is compiling *(using `rustc` / `g++` / `gcc` / `clangd`)*.
-* Syntax errors, typechecking errors, compiler crashes can occur at this stage.
-* If program succesfully compiled withput error messages, **assembly code** / **object code** / **executable file** created and can be run.
-
-#### Runtime 🏃
-
-* Period when **executable file** is run *(after compilation)*.
-* Logical errors, Memory errors, File path and URL errors can occur at this stage *(ie. whatever errors that were not caught by the compiler)*.
-* If program succesfully runs, it will output whatever the programmer intended for initially.
 
 ### Variables && Constants
 
@@ -176,7 +131,9 @@ Also see:
 
 * On the [differences](https://stackoverflow.com/questions/37877381/what-is-the-difference-between-immutable-and-const-variables-in-rust) between `let` and `const`.
 
-### Data types
+---
+
+<h3 align="center">Data types</h3>
 
 #### Primitive data types
 
@@ -210,7 +167,9 @@ Also see:
     * **Heap-allocated string**
     * Stored as a `Vec<u8>` that holds a *valid UTF-8 sequence* that is not null-terminated
 
-### [Data structures](https://doc.rust-lang.org/std/collections/index.html)
+---
+
+<h3 align="center"><a href="https://doc.rust-lang.org/std/collections/index.html">Data structures</a></h3>
 
 * Arrays
     * **Fixed length** sequence of elements that are all the **same data type**.
@@ -245,6 +204,8 @@ let eg_tuple:(i32, bool, char) = (1, true, 'A');
 println!("{}", eg_tuple.1);
 ```
 
+---
+
 ### Conditional flow
 
 Unlike many other languages, the **boolean condition** is not surrounded by brackets.
@@ -255,7 +216,7 @@ Unlike many other languages, the **boolean condition** is not surrounded by brac
 
 #### [Match construct](https://doc.rust-lang.org/book/ch06-02-match.html)
 
-Rust also has the powerful `match` construct *(which functions similarly to `switch`, `case` statements in Typescript)*.
+Rust also has the powerful `match` construct *(which functions similarly to `switch`, `case` statements in Typescript)*, and can be used to catch user-defined conditions, as well as errors and breakcases.
 
 * `match` and `=>` *(match arms)* syntax
 
@@ -404,7 +365,7 @@ let Vec2 {x,y} = v;
 
 Generally, **scope** is defined by a **block of code**.
 
-* Blocks are expressions, that evaluate to a value called the **tail** *(indicated by omission of semicolon)*.
+* Fundamentally, <u>all blocks are expressions</u>, and all expressions evaluate to a value called the **tail** *(indicated by omission of semicolon)*, similar to Haskell.
 * Blocks can have multiple initialization and assignment statements.
 * Blocks exist anywhere in Rust there is code enclosed by `{}` curly braces *(functions, conditional and match statements, loops, objects)*.
 
