@@ -1,4 +1,4 @@
-> Referencing *Learn you a Haskell for Great Good!* Chapter 3 start
+> Referencing *Learn you a Haskell for Great Good!* Chapter 3.3 Typeclasses 101
 
 # The Haskell programming language
 
@@ -39,7 +39,7 @@ Haskell is built around functions *(which are built upon expressions)*, so let's
 
 > Functions can be quickly tested out in `ghci` mode with `:l {file name}`, which compiles the Haskell file.
 
-* Functions are called by writing **function name** and **parameters** *(seperated by spaces)*
+* Functions are called by writing **function name** and **parameters** *(separated by spaces)*
 
 ```Haskell
 max 100 101 -- returns 101 to the stdout
@@ -74,9 +74,48 @@ doubleSmallNumber' x = (if x > 100 then x else x*2) + 1 -- the backtick ' denote
 
 <h3 align="center">Data Types</h3>
 
-* Characters *(`''` single quotes)*
-* Strings == Lists of Characters *(`""` double quotes)*
-* Boolean *(`True` or `False`)*
+Types are written in capital case.
+
+* Whole numbers
+    * `Int` *(<u>**bounded**</u>, having a minimum and maximum value)*
+    * `Integer` *(<u>**not bounded**</u>, can represent really large numbers)*
+
+* Floating points
+    * `Float` *(<u>**single precision**</u>, represented by 32 bits)*
+    * `Double` *(<u>**double precision**</u>, represented by 64 bits)*
+
+* `Bool` *(True or False)*
+* `Char` *(denoted by single quotes)*
+* `String` == `[Char]` *(denoted by double quotes)*
+
+Functions are accompanied by <u>explicit type declaration</u> for its **parameters** and **return types** as well.
+
+* `::` is read as "has the type of".
+* `->` separates each parameter and the return type *(there is no special distinction between the parameter and return value's data type)*.
+
+```Haskell
+removeNonUppercase :: [Char] -> [Char] -- explicit type declaration for the previously covered function that removes all uppercase letters
+removeNonUppercase st = [ c | c <- st, c `elem` ['A'..'Z']]
+
+addThree :: Int -> Int -> Int -> Int -- there is no distinction between the parameters and return type, they are all separated by ->
+addThree x y z = x + y + z
+```
+
+<h4 align="center">Type variables</h4>
+
+**Type variables** are Haskell's equivalent to *generics* in other languages, allowing us to write <u>general functions</u> if they don't have type-specific behaviour.
+
+* Functions with **type variables** are called <u>*Polymorphic functions*</u>.
+
+```console
+ghci> :t head
+head :: [a] -> a -- the head function has type variables, and is an example of a polymorphic function
+
+ghci> :t fst
+fst :: (a,b) -> a -- the fst function also implements type variables, and is another example of a polymorphic function
+```
+
+> We normally give type variables *single-character* names like 'a', 'b', 'c', 'd', though they can be given other non-capitalised names.
 
 ---
 
@@ -88,7 +127,7 @@ Lists are a **homogenous** data structure *(storing elements of <u>same type</u>
 
 > Strings are lists too!
 
-* Lists are denoted by `[]` square brackets and elements are *comma-seperated*.
+* Lists are denoted by `[]` square brackets and elements are *comma-separated*.
 
 ```Haskell
 lostNumbers = [1,2,3,4,5]
@@ -216,13 +255,15 @@ isItAlsoPartOfList = 10 `elem` [3,4,5,6] -- returns False
 
 Tuples are a **non-homogenous** data structure *(storing elements of <u>different types</u>)* that can store a <u>**fixed** number of elements</u>.
 
-* Tuples are denoted by `()` normal brackets and elements are *comma-seperated*.
+* Tuples are denoted by `()` normal brackets and elements are *comma-separated*.
 
 ```Haskell
 someTuple = (8, 11) -- a definition of the tuple someTuple
 ```
   
-> Tuples are differentiated based on the **<u>size</u> of the tuple** and the **<u>data type</u> of its elements**, and each permutation of those two factors is its own *data type*.
+> Tuples are differentiated based on the **<u>size</u> of the tuple** and the **<u>data type</u> of its elements**, and each permutation of those two factors is its own *data type*. 
+>
+> As such, there are **theoretically** an infinite number of tuple types.
 
 <h4 align="center">Other Tuple functions to look into</h4>
 
@@ -299,13 +340,13 @@ anotherDesiredList = [x*2 | x <- [1..10], x*2 >= 12] -- returns the complete lis
 yetAnotherDesiredList = [x | x <- [50..100], x `mod` 7 == 3] -- returns the compleye list of numbers from 50 to 100 whose remainder when divided by 7 is 3, [52,59,66,73,80,87,94]
 ```
 
-* `,` commas can be used to seperate **multiple predicates**.
+* `,` commas can be used to separate **multiple predicates**.
 
 ```Haskell
 okAndHere'sAnotherList = [x | x <- [10..20], x /= 13, x /= 15, x /= 19] -- multiple predicates that state we don't want 13, 15, 19 from our input set
 ```
 
-* `,` commas can also be used to seperate **multiple variables and input sets**.
+* `,` commas can also be used to separate **multiple variables and input sets**.
 
 ```Haskell
 ShagLaBro = [x*y | x <- [2,5,10] , y <- [8,10,11], x*y > 50] -- this returns a list of all the possible products from a list that are more than 50, which is [55,80,100,110]
