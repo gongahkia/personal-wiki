@@ -158,6 +158,27 @@ convertThatString = read "5" :: Int -- returns an Int of value 5
 convertThatList = read "[1,2,3,4]" :: [Int] -- returns a List of Ints, [1,2,3,4]
 ```
 
+<h4 align="center">Enumerations</h4>
+
+**Enumeration members** are <u>sequentially-ordered</u> types *(part of the `Enum` typeclass)* that can be enumerated, allowing for Haskell's <u>list ranges</u>.
+
+```Haskell
+exampleRange = ['a'..'e'] -- equivalent to "abcde"
+anotherExampleRange = [LT..GT] -- equivalent to [LT,EQ,GT]
+yetAnotherExampleRange = [3..5] -- equivalent to [3,4,5]
+```
+
+**Enumeration members** also have defined *successors* and *predecesors*.
+
+* `succ` returns the **sucessor** of a given enumeration member.
+* `pred` returns the **predecesor** of a given enumeration member.
+
+```Haskell
+aFinalExampleRange = ['A'..'Z']
+singleCharSucc = succ 'E' -- returns a Char of value 'F'
+singleCharPred = pred 'F' -- returns a Char of value 'E'
+```
+
 ---
 
 <h3 align="center">Data Structures</h3>
