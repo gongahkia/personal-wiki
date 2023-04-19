@@ -1,4 +1,4 @@
-> Referencing *Learn you a Haskell for Great Good!* Chapter 3.3 Typeclasses 101 => portion on Enumerations
+> Referencing *Learn you a Haskell for Great Good!* Chapter 4
 
 # The Haskell programming language
 
