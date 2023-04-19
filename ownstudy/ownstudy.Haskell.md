@@ -319,11 +319,11 @@ The structure for list comprehension is as follows.
 
 *A comprehension for a set that contains the first 10 even natural numbers.*
 
-$$S = \{2.x|x\in N,x<=10\}$$
+$$ S = \{2.x|x\in N,x<=10\} $$
 
 Wherein <u>each component</u> is as follows.
 
-$$S = \{OutputFunction|VariableAndInputSet,Predicate\}$$
+$$ S = \{OutputFunction|VariableAndInputSet,Predicate\} $$
 
 > * **Output function:** Transformation applied on each value before it is output.  
 > * **Variable:** Variable that iterates over the input set.  
