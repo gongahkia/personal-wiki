@@ -149,7 +149,7 @@ read :: (Read a) => String ->  a
 > 
 > However, since the return type hasn't been specified, Haskell has no way of knowing what type to assign `a`. 
 > 
-> Here, we can use **explicit type annotation** to inform Haskell.
+> Here, we can use **explicit type annotation** to inform Haskell of our desired return type.
 
 ```Haskell
 convertThatString = read "5" :: Int -- returns an Int of value 5
