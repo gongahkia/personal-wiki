@@ -5,8 +5,6 @@
 
 Gong's *private repo* for AY 2023-2027.
 
----
-
 <h2 align="center">Current course 📌</h2>
 
 #### Law
@@ -16,8 +14,6 @@ Gong's *private repo* for AY 2023-2027.
 #### Computing
 
 *
-
----
 
 <h2 align="center">Table of contents 📑</h2>
 
