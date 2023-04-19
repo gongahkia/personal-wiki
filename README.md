@@ -24,9 +24,9 @@ This repository contains my notes from AY 2023-2027.
 
 <h4>Bachelor 1</h4>
 
-* [COMPXXX - HTML && CSS](bach1.htmlcss.md)
-* [COMPXXX - PHP](bach1.php.md)
-* [COMPXXX - SQL](bach1.sql.md)
+* [COMP - HTML && CSS](bach1.htmlcss.md)
+* [COMP - PHP](bach1.php.md)
+* [COMP - SQL](bach1.sql.md)
 
 <h4>Bachelor 2</h4>
 
@@ -38,13 +38,25 @@ This repository contains my notes from AY 2023-2027.
 
 <h4>Bachelor 1</h4>
 
-* [CRIMXXX - Law 103](bach1.crim.law-103.md)
+* [CRIM - Law 103](bach1.crim.law-103.md)
 
 <h4>Bachelor 2</h4>
 
 <h4>Bachelor 3</h4>
 
 <h4>Bachelor 4</h4>
+
+<h3 align="center">Own study 🏣</h3>
+
+* [LANG - C](ownstudy.C.md)
+* [LANG - C++](ownstudy.CPP.md)
+* [LANG - Bash](ownstudy.Bash.md)
+* [LANG - Java](ownstudy.Java.md)
+* [LANG - Typescript](ownstudy.Typescript.md)
+* [LANG - Nim](ownstudy.Nim.md)
+* [LANG - Rust](ownstudy.Rust.md)
+* [LANG - Go](ownstudy.Go.md)
+* [LANG - Haskell](ownstudy.Haskell.md)
 
 ---
 
