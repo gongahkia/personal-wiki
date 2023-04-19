@@ -124,6 +124,8 @@ fst :: (a,b) -> a -- the fst function also implements type variables, and is ano
 * Types that are <u>part of a</u> Typeclass **implement** behavior prescribed by the Typeclass.
 * `=>` separates **class constraints** and the function's **parameters** and **return types**.
 
+> Class constraints can be applied to both a function's *parameters* and its *return types*.
+
 ```console
 ghci> :t (==)
 (==) :: (Eq a) => a -> a -> Bool
