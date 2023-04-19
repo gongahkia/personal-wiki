@@ -41,13 +41,13 @@ Haskell is built around functions *(which are built upon expressions)*, so let's
 
 * Functions are called by writing **function name** and **parameters** *(separated by spaces)*
 
-```Haskell
+```haskell
 max 100 101 -- returns 101 to the stdout
 ```
 
 * Functions are defined by writing **function name**, **parameters**, `=` and **function body**
 
-```Haskell
+```haskell
 doubleMe x = x + x
 doubleUs x y = x*2 + y*2
 ```
@@ -62,7 +62,7 @@ conanO'Brien = "It's a me, Conan O'Brien!" -- this is a definition
 
 * `If` statements in Haskell are **expressions** *(which always evaluate to something)*, so `else` blocks are madantory.
 
-```Haskell
+```haskell
 doubleSmallNumber x = if x > 100
                       then x 
                       else x*2 -- else portions are madantory in Haskell if expressions 
@@ -93,7 +93,7 @@ Functions are accompanied by <u>explicit type declaration</u> for its **paramete
 * `::` is read as "has the type of".
 * `->` separates each parameter and the return type *(there is no special distinction between the parameter and return value's data type)*.
 
-```Haskell
+```haskell
 removeNonUppercase :: [Char] -> [Char] -- explicit type declaration for the previously covered function that removes all uppercase letters
 removeNonUppercase st = [ c | c <- st, c `elem` ['A'..'Z']]
 
@@ -153,7 +153,7 @@ read :: (Read a) => String ->  a
 > 
 > Here, we can use **explicit type annotation** to inform Haskell of our desired return type.
 
-```Haskell
+```haskell
 convertThatString = read "5" :: Int -- returns an Int of value 5
 convertThatList = read "[1,2,3,4]" :: [Int] -- returns a List of Ints, [1,2,3,4]
 ```
@@ -162,7 +162,7 @@ convertThatList = read "[1,2,3,4]" :: [Int] -- returns a List of Ints, [1,2,3,4]
 
 **Enumeration members** are <u>sequentially-ordered</u> types *(part of the `Enum` typeclass)* that can be enumerated, allowing for Haskell's <u>list ranges</u>.
 
-```Haskell
+```haskell
 exampleRange = ['a'..'e'] -- equivalent to "abcde"
 anotherExampleRange = [LT..GT] -- equivalent to [LT,EQ,GT]
 yetAnotherExampleRange = [3..5] -- equivalent to [3,4,5]
@@ -173,7 +173,7 @@ yetAnotherExampleRange = [3..5] -- equivalent to [3,4,5]
 * `succ` returns the **sucessor** of a given enumeration member.
 * `pred` returns the **predecesor** of a given enumeration member.
 
-```Haskell
+```haskell
 aFinalExampleRange = ['A'..'Z']
 singleCharSucc = succ 'E' -- returns a Char of value 'F'
 singleCharPred = pred 'F' -- returns a Char of value 'E'
@@ -191,33 +191,33 @@ Lists are a **homogenous** data structure *(storing elements of <u>same type</u>
 
 * Lists are denoted by `[]` square brackets and elements are *comma-separated*.
 
-```Haskell
+```haskell
 lostNumbers = [1,2,3,4,5]
 greeting = "hello brother"
 ```
 
 * `++` operator <u>**concatenates** two lists</u> *(Haskell has to traverse the entire left list before processing the concatenation)*.
 
-```Haskell
+```haskell
 yesList = [1,2,3,4,5] ++ [6,7,8,9,10] -- returns [1,2,3,4,5,6,7,8,9,10]
 yesGreeting = "hello" ++ " " ++ "uncle" -- returns "hello uncle"
 ```
 
 * `:` cons operator <u>instantaneously **prepends** a value to a list</u>.
 
-```Haskell
+```haskell
 observation = 'A':" small cat" -- this returns "A small cat" at a significantly faster speed than pure concatenation
 ```
 
 * `!!` operator <u>**extracts list elements** by index</u>.
 
-```Haskell
+```haskell
 theHero = "Steve Buscemi" !! 6 -- this returns character 'B', which has an index of 6
 ```
 
 * `<`, `>` `==` <u>**compares list elements** in [**lexographical order**](https://stackoverflow.com/questions/45950646/what-is-lexicographical-order)</u>.
 
-```Haskell
+```haskell
 booleanYesOrNo = [3,4,2] > [3,2] -- returns True
 ```
 
@@ -225,50 +225,50 @@ booleanYesOrNo = [3,4,2] > [3,2] -- returns True
 
 * `head` returns a **list's head**.
 
-```Haskell
+```haskell
 theHead = head [5,4,3,2,1] -- returns 5
 ```
 
 * `tail` returns a **list's tail** *(by chopping off the list's head)*.
 
-```Haskell
+```haskell
 theTail = tail [5,4,3,2,1] -- returns [4,3,2,1] as a list
 ```
 
 * `last` returns **last element of list**.
 
-```Haskell
+```haskell
 theLastElement = last [1,2,3,4,5] -- returns 5
 ```
 
 * `init` returns **everything except list's last element**.
 
-```Haskell
+```haskell
 theInit = init [5,4,3,2,1] -- returns [5,4,3,2] as a list
 ```
 
 * `length` returns **length of list**.
 
-```Haskell
+```haskell
 theLength = length [1,2,3,4,5] -- returns 5
 ```
 
 * `null` checks whether **list is empty** *(returns a boolean value)*.
 
-```Haskell
+```haskell
 theNullCheck = null [] -- returns True
 anotherNullCheck = null [1,2,3] -- returns False
 ```
 
 * `reverse` **reverses a list**.
 
-```Haskell
+```haskell
 theReversedList = reverse [5,4,3,2,1] -- returns [1,2,3,4,5] as a list
 ```
 
 * `take` **extracts** a specified number of elements from the start of a list.
 
-```Haskell
+```haskell
 extractedList = take 3 [1,2,3,4,5] -- returns [1,2,3]
 anotherExtractedList = take 0 [6,6,6] -- returns [] an empty list
 yetAnotherExtractedList = take 5 [1,2] e-- returns [1,2], the entire list
@@ -276,7 +276,7 @@ yetAnotherExtractedList = take 5 [1,2] e-- returns [1,2], the entire list
 
 * `drop` **drops** a specified number of elements from the start of a list, and returns the remaining elements.
 
-```Haskell
+```haskell
 droppedList = drop 3 [1,2,3,4,5,6,7,8] -- returns [4,5,6,7,8]
 anotherDroppedList = drop 0 [1,2,3,4] -- returns [1,2,3,4], the entire list
 yetAnotherDroppedList = drop 100 [1,2,3,4] -- returns [], an empty list
@@ -284,31 +284,31 @@ yetAnotherDroppedList = drop 100 [1,2,3,4] -- returns [], an empty list
 
 * `maximum` returns element of **maximum value** in a list.
 
-```Haskell
+```haskell
 maximumValue = maximum [1,2,3,4,5,83,10] -- returns 83
 ```
 
 * `minimum` returns element of **minimum value** in a list.
 
-```Haskell
+```haskell
 minimumValue = minimum [0,2,200,1,7] -- returns 0
 ```
 
 * `sum` returns the **sum** of all elements in a list.
 
-```Haskell
+```haskell
 sumOfValues = sum [2,3,5,129] -- returns 139
 ```
 
 * `product` returns the **product** of all elements in a list.
 
-```Haskell
+```haskell
 productOfValues = product [2,3,10,4] -- returns 240
 ```
 
 * `elem` checks whether an element is **part of a list** *(returns a boolean value)*.
 
-```Haskell
+```haskell
 isItPartOfList = 4 `elem` [3,4,5,6] -- returns True
 isItAlsoPartOfList = 10 `elem` [3,4,5,6] -- returns False
 ```
@@ -319,7 +319,7 @@ Tuples are a **non-homogenous** data structure *(storing elements of <u>differen
 
 * Tuples are denoted by `()` normal brackets and elements are *comma-separated*.
 
-```Haskell
+```haskell
 someTuple = (8, 11) -- a definition of the tuple someTuple
 ```
   
@@ -345,21 +345,21 @@ Ranges let us make lists that are *arithmetic sequences of elements* which can b
 
 * `..` **creates a range** that can be enumerated over.
 
-```Haskell
+```haskell
 rangeOfOneToTwenty = [1..20] -- returns a complete list of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 rangeOfaToz = ['a'..'z'] -- returns a complete list of letters (string) of "abcdefghijklmnopqrstuvwxyz"
 ```
 
 * We can **specify steps** in ranges as well.
 
-```Haskell
+```haskell
 rangeOfOneToTwentyButEvenOnly = [2,4..20] -- returns a complete list of even numbers [2,4,6,8,10,12,14,16,18,20]
 rangeOfOneToTWentyButMultiplesOfThree = [3,6,20] -- returns a complete list of [3,6,9,12,15,18]
 ```
 
 * We can also obtain **infinite lists** using ranges.
 
-```Haskell
+```haskell
 firstTwentyFourElementsOfThirteen = take 24 [13,26] -- since Haskell lazily evaluates, it only calculates what is needed when specified by us in the program
 ```
 
@@ -396,7 +396,7 @@ The same concept *(and terminology)* can be applied in Haskell's list comprehens
 
 * `<-` signals the relationship between the **variable** and **input set**.
 
-```Haskell
+```haskell
 desiredList = [x*2 | x <- [1..10]] -- returns the complete list [2,4,6,8,10,12,14,16,18,20]
 anotherDesiredList = [x*2 | x <- [1..10], x*2 >= 12] -- returns the complete list [12,14,16,18,20]
 yetAnotherDesiredList = [x | x <- [50..100], x `mod` 7 == 3] -- returns the compleye list of numbers from 50 to 100 whose remainder when divided by 7 is 3, [52,59,66,73,80,87,94]
@@ -404,32 +404,32 @@ yetAnotherDesiredList = [x | x <- [50..100], x `mod` 7 == 3] -- returns the comp
 
 * `,` commas can be used to separate **multiple predicates**.
 
-```Haskell
+```haskell
 okAndHere'sAnotherList = [x | x <- [10..20], x /= 13, x /= 15, x /= 19] -- multiple predicates that state we don't want 13, 15, 19 from our input set
 ```
 
 * `,` commas can also be used to separate **multiple variables and input sets**.
 
-```Haskell
+```haskell
 ShagLaBro = [x*y | x <- [2,5,10] , y <- [8,10,11], x*y > 50] -- this returns a list of all the possible products from a list that are more than 50, which is [55,80,100,110]
 ```
 
 We can embed list comprehension inside *functions* as well.
 
-```Haskell
+```haskell
 boomBangs userInput = [if x < 10 then "Boom!" else "Bang!" | x <- userInput, odd x] -- where odd and even are functions that return True or False depending on whether said number is true or false
 boomBangs [7..13] -- this will return the complete list ["Boom!", "Boom!", "Bang!", "Bang!"]
 ```
 
 * `_` can be used as a **throwaway** variable that will not be referenced in the future.
 
-```Haskell
+```haskell
 length` xs = sum [1 | _ <- xs] -- this function replaces every element of the list with 1, and sums up the values of that list
 ```
 
 About 200 lines ago, we established that **Strings** are *lists of characters*. Therefore, *list comprehension* can similarly be applied on Strings.
 
-```Haskell
+```haskell
 removeNonUppercase inputString = [ c | c <- inputString, c `elem` ['A'..'Z']] -- removes all non-uppercase letters from a string
 ```
 

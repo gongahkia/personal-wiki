@@ -92,7 +92,7 @@ All Rust code to be executed is placed within the `fn main()` main function *(si
 * `//` prefixes any **comments** in Rust
 * `{}` used to embed variables and values in **formatted strings** *(similar to Bash)*
 
-```Rust
+```rust
 fn main() {
     println!("Hello World!");
 } // and this is a comment
@@ -113,7 +113,7 @@ println!("x is: {}", x); // formatted strings in Rust look like this
 
 * `const` initializes a **constant**, whose *value* and *data type* are immutable ***(at COMPILE TIME)***.
 
-```Rust
+```rust
 let x; // declaration and 
 x = 100; // assignment can occur on two different lines!
 
@@ -176,7 +176,7 @@ println!("{}", SECONDS_IN_MINUTES);
     * Rust arrays are intialized with `[]` square brackets.
     * Statically define the data type of the array *(like in C++)*.
 
-```Rust
+```rust
 let eg_array:[i32; 10] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 println!("{}", eg_array[7]);
@@ -187,7 +187,7 @@ println!("{}", eg_array[7]);
     * Rust vectors are initialized with `vec![]` and square brackets.
     * Statically define the data type of the vector *(like in C++)*.
 
-```Rust
+```rust
 let mut eg_vector:Vec<i32> = vec![1,2,3,4,5,59,132];
 
 vector.push(5); // appends the integer i32 of 5 to the vector
@@ -198,7 +198,7 @@ vector.push(5); // appends the integer i32 of 5 to the vector
     * Rust tuples are initialized with `()` normal brackets.
     * Statically define the data type of each element in the tuple.
 
-```Rust
+```rust
 let eg_tuple:(i32, bool, char) = (1, true, 'A');
 
 println!("{}", eg_tuple.1);
@@ -220,7 +220,7 @@ Rust also has the powerful `match` construct *(which functions similarly to `swi
 
 * `match` and `=>` *(match arms)* syntax
 
-```Rust
+```rust
 fn im_feeling_lucky() -> i32 {
     match feeling_lucky {
         true => 6,
@@ -244,7 +244,7 @@ Unlike many other languages, the **loop condition** is not surrounded by bracket
 * `break`
 * `continue`
 
-```Rust
+```rust
 while 1 == 1 {
     println!("It works how you would expect, but this is an infinite loop my man!");
 }
@@ -272,7 +272,7 @@ for i in 0u32..10 {
 * `->` indicates the **return type** of said function
 * `return` indicates the **return value** *(though it is optional since the function block evaluates to its tail regardless)*
 
-```Rust
+```rust
 fn fair_dice_roll() -> i32 {
     return 4; // this is legal
 }
@@ -292,14 +292,14 @@ fn unfair_dice_roll() -> i32 {
         > * `cmp` is a ***MODULE*** *(a source file)*
         > * `min` is a ***FUNCTION***
 
-```Rust
+```rust
 let least = std::cmp::min(3,8); // this assigns i32 value of 3 to the variable least
 ```
 
 * `use`
     * brings names from other namespaces *into scope* in your program
 
-```Rust
+```rust
 use std::cmp::min;
 
 let least = min(7,1); // this assigns i32 value of 1 to the variable least
@@ -308,7 +308,7 @@ let least = min(7,1); // this assigns i32 value of 1 to the variable least
 * `{}` 
     * curly braces in the context of namespaces are called **globs**, and allow us to import multiple functions from other namespaces easily
 
-```Rust
+```rust
 // this is valid code
 use std::cmp::min;
 use std::cmp::max;
@@ -323,7 +323,7 @@ use std::{cmp::min, cmp::max};
 * `*`
     * wildcard operator that imports **every symbol** from a namespace
 
-```Rust
+```rust
 // this brings min, max and many other symbols from the std::cmp namespace into scope
 use std::cmp::*;
 ```
@@ -334,7 +334,7 @@ use std::cmp::*;
 
 * `_` is a special character that indicates to Rust to **throw that value away** *(and acts as a catch-all pattern in match constructs)*.
 
-```Rust
+```rust
 let _ = get_thing(); // calls the function but throws away its result that is returned to _
 
 let _x = 42; // compiler will NOT warn about an unused variable if it is prefixed with an _
@@ -346,7 +346,7 @@ let (_, right) = slice.split_at(middle); // throw away the left side of the dest
 
 Effectively the same concept as in *Typescript*, where we **extract values from data structures** *(arrays, tuples, vectors, structs)*.
 
-```Rust
+```rust
 // here is destructuring on a tuple, where some_char is now 'a' and some_int is now 17
 let (some_char, some_int) = ('a', 17);
 
@@ -371,7 +371,7 @@ Generally, **scope** is defined by a **block of code**.
 * Blocks can have multiple initialization and assignment statements.
 * Blocks exist anywhere in Rust there is code enclosed by `{}` curly braces *(functions, conditional and match statements, loops, structs)*.
 
-```Rust
+```rust
 let x = {
     let y = 1;
     let z = 20;
@@ -420,7 +420,7 @@ Structs are somewhat similar to objects in *Typescript*, often referred to as **
 * user-defined **methods** and **traits** implemented with the [`impl`](https://doc.rust-lang.org/std/keyword.impl.html) keyword *(always used for a Type)*
     * `self` references the given Type
 
-```Rust
+```rust
 struct Vec2 { // struct declaration
     x:f64,
     y:f64,
@@ -450,7 +450,7 @@ Traits are similar to interfaces in *Java*, allowing us to **declare** attribute
 * declared with the `trait` keyword
 * implement traits on types with the `impl` keyword *(`impl`, `for` syntax)*
 
-```Rust
+```rust
 struct Number { // previously declared struct
     odd: bool;
     value: i32;
