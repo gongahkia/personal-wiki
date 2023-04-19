@@ -1,3 +1,7 @@
+> *Reminder:*
+>
+> * Periodically update Table of contents section for module numbers!
+
 ![](https://user-images.githubusercontent.com/117062305/230006500-b6b862da-7263-4012-88ec-8506328541a5.png)
 
 <h1 align="center">SMU C&L NOTES 💻⚖️</h1>
@@ -42,10 +46,6 @@ This repository contains my notes from AY 2023-2027.
 
 <h4>Bachelor 4</h4>
 
-> *Reminder:*
->
-> * Periodically update this section for module numbers!
-
 ---
 
 <h2 align="center">Templates 🥮</h2>
@@ -70,5 +70,8 @@ $ nvim exampleNotes.md
 
 ---
 
-> Credits to [this](https://forum.obsidian.md/t/dendron-style-notes-in-obsidian/47291) [guy](https://www.kevinslin.com/notes/3dd58f62-fee5-4f93-b9f1-b0f0f59a9b64/) for the Dendron-style structure of these notes.
+> **References**
+>
+> * [Dendron-style](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) structure
+> * [Look and feel](https://betterprogramming.pub/taking-my-university-course-computer-science-notes-in-latex-7565875fdde7)
 
