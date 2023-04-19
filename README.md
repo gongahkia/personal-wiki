@@ -1,10 +1,13 @@
-# SMU C&L NOTES 💻⚖️
+![](https://user-images.githubusercontent.com/117062305/230006500-b6b862da-7263-4012-88ec-8506328541a5.png)
+
+<h1 align="center">SMU C&L NOTES 💻⚖️</h1>
+
 
 Gong's *private repo* for AY 2023-2027.
 
 ---
 
-## Current course 📌
+<h2 align="center">Current course 📌</h2>
 
 #### Law
 
@@ -16,9 +19,7 @@ Gong's *private repo* for AY 2023-2027.
 
 ---
 
-## Table of contents 📑
-
-<img src="https://user-images.githubusercontent.com/117062305/230006500-b6b862da-7263-4012-88ec-8506328541a5.png" align="right" height="400px"/>
+<h2 align="center">Table of contents 📑</h2>
 
 * ### [Computing notes](computing)
 * ### [Law notes](law)
