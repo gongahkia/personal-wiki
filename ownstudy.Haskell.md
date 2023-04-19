@@ -1,4 +1,4 @@
-> Referencing *Learn you a Haskell for Great Good!* Chapter 3.3 Typeclasses 101
+> Referencing *Learn you a Haskell for Great Good!* Chapter 3.3 Typeclasses 101 => portion on Enumerations
 
 # The Haskell programming language
 
@@ -116,6 +116,45 @@ fst :: (a,b) -> a -- the fst function also implements type variables, and is ano
 ```
 
 > We normally give type variables *single-character* names like 'a', 'b', 'c', 'd', though they can be given other non-capitalised names.
+
+<h4 align="center">Typeclasses</h4>
+
+**Typeclasses** are similar to Java *Interfaces*, except better.
+
+* Types that are <u>part of a</u> Typeclass **implement** behavior prescribed by the Typeclass.
+* `=>` separates **class constraints** and the function's **parameters** and **return types**.
+
+```console
+ghci> :t (==)
+(==) :: (Eq a) => a -> a -> Bool
+
+ghci> :t (>)
+(>) :: (Ord a) => a -> a -> Bool
+```
+
+> In this example, the equality function takes any two values that are the same type *(`a -> a`)*, and the type must be a member of the `Eq` class, a.k.a the **class constraint** *(`(Eq a)`)*, returning a Bool.
+> 
+> Similarly, the comparison function takes any two values that are the same type *(`a -> a`)*, and the type must be a member of the `Ord` class, a.k.a the **class constraint** *(`(Ord a)`)*, returning a Bool.
+
+<h4 align="center">Explicit type annotations</h4>
+
+This was somewhat covered above, but we employ **explicit type annotation** with the `::` operator where needed with *certain Haskell functions*.
+
+```console
+ghci> :t read
+read :: (Read a) => String ->  a
+```
+
+> In this example, the read function takes a single value *(`a`)*, and the type must be a member of the `Read` class, a.k.a the **class constraint** *(`(Read a)`)*, returning the given input type *(`a`)*.
+> 
+> However, since the return type hasn't been specified, Haskell has no way of knowing what type to assign `a`. 
+> 
+> Here, we can use **explicit type annotation** to inform Haskell.
+
+```Haskell
+convertThatString = read "5" :: Int -- returns an Int of value 5
+convertThatList = read "[1,2,3,4]" :: [Int] -- returns a List of Ints, [1,2,3,4]
+```
 
 ---
 
