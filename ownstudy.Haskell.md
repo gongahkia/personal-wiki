@@ -145,7 +145,7 @@ ghci> :t read
 read :: (Read a) => String ->  a
 ```
 
-> In this example, the read function takes a single value *(`a`)*, and the type must be a member of the `Read` class, a.k.a the **class constraint** *(`(Read a)`)*, returning the given input type *(`a`)*.
+> In this example, the read function takes a single value of type String *(`String`)*, and the type must be a member of the `Read` class, a.k.a the **class constraint** *(`(Read a)`)*, returning the given input type *(`a`)*.
 > 
 > However, since the return type hasn't been specified, Haskell has no way of knowing what type to assign `a`. 
 > 
