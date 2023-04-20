@@ -1,6 +1,6 @@
 <h1>Criminal Law</h1>
 
-> **Class:** *LAW103 Criminal law*  
+> **Class:** *LAW103_603 Criminal law*  
 > **Lecturer:** *Prof How Khang*  
 > 
 > *Last edited 20/4/2023*
