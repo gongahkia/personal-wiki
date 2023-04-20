@@ -53,6 +53,8 @@ This repository contains my notes from AY 2023-2027.
 * [LANG - Go](ownstudy.Go.md)
 * [LANG - Haskell](ownstudy.Haskell.md)
 
+* [TOOL - Mermaid](ownstudy.Mermaid.md)
+
 ---
 
 <h2 align="center">Templates 🥮</h2>
