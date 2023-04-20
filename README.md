@@ -18,42 +18,63 @@ This repository contains my notes from AY 2023-2027.
 
 <h4>Bachelor 1</h4>
 
-* [IS111 - Python](bach1.python.md)
-* [IS112 - SQL](bach1.sql.md)
-* [IS113 - HTML, CSS](bach1.htmlcss.md)
-* [IS113 - PHP](bach1.php.md)
+* CS105 - Statistical Thinking for Data Science
+* IS111 - Intro to Programming
+  * [Python](bach1.python.md)
+* IS112 - Data Management
+  * [SQL](bach1.sql.md)
+* IS113 - Web Application Development 1
+  * [HTML, CSS](bach1.htmlcss.md)
+  * [PHP](bach1.php.md)
+* IS215 - Digital Business (Technology and Transformation)
+* IS210 - Business Process Analysis and Solutioning
+* IS211 - Interaction Design and Prototyping
+* CS206 - Software Product Management
 
 <h4>Bachelor 2</h4>
 
 <h4>Bachelor 3</h4>
 
 <h4>Bachelor 4</h4>
+
+---
 
 <h3 align="center">Law ✒️</h3>
 
 <h4>Bachelor 1</h4>
 
-* [CRIM - Law 103](bach1.crim.law-103.md)
+* [LAW101_601 - Contract Law 1](bach1.law101.Contract1.md)
+* [LGST102 - The Singapore Legal System & Legal Analysis Skills](bach1.lgst102.SGLegalSystem.md)
+* [LAW102_602 - Contract Law 2](bach1.law102.Contract2.md) 
+* [LAW103_603 - Criminal Law](bach1.law103.Criminal.md)
 
 <h4>Bachelor 2</h4>
 
+* [LAW105_605 - Law of Torts](bach2.law105.Tort.md)
+* [LAW201_621 - Corporate Law](bach2.law201.Corporate.md)
+* [LAW401 - Intellectual Property Law](bach2.law401.IPLaw.md)
+
 <h4>Bachelor 3</h4>
+
+* [LAW486 - Privacy and Data Protection Law](bach3.law486.PrivacyDataProtectLaw.md)
+* [LGST201 - Company Law](bach3.lgst201.CompanyLaw.md)
 
 <h4>Bachelor 4</h4>
 
+---
+
 <h3 align="center">Own study 🏣</h3>
 
-* [LANG - C](ownstudy.C.md)
-* [LANG - C++](ownstudy.CPP.md)
-* [LANG - Bash](ownstudy.Bash.md)
-* [LANG - Java](ownstudy.Java.md)
-* [LANG - Typescript](ownstudy.Typescript.md)
-* [LANG - Nim](ownstudy.Nim.md)
-* [LANG - Rust](ownstudy.Rust.md)
-* [LANG - Go](ownstudy.Go.md)
-* [LANG - Haskell](ownstudy.Haskell.md)
-
-* [TOOL - Mermaid](ownstudy.Mermaid.md)
+* [C](ownstudy.C.md)
+* [C++](ownstudy.CPP.md)
+* [Bash](ownstudy.Bash.md)
+* [Java](ownstudy.Java.md)
+* [Typescript](ownstudy.Typescript.md)
+* [Nim](ownstudy.Nim.md)
+* [Rust](ownstudy.Rust.md)
+* [Go](ownstudy.Go.md)
+* [Haskell](ownstudy.Haskell.md)
+* [Mermaid](ownstudy.Markdown.Mermaid.md)
 
 ---
 
