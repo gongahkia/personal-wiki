@@ -18,9 +18,10 @@ This repository contains my notes from AY 2023-2027.
 
 <h4>Bachelor 1</h4>
 
-* [COMP - HTML && CSS](bach1.htmlcss.md)
-* [COMP - PHP](bach1.php.md)
-* [COMP - SQL](bach1.sql.md)
+* [IS111 - Python](bach1.python.md)
+* [IS112 - SQL](bach1.sql.md)
+* [IS113 - HTML, CSS](bach1.htmlcss.md)
+* [IS113 - PHP](bach1.php.md)
 
 <h4>Bachelor 2</h4>
 
@@ -80,5 +81,7 @@ $ nvim exampleNotes.md
 >
 > * [Dendron-style](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) structure
 > * [Look and feel](https://betterprogramming.pub/taking-my-university-course-computer-science-notes-in-latex-7565875fdde7)
+
+---
 
 ![](https://user-images.githubusercontent.com/117062305/230006500-b6b862da-7263-4012-88ec-8506328541a5.png)
