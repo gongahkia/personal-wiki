@@ -100,7 +100,7 @@ Additional string methods can be found [here](https://cplusplus.com/reference/st
 * `this` keyword and the `->` operator used to reference and assign **instance object attributes** and **variables**
 * **Overloaded constructors** are created in the same way as normal overloaded functions, by including *every desired variation* of the constructor method in the class object
 
-```C++
+```cpp
 class Student{
 
     public:
@@ -124,7 +124,7 @@ class Student{
 * Access private attributes via **getters** *(public method that makes a private attribute readable)* and **setters** *(a public method that makes a private attribute writeable)*
 * `:` colon and `public` keyword used to indicate **inheritance** for the relationship between the *child to parent* class 
 
-```C++
+```cpp
 class faeces{
     public:
         bool alive = true;
@@ -160,7 +160,7 @@ class constipation: public faeces{
 
 As opposed to the reasonable `printf()` of C, C++ implements the lovely `cout <<` and `<< endl`.
 
-```C++
+```cpp
 std::cout << "Hello World!" << std::endl;
 ```
 
@@ -170,7 +170,7 @@ Namespaces prevent name conflicts between multiple entities that share the same 
 
 * `namespace` keyword declares a **new namespace**, and variables created within the namespace can later be referenced by prefixing the variable with the **namespace** and `::` **double colons**
 
-```C++
+```cpp
 #include <iostream>
 
 namespace first{
@@ -191,7 +191,7 @@ int main() {
 
 * `using namespace` keyword can be used as an alternative to the `::` double colons
 
-```C++
+```cpp
 #include <iostream>
 
 namespace second{
@@ -216,7 +216,7 @@ Type definitions create an additional name for an *existing data type*, increasi
 
 * `typedef` keyword prefixes the *data type* of the new type we want to create, and the *name* of said type is included at the end
 
-```C++
+```cpp
 #include <iostream>
 #include <vector>
 
@@ -239,7 +239,7 @@ Note that `typedef` has largely been **replaced** by the `using` keyword *(as it
 
 The above example would now look like this:
 
-```C++
+```cpp
 #include <iostream>
 #include <vector>
 
@@ -262,7 +262,7 @@ int main() {
 
 Note that `std::cin` is part of the standard namespace, and thus `std::` must prefix the character in `cin`.
 
-```C++
+```cpp
 std::string name;
 
 std::cout << "NRIC rank and name: " << std::endl;
@@ -273,7 +273,7 @@ However, `cin` **stops reading input** from the console once it detects a *white
 
 * `getline()` function takes in the *input source* `std::cin`, and the *variable to store user input* as arguments
 
-```C++
+```cpp
 std::string dimsum;
 
 std::cout << "Enter your favourite siew mai name: " << std::endl;
@@ -287,7 +287,7 @@ std::getline(std::cin, dimsum); // this reads the value taken from the console i
 
 * we declare **multiple** functions under the *same name*, with each being a possible version that we call in the program
 
-```C++
+```cpp
 #include <iostream>
 
 void papa_pizza() {
@@ -319,7 +319,7 @@ int main() {
 * **declared letter** `typename` replaces any *data type* for **return value** and **arguments taken in** by our overloaded function, and the template function will now take in arguments of ***any data type***
 * `template <typename T>` *template definition* must be included before the template is declared 
 
-```C++
+```cpp
 #include <iostream>
 template <typename T>
 
@@ -343,7 +343,7 @@ To include multiple arguments of **different data types**, we just have to decla
 
 Here's the above template function implemented for arguments with two data types: 
 
-```C++
+```cpp
 #include <iostream>
 template <typename T, typename U>
 

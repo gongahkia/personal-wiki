@@ -27,7 +27,7 @@
 
 > *eg.* the below Java program file should have the name `shit.java`
 
-```Java
+```java
 public class shit {
     
     public static void main(String[] args) {
@@ -67,7 +67,7 @@ Similar to C and C++, Java requires us to enclose any code we want to run within
 
 * `System.out.println()` **prints** the given text to the console *including* a newline character at the end
 
-```Java
+```java
 public class Main {
 
     public static void main(String[] args) {
@@ -106,7 +106,7 @@ Note that aside from the *`% character`*, there are 3 other parameters that can 
 
 *Here is an example of using `printf()` with the conversion character:*
 
-```Java
+```java
 public class Main {
 
     public static void main(String[] args) {
@@ -133,7 +133,7 @@ public class Main {
 
 *Here is an example of using `printf()` with the conversion character and width:*
 
-```Java
+```java
 public class Main {
 
     public static void main(String[] args) {
@@ -151,7 +151,7 @@ public class Main {
 
 *Here is an example of using `printf()` with the conversion character and precision:*
 
-```Java
+```java
 public class Main {
 
     public static void main(String[] args) {
@@ -173,7 +173,7 @@ public class Main {
 
 *Here is an example of using `printf()` with the conversion character, width and flags:*
 
-```Java
+```java
 public class Main {
 
     public static void main(String[] args) {
@@ -191,7 +191,7 @@ public class Main {
 
 Java is a *statically typed* programming language, and variable declaration is the same as in C, C++ and Rust.
 
-```Java
+```java
 public class Main {
 
     public static void main(String args[]) {
@@ -212,7 +212,7 @@ public class Main {
 
 * **final variables** have their variable names *capitalized* as a naming convention
 
-```Java
+```java
 public class Main {
 
     public static void main(String[] args) {
@@ -256,7 +256,7 @@ public class Main {
 
 To *switch the value* of 2 variables of the same data type in Java, we create a **temporary variable** to hold the value of one of them and reassign the value accordingly.
 
-```Java
+```java
 public class Main {
 
     public static void main(string[] args) {
@@ -288,7 +288,7 @@ Stores **multiple values** of the **same data type** in a single variable *(simi
 * `[]` square brackets *append* the data type of the **array name**
 * `{}` curly braces *surround* an array
 
-```Java
+```java
 public class Main {
 
     public static void main(String[] args) {
@@ -325,7 +325,7 @@ ArrayLists are **resizeable arrays**, allowing elements to be added and removed 
 
 * `<>` angle brackets contain the **reference data type** to be stored in the ArrayList
 
-```Java
+```java
 import java.util.ArrayList;
 
 public class Main {
@@ -374,7 +374,7 @@ We can also create **Nested ArrayLists** in Java *(2D ArrayLists)*, for which we
 * `.get().get()`  
     * takes in 1 integer variable/ value each as an *argument* of the index of the respective elements within the ArrayList, returns the **element in a 2D ArrayList** at the given index *(similar to `[][]` in Python)*
 
-```Java
+```java
 import java.util.*;
 
 public class Main {
@@ -457,7 +457,7 @@ Since `HashMap` is a class, we can call class methods on **HashMap objects**.
 * `.forEach()` 
     * takes 2 variables/ values, the **data types** of the key-value pair stored within the HashMap, allowing us to iterate over every single key-value pair.
 
-```Java
+```java
 import java.util.HashMap;
 
 public class Main {
@@ -525,7 +525,7 @@ To accept user input, we have to import the `java.util.Scanner` class.
     * `.next()` method is called on the **scanner object** to *only read user input* from the console that is a **character**
     * `.close()` method is called on the **scanner object** to *close the scanner* after all user input has been read
 
-```Java
+```java
 import java.util.Scanner;
 
 public class Main {
@@ -580,7 +580,7 @@ We can call several *methods* on the newly created file object.
     * takes in no arguments
     * **deletes** the target file specified in the `File` instance object that was instantiated at the beginning
 
-```Java
+```java
 import java.io.File;
 
 public class Main {
@@ -629,7 +629,7 @@ We can call several *methods* on the newly created file writer object.
     * takes in no arguments
     * **closes** target file
 
-```Java
+```java
 import java.io.Filewriter;
 import java.io.IOException;
 
@@ -673,7 +673,7 @@ We can call several *methods* on the newly created file reader object.
     * takes in no arguments 
     * **closes** the target file
 
-```Java
+```java
 import java.io.FileReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -936,7 +936,7 @@ Conditional statements in Java function the same way as in any other programming
 * `else if` statement
 * `else` statement
 
-```Java
+```java
 public class Main {
 
     public static void main(String[] args) {
@@ -961,7 +961,7 @@ Similarly, `switch` statements in Java function the same way as in other program
 
 * `default` keyword creates a **default case** to execute should no prior case be met
 
-```Java
+```java
 public class Main {
 
     public static void main(String[] args) {
@@ -1003,7 +1003,7 @@ The logic governing **loops** in Java are essentially the same as in other progr
 * `while` loop
 * `do while` loop
 
-```Java
+```java
 public class Main {
 
     public static void main(String[] args) {
@@ -1026,7 +1026,7 @@ public class Main {
 
 * `for` loop
 
-```Java
+```java
 public class Main {
 
     public static void main(String[] args) {
@@ -1046,7 +1046,7 @@ Additionally, Java also has `for-each` loops, which **iterate over a given data 
 
 * `:` colon indicates the *iteration variable*, as well as the *data set to be iterated over*
 
-```Java
+```java
 public class Main {
 
     public static void main(String[] args) {
@@ -1084,7 +1084,7 @@ Exception handling in Java is settled by the `try` and `catch()` keywords.
     * always placed *at the end* of our `try` and `catch()` blocks  
         * often used to close any *files* or *scanners* we previously opened
 
-```Java
+```java
 import java.util.scanner;
 
 public class Main {
@@ -1158,7 +1158,7 @@ Wrapper classes allow *primitive data types* to be used as **reference data type
 
 Below is an example of creating wrapper class objects off the 4 main primitive data types via **autoboxing**:
 
-```Java
+```java
 public class Main {
 
     public static void main(String[] args) {
@@ -1186,7 +1186,7 @@ The naming convention for methods is to **begin with a lowercase character**.
 
 *Here is an example of a method:*
 
-```Java
+```java
 public class Main {
 
     public static void main(String[] args) {
@@ -1229,7 +1229,7 @@ Similar to overloaded functions, **overloaded methods** are methods that *share 
 
 *Here is an example of an overloaded method:*
 
-```Java
+```java
 public class Main {
 
     public static void main(String[] args) {
@@ -1310,7 +1310,7 @@ As such, I'll be going over the ***similarities*** and ***differences*** between
     * access instance **attributes** and **methods** of an object from its *parent class* when many objects from the same *parent class* are bundled together
     * [**Dynamic polymorphism**](https://www.javatpoint.com/dynamic-polymorphism-in-java)
 
-```Java
+```java
 public class Main {
 
     public static void main(String[] args) {
@@ -1394,7 +1394,7 @@ public class Streamer {
 
     * `super.` when referencing parent class' *methods*
 
-```Java
+```java
 public class Main {
 
     public static void main(String[] args) {
@@ -1452,7 +1452,7 @@ public class Hero extends person {
 
                 > an example of `abstract` classes in action:
 
-            ```Java
+            ```java
             public abstract class vehicle { // we now cannot instantiate a vehicle class object, and can only extend a child class off of the vehicle parent class and instantiate instance objects off of the child class
                 // rest of class code
             }
@@ -1463,7 +1463,7 @@ public class Hero extends person {
 
                 > an example of `abstract` methods in action:
             
-            ```Java
+            ```java
             public class transformer {
                 abstract void transform(); // there is no implementation for the abstract void transform method in the parent transformer class, but every child class extended off this parent class is forced to implement said transform method via method overriding
             }
@@ -1492,7 +1492,7 @@ public class Hero extends person {
         * can also be called **implicitly** by printing out the object itself
             * `System.out.println(p1)`
 
-```Java
+```java
 public class Main {
 
     public static void main(String[] args) {
@@ -1546,7 +1546,7 @@ public class Pizza {
 
 While creating an array *(not ArrayList)* of objects is mostly similar to what we're used to, we have to **declare** the *object array* as its own data type with the `new` keyword and the **size of the array**.
 
-```Java
+```java
 public class Main {
 
     public static void main(String[] args) {
@@ -1594,7 +1594,7 @@ Interfaces are *templates* that are applied to a class.
 * `implements` keyword indicates which interface a class is choosing to **adopt**
 * a class can apply **more than 1** interface, seperated by a `,` comma
 
-```Java
+```java
 public interface Prey {
 
     void flee(); // this indicates that all classes implemented off the Prey interface must have the flee() void method
@@ -1674,7 +1674,7 @@ By default, only *variables* and *methods* of a class within the **same package*
 
 `public` keyword makes the *variables* and *methods* of a class ***visible*** to any other class within the **same project** folder.
 
-```Java
+```java
 public class C {
 
     String defaultMessage = "This is the default";
@@ -1688,7 +1688,7 @@ public class C {
 `protected` keyword makes the *variables* and *methods* of a class ***visible*** to any other class, as long as it is a **child class**/ **sub class** of the parent class that contains a `protected` member.  
 * child class can be in a **different package**
 
-```Java
+```java
 public class D {
 
     String defaultMessage = "This is the default";
@@ -1701,7 +1701,7 @@ public class D {
 
 `private` keyword makes the *variables* and *methods* of a class ***visible*** only to **itself**.
 
-```Java
+```java
 public class E {
 
     String defaultMessage = "This is the default";
@@ -1727,7 +1727,7 @@ Static *variables* and *methods* are referred to as **static members** *(basical
     * **class** owns the *static variable*/ *static method*, and there is ***a single copy*** of the static member that is created and shared
     * as such, we normally call a *static variable*/ *static method* from the **class** itself, not from any instance object *(though it is possible, it is still not advised)*
 
-```Java
+```java
 public class Main {
 
     public static void main(String[] args) {

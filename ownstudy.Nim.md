@@ -10,7 +10,7 @@ Nim is a **statically-typed**, **compiled** programming language *(which brings 
 
 Since Nim compiles to C code, we use a similar syntax to compile a Nim program into an executable and run it.
 
-```Bash
+```console
 nim c -r test.nim
 ```
 
