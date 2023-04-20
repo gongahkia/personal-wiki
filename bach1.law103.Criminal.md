@@ -1,61 +1,65 @@
-<h1>Criminal Law 🧑‍⚖️</h1>
+<h1>Criminal Law</h1>
 
 > **Class:** *LAW103 Criminal law*  
 > **Lecturer:** *Prof How Khang*  
 > 
-> *Last edited 6/3/2023*
+> *Last edited 20/4/2023*
 
 ---
 
-<h2 align="center">Sem 1 Week 1</h2>
+<h2 align="center">Table of contents 📑</h2>
+
+---
+
+<h2 align="center">Sem 1 Week 1 🧑‍⚖️</h2>
 
 ### Required readings
 
 ---
 
-<h2 align="center">Sem 1 Week 2</h2>
+<h2 align="center">Sem 1 Week 2 🧑‍⚖️</h2>
 
 ### Required readings
 
 ---
 
-<h2 align="center">Sem 1 Week 3</h2>
+<h2 align="center">Sem 1 Week 3 🧑‍⚖️</h2>
 
 ### Required readings
 
 ---
 
-<h2 align="center">Sem 1 Week 4</h2>
+<h2 align="center">Sem 1 Week 4 🧑‍⚖️</h2>
 
 ### Required readings
 
 ---
 
-<h2 align="center">Sem 1 Week 5</h2>
+<h2 align="center">Sem 1 Week 5 🧑‍⚖️</h2>
  
 ### Required readings
 
 ---
 
-<h2 align="center">Sem 1 Week 6</h2>
+<h2 align="center">Sem 1 Week 6 🧑‍⚖️</h2>
 
 ### Required readings
 
 ---
 
-<h2 align="center">Sem 1 Week 7</h2>
+<h2 align="center">Sem 1 Week 7 🧑‍⚖️</h2>
 
 ### Required readings
 
 ---
 
-<h2 align="center">Sem 1 Week 8</h2>
+<h2 align="center">Sem 1 Week 8 🧑‍⚖️</h2>
 
 ### Required readings
 
 ---
  
-<h2 align="center">Sem 1 Week 9</h2>
+<h2 align="center">Sem 1 Week 9 🧑‍⚖️</h2>
 
 ### Required readings
 
@@ -187,3 +191,13 @@ Additionally, there are further limitations on the proceedings of detainment of 
     * `s95(1), cpc`: No bail conditions offered to persons accused of certain offences
 
 ---
+
+<h2 align="center">References 🧾</h2>
+
+<h4>General readings</h4>
+
+* [Criminal Procedure Code 2010](https://sso.agc.gov.sg/Act/CPC2010#pr2-) 
+
+<h4>Reference slides</h4>
+
+* [Week 9.1](https://docs.google.com/presentation/d/1v2W8V7L0dzVHo8IQyl1o2Z95M471VqKR3YLZKHacs4o/edit?usp=sharing)
