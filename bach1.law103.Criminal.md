@@ -1,23 +1,69 @@
-# Law 103: Criminal Law 🧑‍⚖️
+<h1>Criminal Law 🧑‍⚖️</h1>
 
-<img src="https://www.asiaone.com/sites/default/files/original_images/Jan2016/20160126-ST-DENNIS-CHUA-ROCK-CLIMBER.gif" height="125px" align="right">
-
-> **Class:** *Criminal law*  
-> **Subject:** *Law 103*  
-> **Date:** *S1W9*  
+> **Class:** *LAW103 Criminal law*  
 > **Lecturer:** *Prof How Khang*  
 > 
-> *Last edited 6/3/2023*  
+> *Last edited 6/3/2023*
 
-----------
+---
+
+<h2 align="center">Sem 1 Week 1</h2>
 
 ### Required readings
 
-* [Criminal Procedure Code 2010](https://sso.agc.gov.sg/Act/CPC2010#pr2-).
+---
+
+<h2 align="center">Sem 1 Week 2</h2>
+
+### Required readings
+
+---
+
+<h2 align="center">Sem 1 Week 3</h2>
+
+### Required readings
+
+---
+
+<h2 align="center">Sem 1 Week 4</h2>
+
+### Required readings
+
+---
+
+<h2 align="center">Sem 1 Week 5</h2>
+ 
+### Required readings
+
+---
+
+<h2 align="center">Sem 1 Week 6</h2>
+
+### Required readings
+
+---
+
+<h2 align="center">Sem 1 Week 7</h2>
+
+### Required readings
+
+---
+
+<h2 align="center">Sem 1 Week 8</h2>
+
+### Required readings
+
+---
+ 
+<h2 align="center">Sem 1 Week 9</h2>
+
+### Required readings
+
+* [Criminal Procedure Code 2010](https://sso.agc.gov.sg/Act/CPC2010#pr2-)
 * Reference slides   
     * [Week 9.1](https://docs.google.com/presentation/d/1v2W8V7L0dzVHo8IQyl1o2Z95M471VqKR3YLZKHacs4o/edit?usp=sharing)
 
-----------
+---
 
 ### General overview
 
@@ -30,23 +76,21 @@
 2. *Judge, Lawyer, everyone all shouts at each other* 🗣️
 3. Final disposition of the case against the accused for the commission of the offence *(send you go jail)*
 
-----------
+---
 
 ### 2 Models of Criminal Justice
 
-![](https://i.dailymail.co.uk/i/newpix/2018/09/07/19/4FD5BFAF00000578-6143737-image-m-30_1536344415232.jpg)
+Singapore adopts a ***hybrid model*** that incorporates both. 
 
 | Crime Control Model | Due Process Model |
 | :-----: | :-----: |
 | *The repression of criminal conduct is by far the most important function.* | *Primacy to an individual's rights as opposed to the rights of the community as a whole.* |
 
-Singapore adopts a ***hybrid model*** that incorporates both.
-
-----------
+---
 
 ### Jury trials vs Bench trials
 
-![](https://www.blankmediagames.com/wp-content/uploads/2015/05/screen-judgement.jpg)
+<img src="https://www.blankmediagames.com/wp-content/uploads/2015/05/screen-judgement.jpg" align="right" height="200px"/>
 
 ##### Jury trials:
 
@@ -63,13 +107,13 @@ Singapore adopts a ***hybrid model*** that incorporates both.
 * **Overseas**, there is greater skepticism towards those who hold power *(impression that the elite ruling class who rise to positions like Judge)*, and **Jury trials** are preferred.
 * As such, it becomes more of a *political issue* of power held by the state, as opposed to whether a Jury trial actually holds the Jury accountable *(psst, it doesn't to an extent)*.
 
-Singapore adopts a **Bench trial** model, though in the past, we have tested jury trials for a period *(they were shit)*.
+> Singapore adopts a **Bench trial** model, though in the past, we have tested jury trials for a period *(they were shit)*.
 
-----------
+---
 
 ### Power vs Permission
 
-![](https://i.ytimg.com/vi/L53gjP-TtGE/maxresdefault.jpg)
+<img src="https://i.ytimg.com/vi/L53gjP-TtGE/maxresdefault.jpg" height="200px" align="right"/>
 
 Power:  
 * ability to infringe on another's rights *(Police is able to coerce and compel individuals to comply with their investigation)*
@@ -77,15 +121,14 @@ Power:
 Permission:  
 * a person gives you the permission *(within their set limits)* to infringe on their rights
 
+---
+
 #### Powers of investigation:
 
-> Power to require production of document/thing *`s20, CPC`*  
-
-> Power to require attendance *`s21, CPC`*  
-
-> Power to examine witness orally via interview *`s22, CPC`*  
-
-> Power to search and seize *`s24-40, CPC`*  
+* Power to require production of document/thing *`s20, CPC`*  
+* Power to require attendance *`s21, CPC`*  
+* Power to examine witness orally via interview *`s22, CPC`*  
+* Power to search and seize *`s24-40, CPC`*  
 
 *Note that even in this power, the Police are surrounded by limitations on their exercise of power.*
 
@@ -102,18 +145,16 @@ Permission:
 
 Additionally, there are further limitations on the proceedings of detainment of an individual.
 
-![](https://media.tenor.com/OF8EZKWOTCAAAAAd/american-psycho-christian-bale.gif)
-
 * Release of arrested persons on bond or on bail (`s85, cpc`)
 * ***Cautioned statement*** outlining the **offence** and **indication for defense** (`s23(1), cpc`)
 
 > Different *non-police* law enforcement agencies have different powers and provisions **(CNB, CPIB, ICA, Customs)**.
 
-----------
+---
 
 ### Criminal proceedings
 
-![](https://cdn1.dotesports.com/wp-content/uploads/2022/06/09105250/4-amongus-pink-dead-brown-watching_ccexpress.png)
+<img src="https://cdn1.dotesports.com/wp-content/uploads/2022/06/09105250/4-amongus-pink-dead-brown-watching_ccexpress.png" height="200px" align="right"/>
 
 #### Parties to criminal proceedings
 
@@ -145,4 +186,4 @@ Additionally, there are further limitations on the proceedings of detainment of 
     * `s93(1), cpc`: Discretionary bail offered to person accused of non-bailable offence  
     * `s95(1), cpc`: No bail conditions offered to persons accused of certain offences
 
-----------
+---
