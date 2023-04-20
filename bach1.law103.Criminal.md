@@ -9,57 +9,91 @@
 
 <h2 align="center">Table of contents 📑</h2>
 
+<!-- vim-markdown-toc GFM -->
+
+* [Sem 1 Week 1](#sem-1-week-1)
+    * [Required readings](#required-readings)
+* [Sem 1 Week 2](#sem-1-week-2)
+    * [Required readings](#required-readings-1)
+* [Sem 1 Week 3](#sem-1-week-3)
+    * [Required readings](#required-readings-2)
+* [Sem 1 Week 4](#sem-1-week-4)
+    * [Required readings](#required-readings-3)
+* [Sem 1 Week 5](#sem-1-week-5)
+    * [Required readings](#required-readings-4)
+* [Sem 1 Week 6](#sem-1-week-6)
+    * [Required readings](#required-readings-5)
+* [Sem 1 Week 7](#sem-1-week-7)
+    * [Required readings](#required-readings-6)
+* [Sem 1 Week 8](#sem-1-week-8)
+    * [Required readings](#required-readings-7)
+* [Sem 1 Week 9](#sem-1-week-9)
+    * [Required readings](#required-readings-8)
+    * [General overview](#general-overview)
+        * [Criminal Justice Process](#criminal-justice-process)
+    * [2 Models of Criminal Justice](#2-models-of-criminal-justice)
+    * [Jury trials vs Bench trials](#jury-trials-vs-bench-trials)
+        * [Jury trials](#jury-trials)
+        * [Bench trials](#bench-trials)
+    * [Power vs Permission](#power-vs-permission)
+        * [Powers of investigation:](#powers-of-investigation)
+    * [Criminal proceedings](#criminal-proceedings)
+        * [Parties to criminal proceedings](#parties-to-criminal-proceedings)
+        * [General procedure](#general-procedure)
+
+<!-- vim-markdown-toc -->
+
 ---
 
-<h2 align="center">Sem 1 Week 1 🧑‍⚖️</h2>
+## Sem 1 Week 1
 
 ### Required readings
 
 ---
 
-<h2 align="center">Sem 1 Week 2 🧑‍⚖️</h2>
+## Sem 1 Week 2
 
 ### Required readings
 
 ---
 
-<h2 align="center">Sem 1 Week 3 🧑‍⚖️</h2>
+## Sem 1 Week 3
 
 ### Required readings
 
 ---
 
-<h2 align="center">Sem 1 Week 4 🧑‍⚖️</h2>
+## Sem 1 Week 4
 
 ### Required readings
 
 ---
 
-<h2 align="center">Sem 1 Week 5 🧑‍⚖️</h2>
+## Sem 1 Week 5
  
 ### Required readings
 
 ---
 
-<h2 align="center">Sem 1 Week 6 🧑‍⚖️</h2>
+## Sem 1 Week 6
 
 ### Required readings
 
 ---
 
-<h2 align="center">Sem 1 Week 7 🧑‍⚖️</h2>
+## Sem 1 Week 7
 
 ### Required readings
 
 ---
 
-<h2 align="center">Sem 1 Week 8 🧑‍⚖️</h2>
+## Sem 1 Week 8
 
 ### Required readings
 
 ---
  
-<h2 align="center">Sem 1 Week 9 🧑‍⚖️</h2>
+## Sem 1 Week 9
 
 ### Required readings
 
@@ -96,13 +130,13 @@ Singapore adopts a ***hybrid model*** that incorporates both.
 
 <img src="https://www.blankmediagames.com/wp-content/uploads/2015/05/screen-judgement.jpg" align="right" height="200px"/>
 
-##### Jury trials:
+#### Jury trials
 
 * **Jury trials** are to make findings of fact based on evidence, and the Jury has to make their final decision **based on the law**. *(It is **not** a purely subjective decision.)*  
 
 > The Jury does **not** need to explain their decision. 
 
-##### Bench trials:
+#### Bench trials
 
 * **Bench trials** are where Judges provide the final verdict for a given case.
 
