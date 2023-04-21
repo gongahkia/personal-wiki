@@ -109,7 +109,7 @@ $ grf exampleLawNotes.md exampleLawNotes.pdf
 
 > **References**
 >
-> * [Dendron-style](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) structure
+> * [Dendron-style]() structure
 > * [Look and feel](https://betterprogramming.pub/taking-my-university-course-computer-science-notes-in-latex-7565875fdde7)
 
 ---
