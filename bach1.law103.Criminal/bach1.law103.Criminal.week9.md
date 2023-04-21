@@ -1,98 +1,13 @@
 <h1>Criminal Law</h1>
 
 > **Class:** *LAW103_603 Criminal law*  
+> **Date:** *Sem 1 Week 9*  
 > **Lecturer:** *Prof How Khang*  
 > 
 > *Last edited 20/4/2023*
 
 ---
 
-<h2 align="center">Table of contents 📑</h2>
-
-<!-- vim-markdown-toc GFM -->
-
-* [Sem 1 Week 1](#sem-1-week-1)
-    * [Required readings](#required-readings)
-* [Sem 1 Week 2](#sem-1-week-2)
-    * [Required readings](#required-readings-1)
-* [Sem 1 Week 3](#sem-1-week-3)
-    * [Required readings](#required-readings-2)
-* [Sem 1 Week 4](#sem-1-week-4)
-    * [Required readings](#required-readings-3)
-* [Sem 1 Week 5](#sem-1-week-5)
-    * [Required readings](#required-readings-4)
-* [Sem 1 Week 6](#sem-1-week-6)
-    * [Required readings](#required-readings-5)
-* [Sem 1 Week 7](#sem-1-week-7)
-    * [Required readings](#required-readings-6)
-* [Sem 1 Week 8](#sem-1-week-8)
-    * [Required readings](#required-readings-7)
-* [Sem 1 Week 9](#sem-1-week-9)
-    * [Required readings](#required-readings-8)
-    * [General overview](#general-overview)
-        * [Criminal Justice Process](#criminal-justice-process)
-    * [2 Models of Criminal Justice](#2-models-of-criminal-justice)
-    * [Jury trials vs Bench trials](#jury-trials-vs-bench-trials)
-        * [Jury trials](#jury-trials)
-        * [Bench trials](#bench-trials)
-    * [Power vs Permission](#power-vs-permission)
-        * [Powers of investigation:](#powers-of-investigation)
-    * [Criminal proceedings](#criminal-proceedings)
-        * [Parties to criminal proceedings](#parties-to-criminal-proceedings)
-        * [General procedure](#general-procedure)
-
-<!-- vim-markdown-toc -->
-
----
-
-## Sem 1 Week 1
-
-### Required readings
-
----
-
-## Sem 1 Week 2
-
-### Required readings
-
----
-
-## Sem 1 Week 3
-
-### Required readings
-
----
-
-## Sem 1 Week 4
-
-### Required readings
-
----
-
-## Sem 1 Week 5
- 
-### Required readings
-
----
-
-## Sem 1 Week 6
-
-### Required readings
-
----
-
-## Sem 1 Week 7
-
-### Required readings
-
----
-
-## Sem 1 Week 8
-
-### Required readings
-
----
- 
 ## Sem 1 Week 9
 
 ### Required readings
@@ -224,14 +139,3 @@ Additionally, there are further limitations on the proceedings of detainment of 
     * `s93(1), cpc`: Discretionary bail offered to person accused of non-bailable offence  
     * `s95(1), cpc`: No bail conditions offered to persons accused of certain offences
 
----
-
-<h2 align="center">References 🧾</h2>
-
-<h4>General readings</h4>
-
-* [Criminal Procedure Code 2010](https://sso.agc.gov.sg/Act/CPC2010#pr2-) 
-
-<h4>Reference slides</h4>
-
-* [Week 9.1](https://docs.google.com/presentation/d/1v2W8V7L0dzVHo8IQyl1o2Z95M471VqKR3YLZKHacs4o/edit?usp=sharing)
