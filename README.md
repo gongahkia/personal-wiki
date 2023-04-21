@@ -20,12 +20,11 @@ This repository contains my notes from AY 2023-2027.
 
 * CS105 - Statistical Thinking for Data Science
 * IS111 - Intro to Programming
-  * [Python](bach1.python.md)
 * IS112 - Data Management
-  * [SQL](bach1.sql.md)
+  * [SQL](bach1.IS112.sql.md)
 * IS113 - Web Application Development 1
-  * [HTML, CSS](bach1.htmlcss.md)
-  * [PHP](bach1.php.md)
+  * [HTML, CSS](bach1.IS113.htmlcss.md)
+  * [PHP](bach1.IS113.php.md)
 * IS215 - Digital Business (Technology and Transformation)
 * IS210 - Business Process Analysis and Solutioning
 * IS211 - Interaction Design and Prototyping
@@ -43,21 +42,21 @@ This repository contains my notes from AY 2023-2027.
 
 <h4>Bachelor 1</h4>
 
-* [LAW101_601 - Contract Law 1](bach1.law101.Contract1.md)
-* [LGST102 - The Singapore Legal System & Legal Analysis Skills](bach1.lgst102.SGLegalSystem.md)
-* [LAW102_602 - Contract Law 2](bach1.law102.Contract2.md) 
-* [LAW103_603 - Criminal Law](bach1.law103.Criminal.md)
+* [LAW101_601 - Contract Law 1](bach1.law101.Contract1)
+* [LGST102 - The Singapore Legal System & Legal Analysis Skills](bach1.lgst102.SGLegalSystem)
+* [LAW102_602 - Contract Law 2](bach1.law102.Contract2)
+* [LAW103_603 - Criminal Law](bach1.law103.Criminal)
 
 <h4>Bachelor 2</h4>
 
-* [LAW105_605 - Law of Torts](bach2.law105.Tort.md)
-* [LAW201_621 - Corporate Law](bach2.law201.Corporate.md)
-* [LAW401 - Intellectual Property Law](bach2.law401.IPLaw.md)
+* [LAW105_605 - Law of Torts](bach2.law105.Tort)
+* [LAW201_621 - Corporate Law](bach2.law201.Corporate)
+* [LAW401 - Intellectual Property Law](bach2.law401.IPLaw)
 
 <h4>Bachelor 3</h4>
 
-* [LAW486 - Privacy and Data Protection Law](bach3.law486.PrivacyDataProtectLaw.md)
-* [LGST201 - Company Law](bach3.lgst201.CompanyLaw.md)
+* [LAW486 - Privacy and Data Protection Law](bach3.law486.PrivacyDataProtectLaw)
+* [LGST201 - Company Law](bach3.lgst201.CompanyLaw)
 
 <h4>Bachelor 4</h4>
 
@@ -96,6 +95,14 @@ Create new markdown *law notes* with `law` command to echo existing template int
 ```console
 $ law exampleNotes.md
 $ nvim exampleNotes.md
+```
+
+<h2 align="center">Compiling Law notes 🎌</h2>
+
+Compile Law notes into *printable **PDFs*** by running the following command.
+
+```console
+$ grf exampleLawNotes.md exampleLawNotes.pdf
 ```
 
 ---
