@@ -1,14 +1,13 @@
-# Class name
+```{=ms}
+.TL
+```
 
-> **Class:** *class name*  
-> **Subject:** *subject name*  
-> **Date:** *S1W1*  
-> **Lecturer:** *Prof name*  
-> 
-> *Last edited {which date}*  
+<h1 align="center">Subject name</h1>
+<h3>Sem 1 Week 1</h3>
+<h3>*Prof name*</h3>
 
-----------
-
-### Required readings
+# Required readings
 
 * Reference slides   
+
+---

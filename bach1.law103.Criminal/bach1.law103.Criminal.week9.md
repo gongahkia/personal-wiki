@@ -1,16 +1,12 @@
-<h1>Criminal Law</h1>
+```{=ms}
+.TL
+```
 
-> **Class:** *LAW103_603 Criminal law*  
-> **Date:** *Sem 1 Week 9*  
-> **Lecturer:** *Prof How Khang*  
-> 
-> *Last edited 20/4/2023*
+<h1 align="center">Law 103_603 Criminal Law</h1>
+<h3>Sem 1 Week 9</h3>
+<h3>*Prof How Khang*</h3>
 
----
-
-## Sem 1 Week 9
-
-### Required readings
+# Required readings
 
 * [Criminal Procedure Code 2010](https://sso.agc.gov.sg/Act/CPC2010#pr2-)
 * Reference slides   
@@ -18,65 +14,67 @@
 
 ---
 
-### General overview
+# General overview
 
 * The legal process puts multiple *protective mechanisms* in place to prevent **arbitrary exercise of power** *(such as a sole police officer/ victim)* in the process of an investigation.   
 * Only those in **High Office** *(Attorney General)*
 
-#### Criminal Justice Process
+# Criminal Justice Process
 
 1. Reporting of a crime
-2. *Judge, Lawyer, everyone all shouts at each other* 🗣️
+2. *Judge, Lawyer, everyone all shouts at each other*
 3. Final disposition of the case against the accused for the commission of the offence *(send you go jail)*
 
 ---
 
-### 2 Models of Criminal Justice
+# 2 Models of Criminal Justice
+
+| Crime Control Model | Due Process Model |
+| :---: | :---: |
+| *The repression of criminal conduct is by far the most important function.* | *Primacy to an individual's rights as opposed to the rights of the community as a whole.* |
 
 Singapore adopts a ***hybrid model*** that incorporates both. 
 
-| Crime Control Model | Due Process Model |
-| :-----: | :-----: |
-| *The repression of criminal conduct is by far the most important function.* | *Primacy to an individual's rights as opposed to the rights of the community as a whole.* |
-
 ---
 
-### Jury trials vs Bench trials
+# Jury trials vs Bench trials
 
 <img src="https://www.blankmediagames.com/wp-content/uploads/2015/05/screen-judgement.jpg" align="right" height="200px"/>
 
-#### Jury trials
+1. Jury trials
 
-* **Jury trials** are to make findings of fact based on evidence, and the Jury has to make their final decision **based on the law**. *(It is **not** a purely subjective decision.)*  
+    * *The Jury* makes findings of fact based on evidence, and they have to make their final decision **based on the law** *(ie. their decision cannot be purely subjective)*.
+    * The Jury **does not** need to explain their decision. 
 
-> The Jury does **not** need to explain their decision. 
+2. Bench trials
 
-#### Bench trials
+    * *Judges* provide the final verdict for a given case.
+    * The judge **has to** explain their decision according to the law.
 
-* **Bench trials** are where Judges provide the final verdict for a given case.
+**Overseas**, there is greater skepticism towards those who hold power, due to... 
 
-> Bench trials **require** Judges to explain their decision based off the law.
-
-* **Overseas**, there is greater skepticism towards those who hold power *(impression that the elite ruling class who rise to positions like Judge)*, and **Jury trials** are preferred.
-* As such, it becomes more of a *political issue* of power held by the state, as opposed to whether a Jury trial actually holds the Jury accountable *(psst, it doesn't to an extent)*.
+* an impression that it is the elite ruling class who rise to positions of power *(like a Judge)*, so **Jury trials** are preferred.
+* This is moreso a *political issue* of power held by the state, as opposed to whether a Jury trial actually holds the Jury accountable.
 
 > Singapore adopts a **Bench trial** model, though in the past, we have tested jury trials for a period *(they were shit)*.
 
 ---
 
-### Power vs Permission
+# Power vs Permission
 
 <img src="https://i.ytimg.com/vi/L53gjP-TtGE/maxresdefault.jpg" height="200px" align="right"/>
 
 Power:  
+
 * ability to infringe on another's rights *(Police is able to coerce and compel individuals to comply with their investigation)*
 
 Permission:  
+
 * a person gives you the permission *(within their set limits)* to infringe on their rights
 
 ---
 
-#### Powers of investigation:
+# Powers of investigation:
 
 * Power to require production of document/thing *`s20, CPC`*  
 * Power to require attendance *`s21, CPC`*  
@@ -105,17 +103,17 @@ Additionally, there are further limitations on the proceedings of detainment of 
 
 ---
 
-### Criminal proceedings
+# Criminal proceedings
 
 <img src="https://cdn1.dotesports.com/wp-content/uploads/2022/06/09105250/4-amongus-pink-dead-brown-watching_ccexpress.png" height="200px" align="right"/>
 
-#### Parties to criminal proceedings
+## Parties to criminal proceedings
 
 * Public prosecutor ***(pp lol)***
 * Accused *(defense)*
 * Private persons in a Magistrate's complaint (`s151(1), cpc`)
 
-#### General procedure
+## General procedure
 
 1. Initiating criminal proceedings `s150, cpc`  
 
@@ -138,4 +136,3 @@ Additionally, there are further limitations on the proceedings of detainment of 
     * `s92(1), cpc`: Person accused of bailable offence should be offered that option  
     * `s93(1), cpc`: Discretionary bail offered to person accused of non-bailable offence  
     * `s95(1), cpc`: No bail conditions offered to persons accused of certain offences
-
