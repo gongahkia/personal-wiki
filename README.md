@@ -74,6 +74,7 @@ This repository contains my notes from AY 2023-2027.
 * [Go](ownstudy.Go.md)
 * [Haskell](ownstudy.Haskell.md)
 * [Mermaid](ownstudy.Markdown.Mermaid.md)
+* [Groff](ownstudy.Markdown.Groff.md)
 
 ---
 
