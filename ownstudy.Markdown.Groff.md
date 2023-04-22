@@ -53,7 +53,7 @@ Note that Groff's `ms` macro package stipulates that every command *(referred to
 | - | `.AI` | Author's institution |
 | Abstract | `.AB` | Begins the **abstract**. An optional argument `[no]` can be supplied to *suppress* the **ABSTRACT** heading. |
 | - | `.AE` | Ends the **abstract**. |
-| [Table of contents](https://youtu.be/sWeOEMHwmrE) | `.TC` | Creates a **table of contents**, with titles and page numbers specified in the `.XS`, `.XA` and `.XE` macros. |
+| [Table of contents](https://youtu.be/sWeOEMHwmrE) | `.TC` | Creates a **table of contents**, with titles and page numbers specified in the `.XS`, `.XA` and `.XE` macros. To be placed at the end of your Groff file. |
 | - | `.XS`, `.XA`, `.XE` | Wrap text to appear in **table of contents** in the `.XS` and `.XE` macros. `.XS` is the *first entry*, `.XA` is for *subsequent entries*. `.XS` and `.XA` take a **numeric argument**, which is the page number for the specified entry. |
 | - | `.PX` | Creates a **table of contents** without resetting the page number. |
 | Paragraphs | `.PP` | Creates an **indented** paragraph. | 
