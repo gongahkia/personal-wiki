@@ -1,22 +1,13 @@
-<h1>Company Law</h1>
+```{=ms}
+.TL
+```
 
-> **Class:** *LGST201 Company Law*  
-> **Date:** *Sem 1 Week 1*  
-> **Lecturer:** **  
-> 
-> *Last edited *
+<h1 align="center">LGST 201 Company Law</h1>
+<h3>Sem 1 Week 1</h3>
+<h3>*Prof name*</h3>
 
----
+# Required readings
 
-## Sem 1 Week 1
-
-### Required readings
+* Reference slides   
 
 ---
-
-<h2 align="center">References 🧾</h2>
-
-<h4>General readings</h4>
-
-<h4>Reference slides</h4>
-

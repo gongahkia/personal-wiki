@@ -1,20 +1,13 @@
-<h1>Contract Law 1</h1>
+```{=ms}
+.TL
+```
 
-> **Class:** *LAW101_601 Contract Law 1*  
-> **Date:** *Sem 1 Week 1*  
-> **Lecturer:** **  
-> 
-> *Last edited *  
+<h1 align="center">Law 101_601 Contract Law 1</h1>
+<h3>Sem 1 Week 1</h3>
+<h3>*Prof name*</h3>
+
+# Required readings
+
+* Reference slides   
 
 ---
- 
-### Required readings
-
----
-
-<h2 align="center">References 🧾</h2>
-
-<h4>General readings</h4>
-
-<h4>Reference slides</h4>
-

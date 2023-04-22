@@ -1,22 +1,13 @@
-<h1>The Singapore Legal System & Legal Analysis Skills</h1>
+```{=ms}
+.TL
+```
 
-> **Class:** *LGST102 The Singapore Legal System & Legal Analysis Skills*
-> **Date:** *Sem 1 Week 1*
-> **Lecturer:** **
-> 
-> *Last edited *
+<h1 align="center">LGST 102 The Singapore Legal System & Legal Analysis Skills</h1>
+<h3>Sem 1 Week 1</h3>
+<h3>*Prof name*</h3>
 
----
+# Required readings
 
-## Sem 1 Week 1
-
-### Required readings
+* Reference slides   
 
 ---
-
-<h2 align="center">References 🧾</h2>
-
-<h4>General readings</h4>
-
-<h4>Reference slides</h4>
-
