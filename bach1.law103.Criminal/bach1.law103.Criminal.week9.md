@@ -1,10 +1,35 @@
 ```{=ms}
 .TL
+Law 103_603 Criminal Law
+Sem 1 Week 9
+.I Prof\0How\0Khang
+.AU
+Gongkia
+.AI 
+SMU Computing and Law 2024-2027
+.sp
 ```
 
-<h1 align="center">Law 103_603 Criminal Law</h1>
-<h3>Sem 1 Week 9</h3>
-<h3>*Prof How Khang*</h3>
+---
+
+```{=ms}
+.XS 1
+Criminal Justice Process
+.XA 2
+2 Models of Criminal Justice
+.XA 3
+Jury trials vs Bench trials
+.XA 4
+Power vs Permission
+.XA 5
+Powers of investigation
+.XA 6
+Criminal proceedings
+.XE
+.PX
+.sp
+```
+---
 
 # Required readings
 
@@ -13,6 +38,10 @@
     * [Week 9.1](https://docs.google.com/presentation/d/1v2W8V7L0dzVHo8IQyl1o2Z95M471VqKR3YLZKHacs4o/edit?usp=sharing)
 
 ---
+
+```{=ms}
+.bp
+```
 
 # General overview
 
@@ -74,7 +103,7 @@ Permission:
 
 ---
 
-# Powers of investigation:
+# Powers of investigation
 
 * Power to require production of document/thing *`s20, CPC`*  
 * Power to require attendance *`s21, CPC`*  
