@@ -1,5 +1,5 @@
-> *Edit on 18 April 2023:*
-> * Read through [Rust book](https://doc.rust-lang.org/stable/book/) [Chapter 0/21], follow along w projects in [Rust lang playground](https://play.rust-lang.org/?version=stable&mode=debug&edition=2021), continue adding notes here.
+> *Edit on 24 April 2023:*
+> * Read through [Rust book](https://doc.rust-lang.org/stable/book/) [pg 90/554], add notes on Ownership section.
 > * Make notes off this video (https://www.youtube.com/watch?v=zF34dRivLOw).
 
 # The Rust programming language 🦀
@@ -95,10 +95,13 @@ All Rust code to be executed is placed within the `fn main()` main function *(si
 ```rust
 fn main() {
     println!("Hello World!");
-} // and this is a comment
+} 
 
+// this is a comment
+
+// formatted strings in Rust look like this
 let x:i32 = 40;
-println!("x is: {}", x); // formatted strings in Rust look like this
+println!("x is: {}", x); 
 ```
 
 ### Variables && Constants
@@ -114,16 +117,22 @@ println!("x is: {}", x); // formatted strings in Rust look like this
 * `const` initializes a **constant**, whose *value* and *data type* are immutable ***(at COMPILE TIME)***.
 
 ```rust
-let x; // declaration and 
-x = 100; // assignment can occur on two different lines!
+// declaration and 
+let x; 
 
-let x:i32 = 10; // variable values are immutable by default
+// assignment can occur on two different lines!
+x = 100; 
 
-let mut y:i32 = 45; // mut creates a mutable variable
+// variable values are immutable by default
+let x:i32 = 10;
+
+// mut creates a mutable variable
+let mut y:i32 = 45;
 y = 100;
 println!("y is: {}:, y");
 
-const SECONDS_IN_MINUTES:u32 = 60; // const creates a constant, whose value cannot be changed
+// const creates a constant, whose value cannot be changed
+const SECONDS_IN_MINUTES:u32 = 60; 
 println!("{}", SECONDS_IN_MINUTES);
 ```
 
@@ -190,7 +199,8 @@ println!("{}", eg_array[7]);
 ```rust
 let mut eg_vector:Vec<i32> = vec![1,2,3,4,5,59,132];
 
-vector.push(5); // appends the integer i32 of 5 to the vector
+// appends the integer i32 of 5 to the vector
+vector.push(5);
 ```
 
 * Tuples
@@ -249,20 +259,24 @@ while 1 == 1 {
     println!("It works how you would expect, but this is an infinite loop my man!");
 }
 
+// you can also create infinite loops easily with the loop keyword
 loop {
-    println!("Alahoo"); // you can also create infinite loops easily with the loop keyword
+    println!("Alahoo"); 
 }
 
 // --- 
 
 let an_array:[i32;3] = [1,2,3];
-for i:i32 in an_array { // classic for in loop
+
+// classic for in loop
+for i:i32 in an_array {
     println!("{}", i);
 }
 
 // this can be applied to ranges too
+// this would print 0123456789 to the console
 for i in 0u32..10 {
-    println!("{}", i); // this would print 0123456789 to the console
+    println!("{}", i); 
 } 
 ```
 
@@ -273,12 +287,14 @@ for i in 0u32..10 {
 * `return` indicates the **return value** *(though it is optional since the function block evaluates to its tail regardless)*
 
 ```rust
+// this is legal
 fn fair_dice_roll() -> i32 {
-    return 4; // this is legal
+    return 4;
 }
 
+// this is also legal
 fn unfair_dice_roll() -> i32 {
-    10 // this is also legal
+    10 
 }
 ```
 
@@ -293,7 +309,8 @@ fn unfair_dice_roll() -> i32 {
         > * `min` is a ***FUNCTION***
 
 ```rust
-let least = std::cmp::min(3,8); // this assigns i32 value of 3 to the variable least
+// this assigns i32 value of 3 to the variable least
+let least = std::cmp::min(3,8); 
 ```
 
 * `use`
@@ -302,7 +319,8 @@ let least = std::cmp::min(3,8); // this assigns i32 value of 3 to the variable l
 ```rust
 use std::cmp::min;
 
-let least = min(7,1); // this assigns i32 value of 1 to the variable least
+// this assigns i32 value of 1 to the variable least
+let least = min(7,1); 
 ```
 
 * `{}` 
@@ -335,11 +353,14 @@ use std::cmp::*;
 * `_` is a special character that indicates to Rust to **throw that value away** *(and acts as a catch-all pattern in match constructs)*.
 
 ```rust
-let _ = get_thing(); // calls the function but throws away its result that is returned to _
+// calls the function but throws away its result that is returned to _
+let _ = get_thing(); 
 
-let _x = 42; // compiler will NOT warn about an unused variable if it is prefixed with an _
+// compiler will NOT warn about an unused variable if it is prefixed with an _
+let _x = 42; 
 
-let (_, right) = slice.split_at(middle); // throw away the left side of the destructured tuple and only return the right
+// throw away the left side of the destructured tuple and only return the right
+let (_, right) = slice.split_at(middle); 
 ```
 
 <h3 align="center">Destructuring</h3>
@@ -372,10 +393,11 @@ Generally, **scope** is defined by a **block of code**.
 * Blocks exist anywhere in Rust there is code enclosed by `{}` curly braces *(functions, conditional and match statements, loops, structs)*.
 
 ```rust
+// here, y + z is the tail, which evaluates to the int32 value of 21, assigned to x
 let x = {
     let y = 1;
     let z = 20;
-    y + z // the tail, which evaluates to the int32 value of 21, assigned to x
+    y + z 
 };
 ```
 
@@ -391,7 +413,52 @@ let x = {
 > * [Understanding Lifetimes in Rust](https://blog.logrocket.com/understanding-lifetimes-in-rust/)
 > * [Lifetime elision](https://doc.rust-lang.org/nomicon/lifetime-elision.html)
 
+---
+
 <h3 align="center"><a href="https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html">Ownership</a></h3>
+
+Before we talk about Rust's ownership, let's briefly look into how programming languages interface with computer memory.
+
+> Ownership is Rust's most unique feature, and it enables Rust to make memory safety guarantees without needing a garbage collector. 
+> 
+> *~ The Rust Programming Language* book
+
+#### The Stack and the Heap
+
+Both the Stack and the Heap are parts of *computer memory* that are available for your program to use at **runtime**, but they are structured in different ways.
+
+##### Stack 🥞
+
+* **Last in, first out**
+    * Stores values <u>in the order it gets them</u> and removes them in the <u>opposite order</u> *(like a stack of pancakes)*.
+    * Adding data = **Pushing onto the stack**
+    * Removing data = **Popping off the stack**
+* **BLAZINGLY FAST**
+    * The stack only ever has to refer to one place for its data *storage* and *retrieval*, the top of the stack.
+    * All data on the stack takes up a *known, fixed-size*.
+
+##### Heap 🚮
+
+* **Less organised**
+    * Stores values in the heap at **different locations** (memory addresses), based on the <u>amount of space required to store said value</u> *(like a waiter at a restaraunt)*.
+    * Returns a *pointer*, which <u>stores the memory address</u> of said value.
+    * Adding data to an empty spot on the heap of sufficient size, pointer returned = **Allocating on the heap**
+* **LESS FAST**
+    * We have to **follow a pointer** to *retrieve* actual data stored at the given memory address.
+    * Data on the heap has an *unknown size at compile time*, or *a size that might change*.
+    * Allocating a large amount of space on the heap takes a *long time*.  
+  
+> Keeping track of what parts of code are using what data on the heap, minimizing the amount of duplicate data on the heap, and cleaning up unused data on the heap so you don't run out of space are all problems that ownership addresses.
+> 
+> *~ The Rust Programming Language* book
+
+#### Ownership Rules
+
+1. Each value in Rust has a variable that's called an *owner*.
+2. There can only be one owner at a time.
+3. When the owner goes out of scope, the value will be dropped.
+
+---
 
 <h3 align="center"><a href="C++/pointers-references.md">References</a></h3>
 
@@ -421,15 +488,20 @@ Structs are somewhat similar to objects in *Typescript*, often referred to as **
     * `self` references the given Type
 
 ```rust
-struct Vec2 { // struct declaration
+// struct declaration
+struct Vec2 { 
     x:f64,
     y:f64,
 }
 
-let v1 = Vec2 { x:1.0, y:3.0 }; // a struct literal
-let v2 = Vec2 { y:2.0, x:4.0 }; // another struct literal, peep that the order does not matter
+// a struct lieral
+let v1 = Vec2 { x:1.0, y:3.0 }; 
 
-impl Vec2 { // implementing a method on a struct 
+// another struct literal, peep that the order does not matter
+let v2 = Vec2 { y:2.0, x:4.0 };
+
+// implementing a method on a struct 
+impl Vec2 { 
     fn is_strictly_positive(self) -> bool {
         self.value > 0
     }
@@ -451,24 +523,29 @@ Traits are similar to interfaces in *Java*, allowing us to **declare** attribute
 * implement traits on types with the `impl` keyword *(`impl`, `for` syntax)*
 
 ```rust
-struct Number { // previously declared struct
+// previously declared struct
+struct Number { 
     odd: bool;
     value: i32;
 }
 
+// all this does is specify that the type must have a function called isStrictlyNegative that takes self as an argument and returns a boolean
 trait Signed {
-    fn isStrictlyNegative(self) -> bool; // all this does is specify that the type must have a function called isStrictlyNegative that takes self as an argument and returns a boolean
+    fn isStrictlyNegative(self) -> bool; 
 }
 
-impl Signed for Number { // implementing trait for a type
+// implementing a trait for a type
+impl Signed for Number { 
     fn isStrictlyNegative(self) -> (bool) {
         self.value < 0
     }
 }
 
-fn main() { // main function
+// main function
+// this prints out true to the console
+fn main() { 
     let n = Number { odd:false, value:-44 };
-    println!("{}", n.isStrictlyNegative()); // this prints out true to the console
+    println!("{}", n.isStrictlyNegative());
 }
 ```  
   
