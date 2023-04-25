@@ -587,7 +587,7 @@ fn change(some_string: &mut String) {
 
 Note the following restrictions with regards to **mutable references**:
 
-1. You can only **<u>one</u> mutable reference** to a particular piece of data in a given scope.
+1. You can only have **<u>one</u> mutable reference** to a particular piece of data in a given scope.
     * This allows for mutation in a controlled fashion, and prevents *[data races](https://doc.rust-lang.org/nomicon/races.html)* from occuring.
 
 ---
