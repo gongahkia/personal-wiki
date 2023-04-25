@@ -1,5 +1,5 @@
 > *Edit on 24 April 2023:*
-> * Read through [Rust book](https://doc.rust-lang.org/stable/book/) [pg 102/554], add notes on Ownership section.
+> * Read through [Rust book](https://doc.rust-lang.org/stable/book/) [pg 103/554], add notes on Ownership section.
 > * Make notes off this video (https://www.youtube.com/watch?v=zF34dRivLOw).
 
 # The Rust programming language 🦀
@@ -589,6 +589,19 @@ Note the following restrictions with regards to **mutable references**:
 
 1. You can only **<u>one</u> mutable reference** to a particular piece of data in a given scope.
     * This allows for mutation in a controlled fashion, and prevents *[data races](https://doc.rust-lang.org/nomicon/races.html)* from occuring.
+
+Additionally, the Rust compiler also catches errors like *Dangling references* at compile time.
+
+So, to recap...
+
+#### Rules of References
+
+1. At any given time, we can have *either*, but **not both** of the following: one *mutable* reference OR any number of *immutable* references.
+2. References must always be valid.
+
+---
+
+<h3 align="center"><a href="https://doc.rust-lang.org/reference/types/slice.html">Slices as reference</a></h3>
 
 ---
 
