@@ -1,5 +1,5 @@
 > *Edit on 24 April 2023:*
-> * Read through [Rust book](https://doc.rust-lang.org/stable/book/) [pg 90/554], add notes on Ownership section.
+> * Read through [Rust book](https://doc.rust-lang.org/stable/book/) [pg 102/554], add notes on Ownership section.
 > * Make notes off this video (https://www.youtube.com/watch?v=zF34dRivLOw).
 
 # The Rust programming language 🦀
@@ -529,11 +529,44 @@ let y = x;
 println!("x = {}, y = {}", x, y);
 ```
 
----
+However, this kind of behaviour can become frustrating to work with, especially when we consider how Rust functions interact with their parameters and arguments.
+
+As such, Rust provides us with the **incredibly useful**... 
 
 <h3 align="center"><a href="C++/pointers-references.md">References</a></h3>
 
+> Forget everything you think you know about references. We finna learn about them from the ground up today.
+
+References allow us to **refer to a value** <u>without</u> taking ownership of it.
+* The ampersand character (`&`) indicates that the given variable is a **reference**.
+
+```rust
+fn main() {
+    // String allocted on the heap, of dynamic length, created from the string literal "hello"
+    let s1 = String::from("hello"); 
+
+    // pass the heap-allocated String s1 by reference to the function calculate_length(), to prevent the string s1 from being moved after the function runs
+    let len = calculate_length(&s1);
+
+    println!("The length of '{}' is {}", s1, le);
+}
+
+// this function recieves an argument of type reference to a String data type
+// s goes out of scope here, but since it does not have ownership of what it refers to, nothing happens
+fn calculate_length(s:&String) -> usize {
+    s.len() 
+}
+```
+
+> Note that similar to variables, Rust **references** are *immutable by default*.
+
 <h3 align="center"><a href="https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html">Borrowing</a></h3>
+
+> We call having references as function parameters *borrowing*. As in real life, if a person owns something, you can borrow it from them. When you're done, you have to give it back.  
+>  
+> *~ The Rust Programming Language* book
+
+---
 
 <h3 align="center"><a href="https://doc.rust-lang.org/book/ch15-00-smart-pointers.html">Smart pointers</a></h3>
 
