@@ -169,11 +169,13 @@ println!("{}", SECONDS_IN_MINUTES);
 ### Strings 🧵
 
 * `&str`
-    * **String literal**
+    * **String literal, stored on the stack**
+    * Immutable
     * strings surrounded by `""` *double quotation marks*
 
 * `String`
     * **Heap-allocated string**
+    * Mutable
     * Stored as a `Vec<u8>` that holds a *valid UTF-8 sequence* that is not null-terminated
 
 ---
@@ -435,7 +437,7 @@ Both the Stack and the Heap are parts of *computer memory* that are available fo
     * Removing data = **Popping off the stack**
 * **BLAZINGLY FAST**
     * The stack only ever has to refer to one place for its data *storage* and *retrieval*, the top of the stack.
-    * All data on the stack takes up a *known, fixed-size*.
+    * All data on the stack takes up a *known, fixed-size* at compile time.
 
 ##### Heap 🚮
 
@@ -457,6 +459,75 @@ Both the Stack and the Heap are parts of *computer memory* that are available fo
 1. Each value in Rust has a variable that's called an *owner*.
 2. There can only be one owner at a time.
 3. When the owner goes out of scope, the value will be dropped.
+
+To begin with, here's a simple example of <u>scope</u>.
+
+> *Scope*:   
+> Range within a program for which an item is valid.
+
+```rust
+// s is not valid here, it has not been declared yet
+{
+    // s is valid from this point forward till the end of the scope (curly braces), note that s is a string literal and is stack stored
+    let s:&str = "hello";
+}
+// the scope is now over, and s is no longer valid
+```
+
+:. Rust **ownership** hinges on the concept that it *automatically returns memory* once the <u>variable that owns said piece of memory goes out of scope</u>.
+
+> See this concept in application below.
+
+```rust
+// s2 is not valid here, it has not been declared yet
+{
+    // s2 is valid from this point forward till the end of the scope (curly braces), note that s2 is a String, which is heap-allocated, and thus has a dynamic length and value
+    s2:String = "hello";
+}
+// this scope is now over, and s2 is no longer valid, Rust returns the space s2 took up in heap memory to the computer
+```
+
+### HEAP: Ways that Variables and Data interact
+
+#### Move
+
+TLDR:
+
+* To prevent double free errors, Rust automatically `moves` the **owner** of the value to be the variable that was <u>most recently copied</u>. The previous owner is now invalid.
+* This adheres to Rust's **ownership rule number 2**.
+  
+> For an awesome, diagrammatic explanation on double free errors and Rust's handling of move, refer to *The Rust Programming Language* book `pg 92-94` on **Ways that variables and data interact: Move**.
+
+#### Clone
+
+To **deeply copy** *heap data* of a String *(not just stack data)*, we use the `clone` method.
+* This code may be expensive as compared to moving the variable, which Rust does automatically (as covered above).
+
+```rust
+// note that "hello" is a string literal, the from method converts it to a String that is mutable
+let s1 = String::from("hello");
+
+// this creates a deep copy of the String s1, creating a complete copy of s1's attributes in s2 and taking up another place in the heap to store its value
+let s2 = s1.clone();
+
+println!("s1 = {}", "s2= {}", s1, s2);
+```
+
+### STACK: Ways that Variables and Data interact
+
+#### Copy
+
+As a caveat, creating deep copies does exist on the *stack* through the `Copy` trait, which Rust does *automatically*.
+* This is possible since copies on the *stack* are **quick to make**, so there is no reason to prevent copies of variables from staying valid after creation.
+
+```rust
+let x = 5;
+
+// creates a deep copy of x and assigns it to the variable y, x is still valid!
+let y = x;
+
+println!("x = {}, y = {}", x, y);
+```
 
 ---
 
