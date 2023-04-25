@@ -529,20 +529,20 @@ let y = x;
 println!("x = {}, y = {}", x, y);
 ```
 
-However, this kind of behaviour can become frustrating to work with, especially when we consider how Rust functions interact with their parameters and arguments.
+However, this kind of behaviour can become frustrating to work with, <u>especially when we consider how Rust functions interact with their parameters and arguments</u>.
 
 As such, Rust provides us with the **incredibly useful**... 
 
 <h3 align="center"><a href="C++/pointers-references.md">References</a></h3>
 
-> Forget everything you think you know about references. We finna learn about them from the ground up today.
+> Forget everything you think you know about references. We are gonna learn about them from the ground up today.
 
 References allow us to **refer to a value** <u>without</u> taking ownership of it.
 * The ampersand character (`&`) indicates that the given variable is a **reference**.
 
 ```rust
 fn main() {
-    // String allocted on the heap, of dynamic length, created from the string literal "hello"
+    // String allocated on the heap, of dynamic length, created from the string literal "hello"
     let s1 = String::from("hello"); 
 
     // pass the heap-allocated String s1 by reference to the function calculate_length(), to prevent the string s1 from being moved after the function runs
@@ -558,13 +558,37 @@ fn calculate_length(s:&String) -> usize {
 }
 ```
 
-> Note that similar to variables, Rust **references** are *immutable by default*.
+Note that similar to Rust variables, Rust **references** are *immutable by default*.
 
 <h3 align="center"><a href="https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html">Borrowing</a></h3>
 
 > We call having references as function parameters *borrowing*. As in real life, if a person owns something, you can borrow it from them. When you're done, you have to give it back.  
 >  
 > *~ The Rust Programming Language* book
+
+**References** can be made *mutable* using the `mut` keyword (similar to variables).
+
+```rust
+fn main() {
+    // note that the heap allocated String variable s has to be made mutable for us to be able to change its value via its reference
+    let mut s = String::from("hello");
+    
+    // we also have to create a mutable reference for the String s
+    change(&mut s);
+}
+
+// lastly, we need the function change to take in a mutable reference to a String as its data type for the parameter
+fn change(some_string: &mut String) {
+    some_string.push_str(", world");
+}
+```
+
+> As seen above, we are now able to change the value of the String variable s to *"hello, world"*.
+
+Note the following restrictions with regards to **mutable references**:
+
+1. You can only **<u>one</u> mutable reference** to a particular piece of data in a given scope.
+    * This allows for mutation in a controlled fashion, and prevents *[data races](https://doc.rust-lang.org/nomicon/races.html)* from occuring.
 
 ---
 
