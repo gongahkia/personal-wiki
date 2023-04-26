@@ -1,5 +1,5 @@
 > *Edit on 24 April 2023:*
-> * Read through [Rust book](https://doc.rust-lang.org/stable/book/) [pg 103/554], add notes on Ownership section.
+> * Read through [Rust book](https://doc.rust-lang.org/stable/book/) [pg 111/554], add notes on Ownership section.
 > * Make notes off this video (https://www.youtube.com/watch?v=zF34dRivLOw).
 
 # The Rust programming language 🦀
@@ -177,6 +177,7 @@ println!("{}", SECONDS_IN_MINUTES);
     * **Heap-allocated string**
     * Mutable
     * Stored as a `Vec<u8>` that holds a *valid UTF-8 sequence* that is not null-terminated
+    * strings surrounded by `""` *double quotation marks*
 
 ---
 
@@ -602,6 +603,91 @@ So, to recap...
 ---
 
 <h3 align="center"><a href="https://doc.rust-lang.org/reference/types/slice.html">Slices as reference</a></h3>
+
+**Slices** are a data type that <u>does not have</u> *ownership*, and they allow us to reference a contiguous sequence of elements in a collection rather than the whole collection.
+
+However, when it comes to working with Strings, it can get confusing quickly when we try and use slices. As such, Rust provides us with...
+
+#### String slices
+
+A **string slice** is a *reference* to a portion of a heap-allocated `String`.
+
+> The slice data structure stores a *reference to the first element of the String*, and the *length of the String*.
+
+* **String slices** are created with the `[starting_index..ending_index]` syntax, with the ending index being one more than the last position in the slice *(similar to the `[1:3]` list slicing syntax in Python)*.
+* Since **string slices** are a reference to a portion of a `String`, we call that reference with the `&String_name` syntax.
+
+```rust
+// converting the &str string literal "hello world" into a heap-allocated String, which we assign to the variable s
+let s = String::from("hello world");
+
+// we create slices that take reference to a portion (or slice) of the String, with the [start..end] syntax specifying the starting and end - 1 index of characters in the String
+let hello = &s[0..5];
+let world = &s[6..11];
+```
+
+Additionally, the starting or ending index can be dropped if the slice starts at the *first index*, or ends with the *last index*.
+
+```rust
+// an example regarding omission of the starting index
+let s2 = String::from("hello");
+
+// both of the following are equal, and valid pieces of Rust code
+let slice = &s2[0..2];
+let slice = &s2[..2];
+
+// an example regarding omission of the ending index
+let s3 = String::from("world");
+
+let len = s3.len();
+
+// both of the following are likewise equal, and valid pieces of Rust code
+let another_slice = &s3[3..len];
+let another_slice = &s3[3..];
+```
+
+With this knowledge, here is an example function that outputs the first word in a space delimited string.
+
+```rust
+// the first_word function takes in s, a reference to a heap-allocated String, and returns a reference to a string literal
+fn first_word(s:&String) -> &str {
+
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[0..i];
+        }
+    }
+
+    &s[..]
+}
+```
+
+This then wonderfully brings us full circle, where we come to realize that...
+
+#### String literals are slices
+
+Previously, we mentioned that [string literals are stored inside the binary](https://web.mit.edu/rust-lang_v1.25/arch/amd64_ubuntu1404/share/doc/rust/html/book/second-edition/ch08-02-strings.html).
+
+Notice that **string literals** (stored on the Stack) have the type `&str` *(similar to the `&String_name` syntax of String slices)*, because **string literals** are a *slice* pointing to that specific point of the binary.
+
+Similarly, **string literals** are immutable, because `&str` is an *immutable reference*.
+
+---
+
+<h3 align="center">Other slices</h3>
+
+The more general **slice type** functions somewhat similarly (syntax-wise) to String slices, using the `[starting_index..ending_index]` syntax, as well as a reference to the collection type with the `&Collection_name` syntax.
+
+> General slices work similarly to String slices, storing a reference to the first element of the collection, as well as the length of the slice.
+
+```rust
+let a = [1,2,3,4,5];
+
+// this creates a slice of the type &[i32], storing a reference to the first element and the length of the slice
+let example_slice = &a[1..3];
+```
 
 ---
 
