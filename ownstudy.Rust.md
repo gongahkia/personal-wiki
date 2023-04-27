@@ -1,5 +1,5 @@
-> *Edit on 24 April 2023:*
-> * Read through [Rust book](https://doc.rust-lang.org/stable/book/) [pg 111/554], add notes on Ownership section.
+> *Edit on 27 April 2023:*
+> * Read through [Rust book](https://doc.rust-lang.org/stable/book/) [pg 125/554], add notes on Ownership section.
 > * Make notes off this video (https://www.youtube.com/watch?v=zF34dRivLOw).
 
 # The Rust programming language 🦀
@@ -706,41 +706,151 @@ Rust **does not** have 'classes' or 'objects' *(in the conventional sense)*, and
 
 <h3 align="center"><a href="https://doc.rust-lang.org/rust-by-example/custom_types/structs.html">Structs 🏛️</a></h3>
 
-Structs are somewhat similar to objects in *Typescript*, often referred to as **Types** in Rust *(and are Rust's provision for OOP patterns)*.
+> Structs and enums are the building blocks for creating new types in your program's domain to take full advantage of Rust's compile time type checking.
+> 
+> *~ The Rust Programming Language* book
 
-* declared with the `struct` keyword
-    * intialized using **struct literals**
-* user-defined **values** simply added to the struct
-* user-defined **methods** and **traits** implemented with the [`impl`](https://doc.rust-lang.org/std/keyword.impl.html) keyword *(always used for a Type)*
-    * `self` references the given Type
+Structs are somewhat similar to objects in *Typescript*, and are simply another way to contain data and methods in Rust *(Rust's provision for OOP patterns)*.
+
+Similar to *tuples*, every <u>newly defined *struct*</u> is considered its **own data type** (which can be specified in methods and associated functions).
+
+* Structs are declared with the `struct` keyword.
+* User-defined **fields** and **values** are simply added to the struct.
 
 ```rust
-// struct declaration
+// a struct declaration
+struct User {
+    username: String,
+    email: String,
+    sign_in_count: u64,
+    active: bool,
+}
+
+// initialization using a struct literal
+let user1 = User {
+    email: String::from("hotman@hotmail.com"),
+    username: String::from("someusername123"),
+    active: true,
+    sign_in_count: 1,
+}
+```
+
+To use a struct after defining it, we create an instance of that struct *(called a struct literal)*.
+* **Struct literals** are initialized using the `let instance_of_struct = struct_name {}` syntax.
+
+#### Methods
+
+* User-defined **methods** and **traits** implemented with the [`impl struct_name`](https://doc.rust-lang.org/std/keyword.impl.html) syntax.
+* `self` is always given as the *first parameter* (references the given instance of a struct) in a struct's method.
+
+```rust
+// another struct declaration
 struct Vec2 { 
     x:f64,
     y:f64,
 }
 
-// a struct lieral
+// a struct literal
 let v1 = Vec2 { x:1.0, y:3.0 }; 
 
 // another struct literal, peep that the order does not matter
 let v2 = Vec2 { y:2.0, x:4.0 };
 
-// implementing a method on a struct 
+// implementing a method on a struct that references its own value
 impl Vec2 { 
-    fn is_strictly_positive(self) -> bool {
-        self.value > 0
+    fn is_strictly_positive(&self) -> bool {
+        self.x > 0
     }
 }
 
+// method is called using dot notation, similar to other languages
 println!("{}", v1.is_strictly_positive());
+```
+
+#### Associated functions
+
+**Associated functions** are functions that *do not* take `self` as a parameter. 
+
+They don't necessarily have an instance of a struct to work, so they aren't considered *methods*, but they are still functions *associated with the struct* (:. "associated functions").
+
+> `String::from` is an associated function!
+>
+> Associated functions are often used for *constructors* that return a new instance of the struct.
+
+* Associated functions are similarly implemeted using the `impl struct_name` syntax.
+* Associated functions are **called** using the `struct_name::associated_function()` syntax.
+
+```rust
+impl Rectangle {
+    // notice we specify the return type as the struct Rectangle, which is considered its own type
+    fn square(size: u32) -> Rectangle {
+        // omission of semicolon since this new type a return value
+        Rectangle { width: size, height: size }
+    }
+}
+
+// calling of the associated function
+let square1 = Rectangle::square(3);
+```
+
+#### Struct update syntax
+
+To create a new instance of a struct which *uses most of an old instance's values* and only changes some, we use **struct update syntax**.
+* The syntax `..name_of_original_instance` specifies the remaining fields not explicitely set that should have the <u>*same value*</u>.
+
+```rust
+// based off the previously defined struct, User
+// note that the 2 below examples achieve the same thing, just that the latter displays the effectiveness of struct update syntax
+
+let user2 = User {
+    email: String::from("anotheremail@hotmail.com"),
+    username: String::from("anotherusername567"),
+    active: user1.active,
+    sign_in_count: user1.sign_in_count,
+};
+
+// vs...
+
+let user2 = User {
+    // these 2 fields are the ones that have had their values changed
+    email: String::from("anotheremail@hotmail.com"),
+    username: String::from("anotherusername567"),
+
+    // struct update syntax, which represents the active and sign_in_count fields and values from user1
+    ..user1,
+    };
 ```
 
 > Also see:
 > 
 > * On [struct update syntax](https://users.rust-lang.org/t/the-struct-update-syntax/16519)
+> * On [field init shorthand](https://doc.rust-lang.org/reference/expressions/struct-expr.html)
 > * On [structs as a whole](https://doc.rust-lang.org/book/ch05-01-defining-structs.html)
+
+<h3 align="center">Tuple structs</h3>
+
+Now that we've understood the concept of structs, let us take a look at its weirder younger brother, the **tuple struct**.
+
+**Tuple structs** have the *added meaning* that a struct name provides, but <u>does not</u> have any *field names* (only specifying field type).
+* Similarly defined using the `struct` keyword.
+* Instances of tuple struct declared using the `let instance_of_tuple_struct = tuple_struct()` syntax.
+
+```rust
+// tuple struct defined
+struct Color(i32, i32, i32);
+struct Point(i32, i32);
+
+// tuple struct instantiated using tuple struct literals
+let black = Color(0,0,0);
+let origin = Point(0,0);
+```
+
+The following applies for both *structs* and *tuple structs*:
+* They can be destructured.
+
+> Also see:
+> 
+> * On [unit-like structs without any fields](https://web.mit.edu/rust-lang_v1.25/arch/amd64_ubuntu1404/share/doc/rust/html/book/first-edition/structs.html)
 
 <h3 align="center">Traits 🧒</h3>
 
@@ -791,9 +901,13 @@ fn main() {
 > * On [marker traits](https://doc.rust-lang.org/std/marker/index.html)
 > * On [derive](https://doc.rust-lang.org/rust-by-example/trait/derive.html)
 
+That said, structs and traits aren't the only ways we can create custom data types in Rust. We also have...
+
 ---
 
 <h3 align="center"><a href="https://doc.rust-lang.org/book/ch06-01-defining-an-enum.html">Enums</a></h3>
+
+---
 
 <h3 align="center"><a href="https://doc.rust-lang.org/rust-by-example/std/option.html">Option</a></h3>
 
