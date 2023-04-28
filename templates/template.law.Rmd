@@ -1,0 +1,18 @@
+---
+title: Subject title
+author: Gongahkia
+date: Sem 1 Week1 
+output: pdf_document
+---
+
+---
+
+\tableofcontents
+
+---
+
+# Required readings
+
+\newpage
+
+# The rest of your document
