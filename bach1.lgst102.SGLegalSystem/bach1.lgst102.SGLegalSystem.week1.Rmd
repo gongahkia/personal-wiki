@@ -1,5 +1,5 @@
 ---
-title: Subject title
+title: LGST 102 The Singapore Legal System & Legal Analysis Skills
 author: Gongahkia
 date: Sem 1 Week 1  
 output: pdf_document

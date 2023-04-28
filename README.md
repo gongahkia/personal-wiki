@@ -91,11 +91,11 @@ $ nvim someExampleNotes.md
 
 #### Law notes
 
-Create new markdown *law notes* with `law` command to echo existing template into the file.
+Create new R markdown *law notes* with `law` command to echo existing template into the file.
 
 ```console
-$ law exampleNotes.md
-$ nvim exampleNotes.md
+$ law exampleNotes.Rmd
+$ nvim exampleNotes.Rmd
 ```
 
 <h2 align="center">Compiling Law notes 🎌</h2>
@@ -103,7 +103,7 @@ $ nvim exampleNotes.md
 Compile Law notes into *printable **PDFs*** by running the following command.
 
 ```console
-$ grf exampleLawNotes.md exampleLawNotes.pdf
+$ rcmp exampleNotes.Rmd
 ```
 
 ---
