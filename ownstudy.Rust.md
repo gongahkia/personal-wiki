@@ -1,5 +1,5 @@
-> *Edit on 27 April 2023:*
-> * Read through [Rust book](https://doc.rust-lang.org/stable/book/) [pg 125/554], add notes on Ownership section.
+> *Edit on 29 April 2023:*
+> * Read through [Rust book](https://doc.rust-lang.org/stable/book/) [pg 139/554], add notes on Ownership section.
 > * Make notes off this video (https://www.youtube.com/watch?v=zF34dRivLOw).
 
 # The Rust programming language 🦀
@@ -226,21 +226,6 @@ Unlike many other languages, the **boolean condition** is not surrounded by brac
 * `if`
 * `else`
 * `else if`
-
-#### [Match construct](https://doc.rust-lang.org/book/ch06-02-match.html)
-
-Rust also has the powerful `match` construct *(which functions similarly to `switch`, `case` statements in Typescript)*, and can be used to catch user-defined conditions, as well as errors and breakcases.
-
-* `match` and `=>` *(match arms)* syntax
-
-```rust
-fn im_feeling_lucky() -> i32 {
-    match feeling_lucky {
-        true => 6,
-        false => 4,
-    }
-}
-```
 
 <h3 align="center"><a href="https://doc.rust-lang.org/book/appendix-02-operators.html">Equality</a></h3>
 
@@ -741,7 +726,7 @@ To use a struct after defining it, we create an instance of that struct *(called
 #### Methods
 
 * User-defined **methods** and **traits** implemented with the [`impl struct_name`](https://doc.rust-lang.org/std/keyword.impl.html) syntax.
-* `self` is always given as the *first parameter* (references the given instance of a struct) in a struct's method.
+* `&self` is always given as the *first parameter* (references the given instance of a struct) in a struct's method.
 
 ```rust
 // another struct declaration
@@ -906,6 +891,190 @@ That said, structs and traits aren't the only ways we can create custom data typ
 ---
 
 <h3 align="center"><a href="https://doc.rust-lang.org/book/ch06-01-defining-an-enum.html">Enums</a></h3>
+
+> Enums allow you to define a type by **enumerating its possible values**. 
+>
+> Rust's enums are most similar to *algebraic data types* in functional languages, such as F#, OCaml, and Haskell.
+> 
+> *~ The Rust Programming Language* book
+
+Enums allow us to define custom data types in Rust, where the Enum's value can *only* be one of the variants listed.
+
+* **Enums** are defined with the `enum enum_name {}` syntax.
+* **Variants** of the Enum *(possible values)* are comma-separated.
+    * We specify the <u>**data type</u> of a variant** (any kind of data is ok, *Strings*, *numeric types*, *structs* etc.) with `()` brackets after the variant name.
+
+```rust
+// defining an enum, and its respective variants, V4 and V6
+// here, an IP address can only ever be V4 or V6, and so an enum is an appropriate way to represent this data 
+enum IP_address_type {
+    // variants of the Enum
+
+    // V4 variant is able to store a value of (127,0,0,1)
+    V4(u8,u8,u8,u8),
+
+    // V6 variant is able to store a String of value "::1"
+    V6(String),
+}
+```
+
+* We create an **instance of an Enum** with the `let instance_of_enum_name = enum_name::variant_name` syntax.
+    * Peep that the variants of an Enum are *namespaced* under its **identifier** (`enum` name) using the `::` belong-to operator.
+
+```rust
+// creating two instances of the Enum IP_address_type
+let four = IP_address_type::V4;
+let six = IP_address_type::V6;
+
+// values for each variant can also be specified according to their data type, as seen above
+let five = IP_address_type::V4(127,0,0,1);
+let seven = IP_address_type::V6(String::from("::1"));
+```
+
+#### Enum functions
+
+* This style of namespacing *variants* under their *identifier* allows us to <u>first define a function</u> that takes in the general `enum` type, and then <u>call the function with **either variant**</u>.
+
+```rust
+// generally defining a function that receives a parameter of type IP_address_types (enum)
+fn route(ip_type: IP_address_type) {
+    println!("{}", ip_type);
+}
+
+// calling the aforementioned function on the variants of the enum
+route(IP_address_type::V4);
+route(IP_address_type::V6);
+```
+
+#### Enum methods
+
+Similar to structs, we can define **methods** on Enums using the `impl enum_name {method_body}` syntax.
+* Note that **methods** receive `&self` as the first parameter, to reference the *given instance of the enum*.
+
+```rust
+// defining an enum Message and its variants, Quit, Move, Write, ChangeColor alongside their respective data types
+enum Message {
+    Quit,
+    Move { x:i32, y: i32 },
+    Write(String),
+    ChangeColor(i32, i32, i32),
+}
+
+// implementing a method on an enum
+impl Message {
+    fn call(&self) {
+        // method body
+    }
+}
+
+// creating an instance of the enum with its value of the String "hello"
+let m = Message::Write(String::from("hello"));
+
+// method is called using dot notation, as in other languages
+m.call();
+```
+
+#### [Option enum](https://doc.rust-lang.org/std/option/enum.Option.html)
+
+Rust does not have the *null* value (meaning there is no value there), a feature present in many other languages.
+
+In its place, we have the `Option<T>` enum, which is defined in the <u>standard library</u>, and encodes the concept of a value being present or absent.
+
+```rust
+// This is how the standard library defines the Option<T> enum and its variants, Some(T) and None
+enum Option<T> {
+    Some(T),
+    None,
+}
+
+// Here is how the Option values can be used to store different data types
+// present values
+let some_number = Some(5);
+let some_string = Some("a string");
+
+// absent values
+let absent_number: Option<i32> = None;
+```
+
+#### [Match expression](https://doc.rust-lang.org/book/ch06-02-match.html)
+
+Rust also has the powerful `match` expression *(which functions similarly to `switch`, `case` statements in Typescript)*, and can be used to catch user-defined conditions, as well as errors and breakcases.
+
+* **Match expressions* are created using the `match` and `=>` *(match arms)* syntax.
+
+```rust
+fn im_feeling_lucky() -> i32 {
+    match feeling_lucky {
+        true => 6,
+        false => 4,
+    }
+}
+```
+
+Additionally, **match expressions** are extremely useful when working with Enums.
+
+```rust
+// defining an enum and its variants
+enum Coin {
+    Penny,
+    Nickel,
+    Dime,
+    Quarter,
+}
+
+// a function that takes in the general type, and runs a match expression on the types
+fn value_in_cents(coin:Coin) {
+    match coin {
+        // match expression that matches the value of the type enum Coin
+        Coin::Penny => {
+            println!("Lucky penny!");
+            1
+        },
+        Coin::Nickel => 5,
+        Coin::Dime => 10,
+        Coin::Quarter => 25,
+    }
+}
+```
+
+Here are some other things to know about match expressions.
+
+##### Matches are exhaustive
+
+> Matches in Rust are *exhaustive*: we must exhaust every last possibility in order for the code to be valid.
+>
+> Especially in the case of `Option<T>`, when Rust prevents us from forgetting to explicitely handle the `None` case, it protects us from assuming that we have a value when we might have null, thus making the billion-dollar mistake discussed earlier.
+> 
+> *~ The Rust Programming Language* book
+
+As an example, the below code would result in a compile time error of `error[E0004]: non-exhaustive patterns: None not covered`.
+
+```rust
+fn plus_one(x:Option<i32>) -> Option<i32> {
+    match x {
+        Some(i) => Some (i + 1),
+    }
+}
+```
+
+##### `_` placeholder pattern
+
+`_` is a **match-all** pattern, which represents all other possible values that we don't specify.
+
+```rust
+let some_u8_value = 0u8;
+match some_u8_value {
+    // normal match expression and match arms
+    1 => println!("one"),
+    2 => println!("two"),
+    3 => println!("three"),
+
+    // match-all placeholder pattern, that represents all other unspecified values, in this case 4 to 255
+    _ => (),
+}
+```
+
+##### [`if let`](https://doc.rust-lang.org/rust-by-example/flow_control/if_let.html)
 
 ---
 
