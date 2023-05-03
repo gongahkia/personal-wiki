@@ -1,5 +1,5 @@
 > *Edit on 29 April 2023:*
-> * Read through [Rust book](https://doc.rust-lang.org/stable/book/) [pg 139/554], add notes on Ownership section.
+> * Read through [Rust book](https://doc.rust-lang.org/stable/book/) [pg 149/554], add notes on Ownership section.
 > * Make notes off this video (https://www.youtube.com/watch?v=zF34dRivLOw).
 
 # The Rust programming language 🦀
@@ -1095,6 +1095,8 @@ match some_u8_value {
 <h3 align="center"><a href="https://doc.rust-lang.org/book/ch09-00-error-handling.html">Error Handling</a></h3>
 
 <h3 align="center"><a href="https://doc.rust-lang.org/book/ch16-00-concurrency.html">Concurrency 👥</a></h3>
+
+<h3 align="center"><a href="https://doc.rust-lang.org/rust-by-example/mod.html">Modules</a></h3>
 
 ---
 
