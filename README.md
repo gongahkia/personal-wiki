@@ -21,10 +21,10 @@ This repository contains my notes from AY 2023-2027.
 * CS105 - Statistical Thinking for Data Science
 * IS111 - Intro to Programming
 * IS112 - Data Management
-  * [SQL](bach1.IS112.sql.md)
+  * [SQL](bach1.IS112.DataMan/bach1.IS112.sql.md)
 * IS113 - Web Application Development 1
-  * [HTML, CSS](bach1.IS113.htmlcss.md)
-  * [PHP](bach1.IS113.php.md)
+  * [HTML, CSS](bach1.IS113.WebApp/bach1.IS113.htmlcss.md)
+  * [PHP](bach1.IS113.WebApp/bach1.IS113.php.md)
 * IS215 - Digital Business (Technology and Transformation)
 * IS210 - Business Process Analysis and Solutioning
 * IS211 - Interaction Design and Prototyping
@@ -64,17 +64,17 @@ This repository contains my notes from AY 2023-2027.
 
 <h3 align="center">Own study 🏣</h3>
 
-* [C](ownstudy.C.md)
-* [C++](ownstudy.CPP.md)
-* [Bash](ownstudy.Bash.md)
-* [Java](ownstudy.Java.md)
-* [Typescript](ownstudy.Typescript.md)
-* [Nim](ownstudy.Nim.md)
-* [Rust](ownstudy.Rust.md)
-* [Go](ownstudy.Go.md)
-* [Haskell](ownstudy.Haskell.md)
-* [Mermaid](ownstudy.Markdown.Mermaid.md)
-* [Groff](ownstudy.Markdown.Groff.md)
+* [C](ownstudy/ownstudy.C.md)
+* [C++](ownstudy/ownstudy.CPP.md)
+* [Bash](ownstudy/ownstudy.Bash.md)
+* [Java](ownstudy/ownstudy.Java.md)
+* [Typescript](ownstudy/ownstudy.Typescript.md)
+* [Nim](ownstudy/ownstudy.Nim.md)
+* [Rust](ownstudy/ownstudy.Rust.md)
+* [Go](ownstudy/ownstudy.Go.md)
+* [Haskell](ownstudy/ownstudy.Haskell.md)
+* [Mermaid](ownstudy/ownstudy.Markdown.Mermaid.md)
+* [Groff](ownstudy/ownstudy.Markdown.Groff.md)
 
 ---
 
