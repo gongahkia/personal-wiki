@@ -62,7 +62,7 @@ Notes from AY 2023-2027.
 
 ---
 
-Own study 🏣
+### Own study 🏣
 
 * [C](ownstudy/)
 * [C++](ownstudy/)
