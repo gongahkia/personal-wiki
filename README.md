@@ -1,8 +1,8 @@
-<h1 align="center">SMU C&L NOTES 💻⚖️</h1>
+# SMU C&L NOTES 💻⚖️
 
-This repository contains my notes from AY 2023-2027.
+Notes from AY 2023-2027.
 
-<h2 align="center">Current focus 📌</h2>
+## Current focus 📌
 
 #### Computing
 
@@ -12,11 +12,11 @@ This repository contains my notes from AY 2023-2027.
 
 *
 
-<h2 align="center">Table of contents 📑</h2>
+## Table of contents 📑
 
-<h3 align="center">Computing 💽</h3>
+### Computing 💽
 
-<h4>Bach 1</h4>
+#### Bach 1
 
 * CS105 - Statistical Thinking for Data Science
 * IS111 - Intro to Programming
@@ -30,39 +30,39 @@ This repository contains my notes from AY 2023-2027.
 * IS211 - Interaction Design and Prototyping
 * CS206 - Software Product Management
 
-<h4>Bach 2</h4>
+#### Bach 2
 
-<h4>Bach 3</h4>
+#### Bach 3
 
-<h4>Bach 4</h4>
+#### Bach 4
 
 ---
 
-<h3 align="center">Law ✒️</h3>
+### Law ✒️
 
-<h4>Bach 1</h4>
+#### Bach 1
 
 * [LAW101_601 - Contract Law 1](bach1/law)
 * [LGST102 - The Singapore Legal System & Legal Analysis Skills](bach1/law)
 * [LAW102_602 - Contract Law 2](bach1/law)
 * [LAW103_603 - Criminal Law](bach1/law)
 
-<h4>Bach 2</h4>
+#### Bach 2
 
 * [LAW105_605 - Law of Torts](bach2/law)
 * [LAW201_621 - Corporate Law](bach2/law)
 * [LAW401 - Intellectual Property Law](bach2/law)
 
-<h4>Bach 3</h4>
+#### Bach 3
 
 * [LAW486 - Privacy and Data Protection Law](bach3/law)
 * [LGST201 - Company Law](bach3/law)
 
-<h4>Bach 4</h4>
+#### Bach 4
 
 ---
 
-<h3 align="center">Own study 🏣</h3>
+Own study 🏣
 
 * [C](ownstudy/)
 * [C++](ownstudy/)
@@ -78,7 +78,7 @@ This repository contains my notes from AY 2023-2027.
 
 ---
 
-<h2 align="center">Templates 🥮</h2>
+Templates 🥮
 
 #### Computing notes
 
