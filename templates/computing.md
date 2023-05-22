@@ -9,10 +9,6 @@
 
 ----------
 
-### Of interest:
-
-* Additional links
-
 ### Resources:
 
 * Additional resources

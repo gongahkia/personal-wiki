@@ -16,65 +16,65 @@ This repository contains my notes from AY 2023-2027.
 
 <h3 align="center">Computing 💽</h3>
 
-<h4>Bachelor 1</h4>
+<h4>Bach 1</h4>
 
 * CS105 - Statistical Thinking for Data Science
 * IS111 - Intro to Programming
 * IS112 - Data Management
-  * [SQL](bach1.IS112.DataMan/bach1.IS112.DataMan.sql.md)
+  * [SQL](bach1/computing/)
 * IS113 - Web Application Development 1
-  * [HTML, CSS](bach1.IS113.WebApp/bach1.IS113.WebApp.htmlcss.md)
-  * [PHP](bach1.IS113.WebApp/bach1.IS113.WebApp.php.md)
+  * [HTML, CSS](bach1/computing)
+  * [PHP](bach1/computing)
 * IS215 - Digital Business (Technology and Transformation)
 * IS210 - Business Process Analysis and Solutioning
 * IS211 - Interaction Design and Prototyping
 * CS206 - Software Product Management
 
-<h4>Bachelor 2</h4>
+<h4>Bach 2</h4>
 
-<h4>Bachelor 3</h4>
+<h4>Bach 3</h4>
 
-<h4>Bachelor 4</h4>
+<h4>Bach 4</h4>
 
 ---
 
 <h3 align="center">Law ✒️</h3>
 
-<h4>Bachelor 1</h4>
+<h4>Bach 1</h4>
 
-* [LAW101_601 - Contract Law 1](bach1.law101.Contract1)
-* [LGST102 - The Singapore Legal System & Legal Analysis Skills](bach1.lgst102.SGLegalSystem)
-* [LAW102_602 - Contract Law 2](bach1.law102.Contract2)
-* [LAW103_603 - Criminal Law](bach1.law103.Criminal)
+* [LAW101_601 - Contract Law 1](bach1/law)
+* [LGST102 - The Singapore Legal System & Legal Analysis Skills](bach1/law)
+* [LAW102_602 - Contract Law 2](bach1/law)
+* [LAW103_603 - Criminal Law](bach1/law)
 
-<h4>Bachelor 2</h4>
+<h4>Bach 2</h4>
 
-* [LAW105_605 - Law of Torts](bach2.law105.Tort)
-* [LAW201_621 - Corporate Law](bach2.law201.Corporate)
-* [LAW401 - Intellectual Property Law](bach2.law401.IPLaw)
+* [LAW105_605 - Law of Torts](bach2/law)
+* [LAW201_621 - Corporate Law](bach2/law)
+* [LAW401 - Intellectual Property Law](bach2/law)
 
-<h4>Bachelor 3</h4>
+<h4>Bach 3</h4>
 
-* [LAW486 - Privacy and Data Protection Law](bach3.law486.PrivacyDataProtectLaw)
-* [LGST201 - Company Law](bach3.lgst201.CompanyLaw)
+* [LAW486 - Privacy and Data Protection Law](bach3/law)
+* [LGST201 - Company Law](bach3/law)
 
-<h4>Bachelor 4</h4>
+<h4>Bach 4</h4>
 
 ---
 
 <h3 align="center">Own study 🏣</h3>
 
-* [C](ownstudy/ownstudy.C.md)
-* [C++](ownstudy/ownstudy.CPP.md)
-* [Bash](ownstudy/ownstudy.Bash.md)
-* [Java](ownstudy/ownstudy.Java.md)
-* [Typescript](ownstudy/ownstudy.Typescript.md)
-* [Nim](ownstudy/ownstudy.Nim.md)
-* [Rust](ownstudy/ownstudy.Rust.md)
-* [Go](ownstudy/ownstudy.Go.md)
-* [Haskell](ownstudy/ownstudy.Haskell.md)
-* [Mermaid](ownstudy/ownstudy.Markdown.Mermaid.md)
-* [Groff](ownstudy/ownstudy.Markdown.Groff.md)
+* [C](ownstudy/)
+* [C++](ownstudy/)
+* [Bash](ownstudy/)
+* [Java](ownstudy/)
+* [Typescript](ownstudy/)
+* [Nim](ownstudy/)
+* [Rust](ownstudy/)
+* [Go](ownstudy/)
+* [Haskell](ownstudy/)
+* [Mermaid](ownstudy/)
+* [Groff](ownstudy/)
 
 ---
 
@@ -105,13 +105,6 @@ Compile Law notes into *printable **PDFs*** by running the following command.
 ```console
 $ rcmp exampleNotes.Rmd
 ```
-
----
-
-> **References**
->
-> * [Dendron-style]() structure
-> * [Look and feel](https://betterprogramming.pub/taking-my-university-course-computer-science-notes-in-latex-7565875fdde7)
 
 ---
 
