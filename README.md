@@ -10,11 +10,8 @@ This repository contains my notes for `SMU C&L` AY 2023-2027.
 
 * CS105 - Statistical Thinking for Data Science
 * IS111 - Intro to Programming
-* IS112 - Data Management
-  * [SQL](bach1/computing/)
-* IS113 - Web Application Development 1
-  * [HTML, CSS](bach1/computing)
-  * [PHP](bach1/computing)
+* [IS112 - Data Management](bach1/computing/)
+* [IS113 - Web Application Development 1](bach1/computing)
 * IS215 - Digital Business (Technology and Transformation)
 * IS210 - Business Process Analysis and Solutioning
 * IS211 - Interaction Design and Prototyping
