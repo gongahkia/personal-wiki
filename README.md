@@ -47,7 +47,7 @@ This repository contains my notes for `SMU C&L` AY 2023-2027.
 
 ---
 
-### Own study
+## Own study
 
 * [C](ownstudy/)
 * [C++](ownstudy/)
