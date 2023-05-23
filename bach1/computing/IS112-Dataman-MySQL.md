@@ -1,4 +1,5 @@
-> *Continue from [here](https://www.youtube.com/watch?v=5OdVJbNCSso) @ `1:02:17`.*
+> *Continue from [here](https://www.youtube.com/watch?v=5OdVJbNCSso) @ `1:58:40`.*  
+> *MySQL download available [here](https://dev.mysql.com/downloads/).*
 
 # MySQL
 
@@ -270,6 +271,20 @@ Constraints are conditional statements **enforced** on a table's columns or fiel
 * `default`
     * `{column name and data type} default {deafult value}`
     * `alter table {table name} alter {column name} set default {default value}`
+* `primary key`
+    * `{column name and data type} primary key`
+    * `alter table {table name} add constraint primary key({column we want to add the primary key constraint to})`
+        * `{column name and data type} primary key auto_increment`
+        * `alter table {table name} auto_increment = {value we want primary key column field to begin at}`
+* `foreign key`
+    * `foreign key({foreign key column name in home table}) references {other table name}({primary key column name in other table})`
+    * `alter table {table name} drop foreign key {foreign key constraint name in MySQL GUI software}`
+    * `alter table {table name} foreign key({foreign key column name in home table}) references {other table name}({primary key column name in other table})`
+    * `alter table {table name} add constraint {desired foreign key constraint name} foreign key({foreign key column name in home table}) references {other table name}({primary key column name in other table})`
+    * `join`
+        * `select * from {table 1 name} inner join {table 2 name} on {table 1 name}.{table 1 shared column name} = {table 2 name}.{table 2 shared column name}`
+        * `select * from {table 1 name} left join {table 2 name} on {table 1 name}.{table 1 shared column name} = {table 2 name}.{table 2 shared column name}`
+        * `select * from {table 1 name} right join {table 2 name} on {table 1 name}.{table 1 shared column name} = {table 2 name}.{table 2 shared column name}`
 
 #### Unique
 
@@ -341,14 +356,229 @@ alter table products alter price set default 0.00
 /* allows us to alter table fields after creation to apply the default constraint to the specified field */ 
 ```
 
+#### Primary Key
+
+* The *primary key* constraint ensures that the given column's values must hold values that are **unique** and **not NULL**.  
+* A table can only have one *primary key* constraint.
+
+```sql
+create table transactions (
+    transaction_id INT primary key,
+    amount DECIMAL(5, 2)
+);
+/* adds the primary key constraint to the created table */
+
+alter table transactions add constraint primary key(transaction_id);
+/* allows us to alter table fields after creation to apply the primary key constraints to the specified column */ 
+```
+
+##### Auto_increment attribute
+
+* *Auto_increment* is an attribute that can be applied to a column that is set as a key, and it **automatically increments** the value of the primary key column's fields each row.
+* By default, *auto_increment* will start the primary key field value at 1.
+
+```sql
+create table transactions (
+    transaction_id INT primary key auto_increment,
+    amount DECIMAL(5, 2)
+);
+/* adds the auto_increment attribute to the primary key constraint when creating the table */
+
+insert into transactions (amount) values (4.99);
+/* note that we no longer need to indicate a transaction_id when adding entry rows to the table, the auto_increment attribute does the work for us */
+
+alter table transactions auto_increment = 1000;
+/* allows us to begin the primary key column field values at a different value other than 1 */
+```
+
+#### Foreign key
+
+* A *foreign key constraint* is a **foreign key** within one table that can be found as a **primary key** inside another table, allowing us to establish a **link** between two tables.
+
+```sql
+create table customers (
+    customer_id INT primary key auto_increment,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50)
+);
+/* creating the `customers` table */
+
+insert into customers (first_name, last_name)
+values ("Fred", "Fish"),
+       ("Larry", "Lobster"),
+       ("Bubble", "Bass");
+/* inserting entry row values into the `customers` table */
+
+create table transactions (
+    transaction_id INT primary key auto_increment,
+    amount DECIMAL(5, 2),
+    customer_id INT,
+    foreign key(customer_id) references customers(customer_id)
+);
+/* the last line here uses the foreign key constraint to link the customer_id column in transactions table with the customer_id column in the customers table */
+
+alter table transactions drop foreign key transaction_ibfk_1;
+/* to drop a foreign key constraint, we enter MySQL GUI software, see under the specified table name, Foreign Keys/{foreign key names}, and enter that foreign key accordingly */
+
+alter table transactions foreign key(customer_id) references customers(customer_id);
+/* allows us to alter an existing table by adding a foreign key constraint that we don't want to manually name */
+
+alter table transactions add constraint fk_customer_id foreign key(customer_id) references customers(customer_id)
+/* allows us to rename our foreign key, or name our foreign key constraint when adding it to our table */
+```
+
+##### Joins
+
+* A *join* is an operation we can apply on 2 tables that share a **related column** (like a *foreign key constraint*) to combine both tables into one.
+* There are 3 kinds of *joins* we will cover:
+    * `inner join`
+        * join together any matching row from **both tables** based on a common shared column
+    * `left join`
+        * join together any matching row from **both tables** based on a common shared column, and display all shared rows AND any unmatched rows on the **left** table
+    * `right join`
+        * join together any matching row from **both tables** based on a common shared column, and display all shared rows AND any unmatched rows on the **right** table
+
+```sql
+select * from transactions inner join customers on transactions.customer_id = customers.customer_id;
+/* creates an INNER JOIN based on the shared foreign key `customer_id` column, it excludes fields that are not shared in terms of value as well! */
+
+select * from transactions left join customers on transactions.customer_id = customers.customer_id;
+/* creates a LEFT JOIN based on the shared foreign key `customer_id` column, it excludes fields that are not shared BUT displays unmatched rows from the LEFT table*/
+
+select * from transactions right join customers on transactions.customer_id = customers.customer_id;
+/* creates a RIGHT JOIN based on the shared foreign key `customer_id` column, it excludes fields that are not shared BUT displays unmatched rows from the RIGHT table*/
+```
+
+---
+
+## [Logical operators](https://www.w3schools.com/mysql/mysql_and_or.asp)
+
+Functions similarly as in any other low and high-level programming language.
+
+### KEYWORDS
+* `where`
+    * used to scope out **conditional checks** for a given field, row or column in MySQL
+* `and`
+* `or`
+* `not`
+
+---
+
+## [Functions](https://www.w3schools.com/mysql/mysql_ref_functions.asp)
+
+### KEYWORDS
+* `as`
+    * used to define **aliases** for column names in MySQL
+* `count()`
+* `max()`
+* `min()`
+* `avg()`
+* `sum()`
+* `concat()`
+
+> See the [MySQL website](https://www.w3schools.com/mysql/mysql_ref_functions.asp) for other functions.
+
+---
+
+## Clauses
+
+Clauses are keywords we use to **tweak the displayed data** after we have queried it.
+
+### KEYWORDS
+* `order by` 
+    * `select {query selection} from {table name} order by {column name we want to order the entries by}`
+    * `select {query selection} from {table name} order by {column name we want to order the entries by} desc`
+* `limit`
+    * `select {query selection} from {table name} limit {number of entry rows we want returned}`
+    * `select {query selection} from {table name} limit {number of entry rows we want offset before displaying the next value}, {number of entry rows we want returned}`
+* `union`
+    * `select {query selection} from {table 1 name} union select {query selection} from {table 2 name}`
+    * `select {query selection} from {table 1 name} union all select {query selection} from {table 2 name}`
+* self join
+    * `select {query selection} from {table 1 name} as {table 1 alias} inner join {table 2 name} as {table 2 alias} on {table 1 alias}.{shared column name} = {table 2 alias}.{shared column name}`
+    * `select {query selection} from {table 1 name} as {table 1 alias} left join {table 2 name} as {table 2 alias} on {table 1 alias}.{shared column name} = {table 2 alias}.{shared column name}`
+    * `select {query selection} from {table 1 name} as {table 1 alias} right join {table 2 name} as {table 2 alias} on {table 1 alias}.{shared column name} = {table 2 alias}.{shared column name}`
+
+#### Order by
+
+The *order by* clause sorts the results of a query in **ascending** or **descending** order.
+* *Order by* orders the fields by default in **ascending order** (`ASC`).
+* **Descending order** (`DESC`) has to be explicitely stated.
+
+```sql
+select * from employees order by last_name;
+/* by default the fields will be ordered in ASCENDING order */
+
+select * from employees order by last_name desc;
+/* the `desc` will order the results in DESCENDING order */
+```
+
+#### Limit
+
+The *limit clause* limits the number of **entry rows displayed** from a given number of records.
+
+```sql
+select * from customers limit 1;
+/* this sets a limit clause of 1, displaying a single row of field value entries */
+
+select * from customers limit 2, 1;
+/* this sets an OFFSET of 2 before displaying the next one entry row, essentially displaying the THIRD row entry */
+```
+
+The following are *technically not clauses*, but...
+
+#### Union operator
+
+The *union operator* **combines the results** of two or more `select` statements.
+
+```sql
+select * from income union select * from expenses;
+/* REMOVES all duplicates, creates a shared table that displays both the income and expenses data at one go */
+
+select * from income union all select * from expenses;
+/* INCLUDES all duplicates, creates a shared table that displays both the income and expenses data at one go */
+```
+
+#### Self join
+
+* A *self join* **joins together** another copy of a table to itself, to allow for easier comparison of rows from the same table.
+* There are 3 kinds of *self joins* we will cover:
+    * `inner join`
+        * join together any matching row from **both copies of the table** based on a common shared column
+    * `left join`
+        * join together any matching row from **both copies of the table** based on a common shared column, and display all shared rows AND all columns on the **left copy** of the table
+    * `right join`
+        * join together any matching row from **both tables of the table** based on a common shared column, and display all shared rows AND all columns on the **right copy** of the table
+
+```sql
+alter table customers add referral_id INT;
+update customers set referral_id = 1 where customer_id = 2;
+update customers set referral_id = 2 where customer_id = 3;
+update customers set referral_id = 2 where customer_id = 4;
+
+select * from customers as a inner join customers as b on a.referral_id = b.customer_id;
+/* inner join functions similarly to the join discussed previously, except this common shared column is taken from a copy of the same table */
+
+select customer_id, a.first_name, a.last_name, b.first_name, b.last_name from customers as a inner join customers as b on a.referral_id = b.customer_id;
+/* we can similarly use the dot notation syntax to identify which table each field we want displayed in query selection refers to */
+
+select * from customers as a left join customers as b on a.referral_id = b.customer_id;
+/* left join functions similarly to the join discussed previously, except this common shared column is taken from a copy of the same table, and it displays all columns from the LEFT COPY of the table */
+
+select * from customers as a right join customers as b on a.referral_id = b.customer_id;
+/* right join functions similarly to the join discussed previously, except this common shared column is taken from a copy of the same table, and it displays all columns from the RIGHT COPY of the table *
+```
+
 ---
 
 ## Other shit
 
-#### KEYWORDS
+### KEYWORDS
 * `current_date()`
 * `current_time()`
 * `now()`
+* `%`
+* `_`
 
 #### Current date and time
 
@@ -362,5 +592,27 @@ Basic arithmetic operations (`+`/`-`) can be performed on the data or time value
     * returns the current time in the specified MySQL format
 * `now()`
     * returns the current date and time in the specified MySQL format
+
+#### Wild card characters
+
+* *Wild card characters* are used to substitute **one or more characters** in a string.
+    * `like` operator: replacs the *=* operator when comparing VARCHAR with a wild card operator
+    * `%` wild card operator: **any number** of random characters
+    * `_` wild card operator: **one** random character
+
+```sql
+select * from employees where job like "sp%";
+/* this searches for words that start with a "sp" */
+
+select * from employees where first_name like "_";
+/* this searches for words that are just any singular character */ 
+
+select * from employees where job like "_a%";
+/* BOTH wild card operators can be combined */ 
+/* this searches for words that have an 'a' as their second character, and have an undefined number of characters after the 'a', like "janitor" */
+
+select * from employees where hire_date like "____-__-03";
+/* wild card operators work on DATES as well */
+```
 
 ---
