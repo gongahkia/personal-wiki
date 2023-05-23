@@ -1,20 +1,10 @@
-# SMU C&L NOTES 💻⚖️
+# University notes
 
-Notes from AY 2023-2027.
+This repository contains my notes for `SMU C&L` AY 2023-2027.
 
-## Current focus 📌
+## Notes
 
-#### Computing
-
-*
-
-#### Law
-
-*
-
-## Table of contents 📑
-
-### Computing 💽
+### Computing
 
 #### Bach 1
 
@@ -36,9 +26,7 @@ Notes from AY 2023-2027.
 
 #### Bach 4
 
----
-
-### Law ✒️
+### Law
 
 #### Bach 1
 
@@ -62,7 +50,7 @@ Notes from AY 2023-2027.
 
 ---
 
-### Own study 🏣
+### Own study
 
 * [C](ownstudy/)
 * [C++](ownstudy/)
@@ -78,7 +66,7 @@ Notes from AY 2023-2027.
 
 ---
 
-Templates 🥮
+### Templates
 
 #### Computing notes
 
@@ -98,7 +86,9 @@ $ law exampleNotes.Rmd
 $ nvim exampleNotes.Rmd
 ```
 
-<h2 align="center">Compiling Law notes 🎌</h2>
+---
+
+### Compiling Law notes
 
 Compile Law notes into *printable **PDFs*** by running the following command.
 
