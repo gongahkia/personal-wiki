@@ -1,7 +1,6 @@
-> *Continue from [here](https://www.youtube.com/watch?v=5OdVJbNCSso) @ `2:10:00`.*  
 > *MySQL download available [here](https://dev.mysql.com/downloads/).*
 
-# MySQL
+# MySQL, the poor man's excel.
 
 ![](https://1000logos.net/wp-content/uploads/2020/08/MySQL-Logo.jpg)
 
@@ -498,6 +497,17 @@ Clauses are keywords we use to **tweak the displayed data** after we have querie
     * `select {query selection} from {table 1 name} as {table 1 alias} inner join {table 2 name} as {table 2 alias} on {table 1 alias}.{shared column name} = {table 2 alias}.{shared column name}`
     * `select {query selection} from {table 1 name} as {table 1 alias} left join {table 2 name} as {table 2 alias} on {table 1 alias}.{shared column name} = {table 2 alias}.{shared column name}`
     * `select {query selection} from {table 1 name} as {table 1 alias} right join {table 2 name} as {table 2 alias} on {table 1 alias}.{shared column name} = {table 2 alias}.{shared column name}`
+* `group by`
+    * `select {aggregate function}({column name}), {other column names} from {table name} group by {column name we want to aggregate all entry rows by}`
+    * `rollup`
+        * `select {aggregate function}({column name}), {other column names} from {table name} group by {column name we ant to aggregate all entry rows by} with rollup`
+* `on delete`
+    * `on delete set null`
+        * `create table {table name} ({table contents}, on delete set null)`
+        * `alter table {table name} add constraint {foreign key constraint name} foreign key({column name of foreign key}) references {other table name}({column name of foreign key of other table}) on delete set null`
+    * `on delete cascade`
+        * `create table {table name} ({table contents}, on delete cascade)`
+        * `alter table {table name} add constraint {foreign key constraint name} foreign key({column name of foreign key}) references {other table name}({column name of foreign key of other table}) on delete cascade`
 
 #### Order by
 
@@ -569,6 +579,64 @@ select * from customers as a right join customers as b on a.referral_id = b.cust
 /* right join functions similarly to the join discussed previously, except this common shared column is taken from a copy of the same table, and it displays all columns from the RIGHT COPY of the table *
 ```
 
+#### Group by
+
+* The *group by* clause **aggregates** all rows by a specific column.
+* The *group by* clause is often used with other **aggregate functions** *(SUM(), MAX(), MIN(), AVG(), COUNT())*.
+
+```sql
+select sum(amount), order_date from transactions group by order_date;
+/* using the `group by` clause to sort a table's field values by a given column */
+```
+
+##### Rollup
+
+* *Rollup* is an extension of the group by clause, and it **produces another row that displays the grand total** *(super aggregate value)*.
+
+```sql
+select sum(amount), order_date from transactions group by order_date with rollup;
+/* produces a separate additional row that displays the grand total of the queried column */
+
+select count(transaction_id) as "number of orders", customer_id from transactions group by customer_id with rollup;
+/* another example of the rollup clause added to the group by clause */
+```
+
+#### On delete
+
+* The *on delete* clause has 2 versions:
+    * `on delete set null`
+        * When a foreign key is deleted, **replace the foreign key with NULL**.
+    * `on delete cascade`
+        * When a foreign key is deleted, **delete the entire row**.
+
+```sql
+create table transactions (
+    transaction_id INT PRIMARY KEY,
+    amount DECIMAL(5, 2),
+    customer_id INT,
+    order_date DATE,
+    FOREIGN KEY (customer_id) references customers(customer_id)
+    on delete set null
+);
+/* the `on delete set null` clause is added to the table `transactions` when it is first created*/
+
+create table transactions (
+    transaction_id INT PRIMARY KEY,
+    amount DECIMAL(5, 2),
+    customer_id INT,
+    order_date DATE,
+    FOREIGN KEY (customer_id) references customers(customer_id)
+    on delete cascade
+);
+/* the `on delete cascade` clause is added to the table `transactions` when it is first created*/
+
+alter table transactions add constraint fk_customer_id foreign key(customer_id) references customers(customer_id) on delete set null;
+/* the foreign key `fk_customer_id` added to the transactions table and add the `on delete set null` clause */
+
+alter table transactions add constraint fk_customer_id foreign key(customer_id) references customers(customer_id) on delete cascade;
+/* the foreign key `fk_customer_id` added to the transactions table and add the `on delete cascade` clause */
+```
+
 ---
 
 ## Other shit
@@ -587,6 +655,17 @@ select * from customers as a right join customers as b on a.referral_id = b.cust
     * `create index {index name} on {table name}({column name we want to create index from})`
     * `create index {multi-column index name} on {table name}({column names we want to create the multi-column index from, comma-separated})`
     * `alter table {table name} drop index {index / multi-column index name}`
+* Subquery
+    * `select {column names for primary query, comma-separated}, {subquery} as {optional alias for subqeuery} from {table name}`
+* Stored procedure
+    * `DELIMITER {user-defined delimiter characters, usually $$} create procedure {procedure name}() begin {procedure contents}; end{aforementioned user-specified delimiter characters} DELIMITER ;`
+    * `call {stored procedure name}()`
+    * `drop procedure {stored procedure name}`
+    * `DELIMITER {user-defined delimiter characters, usually $$} create procedure {procedure name}({optional stored procedure agruments}) begin {procedure contents that utilize the arguments taken in by the stored procedure}; end{aforementioned user-specified delimiter characters} DELIMITER ;`
+    * `call {stored procedure name}({arguments supplied to the stored procedure})`
+* Trigger
+    * `create trigger {trigger name} before {trigger conditions} on {column name} for each row set {trigger body, consisting of actions to alter the given column};`
+    * `create trigger {trigger name} after {trigger conditions} on {column name} for each row set {trigger body, consisting of actions to alter the given column};`
 
 #### Current date and time
 
@@ -661,6 +740,83 @@ create index last_name_first_name_index on customers(last_name, first_name);
 
 alter table customers drop index last_name_first_name_index;
 /* drops the previously created multi-column index */
+```
+
+#### Subquery
+
+A *subquery* is a **query within another query**.
+
+```sql
+select first_name, last_name, hourly_pay, 
+    (select avg(hourly_pay) from employees) as average_pay
+from employees;
+/* note that the above is a single SQL line, but I have split it up for easier viewing, and `(select avg(hourly_pay) from employees)` is a subquery that returns a field and assigns it the alias `average_pay` */
+```
+
+#### Stored procedure
+
+* A *stored procedure* is **prepared SQL code that you can save**, useful for SQL queries that you often make.
+* A *stored procedure* is the equivalent of a user-defined function in SQL.
+
+```sql
+DELIMITER $$
+create procedure get_customers() 
+begin
+    select * from customers;
+end $$
+DELIMITER ;
+/* stored procedure definitions are prefixed and suffixed by `begin` and `end{delimiter character}` statements respectively, and the delimiter has to be defined by us before the procedure as `$$` so that we can indicate to SQL that the procedure ends with the `end $$` piece of code, as by default SQL takes `;` to be the delimiter character */
+
+call get_customers();
+/* calls the stored procedure */
+
+drop procedure get_customers;
+/* drops the stored procedure */
+
+DELIMITER $$
+create procedure find_customer(IN id INT)
+begin
+    select * from customers where customer_id = id;
+end $$
+DELIMITER ;
+/* stored procedures can also take in arguments, similar to functions in other languages */
+
+call find_customer(1);
+/* calling a stored procedure with a supplied argument */
+```
+
+#### [Trigger](https://www.geeksforgeeks.org/sql-trigger-student-database/)
+
+A *trigger* ensures that when an event occurs, **an action is carried out in response to that trigger**.
+
+```sql
+create trigger before_hourly_pay_update_trigger
+before update on employees
+for each row
+set new.salary = (new.hourly_pay * 40 * 52);
+/* creation of a trigger that runs before an update on the employees column */
+
+create trigger before_hourly_pay_insert_trigger 
+before insert on employees
+for each row
+set new.salary = (new.hourly_pay * 40 * 52);
+/* creation of a trigger that runs before an insert is carried out on the employees column */
+
+create trigger after_salary_delete_trigger
+after delete on employees
+for each row
+update expenses
+set expense_total = expense_total - old.salary
+where expense_name = "salaries";
+/* creation of a trigger that runs after a deletion is carried out on the employees column */
+
+create trigger after_salary_insert_trigger
+after insert on employees
+for each row
+update expenses
+set expense_total = expense_total + new.salary
+where expense_name = "salaries";
+/* creation of a trigger that runs after an insertion is carried out on the employees column */
 ```
 
 ---
