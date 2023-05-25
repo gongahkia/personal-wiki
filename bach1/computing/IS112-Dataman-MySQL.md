@@ -579,6 +579,14 @@ select * from customers as a right join customers as b on a.referral_id = b.cust
 * `now()`
 * `%`
 * `_`
+* View
+    * `create view {view name} as select {column names from desired table, comma-separated} from {desired table name}`
+    * `drop view {view name}`
+* Index
+    * `show indexes from {table name}`
+    * `create index {index name} on {table name}({column name we want to create index from})`
+    * `create index {multi-column index name} on {table name}({column names we want to create the multi-column index from, comma-separated})`
+    * `alter table {table name} drop index {index / multi-column index name}`
 
 #### Current date and time
 
@@ -613,6 +621,46 @@ select * from employees where job like "_a%";
 
 select * from employees where hire_date like "____-__-03";
 /* wild card operators work on DATES as well */
+```
+
+#### Views
+
+* *Views* are virtual tables **created from the result-set of SQL statements**, that are made up of fields and columns from actual tables in the database.
+* *Views* are not real tables, but can be interacted with as if they were.
+
+> One main benefit of using *views* is that the view's data **automatically updates** when the original table has data altered *(similar to a pointer and memory address)*.
+
+```sql
+create view employee_attendance as select first_name, last_name from employees;
+/* creates a new view titled `employee_attendance` from the first_name last_name columns from the `employees` table */
+
+select * from employee_attendance order by last_name ASC;
+/* views can be interacted with as normal tables, so all previously-established SQL actions are valid */
+
+drop view employee_attendance;
+/* drops the view `employee_attendance` */
+```
+
+#### [Indexes](https://www.w3schools.com/sql/sql_create_index.asp)
+
+* *Indexes* allow us to find field values within a column much quicker, similar to a **binary tree data structure**.
+* Multi-column *indexes* are also possible to allow for rapid querying of field values across multiple columns.
+
+```sql
+show indexes from customers;
+/* shows the current indexes for the table `customers` */
+
+create index last_name_index on customers(last_name);
+/* creates the index `last_name_index` on the table `customers` column `last_name` */
+
+select * from customers where last_name = "Puff";
+/* this search now runs much quicker due to the creation of the index `last_name_index` */
+
+create index last_name_first_name_index on customers(last_name, first_name);
+/* creates the mulit-column index `last_name_first_name_index` on the table `customers` column `last_name` and `first_name` */
+
+alter table customers drop index last_name_first_name_index;
+/* drops the previously created multi-column index */
 ```
 
 ---
