@@ -60,6 +60,7 @@ This repository contains my notes for `SMU C&L` AY 2023-2027.
 * [Haskell](ownstudy/)
 * [Mermaid](ownstudy/)
 * [Groff](ownstudy/)
+* [Dart](ownstudy/)
 
 ---
 
@@ -92,7 +93,3 @@ Compile Law notes into *printable **PDFs*** by running the following command.
 ```console
 $ rcmp exampleNotes.Rmd
 ```
-
----
-
-![](https://user-images.githubusercontent.com/117062305/230006500-b6b862da-7263-4012-88ec-8506328541a5.png)

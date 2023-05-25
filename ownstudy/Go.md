@@ -9,34 +9,6 @@
 
 <img src="https://www.sketchappsources.com/resources/source-image/gophers-pack-marialetta.png" height="300" align="right"/>
 
-<!-- vim-markdown-toc GFM -->
-
-* [What is Go?](#what-is-go)
-* [Quick start](#quick-start)
-    * [Installation](#installation)
-    * [Usage](#usage)
-        * [`go build`](#go-build)
-        * [`go run`](#go-run)
-* [I love Go <3](#i-love-go-3)
-    * [Important to establish](#important-to-establish)
-    * [Printing to the console && formatted strings](#printing-to-the-console--formatted-strings)
-    * [Comments](#comments)
-    * [Variable declaration](#variable-declaration)
-    * [Data Types](#data-types)
-    * [Data Structures](#data-structures)
-    * [Conditional flow](#conditional-flow)
-    * [Equality](#equality)
-    * [Loops](#loops)
-    * [Functions](#functions)
-    * [Object-oriented programming](#object-oriented-programming)
-        * [Classes](#classes)
-        * [Objects](#objects)
-        * [Inheritance](#inheritance)
-        * [Scoping](#scoping)
-* [Reference material](#reference-material)
-
-<!-- vim-markdown-toc -->
-
 ## What is Go?
 
 Go is a **statically typed**, **compiled** programming language.
