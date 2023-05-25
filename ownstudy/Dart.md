@@ -45,9 +45,9 @@ var image = {
 };
 ```
 
-However, we didn't come here to enjoy some weakly typed shit, so let's learn Dart's data types!
+However, we didn't come here to enjoy some weakly typed shit, so let's learn about Dart's data types!
 
-## Data types
+### Data types && data structures
 
 * `int`
 * `double`
@@ -59,13 +59,24 @@ However, we didn't come here to enjoy some weakly typed shit, so let's learn Dar
 ```dart
 int num1 = 1;
 double dec1 = 1.2;
-String name = "gongkiasai";
+String name1 = "gongkiasai";
+
+List list1 = List(3);
+list1[0] = 'Shit';
+list1[1] = 'ok';
+list2[2] = 'Dart';
+
+Map map1 = Map();
+map1['key1'] = 'value 1';
+map2['key2'] = 'value 2';
+map3['key3'] = 'value 3';
 ```
 
-## [Null safety](https://dart.dev/null-safety)
+### [Null safety](https://dart.dev/null-safety)
 
 In general, null safety is very sexy.
 
 > *"The Dart language enforces sound null safety."*  
 > ~ Dart lang docs
 
+### Default value
