@@ -1,4 +1,4 @@
-> *Continue from [here](https://www.youtube.com/watch?v=5OdVJbNCSso) @ `1:58:40`.*  
+> *Continue from [here](https://www.youtube.com/watch?v=5OdVJbNCSso) @ `2:10:00`.*  
 > *MySQL download available [here](https://dev.mysql.com/downloads/).*
 
 # MySQL
