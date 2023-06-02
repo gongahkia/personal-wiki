@@ -1,21 +1,16 @@
 > Carry on from Video 3, Arrays Data Structure [here](https://frontendmasters.com/courses/algorithms/).
 
-## Resources to read
-
-* [Grokking algorithms](resources/Grokking-Algorithms.pdf)
-* [The Introduction to Algorithms](resources/Introduction-to-Algorithms.pdf)
-* [For programmers who wanna be the very best](resources/Common-Sense-Guide-to-Data-Structures.pdf)
-
 # Algorithms
 
 This is based off [Prime's Algo course on Frontend Masters](https://frontendmasters.com/courses/algorithms/), which is conducted in Typescript.
 
-Let's start easy.
+## Resources to read
 
-```ts
-const array = [];
-// arrays are the simplest data structure
-```
+Go read this in your own time. Else you gonna suck!
+
+* [Grokking algorithms](resources/Grokking-Algorithms.pdf)
+* [The Introduction to Algorithms](resources/Introduction-to-Algorithms.pdf)
+* [For programmers who wanna be the very best](resources/Common-Sense-Guide-to-Data-Structures.pdf)
 
 ## Time and Space Complexity
 
@@ -146,3 +141,15 @@ Covered later!
 ```
 
 * Time complexity is `0(sqrt(n))`.
+
+## Data structures
+
+### Array
+
+* Fixed size, continiguous memory chunks.
+    * That means you cannot grow an array.
+    * There is no `insert_at`, `push` or `pop`. Those can be implemented separately, but under the hood arrays function based on the above characteristic.
+
+* Time complexity of `0(1)`. (*get, insertion, deletion*)
+* **Constant time**, as we do a constant amount of things regardless of input size.
+* Number of computation steps do not increase with input.
