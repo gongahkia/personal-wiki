@@ -49,17 +49,18 @@ This repository contains my notes for `SMU C&L` AY 2023-2027.
 
 ## Own study
 
+* [Algorithms and Data structures](ownstudy/)
+* [Bash](ownstudy/)
 * [C](ownstudy/)
 * [C++](ownstudy/)
-* [Bash](ownstudy/)
+* [Go](ownstudy/)
+* [Groff](ownstudy/)
+* [Haskell](ownstudy/)
 * [Java](ownstudy/)
-* [Typescript](ownstudy/)
+* [Mermaid](ownstudy/)
 * [Nim](ownstudy/)
 * [Rust](ownstudy/)
-* [Go](ownstudy/)
-* [Haskell](ownstudy/)
-* [Mermaid](ownstudy/)
-* [Groff](ownstudy/)
+* [Typescript](ownstudy/)
 
 ---
 
