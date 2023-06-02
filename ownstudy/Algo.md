@@ -155,4 +155,3 @@ Covered later!
 * Number of computation steps do not increase with input.
 
 ![image_2023-06-02_17-35-17](https://github.com/gongahkia/university-notes/assets/117062305/a4f65168-40f2-45a5-ba6d-03ced7a4f9c0)
-
