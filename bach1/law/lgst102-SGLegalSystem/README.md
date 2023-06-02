@@ -1,9 +1,9 @@
-<h1 align="center">Reference material 🧾</h1>
+# Reference material
 
-<h3>General readings</h3>
+## Readings
 
 *  
 
-<h3>Reference slides</h3>
+## Slides
 
 *  
