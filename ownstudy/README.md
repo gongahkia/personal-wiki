@@ -1,1 +1,1 @@
-# For my own study
+# My own study

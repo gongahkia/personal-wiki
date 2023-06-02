@@ -1,0 +1,147 @@
+> Carry on from Video 3, Arrays Data Structure [here](https://frontendmasters.com/courses/algorithms/).
+
+## Resources to read
+
+* [The Introduction to Algorithms](Intoduction-to-Algorithms.pdf)
+* [For programmers who wanna be the very best](Common-Sense-Guide-to-Data-Structures.pdf)
+
+# Algorithms
+
+This is based off [Prime's Algo course on Frontend Masters](https://frontendmasters.com/courses/algorithms/), which is conducted in Typescript.
+
+Let's start easy.
+
+```ts
+const array = [];
+// arrays are the simplest data structure
+```
+
+## Time and Space Complexity
+
+### Important concepts
+1. Growth is with respect to the input.
+2. Constants are dropped.
+3. Worst case is usually the way we measure.
+
+### Big O notation
+
+* Big O categorizes an algorithm's *time* or *memory requirements* based on the size of input.
+* Big O helps us make decisions about what data structures and algorithms we should use.
+
+> TLDR: As your input grows, how fast does computation or memory grow?
+
+Eg 1.
+
+```ts
+function sum_char_codes(n:string): number {
+    let sum:number = 0;
+    for (let i = 0; i < n.length, ++i) {
+        sum += n.charCodeAt(i);
+    }
+    return sum;
+}
+```
+
+* **Look for loops!**
+* Time complexity is `0(N)`.
+
+Eg 2.
+
+```ts
+function sum_char_codes(n:string): number {
+    let sum:number = 0;
+    for (let i = 0; i < n.length, ++i) {
+        sum += n.charCodeAt(i);
+    }
+    for (let i = 0; i < n.length, ++i) {
+        sum += n.charCodeAt(i);
+    }
+    return sum;
+}
+```
+
+* Time complexity is still `0(N)`
+    * This is as `0(2N)` -> `0(N)`.
+    * **Constants are dropped**.
+
+Eg 3.
+
+```ts
+function sum_char_codes(n:string): number {
+    let sum:number = 0;
+    for (let i = 0; i < n.length, ++i) {
+        if (charCode === 69) {
+            return sum;
+        }
+        sum += n.charCodeAt(i);
+    }
+    return sum;
+}
+```
+
+* Time complexity is still `0(N)`.
+    * This is as we usually consider **worse case**, which is `0(N)`.
+
+### Common complexities we will see
+
+![](https://he-s3.s3.amazonaws.com/media/uploads/ece920b.png)
+
+Eg 4.
+
+```ts
+function sum_char_codes(n:string): number {
+    let sum:number = 0;
+    for (let i = 0; i < n.length, ++i) {
+        for (let i = 0; i < n.length, ++i) {
+            sum += n.charCodeAt(i);
+        }
+    }
+    return sum;
+}
+```
+
+* **Count the loops!**
+* Time complexity is `0(N^2)`.
+
+Eg 5.
+
+```ts
+function sum_char_codes(n:string): number {
+    let sum:number = 0;
+    for (let i = 0; i < n.length, ++i) {
+        for (let i = 0; i < n.length, ++i) {
+            for (let i = 0; i < n.length, ++i) {
+                sum += n.charCodeAt(i);
+            }
+        }
+    }
+    return sum;
+}
+```
+
+* **Count the loops!**
+* Time complexity is `0(N^3)`.
+
+Eg 6.
+
+```md
+Quicksort algorithm
+```
+
+* Time complexity is `0(n log n)`.
+
+Eg 7. 
+
+```md 
+Binary search trees
+```
+
+* Time complexity is `0(log n)`.
+
+Eg 8.
+
+```md
+Covered later!
+```
+
+* Time complexity is `0(sqrt(n))`.

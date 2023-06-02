@@ -49,7 +49,7 @@ This repository contains my notes for `SMU C&L` AY 2023-2027.
 
 ## Own study
 
-* [Algorithms and Data structures](ownstudy/)
+* [Algorithms](ownstudy/)
 * [Bash](ownstudy/)
 * [C](ownstudy/)
 * [C++](ownstudy/)
