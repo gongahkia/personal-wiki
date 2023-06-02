@@ -153,3 +153,6 @@ Covered later!
 * Time complexity of `0(1)`. (*get, insertion, deletion*)
 * **Constant time**, as we do a constant amount of things regardless of input size.
 * Number of computation steps do not increase with input.
+
+![image_2023-06-02_17-35-17](https://github.com/gongahkia/university-notes/assets/117062305/a4f65168-40f2-45a5-ba6d-03ced7a4f9c0)
+
