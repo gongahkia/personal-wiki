@@ -2,8 +2,8 @@
 
 ## Resources to read
 
-* [The Introduction to Algorithms](Intoduction-to-Algorithms.pdf)
-* [For programmers who wanna be the very best](Common-Sense-Guide-to-Data-Structures.pdf)
+* [The Introduction to Algorithms](resources/Introduction-to-Algorithms.pdf)
+* [For programmers who wanna be the very best](resources/Common-Sense-Guide-to-Data-Structures.pdf)
 
 # Algorithms
 
