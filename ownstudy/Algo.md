@@ -2,6 +2,7 @@
 
 ## Resources to read
 
+* [Grokking algorithms](resources/Grokking-Algorithms.pdf)
 * [The Introduction to Algorithms](resources/Introduction-to-Algorithms.pdf)
 * [For programmers who wanna be the very best](resources/Common-Sense-Guide-to-Data-Structures.pdf)
 
