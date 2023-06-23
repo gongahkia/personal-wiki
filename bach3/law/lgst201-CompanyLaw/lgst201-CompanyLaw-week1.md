@@ -1,6 +1,6 @@
-# Date && Topic name [`S1W1 Criminal`]
+# `S1W1 Company Law`
 
-> **Class:** *module && class name*  [*Law 103 Criminal*]  
+> **Class:** *LGST 201 Company Law*  
 > **Subject:** *subject name*  
 > **Lecturer:** *Prof name*  
 

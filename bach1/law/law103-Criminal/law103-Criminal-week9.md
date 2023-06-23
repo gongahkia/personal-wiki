@@ -1,23 +1,18 @@
----
-title: Law 103_603 Criminal Law
-author: Gongahkia
-date: Sem 1 Week 9  
-output: pdf_document
----
+# `S1W9 Criminal`
+
+> **Class:** *Law 103 Criminal*  
+> **Subject:** *Criminal Justice Process, Power vs Permission*  
+> **Lecturer:** *Prof How Khang*  
 
 ---
 
-\tableofcontents
-
----
-
-# Required readings
+## Required readings
 
 * [Criminal Procedure Code 2010](https://sso.agc.gov.sg/Act/CPC2010#pr2-)
 * Reference slides   
     * [Week 9.1](https://docs.google.com/presentation/d/1v2W8V7L0dzVHo8IQyl1o2Z95M471VqKR3YLZKHacs4o/edit?usp=sharing)
 
-\newpage
+---
 
 # General overview
 
