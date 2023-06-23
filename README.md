@@ -47,20 +47,7 @@ This repository contains my notes for `SMU C&L` AY 2023-2027.
 
 ---
 
-## Own study
-
-* [Algorithms](ownstudy/)
-* [Bash](ownstudy/)
-* [C](ownstudy/)
-* [C++](ownstudy/)
-* [Go](ownstudy/)
-* [Groff](ownstudy/)
-* [Haskell](ownstudy/)
-* [Java](ownstudy/)
-* [Mermaid](ownstudy/)
-* [Nim](ownstudy/)
-* [Rust](ownstudy/)
-* [Typescript](ownstudy/)
+## [Own study](ownstudy/)
 
 ---
 
@@ -86,12 +73,10 @@ $ nvim exampleNotes.md
 
 ---
 
-> Edit this portion when I've formalised the process!
-
 ### Compiling Law notes
 
-Compile all existing *law markdown notes* into *printable **PDFs*** by running the following command.
+Compile *law markdown notes* into *a printable **PDF*** by running the following command and answering the prompts accordingly.
 
 ```console
-$ rcmp exampleNotes.Rmd
+$ rcmp exampleNotesWeek1.md exampleNotesWeek2.md exampleNotesWeek3.md
 ```
