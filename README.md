@@ -71,24 +71,26 @@ This repository contains my notes for `SMU C&L` AY 2023-2027.
 Create new markdown *computing notes* with `com` command to copy existing template into the file.
 
 ```console
-$ com someExampleNotes.md
-$ nvim someExampleNotes.md
+$ com exampleNotes.md
+$ nvim exampleNotes.md
 ```
 
 #### Law notes
 
-Create new R markdown *law notes* with `law` command to echo existing template into the file.
+Create new markdown *law notes* with `law` command to copy existing template into the file.
 
 ```console
-$ law exampleNotes.Rmd
-$ nvim exampleNotes.Rmd
+$ law exampleNotes.md
+$ nvim exampleNotes.md
 ```
 
 ---
 
+> Edit this portion when I've formalised the process!
+
 ### Compiling Law notes
 
-Compile Law notes into *printable **PDFs*** by running the following command.
+Compile all existing *law markdown notes* into *printable **PDFs*** by running the following command.
 
 ```console
 $ rcmp exampleNotes.Rmd
