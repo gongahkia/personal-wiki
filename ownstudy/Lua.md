@@ -1,5 +1,5 @@
-> Continue learning from [this video](https://www.youtube.com/watch?v=1srFmjt1Ib0) at `40:52`.  
-> Read the [documentation](https://www.lua.org/start.html) and add notes from there if neccesary.  
+> * Continue learning from [this video](https://www.youtube.com/watch?v=1srFmjt1Ib0) at `40:52`.  
+> * Read the [documentation](https://www.lua.org/start.html) and add notes from there if neccesary.  
 
 # `Lua`
 
