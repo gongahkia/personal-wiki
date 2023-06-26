@@ -1,4 +1,4 @@
-> Continue learning from [this video](https://www.youtube.com/watch?v=1srFmjt1Ib0) at `00:00:00`.  
+> Continue learning from [this video](https://www.youtube.com/watch?v=1srFmjt1Ib0) at `40:52`.  
 > Read the [documentation](https://www.lua.org/start.html) and add notes from there if neccesary.  
 
 # `Lua`
@@ -21,22 +21,72 @@
 
 ## Quickstart
 
-### Printing to the console
+Lua files end with the `.lua` file extension.
+
+### Printing to the console && comments
 
 * `print()`
+* `--`
+* `--[[ ]]`
+* `..`
 
 ```lua
 hello = "ah shit"
-print(hello)
--- this is a comment
 -- dynamically typed language, so no type annotations are required
+
+print(hello)
+print("this is the same as python")
+
+-- this is a single-line comment
+--[[ 
+    this is a multi-line comment
+]]
+
+local name = "gongahkia"
+print("my name is " .. name .. "and thanks") -- .. handles string concatenation
+```
+
+### Variables
+
+Variables can be initialized without a value, and will be automatically assigned the value *nil*.
+
+* `local` indicates the variable is **scoped locally**.
+
+```lua
+local local_variable = "shit" -- creates a variable within the local scope
 ```
 
 ### Data types
 
-```lua
+* `nil`
+* `number`
+* `string`
+* `boolean`
+* `tables`
+* `type()`
 
+```lua
+local eg_nil -- an initialized variable with no value is assigned the nil value
+local eg_nil2 = nil -- you can also manually assign it to clear and reassign variables
+local eg_number = 2
+local eg_string = "ah shit thanks so much g"
+local eg_boolean = true -- could be false also
+local eg_table = {
+    ['ah'] = "shit",     
+    ['good'] = "morning",
+    ['people'] = "thanks"
+}
+print(type(eg_table)) -- type() will print the data type of a given variable in Lua, and will return the type table in this case
 ```
+
+### Arithmetic
+
+Computer arithmetic follows BODMAS rules.
+
+* `+`/`-`/`*`/`/`
+* `^`
+* `%`
+* [Other Lua math functions](https://www.lua.org/pil/18.html)
 
 ### Functions
 
@@ -52,11 +102,11 @@ end
 doMath(2)
 ```
 
-### Data structure
+### Data structures
 
 Lua only has **one** data structure, the `table`, which is actually an associative array / dictionary.
 
-* Lua is **one-indexed** *(array indexes start from 1)*!
+* Lua tables are **one-indexed** *(array indexes start from 1)*!
 * `{}`
 
 ```lua
@@ -77,4 +127,10 @@ end
 -- iterating over said table with a for loop
 ```
 
-### [Coroutine](https://www.lua.org/pil/9.1.html)
+### Conditional flow
+
+```lua
+
+```
+
+### [Coroutines](https://www.lua.org/pil/9.1.html)
