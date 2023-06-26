@@ -47,13 +47,9 @@ This repository contains my notes for `SMU C&L` AY 2023-2027.
 
 ---
 
-## [Own study](ownstudy/)
+## Templates
 
----
-
-### Templates
-
-#### Computing notes
+### Computing notes
 
 Create new markdown *computing notes* with `com` command to copy existing template into the file.
 
@@ -62,7 +58,7 @@ $ com exampleNotes.md
 $ nvim exampleNotes.md
 ```
 
-#### Law notes
+### Law notes
 
 Create new markdown *law notes* with `law` command to copy existing template into the file.
 
