@@ -2,7 +2,7 @@
 > * Continue BroCode's PHP tutorial on youtube from [03:26:07] when I have learned SQL.
 > * Continue adding notes here for OOP in PHP.
 
-# The PHP scripting language
+# `PHP`
 
 <p align="center">
     <img src="https://d1zviajkun9gxg.cloudfront.net/user/prod/2020/01/03/fastpages-0622317d-e016-4e7a-b25e-8eef9db1610a.png"/>

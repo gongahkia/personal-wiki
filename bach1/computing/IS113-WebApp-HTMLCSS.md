@@ -1,4 +1,4 @@
-# HTML, CSS
+# `HTML`, `CSS`
 
 **HTML** *(Hypertext Markup Language)* and **CSS** *(Cascading Stylesheets)* allow for websites to look beautiful. 
 

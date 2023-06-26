@@ -1,6 +1,6 @@
 > *MySQL download available [here](https://dev.mysql.com/downloads/).*
 
-# MySQL, the poor man's excel.
+# `MySQL`
 
 ![](https://1000logos.net/wp-content/uploads/2020/08/MySQL-Logo.jpg)
 
