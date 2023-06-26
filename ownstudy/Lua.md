@@ -1,3 +1,6 @@
+> Continue learning from [this video](https://www.youtube.com/watch?v=1srFmjt1Ib0) at `00:00:00`.  
+> Read the [documentation](https://www.lua.org/start.html) and add notes from there if neccesary.  
+
 # `Lua`
 
 [Lua](https://insights.stackoverflow.com/survey/2018/#most-loved-dreaded-and-wanted) is a dynamically typed scripting language that is faster, easier to learn, and more portable than Python.
