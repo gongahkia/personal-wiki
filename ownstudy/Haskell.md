@@ -6,7 +6,7 @@
 
 ![](https://upload.wikimedia.org/wikipedia/en/thumb/4/4d/Logo_of_the_Haskell_programming_language.svg/2560px-Logo_of_the_Haskell_programming_language.svg.png)
 
-<h2 align="center">What is Haskell?</h2>
+## What is Haskell?
 
 Haskell is a <u>strictly **functional**</u> programming language. This entails...
 
@@ -25,7 +25,7 @@ Haskell is <u>**statically typed**</u>, but supports *type inference*. This enta
 
 ---
 
-<h2 align="center">Quickstart</h2>
+## Quickstart
 
 ### [Installation](https://www.haskell.org/downloads/)
 
@@ -35,7 +35,7 @@ Haskell is <u>**statically typed**</u>, but supports *type inference*. This enta
 
 --- 
 
-<h3 align="center">Functions in Haskell</h3>
+### Functions in Haskell
 
 Haskell is built around functions *(which are built upon expressions)*, so let's start there.
 
@@ -78,7 +78,7 @@ doubleSmallNumber' x = (if x > 100 then x else x*2) + 1
 
 ---
 
-<h3 align="center">Data Types</h3>
+### Data Types
 
 Types are written in capital case.
 
@@ -109,7 +109,7 @@ addThree :: Int -> Int -> Int -> Int
 addThree x y z = x + y + z
 ```
 
-<h4 align="center">Type variables</h4>
+#### Type variables
 
 **Type variables** are Haskell's equivalent to *generics* in other languages, allowing us to write <u>general functions</u> if they don't have type-specific behaviour.
 
@@ -127,7 +127,7 @@ fst :: (a,b) -> a
 
 > We normally give type variables *single-character* names like 'a', 'b', 'c', 'd', though they can be given other non-capitalised names.
 
-<h4 align="center">Typeclasses</h4>
+#### Typeclasses
 
 **Typeclasses** are similar to Java *Interfaces*, except better.
 
@@ -148,7 +148,7 @@ ghci> :t (>)
 > 
 > Similarly, the comparison function takes any two values that are the same type *(`a -> a`)*, and the type must be a member of the `Ord` class, a.k.a the **class constraint** *(`(Ord a)`)*, returning a Bool.
 
-<h4 align="center">Explicit type annotations</h4>
+####Explicit type annotations</h4>
 
 This was somewhat covered above, but we employ **explicit type annotation** with the `::` operator where needed with *certain Haskell functions*.
 
@@ -171,7 +171,7 @@ convertThatList = read "[1,2,3,4]" :: [Int]
 -- returns a List of Ints, [1,2,3,4]
 ```
 
-<h4 align="center">Enumerations</h4>
+#### Enumerations
 
 **Enumeration members** are <u>sequentially-ordered</u> types *(part of the `Enum` typeclass)* that can be enumerated, allowing for Haskell's <u>list ranges</u>.
 
@@ -203,7 +203,7 @@ singleCharPred = pred 'F'
 
 ---
 
-<h3 align="center">Data Structures</h3>
+### Data Structures
 
 #### Lists 
 
@@ -249,7 +249,7 @@ booleanYesOrNo = [3,4,2] > [3,2]
 -- returns True
 ```
 
-<h4 align="center">Other List functions</h4>
+####Other List functions</h4>
 
 * `head` returns a **list's head**.
 
@@ -382,7 +382,7 @@ someTuple = (8, 11)
 >
 > As such, there are **theoretically** an infinite number of tuple types.
 
-<h4 align="center">Other Tuple functions to look into</h4>
+#### Other Tuple functions to look into
 
 * [`fst`](http://zvon.org/other/haskell/Outputprelude/fst_f.html)
 * [`snd`](http://zvon.org/other/haskell/Outputprelude/snd_f.html)
@@ -392,7 +392,7 @@ someTuple = (8, 11)
 
 ---
 
-<h3 align="center">Ranges</h3>
+### Ranges
 
 Ranges let us make lists that are *arithmetic sequences of elements* which can be enumerated.
 
@@ -425,7 +425,7 @@ firstTwentyFourElementsOfThirteen = take 24 [13,26..]
 -- since Haskell lazily evaluates, it only calculates what is needed when specified by us in the program
 ```
 
-<h4 align="center">Other Range functions to look into</h4>
+####Other Range functions to look into</h4>
 
 * [`cycle`](https://livebook.manning.com/concept/haskell/cycle)
 * [`repeat`](http://zvon.org/other/haskell/Outputprelude/repeat_f.html)
@@ -433,7 +433,7 @@ firstTwentyFourElementsOfThirteen = take 24 [13,26..]
 
 ---
 
-<h3 align="center">List comprehension</h3>
+### List comprehension
 
 We can implement list comprehension within Haskell, and it functions the same as in mathematical set theory.
 
@@ -518,9 +518,9 @@ To provide some context before this section begins, Haskell has *2 integral type
 
 > More on this topic can be found [here](https://www.cantab.net/users/antoni.diller/haskell/units/unit01.html).
 
-<h3 align="center">Function syntax</h3>
+### Function syntax
 
-<h4 align="center">Pattern Matching</h4>
+#### Pattern Matching
 
 **Pattern matching** is Haskell's overpowered version of the *switch, case* statement in other languages.
 
@@ -567,20 +567,11 @@ ghci> [a+b | (a,b) <- xs]
 [4,7,6,8,11,4]
 ```
 
----
+#### [Guards](http://learnyouahaskell.com/syntax-in-functions)
 
-<h4 align="center"><a href="http://learnyouahaskell.com/syntax-in-functions">Guards</a></h4>
+#### [Where](http://learnyouahaskell.com/syntax-in-functions)
 
----
+#### [Let](http://learnyouahaskell.com/syntax-in-functions)
 
-<h4 align="center"><a href="http://learnyouahaskell.com/syntax-in-functions">Where</a></h4>
+#### [Case](http://learnyouahaskell.com/syntax-in-functions)
 
----
-
-<h4 align="center"><a href="http://learnyouahaskell.com/syntax-in-functions">Let</a></h4>
-
----
-
-<h4 align="center"><a href="http://learnyouahaskell.com/syntax-in-functions">Case</a></h4>
-
----
