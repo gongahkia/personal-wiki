@@ -90,7 +90,7 @@ Computer arithmetic follows BODMAS rules.
 
 ### Functions
 
-Lua has **no classes**.
+Lua has **no classes**. Functions are all we have.
 
 * `function`, `end`, `return`
 
