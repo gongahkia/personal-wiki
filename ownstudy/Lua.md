@@ -1,4 +1,3 @@
-> * Continue learning from [this video](https://www.youtube.com/watch?v=1srFmjt1Ib0) at `40:52`.  
 > * Read the [documentation](https://www.lua.org/start.html) and add notes from there if neccesary.  
 
 # `Lua`
@@ -23,7 +22,7 @@
 
 Lua files end with the `.lua` file extension.
 
-### Printing to the console && comments
+### Printing to the console `and` comments
 
 * `print()`
 * `--`
@@ -88,18 +87,50 @@ Computer arithmetic follows BODMAS rules.
 * `%`
 * [Other Lua math functions](https://www.lua.org/pil/18.html)
 
+### Strings
+
+* Lua takes *strings* and *characters* as the **same thing**, similar to Python.
+* `""`, `''` and `[[ ]]` are all allowed.
+
+```lua
+local eg_string = "This is a string!"
+print(eg_string) -- prints the "This is a string" string to the console
+
+local eg_also_string = "This is also a string"
+print(eg_also_string) -- prints the "This is also a string" string to the console
+
+local eg_multi_line_string = [[ 
+    Hello World!
+    2 + 2 = 4
+]]
+print(eg_multi_line_string) -- prints the "\n\tHello World!\n\t2 + 2 = 4" multi-line string including the newline character and tab character of the string
+```
+
+* `#` returns length of string
+
+```lua
+local str = Hello
+print(#str) -- returns the length of the string "Hello", 5
+```
+
 ### Functions
 
-Lua has **no classes**. Functions are all we have.
+Lua has **no classes**. Functions are all we have in Lua.
 
-* `function`, `end`, `return`
+* `function`, `end`
+* `return`
 
 ```lua
 function doMath(n)
     return n*2
 end 
 
+function voidFunc()
+    print("shit ass")
+end
+
 doMath(2)
+voidFunc()
 ```
 
 ### Data structures
@@ -107,7 +138,8 @@ doMath(2)
 Lua only has **one** data structure, the `table`, which is actually an associative array / dictionary.
 
 * Lua tables are **one-indexed** *(array indexes start from 1)*!
-* `{}`
+* `{}` used to indicate a table.
+* **Nested tables** are possible as well!
 
 ```lua
 array = {"shit", "ass", "hat"}
@@ -125,12 +157,63 @@ for key,value in pairs(dict) do
     print(value)
 end
 -- iterating over said table with a for loop
+
+local nested_array {
+    {1,2,3,8,10},
+    {6,8,0},
+    {9,99,989}
+}
+
+for i = 1, #nested_array do
+    for j = 1, #nested_array[i] do
+        print(nested_array[i][j]) -- prints every value within the nested array
+    end
+end
 ```
 
-### Conditional flow
+### Conditional flow `and` logical operators
+
+Lua uses the `then` and `end` keywords to indicate the start of conditional flow code blocks, similar to Bash.
+
+* `then`, `end`
+* `if`
+* `elseif`
+* `else`
+* `>`, `<`, `>=`, `<=`, `=`, `==`, `===`, `!=`, `!==`
+* `and`
+* `or`
 
 ```lua
+if false then 
+    print("this shit hella false bruv") -- an example if statement
+end
+```
 
+### Loops
+
+Lua uses the `do` and `end` keywords to indicate the start of loop code blocks, similar to Bash.
+
+* `do`, `end`
+* `for` loops
+* `while` loops
+* `repeat`, `until` loops *(equivalent of a `do while` loop that runs at least once)*
+
+```lua
+for i = 2, 1000, 1 do
+    print(i) -- similar format to a classic for loop in C
+end
+
+local peeps = 10
+while peeps > 0 do
+    peeps = peeps - 1
+    print("People count:" ... peeps) -- similar format to a classic while loop in C
+end
+
+local x = 1
+repeat
+    print("Hey there!") -- the equivalent of a do while loop that runs at least one time
+    x = x + 1
+until x > 10
 ```
 
 ### [Coroutines](https://www.lua.org/pil/9.1.html)
