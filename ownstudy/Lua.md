@@ -218,3 +218,10 @@ until x > 10
 
 ### [Coroutines](https://www.lua.org/pil/9.1.html)
 
+### [Lua modules](http://lua-users.org/wiki/ModulesTutorial)
+
+### [OOP in Lua](https://www.lua.org/pil/16.html)
+
+As previously mentioned, Lua has no classes or objects in the same way as Rust, and only has functions. However, we can use tables to simulate objects *(like structs in Rust)*.
+
+### [Metamethods](https://www.lua.org/pil/13.html)
