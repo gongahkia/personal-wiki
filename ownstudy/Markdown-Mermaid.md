@@ -1,4 +1,4 @@
-<h1 align="center">The Mermaid tool 🧜‍♀️📈</h1>
+`Mermaid` in Markdown 🧜‍♀️📈
 
 ![](https://github.blog/wp-content/uploads/2022/02/mvp2.png?fit=1200%2C630)
 

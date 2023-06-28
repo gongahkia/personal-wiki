@@ -1,4 +1,4 @@
-# The C Programming Language
+# `C`
 
 * C is a low-level programming language, with a large number of operating systems and programming language compilers being written in C
 

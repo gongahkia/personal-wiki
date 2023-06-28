@@ -1,4 +1,4 @@
-# The Bash scripting language
+# `Bash`
 
 Bash is a ***dynamic interpreted*** programming language, and is also known as a **shell** (which wraps the operating system's kernel), whilst allowing for user interaction via abstraction through the command line.
 

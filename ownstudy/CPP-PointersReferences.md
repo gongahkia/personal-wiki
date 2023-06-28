@@ -1,4 +1,4 @@
-# Pointers in C++
+# `Pointers` in C++
 
 ![](https://pbs.twimg.com/media/FV5AgCHWAAEP2X5?format=jpg&name=medium)
 

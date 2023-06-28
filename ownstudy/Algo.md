@@ -1,6 +1,6 @@
 > Carry on from Video 3, Arrays Data Structure [here](https://frontendmasters.com/courses/algorithms/).
 
-# Algorithms
+# `Algorithms`
 
 This is based off [Prime's Algo course on Frontend Masters](https://frontendmasters.com/courses/algorithms/), which is conducted in Typescript.
 

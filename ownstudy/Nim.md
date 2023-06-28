@@ -1,4 +1,4 @@
-# The Nim Programming Language 👑
+# `Nim` 👑
 
 ![](https://styles.redditmedia.com/t5_333n4/styles/mobileBannerImage_s36d3rg4pz561.png)
 

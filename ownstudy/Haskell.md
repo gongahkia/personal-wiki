@@ -2,7 +2,7 @@
 >
 > Continue learning Haskell from *Learn you a Haskell for Great Good!* Chapter 5 onwards when I am back from Haskell burnout!
 
-# The Haskell programming language
+# `Haskell`
 
 ![](https://upload.wikimedia.org/wikipedia/en/thumb/4/4d/Logo_of_the_Haskell_programming_language.svg/2560px-Logo_of_the_Haskell_programming_language.svg.png)
 

@@ -2,7 +2,7 @@
 > * Read through [Rust book](https://doc.rust-lang.org/stable/book/) [pg 149/554], add notes on Ownership section.
 > * Make notes off this video (https://www.youtube.com/watch?v=zF34dRivLOw).
 
-# The Rust programming language 🦀
+# `Rust` 🦀
 
 <img src="https://preview.redd.it/oifjvyix1us41.jpg?auto=webp&s=169dd56f3eb24adda52abc83cc98bce5765c8538" height="250px" align="right"/>
 

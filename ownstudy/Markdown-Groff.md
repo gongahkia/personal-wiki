@@ -1,4 +1,4 @@
-# The Groff markup language
+# `Groff`
 
 ## What is Groff?
 

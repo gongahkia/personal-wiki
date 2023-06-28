@@ -1,6 +1,6 @@
 > *Edit on 30 March 2023:* Watch FreeCodeCamp youtube Typescript tutorial speedrun
 
-# The Typescript programming language
+# `Typescript`
 
 ![](https://kirkstechtips.com/content/images/2023/03/typescript.jpg)
 

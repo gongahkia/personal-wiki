@@ -3,7 +3,7 @@
 > * Continue studying and learning about Go once I'm a pogchamp with Rust.
 > * Refer to [Go by example](https://gobyexample.com/hello-world) from 'Values' onwards.
 
-# The Go Programming Language
+# `Go`
 
 ## Table of Contents 📖
 

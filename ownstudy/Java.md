@@ -1,4 +1,4 @@
-# The Java programming language
+# `Java`
 
 ![](https://www.cnet.com/a/img/resize/efcac0a8d0f46692a6020d23a7ba5bee2b80fd95/hub/2012/04/19/8a430931-f0ec-11e2-8c7c-d4ae52e62bcc/20120419_Java_Duke_mascot_001.jpg?auto=webp&fit=crop&height=900&width=1200)
 

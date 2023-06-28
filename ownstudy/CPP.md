@@ -1,6 +1,6 @@
 > *Edit on 3/3/2023:* Note that the other 2 files, `main.cpp` and `main2.cpp` were made in late 2022 when I first started learning the language. As such, some information might be outdated and wrong. 
 
-# The C++ programming language
+# `C++`
 
  Welcome to Hell. 😔
 
