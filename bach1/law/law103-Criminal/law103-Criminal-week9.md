@@ -39,7 +39,7 @@ Singapore adopts a ***hybrid model*** that incorporates both.
 
 # Jury trials vs Bench trials
 
-<img src="https://www.blankmediagames.com/wp-content/uploads/2015/05/screen-judgement.jpg" align="right" height="200px"/>
+![](https://www.blankmediagames.com/wp-content/uploads/2015/05/screen-judgement.jpg)
 
 1. Jury trials
 
@@ -62,7 +62,7 @@ Singapore adopts a ***hybrid model*** that incorporates both.
 
 # Power vs Permission
 
-<img src="https://i.ytimg.com/vi/L53gjP-TtGE/maxresdefault.jpg" height="200px" align="right"/>
+![](https://i.ytimg.com/vi/L53gjP-TtGE/maxresdefault.jpg)
 
 Power:  
 
@@ -105,7 +105,7 @@ Additionally, there are further limitations on the proceedings of detainment of 
 
 # Criminal proceedings
 
-<img src="https://cdn1.dotesports.com/wp-content/uploads/2022/06/09105250/4-amongus-pink-dead-brown-watching_ccexpress.png" height="200px" align="right"/>
+![](https://cdn1.dotesports.com/wp-content/uploads/2022/06/09105250/4-amongus-pink-dead-brown-watching_ccexpress.png)
 
 ## Parties to criminal proceedings
 
