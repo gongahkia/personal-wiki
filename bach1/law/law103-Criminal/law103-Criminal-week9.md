@@ -16,7 +16,7 @@
 
 # General overview
 
-* The legal process puts multiple *protective mechanisms* in place to prevent **arbitrary exercise of power** *(such as a sole police officer/ victim)* in the process of an investigation.   
+* The legal process puts multiple *protective mechanisms* in place to prevent **arbitrary exercise of power** *(such as a sole police officer/ victim)* in the process of an investigation.
 * Only those in **High Office** *(Attorney General)*
 
 # Criminal Justice Process
