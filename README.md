@@ -25,6 +25,10 @@ This repository contains my notes for `SMU C&L` AY 2023-2027.
 
 ### Law
 
+#### Resources
+
+* [Singapore Statutes](https://sso.agc.gov.sg/)
+
 #### Bach 1
 
 * [LAW101_601 - Contract Law 1](bach1/law)
