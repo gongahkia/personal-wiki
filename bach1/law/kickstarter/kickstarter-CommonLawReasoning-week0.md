@@ -25,6 +25,10 @@
 * Difference between reported and neutral case citations
 * Lord Atkin's `neighbour` principle
 
+---
+
+### Under `Tort law`...
+
 #### Eg. `Tort of negligence`
 Being less careful than legally required in certain circumstances, violating the *duty of care*.
 * Duty of care: A universal duty one has to others to be careful.
