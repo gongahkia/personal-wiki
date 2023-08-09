@@ -21,24 +21,9 @@
 ## Things to read up on
 
 * `Common law`
+* Hierachy of law courts in Singapore
+* Difference between reported and neutral case citations
 * Lord Atkin's `neighbour` principle
-
-## Definitions
-
-* `Party`: someone who appears before the court
-* `Plaintiff`: the person who's SUING, submitting a *com`plaint`*
-* `Defendant`: the person who's BEING SUED, has to `defend` themselves against the claim
-
-
-### `Contract law`
-* **Legally enforcable agreement** made between parties under obligations within the contract.
-    * Oftentimes can be represented by the sale or transaction of an item.
-* A person who breaks a contract must pay damages *(compensation)*.
-
-### `Tort law`
-* **Civil wrongs** that are NOT breach of contract. 
-    * Important to note that civil wrongs can ALSO be breach of contract.
-* A person who commits a tort must pay damages *(compensation)*.
 
 #### Eg. `Tort of negligence`
 Being less careful than legally required in certain circumstances, violating the *duty of care*.
