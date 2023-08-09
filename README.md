@@ -1,33 +1,31 @@
 # University notes
 
-This repository contains my notes for `SMU C&L` AY 2023-2027.
+My notes for SMU C&L AY 2023-2027.
 
 ## Notes
 
-### Computing
+### `Computing`
 
 #### Bach 1
 
-* CS105 - Statistical Thinking for Data Science
-* IS111 - Intro to Programming
-* [IS112 - Data Management](bach1/computing/)
+* [IS111 - Intro to Programming](bach1/computing)
+* [IS112 - Data Management](bach1/computing)
 * [IS113 - Web Application Development 1](bach1/computing)
+
+
+#### Bach 2
+
+* CS105 - Statistical Thinking for Data Science
 * IS215 - Digital Business (Technology and Transformation)
 * IS210 - Business Process Analysis and Solutioning
 * IS211 - Interaction Design and Prototyping
 * CS206 - Software Product Management
 
-#### Bach 2
-
 #### Bach 3
 
 #### Bach 4
 
-### Law
-
-#### Resources
-
-* [Singapore Statutes](https://sso.agc.gov.sg/)
+### `Law`
 
 #### Bach 1
 
@@ -49,6 +47,18 @@ This repository contains my notes for `SMU C&L` AY 2023-2027.
 
 #### Bach 4
 
+### `Others`
+
+#### Bach 1
+
+* [COR2614 - Publics and Privates](bach1/cultures)
+
+#### Bach 2
+
+#### Bach 3
+
+#### Bach 4
+
 ---
 
 ## Templates
@@ -59,7 +69,7 @@ Create new markdown *computing notes* with `com` command to copy existing templa
 
 ```console
 $ com exampleNotes.md
-$ nvim exampleNotes.md
+$ vim exampleNotes.md
 ```
 
 ### Law notes
@@ -68,7 +78,7 @@ Create new markdown *law notes* with `law` command to copy existing template int
 
 ```console
 $ law exampleNotes.md
-$ nvim exampleNotes.md
+$ vim exampleNotes.md
 ```
 
 ---
