@@ -15,15 +15,7 @@
     * [Landrige v Levy](landrige-levy.pdf)
     * [George v Skivington](https://www.wikiwand.com/en/George_v_Skivington)
     * [Mullen v Bar](https://www.casemine.com/judgement/uk/5a8ff8d560d03e7f57ecdff7)
-
----
-
-## Things to read up on
-
-* `Common law`
-* Hierachy of law courts in Singapore
-* Difference between reported and neutral case citations
-* Lord Atkin's `neighbour` principle
+* [Recorded lecture](https://elearn.smu.edu.sg/d2l/le/content/359353/Home)
 
 ---
 
