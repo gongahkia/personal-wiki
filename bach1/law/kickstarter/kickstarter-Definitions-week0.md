@@ -11,6 +11,10 @@
 * `Party`: someone who appears before the court
 * `Plaintiff`: the person who's SUING, submitting a *com`plaint`*
 * `Defendant`: the person who's BEING SUED, has to `defend` themselves against the claim
+* [`Common law`](https://www.investopedia.com/terms/c/common-law.asp): body of unwritten laws based on LEGAL PRECEDENTS established by the courts in past rulings, that *influence decision-making* when case outcomes cannot be determined based on existing rules of law
+
+### For reading cases...
+
 * `Case citations`: At the top of each case document, consisting of...
     1. `Case name`
         * Names of the parties involved in the dispute *(plaintiff && defendant)*
@@ -26,6 +30,8 @@
             * *eg.* `[2005] SGCA 3`
                 * This tells us this was the 3RD CASE heard in 2005 at the SINGAPORE COURT OF APPEAL.
         * Try to use reported case citations in assignments
+
+### Kinds of law
 
 ### `Contract law`
 * **Legally enforcable agreement** made between parties under obligations within the contract.
