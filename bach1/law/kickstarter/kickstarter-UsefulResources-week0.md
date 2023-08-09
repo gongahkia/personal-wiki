@@ -9,6 +9,7 @@
 # Required readings
 
 * [Slides](locatingUKCases.pdf)
+* [PDF](resourcesRepository.pdf)
 
 ---
 
