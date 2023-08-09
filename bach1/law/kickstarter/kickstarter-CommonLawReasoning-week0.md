@@ -54,6 +54,6 @@ Being less careful than legally required in certain circumstances, violating the
 * 'We can't change the law just cuz the plaintiff is sympathetic, must follow OG principles'.
 
 ##### Lord Atkin
-* Deio-Christian idea of the `neighbour` principle, Stevenson should be held liable by Donoghue.
+* Deio-Christian idea of the [`neighbour` principle](https://www.lawteacher.net/free-law-essays/tort-law/neighbour-principle.php), Stevenson should be held liable by Donoghue.
 
 > Lurking behind many court decisions are the base philosphocal positions and understanding of other implications that each judge takes.
