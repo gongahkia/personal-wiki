@@ -1,7 +1,7 @@
 # `S1W0 Intro to Singapore Legal System`
 
 > **Class:** *Intro to Singapore Legal System*  
-> **Subject:** *Legal institutions in Singapore, Sources of law*  
+> **Subject:** *Legal institutions in Singapore, Sources of law, The Courts of Singapore*  
 > **Lecturer:** *Prof Benjamin Joshua Ong*  
 
 ---
@@ -11,6 +11,7 @@
 * [Chapter 1: History of Singapore Legal Systems](chapter1-HistoryLegalSystem.pdf)
 * [Chapter 11: The doctrine of Judicial Precedent and Case method and analysis](chapter11-JudicialPrecedent.pdf)
 * [How Singapore courts decide cases](https://smulexicon.com/2021/05/03/standing-by-decided-things-how-the-singapore-courts-decide-cases/)
+* [Singapore Judiciary website](https://www.judiciary.gov.sg/)
 
 ---
 
@@ -90,3 +91,58 @@
         * Case law can be found in the [Singapore law report](https://www.sal.org.sg/Resources-Tools/LawNet) and [Supreme Court's website](https://www.judiciary.gov.sg/judgments).
         * Legislation may OVERRIDE case law.
 
+## The Courts of Singapore
+
+> Taken from [**Article 94**](https://sso.agc.gov.sg/Act/CONS1963?ProvIds=P18-#pr94-)of the *Constitution of the Republic of Singapore*.
+
+### Fundamental statements
+
+The JUDICIAL POWER of the state can be vested only in the `Supreme court` and `Subordinate courts`.
+
+#### But why? 
+
+* Courts have certain features that make them appropriate for exercising judicial power.
+* Courts authoratively state what the facts are, and apply the law to the facts.
+    1. REALITY and APPEARANCE of **decisional independence** and **impartiality**
+    2. application of PROCEDURAL FAIRNESS
+    3. adherence *(as a general rule)* to the OPEN COURT PRINCIPLE
+        * Singapore Law Report
+        * Members of the public are *(generallY)* open to the public
+    4. provision of reasons for the court's decisions
+
+### Looking at the terms...
+
+* `Supreme court`
+    * Greatest amount of jurisdiction and authority over a given matter.
+    * Comprises...
+        1. `HIGH COURT`
+            * `General Division` *(unlimited jurisdiction to hear and rule on ANY dispute)*
+                * `Family Division`
+                * `Singapore International Commercial Court`
+            * `Appellate Division` *(hears certain appeals from the General Division)*
+        2. `COURT OF APPEAL`
+            * Deals with the more complex questions regarding the law
+
+* `Subordinate court`
+    * Limited jurisidiction and authority over certain matters.
+    * Comprises...
+        1. `STATE COURTS`
+            * `District courts`
+            * `Magistrates' courts`
+            * `Coroners' courts`
+            * `Small Claims Tribunals`
+            * `Community Disputes Resolution Tribunals`
+            * `Employment Claims Tribunals`
+        2. `FAMILY JUSTICE COURTS`
+            * `Family courts`
+            * `Youth courts`
+        3. `SYARIAH COURT`
+        4. OTHER COURTS
+            * Subordinate Military courts
+            * Military court of appeal
+
+#### Why so many types of courts?
+
+* Judges have ***greater specialisation*** regarding hearing and deciding cases.
+* `System of appeals`: Many issues of Subordinate courts can be brought to higher courts for appeal *(especially the more complex ones)*.
+* `System of BINDING PRECEDENT`: higher courts bind lower courts decision-wise.
