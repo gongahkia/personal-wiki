@@ -8,9 +8,9 @@ This is based off [Prime's Algo course on Frontend Masters](https://frontendmast
 
 Go read this in your own time. Else you gonna suck!
 
-* [Grokking algorithms](resources/Grokking-Algorithms.pdf)
-* [The Introduction to Algorithms](resources/Introduction-to-Algorithms.pdf)
-* [For programmers who wanna be the very best](resources/Common-Sense-Guide-to-Data-Structures.pdf)
+* Grokking algorithms
+* The Introduction to Algorithms
+* For programmers who wanna be the very best
 
 ## Time and Space Complexity
 
