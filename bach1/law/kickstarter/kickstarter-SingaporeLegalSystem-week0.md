@@ -137,7 +137,7 @@ The JUDICIAL POWER of the state can be vested only in the `Supreme court` and `S
             * `Family courts`
             * `Youth courts`
         3. `SYARIAH COURT`
-        4. OTHER COURTS
+        4. `OTHER COURTS`
             * Subordinate Military courts
             * Military court of appeal
 
