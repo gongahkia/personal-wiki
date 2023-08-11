@@ -47,4 +47,3 @@ Croesus dismissed Solon, and subsequently is handed divine retribution leading t
 ## 2. `Oishi et al 2013`
 
 * Socratic view of happiness
-* 
