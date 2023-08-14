@@ -48,3 +48,4 @@
 **Week 4**: Justin gives 3 questions for MIDTERMS  
 **Week 9**: IN CLASS MIDTERM  
 **Week 10-13**: PACIFIC RIM ECOLOGIES: WORLD-BUILDING AND REAL MATERIALITIES  
+**Week 13**: FINALS
