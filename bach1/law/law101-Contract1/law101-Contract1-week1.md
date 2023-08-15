@@ -1,17 +1,13 @@
 # `S1W1 Contract 1`
 
 > **Class:** *Law 101 Contract 1*  
-> **Subject:** *subject name*  
-> **Lecturer:** *Prof *
+> **Subject:** *Intro & Contract Formation*  
+> **Lecturer:** *Prof Loo Wee Ling*  
 
 ---
 
-# Required readings
+# Summary of the readings  
+* 
+* 
+*
 
-* Reference readings
-* Reference slides 
-    * Week 1.1 
-
----
-
-# The rest of your document
