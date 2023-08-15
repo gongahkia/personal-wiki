@@ -116,3 +116,10 @@
 * Probate and administration
 * Syriah law
     * Parallel system unqiue to the Singapore law system
+
+### Putting everything together...
+
+* A law that serves no moral or practical purpose is a bad law and should be amended as soon as possible.
+* A lawyer that serves no moral or practical purpose is a bad law and should be disbarred as soon as possible.
+* `Natural law`
+* `Legal posivitism`
