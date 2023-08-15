@@ -57,11 +57,13 @@
 
 ## What is the law?
 
-1. Law sets boundaries.
-    * Formalises a set of offences you cannot commit --> Creates a set of acceptable actions you can follow
-* `Rousseau`: [Law is a social contract between the individual and the state](https://www.bl.uk/collection-items/the-social-contract-by-jean-jacques-rousseau0)
-* Law is a means by which to assign blame and allocate consequence
-* Common law || Case law often sees Courts 'discovering' innate laws in hindsight, pointing to shared universal morality.
+1. A system of SOCIAL ORGANISATION.
+    * Law sets boundaries.
+        * Formalises a set of offences you cannot commit --> Creates a set of acceptable actions you can follow
+    * `Rousseau`: [Law is a social contract between the individual and the state](https://www.bl.uk/collection-items/the-social-contract-by-jean-jacques-rousseau0)
+    * Law is a means by which to assign blame and allocate consequence
+    * Common law || Case law often sees Courts 'discovering' innate laws in hindsight, pointing to shared universal morality.
+2. A system of PRINCIPLES, **NOT** jsut a collection of rules.
 
 ## Types of law
 
