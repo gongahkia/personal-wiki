@@ -49,8 +49,9 @@
 * Outcome-thinking
     * Consider the outcome of each profession to determine the future of the profession
         * 'Citizens don't want soldiers, they want security'
-        * 'consumption is the sole end and purpose of all production; and the interest of the producer ought to be attended to, only so far as it may be necessary for promoting that of the consumer'
+        * 'Consumption is the sole end and purpose of all production; and the interest of the producer ought to be attended to, only so far as it may be necessary for promoting that of the consumer'
     * The systems that'll replace us are unlikely to work like us.
+        * The law needs to ensure that people's rights and obligations to procuring a good will shouldn't hinge on getting a better lawyer
 
 ---
 
