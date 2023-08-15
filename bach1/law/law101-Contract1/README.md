@@ -8,11 +8,11 @@
 * Final Examination: 50%
 **Total: 100%**
 
-## IRAC Guide --> How to structure your anlaysis
+## `I`ssue `R`ule `A`pplication `C`onclusion (IRAC) guide 
 
-> 1. READ THROUGH THIS SECTION AND CUT EXTRA CONTENT, REFORMAT AND UNDERSTAND!
+> ~**READ THROUGH THIS SECTION AND CUT EXTRA CONTENT, REFORMAT AND UNDERSTAND!**~
 
-**I**ssue **R**ule **A**pplication **C**onclusion
+### Note...
 
 > * You DO NOT have to summarise the scenario, provide an introduction or explain why you have identified particular legal issues before you start analysing. Just begin your written analysis using IRAC.
 > * Follow the IRAC structure for every legal issue, complete the steps for one issue before you move on to the next issue

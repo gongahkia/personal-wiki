@@ -2,7 +2,7 @@
 
 > **Class:** *Law 101 Contract 1*  
 > **Subject:** *subject name*  
-> **Lecturer:** *Prof name*  
+> **Lecturer:** *Prof *
 
 ---
 
