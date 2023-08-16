@@ -1,3 +1,87 @@
+# Pls go do :c
+
+1. Read up on...
+    * `Politics of Representation`
+2. Use [Google Scholar](scholar.google.com)
+    * [Google Scholar boolean operators --> REGEX for googling](https://southern.libguides.com/google/boolean)
+3. Download and familiarise myself with [Zotero](https://www.zotero.org/) --> Research purposes
+4.  Go look at essay questions, brainstorm what I want to do topic 8 or scope accordingly in relation to happiness or suffering --> Elearn
+    * Look at the impact of shared ideology (religion, political systems) in the pursuit of happienss and suffering?
+        * Mao's China (1950-1975)
+        * Other communist examples
+        * Khmer Rogue
+        * Enlightenment era Christianity
+        * Pacific Rim 
+        * Pre-WW2 Japan religion and Post-WW2 Shintoism
+        * How do the different strands of buhdism relate to happiness and suffering? 
+            * Dalai Lama
+        * Examine the assumption that the chief end of man is to be happy *(across religions)*
+    * How does early Christanity reconcile the secular desire for happiness?
+
+# Ideas
+
+## Ontology
+
+* Different AXIOMS to begin with, examine how different religions handle the core questions about the divine every man has.
+
+#### Christian 
+
+* Examine the interstatial overlaps between the western narrative that religion *(judeo-Christian)* constructs and that western media *(often secular, but often accepted)* pushes consistently
+* People are born into sin (categorised as unhappy) and enter into the Christian life through Christ (for them to be living a full life)
+
+#### Buhhdism 
+
+* Life is suffering
+
+> Add more here!
+
+# Writing essays
+
+## Scoping
+
+* Be cocksure of the core and supplementary arguments you want to aim for in the essay.
+
+## Conclusion
+
+* Finally can make reference to things OUTSIDE the parameter of the research paper that would **add extra depth** to the research paper. 
+    * In the scholarly world, this opens up avenues for other academics or yourself in the future to write more.
+
+## References
+
+* The references provide scholarly context for the sources writer used to arrive at their targeted conclusion
+
+## Critique 
+
+* Be aware of the
+    * Research essay scope EXPRESSED by the writer
+    * Historical, Cultural, Socio-economic agenda of the writer
+
+# Definitions
+
+1. Happiness
+    * arises from other stimulus *(relationships, individual experience, communal experience)*
+    * unique to the individual
+
+2. Politics of representation
+    * Literally *re-present* 
+    * Vested interest from the government to promote agenda of communal living
+        * Mainly centred around HDB communities, happy chance interactions and opportunities contingent on buying into the average singaporean dream that is sold to the mass populace
+    * How is the propaganda of happiness being sold to lesser developed countries?
+        * IMF selling the economic dream of happiness to DC like India/Korea early 1970s
+        * White imperealism
+    * How do we measure happiness?
+        * Success as a measure of happiness
+        * We can only know happiness because life provides sadness as well
+
+3. Ontology
+    * Systems by which we acquire knowledge
+
+4. Deontology 
+    * Ethical theory on how we know what is right and wrong
+
+5. Epistomology
+    * How we know what we know
+
 # Summary of Week 1 readings
 
 ## 1. `McMahon 2013 (Chapter 19)`
@@ -44,6 +128,13 @@ Croesus dismissed Solon, and subsequently is handed divine retribution leading t
 
 * When Voltaire’s hero, Candide, returns from circling the globe, wiser but no more happy than when he began, he concludes simply that “we must cultivate our garden.” Those seeking happiness—or something like it—in the twenty-first century, could do worse than to take up the hoe.
 
-## 2. `Oishi et al 2013`
+# A Brief History of Happiness
 
-* Socratic view of happiness
+Also refer to the slides.
+
+```mermaid
+graph LR
+A[Agricultural Revolution] --> B[Settlements, Surplus Accomodation, Private Properties, Inequalities, Hierachies]
+
+C[Religious formation] --> D[Human suffering, How can humans achieve full-flourishing lives?] --> E[How do we live differently now to make the future life better?]
+```
