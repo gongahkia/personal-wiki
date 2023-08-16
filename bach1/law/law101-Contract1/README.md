@@ -1,5 +1,14 @@
 # The only contract I have is to cry
 
+## Contact
+
+* **Prof:** wlloo@smu.edu.sg;
+* **TA:** harathrajs.2022@scis.smu.edu.sg
+
+## Hard deadlines
+
+* **Mid-term test**: 30 Sep 2023, 2-3.15pm
+
 ## Assessment Method
 
 * Class participation: 15%
@@ -7,6 +16,18 @@
 * Mid-term Test: 15%
 * Final Examination: 50%
 **Total: 100%**
+
+# Reference material
+
+* [Big Phang](https://store.lawnet.com/the-law-of-contract-in-singapore-2nd-edition.html)
+
+## Doing readings
+
+1. Refer to `Week X outline`, complete all Big Phang readings
+2. Refer to aestriked cases, get **summary of the facts**
+3. Refer to specified legislation
+
+---
 
 ## `I`ssue `R`ule `A`pplication `C`onclusion (IRAC) guide 
 
