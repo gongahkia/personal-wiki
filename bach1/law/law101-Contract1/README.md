@@ -10,22 +10,19 @@
 
 ## `I`ssue `R`ule `A`pplication `C`onclusion (IRAC) guide 
 
-> ~**READ THROUGH THIS SECTION AND CUT EXTRA CONTENT, REFORMAT AND UNDERSTAND!**~
-
 ### Note...
 
 > * You DO NOT have to summarise the scenario, provide an introduction or explain why you have identified particular legal issues before you start analysing. Just begin your written analysis using IRAC.
-> * Follow the IRAC structure for every legal issue, complete the steps for one issue before you move on to the next issue
+> * Follow the IRAC structure for every legal issue, complete the steps for one issue before you move on to the next issue.
 
 ### 1. Identify the legal `I`ssue
-    * This step defines the “legal” problem raised by the given scenario. The legal issue is phrased according to the (relevant) facts in the scenario and the rule or legal principle you are considering.
-        * *eg.* Issue 1: Is the advertisement on ABC’s website an offer or invitation to treat?
+* This step defines the “legal” problem raised by the given scenario. The legal issue is phrased according to the (relevant) facts in the scenario and the rule or legal principle you are considering.
+    * *eg.* Issue 1: Is the advertisement on ABC’s website an offer or invitation to treat?
 
-> * This means you must know the relevant law/rules/legal principles well enough to know that the scenario raises this lega issue.
-> * Please note that a factual issue is not a legal issue. An example of a factual issue is: Whether ABC keyed in the wrong price of the printer in its website?
+> * Note that a factual issue is not a legal issue. An example of a factual issue is: Whether ABC keyed in the wrong price of the printer in its website?
 
 ### 2. State the relevant `R`ule / legal principle
-* This would be the rule/legal principle that could provide an answer to the legal issue that was identified. Rules/legal principles may be from cases (court decisions) or statutes, or any appropriate authority.
+* This is the rule/legal principle that could provide an answer to the legal issue that was identified. Rules/legal principles may be from cases (court decisions) or statutes, or any appropriate authority.
     * *eg.* Rule from a case (court decision): An offer “must consist of a definite promise to be bound, provided that certain specified terms are accepted” (Gay Choon Ing v Loh Sze Ti Terence Peter).
     * *eg.* Rule from a statute: Section 14 of the Electronic Transactions Act (ETA) states that “a proposal to conclude a contract made through ...electronic communications which is not addressed to ...specific parties, but is generally accessible to parties making use of information systems, ...is to be considered as an invitation to make offers, unless it clearly indicates the intention of the party making the proposal to be bound in the case of acceptance.”
 
@@ -49,4 +46,4 @@
 * State the conclusion that your application of the rules to the scenario facts has led to.
     * *eg.* “It is likely that the advertisement on ABC’s website is an offer.”
 
-> * As you deal with each successive issue in a logical sequence, you will come to several mini-conclusions before you draw your overall conclusion. For example, the overall legal issue may be “Is A liable to B for breach of contract?” But to answer this overall issue, the facts of the case may require us to consider the legal issues of (1) Was the advertisement an offer or invitation to treat? (2) If it was an offer, was there a valid acceptance? In such a case, you need to come to your mini- conclusions on Issues (1) and (2) before you can reach a conclusion on the Overall Issue.
+> * As you deal with each successive issue in a logical sequence, you will come to several mini-conclusions before you draw your overall conclusion. For example, the overall legal issue may be “Is A liable to B for breach of contract?” But to answer this overall issue, the facts of the case may require us to consider the legal issues of (1) Was the advertisement an offer or invitation to treat? (2) If it was an offer, was there a valid acceptance? In such a case, you need to come to your mini-conclusions on Issues (1) and (2) before you can reach a conclusion on the Overall Issue.
