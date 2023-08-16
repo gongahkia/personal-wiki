@@ -21,6 +21,12 @@
 * Offer: *Legally binding contract where there is an intention by the Offeror to be bound should offer be accepted, and Offer must have been communicated to Offeree.*
 * Acceptance: *A final and unqualified expression of assent to the terms of an offer.*
 
+## Contract law
+
+* Note that while there are some *statutes* that relate to Contract law, due to the complexity of each case, most decisions in Contract law are arrived at using *Case law*.
+
+> Therefore, in IRAC responses, a bulk of argumentation for Rule and Application should come from **Case law** (mentioning past cases that are of relevance), and **statutes** should be used to supplement the core argument.
+
 ## Objectivity test
 * Plaintiff has to determine what a reasonable person OF THE SAME `BACKGROUND` and `STATUS` *(standing in place of the defendant)* would have understood of a given incident.
 * 2 APPROACHES
