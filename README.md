@@ -12,7 +12,6 @@ My notes for SMU C&L AY 2023-2027.
 * [IS112 - Data Management](bach1/computing)
 * [IS113 - Web Application Development 1](bach1/computing)
 
-
 #### Bach 2
 
 * CS105 - Statistical Thinking for Data Science
