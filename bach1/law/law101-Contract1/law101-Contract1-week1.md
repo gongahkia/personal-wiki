@@ -65,6 +65,7 @@
 
 * Offeror: *person making an offer*
 * Offeree: *person receiving an offer*
+* Estate: *people who take charge of all your assets/estate after you die*
 
 ### Eh is it even an Offer?
 
@@ -99,7 +100,6 @@ flowchart TD
 
 * Unilateral offer
     * *Performance of conditions is the ACCEPTANCE of the unilateral offer.*
-    * Acceptance of a unilaterla offer 
     * It is possible to make unilateral offers to the world
     * `Carlill vs Carbolic Smokeball Company`
         * Courts applied the **objective approach**  
@@ -121,19 +121,45 @@ Termination of offer
     * IMPLIED
     * Counter-offer IS NOT Request for information
         * Courts need to distinguish between the two to determine whether the original offer has been terminated
+
 2. **Lapse of time**
     * deadline stated via EXPRESS PROVISION
         * eg. *"Offer valid for 10 more minutes"*
     * Otherwise, offer expires upon EXPIRY OF REASONABLE TIME
+
 3. **Failure of a condition** subject to which offer was made
     * EXPRESSED
     * IMPLIED
         * `Financings Limited vs Stimson`
-4. Death :c
+
+4. **Death** :c
     * If Offeree knows of Offeror's death, CANNOT ACCEPT
     * If Offeree doesn't know of Offeror's death, law is unclear but leans toward CAN ACCEPT if contract *not for personal service*
     * `Chia Kim Huay v Saw Shu Mawa Min Min [2012]`
         * Offeree's state can accept if offer is not personal to Offeree
+
+5. **Withdrawing an offer**
+    * **BILATERAL OFFERS**
+        * Has to be initiated before ACCEPTANCE
+        * Withdrawal only VALID once Offeree is *aware of it*
+        * Can there be an implied revocation by a 3rd party related to the Offeror?
+            * `Dickinson v Dodds`
+                * Generally, yes, if the 3rd party is a RELIABLE SOURCE OF INFORMATION.
+                * In this case, the 3rd party was the Offeree's own agent and hence there is no problem with communication.
+
+    * **UNILATERAL OFFER**
+        * Can be withdrawn before COMPLETE PERFORMANCE of acceptance of the offer
+        * *Law not settled in Singapore yet!*
+        * `Daulia Ltd v Four Millbank Nominees Ltd` 
+            * ***2-OFFER ANALYSIS***
+            * Unilateral offer creates 2 OFFERS
+                1. EXPRESS OFFER
+                    * The offer you have "expressed"
+                2. IMPLIED OFFER
+                    * Not mentioned but nevertheless intended by the Offeror
+                    * If you have started the PERFORMANCE of the Act, the Offeror will not do anything to impede the completion of said Act
+        * `Errington v Errington & Woods`
+            * First and principal offer is itself acceptance of the Offeree's commencement of performance
 
 ### Acceptance
 * An acceptance is a final and unqualified expression of assent to the terms of an offer.
