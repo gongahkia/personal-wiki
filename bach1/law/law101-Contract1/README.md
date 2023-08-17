@@ -19,7 +19,7 @@
 
 ## Reference material
 
-As we recall, due to the complexity of Contract law cases, most IRAC breakdowns will come from **CASE LAW**, with **STATUTE LAW** supplementing existing arguments.
+Due to the complexity of Contract law cases, most IRAC breakdowns will come from **CASE LAW**, with **STATUTE LAW** supplementing existing arguments.
 
 #### How to do readings
 
