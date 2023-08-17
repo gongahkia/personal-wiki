@@ -6,64 +6,15 @@
 
 ---
 
-## Pre-readings summary
-
-### 1. `Historian as Judge`
-* Common law is based on judicial decisions about the legal implications of a lot of human stories, incredibly historical process.
-    * Private interest undoubtably affects the development of common law.
-* French civil code achieves near complete level of intellectual abstraction.
-* English law intensely human.
-
-1. Understanding the rationale of a rule of law requires HISTORICAL CONTEXT.
-    * Contrast between Historians, who question the authority of sources and work from first principles, and Lawyers, who were too respectful of authority *(esp Common law)* and thus bound by their books and history.
-
-### 2. `Virtual hearings without tears`
-
-* Dress properly, have basic Zoom etiquette. Lol.
-
-### 3. `Sexual misconduct in Universities`
-
-* Imposition of sanctions must be based on principles, not just guidelines.
-    * Guidelines: Road signs and Road markings
-    * Principles: We want people to stay safe
-* Principles
-    1. Denunciation is the signalling effect of the sanction.
-        * A light sentence for a crime signals that the crime is effectively 'no big deal'.
-    2. Retribution
-        * Punishment for antisocial acts
-        * Making the retribution fit the crime
-    3. Deterrence, specific and general
-    4. Protection of the public
-        * Barring flashers from re-entering campus
-    5. Rehabilitation
-* Types of sanctions
-    * Expulsion
-    * Exclusion from campus 
-    * Fine
-    * Reprimand
-    * Public censure
-    * Community service
-
-### 4. `AI, work and 'outcome-thinking'`
-
-* Outcome-thinking
-    * Consider the outcome of each profession to determine the future of the profession
-        * 'Citizens don't want soldiers, they want security'
-        * 'Consumption is the sole end and purpose of all production; and the interest of the producer ought to be attended to, only so far as it may be necessary for promoting that of the consumer'
-    * The systems that'll replace us are unlikely to work like us.
-        * The law needs to ensure that people's rights and obligations to procuring a good will shouldn't hinge on getting a better lawyer
-
----
-
 ## What is the law?
 
 1. A system of SOCIAL ORGANISATION.
     * Law sets boundaries.
         * Formalises a set of offences you cannot commit --> Creates a set of acceptable actions you can follow
-    * `Rousseau`: [Law is a social contract between the individual and the state](https://www.bl.uk/collection-items/the-social-contract-by-jean-jacques-rousseau0)
+    * Rousseau: [Law is a social contract between the individual and the state](https://www.bl.uk/collection-items/the-social-contract-by-jean-jacques-rousseau0)
     * Law is a means by which to assign blame and allocate consequence
-    * Common law || Case law often sees Courts 'discovering' innate laws in hindsight, pointing to shared universal morality.
-2. A system of PRINCIPLES, **NOT** jsut a collection of rules.
+    * Common law OR Case law often sees Courts *'discovering'* innate laws in hindsight, pointing to shared universal morality.
+2. A system of PRINCIPLES, **NOT** just a collection of rules.
 
 ## Types of law
 
@@ -123,3 +74,63 @@
 * A lawyer that serves no moral or practical purpose is a bad law and should be disbarred as soon as possible.
 * `Natural law`
 * `Legal posivitism`
+
+---
+
+## Follow up questions (FUQ)
+
+1. Are existing laws enough?
+    * Is it a question of enforcement or what would u do?
+        * Polytechnic lecturer
+        * Covid related violence
+
+---
+
+## Readings summary
+
+### 1. `Historian as Judge`
+* Common law is based on judicial decisions about the legal implications of a lot of human stories, incredibly historical process.
+    * Private interest undoubtably affects the development of common law.
+* French civil code achieves near complete level of intellectual abstraction.
+* English law intensely human.
+
+1. Understanding the rationale of a rule of law requires HISTORICAL CONTEXT.
+    * Contrast between Historians, who question the authority of sources and work from first principles, and Lawyers, who were too respectful of authority *(esp Common law)* and thus bound by their books and history.
+
+### 2. `Virtual hearings without tears`
+
+* Dress properly, have basic Zoom etiquette. Lol.
+
+### 3. `Sexual misconduct in Universities`
+
+* Imposition of sanctions must be based on principles, not just guidelines.
+    * Guidelines: Road signs and Road markings
+    * Principles: We want people to stay safe
+* Principles
+    1. Denunciation is the signalling effect of the sanction.
+        * A light sentence for a crime signals that the crime is effectively 'no big deal'.
+    2. Retribution
+        * Punishment for antisocial acts
+        * Making the retribution fit the crime
+    3. Deterrence, specific and general
+    4. Protection of the public
+        * Barring flashers from re-entering campus
+    5. Rehabilitation
+* Types of sanctions
+    * Expulsion
+    * Exclusion from campus 
+    * Fine
+    * Reprimand
+    * Public censure
+    * Community service
+
+### 4. `AI, work and 'outcome-thinking'`
+
+* Outcome-thinking
+    * Consider the outcome of each profession to determine the future of the profession
+        * 'Citizens don't want soldiers, they want security'
+        * 'Consumption is the sole end and purpose of all production; and the interest of the producer ought to be attended to, only so far as it may be necessary for promoting that of the consumer'
+    * The systems that'll replace us are unlikely to work like us.
+        * The law needs to ensure that people's rights and obligations to procuring a good will shouldn't hinge on getting a better lawyer
+
+---
