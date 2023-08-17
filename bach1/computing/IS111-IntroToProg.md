@@ -1,4 +1,4 @@
-# Intro to Programming
+# `Intro to Programming`
 
 > **Class:** *IS111 Intro to Programming*  
 > **Subject:** *Python, basically*  
