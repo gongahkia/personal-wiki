@@ -77,15 +77,6 @@
 
 ---
 
-## Follow up questions (FUQ)
-
-1. Are existing laws enough?
-    * Is it a question of enforcement or what would u do?
-        * Polytechnic lecturer
-        * Covid related violence
-
----
-
 ## Readings summary
 
 ### 1. `Historian as Judge`
