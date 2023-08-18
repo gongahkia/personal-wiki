@@ -1,4 +1,8 @@
-# FUA
+# `Py` am i crying?
+
+## FUA
+
+### Weekly
 
 1. Look through **Pre-class Materials** on Elearn `content` tab
 2. Complete **Self check quizzes** on Elearn `quizzes` tab
@@ -6,7 +10,7 @@
 4. Do **Weekly reflections** on Elearn `quizzes` tab
 5. Complete **Extra exercises** on Elearn
 
-# Hard deadlines
+## Hard deadlines
 
 * Week 3: Quiz 1
 * Week 5: Quiz 2
@@ -16,7 +20,7 @@
 * Week 14, November 14 9:30am - 11:00am: **Lab Test 2**
 * Week 16: ***Finals***
 
-# Course breakdown
+## Course breakdown
 
 1. Class Part: *5%*
     * Attendance
