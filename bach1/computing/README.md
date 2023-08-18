@@ -1,7 +1,9 @@
 # Take home FUA :c
 
-* Pre-class preparation materials
-* Labs
+1. **Pre-class readings**
+2. Complete **Self check quizzes** on Elearn
+3. **Lab practice** on Elearn
+4. **Extra exercises** on Elearn
 
 > Most code will be run in **Jupyter notebooks**.
 
