@@ -1,10 +1,10 @@
 # FUA
 
-1. **Pre-class readings**
+1. Look through **Pre-class Materials** on Elearn
 2. Complete **Self check quizzes** on Elearn
-3. **Lab practice** on Elearn
-4. **Extra exercises** on Elearn
-5. **Weekly reflections** on Elearn
+3. Complete **Lab practice** on Elearn
+4. Complete **Extra exercises** on Elearn
+5. Do **Weekly reflections** on Elearn
 
 # Hard deadlines
 
