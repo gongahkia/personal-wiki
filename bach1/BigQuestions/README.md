@@ -1,4 +1,22 @@
-# c:
+# The biggest question is when next climb?
+
+## FUA 
+
+### Weekly
+
+1. Complete all **readings** on Elearn.
+2. Work on BQ individual essay **final submission**.
+
+## Hard deadlines
+
+* **Mid-term examination**: Week 9
+    * 1 in-class essay on lockdown browser
+* **Individual paper**: Week 14 Tuesday, 14th November 2023 5pm 
+    * 2,500 word individual paper
+    * No less than 15 references
+    * Topics 1-7
+    * Topic 8: *Independent self-research*
+        > Let Prof know by end of this week via telegram/ email
 
 ## Timeline
 
@@ -23,14 +41,3 @@
 * Reading responses: 10%
 * Mid-term exam: 30%
 * Individual paper: 40%
-
-## Deadline
-
-* **Mid-term examination**: Week 9
-    * 1 in-class essay on lockdown browser
-* **Individual paper**: Week 14 Tuesday, 14th November 2023 5pm 
-    * 2,500 word individual paper
-    * No less than 15 references
-    * Topics 1-7
-    * Topic 8: *Independent self-research*
-        > Let Prof know by end of this week via telegram/ email
