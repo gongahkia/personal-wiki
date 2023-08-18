@@ -1,5 +1,15 @@
 # The only contract I have is to cry
 
+## FUA
+
+### Weekly
+
+1. Refer to `week x outline` on Elearn.
+2. Complete all specified **BIG PHANG readings** and **aestricked cases**, add case summaries to `university-notes` repo.
+3. Answer questions posed at the bottom of the `*week X outline*` file.
+4. Run through slides for **upcoming week** posted on Elearn, make notes on `university-notes` repo.
+5. Read up on **other cases** mentioned in class.
+
 ## Contact
 
 * **Prof:** wlloo@smu.edu.sg
