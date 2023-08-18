@@ -5,7 +5,7 @@
 ### Weekly
 
 1. Complete all **readings** on Elearn.
-2. Work on BQ individual essay **final submission**.
+2. Consistently work on BQ individual essay **final submission**.
 
 ## Hard deadlines
 
