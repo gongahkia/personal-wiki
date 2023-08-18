@@ -6,8 +6,6 @@
 4. **Extra exercises** on Elearn
 5. **Weekly reflections** on Elearn
 
-> Most code will be run in **Jupyter notebooks**.
-
 # Hard deadlines
 
 * Week 3: Quiz 1
