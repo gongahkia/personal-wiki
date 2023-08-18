@@ -2,7 +2,7 @@
 
 ## Contact
 
-* **Prof:** wlloo@smu.edu.sg;
+* **Prof:** wlloo@smu.edu.sg
 * **TA:** harathrajs.2022@scis.smu.edu.sg
 
 ## Hard deadlines
