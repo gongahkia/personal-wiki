@@ -4,11 +4,11 @@
 
 ### Weekly
 
-1. Look through **Pre-class Materials** on Elearn `content` tab
-2. Complete **Self check quizzes** on Elearn `quizzes` tab
-3. Complete **Lab practice** on Elearn `assignment` tab
-4. Do **Weekly reflections** on Elearn `quizzes` tab
-5. Complete **Extra exercises** on Elearn
+1. Look through **Pre-class Materials** on Elearn `content` tab.
+2. Complete **Self check quizzes** on Elearn `quizzes` tab.
+3. Complete and submit **Lab practice** on Elearn `assignment` tab.
+4. Do **Weekly reflections** on Elearn `quizzes` tab.
+5. Complete **Extra exercises** on Elearn.
 
 ## Hard deadlines
 
