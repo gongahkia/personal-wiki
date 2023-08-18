@@ -4,6 +4,7 @@
 2. Complete **Self check quizzes** on Elearn
 3. **Lab practice** on Elearn
 4. **Extra exercises** on Elearn
+5. **Weekly reflections** on Elearn
 
 > Most code will be run in **Jupyter notebooks**.
 
