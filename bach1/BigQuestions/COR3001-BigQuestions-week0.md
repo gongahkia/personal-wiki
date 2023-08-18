@@ -17,8 +17,7 @@
             * Dalai Lama
         * Examine the assumption that the chief end of man is to be happy *(across religions)*
     * How does early Christanity reconcile the secular desire for happiness?
-
-# Ideas
+5. Drop Aidran a telegram message *(check the BQ tele group)* and ask him if its ok, continue to refine it on google docs
 
 ## Ontology
 
