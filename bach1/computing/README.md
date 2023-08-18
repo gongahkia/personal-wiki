@@ -1,4 +1,4 @@
-# Take home FUA :c
+# FUA
 
 1. **Pre-class readings**
 2. Complete **Self check quizzes** on Elearn
