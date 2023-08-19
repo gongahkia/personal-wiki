@@ -150,10 +150,49 @@ Singapore's position on Social and Domestic Arrangements
 3. `De Cruz Andrea Heidi v Guangzhou Yuzhitang Health Products Co Ltd`
     * Case Summary:
         > Add case summary here.
-    * Court Rulings:
+    * Court Ruling:
         > Add court ruling here, what was the context, rationalisation etc?
 
 #### Commercial arrangements
 
+`Chua Kim Leng (Cai JinLing) v Phillip Securities Pte Ltd at [24]`: In matters of commerce, there is a *rebuttable presumption* that the parties **INTENDED to create LEGAL RELATIONS**, and that absent any rebuttal the parties **must be taken to have intended to enter into a CONTRACT**.
 
+1. `Management Corporation Strata Title Plan No. 473 v De Beers Jewellery Pte Ltd at [32]`
+    * Case Summary:
+        > Add case summary here
+    * Court Ruling:
+        > Add court ruling here
 
+2. `Rose and Frank Company v JR Crompton and Brothers, Limited`
+    * Case Summary:
+        > Add case summary here
+    * Court Ruling:
+        * HONOUR CLAUSE
+        * *"This arrangement is NOT entered into, nor is this memorandum written, as a **formal or legal agreement**, and shall not be subject to legal jurisdiction in the Law Courts either of the United States or England, but it is only a definite expression and record of the purpose and intention of the three parties concerned to which they each honourably pledge themselves with the fullest confidence, based on past business with each other, that it will be carried through by each of the three parties with mutual loyalty and friendly co- operation"*
+
+3. `Kleinwort Benson Ltd v Malaysia Mining Corp Bhd (UK case)`
+    * Case Summary:
+        > Add case summary here
+    * Court Ruling:
+        * LETTER OF COMFORT
+        * *"‘It is the defendant's policy to ensure that the business of MMC Metals Limited is at all times in a position to **meet its liabilities to you** under the above arrangements.’"*
+
+Singapore's solution for this?
+
+4. `HSBC Ltd v Jurong Engineering Ltd at [43]`
+    * Court Ruling:
+        * LETTER OF AWARENESS *(weaker form of letter of comfort)*
+        * *"However, the operation of the presumption does not detract the court from its fundamental task, which is to ascertain the true bargain between the parties, to seek the substance and reality of the transaction and to ascertain what common intentions should be ascribed to the parties. In carrying out this task of construction, the court is to have **regard to the surrounding circumstances** as well as the specific text of the letter of awareness. Since the effect to be attributed to each letter of awareness is essentially a matter of construction, each case turns on its own facts. Past cases concerning letters of awareness **are not precedents** in the strict sense of the word and only provide **useful guidelines** for the court."*
+
+### IRAC practice question
+
+#### Premise:
+
+Ang engages Beng to construct a house for him. They sign a “letter of intent” that is expressly subject to contract. There was no price agreed in the letter of intent. However, no contract was ever signed between the parties. Instead, Beng starts building the house that Ang asked of him; indeed, Ang approves of Beng’s construction plans, material costs and also grants him access to the land where the house was to be constructed. Ang has also paid Beng some money for the materials used. After Beng completed half of the house, Ang refused to pay. Advise Beng.
+
+#### Response:
+
+1. Idenitfy legal issue
+2. What legal rule to use
+3. Apply legal rule
+4. Conclusion
