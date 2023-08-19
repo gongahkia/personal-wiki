@@ -50,6 +50,7 @@ My notes for SMU C&L AY 2023-2027.
 
 #### Bach 1
 
+* [COR3001 - Big Questions, Happiness and Suffering](bach1/bq)
 * [COR2614 - Publics and Privates](bach1/cultures)
 
 #### Bach 2
