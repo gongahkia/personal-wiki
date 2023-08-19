@@ -32,8 +32,6 @@
 
 * Life is suffering
 
-> Add more here!
-
 # Writing essays
 
 ## Scoping
