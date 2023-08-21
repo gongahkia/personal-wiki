@@ -8,13 +8,13 @@
 * Types of pleasure
     1. simple pleasures that are discrete items in your consciousness
     2. simple pleasures that pervade your consciousness like a good mood
-    3. complex, pleasures that revolve around a particular object, like a friend's promotion or your favourite team winning
-    4. complex, pleasures that revolve around a more extended object, like your whole life
+    3. complex pleasures that revolve around a particular object, like a friend's promotion or your favourite team winning
+    4. complex pleasures that revolve around a more extended object, like your whole life
 
 ## 2. `The Experience Machine (pg 42-45)` by Robert Noczik
 
 * *What else could matter to us, other than how our lives feel from the inside?*
-* *What is most disturbing about them (these machines, experience machine, trasnfromation machine, change machine) is their living of our lives for us.*
+* *What is most disturbing about them (these machines, experience machine, transformation machine, change machine) is their living of our lives for us.*
 
 ## 3. `Higher and Lower Pleasures` by Singer P
 

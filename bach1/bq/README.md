@@ -5,7 +5,13 @@
 ### Weekly
 
 1. Complete all **readings** on Elearn.
-2. Consistently work on BQ individual essay **final submission**.
+2. Complete and Submit weekly **Reading Response** on Elearn under `assignments` tab.
+    * One sentence each on three different readings
+        1. First sentence: you summarize the central thesis of a reading of your choice
+        2. Second sentence: you highlight some insight that spoke particularly to you in a second reading 
+        3. Third sentence: you pose a question that is triggered by the third reading.
+    * When there are less than three readings, or when there is a lecture, you may double-count/use any particular reading, or the lecture.
+3. Consistently work on BQ individual essay **final submission**.
 
 ## Hard deadlines
 

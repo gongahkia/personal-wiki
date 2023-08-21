@@ -16,7 +16,7 @@ Vitiate: *destroy the integrity of a given contract*
 ### Incompleteness
 * A contract is incomplete if it **lacks material terms**.
 
-### Effect of UNCERTAINITY and INCOMPLETENESS  
+## Effect of UNCERTAINITY and INCOMPLETENESS  
 * `Foley v Classique Coaches Ltd`
     * *Unless all the material terms of the contract are agreed there is no binding agreement*.  
     * An agreement to agree in future is NOT a contract, nor is there a contract if a material term is NEITHER SETTLED NOR IMPLIED by law and the document contains **no machinery for ascertaining it**.
@@ -128,54 +128,75 @@ Compensating a **reasonable sum in restitution**
 ### Intention to create legal relations
 
 *Gay Choon Ing*: Connotes an **intention** on the part of both parties to a **purported contract that the transaction has legal effect**.
-* While the intention to create legal relations is ascertained OBJECTIVELY, the law draws upon **presumptions depending on the circumstances**
+1. Requirements of **Agreement** and **Consideration**.
+2. Parties must have *intended* for agreement to be **legally binding**.
+> While the intention to create legal relations is ascertained OBJECTIVELY, the law draws upon **presumptions depending on the circumstances**
 
 #### Social and Domestic arrangements
+
+##### Presumption against contractual intent
 
 1. `Balfour v Balfour`
     * Case Summary: 
         * The defendant husband promised his wife an allowance during his period of absence as a civil servant in Ceylon.
     * Court Ruling:
-        * It is presumed that in domestic relations, parties do not NORMALLY seek out legal relations, and so the BURDEN OF PROOF lies on the Plaintiff to show that the parties intended for their arrangement to have **legal consequences**.
+        * Presumption against contractual intent
+            * It is presumed that in domestic relations, parties do not NORMALLY seek out legal relations, and so the BURDEN OF PROOF lies on the Plaintiff to show that the parties intended for their arrangement to have **legal consequences**.
         * *'The small Courts of this country would have to be multiplied one hundred-fold if these arrangements were held to result in legal obligations. They are not sued upon, not because the parties are reluctant to enforce their legal rights when the agreement is broken, but because the parties, in the inception of the arrangement, never intended that they should be sued upon. Agreements such as these are outside the realm of contracts altogether. The common law does not regulate the form of agreements between spouses. Their promises are not sealed with seals and sealing wax. The consideration that really obtains for them is that natural love and affection which counts for so little in these cold Courts.’*
+
+2. `Merritt v Merritt`
+    * Case Summary:
+        * The defendant husband, after **deserting** the plaintiff wife, agreed to pay her a monthly maintanence of 40 pounds, and to transfer the house to her when the mortgage loan had been repaid in full given she paid off the outstanding mortgage loan and other expenses related to the house. The plaitiff wife insisted the defendant husband write an agreement on paper and sign against it.
+   * Court Ruling:
+       * Presumption against contractual intent in `Balfour v Balfour` DOES NOT APPLY, the agreement in `Merritt v Merritt` was **binding**.
+       * Lord Denning MR:
+           * Difference between AGREEMENTS made while a couple is living in amity, and when a couple is already seperated/divorced.
+           * `Balfour v Balfour`: **presumption against contractual intent** applied because couple was living amicably at time of the agreement.
+           * `Merrit v Merrit`: **presumption against contractual intent** NOT APPICABLE as parties were *already estranged*, they can no longer be assumed to trust the other to fulfill their promise on the basis of their common love and affection.
 
 Singapore's position on Social and Domestic Arrangements
 
-2. `Ong Wui Teck v Ong Wui Swoon [2019] SGCA 61 at [45]`
+3. `Ong Wui Teck v Ong Wui Swoon [2019] SGCA 61 at [45]`
     * Court Ruling:
-        * `Balfour`'s presumption applies across other familial relations as well.
+        * `Balfour`'s presumption against contractual intent applies across other familial relations as well.
         * *"The presumption in `Balfour` is not restricted only to arrangements between husbands and wives, but **applies also to other types of familial relationships, such as those involving parent and child, or between siblings**"*
         * *"We must emphasise that arrangements made in the domestic or social context merely give rise to a presumption that parties do not intend to create legal relations, which **puts the burden of proof on the party seeking to enforce the agreement to prove that parties did in fact intend for their arrangement to have legal consequences**."*
 
-3. `De Cruz Andrea Heidi v Guangzhou Yuzhitang Health Products Co Ltd`
+4. `De Cruz Andrea Heidi v Guangzhou Yuzhitang Health Products Co Ltd`
     * Case Summary:
-        > Add case summary here.
+        * Plaintiff TV celebrity suffered liver damage after consuming slimming drug (Slim 10) and sought compensation from the defendant, her colleague at Mediacorp. Plaintiff complained that defendant breached implied term of contract of sale by failing to ensure that the drug was of *satisfactory quality*. Plaintiff and Defendant had SMS messages with a friendly, teasing tone, and there was no evidence beyond the SMS messages of any discussion of time, place, delivery and price.
     * Court Ruling:
-        > Add court ruling here, what was the context, rationalisation etc?
+        * Tay Yong Kwang J:
+            * Parties' conduct "had all the trappings of a friend doing a favour for another by getting something for her" and as such, could not have INTENDED to create **legal obligations**
+            * Although the defendant did make an *undisclosed profit* of $30/100 pills, this still did not qualify as a commerical transaction, "the friend doing the favour has decided to keep some part of the discount for himself, perhaps to compensate for his time and expense, without informing the recepient".
 
 #### Commercial arrangements
+
+##### Presumption of intention to contract
 
 `Chua Kim Leng (Cai JinLing) v Phillip Securities Pte Ltd at [24]`: In matters of commerce, there is a *rebuttable presumption* that the parties **INTENDED to create LEGAL RELATIONS**, and that absent any rebuttal the parties **must be taken to have intended to enter into a CONTRACT**.
 
 1. `Management Corporation Strata Title Plan No. 473 v De Beers Jewellery Pte Ltd at [32]`
     * Case Summary:
-        > Add case summary here
+        * A managment corporation had approved of a subsidiary proprietor's application for the conversion of four penthouses unti 18 maisonette units on condition the subsidiary proprietor contributes $200,000 towards modernisation of 3 lifts at the premises.
     * Court Ruling:
-        > Add court ruling here
+        * Judith Prakash J:
+            * Though the application clearly relates to the proprietor's commercial activites, managing corporation was exercising STATUTORILY CONFERRED ADMINISTRATIVE POWERS in **granting approval** and **raising funds** from proprietor. Parties COULD NOT HAVE SAID to have *intended to create legal relations*, proprietor's contribution was not held to have been made pursuant to a contract.
 
 2. `Rose and Frank Company v JR Crompton and Brothers, Limited`
     * Case Summary:
-        > Add case summary here
+        * Defendants (2 English firms) appointed the Plaintiff (American firm) as their sales agent for carbonising papers in the US via **written agreement**. After a period of 6 years, the defendants were dissatisfied with Plaintiff's work and terminated the agreement. Plaintiff sued for *breach of contract*, Defendants argued the agreement signed was NOT intended to constitute a **legally binding contract** due to conditons EXPRESSLY stated in the agreement.
     * Court Ruling:
         * HONOUR CLAUSE
+            * Intent and purpose was unambiguous, Courts displaced the presumption of intention to contract.
         * *"This arrangement is NOT entered into, nor is this memorandum written, as a **formal or legal agreement**, and shall not be subject to legal jurisdiction in the Law Courts either of the United States or England, but it is only a definite expression and record of the purpose and intention of the three parties concerned to which they each honourably pledge themselves with the fullest confidence, based on past business with each other, that it will be carried through by each of the three parties with mutual loyalty and friendly co- operation"*
 
 3. `Kleinwort Benson Ltd v Malaysia Mining Corp Bhd (UK case)`
     * Case Summary:
-        > Add case summary here
+        * Defendant issued a letter of comfort *(in place of a corporate guarantee)* in favour of the Plaintiff bank in connection with a credit facility by the bank to the Defendant's subsidiary. The letter of comfort confirmed that they would always ensure their subidiary would always be able to repay the bank's loan. After the Defendant's subsidiary went into insolvent liquidation, the plaintiff sought to enforce the letter of comfort.
     * Court Ruling:
-        * LETTER OF COMFORT
-        * *"‘It is the defendant's policy to ensure that the business of MMC Metals Limited is at all times in a position to **meet its liabilities to you** under the above arrangements.’"*
+        * English Court of Appeal:
+            * Plaintiff's assurance did not amount to contractual promise, statement of fact as to defendant's intention at material time, since the defendant has prior to the issuance of the letter, DECLINED to guarantee the subsidiary's liabilities to the plaintiff bank.
 
 Singapore's solution for this?
 
