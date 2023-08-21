@@ -1,5 +1,7 @@
 # Week 2
 
+> Add summary of lecture, 4 readings and movie here, transfer to google doc
+
 ## Readings
 
 1. `The Pacific Proving Grounds and the Proliferation of Settler Environmentalism`
