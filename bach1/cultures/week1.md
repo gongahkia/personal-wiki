@@ -59,16 +59,19 @@
     * ultimately, people are unable to cooperate
 
 
-3. `The end of History` reading by **Francis Fukiyama**
+3. `The end of History` reading by **Francis Fukuyama**
+* 
 * Western ideological struggles, a remenant of Western colonial rule in Asia in the late 19th century, resulted in the spread of Western liberalism in asian countries, that 20+ years ago were communist, fascist or nationalist
 * Western liberalism has now become dominant in Asia
 * Anxiety of only focusing on PRIVATE self-interest results in a boring stagnant society that is prone to the rise of radicals like the Nationalists
 
-4. `the` reading by **Hannah Arendt**
+4. `The Human Condition` reading by **Hannah Arendt**
 * Gives the general parameters for what publics and privates are 
-* Anxiety of never actually being able to create a Transpacific PUBLIC common space, given that all nations and institutions are by nature, PRIVATE
+* **Anxiety of A LIBERAL DREAM** is that we only have private words to describe a public world, so how can we possibly create a public space?
     * We want to create a PUBLIC world in the Pacific Rim, when all we have are private words
     * "If all we have in Western liberalism in Asia are privates, then is the making of a traspacific public world actually possible within this ideology?"
+    * Ownership over words allow control of the narrative
+        * We use those words to engage with our reality, and implictly or expressly accept the cultural / era-based assumptions of the word
 
 ## Movies summary
 
