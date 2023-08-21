@@ -71,7 +71,7 @@
     * We want to create a PUBLIC world in the Pacific Rim, when all we have are private words
     * "If all we have in Western liberalism in Asia are privates, then is the making of a traspacific public world actually possible within this ideology?"
     * Ownership over words allow control of the narrative
-        * We use those words to engage with our reality, and implictly or expressly accept the cultural / era-based assumptions of the word
+        * We use those words to engage with our reality, and implictly or expressly accept the cultural / era-based assumptions the word carries
 
 ## Movies summary
 
