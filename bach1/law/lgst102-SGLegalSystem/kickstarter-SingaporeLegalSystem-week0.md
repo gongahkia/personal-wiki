@@ -75,11 +75,13 @@
     * CAN BE AMENDED, but is **much harder to amend** than other pieces of legislation
 
 2. `Legislation` *(STATUTES)*
-    1. `PRIMARY legislation`: Acts of Parliment
+    1. `PRIMARY legislation`
+        * Acts of Parliment
         * Made by the Legislature *(President + Parliment)*
         * Acts of Parliment can be found at [Singapore Statutes](https://sso.agc.gov.sg), have the word ACT at the back 
             * *eg.* Housing and Development Act
-    2. `SECONDARY legislation`/`Subsidiary`/`Delegated legislation`: Regulations, Rules, Orders
+    2. `SECONDARY legislation`/`Subsidiary`/`Delegated legislation`
+        * Regulations, Rules, Orders
         * Legislation made by persons who have been delegated legislative power *(typically Ministers of Public Servants)*
         * Those persons can create regulatory law WITHOUT having to have a bill passed in Parliment for agreement and then to Presidential council for minority right and then President for assent.
             * *eg. COVID-19 (Temporary Measures) Act 2020*, the **PRIMARY** legislation, creates *COVID-19 (Temporary Measures) (Control Order) Regulations 2020*, the **SECONDARY** legislation
