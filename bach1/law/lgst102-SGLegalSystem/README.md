@@ -5,8 +5,8 @@
 ### Weekly
 
 1. Follow up with existing questions posed in class.
-2. Look through past **uploaded slides** on Elearn.
-3. Complete all **readings** on Elearn.
+2. Complete all upcoming **readings** on Elearn Reading List.
+3. Look through past **uploaded slides** on Elearn.
 4. Check Outlook email and Elearn for updates.
 
 ## Learning outcomes

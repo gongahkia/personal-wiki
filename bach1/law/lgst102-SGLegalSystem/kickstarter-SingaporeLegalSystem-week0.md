@@ -73,6 +73,7 @@
         * Lays out who can be a minister, who can be a president, and their roles and responsiblities
     * States fundamental rights that other laws cannot violate
     * CAN BE AMENDED, but is **much harder to amend** than other pieces of legislation
+        * Most of Constitution's articles can be amended with a CONSTITUTIONAL AMENDMENT BILL that has **support of MORE THAN 2/3 of Members of Parliment**
 
 2. `Legislation` *(STATUTES)*
     1. `PRIMARY legislation`
