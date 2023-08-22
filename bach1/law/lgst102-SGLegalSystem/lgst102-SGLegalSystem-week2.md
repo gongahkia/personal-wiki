@@ -23,6 +23,7 @@
 4. Fully revise all of Ian Chai's notes for Week 2 to learn about different countries' legal systems
 5. Add portion on Bills here
 6. Synthesize and combine the sources of law headers and legal institutions portion of these notes
+7. Look through and understand the life cycle of a law, refactor
 
 ---
 
@@ -91,9 +92,9 @@
 
 #### 1. Judiciary 
 * Enforces, interprets the laws  
-* JUDGES, COURT SYSTEM, COURT OFFICERS
-* It is responsible for ensuring that all are equal before the law and have access to justice. The Judiciary is led by the Chief Justice.
-* Implicitly DEVELOPS the `common law` in the course of deciding legal disputes
+* JUDGES, COURT SYSTEM, COURT OFFICERS, led by CHIEF JUSTICE
+* Ensuring that all are equal before the law and have access to justice
+* Instrumental in DEVELOPING `common law` in the course of deciding legal disputes
 
 #### 2. Executive 
 * Formulates policy, administers the running of the state, influences general direction of the government
@@ -155,6 +156,23 @@
 * Legislative drafter
 * Public Prosecutor *(PP)*
 
+## Life Cycle of a Law
+
+> Make this into a table
+
+| Step no. | Action | Who does it? |
+| :--: | :--: | :--: |
+| 1 | 
+
+1. **Policy** - PMO (Cabinet)
+2. **Drafting** - Ministries in consulation with Attorney General's Chambers
+3. **Passing into law** - Legislature, Members of Parliment
+4. Coming into force - decided by a Minister, published in Gazette
+5. Enforcement - public service
+6. Prosection- pubic service
+7. Adjudication and growth of Common Law - Judiciary
+8. Review and Law Reform - Ministries in consultation with AGC / Judiciary
+
 ## The Courts of Singapore
 
 > Taken from [**Article 94**](https://sso.agc.gov.sg/Act/CONS1963?ProvIds=P18-#pr94-) of the *Constitution of the Republic of Singapore*.
@@ -210,3 +228,4 @@ The JUDICIAL POWER of the state can be vested only in the `Supreme court` and `S
 * Judges have ***greater specialisation*** regarding hearing and deciding cases.
 * `System of appeals`: Many issues of Subordinate courts can be brought to higher courts for appeal *(especially the more complex ones)*.
 * `System of BINDING PRECEDENT`: higher courts bind lower courts decision-wise.
+
