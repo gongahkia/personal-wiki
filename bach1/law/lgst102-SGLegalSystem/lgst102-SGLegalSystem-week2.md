@@ -22,26 +22,13 @@
 3. Add Ian Chai's history of law week 2 slides here and the diff legal systems
 4. Fully revise all of Ian Chai's notes for Week 2 to learn about different countries' legal systems
 5. Add portion on Bills here
-6. Synthesize and combine the sources of law headers and primary secondar legislature creatures of statute portion
+6. Synthesize and combine the sources of law headers and legal institutions portion of these notes
 
 ---
 
 ### Definitions 
 
 **Law**: a *system of rules* governing society
-
-### Primary and Secondary legislature, Creatures of Statute
-
-1. **Primary Legislature** *(Acts of parliment)*
-2. **Secondary Legislature** *(Rules, Regulations, Subsidiary legislature)*
-
-> Legislation && Statute are *interchangable terms*.
-
-* *eg.* MAS (Monetary Authority of Singapore) has its powers *bestowed to it* by the `MAS Act`.
-    * MAS is also termed a *creature of statute*.
-* This allows MAS to create **Secondary Legislation** within the confines of the power bestowed to it by the Primary Legislation (Acts of Parliment, `MAS Act`).
-    * *eg.* [MAS imposes additional capital requirement on DBS](https://www.mas.gov.sg/news/media-releases/2023/mas-imposes-further-additional-capital-requirement-on-dbs-bank-for-disruption-of-banking-services)
-
 
 ## Sources of law
 
@@ -54,16 +41,29 @@
     * Most of Constitution's articles can be amended with a CONSTITUTIONAL AMENDMENT BILL that has **support of MORE THAN 2/3 of Members of Parliment**
 
 ### 2. Legislation *(STATUTES)*
-1. `PRIMARY legislation`
-    * Acts of Parliment
-    * Made by the Legislature *(President + Parliment)*
-    * Acts of Parliment can be found at [Singapore Statutes](https://sso.agc.gov.sg), include the word ACT at the back 
-        * *eg.* Housing and Development Act
-2. `SECONDARY legislation`/`Subsidiary`/`Delegated legislation`
-    * Regulations, Rules, Orders
-    * Legislation made by persons who have been delegated legislative power *(typically Ministers of Public Servants)*
-    * Those persons can create regulatory law WITHOUT having to have a bill passed in Parliment for agreement and then to Presidential council for minority right and then President for assent.
-        * *eg. COVID-19 (Temporary Measures) Act 2020*, the **PRIMARY** legislation, creates *COVID-19 (Temporary Measures) (Control Order) Regulations 2020*, the **SECONDARY** legislation
+
+1. **Primary Legislature** *(Acts of parliment)*
+2. **Secondary Legislature** *(Rules, Regulations, Subsidiary legislature)*
+
+> Legislation && Statute are *interchangable terms*.
+
+#### PRIMARY legislation
+* Acts of Parliment
+* Made by the Legislature *(President + Parliment)*
+* Acts of Parliment can be found at [Singapore Statutes](https://sso.agc.gov.sg), include the word ACT at the back 
+    * *eg.* Housing and Development ACT
+
+#### SECONDARY legislation
+* *A.K.A* Subsidiary legislation / Delegated legislation
+* Regulations, Rules, Orders
+* Legislation made by persons who have been delegated legislative power *(typically Ministers of Public Servants)*
+* Those persons can create regulatory law WITHOUT having to have a bill passed in Parliment for agreement and then to Presidential council for minority right and then President for assent.
+    1. *eg. COVID-19 (Temporary Measures) Act 2020*, the **PRIMARY** legislation which enabled the COVID Committee to create **SECONDARY** legislation, *COVID-19 (Temporary Measures) (Control Order) Regulations 2020*
+    2. *eg.* MAS (Monetary Authority of Singapore) has its powers *bestowed to it* by the `MAS Act`.
+        * `MAS` is a **creature of statute**.
+        * `MAS Act` is a piece of **Primary Legislation** (ACT OF PARLIMENT) that allows the `MAS` to create **Secondary Legislation** (REGULATION, RULES, SUBSIDIARY LEGISLATURE) within the confines of the power bestowed to it.
+            * *eg.* [MAS imposes additional capital requirement on DBS](https://www.mas.gov.sg/news/media-releases/2023/mas-imposes-further-additional-capital-requirement-on-dbs-bank-for-disruption-of-banking-services)
+
 
 ### 3. Case law
 
@@ -75,15 +75,15 @@
     * **Horizontal stare decisis**: NOT APPLICABLE in Singapore, each court is not bound to its own previous decisions  
     * Case law can be found in the [Singapore law report](https://www.sal.org.sg/Resources-Tools/LawNet) and [Supreme Court's website](https://www.judiciary.gov.sg/judgments).  
     * Primary and Secondary legislation (passed by the Legislature) will often OVERRIDE case law
-> NOTE THAT even if a case is not binding, it is still persuasive in influencing the judge's reasoning  
+> NOTE THAT even if a case is not binding, it is still persuasive in influencing the judge's reasoning.
 
 ## Separation of powers  
 
 * State needs LAWS to function.
 * **Three-branch structure** of...
-    1. Judiciary: Power to ENSURE LAWS ARE FOLLOWED
-    2. Executive: Power to EXECUTE LAWS
-    3. Legislature: Power to CREATE LAWS
+    1. **Judiciary**: Power to ENSURE LAWS ARE FOLLOWED
+    2. **Executive**: Power to EXECUTE LAWS
+    3. **Legislature**: Power to CREATE LAWS
 * Ensures CHECKS AND BALANCES to prevent abuse of power by any one of the judicial entities
 * Seperation of powers enshrined in the Constitution, which holds guidelines on how entities of the State should be constituted
 
@@ -154,8 +154,6 @@
 * REPRESENTATIVE of the Government && Singapore in relations with other parties or States
 * Legislative drafter
 * Public Prosecutor *(PP)*
-
----
 
 ## The Courts of Singapore
 
