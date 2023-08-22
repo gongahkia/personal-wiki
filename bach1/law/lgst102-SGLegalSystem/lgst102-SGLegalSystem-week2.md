@@ -23,30 +23,28 @@
 4. Fully revise all of Ian Chai's notes for Week 2 to learn about different countries' legal systems
 5. Add portion on Bills here
 6. Synthesize and combine the sources of law headers and legal institutions portion of these notes
-7. Look through and understand the life cycle of a law, refactor
 
 ---
 
-### Definitions 
+### Definitions  
 
 **Law**: a *system of rules* governing society
 
 ## Sources of law
 
 ### 1. Constitution
-* **Lays out various rules** on how a state should be CONSTRUCTED *(constituted)*
-    * Contains most of the laws about the LEGAL SYSTEM *(courts, parliment, all governing entities)* to begin with
-    * Lays out who can be a minister, who can be a president, and their roles and responsiblities
+* **Lays out various rules** on how a state should be CONSTRUCTED *(constituted)*, and its component entities
+    * *eg.* Lays out who can be a minister, who can be a president, and their roles and responsiblities
 * States fundamental rights that other laws cannot violate
 * CAN BE AMENDED, but is **much harder to amend** than other pieces of legislation
     * Most of Constitution's articles can be amended with a CONSTITUTIONAL AMENDMENT BILL that has **support of MORE THAN 2/3 of Members of Parliment**
 
 ### 2. Legislation *(STATUTES)*
 
+> Legislations and Statutes are *interchangable terms*.
+
 1. **Primary Legislature** *(Acts of parliment)*
 2. **Secondary Legislature** *(Rules, Regulations, Subsidiary legislature)*
-
-> Legislation && Statute are *interchangable terms*.
 
 #### PRIMARY legislation
 * Acts of Parliment
@@ -58,24 +56,24 @@
 * *A.K.A* Subsidiary legislation / Delegated legislation
 * Regulations, Rules, Orders
 * Legislation made by persons who have been delegated legislative power *(typically Ministers of Public Servants)*
-* Those persons can create regulatory law WITHOUT having to have a bill passed in Parliment for agreement and then to Presidential council for minority right and then President for assent.
+* Those persons can create regulatory law **WITHOUT having to have a bill passed in Parliment** for agreement, Presidential council for minority right, and President for final assent.
     1. *eg. COVID-19 (Temporary Measures) Act 2020*, the **PRIMARY** legislation which enabled the COVID Committee to create **SECONDARY** legislation, *COVID-19 (Temporary Measures) (Control Order) Regulations 2020*
     2. *eg.* MAS (Monetary Authority of Singapore) has its powers *bestowed to it* by the `MAS Act`.
         * `MAS` is a **creature of statute**.
         * `MAS Act` is a piece of **Primary Legislation** (ACT OF PARLIMENT) that allows the `MAS` to create **Secondary Legislation** (REGULATION, RULES, SUBSIDIARY LEGISLATURE) within the confines of the power bestowed to it.
             * *eg.* [MAS imposes additional capital requirement on DBS](https://www.mas.gov.sg/news/media-releases/2023/mas-imposes-further-additional-capital-requirement-on-dbs-bank-for-disruption-of-banking-services)
 
-
 ### 3. Case law
 
 * Synonymous with `Common law`
     * The implicit understanding of the "law" created by courts in their deciding of legal disputes  
-    * Acts as a system to *guard against EDGE CASES* that Civil Law does not account for, where the underlying foundational principles guide rule-making and decision-making in law
-* Latin phrase *stare decisis*, meaning "binding precedent"  
+    * *Guards against EDGE CASES* that Civil Law does not account for, where the underlying foundational principles guide **rule-making** and **decision-making** in law
+* Latin phrase *Stare Decisis*
+    * meaning "binding precedent"  
     * **Vertical stare decisis**: a judge is constrained to follow a decision of the courts above him in the judicial hierachy if the case before him cannot be distinguished from the prior case  
     * **Horizontal stare decisis**: NOT APPLICABLE in Singapore, each court is not bound to its own previous decisions  
     * Case law can be found in the [Singapore law report](https://www.sal.org.sg/Resources-Tools/LawNet) and [Supreme Court's website](https://www.judiciary.gov.sg/judgments).  
-    * Primary and Secondary legislation (passed by the Legislature) will often OVERRIDE case law
+    * Primary legislation (passed by the Legislature) will often OVERRIDE case law
 > NOTE THAT even if a case is not binding, it is still persuasive in influencing the judge's reasoning.
 
 ## Separation of powers  
@@ -86,24 +84,22 @@
     2. **Executive**: Power to EXECUTE LAWS
     3. **Legislature**: Power to CREATE LAWS
 * Ensures CHECKS AND BALANCES to prevent abuse of power by any one of the judicial entities
-* Seperation of powers enshrined in the Constitution, which holds guidelines on how entities of the State should be constituted
+* Separation of powers enshrined in the Constitution, which holds guidelines on how entities of the State should be constituted
 
 ## Legal Institutions / State entities
 
-#### 1. Judiciary 
+### 1. Judiciary  
 * Enforces, interprets the laws  
 * JUDGES, COURT SYSTEM, COURT OFFICERS, led by CHIEF JUSTICE
-* Ensuring that all are equal before the law and have access to justice
-* Instrumental in DEVELOPING `common law` in the course of deciding legal disputes
+* Instrumental in developing common law in the course of deciding legal disputes
+* Ensuring that *all are equal before the law* and have *access to justice*
 
-#### 2. Executive 
+### 2. Executive 
 * Formulates policy, administers the running of the state, influences general direction of the government
 * **PRIME MINISTER's OFFICE (PMO)** *(a.k.a THE CABINET led by the PRIME MINISTER)*
     * PRIME MINISTER holds majority of the votes from Members of Parliment (Legislature)
-    * PRESIDENT appoints ministers from among the LEGISLATURE *(members of parliament)* to form the Cabinet
-    * Ministers *(who form the cabinet)* are drawn from the **parliment**
-        * President chooses the Prime Minister *(leader of the party with most seats in Parliment)*
-        * The Prime Minister chooses Ministers from **among MPs**  
+    * PRIME MINISTER forms the Cabinet by **appointing Ministers** from among the LEGISLATURE *(members of parliament)*
+        * PRESIDENT chooses the Prime Minister *(leader of the party with most seats in Parliment)*
     * The CABINET comprises
         1. Prime Minister
         2. Deputy Prime Ministers 
@@ -126,7 +122,7 @@
             * Ministry of Trade and Industry
 * Advised on legal matters by Attorney-General
 
-#### 3. Legislature 
+### 3. Legislature 
 * Create primary legislation, highest law-making authority in Singapore
 * MEMBERS OF PARLIMENT led by the SPEAKER OF PARLIMENT --> Pass Acts of Parliment (primary legislation)
 * Advised on parlimentary draftings by Attorney-General
@@ -134,7 +130,7 @@
     * meet-the-people sessions to find out the public's needs and desires
 * LEGISLATURE (Members of Parliment) **holds PMO (cabinet) accountable** by asking questions to Ministers
 
-#### 4. President 
+### 4. President 
 * HEAD OF STATE, not a member of any of the 3 branches
 * The President's authority *(assent)* is required by the Legislature at the final stage of passing primary legislation (acts of parliment).
 * Power to veto certain choices made by the Government
@@ -142,12 +138,12 @@
 * Fulfills ceromonial roles
 * Symbolic figurehead for national unity
 
-#### 5. Presidential Councils
+### 5. Presidential Councils
 * Council of Presidential Advisers
 * Presidential Council for Minority Rights
 * Presidential Council for Religious Harmony
 
-#### 6. Attorney-General's Chambers 
+### 6. Attorney-General's Chambers 
 * Assists the EXECUTIVE (as the government's legal advisor) and the LEGISLATURE (as parliamentary drafters). 
 * Also the Public prosecutor
 * Brings all public prosecutions in Singapore, independently and without influence from any of the 3 branches of the state
@@ -158,20 +154,16 @@
 
 ## Life Cycle of a Law
 
-> Make this into a table
-
 | Step no. | Action | Who does it? |
 | :--: | :--: | :--: |
-| 1 | 
-
-1. **Policy** - PMO (Cabinet)
-2. **Drafting** - Ministries in consulation with Attorney General's Chambers
-3. **Passing into law** - Legislature, Members of Parliment
-4. Coming into force - decided by a Minister, published in Gazette
-5. Enforcement - public service
-6. Prosection- pubic service
-7. Adjudication and growth of Common Law - Judiciary
-8. Review and Law Reform - Ministries in consultation with AGC / Judiciary
+| 1 | *POLICY* | Prime Ministers Office (Cabinet) |
+| 2 | *DRAFTING* | Ministries in consultation with Attorney General's Chambers |
+| 3 | *PASSING INTO LAW* | Legislature, Members of Parliment |
+| 4 | *COMING INTO FORCE* | Decided by a Minister, published in Gazette |
+| 5 | *ENFORCEMENT* | Public service |
+| 6 | *PROSECUTION* | Public service |
+| 7 | *ADJUDICATION AND GROWTH OF COMMON LAW* | Judiciary |
+| 8 | *REVIEW AND LAW REFORM* | Ministries in consultation with AGC, Judiciary |
 
 ## The Courts of Singapore
 
