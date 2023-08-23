@@ -9,6 +9,7 @@
     * Christianity: Christ as the highest pleasure
 5. Religion as objective list theory
 6. Scope topic down so I'm able to discuss it in 30 seconds (60 words).
+7. Add these ideas to final eassy individual google doc
 
 # Buzzword heaven
 
