@@ -1,6 +1,6 @@
 # `I want 2 die`
 
-> Follow up on this later
+> Try to complete these IRAC practices!
 
 ## Practice question 1
 

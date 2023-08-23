@@ -6,66 +6,9 @@
 
 ---
 
-## FUA
-1. follow all FUA on this doc with ref to wk1 wk2 slides
-2. add data from [here](https://www.singaporelawwatch.sg/About-Singapore-Law/Commercial-Law)
-3. from week1 slides on elearn, add data from *slide 27 to 39* and data from below `S1W1` section and from https://sso.agc.gov.sg/Act/ETA2010 to wk1 markdown notes in this repo 
-
----
-
-## `S1W1 Shit`
-
 ## Definitions
 
-*Offeror*: person MAKING THE OFFER  
-*Offeree*: person WHO ACCEPTS OR DOES NOT ACCEPT THE OFFER  
 *Vitiate*: destroy the integrity of a given contract
-
-### Acceptance
-* Final and unqualified expression of assent to terms of the offer
-
-#### Elements of Acceptance
-##### 1. INTENTION TO BE BOUND determined OBJECTIVELY
-* 'Intention to be bound' evaluated as by means of final and unqualified assent to the terms of the offer
-* 'Objectively' determined via Objectivity test
-    * **OBJECTIVITY TEST**: 
-        * Take point of view of a reasonable person standing in the shoes of the offeror
-        > Add further definition here for what exactly objectivity test in the context of an offer is; see Week 1 slides
-
-##### 2. COMMUNICATION TO OFFEROR
-###### General Receipt Rule (communication rule)
-* Acceptance effective upon communication TO **offeror**. Contract is only formed when **offeror** is notified of acceptance.
-    1. `Entores v Miles Far East`
-        * Case Summary:
-            > ADD CASE SUMMARY and court ruling HERE
-        * Court Ruling:
-            * General Rule applies to **INSTANTANEOUS COMMUNICATION** 
-###### COUNTER-ARGUMENT to General Receipt Rule
-1. `Brinkibon v Stahag Stahl`
-    * Case Summary:
-        > ADD CASE SUMMARY and court ruling HERE
-    * Court Ruling:
-        * **Lord Wilberforce's 3 factors**
-            1. Intention of the parties
-            2. Sound business practice
-            3. Making a judgement on where the risks should lie
-2. `Adams v Lindsell`
-    * Case Summary:
-        > ADD CASE SUMMARY and court ruling HERE
-    * **Postal Acceptance Rule**
-        1. Applies when letter is properly stamped and addressed
-        2. Use of Post to accept offers has been authorised, EXPRESSLY or IMPLICITLY
-
-### Forms of Acceptance
-
-> Add conditions to determine the completion of a bilateral or unilateral offer
-
-1. Unilateral
-2. Bilateral
-
----
-
-## `S1W2 Shit`
 
 ### Uncertainty
 * A term is uncertain if it is **incomprehensible**.
@@ -73,7 +16,7 @@
 ### Incompleteness
 * A contract is incomplete if it **lacks material terms**.
 
-## Effect of UNCERTAINITY and INCOMPLETENESS  
+### Effect of UNCERTAINITY and INCOMPLETENESS  
 * `Foley v Classique Coaches Ltd`
     * *Unless **all the material terms** of the contract are agreed there is no binding agreement*.  
     * An agreement to agree in future is NOT a contract
