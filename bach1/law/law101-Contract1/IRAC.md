@@ -10,11 +10,11 @@ One afternoon, Mr A (of A Ltd) telephones Mr B (of B Ltd) and offers to supply t
 
 ### Response:
 
-1. Identify legal issue
+1. **Identify legal issue**
     * When is the fax ACCEPTANCE effective?
-2. What legal rule to use
+2. **What legal rule to use**
     * GENERAL RECEIPT RULE 
-3. Apply legal rule
+3. **Apply legal rule**
 * *ARGUMENT* for General Receipt Rule
     * This General Receipt Rule applies to instantaneous forms of communication.
     * Applying the General Receipt Rule as seen in `Enteres v Miles Far East`, we can see that acceptance is determined to be effective from 10am, after Mr A (the offeror) is actually notified of the acceptance of Mr B (the offeree).
@@ -24,7 +24,7 @@ One afternoon, Mr A (of A Ltd) telephones Mr B (of B Ltd) and offers to supply t
             * Intention of the parties
             * Sound business practice
             * Making a judgement on where the risks should lie
-4. Conclusion
+4. **Conclusion**
     * Variants to the case
         * Acceptance sent OUTSIDE OFFICE HOURS
         * Notification of acceptance was received by a NON-PRINCIPAL PARTY
