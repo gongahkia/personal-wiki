@@ -9,7 +9,7 @@
 ## FUA
 1. follow all FUA on this doc with ref to wk1 wk2 slides
 2. add data from [here](https://www.singaporelawwatch.sg/About-Singapore-Law/Commercial-Law)
-3. from week1 slides on elearn, add data from *slide 27 to 39* and data from below to wk1 markdown notes in this repo
+3. from week1 slides on elearn, add data from *slide 27 to 39* and data from below and from https://sso.agc.gov.sg/Act/ETA2010 to wk1 markdown notes in this repo 
 
 ---
 
