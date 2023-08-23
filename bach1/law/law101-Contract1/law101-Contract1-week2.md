@@ -18,25 +18,26 @@ Vitiate: *destroy the integrity of a given contract*
 
 ## Effect of UNCERTAINITY and INCOMPLETENESS  
 * `Foley v Classique Coaches Ltd`
-    * *Unless all the material terms of the contract are agreed there is no binding agreement*.  
-    * An agreement to agree in future is NOT a contract, nor is there a contract if a material term is NEITHER SETTLED NOR IMPLIED by law and the document contains **no machinery for ascertaining it**.
+    * *Unless **all the material terms** of the contract are agreed there is no binding agreement*.  
+    * An agreement to agree in future is NOT a contract
+    * When a material term is NEITHER SETTLED NOR IMPLIED by law and the document contains **no machinery for ascertaining it**, it is NOT a contract
 
 * `Norwest Holdings (High Court) at [28]`
     1. *Cases such as `May and Butcher, Limited v The King [1934] 2 KB 17` illustrate that an agreement will NOT BE regarded as a **binding contract** if essential matters*, without which the contract is too uncertain or incomplete to be workable, *remain to be agreed upon.*
     2. *What is required is **substantial or essential AGREEMENT** and NOT complete agreement*
     3. *A contract may be regarded as having been formed even though it has not been worked out in meticulous detail.* 
-    4. *Similarly if a contract calls for further agreement between the parties, the absence of further agreement between the parties will vitiate the contract only if it makes it unworkable or void for uncertainty.*
-> 1 and 3 seem to conflict with each other.
+    4. *Similarly if a contract calls for further agreement between the parties, the absence of further agreement between the parties will vitiate **(impair)** the contract only if it makes it unworkable or void for uncertainty.*
+> 1 and 3 seem to compete with each other, since they call for different amount of detail required to form it.
 
 ## Agreements to negotiate/agree in GOOD FAITH
 
 * `Walford v Miles`
     * Case Summary:  
-        > Add facts of the case here
-    * Plaintiff argues...
+        * Defendant Miles wanted to sell their company for £1.9 million, Plaintiff Walford wanted to buy it. Plaintiff Walford **faxed a letter** headed ‘subject to contract’ to Defendant Miles, stating Defendant Miles had given assurances that they would not treat with any third party or consider alternative offers from them, which Defendant Miles acknowledged. At the same time, Defendant Miles also wrote to another interested party informing them of Walford and Miles' agreement, and said that if the sale did not go through, Defendant Miles would be interested to pursue discussions. Due to health considerations, Defendant Miles phoned the OTHER interested party and agreed to sell the company to them for the same price Plaintiff Walford had offered. Later, Defendant Miles informed Plaintiff Walford of their agreement to sell to the interested party. Plaintiff Walford treated this as a **breach of their non-negotiation agreement** and began proceedings against Defendant Miles.
+    * Plaintiff argues:
         1. No contract was concluded between Plaintiff and Defendant.
-        2. **LOCK-OUT** agreement, Defendant agreed NOT to enter into negotiations with any 3rd party
-        3. **LOCK-IN** agreement, IMPLIED term of agreement that Defendant would *continue to negotiate in GOOD FAITH* with Plaintiff
+        2. **LOCK-OUT** agreement: Defendant agreed NOT to enter into negotiations with any 3rd party
+        3. **LOCK-IN** agreement: IMPLIED term of agreement that Defendant would *continue to negotiate in GOOD FAITH* with Plaintiff
     * Problems:
         * **LOCK-OUT** agreement
             * `Pitt v PHH Asset Management Ltd`
@@ -71,7 +72,7 @@ Vitiate: *destroy the integrity of a given contract*
                 * Case Summary:
                     * RTS began work on basis of letter of intent with "subject to contract" clause whilst parties were NEGOTIATING final contract
                 * UK Court: 
-                    * An agreement is a BINDING CONTRACT when parties **CONDUCT** displays there was a clear intention for a contractual relationship between them.
+                    * An agreement is a BINDING CONTRACT when parties' **CONDUCT** displays there was a clear intention for a contractual relationship between them.
                     * *the ‘subject to contract’ clause had been waived by parties’ conduct, such as carrying out works, making payments, etc. It found that the parties intended that there was a contractual relationship between them.*
 
 ## Solutions to UNCERTAINITY and INCOMPLETENESS
@@ -130,7 +131,7 @@ Compensating a **reasonable sum in restitution**
 *Gay Choon Ing*: Connotes an **intention** on the part of both parties to a **purported contract that the transaction has legal effect**.
 1. Requirements of **Agreement** and **Consideration**.
 2. Parties must have *intended* for agreement to be **legally binding**.
-> While the intention to create legal relations is ascertained OBJECTIVELY, the law draws upon **presumptions depending on the circumstances**
+> While the intention to create legal relations is ascertained OBJECTIVELY, the law draws upon **presumptions depending on the circumstances.**
 
 #### Social and Domestic arrangements
 
@@ -154,7 +155,7 @@ Compensating a **reasonable sum in restitution**
            * `Balfour v Balfour`: **presumption against contractual intent** applied because couple was living amicably at time of the agreement.
            * `Merrit v Merrit`: **presumption against contractual intent** NOT APPICABLE as parties were *already estranged*, they can no longer be assumed to trust the other to fulfill their promise on the basis of their common love and affection.
 
-Singapore's position on Social and Domestic Arrangements
+**Singapore's position on Social and Domestic Arrangements**
 
 3. `Ong Wui Teck v Ong Wui Swoon [2019] SGCA 61 at [45]`
     * Court Ruling:
@@ -164,11 +165,11 @@ Singapore's position on Social and Domestic Arrangements
 
 4. `De Cruz Andrea Heidi v Guangzhou Yuzhitang Health Products Co Ltd`
     * Case Summary:
-        * Plaintiff TV celebrity suffered liver damage after consuming slimming drug (Slim 10) and sought compensation from the defendant, her colleague at Mediacorp. Plaintiff complained that defendant breached implied term of contract of sale by failing to ensure that the drug was of *satisfactory quality*. Plaintiff and Defendant had SMS messages with a friendly, teasing tone, and there was no evidence beyond the SMS messages of any discussion of time, place, delivery and price.
+        * Plaintiff TV celebrity suffered liver damage after consuming slimming drug (Slim 10) and sought compensation from the defendant, her colleague at Mediacorp. Plaintiff complained that defendant breached **implied term of contract of sale** by failing to ensure that the drug was of *satisfactory quality*. Plaintiff and Defendant had SMS messages with a friendly, teasing tone, and there was no evidence beyond the SMS messages of any discussion of time, place, delivery and price.
     * Court Ruling:
         * Tay Yong Kwang J:
-            * Parties' conduct "had all the trappings of a friend doing a favour for another by getting something for her" and as such, could not have INTENDED to create **legal obligations**
-            * Although the defendant did make an *undisclosed profit* of $30/100 pills, this still did not qualify as a commerical transaction, "the friend doing the favour has decided to keep some part of the discount for himself, perhaps to compensate for his time and expense, without informing the recepient".
+            * Parties' conduct *"had all the trappings of a friend doing a favour for another by getting something for her"* and as such, could not have INTENDED to create **legal obligations**
+            * Although the defendant did make an *undisclosed profit* of $30/100 pills, this still did not qualify as a commerical transaction, *"the friend doing the favour has decided to keep some part of the discount for himself, perhaps to compensate for his time and expense, without informing the recepient"*.
 
 #### Commercial arrangements
 
@@ -193,12 +194,12 @@ Singapore's position on Social and Domestic Arrangements
 
 3. `Kleinwort Benson Ltd v Malaysia Mining Corp Bhd (UK case)`
     * Case Summary:
-        * Defendant issued a letter of comfort *(in place of a corporate guarantee)* in favour of the Plaintiff bank in connection with a credit facility by the bank to the Defendant's subsidiary. The letter of comfort confirmed that they would always ensure their subidiary would always be able to repay the bank's loan. After the Defendant's subsidiary went into insolvent liquidation, the plaintiff sought to enforce the letter of comfort.
+        * Defendant issued a letter of comfort *(in place of a corporate guarantee)* in favour of the Plaintiff bank in connection with a credit facility by the bank to the Defendant's subsidiary. The letter of comfort confirmed that they would **always ensure their subidiary would always be able to repay the bank's loan**. After the Defendant's subsidiary went into insolvent liquidation, the plaintiff sought to enforce the letter of comfort.
     * Court Ruling:
         * English Court of Appeal:
             * Plaintiff's assurance did not amount to contractual promise, statement of fact as to defendant's intention at material time, since the defendant has prior to the issuance of the letter, DECLINED to guarantee the subsidiary's liabilities to the plaintiff bank.
 
-Singapore's solution for this?
+**Singapore's solution for this?**
 
 4. `HSBC Ltd v Jurong Engineering Ltd at [43]`
     * Court Ruling:
@@ -213,7 +214,7 @@ Ang engages Beng to construct a house for him. They sign a “letter of intent�
 
 #### Response:
 
-1. Idenitfy legal issue
+1. Identify legal issue
 2. What legal rule to use
 3. Apply legal rule
 4. Conclusion
