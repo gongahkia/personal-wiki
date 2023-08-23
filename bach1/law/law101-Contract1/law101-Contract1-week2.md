@@ -161,7 +161,7 @@ Court could impose a workable mechanism.
     * Case Summary:
         * Lessees were granted option to purchase at price to be agreed by 2 valuers, one appointed by lessor, and the other by lessee. Lessor refused to appoint a valuer and so the mechanism for ascertaining price had broken down. Lessor argue that the contract was unenforceable for uncertainty.
     * Court Ruling:
-        * Applying the OBJECTIVE principle, a REASONABLE bystander in the same position ...
+        * Applying the OBJECTIVE principle to determine intentions of parties objectively
         * *‘the agreement was for sale at a fair and reasonable price by the application of objective standards. Since price was to be ascertained by machinery which, on the true construction of the agreement was a subsidiary and non-essential part of the contract, the court would, if the machinery broke down for any reason, substitute its own machinery, to ascertain a fair and reasonable price'*
         > Add explantion for this, I have no idea what he's saying
 * `Tan Yeow Khoon v Tan Yeow Tat [1998] 2 SLR(R) 19 at [36]`
@@ -171,7 +171,7 @@ Court could impose a workable mechanism.
         * Courts have a responsiblity to ...
         * *"where there is a contract for sale at a valuation, the court ought to ... direct an inquiry to ascertain the price, not only where the parties fail to provide the machinery, but also where the machinery provided had broken down: provided of course that on the true construction of the contract the agreed machinery was subsidiary to the ascertainment of the proper price and was not of the essence of the agreement. The question whether the prescribed machinery was of the essence of the contract is a matter of construction"*
 
-#### 3. Partial recovery in the absence of a contract
+#### 3. Partial recovery (Relief) in the absence of a contract
 
 Compensating a **reasonable sum in restitution**
 
