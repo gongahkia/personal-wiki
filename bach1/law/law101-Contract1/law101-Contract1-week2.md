@@ -27,7 +27,6 @@
     2. *What is required is **substantial or essential AGREEMENT** and NOT complete agreement*
     3. *A contract may be regarded as having been formed even though it has not been worked out in meticulous detail.* 
     4. *Similarly if a contract calls for further agreement between the parties, the absence of further agreement between the parties will vitiate **(impair)** the contract only if it makes it unworkable or void for uncertainty.*
-> 1 and 3 seem to compete with each other, since they call for different amount of detail required to form it.
 
 ## Agreements to negotiate/agree in GOOD FAITH
 
@@ -86,8 +85,7 @@
 #### 1. Previous course of dealings, trade practice and reasonableness
 
 * `Grossner Jens v Raffles Holdings Ltd`
-    * Case Summary:
-        > Add case summary here
+    * [Case Summary](https://www.elitigation.sg/gdviewer/s/2003_SGHC_290)
     * Court Ruling:
         * `Grossner Jens at [14]: ...in Foley v Classique Coaches Ltd ... at 13`
             * *"unless all the material terms of the contract are agreed there is NO binding obligation"*
@@ -108,8 +106,7 @@ Court could impose a workable mechanism.
         * *‘the agreement was for sale at a fair and reasonable price by the application of objective standards. Since price was to be ascertained by machinery which, on the true construction of the agreement was a subsidiary and non-essential part of the contract, the court would, if the machinery broke down for any reason, substitute its own machinery, to ascertain a fair and reasonable price'*
         > Add explantion for this, I have no idea what he's saying
 * `Tan Yeow Khoon v Tan Yeow Tat [1998] 2 SLR(R) 19 at [36]`
-    * Case Summary:
-        > Add case summary here.
+    * [Case Summary](https://www.elitigation.sg/gd/s/2003_SGHC_36)
     * Court Ruling:
         * Courts have a responsiblity to ...
         * *"where there is a contract for sale at a valuation, the court ought to ... direct an inquiry to ascertain the price, not only where the parties fail to provide the machinery, but also where the machinery provided had broken down: provided of course that on the true construction of the contract the agreed machinery was subsidiary to the ascertainment of the proper price and was not of the essence of the agreement. The question whether the prescribed machinery was of the essence of the contract is a matter of construction"*

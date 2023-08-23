@@ -66,7 +66,7 @@
 
 ### 4. Termination by **Discharge**
 * Full performance  
-* Mutual agreemenT  
+* Mutual agreement  
 * Breach  
 * Frustration of basis of contract  
 
@@ -183,32 +183,40 @@ flowchart TD
 
 #### 2. COMMUNICATION TO OFFEROR
 ##### General Receipt Rule (communication rule)
-* Acceptance effective upon communication TO **offeror**. Contract is only formed when **offeror** is notified of acceptance.
-* Applies for face-to-face communication, Fax, Telephone, Emails
+* Acceptance effective upon **communication of acceptance TO offeror**. 
+    * CONTRACT is only formed when **offeror** is notified of acceptance.
+* Applies for face-to-face communication, Fax, Telex, Emails
     1. `Entores v Miles Far East`
         * Case Summary:
-            > ADD CASE SUMMARY and court ruling HERE
+            * Plaintiff Entores were a London-based company that sent an offer to purchase Copper Cathodes from the defendants Miles Far East Corp, a Dutch Company. The offer and acceptance were both **communicated by Telex**. When the contract was not fulfilled, Plaintiff Entores tried to sue defendant Miles Far East for damages.
         * Court Ruling:
-            * General Rule applies to **INSTANTANEOUS COMMUNICATION** 
+            * General Receipt Rule applies to **INSTANTANEOUS COMMUNICATION** 
+            * Telex: form of instant messaging
+            * Acceptance taken as being **when the message by Telex was received**, so the contract was created in London
 
 ##### EXCEPTIONS to General Receipt Rule
 1. **Lord Wilberforce's 3 factors** 
     1. Intention of the parties
     2. Sound business practice
     3. Making a judgement on where the risks should lie
-    * *"No universal rule can cover all such cases; they must be resolved by reference to the intentions of the parties, by sound business practice and in some cases by a judgment where the risks should lie"*
     * `Brinkibon v Stahag Stahl`
         * Case Summary:
-            > ADD CASE SUMMARY HERE
+            * Plaintiff Brinkibon were a London-based company that bought steel from the Austria-based Defendant Stahag Stahl. Plaintiff Brinkiborn sent their acceptance of the offer by Telex to the Defendants in Vienna. Plaintiff Brinkiborn later **wanted to sue Stahag Stahl for breach of contract**.
         * Court Ruling:
-            > ADD COURT RULING HERE
+            * CONTRACT WAS CREATED upon communication of acceptance which was **received by Telex in Vienna**. 
+            * Court reaffirmed `Entores v Miles Far East Co`, which stated that the postal rule did not apply to instantaneous forms of communication, which would include Telex. 
+            * Court also stated there was **no universal rule** and each case would have to be resolved by looking at the **intention of the parties**, **sound business practice**, **judgement of where the risks should lie**. 
+                * *"No universal rule can cover all such cases; they must be resolved by reference to the intentions of the parties, by sound business practice and in some cases by a judgment where the risks should lie"*
 2. **POSTAL ACCEPTANCE RULE** 
     1. Applies when letter is properly stamped and addressed
     2. Use of Post to accept offers has been authorised, EXPRESSLY or IMPLICITLY
+    * *"Where the circumstances are such that it must have been within the contemplation of the parties that, according to the ordinary usages of mankind, the post might be used as a means of communicating the acceptance of an offer, **the acceptance is complete (CONTRACT IS FORMED) as it is posted**."*
     * `Adams v Lindsell`
         * Case Summary:
-            > ADD CASE SUMMARY and court ruling HERE
+            * Defendant Lindsell wrote to the Plaintiff Adams on 2 September, offering to sell wool and **requested that the plaintiffs reply ‘in course of post’**. The letter which contained the offer was wrongly addressed and the Plaintiff Adams did not receive it until 5 September. As a result of this delay, the *letter of acceptance was not received until 9 September* by the Defendant Lindsell, **two days later than the defendants would have expected to receive it**. Because of this, on 8 September the Defendant Lindsell had sold the wool to a third person. Plaintiff Adams suded Defendant Lindsell for breach of contract.
+            * The question for the court in `Adams v Lindsell` was whether a contract of sale had been entered into before 8 September when the wool was sold to the third party. If the acceptance was effective when it arrived at the address or when the defendant saw it, then no contract would have been made and the sale to the third party would amount to revocation of the offer. 
         * Court Ruling: 
+            * Court held that the **offer had been accepted** as soon as the letter had been POSTED. Thus, in Adams v Lindsell there was indeed a contract in existence before the sale of the wool to the third party, even though the letter had not actually been received by the defendant. The defendant was therefore liable in breach of contract.
             * *"considerable delay in commercial transactions ... for the acceptor would never be entirely safe in acting upon his acceptance until he had received notice that his letter of acceptance had reached its destination"*
 3. **OFFEROR WAIVES REQUIREMENT OF COMMUNICATION**
     * Unilateral contracts as in `Carlil v Carbolic Smokeball Company`
@@ -238,11 +246,8 @@ Forms of acceptance differs depend on whether the contract is...
 For all things relating to electronic contracts in Singapore, refer to the Electronic Transactions act. Specifically, see...
 #### Section 2 ETA
 
-* Electronic communications: 
-* Electronic record:
-
-> * Add the following here: see definitions of “electronic communications” and “electronic record”  
-> * Do the rules on formation of contract (offer & acceptance) apply to transactions carried on through electronic means?  
+* *Electronic communications*: any communication that the parties make by means of electronic records
+* *Electronic record*: a record generated, communicated, received or stored by electronic means in an information system or for transmission from one information system to anoter
 
 #### Section 11(1) ETA
 
@@ -266,7 +271,6 @@ control of the originator
 #### Section 13(4) ETA
 
 * For ... [s 13(2) and (3)], electronic communication is presumed to be capable of being retrieved by addressee when it reaches the electronic address of the addressee.
-
 * Allows contracting parties to...
     * exclude the application of s13 (among other provisions)
     * vary the effect of s13 (among other provisions
