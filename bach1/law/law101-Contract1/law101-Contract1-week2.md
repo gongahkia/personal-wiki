@@ -6,9 +6,66 @@
 
 ---
 
+## FUA
+1. follow all FUA on this doc with ref to wk1 wk2 slides
+2. add data from [here](https://www.singaporelawwatch.sg/About-Singapore-Law/Commercial-Law)
+3. synthesize data from wk1 wk2 slides and wk1 markdown notes to here under the `s1w1 shit` section && understand
+
+---
+
+## `S1W1 Shit`
+
 ## Definitions
 
-Vitiate: *destroy the integrity of a given contract*
+*Offeror*: person MAKING THE OFFER  
+*Offeree*: person WHO ACCEPTS OR DOES NOT ACCEPT THE OFFER  
+*Vitiate*: destroy the integrity of a given contract
+
+### Acceptance
+* Final and unqualified expression of assent to terms of the offer
+
+#### Elements of Acceptance
+##### 1. INTENTION TO BE BOUND determined OBJECTIVELY
+* 'Intention to be bound' evaluated as by means of final and unqualified assent to the terms of the offer
+* 'Objectively' determined via Objectivity test
+    * **OBJECTIVITY TEST**: 
+        * Take point of view of a reasonable person standing in the shoes of the offeror
+        > Add further definition here for what exactly objectivity test in the context of an offer is; see Week 1 slides
+
+##### 2. COMMUNICATION TO OFFEROR
+###### General Receipt Rule (communication rule)
+* Acceptance effective upon communication TO **offeror**. Contract is only formed when **offeror** is notified of acceptance.
+    1. `Entores v Miles Far East`
+        * Case Summary:
+            > ADD CASE SUMMARY and court ruling HERE
+        * Court Ruling:
+            * General Rule applies to **INSTANTANEOUS COMMUNICATION** 
+###### COUNTER-ARGUMENT to General Receipt Rule
+1. `Brinkibon v Stahag Stahl`
+    * Case Summary:
+        > ADD CASE SUMMARY and court ruling HERE
+    * Court Ruling:
+        * **Lord Wilberforce's 3 factors**
+            1. Intention of the parties
+            2. Sound business practice
+            3. Making a judgement on where the risks should lie
+2. `Adams v Lindsell`
+    * Case Summary:
+        > ADD CASE SUMMARY and court ruling HERE
+    * **Postal Acceptance Rule**
+        1. Applies when letter is properly stamped and addressed
+        2. Use of Post to accept offers has been authorised, EXPRESSLY or IMPLICITLY
+
+### Forms of Acceptance
+
+> Add conditions to determine the completion of a bilateral or unilateral offer
+
+1. Unilateral
+2. Bilateral
+
+---
+
+## `S1W2 Shit`
 
 ### Uncertainty
 * A term is uncertain if it is **incomprehensible**.
@@ -206,15 +263,3 @@ Compensating a **reasonable sum in restitution**
         * LETTER OF AWARENESS *(weaker form of letter of comfort)*
         * *"However, the operation of the presumption does not detract the court from its fundamental task, which is to ascertain the true bargain between the parties, to seek the substance and reality of the transaction and to ascertain what common intentions should be ascribed to the parties. In carrying out this task of construction, the court is to have **regard to the surrounding circumstances** as well as the specific text of the letter of awareness. Since the effect to be attributed to each letter of awareness is essentially a matter of construction, each case turns on its own facts. Past cases concerning letters of awareness **are not precedents** in the strict sense of the word and only provide **useful guidelines** for the court."*
 
-### IRAC practice question
-
-#### Premise:
-
-Ang engages Beng to construct a house for him. They sign a “letter of intent” that is expressly subject to contract. There was no price agreed in the letter of intent. However, no contract was ever signed between the parties. Instead, Beng starts building the house that Ang asked of him; indeed, Ang approves of Beng’s construction plans, material costs and also grants him access to the land where the house was to be constructed. Ang has also paid Beng some money for the materials used. After Beng completed half of the house, Ang refused to pay. Advise Beng.
-
-#### Response:
-
-1. Identify legal issue
-2. What legal rule to use
-3. Apply legal rule
-4. Conclusion
