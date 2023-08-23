@@ -184,7 +184,7 @@ flowchart TD
         * `Entores v Miles Far East`
     * EXCEPTION to Receipt Rule
         1. Not necessarily a universal rule
-            * `Lord Wilberforce in Brinkibon v Stahag Stahl`
+            * Lord Wilberforce **3 FACTORS** in `Brinkibon v Stahag Stahl`
         2. Offeror waives requirement of communication
             * eg. *Unilateral contract as in `Carlil`*
         3. Postal Acceptance Rule
