@@ -153,7 +153,7 @@ The Law does not look into ADEQUACY of Consideration, and only looks at the SUFF
 		   * PROMISOR obtained a direct right to enforce the PROMISEE's performance of or promise to perform an *existing contractual duty* owed to a third party.
 
 * Contractual duty owed to the **SAME PARTY**
-	* `Stilk v Myrick`
+	1. `Stilk v Myrick`
 		* Case Summary:
 			* On a ship, 2 crewmen deserted and the Defendant Captain Myrick promised to divide wages of deserters among remaining crew if they would work the ship safe back to London. Plaintiff Stilk was a crew member, who sued Defendant Captain Myrick to enforce his promise.
 		* Legal Issue:
@@ -162,3 +162,20 @@ The Law does not look into ADEQUACY of Consideration, and only looks at the SUFF
 			* Court concluded “practical benefits” that Defendant Captain Myrick's promise gave (Plaintiff Stilk and other crew members work the ship safe back to London) amounted to **sufficient consideration**.
 			* Requirement of fresh consideration required in **variations to existing contracts** unless expressly dispensed with the contracting parties.
 			* Since Plaintiff Stilk **did not demand additional payment**, and Defendant Captain Myrick offered the crew in recognition that they would be required to work harder to achieve the same result. This could also be construed as a GREATER BENEFIT to the captain that the ship was returned to London as opposed to being docked overseas. 
+  2. `Williams v Roffey`
+		* Case Summary:
+			* Defendants Roffey were *main contractors* to refurbish 27 flats for clients by a deadline. 
+			* Main contract had a **penalty clause**, where the Defendant Roffey had to pay a penalty to clients if they did not meet the deadline.
+		   * Plaintiff Williams were a SUB-CONTRACTOR hired by Defendant Roffey to do carpentry work for the 27 flats for 20,000 pounds.
+			* Defendant Roffey became worried that Plaintiff Williams could not finish the work in time. Plaintiff Williams also ran into financial difficulties as the initally agreed 20,000 pounds was NOT ENOUGH for Plaintiff Williams to operate satisfactorily and earn a profit AND Plaintiff Williams failed to supervise their manpower properly.
+		   * Defendant Roffey's surveyor persuaded Defendant Roffey to pay the Plaintiff Williams more so Defendant Roffey agreed to pay Plaintiff Williams 10,300 pounds more *(575 pounds per completed flat)*. 
+			* Plaintiff Williams completed 8 more flats, but only received 1,500 pounds further payment. Plaintiff Williams ceased work and sued Defendant Roffey.
+		* Legal Issue:
+			* Did Plaintiff Williams provide **sufficient consideration** in return for Defendant Roffey's promise to pay more?
+		* Court Ruling:
+			1. If A has **entered into a contract** with B to do work for, or to supply goods or services to B in return for payment by B and
+			2. At some stage **before** A has completely performed his obligations under the contract, B has reason to doubt whether A will, or will be able to, complete his side of the bargain
+			3. B thereupon promises A an **additional payment** in return for A’s promise to perform his contractual obligations on time
+			4. As a result of giving his promise, B obtains in practice a benefit, or obviates *(removes)* a disbenefit
+			5. B’s promise is **not given as a result of economic duress or fraud** on the part of A
+			6. The benefit to B is **capable** of being Consideration for B’s promise, so that the promise will be legally binding.
