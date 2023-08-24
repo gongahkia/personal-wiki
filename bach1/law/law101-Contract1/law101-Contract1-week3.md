@@ -113,7 +113,52 @@ The Law does not look into ADEQUACY of Consideration, and only looks at the SUFF
 			* **Insufficient Consideration**
 		   * Since the issue being dealt with here is one of sufficiency (or the lack thereof) of consideration, we see that considerations that **lack economic value** like promising to stop complaining are HARD TO ENFORCE, especially when they relate to actions to be undertaken in the future.
 	 
-#### Intangibles
-* 
+#### Intangibles (Discretionary Promise)
+* *Discretionary promise*: Consideration would again be illusory where it was alleged to consist of **a promise the terms of which left performance entirely to the discretion of the PROMISOR**. A person does not provide consideration by promising to do something ‘if I feel like it’, or ‘unless I change my mind’.
+	* `Ma Hongjin v SCP Holdings Pte Ltd [2021]`
+		* Case Summary:
+			 * In 2015, Plaintiff Mdm Ma Hongjin *(an investor)* entered into a convertible loan agreement with the Defendant SCP, who owns and controls Biomax Holdings Pte Ltd. 
+			 * Under the CLA, Mdm Ma **was to extend a $5m loan to SCP over two years**, while **SCP was to pay interest at 10% per annum**.
+			 * After 2 months, Plaintiff Mdm Ma Hongjin and her husband, Mr Han became unhappy with SCP’s financial results.
+			 * Mr Han re-negotiated some terms of the CLA with SCP’s controlling shareholder Mr Sim Eng Tong, after which Mdm Ma and SCP entered into a supplemental agreement. 
+			 * Under the SA, **SCP had to pay an additional “lump sum facility fee” of S$250,000**, while Defendant Mdm Ma Hongjin did NOT assume any additional obligations to SCP.
+			 * SCP failed to pay the facility fee. Defendant Mdm Ma Hongjin then commenced proceedings to obtain payment of the facility fee, as well as other sums which were not the subject of the appeal.
+		 * Court Ruling:
+			* Court ruled that the Supplemental Agreement was **unenforceable** as it was NOT SUPPORTED BY CONSIDERATION. 
 
 #### Pre-existing Duties
+*Pre-existing duties*: **Public** or **Legal** duty
+
+* Mere performance of an **existing legal duty** is NOT sufficient Consideration.
+	* `Colins v Godefroy`
+		* Case Summary: 
+		* Court Ruling:
+		  * NOT SUFFICIENT CONSIDERATION
+> FUA: Add Case Summary and Court Ruling for this
+
+ * When the act of conduct goes BEYOND what is required by the legal duty, there is **sufficient Consideration**.
+	* `Glassbrook Brothers Ltd v Glamorgan County Council`
+		* Case Summary:
+		* Court Ruling:
+		  * There was SUFFICIENT CONSIDERATION.
+> FUA: Add Case Summary and Court Ruling for this
+
+* Contractual duty owed to a **THIRD PARTY**
+	* `Pao On v Lau Yiu Long`
+		* Case Summary covered above
+		* Legal Issue:
+		   * Would Plaintiff Pao On's performance of an existing contractual duty owed to a 3rd party be sufficient consideration in return for the Defendant Lau Yiu Long's promise to indemnify?
+		* Court Ruling:
+			* **SUFFICIENT CONSIDERATION**
+		   * PROMISOR obtained a direct right to enforce the PROMISEE's performance of or promise to perform an *existing contractual duty* owed to a third party.
+
+* Contractual duty owed to the **SAME PARTY**
+	* `Stilk v Myrick`
+		* Case Summary:
+			* On a ship, 2 crewmen deserted and the Defendant Captain Myrick promised to divide wages of deserters among remaining crew if they would work the ship safe back to London. Plaintiff Stilk was a crew member, who sued Defendant Captain Myrick to enforce his promise.
+		* Legal Issue:
+			* Did Plaintiff Stilk provide sufficient consideration in return for Defendant Captain Myrick's promise?
+		* Court Ruling: 
+			* Court concluded “practical benefits” that Defendant Captain Myrick's promise gave (Plaintiff Stilk and other crew members work the ship safe back to London) amounted to **sufficient consideration**.
+			* Requirement of fresh consideration required in **variations to existing contracts** unless expressly dispensed with the contracting parties.
+			* Since Plaintiff Stilk **did not demand additional payment**, and Defendant Captain Myrick offered the crew in recognition that they would be required to work harder to achieve the same result. This could also be construed as a GREATER BENEFIT to the captain that the ship was returned to London as opposed to being docked overseas. 
