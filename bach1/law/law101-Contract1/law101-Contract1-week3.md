@@ -105,4 +105,15 @@ The Law does not look into ADEQUACY of Consideration, and only looks at the SUFF
 
 ### Is Consideration SUFFICIENT?
 #### Moral Obligations
+* **Moral obligations** that DO NOT have economic value do not constitute sufficient Consideration, particularly because they are difficult to enforce.
+	* `White v Bluett`
+		 * Case Summary:
+			* Plaintiff White promised to release his Defendant son, Bluett from legal obligations to pay a sum of money, if Defendant Bluett would stop complaining about unequal treatment by the Plaintiff White in the distribution of assets among his children.
+		* Court Ruling:
+			* **Insufficient Consideration**
+		   * Since the issue being dealt with here is one of sufficiency (or the lack thereof) of consideration, we see that considerations that **lack economic value** like promising to stop complaining are HARD TO ENFORCE, especially when they relate to actions to be undertaken in the future.
+	 
+#### Intangibles
+* 
 
+#### Pre-existing Duties
