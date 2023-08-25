@@ -11,10 +11,6 @@
 1. Big Phang
 	* Chapter 4 Consideration: whole chapter
 
-2. Relevant case readings 
-
-> FUA: Add the main pointers mentioned in the Course Outline from Elearn here for consideration ++ Important Case names and their applied concepts
-
 ---
 
 ## Consideration
@@ -36,11 +32,11 @@ Fresh consideration required for variations to existing contracts *unless* expre
 
 ### Executory consideration
 *Executory*: Consideration is a COUNTER-PROMISE
+* Promises made in a contract will be **delivered IN THE FUTURE**.
 
 ### Executed consideration
 *Executed*: Consideration is an ACT
-
-> FUA: Add more details on Executory and Executed consideration
+* Promises made in a contract are **executed IMMEDIATELY**.
 
 ## Benefit-detriment analysis
 *Benefit-detriment analysis*: A valuable consideration, in the sense of the law, may consist either in some right, interest, profit, or benefit accruing to the one party, or some forbearance, detriment, loss, or responsibility, given, suffered, or undertaken by the other.
@@ -88,9 +84,12 @@ Fresh consideration required for variations to existing contracts *unless* expre
 #### Joint promise doctrine
 * `Coulls v Bagots Executor & Trustee Co Ltd`
 	* Case Summary:
-	 * Court Ruling: 
+		* Plaintiff Coulls died on 8 June 1960. In his will, he appointed Defendant Bagot’s Executor and Trustee Co Ltd to be his **executor and trustee**.
+		* Plaintiff Coulls entered into a contract with O’Neil Constructions Pty Ltd to quarry a part of his land. In exchange, O’Neil Constructions Pty Ltd would **pay royalties to** Plaintiff Coulls and his wife, Mrs Doris Coulls, as joint tenants.
+		* Mrs Doris Coulls had to append her signature to the contract document.
+		* When Plaintiff Coulls died, Defendant Bagots sought to determine whether O’Neil Constructions Pty Ltd was required to pay the royalties to the estate or to Mrs Coulls.
+		* Court Ruling: 
 		  * If **contracting parties are JOINT PROMISEES**, then one of them can provide Consideration on behalf of the other PROMISEE.
-> FUA: Add Case summary and court ruling here
 
 ## Sufficiency of Consideration
 *Sufficiency*: Having 'legal' validity
@@ -99,9 +98,17 @@ Fresh consideration required for variations to existing contracts *unless* expre
 *Adequacy*: Fairness of comparable value
 
 The Law does not look into ADEQUACY of Consideration, and only looks at the SUFFICIENCY of Consideration.
-* Why though?
 * `Chappell & Co Ltd v Nestle Co Ltd`
-> FUA: Add Case summary and court ruling here and see how this case fits into this point.
+	* Case Summary:
+		* Defendants Nestlé, contracted with a company that made gramophone records **to buy several recordings of music**. 
+		* Plaintiffs Chappell & Co owned the copyright in these recordings.
+		* Defendant Nestlé offered to sell these records at a *discount price to anyone presenting three wrappers from their chocolate bars*. 
+		* Plaintiffs Chappell & Co sought an injunction restraining the **manufacture and sale of the records** because they breached copyright.
+	* Legal Issue:
+		* Defendant Nestle argued the wrappers were PART OF the Consideration and this was not covered by the Copyright Act 1956, which only applied to monetary sales. 
+		* The issue was then **whether the wrappers were Consideration for the SALE OF RECORDS** or whether they were merely a *qualification for buying the records*.
+	* Court Ruling:
+		* House of Lords held that the wrappers DID FORM PART OF the Consideration for the *sale of records* although they had *NO intrinsic economic value*.
 
 ### Is Consideration SUFFICIENT?
 #### Moral Obligations
@@ -130,18 +137,28 @@ The Law does not look into ADEQUACY of Consideration, and only looks at the SUFF
 *Pre-existing duties*: **Public** or **Legal** duty
 
 * Mere performance of an **existing legal duty** is NOT sufficient Consideration.
-	* `Colins v Godefroy`
+	* `Collins v Godefroy`
 		* Case Summary: 
+		  * Defendant Godefroy brought an action against an attorney for negligence and caused Plaintiff Collins to be subpoenaed *(forced to attend court proceedings and give evidence)* to attend. 
+		  * Defendant Godefroy wanted to ensure Plaintiff Collins attended the court proceedings as this would help his case, so Defendant Godefroy **promised to pay him one guinea per day** he was at court as *compensation* for the loss of his time.
+		  * Plaintiff Collins attended court for six days but was not called to give evidence. 
+		  * At the end of this Plaintiff Collins demanded payment of six guineas as per the agreement. Defendant Godefroy refused to pay Plaintiff Collins.
+		  * Plaintiff Collins sued Defendant Godefroy for the owed sum.
 		* Court Ruling:
-		  * NOT SUFFICIENT CONSIDERATION
-> FUA: Add Case Summary and Court Ruling for this
+		  * Plaintiff Collins' attending of the hearing was **NOT sufficient Consideration** to enforce Defendant Godefroy's promise to pay him six guineas, since Plaintiff Collins was merely fulfilling his existing legal duty *(to attend court proceedings should he have any relevant evidence to provide)* since he had been subpoenaed.
 
  * When the act of conduct goes BEYOND what is required by the legal duty, there is **sufficient Consideration**.
 	* `Glassbrook Brothers Ltd v Glamorgan County Council`
 		* Case Summary:
+		  * During a strike at a coal mine, Plaintiff Glassbrook Brothers Ltd asked for additional police protection for the mine and insisted police officers be stationed on the premises. 
+		  * Police superintendent provided mobile officers but **refused** to station more officers at the coal mine unless the Plaintiff Glassbrook Brothers *paid extra to cover the expense*.
+		  * Plaintiff Glassbrook Brothers **agreed to this** but later refused to pay. 
+		  * The trial judge and the Court of Appeal both held that the police were entitled to do this. 
+		  * Plaintiff Grassbrook Brothers appealed to the House of Lords, and sued Defendant Glamorgan County Council.
 		* Court Ruling:
-		  * There was SUFFICIENT CONSIDERATION.
-> FUA: Add Case Summary and Court Ruling for this
+			* House of Lords ruled the police were **entitled to be paid**. While the police had a responsibility to provide protection for life and property, keeping the peace and preventing crime.
+			* However, Plaintiff Glassbrook Brothers demanded officers be stationed at the coal mine, which fell outside the police's *public duty*. 
+			* As such, there was **SUFFICIENT CONSIDERATION provided by the Police**, and the contract was enforceable against Plaintiff Glassbrook Brothers.
 
 * Contractual duty owed to a **THIRD PARTY**
 	* `Pao On v Lau Yiu Long`
@@ -218,33 +235,31 @@ The Law does not look into ADEQUACY of Consideration, and only looks at the SUFF
 2. Reliance
 	* Evidenced by Promisee's change of position by **doing** OR **omitting to do** what he would otherwise not have done or omitted to do.
 	* Seen when Promisee *changes his position*, either doing or not doing what he initially intended to do or not do.
-		* `The Postchaser`
+		* `The Post Chaser [1982]`
 			* Case Summary:
+				* Plaintiff Sellers agreed to sell palm-oil to Defendant buyers who had contracted to sell this onto sub-buyers. 
+				* Contract required the Plaintiff sellers to **send a declaration of shipment** to the Defendant buyers in writing when the ship set sail. 
+				* Plaintiff Sellers gave the declaration *a month after the ship had set sail* and the Defendant buyers DID NOT protest the time delay. 
+				* Plaintiff Sellers also handed the documents directly to the sub-buyer at the request of the first buyer. 
+				* Sub-buyers rejected the documents. 
+				* Defendant Buyers followed the decision of the sub-buyers and the Plaintiff sellers old the oil for less money elsewhere. 
+				* Plaintiff sellers sued the Defendant buyers for the difference in the money lost to damages.
 			* Legal Issue:
+				* Did the Defendant Buyer waive their right to claim **against the delay in the Plaintiff Seller's sending the declaration of shipment** or would it be inequitable *(unfair)* to the Plaintiff Seller to allow them to do so?
 			* Court Ruling:
-		* `Lam Chi Kin David`
-			* Case Summary:
-			* Legal Issue:
-			* Court Ruling:
-   > FUA: Add case summary and court ruling here later with reference to slide 25.
+				* Plaintiff Seller’s claim for damages was REJECTED.
+				* Court found **declaration of shipment was essential**, particularly with regard to the timings requested by the Defendant Buyer. 
+				* Plaintiff Seller had WAIVED their right to *claim against error/delay* by submitting the documents directly to the sub-buyers. 
+				* Defendant Buyers were NOT inequitable in rejecting the documents.
+		* [`Lam Chi Kin David v Deutsche Bank AG [2011]`](https://www.elitigation.sg/gd/s/2012_SGHC_182)
 3. Inequitable to go back on promise	 
 	* Courts must take full account of all relevant circumstances
 
 ##### Effects of Promissory Estoppel
 * **Suspends** the *original contractual right* OR **extinguishes** it
 	* Suspensory with the Promisor being able to RESUME his strict legal rights on reasonable notice being given to the Promisee
-		* `High Trees`
-			* Case Summary:
-			* Legal Issue:
-			* Court Ruling:
+		* [`Central London Property Trust Ltd v High Trees House Ltd [1947]`](https://www.lawteacher.net/cases/london-property-trust-v-high-trees.php)
 	* Rights to pure money debt extinguished
-		* `High Trees` with respect to past part payments
-			* Case Summary:
-			* Legal Issue:
-			* Court Ruling:
+		* `Central London Property Trust Ltd v High Trees House Ltd [1947]` with respect to past part payments.
 	* Extinguished if parties cannot be restored to position before Promisee's reliance 
-		* `Birmingham & District Land Co v London & North Western Railway Co`
-			* Case Summary:
-			* Legal Issue:
-			* Court Ruling:
-   > FUA: Add case summary and court ruling here later with reference to slide 25.
+		* [`Birmingham & District Land Co v London & North Western Railway Co`](https://swarb.co.uk/birmingham-and-district-land-co-v-london-and-north-western-railway-ca-1886/)
