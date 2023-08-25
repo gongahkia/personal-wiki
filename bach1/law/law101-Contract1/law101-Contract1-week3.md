@@ -155,7 +155,7 @@ The Law does not look into ADEQUACY of Consideration, and only looks at the SUFF
 * Contractual duty owed to the **SAME PARTY**
 	1. `Stilk v Myrick`
 		* Case Summary:
-			* On a ship, 2 crewmen deserted and the Defendant Captain Myrick promised to divide wages of deserters among remaining crew if they would work the ship safe back to London. Plaintiff Stilk was a crew member, who sued Defendant Captain Myrick to enforce his promise.
+			* On a ship, 2 crewmen deserted and the Defendant Captain Myrick **promised to divide wages of deserters among remaining crew** if they would work the ship safe back to London. Plaintiff Stilk was a crew member, who sued Defendant Captain Myrick to enforce his promise.
 		* Legal Issue:
 			* Did Plaintiff Stilk provide sufficient consideration in return for Defendant Captain Myrick's promise?
 		* Court Ruling: 
@@ -195,3 +195,21 @@ The Law does not look into ADEQUACY of Consideration, and only looks at the SUFF
 		   * Court rejected Plaintiff employee Cheong Fook Chee's argument, holding that **work which a redundant employee does during his notice period is by definition, of MINIMAL value to his employer**. 
 		   * Defendant employer Sea-Land Service Inc did NOT give the employee one month’s notice and secure his labour *in exchange* for the enhanced severance pay. 
 		   * Instead, Defendant employer Sea-Land Service Inc gave the Plaintiff employee Cheong Fook Chee **one month’s notice** because it was contractually obliged to do so in order to bring an end to the employment.
+* Payment of a LESSER SUM cannot be **complete satisfaction** of a debt unless Consideration is provided in return for the promise to ACCEPT LESS.
+	* `Foakes v Beer`
+		* Case Summary: 
+			* Defendant Beer loaned Plaintiff Foakes an amount. When Plaintiff Foakes was unable to repay this loan, Defendant Beer received a judgment in her favour to recover this amount. 
+			* The pair entered an agreement where ‘in consideration’ of an initial payment of £500 and ‘on condition’ of six-monthly payments of £250 until the whole amount was repaid, Defendant Beer **would not enforce her judgment** against Plaintiff Foakes. 
+			* Plaintiff Foakes made these regular payments until the entire amount was repaid. 
+			* However, Plaintiff Foakes had not paid any interest on the judgement debt, which Defendant Beer was entitled to under statute.
+		* Court Ruling: 
+			* Defendant Beer's case was that the **promise not to enforce the judgement** was NOT SUPPORTED by good Consideration because Plaintiff Foakes had only done what he was ALREADY contractually bound to do.
+			* Applied rule in [Pinnel’s case](https://www.lawteacher.net/cases/pinnels-case.php) that **payment of a lesser sum cannot be a complete satisfaction of a debt** UNLESS Consideration is given in return for the promise to accept less.
+			* There is sufficient Consideration WHEN the Promisee **provides something different** (that the Promisor accepts) or the Promisee makes partial payment at an earlier date or different place (requested by the Promisor).
+
+### Exceptions to Requirement of Consideration
+#### Promissory Estoppel
+*Promissory Estoppel*: A party may **recover on the basis of a promise made** when the party's RELIANCE on that promise was REASONABLE, and the party attempting to recover DETRIMENTALLY RELIED on the promise.
+
+##### Elements of Promissory Estoppel
+1. Clear and Unequivocal *(unambigious)* promise not to insist on original contractual rights.
