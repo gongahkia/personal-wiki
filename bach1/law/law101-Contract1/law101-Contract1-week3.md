@@ -179,3 +179,19 @@ The Law does not look into ADEQUACY of Consideration, and only looks at the SUFF
 			4. As a result of giving his promise, B obtains in practice a benefit, or obviates *(removes)* a disbenefit
 			5. B’s promise is **not given as a result of economic duress or fraud** on the part of A
 			6. The benefit to B is **capable** of being Consideration for B’s promise, so that the promise will be legally binding.
+		   * *Practical benefit*: FACTUAL benefit
+				* Makes it easy to find **SUFFICIENT Consideration** to support contract modifications.
+				* 2 conflicting legal concerns regarding Contract Modification
+					1. Parties **should be encouraged to NEGOTIATE a solution** when they encounter problems in performing a contract.
+					2. One party **should NOT extract an advantage** by exploiting the weaker bargaining position of the other party.
+* Performance of **existing contractual duty** must yield FACTUAL or PRACTICAL BENEFIT to the Promisor and must have been requested “in return” for the promise to PAY MORE.
+	* `Sea-Land Service Inc v Cheong Fook Chee Vincent`
+		* Case Summary:
+			* Defendant employer Sea-Land Service Inc gave Plaintiff employee Cheong Fook Chee Vincent *(a redundant employee)* one month’s notice of termination **under his employment contract** and agreed to pay him enhanced severance pay. 
+			* Plaintiff employee Cheong Fook Chee Vincent served out his one month notice period. The employer refused to pay the enhanced severance pay. 
+			* Defendant employer Sea-Land Service Inc argued that the agreement to do so was unsupported by Consideration.
+			* Plaintiff employee Cheong Fook Chee Vincent argued that the work he did during his notice period was the Consideration.
+		* Court Ruling:
+		   * Court rejected Plaintiff employee Cheong Fook Chee's argument, holding that **work which a redundant employee does during his notice period is by definition, of MINIMAL value to his employer**. 
+		   * Defendant employer Sea-Land Service Inc did NOT give the employee one month’s notice and secure his labour *in exchange* for the enhanced severance pay. 
+		   * Instead, Defendant employer Sea-Land Service Inc gave the Plaintiff employee Cheong Fook Chee **one month’s notice** because it was contractually obliged to do so in order to bring an end to the employment.
