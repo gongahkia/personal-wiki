@@ -213,3 +213,38 @@ The Law does not look into ADEQUACY of Consideration, and only looks at the SUFF
 
 ##### Elements of Promissory Estoppel
 1. Clear and Unequivocal *(unambigious)* promise not to insist on original contractual rights.
+	* ASCERTAINED OBJECTIVELY via the Objectivity test
+	* Would **words**, **conduct** of PROMISOR lead a reasonable PROMISEE to believe that the Promisor will not insist on his strict contractual rights?
+2. Reliance
+	* Evidenced by Promisee's change of position by **doing** OR **omitting to do** what he would otherwise not have done or omitted to do.
+	* Seen when Promisee *changes his position*, either doing or not doing what he initially intended to do or not do.
+		* `The Postchaser`
+			* Case Summary:
+			* Legal Issue:
+			* Court Ruling:
+		* `Lam Chi Kin David`
+			* Case Summary:
+			* Legal Issue:
+			* Court Ruling:
+   > FUA: Add case summary and court ruling here later with reference to slide 25.
+3. Inequitable to go back on promise	 
+	* Courts must take full account of all relevant circumstances
+
+##### Effects of Promissory Estoppel
+* **Suspends** the *original contractual right* OR **extinguishes** it
+	* Suspensory with the Promisor being able to RESUME his strict legal rights on reasonable notice being given to the Promisee
+		* `High Trees`
+			* Case Summary:
+			* Legal Issue:
+			* Court Ruling:
+	* Rights to pure money debt extinguished
+		* `High Trees` with respect to past part payments
+			* Case Summary:
+			* Legal Issue:
+			* Court Ruling:
+	* Extinguished if parties cannot be restored to position before Promisee's reliance 
+		* `Birmingham & District Land Co v London & North Western Railway Co`
+			* Case Summary:
+			* Legal Issue:
+			* Court Ruling:
+   > FUA: Add case summary and court ruling here later with reference to slide 25.
