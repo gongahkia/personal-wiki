@@ -1,15 +1,9 @@
-# FUA
+# Week 2
 
 1. Do a random act of kindness
 2. Numbers for UNI and BQ
     * **Uni:** 9
     * **BQ:** 9
-3. Reference the third section `Theories of well-being` when crafting research question 
-4. Religions often call for the giving up of "lower pleasures" for the "highest pleasure" as well
-    * Christianity: Christ as the highest pleasure
-5. Religion as objective list theory
-6. Scope topic down so I'm able to discuss it in 30 seconds (60 words).
-7. Add these ideas to final eassy individual google doc
 
 # Buzzword heaven
 
@@ -36,7 +30,7 @@
 
 ## 1. `Feeling Good (pg 14- 25)` by Hurka Thomas
 
-* Psychological Hedonism gets it backward, in fact what happens is you want something to occur first, and then derive pleasure from that thing occuring.
+* Psychological Hedonism gets it backward, in fact what happens is you want something to occur first, and then derive pleasure from that thing occurring.
     * *As Butler said, we have desires for things outside us just as things outside us, and we often wouldn’t get the pleasures we do without having those desires.*
 * Concept that natural selection would favour those who have INSTINCTUAL desire to promote altrusitic behaviour, and pleasure arrives as a by-product after the act, instead of pleasure being the main arbiter by which we make our decisions.
 * Types of pleasure

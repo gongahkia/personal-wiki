@@ -6,17 +6,11 @@
 
 ---
 
-## FUA
-
-1. Add Ian Chai's History of Legal Systems and the different legal systems here from *week 2 slides* on Elearn
-
----
-
 ### Definitions  
 
 **Law**: a *system of rules* governing society  
-**Prosection**: conduct legal proceedings *against* a person or organization, conducted by the Plaintiff  
-**Bill**: proposed legislation (draft law) that has *yet to be* PASSED BY MEMBERS OF PARLIMENT (Legislature), VETTED BY *PCMR*, or RECEIVED THE PRESIDENT'S ASSENT
+**Prosecution**: conduct legal proceedings *against* a person or organisation, conducted by the Plaintiff  
+**Bill**: proposed legislation (draft law) that has *yet to be* PASSED BY MEMBERS OF PARLIAMENT (Legislature), VETTED BY *PCMR*, or RECEIVED THE PRESIDENT'S ASSENT
 
 ## [The Legislative Process](https://www.agc.gov.sg/our-roles/drafter-of-laws/the-legislative-process)
 
@@ -27,31 +21,31 @@
     * *eg.* Lays out who can be a minister, who can be a president, and their roles and responsiblities
 * States fundamental rights that other laws cannot violate
 * CAN BE AMENDED, though much harder to amend than other pieces of legislation
-    * most of Constitution's articles can be amended with a CONSTITUTIONAL AMENDMENT BILL that has the **support of MORE THAN 2/3 of Members of Parliment**
+    * most of Constitution's articles can be amended with a CONSTITUTIONAL AMENDMENT BILL that has the **support of MORE THAN 2/3 of Members of Parliament**
 
 ### 2. Legislation *(STATUTES)*
 
-> Legislations and Statutes are *interchangable terms*.
+> Legislations and Statutes are *interchangeable terms*.
 
-1. **Primary Legislature** *(Acts of parliment)*
+1. **Primary Legislature** *(Acts of Parliament)*
 2. **Secondary Legislature** *(Rules, Regulations, Subsidiary legislature)*
 
 #### PRIMARY legislation
-* Acts of Parliment
+* Acts of Parliament
 * Made by the Legislature, approved by the President
-* Acts of Parliment can be found at [Singapore Statutes](https://sso.agc.gov.sg), end with the word "Act"
+* Acts of Parliament can be found at [Singapore Statutes](https://sso.agc.gov.sg), end with the word "Act"
     * *eg.* Housing and Development ACT
-* An Act of Parliment *(PRIMARY legislation)* is a **BILL** that has been passed by Members of Parliament, vetted by Presidential Council for Minority Rights (PCMR), and has the PRESIDENT's assent.
+* An Act of Parliament *(PRIMARY legislation)* is a **BILL** that has been passed by Members of Parliament, vetted by Presidential Council for Minority Rights (PCMR), and has the PRESIDENT's assent.
 
 #### SECONDARY legislation
 * *a.k.a* Subsidiary legislation / Delegated legislation
 * Regulations, Rules, Orders
 * Legislation made by persons who have been delegated legislative power *(typically Ministers of Public Servants)*
-* Those persons can create regulatory law **WITHOUT having to have a bill passed in Parliment** for agreement, Presidential Council for Minority Rights, and President for final assent.
+* Those persons can create regulatory law **WITHOUT having to have a bill passed in Parliament** for agreement, Presidential Council for Minority Rights, and President for final assent.
     1. *eg. COVID-19 (Temporary Measures) Act 2020*, the **PRIMARY** legislation which enabled the COVID Committee to create **SECONDARY** legislation, *COVID-19 (Temporary Measures) (Control Order) Regulations 2020*
     2. *eg.* MAS (Monetary Authority of Singapore) has its powers *bestowed to it* by the `MAS Act`.
         * `MAS` is a **creature of statute**.
-        * `MAS Act` is a piece of **Primary Legislation** (ACT OF PARLIMENT) that allows the `MAS` to create **Secondary Legislation** (REGULATION, RULES, SUBSIDIARY LEGISLATURE) within the confines of the power bestowed to it.
+        * `MAS Act` is a piece of **Primary Legislation** (ACT OF PARLIAMENT) that allows the `MAS` to create **Secondary Legislation** (REGULATION, RULES, SUBSIDIARY LEGISLATURE) within the confines of the power bestowed to it.
             * *eg.* [MAS imposes additional capital requirement on DBS](https://www.mas.gov.sg/news/media-releases/2023/mas-imposes-further-additional-capital-requirement-on-dbs-bank-for-disruption-of-banking-services)
 
 ### 3. Case law
@@ -94,31 +88,31 @@
         1. Prime Minister
         2. Deputy Prime Ministers 
         3. **MINISTERS leading...**
-            * MINDEF
-            * MOE
-            * MOF
-            * MOH 
-            * MOM 
-            * Ministry of Transport
-            * Ministry of Home Affairs
-            * Ministry of Foreign Affairs
-            * Ministry of Law
-            * Ministry of Communications and Information
-            * Ministry of Culture
-            * Ministry of Community and Youth
-            * Ministry of National Development
-            * Ministry of Social and Family Development
-            * Ministry of Sustainability and the Environment
-            * Ministry of Trade and Industry
+			* MINDEF
+			* MOE
+			* MOF
+			* MOH 
+			* MOM 
+			* MHA 
+		   * MFA
+			* Ministry of Transport
+			* Ministry of Law
+			* Ministry of Communications and Information
+			* Ministry of Culture
+			* Ministry of Community and Youth
+			* Ministry of National Development
+			* Ministry of Social and Family Development
+			* Ministry of Sustainability and the Environment
+			* Ministry of Trade and Industry
 * Advised on legal matters by Attorney-General's Chambers
 
 ### 3. Legislature 
 * Create primary legislation, highest law-making authority in Singapore
-* MEMBERS OF PARLIMENT led by the SPEAKER OF PARLIMENT 
-    * Pass Acts of Parliment (primary legislation) with the approval of the PRESIDENT
-* Advised on parlimentary draftings by Attorney-General's Chambers
+* MEMBERS OF PARLIAMENT led by the SPEAKER OF PARLIAMENT 
+    * Pass Acts of Parliament (primary legislation) with the vetting of Presidential Council of Minority Rights (PCMR) and the approval of the PRESIDENT 
+* Advised on parliamentary draftings by Attorney-General's Chambers
 * *Democratically representative body* that debate matters of **national significance**
-    * meet-the-people sessions to find out the public's needs and desires
+    * *eg.* meet-the-people sessions to find out the public's needs and desires
 * LEGISLATURE (Members of Parliment) **holds PMO (cabinet) accountable** by asking questions to Ministers
     * Separation of Powers to ensure *checks and balances*
 
@@ -210,4 +204,3 @@ The JUDICIAL POWER of the state can be vested only in the `Supreme court` and `S
 * Judges have ***greater specialisation*** regarding hearing and deciding cases.
 * `System of appeals`: Many issues of Subordinate courts can be brought to higher courts for appeal *(especially the more complex ones)*.
 * `System of BINDING PRECEDENT`: higher courts bind lower courts decision-wise.
-
