@@ -58,9 +58,14 @@
 
 #### Response:
 1. Identify legal issue
+	* Whether Ann is able to enforce her father's promise to let her have his laptop for $1, as well as a $2,000 interest-free loan for a year.
 2. What legal rule to use
+	* Sufficiency of Consideration in the case of moral obligation.
 3. Apply legal rule
+	* For Ann to be able to enforce her father's promise against her, she must be able to prove that she was providing sufficient consideration as the Promisee, in her case to not neglect her mother after she starts her business.
+	* Since such a promise to not neglect her mother is not an act that holds any economic value, it is hard to enforce, especially since it includes future actions on the Promisee's part. Additionally, such acts of filial piety are moral obligations, and as seen in `White v Bluett`, Courts generally deem such cases **INSUFFICIENT CONSIDERATION**.
 4. Conclusion
+	* Ann lacked sufficient consideration on her part to enforce her father's promise against her.
 
 ### Practice question 2
 
