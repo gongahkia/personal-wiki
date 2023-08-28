@@ -1,7 +1,7 @@
 # `S1W3 SG Legal System`
 
 > **Class:** *LGST 102 SG Legal System*  
-> **Subject:** *Sources of Law and Legal Reasoning 1 : Statutes  
+> **Subject:** *Sources of Law and Legal Reasoning 1 : Statutes*  
 > **Lecturer:** *Ian Chai*  
 
 ---
