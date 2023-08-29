@@ -125,10 +125,14 @@
 * Symbolic figurehead for national unity
 
 ### 5. Presidential Councils
-* Council of Presidential Advisers
-* Presidential Council for Minority Rights (PCMR)
-    * Vet MOST Bills to ensure they do not discriminate against any racial or religious community *(minus money Bills, urgent Bills, Bills affecting security, public safety, peace or good order in Singapore)*
-* Presidential Council for Religious Harmony
+* If ==the President== **vetoes a given Act of Parliament**... 
+	* Act is passed to the ==Presidential Council== for reconsideration.
+	* ==Presidential Council== **decides** whether the Parliament needs to *rework* the Primary Legislation, or if the Act can be *passed*.
+Comprises...
+	1. ==Presidential Council for Minority Rights (PCMR)==
+	    * Vet MOST Bills to ensure they do not discriminate against any racial or religious community *(minus money Bills, urgent Bills, Bills affecting security, public safety, peace or good order in Singapore)*
+	2. ==Council of Presidential Advisers==
+	3. ==Presidential Council for Religious Harmony==
 
 ### 6. Attorney-General's Chambers 
 * Assists the EXECUTIVE (as the government's legal advisor) and the LEGISLATURE (as parliamentary drafters). 
