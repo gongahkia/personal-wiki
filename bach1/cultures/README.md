@@ -24,6 +24,19 @@
 
 1. **Final paper**: 3000 words or less --> Make an argument based on a film of your choice, personal experience and class discussion on WHAT YOU LEARNT IN THE CLASS
 
+## Module overview
+#### Week 1
+**ANXIETY** of the Pacific Rim 
+* There are too many PRIVATES in this PUBLIC world.
+* Too many interests at stake for us to be interested in building the Common World called the "Pacific Rim".
+#### Week 2
+**TRAUMA** of the Pacific Rim
+* There is trauma on the Pacific Rim created by American Empire.
+#### Week 3
+**FIXATION** on the Pacific Rim
+* *Fixation*: Wanting something so badly you must have it.
+* People on the Pacific Rim have a fixation on Asian values.
+
 ## Definitions
 
 * `Epistemology`: how we know what we know, usually in a world
