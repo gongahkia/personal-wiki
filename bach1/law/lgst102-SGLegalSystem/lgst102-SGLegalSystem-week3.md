@@ -6,6 +6,7 @@
 
 ---
 
+> FUA: Add additional notes under Statutory Interpretation from Wk3 elearn slides
 ## Learning Objective and Questions
 
 **Objective**: Understand how to *find relevant statutes*, *read and understand them*, and *apply them to facts*.
@@ -25,6 +26,9 @@
     
 4. What are the practical things you should always do when applying ==legislation==?
 	* Ensure that any application of legislation does not conflict with any other mentioned legislation.
+
+## Ian Chai's tips
+* To ==check for understanding== of a concept, see if you can DUMB IT DOWN and explain it **intuitively** to a laymen. If you can do it, you understand the concept.
 
 ## Definitions
 > FUA: 
@@ -88,3 +92,20 @@ Singapore adheres to ==constitutional supremacy==.
 	* President's assent
 		 * If President is to veto a given Act of Parliament (legislation, statute), it returns to the Presidential Council for reconsideration.
 	* Needs to adhere to the **core tenants** of the ==Constitution of the Republic of Singapore==.
+
+### Statutory interpretation 
+1. Start with the text
+2. Take the **PURPOSIVE approach**.
+	* Refer to the interpretation act 9A(1)
+> FUA: Add the definition of purposive approach here
+3. You are trying to find **Parliament's intent**, NOT the **Minister's intent**.
+4. CANONS OF CONSTRUCTION:
+> FUA: Add translation of the following terms from latin
+	* *Ejusdem generis*: 
+	* *Lex nil furstra facit*: 
+	* **Domestic laws** ==consistent with== **international obligations** 
+	* Presumption against removal of ==common law rights==
+		* **General adherence to Common Law** *(unless there is a convincing argument to be made)*
+5. Check to whom the Statute applies. *(TARGET AUDIENCE)*
+6. Check the relevant *VERSION* applied AT THE TIME of the events being analysed
+7. Check understanding of what the words mean, there is usually an interpretation section at the start of the statute.
