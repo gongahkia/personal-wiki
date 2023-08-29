@@ -109,3 +109,7 @@ Singapore adheres to ==constitutional supremacy==.
 5. Check to whom the Statute applies. *(TARGET AUDIENCE)*
 6. Check the relevant *VERSION* applied AT THE TIME of the events being analysed
 7. Check understanding of what the words mean, there is usually an interpretation section at the start of the statute.
+
+## Problem Question
+![[Screenshot 2023-08-29 at 9.01.20 PM.png]]
+![[Screenshot 2023-08-29 at 9.02.35 PM.png]]
