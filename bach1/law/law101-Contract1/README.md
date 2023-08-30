@@ -3,7 +3,6 @@
 ## FUA
 
 ### Weekly
-
 1. Refer to `week x outline` on Elearn.
 2. Complete all specified **BIG PHANG readings** and **aestricked cases**, add case summaries to `university-notes` repo.
 3. Answer questions posed at the bottom of the `*week X outline*` file.
@@ -11,44 +10,36 @@
 5. Read up on **other cases** mentioned in class.
 
 ## Contact
-
 * **Prof:** wlloo@smu.edu.sg
-* **TA:** harathrajs.2022@scis.smu.edu.sg
+* **TA:** bharathrajs.2022@scis.smu.edu.sg
 
 ## Hard deadlines
-
 * **Mid-term test**: 30 Sep 2023, 2-3.15pm
 * **Finals**: When?
 
 ## Assessment Method
-
 * Class participation: 15%
 * Group assignment (Oral presentation): 20%
 * Mid-term Test: 15%
 * Final Examination: 50%  
 
 ## Reference material
-
 Due to the complexity of Contract law cases, most IRAC breakdowns will come from **CASE LAW**, with **STATUTE LAW** supplementing existing arguments.
 
 #### How to do readings
-
 1. Refer to `Week X outline`, complete all Big Phang readings
 2. Refer to aestriked cases, get **summary of the facts** from Lawnet, SG courts, elitigation.
 3. Refer to **specified legislation or statutes** from SGC statutes online.
 
 ### 1. Find Readings
-
 * [Big Phang](https://store.lawnet.com/the-law-of-contract-in-singapore-2nd-edition.html)
 
 ### 2. Find Cases
-
 * [Lawnet](https://www.lawnet.sg/lawnet/web/lawnet/home)
 * [SG courts](https://www.judiciary.gov.sg/)
 * [elitigation](https://www.elitigation.sg/_layouts/IELS/HomePage/Pages/Home.aspx)
 
 ### 3. Find Statutes
-
 * [SGC statutes online](https://sso.agc.gov.sg/)
 
 ---
@@ -87,7 +78,6 @@ Due to the complexity of Contract law cases, most IRAC breakdowns will come from
     * **Discuss whether** the facts of given scenario satisfy the *elements of the statutory provision*. 
 
 ### 4. `C`onclusion
-
 * State the conclusion that your application of the rules to the scenario facts has led to.
     * *eg.* “It is likely that the advertisement on ABC’s website is an offer.”
 

@@ -27,7 +27,7 @@
 1. ==Identify the Promise== being enforced *(who's enforcing the promise against who?)*.
 2. ==Identify the Promisor and Promisee== *(who made the promise, who needs to provide consideration?)*
 3. Identify the ==consideration== (or lack thereof) made by the Promisee.
-4. Evaluate whether the ==consideration was VALID, SUFFICIENT== for the promise being made.
+4. Evaluate whether the ==consideration was VALID, SUFFICIENT or COMPLETE== for the promise being made.
 ## Consideration
 *Consideration*: Consideration signifies a RETURN *(recognised in law)* given in exchange for the PROMISE SOUGHT TO BE ENFORCED.
 * The PROMISE, PERFORMANCE, FORBEARANCE bargained by the **PROMISOR**, provided by the **PROMISEE** in exchange for the PROMISOR's PROMISE.
@@ -69,6 +69,10 @@ Fresh consideration required for variations to existing contracts *unless* expre
 * Consideration is also a ==DETRIMENT incurred/suffered by the **PROMISEE**== in return for the *promisor’s promise*
 
 > `Gay Choon Ing [67]`: *benefit-detriment is preferred as ‘the most workable of all the definitions'*
+
+*Factual benefit*: ==Practical benefit *(actual benefit)*== that can be conferred to a party in a transaction.
+*Legal benefit*: ==Benefit *(as per the contract, enforced by the law)*== that should be conferred to a party in a transaction.
+
 ## Price of Promise analysis
 *Price of Promise analysis*: Promisee ‘buys’ the promisor’s promise by doing some act for it or by offering a counter-promise in return.
 
@@ -198,22 +202,25 @@ The Law ==does not look into ADEQUACY of Consideration==, and only looks at the 
 			* **SUFFICIENT CONSIDERATION**
 		   * PROMISOR obtained a direct right to enforce the PROMISEE's performance of or promise to perform an *existing contractual duty* owed to a third party.
 
+> FUA: Tie its relation of factual and legal benefit to the court ruling of Stilk v Myrick under ==legal issue== section.
+
 * ==Contractual duty owed to the **SAME PARTY**==
 	1. `Stilk v Myrick`
 		* Case Summary:
 			* On a ship, 2 crewmen deserted and the Defendant Captain Myrick **promised to divide wages of deserters among remaining crew** if they would work the ship safe back to London. Plaintiff Stilk was a crew member, who sued Defendant Captain Myrick to enforce his promise.
 		* Legal Issue:
-			* Did Plaintiff Stilk provide sufficient consideration in return for Defendant Captain Myrick's promise?
+			* Did Plaintiff crew member Stilk provide ==sufficient consideration== in return for Defendant Captain Myrick's promise?
+			* *Factual benefit*: ==Practical benefit *(actual benefit)*== that can be conferred to a party in a transaction.
+			* *Legal benefit*: ==Benefit *(as per the contract, enforced by the law)*== that should be conferred to a party in a transaction.
 		* Court Ruling: 
-			* Court concluded “practical benefits” that Defendant Captain Myrick's promise gave (Plaintiff Stilk and other crew members work the ship safe back to London) amounted to **sufficient consideration**.
-			* Requirement of fresh consideration required in **variations to existing contracts** unless expressly dispensed with the contracting parties.
-			* Since Plaintiff Stilk **did not demand additional payment**, and Defendant Captain Myrick offered the crew in recognition that they would be required to work harder to achieve the same result. This could also be construed as a GREATER BENEFIT to the captain that the ship was returned to London as opposed to being docked overseas. 
+			* Court concluded ==“factual benefits” that Plaintiff crew member Stilk gave (Plaintiff Stilk and other crew members work the ship safe back to London) amounted to **INSUFFICIENT CONSIDERATION**==  for the enforcement of Defendant Captain Myrick's promise to pay them extra.
+			* ==Performance of an EXISTING DUTY== is NOT considered sufficient consideration.
   2. `Williams v Roffey`
 		* Case Summary:
 			* Defendants Roffey were *main contractors* to refurbish 27 flats for clients by a deadline. 
 			* Main contract had a **penalty clause**, where the Defendant Roffey had to pay a penalty to clients if they did not meet the deadline.
 		   * Plaintiff Williams were a SUB-CONTRACTOR hired by Defendant Roffey to do carpentry work for the 27 flats for 20,000 pounds.
-			* Defendant Roffey became worried that Plaintiff Williams could not finish the work in time. Plaintiff Williams also ran into financial difficulties as the initally agreed 20,000 pounds was NOT ENOUGH for Plaintiff Williams to operate satisfactorily and earn a profit AND Plaintiff Williams failed to supervise their manpower properly.
+			* Defendant Roffey became worried that Plaintiff Williams could not finish the work in time. Plaintiff Williams also ran into financial difficulties as the initially agreed 20,000 pounds was NOT ENOUGH for Plaintiff Williams to operate satisfactorily and earn a profit AND Plaintiff Williams failed to supervise their manpower properly.
 		   * Defendant Roffey's surveyor persuaded Defendant Roffey to pay the Plaintiff Williams more so Defendant Roffey agreed to pay Plaintiff Williams 10,300 pounds more *(575 pounds per completed flat)*. 
 			* Plaintiff Williams completed 8 more flats, but only received 1,500 pounds further payment. Plaintiff Williams ceased work and sued Defendant Roffey.
 		* Legal Issue:
@@ -230,18 +237,23 @@ The Law ==does not look into ADEQUACY of Consideration==, and only looks at the 
 				* 2 conflicting legal concerns regarding Contract Modification
 					1. Parties **should be encouraged to NEGOTIATE a solution** when they encounter problems in performing a contract.
 					2. One party **should NOT extract an advantage** by exploiting the weaker bargaining position of the other party.
+			* From this perspective, ==the Court ruling on `Williams v Roffey` retroactively contradicts understanding of `Stilk v Myrick`==.
+				1. Requirement of fresh consideration required in **variations to existing contracts** unless expressly dispensed with the contracting parties.
+				2. Since ==Plaintiff Stilk **did not demand additional payment**, and Defendant Captain Myrick offered the crew extra money== in recognition that they would be required to work harder to achieve the same result. 
+				3. This could be construed as Defendant Captain Myrick seeing the Plaintiff crew member Stilk *(Promisee's consideration of guiding the ship back safe as opposed to being dock overseas)* was of ==GREATER OR EQUIVALENT BENEFIT to enforce his promise.==
 * ==Performance of **existing contractual duty** must yield FACTUAL BENEFIT to the Promisor== and must have been ==requested “in return” for the promise== to PAY MORE.
 	* `Sea-Land Service Inc v Cheong Fook Chee Vincent`
 		* Case Summary:
 			* Defendant employer Sea-Land Service Inc gave Plaintiff employee Cheong Fook Chee Vincent *(a redundant employee)* one month’s notice of termination **under his employment contract** and agreed to pay him enhanced severance pay. 
-			* Plaintiff employee Cheong Fook Chee Vincent served out his one month notice period. The employer refused to pay the enhanced severance pay. 
-			* Defendant employer Sea-Land Service Inc argued that the agreement to do so was unsupported by Consideration.
+			* Plaintiff employee Cheong Fook Chee Vincent served out his one month notice period. ==The employer refused to pay the enhanced severance pay.==
+			* Defendant employer Sea-Land Service Inc argued that ==the agreement to do so was unsupported by Consideration==.
 			* Plaintiff employee Cheong Fook Chee Vincent argued that the work he did during his notice period was the Consideration.
 		* Court Ruling:
-		   * Court rejected Plaintiff employee Cheong Fook Chee's argument, holding that **work which a redundant employee does during his notice period is by definition, of MINIMAL value to his employer**. 
-		   * Defendant employer Sea-Land Service Inc did NOT give the employee one month’s notice and secure his labour *in exchange* for the enhanced severance pay. 
-		   * Instead, Defendant employer Sea-Land Service Inc gave the Plaintiff employee Cheong Fook Chee **one month’s notice** because it was contractually obliged to do so in order to bring an end to the employment.
-* ==Payment of a LESSER SUM cannot be **complete satisfaction** of a debt== unless Consideration is provided in return for the promise to ACCEPT LESS.
+		   * ==Court rejected Plaintiff employee Cheong Fook Chee's argument==, holding that work which a redundant employee does during his notice period is *by definition*, of MINIMAL value to his employer. 
+			* Plaintiff argued `Williams v Roffey`, Defendant argued `Stilk v Myrick`.
+		   * Defendant employer Sea-Land Service Inc ==did NOT give the employee one month’s notice and secure his labour *in exchange* for the enhanced severance pay==, in other words there was **NO FACTUAL BENEFIT** provided by the Plaintiff employee. 
+		   * Instead, Defendant employer Sea-Land Service Inc gave the Plaintiff employee Cheong Fook Chee **one month’s notice** because ==it was contractually obliged to do so== in order to bring an end to the employment.
+* ==Payment of a LESSER SUM cannot be **complete satisfaction** of a debt== unless Consideration is provided in return for the ==promise to ACCEPT LESS==.
 	* `Foakes v Beer`
 		* Case Summary: 
 			* Defendant Beer loaned Plaintiff Foakes an amount. When Plaintiff Foakes was unable to repay this loan, Defendant Beer received a judgment in her favour to recover this amount. 
@@ -258,12 +270,12 @@ The Law ==does not look into ADEQUACY of Consideration==, and only looks at the 
 *Promissory Estoppel*: A party may **recover on the basis of a promise made** when the party's RELIANCE on that promise was REASONABLE, and the party attempting to recover DETRIMENTALLY RELIED on the promise.
 
 ##### Elements of Promissory Estoppel
-1. Clear and Unequivocal *(unambigious)* promise not to insist on original contractual rights.
+1. Clear and Unequivocal *(unambiguous)* promise ==not to insist on original contractual rights==.
 	* ASCERTAINED OBJECTIVELY via the Objectivity test
 	* Would **words**, **conduct** of PROMISOR lead a reasonable PROMISEE to believe that the Promisor will not insist on his strict contractual rights?
-2. Reliance
-	* Evidenced by Promisee's change of position by **doing** OR **omitting to do** what he would otherwise not have done or omitted to do.
-	* Seen when Promisee *changes his position*, either doing or not doing what he initially intended to do or not do.
+2. ==Reliance==
+	* Evidenced by Promisee's change of position ==by **doing** OR **omitting to do** what he would otherwise not have done or omitted to do== due to the Promise.
+	* Seen when Promisee *changes his position*, either doing or not doing what he initially intended to do or not do as a result of the Promise.
 		* `The Post Chaser [1982]`
 			* Case Summary:
 				* Plaintiff Sellers agreed to sell palm-oil to Defendant buyers who had contracted to sell this onto sub-buyers. 
@@ -281,7 +293,7 @@ The Law ==does not look into ADEQUACY of Consideration==, and only looks at the 
 				* Plaintiff Seller had WAIVED their right to *claim against error/delay* by submitting the documents directly to the sub-buyers. 
 				* Defendant Buyers were NOT inequitable in rejecting the documents.
 		* [`Lam Chi Kin David v Deutsche Bank AG [2011]`](https://www.elitigation.sg/gd/s/2012_SGHC_182)
-3. Inequitable to go back on promise	 
+3. ==Inequitable== to go back on promise	 
 	* Courts must take full account of all relevant circumstances
 
 ##### Effects of Promissory Estoppel
