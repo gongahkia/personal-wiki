@@ -5,7 +5,6 @@
 > **Lecturer:** *Prof Loo Wee Ling*  
 
 ---
-
 ## Readings
 
 1. Big Phang
@@ -13,44 +12,70 @@
 
 ---
 
+> FUA: Add case summary and court ruling of `Chwee Kin Keong & Ors v Digilandmall.com Pte Ltd` under ==Executory Consideration== section of these notes.
+
+## Loo Wee Ling's advice
+![]()
+![](https://i1.sndcdn.com/artworks-000237741536-psz7yj-t500x500.jpg)
+### Ingredients of a contract
+* Offer (WK1)
+* Acceptance (WK1)
+* Certainty && Completeness (WK2)
+* Consideration (WK3)
+
+### Evaluating Consideration
+1. ==Identify the Promise== being enforced *(who's enforcing the promise against who?)*.
+2. ==Identify the Promisor and Promisee== *(who made the promise, who needs to provide consideration?)*
+3. Identify the ==consideration== (or lack thereof) made by the Promisee.
+4. Evaluate whether the ==consideration was VALID, SUFFICIENT== for the promise being made.
 ## Consideration
 *Consideration*: Consideration signifies a RETURN *(recognised in law)* given in exchange for the PROMISE SOUGHT TO BE ENFORCED.
 * The PROMISE, PERFORMANCE, FORBEARANCE bargained by the **PROMISOR**, provided by the **PROMISEE** in exchange for the PROMISOR's PROMISE.
 	* Safeguards the PROMISER, who is providing the promise.
 	* Consideration is provided by the PROMISEE.
 * Based on the damn basic idea of reciprocity, an essential element of a Contract *(otherwise it's just considered a gift, not a Contract)*
-* Without Consideration from the Promisee, there is an unequal weightage of stakes, and Contract CANNOT BE ENFORCEABLE.
+* Without Consideration from the Promisee, there is an ==unequal weightage of stakes, and Contract CANNOT BE ENFORCEABLE==.
 * Comes in the form of RIGHT, INTEREST, PROFIT or BENEFIT to the Promisor, or FORBEARANCE, DETRIMENT, LOSS or RESPONSIBILITY suffered by the Promisee.
 
 Fresh consideration required for variations to existing contracts *unless* expressly dispensed with by the contracting parties
 * *`Ma Hongjin [36], [60]`
 
 ## Contracts by deed
-*Contracts by deed*: Contracts that are **SIGNED, SEALED, DELIVERED** to create an EXPRESSED legal obligation.
+*Contracts by deed*: Contracts that are **SIGNED, SEALED, DELIVERED** to create an ==EXPRESSED legal obligation==.
 * Consideration NOT REQUIRED for enforceability of Contracts by deed, since the legal obligation holds parties accountable in Court of Law.
 * Contrasted with **Simple Contracts** *(the other IMPLICIT CONTRACTS)* covered in Week 1 and 2.
+* *Signed*: Signatures required
+* *Sealed*: Literally sealed with a Seal *(company seal)*
+* *Delivered*: Copy of Contract must be passed on to both Promisee, Promisor and Third Parties
 
 ### Executory consideration
-*Executory*: Consideration is a COUNTER-PROMISE
+*Executory*: Consideration is a COUNTER-PROMISE provided for the promise.
 * Promises made in a contract will be **delivered IN THE FUTURE**.
 
 ### Executed consideration
-*Executed*: Consideration is an ACT
+*Executed*: Consideration is an ACT for the promise.
 * Promises made in a contract are **executed IMMEDIATELY**.
+* Usually seen in ==unilateral contracts==.
+> FUA: Add case summary court ruling here
+	* `Carlill v Carbolic Smoke Ball Co`
+		* Case Summary:
+* 
+		* Court Ruling:
+* 
 
 ## Benefit-detriment analysis
-*Benefit-detriment analysis*: A valuable consideration, in the sense of the law, may consist either in some right, interest, profit, or benefit accruing to the one party, or some forbearance, detriment, loss, or responsibility, given, suffered, or undertaken by the other.
-* Consideration is a BENEFIT conferred by the promisee on the **PROMISOR** in return for the *promisor’s promise*
-* Consideration is also a DETRIMENT incurred/suffered by the **PROMISEE** in return for the *promisor’s promise*
+*Benefit-detriment analysis*: A valuable consideration, in the sense of the law, may consist either in some right, interest, profit, or benefit accruing to the one party, or some forbearance *(refraining from exercising a given right)*, detriment, loss, or responsibility, given, suffered, or undertaken by the other.
+* Consideration is a ==BENEFIT conferred by the promisee on the **PROMISOR**== in return for the *promisor’s promise*
+* Consideration is also a ==DETRIMENT incurred/suffered by the **PROMISEE**== in return for the *promisor’s promise*
 
-> `Gay Choon Ing [67]`: *benefit-detriment is preferred as ‘the most workable of all the definitions*
+> `Gay Choon Ing [67]`: *benefit-detriment is preferred as ‘the most workable of all the definitions'*
 ## Price of Promise analysis
 *Price of Promise analysis*: Promisee ‘buys’ the promisor’s promise by doing some act for it or by offering a counter-promise in return.
 
 ## Past consideration
-*Past consideration*: Act that is done **prior to** and **independent of** a promise.
+*Past consideration*: Act that is done ==**prior to** and **independent of** a promise==.
 * By its very definition, past consideration CANNOT be regarded as a valid consideration.
-	* VALID CONSIDERATION for a promise must be **causally related** to the promise itself.
+	* VALID CONSIDERATION for a promise must be ==**causally related** to the promise itself==.
 	* Given in exchange for a promise.
 
 ### Exceptions to Past consideration being invalid
@@ -58,27 +83,30 @@ Fresh consideration required for variations to existing contracts *unless* expre
 #### The `Pao On` exception
 * `Pao On v Lau Yiu Long`
 	* Case Summary:
-		 * Plaintiff Pao On signed a contract with a public company to sell ALL their shares in a private company.
-		 * Under the contract, Plaintiff Pao On was to be paid with shares issued by the public company. 
-		 * Defendant Lau Yiu Long were majority shareholders of the public company, and feared the heavy selling of public company stock by the Plaintiff Pao On would depress the public company's share price.
-		* As such, Plaintiff Pao On also undertook **not to sell or transfer** 60% of the public company shares received until end April 1974.
-		 * Plaintiff Pao On wanted assurance that they would be protected against any fall in the public co’s share price during the period of restriction. 
-		 * After much negotiation, Defendant Lau Yiu Long signed a separate agreement to **indemnify the Plaintiff Pao On against any loss as a result of the restriction**. 
-		 * Public company share prices *dropped steeply* during the period of restriction. 
-		 * Plaintiff Pao On sued the Defendant Lau Yiu Long on  the basis of the indemnity. 
-		 * Defendant Lau Yiu Long argued that there was **no valid consideration for their promise to indemnify**, because Plaintiff Pao On's undertaking not to sell was PAST CONSIDERATION.
+			* ==Defendant Lau Yiu Long were the PROMISOR==, ==Plaintiff Pao On were the PROMISEE==. 
+			* Plaintiff Pao On expected to provide ==sufficient consideration== for their expectation of Defendant Lau Yiu Long to fulfil their promise.
+			* Plaintiff Pao On signed a contract with a public company to ==sell ALL their shares in a private company==.
+			* Under the contract, Plaintiff Pao On was to be ==paid with shares issued by the public company==. 
+			* Defendant Lau Yiu Long were majority shareholders of the public company, and feared the heavy selling of public company stock by the Plaintiff Pao On would ==depress the public company's share price==.
+			* As such, Plaintiff Pao On also undertook ==**not to sell or transfer** 60% of the public company shares received until end April 1974==.
+			* Plaintiff Pao On wanted assurance that they would be protected against any fall in the public co’s share price during the period of restriction. 
+			* After much negotiation, Defendant Lau Yiu Long signed a separate agreement to ==**indemnify the Plaintiff Pao On against any loss as a result of the restriction==**. 
+			* Public company share prices *dropped steeply* during the period of restriction. 
+			* Plaintiff Pao On sued the Defendant Lau Yiu Long ==on the basis of the indemnity==. 
+			* Defendant Lau Yiu Long argued that there was **no valid consideration for their promise to indemnify**, because Plaintiff Pao On's undertaking not to sell was PAST CONSIDERATION.
 	* Court Ruling: 
-		* Elements for **past consideration to be VALID**
-			1. The act must have been done at the promisor’s request
-			2. the parties must have understood that the act was to be remunerated either by a payment of the conferment of some other benefit; and 
-			3. the payment, or the conferment of a benefit, must have been legally enforceable had it been promised in advance
-		* Court determined all 3 elements were satisfied, by looking at the substance of the Parties' transactions to determine if the alleged act was truly past consideration.
+		* ==Elements for **past consideration to be VALID**==
+			1. The act must have been done at the promisor’s *(person who made the SUBSEQUENT PROMISE)* request
+			2. The parties must have understood that the **act was to be remunerated** by *a payment of the conferment of some other benefit* 
+			3. The payment, or conferment of a benefit, must have been **legally enforceable** had it been promised in advance
+		* Court determined all 3 elements were satisfied, by looking at the ==substance of the Parties' transactions== to determine if the alleged act was truly past consideration.
 		* Courts do not MERELY LOOK AT FORM *(the chronology of events)*.
 
 ## Idea of reciprocity
 *Idea of reciprocity*: Promisee who wishes to *enforce a promise* must first have furnished consideration for the promise.
-* Benefit or Detriment must be requested by the PROMISOR 
-* Though Consideration must be provided by the PROMISEE, *it need not move to the Promisor*, and may instead move to *THIRD PARTIES*
+* Benefit or Detriment must be requested by the PROMISOR ==*(expressed or implied)*==
+* Though Consideration must be provided by the PROMISEE, *it need not move to the Promisor*, and may ==instead move to *THIRD PARTIES*==.
+	* *Third Party*: Someone not involved in the direct transaction, on whom the benefit can be conferred on by the Promisee as Consideration, if so requested by the Promisor.
 
 ### Exceptions to the Idea of reciprocity
 #### Joint promise doctrine
@@ -97,28 +125,29 @@ Fresh consideration required for variations to existing contracts *unless* expre
 * When there are no price tags attached, determining sufficiency of consideration becomes more challenging.
 *Adequacy*: Fairness of comparable value
 
-The Law does not look into ADEQUACY of Consideration, and only looks at the SUFFICIENCY of Consideration.
-* `Chappell & Co Ltd v Nestle Co Ltd`
-	* Case Summary:
-		* Defendants Nestlé, contracted with a company that made gramophone records **to buy several recordings of music**. 
-		* Plaintiffs Chappell & Co owned the copyright in these recordings.
-		* Defendant Nestlé offered to sell these records at a *discount price to anyone presenting three wrappers from their chocolate bars*. 
-		* Plaintiffs Chappell & Co sought an injunction restraining the **manufacture and sale of the records** because they breached copyright.
-	* Legal Issue:
-		* Defendant Nestle argued the wrappers were PART OF the Consideration and this was not covered by the Copyright Act 1956, which only applied to monetary sales. 
-		* The issue was then **whether the wrappers were Consideration for the SALE OF RECORDS** or whether they were merely a *qualification for buying the records*.
-	* Court Ruling:
-		* House of Lords held that the wrappers DID FORM PART OF the Consideration for the *sale of records* although they had *NO intrinsic economic value*.
-
+The Law ==does not look into ADEQUACY of Consideration==, and only looks at the SUFFICIENCY of Consideration.
+* The Courts respect **Party Autonomy** in Contract Law.
+	* `Chappell & Co Ltd v Nestle Co Ltd`
+		* Case Summary:
+			* Defendants Nestlé, contracted with a company that made gramophone records **to buy several recordings of music**. 
+			* Plaintiffs Chappell & Co owned the copyright in these recordings.
+			* Defendant Nestlé offered to sell these records at a *discount price to anyone presenting three wrappers from their chocolate bars*. 
+			* Plaintiffs Chappell & Co sought an injunction restraining the **manufacture and sale of the records** because they breached copyright.
+		* Legal Issue:
+			* Defendant Nestle argued the wrappers were PART OF the Consideration and this was not covered by the Copyright Act 1956, which only applied to monetary sales. 
+			* The issue was then **whether the wrappers were Consideration for the SALE OF RECORDS** or whether they were merely a *qualification for buying the records*.
+		* Court Ruling:
+			* House of Lords held that ==the wrappers DID FORM PART OF the Consideration== for the *sale of records* although they had *NO intrinsic economic value*.
+	
 ### Is Consideration SUFFICIENT?
 #### Moral Obligations
-* **Moral obligations** that DO NOT have economic value do not constitute sufficient Consideration, particularly because they are difficult to enforce.
+* **Moral obligations** that DO NOT have economic value do not constitute sufficient Consideration, particularly because they are difficult to enforce and encourage the wrong kind of behaviour.
 	* `White v Bluett`
 		 * Case Summary:
 			* Plaintiff White promised to release his Defendant son, Bluett from legal obligations to pay a sum of money, if Defendant Bluett would stop complaining about unequal treatment by the Plaintiff White in the distribution of assets among his children.
 		* Court Ruling:
 			* **Insufficient Consideration**
-		   * Since the issue being dealt with here is one of sufficiency (or the lack thereof) of consideration, we see that considerations that **lack economic value** like promising to stop complaining are HARD TO ENFORCE, especially when they relate to actions to be undertaken in the future.
+		   * Since the issue being dealt with here is one of sufficiency (or the lack thereof) of consideration, we see that considerations that **lack economic value**, especially those with ==moral obligation== like promising to stop complaining are HARD TO ENFORCE and ==ENCOURAGE THE WRONG BEHAVIOUR==, especially when they relate to actions to be undertaken in the future.
 	 
 #### Intangibles (Discretionary Promise)
 * *Discretionary promise*: Consideration would again be illusory where it was alleged to consist of **a promise the terms of which left performance entirely to the discretion of the PROMISOR**. A person does not provide consideration by promising to do something ‘if I feel like it’, or ‘unless I change my mind’.
@@ -136,22 +165,22 @@ The Law does not look into ADEQUACY of Consideration, and only looks at the SUFF
 #### Pre-existing Duties
 *Pre-existing duties*: **Public** or **Legal** duty
 
-* Mere performance of an **existing legal duty** is NOT sufficient Consideration.
+* ==Mere performance of an **existing legal duty**== is NOT sufficient Consideration.
 	* `Collins v Godefroy`
 		* Case Summary: 
 		  * Defendant Godefroy brought an action against an attorney for negligence and caused Plaintiff Collins to be subpoenaed *(forced to attend court proceedings and give evidence)* to attend. 
-		  * Defendant Godefroy wanted to ensure Plaintiff Collins attended the court proceedings as this would help his case, so Defendant Godefroy **promised to pay him one guinea per day** he was at court as *compensation* for the loss of his time.
+		  * Defendant Godefroy wanted to ensure Plaintiff Collins attended the court proceedings as this would help his case, so Defendant Godefroy **promised to pay him one guinea per day** he was at court as *compensation* for the loss of his time= though he had been subpoenaed.
 		  * Plaintiff Collins attended court for six days but was not called to give evidence. 
 		  * At the end of this Plaintiff Collins demanded payment of six guineas as per the agreement. Defendant Godefroy refused to pay Plaintiff Collins.
 		  * Plaintiff Collins sued Defendant Godefroy for the owed sum.
 		* Court Ruling:
-		  * Plaintiff Collins' attending of the hearing was **NOT sufficient Consideration** to enforce Defendant Godefroy's promise to pay him six guineas, since Plaintiff Collins was merely fulfilling his existing legal duty *(to attend court proceedings should he have any relevant evidence to provide)* since he had been subpoenaed.
+		  * Plaintiff Collins' attending of the hearing was **NOT sufficient Consideration** to enforce Defendant Godefroy's promise to pay him six guineas, since Plaintiff Collins was ==merely fulfilling his existing legal duty== *(to attend court proceedings should he have any relevant evidence to provide)* since he had been subpoenaed.
 
- * When the act of conduct goes BEYOND what is required by the legal duty, there is **sufficient Consideration**.
+ * When the ==act of conduct goes BEYOND what is required by the legal duty==, there is **sufficient Consideration**.
 	* `Glassbrook Brothers Ltd v Glamorgan County Council`
 		* Case Summary:
 		  * During a strike at a coal mine, Plaintiff Glassbrook Brothers Ltd asked for additional police protection for the mine and insisted police officers be stationed on the premises. 
-		  * Police superintendent provided mobile officers but **refused** to station more officers at the coal mine unless the Plaintiff Glassbrook Brothers *paid extra to cover the expense*.
+		  * Police superintendent provided patrolling officers but **refused** to station more officers at the coal mine unless the Plaintiff Glassbrook Brothers *paid extra to cover the expense*.
 		  * Plaintiff Glassbrook Brothers **agreed to this** but later refused to pay. 
 		  * The trial judge and the Court of Appeal both held that the police were entitled to do this. 
 		  * Plaintiff Grassbrook Brothers appealed to the House of Lords, and sued Defendant Glamorgan County Council.
@@ -160,7 +189,7 @@ The Law does not look into ADEQUACY of Consideration, and only looks at the SUFF
 			* However, Plaintiff Glassbrook Brothers demanded officers be stationed at the coal mine, which fell outside the police's *public duty*. 
 			* As such, there was **SUFFICIENT CONSIDERATION provided by the Police**, and the contract was enforceable against Plaintiff Glassbrook Brothers.
 
-* Contractual duty owed to a **THIRD PARTY**
+* ==Contractual duty owed to a **THIRD PARTY**==
 	* `Pao On v Lau Yiu Long`
 		* Case Summary covered above
 		* Legal Issue:
@@ -169,7 +198,7 @@ The Law does not look into ADEQUACY of Consideration, and only looks at the SUFF
 			* **SUFFICIENT CONSIDERATION**
 		   * PROMISOR obtained a direct right to enforce the PROMISEE's performance of or promise to perform an *existing contractual duty* owed to a third party.
 
-* Contractual duty owed to the **SAME PARTY**
+* ==Contractual duty owed to the **SAME PARTY**==
 	1. `Stilk v Myrick`
 		* Case Summary:
 			* On a ship, 2 crewmen deserted and the Defendant Captain Myrick **promised to divide wages of deserters among remaining crew** if they would work the ship safe back to London. Plaintiff Stilk was a crew member, who sued Defendant Captain Myrick to enforce his promise.
@@ -196,12 +225,12 @@ The Law does not look into ADEQUACY of Consideration, and only looks at the SUFF
 			4. As a result of giving his promise, B obtains in practice a benefit, or obviates *(removes)* a disbenefit
 			5. B’s promise is **not given as a result of economic duress or fraud** on the part of A
 			6. The benefit to B is **capable** of being Consideration for B’s promise, so that the promise will be legally binding.
-		   * *Practical benefit*: FACTUAL benefit
+		   * *Factual benefit*: PRACTICAL benefit
 				* Makes it easy to find **SUFFICIENT Consideration** to support contract modifications.
 				* 2 conflicting legal concerns regarding Contract Modification
 					1. Parties **should be encouraged to NEGOTIATE a solution** when they encounter problems in performing a contract.
 					2. One party **should NOT extract an advantage** by exploiting the weaker bargaining position of the other party.
-* Performance of **existing contractual duty** must yield FACTUAL or PRACTICAL BENEFIT to the Promisor and must have been requested “in return” for the promise to PAY MORE.
+* ==Performance of **existing contractual duty** must yield FACTUAL BENEFIT to the Promisor== and must have been ==requested “in return” for the promise== to PAY MORE.
 	* `Sea-Land Service Inc v Cheong Fook Chee Vincent`
 		* Case Summary:
 			* Defendant employer Sea-Land Service Inc gave Plaintiff employee Cheong Fook Chee Vincent *(a redundant employee)* one month’s notice of termination **under his employment contract** and agreed to pay him enhanced severance pay. 
@@ -212,7 +241,7 @@ The Law does not look into ADEQUACY of Consideration, and only looks at the SUFF
 		   * Court rejected Plaintiff employee Cheong Fook Chee's argument, holding that **work which a redundant employee does during his notice period is by definition, of MINIMAL value to his employer**. 
 		   * Defendant employer Sea-Land Service Inc did NOT give the employee one month’s notice and secure his labour *in exchange* for the enhanced severance pay. 
 		   * Instead, Defendant employer Sea-Land Service Inc gave the Plaintiff employee Cheong Fook Chee **one month’s notice** because it was contractually obliged to do so in order to bring an end to the employment.
-* Payment of a LESSER SUM cannot be **complete satisfaction** of a debt unless Consideration is provided in return for the promise to ACCEPT LESS.
+* ==Payment of a LESSER SUM cannot be **complete satisfaction** of a debt== unless Consideration is provided in return for the promise to ACCEPT LESS.
 	* `Foakes v Beer`
 		* Case Summary: 
 			* Defendant Beer loaned Plaintiff Foakes an amount. When Plaintiff Foakes was unable to repay this loan, Defendant Beer received a judgment in her favour to recover this amount. 
