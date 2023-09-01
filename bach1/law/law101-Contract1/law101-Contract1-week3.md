@@ -64,7 +64,7 @@ Fresh consideration required for variations to existing contracts *unless* expre
 > `Gay Choon Ing [67]`: *benefit-detriment is preferred as ‘the most workable of all the definitions'*
 
 *Factual benefit*: ==Practical benefit *(actual benefit)*== that can be conferred to a party in a transaction.
-*Legal benefit*: ==Benefit *(as per the contract, enforced by the law)*== that should be conferred to a party in a transaction.
+*Legal benefit*: ==Benefit *(as per the contract, enforced by the law)*== that should be legally conferred to a party in a transaction.
 
 ## Price of Promise analysis
 *Price of Promise analysis*: Promisee ‘buys’ the promisor’s promise by doing some act for it or by offering a counter-promise in return.
@@ -194,8 +194,6 @@ The Law ==does not look into ADEQUACY of Consideration==, and only looks at the 
 		* Court Ruling:
 			* **SUFFICIENT CONSIDERATION**
 		   * PROMISOR obtained a direct right to enforce the PROMISEE's performance of or promise to perform an *existing contractual duty* owed to a third party.
-
-> FUA: Tie its relation of factual and legal benefit to the court ruling of Stilk v Myrick under ==legal issue== section.
 
 * ==Contractual duty owed to the **SAME PARTY**==
 	1. `Stilk v Myrick`
