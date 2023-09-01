@@ -11,9 +11,6 @@
 	* Chapter 4 Consideration: whole chapter
 
 ---
-
-> FUA: Add case summary and court ruling of `Chwee Kin Keong & Ors v Digilandmall.com Pte Ltd` under ==Executory Consideration== section of these notes.
-
 ## Loo Wee Ling's advice
 ![]()
 ![](https://i1.sndcdn.com/artworks-000237741536-psz7yj-t500x500.jpg)
@@ -51,7 +48,8 @@ Fresh consideration required for variations to existing contracts *unless* expre
 ### Executory consideration
 *Executory*: Consideration is a COUNTER-PROMISE provided for the promise.
 * Promises made in a contract will be **delivered IN THE FUTURE**.
-
+	* `Chwee Kin Keong v Digilandmall.com Pte Ltd [2005] 1 SLR(R) 502`
+ 
 ### Executed consideration
 *Executed*: Consideration is an ACT for the promise.
 * Promises made in a contract are **executed IMMEDIATELY**.
