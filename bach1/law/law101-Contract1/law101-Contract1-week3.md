@@ -54,12 +54,7 @@ Fresh consideration required for variations to existing contracts *unless* expre
 *Executed*: Consideration is an ACT for the promise.
 * Promises made in a contract are **executed IMMEDIATELY**.
 * Usually seen in ==unilateral contracts==.
-> FUA: Add case summary court ruling here
 	* `Carlill v Carbolic Smoke Ball Co`
-		* Case Summary:
-* 
-		* Court Ruling:
-* 
 
 ## Benefit-detriment analysis
 *Benefit-detriment analysis*: A valuable consideration, in the sense of the law, may consist either in some right, interest, profit, or benefit accruing to the one party, or some forbearance *(refraining from exercising a given right)*, detriment, loss, or responsibility, given, suffered, or undertaken by the other.
