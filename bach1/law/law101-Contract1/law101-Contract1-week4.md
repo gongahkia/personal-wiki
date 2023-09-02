@@ -217,7 +217,13 @@ Even if parties intended for the statement to be an express term, ==did it becom
  
 #### 3. Incorporation by PREVIOUS COURSE OF DEALING
 ##### Basic test
-* **Basic test**: 
-
+* **Basic test**: Whether at time of Contract formation, each party *(as a reasonable person)* could **infer** from past dealings and conduct of the other that the term was incorporated into the Contract.
+	* `Vinmar at [53] citing Furmston` 
+		* *"Whether, at the time of contracting, each party as a reasonable person was entitled to infer from the past dealings and the actions and the words of the other ..., that the term was to be a part of the contract."*
+##### Elements of Basic test: Previous course of dealing
+* **NUMBER** of previous contracts
+* **RECENCY** of previous contract *(how recent something was)* 
+* **SUBJECT MATTER** of previous contract *(whether similar subject matter)*
+* **CONSISTENCY** of previous contracts 
 
 > FUA: Continue adding notes from slide 13.
