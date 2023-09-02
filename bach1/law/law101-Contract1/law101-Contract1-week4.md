@@ -47,7 +47,7 @@ Now, we'll be covering the *terms of a contract*, in other words the *conditions
 	* **Promised undertaking** laid out in the contract.
 	* Promise for which the ==promisor assumes contractual liability==.
 * Condition precedent:
-	* Other ==pre-requisite conditions== that need to be satisfied BEFORE the written contract can take effect.
+	* Other ==prerequisite conditions== that need to be satisfied BEFORE the written contract can take effect.
 ## What to consider when looking at Terms of a contract
 ### 1. Statements made during negotiations
 * Were the statements made EXPRESS TERMs, MERE REPRESENTATIONs or PUFFs?
@@ -304,3 +304,64 @@ Extrinsic evidence can introduce OTHER express terms to the written contract.
 	1. *the existence of any **separate oral agreement** constituting a ==condition precedent to the attaching of any obligation== under any such contract, grant or disposition of property, **may be proved*** 
 		* `Section 94(c) of Evidence Act`
 	* ==Precluded by== an appropriately worded *ENTIRE AGREEMENT CLAUSE* (EAC)
+
+### Interpreting express terms 
+#### What interpreting express terms isn't
+There is a ==difference== between *contradicting, varying, adding to, or subtracting from* terms and **interpreting** terms in a contract.
+
+| Definition | Explanation | Legality |
+| :---: | :--- | :--- |
+| Contradicting, varying, adding to, or subtracting from terms in the **written contract**. | ==Introducing additional evidence== to ***CHANGE*** terms already in the contract. | *NOT ALLOWED* under Parole Evidence Rule. | 
+| Interpreting terms in the written contract. | ==Introducing *background* evidence== to ***UNDERSTAND*** terms already in the contract. Not merely relying on the dictionary definitions of words. | PERMITTED under section 94(f) Evidence Act | 
+
+#### Common Law Contextual Approach
+Interpreting express terms is generally done using the **CONTEXTUAL APPROACH** *(assisted by the objectivity test)*.
+* Lord Hoffman's 5 principles in `Investors Compensation Scheme v West Bromwich Building Society [1998]`
+	1. Interpretation is the ==ascertainment of the meaning which the document would convey to a **REASONABLE PERSON** having all the **background knowledge** which would reasonably have been *available to the parties* at the time of the contract==.  
+	2. The ==BACKGROUND==... the “matrix of fact,” ... ==includes absolutely anything which would have **affected the way in which the language of the document would have been understood by a REASONABLE man.==
+	3. The meaning of words is a matter of dictionaries and grammars but the ==*MEANING OF THE DOCUMENT==* is ==what the parties using those words against the relevant background would **reasonably** have been understood to mean==.
+* Singapore's take on **contextual approach** for interpreting express terms
+	* `Sembcorp Marine at [34]`
+		* *"==We have adopted the contextual approach== in Zurich Ins where this court held at 132(d) that extrinsic evidence is admissible if it 'goes towards proof of what the parties, from an objective viewpoint, ultimately agreed upon'"*
+* Section 94(f) Evidence Act *affirms* and statutorily embeds **contextual approach** to interpret express terms
+	1. *any fact may be **proved** which shows in what manner ==the language of a document is related to existing facts==*
+		 * `Section 94(f) Evidence Act`
+   2. *"**evidence is admissible** not only in order to ==ascertain the identity or extent of the subjects referred to in a document== or the sense in which particular terms have been used, but also to =='clear up any other doubt that may arise in **APPLYING THE DOCUMENT** to the facts of the case=='"*
+		* `Zurich Ins at [132]`
+#### LIMITS on Common Law Contextual Approach
+* Contextual approach should be used as a ==supplementary tool== that aids **existing understanding** of the written contract *(ascertained from an objective reasonable standpoint)*, and **should NOT** contradict or modify the base contract.
+	* *"the courts must remain **ever vigilant** to ensure that, in interpreting a contract, ==extrinsic evidence is ONLY employed to ***illuminate the contractual language***== and NOT as a pretext to *contradict or vary it*."
+		* `Zurich Ins at [122]`
+	* *"the extrinsic material sought to be admitted must ==always **GO TOWARDS PROOF OF*** what the parties, from an OBJECTIVE viewpoint, ultimately agreed upon==."*
+		* `Zurich Ins at [127]`
+#### EXTRINSIC EVIDENCE in Contextual Approach
+All details below regarding **extrinsic evidence** are covered under the `Section 94(f) Evidence Act`.
+##### Use of extrinsic evidence 
+* Admission of ==extrinsic evidence to **aid interpretation of the written word** of a contract== and *ambiguity of the written word is NOT a prerequisite*.
+##### What constitutes extrinsic evidence
+Extrinsic evidence MUST satisfy:
+* *`Sembcorp's [73]` ***4 REQUIREMENTS OF CIVIL PROCEDURE***
+* `Zurich Ins' [132(d)]` ==***3 REQUIREMENTS for admissibility***==
+	1. ==**Relevant**==
+	2. ==**Reasonably** available== to all contracting parties
+		* *COMMON intention* of contracting parties to be discerned, so extrinsic evidence must have been ==available to all==.
+	3. **Relates** to a ==clear or obvious context==
+		* *Minimise* increased uncertainty and added litigation cost.
+##### Types of extrinsic evidence 
+1. **Circumstances** surrounding the making of the contract
+2. *Subjective* **declarations of intention**
+3. **Pre-contractual negotiations**
+	* Admissible only if fulfils the ==3 requirements for admissibility==
+1. **Conduct** subsequent to entering into the contract
+![[Screenshot 2023-09-02 at 21-54-39 Week 4 Slides - LAW101_601-G50-Contract Law 1.png]]
+
+#### Applying the Contextual Approach to interpret express terms
+![[Screenshot 2023-09-02 at 22-02-58 Week 4 Slides - LAW101_601-G50-Contract Law 1.png]]
+
+#### CONTRA PROFERENTEM rule
+1. Express term should be **INTERPRETED STRICTLY** ==against the party relying on it==.
+2. For any *doubt or ambiguity* in the ==language of the contract== and ==scope of the clause==, said ambiguity will be **resolved against the party seeking to rely on the clause**.
+	* `LTT Global Consultants v BMC Academy Pte Ltd [2011]`
+![[Screenshot 2023-09-02 at 22-10-03 Week 4 Slides - LAW101_601-G50-Contract Law 1.png]]
+##### CONTRA PROFERENTEM rule for excluding negligence liability
+ ![[Screenshot 2023-09-02 at 22-10-19 Week 4 Slides - LAW101_601-G50-Contract Law 1.png]]![[Screenshot 2023-09-02 at 22-10-33 Week 4 Slides - LAW101_601-G50-Contract Law 1.png]]
