@@ -12,3 +12,9 @@ print(f"shit and also {yes * 10}")
 ```python
 print(int(float("20.0"))) # --- this will cause the string "20.0" to undergo type conversion to the float 20.0, which is then type converted to the int 20 (no decimal places), so this will print the int 20 to the console
 ```
+
+# Lab Test Reminders!
+
+```python
+import retail_utility # --- remember to import modules and functions from diff files by using 'import FILENAME' 
+```
