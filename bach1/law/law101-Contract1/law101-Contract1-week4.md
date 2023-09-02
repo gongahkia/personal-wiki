@@ -46,16 +46,18 @@ Now, we'll be covering the *terms of a contract*, in other words the *conditions
 * Express Term:  
 	* **Promised undertaking** laid out in the contract.
 	* Promise for which the ==promisor assumes contractual liability==.
+* Condition precedent:
+	* Other ==pre-requisite conditions== that need to be satisfied BEFORE the written contract can take effect.
 ## What to consider when looking at Terms of a contract
 ### 1. Statements made during negotiations
 * Were the statements made EXPRESS TERMs, MERE REPRESENTATIONs or PUFFs?
 ### 2. Express terms
-* Were the EXPRESS TERMS **part of the contract**?
+* Were the EXPRESS TERMS **part of the contract** via ==incorporation==?
 	1. INCORPORATION
-* What evidence can be produced in Court to **prove the EXPRESS TERMS**?
+* What evidence can be produced in Court to ==**prove== the EXPRESS TERMS**?
 	1. PAROLE EVIDENCE RULE
-	2. Effect of ENTIRE CLAUSE AGREEMENT
-* How should the EXPRESS TERMS be **interpreted**?
+	2. Effect of ENTIRE CLAUSE AGREEMENT (EAC)
+* How should the EXPRESS TERMS be ==**interpreted**==?
 	1. Issue of INTERPRETATION
 	2. Evidence to aid INTERPRETATION
 ### 3. Implied terms
@@ -217,13 +219,88 @@ Even if parties intended for the statement to be an express term, ==did it becom
  
 #### 3. Incorporation by PREVIOUS COURSE OF DEALING
 ##### Basic test
-* **Basic test**: Whether at time of Contract formation, each party *(as a reasonable person)* could **infer** from past dealings and conduct of the other that the term was incorporated into the Contract.
+* **Basic test**: Whether at time of Contract formation, ==each party *(as a reasonable person)* could **infer** from past dealings and conduct of the other== that the express term was incorporated into the Contract.
 	* `Vinmar at [53] citing Furmston` 
 		* *"Whether, at the time of contracting, each party as a reasonable person was entitled to infer from the past dealings and the actions and the words of the other ..., that the term was to be a part of the contract."*
 ##### Elements of Basic test: Previous course of dealing
 * **NUMBER** of previous contracts
 * **RECENCY** of previous contract *(how recent something was)* 
-* **SUBJECT MATTER** of previous contract *(whether similar subject matter)*
 * **CONSISTENCY** of previous contracts 
+* **SUBJECT MATTER** of previous contract *(whether similar subject matter)*
 
-> FUA: Continue adding notes from slide 13.
+> `Vinmar at [58]`
+> - In general, it is ==much easier to *establish INCORPORATION by previous course of dealing* when both parties are in **business**== rather than when one was a consumer.
+> - *INCORPORATION by previous course of dealing* is also easier when ==the term is **not unusual or unreasonable**==.
+
+###### Number of and Recency of previous contracts
+1. `Vinmar at [60]`
+	* Case Summary:
+		* 4 contracts made between December 2013 and October 2014 before the *contract in dispute* in November 2014.
+	* Court Ruling:
+		* Court held that there was **sufficient incorporation of express terms** in the Contract by ==previous course of dealings== due to the NUMBER of previous contracts made and the RECENCY of said contracts.
+> FUA: Add case summary for this section below and tweak court ruling to infuse reasoning for the judgement in relation to the point.
+2. `Hollier v Rambler Motors (AMC) Ltd [1971]`
+	* Case Summary:
+		* 3 or 4 car repair transactions over 5 years.
+	* Court Ruling:
+		* Court held that there was **NOT a sufficient incorporation of express terms** in the contract by ==previous course of dealings== due to the small NUMBER of previous contracts made and how OLD those contracts were.
+###### Consistency of previous contracts (similarity of subject matter, how contract made)
+1. `Vinmar at [60]`
+	* Case Summary:
+		* All 4 contracts made were for *purchase of commodities*, and *all concluded in the same manner*, with oral negotiations followed by correspondence laying out key terms. PTT then sent Vinmar a supply agreement stating the full terms.
+		* Neither party signed.
+	* Court Ruling:
+		* Court held that there was **sufficient incorporation of express terms** in the contract by ==previous course of dealings== due to the CONSISTENCY in the SUBJECT MATTER and HOW THE CONTRACT WAS MADE between all of them.
+2. `MGA International Pte Ltd v Wajilam Exports (Singapore) Pte Ltd [2010]`
+	* Case Summary:
+		* 17 dealings in 13 months BUT the express terms *sought to be incorporated* were discussed **in the first dealing only**, without continuous notice of those terms being reaffirmed in subsequent dealings.
+	* Court Ruling:
+		* Court held that there was **NOT a sufficient incorporation of express terms** in the contract by ==previous course of dealings== due to the LACK OF CONSISTENCY in the SUBJECT MANNER and that the agreement on HOW THE CONTRACT WAS MADE was only discussed once at the very beginning.
+
+### Proving vs Interpreting express terms
+#### Proving
+* Necessary when parties disagree over **WHAT EXPRESS TERMS** govern their Contract.
+* PAROLE EVIDENCE RULE *may apply* and ==limits what evidence can be produced in Court to prove express terms==.
+* ENTIRE AGREEMENT CLAUSE (EAC) *applies* in ==written contracts==, pertaining to effect of the clause.
+#### Interpreting 
+* Necessary when parties disagree over **WHAT EXPRESS TERMS MEAN**.
+* CONTEXTUAL INTERPRETATION: ==ascertain objectively== parties' intention at time of Contract formation, to determine *meaning of express terms*.
+* What ==contextual facts== can be used for interpretation of express terms?
+	* Facts allowed under **exception** to PAROLE EVIDENCE RULE
+	* Limits of Contract law *(eg. objective ascertainment)*
+* ==Canons of Interpretation== in the CONTRA PROFERENTEM rule
+
+### Proving express terms
+#### Parole Evidence Rule
+* ==EXCLUDES any evidence beyond the contractual document itself== *if* the written contract was intended by the parties to represent the **entire agreement between them**.
+	1. *When the terms of a contract have been ==reduced by the parties to the **form of a document**==, NO evidence shall be given in proof of the terms of such contract ==EXCEPT the document itself==.*
+		* `Section 93 of Evidence Act`
+	2. *When the terms of a contract have been ==proved according to section 93==, NO evidence of any **oral agreement or statement** shall be admitted for the purpose of ==contradicting, varying, adding to, or subtracting from== the terms of the contract.*
+		* `Section 94 of Evidence Act`
+* To determine intentions of the parties *(so as to apply the Parole Evidence Rule)*, we can look at ==**Extrinsic evidence**==, ==**Document attributes**== and ==presence of **Entire Agreement Clause (EAC)**==.
+##### Extrinsic evidence 
+* Facts outside the document *(extrinsic evidence)* CAN be considered when deducing parties' intentions.
+	* *"in determining whether the parties so intended, ==the court may look at extrinsic evidence and apply the **normal OBJECTIVE TEST**==, subject to a rebuttable presumption that a contract which is complete on its face was intended to contain all the terms of the parties’ agreement."*
+		* `Zurich Ins at [40]`
+##### Document attributes
+* Document's attributes are RELEVANT in determining deducing parties' intentions, and thus whether the *Parole Evidence Rule* can be applied.
+	* *"==Different genres of documents may require different treatment==. For example, for **standard form contracts** and **documents intended for commercial circulation**, the ==presumption that **all the terms** of the agreement between the parties are contained in the contract== will be almost impossible to rebut."*
+		* `Zurich Ins at [110]`
+##### Entire Agreement Clause (EAC)
+* *Presence of Entire Agreement Clause* in a document ==**defines the parties' rights and obligations** WITHIN the written contractual document==.
+	* *eg.* `11.1 This Agreement sets forth the entire agreement and understanding between the Parties in connection with the matters dealt with and described herein.`
+	* *"Generally, such clauses are conducive to certainty as they ==define and confine the parties’ rights and obligations within the four corners of the written document== thereby precluding any attempt to qualify or supplement the document by reference to pre-contractual representations"*
+		 * `Lee Chee Wei at [25]`
+	* *"an ==appropriately worded provision== would be acknowledged and upheld if it clearly purports to ==deprive any pre-contractual or collateral agreement of legal effect==, whether from the perspective of **evidential admissibility** or **contractual invalidation**"*
+		 * `Lee Chee Wei at [35]`
+#### EXCEPTIONS to Parole Evidence Rule
+Extrinsic evidence can introduce OTHER express terms to the written contract.
+* EXTRINSIC EVIDENCE **not inconsistent with a contract's existing terms** may be used to ==prove another document's validity==.
+	1. *the existence of any **separate oral agreement**, as to ==any matter on which a document is silent== and which is ==not inconsistent with its terms, may be proved==; in considering whether or not this proviso applies, the court shall have regard to the degree of formality of the document*
+		* `Section 94(b) of Evidence Act`
+	* ==Illustrated in== `Latham Scott v Credit Suisse First Boston [2000]`
+	* ==Precluded by== an appropriately worded *ENTIRE AGREEMENT CLAUSE* (EAC) in `Lee Chee Wei at [31]-[35]`
+* EXTRINSIC EVIDENCE may be used to ==prove another document as the contract's **condition precedents**==.
+	1. *the existence of any **separate oral agreement** constituting a ==condition precedent to the attaching of any obligation== under any such contract, grant or disposition of property, **may be proved*** 
+		* `Section 94(c) of Evidence Act`
+	* ==Precluded by== an appropriately worded *ENTIRE AGREEMENT CLAUSE* (EAC)
