@@ -34,6 +34,7 @@ Now, we'll be covering the *terms of a contract*, in other words the *conditions
 		* Tests for implying
 
 ## Definitions
+* Liability: state of being legally responsible for something
 * Mere representation:  
 	* Statement of past or present fact that ==**encourages *(induces)* a party to make a contract**==, but is NOT part of the contract *(not intended to have contractual effect)*.
 	* Could give rise to legal consequence if qualified as *Misrepresentation*.
@@ -149,16 +150,16 @@ Even if parties intended for the statement to be an express term, ==did it becom
 * Generally, ==INCORPORATION must occur *at time* Contract was made==, and NOT *after*.  
 * Courts take the **OBJECTIVE APPROACH**.
 ### 3 types of Incorporation
-1. Incorporation by SIGNATURE
-2. Incorporation by NOTICE
-3. Incorporation by PREVIOUS COURSE OF DEALING
+1. Incorporation by **SIGNATURE**
+2. Incorporation by **NOTICE**
+3. Incorporation by **PREVIOUS COURSE OF DEALING**
 
 #### 1. Incorporation by SIGNATURE
 ##### General Rule
 * ==**GENERAL RULE**==: where a person ==*signs a written document*==, ==knowing it to be a contract that governs the relations between him and the other party==, *all terms, including exception clauses*, contained in that document are INCORPORATED into the contract.
 	* `L’Estrange v Graucob Ltd (1971)`
 		* *“When a document containing contractual terms is signed, then, in the absence of fraud, or ... misrepresentation, the party signing it is bound, and it is wholly immaterial whether he has read the document or not.”*
-* GENERAL RULE is affirmed in Singapore's Court of Appeal.
+* GENERAL RULE AFFIRMED in Singapore's Court of Appeal.
 	* `Bintai Kindenko Pte Ltd v Samsung C & T Corp [2019]`
 ##### Exceptions to General Rule
 * **General rule** DOES NOT apply where there is ==fraud or misrepresentation== as to the effect of the *term concerned*.
@@ -174,8 +175,49 @@ Even if parties intended for the statement to be an express term, ==did it becom
 			* Defendant Employee **MISREPRESENTED** the extent of ==exception clause== and induced P to sign the receipt.
 			* Defendant Chemical Cleaning and Dyeing Co could *only rely on the exception clause* for damage to sequins and beads.
 #### 2. Incorporation by NOTICE
+*Incorporation by Notice*: ==Inclusion of terms and conditions in a contract== by referring to them in ==another document or another contract==. 
+##### No Notice at all, Actual Notice,  Reasonable Notice required
+* `Parker v South Eastern Railway Co (1877)`
+	* Case Summary:
+		* Plaintiff Parker left bag at station cloakroom and got a ticket, which stated 'SEE BACK' on the ticket, pointing to clauses limiting Defendant South Eastern Railway Co's **liability** to 10 pounds for loss of items with them.
+		* Plaintiff Parker's bag was lost.
+	* Legal Issue:
+		* Did Plaintiff Parker ==SEE or KNOW that there were conditions== printed on the ticket?
+	* Court Ruling:
+		* ***NO NOTICE AT ALL***
+			* Plaintiff Parker **DID NOT KNOW** there were conditions written on the ticket --> Plaintiff is ==not bound by conditions==
+		* ***ACTUAL NOTICE***
+			* Plaintiff parker **KNEW** there was writing, and **KNEW or BELIEVED** the writing contained conditions --> Plaintiff is ==bound by conditions==
+		* ***REASONABLE NOTICE REQUIRED***
+			* Plaintiff parker **KNEW** there was writing, but ==**DID NOT KNOW or BELIEVE**== the writing contained conditions --> Plaintiff is nevertheless ==bound by conditions==
+				* *If delivering of ticket to Plaintiff Parker was in such manner that ==he could see there was writing upon it==, that constituted **reasonable notice** that the writing contained conditions.
 
-
+> FUA: Add Case Summary, Legal Issue and Court Ruling for the cases below.
+##### Evaluating Reasonable Notice: Red hand rule
+*Red hand rule*: Courts hold that a ==literal red hand== points to an unfair contract term in a written contract.
+* `Thornton v Shoe Lane Parking Ltd [1971]`: The **more ONEROUS or UNUSUAL** an Exception clause, the ==**GREATER the requirements for reasonable notice==.
+	1. `Interfoto Picture Library Ltd v Stilletto Visual Programmes Ltd [1989]`
+		* Case Summary:
+			* 
+		* Legal Issue:
+			* 
+		* Court Ruling:
+			* 
+* Red hand rule **APPLIED** in Singapore.
+	2. `Hakko Products Pte Ltd v Danzas (S) Pte Ltd [1999]`
+		* Case Summary:
+			* 
+		* Legal Issue:
+			* 
+		* Court Ruling:
+			* 
+##### Exceptions to Red hand rule
+* Red hand rule **DOES NOT APPLY** to Signed contracts.
+	* `Press Automation at [39]`: *'the line of authorities that decides that onerous and unusual conditions cannot be incorporated unless the attention of the party sought to be bound has been specifically drawn to them DOES NOT APPLY to a case like this where ==there is a signed contract with an explicit incorporating clause==.'*
+ 
 #### 3. Incorporation by PREVIOUS COURSE OF DEALING
+##### Basic test
+* **Basic test**: 
 
-> FUA: Continue adding notes from slide 11.
+
+> FUA: Continue adding notes from slide 13.
