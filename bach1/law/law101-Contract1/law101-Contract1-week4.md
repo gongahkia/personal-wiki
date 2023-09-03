@@ -70,7 +70,6 @@ Now, we'll be covering the *terms of a contract*, in other words the *conditions
 ## 1. Statements made during Negotiations
 * *A.K.A* Pre-Contractual Agreements 
 ### EXPRESS TERMS vs MERE REPRESENTATION
-> FUA: Add case summary and court ruling for the below cases, shift them around if they don't fit the targeted point of the slide OR consider reformatting so only the main points of the case required for counterargument are employed.
 1. ==**BASIC TEST**==: depends on the ==intention== of the contracting parties, ==objectively ascertained==.
 	* GUIDELINES:
 		1. Substance of statement
@@ -78,69 +77,33 @@ Now, we'll be covering the *terms of a contract*, in other words the *conditions
 		3. Assumption of responsibility
 	* `Heilbut Symons & Co v Buckleton [1913] AC 30, at 50-51`
 		* Case Summary:
-			* 
+			* Defendants Heilbut were merchants during the rubber trade boom in 1910s, Plaintiff Buckleton contacted Defendant to purchase shares, and Heilbut's manager responded **positively, insinuating the creation of a new rubber company**
+			* This persuaded Plaintiff Buckleton to purchase a large number of shares in Defendant Heilbut's new rubber company.
+		   * Defendant's Heilbut new rubber company flopped in performance.
+			* Plaintiff Buckleton sued for *breach of warranty* as Defendant Heilbut initially insinuated far greater resources and outcomes.
 		* Legal Issue:
-			* 
+			* Whether Defendant Heilbut's remarks *as to the new rubber company’s resource pool* could be considered **SIMPLE REPRESENTATION** or if it was a *binding contractual promise*.
 		* Court Ruling:
-			* 
-2. **Does statement relate to ==matter of significance about subject matter of Contract**==?  
+			* Court ruled that there was NO proper evidence on which Defendant Heilbut had made a warranty.
+			* Whether a MERE REPRESENTATION becomes a term of the contract depends on **whether** ==the parties objectively intended it to be so==. 
+				* It cannot be presumed that a person intends to be contractually bound by every representation of fact.
+			* Emphasised the role of intent where one party makes a promise to another and that party then choose to *opt to RELY* upon that information in choosing to contract.
+1. **Does statement relate to ==matter of significance about subject matter of Contract**==?  
 	* RELATED to a ==necessary feature== of the subject matter --> **MOST LIKELY EXPRESS TERM**
 		* `Darwish MKF Al Gobashi v House of Hung Pte Ltd [1995]`
-			* Case Summary:
-				* 
-			* Legal Issue:
-				* 
-			* Court Ruling:
-				* 
 	* RELATED to a ==matter regarded by parties as important== --> **MOST LIKELY EXPRESS TERM**
 		* `Bannerman v White (1861)`
-			* Case Summary:
-				* 
-			* Legal Issue:
-				* 
-			* Court Ruling:
-				* 
-3. **Did the party who made the statement have ==special knowledge or skill compared to the other party==**?
+2. **Did the party who made the statement have ==special knowledge or skill compared to the other party==**?
 	* YES, Party who made statement ==had special knowledge or skill over the other party== --> **MOST LIKELY EXPRESS TERM**
 		* `Esso Petroleuym Co Ltd v Mardon [1976]`
-			* Case Summary:
-				* 
-			* Legal Issue:
-				* 
-			* Court Ruling:
-				* 
 		* `Oscar Chess Ltd v Williams [1957]`
-			* Case Summary:
-				* 
-			* Legal Issue:
-				* 
-			* Court Ruling:
-				* 
 	* NO, Party who made statement ==did not have special knowledge or skill over the other party== --> **MOST LIKELY MERE REPRESENTATION**
 		* `Dick Bentley Productions Ltd v Harold Smith (Motors) Ltd [1965]`
-			* Case Summary:
-				* 
-			* Legal Issue:
-				* 
-			* Court Ruling:
-				* 
-4. **Did the party making the statement ==appear to assume responsibility**==?
+3. **Did the party making the statement ==appear to assume responsibility**==?
 	* YES, Party who made statement ==appeared to assumed responsibility== --> **MOSTLY LIKELY EXPRESS TERM**
 		* `Ecay v Godfrey (1946)`
-			* Case Summary:
-				* 
-			* Legal Issue:
-				* 
-			* Court Ruling:
-				* 
 	* NO, Party who made statement ==did not appear to assume responsibility== --> **MOSTLY LIKELY MERE REPRESENTATION**
 		* `Schawel v Reade (1913)`
-			* Case Summary:
-				* 
-			* Legal Issue:
-				* 
-			* Court Ruling:
-				* 
 * Guidelines of the basic test are ==NOT CONCLUSIVE==.
 	* `Heilbut Symons & Co v Buckleton [1913] AC 30`
 		* *"The intention of the parties can only be deduced from the totality of evidence."*
@@ -194,25 +157,12 @@ Even if parties intended for the statement to be an express term, ==did it becom
 			* Plaintiff parker **KNEW** there was writing, but ==**DID NOT KNOW or BELIEVE**== the writing contained conditions --> Plaintiff is nevertheless ==bound by conditions==
 				* *If delivering of ticket to Plaintiff Parker was in such manner that ==he could see there was writing upon it==, that constituted **reasonable notice** that the writing contained conditions.
 
-> FUA: Add Case Summary, Legal Issue and Court Ruling for the cases below.
 ##### Evaluating Reasonable Notice: Red hand rule
 *Red hand rule*: Courts hold that a ==literal red hand== points to an unfair contract term in a written contract.
 * `Thornton v Shoe Lane Parking Ltd [1971]`: The **more ONEROUS or UNUSUAL** an Exception clause, the ==**GREATER the requirements for reasonable notice==.
 	1. `Interfoto Picture Library Ltd v Stilletto Visual Programmes Ltd [1989]`
-		* Case Summary:
-			* 
-		* Legal Issue:
-			* 
-		* Court Ruling:
-			* 
 * Red hand rule **APPLIED** in Singapore.
 	2. `Hakko Products Pte Ltd v Danzas (S) Pte Ltd [1999]`
-		* Case Summary:
-			* 
-		* Legal Issue:
-			* 
-		* Court Ruling:
-			* 
 ##### Exceptions to Red hand rule
 * Red hand rule **DOES NOT APPLY** to Signed contracts.
 	* `Press Automation at [39]`: *'the line of authorities that decides that onerous and unusual conditions cannot be incorporated unless the attention of the party sought to be bound has been specifically drawn to them DOES NOT APPLY to a case like this where ==there is a signed contract with an explicit incorporating clause==.'*
@@ -238,7 +188,6 @@ Even if parties intended for the statement to be an express term, ==did it becom
 		* 4 contracts made between December 2013 and October 2014 before the *contract in dispute* in November 2014.
 	* Court Ruling:
 		* Court held that there was **sufficient incorporation of express terms** in the Contract by ==previous course of dealings== due to the NUMBER of previous contracts made and the RECENCY of said contracts.
-> FUA: Add case summary for this section below and tweak court ruling to infuse reasoning for the judgement in relation to the point.
 2. `Hollier v Rambler Motors (AMC) Ltd [1971]`
 	* Case Summary:
 		* 3 or 4 car repair transactions over 5 years.
