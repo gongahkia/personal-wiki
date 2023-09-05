@@ -41,9 +41,9 @@
 * Just state the charge, and the Statute or Rule from the given source accordingly
 * If unsure of the facts, just say *"There is insufficient evidence or insufficient proof to draw a conclusion."*
 * Many of the items on the penal code will be evaluated based on multiple `if else` conditions presented, and we must ensure that all limbs are fulfilled.
-  
 ## Types of legal systems
-1. ==Common Law systems== that retain the *Statute of Westminster*
+1. ==Common Law systems== 
+	* Retain the *Statute of Westminster*
 	* Practice the concept of *stare decisis* (order of binding precedence) in their courts
 	* Countries that practice this:
 		* Singapore
@@ -105,4 +105,16 @@ Generally, Courts employ a mix of common law and statutes when making their judg
 ### Self Practice Exercise
 `Wong Leng Si Rachel v Wu Su Han Olivia [2022] SGHC 511`
 * Identify the *ratio* of this case and any *orbiter* comments. Determine which courts this case is binding on.
-> FUA : Complete this assignment, add answer here.
+* Definition
+	* *Ratio*: rationale for the judgement
+	* *Orbiter*: that which is said in passing
+#### Response
+##### Ratio
+* In many discovering applications, party resisting will claim the applicant is "only fishing".
+* However, the principle against such applications is that a good reason is required for a party to request discovery of such documents. If the documents are expected by one party to be produced by the other, and they are relevant to the trial, they must be produced.
+	* *"It is not a mere fishing expedition if fish has in fact been spotted."
+##### Orbiter
+* *"Mr Lun also argued that the application by the defendant was scandalous and vexatious. The evidence sought may prove to be scandalous — if true, obviously, but it is scandalous only because of the nature of the subject matter of the defamation. The plaintiff had chosen to sue and the defendant seeks to justify her statements. The scandal will fall heavily on the plaintiff or the defendant, depending on who succeeds in this action, but this application in itself is neither scandalous nor vexatious."*
+##### Courts this case is binding on
+* Case ruled in High Court of Singapore
+* Case is binding on all subordinate courts, namely state courts and family courts
