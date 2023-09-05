@@ -111,10 +111,7 @@ So how exactly do we go about reading, understanding and applying Statutes?
 ## Problem Question
 ![[Screenshot 2023-08-29 at 9.01.20 PM.png]]
 ![[Screenshot 2023-08-29 at 9.02.35 PM.png]]
-
-
 ### Response
-
 #### Offences committed 
 ##### Accused (butler)
 1. ==Criminal Trespass==
@@ -129,7 +126,7 @@ So how exactly do we go about reading, understanding and applying Statutes?
 ##### Mr L (lawyer)
 1. ==Conduct of proceedings in client's interest==
 	* Lawyer lied to client to and intervened with the due law process.
-	* `Legal Profession (Professional Conduct) Rules (54)`
+	* `Legal Profession (Professional Conduct) Rules 2a,i,j
 ##### B (butler, Accused's friend)
 1. ==Criminal breach of trust==
 	* B allowed the accused to enter the Victim's property when it was not the accused's shift.

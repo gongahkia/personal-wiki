@@ -29,15 +29,16 @@ Due to the complexity of Contract law cases, most IRAC breakdowns will come from
 #### How to do readings
 1. Refer to `Week X outline`, complete all Big Phang readings
 2. Refer to aestriked cases, get **summary of the facts** from Lawnet, SG courts, elitigation.
-3. Refer to **specified legislation or statutes** from SGC statutes online.
+	* To ==access any relevant Contract Cases==, just search *elitigation {case name}*.
+1. Refer to **specified legislation or statutes** from SGC statutes online.
 
 ### 1. Find Readings
 * [Big Phang](https://store.lawnet.com/the-law-of-contract-in-singapore-2nd-edition.html)
 
 ### 2. Find Cases
+* [elitigation](https://www.elitigation.sg/_layouts/IELS/HomePage/Pages/Home.aspx)
 * [Lawnet](https://www.lawnet.sg/lawnet/web/lawnet/home)
 * [SG courts](https://www.judiciary.gov.sg/)
-* [elitigation](https://www.elitigation.sg/_layouts/IELS/HomePage/Pages/Home.aspx)
 
 ### 3. Find Statutes
 * [SGC statutes online](https://sso.agc.gov.sg/)
