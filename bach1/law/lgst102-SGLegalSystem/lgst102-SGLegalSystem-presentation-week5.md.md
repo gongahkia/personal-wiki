@@ -1,4 +1,10 @@
-# `Presentation`
+# `S1W5 SG Legal System`
+
+> **Class:** *LGST 102 SG Legal System*  
+> **Subject:** *Sources of Law and Legal Reasoning 3 : Presentation*
+> **Lecturer:** *Ian Chai*  
+
+---
 ## Question 1
 ![[Screenshot 2023-09-05 at 10.44.07 PM.png]]
 ### Response
