@@ -1,7 +1,7 @@
 # Legal sis
 
 ## Important
-1. To ==access any relevant cases==, just search *elitigation {case name}*.
+1. To ==access any relevant cases==, just search [*elitigation {case name}*](https://www.elitigation.sg/gdviewer/).
 2. For Criminal Law cases, access [Singapore Criminal Case Summary Repository](https://www.sg-ccsr.com/copy-of-repository)
 
 ## FUA

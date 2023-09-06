@@ -36,7 +36,7 @@ Due to the complexity of Contract law cases, most IRAC breakdowns will come from
 * [Big Phang](https://store.lawnet.com/the-law-of-contract-in-singapore-2nd-edition.html)
 
 ### 2. Find Cases
-* [elitigation](https://www.elitigation.sg/_layouts/IELS/HomePage/Pages/Home.aspx)
+* [elitigation](https://www.elitigation.sg/gdviewer/)
 * [Lawnet](https://www.lawnet.sg/lawnet/web/lawnet/home)
 * [SG courts](https://www.judiciary.gov.sg/)
 

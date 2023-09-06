@@ -87,11 +87,15 @@
 ## Terms of Contract
 ### Practice question 1
 #### Premise:
-* Ang wants to rent a flat from Beng. Ang is extremely allergic to mould and mildew. He informs Beng that he will only rent Beng’s flat if it is painted with anti-mould and mildew paint. Beng assures Ang that the flat is painted with mildew resistant paint. Based on Beng’s assurance, Ang agrees to rent Beng’s flat. Beng then produces his standard written contract, which contains a term that says that “the owner shall hand-over the flat cleaned and given a fresh coat of ordinary paint at the commencement of the rental”. Ang signs it. 
+* Ang wants to rent a flat from Beng. Ang is extremely allergic to mould and mildew. He informs Beng that he will only rent Beng’s flat if it is painted with anti-mould and mildew paint. ==Beng assures Ang that the flat is painted with mildew resistant paint==. *Based on Beng’s assurance*, Ang agrees to rent Beng’s flat. Beng then produces his standard written contract, which contains a term that says that “the owner shall hand-over the flat cleaned and given a fresh coat of ordinary paint at the commencement of the rental”. Ang signs it. 
 * After staying in the flat for a few days, Ang’s allergy flares up. As it happens, the painting contractor who painted Beng’s flat before Ang rented it turns up at the flat to collect something he had left behind by mistake. When Ang asked, he told Ang he did not use anti-mould or mildew paint on the flat; he painted the flat with ordinary paint. 
 * Advise Ang who wishes to sue Beng for breach of contract
 #### Response:
 1. Identify legal issue
-2. What legal rule to use
-3. Apply legal rule
-4. Conclusion
+	* `Heilbut Symons & Co v Buckleton [1913]` basic test applied to determine if Beng was practicing **mere representation** or **express terms**.
+	* Will `Parole Evidence Rule` invalidate Beng's assurance of Ang that anti-mildew paint will be used?
+	 * Exceptions in `Section 94(b) of Evidence Act` brought up means we can't sue for breach of contract
+1. What legal rule to use
+	* Statement was related to a matter regarded by parties as important, and so most likely was an express term.
+2. Apply legal rule
+3. Conclusion

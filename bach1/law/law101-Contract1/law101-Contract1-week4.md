@@ -10,7 +10,6 @@
 1. Big Phang
 	* Chapter 6 Express Terms: paras 06.001 - 06.111  
 	* Chapter 7 Regulation of Terms: paras 07.012 - 07.037  
- 
 ---
 ## Breakdown of Syllabus
 ![[Screenshot 2023-09-01 at 17-15-58 Week 4 Slides - LAW101_601-G50-Contract Law 1.png]]
@@ -25,29 +24,26 @@ Now, we'll be covering the *terms of a contract*, in other words the *conditions
 ### Terms of the contract
 1. ==EXPRESS Terms==
 	* EXPLICIT expectations listed in the written contract.
-	* **To do**
-		* Proving terms
-		* Ascertain meaning
 2. ==IMPLIED Terms==
 	* IMPLIED expectations not necessarily written out, but nonetheless understood and expected.
-	* **To do**
-		* Tests for implying
-
+ 
 ## Definitions
 * Liability: state of being legally responsible for something
 * Mere representation:  
 	* Statement of past or present fact that ==**encourages *(induces)* a party to make a contract**==, but is NOT part of the contract *(not intended to have contractual effect)*.
-	* Could give rise to legal consequence if qualified as *Misrepresentation*.
+	* CAN'T give rise to legal consequences for *breach of contract*.
+	* COULD give rise to legal consequence if qualified as *Misrepresentation*.
 * Puff:  
 	* SALES TALK
-	* Characterised by exaggerations, grandstanding
+	* Characterised by exaggerations, grandstanding, and thus *hard to verify*
 	* ==Statement which is **never meant to be taken literally**==, has ==**no intention to be legally bound**==.
 	* Cannot give rise to legal consequence.
 * Express Term:  
 	* **Promised undertaking** laid out in the contract.
-	* Promise for which the ==promisor assumes contractual liability==.
+	* Promise for which the ==promisor assumes ***contractual liability***==.
 * Condition precedent:
 	* Other ==prerequisite conditions== that need to be satisfied BEFORE the written contract can take effect.
+* Collateral agreement: a side-contract that runs parallel to the main agreement
 ## What to consider when looking at Terms of a contract
 ### 1. Statements made during negotiations
 * Were the statements made EXPRESS TERMs, MERE REPRESENTATIONs or PUFFs?
@@ -69,9 +65,10 @@ Now, we'll be covering the *terms of a contract*, in other words the *conditions
 
 ## 1. Statements made during Negotiations
 * *A.K.A* Pre-Contractual Agreements 
+* First, we need to distinguish between *Express terms*, *Mere representation* and *Puffs*.
 ### EXPRESS TERMS vs MERE REPRESENTATION
 1. ==**BASIC TEST**==: depends on the ==intention== of the contracting parties, ==objectively ascertained==.
-	* GUIDELINES:
+	* ***GUIDELINES***:
 		1. Substance of statement
 		2. Relative knowledge of parties
 		3. Assumption of responsibility
@@ -104,10 +101,11 @@ Now, we'll be covering the *terms of a contract*, in other words the *conditions
 		* `Ecay v Godfrey (1946)`
 	* NO, Party who made statement ==did not appear to assume responsibility== --> **MOSTLY LIKELY MERE REPRESENTATION**
 		* `Schawel v Reade (1913)`
-* Guidelines of the basic test are ==NOT CONCLUSIVE==.
+* **Guidelines of the basic test** are ==NOT CONCLUSIVE==.
 	* `Heilbut Symons & Co v Buckleton [1913] AC 30`
 		* *"The intention of the parties can only be deduced from the totality of evidence."*
 
+Now that we've determined parties **intended** for a statement to be an Express term, we can look at ==whether it was made part of the contract==.
 ## 2. Express terms
 ### Issue of INCORPORATION
 Even if parties intended for the statement to be an express term, ==did it become **part of their contract**==?
@@ -131,16 +129,16 @@ Even if parties intended for the statement to be an express term, ==did it becom
 	* `Curtis v Chemical Cleaning and Dyeing Co [1951]`
 		* Case Summary:
 			* Plaintiff Curtis took wedding dress to Defendant Chemical Cleaning and Dyeing Co for cleaning and asked Plaintiff Curtis to sign a receipt with a clause **exempting Defendant from liability** 'if any damage caused'.
-		   * Defendant Employee claimed Defendant Chemical Cleaning and Dyeing Co did not accept liability for damage to beads and sequins *(implying Defendant Co would accept damage to other aspects of the dress)*.
+		   * Defendant Employee claimed Defendant Chemical Cleaning and Dyeing Co ==did not accept liability for damage to beads and sequins== *(implying Defendant Co would accept damage to other aspects of the dress)*.
 		   * Plaintiff Curtis signed the receipt.
 			* Dress was returned damaged to Plaintiff Curtis.
 			* Plaintiff Curtis sued Defendant Chemical Cleaning and Dyeing Co, who tried to rely on their exception clause to avoid liability.
 		* Court Ruling:
-			* ==MISREPRESENTATION== of the exception clause
+			* ==***MISREPRESENTATION***== of the exception clause
 			* Defendant Employee **MISREPRESENTED** the extent of ==exception clause== and induced P to sign the receipt.
 			* Defendant Chemical Cleaning and Dyeing Co could *only rely on the exception clause* for damage to sequins and beads.
 #### 2. Incorporation by NOTICE
-*Incorporation by Notice*: ==Inclusion of terms and conditions in a contract== by referring to them in ==another document or another contract==. 
+*Incorporation by Notice*: ==***Didn't SIGN anything***==, terms and conditions in a contract were still mentioned explicitely. 
 ##### No Notice at all, Actual Notice,  Reasonable Notice required
 * `Parker v South Eastern Railway Co (1877)`
 	* Case Summary:
@@ -156,10 +154,9 @@ Even if parties intended for the statement to be an express term, ==did it becom
 		* ***REASONABLE NOTICE REQUIRED***
 			* Plaintiff parker **KNEW** there was writing, but ==**DID NOT KNOW or BELIEVE**== the writing contained conditions --> Plaintiff is nevertheless ==bound by conditions==
 				* *If delivering of ticket to Plaintiff Parker was in such manner that ==he could see there was writing upon it==, that constituted **reasonable notice** that the writing contained conditions.
-
 ##### Evaluating Reasonable Notice: Red hand rule
 *Red hand rule*: Courts hold that a ==literal red hand== points to an unfair contract term in a written contract.
-* `Thornton v Shoe Lane Parking Ltd [1971]`: The **more ONEROUS or UNUSUAL** an Exception clause, the ==**GREATER the requirements for reasonable notice==.
+* `Thornton v Shoe Lane Parking Ltd [1971]`: The **more ONEROUS or UNUSUAL** an Exception clause, the ==**GREATER the requirements for reasonable notice**==.
 	1. `Interfoto Picture Library Ltd v Stilletto Visual Programmes Ltd [1989]`
 * Red hand rule **APPLIED** in Singapore.
 	2. `Hakko Products Pte Ltd v Danzas (S) Pte Ltd [1999]`
@@ -169,20 +166,20 @@ Even if parties intended for the statement to be an express term, ==did it becom
  
 #### 3. Incorporation by PREVIOUS COURSE OF DEALING
 ##### Basic test
-* **Basic test**: Whether at time of Contract formation, ==each party *(as a reasonable person)* could **infer** from past dealings and conduct of the other== that the express term was incorporated into the Contract.
+* **Basic test**: Whether at time of Contract formation, ==each party *(as a reasonable person)* could **infer** from past dealings and conduct of the other== that the ***express term was incorporated*** into the Contract.
 	* `Vinmar at [53] citing Furmston` 
 		* *"Whether, at the time of contracting, each party as a reasonable person was entitled to infer from the past dealings and the actions and the words of the other ..., that the term was to be a part of the contract."*
 ##### Elements of Basic test: Previous course of dealing
-* **NUMBER** of previous contracts
-* **RECENCY** of previous contract *(how recent something was)* 
-* **CONSISTENCY** of previous contracts 
-* **SUBJECT MATTER** of previous contract *(whether similar subject matter)*
+1. **NUMBER** of previous contracts
+2. **RECENCY** of previous contract *(how recent something was)* 
+3. **CONSISTENCY** of previous contracts 
+4. **SUBJECT MATTER** of previous contract *(whether similar subject matter)*
 
-> `Vinmar at [58]`
+> No shit considerations by `Vinmar at [58]`
 > - In general, it is ==much easier to *establish INCORPORATION by previous course of dealing* when both parties are in **business**== rather than when one was a consumer.
 > - *INCORPORATION by previous course of dealing* is also easier when ==the term is **not unusual or unreasonable**==.
 
-###### Number of and Recency of previous contracts
+###### 1. Number of and 2. Recency of previous contracts
 1. `Vinmar at [60]`
 	* Case Summary:
 		* 4 contracts made between December 2013 and October 2014 before the *contract in dispute* in November 2014.
@@ -193,7 +190,7 @@ Even if parties intended for the statement to be an express term, ==did it becom
 		* 3 or 4 car repair transactions over 5 years.
 	* Court Ruling:
 		* Court held that there was **NOT a sufficient incorporation of express terms** in the contract by ==previous course of dealings== due to the small NUMBER of previous contracts made and how OLD those contracts were.
-###### Consistency of previous contracts (similarity of subject matter, how contract made)
+###### 3. Consistency of previous contracts (similarity of 4. subject matter, how contract made)
 1. `Vinmar at [60]`
 	* Case Summary:
 		* All 4 contracts made were for *purchase of commodities*, and *all concluded in the same manner*, with oral negotiations followed by correspondence laying out key terms. PTT then sent Vinmar a supply agreement stating the full terms.
@@ -209,22 +206,22 @@ Even if parties intended for the statement to be an express term, ==did it becom
 ### Proving vs Interpreting express terms
 #### Proving
 * Necessary when parties disagree over **WHAT EXPRESS TERMS** govern their Contract.
-* PAROLE EVIDENCE RULE *may apply* and ==limits what evidence can be produced in Court to prove express terms==.
-* ENTIRE AGREEMENT CLAUSE (EAC) *applies* in ==written contracts==, pertaining to effect of the clause.
+	1. `PAROLE EVIDENCE RULE` *may apply* and ==limits what evidence can be produced in Court to prove express terms==.
+	2. `ENTIRE AGREEMENT CLAUSE (EAC)` *applies* in ==written contracts==, pertaining to effect of the clause.
 #### Interpreting 
 * Necessary when parties disagree over **WHAT EXPRESS TERMS MEAN**.
-* CONTEXTUAL INTERPRETATION: ==ascertain objectively== parties' intention at time of Contract formation, to determine *meaning of express terms*.
-* What ==contextual facts== can be used for interpretation of express terms?
+1. `CONTEXTUAL INTERPRETATION`: ==ascertain objectively== parties' intention at time of Contract formation, to determine *meaning of express terms*.
+2. What ==contextual facts== can be used for interpretation of express terms?
 	* Facts allowed under **exception** to PAROLE EVIDENCE RULE
 	* Limits of Contract law *(eg. objective ascertainment)*
-* ==Canons of Interpretation== in the CONTRA PROFERENTEM rule
+3. `Canons of Interpretation` in the CONTRA PROFERENTEM rule
 
 ### Proving express terms
 #### Parole Evidence Rule
 * ==EXCLUDES any evidence beyond the contractual document itself== *if* the written contract was intended by the parties to represent the **entire agreement between them**.
 	1. *When the terms of a contract have been ==reduced by the parties to the **form of a document**==, NO evidence shall be given in proof of the terms of such contract ==EXCEPT the document itself==.*
 		* `Section 93 of Evidence Act`
-	2. *When the terms of a contract have been ==proved according to section 93==, NO evidence of any **oral agreement or statement** shall be admitted for the purpose of ==contradicting, varying, adding to, or subtracting from== the terms of the contract.*
+	2. *When the terms of a contract have been proved according to section 93, ==NO evidence of any **oral agreement or statement** shall be admitted== for the purpose of contradicting, varying, adding to, or subtracting from the terms of the contract.*
 		* `Section 94 of Evidence Act`
 * To determine intentions of the parties *(so as to apply the Parole Evidence Rule)*, we can look at ==**Extrinsic evidence**==, ==**Document attributes**== and ==presence of **Entire Agreement Clause (EAC)**==.
 ##### Extrinsic evidence 
@@ -245,12 +242,12 @@ Even if parties intended for the statement to be an express term, ==did it becom
 #### EXCEPTIONS to Parole Evidence Rule
 Extrinsic evidence can introduce OTHER express terms to the written contract.
 * EXTRINSIC EVIDENCE **not inconsistent with a contract's existing terms** may be used to ==prove another document's validity==.
-	1. *the existence of any **separate oral agreement**, as to ==any matter on which a document is silent== and which is ==not inconsistent with its terms, may be proved==; in considering whether or not this proviso applies, the court shall have regard to the degree of formality of the document*
+	* *the existence of any **separate oral agreement**, as to ==any matter on which a document is silent== and which is ==not inconsistent with its terms, may be proved==; in considering whether or not this proviso applies, the court shall have regard to the degree of formality of the document*
 		* `Section 94(b) of Evidence Act`
 	* ==Illustrated in== `Latham Scott v Credit Suisse First Boston [2000]`
 	* ==Precluded by== an appropriately worded *ENTIRE AGREEMENT CLAUSE* (EAC) in `Lee Chee Wei at [31]-[35]`
-* EXTRINSIC EVIDENCE may be used to ==prove another document as the contract's **condition precedents**==.
-	1. *the existence of any **separate oral agreement** constituting a ==condition precedent to the attaching of any obligation== under any such contract, grant or disposition of property, **may be proved*** 
+* EXTRINSIC EVIDENCE may be used to ==prove another document as the contract's **CONDITION PRECEDENT**==.
+	* *the existence of any **separate oral agreement** constituting a ==condition precedent to the attaching of any obligation== under any such contract, grant or disposition of property, **may be proved*** 
 		* `Section 94(c) of Evidence Act`
 	* ==Precluded by== an appropriately worded *ENTIRE AGREEMENT CLAUSE* (EAC)
 
@@ -301,16 +298,22 @@ Extrinsic evidence MUST satisfy:
 2. *Subjective* **declarations of intention**
 3. **Pre-contractual negotiations**
 	* Admissible only if fulfils the ==3 requirements for admissibility==
-1. **Conduct** subsequent to entering into the contract
+4. **Conduct** subsequent to entering into the contract
 ![[Screenshot 2023-09-02 at 21-54-39 Week 4 Slides - LAW101_601-G50-Contract Law 1.png]]
 
 #### Applying the Contextual Approach to interpret express terms
+* No ambiguity
+* Patent ambiguity
+* Latent ambiguity
 ![[Screenshot 2023-09-02 at 22-02-58 Week 4 Slides - LAW101_601-G50-Contract Law 1.png]]
 
 #### CONTRA PROFERENTEM rule
+This rule is in the *spirit of* ==preventing persons== proffering a term or exclusion in an agreement from ==taking advantage of== **express terms** in a contract.
 1. Express term should be **INTERPRETED STRICTLY** ==against the party relying on it==.
 2. For any *doubt or ambiguity* in the ==language of the contract== and ==scope of the clause==, said ambiguity will be **resolved against the party seeking to rely on the clause**.
 	* `LTT Global Consultants v BMC Academy Pte Ltd [2011]`
 ![[Screenshot 2023-09-02 at 22-10-03 Week 4 Slides - LAW101_601-G50-Contract Law 1.png]]
+*  If we can't apply `contra proferentem` rule, we look to *other canons of interpretation*.
 ##### CONTRA PROFERENTEM rule for excluding negligence liability
- ![[Screenshot 2023-09-02 at 22-10-19 Week 4 Slides - LAW101_601-G50-Contract Law 1.png]]![[Screenshot 2023-09-02 at 22-10-33 Week 4 Slides - LAW101_601-G50-Contract Law 1.png]]
+ ![[Screenshot 2023-09-02 at 22-10-19 Week 4 Slides - LAW101_601-G50-Contract Law 1.png]]
+ ![[Screenshot 2023-09-02 at 22-10-33 Week 4 Slides - LAW101_601-G50-Contract Law 1.png]]
