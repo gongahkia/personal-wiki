@@ -313,7 +313,7 @@ This rule is in the *spirit of* ==preventing persons== proffering a term or excl
 2. For any *doubt or ambiguity* in the ==language of the contract== and ==scope of the clause==, said ambiguity will be **resolved against the party seeking to rely on the clause**.
 	* `LTT Global Consultants v BMC Academy Pte Ltd [2011]`
 ![[Screenshot 2023-09-02 at 22-10-03 Week 4 Slides - LAW101_601-G50-Contract Law 1.png]]
-*  If we can't apply `contra proferentem` rule, we look to *other canons of interpretation*.
+*  If we can't apply `contra proferentem` rule, we look to *other canons of interpretation* to decide case rulings.
 ##### CONTRA PROFERENTEM rule for excluding negligence liability
  ![[Screenshot 2023-09-02 at 22-10-19 Week 4 Slides - LAW101_601-G50-Contract Law 1.png]]
  ![[Screenshot 2023-09-02 at 22-10-33 Week 4 Slides - LAW101_601-G50-Contract Law 1.png]]
