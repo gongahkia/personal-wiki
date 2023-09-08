@@ -26,6 +26,7 @@ Now, we'll be covering the *terms of a contract*, in other words the *conditions
 	* EXPLICIT expectations listed in the written contract.
 2. ==IMPLIED Terms==
 	* IMPLIED expectations not necessarily written out, but nonetheless understood and expected.
+3. ==EXCEPTION clauses==
  
 ## Definitions
 * Liability: state of being legally responsible for something
