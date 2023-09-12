@@ -42,7 +42,7 @@
 #### Ratio
 1. Based on past precedent, the present case's sentence should be enhanced to 4 months’ imprisonment by ==taking into account== the ==substantial amount misappropriated and the long period over which the misappropriation took place==. 
 	* `Paragraph 9`
-		* *"Existing precedents set out above all also involved accused persons who pleaded guilty, made full restitution and had clean records. Even after taking into account these mitigating factors, a more appropriate sentence here would be 15 weeks’ imprisonment (equivalent of 4.36 weeks). A $4,000 fine is a marked and inconsistent departure from the precedents that is unjustified."*
+		* *"Existing precedents set out above all also involved accused persons who pleaded guilty, made full restitution and had clean records. Even after taking into account these mitigating factors, a more appropriate sentence here would be 15 weeks’ imprisonment (equivalent of 4.36 weeks). A $4,000 fine is a marked and inconsistent departure from the precedents that is unjustified."**
 2. District Judge placed ==**insufficient weight** on the two aggravating factors== *(substantial amount misappropriated, long period over which the misappropriation took place)*, and ==**too much weight** on the mitigating factors== *(Defendant’s clean record, plea of guilt, full restitution, difficult financial circumstances)*. 
 	* `Paragraph 8`
 		* Only in “rare” and “very exceptional or extreme circumstances” would an accused’s financial hardship be treated as a mitigating factor (Lai Oei Mui Jenny v PP [1993] 2 SLR(R) 406 at [10]). 
