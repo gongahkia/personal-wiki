@@ -184,9 +184,10 @@ The JUDICIAL POWER of the state can be vested only in the `Supreme court` and `S
             * `Appellate Division` *(hears certain appeals from the General Division)*
         2. `COURT OF APPEAL`
             * Deals with the more complex questions regarding the law
+            * Decisions by Court of appeal are ==***binding*** on High Court==.
 
 2. `Subordinate court`
-    * Limited jurisidiction and authority over certain matters.
+    * Limited jurisdiction and authority over certain matters.
     * Comprises...
         1. `STATE COURTS`
             * `District courts`
