@@ -11,7 +11,7 @@
 *Vitiate*: destroy the integrity of a given contract
 
 ### Uncertainty
-* A term is uncertain if it is **incomprehensible**.
+* A term is uncertain if it is **incomprehensible**, material terms lacking details.
 
 ### Incompleteness
 * A contract is incomplete if it **lacks material terms**.

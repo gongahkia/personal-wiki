@@ -158,6 +158,7 @@ The Law ==does not look into ADEQUACY of Consideration==, and only looks at the 
 			 * SCP failed to pay the facility fee. Defendant Mdm Ma Hongjin then commenced proceedings to obtain payment of the facility fee, as well as other sums which were not the subject of the appeal.
 		 * Court Ruling:
 			* Court ruled that the Supplemental Agreement was **unenforceable** as it was NOT SUPPORTED BY CONSIDERATION. 
+			* Fresh consideration is required even in supplemental agreement.
 
 #### Pre-existing Duties
 *Pre-existing duties*: **Public** or **Legal** duty
