@@ -1,4 +1,3 @@
-> FUA: Add Uniformity of Nature, Classical Rhetoric, ask jared for other philo logic books to add to kindle
 # `S1W6 SG Legal System`
 
 > **Class:** *LGST 102 SG Legal System*  
