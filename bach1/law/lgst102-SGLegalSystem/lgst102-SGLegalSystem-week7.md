@@ -50,3 +50,20 @@
 * ==Resulting rationale==
 	* As such, Accused is unable to feign ignorance with regard to the proper guidelines for food storage.
 	* Accused should be penalised accordingly for the food poisonings of the 44 other workers, to highlight severity of not adhering to food safety guidelines and to deter future acts of negligence by those preparing food.
+---
+> FUA: Be able to answer the below questions after the lesson in week 7
+## Lesson outline
+* ***Learning Objective***: To be able to perform basic legal writing *(draft a charge)* and be aware of trial procedure.
+* ***Questions to answer***
+	1. How do I know if a charge is made out? 
+		* (Hint: be able to analyse the offence-creating provision and use cases to resolve any difficulties)
+	2. How do I draft a charge?
+		* 
+	3. What are the steps in a trial?
+		* 
+	4. How do i behave during a trial?
+		* Be respectful and polite
+	5. What is the outcome of a trial and what happens next?
+		* 
+	6. How do I write for court?
+		* 
