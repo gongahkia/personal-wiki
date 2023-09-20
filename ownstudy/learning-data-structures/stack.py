@@ -23,7 +23,9 @@ class Stack:
 # testing out the stack
 
 s1 = Stack([1,2,3,4,5,6,7,8,9,10])
+print(s1.stack)
 s1.push_element(0)
 print(s1.stack)
 popped_element = s1.pop_element()
+print(f"Popped element: {popped_element}")
 print(s1.stack)
