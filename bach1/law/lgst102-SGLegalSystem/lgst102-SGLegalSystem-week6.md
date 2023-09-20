@@ -21,7 +21,6 @@
 	* Like any other specialised industry, information asymmetry
 	* **Rent-seeking**: Not providing additional value for additional payment
 * [Balance of probabilities](https://cacj-ajp.org/singapore/legal-system/singapore-laws/overview/court-procedure-and-court-processes/)
-* [Uniformity of Nature](https://www.jstor.org/stable/2104014)
 
 ## Learning Objective and Questions
 **Objective**: To be able to understand basic logic, persuasive reasoning and how to develop a case theory.
