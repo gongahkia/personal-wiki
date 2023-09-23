@@ -6,8 +6,6 @@
 
 ---
 ## Mock IP
-![[Screenshot 2023-09-19 at 21-08-18 2023 - SLS Week 6 - LGST102-G50-The SG Legal Sys and Legal A S.png]]
-![[Screenshot 2023-09-19 at 21-08-46 2023 - SLS Week 6 - LGST102-G50-The SG Legal Sys and Legal A S.png]]
 ### Case summary
 #### Context
 * Note this case is often brought up in Food Safety courses 1 with regard to storing of raw foods with pre-prepared foods together.

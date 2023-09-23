@@ -6,7 +6,6 @@
 
 ---
 ## Question 1
-![[Screenshot 2023-09-05 at 10.44.07 PM.png]]
 ### Response
 #### Context
 * I am prosecuting a case in a District Court *(State courts before a District judge)*
@@ -34,7 +33,6 @@
 		* Similarly levy criticism levied against ==Case 4==
 		* Pick apart *similarities* and *differences* between Case 4 and current case
 ## Question 2
-![[Screenshot 2023-09-05 at 10.46.49 PM.png]]
 ### [Response](https://www.elitigation.sg/gd/s/2016_SGHC_78)
 #### Preliminary Definitions
 * *Ratio*: Rationale for the judgement

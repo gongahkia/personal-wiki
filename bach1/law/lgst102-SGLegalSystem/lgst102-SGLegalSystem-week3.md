@@ -52,7 +52,6 @@
 3. ==*Chat bot*==: The application of this GPT model. 
 	* Catered to provide **interactive conversations** with users. 
 
-![[Screenshot 2023-08-29 at 7.44.02 PM.png]]
 ### 'But for' causation
 * **"If not for"** ==CAUSE==, there would have not been an ==EFFECT==.
 	* *Judea Paul*: Generative AI cannot yet explain 'But for' causation properly.
@@ -77,8 +76,6 @@ Refer to the [Constitution of the Republic of Singapore](https://sso.agc.gov.sg/
 	* Enshrines ==Constitutional Supremacy== within the Constitution of the Republic of Singapore
 3. `Article 162`: **EXISTING LAWS**
 	* All existing and future Statutes *(Legislation, Acts of Parliament)* shall be enforced by the Constitution of the Republic of Singapore, ==and SHOULD conform to the Constitution==.
-![[Screenshot 2023-08-29 at 20-24-54 Constitution of the Republic of Singapore - Singapore Statutes Online.png]]
-
 ### Constitutional supremacy vs Parliamentary sovereignty
 Singapore adheres to ==constitutional supremacy==.
 * Acts of parliament are beholden to...
@@ -109,8 +106,6 @@ So how exactly do we go about reading, understanding and applying Statutes?
 	* Can also refer to ==Interpretation Act== and ==Common Law==
 
 ## Problem Question
-![[Screenshot 2023-08-29 at 9.01.20 PM.png]]
-![[Screenshot 2023-08-29 at 9.02.35 PM.png]]
 ### Response
 #### Offences committed 
 ##### Accused (butler)

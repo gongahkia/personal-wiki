@@ -75,4 +75,3 @@
 3. Facts, Inferences, Context and Importance of Evidence, Types of Evidence
 4. Confront weak points of argument
 5. What's the endgame of the argument?
-![[Screenshot 2023-09-19 at 21-08-18 2023 - SLS Week 6 - LGST102-G50-The SG Legal Sys and Legal A S.png]]

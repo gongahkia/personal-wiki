@@ -12,8 +12,6 @@
 	* Chapter 7 Regulation of Terms: paras 07.012 - 07.037  
 ---
 ## Breakdown of Syllabus
-![[Screenshot 2023-09-01 at 17-15-58 Week 4 Slides - LAW101_601-G50-Contract Law 1.png]]
-
 In past weeks 1-3, we covered the *elements for CONTRACT FORMATION.*
 ### Elements of formation of a contract
 1. Offer and Acceptance
@@ -300,21 +298,17 @@ Extrinsic evidence MUST satisfy:
 3. **Pre-contractual negotiations**
 	* Admissible only if fulfils the ==3 requirements for admissibility==
 4. **Conduct** subsequent to entering into the contract
-![[Screenshot 2023-09-02 at 21-54-39 Week 4 Slides - LAW101_601-G50-Contract Law 1.png]]
 
 #### Applying the Contextual Approach to interpret express terms
 * No ambiguity
 * Patent ambiguity
 * Latent ambiguity
-![[Screenshot 2023-09-02 at 22-02-58 Week 4 Slides - LAW101_601-G50-Contract Law 1.png]]
 
 #### CONTRA PROFERENTEM rule
 This rule is in the *spirit of* ==preventing persons== proffering a term or exclusion in an agreement from ==taking advantage of== **express terms** in a contract.
 1. Express term should be **INTERPRETED STRICTLY** ==against the party relying on it==.
 2. For any *doubt or ambiguity* in the ==language of the contract== and ==scope of the clause==, said ambiguity will be **resolved against the party seeking to rely on the clause**.
 	* `LTT Global Consultants v BMC Academy Pte Ltd [2011]`
-![[Screenshot 2023-09-02 at 22-10-03 Week 4 Slides - LAW101_601-G50-Contract Law 1.png]]
 *  If we can't apply `contra proferentem` rule, we look to *other canons of interpretation* to decide case rulings.
 ##### CONTRA PROFERENTEM rule for excluding negligence liability
- ![[Screenshot 2023-09-02 at 22-10-19 Week 4 Slides - LAW101_601-G50-Contract Law 1.png]]
- ![[Screenshot 2023-09-02 at 22-10-33 Week 4 Slides - LAW101_601-G50-Contract Law 1.png]]
+* Ambiguous terms will be read **against** the one who proposed their inclusion in the contract.

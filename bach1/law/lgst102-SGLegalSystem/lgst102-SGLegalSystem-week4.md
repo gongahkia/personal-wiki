@@ -75,7 +75,6 @@ Generally speaking, reported case citations are favoured over neutral ones.
 ### Civil Cases
 * `SGCA`: Singapore Court of Appeal, **neutral case citation**
 * `SGHC`: Singapore High Court, **neutral case citation**
-![[Screenshot 2023-09-05 at 10.20.34 PM.png]]
 ## Introduction to Common Law  
 ### Foreign cases
 * Foreign cases are not binding on Singapore's cases since we are a separate *legal system*, they do hold a certain level of **persuasion** in Judge's ruling.
