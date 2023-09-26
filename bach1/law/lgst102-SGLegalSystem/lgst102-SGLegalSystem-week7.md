@@ -11,6 +11,9 @@
 ### Ian Chai says...
 
 * "Don't rush ahead to your conclusion. Be procedural when parsing through the facts to logic to the conlusion."
+* "Focus on submissions to determine obiter and ratio"
+* "Actus reas and Mens reas necessary for mounting a charge"
+* "Clarity of thought, Factual accuracy and Legal accuracy are VITAL when drafting and submitting charges."
 
 ## `actus reas`, `mens reas`
 
