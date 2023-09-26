@@ -1,10 +1,30 @@
 # `S1W7 SG Legal System`
 
 > **Class:** *LGST 102 SG Legal System*  
-> **Subject:** *Ethics and the Role of the Legal Profession 2*  
+> **Subject:** *ACTUS REUS, MENS REUS*  
 > **Lecturer:** *Ian Chai*
 
 ---
+
+## Learn some shit
+
+### Ian Chai says...
+
+* "Don't rush ahead to your conclusion. Be procedural when parsing through the facts to logic to the conlusion."
+
+## `actus reas`, `mens reas`
+
+When looking at criminal cases:
+
+* *actus reus*: physical element 
+* *mens rea*: mental aspect
+
+In a Criminal trial, prosecution must prove the existence of both aspects to establish the commission of the crime.
+
+### Rashness v Negligence
+
+* Rashness means doing an act with the **consciousness of a risk that evil consequences will follow** but with the **hope that it will not**. 
+* Negligence means **breach of duty** imposed by law
 
 ## Mock IP
 
@@ -26,10 +46,17 @@
 
 #### Recommended charges (offences)
 
-* IO recommends charge of 1 count of s304A of penal code *(causing death by rash or negligent act)*
+1. Determine the *actus reas* and *mens reas* of the charge
+
+2. Distinguish *rashness* and *negligence* for this case since they bring about different tiers of punishment
+    * Negligence (the legal term), refers to explicit breach of duty laid out in contract
+    * Rashness means doing an act with the **consciousness of a risk that evil consequences will follow** but with the **hope that it will not**. 
+
+* IO recommends charge of 1 count of s304A of penal code *(causing death by rash or negligent act)* 
 >  **304A**: Whoever causes the death of any person by doing any ***rash or negligent act*** not amounting to culpable homicide, shall be punished by...
-		(a) in the case of a rash act, with imprisonment for a term which may extend to 5 years, or with fine, or with both; or	
-		(b) in the case of a negligent act, with imprisonment for a term which may extend to 2 years, or with fine, or with both.
+>       (a) in the case of a rash act, with imprisonment for a term which may extend to 5 years, or with fine, or with both; or	
+>       (b) in the case of a NEGLIGENT act, with imprisonment for a term which may extend to 2 years, or with fine, or with both.
+>  **Sale of Food Act 1973** S5, S19
 * AGC previously affirmed conditional warning for 44 other cases
 
 #### Relevant evidence
@@ -53,7 +80,12 @@
 
 ### Weaknesses in your case
 
-* I can't find any oops `>_<`
+Criminal law needs us to argue that there is both an actus reus and a mens reus.
+
+1. Cannot prove ACTUS REUS: *No rojak samples secured* --> Merely an inference
+2. MENS REUS: Infer to MENS REUS
+    * Shankar cleared out fridge after being informed by mangager, he appreciated the risk
+    * Shankar would have had to take the 
 
 ### Inferences drawn
 
@@ -61,7 +93,9 @@
 
 ### My recommendation
 
-* I would agree with the IO's recommendation for charge of 1 count of s304A of penal code *(causing death by rash or negligent act)*, amounting to 5 year imprisonment and or fine
+* I would agree with the IO's recommendation for charge of 1 count of s304A of penal code *(causing death by NEGLIGENT act)*, amounting to 5 year imprisonment and or fine
+    * evident Mr Shankar (accused) had no idea of what he did wrong, but being a hawker should have been expected to know basic food safety hygiene 
+        * `Objective test`: Even without his position as a hawker, any reasonable person SHOULD know storing raw food with cooked food carries the risk of transmission, constitutes RASHNESS.
 * I would propose the additional charge of 44 counts of s336b of penal code *(punishment for act which endangers life or the personal safety of others)*, amounting to 3 month imprisonment and or fine of $1,500
 
 #### Cursory considerations
