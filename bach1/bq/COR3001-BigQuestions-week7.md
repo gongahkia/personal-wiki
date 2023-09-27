@@ -8,6 +8,8 @@
 
 ## Go look @ this
 * Richest families in Hong Kong, Korea, Singapore, Taiwan (4 asian tigers) in relation to transpacific wealth and flow of ideology
+* David Harvey
+* Ha June Chang
 
 ## Aidan says
 * Midterm syllabus  
@@ -18,6 +20,7 @@
 * "Go do happiness half hour"
 * "I'll beat your ass if you don't start BQ final essay"
 * "People who go to the supermarket are plebians"
+* "How do we then embrace market capitalism?"
 
 ## Aidan hates capitalism <3
 

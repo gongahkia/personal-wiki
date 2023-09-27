@@ -22,7 +22,6 @@
     * No less than 15 references
     * Topics 1-7
     * Topic 8: *Independent self-research*
-        > Let Prof know by end of this week via telegram/ email
 
 ## Timeline
 
