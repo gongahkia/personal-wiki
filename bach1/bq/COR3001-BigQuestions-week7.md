@@ -21,6 +21,7 @@
 * "I'll beat your ass if you don't start BQ final essay"
 * "People who go to the supermarket are plebians"
 * "How do we then embrace market capitalism?"
+* "How would you reshape society to better target and achieve their species-essence?"
 
 ## Aidan hates capitalism <3
 
