@@ -54,3 +54,11 @@ another_variable = "20"
 padded_variable = another_variable.zfill(5) # this pads the string "20" up to five digits including existing ones
 print(padded_variable) # this will print the padded string "00020"
 ```
+
+## Differentiating between functions and class methods
+
+```python
+example_list = ["yes", "no", "eat shit"]
+sorted_list = sorted(example_list) # sorted() is a function, and RETURNS a copy of the new sorted list
+example_list.sort() # .sort() is a class method called on iterable objects that can be sorted, and does NOT return any value, instead mutating the original list
+```
