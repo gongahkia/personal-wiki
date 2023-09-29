@@ -62,3 +62,11 @@ example_list = ["yes", "no", "eat shit"]
 sorted_list = sorted(example_list) # sorted() is a function, and RETURNS a copy of the new sorted list
 example_list.sort() # .sort() is a class method called on iterable objects that can be sorted, and does NOT return any value, instead mutating the original list
 ```
+
+## Python [currying](https://towardsdatascience.com/what-is-currying-in-programming-56fd57103431) 🍛
+```python
+def sort_strings(huatah):
+    length_dict = {string: len(string) for string in huatah}
+    final_array = list(element for length, element in sorted((length, element) for element, length in length_dict.items()))
+    return final_array
+```
