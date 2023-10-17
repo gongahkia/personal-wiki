@@ -16,6 +16,7 @@ Here are some facts about Dart.
 * Print statement allows for formatted strings with `${variable}` operator
 * Comment with `//`
 * All code to be run to be placed within main void function
+* Dart handles structured data types similar to Rust
 
 ```Dart
 void main() {
