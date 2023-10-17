@@ -15,11 +15,14 @@ Here are some facts about Dart.
 * Used in Fluttr, Google's cross-platform mobile application framework
 * Print statement allows for formatted strings with `${variable}` operator
 * Comment with `//`
+* All code to be run to be placed within main void function
 
 ```Dart
-var numWatermelon = 10;
-print("You have ${numWatermelon} watermelons.");
-// this is a comment
+void main() {
+    var numWatermelon = 10;
+    print("You have ${numWatermelon} watermelons.");
+    // this is a comment
+    }
 ```
 
 ## Compile time vs Runtime
