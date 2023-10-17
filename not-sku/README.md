@@ -1,0 +1,1 @@
+# Studies from outside school
