@@ -239,13 +239,181 @@ String test2(){return "Rut";};
 
 ## OOP
 
+### Constructor
 
+#### Default constructor
+
+```Dart
+class Cat {
+    DateTime birthday; // default constructor is here even if not explicitely mentioned
+}
+```
+
+#### Named constructor
+
+```Dart
+class Cat {
+    DateTime birthday; // named constructor
+    Cat.baby() {
+        birthday = DateTime.now();
+    }
+}
+```
+
+#### Redirecting call to main constructor
+
+```Dart
+class Cat {
+    DateTime birthday;
+    Cat(this.birthda); // main constructor
+    Cat.withBirthday(DateTime Birthday): this(birthday); // delegating call to main constructor
+}
+```
+
+#### Creating an immutable object
+
+* Can be declared using `final` or `const` fields as per required use
+
+```Dart
+class CatTreat {
+    final num quantity;
+    constant CatTreat(this.quantity) // creates a constant
+}
+```
+
+## Generators
+
+* Used to lazily produce a sequence of values
+
+### Synchronous generator returns iterable object
+
+```Dart
+Iterable<Cat> kittens(int toSpawn) sync* {
+    int kittenIndex = 0;
+    while (kittenIndex < n) {
+        kittenIndex++;
+        yield Cat.baby();
+    }
+}
+```
+
+### Asynchronous generator returns stream object
+
+```Dart
+Stream<Cat> kittens(int toSpawn) async* {
+    int kittenIndex = 0;
+    while (kittenIndex < n) {
+        kittenIndex++;
+        yield Cat.baby();
+    }
+}
+```
+
+## Encapsulation
+
+There are no keywords that restrict access like public, protected or private as in Java. Encapsulation occurs at a library level, not class level. There is only one simple rule...
+
+* Any identifier that starts with an `_` underscore is **private** to its library.
+
+## [Interface](https://www.educative.io/answers/what-is-an-interface-in-dart)
+
+```Dart
+class identifier implements interface-1, interface-2, interface-3
+```
+
+## [Abstract classes](https://www.darttutorial.org/dart-tutorial/dart-abstract-class/)
+
+## [Mixins](https://dart.dev/language/mixins)
+
+Dart's null safety is based off these three core design principles.
+
+1. **Non-nullable by default**: variables are non-nullable unless otherwise explicitely stated 
+2. **Incrementally adoptable**: users choose what parts of their project and when to migrate their project to null safety
+3. **Fully sound**: allows for compiler optimizations
+
+```Dart
+int? thisIntMightBeNull = null; // no error thrown at compile time
+```
 
 ## Null-safety
 
+* Variables are non-nullable by default, every variable should be assigned and cannot be null at compile-time
+* `?` appended to variable's type declaration to indicate a variable MIGHT have null value
 
+```Dart
+// In null-safe Dart, none of these can ever be null
+var i = 42; // inferred to be int
+String name = getFileName(); // explicitely defined 
+final b = Foo();
+
+// To indicate a variable might have null value, add ? to type declaration
+int? aNullableInt = null
+```
+
+As such, the below code will not run
+
+```Dart
+void main() {
+    String country; 
+    print(country); // error will occur at this line, value of country has to be assigned and cannot be null
+}
+```
+
+While the below code will work
+
+```Dart
+void main() {
+    String country;
+    country = "Welcome to Flutter"; // this will not produce an error, since the assignment occurs after declaration but before the variable is actually called
+}
+```
+
+* `!` appended to a variable indicates the variable is NOT null-valued, and can be used safely
+
+```Dart
+void main() {
+    String? country = "USA"; // variable country might have null value
+    String myCountry = country!; // throws an error as myCountry is non-nullable by definition, but country might store a null value
+}
+```
+
+## Late
+
+### Late variables
+
+* `late` prefixes variables which will be **initialized later**, not upon declaration but upon variable being accessed, ensuring null safety at all times
+    * as opposed to languages like C++ and C which allow casual intialisation with no checks for subsequent assignment, Dart enforces the `late` keyword to ensure users know what they are doing
+* these late variables are also non-nullable
+* Accessing unassigned variables before initialization causes runtime error
+
+```Dart
+void main() {
+    late String country; // late variable that is by default non-nullable
+    print(value); // this throws a runtime error
+    country = "USA"; // subsequent assignment of country late variable
+}
+```
+
+### Late final
+
+* Same as `late` variable, but value can only be assigned once
+
+```Dart
+late final String country;
+country = "USA";
+print(country); // working since value assigned already
+country = "India"; // Error caused since the final local variable cannot be reassigned 
+```
 
 Reference was taken from...
 * [this article](https://medium.com/nerd-for-tech/dart-for-dummies-learn-dart-in-30-minutes-e212328b81f0)
 * [dart documentation](https://dart.dev/tutorials)
 * [learn x in y minutes](https://learnxinyminutes.com/docs/dart/)
+* [effective dart](https://dart.dev/effective-dart)
+
+Other things to look at...
+* Asynchronous programming 
+* Future
+* Async
+* Await
+* Isolates & Concurrency
