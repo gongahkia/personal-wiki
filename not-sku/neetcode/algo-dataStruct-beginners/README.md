@@ -169,4 +169,102 @@ Since this operation involves loops, time complexity is `O(n)`, with number of o
 
 ### Dynamic arrays
 
+Dynamic arrays are much more common, and can be resized. They are found in non strictly typed languages like Python and JavaScript.
+
+The main difference between static and dynamic arrays is that we don't have to specify a dynamic array's size at initialization *(although a default size is still quietly assigned to dynamic arrays at initialization, 10 for Java, 4 for C#)*. The arrays are resized dynamically by the operating system.
+
+#### Mechanics of dynamic array
+
+##### 1. Inserting into a dynamic array
+
+When inserting an element into a dynamic array, the operating system finds the next empty space and pushes the element into it.
+
+```Python
+# the below is pseudo-code of a possibly implemented dynamic array class, and is used to visualize what would occur at a memory level with dynamic arrays
+# Insert value in the last position of the array
+def pushback(self, value):
+    if self.length == self.capacity:
+        self.resize()
+    
+    # insert value at the next available position, and increase length of dynamic array by 1
+    self.arr[self.length] = value
+    self.length += 1
+```
+
+##### 2. Resizing a dynamic array
+
+Since the array is dynamic, adding another element when we run out of capacity is achieved through copying existing elements of the array to a **new array** that is **double the original array's size**. After this move has occurred, the space taken up by the original array will be **deallocated**.
+
+```Python
+# as with above, the below is pseudo-code, and in this instance, the new array will have size 6, with new space allocated for it in memory
+def resize(self):
+    # initializes a new array of double capacity of the original
+    self.capacity = 2 * self.capacity
+    newArray:list = [0] * self.capacity
+
+    # copy existing elements to new array
+    for i in range(self.length):
+        newArray[i] = self.array[i]
+    self.array = newArray
+```
+
+The time complexity of this operation is `amortized O(1)` (average time taken per operation), as the array will only be resized once its capacity has been exhausted, and as the size of the array increases, the resizing operation will be called more infrequently in relation to inserting elements into the array.
+
+###### Why double the capacity?
+
+Generally, an array of size `n` requires at most `2n` operations to create.
+
+#### Summary
+
+| Operation | Big-O time | Notes |
+| :---: | :---: | :---: |
+| Access | `O(1)` | | 
+| Insertion | `O(1)` | If inserting at the middle of the array, shifting will be required, `O(n)` |
+| Deletion | `O(1)` | If deleting at the middle of the array, shifting will be required, `O(n)` |
+
+> ⚠️  From here on out, all data structures covered are abstract interfaces that can be implemented in any number of ways. **Importantly**, the characteristics and methods of each data structure remain the same. For the stack, that would be the LIFO philosophy and the `push`, `pop` and `peek` methods.
+
 ### Stacks
+
+A stack is a collection of elements, and you can only **add and delete elements from one end** *(called the top of the stack)*. This functions similarly to a stack of plates IRL.
+
+It is a **dynamic data structure** that operates in a **last in first out** (LIFO) manner, and supports the three operations - `push`, `pop` and `peek`.
+
+#### 1. Push
+
+Adds an element to the top of the stack *(equivalent to appending an element to a dynamic array)*. Time complexity is `O(1)`, as the number of operations is **constant** in relation to the size of the input (size of stack).
+
+```Python
+# also pseudo-code
+def push(self, value):
+    self.stack.append(value) # appends value to the stack
+```
+
+#### 2. Pop
+
+Removes last element from the top of the stack *(equivalent to removing and retrieving the last element of a dynamic array)*. Time complexity is `O(1)`, as the number of operations is **constant** in relation to the size of the input (size of stack).
+
+```Python
+# pseudo-code too
+def pop(self):
+    if len(self.stack) != 0: # otherwise throws an error exception if stack is empty
+        return self.stack.pop()
+```
+
+#### 3. Peek
+
+Returns the last element from the top of the stack *(equivalent to retrieving the last element of a dynamic array via index)*. Time complexity is `0(1)`, as the number of operations is **constant** relative to size of the input (size of stack).
+
+```Python
+# yup, this is pseudo-code too
+def peek(self):
+    return self.stack[-1]
+```
+
+#### Summary
+
+| Operation | Big-O time | Notes |
+| :---: | :---: | :---: |
+| Push | `O(1)` | Appends value to top of stack |
+| Pop | `O(1)` | Check if the stack is empty first |
+| Peek | `O(1)` | Retrieves without removing |
