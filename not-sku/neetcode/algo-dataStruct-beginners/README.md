@@ -268,3 +268,31 @@ def peek(self):
 | Push | `O(1)` | Appends value to top of stack |
 | Pop | `O(1)` | Check if the stack is empty first |
 | Peek | `O(1)` | Retrieves without removing |
+
+## Linked Lists
+
+### Singly Linked Lists
+
+### Doubly Linked Lists
+
+### Queues
+
+## Recursion
+
+## Sorting
+
+## Binary Search
+
+## Trees
+
+## Backtracking
+
+## Heap / Priority Queue
+
+## Hashing
+
+## Graphs 
+
+## Dynamic Programming
+
+## Bit Manipulation
