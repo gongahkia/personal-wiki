@@ -18,6 +18,11 @@ Topics covered...
 * Dynamic programming
 * Bit manipulation
 
+## Practice
+
+* [Leetcode](https://leetcode.com/)
+* [Codewars](https://www.codewars.com/dashboard)
+
 ## Size conversion
 
 * 1 bit == `1` or `0` in binary
@@ -153,6 +158,14 @@ def insertMiddle(array:list, index:int, value, length:int):
 ```
 
 Since this operation involves loops, time complexity is `O(n)`, with number of operations being **linear** relative to size of the input (size of the array). In the worse case scenario, we could be asked to insert a value at the index `0` of an array, in which case we would have to loop over every other value in the array to shift it one to the right via reassignment, prior to assigning `array[0] = value`.
+
+#### Summary
+
+| Operation | Big-O time | Notes |
+| :---: | :---: | :---: |
+| Reading | `O(1)` | | 
+| Insertion | `O(n)` | If inserting at the end of the array, `O(1)` |
+| Deletion | `O(n)` | If deleting at the end of the array, `O(1)` |
 
 ### Dynamic arrays
 
