@@ -22,7 +22,7 @@ $ vim exampleNotes.md
 
 ---
 
-### compiling Law notes
+### compiling law notes
 
 Compile *law markdown notes* into *a printable **PDF*** by running the following command and answering the prompts accordingly.
 
