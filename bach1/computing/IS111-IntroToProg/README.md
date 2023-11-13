@@ -70,3 +70,7 @@ def sort_strings(huatah):
     final_array = list(element for length, element in sorted((length, element) for element, length in length_dict.items()))
     return final_array
 ```
+
+## Regarding any time-related questions
+
+Convert all terms to an arbitrary integer that can be easily compared using `<` and `>`.
