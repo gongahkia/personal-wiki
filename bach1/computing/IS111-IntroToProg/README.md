@@ -51,6 +51,11 @@ print(sublist4) # this will print [2,4,6,8,10]
 ** # EXPONENT; first, done right to left 
 *, /, %, // # MULTIPLICATION, DIVIDE, MODULO, FLOOR DIVIDE; secoind, done left to right
 +,- # ADDITION, SUBTRACTION; third, done left to right
+
+# Precedence ranks top to bottom
+not # FIRST
+and # SECOND
+or # THIRD
 ```
 
 ## De Morgan's Law
