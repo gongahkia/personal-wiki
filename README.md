@@ -1,4 +1,4 @@
-# personal wiki
+# `personal wiki`
 
 ## templates
 
