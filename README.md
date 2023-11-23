@@ -1,30 +1,19 @@
-# university notes
+# personal wiki
 
 ## templates
 
-### computing notes
+### making notes
 
-Create new markdown *computing notes* with `com` command to copy existing template into the file.
+Create new markdown *notes* with `lrn` command to copy existing template into the file.
 
 ```console
-$ com exampleNotes.md
+$ lrn exampleNotes.md
 $ vim exampleNotes.md
 ```
 
-### law notes
+### compiling notes
 
-Create new markdown *law notes* with `law` command to copy existing template into the file.
-
-```console
-$ law exampleNotes.md
-$ vim exampleNotes.md
-```
-
----
-
-### compiling law notes
-
-Compile *law markdown notes* into *a printable **PDF*** by running the following command and answering the prompts accordingly.
+Compile *related markdown notes* into *a printable **PDF*** by running the following command and answering the prompts accordingly.
 
 ```console
 $ rcmp exampleNotesWeek1.md exampleNotesWeek2.md exampleNotesWeek3.md

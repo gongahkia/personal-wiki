@@ -1,9 +1,0 @@
-# Reference material
-
-## Readings
-
-*  
-
-## Slides
-
-*  

@@ -1,1 +1,1 @@
-# Templates for document creation
+# templates for document creation
