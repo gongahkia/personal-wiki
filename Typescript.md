@@ -8,6 +8,10 @@ As a superset of Javascript, *Typescript code compiles to Javascript code*.
 
 ## Quick Start
 
+### Syntax summary
+
+![](../assets/typescript.png)
+
 ### Installing and compiling Typescript 
 
 We want to **avoid** installing Typescript globally as far as possible. Instead, we install it as a *local dependency* for each project with the following commands.
