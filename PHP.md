@@ -1,5 +1,3 @@
-> Continue making notes from `Includes` portion of https://learnxinyminutes.com/docs/php/
-
 # PHP
 
 PHP is a scripting language for the server.
@@ -417,6 +415,23 @@ variable("Separate", "Hello", "World"); // prints Seperate || Hello ||| World
 >
 ```
 
+## Error handling
+
+* `try` `catch` works as you would expect
+* Exception creates a variable that you can store and access
+
+```php
+<?php
+
+try {
+    // Do something
+} catch (Exception $e){
+    // Handle the exception $e
+}
+
+>
+```
+
 ## Other files
 
 * equivalent of a python `import`
@@ -440,7 +455,6 @@ require_once 'my-file.php';
 
 ## Classes
 
-* average weak oop language
 * `public` variables are visible from the global scope
 * `private` variables are accesible within the class only
 * `protected` variables are accessible from the class and its subclasses
@@ -450,8 +464,6 @@ require_once 'my-file.php';
 * `$this` is the equivalent of self in python
 * `->` is the equivalent of . in python
 * `new` is used to instantiate a class object
-
-![](https://imageproxy.ifunny.co/crop:x-20,resize:640x,quality:90x75/images/f40460e7e9acd99883c1ed1b5cac32ae4d5ceff88003a5badc59944e99bf6007_1.jpg)
 
 ```php
 <?php
@@ -639,9 +651,22 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
 >
 ```
 
+## Useful magic constants
+
+* `__DIR__` returns full path directory of a file
+* `__FILE__` returns full path of a file
+* `__FUNCTION__` returns current function name
+* `__LINE__` returns current line number
+* `__CLASS__` returns current class name, must be used inside a class declaration
+* `__METHOD__` returns current method name, only returns a value when called inside a trait or object declaration
+* `__TRAIT__` returns current trait name, only returns a value when called inside a trait or object declaration
+* `__NAMESPACE__` returns current namespace name
+
 ## More on
 
 * `_get`
 * `_set`
 * `nowdoc`
 * `heredoc`
+* namespaces
+* late static binding
