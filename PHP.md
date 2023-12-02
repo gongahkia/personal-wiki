@@ -417,7 +417,231 @@ variable("Separate", "Hello", "World"); // prints Seperate || Hello ||| World
 >
 ```
 
+## Other files
+
+* equivalent of a python `import`
+
+```php
+<?php
+
+// INCLUDE
+
+include 'my-file.php'; // code within my-file.php is now within scope, if the current file is not found it emitts a warning
+include_once 'my-file.php'; // will not include code from my-file.php if its been included elsewhere
+
+// REQUIRE
+    // functions the same way as include except a fatal error is created if file cannot be included
+
+require 'my-file.php'; 
+require_once 'my-file.php';
+
+>
+```
+
+## Classes
+
+* average weak oop language
+* `public` variables are visible from the global scope
+* `private` variables are accesible within the class only
+* `protected` variables are accessible from the class and its subclasses
+* `static` variables belong to the class itself and can only be called from the class, not from any of its objects
+* `final` class methods are unoverridable and `final` classes are unextendable
+* `_construct` function is the constructor that is automatically called upon object instantiation, equivalent of \_\_init__ in python
+* `$this` is the equivalent of self in python
+* `->` is the equivalent of . in python
+* `new` is used to instantiate a class object
+
+![](https://imageproxy.ifunny.co/crop:x-20,resize:640x,quality:90x75/images/f40460e7e9acd99883c1ed1b5cac32ae4d5ceff88003a5badc59944e99bf6007_1.jpg)
+
+```php
+<?php
+
+class CaiFanShop {
+
+    const carbohydrate = 'Rice';
+
+    public static $publicStaticVar = 'public static'; // public variable visible from global scope, static meaning it can only be accessed from within the class
+    private static $privateStaticVar = 'private static'; // private variable accesible from within the class only
+    protected static $protectedStaticVar = 'protected static'; // protected variable accessible from wihtin the class and its subclasses during inheritance
+
+    // properties must declare their visibility
+    public $property = 'public';
+    public $instanceProp;
+    protected $prot = 'protected';
+    private $priv = 'private';
+
+    // CONSTRUCTOR FUNCTION 
+
+    public function _construct($instanceProp) { 
+        $this->instanceProp = $instanceProp; // access instance variables with $this
+    }
+
+
+    public function myMethod() {
+        print 'MyClass';
+    }
+
+    // FINAL FUNCTIONS
+        // final functions are unoverridable
+
+    final function youCannotOverrideMe() {
+    }
+
+    // DESTRUCTOR FUNCTION
+        // called when object is no longer referenced, used to deconstruct the object
+
+    public function _destruct() {
+        print "Destroying";
+    }
+
+    // STATIC
+        // declaring class properties or methods as static means they are accesible without needing an instantiation of the class
+        // a static property or attribute cannot be accessed with an instantiated class object
+        // a static method can be accessed with an instantiated class object
+
+    static $sauce = 'Curry';
+    public static function myStaticMethod() {
+        print 'I am static';
+    }
+}
+
+echo CaiFanShop::carbohydrate; // prints 'Rice'
+echo CaiFanShop::$sauce; // prints 'Curry'
+CaiFanShop::myStaticMethod(); // prints 'I am static'
+
+// Instantiate new instance object of name isle_eating_house of the class CaiFanShop
+$isle_eating_house = new CaiFanShop('watermelon'); // the string 'watermelon' is assigned to the instance property $this->instanceProp in the constructor function
+
+// Access class members
+echo $isle_eating_house->property // prints 'public'
+echo $isle_eating_house->instanceProp // prints 'watermelon'
+echo $isle_eating_house->myMethod(); // prints 'MyClass'
+
+// NULLSAFE OPERATORS
+    // ? used when we're unsure whether an object contains a certain property or method, assigns null by default
+    // can be used in conjunction with nullish coalescing operator to ensure proper default value
+
+echo $isle_eating_house->invalid_property // error thrown since property invalid_property does not exist
+echo $isle_eating_house?->invalid_property // since the object property invalid_property does not exist, it is assigned the value of null
+echo $isle_eating_house?->invalid_property ?? "public" // since the object property invalid_property does not exist, it is assigned the value of null, and since its value is null, it is then assigned the value of string "public"
+
+// CLASS EXTENDS CLASSES
+    // inheritance of class methods and attributes
+    // method overriding is supported simply by redefining the method
+    // parent methods and attributes can be accessed using parent:: keyword if overridden by the child class
+    // inherited methods and attributes can be accessed as their own if not overridden by the child class
+
+// SimLimCaiFan is the child class, inheriting the attributes and methods of the CaiFanShop parent class
+class SimLimCaiFan extends CaiFanShop {
+
+    function printProtectedProperty() {
+        echo $this->prot;
+    }
+
+    // overrrides the originally defined myMethod() in the CaiFanShop class
+    function myMethod() {
+        parent::myMethod(); // since we're overriding the child class' myMethod() method, the parent:: calls the parent CaiFanShop class' method myMethod() which prints "MyClass"
+        print ' > MyOtherClass'; // prints "MyOtherClass"
+    }
+
+}
+
+$sim_lim_cai_fan = new SimLimCaiFan('strawberry');
+$sim_lim_cai_fan->printProtectedProperty(); // prints "protected" as defined in the parent class
+$sim_lim_cai_fan->myMethod(); // prints 
+
+// FINAL CLASS
+    // final classes are unextendable
+
+final class YouCannotExtendMe {
+
+}
+
+// ABSTRACT or INTERFACES
+    // classes can be abstract or implement interfaces 
+    // Abstract classes
+        // abstract classes can have both abstract methods (no implementation) and concrete methods (with implementation)
+        // abstract classes can have properties with or without values
+        // single-inheritance
+        // constructors can be declared
+    // Interfaces 
+        // all methods declared in an interface must be abstract (without implementation) as the implementing class provides the actual implementation
+        // can only decalre constants, interfaces cannot assign properties with values
+        // multiple-interhitance
+        // no declaration of constructors
+        // complete abstraction, since only method signature is specified and implementation detail left up to implementing class
+
+// INTERFACES
+    // declared with the interface keyword
+    // interfaces can be extended
+    // classes can implement more than one interface, comma-separated
+
+interface InterfaceOne {
+    public function doSomething();
+}
+
+interface InterfaceTwo {
+    public function doSomethingElse();
+}
+
+// interfaces can be extended
+interface InterfaceThree extends InterfaceTwo {
+    public function doAnotherContract();
+}
+
+// classes can implement more than one interface
+class SomeOtherClass implements InterfaceOne, InterfaceTwo {
+    public function doSomething() {
+        echo 'doSomething';
+    }
+
+    public function doSomethingElse() {
+        echo 'doSomethingElse';
+    }
+}
+
+// ABSTRACT CLASSES
+
+abstract class MyAbstractClass implements InterfaceOne {
+    public $x = 'doSomething';
+}
+
+class MyConcreteClass extends MyAbstractClass implements InterfaceTwo {
+    public function doSomething() {
+        echo $x;
+    }
+
+    public function doSomethingElse() {
+        echo 'doSomethingElse';
+    }
+}
+
+// TRAITS
+    // introduced from PHP 5.4.0
+    // declared using trait
+    // classes implement a trait with use
+    // appear to be somewhat similar to an interface but methods can have their signature and implementation detail specified
+
+
+trait MyTrait {
+    public function myTraitMethod() {
+        print 'I have MyTrait';
+    }
+}
+
+class MyTraitfulClass {
+    use MyTrait;
+}
+
+$cls = new MyTraitfulClass();
+$cls->myTraitMethod(); // this prints "I have MyTrait"
+
+>
+```
+
 ## More on
 
+* `_get`
+* `_set`
 * `nowdoc`
 * `heredoc`
