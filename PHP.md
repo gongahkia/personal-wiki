@@ -1,3 +1,5 @@
+> Continue making notes from `Includes` portion of https://learnxinyminutes.com/docs/php/
+
 # PHP
 
 PHP is a scripting language for the server.
@@ -347,6 +349,70 @@ foreach ($meta as $food_item_level) {
 foreach ($meta as $food_item => $food_item_level) {
     echo "Parklane cai fan menu item $food_item has a level of $food_item_level";
 }
+
+>
+```
+
+## Functions
+
+* function defined with `function`
+* `return` functions similarly as in other languages
+
+```php
+<?php
+
+// FUNCTION
+    // default parameter values can be assigned
+
+function shit() {
+    return 'Shit';
+}
+echo shit(); // prints 'Shit'
+
+function add($x, $y=1) { // $y assigned a default value of 1 and it is an optional parameter
+    return $x + $y;
+}
+
+// ANONYMOUS FUNCTIONS
+
+$anon = function($x) {
+    return $x + 1;
+}
+echo $anon(2); // prints 3
+
+// NESTED FUNCTIONS
+    // functions can return functions
+    // use keyword brings outside variables into scope
+
+function ass($x, $y, $z) {
+    echo "$x - $y - $z";
+}
+function bar($x, $y) {
+    return function($z) use ($x, $y) { // use to bring in outside variables
+        ass($x, $y, $z);
+    }
+}
+$bar = bar('A', 'B');
+$bar('C'); // prints "A - B - C"
+
+// CALLING NAMED FUNCTIONS
+    // named functions can be called using a string of their name
+
+$func_name = 'add'; // we previously defined an add() function
+echo $func_name(1,2); // prints 3, since this invokes the add() function
+
+// VARIABLE NUMBER OF ARGUMENTS
+    // ... operator takes in a variable number of arguments as an array that can be iterated over
+    // can be used since PHP 5.6
+
+function variable($word, ...$list) {
+    echo $word . "||";
+    foreach ($list as $item) {
+        echo $item . '|';
+    }
+}
+
+variable("Separate", "Hello", "World"); // prints Seperate || Hello ||| World
 
 >
 ```
