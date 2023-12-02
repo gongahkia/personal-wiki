@@ -78,6 +78,9 @@ $another_formatted_string = "This is also a formatted string as seen in {$string
 $escaped = "This will reflect as 4 spaces /t"; // special characters like /t and /n are escaped only in double quotes
 $unescaped = 'This will literally show a slash and a t'; // special characters are unescaped in single quotes
 echo 'This string' . ' is concatenated'; // the . supports string concatenation
+$test = 'watermelon';
+$test .= ' sugar high' // string concatenation means .= also works for strings
+echo $test; // this will print out "watermelon sugar high"
 echo 'Multiple', 'Parameters', 'Valid'; // the , also supports string concatenation
 
 // NULL values
