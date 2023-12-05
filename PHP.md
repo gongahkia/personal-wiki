@@ -1,4 +1,4 @@
-# PHP
+# `PHP`
 
 PHP is a scripting language for the server.
 

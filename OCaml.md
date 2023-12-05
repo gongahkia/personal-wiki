@@ -1,6 +1,6 @@
 > continue making notes from here https://learnxinyminutes.com/docs/ocaml/ on unary minus, google what unary minus is
 
-# OCaml
+# `OCaml`
 
 A strictly evaluated, functional language with imperative features.
 
