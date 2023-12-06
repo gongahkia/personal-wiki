@@ -140,8 +140,11 @@ print_r($array_literal); // prints a variable in a human-readable format
 $eg_array = array('One' => 1, 'Two' => 2, 'Three' => 3); // works in all PHP versions to instantiate an array
 $another_eg_array = ['One' => 1, 'Two' => 2, 'Three' => 3]; // works in PHP 5.4
 
+print_r($eg_array); // prints all key value pairs, print_r() is useful for debugging
+var_dump($eg_array); // displays more information than print_r(), is useful for debugging
+
 $another_eg_array['Four'] = 4; // assigns a new element to the array
-echo $eg_array['One']; // prints 1
+echo $eg_array['One']; // prints 1, this tells me the least as compared to print_r() or var_dump()
 
 // ARRAY LITERALS
 
@@ -149,8 +152,34 @@ $array_literal = ['One', 'Two', 'Three']; // implictly assigns integer key for a
 
 $array_literal[] = 'Four'; // appends an element to the end of the array
 array_push($array_literal, 'Five'); // also appends an element to the end of the array
-echo $array_literal[1]; // prints 'Two'
+
 unset($array_literal[3]); // removes element from array
+
+$num = 2;
+echo $array_literal[1]; // prints 'Two'
+echo $array_literal[$num]; // prints 'Three'
+
+// ITERATING THROUGH AN ARRAY
+// iterate through a hashmap array or an array literal using the foreach() loop
+
+foreach($stuff as $k => $v) {
+    echo "Key=", $k, "Val=", $v;
+}
+
+// ARRAY FUNCTIONS
+
+array_key_exists($key, $array); // checks whether a key is in the array
+isset($array["key"]); // also checks whether a key is in the array
+count($array); // length of the array
+is_array($array); // checks whether a variable is an array
+sort($array); // sorts the array by its values, loses the key value pair associations
+ksort($array); // sorts the array key-value pairs by its keys
+asort($array); // sorts the array key-value pairs by its values
+shuffle($array); // randomly sorts the array
+explode($delimiter, $string); // splits a string by a specified delimiter and assigns that to an array
+
+echo isset($eg_array["name"]) ? "name is set" : "name is not set"; // utilising the ternary operator to check whether a key exists in an array, this can be avoided using the null coalescing operator
+echo $_GET["name"] ?? "nobody"; // PHP 7's null coalescing operator can also be used here
 
 >
 ```
@@ -230,6 +259,9 @@ if ($watermelon > 10) {
 // TERNARY OPERATOR
     // additional ternary shortcut since PHP 5.3
 
+// general structure is as follows
+    // CONDITIONAL CHECK ? IF EVALUATES TRUE : IF EVALUATES FALSE
+
 print (false ? 'Isle eating house' : 'Hurt Hurt Skrt Skrt');
 $x = false;
 print($x ?: 'Hurt Hurt Skrt Skrt'); // ternary operator shortcut in ?:
@@ -264,6 +296,9 @@ switch ($x) {
 
 // NULL COALESCING OPERATOR
     // shorthand operator also available
+
+// takes on the following syntax
+    // VALUE TO CHECK ?? DEFAULT VALUE TO ASSIGN IF THE AFOREMENTIONED VALUE IS NULL
 
 $variable = $value ?? $default; // if $value is not null, $variable takes value of $value, else $variable takes value of $default
 $a = null;
@@ -674,22 +709,22 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
 * namespaces
 * late static binding
 
-## Web Applications
+# Web Applications
 
 ## Theory
 
 Everything on the web is built in HTML, CSS, PHP, SQL, JS, JQuery, JSON.
 
-### HTTP
+## HTTP
  
 HTTP connects the client-side browser to the web server and database server via the **request response cycle**.
 * client-side browser: HTMl, CSS, DOM, CSSOM, JS, JQuery, JSON
 * web server: Apache, PHP
 * database server: MySQL
 
-#### GET
+## Request response cycle
 
-When a URL *(an anchor tag `<a></a>`)* is clicked, the client browser makes a connection to the server and issues a GET *request* to retrieve the contents of the page at the specified URL. 
+When a URL *(an anchor tag `<a></a>`)* is clicked, the client browser makes a connection to the web server and issues a GET **request** to retrieve the contents of the page at the specified URL.
 
 This connection is also called a "handshake".
 
@@ -701,23 +736,25 @@ GET http://data.pr4e.org/page2.htm
 GET http://data.pr4e.org/page1.htm HTTP/1.0 
 ```
 
-The server *responds* with the HTML contents which are received by the client browser. The HTML code is then parsed through the **DOM renderer** to display the HTML page.
+The web server **responds** with the HTML contents which are received by the client browser. The HTML code is then parsed through the *DOM renderer* to display the HTML page.
 
-This is the request-response cycle.
-
-### HTML
+## HTML
 
 Parsed and rendered by the DOM.
 
 * [HTML cheatsheet](https://www.geeksforgeeks.org/html-cheat-sheet-a-basic-guide-to-html/)
 
-### CSS
+## CSS
 
 Parsed and rendered by the CSSOM.
 
 * [CSS cheatsheet](https://web.stanford.edu/group/csp/cs21/csscheatsheet.pdf)
 * [CSS Tricks](https://css-tricks.com/)
 
-### XAMPP
+## XAMPP
 
 * [installation guide](https://www.wa4e.com/software-win.php)
+
+## PHP
+
+* [PHP superglobal](https://www.w3schools.com/php/php_superglobals.asp)
