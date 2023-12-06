@@ -674,21 +674,24 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
 * namespaces
 * late static binding
 
-## Web Application
+## Web Applications
 
 ## Theory
 
-Everything on the basic web is built in HTML, CSS, PHP, SQL, JS, JQuery, JSON.
+Everything on the web is built in HTML, CSS, PHP, SQL, JS, JQuery, JSON.
 
 ### HTTP
  
-HTTP connects the client-side browser *(HTML, CSS, DOM, JS, JQuery)* to the web server *(Apache, PHP)* and database server *(MySQL)* via the **request response cycle**.
+HTTP connects the client-side browser to the web server and database server via the **request response cycle**.
+* client-side browser: HTMl, CSS, DOM, CSSOM, JS, JQuery, JSON
+* web server: Apache, PHP
+* database server: MySQL
 
-#### Request response cycle and GET
+#### GET
 
-When a URL *(anchor tag `<a></a>`)* is clicked, the client browser makes a connection to the server and issues a "GET" *request* to retrieve the contents of the page at the specified URL. 
+When a URL *(an anchor tag `<a></a>`)* is clicked, the client browser makes a connection to the server and issues a GET *request* to retrieve the contents of the page at the specified URL. 
 
-> This connection is also called a "handshake".
+This connection is also called a "handshake".
 
 ```console
 # sample GET request
@@ -700,3 +703,21 @@ GET http://data.pr4e.org/page1.htm HTTP/1.0
 
 The server *responds* with the HTML contents which are received by the client browser. The HTML code is then parsed through the **DOM renderer** to display the HTML page.
 
+This is the request-response cycle.
+
+### HTML
+
+Parsed and rendered by the DOM.
+
+* [HTML cheatsheet](https://www.geeksforgeeks.org/html-cheat-sheet-a-basic-guide-to-html/)
+
+### CSS
+
+Parsed and rendered by the CSSOM.
+
+* [CSS cheatsheet](https://web.stanford.edu/group/csp/cs21/csscheatsheet.pdf)
+* [CSS Tricks](https://css-tricks.com/)
+
+### XAMPP
+
+* [installation guide](https://www.wa4e.com/software-win.php)
