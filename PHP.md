@@ -673,3 +673,30 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
 * `heredoc`
 * namespaces
 * late static binding
+
+## Web Application
+
+## Theory
+
+Everything on the basic web is built in HTML, CSS, PHP, SQL, JS, JQuery, JSON.
+
+### HTTP
+ 
+HTTP connects the client-side browser *(HTML, CSS, DOM, JS, JQuery)* to the web server *(Apache, PHP)* and database server *(MySQL)* via the **request response cycle**.
+
+#### Request response cycle and GET
+
+When a URL *(anchor tag `<a></a>`)* is clicked, the client browser makes a connection to the server and issues a "GET" *request* to retrieve the contents of the page at the specified URL. 
+
+> This connection is also called a "handshake".
+
+```console
+# sample GET request
+GET http://data.pr4e.org/page2.htm
+
+# old telnet command to send a GET request to the server via the HTTP/1.0 protocol
+GET http://data.pr4e.org/page1.htm HTTP/1.0 
+```
+
+The server *responds* with the HTML contents which are received by the client browser. The HTML code is then parsed through the **DOM renderer** to display the HTML page.
+
