@@ -1,8 +1,4 @@
-> continue making notes from here https://learnxinyminutes.com/docs/ocaml/ on unary minus, google what unary minus is
-
 # `OCaml`
-
-A strictly evaluated, functional language with imperative features.
 
 ## Comments
 
@@ -10,7 +6,19 @@ A strictly evaluated, functional language with imperative features.
 (* This is a comment *)
 ```
 
-## Variables and functions
+## Introduction 
+
+A strictly evaluated, functional language with imperative features.
+
+```ocaml
+(*** FUNCTIONAL LAND ***)
+
+(* everything in OCaml is an expression *)
+(* every expression (* variables, functions *) evaluates to a value *)
+(* OCaml lacks "procedures" and every function must evaluate to a value, so functions that don't do that and are called for their side effects (* like print_endline *) return a value of "unit" type *)
+```
+
+## Expressions, Variables and Functions
 
 * double semicolon language *(to separate expressions, though not always necessary)*
 * `let` for function and variable declaration
@@ -18,14 +26,6 @@ A strictly evaluated, functional language with imperative features.
 * optional type declaration *(OCaml compiler automatically infers types)*
 
 ```ocaml
-(*** FUNCTIONAL LAND ***)
-
-(* everything in OCaml is an expression and every expression (* variables, functions *) evaluates to a value *)
-
-(* OCaml lacks "procedures" and every function must evaluate to a value, so functions that don't do that and are called for their side effects (* like print_endline *) return a value of "unit" type *)
-
-(*** QUICKSTART ***)
-
 (*** EXPRESSIONS ***)
 
 (* Expressions can be separated by a double semicolon, though in production source code often omits the double semicolon for stylistic purposes. *)
@@ -93,8 +93,14 @@ and
 
 (*** ANONYMOUS FUNCTIONS ***)
 
-let my_lambda = fun x -> x * x;;
+(* anonymous functions are declared with the fun keyword *)
 
+let my_lambda = fun x -> x * x;;
+```
+
+## Operators
+
+```ocaml
 (*** OPERATORS ***)
 
 (* in functional programming land, every operator is a function and can be called as such *)
@@ -109,4 +115,239 @@ let my_lambda = fun x -> x * x;;
 12.0 /. 3.0;; (* float arithmetic, evaluates to 4.0 *)
 
 5 mod 2;; (* modulo is universal across floats and integers *)
+
+(* Unary minus (* the negation operator *) is a marked exception to this rule as it is polymorphic, although type-specific versions of it do exist as well *)
+
+(* Unary operators are operators which are used to calculate the result on only one operand *)
+(* Binary operators are operatores which are used to calculate the result on two operands *)
+
+(* Polymorphic unary operator *)
+
+-3;; (* evaluates to the integer value -3 *)
+-4.5;; (* evaluates to the float value -4.5 *)
+
+(* Type specific unary operators *)
+
+~- 3;; (* applicable for integers only *)
+~-. 3.4;; (* applicable for floats only *)
+~- 3.4;; (* this results in a type error *)
+
+(* You can also be sneaky and redefine your own operators for fun *)
+
+let (~/) x = 1.0 /. x;; (* unary operators must start with ~ *)
+~/ 4.0;; (* this evaluates to the float value of 0.25 *)
 ```
+
+## Data structures
+
+```ocaml
+(*** DATA STRUCTURES ***)
+
+(* LIST *)
+
+(* square brackets, items are semi-colon separated *)
+(* dynamically allocated space, size can be casually changed *)
+(* dynamically allocated space, can store elements of different datat types *)
+
+let my_list = [1;2;3];; (* of type "int list" *)
+
+(* LIST METHODS *)
+
+(* LIST INDEXING *)
+
+List.nth my_list 1;; (* evaluates to integer 2, the second element in the list of index 1 *)
+
+(* LIST MAP *)
+
+(* List.map() calls an anonymous function that is user-defined *)
+
+(* List.map() applies the given function to each iteration variablein the list *)
+
+List.map(fun x -> x * 2)  [1;2;3];; (* this should evaulate to [2;4;6] *)
+
+(* LIST FILTER *)
+
+(* List.filter() also calls an anonymous function that is user-defined *)
+
+(* List.filter() applies the specified conditonal check as a function to the list, and only those that pass said check are remaining in the list *)
+
+List.filter (fun x -> x mod 2 = 0) [1;2;3;4];; (* this should evaulate to [2;4] *)
+
+(* ADDING ELEMENTS *)
+
+(* add an item to the FRONT of a list with the :: constructor which is often referred to as a "cons" *)
+
+1 :: [2;3];; (* evaluates to [1;2;3] *)
+
+(* TUPLES *)
+
+(* (* optionally surrounded by *) round brackets, items are comma separated *)
+
+let my_tuple = 3, 4;; (* of type "int * int" *)
+let my_other_tuple = (5,6,7);; (* this is a much clearer more approved syntax *)
+
+(* warning to not separate list items by commas, otherwise you'll accidentally create a list with a tuple inside *)
+
+let bad_list = [1,2];; (* this shit becomes [(1,2)] *)
+
+(* ARRAYS *)
+
+(* "[| |]" surrounded, items are semicolon seperated *)
+(* statically allocated space, size of array declared at initialization * )
+(* statically allocated space, arrays can only contain same data type *)
+
+let my_array = [| 1;2;3 |];;
+
+(* ARRAY INDEXING *)
+
+my_array.(0);; (* this evaluates to the integer 1, the first element of the array with index 0 *)
+```
+
+## Strings and Characters
+
+```ocaml
+(*** STRINGS and CHARACTERS ***)
+
+(* double quotes for string literals *)
+(* single quotes for character literals *)
+(* single and double quotes are not interchangeable, effects may vary depending on how you mix them up *)
+
+let my_str = "Hello world";; (* string literal *)
+let my_char = 'a';; (* character literal *)
+let unintended_effect = "w";; (* this creates a single character string, not a character *)
+let syntax_error = 'syntax error';; (* this results in a syntax error *)
+
+(* STRING CONCATENATION *)
+
+(* ^ operator *)
+
+let some_str = "hello" ^ "world";; (* evaluates to "helloworld" string *)
+
+(* CAVEAT *)
+
+(* strings are NOT arrays of characters, and the two data types cannot be mixed in expressions *)
+(* characters are converted to strings with String.make 1 my_char *)
+
+let ocaml = (String.make 1 'O') ^ "Caml";; (* this evaluates to the string value "OCaml" by type converting a character to a string and concatenating that single-character string with the "Caml" string *)
+
+(* FORMATTED STRING *)
+
+(* C or Bash-like syntax *)
+
+Printf.printf "%d %s" 99 "bottles of beer";; (* evauates to the string value of "99 bottles of beer" *)
+
+(* PRINT STATEMENTS *)
+
+print_string "hello world\n";; (* prints string values without the newline character *)
+print_endline "hello world";; (* prints string with a newline character *)
+
+(* READ STRINGS *)
+
+let line = read_line();; (* does what it says it does *)
+```
+
+## User-defined data types
+
+```ocaml
+(*** USER-DEFINED DATA TYPES ***)
+
+(* defined using the type keyword *)
+
+type my_int = int;; (* this is an incredibly useless type alias, refrain from doing this *)
+
+(* there are also magic type constructors that must start with a capital letter, do google what these do for more detail *)
+
+type ml = Ocaml | StandardML;; 
+let lang = OCaml;; (* has the type "ml" *)
+
+(* the below are also valid type constructors *)
+
+type my_number = PlusInfinity | MinusInfinity | Real of float;;
+let r0 = Real (-3.4);; (* of type my_number *)
+
+(* type constructors can also be used to implement polymorphoc arithmetic *)
+
+type number = Int of int | Float of float;; 
+
+(* an example is of a point on a 2d plane *)
+
+type point2d = Point of float * float;;
+let my_point = Point (2.0, 3.0);;
+
+(* types can also be parameterized, like in this type for "list of lists of anything really" where 'a can be substituted with any type *)
+
+type 'a list_of_lists = 'a list list;;
+type int_list_list = int list_of_lists;;
+
+(* types can also mysteriously be recursive, like this type analogous to a built-in list of integers *)
+
+type my_int_list = EmptyList | IntList of int * my_int_list;;
+let l = IntList (1, EmptyList);;
+```
+
+## Pattern matching
+
+```ocaml
+(*** PATTERN MATCHING ***)
+
+(* all hail the pattern matching statement *)
+(* matches an argument against an exact value, a predicate or a type constructor *)
+(* _ acts as the catch-all default statement similar to Rust *)
+
+(* MATCHING against exact values *)
+
+let is_zero x = 
+    match x with 
+    | 0 -> true
+    | _  -> false
+;;
+
+let is_one = function  (* the function keyword is interchangeable with the match with *)
+    | 1 -> true
+    | _ -> false
+;;
+
+(* MATCHING predicates *)
+
+(* basically guarded pattern matching aka pattern matching with a conditional check *)
+
+let abs x = 
+    match x with 
+    | x when x < 0 -> -x
+    | _ -> x
+;;
+
+abs 5;; (* evaluates to 5 *)
+abs (-5);; (* also evaluates to 5 *)
+
+(* MATCHING type constructors *)
+
+type animal = Dog of string | Cat of string;;
+
+let say x = 
+    match x with 
+    | Dog x -> x ^ " says woof" 
+    | Cat x -> x ^ " says meow"
+;;
+
+say (Cat "Fluffy");; (* evaluates to the string "Fluffy says meow" *)
+
+(* TRAVERSING DATA STRUCTURES with pattern matching *)
+
+(* most commonly used for recursive types *)
+(* built-in constructor operator :: covered previously can be matched like any other since its a type constructor *)
+
+let rec sum_list l = 
+    match l with 
+    | [] -> 0
+    | head :: tail -> head + (sum_list tail)
+;;
+
+sum_list [1;2;3];; (* evaluates to 6 *)
+```
+
+## More on
+
+* [web-based editor and interpreter](https://ocaml.org/play)
+* [core documentation](https://ocaml.org/)
+* [another tutorial](https://cs3110.github.io/textbook/cover.html)
