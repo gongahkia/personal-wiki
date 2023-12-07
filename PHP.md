@@ -393,9 +393,14 @@ foreach ($meta as $food_item => $food_item_level) {
 
 * function defined with `function`
 * `return` functions similarly as in other languages
+* `&` is the reference operator and allows us to call by reference similar to C
 
 ```php
 <?php
+
+// PARAMETERS VS ARGUMENTS
+    // parameter is the variable used in the function definition
+    // argument is the value passed during function invocation
 
 // FUNCTION
     // default parameter values can be assigned
@@ -409,6 +414,63 @@ function add($x, $y=1) { // $y assigned a default value of 1 and it is an option
     return $x + $y;
 }
 
+// CALL BY VALUE
+    // function arguments are an alias for the actual variable, they are stored as a separate variable with a copy of the value of the argument during function invocation
+    // PHP handles this similarly to most other programming languages
+    // this safeguards the function arguments from being modified directly as a copy is returned, the function argument itself will not be altered by the function in memory (unlike a method)
+    // this is calling by value
+
+function call_by_value($alias) {
+    $alias = $alias * 2; // the $alias being assigned here stores a different value from the $alias function argument
+    return $alias;
+}
+
+// CALL BY REFERENCE
+    // PHP has references using the & (ampersand) operator
+    // this allows the function arguments to be directly modified by pointing the function to the function argument in memory, effectively creating a method (since the function does not need to return any value)
+    // this is calling by reference
+
+function call_by_reference(&$realthing) { // the & indicates that we are calling the function argument by reference
+    $realthing = $realthing * 3; // this will modify the actual value of the funtion argument directly, multiplying it by 3, and no value has to be returned explicitly since the function argument has already been modified
+}
+
+// SCOPE
+    // conventionally, scope is restricted within the degree of curly braces, which includes functions
+    // global scope is for variables available within scope of entire program
+    // local scope is for variables available within scope of current set of curly braces (could be for functions, loops, conditional checks etc.)
+
+function tryzap() {
+    $val = 100; // this $val here is completely separate from the below val and is in local scope
+}
+
+$val = 10; // this $val here is a completely different variable from the above val and is in global scope
+tryzap(); // as such, nothing will change here since we are neither calling the variable by reference nor reassigning $val in the global scope to accept a copy
+echo $val; // this will print out integer value of 10
+
+// GLOBAL
+    // the global keyword converts a variable within the local scope into one in the global scope
+    // avoid using global as far as possible, prioritize functional programming practices
+    // "this will affect the global scope"
+
+function dozap() {
+    global $val2; // causes the local variable $val2 to become a global variable
+    $val2= 100; // assigns the global variable $val2 the value of 100 within local scope, this will affect the global scope
+}
+
+$val2 = 10; // creates the global variable $val2 of value 10
+dozap(); // this will now change the global variable of $val2 since the function invocation converts the local variable $val2 into the global variable $val2
+echo $val2; // this will print out integer value of 100
+
+// CHECK IF FUNCTION EXISTS
+    // function_exists("function_name") returns TRUE or FALSE based on whether a function exists
+
+if (function_exists("array_combine")) {
+    array_combine($some_array);
+} else {
+    echo "walao eh";
+    // do something else
+}
+
 // ANONYMOUS FUNCTIONS
 
 $anon = function($x) {
@@ -416,13 +478,14 @@ $anon = function($x) {
 }
 echo $anon(2); // prints 3
 
+function ass($x, $y, $z) {
+    echo "$x - $y - $z";
+}
+
 // NESTED FUNCTIONS
     // functions can return functions
     // use keyword brings outside variables into scope
 
-function ass($x, $y, $z) {
-    echo "$x - $y - $z";
-}
 function bar($x, $y) {
     return function($z) use ($x, $y) { // use to bring in outside variables
         ass($x, $y, $z);
@@ -478,12 +541,13 @@ try {
 <?php
 
 // INCLUDE
+    // searches for the specified file, if absent returns a non-fatal error
 
 include 'my-file.php'; // code within my-file.php is now within scope, if the current file is not found it emitts a warning
 include_once 'my-file.php'; // will not include code from my-file.php if its been included elsewhere
 
 // REQUIRE
-    // functions the same way as include except a fatal error is created if file cannot be included
+    // functions the same way as include except a fatal error is created if specified file absent
 
 require 'my-file.php'; 
 require_once 'my-file.php';
@@ -706,6 +770,7 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
 * `_set`
 * `nowdoc`
 * `heredoc`
+* `phpinfo()`
 * namespaces
 * late static binding
 
