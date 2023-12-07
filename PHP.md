@@ -773,6 +773,7 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
 * `phpinfo()`
 * namespaces
 * late static binding
+* [superglobals](https://www.w3schools.com/php/php_superglobals.asp)
 
 # Web Applications
 
@@ -819,7 +820,4 @@ Parsed and rendered by the CSSOM.
 ## XAMPP
 
 * [installation guide](https://www.wa4e.com/software-win.php)
-
-## PHP
-
-* [PHP superglobal](https://www.w3schools.com/php/php_superglobals.asp)
+* [ngrok](https://ngrok.com/)
