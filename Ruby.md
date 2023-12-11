@@ -1,4 +1,4 @@
-> add notes from Control structures onwards
+> add notes from The contents of data structures can also be iterated using each.
 
 # `Ruby`
 
@@ -199,7 +199,39 @@ yet_another_hash.value?(3) # checks the existence of values in hash, evaluates t
 ## Control structures and logic flow
 
 ```ruby
+# CONDITIONALS
+    # similar syntax to bash
+    # postfix-if notation is available also
 
+if true
+    "if statement"
+elsif false
+    "else if, optional"
+else
+    "else, also optional"
+end
+
+warnings = ["Patronimic is missing", "Address is too short"]
+puts("Some warnings occured:\n" + warnings.join("\n")) if !warnings.empty? # postfix-if notation can be used for single statements with no code blocks
+puts("Some warnings occured:\n" + warnings.join("\n")) unless warnings.empty? # unless can be used in place with if
+
+# LOOPS
+    # traditional for loops aren't common
+    # basic loops are implemented with each enumerable
+    # also similar syntax to bash and rust
+
+# APPROVED SYNTAX AND COMMONLY SEEN
+(1..5).each do |counter|
+    puts "this is the ${counter}"
+end
+
+# this is also approved syntax since blocks can be wrapped in curly braces
+(1..5).each {|counter| puts "this is also the #{counter}"}
+
+# APPROVED SYNTAX BUT RARELY SEEN
+for counter in 1..5
+    puts "iteration #{counter}"
+end
 ```
 
 ## More on
