@@ -348,6 +348,7 @@ sum_list [1;2;3];; (* evaluates to 6 *)
 
 ## More on
 
+* [eliom full stack](https://github.com/ocsigen/eliom)
 * [web-based editor and interpreter](https://ocaml.org/play)
 * [core documentation](https://ocaml.org/)
 * [another tutorial](https://cs3110.github.io/textbook/cover.html)
