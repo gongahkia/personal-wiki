@@ -1,5 +1,3 @@
-> add notes from The contents of data structures can also be iterated using each.
-
 # `Ruby`
 
 In Ruby, everything is an object.
@@ -32,10 +30,10 @@ comment
 :pending.class # Symbol
 ```
 
-## Variables
+## Variables, Constants, Scope
 
 ```ruby
-# VARIABLE
+# ---------- VARIABLE ----------
     # variable assignment returns the value assigned
     # by convention, snake_case used for variable names
 
@@ -44,6 +42,17 @@ another_variable = "awesome sauce"
 yet_another_variable = true
 
 x = y = 10 # this will assign 10 to y, and that will then return 10 which is assigned to x
+
+# ---------- SCOPE ----------
+    # $ for global variables
+    # @ for instance scope 
+    # @@ for class scope
+    # capitalised variable names for constants
+
+$var = "I'm a global variable"
+@var = "I'm an instance variable"
+@@var = "I'm a class variable"
+Var = "I'm a constant"
 ```
 
 ## Types
@@ -104,6 +113,10 @@ other_eg_bool = false # of the FalseClass
 
 true && false # and, evaluates to false
 true || false # or, evaluates to true
+
+# by convention, all methods that return booleans end with a question mark
+5.even? # returns false
+5.odd? # returns true
 
 # ---------- SYMBOL ----------
     # symbols are immutable reusable constants often used in place of strings to convey specific meaning
@@ -199,9 +212,11 @@ yet_another_hash.value?(3) # checks the existence of values in hash, evaluates t
 ## Control structures and logic flow
 
 ```ruby
-# CONDITIONALS
+# ---------- CONDITIONALS ----------
     # similar syntax to bash
     # postfix-if notation is available also
+
+# if elsif else
 
 if true
     "if statement"
@@ -215,10 +230,39 @@ warnings = ["Patronimic is missing", "Address is too short"]
 puts("Some warnings occured:\n" + warnings.join("\n")) if !warnings.empty? # postfix-if notation can be used for single statements with no code blocks
 puts("Some warnings occured:\n" + warnings.join("\n")) unless warnings.empty? # unless can be used in place with if
 
-# LOOPS
+# case when else
+    # else functions as the default statement
+    # cases can also use ranges!
+
+grade = "B"
+case grade
+when "A"
+    puts "lovely"
+when "B"
+    puts "ok but good job"
+when "C"
+    puts "watermelon sugar high"
+else
+    puts "Alternative grading system, eh?"
+end
+
+num_grade = 82
+case num-grade
+when 90..100
+    puts "nice one"
+when 80..90
+    puts "lovely job"
+else
+    puts "You failed!"
+end
+
+# ---------- LOOPS ----------
     # traditional for loops aren't common
     # basic loops are implemented with each enumerable
     # also similar syntax to bash and rust
+    # Ruby has other looping functions like map, reduce and inject
+
+# .each DO AND .each_with_index DO LOOPS
 
 # APPROVED SYNTAX AND COMMONLY SEEN
 (1..5).each do |counter|
@@ -232,9 +276,153 @@ end
 for counter in 1..5
     puts "iteration #{counter}"
 end
+
+# you can also iterate over elements in data structrues like Hashes and Maps
+array.each do |element|
+    puts "this is an #{element}"
+end
+hash.each do |key,value|
+    puts "this is a #{key} and this is a #{value}"
+end
+
+# .each_with_index returns an index with an iterable, similar to enumerate() in python
+array.each_with_index do |element, index|
+    puts "#{element} and this is an #{index}"
+end
+
+# WHILE DO LOOPS
+counter = 1
+while counter <= 5 do
+    puts "iteration #{counter}"
+    counter += 1
+end
+```
+
+## Methods
+
+Since Ruby is largely OOP, functions are methods called on objects.
+
+```ruby
+# ---------- METHODS ----------
+    # similar to Scala and Rust, methods implictly return the value of the last statement
+    # def
+    # yield
+
+def double(x)
+    x * 2 # x * 2 is returned
+end
+
+double(2) # this returns 4
+double 3 # parantheses are optional when interpretation of methods is unambigious, this returns 6
+
+double double 3 # this returns 12
+
+def sum(x,y)
+    x + y
+end
+
+sum 3,4 # method arguments are separated by commas, this returns 7
+sum sum (3,4), 5 # this returns 12
+
+# yield
+    # implicit optional block parameter that can be returned
+
+def surround 
+    puts "{"
+    yield
+    puts "}"
+end
+
+surround {puts "hello world"} # this returns { hello world } with hello world being a variable
+
+# by convention, if the method name ends with an exclamation mark, the method does something destructive like mutate the receiver
+    # many methods have ! version that modifies the existing object, and a non-! version that returns a copy of the changed version
+```
+
+## Class
+
+```ruby
+# ---------- CLASSES ----------
+class Human # create a class
+
+    @@species = "Homo Sapiens" # @@ creates a class variable that is shared across all instances of the Human class
+
+    # INSTANCE METHODS
+
+    def initialize(name, age=0) # default constuctor method, it can be named anything really and serves the purpose of assigning values to the attributes of the instance object
+        @name = name
+        @age = age
+    end
+
+    def name=(name) # basic setter method
+        @name = name
+    end
+
+    def name # basic getter method
+        @name
+    end
+
+    # CLASS METHODS
+        # only be called on the class, not an instance object
+
+    def self.say(msg) # the self. distinguishes a class method from an instance method
+        puts msg
+    end
+
+    def species
+        @@species
+    end
+
+end
+
+# INSTANTIATING A NEW CLASS OBJECT
+    # .new()
+
+jim = Human.new("Jimmy Neutron")
+dwight = Human.new("Dwight Howard")
+
+# calling instance methods
+jim.species
+jim.name # returns the name as a String
+jim.name = "Jim the science guy" # takes in the assigned String value as the new instance object attribute
+dwight.species
+
+# calling class methods
+Human.say("Hello sir") # returns "Hello sir"
+
+# INHERITANCE
+
+class Worker < Human # class Worker inherits all attributes and methods of the Human class
+end
+```
+
+## Exception handling
+
+```ruby
+# ---------- EXCEPTION HANDLING ----------
+    # begin
+    # raise
+    # rescue =>
+    # ensure
+    # else
+
+begin
+  raise NoMemoryError, 'You ran out of memory.' # raises an exception
+rescue NoMemoryError => exception_variable
+  puts 'NoMemoryError was raised', exception_variable
+rescue RuntimeError => other_exception_variable
+  puts 'RuntimeError was raised now'
+else
+  puts 'This runs if no exceptions were thrown at all'
+ensure
+  puts 'This code always runs no matter what'
+end
 ```
 
 ## More on
 
+* destructuring
+* splat operator
 * [ruby ecosystem](https://learnxinyminutes.com/docs/ruby-ecosystem/)
 * [ruby documentation](https://www.ruby-lang.org/en/documentation/quickstart/)
+* [try ruby](https://try.ruby-lang.org/)
