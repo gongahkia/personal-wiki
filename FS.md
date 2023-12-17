@@ -208,6 +208,32 @@ let simplePatternMatch =
         | "a" -> printfn "x is a"
         | "b" -> printfn "x is b"
         | _ -> printfn "catch all operator hit" // F# does not allow nulls by default, an Option type must be used for pattern matching, although None is a valid value
+
+// ---------- IF ELIF ELSE THEN ----------
+    // F# also has the standard conditional checks, which work as expected
+    // you can assign boolean expressions to variables and functions
+
+let test x y =
+    if x = y then "they are equals"
+    elif x < y then "x is less than y"
+    else "x is greater than y"
+```
+
+## Loops
+
+```fs
+// ---------- LOOP ----------
+    // for in do allows you to iterate over a collection of elements
+    // indentation matters
+    // loops can be used to iterate over different patterns as well
+
+let list1 = [1; 5; 100; 450; 788]
+for i in list1 do
+    printfn "%d" i
+
+let seq1 = seq {for i in 1..10 -> (i, i*i)}
+for (a, asqr) in seq1 do
+    printfn "%d squared is %d" a asqr
 ```
 
 ## Helpful functions
