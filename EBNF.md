@@ -1,4 +1,4 @@
-# EBNF
+# `EBNF`
 
 Extended Backus-Naur Form is a notation *(metalanguage)* used to define a programming language's syntax.   
 
