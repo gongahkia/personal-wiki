@@ -1,4 +1,4 @@
-# Make 
+# `Make`
 
 A `Makefile` is a text file which is universally recognised on all platforms, and can be used to run default commands for your project's build system.  
 
