@@ -8,9 +8,7 @@ As a superset of Javascript, *Typescript code compiles to Javascript code*.
 
 ## Quick Start
 
-### Syntax summary
-
-![](../assets/typescript.png)
+### [Syntax summary](https://www.typescriptlang.org/cheatsheets)
 
 ### Installing and compiling Typescript 
 
