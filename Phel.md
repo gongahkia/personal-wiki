@@ -1,4 +1,4 @@
-# `phel`
+# `Phel`
 
 A dialect of lisp that compiles to PHP 8.0 and up.
 
