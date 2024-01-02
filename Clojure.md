@@ -149,6 +149,23 @@ nil ; special value nil
   :else "Unknown day") ; this evaluates to "Tuesday"
 
 ; LOOPS
+    ; for most iterative solutions, clojure's functional programming constructs are encouraged instead of loops (map, reduce, filter)
+    ; loop => creates and defines the lexical scope of a loop, used alongside recur
+    ; recur => indicates to initiate another iteration of the current loop with recursion
+    ; doseq => creates a loop that iterates over a specified structure, achieved without explicit recursion
+
+(defn countdown-recur [n]
+  (loop [i n]
+    (if (<= i 0)
+      "Blast off!"
+      (do
+        (println i)
+        (recur (dec i)))))) ; function definition for a function that contains a recursive loop which counts down from n to 0, then prints blast off, here recur is used to decrement i by 1 and initiate another iteration of the loop
+
+(defn countdown-iter [n]
+  (doseq [i (range n 0 -1)]
+    (println i))
+  (println "Blast off!")) ; function defintion for a function that achieves the same thing as the above function, but does it using doseq to create a loop that does not rely on explicit recursion but instead iterates over a vector created using the range function
 ```
 
 ## Data structures
