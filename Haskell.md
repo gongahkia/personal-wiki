@@ -1,78 +1,67 @@
+> continue editing these notes and add details from [here](https://learnxinyminutes.com/docs/haskell/)
+
 # `Haskell`
 
-![](https://upload.wikimedia.org/wikipedia/en/thumb/4/4d/Logo_of_the_Haskell_programming_language.svg/2560px-Logo_of_the_Haskell_programming_language.svg.png)
+Strict statically-typed functional language.
 
-## What is Haskell?
+## Comments
 
-Haskell is a <u>strictly **functional**</u> programming language. This entails...
+```hs
+-- ---------- COMMENT ----------
 
-* Functions have ***no side-effects***.
-* Functions calculate something and return a result *(referential transparency)*.
+-- this is a single-line comment
 
-Haskell is <u>**lazy**</u>. This entails...
+{-
+this 
+is a 
+multi-line
+comment
+-}
+```
 
-* Haskell ***won't*** execute a function unless it is forced to display its result.
+## Printing
 
-Haskell is <u>**statically typed**</u>, but supports *type inference*. This entails...
+```hs
+-- ---------- PRINT ----------
+    -- putStrLn => prints a string to the stdout and appends a newline to the output
+    -- putStr => prints a string to the stdout and does not include a newline
+    -- print => prints a value of the Show type class to the stdout and appends a newline to the output
 
-* Haskell's compiler can catch most type errors at compile time.
-
-> On the [differences between functional and imperative languages](https://stackoverflow.com/questions/17826380/what-is-difference-between-functional-and-imperative-programming-languages).
-
----
+main :: IO ()
+main = do 
+    putStrLn "this watermelon statement includes a newline at the end automatically"
+    putStr "this pineapple statement does not include a newline at the end and must be specified explicitly by us\n"
+```
 
 ## Quickstart
 
-### [Installation](https://www.haskell.org/downloads/)
+```hs
+-- ---------- QUICKSTART ----------
+    -- functional programming language with no side-effects, where everything is an expression that must evaluate to a value, including function definitions
+    -- lazy evaluation, where functions will only be evaluated when called 
+    -- executable files require a main function to be called, which serves as the entry point for the program allowing for file IO (classified as a side-effect in pure functional languages)
 
-### Usage
-
-> Read the second chapter of [*Learn you a Haskell for Great Good!*](http://learnyouahaskell.com/)
-
---- 
-
-### Functions in Haskell
-
-Haskell is built around functions *(which are built upon expressions)*, so let's start there.
-
-> Functions can be quickly tested out in `ghci` mode with `:l {file name}`, which compiles the Haskell file.
-
-* Functions are called by writing **function name** and **parameters** *(separated by spaces)*
-
-```haskell
-max 100 101 
--- returns 101 to the stdout
+main :: IO ()
+main = putStr "fear and hunger truly is a game"
 ```
 
-* Functions are defined by writing **function name**, **parameters**, `=` and **function body**
+## Variables
 
-```haskell
-doubleMe x = x + x
-doubleUs x y = x*2 + y*2
+```hs
+-- ---------- VARIABLE ----------
+    --
 ```
 
-* Functions that *don't take any parameters* are called <u>**definitions**</u>.
+## Types
 
-```haskell
-conanO'Brien = "It's a me, Conan O'Brien!" -- this is a definition
+```hs
+-- ---------- TYPE ----------
+    --
+
+-- TYPE SIGNATURES
+    --
+
 ```
-
-#### `if` statements
-
-* `If` statements in Haskell are **expressions** *(which always evaluate to something)*, so `else` blocks are madantory.
-    * Note the `if`, `then`, `else` block syntax.
-
-```haskell
-doubleSmallNumber x = if x > 100
-                      then x 
-                      else x*2 
-                      -- else blocks are madantory in Haskell if expressions 
-
-doubleSmallNumber' x = (if x > 100 then x else x*2) + 1 
--- the backtick ' denotes a strict version of the function / slightly modified version
-```
-
----
 
 ### Data Types
 
@@ -104,6 +93,130 @@ addThree :: Int -> Int -> Int -> Int
 -- there is no distinction between the parameters and return type, they are all separated by ->
 addThree x y z = x + y + z
 ```
+
+## Operators
+
+```hs
+-- ---------- OPERATOR ----------
+
+-- ARITHMETIC OPERATORS
+    --
+
+-- LOGICAL OPERATORS
+    --
+
+-- COMPARISON OPERATORS
+    --
+
+```
+
+## Control structures
+
+```hs
+-- ---------- CONTROL STRUCTURE ----------
+
+-- CONDITIONALS
+
+-- IF THEN ELSE
+    -- else => required in every if statement since every expression (including conditional expressions) must evalaute to a value
+
+doubleSmallNumber :: (Num a, Ord a) => a -> a
+doubleSmallNumber x = if x > 100
+                      then x 
+                      else x*2 
+
+-- CASE OF _
+    -- powerful pattern-matching construct similar to the match case statements in other languages
+    -- _ => wildcard catch-all operator that acts as the equivalent of the default statement in other languages
+
+numberAsString :: Int -> String -- static type declaration of an expression prior to expression initialisation
+numberAsString num = case num of
+    1 -> "One"
+    2 -> "Two"
+    3 -> "Three"
+    _ -> "Unknown but also the catch-call wildcard operator"
+
+-- LOOPS DON'T EXIST
+    -- higher-order functions, recursion, list comprehension are used in place of imperative loop constructs like for or while loops, which Haskell does not have
+
+-- HIGHER-ORDER FUNCTIONS
+    -- map => applies a specified function on each element of an iterable structure and returns the transformed data structure
+    -- filter => applies a specified predicate to each element of an iterable structure and returns the data structure with elements that fulfil the predicate
+    -- foldl, foldr => reduces a list to a single value by repeatedly applying a specified binary function to each element of the list, the equivalent of reduce in Haskell
+    -- zipWith => combines two lists with a specified function
+    -- compose => declared with a . period, combines two functions into a new function
+    -- flip => receives a function, reverses its first two arguments and returns that new function
+
+squareList :: Num a => [a] -> [a]
+squareList xs = map (\x -> x * x) xs -- calling map function
+
+evenNumbers :: Integral a => [a] -> [a]
+evenNumbers xs = filter even xs -- calling filter function
+
+sumList :: Num a => [a] -> a
+sumList xs = foldl (+) 0 xs -- calling reduce function
+
+addLists :: Num a => [a] -> [a] -> [a]
+addLists xs ys = zipWith (+) xs ys -- calling zipWith function
+
+squareAndDouble :: Num a => a -> a
+squareAndDouble = (*2) . (^2) -- calling compose function
+
+subtractFrom :: Num a => a -> a -> a
+subtractFrom = flip (-) -- calling flip function
+
+-- RECURSION
+
+sumList :: Num a => [a] -> a 
+sumList [] = 0
+sumList (x:xs) = x + sumList xs -- simple recursion to sum the elements of a list
+
+-- LIST COMPREHENSION
+
+squareList :: Num a => [a] -> [a]
+squareList xs = [x * x | x <- xs] -- list comprehension used to generate lists concisely
+```
+
+## Data structures
+
+```hs
+-- ---------- DATA STRUCTURE ----------
+```
+
+## Functions
+
+```hs
+-- ---------- FUNCTION ----------
+```
+
+
+### Functions in Haskell
+
+Haskell is built around functions *(which are built upon expressions)*, so let's start there.
+
+> Functions can be quickly tested out in `ghci` mode with `:l {file name}`, which compiles the Haskell file.
+
+* Functions are called by writing **function name** and **parameters** *(separated by spaces)*
+
+```hs
+max 100 101 
+-- returns 101 to the stdout
+```
+
+* Functions are defined by writing **function name**, **parameters**, `=` and **function body**
+
+```haskell
+doubleMe x = x + x
+doubleUs x y = x*2 + y*2
+```
+
+* Functions that *don't take any parameters* are called <u>**definitions**</u>.
+
+```haskell
+conanO'Brien = "It's a me, Conan O'Brien!" -- this is a definition
+```
+
+---
 
 #### Type variables
 
@@ -563,11 +676,12 @@ ghci> [a+b | (a,b) <- xs]
 [4,7,6,8,11,4]
 ```
 
-#### [Guards](http://learnyouahaskell.com/syntax-in-functions)
+## More on
 
-#### [Where](http://learnyouahaskell.com/syntax-in-functions)
-
-#### [Let](http://learnyouahaskell.com/syntax-in-functions)
-
-#### [Case](http://learnyouahaskell.com/syntax-in-functions)
-
+* guards
+* where
+* let
+* case
+* [install haskell](https://www.haskell.org/downloads/)
+* [learn haskell in y minutes](https://learnxinyminutes.com/docs/haskell/)
+* [learn you a haskell for great good](https://learnyouahaskell.com/chapters)
