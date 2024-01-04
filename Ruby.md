@@ -423,6 +423,10 @@ end
 
 * destructuring
 * splat operator
-* [ruby ecosystem](https://learnxinyminutes.com/docs/ruby-ecosystem/)
-* [ruby documentation](https://www.ruby-lang.org/en/documentation/quickstart/)
 * [try ruby](https://try.ruby-lang.org/)
+* [ruby documentation](https://www.ruby-lang.org/en/documentation/quickstart/)
+* [rubygems package manager](https://rubygems.org/)
+* [ruby version manager](https://rvm.io/)
+* [bundler for ruby dependency management](https://bundler.io/)
+* [ruby ecosystem](https://learnxinyminutes.com/docs/ruby-ecosystem/)
+* [rubymotion for ios development](http://www.rubymotion.com/)
