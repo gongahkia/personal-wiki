@@ -1,5 +1,3 @@
-> continue editing these notes and add details from [here](https://learnxinyminutes.com/docs/haskell/)
-
 # `Haskell`
 
 Strict statically-typed functional language.
@@ -45,52 +43,55 @@ main :: IO ()
 main = putStr "fear and hunger truly is a game"
 ```
 
-## Variables
+## Functions and Definitions
 
 ```hs
--- ---------- VARIABLE ----------
-    --
+-- ---------- FUNCTION ----------
+    -- as a functional language, Haskell revolves around functions, which are all expressions that evaluate to a value
+    -- function defined with the syntax => {FUNCTION NAME} {FUNCTION PARAMETERS SPACE DELIMITED} = {FUNCTION BODY}
+    -- functions called with the syntax => {FUNCTION NAME} {FUNCTION ARGUMENTS SPACE DELIMITED}
+    -- function parameter and return type type signatures are optionally declared before function defintion, but encouraged for clear code
+
+max 100 101 -- this evaluates to the Int value 101
+
+doubleMe :: Int -> Int
+doubleMe x = x + x
+
+doubleUs :: Int -> Int -> Int
+doubleUs x y = x*2 + y*2
+
+-- ---------- DEFINITION ----------
+    -- as a functional language, Haskell has no concept of 'variables' and every binding is immutable by default since modification of a value binding entails side-effects and instead, every value can be modified through a function expression which evaluates to a transformed return value
+    -- these are called definitions, the equivalent of constant bindings in other languages
+    -- let => creates a local binding within a specified lexical scope that can only be accessed within its own local scope
+    -- raw definition creates a global binding that can be accessed anywhere in the program
+
+let jimmyFallon = "It's a me, Jimmy Fallon!" -- this creates a local binding
+conanOBrien = "It's a me, Conan O'Brien!" -- this creates a global binding
 ```
 
 ## Types
 
 ```hs
 -- ---------- TYPE ----------
-    --
+    -- Int => bounded integer number with a minimum and maximum value
+    -- Integer => unbounded integer number with no minimum and maximum value
+    -- Float => single precision floating point number, 32 bits
+    -- Double => double precision floating point number, 64 bits
+    -- Bool => True, False
+    -- Char => single quotation marks
+    -- String => double quotation marks, a string list
 
 -- TYPE SIGNATURES
-    --
+    -- functions have their parameter and return type's type signatures explicitly declared before the function definition
+    -- :: => means "has the type of"
+    -- -> => seperates each parameter type and return type with a syntax very similar to Clojure
 
-```
 
-### Data Types
-
-Types are written in capital case.
-
-* Whole numbers
-    * `Int` *(<u>**bounded**</u>, having a minimum and maximum value)*
-    * `Integer` *(<u>**not bounded**</u>, can represent really large numbers)*
-
-* Floating points
-    * `Float` *(<u>**single precision**</u>, represented by 32 bits)*
-    * `Double` *(<u>**double precision**</u>, represented by 64 bits)*
-
-* `Bool` *(True or False)*
-* `Char` *(denoted by single quotes)*
-* `String` == `[Char]` *(denoted by double quotes)*
-
-Functions are accompanied by <u>explicit type declaration</u> for its **parameters** and **return types** as well.
-
-* `::` is read as "has the type of".
-* `->` separates each parameter and the return type *(there is no special distinction between the parameter and return value's data type)*.
-
-```haskell
-removeNonUppercase :: [Char] -> [Char] 
--- explicit type declaration for the previously covered function that removes all uppercase letters
+removeNonUppercase :: [Char] -> [Char] -- this function removes all uppercase characters
 removeNonUppercase st = [ c | c <- st, c `elem` ['A'..'Z']]
 
-addThree :: Int -> Int -> Int -> Int 
--- there is no distinction between the parameters and return type, they are all separated by ->
+addThree :: Int -> Int -> Int -> Int -- this function receives three arguments of type Int and returns a value of type Int
 addThree x y z = x + y + z
 ```
 
@@ -181,42 +182,76 @@ squareList xs = [x * x | x <- xs] -- list comprehension used to generate lists c
 
 ```hs
 -- ---------- DATA STRUCTURE ----------
+
+-- LIST
+    -- ordered sequence of elements of the same type (so strings are char lists)
+    -- declared with [] square brackets, elements are comma-delimited 
+
+lostNumbers = [1,2,3,4,5] -- an Int list in Haskell
+
+-- LIST OPERATIONS
+    -- ++ => concatenates two lists together, though Haskell has to traverse the entire left list before processing the concatenation
+    -- : => inserts a value to the start of the list immediately, much faster than concatenation
+    -- !! => extracts a list element by index
+    -- < > == => compares list elements in lexographical order
+    -- head => returns the first element of a list
+    -- tail => returns everything but the list's head
+    -- last => returns the last element of a list
+    -- init => returns everything but the list's last element
+    -- length => returns the length of the list
+    -- null => checks whether a list is empty and returns a Boolean
+    -- reverse => returns a reversed copy of a list
+    -- take => extracts a specified number of elements from the start of a list
+    -- drop => drops a specified number of elements from the start of a list and returns the remaining elements as a sublist
+    -- maximum => returns the element of maximum value in a list
+    -- minimum => returns the element of minimum value in a list
+    -- sum => returns the sum of all elements in a list
+    -- product => returns the product of all elements in a list
+    -- elem => checks whether a specified element is part of a list and returns a Boolean
+
+yesList = [1,2,3,4,5] ++ [6,7,8,9,10] -- this evaluates to the list value [1,2,3,4,5,6,7,8,9,10]
+yesGreeting = "hello" ++ " " ++ "uncle" -- this evaluates to the String (Char list) value "hello uncle"
+observation = 'a':" small cat" -- this evaluates to the String (Char list) value "a small cat"
+theHero = "Steve Buscemi" !! 6 -- this evaluates to the Char value 'B', which has an index of 6 in the String (Char list)
+booleanYesOrNo = [3,4,2] > [3,2] -- this evaluates to Boolean True
+theHead = head [5,4,3,2,1] -- this evaluats to the Int value 5
+theTail = tail [5,4,3,2,1] -- this evaluates to the Int list of [4,3,2,1] 
+theLastElement = last [1,2,3,4,5] -- this evaluates to the Int value 5
+theInit = init [5,4,3,2,1] -- this evaluates to the Int list of [5,4,3,2]
+theLength = length [1,2,3,4,5] -- this evaluates to the Int value 5
+theNullCheck = null [] -- this evaluates to Boolean True
+anotherNullCheck = null [1,2,3] -- this evaluates to Boolean False
+theReversedList = reverse [5,4,3,2,1] -- this evaluates to the Int list of [1,2,3,4,5]
+extractedList = take 3 [1,2,3,4,5] -- this evaluates to the Int list of [1,2,3]
+anotherExtractedList = take 0 [6,6,6] -- this evaluates to the empty list of [] since 0 elements were extracted
+yetAnotherExtractedList = take 5 [1,2] -- this evaluates to the Int list of [1,2] since the entire list was extracted
+droppedList = drop 3 [1,2,3,4,5,6,7,8] -- this evaluates to the Int list of [4,5,6,7,8]
+anotherDroppedList = drop 0 [1,2,3,4] -- this evaluates to the Int list of [1,2,3,4] since no values were dropped
+yetAnotherDroppedList = drop 100 [1,2,3,4] -- this evaluates to the empty list of [] since all the values were dropped
+maximumValue = maximum [1,2,3,4,5,83,10] -- this evaluates to the Int value of 83
+minimumValue = minimum [0,2,200,1,7] -- this evaluates to the Int value of 0
+sumOfValues = sum [2,3,5,129] -- this evaluates to the Int value of 139
+productOfValues = product [2,3,10,4] -- this evaluates to the Int value of 240
+isItPartOfList = 4 `elem` [3,4,5,6] -- this evaluates to Boolean True
+isItAlsoPartOfList = 10 `elem` [3,4,5,6] -- this evaluates to Boolean False
+
+-- TUPLE
+    -- ordered sequence of elements of a fixed size that can store different types
+    -- declared with () brackets, elements are comma-delimited
+
+someTuple = (8, 11) -- an Int tuple in Haskell
+
+-- TUPLE OPERATIONS
+    -- fst => receives a pair (tuple with two elements) as an argument and returns the first element
+    -- snd => receives a pair (tuple with two elements) as an argument and returns the second element
+    -- zip => takes two lists and returns a list of pairs comprised of elements of corresponding positions in the input lists
+
+firstElement = fst (1, 2) -- this evaluates to the Int value 1
+secondElement = snd (1, 2) -- this evaluates to the Int value 2
+list1 = [1, 2, 3]
+list2 = ["one", "two", "three"]
+zippedList = zip list1 list2 -- this evaluates to the Int tuple list value of [(1, "one"), (2, "two"), (3, "three")]
 ```
-
-## Functions
-
-```hs
--- ---------- FUNCTION ----------
-```
-
-
-### Functions in Haskell
-
-Haskell is built around functions *(which are built upon expressions)*, so let's start there.
-
-> Functions can be quickly tested out in `ghci` mode with `:l {file name}`, which compiles the Haskell file.
-
-* Functions are called by writing **function name** and **parameters** *(separated by spaces)*
-
-```hs
-max 100 101 
--- returns 101 to the stdout
-```
-
-* Functions are defined by writing **function name**, **parameters**, `=` and **function body**
-
-```haskell
-doubleMe x = x + x
-doubleUs x y = x*2 + y*2
-```
-
-* Functions that *don't take any parameters* are called <u>**definitions**</u>.
-
-```haskell
-conanO'Brien = "It's a me, Conan O'Brien!" -- this is a definition
-```
-
----
 
 #### Type variables
 
@@ -257,7 +292,7 @@ ghci> :t (>)
 > 
 > Similarly, the comparison function takes any two values that are the same type *(`a -> a`)*, and the type must be a member of the `Ord` class, a.k.a the **class constraint** *(`(Ord a)`)*, returning a Bool.
 
-####Explicit type annotations</h4>
+#### Explicit type annotations</h4>
 
 This was somewhat covered above, but we employ **explicit type annotation** with the `::` operator where needed with *certain Haskell functions*.
 
@@ -312,192 +347,6 @@ singleCharPred = pred 'F'
 
 ---
 
-### Data Structures
-
-#### Lists 
-
-Lists are a **homogenous** data structure *(storing elements of <u>same type</u>)*.
-
-> Strings are lists too!
-
-* Lists are denoted by `[]` square brackets and elements are *comma-separated*.
-
-```haskell
-lostNumbers = [1,2,3,4,5]
-greeting = "hello brother"
-```
-
-* `++` operator <u>**concatenates** two lists</u> *(Haskell has to traverse the entire left list before processing the concatenation)*.
-
-```haskell
-yesList = [1,2,3,4,5] ++ [6,7,8,9,10] 
--- returns [1,2,3,4,5,6,7,8,9,10]
-
-yesGreeting = "hello" ++ " " ++ "uncle" 
--- returns "hello uncle"
-```
-
-* `:` cons operator <u>instantaneously **prepends** a value to a list</u>.
-
-```haskell
-observation = 'A':" small cat" 
--- this returns "A small cat" at a significantly faster speed than pure concatenation
-```
-
-* `!!` operator <u>**extracts list elements** by index</u>.
-
-```haskell
-theHero = "Steve Buscemi" !! 6 
--- this returns character 'B', which has an index of 6
-```
-
-* `<`, `>` `==` <u>**compares list elements** in [**lexographical order**](https://stackoverflow.com/questions/45950646/what-is-lexicographical-order)</u>.
-
-```haskell
-booleanYesOrNo = [3,4,2] > [3,2] 
--- returns True
-```
-
-####Other List functions</h4>
-
-* `head` returns a **list's head**.
-
-```haskell
-theHead = head [5,4,3,2,1] 
--- returns 5
-```
-
-* `tail` returns a **list's tail** *(by chopping off the list's head)*.
-
-```haskell
-theTail = tail [5,4,3,2,1] 
--- returns [4,3,2,1] as a list
-```
-
-* `last` returns **last element of list**.
-
-```haskell
-theLastElement = last [1,2,3,4,5] 
--- returns 5
-```
-
-* `init` returns **everything except list's last element**.
-
-```haskell
-theInit = init [5,4,3,2,1] 
--- returns [5,4,3,2] as a list
-```
-
-* `length` returns **length of list**.
-
-```haskell
-theLength = length [1,2,3,4,5] 
--- returns 5
-```
-
-* `null` checks whether **list is empty** *(returns a boolean value)*.
-
-```haskell
-theNullCheck = null [] 
--- returns True
-
-anotherNullCheck = null [1,2,3] 
--- returns False
-```
-
-* `reverse` **reverses a list**.
-
-```haskell
-theReversedList = reverse [5,4,3,2,1] 
--- returns [1,2,3,4,5] as a list
-```
-
-* `take` **extracts** a specified number of elements from the start of a list.
-
-```haskell
-extractedList = take 3 [1,2,3,4,5] 
--- returns [1,2,3]
-
-anotherExtractedList = take 0 [6,6,6] 
--- returns [] an empty list
-
-yetAnotherExtractedList = take 5 [1,2] 
--- returns [1,2], the entire list
-```
-
-* `drop` **drops** a specified number of elements from the start of a list, and returns the remaining elements.
-
-```haskell
-droppedList = drop 3 [1,2,3,4,5,6,7,8] 
--- returns [4,5,6,7,8]
-
-anotherDroppedList = drop 0 [1,2,3,4] 
--- returns [1,2,3,4], the entire list
-
-yetAnotherDroppedList = drop 100 [1,2,3,4] 
--- returns [], an empty list
-```
-
-* `maximum` returns element of **maximum value** in a list.
-
-```haskell
-maximumValue = maximum [1,2,3,4,5,83,10] 
--- returns 83
-```
-
-* `minimum` returns element of **minimum value** in a list.
-
-```haskell
-minimumValue = minimum [0,2,200,1,7] 
--- returns 0
-```
-
-* `sum` returns the **sum** of all elements in a list.
-
-```haskell
-sumOfValues = sum [2,3,5,129] 
--- returns 139
-```
-
-* `product` returns the **product** of all elements in a list.
-
-```haskell
-productOfValues = product [2,3,10,4] 
--- returns 240
-```
-
-* `elem` checks whether an element is **part of a list** *(returns a boolean value)*.
-
-```haskell
-isItPartOfList = 4 `elem` [3,4,5,6] 
--- returns True
-
-isItAlsoPartOfList = 10 `elem` [3,4,5,6] 
--- returns False
-```
-
-#### Tuples
-
-Tuples are a **non-homogenous** data structure *(storing elements of <u>different types</u>)* that can store a <u>**fixed** number of elements</u>.
-
-* Tuples are denoted by `()` normal brackets and elements are *comma-separated*.
-
-```haskell
-someTuple = (8, 11) 
--- a definition of the tuple someTuple
-```
-  
-> Tuples are differentiated based on the **<u>size</u> of the tuple** and the **<u>data type</u> of its elements**, and each permutation of those two factors is its own *data type*. 
->
-> As such, there are **theoretically** an infinite number of tuple types.
-
-#### Other Tuple functions to look into
-
-* [`fst`](http://zvon.org/other/haskell/Outputprelude/fst_f.html)
-* [`snd`](http://zvon.org/other/haskell/Outputprelude/snd_f.html)
-* [`zip`](http://zvon.org/other/haskell/Outputprelude/zip_f.html)
-
-> See pg 18 of *Learn you a Haskell for Great Good!* for a fantastic example on tuples and list comprehension.
 
 ---
 
