@@ -19,6 +19,12 @@ new:
 	echo "" >> "$$title".md; \
 	echo "\`\`\`" >> "$$title".md; \
 	echo "" >> "$$title".md; \
+	echo "## Quickstart" >> "$$title".md; \
+	echo "" >> "$$title".md; \
+	echo "\`\`\`$$language" >> "$$title".md; \
+	echo "" >> "$$title".md; \
+	echo "\`\`\`" >> "$$title".md; \
+	echo "" >> "$$title".md; \
 	echo "## Types" >> "$$title".md; \
 	echo "" >> "$$title".md; \
 	echo "\`\`\`$$language" >> "$$title".md; \
