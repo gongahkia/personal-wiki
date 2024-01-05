@@ -23,7 +23,7 @@ comment
 -- ---------- PRINT ----------
     -- putStrLn => prints a string to the stdout and appends a newline to the output
     -- putStr => prints a string to the stdout and does not include a newline
-    -- print => prints a value of the Show type class to the stdout and appends a newline to the output
+    -- print => prints a value of the Show typeclass to the stdout and appends a newline to the output
 
 main :: IO ()
 main = do 
@@ -87,12 +87,27 @@ conanOBrien = "It's a me, Conan O'Brien!" -- this creates a global binding
     -- :: => means "has the type of"
     -- -> => seperates each parameter type and return type with a syntax very similar to Clojure
 
-
 removeNonUppercase :: [Char] -> [Char] -- this function removes all uppercase characters
 removeNonUppercase st = [ c | c <- st, c `elem` ['A'..'Z']]
 
 addThree :: Int -> Int -> Int -> Int -- this function receives three arguments of type Int and returns a value of type Int
 addThree x y z = x + y + z
+
+-- TYPE VARIABLES
+    -- used in type signatures for functions that don't have type-specific behaviour and accept arguments of multiple types, Haskell's equivalent of generics in other languages
+    -- these functions are called polymorphic functions
+    -- type variables are specified with single-character names like 'a' as seen below
+
+head :: [a] -> a -- the type signature of the head function employs a type variable since its behaviour could apply to tuples of Int, Char, Bool, Float or any other type
+fst :: (a,b) -> a -- similarly, the type signature of the fst function employs a type variables since its behaviour is not type-specific
+
+-- TYPECLASSES
+    -- specify behaviour for types by prescribing them within the typeclass, allowing for a degree of meta-programming similar to interfaces in other languages and metatables in Lua
+    -- behaviours specified through class constraints which are decalred in () brackets within the function's type signature before the function's parameter and return types
+    -- => => seperates class constraints from the function's parameters and return types
+
+(==) :: (Eq a) => a -> a -> Bool -- the equality function's type signature (a -> a) specifies that it receives any two values that are the same type as arguments and returns a Boolean, while the typeclass specifies that the argument's type must be a member of the Eq class (Eq a)
+(>) :: (Ord a) => a -> a -> Bool -- the comparison function's type signature (a -> a) specifies that it receives any two values that are the same type as arguments and returns a Boolean, while the typeclass specifies that the argument's type must be a member of the Ord class (Ord a)
 ```
 
 ## Operators
@@ -101,14 +116,22 @@ addThree x y z = x + y + z
 -- ---------- OPERATOR ----------
 
 -- ARITHMETIC OPERATORS
-    --
+    -- + => addition
+    -- - => subtraction
+    -- * => multiplication
+    -- / => division
+    -- div => floor divison
+    -- mod => modulo operator
 
 -- LOGICAL OPERATORS
-    --
+    -- && => and
+    -- || => or
+    -- not => logical not
 
 -- COMPARISON OPERATORS
-    --
-
+    -- == => partial equality check for value
+    -- /= => partial inequality check for value
+    -- > < <= >= are also comparsion operators
 ```
 
 ## Control structures
@@ -121,13 +144,14 @@ addThree x y z = x + y + z
 -- IF THEN ELSE
     -- else => required in every if statement since every expression (including conditional expressions) must evalaute to a value
 
-doubleSmallNumber :: (Num a, Ord a) => a -> a
+doubleSmallNumber :: (Int a, Ord a) => a -> a
 doubleSmallNumber x = if x > 100
                       then x 
                       else x*2 
 
 -- CASE OF _
     -- powerful pattern-matching construct similar to the match case statements in other languages
+    -- cases are checked top to bottom so order matters
     -- _ => wildcard catch-all operator that acts as the equivalent of the default statement in other languages
 
 numberAsString :: Int -> String -- static type declaration of an expression prior to expression initialisation
@@ -148,34 +172,49 @@ numberAsString num = case num of
     -- compose => declared with a . period, combines two functions into a new function
     -- flip => receives a function, reverses its first two arguments and returns that new function
 
-squareList :: Num a => [a] -> [a]
+squareList :: Int a => [a] -> [a]
 squareList xs = map (\x -> x * x) xs -- calling map function
 
 evenNumbers :: Integral a => [a] -> [a]
 evenNumbers xs = filter even xs -- calling filter function
 
-sumList :: Num a => [a] -> a
+sumList :: Int a => [a] -> a
 sumList xs = foldl (+) 0 xs -- calling reduce function
 
-addLists :: Num a => [a] -> [a] -> [a]
+addLists :: Int a => [a] -> [a] -> [a]
 addLists xs ys = zipWith (+) xs ys -- calling zipWith function
 
-squareAndDouble :: Num a => a -> a
+squareAndDouble :: Int a => a -> a
 squareAndDouble = (*2) . (^2) -- calling compose function
 
-subtractFrom :: Num a => a -> a -> a
+subtractFrom :: Int a => a -> a -> a
 subtractFrom = flip (-) -- calling flip function
 
 -- RECURSION
 
-sumList :: Num a => [a] -> a 
+sumList :: Int a => [a] -> a 
 sumList [] = 0
 sumList (x:xs) = x + sumList xs -- simple recursion to sum the elements of a list
 
 -- LIST COMPREHENSION
+    -- given Haskell's mathematical roots, concepts like list comprehension originate from set theory
+    -- list comprehension syntax => [{OUTPUT FUNCTION} | {VARIABLE AND INPUT SET}, {PREDICATE}]
+        -- output function => function applied on each element
+        -- variable => element iterated over within the input set, commas can be used to delimit multiple variables
+        -- input set => iterable collection over which the variable iterates over, can be expressed as a range in Haskell, commas can be used to delimit multiple input sets
+        -- predicate => specifies conditional check on the variable that limits what values from the input set can have the output function applied to them, the equivalent of a filter in other programming languages, commas can be used to delimit multiple predicates
+    -- <- => specifies the relationship between the variable and input set
+    -- _ => catch-all operator also acts as a throwaway variable that is not needed later
 
-squareList :: Num a => [a] -> [a]
-squareList xs = [x * x | x <- xs] -- list comprehension used to generate lists concisely
+multiplyByTwo = [x*2 | x <- [1..10]] -- this evaluates to the Int list of [2,4,6,8,10,12,14,16,18,20] using list comprehension
+multiplyByTwoWithPredicate = [x*2 | x <- [1..10], x*2 >= 12] -- this evaluates to the Int list of [12,14,16,18,20] using list comprehension when x fulfills the predicate of 2 * x is bigger or equals to 12
+applyAnotherPredicate = [x | x <- [50..100], x `mod` 7 == 3]  -- this evaluates to the Int list of [52,59,66,73,80,87,94] using list comprehension where x fulfills the predicate of x mod 7 == 3
+applyMultiplePredicates = [x | x <- [10..20], x /= 13, x /= 15, x /= 19] -- commas are used to delimit multiple predicates that specify x cannot be equals to 13, 15, 19
+applyMultipleVariableAndInputSets = [x*y | x <- [2,5,10] , y <- [8,10,11], x*y > 50] -- commas are used to delimit multiple variable and inpiut sets to evaluate to a list of all the possible products from a list that are more than 50, which is [55,80,100,110]
+removeNonUppercase inputString = [ c | c <- inputString, c `elem` ['A'..'Z']] -- Strings are just Char lists so we can use list comprehension to removes all non-uppercase letters from a string
+length` xs = sum [1 | _ <- xs] -- _ catch-all wildcard operator used to signify throwing away that variable, so this function evaluates to the length of the list where every element of the list is replaced with 1 and the value of the Int list is summed up
+squareList :: Int a => [a] -> [a] -- note this employs typeclasses for a generic function that does not have type-specific behaviour
+squareList xs = [x * x | x <- xs] -- list comprehension can also be used with functions to generate an Int list where each value is its value squared
 ```
 
 ## Data structures
@@ -253,280 +292,10 @@ list2 = ["one", "two", "three"]
 zippedList = zip list1 list2 -- this evaluates to the Int tuple list value of [(1, "one"), (2, "two"), (3, "three")]
 ```
 
-#### Type variables
-
-**Type variables** are Haskell's equivalent to *generics* in other languages, allowing us to write <u>general functions</u> if they don't have type-specific behaviour.
-
-* Functions with **type variables** are called <u>*Polymorphic functions*</u>.
-
-```console
-ghci> :t head
-head :: [a] -> a 
--- the head function has type variables, and is an example of a polymorphic function
-
-ghci> :t fst
-fst :: (a,b) -> a 
--- the fst function also implements type variables, and is another polymorphic function
-```
-
-> We normally give type variables *single-character* names like 'a', 'b', 'c', 'd', though they can be given other non-capitalised names.
-
-#### Typeclasses
-
-**Typeclasses** are similar to Java *Interfaces*, except better.
-
-* Types that are <u>part of a</u> Typeclass **implement** behavior prescribed by the Typeclass.
-* `=>` separates **class constraints** and the function's **parameters** and **return types**.
-
-> Class constraints can be applied to both a function's *parameters* and its *return types*.
-
-```console
-ghci> :t (==)
-(==) :: (Eq a) => a -> a -> Bool
-
-ghci> :t (>)
-(>) :: (Ord a) => a -> a -> Bool
-```
-
-> In this example, the equality function takes any two values that are the same type *(`a -> a`)*, and the type must be a member of the `Eq` class, a.k.a the **class constraint** *(`(Eq a)`)*, returning a Bool.
-> 
-> Similarly, the comparison function takes any two values that are the same type *(`a -> a`)*, and the type must be a member of the `Ord` class, a.k.a the **class constraint** *(`(Ord a)`)*, returning a Bool.
-
-#### Explicit type annotations</h4>
-
-This was somewhat covered above, but we employ **explicit type annotation** with the `::` operator where needed with *certain Haskell functions*.
-
-```console
-ghci> :t read
-read :: (Read a) => String ->  a
-```
-
-> In this example, the read function takes a single value of type String *(`String`)*, and returns the specified type *(`a`)*, where the type must be a member of the `Read` class, a.k.a the **class constraint** *(`(Read a)`)*.
-> 
-> However, since the return type hasn't been specified, Haskell has no way of knowing what type to assign `a`. 
-> 
-> Here, we can use **explicit type annotation** to inform Haskell of our desired return type.
-
-```haskell
-convertThatString = read "5" :: Int 
--- returns an Int of value 5
-
-convertThatList = read "[1,2,3,4]" :: [Int] 
--- returns a List of Ints, [1,2,3,4]
-```
-
-#### Enumerations
-
-**Enumeration members** are <u>sequentially-ordered</u> types *(part of the `Enum` typeclass)* that can be enumerated, allowing for Haskell's <u>list ranges</u>.
-
-```haskell
-exampleRange = ['a'..'e'] 
--- equivalent to "abcde"
-
-anotherExampleRange = [LT..GT] 
--- equivalent to [LT,EQ,GT]
-
-yetAnotherExampleRange = [3..5] 
--- equivalent to [3,4,5]
-```
-
-**Enumeration members** also have defined *successors* and *predecesors*.
-
-* `succ` returns the **sucessor** of a given enumeration member.
-* `pred` returns the **predecesor** of a given enumeration member.
-
-```haskell
-aFinalExampleRange = ['A'..'Z']
-
-singleCharSucc = succ 'E' 
--- returns a Char of value 'F'
-
-singleCharPred = pred 'F' 
--- returns a Char of value 'E'
-```
-
----
-
-
----
-
-### Ranges
-
-Ranges let us make lists that are *arithmetic sequences of elements* which can be enumerated.
-
-> **Numbers** and **Characters** can be enumerated.
-
-* `..` **creates a range** that can be enumerated over.
-
-```haskell
-rangeOfOneToTwenty = [1..20] 
--- returns a complete list of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
-
-rangeOfaToz = ['a'..'z'] 
--- returns a complete list of letters (string) of "abcdefghijklmnopqrstuvwxyz"
-```
-
-* We can **specify steps** in ranges as well.
-
-```haskell
-rangeOfOneToTwentyButEvenOnly = [2,4..20] 
--- returns a complete list of even numbers [2,4,6,8,10,12,14,16,18,20]
-
-rangeOfOneToTwentyButMultiplesOfThree = [3,6..20] 
--- returns a complete list of [3,6,9,12,15,18]
-```
-
-* We can also obtain **infinite lists** using ranges.
-
-```haskell
-firstTwentyFourElementsOfThirteen = take 24 [13,26..] 
--- since Haskell lazily evaluates, it only calculates what is needed when specified by us in the program
-```
-
-####Other Range functions to look into</h4>
-
-* [`cycle`](https://livebook.manning.com/concept/haskell/cycle)
-* [`repeat`](http://zvon.org/other/haskell/Outputprelude/repeat_f.html)
-* [`replicate`](http://zvon.org/other/haskell/Outputprelude/replicate_f.html)
-
----
-
-### List comprehension
-
-We can implement list comprehension within Haskell, and it functions the same as in mathematical set theory.
-
-The structure for list comprehension is as follows.
-
-***Example:***
-
-*A comprehension for a set that contains the first 10 even natural numbers.*
-
-$$ S = \{2.x|x\in N,x<=10\} $$
-
-Wherein <u>each component</u> is as follows.
-
-$$ S = \{OutputFunction|VariableAndInputSet,Predicate\} $$
-
-> * **Output function:** Transformation applied on each value before it is output.  
-> * **Variable:** Variable that iterates over the input set.  
-> * **Input set:** Input set which the variable can iterate over, can be expressed as a range.  
-> * **Predicate:** Conditions *imposed on the variable* that limit what values from the input set can be output.  
-
-The same concept *(and terminology)* can be applied in Haskell's list comprehension, with `[{Output function} | {Variable & Input set}, {Predicate}]` in the same format.
-
-* `<-` signals the relationship between the **variable** and **input set**.
-
-```haskell
-desiredList = [x*2 | x <- [1..10]] 
--- returns the complete list [2,4,6,8,10,12,14,16,18,20]
-
-anotherDesiredList = [x*2 | x <- [1..10], x*2 >= 12] 
--- returns the complete list [12,14,16,18,20]
-
-yetAnotherDesiredList = [x | x <- [50..100], x `mod` 7 == 3] 
--- returns the complete list of numbers from 50 to 100 whose remainder when divided by 7 is 3, [52,59,66,73,80,87,94]
-```
-
-* `,` commas can be used to separate **multiple predicates**.
-
-```haskell
-okAndHere'sAnotherList = [x | x <- [10..20], x /= 13, x /= 15, x /= 19] 
--- multiple predicates that state we don't want 13, 15, 19 from our input set
-```
-
-* `,` commas can also be used to separate **multiple variables and input sets**.
-
-```haskell
-ShagLaBro = [x*y | x <- [2,5,10] , y <- [8,10,11], x*y > 50] 
--- this returns a list of all the possible products from a list that are more than 50, which is [55,80,100,110]
-```
-
-We can embed list comprehension inside *functions* as well.
-
-```haskell
-boomBangs userInput = [if x < 10 then "Boom!" else "Bang!" | x <- userInput, odd x] 
--- where odd and even are functions that return True or False depending on whether said number is true or false
-
-boomBangs [7..13] 
--- this will return the complete list ["Boom!", "Boom!", "Bang!", "Bang!"]
-```
-
-* `_` can be used as a **throwaway** variable that will not be referenced in the future.
-
-```haskell
-length` xs = sum [1 | _ <- xs] 
--- this function replaces every element of the list with 1, and sums up the values of that list
-```
-
-About 200 lines ago, we established that **Strings** are *lists of characters*. Therefore, *list comprehension* can similarly be applied on Strings.
-
-```haskell
-removeNonUppercase inputString = [ c | c <- inputString, c `elem` ['A'..'Z']] 
--- removes all non-uppercase letters from a string
-```
-
-> **Nested list comprehension** is also possible.
-
----
-
-To provide some context before this section begins, Haskell has *2 integral types*, as follows...
-
-* `Int`
-* `Integer`
-
-> More on this topic can be found [here](https://www.cantab.net/users/antoni.diller/haskell/units/unit01.html).
-
-### Function syntax
-
-#### Pattern Matching
-
-**Pattern matching** is Haskell's overpowered version of the *switch, case* statement in other languages.
-
-Here are some rules when creating patterns...
-
-1. Patterns are checked from **top to bottom**.
-2. As such, the **order is important** when specifying patterns.
-3. Always include a **catch-all** pattern to prevent our program from crashing due to unexpected input.
-
-> Here is *pattern matching's* application in a function.
-
-```haskell
-sayMe :: (Integral a) => a -> String
-sayMe 1 = "One!"
-sayMe 2 = "Two!"
-sayMe 3 = "Three!"
-sayMe 4 = "Four!"
-sayMe 5 = "Five!"
-sayme x = "Not between 1 and 5!"
--- sayme x is a catch-all pattern
-```
-
-Note that the final `sayme x` acts as a **catch-all** pattern *(equivalent of a default statement)* to ensure the function (an expression) <u>evaluates to a value</u> no matter the situation.
-
-> Recursion (another important concept in Haskell) can also be applied in conjunction with **pattern-matching**.
->
-> Here is *pattern-matching's* application in a recursive function.
-
-```haskell
-factorial :: (Integral a) => a -> a
-factorial 0 = 1
-factorial n = n * factorial (n-1)
-```
-
-Note that the above only works because of the <u>order of the patterns</u>.   
-
-For an in-depth explanation of this function, refer to page 31 of [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/).
-
-> We are also able to use *pattern-matching* alongside list comprehension. Should a pattern match fail, it moves on to the next element in the list.
-
-```console
-ghci> let xs = [(1,3), (4,3), (2,4), (5,3), (5,6), (3,1)]
-ghci> [a+b | (a,b) <- xs]
-[4,7,6,8,11,4]
-```
-
 ## More on
 
+* ranges
+* enumeration
 * guards
 * where
 * let
