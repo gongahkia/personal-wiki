@@ -270,3 +270,5 @@ fun odd(x: Int): Boolean = x % 2 == 1 // a single-line expression
 * [kotlin playground](https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS45LjIxIiwicGxhdGZvcm0iOiJqYXZhIiwiYXJncyI6IiIsIm5vbmVNYXJrZXJzIjp0cnVlLCJ0aGVtZSI6ImlkZWEiLCJjb2RlIjoiLyoqXG4gKiBZb3UgY2FuIGVkaXQsIHJ1biwgYW5kIHNoYXJlIHRoaXMgY29kZS5cbiAqIHBsYXkua290bGlubGFuZy5vcmdcbiAqL1xuZnVuIG1haW4oKSB7XG4gICAgcHJpbnRsbihcIkhlbGxvLCB3b3JsZCEhIVwiKVxufSJ9)
 * [kotlin documentation](https://kotlinlang.org/docs/home.html)
 * [learn kotlin in y minutes](https://learnxinyminutes.com/docs/kotlin/)
+* [app development in kotlin](https://developer.android.com/codelabs/build-your-first-android-app-kotlin#0)
+* [fact app in kotlin](https://tjah.medium.com/lets-build-an-android-app-with-kotlin-6fa0fe977e1c)
