@@ -1,12 +1,102 @@
+> Continue adding notes from learn bash in y minutes and rework these notes
+
 # `Bash`
 
-Bash is a ***dynamic interpreted*** programming language, and is also known as a **shell** (which wraps the operating system's kernel), whilst allowing for user interaction via abstraction through the command line.
+Shell scripting language to pimp out your Arch-Neovim-Tmux development setup.
 
-*(Most likely though, you want to learn Bash so you can further pimp out your Arch-Neovim-Tmux setup. More power to you of course.)* 🫡
+## Comments
 
-![](https://miro.medium.com/max/800/1*avk37KYCRMe8HRYcgdMJUA.jpeg)
+```bash
+# ---------- COMMENT ----------
 
-----------
+# this is a single-line comment
+
+:'
+this is a 
+multi-line
+comment
+'
+```
+
+## Printing
+
+```bash
+# ---------- PRINT ----------
+    # 
+```
+
+## Quickstart
+
+```bash
+# ---------- QUICKSTART ----------
+    # 
+```
+
+## Types
+
+```bash
+# ---------- TYPE ----------
+    # 
+```
+
+## Operators
+
+```bash
+# ---------- OPERATOR ----------
+
+# ARITHMETIC OPERATORS
+    # + => addition
+    # - => subtraction
+    # * => multiplication
+    # / => division
+    # % => modulo operator
+
+# LOGICAL OPERATORS
+    # && => logical and
+    # || => logical or
+    # ! => logical not
+
+# COMPARISON OPERATORS
+    # == => partial equality check for string values, not type
+    # != => partial inequality check for string values, not type
+    # -eq => partial equality check for integer values, not type
+    # -ne => partial inequality check for integer values, not type
+    # > < >= <= are also valid comparison operators
+```
+
+## Control structures 
+
+```bash
+# ---------- CONTROL STRUCTURE ----------
+
+# ---------- CONDITIONALS ----------
+
+# ---------- LOOPS ----------
+
+```
+
+## Data structures
+
+```bash
+# ---------- DATA STRUCTURE ----------
+
+```
+
+## Functions
+
+```bash
+# ---------- FUNCTION ----------
+    # 
+
+```
+
+## More on
+
+* select in
+* [learn bash in y minutes](https://learnxinyminutes.com/docs/bash/)
+*
+
+---
 
 ### Creating and running a Bash file
 
@@ -66,9 +156,6 @@ As you will no doubt quickly realize from the above code, there are many differe
 
 and...
 
-* ***equality*** is indicated by the `-eq` flag (equal) [or with the `==` equality operator]
-* ***inequality*** is indicated by the `-ne` flag (not equal) [or with the `!=` inequality operator]
-* ***value comparison*** is indicated with the `-gt` (greater than), `-lt` (less than), `-ge` (greater than or equal), `-le` (less than or equal) flags [or with the `>`,`<`,`<=`,`>=` operators, which are available]
 * ***variables*** are referenced with the `$` dollarsign character in front of them (similar to *PHP*)
 
 ```bash
@@ -116,15 +203,6 @@ esac
 
 ----------
 
-### && and || and !
-
-All the following logical operators work the same way in Bash as in any other programming language
-
-* `&&`/`-a` is the **and** operator
-* `||`/`-o` is the **or** operator
-* `!` is the **not** operator
-
-----------
 
 ### While loops
 
@@ -214,28 +292,6 @@ do
     echo $i 
 done
 ```
-
-----------
-
-### Comments 
-
-* **single-line** comments are prefixed with the `#` hash character
-* **multi-line** comments are surrounded by the `: '` colon, space, single quote characters and the `'` single quote character
-
-```bash
-#here is a comment in Bash
-
-: '
-here 
-is 
-a 
-multi-line
-comment
-in
-Bash'
-```
-
-----------
 
 ### Reading User Input
 
@@ -352,26 +408,6 @@ echo ${string2^^}
 ```
 
 * to **capitalize** or **uncapitalize** only the first letter of the string, we mention said letter in the format of `${string1^h}` or `${string2^^h}` assuming the string is "Hello world!"
-
-----------
-
-### Numbers and Arithmetic operations
-
-All arithmetic operations used in other programming languages are valid in Bash:
-
-`+` : **addition** operator  
-`-` : **subtraction** operator  
-`*` : **multiplication** operator  
-`/` : **division** operator  
-`%` : **modulo** operator  
-
-* note that arithmetic operations in bash must be conducted within two sets of normal `()` brackets if the calculation is done directly in the `echo` statement
-
-```bash
-num1 = 4
-num2 = 20
-echo $(( num1 + num2 ))
-```
 
 ----------
 
@@ -764,22 +800,7 @@ curl -I ${url}
 
 ----------
 
-### Creating menus in Bash
-
-* the `select` `in` loop automatically generates a ***selection*** from the elements given to it *(BMW Mercedes Tesla Rover Toyota)*, and allows the user to input their choice, which `select` `in` will then **assign** to the specified variable *(car)*
-
-```bash
-select car in BMW Mercedes Tesla Rover Toyota
-do 
-    echo "You have selected $car"
-    break
-```
-
-----------
-
 ### Grep
-
-![](https://www.meme-arsenal.com/memes/b01f18ca70a42a57f4c31934afd3bae7.jpg)
 
 For the uninitiated, `grep` is the command line equivalent of *control-f* to **search for patterns and text** in a file, though `grep` allows for use of regular expressions. Just like any other command that can be run on the command line, `grep` is valid Bash code.
 
@@ -798,56 +819,6 @@ then
     echo "Enter the search parameters: "
     read searchParam
     grep -i -n -c -v $searchParam $fileName
-else
-    echo "$fileName does not exist"
-fi
-```
-
-----------
-
-### Awk
-
-Very briefly, `awk` is a *scripting language* used to **format data and reports** and **process text files**, its program files ending in *.awk*. Similar to `grep`, since `awk` is a valid command on the command line, it can be run as Bash code.
-
-* note that any interaction with `awk` scripting from within Bash must occur within the set of *'single quotes'* suffixing `awk`, as seen below
-* as seen in the code below, `awk` is simply being used to **print out the entire file** to the command line 
-
-```bash
-echo "Enter the filename to be printed from awk: "
-read fileName
-
-if [ -f "$fileName" ]
-then
-    awk '{print}' $fileName
-else
-    echo "$fileName does not exist"
-fi
-```
-
-* `//` double slashes indicate to `awk` to only **print out** lines that **match the pattern** of the word enclosed by the `//` double slashes *(peepeepoopoo)*
-
-```bash
-echo "Enter the filename to be printed from awk: "
-read fileName
-
-if [ -f "$fileName" ]
-then
-    awk '/peepeepoopoo/ {print}' $fileName
-else
-    echo "$fileName does not exist"
-fi
-```
-
-* `$` dollarsign character *(when suffixing the `awk` `print` statement)*, indicates to `awk` to only **print out** the Nth word *(with N being the number suffixing the `$`)* in lines that **match the pattern** of the word enclosed by the `//` double slashes
-* the same effect can be used to print out multiple words from a line, in the format of `awk '/{word to be searched}/ {print $2, $4, $9}' ${name of File}`
-
-```bash
-echo "Enter the filename to be printed from awk: "
-read fileName
-
-if [ -f "$fileName" ]
-then
-    awk '/peepeepoopoo/ {print $2}' $fileName
 else
     echo "$fileName does not exist"
 fi
