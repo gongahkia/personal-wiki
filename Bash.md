@@ -237,7 +237,6 @@ function test_function()
         # -n => adds line numbers to each returned matched pattern
         # -c => return matched pattern and the number of matches found
         # -v => return number of lines within the specified file that don't have the pattern
-    # sed => 
 
 echo "directory name: "
 read directory_name
@@ -279,4 +278,5 @@ fi
 * file IO
 * heredoc delimiter
 * string concatenation
+* sed
 * [learn bash in y minutes](https://learnxinyminutes.com/docs/bash/)
