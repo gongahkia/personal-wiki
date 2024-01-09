@@ -2,9 +2,72 @@
 
 SQL is a standardised language for interacting with relational database management systems (MySQL, Oracle, Sybase).
 
+## Quickstart
+
+```sql
+-- ---------- QUICKSTART ---------
+    -- data => stored representations of bits, forming inetgers, floats, strings
+    -- metadata => properties of data that give data significance and context
+    -- information => processed data that increases knowledge in users (this is mostly semantics so ignore this definition)
+    -- database => structured collection of logically-related data 
+    -- redundancy => good for cybersecurity, but bad in databases where repetition might render a database inconsistent
+
+-- ---------- DATABASE ENVIRONMENT -----------
+    -- repository => storehouse for metadata
+    -- database => storehouse for data
+    -- database management system (DBMS) => software to manage a database
+    -- application programs => apps that use the data
+    -- user interface => UI that end users see
+    -- end users => application and database users
+    -- system developers => app developers
+    -- data administrators => database engineers
+
+-- ---------- DATABASE LIFECYCLE ----------
+    -- 1. PLANNING
+        -- business provides business rules for database engineers
+        -- business rule => atomic statements that specify constraints on the way the business should work
+    -- 2. ANALYSIS
+        -- database engineers do data modelling
+        -- E-R diagram notation
+            -- entity symbols
+            -- attribute symbols
+            -- relationship symbols
+        -- entity => building block of E-R diagram used to model a basic unit in an organisation
+            -- entity type => class and its class attributes
+            -- entity instance => instance object and its instance attributes
+        -- attribute => property of an entity type
+            -- simple => basic attribute, just list each attribute within the entity type
+            -- composite => attribute comprised of multiple composite attributes, declared within () brackets and comma-delimited, an example being an address being comprised of street address, city, state and postal code as its composite attributes, and note that we can have a multi-valued attribute that consists of composite attributes
+            -- multi-valued => an attribute that in memory, is represnted as a list that contains one or more attributes, declared within {} curly braces
+            -- derived => attributes that don't need to be explicitly assigned and can be calaculated based on other assigned values within the database, declared within [] square brackets, and example being able to compute number of years employed for an employee since we have their year of employment recorded as a stored attribute
+            -- identifier => attribute that uniquely distinguishes an entity instance from all other entity instances, only one default identifier can be chosen and the identifier cannot be null or a mutable value, declared by being underlined, an example being a studentID
+                -- simple identifier => simple attribute assigned as an identifier, declared by being underlined
+                -- composite identifier => either a composite attribute that is assigned as an identifier underlined directly, or multiple simple attributes forming one composite identifier then having each composite attribute that comprise the composite identifier being underlined
+    -- 3. DATABASE DESIGN
+    -- 4. DATABASE IMPLEMENTATION
+    -- 5. DATABASE MAINTENANCE
+```
+
+## Database lifecycle
+
+```mermaid
+flowchart TD
+    A[Planning] --> B
+    B[Analysis] --> C
+    C[Database design] -->D
+    D[Database implementation] -->E
+    E[Database maintanance] -->A
+```
+
+## E-R diagram notation
+
+![](https://images.edrawsoft.com/articles/er-diagram-symbols/crows-foot-notation.png)
+
 ## Comments
 
 ```sql
+-- --------- COMMENT ----------
+
 -- single-line comments
 
 -- there is no special syntax for multi-line comments
@@ -89,6 +152,7 @@ SELECT * FROM INFORMATION_SCHEMAD.TABLES WHERE TABLE_TYPE='BASE TABLE'; -- list 
 
 ## More on
 
+* [modern database management textbook](https://library.lol/main/1E408DAED98F12A01C57A47CE5E28396)
 * [mysql documentation](https://dev.mysql.com/doc/)
 * [different sql implementations](https://troels.arvin.dk/db/rdbms/)
 * [learn sql in y minutes](https://learnxinyminutes.com/docs/sql/)
