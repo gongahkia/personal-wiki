@@ -38,7 +38,7 @@ SQL is a standardised language for interacting with relational database manageme
         -- attribute => property of an entity type
             -- simple => basic attribute, just list each attribute within the entity type
             -- composite => attribute comprised of multiple composite attributes, declared within () brackets and comma-delimited, an example being an address being comprised of street address, city, state and postal code as its composite attributes, and note that we can have a multi-valued attribute that consists of composite attributes
-            -- multi-valued => an attribute that in memory, is represnted as a list that contains one or more attributes, declared within {} curly braces
+            -- multi-valued => an attribute that in memory, is represented as a list that contains one or more attributes, declared within {} curly braces
             -- derived => attributes that don't need to be explicitly assigned and can be calaculated based on other assigned values within the database, declared within [] square brackets, and example being able to compute number of years employed for an employee since we have their year of employment recorded as a stored attribute
             -- identifier => attribute that uniquely distinguishes an entity instance from all other entity instances, only one default identifier can be chosen and the identifier cannot be null or a mutable value, declared by being underlined, an example being a studentID
                 -- simple identifier => simple attribute assigned as an identifier, declared by being underlined
