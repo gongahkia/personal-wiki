@@ -185,13 +185,28 @@ doubled_numbers # this evaluates to the integer list of value [2, 4, 6, 8, 10]
 # ---------- DATA STRUCTURE ----------
 
 # LIST
-    # [] =>
-    # head =>
-    # tail =>
+    # every list is essentially a linked list, where the head consists of the first element of the list and the tail comprises every other element behind the head, causing head operations to be fast but tail operations to be slow
+    # [] => declares and creates a dynamically-sized ordered sequence of elements of the same type
+    # [ | ] => specifies pattern-matching constrct that matches the head and a tail of a list
+
+an_int_list = [1, 2, 3, 4, 5, 6]
+[a_head | a_tail] = an_int_list
+a_head # this evaluates to the integer value 1
+a_tail # this evaluates to the integer list value [2, 3, 4, 5, 6]
 
 # TUPLE
-    # {} 
-    # elem =>
+    # tuples allow for faster access to elements by index but are slower for frequent modification
+    # {} => declares and creates a fixed size ordered sequence of elements of different types
+    # elem => retrieves a specified element from a given tuple by its index
+
+a_mixed_tuple = {:ok, "Success", 42}
+first_el = elem(a_mixed_tuple, 0)
+second_el = elem(a_mixed_tuple, 1)
+third_el = elem(a_mixed_tuple, 2)
+
+first_el # this evaluates to the atom value of :ok
+second_el # this evaluates to the string value of "Success"
+third_el # this evaluates to the integer value of 42
 
 # MAPS
     # %{} => declares and creates a map which stores an unordered collection of key-value pairs, their relationship denoted by =>
@@ -205,13 +220,53 @@ genders["david"] # this evaluates to the string value "male"
 
 ```ex
 # ---------- FUNCTION ----------
-    #
+
+# ANONYMOUS FUNCTIONS
+    # fn => creates an anonymous lambda function with named parameters specified in () brackets 
+    # -> => specifies the function body within the function definition
+    # when => specifies a predicate that acts as a function guard for function parameters
+    # end => marks the end of a function definition
+    # invocation of anonymous functons requires . dot notation
+
+square = fn(x) -> x * x end # declares and creates an anonymous function and assigns it to the variable square
+square.(5) # invocation of the anonymous function
+
+f = fn
+    x, y when x > 0 -> x + y # specifies the pattern-matching construct that the anonymous function assigned to the variable x can receive before the actual function body
+    x, y -> x * y
+end
+
+f.(1, 3) # this evaluates to the integer value of 4
+
+# MODULE AND NAMED FUNCTIONS
+    # functions that serve the same purpose are grouped together under modules
+    # defmodule => declares and creates a module block
+    # def => declares and creates a public function within the module block that can be called from other modules
+    # defp => declares and creates a private function within the module that can only be called within the module
+    # do end => marks the start and end of a function definition and module block
+
+defmodule PrivateMath do # declares a module called PrivateMath
+    def sum(a, b) do
+        do_sum(a, b)
+    end # declares a public function called sum that can be called from another module
+
+    defp do_sum(a, b) do
+        a + b
+    end # declares a private function called do_sum that can only be called from within the module
+end
 ```
 
 ## More on
 
-* modules
-* structs
+* struct
+* exceptions
+* keyword list
+* mapset
+* hashset
+* binary
+* module visibility
+* attribute
+* |>
 * concurrency
 * agent
 * Stream module
@@ -219,4 +274,5 @@ genders["david"] # this evaluates to the string value "male"
 * [elixir documentation](https://elixir-lang.org/docs.html)
 * [elixir cheatsheet](https://media.pragprog.com/titles/elixir/ElixirCheat.pdf)
 * [build something in elixir](https://medium.com/@clairedigitalogy/a-beginners-guide-to-elixir-906603251f06)
+* [learn you some erlang for great good](https://learnyousomeerlang.com/)
 
