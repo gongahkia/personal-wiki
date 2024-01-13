@@ -1,27 +1,21 @@
 # `Make`
 
-A `Makefile` is a text file which is universally recognised on all platforms, and can be used to run default commands for your project's build system.  
+Universal build tool.
 
-There are other alternatives such as *(Make, Rake, Ant, Maven)*.   
-
-The general format of Makefiles are as follows.
+## Quickstart and Usage
 
 ```Makefile
-command: file dependancy
-    actual command you would normally type out
-```
+# ---------- QUICKSTART ----------
+    # filename must be "Makefile"
+    # Makefile rules follow the format => {COMMAND}: {FILE DEPENDANCY} {ACTUAL COMMAND TO RUN WHEN RULE CALLED}
 
-To invoke the command, you would simply type "make command".   
+# ---------- USAGE ----------
+    # make {SPECIFIED COMMAND NAME} => calls the make command within your Makefile
+    # = => assignment operator allows for variables to be declared and reused later
+    # $() => retrieves a value stored at the specified variable, similar to PHP
+    # all => augmenter that specifies that command will be run universally when "make" is inputted into the stdin
+    # by convention, always add a "clean" rule to automate restoring a clean build of your project within your Makefile, although logic may vary
 
-Notice how this functions like a rich man's bash alias since it works on virtually any platform.  
-
-Here are some other special things Makefiles can do.
-
-* declare variables to reuse text with `=` assignment operator, reference variables with `$()`
-* `all` keyword will run the command universally when "make" is inputted into the console.
-* its a good idea to have a `clean` rule to automate restoring a clean build 
-
-```Makefile
 CC=clang
 
 all: hello
@@ -36,4 +30,9 @@ clean:
     rm hello test.o
 ```
 
-> [Reference](https://makefiletutorial.com/)
+## More on
+
+* Rake
+* Ant
+* Maven
+* [Makefile by example](https://makefiletutorial.com/)
