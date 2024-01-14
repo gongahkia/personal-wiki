@@ -247,5 +247,7 @@ class constipation: public faeces{
 * function templates
 * auto
 * overloaded constructors
+* pointers
+* references
 * [learn C++ in y minutes](https://learnxinyminutes.com/docs/c++/)
 * [C++ documentation](https://devdocs.io/cpp/)

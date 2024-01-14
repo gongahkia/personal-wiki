@@ -1,6 +1,6 @@
 # `Docker`
 
-The lighweight VM of the future.
+The lightweight VM of the future.
 
 ## Quickstart
 
