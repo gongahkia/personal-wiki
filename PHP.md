@@ -5,6 +5,8 @@ PHP is a scripting language for the server.
 ## Comments
 
 ```php
+// ---------- COMMENT ----------
+
 // this is a single-line comment 
 
 # this is also a single-line comment but the above is more common
@@ -17,27 +19,33 @@ PHP is a scripting language for the server.
 
 ## Quickstart
 
-* semicolon language
-
 ```php
-<?php // php code must be enclosed in <?php tags, anything outside <?php tags are echoed automatically
+// ---------- QUICKSTART ----------
+    // semicolon language
+    // all runnable php code must be enclosed within <?php and > tags, anything outside of those tags is echoed automatically
+    // values are printed to the stdout by default but can be printed to the webpage if php is running within the browser
+        // print => prints a string to the stdout and does not include a newline, brackets are optional
+        // echo => prints a string to the stdout and also does not include a newline, brackets are optional
 
-// These values are printed to the stdout by default, which can be the webpage if PHP running in the browser
-print('Hello'); // prints without newline by default, brackets () are optional
-echo 'World'; // prints without newline by default, brackets () are optional
+<?php
+
+print('Hello and this does not include a newline'); 
+echo 'World and this also does not include a newline';
 echo 100; // prints scalar integer value of 100 directly
 
 >
 ```
 
-## Variables
+## Variables and Types
 
 ```php
 <?php
 
-// VARIABLES
+// ---------- VARIABLE ----------
     // variables declared with a $
     // variables CANNOT be declared, they are created at value assignment and their type is immediately assigned to them
+
+// ---------- TYPE ----------
 
 // BOOLEAN 
 $boolean_val = true; // case-insensitive, can be TRUE or True
@@ -94,7 +102,7 @@ $var_null = null;
 ```php
 <?php
 
-// CONSTANTS
+// ---------- CONSTANT ----------
     // constants are defined using define() and cannot be changed at runtime
     // constants can be accessed by calling it without a $
 
@@ -102,16 +110,37 @@ define("FOO", "something"); // defines a constant variable called FOO of string 
 echo FOO; // prints 'something'
 echo 'This outputs ' . FOO // prints 'This outputs something'
 
+>
+```
+
+## Type conversion
+
+```php
+<?php
+
+// ---------- TYPE CONVERSION ----------
+
+$integer = 1;
+echo $integer + $integer; // returns 2
+
+$string = '1';
+echo $string + $string; // variable $string coerced into type conversion to become an integer due to the + operator, returns 2
+
+$string1 = 'one';
+echo $string1 + $string1; // variable $string1 cannot be coerced into being type converted into an integer, so this returns 0
+
+// there are also other dedicated functions for just type conversion such as strval()
 
 >
 ```
 
 ## References
 
-* references to variables are created with `&` character
-
 ```php
 <?php
+
+// ---------- REFERENCE ----------
+    // & => ampersand operator creates a reference to a variable which points to its place in memory
 
 $x = 1; // assigns scalar integer value of 1 to variable $x
 $y = 2; // assigns scalar integer value of 2 to variable $y
@@ -127,15 +156,13 @@ print_r($array_literal); // prints a variable in a human-readable format
 >
 ```
 
-## Arrays
-
-* all php arrays are stored as hashmaps *(dictionaries with key-value pairs)*
-* list literals are implictly assigned integer keys
+## Associative Arrays
 
 ```php
 <?php
 
-// ARRAYS as hashmaps
+// ---------- ASSOCIATIVE ARRAYS ----------
+    // similar to Lua's tables, all php arrays are implictly associative arrays with integer keys
 
 $eg_array = array('One' => 1, 'Two' => 2, 'Three' => 3); // works in all PHP versions to instantiate an array
 $another_eg_array = ['One' => 1, 'Two' => 2, 'Three' => 3]; // works in PHP 5.4
@@ -160,7 +187,7 @@ echo $array_literal[1]; // prints 'Two'
 echo $array_literal[$num]; // prints 'Three'
 
 // ITERATING THROUGH AN ARRAY
-// iterate through a hashmap array or an array literal using the foreach() loop
+    // iterate through a hashmap array or an array literal using the foreach() loop
 
 foreach($stuff as $k => $v) {
     echo "Key=", $k, "Val=", $v;
@@ -188,6 +215,8 @@ echo $_GET["name"] ?? "nobody"; // PHP 7's null coalescing operator can also be 
 
 ```php
 <?php
+
+// ---------- LOGIC ----------
 
 // assert() throws a warning if an argument evaluates to false
 
@@ -233,6 +262,8 @@ echo $b <=> $a; // prints 1 since $b > $a
 
 ```php
 <?php
+
+// ---------- CONTROL STRUCTURE ----------
 
 // IF ELSEIF ELSE STRUCTURES
 
@@ -289,16 +320,13 @@ switch ($x) {
 
 ## Null coalescing operator
 
-* `??` coalescing operator to assign a default value if a variable's value is null
-
 ```php
 <?php
 
-// NULL COALESCING OPERATOR
+// ---------- NULL COALESCING OPERATOR -----------
+    // ?? => colescing operators assigns a default value if a variable stores a value of null 
+        // syntax is as follows => {VALUE TO CHECK} ?? {DEFAULT VALUE TO ASSIGN IF THE AFOREMENTIONED VALUE IS NULL}
     // shorthand operator also available
-
-// takes on the following syntax
-    // VALUE TO CHECK ?? DEFAULT VALUE TO ASSIGN IF THE AFOREMENTIONED VALUE IS NULL
 
 $variable = $value ?? $default; // if $value is not null, $variable takes value of $value, else $variable takes value of $default
 $a = null;
@@ -309,31 +337,13 @@ $b ?? 'Thai fish'; // since $b already has value 'Cereal chicken', it keeps that
 >
 ```
 
-## Type conversion
-
-```php
-<?php
-
-$integer = 1;
-echo $integer + $integer; // returns 2
-
-$string = '1';
-echo $string + $string; // variable $string coerced into type conversion to become an integer due to the + operator, returns 2
-
-$string1 = 'one';
-echo $string1 + $string1; // variable $string1 cannot be coerced into being type converted into an integer, so this returns 0
-
-// there are also other dedicated functions for just type conversion such as strval()
-
->
-```
-
 ## Loops
 
-* `continue` and `break` function similarly as in other languages
-
 ```php
 <?php
+
+// ---------- LOOP ----------
+    // continue and break operate as expected in other languages
 
 // WHILE loop
 
@@ -391,18 +401,15 @@ foreach ($meta as $food_item => $food_item_level) {
 
 ## Functions
 
-* function defined with `function`
-* `return` functions similarly as in other languages
-* `&` is the reference operator and allows us to call by reference similar to C
-
 ```php
 <?php
 
-// PARAMETERS VS ARGUMENTS
-    // parameter is the variable used in the function definition
-    // argument is the value passed during function invocation
-
-// FUNCTION
+// ---------- FUNCTION ----------
+    // parameter => variable used in the function definition
+    // argument => value passed during function invocation
+    // function => declares and creates a function
+    // return => specifies the return expression
+    // & => reference operator as covered above, allowing us to call values by reference simiar to C
     // default parameter values can be assigned
 
 function shit() {
@@ -518,11 +525,12 @@ variable("Separate", "Hello", "World"); // prints Seperate || Hello ||| World
 
 ## Error handling
 
-* `try` `catch` works as you would expect
-* Exception creates a variable that you can store and access
-
 ```php
 <?php
+
+// --------- ERROR HANDLING ---------
+    // try and catch operate as you'd expect in other languages
+    // Exception => specifies a special exception variable that can be stored and referenced
 
 try {
     // Do something
@@ -535,40 +543,36 @@ try {
 
 ## Other files
 
-* equivalent of a python `import`
-
 ```php
 <?php
 
-// INCLUDE
-    // searches for the specified file, if absent returns a non-fatal error
+// ---------- IMPORTS -----------
+    // include => searches for the specified file, if absent returns a non-fatal error, the equivalent of import in Python
+    // require => functions the same way as include except a fatal error is created if specified file absent
 
 include 'my-file.php'; // code within my-file.php is now within scope, if the current file is not found it emitts a warning
 include_once 'my-file.php'; // will not include code from my-file.php if its been included elsewhere
-
-// REQUIRE
-    // functions the same way as include except a fatal error is created if specified file absent
-
 require 'my-file.php'; 
 require_once 'my-file.php';
 
 >
 ```
 
-## Classes
-
-* `public` variables are visible from the global scope
-* `private` variables are accesible within the class only
-* `protected` variables are accessible from the class and its subclasses
-* `static` variables belong to the class itself and can only be called from the class, not from any of its objects
-* `final` class methods are unoverridable and `final` classes are unextendable
-* `_construct` function is the constructor that is automatically called upon object instantiation, equivalent of \_\_init__ in python
-* `$this` is the equivalent of self in python
-* `->` is the equivalent of . in python
-* `new` is used to instantiate a class object
+## OOP
 
 ```php
 <?php
+
+// ---------- OBJECT ORIENTED PROGRAMMING ----------
+    // public => specifies a given variable is public, meaning it is visible from the global scope
+    // private => specifies a given variable is private, meaning it is accesible within the class only
+    // protected => specifies a given variable is protected, meaning it is accessible from the class and its subclasses
+    // static => specifies a given variable is static, meaning it belongs to the class itself and can only be called from the class, not from any of its objects
+    // final => specifies a given class method is final, meaning it is unoverridable and unextendable
+    // _construct => constructor method automatically called upon an object's instantiation, similar to __init__ in Python
+    // $this => equivalent of self in Python 
+    // -> equivalent of . dot notation in Python
+    // new => instantiates a new instance object of a class
 
 class CaiFanShop {
 
@@ -777,47 +781,32 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
 
 # Web Applications
 
-## Theory
-
-Everything on the web is built in HTML, CSS, PHP, SQL, JS, JQuery, JSON.
-
-## HTTP
- 
-HTTP connects the client-side browser to the web server and database server via the **request response cycle**.
-* client-side browser: HTMl, CSS, DOM, CSSOM, JS, JQuery, JSON
-* web server: Apache, PHP
-* database server: MySQL
-
-## Request response cycle
-
-When a URL *(an anchor tag `<a></a>`)* is clicked, the client browser makes a connection to the web server and issues a GET **request** to retrieve the contents of the page at the specified URL.
-
-This connection is also called a "handshake".
-
-```console
-# sample GET request
-GET http://data.pr4e.org/page2.htm
-
-# old telnet command to send a GET request to the server via the HTTP/1.0 protocol
-GET http://data.pr4e.org/page1.htm HTTP/1.0 
+```php
+// ---------- WEB APPLICATION ----------
+    // everything on the web is built in HTML, CSS, PHP, SQL, JS, JQuery, JSON
+    // DEFINITION
+        // HTTP => connects the client-side browser to the web server and database server via the request response cycle
+        // client-side browser => HTMl, CSS, DOM, CSSOM, JS, JQuery, JSON
+        // web server => Apache, PHP
+        // database server => MySQL
+        // dns server => equivalent of a telephone book that stores every hostname and its corresponding ip address
+    // REQUEST RESPONSE CYCLE
+        // 1. user makes a url request for a specific webpage
+        // 2. client browser takes the url, extracts the hostname, and feeds that hostname to the dns server, which returns the corresonding ip address of the web server
+        // 3. client browser makes a connection to the web server via that ip address and issues a http GET request to retrieve contents of the page at the specified url
+        // 4. web server can optionally interact with other processing engines using php and sql to access the database server, and other external resources on the web server's side
+        // 5. web server returns a http response with html, css and js contents to the client browser
+        // 6. client browser parses html contents via dom renderer and css contents via cssom, then displays the webpage
+    // URL structure => {PROTOCOL}://{HOSTNAME}:{PORT}/{PATH}?{QUERY}
+        // protocol => service used to connect to hostname, such as http, https, ftp
+        // hostname => identifier of a web server
+        // port => port 80 used by default, port number that specifies which service of a web server we want to call, since web servers can host multiple servicesI
+        // path => points to a specific resource in the web server, separated by / similar to in the cli
+        // query => optional parameter that augments the url, often including key-value pairs that are ampersand & operator delimited
 ```
 
-The web server **responds** with the HTML contents which are received by the client browser. The HTML code is then parsed through the *DOM renderer* to display the HTML page.
-
-## HTML
-
-Parsed and rendered by the DOM.
+# `HTML`
 
 * [HTML cheatsheet](https://www.geeksforgeeks.org/html-cheat-sheet-a-basic-guide-to-html/)
-
-## CSS
-
-Parsed and rendered by the CSSOM.
-
 * [CSS cheatsheet](https://web.stanford.edu/group/csp/cs21/csscheatsheet.pdf)
-* [CSS Tricks](https://css-tricks.com/)
-
-## XAMPP
-
-* [installation guide](https://www.wa4e.com/software-win.php)
-* [ngrok](https://ngrok.com/)
+* [CSS tricks](https://css-tricks.com/)
