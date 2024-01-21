@@ -1,5 +1,3 @@
-> Edit the ER diagram notes accordingly and segment if needed, refer to past notes
-
 # `SQL`
 
 SQL is a standardised language for interacting with relational database management systems (MySQL, Oracle, Sybase).
