@@ -1,3 +1,5 @@
+> Edit the ER diagram notes accordingly and segment if needed, refer to past notes
+
 # `SQL`
 
 SQL is a standardised language for interacting with relational database management systems (MySQL, Oracle, Sybase).
@@ -6,6 +8,9 @@ SQL is a standardised language for interacting with relational database manageme
 
 ```sql
 -- ---------- QUICKSTART ---------
+    -- note this quickstart covers the structure of databases, SQL syntax is covered further below
+
+-- ----------- GENERIC DEFINITION ----------
     -- data => stored representation of bits, forming integers, floats, strings
     -- metadata => properties of data that give data contextual significance
     -- information => processed data that increases knowledge in users (this is mostly semantics so ignore this definition)
@@ -28,50 +33,71 @@ SQL is a standardised language for interacting with relational database manageme
             -- business rule => atomic statements that specify constraints on the way the business should work
     -- 2. ANALYSIS
         -- database engineers carry out data modelling
-        -- E-R diagram notation
-            -- NOT ALLOWED to copy identifiers around
-            -- entity symbols
-                -- entity => building block of E-R diagram used to model a basic unit in an organisation
-                    -- entity type => class and its class attributes
-                        -- strong entity => entity type that exists idependently of other entity types, has its own unique identifier and is represented with a single-lined rectangle
-                        -- weak entity => entity type that cannot form a unique identifier by its own attributes alone, and is identified by a combination of its attributes and an identifier from another entity (owner of the weak entity), represented with a double-lined rectangle
-                        -- weak entities and their owners are connected by identifying relationships, a double line
-                    -- entity instance => instance object and its instance attributes
-                    -- associative entity => special name assigned for relationship attributes that we convert into an entity (to prevent overly complex cardinality rules), represented with a rounded-corner rectangle
-                        -- ternary relationship must ALWAYS be modelled as an associative entity
-                        -- ternary relationships are to be read from the origin entity type to the next directly-connected entity type via cardinality, then looks beyond to other connected entity types and examines their cardinality
-                        -- a unary or binary relationship can be modelled as an associative entity if it is many-to-many and has AT LEAST ONE attribute
-                        -- associative entities can have other independent relationships, but an associative entity always has a one-to-one going into the other connected entity types and has a zero-to-many or one-to-many going into the associated entity
-            -- attribute symbols
-                -- attribute => property of an entity type
-                    -- simple => basic attribute, just list each attribute within the entity type
-                    -- composite => attribute comprised of multiple composite attributes, declared within () brackets and comma-delimited, an example being an address being comprised of street address, city, state and postal code as its composite attributes, and note that we can have a multi-valued attribute that consists of composite attributes
-                    -- multi-valued => an attribute that in memory, is represented as a list that contains one or more attributes, declared within {} curly braces
-                    -- derived => attributes that don't need to be explicitly assigned and can be calaculated based on other assigned values within the database, declared within [] square brackets, and example being able to compute number of years employed for an employee since we have their year of employment recorded as a stored attribute
-                    -- identifier => attribute that uniquely distinguishes an entity instance from all other entity instances, only one default identifier can be chosen and the identifier cannot be null or a mutable value, declared by being underlined, an example being a studentID
-                        -- complete simple identifier => complete simple attribute assigned as an identifier, declared by being underlined once, can be part of a strong entity
-                        -- partial identifier => double underlined, can be part of a weak entity
-                        -- composite identifier => either a composite attribute that is assigned as an identifier underlined directly, or multiple simple attributes forming one composite identifier then having each composite attribute that comprise the composite identifier being underlined
-            -- relationship symbols
-                -- relationship type => relationship line between entity types
-                -- relationship instance => relationship lines between entity instances
-                -- relationship attributes => field attributes applied on a relationship instance, specified in a box connected to the relationship line with a dashed line
-                -- relationship degree => number of entities participating in a relationship
-                    -- unary relationship => 1 entity related to an entity of the SAME entity type
-                    -- binary relationship => 2 different entity types related to each other
-                    -- ternary relationship => 3 different entity types related to each other
-                    -- more than ternary 💀
-                -- relationship cardinality => number of instances one entity that can or must be associated with each instance of another entity 
-                    -- one-to-one => each entity in a relationship has ONE related entity
-                    -- one-to-many => an entity on ONE side has MANY related entities, but an entity on the other side has a maximum of ONE related entity
-                    -- many-to-many => entities on BOTH sides of the relationship have MANY related entities on the other side
-                    -- cardinality constraints => number of instances one entity must be associated with each instance of another entity, and in the E-R diagram, cardinality symbols are represented with O for 0, | for 1 and > < for many with the minimum cardinality specified on the left and maximum cardinality specified on the right
-                        -- cardinality is read with regard to the target entity type
-                        -- minimum cardinality => min number of related entity instances, if zero is optional, one or more mandatory
-                        -- maximum cardinality => max number of related entity instances
     -- 3. DATABASE DESIGN 
     -- 4. DATABASE IMPLEMENTATION
     -- 5. DATABASE MAINTENANCE
+
+-- ---------- E-R DIAGRAM NOTATION ---------
+    -- STANDARD E-R DIAGRAM NOTATION
+        -- CANNOT copy identifiers around
+        -- 1. entity symbols
+            -- entity => building block of E-R diagram used to model a basic unit in an organisation
+                -- entity type => class and its class attributes
+                    -- strong entity => entity type that exists idependently of other entity types, has its own unique identifier and is represented with a single-lined rectangle
+                    -- weak entity => entity type that cannot form a unique identifier by its own attributes alone, and is identified by a combination of its attributes and an identifier from another entity (owner of the weak entity), represented with a double-lined rectangle
+                    -- weak entities and their owners are connected by identifying relationships, a double line
+                -- entity instance => instance object and its instance attributes
+                -- associative entity => special name assigned for relationship attributes that we convert into an entity (to prevent overly complex cardinality rules), represented with a rounded-corner rectangle
+                    -- ternary relationships must ALWAYS be modelled as an associative entity
+                    -- ternary relationships are to be read from the origin entity type to the next directly-connected entity type via cardinality, then looks beyond to other connected entity types and examines their cardinality
+                    -- a unary or binary relationship can be modelled as an associative entity if it is many-to-many and has AT LEAST ONE attribute
+                    -- associative entities can have other independent relationships, but an associative entity always has a one-to-one going into the other connected entity types and has a zero-to-many or one-to-many going into the associated entity
+        -- 2. attribute symbols
+            -- attribute => property of an entity type
+                -- simple => basic attribute, just list each attribute within the entity type
+                -- composite => an attribute comprised of multiple simple attributes, declared within () brackets and comma-delimited, an example being an address being comprised of street address, city, state and postal code as its composite attributes, and note that we can have a multi-valued attribute that consists of composite attributes
+                -- multi-valued => an attribute that in memory, is represented as a list that contains one or more possible values for the attribute, declared within {} curly braces
+                -- derived => attributes that don't need to be explicitly assigned and can be calculated based on other assigned values within the database, declared within [] square brackets, and example being able to compute number of years employed for an employee since we have their year of employment recorded as a stored attribute
+                -- identifier => attribute that uniquely distinguishes an entity instance from all other entity instances, only one default identifier can be chosen and the identifier cannot be null or a mutable value, declared by being underlined, an example being a studentID
+                    -- complete simple identifier => complete simple attribute assigned as an identifier, declared by being underlined once, can be part of a strong entity
+                    -- partial identifier => double underlined, can be part of a weak entity
+                    -- composite identifier => either a composite attribute that is assigned as an identifier underlined directly, or multiple simple attributes forming one composite identifier then having each composite attribute that comprise the composite identifier being underlined
+        -- 3. relationship symbols
+            -- relationship type => relationship line between entity types
+            -- relationship instance => relationship lines between entity instances
+            -- relationship attributes => field attributes applied on a relationship instance, specified in a box connected to the relationship line with a dashed line
+            -- relationship degree => number of entities participating in a relationship
+                -- unary relationship => 1 entity related to an entity of the SAME entity type
+                -- binary relationship => 2 different entity types related to each other
+                -- ternary relationship => 3 different entity types related to each other
+                -- more than ternary 
+            -- relationship cardinality => number of instances one entity that can or must be associated with each instance of another entity 
+                -- one-to-one => each entity in a relationship has ONE related entity
+                -- one-to-many => an entity on ONE side has MANY related entities, but an entity on the other side has a maximum of ONE related entity
+                -- many-to-many => entities on BOTH sides of the relationship have MANY related entities on the other side
+                -- cardinality constraints => number of instances one entity must be associated with each instance of another entity, and in the E-R diagram, cardinality symbols are represented with O for 0, | for 1 and > < for many with the minimum cardinality specified on the left and maximum cardinality specified on the right
+                    -- cardinality is read with regard to the target entity type
+                    -- minimum cardinality => min number of related entity instances, if zero is optional, one or more mandatory
+                    -- maximum cardinality => max number of related entity instances
+    -- ENHANCED E-R DIAGRAM NOTATION
+        -- supertype and subtype
+            -- relationship between supertype and its subtypes specified with a circle at the intersection between lines connecting the supertype and its subtypes
+            -- supertype => parent class entity type that contains generic shared attributes
+            -- subtype => child class entity type that inherits the shared attributes (and their values) and relationships of the supertype, while also specifying any attributes and relationships unique to the subtype 
+                -- note that each instance of a subtype is also an instance of its supertype by nature of inheritance
+        -- generalization and specialization
+            -- generalization => process of defining a more general entity type from a set of more specific entity types by forming subtype-supertype relationships BOTTOM-UP
+            -- specialization => process of defining one or more subtypes off of a given supertype by forming supertype-subtype relationships TOP-DOWN
+        -- constraints in supertype
+            -- 1. completeness constraint => whether an instance of a supertype MUST also be a member of at least one of the specified subtypes
+                -- total specialization rule => yes, represented with double line, where the specified subtypes are the only possible variations of the supertype
+                -- partial specialization rule => no, represented with single line, where the specified subtypes are not the only possible variations of the supertype and the supertype has other unspecified subtypes
+            -- 2. disjointness constaint => whether an instance of a supertype CAN simultaneously be a member of TWO or MORE subtypes
+                -- disjoint rule => an instance of a supertype can be only ONE of the subtypes at once, represented by a 'd' within the aforementioned circle specifying the relationship between supertypes and their subtypes
+                -- overlap rule => an instance of the supertype could be more than one of the subtypes at once, represented by a 'o' within the aforementioned circle specifying the relationship between supertypes and their subtypes
+            -- 3. subtype discriminators => attribute of the supertype whose value determines the target subtype
+                -- disjoint => simple attribute with alternate values to indicate possible subtypes, where the simple attribute and the = assignment operator is specified on the line running from the supertype to the aforementioned circle AND the possible attribute values are specified on the lines running from the aforementioned circle to the subtypes
+                -- overlapping => composite attribute whose subparts pertain to different subtypes, each subpart contains a Boolean value that indicates whether the instance belongs to the associated subtype, where the composite attribute and the : colon operator is specified on the line running from the supertype to the aforementioned circle AND the possible subpart values are specified on the lines running from the aforementioned circle to the subtypes
 ```
 
 ## Comments
