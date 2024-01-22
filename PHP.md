@@ -807,6 +807,127 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
 
 # `HTML`
 
+```html
+<!-- quickstart -->
+
+<!DOCTYPE html> <!-- comes at the start of everything else -->
+<html>
+    <head>
+        <title>this is a title</title>
+    </head>
+    <body>
+
+<!-- BASIC TEXT -->
+
+        <p>this is a paragraph</p>
+        <div>this is a div, often used to further augment styled sections of webpages</div>
+        <br> <!-- used to indicate a breakline in html -->
+
+<!-- LISTS -->
+
+        <p>this is an unordered list of fruits</p>
+        <ul>
+            <li>apple</li>
+            <li>watermelon</li>
+            <li>orange</li>
+            <li>lemon</li>
+            <li>grape</li>
+        </ul>
+        <p>this is an ordered list of fruits</p>
+        <ol>
+            <li>john xina</li>
+            <li>ma zongtong</li>
+            <li>winnie the poo</li>
+        </ol>
+
+<!-- ANCHOR TAGS -->
+    <!-- an anchor tag's href can point to an external url, a relative or absolute local filepath, or a specific webpage element based on the id specified with # -->
+
+        <p>this is an <a href="http://www.google.com">anchor tag</a>
+
+<!-- IMAGES -->
+    <!-- src, width and height can be specified -->
+
+        <img src="http://www.watermelonImages.com" width="170" height="227"/>
+
+<!-- FORM -->
+    <!-- action => specifies the filepath to send the request to -->
+    <!-- method => specifies the type of request being made and how the message should be formatted, default values are post and get -->
+        <!-- get => data sent with get is appended to the url and visible to the browser, so whatever information sent will be exposed -->
+    <!-- form tags are always accompanied by input tags -->
+
+<!-- INPUT -->
+    <!-- self-closing tag -->
+    <!-- type => specifies the type of input field -->
+        <!-- 1. text => creates a single-lined input text field -->
+            <!-- name => allows for specification of input tag name -->
+            <!-- value => specifies a default value that will be displayed in the text field when webpage first loads -->
+            <!-- size => specifies size of text field -->
+        <!-- 2. submit => creates a submit button -->
+            <!-- value => allows for specification of text that will replace the default Submit text within the submit button -->
+        <!-- 3. password => creates a text field where characters are obscured -->
+            <!-- name => allows for specification of input tag name -->
+            <!-- size => specifies size of password text field -->
+        <!-- 4. radio => creates a radio button (which normally come in a set), of which selection is mutually exclusive so when one is selected, the others are automatically deselected -->
+            <!-- name => allows for specification of input tag name, wherein specifically for radio tags, many related radio tags are grouped under the same name -->
+            <!-- value => value needs to be distinct as it differentiates the radio tags from each other -->
+        <!-- 5. checkbox => creates a checkbox (which normally comes in a set), of which more than one checkbox can be selected -->
+            <!-- name => allows for specification of input tag name, wherein specifically for checkbox tags, many related checkbox tags are grouped under the same name -->
+            <!-- value => value needs to be distinct as it differentiates the checkbox tags from each other -->
+            <!-- checked => an additional parameter that can be specified to initialize a checkbox as already being checked -->
+        <!-- 6. hidden => creates a hidden section that obscures data from the webpage user -->
+        <!-- 7. reset => resets all webpage components in the html form to their default values, does not send any form data to the web server -->
+
+<!-- LABEL -->
+    <!-- label => creates label text that is associated with an input tag -->
+        <!-- for => links a label to a specified input tag via the input tag's id -->
+
+<!-- TEXTAREA -->
+    <!-- textarea => creates a mutli-line text input area -->
+        <!-- rows => specifies number of rows within the text area -->
+        <!-- cols => specifies the number of columns within the text area -->
+        <!-- name => specifies a name for the text area for easier identification -->
+
+<!-- DROPDOWN LIST -->
+    <!-- select => creates a dropdown list whose options can be selected from -->
+        <!-- name => specifies a name for the dropdown list for easier identification -->
+        <!-- size => specifies the number of options to be visible at a given point of time within the dropdown list viewport -->
+        <!-- multiple => used to allow for more than one option to be selected -->
+        <!-- option => creates options within the given dropdown field -->
+            <!-- value => assigned a unique value to distinguish different selection options from each other within a dropdown list -->
+
+        <form action="/yes.php" method="post">
+            <input type="text" name="watermelon" value="default value" size="20" />
+        </form>
+
+<!-- TABLE -->
+    <!-- table => creates a table, comes as a pair with its closing tag -->
+        <!-- border => takes an integer value, specifies the thickness of table borders -->
+        <!-- colspan => specifies how many additional columns a given cell should occupy -->
+        <!-- rowspan => specifies how many additional rows a given cell should occupy -->
+    <!-- th => defines tables headers -->
+    <!-- tr => defines table rows -->
+    <!-- td => specifies table data within cells -->
+
+    <table>
+        <th>department</th>
+        <th>number</th>
+        <tr>
+            <td>Fire/Ambulance</td>
+            <td>995</td>
+        </tr>
+        <tr>
+            <td>Police</td>
+            <td>999</td>
+        </tr>
+    </table>
+
+    </body>
+</html>
+````
+
+## More on
+
 * [HTML cheatsheet](https://www.geeksforgeeks.org/html-cheat-sheet-a-basic-guide-to-html/)
 * [CSS cheatsheet](https://web.stanford.edu/group/csp/cs21/csscheatsheet.pdf)
 * [CSS tricks](https://css-tricks.com/)
