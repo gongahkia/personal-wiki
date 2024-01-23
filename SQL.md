@@ -80,9 +80,11 @@ SQL is a standardised language for interacting with relational database manageme
     -- ENHANCED E-R DIAGRAM NOTATION
         -- supertype and subtype
             -- relationship between supertype and its subtypes specified with a circle at the intersection between lines connecting the supertype and its subtypes
+            -- no cardinality symbols to specify relationship between the supertype and subtype since cardinality symbols specify verb-interaction relationships between two distinct entity types, and subtypes inherit the existing relationships of their supertypes but don't share an explicit verb-interaction relationship with their supertype, alongside being able to define their own respective verb-interaction relationships
             -- supertype => parent class entity type that contains generic shared attributes
             -- subtype => child class entity type that inherits the shared attributes (and their values) and relationships of the supertype, while also specifying any attributes and relationships unique to the subtype 
                 -- note that each instance of a subtype is also an instance of its supertype by nature of inheritance
+                -- never draw a subtype that has no unique attributes, those will be categorised under the supertype implicitly
         -- generalization and specialization
             -- generalization => process of defining a more general entity type from a set of more specific entity types by forming subtype-supertype relationships BOTTOM-UP
             -- specialization => process of defining one or more subtypes off of a given supertype by forming supertype-subtype relationships TOP-DOWN
