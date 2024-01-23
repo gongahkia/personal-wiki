@@ -91,7 +91,7 @@ SQL is a standardised language for interacting with relational database manageme
         -- constraints in supertype
             -- 1. completeness constraint => whether an instance of a supertype MUST also be a member of at least one of the specified subtypes
                 -- total specialization rule => yes, represented with double line, where the specified subtypes are the only possible variations of the supertype
-                -- partial specialization rule => no, represented with single line, where the specified subtypes are not the only possible variations of the supertype and the supertype has other unspecified subtypes
+                -- partial specialization rule => no, represented with single line, where the specified subtypes are not the only possible variations of the supertype and the supertype has other unspecified subtypes including within the supertype itself
             -- 2. disjointness constraint => whether an instance of a supertype CAN simultaneously be a member of TWO or MORE subtypes
                 -- disjoint rule => an instance of a supertype can be only ONE of the subtypes at once, represented by a 'd' within the aforementioned circle specifying the relationship between supertypes and their subtypes
                 -- overlap rule => an instance of the supertype could be more than one of the subtypes at once, represented by a 'o' within the aforementioned circle specifying the relationship between supertypes and their subtypes
