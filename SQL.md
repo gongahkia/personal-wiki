@@ -92,12 +92,14 @@ SQL is a standardised language for interacting with relational database manageme
             -- 1. completeness constraint => whether an instance of a supertype MUST also be a member of at least one of the specified subtypes
                 -- total specialization rule => yes, represented with double line, where the specified subtypes are the only possible variations of the supertype
                 -- partial specialization rule => no, represented with single line, where the specified subtypes are not the only possible variations of the supertype and the supertype has other unspecified subtypes
-            -- 2. disjointness constaint => whether an instance of a supertype CAN simultaneously be a member of TWO or MORE subtypes
+            -- 2. disjointness constraint => whether an instance of a supertype CAN simultaneously be a member of TWO or MORE subtypes
                 -- disjoint rule => an instance of a supertype can be only ONE of the subtypes at once, represented by a 'd' within the aforementioned circle specifying the relationship between supertypes and their subtypes
                 -- overlap rule => an instance of the supertype could be more than one of the subtypes at once, represented by a 'o' within the aforementioned circle specifying the relationship between supertypes and their subtypes
-            -- 3. subtype discriminators => attribute of the supertype whose value determines the target subtype
-                -- disjoint => simple attribute with alternate values to indicate possible subtypes, where the simple attribute and the = assignment operator is specified on the line running from the supertype to the aforementioned circle AND the possible attribute values are specified on the lines running from the aforementioned circle to the subtypes
-                -- overlapping => composite attribute whose subparts pertain to different subtypes, each subpart contains a Boolean value that indicates whether the instance belongs to the associated subtype, where the composite attribute and the : colon operator is specified on the line running from the supertype to the aforementioned circle AND the possible subpart values are specified on the lines running from the aforementioned circle to the subtypes
+            -- 3. subtype discriminators constraint => attribute of the supertype whose value determines the target subtype
+                -- disjoint rule => simple attribute with alternate values to indicate possible subtypes, where the simple attribute and the = assignment operator is specified on the line running from the supertype to the aforementioned circle AND the possible attribute values are specified on the lines running from the aforementioned circle to the subtypes
+                    -- allows for mutually exclusive subtypes only
+                -- overlap rule => composite attribute whose subparts pertain to different subtypes, each subpart contains a Boolean value that indicates whether the instance belongs to the associated subtype, where the composite attribute and the : colon operator is specified on the line running from the supertype to the aforementioned circle AND the possible subpart values are specified on the lines running from the aforementioned circle to the subtypes
+                    -- allows for overlap in the specified composite attributes, creating many subtypes that are not neccesarily mutually exclusive
 ```
 
 ## Comments
