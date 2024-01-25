@@ -958,6 +958,24 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
         </tr>
     </table>
 
+<!-- Connect HTML to PHP -->
+    <!-- done in context of form handling as covered above -->
+    <!-- method => specifies the method for form data to be sent to the web server -->
+    <!-- action => specifies the php file which handles the form data, allowing us to parse and interact as needed -->
+
+    <form method="post" action="pangsai.php">
+        Enter your name:
+        <input type="text" name="fullname"/>
+        <input type="submit" value="send"/>
+    </form>
+
+    <!-- PHP SIDE -->
+        <!-- $_POST => collects form data submitted using the specified http post request, where data IS NOT visible in the url-->
+            <!-- sensitive data -->
+        <!-- $_GET => collects form data submitted using the specified http get method, where data IS visible in the url-->
+            <!-- non-sensitive data -->
+        <!-- $_REQUEST => collects form data from both $_GET and $_POST as well as $_COOKIE -->
+
     </body>
 </html>
 ````
