@@ -786,10 +786,16 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
     // everything on the web is built in HTML, CSS, PHP, SQL, JS, JQuery, JSON
     // DEFINITION
         // HTTP => connects the client-side browser to the web server and database server via the request response cycle
-        // client-side browser => HTMl, CSS, DOM, CSSOM, JS, JQuery, JSON
+        // client-side browser => rendered in HTMl, CSS, DOM, CSSOM, JS, JQuery, JSON
         // web server => Apache, PHP
         // database server => MySQL
         // dns server => equivalent of a telephone book that stores every hostname and its corresponding ip address
+    // URL structure => {PROTOCOL}://{HOSTNAME}:{PORT}/{PATH}?{QUERY}
+        // protocol => service used to connect to hostname, such as http, https, ftp
+        // hostname => identifier of a web server
+        // port => port 80 used by default, port number that specifies which service of a web server we want to call, since web servers can host multiple servicesI
+        // path => points to a specific resource in the web server, separated by / similar to in the cli
+        // query => optional parameter that augments the url, often including key-value pairs that are ampersand & operator delimited
     // REQUEST RESPONSE CYCLE
         // 1. user makes a url request for a specific webpage
         // 2. client browser takes the url, extracts the hostname, and feeds that hostname to the dns server, which returns the corresonding ip address of the web server
@@ -797,12 +803,6 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
         // 4. web server can optionally interact with other processing engines using php and sql to access the database server, and other external resources on the web server's side
         // 5. web server returns a http response with html, css and js contents to the client browser
         // 6. client browser parses html contents via dom renderer and css contents via cssom, then displays the webpage
-    // URL structure => {PROTOCOL}://{HOSTNAME}:{PORT}/{PATH}?{QUERY}
-        // protocol => service used to connect to hostname, such as http, https, ftp
-        // hostname => identifier of a web server
-        // port => port 80 used by default, port number that specifies which service of a web server we want to call, since web servers can host multiple servicesI
-        // path => points to a specific resource in the web server, separated by / similar to in the cli
-        // query => optional parameter that augments the url, often including key-value pairs that are ampersand & operator delimited
 ```
 
 # `HTML`
@@ -863,18 +863,48 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
             <!-- name => allows for specification of input tag name -->
             <!-- value => specifies a default value that will be displayed in the text field when webpage first loads -->
             <!-- size => specifies size of text field -->
+
+        <form action="/yes.php" method="post">
+            <input type="text" name="aName" value="defaultValue" size="20"/>
+        </form>
+
         <!-- 2. submit => creates a submit button -->
             <!-- value => allows for specification of text that will replace the default Submit text within the submit button -->
+            <!-- action => specifies the filepath to send the request too -->
+
+        <form action="test.php">
+           <input type="submit"/> 
+        </form>
+
         <!-- 3. password => creates a text field where characters are obscured -->
             <!-- name => allows for specification of input tag name -->
             <!-- size => specifies size of password text field -->
+
+        <form>
+            <input type="password" name="pwd" size="20"/>
+        </form>
+
         <!-- 4. radio => creates a radio button (which normally come in a set), of which selection is mutually exclusive so when one is selected, the others are automatically deselected -->
             <!-- name => allows for specification of input tag name, wherein specifically for radio tags, many related radio tags are grouped under the same name -->
             <!-- value => value needs to be distinct as it differentiates the radio tags from each other -->
+
+        <form>
+            <input name ="color" type="radio" value="r" checked/>Red
+            <input name="color" type="radio" value="g"/>Green
+            <input name="color" type="radio" value="b"/>Blue
+        </form>
+
         <!-- 5. checkbox => creates a checkbox (which normally comes in a set), of which more than one checkbox can be selected -->
             <!-- name => allows for specification of input tag name, wherein specifically for checkbox tags, many related checkbox tags are grouped under the same name -->
             <!-- value => value needs to be distinct as it differentiates the checkbox tags from each other -->
             <!-- checked => an additional parameter that can be specified to initialize a checkbox as already being checked -->
+
+        <form>
+            <input name="color[]" type="checkbox" value="r" checked/>Red
+            <input name="color[]" type="checkbox" value="g" checked/>Green <!-- note that the red and green checkboxes are checked by default here -->
+            <input name="color[]" type="checkbox" value="b"/>Blue
+        </form>
+
         <!-- 6. hidden => creates a hidden section that obscures data from the webpage user -->
         <!-- 7. reset => resets all webpage components in the html form to their default values, does not send any form data to the web server -->
 
@@ -882,11 +912,21 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
     <!-- label => creates label text that is associated with an input tag -->
         <!-- for => links a label to a specified input tag via the input tag's id -->
 
+        <form>
+            <input name="color" type="radio" value="g" id="color_g"/>
+            <label for="color_g">Green</label>
+        </form>
+
 <!-- TEXTAREA -->
     <!-- textarea => creates a mutli-line text input area -->
         <!-- rows => specifies number of rows within the text area -->
         <!-- cols => specifies the number of columns within the text area -->
         <!-- name => specifies a name for the text area for easier identification -->
+        <!-- default text => default filler text to be initialized with the text area upon webpage loading can be specified within the textarea opening and closing tags -->
+
+        <form>
+            <textarea name="comment" rows="2" cols="30">No comments</textarea>
+        </form>
 
 <!-- DROPDOWN LIST -->
     <!-- select => creates a dropdown list whose options can be selected from -->
@@ -895,10 +935,6 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
         <!-- multiple => used to allow for more than one option to be selected -->
         <!-- option => creates options within the given dropdown field -->
             <!-- value => assigned a unique value to distinguish different selection options from each other within a dropdown list -->
-
-        <form action="/yes.php" method="post">
-            <input type="text" name="watermelon" value="default value" size="20" />
-        </form>
 
 <!-- TABLE -->
     <!-- table => creates a table, comes as a pair with its closing tag -->
