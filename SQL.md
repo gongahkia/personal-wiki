@@ -64,7 +64,7 @@ SQL is a standardised language for interacting with relational database manageme
             -- relationship type => relationship line between entity types
             -- relationship instance => relationship lines between entity instances
             -- relationship attributes => field attributes applied on a relationship instance, specified in a box connected to the relationship line with a dashed line
-            -- relationship degree => number of entities participating in a relationship
+            -- relationship degree => number of entities participating in a relationship, don't just assume the degree when you see an associative entity, check the individual cardinality of each connected entity
                 -- unary relationship => 1 entity related to an entity of the SAME entity type
                 -- binary relationship => 2 different entity types related to each other
                 -- ternary relationship => 3 different entity types related to each other
@@ -105,7 +105,7 @@ SQL is a standardised language for interacting with relational database manageme
     -- Relation => a generic table that corresponds to an entity type and with a many-to-many relationship types
     -- Table ROWS => correspond to entity instance OR any instance with a many-to-many relationship instances
     -- Table COLUMNS => correspond to attribute
-    -- Primary Key => attribute or combination of attributes of unique value that uniquely identifies a ROW in a relation, cannot be NULL, usually the identifier within the context of E-R diagrams
+    -- Primary Key => attribute or combination of attributes of unique value that uniquely identifies a ROW in a relation, cannot be NULL, usually the identifier within the context of E-R diagrams, specified by underlining it 
         -- Simple primary key => single field, unique identifier
         -- Composite primary key => multiple fields, composite identifier
         -- Each relation MUST HAVE ONE primary key, it is used as index to speed up user querying
@@ -124,23 +124,26 @@ SQL is a standardised language for interacting with relational database manageme
         -- Entity integrity
             -- No primary key attribute may be NULL and all primary key fields must have data 
     -- EER Diagrams into Relations
+        -- when determining cardinalities in relations, we are reflecting the MAX CARDINALITY of a given relationship in ER-diagram land
         -- 1. Map REGULAR entity types to relations
             -- SIMPLE attributes map directly onto columns of a relation table
             -- COMPOSTIE attributes ONLY have their simple component attributes mapped as columns of the relation table
-            -- each MULTI-VALUED attribute becomes a separate relation with a foreign key taken from its related parent entity
+            -- each MULTI-VALUED attribute becomes a separate relation with a foreign key taken from its related parent entity and both its identifying primary key and the multi-valued attribute is underlined
+                -- where a composite attribute is also multi-valued, we must actively determine whether we need to underline all its composite attributes to distinguish each entity instance of a multivalued composite attribute
             -- DERIVED attributes are NOT stored and so do not need to be displayed within the relations diagram
         -- 2. Map WEAK entities
             -- WEAK ENTITY becomes a separate relation with a foreign key taken from the strong entity, and added as an additional column within the relation table
             -- the PRIMARY KEY is comprised of the partial identifier of weak entity AND primary key of the strong entity
         -- 3. Map BINARY relationships
+            -- keep in mind that based on the specific business rules, there might be a need to underline additional fields to distinguish a relation instance from another instance
             -- one-to-many => PRIMARY KEY on one side becomes FOREIGN KEY on many side
             -- many-to-many => create a NEW RELATION with PRIMARY KEYS of two entities as its primary key
-            -- one-to-one => PRIMARY key on mandatory side becomes FOREIGN key on optional side
+            -- one-to-one => PRIMARY key on mandatory one side becomes FOREIGN key on the optional one side, but if both sides are of exact same cardinality then the arrow direction does not matter
         -- 4. Map ASSOCIATIVE ENTITIES
             -- identifier NOT ASSIGNED => default primary keys for association relation composed of PRIMARY KEYS of the two entities
             -- identifier ASSIGNED => assigned identifier becomes the PRIMARY KEY of the relation table
         -- 5. Map UNARY relationships
-            -- ONE-to-ONE or ONE-to-MANY relationships are mapped as a recursive foreign key within the same relation table
+            -- ONE-to-ONE or ONE-to-MANY relationships are mapped as a recursive foreign key within the same one relation table
             -- MANY-to-MANY are mapped as two relations, with one as the entity type and one for the associative relation in which the PRIMARY KEY has two attributes both taken from the primary key of the entity
         -- 6. Map TERNARY and more relationships
             -- one relation for each entity
