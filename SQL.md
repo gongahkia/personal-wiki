@@ -100,6 +100,59 @@ SQL is a standardised language for interacting with relational database manageme
                     -- allows for mutually exclusive subtypes only
                 -- overlap rule => composite attribute whose subparts pertain to different subtypes, each subpart contains a Boolean value that indicates whether the instance belongs to the associated subtype, where the composite attribute and the : colon operator is specified on the line running from the supertype to the aforementioned circle AND the possible subpart values are specified on the lines running from the aforementioned circle to the subtypes
                     -- allows for overlap in the specified composite attributes, creating many subtypes that are not neccesarily mutually exclusive
+
+-- ---------- RELATION ---------
+    -- Relation => a generic table that corresponds to an entity type and with a many-to-many relationship types
+    -- Table ROWS => correspond to entity instance OR any instance with a many-to-many relationship instances
+    -- Table COLUMNS => correspond to attribute
+    -- Primary Key => attribute or combination of attributes of unique value that uniquely identifies a ROW in a relation, cannot be NULL, usually the identifier within the context of E-R diagrams
+        -- Simple primary key => single field, unique identifier
+        -- Composite primary key => multiple fields, composite identifier
+        -- Each relation MUST HAVE ONE primary key, it is used as index to speed up user querying
+    -- Relational database => consists of any number of relations
+    -- Schema => description of database structure, textually represented by a capitalised uppercase word and its comma-delimited components within brackets
+    -- Foreign Key => attribute in a relation that is primary key to another relation
+    -- Integrity constraints
+        -- Referential Integrity => any foreign key value MUST either match a primary key value in the relation it shares a relationship with or be NULL
+            -- represented with an arrow, wherein the arrow direction flows FROM the dependant child relation table with the FOREIGN KEY to the related parent relation table with the PRIMARY KEY
+            -- impacts data deletion based on the following specifications 
+                -- restrict: as long as a relation table row contains a primary or foreign key linked with another relation table row, it cannot be deleted 
+                -- cascade: deletion of a relation table row that contains a foreign or primary key will result in any linked rows being deleted as well
+                -- set-to-null: related affected relation table row will have its foreign key value set to NULL
+        -- Domain constraints 
+            -- permitted data types for a given field
+        -- Entity integrity
+            -- No primary key attribute may be NULL and all primary key fields must have data 
+    -- EER Diagrams into Relations
+        -- 1. Map REGULAR entity types to relations
+            -- SIMPLE attributes map directly onto columns of a relation table
+            -- COMPOSTIE attributes ONLY have their simple component attributes mapped as columns of the relation table
+            -- each MULTI-VALUED attribute becomes a separate relation with a foreign key taken from its related parent entity
+            -- DERIVED attributes are NOT stored and so do not need to be displayed within the relations diagram
+        -- 2. Map WEAK entities
+            -- WEAK ENTITY becomes a separate relation with a foreign key taken from the strong entity, and added as an additional column within the relation table
+            -- the PRIMARY KEY is comprised of the partial identifier of weak entity AND primary key of the strong entity
+        -- 3. Map BINARY relationships
+            -- one-to-many => PRIMARY KEY on one side becomes FOREIGN KEY on many side
+            -- many-to-many => create a NEW RELATION with PRIMARY KEYS of two entities as its primary key
+            -- one-to-one => PRIMARY key on mandatory side becomes FOREIGN key on optional side
+        -- 4. Map ASSOCIATIVE ENTITIES
+            -- identifier NOT ASSIGNED => default primary keys for association relation composed of PRIMARY KEYS of the two entities
+            -- identifier ASSIGNED => assigned identifier becomes the PRIMARY KEY of the relation table
+        -- 5. Map UNARY relationships
+            -- ONE-to-ONE or ONE-to-MANY relationships are mapped as a recursive foreign key within the same relation table
+            -- MANY-to-MANY are mapped as two relations, with one as the entity type and one for the associative relation in which the PRIMARY KEY has two attributes both taken from the primary key of the entity
+        -- 6. Map TERNARY and more relationships
+            -- one relation for each entity
+            -- one relation for the assoicative entity
+                -- associative entity has FOREIGN KEYS to each entity type in the relationship
+        -- 7. Map SUPERTYPE and SUBTYPE relationships
+            -- one relation for each supertype
+                -- supertype attributes including unique identifier and subtype discriminators go into supertype relation
+            -- one relation for each subtype
+                -- subtype attributes go into each subtype
+            -- primary key of supertype relation table ALSO becomes primary key of subtype relation table
+            -- one to one relationship between supertype and each subtype where supertype is the PRIMARY relation table
 ```
 
 ## Comments
