@@ -123,11 +123,11 @@
 -- RELATION => a generic table that corresponds to an entity type and with a many-to-many relationship types
 -- TABLE ROWS => correspond to entity instance OR any instance with a many-to-many relationship instances
 -- TABLE COLUMNS => correspond to attribute
--- PRIMARY KEY => attribute or combination of attributes of unique value that uniquely identifies a ROW in a relation, cannot be NULL, usually the identifier within the context of E-R diagrams, specified by underlining it 
+-- PRIMARY KEY => attribute or combination of attributes of unique value that uniquely identifies a ROW in a relation, cannot be NULL, usually the identifier within the context of E-R diagrams, specified by underlining it once
     -- SIMPLE PRIMARY KEY => single field, unique identifier
     -- COMPOSITE PRIMARY KEY => multiple fields, composite identifier
     -- Each relation MUST HAVE ONE primary key, it is used as index to speed up user querying
--- FOREIGN KEY => attribute in a relation that is primary key to another relation
+-- FOREIGN KEY => attribute in a relation that is primary key to another relation, specified by underlining it once, where the relationship between primary and foreign key is specified by place of origin and destination for the arrow
 -- RELATIONAL DATABASE => consists of any number of relations
 -- SCHEMA => description of database structure, textually represented by a capitalised uppercase word and its comma-delimited components within brackets
     
@@ -185,24 +185,47 @@
     -- * GENERAL RULE OF THUMB => a table should NOT pertain to more than one entity type
     -- INSERTION ANOMALY => adding new rows forces users to create duplicate data
     -- DELETION ANOMALY => deleting rows may cause a loss of data that would be needed for other rows
-    -- MODIFICATION/UPDATE ANOMALY => changing data in a row forces changes to other rows because of duplication of data
+    -- UPDATE/MODIFICATION ANOMALY => changing data in a row forces changes to other rows because of duplication of data
 
--- DATA NORMALIZATION => tool to validate and improve logical design to satisfy certain contraints and avoid unnecessary duplication of data 
--- we describe relations as being in one of the following forms
+-- DATA NORMALIZATION => make database designs better and less shit by avoiding unnecessary duplication of data that creates insertion, deletion and update anomalies
+    -- * when asked "What normal form is this table in?", always return the HIGHEST NORMAL FORM it satifies
+    -- move in order from 1st to 3rd normal form
+    -- FRAMEWORK FOR DATA NORMALIZATION
+        -- 1. Find all candidate keys
+        -- 2. Find all non-key attributes
+        -- 3. Look for partial dependancies
+        -- 4. Look for transitive dependancies
 
 -- 1st NORMAL FORM => NO multivalued attribute and every attribute value is ATOMIC
-    -- all relations are in 1st Normal Form
+    -- all relations are in 1st Normal Form by default
 
 -- 2nd NORMAL FORM => 1st NORMAL FORM requirements and NO PARTIAL FUNCTIONAL DEPENDANCIES
-    -- decomposing the relation into 2 new relations
-    -- FUNCTIONAL DEPENDANCY => value of one attribute or combination of multiple attributes that acts as the DETERMINANT which determines the value of another attribute, graphically represented by an arrow pointing from the determinant to the other attribute on a relation model
-        -- * each NON-KEY attribute is functionally dependant on every candidate key
-    -- PARTIAL FUNCTIONAL DEPENDANCY => functional dependancy where a non-key attribute is functionally dependant on PART OF but not the whole candidate key
-    -- CANDIDATE KEY => attribute (OR a combination of multiple attributes) that can be uniquely identified as a row, like a Primary key
+    -- ** finding PARTIAL FUNCTIONAL DEPENDANCIES
+        -- CANDIDATE KEY => attribute (OR a combination of multiple attributes) that can uniquely identify an entire row
+            -- a Primary Key can be a candidate key, or one of many candidate keys
+        -- NON-KEY ATTRIBUTES => any key that is not a candidate key
+        -- FUNCTIONAL DEPENDANCY => ONE attribute or combination of MUTLIPLE attributes that are the pure DETERMINANT which points to another attribute, graphically represented in a relation model by ONE or MORE arrows originating from the determinant(s) and branching out to ONE or MORE non-key attributes (these arrows are for the purposes of NORMALIZATION only and should be removed in the final relational schema, where the only arrows present should be for those denoting relation between foreign and primary keys)
+            -- DETERMINANT => the predicate cause which effects a direct chain of causation from an attribute to another attribute
+            -- * NON-KEY ATTRIBUTES will always be functionally dependant on ANY of the CANDIDATE KEYS
+                -- this essentially means CANDIDATE KEYS determine non-key attributes
+            -- however it must be noted that NON-KEY ATTRIBUTES can share a functional dependancy with other NON-KEY ATTRIBUTES in the case of transitive dependancy under 3rd Normal form
+        -- PARTIAL FUNCTIONAL DEPENDANCY => functional dependancy where there is a COMPOSITE candidate key and only a SUBSET of the candidate keys can DETERMINE certain non-key attributes
+            -- 1. identify all candidate keys and non-key attributes
+            -- 2. determine all functional dependant relationships for each candidate key
+            -- 3. if not all candidate keys are required to determine a given non-key attribute, there is partial functional dependancy
+    -- ** undergoing NORMALIZATION to resolve partial functional dependancy
+        -- decompose the relation into 2 new relations by...
+            -- each candidate key and the corresponding non-key attribute related to it under partial functional dependancy as foreign and primary keys respectivelu
+            -- use the arrows learnt under relation modelling to deliniate the resulting relationship between the newfound primary and foreign keys, where the overlap contains the foreign keys and the newly created relation tables contain primary keys
 
 -- 3rd NORMAL FORM => 2nd NORMAL FORM requirements and NO TRANSITIVE DEPENDANCIES
-    -- decomposing the relation into 2 new relations
-    -- TRANSITIVE DEPENDANCY => functional dependency between 2 or more non-key attributes
+    -- ** finding TRANSITIVE DEPENDANCIES
+        -- TRANSITIVE DEPENDANCY => functional dependency between 2 or more NON-KEY attributes
+    -- ** undergoing NORMALIZATION to resolve transitive functional dependancy
+        -- decomposing the relation into 2 new relations by...
+            -- each non-key attribute that has a functional dependant relationship with another non-key attribute is seperated into 2 different relation tables
+            -- one relation table has a non-key attribute as an attribute
+            -- other relation table has the functionally dependant non-key attribute as a primary key
 ```
 
 # `SQL`
