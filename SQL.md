@@ -273,6 +273,7 @@ USE parklaneCaiFan;
     -- DATE => accepts dates of recognised formats like YYYY-MM-DD or YY-MM-DD
 
 -- ---------- TABLE ----------
+    -- SHOW TABLES => displays all the table names within the database
     -- CREATE TABLE {table name} ({column name(s), data type(s), constraint(s)}) => creates specified table with specified columns and their respective datatypes and constraints
         -- NOT NULL => prevents a specified entry value from being null
         -- CONSTRAINTS
@@ -299,17 +300,23 @@ DELETE FROM employees; -- deletes all rows from employees table, leaving an empt
 DROP TABLE employeesl -- deletes the entire employes table
 
 -- AUGMENTATION
-    -- * => wildcard all operator
     -- LIMIT => limits selection
+    -- AS => rename the given column to another specified name
     -- WHERE => specifies a predicate
-    -- LIKE => similar to a partial equality check operator
-    -- % => wildcard string operator to represent any string of characters with indeterminate count
+    -- * => wildcard all operator
+    -- % => wildcard string operator to represent an indeterminate count of characters (INCLUDING ZERO!) as a string
         -- 'abc%' specifies a field that starts with 'abc'
         -- '%abc' specifies a field that ends with 'abc'
         -- '%abc%' specifies a field that contains the substring 'abc' in the middle of it
-    -- _ => catch-all operator to represent any character with a specific count
+    -- _ => catch-all operator to represent exactly ONE character
+    -- LIKE => similar to a partial equality check operator
     -- DISTINCT => show unique entries only with no duplicates
     -- ORDER BY => sorts values by their title (case-sensitive)
+    -- GROUP BY => suffixes the selection clause and allows for grouping of a result by certain specified database columns (aggregation)
+        -- * functions called on sets aggregated by GROUP BY will be called on the entire group (SUM, COUNT, AVG, MIN, MAX)
+        -- HAVING => suffixes the GROUP BY clause and extract groups that satisfy some conditions (acting as the WHERE clause for GROUP BY)
+        -- * WHERE clauses execute first before the GROUP BY clause
+        -- * You cannot select an unaggregated attribute that does not appear in the GROUP BY list!
     -- COUNT() => returns the count of whatever field specified within brackets
         -- COUNT(DISTINCT) => returns the count of unique fields specified within brackets after DISTINCT
     -- JOIN => combines rows from two or more tables based on a related column between them
@@ -317,10 +324,15 @@ DROP TABLE employeesl -- deletes the entire employes table
         -- LEFT JOIN => selects all rows from left table and matched rows from right table
         -- RIGHT JOIN => selects all rows from right table and matched rows from left table
         -- FULL JOIN => selects all rows from left or right table as long as there is a match in either
+    -- EXTRACT(A FROM B) => used to extract A from B, where A is a subset of B and both A and B are predefined datatypes (often use to extract month or year from data, an alternative to month(B) or year(B))
     -- ON => specifies a predicate for the JOIN clause
     -- MIN => finds the lowest value of the column
     -- MAX => finds the highest value of the column
     -- AVG => finds average value of the column
+    -- IN => checks for the presence of a specified predicate within a set
+    -- NOT IN => checks for the absence of a specified predicate within a set
+    -- IS NULL => checks whether a specified value is NULL
+    -- IS NOT NULL => checks whether a specified value is NOT NULL
 
 SELECT * FROM employees; -- select all rows and columns from parklaneCaiFan database's employees table
 SELECT working_hrs, employee_name FROM employees; -- select only the working_hrs and employee_name column from employees table
