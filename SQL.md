@@ -265,6 +265,13 @@ DROP DATABASE parklaneCaiFan;
 SHOW DATABASES;
 USE parklaneCaiFan;
 
+-- ---------- DATATYPE ----------
+    -- INT => integer with value between -2^31 and 2^31-1
+    -- DECIMAL(M,D) => floating point number with total M digits and D digits after the decimal point
+    -- CHAR(N) => string of N characters
+    -- VARCHAR(N) => string with AT MOST N characters
+    -- DATE => accepts dates of recognised formats like YYYY-MM-DD or YY-MM-DD
+
 -- ---------- TABLE ----------
     -- CREATE TABLE {table name} ({column name(s)}) => creates specified table with specified columns
     -- INSERT INTO {table name} VALUES({row value(s)}) => creates an entry in a specified table
@@ -272,6 +279,9 @@ USE parklaneCaiFan;
     -- DELETE FROM {table name} => deletes rows from the specified table
     -- DROP TABLE {table name} => deletes the specified table
     -- SELECT {column name(s)} FROM {table name} {augmentation(s)} => general syntax to specify which row or column to select from in a table
+
+-- NOTES ABOUT TABLE CREATION
+    -- PARENT tables created first, CHILD tables created after all parent tables created
 
 CREATE TABLE employees (first_name VARCHAR(20), last_name VARCHAR(20), employee_name VARCHAR(20), employee_num BIGINT); -- creates a table called employees that has the column names of first_name, last_name, employee_name and employee_num and their specified data types
 INSERT INTO employees VALUES('John', 'Piper', 'John Piper', 101); -- inserts a row of data entry into the employees tablee, and assumes the values and table have been correctly assigned
@@ -293,12 +303,16 @@ DROP TABLE employeesl -- deletes the entire employes table
     -- DISTINCT => show unique entries only with no duplicates
     -- ORDER BY => sorts values by their title (case-sensitive)
     -- COUNT() => returns the count of whatever field specified within brackets
+        -- COUNT(DISTINCT) => returns the count of unique fields specified within brackets after DISTINCT
     -- JOIN => combines rows from two or more tables based on a related column between them
         -- INNER JOIN => selects only matched rows in both tables
         -- LEFT JOIN => selects all rows from left table and matched rows from right table
         -- RIGHT JOIN => selects all rows from right table and matched rows from left table
         -- FULL JOIN => selects all rows from left or right table as long as there is a match in either
     -- ON => specifies a predicate for the JOIN clause
+    -- MIN => finds the lowest value of the column
+    -- MAX => finds the highest value of the column
+    -- AVG => finds average value of the column
 
 SELECT * FROM employees; -- select all rows and columns from parklaneCaiFan database's employees table
 SELECT working_hrs, employee_name FROM employees; -- select only the working_hrs and employee_name column from employees table
