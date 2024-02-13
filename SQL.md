@@ -273,7 +273,14 @@ USE parklaneCaiFan;
     -- DATE => accepts dates of recognised formats like YYYY-MM-DD or YY-MM-DD
 
 -- ---------- TABLE ----------
-    -- CREATE TABLE {table name} ({column name(s)}) => creates specified table with specified columns
+    -- CREATE TABLE {table name} ({column name(s), data type(s), constraint(s)}) => creates specified table with specified columns and their respective datatypes and constraints
+        -- NOT NULL => prevents a specified entry value from being null
+        -- CONSTRAINTS
+            -- CONSTRAINT => prefixes a specified constraint
+            -- PRIMARY KEY (PK) => specifies the primary key of a given entry value where PK is the primary key
+                -- PRIMARY KEY (C, PK) => specifies the primary key of a given entry value where C and PK are composites of the one primary key
+            -- FOREIGN KEY => specifies a foreign key of a given entry value
+                -- REFERENCES => suffixes a foreign key and specifies relationship from a FOREIGN to PRIMARY key
     -- INSERT INTO {table name} VALUES({row value(s)}) => creates an entry in a specified table
     -- UPDATE {table name} SET {value to be updated} WHERE {predicate to enforce value to be updated} => updates an entry in a specified table
     -- DELETE FROM {table name} => deletes rows from the specified table
