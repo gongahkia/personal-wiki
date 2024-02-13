@@ -289,6 +289,7 @@ USE parklaneCaiFan;
 
 -- NOTES ABOUT TABLE CREATION
     -- PARENT tables created first, CHILD tables created after all parent tables created
+    -- relationship between parent and child tables specified by foreign key
 
 CREATE TABLE employees (first_name VARCHAR(20), last_name VARCHAR(20), employee_name VARCHAR(20), employee_num BIGINT); -- creates a table called employees that has the column names of first_name, last_name, employee_name and employee_num and their specified data types
 INSERT INTO employees VALUES('John', 'Piper', 'John Piper', 101); -- inserts a row of data entry into the employees tablee, and assumes the values and table have been correctly assigned
