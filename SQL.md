@@ -289,7 +289,8 @@ USE parklaneCaiFan;
     -- SELECT {column name(s)} FROM {table name} WHERE {augmentation(s)} {conditional check(s)}=> general syntax to specify which row or column to select from in a tableq
         -- FROM => specifies the table(s) from which we will be selecting data, note that multiple tables can be made the selection target
         -- WHERE => specifies the predicate condition(s) from which we want to augment our selection
-    -- the general format of every SQL query is to augment the target selection group, and filter our selection using a specified predicate
+    -- the general format of every SQL query is to augment the target SELECTION CLAUSE, and filter our selection using a specified PREDICATE CLAUSE
+        -- SELECT {SELECTION CLAUSE} FROM {TABLE NAME} WHERE {PREDICATE CLAUSE}
 
 -- NOTES ABOUT TABLE CREATION
     -- PARENT tables created first, CHILD tables created after all parent tables created
@@ -312,9 +313,9 @@ DROP TABLE employeesl -- deletes the entire employes table
         -- '%abc' specifies a field that ends with 'abc'
         -- '%abc%' specifies a field that contains the substring 'abc' in the middle of it
     -- _ => catch-all operator to represent exactly ONE character
-    -- LIKE => similar to a partial equality check operator
-    -- DISTINCT => show unique entries only with no duplicates
-    -- ORDER BY => sorts values by their title (case-sensitive)
+    -- LIKE => similar to a partial equality check operator, used when we apply the operators for regex-like string matching
+    -- DISTINCT => show unique entries only with no duplicates, prefixes the selection clause
+    -- ORDER BY => sorts values by their title (case-sensitive), used to suffix the predicate clause
     -- GROUP BY => suffixes the selection clause and allows for grouping of a result by certain specified database columns (aggregation)
         -- * functions called on sets aggregated by GROUP BY will be called on the entire group (SUM, COUNT, AVG, MIN, MAX)
         -- HAVING => suffixes the GROUP BY clause and extract groups that satisfy some conditions (acting as the WHERE clause for GROUP BY)
@@ -322,10 +323,13 @@ DROP TABLE employeesl -- deletes the entire employes table
         -- * You cannot select an unaggregated attribute that does not appear in the GROUP BY list!
     -- COUNT() => returns the count of whatever field specified within brackets
         -- COUNT(DISTINCT) => returns the count of unique fields specified within brackets after DISTINCT
-    -- JOIN => combines rows from two or more tables based on a related column between them, used to specify the target group from which to select items from 
+    -- JOIN => combines rows from two or more tables based on a related column between them, used to specify the target group from which to select items from, offered as an alternative to the "," comma normally used to indicate simply joining 2 tables while providing further augmentations to join with OUTER, INNER JOIN etc
         -- use format => SELECT {COLUMN NAME(S)} FROM {COLUMN 1 NAME} {COLUMN 1 ALIAS} JOIN {COLUMN 2 NAME} {COLUMN 2 ALIAS} ON {PREDICATE}
         -- note that NOT, AND and OR can be used to augment the JOIN conditions
-    -- ON => specifies a predicate for the JOIN clause
+        -- to reference each table's specific column data in the SELECT CLAUSE and PREDICATE CLAUSE, use dot notation in the format of {TABLE / ALIAS NAME}.{COLUMN NAME}
+    -- ON => replaces WHERE to specify a predicate for the JOIN clause as the higher priority predicate clause
+        -- where ON exists, WHERE is a lower priority predicate clause that can be nested within a highe priority ON predicate clause and specifies an additional lower priority condition to check against
+        -- AND being used on the same tier as its ON higher predicate clause will see that the specified JOIN clause is augmented by BOTH checks specified under the ON clause
     -- INNER JOIN => selects only matched rows in both tables (eg. SELECT * FROM customer c INNER JOIN orders o ON c.cid = 0.cid)
     -- LEFT OUTER JOIN => selects all rows from left table and matched rows from right table, the result being NULL on the right side when no matching occurs
     -- RIGHT OUTER JOIN => selects all rows from right table and matched rows from left table, the result being NULL on the left side when no matching occurs
@@ -341,7 +345,8 @@ DROP TABLE employeesl -- deletes the entire employes table
 
 SELECT * FROM employees; -- select all rows and columns from parklaneCaiFan database's employees table
 SELECT working_hrs, employee_name FROM employees; -- select only the working_hrs and employee_name column from employees table
-SELECT * FROM employees, dishes; -- selects all rows and columns from parklaneCaiFan database's employees and dishes tables and effectively calls the JOIN operation on them to create a new table that contains all columns from each composite table
+SELECT * FROM employees e, dishes d; -- selects all rows and columns from parklaneCaiFan database's employees and dishes tables and effectively calls the JOIN operation on them to create a new table that contains all columns from each composite table with optional aliases e and d for employees and dishes respectively
+SELECT working_hrs AS watermelon FROM employees; -- displays all working_hrs column data from the employee table but renames the column to watermelon
 
 SELECT * FROM employees LIMIT 5; -- selects all columns from employees table but only the first 5 rows
 
