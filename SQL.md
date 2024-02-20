@@ -289,6 +289,7 @@ USE parklaneCaiFan;
     -- SELECT {column name(s)} FROM {table name} WHERE {augmentation(s)} {conditional check(s)}=> general syntax to specify which row or column to select from in a tableq
         -- FROM => specifies the table(s) from which we will be selecting data, note that multiple tables can be made the selection target
         -- WHERE => specifies the predicate condition(s) from which we want to augment our selection
+    -- the general format of every SQL query is to augment the target selection group, and filter our selection using a specified predicate
 
 -- NOTES ABOUT TABLE CREATION
     -- PARENT tables created first, CHILD tables created after all parent tables created
