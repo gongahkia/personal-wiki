@@ -286,7 +286,9 @@ USE parklaneCaiFan;
     -- UPDATE {table name} SET {value to be updated} WHERE {predicate to enforce value to be updated} => updates an entry in a specified table
     -- DELETE FROM {table name} => deletes rows from the specified table
     -- DROP TABLE {table name} => deletes the specified table
-    -- SELECT {column name(s)} FROM {table name} {augmentation(s)} => general syntax to specify which row or column to select from in a table
+    -- SELECT {column name(s)} FROM {table name} WHERE {augmentation(s)} {conditional check(s)}=> general syntax to specify which row or column to select from in a tableq
+        -- FROM => specifies the table(s) from which we will be selecting data, note that multiple tables can be made the selection target
+        -- WHERE => specifies the predicate condition(s) from which we want to augment our selection
 
 -- NOTES ABOUT TABLE CREATION
     -- PARENT tables created first, CHILD tables created after all parent tables created
@@ -319,13 +321,15 @@ DROP TABLE employeesl -- deletes the entire employes table
         -- * You cannot select an unaggregated attribute that does not appear in the GROUP BY list!
     -- COUNT() => returns the count of whatever field specified within brackets
         -- COUNT(DISTINCT) => returns the count of unique fields specified within brackets after DISTINCT
-    -- JOIN => combines rows from two or more tables based on a related column between them
-        -- INNER JOIN => selects only matched rows in both tables
-        -- LEFT JOIN => selects all rows from left table and matched rows from right table
-        -- RIGHT JOIN => selects all rows from right table and matched rows from left table
-        -- FULL JOIN => selects all rows from left or right table as long as there is a match in either
-    -- EXTRACT(A FROM B) => used to extract A from B, where A is a subset of B and both A and B are predefined datatypes (often use to extract month or year from data, an alternative to month(B) or year(B))
+    -- JOIN => combines rows from two or more tables based on a related column between them, used to specify the target group from which to select items from 
+        -- use format => SELECT {COLUMN NAME(S)} FROM {COLUMN 1 NAME} {COLUMN 1 ALIAS} JOIN {COLUMN 2 NAME} {COLUMN 2 ALIAS} ON {PREDICATE}
+        -- note that NOT, AND and OR can be used to augment the JOIN conditions
     -- ON => specifies a predicate for the JOIN clause
+    -- INNER JOIN => selects only matched rows in both tables (eg. SELECT * FROM customer c INNER JOIN orders o ON c.cid = 0.cid)
+    -- LEFT OUTER JOIN => selects all rows from left table and matched rows from right table, the result being NULL on the right side when no matching occurs
+    -- RIGHT OUTER JOIN => selects all rows from right table and matched rows from left table, the result being NULL on the left side when no matching occurs
+    -- FULL JOIN => selects all rows from left or right table as long as there is a match in either
+    -- EXTRACT(A FROM B) => used to extract A from B, where A is a subset of B and both A and B are predefined datatypes (often use to extract month or year from data, an alternative to month(B) or year(B))
     -- MIN => finds the lowest value of the column
     -- MAX => finds the highest value of the column
     -- AVG => finds average value of the column
@@ -336,6 +340,7 @@ DROP TABLE employeesl -- deletes the entire employes table
 
 SELECT * FROM employees; -- select all rows and columns from parklaneCaiFan database's employees table
 SELECT working_hrs, employee_name FROM employees; -- select only the working_hrs and employee_name column from employees table
+SELECT * FROM employees, dishes; -- selects all rows and columns from parklaneCaiFan database's employees and dishes tables and effectively calls the JOIN operation on them to create a new table that contains all columns from each composite table
 
 SELECT * FROM employees LIMIT 5; -- selects all columns from employees table but only the first 5 rows
 
