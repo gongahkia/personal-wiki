@@ -316,9 +316,10 @@ DROP TABLE employeesl -- deletes the entire employes table
     -- LIKE => similar to a partial equality check operator, used when we apply the operators for regex-like string matching
     -- DISTINCT => show unique entries only with no duplicates, prefixes the selection clause
     -- ORDER BY => sorts values by their title (case-sensitive), used to suffix the predicate clause
-    -- GROUP BY => suffixes the selection clause and allows for grouping of a result by certain specified database columns (aggregation)
-        -- * functions called on sets aggregated by GROUP BY will be called on the entire group (SUM, COUNT, AVG, MIN, MAX)
+    -- GROUP BY => suffixes the predicate clause and allows for grouping of a result by certain specified database columns (aggregation)
         -- HAVING => suffixes the GROUP BY clause and extract groups that satisfy some conditions (acting as the WHERE clause for GROUP BY)
+        -- COUNT() => often paired together with GROUP BY where COUNT() suffixes the selection clause to act similarly to a .get() in Python by enabling aggregation of datasets
+        -- * functions called on sets aggregated by GROUP BY will be called on the entire group (SUM, COUNT, AVG, MIN, MAX)
         -- * WHERE clauses execute first before the GROUP BY clause
         -- * You cannot select an unaggregated attribute that does not appear in the GROUP BY list!
     -- COUNT() => returns the count of whatever field specified within brackets
@@ -338,7 +339,7 @@ DROP TABLE employeesl -- deletes the entire employes table
     -- MIN => finds the lowest value of the column
     -- MAX => finds the highest value of the column
     -- AVG => finds average value of the column
-    -- IN => checks for the presence of a specified predicate within a set
+    -- IN => checks for the presence of a specified predicate within a set similar to in Python
     -- NOT IN => checks for the absence of a specified predicate within a set
     -- IS NULL => checks whether a specified value is NULL
     -- IS NOT NULL => checks whether a specified value is NOT NULL
