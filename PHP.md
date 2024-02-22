@@ -970,6 +970,7 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
     </form>
 
     <!-- PHP SIDE -->
+        <!-- it is considered good convention to include a name for your submit button and check whether the submit button is clicked using isset() -->
         <!-- $_POST => collects form data submitted using the specified http post request, where data IS NOT visible in the url-->
             <!-- sensitive data -->
         <!-- $_GET => collects form data submitted using the specified http get method, where data IS visible in the url-->
