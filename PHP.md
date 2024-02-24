@@ -969,13 +969,23 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
         <input type="submit" value="send"/>
     </form>
 
-    <!-- PHP SIDE -->
+<!-- SUPERGLOBALS -->
+    <!-- superglobals are associative arrays that are ALWAYS accessible REGARDLESS OF SCOPE, and are often used to store important values returned from the html form or assigned by the programmer -->
+    <!-- $_POST => collects form data submitted using the specified http post request, where data IS NOT visible in the url (so often used for transmission of sensitive form data) -->
+    <!-- $_GET => collects form data submitted using the specified http get method, where data IS visible in the url (so often used for transmission of neutral non-confidential form data) -->
         <!-- it is considered good convention to include a name for your submit button and check whether the submit button is clicked using isset() -->
-        <!-- $_POST => collects form data submitted using the specified http post request, where data IS NOT visible in the url-->
-            <!-- sensitive data -->
-        <!-- $_GET => collects form data submitted using the specified http get method, where data IS visible in the url-->
-            <!-- non-sensitive data -->
-        <!-- $_REQUEST => collects form data from both $_GET and $_POST as well as $_COOKIE -->
+    <!-- $_SESSION -->
+        <!-- allows for powerful storing of data across multiple HTTP requests (aka multiple instances of form submission), effectively allowing for storage of data across multipe webpages in a single website -->
+        <!-- session_start() => BEGINS a session, necessary to start accessing the $_SESSION superglobal variable and assigning keys and values to it -->
+        <!-- session_destroy() => DESTROYS a session on the SERVER (note that the client-side cookies remain until the browser is closed) -->
+        <!-- session_unset() => DESTROYS a session on the CLIENT immediately (deletes the session cookies) -->
+    <!-- $_REQUEST => collects form data from both $_GET and $_POST as well as $_COOKIE -->
+    <!-- other superglobals to check out -->
+        <!-- $GLOBALS -->
+        <!-- $_SERVER -->
+        <!-- $_FILES -->
+        <!-- $_ENV -->
+        <!-- $_COOKIE -->
 
     </body>
 </html>
