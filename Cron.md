@@ -4,7 +4,7 @@ Standard UNIX tool for scheduling jobs at periodic intervals.
 
 ## Installation
 
-```console
+```bash
 # ----- INSTALLATION -----
     # cron should come installed by default on most unix and linux systems
 
