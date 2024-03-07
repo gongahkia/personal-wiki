@@ -551,6 +551,7 @@ try {
     // include => searches for the specified file, if absent returns a non-fatal error, the equivalent of import in Python
     // require => functions the same way as include except a fatal error is created if specified file absent
         // generally preferred for greater safety offered
+    // require_once => checks whether a file is already imported, if already imported then will NOT include it again
 
 include 'my-file.php'; // code within my-file.php is now within scope, if the current file is not found it emitts a warning
 include_once 'my-file.php'; // will not include code from my-file.php if its been included elsewhere
