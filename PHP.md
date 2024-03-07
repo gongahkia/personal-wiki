@@ -564,15 +564,24 @@ require_once 'my-file.php';
 <?php
 
 // ---------- OBJECT ORIENTED PROGRAMMING ----------
-    // public => specifies a given variable is public, meaning it is visible from the global scope
-    // private => specifies a given variable is private, meaning it is accesible within the class only
-    // protected => specifies a given variable is protected, meaning it is accessible from the class and its subclasses
-    // static => specifies a given variable is static, meaning it belongs to the class itself and can only be called from the class, not from any of its objects
-    // final => specifies a given class method is final, meaning it is unoverridable and unextendable
-    // _construct => constructor method automatically called upon an object's instantiation, similar to __init__ in Python
-    // $this => equivalent of self in Python 
-    // -> equivalent of . dot notation in Python
-    // new => instantiates a new instance object of a class
+    // public
+        // variable VISIBLE from GLOBAL SCOPE
+    // private
+        // variable ACCESIBLE ONLY WITHIN CLASS only
+    // protected 
+        // variable ACCESIBLE FROM CLASS AND SUBCLASSES
+    // static
+        // variable BELONGS TO CLASS and can ONLY BE CALLED FROM CLASS, not any of its objects
+    // final
+        // METHOD is unoverridable and unextendable
+    // _construct
+        // constructor method automatically called upon an object's instantiation, similar to __init__ in Python
+    // new
+        // instantiates a new instance object of a class
+    // $this
+        // .self in Python 
+    // -> 
+        // equivalent of . dot notation in Python
 
 class CaiFanShop {
 
