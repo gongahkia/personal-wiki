@@ -82,7 +82,7 @@ $funny /= $float_val; // divide $funny by $float_val and assign the quotient to 
 // STRING
 $string_val = 'quote'; // strings are enclosed in single quotes
 $formatted_string = "This is a $string_val"; // functions as a formatted string that embeds the $string_val variable in the string
-$another_formatted_string = "This is also a formatted string as seen in {$string_val} here."; // enclosing a variables in curly braces also creates a formatted string, as well as ${}
+$another_formatted_string = "This is also a formatted string as seen in {$string_val} here."; // enclosing a variables in curly braces allows for evaluation of more complex statements within a string
 $escaped = "This will reflect as 4 spaces /t"; // special characters like /t and /n are escaped only in double quotes
 $unescaped = 'This will literally show a slash and a t'; // special characters are unescaped in single quotes
 echo 'This string' . ' is concatenated'; // the . supports string concatenation
@@ -103,9 +103,10 @@ $var_null = null;
 <?php
 
 // ---------- CONSTANT ----------
-    // constants are defined using define() and cannot be changed at runtime
+    // constants are defined using define() or the keyword const WITHOUT $ and cannot be changed at runtime
     // constants can be accessed by calling it without a $
 
+const watermelon = "I cannot be changed at runtime, change me upon intialization only";
 define("FOO", "something"); // defines a constant variable called FOO of string value 'something'
 echo FOO; // prints 'something'
 echo 'This outputs ' . FOO // prints 'This outputs something'
@@ -549,6 +550,7 @@ try {
 // ---------- IMPORTS -----------
     // include => searches for the specified file, if absent returns a non-fatal error, the equivalent of import in Python
     // require => functions the same way as include except a fatal error is created if specified file absent
+        // generally preferred for greater safety offered
 
 include 'my-file.php'; // code within my-file.php is now within scope, if the current file is not found it emitts a warning
 include_once 'my-file.php'; // will not include code from my-file.php if its been included elsewhere
@@ -565,10 +567,12 @@ require_once 'my-file.php';
 
 // ---------- OBJECT ORIENTED PROGRAMMING ----------
     // public
-        // variable VISIBLE from GLOBAL SCOPE
+        // variable and methods VISIBLE from GLOBAL SCOPE
+        // normally declare class methods as public to allow them to be called from the global scope
     // private
         // variable ACCESIBLE ONLY WITHIN CLASS only
         // normally declare class attributes as private to prevent unhandled mutation
+        // variables and their scope can be declared without variable intialization (assigning a value to a variable)
     // protected 
         // variable ACCESIBLE FROM CLASS AND SUBCLASSES
     // static
@@ -581,14 +585,28 @@ require_once 'my-file.php';
     // new
         // instantiates a new instance object of a class
     // $this
-        // .self in Python 
+        // represents an instance object (similar to .self in Python), used when calling instance variables and methods which are per object
+        // always followed by -> operator (similar to . in Python)
+        // remember NOT to include another $ after the -> before the instance attribute since $ already placed as part of the $this
+    // self 
+        // represents a class, used when calling class constants which are per class
+        // always followed by :: operator
     // -> 
         // equivalent of . dot notation in Python
         // first called in constructor function to define the instance object's attributes, then called subsquently whenever instance attributes referenced
+    // getter
+        // generic term for class method that returns a private class property
+    // setter
+        // generic term for class method that modifies a private class property
+    // class constant
+        // class constants are declared WITHOUT $
+        // constant attribute defined within a class that does not change during runtime, per class
+        // self => class constant referenced from within the class by self::constantName
+        // :: => class constant referenced from outside the class by className::constantName
 
 class CaiFanShop {
 
-    const carbohydrate = 'Rice';
+    const carbohydrate = 'Rice'; // class constant
 
     public static $publicStaticVar = 'public static'; // public variable visible from global scope, static meaning it can only be accessed from within the class
     private static $privateStaticVar = 'private static'; // private variable accesible from within the class only
@@ -602,7 +620,7 @@ class CaiFanShop {
 
     // CONSTRUCTOR FUNCTION 
 
-    public function _construct($instanceProp) { 
+    public function __construct($instanceProp) { 
         $this->instanceProp = $instanceProp; // access instance variables with $this
     }
 
@@ -620,7 +638,7 @@ class CaiFanShop {
     // DESTRUCTOR FUNCTION
         // called when object is no longer referenced, used to deconstruct the object
 
-    public function _destruct() {
+    public function __destruct() {
         print "Destroying";
     }
 
