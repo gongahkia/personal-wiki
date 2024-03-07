@@ -568,20 +568,23 @@ require_once 'my-file.php';
         // variable VISIBLE from GLOBAL SCOPE
     // private
         // variable ACCESIBLE ONLY WITHIN CLASS only
+        // normally declare class attributes as private to prevent unhandled mutation
     // protected 
         // variable ACCESIBLE FROM CLASS AND SUBCLASSES
     // static
         // variable BELONGS TO CLASS and can ONLY BE CALLED FROM CLASS, not any of its objects
     // final
         // METHOD is unoverridable and unextendable
-    // _construct
+    // __construct()
         // constructor method automatically called upon an object's instantiation, similar to __init__ in Python
+        // constructor method takes arguments that can be assigned to the instance object upon instantiation
     // new
         // instantiates a new instance object of a class
     // $this
         // .self in Python 
     // -> 
         // equivalent of . dot notation in Python
+        // first called in constructor function to define the instance object's attributes, then called subsquently whenever instance attributes referenced
 
 class CaiFanShop {
 
