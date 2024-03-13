@@ -542,21 +542,38 @@ try {
 >
 ```
 
-## Other files
+## Importing from other files
 
 ```php
 <?php
 
 // ---------- IMPORTS -----------
-    // include => searches for the specified file, if absent returns a non-fatal error, the equivalent of import in Python
+    // include => searches for the specified file, if absent returns a non-fatal error, the equivalent of import in Python, emits a warning if specified file absent
+    // include_once => searches the specified file, if alreayd imported then DOES NOT include it again to prevent circular importing, emits a warning if specified file absent
     // require => functions the same way as include except a fatal error is created if specified file absent
+    // require_once => checks whether a file is already imported, if already imported then will NOT include it again to prevent circular importing, creates a fatal error if specified file absent
         // generally preferred for greater safety offered
-    // require_once => checks whether a file is already imported, if already imported then will NOT include it again
+    // spl_autoload_register() => built-in function that is called once at the beginning of the file, facilitates automatic creation of undefined classes that are instantiated as their own php file, takes in a function name (string) or an anonymous function as an argument, where the function takes in $class as an argument and requires or includes the special variable $class.php with a file path that can be augmented (similar to Java) in the functiond definition
 
-include 'my-file.php'; // code within my-file.php is now within scope, if the current file is not found it emitts a warning
-include_once 'my-file.php'; // will not include code from my-file.php if its been included elsewhere
+include 'my-file.php'; 
+include_once 'my-file.php'; 
 require 'my-file.php'; 
 require_once 'my-file.php';
+
+// if an undefined class is instantiated, creates that class as a {class}.php file in the same file directory
+spl_autoload_register(
+    function($class){
+        require_once "$class.php"; // specified file path is same directory
+    }
+)
+
+// spl_autoload_register can only be called once by right but called multiple times here for example's sake
+// if an undefined class is instantiated, creates the file in the file path model/{class}.php
+spl_autoload_register( 
+    function($class){
+        require_once "model/$class.php"; // specified file path is within the model file directory
+    }
+)
 
 >
 ```
@@ -567,19 +584,44 @@ require_once 'my-file.php';
 <?php
 
 // ---------- OBJECT ORIENTED PROGRAMMING ----------
+
+// ----- QUICK YAPPING ----- 
+
+// GENERAL OOP principle 
+    // AIM TO REDUCE COMPLEXITY
+    // information hiding --> object properties accessed via defined methods like getters and setters
+    // callers need not know of an object's inner workings like how exactly its methods are defined
+
+// DATA ACCESS OBJECTS (DAO)
+    // a class that provides access to data stored in a file or database
+    // one DAO for each datatype (eg. personDAO, parklaneDAO, VehicleDAO)
+    // supports CRUD operations (create, read, update, delete) as defined methods by the programmer
+    // follows information hiding principles with complexity obscured by the DAO
+
+// ----- ACCESS MODIFIERS -----
+
     // public
         // variable and methods VISIBLE from GLOBAL SCOPE
-        // normally declare class methods as public to allow them to be called from the global scope
+        // GENERALLY, GOOD OOP PRACTICE to declare class methods as public to allow them to be called from the global scope
+            // methods are public by default if not specified
+
     // private
         // variable ACCESIBLE ONLY WITHIN CLASS only
-        // normally declare class attributes as private to prevent unhandled mutation
         // variables and their scope can be declared without variable intialization (assigning a value to a variable)
+        // GENERALLY, GOOD OOP PRACTICE TO declare class attributes as private to prevent unhandled mutation
+            // class attributes are accessed via GETTERS and SETTERS
+
     // protected 
         // variable ACCESIBLE FROM CLASS AND SUBCLASSES
+
     // static
         // variable BELONGS TO CLASS and can ONLY BE CALLED FROM CLASS, not any of its objects
+
     // final
         // METHOD is unoverridable and unextendable
+
+// ----- OOP SYNTAX -----
+
     // __construct()
         // constructor method automatically called upon an object's instantiation, similar to __init__ in Python
         // constructor method takes arguments that can be assigned to the instance object upon instantiation
@@ -828,7 +870,7 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
         // path => points to a specific resource in the web server, separated by / similar to in the cli
         // query => optional parameter that augments the url, often including key-value pairs that are ampersand & operator delimited
     // REQUEST RESPONSE CYCLE
-        // 1. user makes a url request for a specific webpage
+        // 1. client user makes a url request for a specific webpage
         // 2. client browser takes the url, extracts the hostname, and feeds that hostname to the dns server, which returns the corresonding ip address of the web server
         // 3. client browser makes a connection to the web server via that ip address and issues a http GET request to retrieve contents of the page at the specified url
         // 4. web server can optionally interact with other processing engines using php and sql to access the database server, and other external resources on the web server's side
@@ -936,7 +978,7 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
             <input name="color[]" type="checkbox" value="b"/>Blue
         </form>
 
-        <!-- 6. hidden => creates a hidden section that obscures data from the webpage user -->
+        <!-- 6. hidden => creates a hidden section that obscures data from the webpage client user -->
         <!-- 7. reset => resets all webpage components in the html form to their default values, does not send any form data to the web server -->
 
 <!-- LABEL -->
