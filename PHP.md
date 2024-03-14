@@ -602,6 +602,7 @@ spl_autoload_register(
     // 1. $roadUser is a local variable that stores an instance object of the RoadUser class
     // 2. $roadUser -> getVehicle() returns an instance object of the Vehicle class
     // 3. getType() is a method called on the Vehicle class to return a value
+
 $roadUser->getVehicle()->getType(); 
 
 // ----- ACCESS MODIFIERS -----
@@ -652,6 +653,8 @@ $roadUser->getVehicle()->getType();
         // constant attribute defined within a class that does not change during runtime, per class
         // self => class constant referenced from within the class by self::constantName
         // :: => class constant referenced from outside the class by className::constantName
+    // {}
+        // can be used to embed more complex statements (an object or class calling its method or attribute) within a string through string interpolation
 
 class CaiFanShop {
 
@@ -673,9 +676,12 @@ class CaiFanShop {
         $this->instanceProp = $instanceProp; // access instance variables with $this
     }
 
+    public function shiok() {
+        print 'MyClass';
+    }
 
     public function myMethod() {
-        print 'MyClass';
+        print 'Look at {$this->shiok()}'; // made possible via string interpolation to embed complex statements in strings
     }
 
     // FINAL FUNCTIONS
