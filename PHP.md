@@ -553,25 +553,24 @@ try {
     // require => functions the same way as include except a fatal error is created if specified file absent
     // require_once => checks whether a file is already imported, if already imported then will NOT include it again to prevent circular importing, creates a fatal error if specified file absent
         // generally preferred for greater safety offered
-    // spl_autoload_register() => built-in function that is called once at the beginning of the file, facilitates automatic creation of undefined classes that are instantiated as their own php file, takes in a function name (string) or an anonymous function as an argument, where the function takes in $class as an argument and requires or includes the special variable $class.php with a file path that can be augmented (similar to Java) in the functiond definition
+    // spl_autoload_register() => built-in function that is called once at the beginning of the file, automatically loads predefined classes which are separated as their own php file, takes in a function name (string) or an anonymous function which receives a $class argument, where the function definition specifies the file path to find the predefined classes' .php files
+        // allows for a templated and tiered approach to creating different classes and objects
 
 include 'my-file.php'; 
 include_once 'my-file.php'; 
 require 'my-file.php'; 
 require_once 'my-file.php';
 
-// if an undefined class is instantiated, creates that class as a {class}.php file in the same file directory
 spl_autoload_register(
     function($class){
-        require_once "$class.php"; // specified file path is same directory
+        require_once "$class.php"; // specified file path to find predefined classes is same directory
     }
 )
 
-// spl_autoload_register can only be called once by right but called multiple times here for example's sake
-// if an undefined class is instantiated, creates the file in the file path model/{class}.php
+// spl_autoload_register should only be called once by right but called multiple times here for example's sake
 spl_autoload_register( 
     function($class){
-        require_once "model/$class.php"; // specified file path is within the model file directory
+        require_once "model/$class.php"; // specified file path to find predefined classes is within the model file directory
     }
 )
 
@@ -593,10 +592,17 @@ spl_autoload_register(
     // callers need not know of an object's inner workings like how exactly its methods are defined
 
 // DATA ACCESS OBJECTS (DAO)
-    // a class that provides access to data stored in a file or database
+    // a class that provides access to data stored in a file or database, which could include other classes
+        // effectively allows for chaining of class object methods that return other class objects which then call their own methods to obtain values
     // one DAO for each datatype (eg. personDAO, parklaneDAO, VehicleDAO)
     // supports CRUD operations (create, read, update, delete) as defined methods by the programmer
     // follows information hiding principles with complexity obscured by the DAO
+
+// code like the line below is possible because of layered obscurity provided by the DAO
+    // 1. $roadUser is a local variable that stores an instance object of the RoadUser class
+    // 2. $roadUser -> getVehicle() returns an instance object of the Vehicle class
+    // 3. getType() is a method called on the Vehicle class to return a value
+$roadUser->getVehicle()->getType(); 
 
 // ----- ACCESS MODIFIERS -----
 
