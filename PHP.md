@@ -992,12 +992,14 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
 
         <!-- 6. hidden => creates a hidden section that obscures data from the webpage client user -->
             <!-- TAKE NOTE OF THIS TO USE -->
-            <!-- value => can save state across form submissions by reassigning the value of the value attribute in the hidden form field, where your name is the key and the value is the value in the key-value pair submitted alongside other input fields to the $_GET or $_POST superglobal variables -->
-                <!-- hidden input names and values are thus submitted alongside any other input field when the submit button is pressed -->
+            <!-- value => programmer can save state across form submissions by reassigning the value of the value attribute in the hidden form field, with the name attribute being the key and the value attribute is the value in the key-value pair submitted alongside other input fields to the $_GET or $_POST superglobal variables -->
+                <!-- hidden input names and values will be submitted alongside any other input field when the submit button is pressed -->
         
-        <input name="key-pair" value="value-pair which is your value" type="hidden">
+        <input name="key-pair" value="value-pair" type="hidden">
 
         <!-- 7. reset => resets all webpage components in the html form to their default values, does not send any form data to the web server -->
+
+        <input name="value-you-want" type="reset">
 
 <!-- LABEL -->
     <!-- label => creates label text that is associated with an input tag -->
