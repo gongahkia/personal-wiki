@@ -605,8 +605,9 @@ $roadUser->getVehicle()->getType();
     // 2. $roadUser -> getVehicle() returns an instance object of the Vehicle class
     // 3. getType() is a method called on the Vehicle class to return a value
 
-// PHP DATA OBJECTS (PDO)
+// ----- PHP DATA OBJECTS (PDO) -----
     // perform CRUD operations on a connected database by interacting with DAOs using SQL queries
+    // AVOID writing PDO object code in multiple PHP pages
 
 // 1. Connect to Database by creating a PDO object 
     // PDO object instantiated with DSN, username and password
@@ -664,6 +665,78 @@ while($row = $preparedStatement->fetch()){
 
 $preparedStatement = null;
 $pdo = null;
+
+// CONNECTIONMANAGER class
+    // common practice to create a shared ConnectionManager class as its own PHP file
+    // then call it as a class whose method is invoked within other class files to perform basic CRUD operations on the desired database
+
+// < ConnectionManager.php >
+class ConnectionManager { 
+    public function getConnection() {
+        $dsn = "mysql:host=localhost;dbname=week11;port=3306";
+        $pdo = new PDO($dsn, "root", "");
+        return $pdo;
+    }
+}
+
+// < BookDAO.php >
+    // assume that these are public methods declared within the class BookDAO
+    // they all make use of the ConnectionManager class (remember to import it into your current PHP file!)
+
+public class BookDAO {
+
+    // declared variables, constructor functions etc ...
+
+    public function getBooks() { 
+        $connMgr = new ConnectionManager();      
+        $pdo = $connMgr->getConnection();  
+        $sql = 'SELECT * FROM book';         
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        $result = [];
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        while($row = $stmt->fetch()) {
+            $result[] = new Book($row['isbn'], $row['title']);
+        }
+        $stmt = null;
+        $pdo = null;
+        return $result;
+    }
+
+    public function getBook($isbn) {
+        $connMgr = new ConnectionManager();      
+        $pdo = $connMgr->getConnection();  
+        $sql = 'select * from book where isbn=:isbn';         
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':isbn', $isbn, PDO::PARAM_STR);
+        $stmt->execute();
+        $result = null;
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        if($row = $stmt->fetch()) {
+            $result = new Book($row['isbn'],$row['title']);
+        }
+        $stmt = null;
+        $pdo = null;
+        return $result;
+    }
+
+    public function add($book) {
+        $connMgr = new ConnectionManager();      
+        $pdo = $connMgr->getConnection(); 
+        $sql = 'insert into book (isbn, title)
+                values (:isbn, :title)';
+        $stmt = $pdo->prepare($sql); 
+        $title = $book->getTitle(); 
+        $isbn = $book->getIsbn(); 
+        $stmt->bindParam(':title', $title, PDO::PARAM_STR);
+        $stmt->bindParam(':isbn', $isbn, PDO::PARAM_STR);
+        $isAddOK = $stmt->execute();
+        $stmt = null;
+        $pdo = null;
+        return $isAddOK;    
+    }
+
+}
 
 // ----- ACCESS MODIFIERS -----
 
