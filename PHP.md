@@ -598,12 +598,72 @@ spl_autoload_register(
     // supports CRUD operations (create, read, update, delete) as defined methods by the programmer
     // follows information hiding principles with complexity obscured by the DAO
 
-// code like the line below is possible because of layered obscurity provided by the DAO
+$roadUser->getVehicle()->getType(); 
+
+// code like above line is possible because of layered obscurity provided by the DAO
     // 1. $roadUser is a local variable that stores an instance object of the RoadUser class
     // 2. $roadUser -> getVehicle() returns an instance object of the Vehicle class
     // 3. getType() is a method called on the Vehicle class to return a value
 
-$roadUser->getVehicle()->getType(); 
+// PHP DATA OBJECTS (PDO)
+    // perform CRUD operations on a connected database by interacting with DAOs using SQL queries
+
+// 1. Connect to Database by creating a PDO object 
+    // PDO object instantiated with DSN, username and password
+        // Data Source Name (DSN) consists of ...
+            // database type and host
+            // database name 
+            // port
+
+$dsn = "mysql:host=localhost;dbname=week11Test;port=3306";
+$user = "root";
+$password = "";
+$pdo = new PDO($dsn, $user, $password); // all parameters defined for clarity here but they can be fed in as value literals for generic PDO object instantiation
+
+// 2. Prepare an SQL statement called by PDO object using a method
+    // prepare() => creates a template SQL query statement that can be executed multiple times with different parameter values
+        // each :XX value in the SQL query statement string is a parameter's placeholder value 
+        // takes in SQL query statement as an argument
+    // bindParam() => associates a prepared SQL query's parameter with a PHP variable
+        // effectively interpolates the specified variable into the prepared SQL query statement, necessary before execution
+        // takes in parameter within SQL query statement, PHP variable to associate it with, and class constraints as arguments
+            // CLASS CONSTRAINTS
+                // 1. PDO::PARAM_STR => represents datatypes SQL CHAR, VARCHAR, other string types 
+                    // !!! also use for SQL FLOAT, DOUBLE, DECIMAL and any datatypes not within other PDO class constraints
+                // 2. PDO::PARAM_INT => represents datatype SQL INT
+                // 3. PDO::PARAM_BOOL => represents datatype SQL BOOLEAN 
+
+$isbn = 'isbn1';
+$sqlStatement = 'select * from book where isbn = :isbn'; // here :isbn is the placeholder value
+$preparedStatement = $pdo->prepare($sql);
+$preparedStatement->bindParam(':isbn', $isbn, PDO:PARAM_STR);
+
+    // 3. Execute an SQL statement 
+        // execute() => runs the specified prepared and binded SQL query statement
+            // takes no arguments
+
+$preparedStatement->execute();
+
+    // 4. Retrieve results row-by-row from queried SQL data
+        // setFetchMode() => specifies how the rows retrieved from a SQL database query should be returned
+            // takes in fetch constraint as an argument
+                // FETCH CONSTRAINT
+                    // PDO::FETCH_ASSOC
+                    // PDO::FETCH_OBJ
+                    // PDO::FETCH_BOTH
+        // fetch() => iteratively retrieves the next row from the returned SQL result set in response to a database query
+            // takes no arguments by default
+        // each SQL database column is a KEY associated with its corresponding record's stored as a VALUE in a KEY-VALUE pair relationship
+
+$preparedStatement->setFetchMode(PDO::FETCH_ASSOC);
+while($row = $preparedStatement->fetch()){
+    echo $row['isbn'] . "    " . $row['title'];
+}
+
+    // 5. Free up resources to close connection to Database and SQL statement
+
+$preparedStatement = null;
+$pdo = null;
 
 // ----- ACCESS MODIFIERS -----
 
