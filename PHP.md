@@ -616,11 +616,13 @@ $roadUser->getVehicle()->getType();
             // database type and host
             // database name 
             // port
+    // setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT) => used to silence any errors and exceptions raised by SQL, useful for final display but should be avoided during development
 
 $dsn = "mysql:host=localhost;dbname=week11Test;port=3306";
 $user = "root";
 $password = ""; // password is "" for Windows and "root" for Mac
 $pdo = new PDO($dsn, $user, $password); // all parameters defined for clarity here but they can be fed in as value literals for generic PDO object instantiation
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
 
 // 2. Prepare an SQL statement called by PDO object using a method
     // SQL statement HAS to be within single quotes to create a string literal 
