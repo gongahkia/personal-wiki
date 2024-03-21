@@ -610,6 +610,7 @@ $roadUser->getVehicle()->getType();
     // AVOID writing PDO object code in multiple PHP pages
 
 // 1. Connect to Database by creating a PDO object 
+    // PDO is a predefined class within PHP
     // PDO object instantiated with DSN, username and password
         // Data Source Name (DSN) consists of ...
             // database type and host
@@ -618,7 +619,7 @@ $roadUser->getVehicle()->getType();
 
 $dsn = "mysql:host=localhost;dbname=week11Test;port=3306";
 $user = "root";
-$password = "";
+$password = ""; // password is "" for Windows and "root" for Mac
 $pdo = new PDO($dsn, $user, $password); // all parameters defined for clarity here but they can be fed in as value literals for generic PDO object instantiation
 
 // 2. Prepare an SQL statement called by PDO object using a method
@@ -636,7 +637,7 @@ $pdo = new PDO($dsn, $user, $password); // all parameters defined for clarity he
 
 $isbn = 'isbn1';
 $sqlStatement = 'select * from book where isbn = :isbn'; // here :isbn is the placeholder value
-$preparedStatement = $pdo->prepare($sql);
+$preparedStatement = $pdo->prepare($sqlStatement);
 $preparedStatement->bindParam(':isbn', $isbn, PDO:PARAM_STR);
 
     // 3. Execute an SQL statement 
@@ -654,12 +655,22 @@ $preparedStatement->execute();
                     // PDO::FETCH_BOTH
         // fetch() => iteratively retrieves the next row from the returned SQL result set in response to a database query
             // takes no arguments by default
+        // fetchColumn() => retrieves the single column value from the returned SQL resulte to a database query
+            // takes no arguments by default
         // each SQL database column is a KEY associated with its corresponding record's stored as a VALUE in a KEY-VALUE pair relationship
 
 $preparedStatement->setFetchMode(PDO::FETCH_ASSOC);
 while($row = $preparedStatement->fetch()){
     echo $row['isbn'] . "    " . $row['title'];
 }
+
+// fetchColumn() makes things like this possible
+
+$sqlStatement = "SELECT COUNT(*) FROM book";
+$preparedStatement = $pdo->prepare($sqlStatement);
+$preparedStatement->execute();
+$count = $preparedStatement->fetchColumn();
+echo "Here's your final count $count";
 
     // 5. Free up resources to close connection to Database and SQL statement
 
