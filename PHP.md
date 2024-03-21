@@ -623,8 +623,9 @@ $password = ""; // password is "" for Windows and "root" for Mac
 $pdo = new PDO($dsn, $user, $password); // all parameters defined for clarity here but they can be fed in as value literals for generic PDO object instantiation
 
 // 2. Prepare an SQL statement called by PDO object using a method
+    // SQL statement HAS to be within single quotes to create a string literal 
     // prepare() => creates a template SQL query statement that can be executed multiple times with different parameter values
-        // each :XX value in the SQL query statement string is a parameter's placeholder value 
+        // each :XX value in the SQL query statement string is a parameter's placeholder value, where : prepends the placeholder within the SQL statement
         // takes in SQL query statement as an argument
     // bindParam() => associates a prepared SQL query's parameter with a PHP variable
         // effectively interpolates the specified variable into the prepared SQL query statement, necessary before execution
@@ -638,7 +639,7 @@ $pdo = new PDO($dsn, $user, $password); // all parameters defined for clarity he
 $isbn = 'isbn1';
 $sqlStatement = 'select * from book where isbn = :isbn'; // here :isbn is the placeholder value
 $preparedStatement = $pdo->prepare($sqlStatement);
-$preparedStatement->bindParam(':isbn', $isbn, PDO:PARAM_STR);
+$preparedStatement->bindParam(':isbn', $isbn, PDO::PARAM_STR);
 
     // 3. Execute an SQL statement 
         // execute() => runs the specified prepared and binded SQL query statement
