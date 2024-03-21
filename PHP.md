@@ -637,6 +637,7 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
                     // !!! also use for SQL FLOAT, DOUBLE, DECIMAL and any datatypes not within other PDO class constraints
                 // 2. PDO::PARAM_INT => represents datatype SQL INT
                 // 3. PDO::PARAM_BOOL => represents datatype SQL BOOLEAN 
+        // NOT ALWAYS NECESSARY to be used, used only when the SQL statement has parameters that are user-defined or variable to change
 
 $isbn = 'isbn1';
 $sqlStatement = 'select * from book where isbn = :isbn'; // here :isbn is the placeholder value
@@ -646,8 +647,14 @@ $preparedStatement->bindParam(':isbn', $isbn, PDO::PARAM_STR);
     // 3. Execute an SQL statement 
         // execute() => runs the specified prepared and binded SQL query statement
             // takes no arguments
+            // returns a Boolean value (True / False) depending on whether the given action executed succesfully
+                // ! often stored within variables to check whether a given value inserted or deleted correctly etc
 
+// just executes the job if no validation is required
 $preparedStatement->execute();
+
+// alternatively...
+$validateInsertion = $preparedStatement->execute();
 
     // 4. Retrieve results row-by-row from queried SQL data
         // setFetchMode() => specifies how the rows retrieved from a SQL database query should be returned
@@ -658,6 +665,7 @@ $preparedStatement->execute();
                     // PDO::FETCH_BOTH
         // fetch() => iteratively retrieves the next row from the returned SQL result set in response to a database query
             // takes no arguments by default
+            // note that while($row = $preparedStatement->fetch()) is not a comparison equality check but an ASSIGNMENT STATEMENT where the value of $preparedStatement->fetch() is assigned to $row
         // fetchColumn() => retrieves the single column value from the returned SQL resulte to a database query
             // takes no arguments by default
         // each SQL database column is a KEY associated with its corresponding record's stored as a VALUE in a KEY-VALUE pair relationship
@@ -680,9 +688,66 @@ echo "Here's your final count $count";
 $preparedStatement = null;
 $pdo = null;
 
+// ----- DAO and PDO interaction -----
+    // allows us to connect our DAO to the database, useful because CRUD operations are normally called on DAO
+    // the value of incorporating DAO and PDO lies in allowing for all database connection logic to be encapsulated within a single method
+        // ! combine the 5 steps covered above and place them within a defined class method
+
+// < BookDAO.php >
+class BookDAO {
+
+    public function getAllBooks(){
+        $fin = [];
+        $dsn = "mysql:host=localhost;dbname=week11;port=3306";
+        $pdo = new PDO($dsn, "root", "");
+        $sql = 'SELECT * FROM book';
+        $job = $pdo->prepare($sql);
+        $job->execute();
+        $job->setFetchMode(PDO::FETCH_ASSOC);
+        while ($row = $job->fetch()){
+            $fin[] = new Book($row['isbn']), $row['title']);
+        }
+        $job = null;
+        $pdo = null;
+        return $fin;
+    }
+
+    public function getSpecificBook(){
+        $fin = null;
+        $dsn = "mysql:host=localhost;dbname=week11;port=3306";
+        $pdo = new PDO($dsn, "root", "");
+        $sql = 'SELECT * FROM book WHERE isbn = :isbn';
+        $job = $pdo->prepare($sql);
+        $job->bindParam(':isbn', $isbn, PDO::PARAM_STR);
+        $job->execute();
+        $job->setFetchMode(PDO::FETCH_ASSOC);
+        if($row = $job->fetch()){
+            $fin = new Book($row['isbn'], $row['title']);
+        }
+        $job = null;
+        $pdo = null;
+        return $fin;
+    }
+
+    public function addSpecificBook($book){
+        $dsn = "mysql:host=localhost;dbname=week11;port=3306";
+        $pdo = new PDO($dsn, "root", "");
+        $sql = 'INSERT INTO book (isbn, title) VALUES (:ibsn, :title)';
+        $job = $pdo->prepare($sql);
+        $currIsbn = $book->getIsbn();
+        $currTitle = $book->getTitle();
+        $job->bindParam(':isbn', $currIsbn, PDO::PARAM_STR);
+        $job->bindParam(':title', $currTitle, PDO::PARAM_STR);
+        $validateAdding = $job->execute();
+        $job = null;
+        $pdo = null;
+        return $validateAdding;
+    }
+
+}
+
 // CONNECTIONMANAGER class
-    // common practice to create a shared ConnectionManager class as its own PHP file
-    // then call it as a class whose method is invoked within other class files to perform basic CRUD operations on the desired database
+    // the value of the ConnectionManager user-defined class is in preventing repeated code as seen above in DAO-PDO interaction
 
 // < ConnectionManager.php >
 class ConnectionManager { 
@@ -696,6 +761,7 @@ class ConnectionManager {
 // < BookDAO.php >
     // assume that these are public methods declared within the class BookDAO
     // they all make use of the ConnectionManager class (remember to import it into your current PHP file!)
+    // my code above now becomes this below instead
 
 public class BookDAO {
 
