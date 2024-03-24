@@ -689,8 +689,9 @@ $preparedStatement = null;
 $pdo = null;
 
 // ----- DAO and PDO interaction -----
-    // allows us to connect our DAO to the database, useful because CRUD operations are normally called on DAO
+    // allows us to connect our DAO to the SQL database, useful because CRUD operations are normally called on DAO
     // the value of incorporating DAO and PDO lies in allowing for all database connection logic to be encapsulated within a single method
+    // generally, individual object state (Book.php) is saved locally and collectively saved as a DAO (BookDAO.php), and the DAO is then written and read from the SQL database (since each record is the equivalent of an individual object and multiple records create a single table, which is the DAO)
         // ! combine the 5 steps covered above and place them within a defined class method
 
 // < BookDAO.php >
