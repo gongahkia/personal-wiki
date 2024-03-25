@@ -1206,10 +1206,75 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
 
         <!-- 6. hidden => creates a hidden section that obscures data from the webpage client user -->
             <!-- TAKE NOTE OF THIS TO USE -->
-            <!-- value => programmer can save state across form submissions by reassigning the value of the value attribute in the hidden form field, with the name attribute being the key and the value attribute is the value in the key-value pair submitted alongside other input fields to the $_GET or $_POST superglobal variables -->
-                <!-- hidden input names and values will be submitted alongside any other input field when the submit button is pressed -->
+            <!-- name => the name attribute is the key in the key-value pair stored within the submission protocol method (GET/POST) superglobal variable --> 
+            <!-- value => programmer can save state across form submissions by ASSIGNING the value in the value attribute within a hidden form field -->
+                <!-- hidden input names and values will be submitted alongside any other input fields under the same FORM TAG when the submit button is pressed -->
+            <!-- normally HIDDEN input tags are paired with the ACTION attribute within the FORM tag (which specifies the php file to be loaded when submission button is pressed) to preserve input values across multiple sessions-->
         
         <input name="key-pair" value="value-pair" type="hidden">
+
+        <!-- eg. of preserving values using input.php -->
+
+            <!-- page1.php -->
+
+            <html>
+                <body>
+                    <form method="post" action="page2.php"> <!-- page2.php will be loaded when the submission button is pressed -->
+                        <label>Name: <input type="text" name="name"/></label>
+                        <input type="submit" value="Next"/>
+                    </form>
+                </body>
+            </html>
+
+            <!-- page2.php -->
+
+            <html>
+                <body>
+                    <form method="post" action="page3.php"> <!-- page3.php will be loaded when the submission button is pressed -->
+                        Age: <input type="text" name="age"/>
+                        <?php
+                            $name = $_POST['name'];
+                            echo "<input type='hidden' name='name' value='$name'/>"; // assigning the value name to the hidden input field, which is submitted to page3.php so we can access the name key within the POST superglobal associative array later
+                        ?>
+                        <input type="submit" value="Next" name='check'/>
+                    </form>
+                </body>
+            </html>
+
+            <!-- page3.php -->
+
+            <html>
+                <body>
+                    <form method="post" action="summary.php"> <!-- summary.php will be loaded when the submission button is pressed -->
+                        Hobby: <input type="text" name="hobby"/>
+                        <?php
+                            if (isset($_POST["check"])){ // check if form is submitted, though unnecessary if next form display predicated on submission button already being clicked
+                                $name = $_POST["name"];
+                                $age = $_POST["age"];
+                                echo "
+                                    <input type='hidden' name='name' value='$name'></input>
+                                    <input type='hidden' name='age' value='$age'></input>
+                                "; // assigning the values name and age to the hidden input field, which is submitted to summary.php so we can access the name keys within the POST superglobal associative array later
+                            } else {} // form not submitted
+                        ?>
+                        <input type="submit" value="Next"/>
+                    </form>
+                </body>
+            </html>
+
+        <!-- summary.php -->
+
+            <?php
+                // display all 3 values, which have been retained through the hidden input tag
+                $name =     $_POST["name"];
+                $age = $_POST["age"];
+                $hobby = $_POST["hobby"];
+
+                echo "Name: $name<br>"; 
+                echo "Age: $age<br>";
+                echo "Hobby: $hobby";
+            ?>
+ 
 
         <!-- 7. reset => resets all webpage components in the html form to their default values, does not send any form data to the web server -->
 
@@ -1268,12 +1333,17 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
 <!-- Connect HTML to PHP -->
     <!-- done in context of form handling as covered above -->
     <!-- method => specifies the method for form data to be sent to the web server -->
-    <!-- action => specifies the php file which handles the form data, allowing us to parse and interact as needed -->
+    <!-- !!! action => specifies the NEXT PHP FILE LOADED when the submission button is pressed, allowing us to handle form data and parse and interact as needed -->
 
-    <form method="post" action="pangsai.php">
+    <form method="post" action="pangsai.php"> <!-- this will run pangsai.php when the submission button is pressed -->
         Enter your name:
         <input type="text" name="fullname"/>
         <input type="submit" value="send"/>
+    </form>
+
+    <form method="post" action="form2.php"> <!-- this will run form2.php when the submission button is pressed -->
+        Enter your placeholder:
+        <input type="text" name="identifier"></input>
     </form>
 
 <!-- SUPERGLOBALS -->
