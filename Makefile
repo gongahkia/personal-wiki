@@ -60,3 +60,6 @@ new:
 	echo "*" >> "$$title".md; \
 	echo "" >> "$$title".md; \
 	echo "Markdown file created: $$title.md"
+
+up:
+	git pull
