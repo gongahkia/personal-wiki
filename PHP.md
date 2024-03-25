@@ -1381,7 +1381,7 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
     <!-- session2.php -->
 
     <?php
-        session_start(); 
+        session_start(); // must call session_start() to resume the previous session and have access to superglobal associative array SESSION within the file session2.php
     ?>
     <html>
         <body>
