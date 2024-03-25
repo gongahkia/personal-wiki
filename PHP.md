@@ -1431,9 +1431,9 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
             <!-- 0. User enters name and password in login.php -->
             <!-- 1. Entered Username CHECKED AGAINST existing usernames in database in process_login.php-->
             <!-- 2. Entered password is HASHED and compared against the HASHED value in the database for CREDENTIAL VALIDATION in process_login.php -->
-            <!-- 3. If login succesful, user login entry recorded by storing login as a record in the SESSION superglobal associative array in process_login.php AND user redirected to welcome.php via header("location:welcome.php") function -->
+            <!-- 3. If login succesful, user login entry recorded by storing login as a record in the SESSION superglobal associative array in process_login.php AND user redirected to welcome.php via header("Location:welcome.php") function -->
             <!-- 4. Additional credential check that user has access to welcome.php because they logged in validly and didn't just google the specific url file path to reach welcome.php by checking for past logins in SESSION superglobal associative array as done in step 3 in welcome.php -->
-            <!-- 5. If no valid login found as a record in SESSION superglobal associative array, user redirected to login.php again via header("location:login.php") function -->
+            <!-- 5. If no valid login found as a record in SESSION superglobal associative array, user redirected to login.php again via header("Location:login.php") function -->
             <!-- 6. If valid login found as a record in SESSION superglobal associative array, user has succesfully logged into welcome.php secure page -->
 
 <!-- eg. simulating login verification of username AND password -->
