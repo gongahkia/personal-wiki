@@ -1346,6 +1346,11 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
         <input type="text" name="identifier"></input>
     </form>
 
+<!-- SESSIONS to pass data across pages -->
+    <!-- an alternative to using multiple hidden text fields -->
+
+<FUA>
+
 <!-- SUPERGLOBALS -->
     <!-- superglobals are associative arrays that are ALWAYS accessible REGARDLESS OF SCOPE, and are often used to store important values returned from the html form or assigned by the programmer -->
     <!-- $_POST => collects form data submitted using the specified http post request, where data IS NOT visible in the url (so often used for transmission of sensitive form data) -->
@@ -1363,6 +1368,27 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
         <!-- $_FILES -->
         <!-- $_ENV -->
         <!-- $_COOKIE -->
+
+<!-- NUGGETS OF INFORMATION -->
+    <!-- ANCHOR TAGS can also carry extraneous information from one "page" to another where the URL is used to specify addiitonal data -->
+
+<!-- eg. of anchor tags carrying info across pages -->
+
+    <!-- main.php -->
+
+    <html>
+        <body>
+            <a href='view_object.php?src=cat.png&width=500'>View Object</a>
+        </body>
+    </html>
+
+    <!-- view_object.php -->
+
+    <?php
+        echo "
+        <img src='{$_GET["src"]}' width='{$_GET["width"]}'/> // here, view_object.php can retrieve src and width names from the GET superglobal associative array because they have technically been "submitted" in the URL of the GET request which exposes all user input and customisation within the URL
+        " 
+    ?>
 
     </body>
 </html>
