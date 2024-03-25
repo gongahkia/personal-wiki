@@ -1408,16 +1408,97 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
 
 <!-- eg. using SESSION to store mutating data across the same page -->
 
-<?php
+    <!-- counter.php -->
 
-session_start(); // allows for access of the SESSION superglobal associative array
-if (!isset($_SESSION['count'])){
-    $_SESSION('count') = 0; // initializes the count key within the superglobal associative array $SESSION if it doesn't exist
-}
-$_SESSION['count']++;
-echo "You have accessed this page " . $_SESSION['count'] . " times";
+    <?php
 
-?>
+    session_start(); // allows for access of the SESSION superglobal associative array
+    if (!isset($_SESSION['count'])){
+        $_SESSION('count') = 0; // initializes the count key within the superglobal associative array $SESSION if it doesn't exist
+    }
+    $_SESSION['count']++;
+    echo "You have accessed this page " . $_SESSION['count'] . " times";
+
+    ?>
+
+<!-- USER AUTHENTICATION -->
+    <!-- User's account name AND passwords are stored in a database -->
+        <!-- Passwords MUST NOT BE STORED IN plaintext format for security reasons -->
+        <!-- HASHED string versions of the password CAN be stored in the database -->
+            <!-- password hashing => ONE-WAY transformation of a password into another string -->
+                <!-- one-way meaning the password can be transformed into a hashed string but not the other way around>
+        <!-- !!! UPON LOGIN... !!! -->
+            <!-- 0. User enters name and password in login.php -->
+            <!-- 1. Entered Username CHECKED AGAINST existing usernames in database in process_login.php-->
+            <!-- 2. Entered password is HASHED and compared against the HASHED value in the database for CREDENTIAL VALIDATION in process_login.php -->
+            <!-- 3. If login succesful, user login entry recorded by storing login as a record in the SESSION superglobal associative array in process_login.php AND user redirected to welcome.php via header("location:welcome.php") function -->
+            <!-- 4. Additional credential check that user has access to welcome.php because they logged in validly and didn't just google the specific url file path to reach welcome.php by checking for past logins in SESSION superglobal associative array as done in step 3 in welcome.php -->
+            <!-- 5. If no valid login found as a record in SESSION superglobal associative array, user redirected to login.php again via header("location:login.php") function -->
+            <!-- 6. If valid login found as a record in SESSION superglobal associative array, user has succesfully logged into welcome.php secure page -->
+
+<!-- eg. simulating login verification of username AND password -->
+
+    <!-- login.php -->
+
+    <html>
+        <body>
+            <h1>Login</h1>
+                <form method='POST' action='process_login.php'> <!-- loads the process_login.php page when submission is pressed -->
+                Username: <input type='text' name='username'></input>
+                Password: <input type='text'> name='password'></input>
+                <input type='submit' value='login'></input>
+            </form>
+        </body>
+    </html>
+
+    <!-- process_login.php -->
+
+    <?php
+
+    spl_autoload_register(
+        function($class){
+            require_once "model/$class.php";
+        }
+    );
+
+    session_start(); // start the superglobal associative array SESSION so that we can store a login entry in it later
+    
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $dao = new UserDAO();
+    $user = $dao->retrieve($username); // validates username
+    $success = false;
+    if ($user != null){
+        $hashed = $user->getHashedPassword();
+        $success = password_verify($password, $hashed); // validates password by hashing the input and comparing it against the already hashed password in the database
+        if ($success){ 
+
+            $_SESSION['user'] = $username; // stores a successful login entry within the superglobal associative array SESSION
+            header('Location:welcome.php') // redirects user to the specified file or url at filepath welcome.php
+            echo "Successful login";
+
+        }
+    }
+    if (!$success){
+        echo "Failed login";
+    }
+
+    ?>
+
+    <!-- welcome.php -->
+
+    <?php
+    
+    session_start(); // resume the superglobal associative array SESSION so that we can access all past recorded login entries
+
+    if (!isset($_SESSION['user'])){
+        header('Location:login.php'); // redirects user to login page if no valid login history has been found
+        exit; // stops all further code execution since browser redirected to login.php
+    } 
+
+    echo "<h1>You have succesfuly logged in, welcome to secure system</h1>";
+
+    ?>
 
 <!-- SUPERGLOBALS -->
     <!-- superglobals are associative arrays that are ALWAYS accessible REGARDLESS OF SCOPE, and are often used to store important values returned from the html form or assigned by the programmer -->
@@ -1429,6 +1510,7 @@ echo "You have accessed this page " . $_SESSION['count'] . " times";
     <!-- $_SESSION -->
         <!-- $_SESSION[{key-name}] -->
         <!-- session_start() -->
+        <!-- unset($_SESSION[session-key]) -->
         <!-- session_destroy() -->
         <!-- session_unset() -->
     <!-- other superglobals to check out -->
@@ -1439,25 +1521,48 @@ echo "You have accessed this page " . $_SESSION['count'] . " times";
         <!-- $_COOKIE -->
 
 <!-- NUGGETS OF INFORMATION -->
-    <!-- ANCHOR TAGS can also carry extraneous information from one "page" to another where the URL is used to specify addiitonal data -->
+    <!-- ANCHOR TAGS -->
+        <!-- ANCHOR TAGS can also carry extraneous information from one "page" to another where the URL is used to specify addiitonal data -->
 
-<!-- eg. of anchor tags carrying info across pages -->
+        <!-- eg. of anchor tags carrying info across pages -->
 
-    <!-- main.php -->
+        <!-- main.php -->
 
-    <html>
-        <body>
-            <a href='view_object.php?src=cat.png&width=500'>View Object</a>
-        </body>
-    </html>
+        <html>
+            <body>
+                <a href='view_object.php?src=cat.png&width=500'>View Object</a>
+            </body>
+        </html>
 
-    <!-- view_object.php -->
+        <!-- view_object.php -->
 
-    <?php
-        echo "
-        <img src='{$_GET["src"]}' width='{$_GET["width"]}'/> // here, view_object.php can retrieve src and width names from the GET superglobal associative array because they have technically been "submitted" in the URL of the GET request which exposes all user input and customisation within the URL
-        " 
-    ?>
+        <?php
+            echo "
+            <img src='{$_GET["src"]}' width='{$_GET["width"]}'/> // here, view_object.php can retrieve src and width names from the GET superglobal associative array because they have technically been "submitted" in the URL of the GET request which exposes all user input and customisation within the URL
+            " 
+        ?>
+
+    <!-- header() -->
+        <!-- the header function sends HTTP headers from the server to the client browser -->
+        <!-- header("Location: locationUrl.php") -->
+            <!-- !!! Supplying "Location: {location-url}" within the header() function as an ARGUMENT will REDIRECT the browser to load the specified URL -->
+                <!-- this works for both LOCAL file paths and generic web URLs -->
+                <!-- similar to how the ACTION attribute in the FORM tag specifies which url or filepath to load when the submission button is clicked, except header("Location: XXX") loads AUTOMATICALLY once the line of code is executed -->
+        <!-- exit -->
+            <!-- equivalent of a BREAK statement -->
+            <!-- normally paired with header("Location: XXX") and called AFTER to prevent further code execution once the browser has been REDIRECTED to another page -->
+
+        <?php
+
+        header('Location:webapp.php'); // this line of code will execute to load the local php page webapp.php
+        exit; // stops all further code execution since browser redirected to another page
+
+        // ---
+
+        header('Location:https://www.example.com'); // this line of code will execute to load the webpage https://www.example.com
+        exit; // stops all further code execution since browser redirected to another page
+
+        ?>
 
     </body>
 </html>
