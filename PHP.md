@@ -1206,7 +1206,7 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
 
         <!-- 6. hidden => creates a hidden section that obscures data from the webpage client user -->
             <!-- TAKE NOTE OF THIS TO USE -->
-            <!-- name => the name attribute is the key in the key-value pair stored within the submission protocol method (GET/POST) superglobal variable --> 
+            <!-- name => the name attribute is the key in the key-value pair stored within the submission protocol method (GET/POST) superglobal associative array --> 
             <!-- value => programmer can save state across form submissions by ASSIGNING the value in the value attribute within a hidden form field -->
                 <!-- hidden input names and values will be submitted alongside any other input fields under the same FORM TAG when the submit button is pressed -->
             <!-- normally HIDDEN input tags are paired with the ACTION attribute within the FORM tag (which specifies the php file to be loaded when submission button is pressed) to preserve input values across multiple sessions-->
