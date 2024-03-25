@@ -1346,22 +1346,91 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
         <input type="text" name="identifier"></input>
     </form>
 
-<!-- SESSIONS to pass data across pages -->
-    <!-- an alternative to using multiple hidden text fields -->
+<!-- HTTP SESSIONS -->
+    <!-- stores data shared between USER and the WEBSITE -->
+    <!-- stores data across MULTIPLE pages -->
+        <!-- !!! DATA AUTOMATICALLY RESET AFTER given period of time -->
+        <!-- alternative to hidden input tags or GET URLs -->
+    <!-- used to... -->
+        <!-- preserve data across MULTIPLE pages -->
+        <!-- identify users across MULTIPLE pages in a site -->
+    <!-- session_start() -->
+        <!-- initializes a session OR resumes existing session -->
+        <!-- must be called FIRST @ the START OF EVERY FILE before we can access the $_SESSION superglobal associative array and assign key-value pairs to it WITHIN THAT FILE -->
+    <!-- unset($_SESSION[example-key]) -->
+        <!-- allows for clearing of all stored variables within a specified key in the SESSION superglobal associative array -->
+        <!-- equivalent to assigning an empty array [] value to a given SESSION superglobal associative array key -->
+    <!-- session_unset() -->
+        <!-- clears a session on the client IMMEDIATELY by deleting session cookies and freeing all session variables currently registerd -->
+    <!-- session_destroy() -->
+        <!-- destroys a session on the server but client-side cookies will remain until BROWSER CLOSED-->
 
-<FUA>
+<!-- eg. using SESSION to store data across multiple pages -->
+
+    <!-- session1.php -->
+
+    <html>
+        <body>
+            <form method='POST' action='session2.php'>
+                Name: <input type='text' name='name'></input>
+                <input type='submit' value='next'></input>
+            </form>
+        </body>
+    </htmL>
+
+    <!-- session2.php -->
+
+    <?php
+        session_start(); 
+    ?>
+    <html>
+        <body>
+            <form method='POST' action='summary.php'>
+                Age: <input type='text' name='age'></input>
+                <?php
+                    $_SESSION['name'] = $_POST['name']; // assigns the key-value pair of name = {value stored in $_POST['name']} to the SESSION superglobal associative array, and values can be retrieved anytime
+                ?>
+                <input type='submit' value='next'></input>
+            </form>
+        </body>
+    </htmL>
+
+    <!-- summary.php -->
+
+    <?php 
+        session_start(); // must call session_start() again to resume the session and have accesss to superglobal associative array SESSION within the file summary.php
+        $name = $_SESSION['name'];
+        $age = $_SESSION['age'];
+
+        echo "Name: $name<br>";
+        echo "Age: $age";
+    ?>
+
+<!-- eg. using SESSION to store mutating data across the same page -->
+
+<?php
+
+session_start(); // allows for access of the SESSION superglobal associative array
+if (!isset($_SESSION['count'])){
+    $_SESSION('count') = 0; // initializes the count key within the superglobal associative array $SESSION if it doesn't exist
+}
+$_SESSION['count']++;
+echo "You have accessed this page " . $_SESSION['count'] . " times";
+
+?>
 
 <!-- SUPERGLOBALS -->
     <!-- superglobals are associative arrays that are ALWAYS accessible REGARDLESS OF SCOPE, and are often used to store important values returned from the html form or assigned by the programmer -->
     <!-- $_POST => collects form data submitted using the specified http post request, where data IS NOT visible in the url (so often used for transmission of sensitive form data) -->
+        <!-- it is considered good convention to include a name for your submit button and check whether the submit button is clicked using isset() -->
     <!-- $_GET => collects form data submitted using the specified http get method, where data IS visible in the url (so often used for transmission of neutral non-confidential form data) -->
         <!-- it is considered good convention to include a name for your submit button and check whether the submit button is clicked using isset() -->
-    <!-- $_SESSION -->
-        <!-- allows for powerful storing of data across multiple HTTP requests (aka multiple instances of form submission), effectively allowing for storage of data across multipe webpages in a single website -->
-        <!-- session_start() => BEGINS a session, necessary to start accessing the $_SESSION superglobal variable and assigning keys and values to it -->
-        <!-- session_destroy() => DESTROYS a session on the SERVER (note that the client-side cookies remain until the browser is closed) -->
-        <!-- session_unset() => DESTROYS a session on the CLIENT immediately (deletes the session cookies) -->
     <!-- $_REQUEST => collects form data from both $_GET and $_POST as well as $_COOKIE -->
+    <!-- $_SESSION -->
+        <!-- $_SESSION[{key-name}] -->
+        <!-- session_start() -->
+        <!-- session_destroy() -->
+        <!-- session_unset() -->
     <!-- other superglobals to check out -->
         <!-- $GLOBALS -->
         <!-- $_SERVER -->
