@@ -1430,7 +1430,7 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
         <!-- !!! UPON LOGIN... !!! -->
             <!-- 0. User enters name and password in login.php -->
             <!-- 1. Entered Username CHECKED AGAINST existing usernames in database in process_login.php-->
-            <!-- 2. Entered password is HASHED and compared against the HASHED value in the database for CREDENTIAL VALIDATION in process_login.php -->
+            <!-- 2. Entered password is HASHED using password_hash($password, PASSWORD_BCRYPT) and compare the hashed password against the HASHED value in the database for CREDENTIAL VALIDATION in process_login.php -->
             <!-- 3. If login succesful, user login entry recorded by storing login as a record in the SESSION superglobal associative array in process_login.php AND user redirected to welcome.php via header("Location:welcome.php") function -->
             <!-- 4. Additional credential check that user has access to welcome.php because they logged in validly and didn't just google the specific url file path to reach welcome.php by checking for past logins in SESSION superglobal associative array as done in step 3 in welcome.php -->
             <!-- 5. If no valid login found as a record in SESSION superglobal associative array, user redirected to login.php again via header("Location:login.php") function -->
@@ -1563,6 +1563,30 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
         exit; // stops all further code execution since browser redirected to another page
 
         ?>
+
+    <!-- password_hash($password, PASSWORD_BCRYPT) -->
+        <!-- the password_hash function hashes a given string (normally a password) based off a specified hash value and returns the hashed value -->
+        <!-- where $password is your password of the String datatype -->
+        <!-- where PASSWORD_BCRYPT is an available variant -->
+    <!-- ALL HASHING OPTIONS -->
+        <!-- normally BCRYPT, MD5 or SHA-256/SHA-512 are chosen as hashing variants -->
+            <!-- bcrypt -->
+                <!-- PASSWORD_BCRYPT -->
+            <!-- md5 -->
+                <!-- PASSWORD_MD5 -->
+            <!-- sha-1 -->
+                <!-- PASSWORD_SHA1 -->
+            <!-- sha-256 or sha-512 -->
+                <!-- PASSWORD_DEFAULT -->
+            <!-- argon5 -->
+                <!-- PASSWORD_ARGON2I -->
+            <!-- sodium -->
+                <!-- PASSWORD_AGRON2ID -->
+    
+    <!-- example of hashing a password by the bcrypt hash -->
+
+    $password = 'your_password_here';
+    $hash = password_hash($password, PASSWORD_BCRYPT);
 
     </body>
 </html>
