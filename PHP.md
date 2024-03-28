@@ -1564,7 +1564,10 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
 
         ?>
 
-    <!-- password_hash($password, PASSWORD_BCRYPT) -->
+    <!-- password_hash() -->
+        <!-- eg. usage is password_hash($password, PASSWORD_BCRYPT) -->
+            <!-- @param => string password, hashing algorithm -->
+            <!-- @return => hashed password -->
         <!-- the password_hash function hashes a given string (normally a password) based off a specified hash value and returns the hashed value -->
         <!-- where $password is your password of the String datatype -->
         <!-- where PASSWORD_BCRYPT is an available variant -->
@@ -1587,6 +1590,15 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
 
     $password = 'your_password_here';
     $hash = password_hash($password, PASSWORD_BCRYPT);
+
+    <!-- password_verify() -->
+        <!-- eg. usage is password_verify($presentlyEnteredPassword, $storedDatabasePassword) -->
+            <!-- @param => password that has yet to be validated, hashed password stored in database from register -->
+            <!-- @return => boolean value based on validity of password -->
+        <!-- the password_verify() function validates a given string (password to be validated) against the hashed value stored within the database -->
+
+    $storedHashed = $user->getPasswordHash();
+    $status = password_verify($password, $storedHashed);
 
     </body>
 </html>
