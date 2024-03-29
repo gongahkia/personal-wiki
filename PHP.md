@@ -614,7 +614,7 @@ $roadUser->getVehicle()->getType();
     // PDO object instantiated with DSN, username and password
         // Data Source Name (DSN) consists of ...
             // database type and host
-            // database name (dbname) => defined in the SQL creation script 
+            // database name (dbname) => defined in the SQL creation script, note NO '' or "" used 
             // port
     // setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT) => used to silence any errors and exceptions raised by SQL, useful for final display but should be avoided during development
 
