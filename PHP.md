@@ -1522,7 +1522,8 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
 
 <!-- NUGGETS OF INFORMATION -->
     <!-- ANCHOR TAGS -->
-        <!-- ANCHOR TAGS can also carry extraneous information from one "page" to another where the URL is used to specify addiitonal data -->
+        <!-- ANCHOR TAGS can also carry extraneous information from one "page" to another where the URL embeds additional GET request data regarding a form's submission fields -->
+        <!-- these values are effectively "submitted" when the anchor tag is clicked and can be accessed similar to any other variable within the GET and POST superglobal associative arrays -->
 
         <!-- eg. of anchor tags carrying info across pages -->
 
@@ -1538,9 +1539,13 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
 
         <?php
             echo "
-            <img src='{$_GET["src"]}' width='{$_GET["width"]}'/> // here, view_object.php can retrieve src and width names from the GET superglobal associative array because they have technically been "submitted" in the URL of the GET request which exposes all user input and customisation within the URL
+            <img src='{$_GET["src"]}' width='{$_GET["width"]}'/> // here, view_object.php can retrieve src and width names from the GET superglobal associative array because they have technically been "submitted" in the URL of the anchor tag through the embedded GET request which exposes all user input and customisation within the URL
             " 
         ?>
+
+        <!-- another eg. of different anchor tags carrying different selection infos across pages -->
+
+        <!-- !!!!!!!! FUA add example from extra exercise question 3 about embedding values and give context of how to do it, use ? after the file handle etc -->
 
     <!-- header() -->
         <!-- the header function sends HTTP headers from the server to the client browser -->
