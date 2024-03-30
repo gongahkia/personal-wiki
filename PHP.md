@@ -1522,30 +1522,67 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
 
 <!-- NUGGETS OF INFORMATION -->
     <!-- ANCHOR TAGS -->
-        <!-- ANCHOR TAGS can also carry extraneous information from one "page" to another where the URL embeds additional GET request data regarding a form's submission fields -->
-        <!-- these values are effectively "submitted" when the anchor tag is clicked and can be accessed similar to any other variable within the GET and POST superglobal associative arrays -->
+        <!-- ANCHOR TAGS can also carry ANY extraneous information from one page to another by embedding GET request data directly into the the anchor tag's HREF URL, specifying the KEY VALUE pairs to include in the GET superglobal associative array -->
+            <!-- these values are effectively "submitted" when the anchor tag is clicked and can be accessed similar to any other variable within the GET superglobal associative arrays -->
+            <!-- !!! Only works for forms with request method specified as GET since the user's submission choices are visible in the URL -->
+        <!-- HREF follows the format of... -->
+            <!-- tagretFileExtension.php?exampleKey1=exampleValue1&exampleKey2=exampleValue2 -->
+                <!-- ? => seperates the target file extension and the user choices for form field submission within that target file -->
+                <!-- & => seperates each possible user entry for form fields -->
+                <!-- !!! NOTE that spaces and capitalisation ARE allowed within the key value pair specification in the anchor tag's URL HREF value -->
 
-        <!-- eg. of anchor tags carrying info across pages -->
+        <!-- eg. of anchor tags carrying selection info across pages -->
 
         <!-- main.php -->
 
         <html>
             <body>
-                <a href='view_object.php?src=cat.png&width=500'>View Object</a>
+                <a href='searchByCategory.php?drinkCategory=alcaholic drink'>$category</a>
+                <a href='searchByCategory.php?drinkCategory=cereals'>$category</a>
+                <a href='searchByCategory.php?drinkCategory=drink'>$category</a>
+                <a href='searchByCategory.php?drinkCategory=fruit'>$category</a>
+                <a href='searchByCategory.php?drinkCategory=meat'>$category</a>
+                <a href='searchByCategory.php?drinkCategory=seafood'>$category</a>
+                <a href='searchByCategory.php?drinkCategory=chocolate and sweets'>$category</a>
             </body>
         </html>
 
-        <!-- view_object.php -->
+        <!-- eg. of anchor tags dynamically having their href values assigned to carrying different GET info to different pages -->
 
-        <?php
-            echo "
-            <img src='{$_GET["src"]}' width='{$_GET["width"]}'/> // here, view_object.php can retrieve src and width names from the GET superglobal associative array because they have technically been "submitted" in the URL of the anchor tag through the embedded GET request which exposes all user input and customisation within the URL
-            " 
-        ?>
+        <!-- main.php -->
 
-        <!-- another eg. of different anchor tags carrying different selection infos across pages -->
+        <html>
+            <body>
+                <ol>
+                <?php
+                    $warehouse = new Warehouse();
+                    foreach($warehouse->getCategories() as $category){
+                        echo "
+                            <li><a href='searchByCategory.php?drinkCategory=$category'>$category</a></li>
+                        ";
+                    }
+                ?>
+                </ol>
+            </body>
+        </html>
 
-        <!-- !!!!!!!! FUA add example from extra exercise question 3 about embedding values and give context of how to do it, use ? after the file handle etc -->
+        <!-- eg. of anchor tags carrying info across pages to an image -->
+
+            <!-- main.php -->
+
+            <html>
+                <body>
+                    <a href='view_object.php?src=cat.png&width=500'>View Object</a>
+                </body>
+            </html>
+
+            <!-- view_object.php -->
+
+            <?php
+                echo "
+                <img src='{$_GET["src"]}' width='{$_GET["width"]}'/> // here, view_object.php can retrieve src and width names from the GET superglobal associative array because they have technically been "submitted" in the URL of the anchor tag through the embedded GET request which exposes all user input and customisation within the URL
+                " 
+            ?>
 
     <!-- header() -->
         <!-- the header function sends HTTP headers from the server to the client browser -->
