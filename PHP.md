@@ -1521,6 +1521,14 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
         <!-- $_COOKIE -->
 
 <!-- NUGGETS OF INFORMATION -->
+
+    <!-- NOW() -->
+        <!-- the NOW() function in SQL can be used within an SQL query in a PDO-DAO method to create a record with an attribute detailing the current datetime in the format of 'YYYY-MM-DD HH:MM:SS' -->
+
+        <!-- blogPostDAO.php -->
+
+        $sql = 'INSERT INTO post (create_timestamp, update_timestamp, subject, entry, mood) VALUES (NOW(), NOW(), :subject, :entry, :mood)'; 
+
     <!-- ANCHOR TAGS -->
         <!-- ANCHOR TAGS can also carry ANY extraneous information from one page to another by embedding GET request data directly into the the anchor tag's HREF URL, specifying the KEY VALUE pairs to include in the GET superglobal associative array -->
             <!-- these values are effectively "submitted" when the anchor tag is clicked and can be accessed similar to any other variable within the GET superglobal associative arrays -->
@@ -1533,40 +1541,40 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
 
         <!-- eg. of anchor tags carrying selection info across pages -->
 
-        <!-- main.php -->
+            <!-- main.php -->
 
-        <html>
-            <body>
-                <a href='searchByCategory.php?drinkCategory=alcaholic drink'>$category</a>
-                <a href='searchByCategory.php?drinkCategory=cereals'>$category</a>
-                <a href='searchByCategory.php?drinkCategory=drink'>$category</a>
-                <a href='searchByCategory.php?drinkCategory=fruit'>$category</a>
-                <a href='searchByCategory.php?drinkCategory=meat'>$category</a>
-                <a href='searchByCategory.php?drinkCategory=seafood'>$category</a>
-                <a href='searchByCategory.php?drinkCategory=chocolate and sweets'>$category</a>
-            </body>
-        </html>
+            <html>
+                <body>
+                    <a href='searchByCategory.php?drinkCategory=alcaholic drink'>$category</a>
+                    <a href='searchByCategory.php?drinkCategory=cereals'>$category</a>
+                    <a href='searchByCategory.php?drinkCategory=drink'>$category</a>
+                    <a href='searchByCategory.php?drinkCategory=fruit'>$category</a>
+                    <a href='searchByCategory.php?drinkCategory=meat'>$category</a>
+                    <a href='searchByCategory.php?drinkCategory=seafood'>$category</a>
+                    <a href='searchByCategory.php?drinkCategory=chocolate and sweets'>$category</a>
+                </body>
+            </html>
 
         <!-- eg. of anchor tags dynamically having their href values assigned to carrying different GET info to different pages -->
 
-        <!-- main.php -->
+            <!-- main.php -->
 
-        <html>
-            <body>
-                <ol>
-                <?php
-                    $warehouse = new Warehouse();
-                    foreach($warehouse->getCategories() as $category){
-                        echo "
-                            <li><a href='searchByCategory.php?drinkCategory=$category'>$category</a></li>
-                        ";
-                    }
-                ?>
-                </ol>
-            </body>
-        </html>
+            <html>
+                <body>
+                    <ol>
+                    <?php
+                        $warehouse = new Warehouse();
+                        foreach($warehouse->getCategories() as $category){
+                            echo "
+                                <li><a href='searchByCategory.php?drinkCategory=$category'>$category</a></li>
+                            ";
+                        }
+                    ?>
+                    </ol>
+                </body>
+            </html>
 
-        <!-- eg. of anchor tags carrying info across pages to an image -->
+        <!-- eg. of anchor tags carrying info across pages to an image, where again, these are just key-value pairs sent to the GET superglobal associative array -->
 
             <!-- main.php -->
 
@@ -1594,17 +1602,15 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
             <!-- equivalent of a BREAK statement -->
             <!-- normally paired with header("Location: XXX") and called AFTER to prevent further code execution once the browser has been REDIRECTED to another page -->
 
-        <?php
+            <!-- example.php -->
 
-        header('Location:webapp.php'); // this line of code will execute to load the local php page webapp.php
-        exit; // stops all further code execution since browser redirected to another page
+            header('Location:webapp.php'); // this line of code will execute to load the local php page webapp.php
+            exit; // stops all further code execution since browser redirected to another page
 
-        // ---
+            <!-- anotherExample.php -->
 
-        header('Location:https://www.example.com'); // this line of code will execute to load the webpage https://www.example.com
-        exit; // stops all further code execution since browser redirected to another page
-
-        ?>
+            header('Location:https://www.example.com'); // this line of code will execute to load the webpage https://www.example.com
+            exit; // stops all further code execution since browser redirected to another page
 
     <!-- password_hash() -->
         <!-- eg. usage is password_hash($password, PASSWORD_BCRYPT) -->
