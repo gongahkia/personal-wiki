@@ -1595,22 +1595,23 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
     <!-- header() -->
         <!-- the header function sends HTTP headers from the server to the client browser -->
         <!-- header("Location: locationUrl.php") -->
-            <!-- !!! Supplying "Location: {location-url}" within the header() function as an ARGUMENT will REDIRECT the browser to load the specified URL -->
+            <!-- !!! Supplying "Location: {location-url}" within the header() function as an ARGUMENT will REDIRECT the browser DISPLAY to load the specified URL but the original PHP file will keep running unless exit() is called -->
+                <!-- so normally JUST CALL exit() after Header redirection -->
                 <!-- this works for both LOCAL file paths and generic web URLs -->
                 <!-- similar to how the ACTION attribute in the FORM tag specifies which url or filepath to load when the submission button is clicked, except header("Location: XXX") loads AUTOMATICALLY once the line of code is executed -->
-        <!-- exit -->
+        <!-- exit() -->
             <!-- equivalent of a BREAK statement -->
-            <!-- normally paired with header("Location: XXX") and called AFTER to prevent further code execution once the browser has been REDIRECTED to another page -->
+            <!-- normally paired with header("Location: XXX") and called AFTER to prevent further code execution in the original file once the browser has been REDIRECTED to another page -->
 
             <!-- example.php -->
 
             header('Location:webapp.php'); // this line of code will execute to load the local php page webapp.php
-            exit; // stops all further code execution since browser redirected to another page
+            exit(); // stops all further code execution since browser redirected to another page
 
             <!-- anotherExample.php -->
 
             header('Location:https://www.example.com'); // this line of code will execute to load the webpage https://www.example.com
-            exit; // stops all further code execution since browser redirected to another page
+            exit(); // stops all further code execution since browser redirected to another page
 
     <!-- password_hash() -->
         <!-- eg. usage is password_hash($password, PASSWORD_BCRYPT) -->
