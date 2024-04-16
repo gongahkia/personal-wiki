@@ -1301,12 +1301,14 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
         </form>
 
 <!-- DROPDOWN LIST -->
+    <!-- remember the order is ALWAYS select THEN option where option values can then be augmented with selected -->
     <!-- select => creates a dropdown list whose options can be selected from -->
         <!-- name => specifies a name for the dropdown list for easier identification -->
         <!-- size => specifies the number of options to be visible at a given point of time within the dropdown list viewport -->
         <!-- multiple => used to allow for more than one option to be selected -->
         <!-- option => creates options within the given dropdown field -->
             <!-- value => assigned a unique value to distinguish different selection options from each other within a dropdown list -->
+            <!-- selected => used to specify a given option value is selected by default in a select option field --> 
 
 <!-- TABLE -->
     <!-- table => creates a table, comes as a pair with its closing tag -->
@@ -1521,6 +1523,20 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
         <!-- $_COOKIE -->
 
 <!-- NUGGETS OF INFORMATION -->
+
+    <!-- RELATIVE PATH and ABSOLUTE PATH -->
+        <!-- PARENT directory -->
+            <!-- represented by ../ -->
+        <!-- CURRENT directory -->
+            <!-- represented by ./ or nothing -->
+        <!-- ROOT directory -->
+            <!-- represented by / -->
+            <!-- generally used within absolute paths -->
+
+    <!-- print_r() -->
+        <!-- odd function that acts as a var_dump equivalent in html -->
+
+    <!-- GET superglobals will always prioritise information taken in from USER INPUT when form is submitted over the default values given if specified within the anchortag href hyperlink --> 
 
     <!-- NOW() -->
         <!-- the NOW() function in SQL can be used within an SQL query in a PDO-DAO method to create a record with an attribute detailing the current datetime in the format of 'YYYY-MM-DD HH:MM:SS' -->
