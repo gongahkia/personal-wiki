@@ -1556,6 +1556,10 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
         <!-- PHP_SESSION_NONE => specifies that there is NO current session running and one can be started with session_start() -->
         <!-- technically isset($_SESSION) works but fails to cover edgecases so session_status() should be used as default check in production -->
 
+    <!-- closeCursor() -->
+        <!-- called on the PDO job object, normally $job going by the naming convention above -->
+        <!-- closes the previous connection to the SQL server so that other SQL statements can be run, can be called alongside $job = null and $pdo = null -->
+
     <!-- NOW() -->
         <!-- the NOW() function in SQL can be used within an SQL query in a PDO-DAO method to create a record with an attribute detailing the current datetime in the format of 'YYYY-MM-DD HH:MM:SS' -->
 
