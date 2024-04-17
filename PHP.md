@@ -1515,6 +1515,7 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
         <!-- unset($_SESSION[session-key]) -->
         <!-- session_destroy() -->
         <!-- session_unset() -->
+        <!-- session_status() -->
     <!-- other superglobals to check out -->
         <!-- $GLOBALS -->
         <!-- $_SERVER -->
@@ -1522,21 +1523,38 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
         <!-- $_ENV -->
         <!-- $_COOKIE -->
 
-<!-- NUGGETS OF INFORMATION -->
+<!-- NUGGETS OF INFORMATION (for is113 finals mostly) -->
+
+    <!-- require_once -->
+        <!-- AUTOMATICALLY calls and RUNS ALL CODE within the required file -->
+        <!-- this includes session_start() and any other executable code (thus allowing protect.php to function the moment it is required at the top of a given file) -->
+        <!-- normally since code is modularised into function definition files and require_once is used in the context of adding functionality with helpers, we don't realise this, but all code within the require_once file is automatically executed when the "require_once filename.php" line is hit -->
+
+    <!-- {} -->
+        <!-- allows for more complex string interpolation to embed variables within strings -->
+        <!-- APPLICABLE to not only object method calls but also retrieval of values from associative arrays and superglobals -->
+        <!-- just remember to use them within "" double quoted strings -->
 
     <!-- RELATIVE PATH and ABSOLUTE PATH -->
-        <!-- PARENT directory -->
-            <!-- represented by ../ -->
-        <!-- CURRENT directory -->
-            <!-- represented by ./ or nothing -->
         <!-- ROOT directory -->
             <!-- represented by / -->
             <!-- generally used within absolute paths -->
+        <!-- PARENT directory -->
+            <!-- represented by ../ or /.. -->
+        <!-- CURRENT directory -->
+            <!-- represented by ./ or /. or nothing (where the current directory is implicit) -->
 
     <!-- print_r() -->
         <!-- odd function that acts as a var_dump equivalent in html -->
+        <!-- covered in the provided appendix -->
 
-    <!-- GET superglobals will always prioritise information taken in from USER INPUT when form is submitted over the default values given if specified within the anchortag href hyperlink --> 
+    <!-- GET superglobals will always prioritise information taken in from USER INPUT when the form is submitted over default values specified within the anchortag href hyperlink after the ? in the href --> 
+    <!-- unspecified method for a form section will assign GET as the request method by default, POST must be specified -->
+
+    <!-- session_status() -->
+        <!-- function that returns the current session state -->
+        <!-- PHP_SESSION_NONE => specifies that there is NO current session running and one can be started with session_start() -->
+        <!-- technically isset($_SESSION) works but fails to cover edgecases so session_status() should be used as default check in production -->
 
     <!-- NOW() -->
         <!-- the NOW() function in SQL can be used within an SQL query in a PDO-DAO method to create a record with an attribute detailing the current datetime in the format of 'YYYY-MM-DD HH:MM:SS' -->
@@ -1617,7 +1635,7 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
                 <!-- similar to how the ACTION attribute in the FORM tag specifies which url or filepath to load when the submission button is clicked, except header("Location: XXX") loads AUTOMATICALLY once the line of code is executed -->
         <!-- exit() -->
             <!-- equivalent of a BREAK statement -->
-            <!-- normally paired with header("Location: XXX") and called AFTER to prevent further code execution in the original file once the browser has been REDIRECTED to another page -->
+            <!-- normally paired with header("Location: XXX") and called AFTER to PREVENT further code execution in the original file once the browser has been REDIRECTED to another page -->
 
             <!-- example.php -->
 
@@ -1628,6 +1646,11 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
 
             header('Location:https://www.example.com'); // this line of code will execute to load the webpage https://www.example.com
             exit(); // stops all further code execution since browser redirected to another page
+
+            <!-- alsoThisIsAcceptable.php -->
+            $url = "watermelonSugar.php";
+            header("Location:$url"); // just remember to use double quotation marks so string interpolation is succesful
+            exit();
 
     <!-- password_hash() -->
         <!-- eg. usage is password_hash($password, PASSWORD_BCRYPT) -->
