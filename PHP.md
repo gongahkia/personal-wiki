@@ -1560,6 +1560,12 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
         <!-- called on the PDO job object, normally $job going by the naming convention above -->
         <!-- closes the previous connection to the SQL server so that other SQL statements can be run, can be called alongside $job = null and $pdo = null -->
 
+    <!-- OOP default constructors -->
+        <!-- classes without a constructor method explicitly defined in their method definition have a default constructor AUTOMATICALLY assigned -->
+        <!-- allows for classes like ConnectionManager to not explicitly define a constructor method -->
+
+        public function __construct(){} <!-- the following line is inserted by the transpiler -->
+
     <!-- NOW() -->
         <!-- the NOW() function in SQL can be used within an SQL query in a PDO-DAO method to create a record with an attribute detailing the current datetime in the format of 'YYYY-MM-DD HH:MM:SS' -->
 
