@@ -1524,6 +1524,17 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
 
 <!-- NUGGETS OF INFORMATION (for is113 finals mostly) -->
 
+    <!-- empty() -->
+        <!-- checks whether a value EXISTS or if it is converted to BOOLEAN FALSE -->
+            <!-- 1. Uninitialised values do not exist, so empty() returns TRUE -->
+            <!-- 2. Boolean Conversion (values that also evaluate to False), so empty() returns TRUE -->
+                <!-- false -->
+                <!-- int 0 -->
+                <!-- float 0.0 -->
+                <!-- str "" and str "0" -->
+                <!-- array() or [] -->
+                <!-- null -->
+
     <!-- $_REQUEST --> 
         <!-- collects form data from both $_GET, $_POST and $_COOKIE into a single superglobal array -->
 
@@ -1536,6 +1547,14 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
         <!-- allows for more complex string interpolation to embed variables within strings -->
         <!-- APPLICABLE to not only object method calls but also retrieval of values from associative arrays and superglobals -->
         <!-- just remember to use them within "" double quoted strings -->
+
+    <!-- <?= ?> -->
+        <!-- shorthand for <?php echo ; ?>, where a value can be echoed -->
+        <!-- particularly useful for embedding variables and values to be echoed within existing html code -->
+        <!-- often used alongside functions to pre-select previously selected fields within a html form -->
+    
+    enter your age: <input type='text' name='age' <?php echo printAge(); ?> ><br> <!-- essentially this -->
+    enter your age: <input type='text' name='age' <?=printAge()?> ><br> <!-- can be shortened to this -->
 
     <!-- RELATIVE PATH and ABSOLUTE PATH -->
         <!-- ROOT directory -->
