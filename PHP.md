@@ -1508,7 +1508,6 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
         <!-- it is considered good convention to include a name for your submit button and check whether the submit button is clicked using isset() -->
     <!-- $_GET => collects form data submitted using the specified http get method, where data IS visible in the url (so often used for transmission of neutral non-confidential form data) -->
         <!-- it is considered good convention to include a name for your submit button and check whether the submit button is clicked using isset() -->
-    <!-- $_REQUEST => collects form data from both $_GET and $_POST as well as $_COOKIE -->
     <!-- $_SESSION -->
         <!-- $_SESSION[{key-name}] -->
         <!-- session_start() -->
@@ -1524,6 +1523,9 @@ $cls->myTraitMethod(); // this prints "I have MyTrait"
         <!-- $_COOKIE -->
 
 <!-- NUGGETS OF INFORMATION (for is113 finals mostly) -->
+
+    <!-- $_REQUEST --> 
+        <!-- collects form data from both $_GET, $_POST and $_COOKIE into a single superglobal array -->
 
     <!-- require_once -->
         <!-- AUTOMATICALLY calls and RUNS ALL CODE within the required file -->
