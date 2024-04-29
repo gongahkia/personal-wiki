@@ -294,13 +294,20 @@ fmt.Println("Add + double these two numbers: ",
         return (a + b) * 2
     }(10, 2) // immediately calls the function literal inline by providing it with the arguments a = 10 and b = 2
 ) // prints "Add + double these two numbers: 24" to the stdout
+
+// DEFER
+    // defer => pushes a function call onto a stack, where stacked functions are executed in last in, first out (LIFO) order after the surrounding parent function the defer statement is called within has been returned but before it exits
+    // normally used to close files, unlock mutexes, release resources and run any cleanup actions after a function has been executed but before it exits
+
+func usingDefer() (ok bool) {
+    defer fmt.Println("deferred statements execute in LIFO order only after the parent function usingDefer() has been fully executed.")
+    defer fmt.Println("this line is being printed first because")
+    return true // after this value is returned, the above 2 lines execute in reverse lifo order
+}
 ```
 
 ## More on
 
-* variadic parameters for functions
-* type
-* defer
 * ok
 * pointer
 * interface
