@@ -63,3 +63,4 @@ new:
 
 up:
 	git pull
+	git status
