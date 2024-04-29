@@ -142,7 +142,7 @@ if x > 10 {
 
 // SWITCH CASE DEFAULT  
     // note there is no break statement required for each case statement here unlike other languages
-    // default => specifies the default case if logic falls through every other case statement
+    // default => specifies the default case if logic falls through every other case statement within the switch clause
 
 day := "Monday"
 switch day {
@@ -159,6 +159,7 @@ switch day {
 
 // FOR LOOP
     // for => allows for creation of simple and complex iteration-based for loops based on context of usage
+    // range => allows for iteration over an iterable data structure (array, slice, string, map, channel) and supports multiple value deconstruction
     // break and continue operate similarly as in other languages
 
 for i := 0; i < 5; i++ { // a basic for range-based for loop
@@ -166,7 +167,7 @@ for i := 0; i < 5; i++ { // a basic for range-based for loop
 }
 
 numbers := []int{1, 2, 3, 4, 5}
-for index, value := range numbers { // allows for iteration over an iterable data structure with multiple value deconstruction
+for index, value := range numbers { 
     fmt.Print(index, value)
 }
 
@@ -235,13 +236,39 @@ func main(){
     john.Introduce(); // calls the Introduce method on the john instance 
 
 }
+
+// CHANNEL
+    // backbone of concurrent programming that affords communication between goroutines to synchronise process execution 
+    // make(chan desiredDatatype) => creates an unbuffered channel of a specified datatype 
+    // make(chan desiredDatatype, bufferCapacity) => creates a buffered channel of a specified datatype with a specified buffer capacity
+    // <- => sends and receives data through channels, arrow direction indicating flow of data from destination to origin
+    // close() => closes a specified channel per the given channel name
+    // select { case ... } => equivalent of switch-case statements but select is specifically designed for concurrent programming, to allow waiting on multiple channel simultaneously, where the select clause MATCHES one case when the communication operation (sending or receiving data) is ready to proceed
+        // default => similarly specifies the default case if logic falls through every other case statement within the select clause
+
+ch := make(chan int) // creates an unbuffered channel of integers and assigns it to the channel variable ch
+ch := make(chan int, 3) // creates a buffered channel with a buffer capacity of 3 integers and assigns it to the channel variable ch
+
+ch <- 42 // sends data (integer 42) to the channel variable ch
+value := <-ch // receives data from a channel variable ch and returns that data to the variable value
+
+close(ch) // closes the channel variable ch
+
+select { // imagine the channels ch1 and ch2 exist
+    case msg1 := <-ch1:
+        fmt.Println("Received message from ch1:", msg1)
+    case msg2 := <-ch2:
+        fmt.Println("Received message from ch2:", msg2)
+    default:
+        fmt.Println("No channel ready")
+} // whichever channel's communication operation of receiving data is first ready will be matched and have its resulting predicate logic executed
 ```
 
 ## Functions
 
 ```go
 // ---------- FUNCTION ----------
-    // functions are first-class citizens in Go, allowing for implementation of higher-order functions common in functional programming paradigms
+    // functions are first-class citizens in Go, allowing for implementation of higher-order functions common in functional programming 
     // func => declares and creates a function, and function definition specifies the parameter and return type (more than one return value to be specified within brackets)
     // return => specifies the return expression, functions can have multiple return values and named return values
 
@@ -253,11 +280,24 @@ func receiveMultiple(x, y int) (sum, prod int) { // specifies that both paramete
     return x + y, x * y // returns two values, allowing for immediate shorthand assignment via deconstruction when the function is called
 }
 sum, product := receiveMultiple(1,2) // this assigns the two results returned by the receiveMultiple function to the sum and product variable respectively
+
+// FUNCTION LITERALS
+    // anonymous functions, another cornerstone of functional programming
+    // functionDefinition(){ functionBody }(functionArguments) => defines and calls function literals immediately
+
+isXBig := func() bool {
+    return x > 10000
+} // function literals are effectively closures
+
+fmt.Println("Add + double these two numbers: ", 
+    func (a, b int) int {
+        return (a + b) * 2
+    }(10, 2) // immediately calls the function literal inline by providing it with the arguments a = 10 and b = 2
+) // prints "Add + double these two numbers: 24" to the stdout
 ```
 
 ## More on
 
-* function literals
 * variadic parameters for functions
 * type
 * defer
@@ -265,7 +305,6 @@ sum, product := receiveMultiple(1,2) // this assigns the two results returned by
 * pointer
 * interface
 * Goroutines
-* Channels
 * [go playground](https://go.dev/play/p/tnWMjr16Mm)
 * [go by example](https://gobyexample.com/)
 * [go documentation](https://go.dev/doc/)
