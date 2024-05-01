@@ -52,17 +52,21 @@ func binaryToDecimal(binaryStr string) (int) {
 ```go
 // --- worked examples --- 
 
-// 26
-// = (1 * 16) + (1 * 8) + (0 * 4) + (1 * 2) + (0 * 1)
-// = 11010
+// q1
+    // 26
+    // = (1 * 16) + (1 * 8) + (0 * 4) + (1 * 2) + (0 * 1)
+    // = 11010
 
-// 14
-// = (1 * 8) + (1 * 4) + (1 * 2) + (0 * 1)
-// = 1110
 
-// 35
-// = (1 * 32) + (0 * 16) + (0 * 8) + (0 * 4) + (1 * 2) + (1 * 1)
-// = 100011
+// q2
+    // 14
+    // = (1 * 8) + (1 * 4) + (1 * 2) + (0 * 1)
+    // = 1110
+
+// q3
+    // 35
+    // = (1 * 32) + (0 * 16) + (0 * 8) + (0 * 4) + (1 * 2) + (1 * 1)
+    // = 100011
 
 // --- go function implementation --- 
 
@@ -81,6 +85,95 @@ func decimalToBinary(decimal int) string {
         decimal /= 2
     }
     return binaryStr
+}
+```
+
+## Hexadecimal Binary two-way conversion
+
+* Hexadecimal are BASE 16 numbers
+* Binary are BASE 2 numbers
+* need to know how to convert Hexadecimal to Binary and vice-versa since Bitwise operations involve Binary numbers
+
+### Converting binary to hexadecimal
+
+```go
+// --- worked examples --- 
+
+// q1
+    // 0000 0001 
+    // = 0 1
+    // = 0X01
+
+// q2
+    // 1111 1100
+    // = 15 12 
+    // = 0XFC
+
+// q3
+    // 1111 1111
+    // = 15 15
+    // = 0XFF
+
+// --- go function implementation --- 
+
+func binaryToHex(binary string) string {
+    for len(binary)%4 != 0 {
+        binary = "0" + binary
+    }
+    var hex string
+    binToHexMap := map[string]string{
+        "0000": "0", "0001": "1", "0010": "2", "0011": "3",
+        "0100": "4", "0101": "5", "0110": "6", "0111": "7",
+        "1000": "8", "1001": "9", "1010": "A", "1011": "B",
+        "1100": "C", "1101": "D", "1110": "E", "1111": "F",
+    }
+    for i := 0; i < len(binary); i += 4 {
+        fourBits := binary[i : i+4]
+        hex += binToHexMap[fourBits]
+    }
+    return strings.ToUpper(hex)
+}
+```
+
+### Converting hexadecimal to binary
+
+```go
+// --- worked examples --- 
+
+// q1
+    // 0X00
+    // = 0 0 
+    // = 0000 0000
+
+// q2
+    // 0XF3
+    // = 15 3
+    // = 1111 0011
+
+// q3
+    // 0XDE
+    // = 13 14
+    // = 1101 1110
+
+// --- go function implementation --- 
+
+func hexToBinary(hex string) string {
+    hexDigits := "0123456789ABCDEF"
+    binaryDigits := "0000" + "0001" + "0010" + "0011" +
+        "0100" + "0101" + "0110" + "0111" +
+        "1000" + "1001" + "1010" + "1011" +
+        "1100" + "1101" + "1110" + "1111"
+    var binary string
+    for i := 0; i < len(hex); i++ {
+        hexDigit := hex[i]
+        for j := 0; j < len(hexDigits); j++ {
+            if hexDigits[j] == hexDigit {
+                binary += binaryDigits[j*4 : j*4+4]
+                break
+            }
+        }
+    }
+    return binary
 }
 ```
 
@@ -170,9 +263,9 @@ z = 3 // binary 00000011 in decimal => 3
 
 ## More on
 
+* [converting decimal to binary to hexadecimal](https://youtu.be/GePdOJNnaQg?si=J5cjO6XaJ0-CkPnU)
 * [converting binary to decimal](https://youtu.be/a2FpnU9Mm3E?si=7_bFrtMgsAATZi8y)
 * [converting decimal to binary](https://youtu.be/gGiEu7QTi68?si=7v3Jb6G9KorflO4P)
-* [converting decimal to hexadecimal](https://youtu.be/GePdOJNnaQg?si=J5cjO6XaJ0-CkPnU)
 * [basic bitwise](https://www.techtarget.com/whatis/definition/bitwise)
 * [bitwise operations applied](https://youtu.be/BGeOwlIGRGI?si=lbSyji_4bXDprrsD)
 * [bitwise operation exercises](https://medium.com/@jeremythen16/master-bitwise-operations-once-and-for-all-f5283e3c9a11)
