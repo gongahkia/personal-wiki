@@ -7,6 +7,7 @@ Bitwise operations involve manipulation of individual bits.
 * Decimal are BASE 10 numbers
 * Binary are BASE 2 numbers
 * need to know how to convert Decimal to Binary and vice-versa since Bitwise operations involve Binary numbers
+* NOTE that a SIGNED binary to decimal conversion causes the Most Significant Bit to have a negative value while every other Bit retains its positive value
 
 ### Converting binary to decimal
 
@@ -93,6 +94,7 @@ func decimalToBinary(decimal int) string {
 * Hexadecimal are BASE 16 numbers
 * Binary are BASE 2 numbers
 * need to know how to convert Hexadecimal to Binary and vice-versa since Bitwise operations involve Binary numbers
+* NOTE that a SIGNED binary to hexadecimal conversion DOES NOT affect how it is calculated, since the number being SIGNED only causes the Most Significant Bit to have a negative value while every other Bit retains its positive value, which is within Decimal to Binary conversion
 
 ### Converting binary to hexadecimal
 
@@ -205,8 +207,11 @@ func hexToBinary(hex string) string {
 
 ### Bit Shift operators
 
-* Left shift (`<<`) aligns Bits by SHIFTING left operand value LEFT by specified number of Bits in right operand and right is padded with 0, any 1s are truncated
-* Signed Right shift (`>>`) aligns Bits by SHIFTING left operand value RIGHT by specified number of Bits in right operand and left is padded with 0, any 1s are truncated
+* Most Significant Bit is the LEFTMOST bit of the LARGEST POWER regardless of whether its value is 0 or 1
+* Left shift (`<<`) aligns Bits by SHIFTING left operand value LEFT by specified number of Bits in right operand and right is padded with 0, any numbers shifted out are truncated
+* Signed Right shift (`>>`) aligns Bits by SHIFTING left operand value RIGHT by specified number of Bits in right operand and left is padded with the most significant bit or 0 depending on the type of SHIFT specified, any numbers shifted out are truncated
+    * ARITHMETIC Right shift: left is padded with most significant Bit and any numbers shifted out are truncated (generally use this)
+    * LOGICAL Right shift: left is padded with 0 and any numbers shifted out are truncated
 * NOTE: Left shift and Right shift Bit Shift operators **SHOULD NOT** be used for negative numbers since doing so results in undefined behaviour
     * Some languages like Java and JS resolve this by providing the Unsigned Right shift (`>>>`) that always fills left-vacated positions with 0 regardless of the sign of the number
     * C, C++, Rust and Go do not have this added functionality
@@ -219,8 +224,8 @@ func hexToBinary(hex string) string {
 | `\|` | Bitwise OR | copies a Bit to the result if it exists in EITHER or BOTH operands | adds two numbers if there is no carry involved |
 | `^` | Bitwise XOR (Exclusive OR) | copies a Bit to the result if it exists in EITHER but NOT BOTH operands | toggle Bits or swap two variables without using a third temporary variable, find specific types of numbers in a series of numbers, find nonrepeating elements, detect if two integers are of opposite signs
 | `~` | Bitwise NOT (Bitwise COMPLEMENT, Bitwise INVERSION) | flips 0 into 1 and 1 into 0 | flip or invert Bits |
-| `<<` | LEFT SHIFT | left operand value is SHIFTED LEFT by the number of Bits specified by the right operand and right padded with 0, truncating any 1s | aligns Bits |
-| `>>` | Signed RIGHT SHIFT | left operand value is SHIFTED RIGHT by the number of Bits specified by the right operand and left padded with 0, truncating any 1s | aligns Bits |
+| `<<` | LEFT SHIFT | left operand value is SHIFTED LEFT by the number of Bits specified by the right operand and right padded with 0, truncating any numbers shifted out | aligns Bits |
+| `>>` | Signed RIGHT SHIFT | left operand value is SHIFTED RIGHT by the number of Bits specified by the right operand and left padded with the most significant Bit or 0 depending on the type of shift specified, truncating any numbers shifted out | aligns Bits |
 
 ## Application
 
@@ -257,7 +262,7 @@ z = 12 // binary 00001100 in decimal => 12
 
 // --- RIGHT SHIFT ---
 
-z = y >> 2 // Right shift results in 00000011
+z = y >> 2 // Right shift results in 00000011 applying arithmetic right shift since most significant Bit is 0 in 00001100
 z = 3 // binary 00000011 in decimal => 3
 ```
 
