@@ -4,8 +4,9 @@ Bitwise operations involve manipulation of individual bits.
 
 ## Decimal Binary two-way conversion
 
-* decimal are BASE 10 numbers
-* binary are BASE 2 numbers
+* Decimal are BASE 10 numbers
+* Binary are BASE 2 numbers
+* need to know how to convert Decimal to Binary and vice-versa since Bitwise operations involve Binary numbers
 
 ### Converting binary to decimal
 
@@ -111,8 +112,8 @@ func decimalToBinary(decimal int) string {
 
 ### Bit Shift operators
 
-* Left shift (`<<`) aligns Bits by SHIFTING left operand value LEFT by specified number of Bits in right operand
-* Signed Right shift (`>>`) aligns Bits by SHIFTING left operand value RIGHT by specified number of Bits in right operand
+* Left shift (`<<`) aligns Bits by SHIFTING left operand value LEFT by specified number of Bits in right operand and right is padded with 0, any 1s are truncated
+* Signed Right shift (`>>`) aligns Bits by SHIFTING left operand value RIGHT by specified number of Bits in right operand and left is padded with 0, any 1s are truncated
 * NOTE: Left shift and Right shift Bit Shift operators **SHOULD NOT** be used for negative numbers since doing so results in undefined behaviour
     * Some languages like Java and JS resolve this by providing the Unsigned Right shift (`>>>`) that always fills left-vacated positions with 0 regardless of the sign of the number
     * C, C++, Rust and Go do not have this added functionality
@@ -125,8 +126,47 @@ func decimalToBinary(decimal int) string {
 | `\|` | Bitwise OR | copies a Bit to the result if it exists in EITHER or BOTH operands | adds two numbers if there is no carry involved |
 | `^` | Bitwise XOR (Exclusive OR) | copies a Bit to the result if it exists in EITHER but NOT BOTH operands | toggle Bits or swap two variables without using a third temporary variable, find specific types of numbers in a series of numbers, find nonrepeating elements, detect if two integers are of opposite signs
 | `~` | Bitwise NOT (Bitwise COMPLEMENT, Bitwise INVERSION) | flips 0 into 1 and 1 into 0 | flip or invert Bits |
-| `<<` | LEFT SHIFT | left operand value is SHIFTED LEFT by the number of Bits specified by the right operand | aligns Bits |
-| `>>` | Signed RIGHT SHIFT | left operand value is SHIFTED RIGHT by the number of Bits specified by the right operand | aligns Bits |
+| `<<` | LEFT SHIFT | left operand value is SHIFTED LEFT by the number of Bits specified by the right operand and right padded with 0, truncating any 1s | aligns Bits |
+| `>>` | Signed RIGHT SHIFT | left operand value is SHIFTED RIGHT by the number of Bits specified by the right operand and left padded with 0, truncating any 1s | aligns Bits |
+
+## Application
+
+```go
+// --- PRESETS ---
+    // below implementation is in go
+
+var x int 
+var y int 
+var z int 
+
+x = 6 // decimal 6 in binary => 00000110
+y = 12 // decimal 12 in binary => 00001100
+
+// --- BITWISE AND ---
+
+z = x & y // Bitwise AND results in 00000100
+z = 4 // binary 00000100 in decimal => 4
+
+// --- BITWISE OR ---
+
+z = x | y // Bitwise OR results in 00001110
+z = 14 // binary 00001110 in decimal => 14
+
+// --- BITWISE XOR --- 
+
+z = x ^ y // Bitwise XOR results in 00001010
+z = 10 // binary 00001010 in decimal => 10
+
+// --- LEFT SHIFT ---
+
+z = x << 1 // Left shift results in 00001100
+z = 12 // binary 00001100 in decimal => 12
+
+// --- RIGHT SHIFT ---
+
+z = y >> 2 // Right shift results in 00000011
+z = 3 // binary 00000011 in decimal => 3
+```
 
 ## More on
 
@@ -134,5 +174,6 @@ func decimalToBinary(decimal int) string {
 * [converting decimal to binary](https://youtu.be/gGiEu7QTi68?si=7v3Jb6G9KorflO4P)
 * [converting decimal to hexadecimal](https://youtu.be/GePdOJNnaQg?si=J5cjO6XaJ0-CkPnU)
 * [basic bitwise](https://www.techtarget.com/whatis/definition/bitwise)
-* [cs50 bitwise operators](https://youtu.be/79i1iu7iyAc?si=Es_JsfqwuX0PQhfe)
+* [bitwise operations applied](https://youtu.be/BGeOwlIGRGI?si=lbSyji_4bXDprrsD)
 * [bitwise operation exercises](https://medium.com/@jeremythen16/master-bitwise-operations-once-and-for-all-f5283e3c9a11)
+* [cs50 bitwise operators](https://youtu.be/79i1iu7iyAc?si=Es_JsfqwuX0PQhfe)
