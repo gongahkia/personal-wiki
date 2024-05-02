@@ -212,7 +212,6 @@ aMap := map[string]int{
 // STRUCT
     // type => creates a custom data type as a type definition that can be later referenced when instances of the type are created 
     // struct => creates and declares a struct that stores multiple values of different specified types within {} curly braces
-    // func (structAlias structName) methodName() { methodBody } => declares a specified method on a struct, where the attributes of a struct instance can be called via . dot syntax
     // Go's equivalent of structs in Rust, objects in Javascript, tables in Lua (Go does NOT support OOP and the closest analogue we can get are structs)
 
 type Person struct {
@@ -220,9 +219,26 @@ type Person struct {
     Age int
 } // this creates a type definition for the Person struct
 
+// STRUCT METHODS
+    // declare a specified method on a struct, where the attributes and methods of a struct instance can be called via . dot syntax
+    // there are 2 kinds of struct methods
+        // 1. VALUE RECEIVER METHOD => func (structAlias structName) methodName() { methodBody }
+            // struct method operates on a COPY of the struct
+            // method DOES NOT modify struct state
+            // modifications made to the struct within the method are LOCAL to the method 
+        // 2. POINTER RECEIVER METHOD => func (structAlias *structName) methodName() { methodBody } 
+            // struct method operates DIRECTLY ON that original struct
+            // method MODIFIES struct state
+            // modifications made to the struct within the method WILL MODIFY original struct state
+
 func (p Person) Introduce() {
     fmt.Printf("Hello, my name is %s and I am %d years old.\n", p.Name, p.Age)
-} // this declares the Introduce method on the Person struct, note the syntax to declare the function as a method on the struct Person
+} // this declares the value receiver Introduce method on the Person struct, appropriate since the method DOES NOT need to modify struct state at all (note the syntax to declare the function as a method on the struct Person)
+
+func (p *Person) DrinkFromFountainOfYouth() {
+    p.Age -= 10;
+    fmt.Printf("You have drank from the fountain of youth and you are now %d years old.\n", p.Age)
+} // this declares the pointer receiver DrinkFromFountainOfYouth method on the Person struct, appropriate since the method DOES need to modify struct state (note the syntax to declare the function as a method on the struct Person)
 
 func main(){
 
@@ -234,6 +250,7 @@ func main(){
     }
 
     john.Introduce(); // calls the Introduce method on the john instance 
+    john.DrinkFromFountainOfYouth(); // calls the DrinkFromFountainOfYouth method on the john instance, deaging john 10 years
 
 }
 
