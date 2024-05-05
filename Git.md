@@ -8,7 +8,7 @@ Universal version management system authored by the creator of Linux.
 # ----- DEFINITIONS -----
     # working directory => current file directory (folder) that stores actual project files
     # index => staging area within which you add, commit and push changes made to local files
-    # head => pointer pointing to the last commit made
+    # head => pointer pointing to the last commit made on a given branch
 
 # ----- CREATE & CHECKOUT REPOSITORIES -----
 
@@ -22,7 +22,7 @@ git status # shows any files or folders which have been changed in your local wo
             # * can be used to add EVERYTHING within the current file directory to the index (git automatically adds only modified files to the staging area)
         # 2. commits modified files to the head, often with a commit message
         # 3. pushes the changes to the specified branch of the remote repository
-            # git push => NOT specifying the branch to push the committed changes to will cause git to default to the currently checked-out branch or the default branch specified in git configuration, which is generally the main or master branch
+            # git push => NOT specifying the branch to push the committed changes to will cause git to default to the currently checked-out branch or the default branch specified in git configuration, which is generally the master branch
 
 git add fileName1 fileName2 folderName1 
 git add * # this is also valid to just add everything
