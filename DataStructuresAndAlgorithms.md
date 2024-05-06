@@ -8,6 +8,8 @@ Code snippets below are written in [Go](https://go.dev/).
 * algorithm: sequence of steps to solve a problem
 * big o notation: describes performance of an algorithm as size of the dataset increases
     * `n`: variable representing size of dataset
+* time complexity:
+* space complexity: 
 
 ## Big O Notation
 
@@ -448,6 +450,167 @@ func interpolationSearch(arr []interface{}, target interface{}) int {
 
     return -1 // returns -1 if target element not found
 
+}
+```
+
+### Bubble Sort
+
+```go
+// --- BUBBLE SORT ---
+    // QUADRATIC time complexity of O(n^2)
+    // CONSTANT space complexity of O(1)
+    // compares pairs of adjacent elements and swaps them if they are not in order
+    // pros
+        // relatively fast for small datasets
+        // lower CONSTANT space complexity since collection sorted in place
+    // cons
+        // extremely slow for medium and large datasets
+
+func bubbleSort(arr []int) { // slices are reference types in Go so changes made to the slice within the function are reflected outside the function
+    n := len(arr)
+    for i := 0; i < n-1; i++ {
+        for j := 0; j < n-i-1; j++ {
+            if arr[j] > arr[j+1] {
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+            }
+        }
+    }
+}
+```
+
+### Selection Sort
+
+```go
+// --- SELECTION SORT ---
+    // QUADRATIC time complexity of O(n^2)
+    // CONSTANT space complexity of O(1)
+    // iterates across each element in a collection and compares against and stores the minimum value, swapping variables after each iteration
+    // pros
+        // relatively fast for small and medium datasets
+        // lower CONSTANT space complexity since collection sorted in place
+    // cons
+        // slower for large datasets
+
+func selectionSort(arr []int) { // slices are reference types in Go so changes made to the slice within the function are reflected outside the function
+    n := len(arr)
+    for i := 0; i < n-1; i++ {
+        minIndex := i 
+        for j := i + 1; j < n; j++ {
+            if arr[j] < arr[minIndex] {
+                minIndex = j
+            }
+        }
+        arr[i], arr[minIndex] = arr[minIndex], arr[i]
+    }
+}
+```
+
+### Insertion Sort
+
+```go
+// --- INSERTION SORT ---
+    // QUADRATIC time complexity of O(n^2)
+    // CONSTANT space complexity of O(1)
+    // compares all elements to the left of a given element, then shift elements to the right to make room to insert a value
+    // pros
+        // fast for small and medium datasets
+        // fewer steps than BUBBLE SORT
+        // best case time LINEAR complexity is O(n) compared to SELECTION SORT'S O(n^2)
+        // lower CONSTANT space complexity since collection sorted in place
+    // cons
+        // slower for large datasets
+
+func insertionSort(arr []int) { // slices are reference types in Go so changes made to the slice within the function are reflected outside the function
+    n := len(arr)
+    for i := 1; i < n; i++ {
+        key := arr[i]
+        j := i - 1
+        for j >= 0 && arr[j] > key {
+            arr[j+1] = arr[j]
+            j = j - 1
+        }
+        arr[j+1] = key
+    }
+}
+```
+
+### Merge Sort
+
+```go
+// --- MERGE SORT ---
+    // QUASILINEAR time complexity of O(n log n)
+    // LINEAR space complexity of O(n)
+    // recursively split collection in half, sort each half, then recombine the two halves
+    // pros
+        // faster than all sorting algorithms with QUADRATIC time complexity (bubble sort, selection sort, insertion sort)
+    // cons
+        // higher LINEAR space complexity since new subarrays are created to store elements for each level of recursion
+
+func mergeSort(arr []int) []int { 
+    if len(arr) <= 1 {
+        return arr
+    }
+    mid := len(arr) / 2
+    left := mergeSort(arr[:mid])
+    right := mergeSort(arr[mid:])
+    return merge(left, right)
+}
+
+func merge(left, right []int) []int {
+    result := make([]int, 0)
+    for len(left) > 0 || len(right) > 0 {
+        if len(left) == 0 {
+            return append(result, right...)
+        }
+        if len(right) == 0 {
+            return append(result, left...)
+        }
+        if left[0] <= right[0] {
+            result = append(result, left[0])
+            left = left[1:]
+        } else {
+            result = append(result, right[0])
+            right = right[1:]
+        }
+    }
+    return result
+}
+```
+
+### Quick Sort
+
+```go
+// --- QUICK SORT ---
+    // QUASILINEAR time complexity of O(n log n) in best case and average case
+    // QUADRATIC time complexity of O(n^2) in worst case 
+    // LOGARITHMIC space complexity of O(log n)
+    // moves smaller elements in a collection to left side of a pivot element, then recursively divide the collection into 2 partitions
+    // pros
+        // faster than all sorting algorithms with QUADRATIC time complexity (bubble sort, selection sort, insertion sort) in best and average cases
+        // lower LOGARITHMIC space complexity than MERGE SORT'S LINEAR space complexity since collection sorted in place
+    // cons
+        // higher LOGARITHMIC space complexity since quick sort relies on recursion 
+
+func quickSort(arr []int) { // slices are reference types in Go so changes made to the slice within the function are reflected outside the function
+    if len(arr) <= 1 {
+        return
+    }
+    pivotIndex := partition(arr)
+    quickSort(arr[:pivotIndex])
+    quickSort(arr[pivotIndex+1:])
+}
+
+func partition(arr []int) int {
+    pivot := arr[len(arr)-1]
+    i := -1
+    for j := 0; j < len(arr)-1; j++ {
+        if arr[j] < pivot {
+            i++
+            arr[i], arr[j] = arr[j], arr[i]
+        }
+    }
+    arr[i+1], arr[len(arr)-1] = arr[len(arr)-1], arr[i+1]
+    return i + 1
 }
 ```
 
