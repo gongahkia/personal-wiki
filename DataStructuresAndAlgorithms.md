@@ -428,25 +428,25 @@ func binarySearch(arr []interface{}, target interface{}) int {
 
 func interpolationSearch(arr []interface{}, target interface{}) int {
 
-	low := 0
-	high := len(arr) - 1
+    low := 0
+    high := len(arr) - 1
 
-	for low <= high && target >= arr[low] && target <= arr[high] {
-		pos := low + ((target - arr[low]) * (high - low)) / (arr[high] - arr[low])
+    for low <= high && target >= arr[low] && target <= arr[high] {
+        pos := low + ((target - arr[low]) * (high - low)) / (arr[high] - arr[low])
 
-		if arr[pos] == target {
-			return pos // returns index of target element
-		}
+        if arr[pos] == target {
+            return pos // returns index of target element
+        }
 
-		if arr[pos] < target {
-			low = pos + 1
-		} else {
-			high = pos - 1
-		}
+        if arr[pos] < target {
+            low = pos + 1
+        } else {
+            high = pos - 1
+        }
 
-	}
+    }
 
-	return -1 // returns -1 if target element not found
+    return -1 // returns -1 if target element not found
 
 }
 ```
