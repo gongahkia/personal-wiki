@@ -50,7 +50,7 @@ func binarySearch(arr []int, target int) int { // computation here has a time co
     * number of steps for algorithm to complete execution INCREASES PROPORTIONALLY to size of dataset
 
 ```go
-func addUp(int n) int{ // for loops generally have time complexity of O(n)
+func addUp(int n) int{ // computation here has a time complexity of O(n)
     var sum int
     sum = 0
     for i := 0; i <= n; i++ {
@@ -96,7 +96,7 @@ func merge(left, right []int) []int {
 }
 ```
 
-5. QUADRATIC TIME
+5. QUADRATIC time
     * `O(n^2)`
     * QUADRATIC increase in number of steps for algorithm to complete execution for a given increase in size of dataset
 
@@ -110,6 +110,19 @@ func bubbleSort(arr []int) { // computation here has a time complexity of O(n^2)
             }
         }
     }
+}
+```
+
+6. FACTORIAL time
+    * `O(n!)`
+    * extremely slow and rarely used
+
+```go
+func factorial(n int) int { // computation here has a time complexity of O(n!)
+    if n == 0 {
+        return 1
+    }
+    return n * factorial(n-1)
 }
 ```
 
