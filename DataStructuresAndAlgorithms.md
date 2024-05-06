@@ -18,21 +18,21 @@ Code snippets below are written in [Go](https://go.dev/).
     // pop() => removes elements from the TOP of the stack
 
 type Stack struct {
-	items []interface{} // interface is used here to allow the slice to hold elements of any datatype
+    items []interface{} // interface is used here to allow the slice to hold elements of any datatype
 }
 
 func (s *Stack) Push(item interface{}) {
-	s.items = append(s.items, item)
+    s.items = append(s.items, item)
 }
 
 func (s *Stack) Pop() interface{} {
-	if len(s.items) == 0 { // empty stack
-		return nil 
-	}
-	index := len(s.items) - 1
-	item := s.items[index]
-	s.items = s.items[:index] 
-	return item
+    if len(s.items) == 0 { // empty stack
+        return nil 
+    }
+    index := len(s.items) - 1
+    item := s.items[index]
+    s.items = s.items[:index] 
+    return item
 }
 
 // --- USES ---
@@ -51,20 +51,20 @@ func (s *Stack) Pop() interface{} {
     // remove() => dequeues an element from the FRONT of the queue
 
 type Queue struct {
-	items []interface{} // interface is used here to allow the slice to hold elements of any datatype
+    items []interface{} // interface is used here to allow the slice to hold elements of any datatype
 }
 
 func (q *Queue) Add(item interface{}) {
-	q.items = append(q.items, item)
+    q.items = append(q.items, item)
 }
 
 func (q *Queue) Remove() interface{} {
-	if len(q.items) == 0 { // empty queue
-		return nil
-	}
-	item := q.items[0]
-	q.items = q.items[1:] 
-	return item
+    if len(q.items) == 0 { // empty queue
+        return nil
+    }
+    item := q.items[0]
+    q.items = q.items[1:] 
+    return item
 }
 
 // --- USES ---
@@ -85,30 +85,30 @@ func (q *Queue) Remove() interface{} {
     // remove() => dequeues element of HIGHEST priority 
 
 type Item struct { // item being EACH ELEMENT of the priority queue
-	value interface{} // interface is used here to allow the value to hold elements of any datatype
-	priority int
+    value interface{} // interface is used here to allow the value to hold elements of any datatype
+    priority int
 }
 
 type PriorityQueue []*Item // priority queue is implemented via a sorted slice of Item elements
 
 func (pq *PriorityQueue) Add(value interface{}, priority int) {
-	item := &Item{
-		value: value,
-		priority: priority,
-	}
-	*pq = append(*pq, item)
-	sort.Slice(*pq, func(i int, j int) bool { // sort the priority queue based on priority
-		return (*pq)[i].priority < (*pq)[j].priority
-	})
+    item := &Item{
+        value: value,
+        priority: priority,
+    }
+    *pq = append(*pq, item)
+    sort.Slice(*pq, func(i int, j int) bool { // sort the priority queue based on priority
+        return (*pq)[i].priority < (*pq)[j].priority
+    })
 }
 
 func (pq *PriorityQueue) Remove() interface{} {
-	if len(*pq) == 0 { // empty priority queue
-		return nil
-	}
-	item := (*pq)[0]
-	*pq = (*pq)[1:] 
-	return item.value
+    if len(*pq) == 0 { // empty priority queue
+        return nil
+    }
+    item := (*pq)[0]
+    *pq = (*pq)[1:] 
+    return item.value
 }
 
 // --- USES ---
@@ -133,8 +133,8 @@ func (pq *PriorityQueue) Remove() interface{} {
 			// 3. NEXT node's memory address
 
 type Node struct { // type definition for an element in a singly linked list
-	value interface{}
-	next *Node // pointer to the next node
+    value interface{} // interface is used here to allow the value to hold elements of any datatype
+    next *Node // pointer to the next node
 }
 
 type LinkedList struct { // type definition for a singly linked list
@@ -144,18 +144,18 @@ type LinkedList struct { // type definition for a singly linked list
 func (list *LinkedList) append(value interface{}) { // appends a new node to the END of the linked list
 
     newNode := &Node{ // creation of current node
-		value: value, 
-		next: nil,
-	}
+        value: value, 
+        next: nil,
+    }
 
     if list.head == nil { // if linked list empty, make current node the new head node
-		list.head = newNode
-		return
+        list.head = newNode
+        return
     }
 
     lastNode := list.head // traverse through the entire linked list until we reach the actual last node in the linkedlist where the next node is nil
     for lastNode.next != nil {
-		lastNode = lastNode.next 
+        lastNode = lastNode.next 
     }
     lastNode.next = newNode // make the current node the new last node
 
@@ -168,9 +168,9 @@ func (list *LinkedList) add(value interface{}, position int) error { // adds a n
     }
 
     newNode := &Node{ // creation of current node
-		value: value, 
-		next: nil,
-	}
+        value: value, 
+        next: nil,
+    }
 
     if position == 0 { // if insert current node at start of linked list, then just point current node's next at the old head
         newNode.next = list.head
@@ -186,10 +186,10 @@ func (list *LinkedList) add(value interface{}, position int) error { // adds a n
     if prevNode == nil { // if insert current node at index outside length of the list, invalid index
         return fmt.Errorf("position out of range") // error
     } else { // assuming no error
-		newNode.next = prevNode.next // assigns current node pointer to the previousnode's pointer to insert the current node in between the old previous node and its old next node
-		prevNode.next = newNode // assigns pointer from previousnode to point to current node
-		return nil
-	}
+        newNode.next = prevNode.next // assigns current node pointer to the previousnode's pointer to insert the current node in between the old previous node and its old next node
+        prevNode.next = newNode // assigns pointer from previousnode to point to current node
+        return nil
+    }
 
 }
 
@@ -212,9 +212,9 @@ func (list *LinkedList) remove(value interface{}) error { // remove a node from 
     if prevNode.next == nil { // if reach the end of the linked list and the node with desired value not found
         return fmt.Errorf("element not found") // error
     } else { // node with desired value is found and it is the next node
-		prevNode.next = prevNode.next.next // assigns pointer from current node to one node after the next node, to effectively "remove" it from the linked list
-		return nil
-	}
+        prevNode.next = prevNode.next.next // assigns pointer from current node to one node after the next node, to effectively "remove" it from the linked list
+        return nil
+    }
 
 }
 
