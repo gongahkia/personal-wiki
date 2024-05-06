@@ -8,8 +8,8 @@ Code snippets below are written in [Go](https://go.dev/).
 * algorithm: sequence of steps to solve a problem
 * big o notation: describes performance of an algorithm as size of the dataset increases
     * `n`: variable representing size of dataset
-* time complexity:
-* space complexity: 
+* time complexity: time taken for an algorithm to complete execution
+* space complexity: memory taken for an algorithm to complete execution
 
 ## Big O Notation
 
