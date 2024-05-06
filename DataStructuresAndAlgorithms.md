@@ -245,3 +245,5 @@ func (list *LinkedList) display() { // display all linkedlist nodes
 * [freecodecamp](https://youtu.be/8hly31xKli0?si=aEbuILtMyqXl5PPu)
 * [cs50 week 5 data structures](https://cs50.harvard.edu/x/2024/weeks/5/)
 * [cs50 ai with python](https://youtu.be/5NgNicANyqM?si=qYD6DDvV5Fe3n-AA)
+* [sorting algorithms explained](https://visualgo.net/en/sorting)
+* [sorting algorithms visualised](https://www.toptal.com/developers/sorting-algorithms)
