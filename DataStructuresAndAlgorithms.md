@@ -117,6 +117,123 @@ func (pq *PriorityQueue) Remove() interface{} {
     // system-related functions (load balancing and interrupt handling)
 ```
 
+### Linked List
+
+```go
+// --- LINKED LIST --- 
+	// collection of nodes (each node comprising a VALUE + pointer(s) to OTHER NODE'S memory address(es)) stored in non-consecutive memory locations
+	// SINGLY LINKED LIST
+		// nodes comprise...
+			// 1. VALUE
+			// 2. NEXT node's memory address
+	// DOUBLY LINKED LIST
+		// nodes comprise...
+			// 1. VALUE
+			// 2. PREVIOUS node's memory address
+			// 3. NEXT node's memory address
+
+type Node struct { // type definition for an element in a singly linked list
+	value interface{}
+	next *Node // pointer to the next node
+}
+
+type LinkedList struct { // type definition for a singly linked list
+    head *Node // define the head node
+}
+
+func (list *LinkedList) append(value interface{}) { // appends a new node to the END of the linked list
+
+    newNode := &Node{ // creation of current node
+		value: value, 
+		next: nil,
+	}
+
+    if list.head == nil { // if linked list empty, make current node the new head node
+		list.head = newNode
+		return
+    }
+
+    lastNode := list.head // traverse through the entire linked list until we reach the actual last node in the linkedlist where the next node is nil
+    for lastNode.next != nil {
+		lastNode = lastNode.next 
+    }
+    lastNode.next = newNode // make the current node the new last node
+
+}
+
+func (list *LinkedList) add(value interface{}, position int) error { // adds a new node to a specified position in the linked list
+
+    if position < 0 { // if negative index, invalid index
+        return fmt.Errorf("invalid position") // error
+    }
+
+    newNode := &Node{ // creation of current node
+		value: value, 
+		next: nil,
+	}
+
+    if position == 0 { // if insert current node at start of linked list, then just point current node's next at the old head
+        newNode.next = list.head
+        list.head = newNode
+        return nil 
+    }
+
+    prevNode := list.head // traverse through the entire linked list until we reach the node at the desired position
+    for i := 0; i < position-1 && prevNode != nil; i++ { 
+        prevNode = prevNode.next
+    }
+
+    if prevNode == nil { // if insert current node at index outside length of the list, invalid index
+        return fmt.Errorf("position out of range") // error
+    } else { // assuming no error
+		newNode.next = prevNode.next // assigns current node pointer to the previousnode's pointer to insert the current node in between the old previous node and its old next node
+		prevNode.next = newNode // assigns pointer from previousnode to point to current node
+		return nil
+	}
+
+}
+
+func (list *LinkedList) remove(value interface{}) error { // remove a node from the linked list by value
+
+    if list.head == nil { // empty list
+        return fmt.Errorf("empty list") // error
+    }
+
+    if list.head.value == value { // check if current list head is node with desired value
+        list.head = list.head.next
+        return nil
+    }
+
+    prevNode := list.head // traverse through the entire linked list until we reach the node with the desired value
+    for prevNode.next != nil && prevNode.next.value != value {
+        prevNode = prevNode.next
+    }
+
+    if prevNode.next == nil { // if reach the end of the linked list and the node with desired value not found
+        return fmt.Errorf("element not found") // error
+    } else { // node with desired value is found and it is the next node
+		prevNode.next = prevNode.next.next // assigns pointer from current node to one node after the next node, to effectively "remove" it from the linked list
+		return nil
+	}
+
+}
+
+func (list *LinkedList) display() { // display all linkedlist nodes
+    current := list.head // assigns current node to starting node
+    for current != nil { // traverses through the entire linked list from start to finish
+        fmt.Printf("%v -> ", current.value)
+        current = current.next
+    }
+    fmt.Println("nil")
+}
+
+// --- USES ---
+	// advantageous to arraylists
+		// faster insertion and deletion of nodes with 0(1) time complexity
+		// low memory waste
+	// dynamically allocates memory as required
+```
+
 ## Algorithms
 
 > FUA add here later from Brocode
