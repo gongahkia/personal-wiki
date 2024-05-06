@@ -359,7 +359,97 @@ func (list *LinkedList) display() { // display all linkedlist nodes
 
 ## Algorithms
 
-> FUA add here later from Brocode
+### Linear Search
+
+```go
+// --- LINEAR SEARCH ---
+    // LINEAR time complexity of O(n)
+    // iterates through a collection one element at a time
+    // pros
+        // dataset can be unsorted
+        // fast for searching small to medium-sized datasets
+        // useful for data structures without random access 
+    // cons
+        // slow for large datasets
+
+func linearSearch(arr []interface{}, target interface{}) int { // returns index of target element if found
+    for i, item := range arr {
+        if item == target {
+            return i 
+        }
+    }
+    return -1 // returns -1 if target element not found
+}
+```
+
+### Binary Search
+
+```go
+// --- BINARY SEARCH ---
+    // LOGARITHMIC time complexity of O(log n)
+    // eliminates half of the collection at each step to find the target element
+    // pros
+        // more efficient for large datasets
+    // cons
+        // dataset has to be sorted
+        // less efficient for smaller datasets
+
+func binarySearch(arr []interface{}, target interface{}) int { 
+    left, right := 0, len(arr)-1
+    for left <= right {
+        mid := left + (right-left)/2
+        if arr[mid] == target {
+            return mid // returns index of target element
+        }
+        if arr[mid] < target {
+            left = mid + 1
+        } else {
+            right = mid - 1
+        }
+    }
+    return -1 // returns -1 if target element not found
+}
+```
+
+### Interpolation Search
+
+```go
+// --- INTERPOLATION SEARCH ---
+    // average time complexity of O(log(log n))
+    // worst case time complexity of O(n)
+    // guesses where a value might be based on estimated probe results, with incorrect probes narrowing the search area and recalculating a new probe
+    // improvement over BINARY searches that are best used for uniformly distributed datasets
+    // pros
+        // more efficient for uniformly distributed datasets
+        // more efficient for large datasets
+    // cons
+        // dataset has to be sorted
+        // dataset has to be uniformly distributed
+
+func interpolationSearch(arr []interface{}, target interface{}) int {
+
+	low := 0
+	high := len(arr) - 1
+
+	for low <= high && target >= arr[low] && target <= arr[high] {
+		pos := low + ((target - arr[low]) * (high - low)) / (arr[high] - arr[low])
+
+		if arr[pos] == target {
+			return pos // returns index of target element
+		}
+
+		if arr[pos] < target {
+			low = pos + 1
+		} else {
+			high = pos - 1
+		}
+
+	}
+
+	return -1 // returns -1 if target element not found
+
+}
+```
 
 ## More on
 
