@@ -121,16 +121,16 @@ func (pq *PriorityQueue) Remove() interface{} {
 
 ```go
 // --- LINKED LIST --- 
-	// collection of nodes (each node comprising a VALUE + pointer(s) to OTHER NODE'S memory address(es)) stored in non-consecutive memory locations
-	// SINGLY LINKED LIST
-		// nodes comprise...
-			// 1. VALUE
-			// 2. NEXT node's memory address
-	// DOUBLY LINKED LIST
-		// nodes comprise...
-			// 1. VALUE
-			// 2. PREVIOUS node's memory address
-			// 3. NEXT node's memory address
+    // collection of nodes (each node comprising a VALUE + pointer(s) to OTHER NODE'S memory address(es)) stored in non-consecutive memory locations
+    // SINGLY LINKED LIST
+        // nodes comprise...
+            // 1. VALUE
+            // 2. NEXT node's memory address
+    // DOUBLY LINKED LIST
+        // nodes comprise...
+            // 1. VALUE
+            // 2. PREVIOUS node's memory address
+            // 3. NEXT node's memory address
 
 type Node struct { // type definition for an element in a singly linked list
     value interface{} // interface is used here to allow the value to hold elements of any datatype
@@ -228,10 +228,10 @@ func (list *LinkedList) display() { // display all linkedlist nodes
 }
 
 // --- USES ---
-	// advantageous to arraylists
-		// faster insertion and deletion of nodes with 0(1) time complexity
-		// low memory waste
-	// dynamically allocates memory as required
+    // advantageous to arraylists
+        // faster insertion and deletion of nodes with 0(1) time complexity
+        // low memory waste
+    // dynamically allocates memory as required
 ```
 
 ## Algorithms
