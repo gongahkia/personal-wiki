@@ -6,6 +6,116 @@ Code snippets below are written in [Go](https://go.dev/).
 
 * data structure: ordered collection of data provided by the language or defined and enforced by the programmer
 * algorithm: sequence of steps to solve a problem
+* big o notation: describes performance of an algorithm as size of the dataset increases
+    * `n`: variable representing size of dataset
+
+## Big O Notation
+
+1. CONSTANT time
+    * `O(1)`
+    * number of steps for algorithm to complete execution is CONSTANT regardless of size of dataset
+
+```go
+func addUp(int n) int{ // computation here has a time complexity of O(1)
+    var sum int
+    sum = n * (n + 1)/2
+    return sum
+}
+```
+
+2. LOGARITHMIC time
+    * `O(log n)`
+    * number of steps for algorithm to complete execution is MARGINALLY LOWER as size of dataset increases
+
+```go
+func binarySearch(arr []int, target int) int { // computation here has a time complexity of O(log n)
+    left, right := 0, len(arr)-1
+    for left <= right {
+        mid := left + (right-left)/2
+        if arr[mid] == target {
+            return mid
+        }
+        if arr[mid] < target {
+            left = mid + 1
+        } else {
+            right = mid - 1
+        }
+    }
+    return -1 // target not found
+}
+```
+
+3. LINEAR time
+    * `O(n)`
+    * number of steps for algorithm to complete execution INCREASES PROPORTIONALLY to size of dataset
+
+```go
+func addUp(int n) int{ // for loops generally have time complexity of O(n)
+    var sum int
+    sum = 0
+    for i := 0; i <= n; i++ {
+        sum += i;
+    }
+    return sum
+}
+```
+
+4. QUASILINEAR time
+    * `O(n log n)`
+    * similar to LINEAR time, but slows down further when working with larger datasets
+
+```go
+func mergeSort(arr []int) []int { // computation here has a time complexity of O(n log n)
+    if len(arr) <= 1 {
+        return arr
+    }
+    mid := len(arr) / 2
+    left := mergeSort(arr[:mid])
+    right := mergeSort(arr[mid:])
+    return merge(left, right)
+}
+
+func merge(left, right []int) []int {
+    result := make([]int, 0)
+    for len(left) > 0 || len(right) > 0 {
+        if len(left) == 0 {
+            return append(result, right...)
+        }
+        if len(right) == 0 {
+            return append(result, left...)
+        }
+        if left[0] <= right[0] {
+            result = append(result, left[0])
+            left = left[1:]
+        } else {
+            result = append(result, right[0])
+            right = right[1:]
+        }
+    }
+    return result
+}
+```
+
+5. QUADRATIC TIME
+    * `O(n^2)`
+    * QUADRATIC increase in number of steps for algorithm to complete execution for a given increase in size of dataset
+
+```go
+func bubbleSort(arr []int) { // computation here has a time complexity of O(n^2)
+    n := len(arr)
+    for i := 0; i < n-1; i++ {
+        for j := 0; j < n-i-1; j++ {
+            if arr[j] > arr[j+1] {
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+            }
+        }
+    }
+}
+```
+
+### Summary
+
+![](https://paper-attachments.dropbox.com/s_2D428973624E7FC84C7D69D11421DE762BEA6B6F3361231FCDCAE0425D14526F_1664885448372_Untitled.drawio+17.png)
 
 ## Data Structures
 
@@ -247,3 +357,4 @@ func (list *LinkedList) display() { // display all linkedlist nodes
 * [cs50 ai with python](https://youtu.be/5NgNicANyqM?si=qYD6DDvV5Fe3n-AA)
 * [sorting algorithms explained](https://visualgo.net/en/sorting)
 * [sorting algorithms visualised](https://www.toptal.com/developers/sorting-algorithms)
+* [big o notation cheatsheet](https://www.bigocheatsheet.com/)
