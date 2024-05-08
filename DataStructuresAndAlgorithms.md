@@ -401,7 +401,6 @@ func (ht *HashTable) Insert(key, value string) { // insert a new key-value pair 
         key:   key,
         value: value,
     }
-
     if ht.table[index] == nil { // handle collisions within the same bucket by implementing a linked list
         ht.table[index] = newNode
     } else {
@@ -430,12 +429,10 @@ func (ht *HashTable) Delete(key string) { // delete a key-value pair from the ha
     if ht.table[index] == nil {
         return
     }
-
     if ht.table[index].key == key {
         ht.table[index] = ht.table[index].next
         return
     }
-
     prev := ht.table[index]
     current := prev.next
     for current != nil {
@@ -483,7 +480,7 @@ func (ht *HashTable) Delete(key string) { // delete a key-value pair from the ha
 
 ```go
 // --- ADJACENCY MATRIX ---
-    // 2d nested array which acts as a conceptual representation of adjacency between any two nodes in the graph
+    // 2d nested array of 0s and 1s which acts as a conceptual representation of adjacency between any two nodes in the graph
 
 type Graph struct { // type definition for an undirected graph represented by an adjacency matrix
     vertices int
@@ -526,7 +523,7 @@ func (g *Graph) PrintMatrix() { // displays adjacency matrix
 
 ```go
 // --- ADJACENCY LIST ---
-    // array of LINKED LISTs, where each LINKED LIST head represents a node and its adjacent nodes
+    // array of LINKED LISTs, where each LINKED LIST head represents a unique node and its adjacent neighbour nodes
 
 type Node struct { // type definition for a node within an undirected graph 
     vertex int
@@ -550,7 +547,6 @@ func (g *Graph) AddEdge(v1, v2 int) { // adds an undirected edge between two ver
     if v1 >= 0 && v1 < g.vertices && v2 >= 0 && v2 < g.vertices {
         nodeV1 := &Node{vertex: v2, next: g.adjList[v1]}
         g.adjList[v1] = nodeV1
-
         nodeV2 := &Node{vertex: v1, next: g.adjList[v2]}
         g.adjList[v2] = nodeV2
     }
@@ -573,14 +569,111 @@ func (g *Graph) PrintList() { // displays adjacency list
         // uses less space compared to an ADJACENCY MATRIX for any given dataset
 ```
 
+### Tree
+
+```go
+// --- TREE ---
+    // non-linear collection of nodes (which store data) organised in a hierachy, where nodes are connected by edges
+    // root node: top-most node with no incoming edges
+    // leaf node: bottom-most nodes with no outgoing edges
+    // branch nodes: nodes in the middle with both incoming and outgoing edges
+    // parent nodes: any node with an outgoing edge
+    // child nodes: any node with an incoming edge
+    // sibling nodes: any nodes sharing the same parent node
+    // subtree: smaller tree nested within a larger tree
+    // size of tree => total number of nodes
+    // depth of node => number of edges below root node
+    // height of node => number of edges above furthest leaf node
+
+// --- USES ---
+    // file explorers
+    // database searches
+    // domain name servers
+    // HTML DOM structure
+    // expression parsing in interpreters and transpilers
+```
+
 ### Binary Search Tree
 
 ```go
 // --- BINARY SEARCH TREE ---
-    // 
+    // ordered tree where each parent node has only two child nodes (binary) and each parent node's value is greater than the left child node and smaller than the right child node, including the root node
+
+type Node struct { // type definition for a generic node within a binary search tree
+    key   int
+    left  *Node
+    right *Node
+}
+
+type BST struct { // type definition for a binary search tree, which begins with its root node
+    root *Node
+}
+
+func NewNode(key int) *Node { // initializes a new node with a given key
+    return &Node{
+        key: key,
+    }
+}
+
+func (bst *BST) Insert(key int) { // inserts a key into the binary search tree
+    if bst.root == nil {
+        bst.root = NewNode(key)
+    } else {
+        insertRecursive(bst.root, key)
+    }
+}
+
+func insertRecursive(node *Node, key int) { // helper function for recursive insertion
+    if key < node.key {
+        if node.left == nil {
+            node.left = NewNode(key)
+        } else {
+            insertRecursive(node.left, key)
+        }
+    } else if key > node.key {
+        if node.right == nil {
+            node.right = NewNode(key)
+        } else {
+            insertRecursive(node.right, key)
+        }
+    }
+}
+
+func (bst *BST) Search(key int) bool { // searches for a key within the binary search tree
+    return searchRecursive(bst.root, key)
+}
+
+func searchRecursive(node *Node, key int) bool { // helper function for recursive search
+    if node == nil {
+        return false
+    }
+    if key == node.key {
+        return true
+    } else if key < node.key {
+        return searchRecursive(node.left, key)
+    } else {
+        return searchRecursive(node.right, key)
+    }
+}
+
+func (bst *BST) InOrderTraversal() { // performs in-order traversal of binary search tree
+    inOrderRecursive(bst.root)
+    fmt.Println()
+}
+
+func inOrderRecursive(node *Node) { // helper function for recursive in-order traversal
+    if node != nil {
+        inOrderRecursive(node.left)
+        fmt.Printf("%d ", node.key)
+        inOrderRecursive(node.right)
+    }
+}
 
 // --- USES ---
-    // 
+    // easier to locate a node when they are ordered within a binary search tree
+    // best case LOGARITHMIC time complexity of O(log n)
+    // worst case LINEAR time complexity of O(n)
+    // LINEAR space complexity of O(n)
 ```
 
 ## Algorithms
@@ -642,7 +735,7 @@ func binarySearch(arr []interface{}, target interface{}) int {
 ```go
 // --- INTERPOLATION SEARCH ---
     // average time complexity of O(log(log n))
-    // worst case time complexity of O(n)
+    // worst case LINEAR time complexity of O(n)
     // guesses where a value might be based on estimated probe results, with incorrect probes narrowing the search area and recalculating a new probe
     // improvement over BINARY searches that are best used for uniformly distributed datasets
     // pros
@@ -739,7 +832,7 @@ func selectionSort(arr []int) { // slices are reference types in Go so changes m
     // pros
         // fast for small and medium datasets
         // fewer steps than BUBBLE SORT
-        // best case time LINEAR complexity is O(n) compared to SELECTION SORT'S O(n^2)
+        // best case LINEAR time complexity is O(n) compared to SELECTION SORT'S O(n^2)
         // lower CONSTANT space complexity since collection sorted in place
     // cons
         // slower for large datasets
