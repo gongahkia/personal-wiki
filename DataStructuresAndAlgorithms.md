@@ -380,7 +380,7 @@ type HashTable struct { // type definition for the actual hash table struct
     table []*Node
 }
 
-func NewHashTable(size int) *HashTable { // initialise a hash table of a specified size
+func NewHashTable(size int) *HashTable { // initialize a hash table of a specified size
     return &HashTable{
         size:  size,
         table: make([]*Node, size),
@@ -449,40 +449,128 @@ func (ht *HashTable) Delete(key string) { // delete a key-value pair from the ha
 }
 
 // --- USES ---
-    // not ideal for small datasets
-    // extremely efficient for large datasets
     // best case CONSTANT time complexity of O(1)
     // worst case LINEAR time complexity of O(n)
+        // less efficient for smaller datasets
+        // extremely efficient for larger datasets
 ```
 
 ### Graph
 
 ```go
 // --- GRAPH ---
-    // 
+    // non-linear aggregation of nodes and edges
+        // node: vertex that stores data
+        // edge: connection between two nodes
+        // adjacency: relationship between two nodes when they are connected by an edge
+    // UNDIRECTED GRAPH
+        // graph with bi-directional adjacency by default
+        // eg. graph of a social network
+    // DIRECTED GRAPH  
+        // graph with uni-directional adjacency by default (arrowheads specify direction adjacency flows in), and bi-directional adjacency has to be specified with two seperate arrows
+        // eg. graph of a street map (some roads only allow one-way traffic)
+    // graphs can be represented by ADJACENCY MATRIXes or ADJACENCY LISTs as covered below
 
 // --- USES ---
-    // 
+    // representing social networks
+    // visualising network routing
+    // recommendation engines
+    // gps mapping applications
+    // knowledge graphs
 ```
 
 ### Adjacency Matrix 
 
 ```go
 // --- ADJACENCY MATRIX ---
-    //
+    // 2d nested array which acts as a conceptual representation of adjacency between any two nodes in the graph
+
+type Graph struct { // type definition for an undirected graph represented by an adjacency matrix
+    vertices int
+    matrix   [][]bool
+}
+
+func NewGraph(vertices int) *Graph { // initializes an undirected graph with a given number of vertices
+    matrix := make([][]bool, vertices)
+    for i := range matrix {
+        matrix[i] = make([]bool, vertices)
+    }
+    return &Graph{
+        vertices: vertices,
+        matrix:   matrix,
+    }
+}
+
+func (g *Graph) AddEdge(v1, v2 int) { // adds an undirected edge between two vertices
+    if v1 >= 0 && v1 < g.vertices && v2 >= 0 && v2 < g.vertices {
+        g.matrix[v1][v2] = true
+        g.matrix[v2][v1] = true
+    }
+}
+
+func (g *Graph) PrintMatrix() { // displays adjacency matrix
+    for _, row := range g.matrix {
+        fmt.Println(row)
+    }
+}
 
 // --- USES ---
-    //
+    // CONSTANT time complexity of O(1)
+        // relatively quicker compared to an ADJACENCY LIST for any given dataset
+    // QUADRATIC space complexity of O(n^2)
+        // less efficient for smaller graph datasets
+        // extremely efficient for larger graph datasets
 ```
 
 ### Adjacency List
 
 ```go
 // --- ADJACENCY LIST ---
-    //
+    // array of LINKED LISTs, where each LINKED LIST head represents a node and its adjacent nodes
+
+type Node struct { // type definition for a node within an undirected graph 
+    vertex int
+    next   *Node
+}
+
+type Graph struct { // type definition for an undirected graph represented by an adjacency list
+    vertices int
+    adjList  []*Node
+}
+
+func NewGraph(vertices int) *Graph { // initializes an undirected graph with a given number of vertices
+    adjList := make([]*Node, vertices)
+    return &Graph{
+        vertices: vertices,
+        adjList:  adjList,
+    }
+}
+
+func (g *Graph) AddEdge(v1, v2 int) { // adds an undirected edge between two vertices
+    if v1 >= 0 && v1 < g.vertices && v2 >= 0 && v2 < g.vertices {
+        nodeV1 := &Node{vertex: v2, next: g.adjList[v1]}
+        g.adjList[v1] = nodeV1
+
+        nodeV2 := &Node{vertex: v1, next: g.adjList[v2]}
+        g.adjList[v2] = nodeV2
+    }
+}
+
+func (g *Graph) PrintList() { // displays adjacency list
+    for vertex, node := range g.adjList {
+        fmt.Printf("Vertex %d -> ", vertex)
+        for node != nil {
+            fmt.Printf("%d ", node.vertex)
+            node = node.next
+        }
+        fmt.Println()
+    }
+}
 
 // --- USES ---
-    //
+    // LINEAR time complexity of O(n)
+    // UNIQUE space complexity of O(numVertex + numEdge)
+        // uses less space compared to an ADJACENCY MATRIX for any given dataset
 ```
 
 ### Binary Search Tree
