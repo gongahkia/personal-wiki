@@ -565,7 +565,7 @@ func (g *Graph) PrintList() { // displays adjacency list
 
 // --- USES ---
     // LINEAR time complexity of O(n)
-    // UNIQUE space complexity of O(numVertex + numEdge)
+    // space complexity of O(numVertex + numEdge)
         // uses less space compared to an ADJACENCY MATRIX for any given dataset
 ```
 
@@ -770,6 +770,78 @@ func interpolationSearch(arr []interface{}, target interface{}) int {
 }
 ```
 
+### Depth First Search
+
+```go
+// --- DEPTH FIRST SEARCH ---
+    // search algorithm to traverse a tree or graph one BRANCH at a time
+        // 1. pick a route
+        // 2. keep on going until a dead end or previously visited node is reached
+        // 3. backtrack to last node with unvisited adjacent neighbour nodes
+        // 4. repeat step 1
+    // time complexity of O(numVertex + numEdge)
+    // LINEAR space complexity of O(n)
+    // pros
+        // utilises a STACK
+        // child nodes are visited before sibling nodes
+        // better if destination node is on average FURTHER from start node
+    // cons
+        // often returns non-optimal paths
+
+func (g *Graph) DFSUtil(v int) { // helper function for DFS
+    g.visited[v] = true
+    fmt.Printf("%d ", v)
+    for node := g.adjList[v]; node != nil; node = node.next { // recur for all adjacent vertices
+        if !g.visited[node.vertex] {
+            g.DFSUtil(node.vertex)
+        }
+    }
+}
+
+func (g *Graph) DFS() {
+    for i := 0; i < g.vertices; i++ {
+        if !g.visited[i] {
+            g.DFSUtil(i)
+        }
+    }
+}
+```
+
+### Breadth First Search
+
+```go
+// --- BREADTH FIRST SEARCH ---
+    // search algorithm to traverse a tree or graph one LEVEL at a time
+        // 1. traverse one node at a time in every direction
+        // 2. once all directions have been expanded one node, repeat step 1
+    // time complexity of O(numVertex + numEdge)
+    // LINEAR space complexity of O(n) if implemented with a queue
+    // space complexity of O(numVertex + numEdge) if implemented with an adjacency list
+    // pros
+        // utilises a QUEUE
+        // sibling nodes are visited before child nodes
+        // better if destination node is on average CLOSER to start node
+    // cons
+        // less efficient on denser graph datasets with many edges
+
+func (g *Graph) BFS(startVertex int) {
+    queue := []int{} // initializes a queue for BFS traversal
+    g.visited[startVertex] = true
+    queue = append(queue, startVertex)
+    for len(queue) > 0 { 
+        currentVertex := queue[0]
+        queue = queue[1:] // dequeues a vertex from the queue
+        fmt.Printf("%d ", currentVertex)
+        for node := g.adjList[currentVertex]; node != nil; node = node.next { // check to ensure adjacent vertices have not been visited
+            if !g.visited[node.vertex] {
+                g.visited[node.vertex] = true
+                queue = append(queue, node.vertex)
+            }
+        }
+    }
+}
+```
+
 ### Bubble Sort
 
 ```go
@@ -929,30 +1001,6 @@ func partition(arr []int) int {
     arr[i+1], arr[len(arr)-1] = arr[len(arr)-1], arr[i+1]
     return i + 1
 }
-```
-
-### Depth First Search
-
-```go
-// ---
-    // pros
-        //
-    // cons
-        //
-
-
-```
-
-### Breadth First Search
-
-```go
-// ---
-    // pros
-        //
-    // cons
-        //
-
-
 ```
 
 ## More on
