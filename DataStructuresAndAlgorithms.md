@@ -359,6 +359,142 @@ func (list *LinkedList) display() { // display all linkedlist nodes
     // dynamically allocates memory as required
 ```
 
+### Hash Table
+
+```go
+// --- HASH TABLE ---
+    // collection of unique entries that enables fast insertion, lookup and deletion of entries by leveraging on hashing and buckets
+    // entry: a key-value pair
+    // hashing: computing an integer based on a key (formulas vary depending on the key's datatype) to determine an entry's index
+    // collision: when hashing a key returns the SAME index for more than one key
+    // bucket: indexed storage location for one or more entries that functions like a LINKED LIST, allowing multiple entries to be stored in cases of collision
+
+type Node struct { // type definition for a node in a hashtable
+    key   string
+    value string
+    next  *Node
+}
+
+type HashTable struct { // type definition for the actual hash table struct
+    size  int
+    table []*Node
+}
+
+func NewHashTable(size int) *HashTable { // initialise a hash table of a specified size
+    return &HashTable{
+        size:  size,
+        table: make([]*Node, size),
+    }
+}
+
+func (ht *HashTable) hash(key string) int { // generates an index from a key
+    sum := 0
+    for _, char := range key {
+        sum += int(char)
+    }
+    return sum % ht.size
+}
+
+func (ht *HashTable) Insert(key, value string) { // insert a new key-value pair into the hash table
+    index := ht.hash(key)
+    newNode := &Node{
+        key:   key,
+        value: value,
+    }
+
+    if ht.table[index] == nil { // handle collisions within the same bucket by implementing a linked list
+        ht.table[index] = newNode
+    } else {
+        current := ht.table[index]
+        for current.next != nil {
+            current = current.next
+        }
+        current.next = newNode
+    }
+}
+
+func (ht *HashTable) Get(key string) (string, bool) { // retrieve a value based on its key within the hash table
+    index := ht.hash(key)
+    current := ht.table[index]
+    for current != nil {
+        if current.key == key {
+            return current.value, true
+        }
+        current = current.next
+    }
+    return "", false
+}
+
+func (ht *HashTable) Delete(key string) { // delete a key-value pair from the hash table
+    index := ht.hash(key)
+    if ht.table[index] == nil {
+        return
+    }
+
+    if ht.table[index].key == key {
+        ht.table[index] = ht.table[index].next
+        return
+    }
+
+    prev := ht.table[index]
+    current := prev.next
+    for current != nil {
+        if current.key == key {
+            prev.next = current.next
+            return
+        }
+        prev = current
+        current = current.next
+    }
+}
+
+// --- USES ---
+    // not ideal for small datasets
+    // extremely efficient for large datasets
+    // best case CONSTANT time complexity of O(1)
+    // worst case LINEAR time complexity of O(n)
+```
+
+### Graph
+
+```go
+// --- GRAPH ---
+    // 
+
+// --- USES ---
+    // 
+```
+
+### Adjacency Matrix 
+
+```go
+// --- ADJACENCY MATRIX ---
+    //
+
+// --- USES ---
+    //
+```
+
+### Adjacency List
+
+```go
+// --- ADJACENCY LIST ---
+    //
+
+// --- USES ---
+    //
+```
+
+### Binary Search Tree
+
+```go
+// --- BINARY SEARCH TREE ---
+    // 
+
+// --- USES ---
+    // 
+```
+
 ## Algorithms
 
 ### Linear Search
@@ -612,6 +748,30 @@ func partition(arr []int) int {
     arr[i+1], arr[len(arr)-1] = arr[len(arr)-1], arr[i+1]
     return i + 1
 }
+```
+
+### Depth First Search
+
+```go
+// ---
+    // pros
+        //
+    // cons
+        //
+
+
+```
+
+### Breadth First Search
+
+```go
+// ---
+    // pros
+        //
+    // cons
+        //
+
+
 ```
 
 ## More on
