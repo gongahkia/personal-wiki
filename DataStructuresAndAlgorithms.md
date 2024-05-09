@@ -1003,6 +1003,127 @@ func partition(arr []int) int {
 }
 ```
 
+The below algorithms are often used within Leetcode problems.
+
+### Sliding Window 
+
+```go
+// --- SLIDING WINDOW ---
+    // create a fixed-size window that moves through an array and performs a given operation
+
+func findMaxSum(arr []int, k int) int {
+
+    windowSum := 0
+    maxSum := 0
+
+    n := len(arr)
+    if n < k {
+        return -1 // out of range index error
+    }
+
+    for i := 0; i < k; i++ {
+        windowSum += arr[i]
+    }
+    maxSum = windowSum
+
+    for i := k; i < n; i++ {
+        windowSum += arr[i] - arr[i-k]
+        if windowSum > maxSum {
+            maxSum = windowSum
+        }
+    }
+
+    return maxSum
+
+}
+
+// --- USES ---
+    // problems involving... 
+        // substring searches 
+        // subarray slice searches
+    // Leetcode Problem #53: Maximum Subarray
+    // Leetcode Problem #3: Longest Substring Without Repeating Characters
+    // Leetcode Problem #128: Longest Consecutive Sequence
+```
+
+### Two Pointer
+
+```go
+// --- TWO POINTER ---
+    // two pointers traverse an array simultaneously (from different ends or with a stipulated distance between them)
+
+func findPairSum(arr []int, target int) []int {
+
+    left := 0 // left pointer index
+    right := len(arr) - 1 // right pointer index
+
+    for left < right {
+        sum := arr[left] + arr[right]
+        if sum == target {
+            return []int{arr[left], arr[right]}
+        } else if sum < target {
+            left++
+        } else {
+            right--
+        }
+    }
+
+    return nil // nothing found
+
+}
+
+// --- USES ---
+    // problems involving... 
+        // finding pairs in a sorted array 
+        // merging two sorted arrays
+    // Leetcode Problem #167: Two Sum II - Input array is sorted
+    // Leetcode Problem #19: Remove Nth Node From End of List
+    // Leetcode Problem #11: Container With Most Water
+```
+
+### Three Pointer
+
+```go
+// --- THREE POINTER ---
+    // extension of two pointer algorithm
+    // three pointers traverse an array simultaneously (from different ends or with a stipulated distance between them)
+
+func findTriplet(arr []int, target int) []int {
+
+    n := len(arr)
+
+    for i := 0; i < n-2; i++ {
+
+        left := i + 1 // left pointer
+        right := n - 1 // right pointer
+
+        for left < right {
+            sum := arr[i] + arr[left] + arr[right]
+            if sum == target {
+                return []int{arr[i], arr[left], arr[right]}
+            } else if sum < target {
+                left++
+            } else {
+                right--
+            }
+        }
+
+    }
+
+    return nil // nothing found
+
+}
+
+// --- USES ---
+    // problems involving... 
+        // finding triplets satisfying a predicate
+        // merging three or more sorted arrays
+        // partitioning 
+    // Leetcode Problem #15: 3Sum
+    // Leetcode Problem #21: Merge Two Sorted Lists
+    // Leetcode Problem #23: Merge k Sorted Lists
+```
+
 ## More on
 
 * [primeagen's last algorithms course](https://frontendmasters.com/courses/algorithms/)
