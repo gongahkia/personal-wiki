@@ -149,6 +149,7 @@ $a^2 + b^2 = c^2$ % pythogarous theorom
 \[a^2 + b^2 = c^2 \] % pythogarous theorom, using the alternative syntax for signposting the start and end of a math section 
 
 % --- FIGURES ---
+  % inkscape (https://inkscape.org/) is often used to draw diagrams that can be later embedded in the LaTeX document
   % for more details on captioning figures, see here https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions 
   % \includegraphics{imageFilePath} => draws a specified figure at the given file path, can be further customised with augmenters within the []
   % \caption{captionTitle} => draws a specified caption within the figure
@@ -175,9 +176,13 @@ $a^2 + b^2 = c^2$ % pythogarous theorom
 
 ## More on
 
+* [LaTeX for beginners](https://youtu.be/p5Yr0dkrKG8?si=rJmg6cck1Op1-ALm)
+* [LaTeX for students](https://youtu.be/lgiCpA4zzGU?si=RB3nN03LF328nROK)
+* [Inkscape diagrams within LaTeX documents](https://inkscape.org/learn/tutorials/latex/)
 * [LaTeX table generator](https://www.tablesgenerator.com/)
 * [LaTeX equation editor](https://latex.codecogs.com/eqneditor/editor.php)
 * [learn LaTeX in y minutes](https://learnxinyminutes.com/docs/latex/)
 * [LaTeX project](https://www.latex-project.org/)
 * [learn LaTeX.org](https://www.learnlatex.org/)
 * [comprehensive LaTeX wiki](https://en.wikibooks.org/wiki/LaTeX)
+* [mathematics in college with LaTeX and Vim](https://castel.dev/post/lecture-notes-1/)
