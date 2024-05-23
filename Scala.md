@@ -151,8 +151,8 @@ object Application { // object declaration
 
 // --- REFERENCE TYPE ---
     // String => sequence of Char primitives, immutable and backed by the Java String class, declared with "" double quotes
-    // Option => data structure representing optional values including None
-    // Tuple => data structure storing a fixed number of items of different types
+    // Option => datatype representing either an optional value or None
+    // Tuple => data structure storing a fixed number of items of different types, declared with () round brackets
     // List => immutable linked list
     // Seq => ordered sequence of elements
     // Set => unordered sequence of unique elements
@@ -247,158 +247,47 @@ do {
 
 ```scala
 // ----- DATA STRUCTURE -----
+    // () => declares a tuple with its specified element datatypes
+    // Option[] => declares an option type that could either be the specified datatype or None
+    // List[] => declared a linked list with elements of the specified type
+    // Set[] => declares a set with elements of the specified type
+    // Map[] => declares a Map with key-value pairs of the specified types
+        // -> => specifies the relationship between a key-value pair
 
-
-// Tuple
 val tuple: (Int, String, Boolean) = (1, "Scala", true)
-
-// Option
 val someValue: Option[Int] = Some(5)
 val noValue: Option[Int] = None
-
-// List
 val list: List[Int] = List(1, 2, 3)
-
-// Set
 val set: Set[String] = Set("apple", "banana", "cherry")
-
-// Map
 val map: Map[String, Int] = Map("a" -> 1, "b" -> 2, "c" -> 3)
-
-val a = Array(1, 2, 3, 5, 8, 13)
-a(0)     // Int = 1
-a(3)     // Int = 5
-a(21)    // Throws an exception
-
-val m = Map("fork" -> "tenedor", "spoon" -> "cuchara", "knife" -> "cuchillo")
-m("fork")         // java.lang.String = tenedor
-m("spoon")        // java.lang.String = cuchara
-m("bottle")       // Throws an exception
-
-val safeM = m.withDefaultValue("no lo se")
-safeM("bottle")   // java.lang.String = no lo se
-
-val s = Set(1, 3, 7)
-s(0)      // Boolean = false
-s(1)      // Boolean = true
-
-/* Look up the documentation of map here -
- * https://www.scala-lang.org/api/current/scala/collection/immutable/Map.html
- * and make sure you can read it
- */
-
-
-// Tuples
-
-(1, 2)
-
-(4, 3, 2)
-
-(1, 2, "three")
-
-(a, 2, "three")
-
-// Why have this?
-val divideInts = (x: Int, y: Int) => (x / y, x % y)
-
-// The function divideInts gives you the result and the remainder
-divideInts(10, 3)    // (Int, Int) = (3,1)
-
-// To access the elements of a tuple, use _._n where n is the 1-based index of
-// the element
-val d = divideInts(10, 3)    // (Int, Int) = (3,1)
-
-d._1    // Int = 3
-d._2    // Int = 1
-
-// Alternatively you can do multiple-variable assignment to tuple, which is more
-// convenient and readable in many cases
-val (div, mod) = divideInts(10, 3)
-
-div     // Int = 3
-mod     // Int = 1
-
 ```
 
 ## Functions
 
 ```scala
 // ----- FUNCTION -----
-    // 
+    // Scala features implicit return of the last expression within a function block, so there is no return keyword
+        // the {} surrounding the function body can be omitted if the entire function body is a single expression that evaluates to the function's return value
+    // def => defines a function similar to Python
+    // : => specifies the datatype of a function's arguments and return values
+    // = => used to assign default values to certain function arguments
 
-// Functions are defined like so:
-//
-//   def functionName(args...): ReturnType = { body... }
-//
-// If you come from more traditional languages, notice the omission of the
-// return keyword. In Scala, the last expression in the function block is the
-// return value.
 def sumOfSquares(x: Int, y: Int): Int = {
-  val x2 = x * x
-  val y2 = y * y
-  x2 + y2
+    val x2 = x * x
+    val y2 = y * y
+    x2 + y2 // this last expression is implicitly returned
 }
 
-// The { } can be omitted if the function body is a single expression:
-def sumOfSquaresShort(x: Int, y: Int): Int = x * x + y * y
+def sumOfSquaresShort(x: Int, y: Int): Int = x * x + y * y // this one-line function evaluates to the single return expression
+def addWithDefault(x: Int, y: Int = 5) = x + y // default argument provided to this function
 
-// Syntax for calling functions is familiar:
-sumOfSquares(3, 4)  // => 25
+// --- ANONYMOUS FUNCTION ---
+    // a hallmark of functional programming languages, where anonymous functions can be assigned to variables
+    // => => defines an anonymous function and the relationship between the anonymous function's parameters and its return value
+        // def and function name are completly omitted in anonymous function declarations
 
-// You can use parameters names to specify them in different order
-def subtract(x: Int, y: Int): Int = x - y
-
-subtract(10, 3)     // => 7
-subtract(y=10, x=3) // => -7
-
-// In most cases (with recursive functions the most notable exception), function
-// return type can be omitted, and the same type inference we saw with variables
-// will work with function return values:
-def sq(x: Int) = x * x  // Compiler can guess return type is Int
-
-// Functions can have default parameters:
-def addWithDefault(x: Int, y: Int = 5) = x + y
-addWithDefault(1, 2) // => 3
-addWithDefault(1)    // => 6
-
-
-// Anonymous functions look like this:
-(x: Int) => x * x
-
-// Unlike defs, even the input type of anonymous functions can be omitted if the
-// context makes it clear. Notice the type "Int => Int" which means a function
-// that takes Int and returns Int.
-val sq: Int => Int = x => x * x
-
-// Anonymous functions can be called as usual:
-sq(10)   // => 100
-
-// If each argument in your anonymous function is
-// used only once, Scala gives you an even shorter way to define them. These
-// anonymous functions turn out to be extremely common, as will be obvious in
-// the data structure section.
-val addOne: Int => Int = _ + 1
-val weirdSum: (Int, Int) => Int = (_ * 2 + _ * 3)
-
-addOne(5)      // => 6
-weirdSum(2, 4) // => 16
-
-
-// The return keyword exists in Scala, but it only returns from the inner-most
-// def that surrounds it.
-// WARNING: Using return in Scala is error-prone and should be avoided.
-// It has no effect on anonymous functions. For example here you may expect foo(7) should return 17 but it returns 7:
-def foo(x: Int): Int = {
-  val anonFunc: Int => Int = { z =>
-    if (z > 5)
-      return z // This line makes z the return value of foo!
-    else
-      z + 2    // This line is the return value of anonFunc
-  }
-  anonFunc(x) + 10  // This line is the return value of foo
-}
-
-foo(7) // => 7
+(x: Int) => x * x // this is an anonymous function
+val sq: Int => Int = x => x * x // datatype of the anonymous function's parameters and return type can also be specified with this syntax which appears nearly identical to Haskell
 ```
 
 ## Object Oriented Programming
