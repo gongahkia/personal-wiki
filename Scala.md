@@ -93,13 +93,15 @@ import scala.collection.immutable.{Map => _, Set => _, _} // import all classes 
         // .write() => writes the designated text as a string to the file
         // .close() => closes the PrintWriter object
 
-// --- READ ---
+// --- INPUT ---
+    // performs read actions
 
 import scala.io.Source // required import
 for(line <- Source.fromFile("myfile.txt").getLines())
     println(line)
 
-// --- WRITE ---
+// --- OUTPUT ---
+    // performs write actions
 
 val writer = new PrintWriter("myfile.txt")
 writer.write("Writing line for line" + util.Properties.lineSeparator)
@@ -112,28 +114,22 @@ writer.close()
 ```scala
 // ----- QUICKSTART -----
     // Scala is statically typed but affords type inference (Scala compiler determines the type of a given variable if not explicitly defined)
+    // a Scala program's entry point is defined within an object's main method
     // scalac => CLI command to compile the .scala file
     // val => declares an immutable value that cannot be reassigned
     // var => declares a mutable value that can be reassigned
     // : => declares the type of a variable
 
-val x:Int = 10 
-x = 20 // this causes an error
-var y:Int = 10
-var z:Double = 1.0
-y = 20 // this is okay
-z = 2.5 // this is also okay
-
-
-
-// Your program's entry point is defined in a scala file using an object, with a
-// single method, main:
-object Application {
-  def main(args: Array[String]): Unit = {
-    // stuff goes here.
-  }
+object Application { // object declaration
+    def main(args: Array[String]): Unit = { // main method
+        val x:Int = 10 
+        x = 20 // this causes an error
+        var y:Int = 10
+        var z:Double = 1.0
+        y = 20 // this is okay
+        z = 2.5 // this is also okay
+    }
 }
-
 ```
 
 ## Types
@@ -205,65 +201,46 @@ object Application {
 // ----- CONTROL STRUCTURE -----
 
 // ----- CONDITIONAL -----
+    // conditionals can be specified for later evaluation within function calls and assignment statements
+    // conditionals, like many other things in Scala, can also flexibly be written in a single line
+        // if 
+        // else
+        // else if
+
+val x:Int = 10
+if (x == 1) println("this won't run")
+if (x == 10) println("this will run")
+if (x == 11) println("meanwhile this won't run") else if (x == 12) println("this also won't run") else println("but this will")
+println(if (x == 10) "yeah" else "nope") // conditionals can be nested within other functions
+val text = if (x == 10) "yeah" else "nope" // as well as assignment
 
 // ----- LOOP -----
+    // Scala does not feature 'conventional' for loops, but rather employs special keywords like to and by to generate similar structures
+        // to => creates an iterable structure, equivalent of range in Python
+        // by => specifies the step within the given iterable structure being created
+    // .foreach() => equivalent of map() as a signature of functional programming, applies the given function call on a given iterable structure
+        // this can be called without dots and brackets also, Scala is generally quite lenient with the function call syntax
+    // while loop
+        // while => specifies the predicate condition upon which the while loop runs a check on every iteration
+    // do while loop
+        // do => specify the action to be executed every loop iteration
+        // while => specifies the predicate condition upon which the while loop runs a check on every iteration
 
+val r = 1 to 5 // creates an iterable structure with Int's from 1 to 5 and assigns it to r
+r.foreach(println) // prints "1\n2\n3\n4\n5\n" to the stdout
+(5 to 1 by -1) foreach (println) // initialises an iterable structure literal and iterates over it and prints out each item accordingly
 
-1 to 5
-val r = 1 to 5
-r.foreach(println)
-
-r foreach println
-// NB: Scala is quite lenient when it comes to dots and brackets - study the
-// rules separately. This helps write DSLs and APIs that read like English
-
-// Why doesn't `println` need any parameters here?
-// Stay tuned for first-class functions in the Functional Programming section below!
-(5 to 1 by -1) foreach (println)
-
-// A while loop
 var i = 0
-while (i < 10) { println("i " + i); i += 1 }
+while (i < 10) { // classic while loop
+    println("i " + i)
+    i += 1 
+}
 
-while (i < 10) { println("i " + i); i += 1 }   // Yes, again. What happened? Why?
-
-i    // Show the value of i. Note that while is a loop in the classical sense -
-     // it executes sequentially while changing the loop variable. while is very
-     // fast, but using the combinators and comprehensions above is easier
-     // to understand and parallelize
-
-// A do-while loop
 i = 0
 do {
-  println("i is still less than 10")
+  println("i is still less than 10") // classic do while loop
   i += 1
 } while (i < 10)
-
-// Recursion is the idiomatic way of repeating an action in Scala (as in most
-// other functional languages).
-// Recursive functions need an explicit return type, the compiler can't infer it.
-// Here it's Unit, which is analogous to a `void` return type in Java
-def showNumbersInRange(a: Int, b: Int): Unit = {
-  print(a)
-  if (a < b)
-    showNumbersInRange(a + 1, b)
-}
-showNumbersInRange(1, 14)
-
-
-// Conditionals
-
-val x = 10
-
-if (x == 1) println("yeah")
-if (x == 10) println("yeah")
-if (x == 11) println("yeah")
-if (x == 11) println("yeah") else println("nay")
-
-println(if (x == 10) "yeah" else "nope")
-val text = if (x == 10) "yeah" else "nope"
-
-
 ```
 
 ## Data structures
