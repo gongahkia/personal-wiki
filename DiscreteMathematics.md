@@ -73,7 +73,7 @@ To select a limited range of real numbers, we use an interval of the real line.
     * $n!$ permutations of these objects
         * permutation: number of ways to **arrange** objects in a particular order
     * $\frac{n!}{k!(n-k)!}$ ways to **choose** $k$ (unordered) elements from set $S$
-        * $\frac{n!}{k!(n-k)!}$ can be abbreviated as $n \choose k$
+        * $\frac{n!}{k!(n-k)!}$ can be abbreviated as $n \choose k$ (read as $n$ choose $k$)
 19. Floor and Ceiling
     * $\lfloor$ $\rfloor$ denotes the **floor** function, which takes a real number $x$ and returns an integer no bigger than $x$ (rounds down)
         * eg. $\lfloor{3.75}\rfloor = 3$
