@@ -73,7 +73,7 @@ To select a limited range of real numbers, we use an interval of the real line.
     * $n!$ permutations of these objects
         * permutation: number of ways to **arrange** objects in a particular order
     * $\frac{n!}{k!(n-k)!}$ ways to **choose** $k$ (unordered) elements from set $S$
-        * $\frac{n!}{k!(n-k)!}$ can be abbreviated as $n \choose k$ (read as "$n$ choose $k$")
+        * $\frac{n!}{k!(n-k)!}$ can be abbreviated as $n \choose k$
 19. Floor and Ceiling
     * $\lfloor$ $\rfloor$ denotes the **floor** function, which takes a real number $x$ and returns an integer no bigger than $x$ (rounds down)
         * eg. $\lfloor{3.75}\rfloor = 3$
@@ -85,32 +85,20 @@ To select a limited range of real numbers, we use an interval of the real line.
         * eg. $\lceil{-3.75}\rceil = -3$
 20. Summation
     * assuming $a_i$ is a formula that depends on $i$, then
-    $$
-    \sum_{i=1}^{n}a_i = a_1 + a_2 + a_3 + \ldots + a_n
-    $$
+    $$\sum_{i=1}^{n}a_i = a_1 + a_2 + a_3 + \ldots + a_n$$
         * eg.
-    $$
-    \sum_{i=1}^{n}\frac{1}{2^i} = \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \ldots + \frac{1}{2^n}
-    $$
+    $$\sum_{i=1}^{n}\frac{1}{2^i} = \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \ldots + \frac{1}{2^n}$$
     * **closed form** notation is employed for certain sums
         * general formula
-    $$
-        \sum_{k=0}^{n}{r^k} = \frac{r^{n+1}-1}{r-1}
-    $$
+    $$\sum_{k=0}^{n}{r^k} = \frac{r^{n+1}-1}{r-1}$$
         * geometric series pattern
-    $$
-    \sum_{i=1}^{n}\frac{1}{2^i} = 1 - \frac{1}{2^n}
-    $$
+    $$\sum_{i=1}^{n}\frac{1}{2^i} = 1 - \frac{1}{2^n}$$
         * also this one
-    $$
-    \sum_{i=1}^{n}{i} = \frac{n(n+1)}{2}
-    $$
+    $$\sum_{i=1}^{n}{i} = \frac{n(n+1)}{2}$$
     * products are written with the same notation
         * eg. 
-    $$
-    \prod_{k=1}^{n}\frac{1}{k} = \frac{1}{1}\cdot\frac{1}{2}\cdot\frac{1}{3}\cdot\ldots\cdot\frac{1}{n}
-    $$
-21. $\epsilon$ denotes a string containing no characters of length 0
+    $$\prod_{k=1}^{n}\frac{1}{k} = \frac{1}{1}\cdot\frac{1}{2}\cdot\frac{1}{3}\cdot\ldots\cdot\frac{1}{n}$$
+21. $\epsilon$ denotes a string of length 0 containing no characters
 22. $\alpha\beta$ denotes the concatenation of the 2 strings $\alpha$ and $\beta$
     * eg. where $\alpha = \text{water}$ and $\beta = \text{melon}$ then $\alpha\beta = \text{watermelon}$
     * eg. where $\alpha = \text{shit}$ then $\alpha\text{s} = \text{shits}$
