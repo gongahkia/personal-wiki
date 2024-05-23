@@ -3,7 +3,7 @@
 
 # `Discrete mathematics`
 
-**Read** and **write** mathematical proofs.
+**Read** and **write** mathematical proofs and apply them in Computer Science.
 
 Covers...
 
@@ -74,7 +74,7 @@ To select a limited range of real numbers, we use an interval of the real line.
         * permutation: number of ways to **arrange** objects in a particular order
     * $\frac{n!}{k!(n-k)!}$ ways to **choose** $k$ (unordered) elements from set $S$
         * $\frac{n!}{k!(n-k)!}$ can be abbreviated as $n \choose k$ (read as "$n$ choose $k$")
-19. Others
+19. Floor and Ceiling
     * $\lfloor$ $\rfloor$ denotes the **floor** function, which takes a real number $x$ and returns an integer no bigger than $x$ (rounds down)
         * eg. $\lfloor{3.75}\rfloor = 3$
         * eg. $\lfloor{3}\rfloor = 3$
@@ -83,6 +83,48 @@ To select a limited range of real numbers, we use an interval of the real line.
         * eg. $\lceil{3.75}\rceil = 4$
         * eg. $\lceil{3}\rceil = 3$
         * eg. $\lceil{-3.75}\rceil = -3$
+20. Summation
+    * assuming $a_i$ is a formula that depends on $i$, then
+    $$
+    \sum_{i=1}^{n}a_i = a_1 + a_2 + a_3 + \ldots + a_n
+    $$
+        * eg.
+    $$
+    \sum_{i=1}^{n}\frac{1}{2^i} = \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \ldots + \frac{1}{2^n}
+    $$
+    * **closed form** notation is employed for certain sums
+        * general formula
+    $$
+        \sum_{k=0}^{n}{r^k} = \frac{r^{n+1}-1}{r-1}
+    $$
+        * geometric series pattern
+    $$
+    \sum_{i=1}^{n}\frac{1}{2^i} = 1 - \frac{1}{2^n}
+    $$
+        * also this one
+    $$
+    \sum_{i=1}^{n}{i} = \frac{n(n+1)}{2}
+    $$
+    * products are written with the same notation
+        * eg. 
+    $$
+    \prod_{k=1}^{n}\frac{1}{k} = \frac{1}{1}\cdot\frac{1}{2}\cdot\frac{1}{3}\cdot\ldots\cdot\frac{1}{n}
+    $$
+21. $\epsilon$ denotes a string containing no characters of length 0
+22. $\alpha\beta$ denotes the concatenation of the 2 strings $\alpha$ and $\beta$
+    * eg. where $\alpha = \text{water}$ and $\beta = \text{melon}$ then $\alpha\beta = \text{watermelon}$
+    * eg. where $\alpha = \text{shit}$ then $\alpha\text{s} = \text{shits}$
+23. A bit string is a string consisting of the $0$ and $1$ characters.
+24. Supposing $A$ is a set of characters, then $A^*$ is a set of all finite-length strings containing characters from $A$.
+    * eg. where $A$ contains all lower-case alphabets then $A^*$ contains strings like $\text{onion}$, $\text{e}$, $\text{kkkkmmmmmmbb}$ **and** the empty string $\epsilon$
+25. Rudimentary regex support
+    * $\text{a}\mid\text{b}$ means either the character $a$ or $b$
+    * $\text{a}^*$ means zero or more copies of the character $\text{a}$
+    * $($ $)$ show grouping
+        * eg. $\text{ab}^*$ specifies all strings that start with $\text{a}$ followed by zero or more $\text{b}$'s
+        * eg. $\text{c}(\text{a}\mid\text{b})^*\text{c}$ specifies all strings that start with a $\text{c}$, followed by zero or more characters that are either $\text{a}$ or $\text{b}$, followed by one $\text{c}$
+
+## Chapter 2: Logic
 
 ## More on
 
