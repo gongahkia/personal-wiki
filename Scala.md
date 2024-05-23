@@ -238,8 +238,8 @@ while (i < 10) { // classic while loop
 
 i = 0
 do {
-  println("i is still less than 10") // classic do while loop
-  i += 1
+    println("i is still less than 10") // classic do while loop
+    i += 1
 } while (i < 10)
 ```
 
@@ -290,259 +290,33 @@ def addWithDefault(x: Int, y: Int = 5) = x + y // default argument provided to t
 val sq: Int => Int = x => x * x // datatype of the anonymous function's parameters and return type can also be specified with this syntax which appears nearly identical to Haskell
 ```
 
-## Object Oriented Programming
+## Pattern Matching
 
 ```scala
-// ----- OBJECT ORIENTED PROGRAMMING -----
-
-/*
-  Aside: Everything we've done so far in this tutorial has been simple
-  expressions (values, functions, etc). These expressions are fine to type into
-  the command-line interpreter for quick tests, but they cannot exist by
-  themselves in a Scala file. For example, you cannot have just "val x = 5" in
-  a Scala file. Instead, the only top-level constructs allowed in Scala are:
-
-  - objects
-  - classes
-  - case classes
-  - traits
-
-  And now we will explain what these are.
-*/
-
-// classes are similar to classes in other languages. Constructor arguments are
-// declared after the class name, and initialization is done in the class body.
-class Dog(br: String) {
-  // Constructor code here
-  var breed: String = br
-
-  // Define a method called bark, returning a String
-  def bark = "Woof, woof!"
-
-  // Values and methods are assumed public. "protected" and "private" keywords
-  // are also available.
-  private def sleep(hours: Int) =
-    println(s"I'm sleeping for $hours hours")
-
-  // Abstract methods are simply methods with no body. If we uncomment the
-  // def line below, class Dog would need to be declared abstract like so:
-  //   abstract class Dog(...) { ... }
-  // def chaseAfter(what: String): String
-}
-
-val mydog = new Dog("greyhound")
-println(mydog.breed) // => "greyhound"
-println(mydog.bark)  // => "Woof, woof!"
-
-
-// The "object" keyword creates a type AND a singleton instance of it. It is
-// common for Scala classes to have a "companion object", where the per-instance
-// behavior is captured in the classes themselves, but behavior related to all
-// instance of that class go in objects. The difference is similar to class
-// methods vs static methods in other languages. Note that objects and classes
-// can have the same name.
-object Dog {
-  def allKnownBreeds = List("pitbull", "shepherd", "retriever")
-  def createDog(breed: String) = new Dog(breed)
-}
-
-
-// Case classes are classes that have extra functionality built in. A common
-// question for Scala beginners is when to use classes and when to use case
-// classes. The line is quite fuzzy, but in general, classes tend to focus on
-// encapsulation, polymorphism, and behavior. The values in these classes tend
-// to be private, and only methods are exposed. The primary purpose of case
-// classes is to hold immutable data. They often have few methods, and the
-// methods rarely have side-effects.
-case class Person(name: String, phoneNumber: String)
-
-// Create a new instance. Note cases classes don't need "new"
-val george = Person("George", "1234")
-val kate = Person("Kate", "4567")
-
-// With case classes, you get a few perks for free, like getters:
-george.phoneNumber  // => "1234"
-
-// Per field equality (no need to override .equals)
-Person("George", "1234") == Person("Kate", "1236")  // => false
-
-// Easy way to copy
-// otherGeorge == Person("George", "9876")
-val otherGeorge = george.copy(phoneNumber = "9876")
-
-// And many others. Case classes also get pattern matching for free, see below.
-
-// Traits
-// Similar to Java interfaces, traits define an object type and method
-// signatures. Scala allows partial implementation of those methods.
-// Constructor parameters are not allowed. Traits can inherit from other
-// traits or classes without parameters.
-
-trait Dog {
-    def breed: String
-    def color: String
-    def bark: Boolean = true
-    def bite: Boolean
-}
-class SaintBernard extends Dog {
-    val breed = "Saint Bernard"
-    val color = "brown"
-    def bite = false
-}  
-
-scala> val b = new SaintBernard
-res0: SaintBernard = SaintBernard@3e57cd70  
-scala> b.breed  
-res1: String = Saint Bernard  
-scala> b.bark  
-res2: Boolean = true  
-scala> b.bite  
-res3: Boolean = false  
-
-// A trait can also be used as Mixin. The class "extends" the first trait,
-// but the keyword "with" can add additional traits.
-
-trait Bark {
-    def bark: String = "Woof"
-}
-trait Dog {
-    def breed: String
-    def color: String
-}
-class SaintBernard extends Dog with Bark {
-    val breed = "Saint Bernard"
-    val color = "brown"
-}
-
-scala> val b = new SaintBernard
-b: SaintBernard = SaintBernard@7b69c6ba
-scala> b.bark
-res0: String = Woof
-```
-
-## Functional Programming
-
-```scala
-// ----- FUNCTIONAL PROGRAMMING -----
-
-// Scala allows methods and functions to return, or take as parameters, other
-// functions or methods.
-
-val add10: Int => Int = _ + 10 // A function taking an Int and returning an Int
-List(1, 2, 3) map add10 // List(11, 12, 13) - add10 is applied to each element
-
-// Anonymous functions can be used instead of named functions:
-List(1, 2, 3) map (x => x + 10)
-
-// And the underscore symbol, can be used if there is just one argument to the
-// anonymous function. It gets bound as the variable
-List(1, 2, 3) map (_ + 10)
-
-// If the anonymous block AND the function you are applying both take one
-// argument, you can even omit the underscore
-List("Dom", "Bob", "Natalia") foreach println
-
-
-// Combinators
-// Using `s` from above:
-// val s = Set(1, 3, 7)
-
-s.map(sq)
-
-val sSquared = s.map(sq)
-
-sSquared.filter(_ < 10)
-
-sSquared.reduce (_+_)
-
-// The filter function takes a predicate (a function from A -> Boolean) and
-// selects all elements which satisfy the predicate
-List(1, 2, 3) filter (_ > 2) // List(3)
-case class Person(name: String, age: Int)
-List(
-  Person(name = "Dom", age = 23),
-  Person(name = "Bob", age = 30)
-).filter(_.age > 25) // List(Person("Bob", 30))
-
-
-// Certain collections (such as List) in Scala have a `foreach` method,
-// which takes as an argument a type returning Unit - that is, a void method
-val aListOfNumbers = List(1, 2, 3, 4, 10, 20, 100)
-aListOfNumbers foreach (x => println(x))
-aListOfNumbers foreach println
-
-// For comprehensions
-
-for { n <- s } yield sq(n)
-
-val nSquared2 = for { n <- s } yield sq(n)
-
-for { n <- nSquared2 if n < 10 } yield n
-
-for { n <- s; nSquared = n * n if nSquared < 10} yield nSquared
-
-/* NB Those were not for loops. The semantics of a for loop is 'repeat', whereas
-   a for-comprehension defines a relationship between two sets of data. */
-
-// --- PATTERN MATCHING ---
-
-// Pattern matching is a powerful and commonly used feature in Scala. Here's how
-// you pattern match a case class. NB: Unlike other languages, Scala cases do
-// not need breaks, fall-through does not happen.
+// ----- PATTERN MATCHING -----
+    // Scala features powerful pattern matching for multiple predicates that uniquely does not require breaks, fall-through simply does not occur
+        // Scala even has regex support built in
+    // match, case => creates a match-case expression that allows for pattern matching
+        // => => specifies the relationship between a give case statement and the relevant execution code
+        // _ => final catch-all character, equivalent of default in other languages
 
 def matchPerson(person: Person): String = person match {
-  // Then you specify the patterns:
-  case Person("George", number) => "We found George! His number is " + number
-  case Person("Kate", number)   => "We found Kate! Her number is " + number
-  case Person(name, number)     => "We matched someone : " + name + ", phone : " + number
+    case Person("George", number) => "We found George! His number is " + number
+    case Person("Kate", number) => "We found Kate! Her number is " + number
+    case Person(name, number) => "We matched someone : " + name + ", phone : " + number
 }
 
-// Regular expressions are also built in.
-// Create a regex with the `r` method on a string:
-val email = "(.*)@(.*)".r
-
-// Pattern matching might look familiar to the switch statements in the C family
-// of languages, but this is much more powerful. In Scala, you can match much
-// more:
-def matchEverything(obj: Any): String = obj match {
-  // You can match values:
-  case "Hello world" => "Got the string Hello world"
-
-  // You can match by type:
-  case x: Double => "Got a Double: " + x
-
-  // You can specify conditions:
-  case x: Int if x > 10000 => "Got a pretty big number!"
-
-  // You can match case classes as before:
-  case Person(name, number) => s"Got contact info for $name!"
-
-  // You can match regular expressions:
-  case email(name, domain) => s"Got email address $name@$domain"
-
-  // You can match tuples:
-  case (a: Int, b: Double, c: String) => s"Got a tuple: $a, $b, $c"
-
-  // You can match data structures:
-  case List(1, b, c) => s"Got a list with three elements and starts with 1: 1, $b, $c"
-
-  // You can nest patterns:
-  case List(List((1, 2, "YAY"))) => "Got a list of list of tuple"
-
-  // Match any case (default) if all previous haven't matched
-  case _ => "Got unknown object"
+def matchEverything(obj: Any): String = obj match { // this function's match statement takes in an object of any type
+    case "Hello world" => "Got the string Hello world" // matches a value
+    case x: Double => "Got a Double: " + x // match by type
+    case x: Int if x > 10000 => "Got a pretty big number!" // matches a condition
+    case Person(name, number) => s"Got contact info for $name!" // match the class of a case
+    case email(name, domain) => s"Got email address $name@$domain" // match a regular expression
+    case (a: Int, b: Double, c: String) => s"Got a tuple: $a, $b, $c" // multiple matching within a tuple
+    case List(1, b, c) => s"Got a list with three elements and starts with 1: 1, $b, $c" // match a data structure
+    case List(List((1, 2, "YAY"))) => "Got a list of list of tuple" // nested patterns
+    case _ => "Got unknown object" // match any uncaught case
 }
-
-// In fact, you can pattern match any object with an "unapply" method. This
-// feature is so powerful that Scala lets you define whole functions as
-// patterns:
-val patternFunc: Person => String = {
-  case Person("George", number) => s"George's number: $number"
-  case Person(name, number) => s"Random person's number: $number"
-}
-
-
-
 ```
 
 ## More on
@@ -550,5 +324,7 @@ val patternFunc: Person => String = {
 * Intersection types
 * Union types
 * Implicit
+* Object Oriented Programming
+* Combinators
 * [learn scala in y minutes](https://learnxinyminutes.com/docs/scala/)
 * [scala official documentation](https://www.scala-lang.org/)
