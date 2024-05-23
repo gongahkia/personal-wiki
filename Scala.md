@@ -1,9 +1,6 @@
 # `Scala`
 
->[!WARNING]
->add desription here
-
-Scala is a 
+Hybrid functional and object-oriented programming language that compiles to Java bytecode.
 
 ## REPL
 
