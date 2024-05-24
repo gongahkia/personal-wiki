@@ -1,5 +1,5 @@
 > [!NOTE] 
-> Continue from Chapter 2.
+> Continue from Chapter 2.10 Predicates and Variables.
 
 # `Discrete mathematics`
 
@@ -12,6 +12,8 @@ Covers...
 * Algorithm analysis and complexity, Automata theory, Computability
 
 ## Chapter 1: Math Review
+
+* Refresher on general concepts
 
 ### Definitions
 
@@ -113,6 +115,246 @@ To select a limited range of real numbers, we use an interval of the real line.
         * eg. $\text{c}(\text{a}\mid\text{b})^*\text{c}$ specifies all strings that start with a $\text{c}$, followed by zero or more characters that are either $\text{a}$ or $\text{b}$, followed by one $\text{c}$
 
 ## Chapter 2: Logic
+
+* Propositional logic, Predicate logic
+
+### Definitions
+
+1. $0$: False
+2. $1$: True
+3. $\neg$: Not
+4. $\land$: And
+5. $\lor$: Inclusive Or
+6. $\oplus$: Exclusive Or
+7. $\rightarrow$: Implies
+8. $\leftrightarrow$: Biconditional
+9. $\equiv$: Logical Equivalence
+10. $($ $)$: Groups logically related propositions together
+
+> ![TIP]
+> Moving forward, all truth tables will be represented assuming $A$, $B$ and $C$ are all propositions.
+
+### Propositions
+
+* Proposition: statement which is either true or false 
+    * states a claim
+    * cannot be a question
+    * cannot contain variables *(eg. $x\leq9$ is not a proposition)*
+
+#### Complex propositions
+
+* Propositions can be chained together with $\neg$, $\land$ and $\lor$ to create complex propositions.
+* Complex propositions are represented by truth tables.
+
+**And truth table**
+
+$$\begin{array}{|c|c|c|}
+\hline
+A & B & A \land B \\
+\hline
+0 & 0 & 0 \\
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+1 & 1 & 1 \\
+\hline
+\end{array}$$
+
+**Inclusive Or truth table**
+
+$$\begin{array}{|c|c|c|}
+\hline
+A & B & A \lor B \\
+\hline
+0 & 0 & 0 \\
+0 & 1 & 1 \\
+1 & 0 & 1 \\
+1 & 1 & 1 \\
+\hline
+\end{array}$$
+
+**Exclusive Or truth table**
+
+$$\begin{array}{|c|c|c|}
+\hline
+A & B & A \oplus B \\
+\hline
+0 & 0 & 0 \\
+0 & 1 & 1 \\
+1 & 0 & 1 \\
+1 & 1 & 0 \\
+\hline
+\end{array}$$
+
+#### Implication
+
+* Two propositions can be joined into a conditional statement in the format of "if *Proposition 1*, then *Proposition 2*".
+* Can also be phrased as...
+    * "*Proposition 1* implies *Proposition 2*"
+    * "*Proposition 2* follows *Proposition 1*"
+* *Proposition 1* is called the **hypothesis**.
+* *Proposition 2* is called the **conclusion**.
+
+**Implication truth table**
+
+$$\begin{array}{|c|c|c|}
+\hline
+A & B & A \rightarrow B \\
+\hline
+0 & 0 & 1 \\
+0 & 1 & 1 \\
+1 & 0 & 0 \\
+1 & 1 & 1 \\
+\hline
+\end{array}$$
+
+#### Converse
+
+* The converse of $A \rightarrow B$ is $B \rightarrow A$.
+* Note that implications frequently only apply in one direction.
+    * Therefore, there is **no** guarantee that since $A \rightarrow B$, then $B \rightarrow A$.
+
+**Converse truth table**
+
+$$\begin{array}{|c|c|c|}
+\hline
+A & B & B \rightarrow A \\
+\hline
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & 1 \\
+1 & 1 & 1 \\
+\hline
+\end{array}$$
+
+#### Biconditional
+
+* Biconditional covers a situation where $A \rightarrow B$ and $B \rightarrow A$.
+* $A$ and $B$ are true under exactly the same conditions.
+
+**Biconditional truth table**
+
+$$\begin{array}{|c|c|c|}
+\hline
+A & B & A \leftrightarrow B \\
+\hline
+0 & 0 & 1 \\
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+1 & 1 & 1 \\
+\hline
+\end{array}$$
+
+#### Contrapositive
+
+* Contrapositive just means to negate both the hypothesis and conclusion.
+    * eg. the contrapositive of $A \rightarrow B$ would be $\neg B \rightarrow \neg A$
+
+**Contrapositive truth table**
+
+$$\begin{array}{|c|c|c|c|c|}
+\hline
+A & B & \neg A & \neg B & \neg B \rightarrow \neg A \\
+\hline
+0 & 0 & 1 & 1 & 1 \\
+0 & 1 & 1 & 0 & 1 \\
+1 & 0 & 0 & 1 & 0 \\
+1 & 1 & 0 & 0 & 1 \\
+\hline
+\end{array}$$
+
+##### Rules for complex statements
+
+Follow these rules when constructing truth tables.
+
+1. Apply $\neg$ (not operator) first.
+2. Apply $\land$ (and) and $\lor$ (inclusive or) operators.
+3. Apply $\rightarrow$ (implication) and $\leftrightarrow$ (biconditional) operators.
+4. Use $($ $)$ (parantheses) to group logically related propositions together.
+
+#### Logical Equivalence
+
+* 2 propositions are logically equivalent when they are true for the same input values.
+    * eg. $A \rightarrow B$ is logically equivalent to $\neg A \lor B$, so it can be said that $A \rightarrow B \equiv \neg A \lor B$
+
+The proof is given that
+
+**$A \rightarrow B$ truth table**
+
+$$\begin{array}{|c|c|c|}
+\hline
+A & B & A \rightarrow B \\
+\hline
+0 & 0 & 1 \\
+0 & 1 & 1 \\
+1 & 0 & 0 \\
+1 & 1 & 1 \\
+\hline
+\end{array}$$
+
+and 
+
+**$\neg A \lor B$ truth table**
+
+$$\begin{array}{|c|c|c|c|}
+\hline
+A & B & \neg A & \neg A \lor B \\
+\hline
+0 & 0 & 1 & 1\\
+0 & 1 & 1 & 1\\
+1 & 0 & 0 & 0\\
+1 & 1 & 0 & 1\\
+\hline
+\end{array}$$
+
+it can be said that $A \rightarrow B$ and $\neg A \lor B$ are logically equivalent.
+
+* Other well-known logical equivalences are...
+    1. De Morgan's Laws
+        * $\neg (A \land B) \equiv \neg A \lor \neg B$
+        * $\neg(A \lor B) \equiv \neg A \land \neg B$
+    2. Some useful ones
+        * $A \land \neg A \equiv 0$
+        * $A \land B \equiv B \land A$
+        * $A \lor (B \land C) \equiv (A \lor B) \land (A \lor C)$
+        * $A \land (B \lor C) \equiv (A \land B) \lor (A \land C)$
+        * $\neg (\neg A) \equiv A$
+        * $\neg(A \rightarrow B) \equiv A \land \neg B$
+    3. [Actual cheatsheet](https://courses.cs.washington.edu/courses/cse311/24wi/resources/reference-logical_equiv.pdf)
+
+#### Applying propositional logic
+
+Below is a worked example of applying propositional logic by way of negation.
+
+*eg. Suppose the claim "If M is regular, then M is paracompact or M is not Lindelof."*
+
+1. Convert the claim to shorthand.
+
+> Let $A$ be "M is regular"  
+> Let $B$ be "M is paracompact"  
+> Let $C$ be "M is Lindelof"  
+>  
+> So the claim is now $A \rightarrow (B \lor \neg C)$
+
+2. Negate the claim.
+
+> Negation of $A \rightarrow (B \lor \neg C)$ would be $\neg(A \rightarrow (B \lor \neg C))$
+
+3. Simplify by applying known logical equivalences.
+
+> Applying the following...  
+> $\neg (\neg A) \equiv A$  
+> $\neg(A \land B) \equiv \neg A \lor \neg B$  
+> $\neg(A \lor B) \equiv \neg A \land \neg B$  
+> $\neg(A \rightarrow B) \equiv A \land \neg B$   
+>  
+> Therefore...  
+> $\neg(A \rightarrow (B \lor \neg C)) \equiv A \land \neg(B \lor \neg C) \equiv A \land \neg B \land \neg\neg C \equiv A \land \neg B \land C$
+
+4. Convert the shorthand back to a claim.
+
+> Therefore, the negation of our original claim is "M is regular and M is not paracompact and M is Lindelof."
+
+### Predicates
 
 ## More on
 
