@@ -1,4 +1,4 @@
-> [!NOTE] 
+> [!IMPORTANT] 
 > Continue from Chapter 2.10 Predicates and Variables.
 
 # `Discrete mathematics`
@@ -131,7 +131,7 @@ To select a limited range of real numbers, we use an interval of the real line.
 9. $\equiv$: Logical Equivalence
 10. $($ $)$: Groups logically related propositions together
 
-> ![TIP]
+> [!NOTE]  
 > Moving forward, all truth tables will be represented assuming $A$, $B$ and $C$ are all propositions.
 
 ### Propositions
@@ -325,7 +325,7 @@ it can be said that $A \rightarrow B$ and $\neg A \lor B$ are logically equivale
 
 Below is a worked example of applying propositional logic by way of negation.
 
-*eg. Suppose the claim "If M is regular, then M is paracompact or M is not Lindelof."*
+> *eg. Suppose the claim "If M is regular, then M is paracompact or M is not Lindelof."*
 
 1. Convert the claim to shorthand.
 
