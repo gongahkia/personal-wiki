@@ -151,7 +151,7 @@ Github flavoured markdown also supports alerts to signpost significant content.
 > purple speech bubble containing exclamation mark
 
 > [!WARNING]
-> yellow speech bubble containing exclamation mark
+> yellow triangle containing exclamation mark
 
 > [!CAUTION]
 > red octagon containing exclamation mark
@@ -169,7 +169,7 @@ Rendered, they look like this.
 > purple speech bubble containing exclamation mark
 
 >[!WARNING]
-> yellow speech bubble containing exclamation mark
+> yellow triangle containing exclamation mark
 
 >[!CAUTION]
 > red octagon containing exclamation mark
