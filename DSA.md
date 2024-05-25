@@ -8,14 +8,14 @@
 * data structure: ordered collection of data provided by the language or defined and enforced by the programmer
 * algorithm: sequence of steps to solve a problem
 * big o notation: describes performance of an algorithm as size of the dataset increases
-    * `n`: variable representing size of dataset
+    * $n$: variable representing size of dataset
 * time complexity: time taken for an algorithm to complete execution
 * space complexity: memory taken for an algorithm to complete execution
 
 ## Big O Notation
 
 1. CONSTANT time
-    * `O(1)`
+    * $O(1)$
     * number of steps for algorithm to complete execution is CONSTANT regardless of size of dataset
 
 ```go
@@ -27,7 +27,7 @@ func addUp(int n) int{ // computation here has a time complexity of O(1)
 ```
 
 2. LOGARITHMIC time
-    * `O(log n)`
+    * $O(\log n)$
     * number of steps for algorithm to complete execution is MARGINALLY LOWER as size of dataset increases
 
 ```go
@@ -49,7 +49,7 @@ func binarySearch(arr []int, target int) int { // computation here has a time co
 ```
 
 3. LINEAR time
-    * `O(n)`
+    * $O(n)$
     * number of steps for algorithm to complete execution INCREASES PROPORTIONALLY to size of dataset
 
 ```go
@@ -64,7 +64,7 @@ func addUp(int n) int{ // computation here has a time complexity of O(n)
 ```
 
 4. QUASILINEAR time
-    * `O(n log n)`
+    * $O(n \log n)$
     * similar to LINEAR time, but slows down further when working with larger datasets
 
 ```go
@@ -100,7 +100,7 @@ func merge(left, right []int) []int {
 ```
 
 5. QUADRATIC time
-    * `O(n^2)`
+    * $O(n^2)$
     * QUADRATIC increase in number of steps for algorithm to complete execution for a given increase in size of dataset
 
 ```go
@@ -117,7 +117,7 @@ func bubbleSort(arr []int) { // computation here has a time complexity of O(n^2)
 ```
 
 6. FACTORIAL time
-    * `O(n!)`
+    * $O(n!)$
     * extremely slow and rarely used
 
 ```go
