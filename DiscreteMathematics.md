@@ -362,11 +362,15 @@ Below is a worked example of applying propositional logic by way of negation.
 
 > Therefore, the negation of our original claim is "M is regular and M is not paracompact and M is Lindelof."
 
+> [!NOTE]  
+> Moving forward, assume that $P()$, $Q()$ and $R()$ are all predicates.
+
 ### Predicates
 
 * Predicate: statement that becomes either true or false when its variables are substituted for values
     * eg. $P(x)$ is a predicate where $x^2 \geq 10$
     * eg. $Q(y)$ is a predicate where "$y$ is winter hardy"
+    * eg. $R(z)$ is a predicate where "you are smelly when $z$"
 * Predicates are useful for making **general statements** about what happens when we subtitute a variety of values for variables.
     * eg. "$P(x)$ is true for every $x$"
 
@@ -421,6 +425,25 @@ Below are some worked examples of understanding quantifier notation.
     * $\mathbb{R}$ is the set of all real numbers
 3. $x^2 = 0$ is the predicate we are asserting
 4. Therefore this reads as "There is a unique real number $x$ such that $x^2 = 0$."
+
+> [!IMPORTANT]  
+> Multiple quantifiers can be chained together as in the following shorthand.  
+>   
+> $\forall x \in \mathbb{R}, \forall y \in \mathbb{R}, x + y \geq x$  
+>  
+> can be shortened to become 
+>   
+> $\forall x, y \in \mathbb{R}, x + y \geq x$
+>   
+> and both retain the meaning of "for all real numbers $x$ and $y$, $x + y \geq x$". (Note the predicate itself isn't true, but that's not important here.)
+
+#### Quantifiers and logical equivalences
+
+Here are some logical equivalences derived from the negation of quantifiers.
+
+* $\neg (\forall x, P(x)) \equiv \exists x, \neg P(x)$
+* $\neg(\exists x, P(x)) \equiv \forall x, \neg P(x)$
+* $\neg (\forall x, P(x) \rightarrow (Q(x) \land R(x))) \equiv \exists x, P(x) \land (\neg Q(x) \lor \neg R(x))$
 
 ## More on
 
