@@ -62,5 +62,8 @@ new:
 	echo "Markdown file created: $$title.md"
 
 up:
-	git pull
-	git status
+	@git pull
+	@git status
+
+history:
+	@git log
