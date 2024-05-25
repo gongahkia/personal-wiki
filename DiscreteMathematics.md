@@ -369,7 +369,7 @@ Below is a worked example of applying propositional logic by way of negation.
 
 * Predicate: statement that becomes either true or false when its variables are substituted for values
     * eg. $P(x)$ is a predicate where $x^2 \geq 10$
-    * eg. $Q(y)$ is a predicate where "$y$ is winter hardy"
+    * eg. $Q(y)$ is a predicate where "the weather is $y$"
     * eg. $R(z)$ is a predicate where "you are smelly when $z$"
 * Predicates are useful for making **general statements** about what happens when we subtitute a variety of values for variables.
     * eg. "$P(x)$ is true for every $x$"
