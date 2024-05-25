@@ -157,6 +157,23 @@ Github flavoured markdown also supports alerts to signpost significant content.
 > red octagon containing exclamation mark
 ```
 
+Rendered, they look like this.
+
+>[!NOTE]
+> blue circle containing exclamation mark
+
+>[!TIP]
+> green lightbulb
+
+>[!IMPORTANT]
+> purple speech bubble containing exclamation mark
+
+>[!WARNING]
+> yellow speech bubble containing exclamation mark
+
+>[!CAUTION]
+> red octagon containing exclamation mark
+
 ## More on
 
 * [learn markdown in y minutes](https://learnxinyminutes.com/docs/markdown/)
