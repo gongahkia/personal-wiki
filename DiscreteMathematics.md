@@ -1,5 +1,5 @@
 > [!IMPORTANT] 
-> Continue from Chapter 2.10 Predicates and Variables.
+> Continue from Chapter 3 Proofs.
 
 # `Discrete mathematics`
 
