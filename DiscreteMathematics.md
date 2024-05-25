@@ -445,6 +445,8 @@ Here are some logical equivalences derived from the negation of quantifiers.
 * $\neg(\exists x, P(x)) \equiv \forall x, \neg P(x)$
 * $\neg (\forall x, P(x) \rightarrow (Q(x) \land R(x))) \equiv \exists x, P(x) \land (\neg Q(x) \lor \neg R(x))$
 
+## Chapter 3: Proofs
+
 ## More on
 
 * [Building Blocks for Theoretical Computer Science](https://mfleck.cs.illinois.edu/building-blocks/index-sp2020.html) by Margaret M Fleck
