@@ -120,6 +120,8 @@ To select a limited range of real numbers, we use an interval of the real line.
 
 ### Definitions
 
+#### Propositional logic
+
 1. $0$: False
 2. $1$: True
 3. $\neg$: Not
@@ -130,6 +132,12 @@ To select a limited range of real numbers, we use an interval of the real line.
 8. $\leftrightarrow$: Biconditional
 9. $\equiv$: Logical Equivalence
 10. $($ $)$: Groups logically related propositions together
+
+#### Predicate logic
+
+11. $\forall$: Universal quantifier
+12. $\exists$: Existental quantifier
+13. $\exists!$: Unique Existence quantifier
 
 > [!NOTE]  
 > Moving forward, all truth tables will be represented assuming $A$, $B$ and $C$ are all propositions.
@@ -355,6 +363,64 @@ Below is a worked example of applying propositional logic by way of negation.
 > Therefore, the negation of our original claim is "M is regular and M is not paracompact and M is Lindelof."
 
 ### Predicates
+
+* Predicate: statement that becomes either true or false when its variables are substituted for values
+    * eg. $P(x)$ is a predicate where $x^2 \geq 10$
+    * eg. $Q(y)$ is a predicate where "$y$ is winter hardy"
+* Predicates are useful for making **general statements** about what happens when we subtitute a variety of values for variables.
+    * eg. "$P(x)$ is true for every $x$"
+
+#### Quantifiers
+
+1. Universal quantifier: *"for all"*
+    * **all** objects have such properties
+    * eg. "for all integers $x$, $x^2 \geq 10$"
+2. Existential quantifier: *"there exists"*
+    * **at least one** object have such properties
+    * eg. "there exists an integer $x$ such that $5 \lt x \lt 100$"
+3. Unique Existence quantifier: *"there is"*
+    * **only one** object have such properties
+    * eg. "there is a unique integer $x$ such that $x^2 = 0$"
+
+#### Quantifier notation 
+
+The quantifiers are represented as...
+
+* Universal quantifier: $\forall$
+* Existential quantifier: $\exists$
+* Unique Existence quantifier: $\exists!$
+
+Below are some worked examples of understanding quantifier notation.
+
+*eg.* $\forall x \in \mathbb{R}, x^2 + 3 \geq 0$
+
+1. $\forall$ is the quantifier
+2. $x \in \mathbb{R}$ specifies the variable and the set it belongs to 
+    * $x$ is the variable
+    * $\in$ denotes membership
+    * $\mathbb{R}$ is the set of all real numbers
+3. $x^2 + 3 \geq 0$ is the predicate we are asserting
+4. Therefore this reads as "For all real numbers $x$, $x^2 + 3 \geq 0$."
+
+*eg.* $\exists y \in \mathbb{R}, y = \sqrt{2}$
+
+1. $\exists$ is the quantifier
+2. $y \in \mathbb{R}$ specifies the variable and the set it belongs to
+    * $y$ is the variable
+    * $\in$ denotes membership
+    * $\mathbb{R}$ is the set of all real numbers
+3. $y = \sqrt{2}$ is the predicate we are asserting
+4. Therefore this reads as "There exists a real number $y$ such that $y = \sqrt{2}$."
+
+*eg.* $\exists!x \in \mathbb{R}, x^2 = 0$
+
+1. $\exists!$ is the quantifier
+2. $x \in \mathbb{R}$ specifies the variable and the set it belongs to
+    * $x$ is the variable
+    * $\in$ denotes membership
+    * $\mathbb{R}$ is the set of all real numbers
+3. $x^2 = 0$ is the predicate we are asserting
+4. Therefore this reads as "There is a unique real number $x$ such that $x^2 = 0$."
 
 ## More on
 
