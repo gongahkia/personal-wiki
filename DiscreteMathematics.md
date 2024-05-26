@@ -447,6 +447,139 @@ Here are some logical equivalences derived from the negation of quantifiers.
 
 ## Chapter 3: Proofs
 
+Mathematical proofs adhere to certain outlines for proving. 
+
+1. Direct proof
+2. Examples, Counter-examples
+3. Proof by contrapositive
+
+### Summary
+
+An overview of proving methods for the given claim.
+
+1. **Proving** Universal claim
+    * Need to prove universality of claim for all proposed values within the given set
+    * Construct general argument with variables (eg. $x$, $y$, $z$) in proof
+2. **Disproving** Universal claim
+    * Only need prove existential statement of claim failing
+    * Find the specific counterexample 
+3. **Proving** Existential claim
+    * Only need prove existential statement
+    * Find the specific example
+4. **Disproving** Existential claim
+    * Need to prove universality of counterclaim for all proposed values within the given set
+    * Construct general argument with variables (eg. $x$, $y$, $z$) in proof
+
+In table form...
+
+| | Prove | Disprove |
+| :---: | :---: | :---: |
+| **Universal claim** | general argument | specific counter-example |
+| **Existential claim** | specific example | general argument |
+
+#### Direct Proof
+
+* Start from **known** information *(variable declarations, definitions, hypothesis)*
+* Move to information that has to be **proved**
+
+##### Example 1
+
+> *eg. Prove the claim "For every rational number $q$, $2q$ is rational."*
+
+1. **Identify** the claim.
+
+> This is a universal claim.
+>   
+> This claim is of the form $\forall x \in A, P(x)$.
+
+2. **Definition(s)** within the claim.
+
+> A real number $r$ is rational if there are integers $m$ and $n$ where $n \neq 0$, such that $r = \frac{m}{n}$.
+
+3. **Substitution** of value(s) into definition.
+
+> Let $q$ be any rational number. From the definition of "rational", we know that $q = \frac{m}{n}$ where $m$ and $n$ are integers and $n \neq 0$. As such, $2q = 2\frac{m}{n} = \frac{2m}{n}$. Since $m$ is an integer, so is $2m$. As such, $2q$ is a ratio of two integers, fulfilling the definition of "rational".
+
+##### Example 2
+
+> *eg. Prove the claim "For any integer $k$, if $k$ is odd then $k^2$ is odd."*
+
+1. **Identify** the claim.
+
+> This is a universal claim.
+>   
+>  This claim is of the form $\forall x \in \mathbb{Z}, P(x) \rightarrow Q(x)$.
+
+2. **Definition(s)** within the claim.
+
+> An integer $n$ is even if there is an integer $m$ such that $n = 2m$.
+>  
+> An integer $n$ is odd if there is an integer $m$ such that $n = 2m + 1$.
+
+3. **Substitution** of value(s) into definition.
+
+> Let $k$ be any integer and suppose that $k$ is odd. We now need to prove that $k^2$ is odd. Since $k$ is odd, there exists an integer $j$ such that $k = 2j + 1$.
+> 
+> Therefore, $k^2 = (2j + 1)^2 = 4j^2 + 4j + 1 = 2(2j^2 + 2j) + 1$.
+> 
+> Since $j$ is an integer, $2j^2 + 2j$ is also an integer that we can call $p$.
+>
+> Therefore, $k^2 = 2p + 1$, so by the definition of odd, $k^2$ is odd.
+
+##### Example 3
+
+> *eg. Prove the claim "There is an integer $k$ such that $k^2 = 0$"*.
+
+1. **Identify** the claim.
+
+> This is an existential claim.
+> 
+>  This claim is of the form $\exists x \in A, P(x)$.
+
+2. **Choose a concrete value** that proves the point.
+
+> $0$ is such an integer. So the statement is true.
+
+##### Example 4
+
+> *eg. Disprove the claim "Every rational number $q$ has a multiplicative inverse."*
+
+1. **Identify** the claim.
+
+> This is a universal claim.
+> 
+>  This claim is of the form $\forall x \in A, P(x)$.
+
+2. **Choose a concrete value** that disproves the point.
+
+> Defining what a multiplicative inverse is, if $p$ and $r$ are real numbers, $r$ is a multiplicative inverse for $q$ if $qr = 1$.
+>  
+> Given that $0$ has no inverse, the claim is false.
+
+##### Example 5
+
+> *eg. Disprove the claim "There is an integer $k$ such that $k^2 + 2k + 1 \lt 0$".*
+
+1. **Identify** the claim.
+
+> This is an existential claim.
+>  
+> This claim is of the form $\exists x \in A, P(x)$.
+
+2. **Identify** the counterclaim we need to prove.
+
+> Therefore, we need to prove that "For every integer $k$, $k^2 + 2k + 1 \geq 0$".
+
+3. **Substitution** of value(s) into counterclaim.
+
+> Let $k$ be an integer.
+>  
+> $k^2 + 2k + 1$ can be factorised to be $(k + 1)^2$.
+>  
+> $(k + 1)^2 \geq 0$ since the square of any real number is non-negative, so $k^2 + 2k + 1 \geq 0$.
+>   
+> Therefore the original claim is false.
+
 ## More on
 
 * [Building Blocks for Theoretical Computer Science](https://mfleck.cs.illinois.edu/building-blocks/index-sp2020.html) by Margaret M Fleck
