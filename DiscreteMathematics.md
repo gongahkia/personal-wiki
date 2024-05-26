@@ -1,5 +1,5 @@
 > [!IMPORTANT] 
-> Continue from Chapter 3.10 Proof by cases.
+> Continue from Chapter 3.12 Proof by contrapositive.
 
 # `Discrete mathematics`
 
@@ -632,7 +632,67 @@ In table form...
 >  
 > As such, $jk = 2m + 1$, so $jk$ is odd and the claim is true.
 
-#### Examples, Counter-examples
+#### Proof by cases
+
+* Used when given information results in *two or more* separate possibilities
+* Do part of the proof *two or more times*, once for **each of the possibilities**
+
+> [!TIP]  
+> It is okay if the cases overlap, but the cases must together cover all possibilities.
+
+##### Example 1
+
+> *eg.* Prove the claim "For all integers $j$ and $k$, if $j$ is even or $k$ is even, then $jk$ is even".
+
+1. **Identify** the claim.
+
+> This is a universal claim.
+>  
+> This claim is of the form $\forall x \in A \lor \forall y \in A, P(x, y)$.
+
+2. **Definition(s)** within the claim.
+
+> An integer $n$ is even if there is an integer $m$ such that $n = 2m$.
+
+3. **Handle** each possible case.
+
+> Let $j$ and $k$ be integers and suppose that $j$ is even or $k$ is even. 
+>  
+> There are two cases.
+>  
+> Case 1: $j$ is even. Then $j = 2m$, where $m$ is an integer. As such, the expression simplifies to $jk = (2m)k = 2(mk)$. Since $m$ and $k$ are integers, so is $mk$. Therefore, $jk$ must be even.
+>  
+> Case 2: $k$ is even. Then $k = 2n$, where $n$ is an integer. As such, the expression simplifies to $jk = j(2n) = 2(nj)$. Since $n$ and $j$ are integers, so is $nj$. Therefore, $jk$ must be even.
+
+4. **Summarise**
+
+> So $jk$ is even in both cases, and the claim is true.
+
+#### Rephrasing claims
+
+* Used when given claim is not in a *good form* for direct proof
+* Rephrase the claim to be **readable**
+* Rephrase the claim using **logical equivalence**
+
+##### Example 1
+
+> *eg.* Prove the claim "There is no integer $k$ such that $k$ is odd and $k^2$ is even".
+
+1. **Rephrase** the claim to be readable
+
+> The claim is really saying "For every integer $k$, it is not the case that $k$ is odd and $k^2$ is even".
+
+2. **Rephrase** the claim using logical equivalence
+
+> Applying DeMorgan's laws, this is also equivalent to "For every integer $k$, $k$ is not odd or $k^2$ is not even".
+>   
+> This is effectively the same as "For every integer $k$, $k$ is not odd or $k^2$ is odd".
+>  
+> Applying the logical equivalence that $\neg p \lor q \equiv p \rightarrow q$, this can be restated as "For every integer $k$, if $k$ is odd then $k^2$ is odd."
+
+The following steps merely involve direct proof of a universal claim as covered above.
+
+#### Proof by contrapositive
 
 ## More on
 
