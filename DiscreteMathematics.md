@@ -331,9 +331,7 @@ it can be said that $A \rightarrow B$ and $\neg A \lor B$ are logically equivale
 
 #### Applying propositional logic
 
-Below is a worked example of applying propositional logic by way of negation.
-
-> *eg. Suppose the claim "If M is regular, then M is paracompact or M is not Lindelof."*
+> *eg.* Suppose the claim "If M is regular, then M is paracompact or M is not Lindelof."
 
 1. Convert the claim to shorthand.
 
@@ -488,7 +486,7 @@ In table form...
 
 ##### Example 1
 
-> *eg. Prove the claim "For every rational number $q$, $2q$ is rational."*
+> *eg.* Prove the claim "For every rational number $q$, $2q$ is rational."
 
 1. **Identify** the claim.
 
@@ -506,7 +504,7 @@ In table form...
 
 ##### Example 2
 
-> *eg. Prove the claim "For any integer $k$, if $k$ is odd then $k^2$ is odd."*
+> *eg.* Prove the claim "For any integer $k$, if $k$ is odd then $k^2$ is odd."
 
 1. **Identify** the claim.
 
@@ -532,7 +530,7 @@ In table form...
 
 ##### Example 3
 
-> *eg. Prove the claim "There is an integer $k$ such that $k^2 = 0$"*.
+> *eg.* Prove the claim "There is an integer $k$ such that $k^2 = 0$".
 
 1. **Identify** the claim.
 
@@ -546,7 +544,7 @@ In table form...
 
 ##### Example 4
 
-> *eg. Disprove the claim "Every rational number $q$ has a multiplicative inverse."*
+> *eg.* Disprove the claim "Every rational number $q$ has a multiplicative inverse."
 
 1. **Identify** the claim.
 
@@ -562,7 +560,7 @@ In table form...
 
 ##### Example 5
 
-> *eg. Disprove the claim "There is an integer $k$ such that $k^2 + 2k + 1 \lt 0$".*
+> *eg.* Disprove the claim "There is an integer $k$ such that $k^2 + 2k + 1 \lt 0$".
 
 1. **Identify** the claim.
 
@@ -586,7 +584,7 @@ In table form...
 
 ##### Example 6
 
-> *eg. Prove the claim "For any integers $m$ and $n$, if $m$ and $n$ are perfect squares, then so is $mn$".*
+> *eg.* Prove the claim "For any integers $m$ and $n$, if $m$ and $n$ are perfect squares, then so is $mn$".
 
 1. **Identify** the claim.
 
@@ -610,7 +608,7 @@ In table form...
 
 ##### Example 7
 
-> *eg. Prove the claim "For all integers $j$ and $k$, if $j$ and $k$ are odd, then $jk$ is odd".*
+> *eg.* Prove the claim "For all integers $j$ and $k$, if $j$ and $k$ are odd, then $jk$ is odd".
 
 1. **Identify** the claim.
 
