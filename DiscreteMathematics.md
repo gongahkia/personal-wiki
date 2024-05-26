@@ -1,5 +1,5 @@
 > [!IMPORTANT] 
-> Continue from Chapter 3.12 Proof by contrapositive.
+> Continue from Chapter 4 Number Theory.
 
 # `Discrete mathematics`
 
@@ -479,7 +479,7 @@ In table form...
     * *General argument*: $x$ is a random element whose identity isn't uniquely specified
     * *Specific example* or *counter-example*: $x$ is a specific concrete value
 
-#### Direct Proof
+### Direct Proof
 
 * Start from **known** information *(variable declarations, definitions, hypothesis)*
 * Move to information that has to be **proved**
@@ -668,11 +668,13 @@ In table form...
 
 > So $jk$ is even in both cases, and the claim is true.
 
-#### Rephrasing claims
+### Rephrasing claims
 
 * Used when given claim is not in a *good form* for direct proof
 * Rephrase the claim to be **readable**
 * Rephrase the claim using **logical equivalence**
+    * DeMorgan's laws
+    * Proof by contrapositive
 
 ##### Example 1
 
@@ -693,6 +695,49 @@ In table form...
 The following steps merely involve direct proof of a universal claim as covered above.
 
 #### Proof by contrapositive
+
+* Contrapositive of the claim $\forall x, P(x) \rightarrow Q(x)$ is $\forall x, \neg Q(x) \rightarrow \neg P(x)$
+* Proving the contrapositive of a claim allows the inference  that the *original claim* is true
+
+##### Example 1
+
+> *eg.* Prove the claim "For any integers $a$ and $b$, if $a + b \geq 15$, then $a \geq 8$ or $b \geq 8$".
+
+1. **Rephrase** the claim using logical equivalence by way of Proof by contrapositive
+
+> The contrapositive of the claim is "For any integers $a$ and $b$, if it's not the case that $a \geq 8$ or $b \geq 8$, then it's not the case that $a + b \geq 15$".
+>  
+> Simplifying that further with logical equivalence, that is equivalent to "For any integers $a$ and $b$, if $a \lt 8$ and $b \lt 8$, then $a + b \lt 15$".
+
+2. **Prove** the contrapositive
+
+> We will now prove the contrapositive of the claim. That is, that for any integers $a$ and $b$, if $a \lt 8$ and $b \lt 8$, then $a + b \lt 15$.
+>  
+> Suppose that $a$ and $b$ are integers such that $a \lt 8$ and $b \lt 8$, this implies that $a \leq 7$ and $b \leq 7$.
+>  
+> Therefore, $a + b \leq 14$. This implies that $a + b \lt 15$, proving the contrapositive, so the original claim is true.
+
+##### Example 2
+
+> *eg.* Prove the claim "For any integer $k$, if $3k + 1$ is even, then $k$ is odd".
+
+1. **Rephrase** the claim using logical equivalence by way of Proof by contrapositive
+
+> Rephrasing the claim as the contrapositive returns "For any integer $k$, if $k$ is even, $3k + 1$ is odd".
+
+2. **Prove** the contrapositive
+
+> We will now prove the contrapositive of the claim. That is, that for any integer $k$, if $k$ is even, $3k + 1$ is odd.
+>   
+> An integer $x$ is even if there is an integer $y$ such that $x = 2y$.
+>  
+> An integer $x$ is odd if there is an integer $y$ such that $x = 2y + 1$.
+> 
+> Suppose that $k$ is an integer and $k$ is even, then $k = 2m$ where $m$ is an integer. Simplifying the expression, $3k + 1 = 3(2m) + 1 = 2(3m) + 1$. Since $m$ is an integer, so is $3m$.
+>  
+> Therefore, $3k + 1$ must be odd, proving the contrapositive so the original claim is true.
+
+## Chapter 4: Number Theory
 
 ## More on
 
