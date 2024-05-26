@@ -1,5 +1,5 @@
 > [!IMPORTANT] 
-> Continue from Chapter 3 Proofs.
+> Continue from Chapter 3.10 Proof by cases.
 
 # `Discrete mathematics`
 
@@ -477,6 +477,10 @@ In table form...
 | **Universal claim** | general argument | specific counter-example |
 | **Existential claim** | specific example | general argument |
 
+* Both proofs start by picking an element $x$ from the domain of quantification.
+    * *General argument*: $x$ is a random element whose identity isn't uniquely specified
+    * *Specific example* or *counter-example*: $x$ is a specific concrete value
+
 #### Direct Proof
 
 * Start from **known** information *(variable declarations, definitions, hypothesis)*
@@ -579,6 +583,58 @@ In table form...
 > $(k + 1)^2 \geq 0$ since the square of any real number is non-negative, so $k^2 + 2k + 1 \geq 0$.
 >   
 > Therefore the original claim is false.
+
+##### Example 6
+
+> *eg. Prove the claim "For any integers $m$ and $n$, if $m$ and $n$ are perfect squares, then so is $mn$".*
+
+1. **Identify** the claim.
+
+> This is a universal claim.
+>  
+> This claim is of the form $\forall x,y \in A, P(x,y)$.
+
+2. **Definition(s)** within the claim.
+
+> An integer $n$ is a perfect square if $n = k^2$ for some integer $k$.
+
+3. **Substitution** of value(s) into definition.
+
+> Let $m$ and $n$ be integers and suppose that $m$ and $n$ are perfect squares.
+>  
+> By the definition of "perfect square", $m = k^2$ and $n = j^2$, so $mn = k^2j^2$, which can be factorised to $(kj)^2$.
+>  
+> Since $k$ and $j$ are both integers, so is $kj$. 
+>  
+> Since $mn$ is the square of the integer $kj$, $mn$ is a perfect square and the claim is true.
+
+##### Example 7
+
+> *eg. Prove the claim "For all integers $j$ and $k$, if $j$ and $k$ are odd, then $jk$ is odd".*
+
+1. **Identify** the claim.
+
+> This is a universal claim.
+>  
+> This claim is of the form $\forall x,y \in A, P(x,y)$.
+
+2. **Definition(s)** within the claim.
+
+> An integer $n$ is odd if there is an integer $m$ such that $n = 2m + 1$.
+
+3. **Substitution** of value(s) into definition.
+
+> Let $j$ and $k$ be integers and suppose they are both odd. 
+>   
+> Because $j$ is odd, there is an integer $p$ such that $j = 2p + 1$. Similarly, there is an integer $q$ such that $k = 2q + 1$.
+>   
+> Simplifying the expression, $jk = (2p + 1)(2q + 1) = 4pq + 2p + 2q + 1 = 2(2pq + p + q) + 1$. 
+>  
+> Given that both $p$ and $q$ are integers, $2pq + p + q$ is also an integer which we call $m$.
+>  
+> As such, $jk = 2m + 1$, so $jk$ is odd and the claim is true.
+
+#### Examples, Counter-examples
 
 ## More on
 
