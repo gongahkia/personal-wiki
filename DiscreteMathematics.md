@@ -762,7 +762,7 @@ The following steps merely involve direct proof of a universal claim as covered 
 > [!WARNING]  
 > * $0$ is divisible by any integer.
 > * The only divisor of $0$ is $0$.
-> * Avoid rephrasing $a \mid b$ to "$\frac{b}{a}$ is an integer" as it introduces a non-integer rational number into a problem that only involves integers.
+> * Avoid rephrasing $a \mid b$ to $\frac{b}{a}$ is an integer as it introduces a non-integer rational number into a problem that only involves integers.
 
 3. Integer $x \geq 2$ is **prime** if the only positive factors of $x$ are $x$ and $1$.
 4. Integer $x \geq 2$ is **composite** if it is not prime.
