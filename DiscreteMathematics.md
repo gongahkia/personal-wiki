@@ -1,5 +1,5 @@
 > [!IMPORTANT] 
-> Continue from Chapter 4 Number Theory.
+> Continue from Chapter 5 Sets.
 
 # `Discrete mathematics`
 
@@ -738,6 +738,81 @@ The following steps merely involve direct proof of a universal claim as covered 
 > Therefore, $3k + 1$ must be odd, proving the contrapositive so the original claim is true.
 
 ## Chapter 4: Number Theory
+
+* Analyses behaviour of integers
+* Useful for...
+    * Cryptography 
+    * Algorithm randomisation
+
+### Definitions
+
+Here are some formal definitions under number theory.
+
+1. Suppose integers $x$ and $y$. $x$ **divides** $y$ if $y = xz$ for some integer $z$.
+    * $x$ is the divisor (factor) of $y$
+    * $y$ is the multiple of $x$
+    * $\mid$: multiple **does divide** by divisor to an integer
+        * eg. integer $p$ is even exactly when $2 \mid p$
+        * eg. $7 \mid 77$
+        * eg. $7 \mid 7$ because $7 = 7 \cdot 1$
+        * eg. $(-3) \mid 12$ because $12 = - 3 \cdot -4$
+        * eg. $3 \mid (-12)$ because $-12 = 3 \cdot -4$
+    * $\nmid$: multiple **does not divide** by divisor to an integer
+        * eg. $77 \nmid 7$
+
+> [!WARNING]  
+> * $0$ is divisible by any integer.
+> * The only divisor of $0$ is $0$.
+> * Avoid rephrasing $a \mid b$ to "$\frac{b}{a}$ is an integer" as it introduces a non-integer rational number into a problem that only involves integers.
+
+2. Integer $x \geq 2$ is **prime** if the only positive factors of $x$ are $x$ and $1$.
+3. Integer $x \geq 2$ is **composite** if it is not prime.
+4. Every integer $z \geq 2$ can be written as the **product** of one or more prime factors, and this [prime factorization](https://www.mathsisfun.com/prime-factorization.html) is *unique*.
+    * $\cdot$: **product** of two numbers
+        * eg. $1 \cdot 3 = 3$
+5. $z$ is a common divisor of $x$ and $y$ if $z \mid x$ and $z \mid y$.
+    * $gcd()$: **greatest common divisor** of two numbers
+6. $z$ is a common multiple of $x$ and $y$ if $x \mid z$ and $y \mid z$.
+    * $lcm()$: **lowest common multiple** of two numbers
+7. Suppose two integers $a$ and $b$ share no common factors, then $gcd(a,b) = 1$ and $a$ and $b$ are **relatively prime**.
+
+### Applications in Proofs
+
+##### Example 1
+
+> *eg.* Prove the claim "For any integers $a$, $b$ and $c$, if $a \mid b$ and $a \mid c$" then $a \mid (b + c)$."
+
+Proof:
+
+> Let $a$, $b$ and $c$ be integers and suppose that $a \mid b$ and $a \mid c$.
+>  
+> Since $a \mid b$, there is an integer $k$ such that $b = ak$. Similarly, since $a \mid c$, there is an integer $j$ such that $c = aj$.
+> 
+> Simplifying the expression, $(b + c) = ak + aj = a(k + j) = (k + j)a$. Since $k$ and $j$ are integers, their sum $(k + j)$ is also an integer, so the claim is true.
+
+##### Example 2
+
+> *eg.* Prove the claim "For any integers $a$, $b$ and $c$, if $a \mid b$ and $b \mid c$ then $a \mid c$."
+
+Proof:
+
+> Let $a$, $b$ and $c$ be integers and suppose that $a \mid b$ and $b \mid c$.
+> 
+> Since $a \mid b$, there is an integer $k$ such that $b = ak$. Similarly, since $b \mid c$, there is an integer $j$ such that $c = bj$.
+> 
+> Simplifying the expression, $c = bj = akj = kja$. Since $k$ and $j$ are integers, their product $k \cdot j$ is also an integer, so the claim is true.
+
+##### Example 3
+
+> *eg.* Prove the claim "For any integers $a$, $b$ and $c$, if $a \mid b$ then $a \mid bc$."
+
+Proof:
+
+> Since $a \mid b$, there is an integer $k$ such that $b = ak$.
+>
+> Simplifying the expression, $bc = akc = kca$. Since $k$ and $c$ are integers, their product $k \cdot c$ is also an integer, so the claim is true.
+
+## Chapter 5: Sets
 
 ## More on
 
