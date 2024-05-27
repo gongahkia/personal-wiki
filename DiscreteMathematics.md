@@ -739,16 +739,15 @@ The following steps merely involve direct proof of a universal claim as covered 
 
 ## Chapter 4: Number Theory
 
-* Analyses behaviour of integers
+* Charts behaviour of integers
 * Useful for...
     * Cryptography 
     * Algorithm randomisation
 
 ### Definitions
 
-Here are some formal definitions under number theory.
-
-1. Suppose integers $x$ and $y$. $x$ **divides** $y$ if $y = xz$ for some integer $z$.
+1. Corollary: The following statement is an *easy consequence* of the preceding claim.
+2. Suppose integers $x$ and $y$. $x$ **divides** $y$ if $y = xz$ for some integer $z$.
     * $x$ is the divisor (factor) of $y$
     * $y$ is the multiple of $x$
     * $\mid$: multiple **does divide** by divisor to an integer
@@ -765,16 +764,29 @@ Here are some formal definitions under number theory.
 > * The only divisor of $0$ is $0$.
 > * Avoid rephrasing $a \mid b$ to "$\frac{b}{a}$ is an integer" as it introduces a non-integer rational number into a problem that only involves integers.
 
-2. Integer $x \geq 2$ is **prime** if the only positive factors of $x$ are $x$ and $1$.
-3. Integer $x \geq 2$ is **composite** if it is not prime.
-4. Every integer $z \geq 2$ can be written as the **product** of one or more prime factors, and this [prime factorization](https://www.mathsisfun.com/prime-factorization.html) is *unique*.
+3. Integer $x \geq 2$ is **prime** if the only positive factors of $x$ are $x$ and $1$.
+4. Integer $x \geq 2$ is **composite** if it is not prime.
+5. Every integer $z \geq 2$ can be written as the **product** of one or more prime factors, and this [prime factorization](https://www.mathsisfun.com/prime-factorization.html) is *unique*.
     * $\cdot$: **product** of two numbers
         * eg. $1 \cdot 3 = 3$
-5. $z$ is a common divisor of $x$ and $y$ if $z \mid x$ and $z \mid y$.
+6. $z$ is a common divisor of $x$ and $y$ if $z \mid x$ and $z \mid y$.
     * $gcd()$: **greatest common divisor** of two numbers
-6. $z$ is a common multiple of $x$ and $y$ if $x \mid z$ and $y \mid z$.
+    * Algorithms to compute $gcd()$
+        1. [Division algorithm](https://en.wikipedia.org/wiki/Division_algorithm)
+        2. [Euclidean algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm)
+7. $z$ is a common multiple of $x$ and $y$ if $x \mid z$ and $y \mid z$.
     * $lcm()$: **lowest common multiple** of two numbers
-7. Suppose two integers $a$ and $b$ share no common factors, then $gcd(a,b) = 1$ and $a$ and $b$ are **relatively prime**.
+8. Suppose two integers $a$ and $b$ share no common factors, then $gcd(a,b) = 1$ and $a$ and $b$ are **relatively prime**.
+9. Suppose $k$ is a positive integer, two integers $a$ and $b$ are congruent mod $k$ if $k \mid (a - b)$.
+    * $a \equiv b$ (mod $k$): $a$ and $b$ are **congruent mod** $k$
+        * eg. $17 \equiv 5$ (mod $12$)
+        * eg. $3 \equiv 10$ (mod $7$)
+        * eg. $3 \equiv 38$ (mod $7$)
+        * eg. $-3 \equiv 3$ (mod $6$)
+        * eg. $-3 \equiv 4$ (mod $7$)
+        * eg. $-29 \equiv -13$ (mod $8$)
+    * $a \not\equiv b$ (mod $k$): $a$ and $b$ are **not congruent mod** $k$
+        * eg. $-3 \not\equiv 3$ (mod $7$)
 
 ### Applications in Proofs
 
@@ -811,6 +823,30 @@ Proof:
 > Since $a \mid b$, there is an integer $k$ such that $b = ak$.
 >
 > Simplifying the expression, $bc = akc = kca$. Since $k$ and $c$ are integers, their product $k \cdot c$ is also an integer, so the claim is true.
+
+##### Example 4
+
+> *eg.* Prove the claim "For any integers $a$, $b$, $q$ and $r$, where $b$ is positive, if $a = bq + r$, then $gcd(a,b) = gcd(b,r)$."
+
+Proof:
+
+> Suppose the integer $n$ which is $gcd(a,b)$ where $n \mid a$ and $n \mid b$, and $n$ divides $bq$. So $n$ divides $a - bq$, which is just $r$. So $n$ divides $r$.
+>  
+> Applying the same line of reasoning, if $n$ divides both $b$ and $r$, then $n$ divides $a$.
+> 
+> Therefore, the set of common divisors of $a$ and $b$ are exactly the same as the set of common divisors of $b$ and $r$. However, $gcd(a,b)$ and $gcd(b,r)$ are just the largest numbers in the set of common divisors for each set, so if the sets contain the same things, the two $gcd$'s must be equal. So the claim is true.
+
+##### Example 5
+
+> *eg.* Prove the claim "For any integers $a$, $b$, $c$, $d$ and $k$ where $k$ is positive, if $a \equiv b$ (mod $k$) and $c \equiv d$ (mod $k$), then $a + c \equiv b + d$ (mod $k$)."
+
+Proof:
+
+> Let $a$, $b$, $c$, $d$ and $k$ be integers with $k$ being positive, and suppose that $a \equiv b$ (mod $k$) and $c \equiv d$ (mod $k$).
+>
+> Since $a \equiv b$ (mod $k$), so $k \mid (a - b)$. Similarly, $c \equiv d$ (mod $k$) implies $k \mid (c - d)$. As such, $k \mid (a + c) - (b + d)$.
+> 
+> By definition of congruence mod $k$, $a + c \equiv b + d$ (mod $k$) so the claim is true.
 
 ## Chapter 5: Sets
 
