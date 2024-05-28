@@ -18,7 +18,7 @@ Covers...
 ### Definitions
 
 1. $\mathbb{Z}$ denotes the set of *all* negative and positive integers
-    * $\mathbb{Z} = \{ \ldots, -3, -2, -1, 0, 1, 2, 3, \ldots \}$
+    * $\mathbb{Z} = \\{ \ldots, -3, -2, -1, 0, 1, 2, 3, \ldots \\}$
 2. $\mathbb{N}$ denotes the set of *all* natural numbers (aka. non-negative integers)
     * non-negative integers: positive integers and zero
     * $\mathbb{N} = \{0, 1, 2, 3, \ldots\}$
