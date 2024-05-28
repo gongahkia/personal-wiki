@@ -1,5 +1,5 @@
 > [!IMPORTANT] 
-> Continue from Chapter 5 Sets.
+> Continue from Chapter 6 Relations.
 
 # `Discrete mathematics`
 
@@ -849,6 +849,119 @@ Proof:
 > By definition of congruence mod $k$, $a + c \equiv b + d$ (mod $k$) so the claim is true.
 
 ## Chapter 5: Sets
+
+### Definitions
+
+1. Set: **unordered** collection of objects
+2. $\in$: denotes an object is **a member** of a set
+3. $\notin$: denotes an object is **not a member** of a set
+4. Proper subset: Subset containing *some but not all* elements of the original set
+5. Improper subset: Subset containing *all* elements of the original set and is the **same** as the original set
+6. $\subset$: denotes that a set is **a proper subset** of another set
+    * eg. $A \subset A$ (this is false)
+7. $\subseteq$: denotes that a set is (possibly) **an improper subset** of another set
+    * eg. suppose sets $A$ and $B$, then $A \subseteq B$ if $\forall x, x \in A \rightarrow x \in B$ (every element of $A$ is in $B$)
+    * eg. $\mathbb{Q} \subseteq \mathbb{R}$
+    * eg. $A \subseteq A$ (this is true)
+8. $\nsubseteq$: denotes that a set is **not a subset** of another set
+9. $\{$ $\}$: denotes a set literal declared within curly braces
+10. $\mid$: separates the variable declaration of a set object from the constraints it must satisfy, read as "such that"
+    * some variants of set-builder notation represent the separator as a $:$ colon instead
+11. $\ldots$: denotes an unspecified number of set objects
+12. $\emptyset$: denotes an empty set (also called a null set)
+13. $|$ $|$: denotes the **cardinality** of a set (number of different objects in a set)
+    * eg. $|\{a,b,3\}| = 3$
+    * eg. $|\{a,3,b,a,3\}| = 3$
+14. Antecedent: statement that logically precedes another
+15. Vacuous truth: statement that is true because the antecedent can *never* be satisfied
+16. $\cap$: **intersection** (set containing objects that are in both sets)
+    * eg. suppose $M = \{\text{egg,bread,milk}\}$ and $P = \{\text{milk,egg,flour}\}$, then $M \cap P$ is $\{\text{milk,egg}\}$
+17. Two sets are **disjoint** when they have no elements in common.
+    * eg. sets $A$ and $B$ are disjoint when $A \cap B = \emptyset$
+17. $\cup$: **union** (set containing all objects from both sets)
+    * eg. suppose $M = \{\text{egg,bread,milk}\}$ and $P = \{\text{milk,egg,flour}\}$, then $M \cup P$ is $\{\text{milk,egg,bread,flour}\}$
+18. $-$: **set difference** between two sets (set containing objects that are in the first set but not the second)
+    * eg. set $(A - B)$ contains all objects that are in set $A$ but not in $B$
+    * eg. suppose $M = \{\text{egg,bread,milk}\}$ and $P = \{\text{milk,egg,flour}\}$, then $M - P$ is $\{\text{bread}\}$
+19. $\overline{A}$: **complement** of a set (set containing objects that are not in the original set)
+    * eg. $\overline{B}$ is the complement of set $B$ and contains all objects that are not in set $B$
+20. $U$: **universal set**
+    * definition of $U$ varies based on usage within question
+21. $\times$: **cartesian product** of two sets (set containing all ordered pairs of values coming from each set)
+    * eg. $A \times B = \{(x,y) \mid x \in A \text{ and } y \in B \}$
+    * eg. suppose sets $A$ and $B$ where $A = \{a,b\}$ and $B = \{1,2\}$, then $A \times B = \{(a,1),(a,2),(b,1),(b,2)\}$
+    * eg. suppose sets $A$ and $B$ where $A = \{a,b\}$ and $B = \{1,2\}$, then $B \times A = \{(1,a),(2,a),(1,b),(2,b)\}$
+
+> [!WARNING]  
+> Note that order *matters* for cartesian product, so the above two sets are not equal!
+
+Sets can be defined by...
+
+1. **Mathematical english**
+    * eg. "The integers between 3 and 7, inclusive."
+    * eg. "Multiples of 7." (this is a set containing an infinite number of objects)
+2. **Listing** all set members
+    * eg. $\{3, 4, 5, 6, 7\}$
+    * eg. $\{\ldots, -14, -7, 0, 7, 14, 21, 28, \ldots\}$ (this too, is a set containing an infinite number of objects)
+3. **Set-builder notation** in the format of $\{$ *variable ranging over all set objects* $\mid$ *constraints objects must satisfy* $\}$
+    * eg. $\{x \in \mathbb{Z} \mid 3 \leq x \leq 7\}$
+    * eg. $\{x \in \mathbb{Z} \mid x$ is a mutliple of $7 \}$ (this is a also a set containing an infinite number of objects)
+
+### Set calculations
+
+1. Inclusion-Exclusion principle
+    * $| A \cup B | = |A| + |B| - |A \cap B|$
+2. DeMorgan's Law
+    * $\overline{A \cup B} = \overline{A} \cap \overline{B}$
+3. Product rule
+    * Suppose $|A| = n$ and $|B| = q$, then $|A \times B| = nq$.
+    * Put into mathematical english, "If you have $n$ choices for one part of a task, and $q$ choices for a second part, and options for the second part **don't depend** on the first part, you have $nq$ options for the whole task."
+
+### Application in Proofs
+
+##### Example 1
+
+> *eg.* Prove the claim "For any sets $A$, $B$ and $C$, if $A \subseteq B$ and $B \subseteq C$, then $A \subseteq C$."
+
+Proof:
+
+> Let $A$, $B$ and $C$ be sets and suppose that $A \subseteq B$ and $B \subseteq C$.
+> 
+> Let $x$ be an element of $A$. Since $A \subseteq B$ and $x \in A$, then $x \in B$. Similarly, since $x \in B$ and $B \subseteq C$, $x \in C$.
+> 
+> So for any $x$, if $x \in A$, then $x \in C$. Therefore, $A \subseteq C$ and the claim is true.
+
+##### Example 2
+
+> *eg.* Prove the claim "For any sets $A$, $B$ and $C$, if $A \times B \subseteq A \times C$ and $A \neq \emptyset$, then $B \subseteq C$."
+
+Proof:
+
+> Let $A$, $B$ and $C$ be sets and suppose $A \times B \subseteq A \times C$ and $A \neq \emptyset$.
+> 
+> Here, we need to show that $B \subseteq C$.
+> 
+> Let $x$ be an element from B where $x in B$. Since $A \neq \emptyset$, let $t$ be an element from $A$ where $t \in A$. Then $(t,x) \in A \times B$ by the definition of cartesian product.
+> 
+> Since $(t,x) \in A \times B$ and $A \times B \subseteq A \times C$, it must hold that $(t,x) \in A \times C$ by the definition of a subset. 
+> 
+> Given that $x \in C$, we have shown that if $x \in B$ then $x \in C$, so $B \subseteq C$ and the claim is true.
+
+##### Example 3
+
+> *eg.* Prove the claim "For any sets $A$ and $B$, if $(A - B) \cup (B - A) = A \cup B$ then $A \cap B = \emptyset$."
+
+Proof:
+
+> We will prove the contrapositive, so we now need to prove that if $A \cap B \neq \emptyset$, then $(A - B) \cup (B - A) \neq A \cup B$.
+> 
+> Let $A$ and $B$ be sets and suppose $A \cap B \neq \emptyset$.
+> 
+> Since $A \cap B \neq \emptyset$, let $x$ be an elemen from $A \cap B$. Since $x$ is in both $A$ and $B$, $x$ is also in $A \cup B$.
+> 
+> However, since $x$ is in both $A$ and $B$, $x$ is not in $A - B$ or $B - A$. Therefore, $x$ is not a member of $(A - B) \cup (B - A)$, meaning $(A - B) \cup (B - A) \neq A \cup B$, so the claim is true.
+
+## Chapter 6: Relations
 
 ## More on
 
