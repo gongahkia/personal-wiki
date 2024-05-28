@@ -863,31 +863,32 @@ Proof:
     * eg. suppose sets $A$ and $B$, then $A \subseteq B$ if $\forall x, x \in A \rightarrow x \in B$ (every element of $A$ is in $B$)
     * eg. $\mathbb{Q} \subseteq \mathbb{R}$
     * eg. $A \subseteq A$ (this is true)
-8. $\nsubseteq$: denotes that a set is **not a subset** of another set
-9. $\{$ $\}$: denotes a set literal declared within curly braces
-10. $\mid$: separates the variable declaration of a set object from the constraints it must satisfy, read as "such that"
+8. $\not\subset$: denotes that a set is **not a proper subset** of another set
+9. $\nsubseteq$: denotes that a set is **not an improper subset** of another set
+10. $\{$ $\}$: denotes a set literal declared within curly braces
+11. $\mid$: separates the variable declaration of a set object from the constraints it must satisfy, read as "such that"
     * some variants of set-builder notation represent the separator as a $:$ colon instead
-11. $\ldots$: denotes an unspecified number of set objects
-12. $\emptyset$: denotes an empty set (also called a null set)
-13. $|$ $|$: denotes the **cardinality** of a set (number of different objects in a set)
+12. $\ldots$: denotes an unspecified number of set objects
+13. $\emptyset$: denotes an empty set (also called a null set)
+14. $|$ $|$: denotes the **cardinality** of a set (number of different objects in a set)
     * eg. $|\{a,b,3\}| = 3$
     * eg. $|\{a,3,b,a,3\}| = 3$
-14. Antecedent: statement that logically precedes another
-15. Vacuous truth: statement that is true because the antecedent can *never* be satisfied
-16. $\cap$: **intersection** (set containing objects that are in both sets)
+15. Antecedent: statement that logically precedes another
+16. Vacuous truth: statement that is true because the antecedent can *never* be satisfied
+17. $\cap$: **intersection** (set containing objects that are in both sets)
     * eg. suppose $M = \{\text{egg,bread,milk}\}$ and $P = \{\text{milk,egg,flour}\}$, then $M \cap P$ is $\{\text{milk,egg}\}$
-17. Two sets are **disjoint** when they have no elements in common.
+18. Two sets are **disjoint** when they have no elements in common.
     * eg. sets $A$ and $B$ are disjoint when $A \cap B = \emptyset$
-17. $\cup$: **union** (set containing all objects from both sets)
+19. $\cup$: **union** (set containing all objects from both sets)
     * eg. suppose $M = \{\text{egg,bread,milk}\}$ and $P = \{\text{milk,egg,flour}\}$, then $M \cup P$ is $\{\text{milk,egg,bread,flour}\}$
-18. $-$: **set difference** between two sets (set containing objects that are in the first set but not the second)
+20. $-$: **set difference** between two sets (set containing objects that are in the first set but not the second)
     * eg. set $(A - B)$ contains all objects that are in set $A$ but not in $B$
     * eg. suppose $M = \{\text{egg,bread,milk}\}$ and $P = \{\text{milk,egg,flour}\}$, then $M - P$ is $\{\text{bread}\}$
-19. $\overline{A}$: **complement** of a set (set containing objects that are not in the original set)
+21. $\overline{A}$: **complement** of a set (set containing objects that are not in the original set)
     * eg. $\overline{B}$ is the complement of set $B$ and contains all objects that are not in set $B$
-20. $U$: **universal set**
+22. $U$: **universal set**
     * definition of $U$ varies based on usage within question
-21. $\times$: **cartesian product** of two sets (set containing all ordered pairs of values coming from each set)
+23. $\times$: **cartesian product** of two sets (set containing all ordered pairs of values coming from each set)
     * eg. $A \times B = \{(x,y) \mid x \in A \text{ and } y \in B \}$
     * eg. suppose sets $A$ and $B$ where $A = \{a,b\}$ and $B = \{1,2\}$, then $A \times B = \{(a,1),(a,2),(b,1),(b,2)\}$
     * eg. suppose sets $A$ and $B$ where $A = \{a,b\}$ and $B = \{1,2\}$, then $B \times A = \{(1,a),(2,a),(1,b),(2,b)\}$
