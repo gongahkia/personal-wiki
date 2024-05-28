@@ -18,14 +18,14 @@ Covers...
 ### Definitions
 
 1. $\mathbb{Z}$ denotes the set of *all* negative and positive integers
-    * $\mathbb{Z} = \\{ \ldots, -3, -2, -1, 0, 1, 2, 3, \ldots \\}$
+    * $\mathbb{Z} = \\{\ldots, -3, -2, -1, 0, 1, 2, 3, \ldots\\}$
 2. $\mathbb{N}$ denotes the set of *all* natural numbers (aka. non-negative integers)
     * non-negative integers: positive integers and zero
-    * $\mathbb{N} = \{0, 1, 2, 3, \ldots\}$
+    * $\mathbb{N} = \\{0, 1, 2, 3, \ldots\\}$
 3. $\mathbb{Z}^+$ or $\mathbb{N}^+$ denotes the set of *all* positive integers
     * positive integer: integer greater than zero
-    * $\mathbb{Z}^+ = \{1, 2, 3, \ldots\}$
-    * $\mathbb{N}^+ = \{1, 2, 3, \ldots\}$
+    * $\mathbb{Z}^+ = \\{1, 2, 3, \ldots\\}$
+    * $\mathbb{N}^+ = \\{1, 2, 3, \ldots\\}$
 4. $\mathbb{Q}$ denotes the set of *all* rational numbers
     * rational numbers: fractions which can be represented by $\frac{p}{q}$ where $q$ can't be zero **and** two fractions are the same number if they are the same when reduced to lowest terms
 5. $\mathbb{R}$ denotes the set of *all* real numbers
@@ -864,33 +864,33 @@ Proof:
     * eg. $\mathbb{Q} \subseteq \mathbb{R}$
     * eg. $A \subseteq A$ (this is true)
 8. $\nsubseteq$: denotes that a set is **not a subset** of another set
-9. $\{$ $\}$: denotes a set literal declared within curly braces
+9. $\\{$ $\\}$: denotes a set literal declared within curly braces
 10. $\mid$: separates the variable declaration of a set object from the constraints it must satisfy, read as "such that"
     * some variants of set-builder notation represent the separator as a $:$ colon instead
 11. $\ldots$: denotes an unspecified number of set objects
 12. $\emptyset$: denotes an empty set (also called a null set)
 13. $|$ $|$: denotes the **cardinality** of a set (number of different objects in a set)
-    * eg. $|\{a,b,3\}| = 3$
-    * eg. $|\{a,3,b,a,3\}| = 3$
+    * eg. $|\\{a,b,3\\}| = 3$
+    * eg. $|\\{a,3,b,a,3\\}| = 3$
 14. Antecedent: statement that logically precedes another
 15. Vacuous truth: statement that is true because the antecedent can *never* be satisfied
 16. $\cap$: **intersection** (set containing objects that are in both sets)
-    * eg. suppose $M = \{\text{egg,bread,milk}\}$ and $P = \{\text{milk,egg,flour}\}$, then $M \cap P$ is $\{\text{milk,egg}\}$
+    * eg. suppose $M = \\{\text{egg,bread,milk}\\}$ and $P = \\{\text{milk,egg,flour}\\}$, then $M \cap P$ is $\\{\text{milk,egg}\\}$
 17. Two sets are **disjoint** when they have no elements in common.
     * eg. sets $A$ and $B$ are disjoint when $A \cap B = \emptyset$
 17. $\cup$: **union** (set containing all objects from both sets)
-    * eg. suppose $M = \{\text{egg,bread,milk}\}$ and $P = \{\text{milk,egg,flour}\}$, then $M \cup P$ is $\{\text{milk,egg,bread,flour}\}$
+    * eg. suppose $M = \\{\text{egg,bread,milk}\\}$ and $P = \\{\text{milk,egg,flour}\\}$, then $M \cup P$ is $\\{\text{milk,egg,bread,flour}\\}$
 18. $-$: **set difference** between two sets (set containing objects that are in the first set but not the second)
     * eg. set $(A - B)$ contains all objects that are in set $A$ but not in $B$
-    * eg. suppose $M = \{\text{egg,bread,milk}\}$ and $P = \{\text{milk,egg,flour}\}$, then $M - P$ is $\{\text{bread}\}$
+    * eg. suppose $M = \\{\text{egg,bread,milk}\\}$ and $P = \\{\text{milk,egg,flour}\\}$, then $M - P$ is $\\{\text{bread}\\}$
 19. $\overline{A}$: **complement** of a set (set containing objects that are not in the original set)
     * eg. $\overline{B}$ is the complement of set $B$ and contains all objects that are not in set $B$
 20. $U$: **universal set**
     * definition of $U$ varies based on usage within question
 21. $\times$: **cartesian product** of two sets (set containing all ordered pairs of values coming from each set)
-    * eg. $A \times B = \{(x,y) \mid x \in A \text{ and } y \in B \}$
-    * eg. suppose sets $A$ and $B$ where $A = \{a,b\}$ and $B = \{1,2\}$, then $A \times B = \{(a,1),(a,2),(b,1),(b,2)\}$
-    * eg. suppose sets $A$ and $B$ where $A = \{a,b\}$ and $B = \{1,2\}$, then $B \times A = \{(1,a),(2,a),(1,b),(2,b)\}$
+    * eg. $A \times B = \\{(x,y) \mid x \in A \text{ and } y \in B \\}$
+    * eg. suppose sets $A$ and $B$ where $A = \\{a,b\\}$ and $B = \\{1,2\\}$, then $A \times B = \\{(a,1),(a,2),(b,1),(b,2)\\}$
+    * eg. suppose sets $A$ and $B$ where $A = \\{a,b\\}$ and $B = \\{1,2\\}$, then $B \times A = \\{(1,a),(2,a),(1,b),(2,b)\\}$
 
 > [!WARNING]  
 > Note that order *matters* for cartesian product, so the above two sets are not equal!
@@ -901,11 +901,11 @@ Sets can be defined by...
     * eg. "The integers between 3 and 7, inclusive."
     * eg. "Multiples of 7." (this is a set containing an infinite number of objects)
 2. **Listing** all set members
-    * eg. $\{3, 4, 5, 6, 7\}$
-    * eg. $\{\ldots, -14, -7, 0, 7, 14, 21, 28, \ldots\}$ (this too, is a set containing an infinite number of objects)
-3. **Set-builder notation** in the format of $\{$ *variable ranging over all set objects* $\mid$ *constraints objects must satisfy* $\}$
-    * eg. $\{x \in \mathbb{Z} \mid 3 \leq x \leq 7\}$
-    * eg. $\{x \in \mathbb{Z} \mid x$ is a mutliple of $7 \}$ (this is a also a set containing an infinite number of objects)
+    * eg. $\\{3, 4, 5, 6, 7\\}$
+    * eg. $\\{\ldots, -14, -7, 0, 7, 14, 21, 28, \ldots\\}$ (this too, is a set containing an infinite number of objects)
+3. **Set-builder notation** in the format of $\\{$ *variable ranging over all set objects* $\mid$ *constraints objects must satisfy* $\\}$
+    * eg. $\\{x \in \mathbb{Z} \mid 3 \leq x \leq 7\\}$
+    * eg. $\\{x \in \mathbb{Z} \mid x$ is a mutliple of $7 \\}$ (this is a also a set containing an infinite number of objects)
 
 ### Set calculations
 
