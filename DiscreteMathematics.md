@@ -963,6 +963,25 @@ Proof:
 
 ## Chapter 6: Relations
 
+### Definitions
+
+1. Relations: relationships between pairs of objects
+2. Reflexive: **every element** is related to itself
+    * eg. relation $R$ on set $A$ is reflexive where $\forall a \in A, (a,a) \in R$
+3. Irreflexive: **no element** is related to itself
+    * eg. relation $R$ on set $A$ is irreflexive where $\forall a \in A, (a,a) \notin R$
+4. Neither reflexive nor irreflexive: **some elements** are related to themselves but **others** are not
+    * eg. relation $R$ on set $A$ is neither reflexive nor irreflexive where $\exists a \in A$ such that $(a,a) \in R$ and $\exists b \in A$ such that $(b,b) \notin R$
+5. Symmetric: where an element is related to another, **the reverse** is also true
+    * eg. relation $R$ on set $A$ is symmetric where $\forall a,b \in A, (a,b) \in R$ implies $(b,a) \in R$
+6. Antisymmetric: where two elements are related in both directions, they are the **same element**
+    * eg. relation $R$ on set $A$ is antisymmetric where $\forall a,b \in A, (a,b) \in R$ and $(b,a) \in R$ implies $a = b$
+7. Transistive: where an element is related to another element which is related to a third element, the **first element is related to the third**
+    * eg. relation $R$ on set $A$ is transistive where $\forall a,b,c \in A, (a,b) \in R$ and $(b,c) \in R$ implies $(a,c) \in R$
+
+> ![NOTE] 
+> Continue adding notes here.
+
 ## More on
 
 * [Building Blocks for Theoretical Computer Science](https://mfleck.cs.illinois.edu/building-blocks/index-sp2020.html) by Margaret M Fleck
