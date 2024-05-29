@@ -1,5 +1,5 @@
 > [!IMPORTANT] 
-> Continue from Chapter 6 Relations.
+> Continue from Chapter 9 Graphs.
 
 # `Discrete mathematics`
 
@@ -991,10 +991,19 @@ Proof:
 2. Domain: set of all possible values accepted as function arguments
 3. Co-domain: set of all possible return values based on function definition
 4. Type signature: **Combination** of a function's domain and co-domain
-5. Onto (map, surjective): every element of a function's co-domain is **mapped** to *at least one* element of its domain
-6. Function composition: **combining** two functions to form a new function
-7. $\circ$: denotes the **second function** having its *co-domain mapped onto the domain* of the **first function** via function composition
+5. Onto (surjective, map): every element of a function's co-domain is **mapped** to *at least one* element of its domain
+6. One-to-one (injective): every element of a function's domain **maps** to *one unique* element of its co-domain
+7. Function composition: **combining** two functions to form a new function
+8. $\circ$: denotes the **second function** having its *co-domain mapped onto the domain* of the **first function** via function composition
     * eg. suppose the functions $f : A \to B$ and $g : B \to C$, then $g \circ f = (g \circ f)(x) = g(f(x))$ which accepts argument $A$ and returns $C$
+9. Bijective (bijection, one-to-one correspondence): an inverse function
+    * requires the original function to be **both** *onto* and *one-to-one*
+10. Pigeonhole principle: suppose $n$ objects with $k$ labels assigned to these objects, where $n \gt k$, **two object will get the same label**
+11. Permutation: number of ways to **arrange** objects in a particular order
+12. Suppose set $S$ containing $n$ objects (all unique)
+    * $n!$ permutations of these objects
+    * $\frac{n!}{(n-k)!}$ ways to choose $k$ **ordered** elements from set $S$
+    * $\frac{n!}{k!(n-k)!}$ ways to choose $k$ **unordered** elements from set $S$
 
 > [!IMPORTANT]
 > In function composition, examine the *shorthand notation* to describe a function rather than the mathematical english used for which function is applied first.
@@ -1014,6 +1023,18 @@ Proof:
 > For some element $x$ in $C$, since $g$ is onto, there is an element $z$ in $B$ such that $g(z) = x$. Similarly, since $f$ is onto, there is an element $y$ in $A$ such that $f(y) - z$.
 > 
 > Substituting the value $f(y) = z$ into the equation $g(z) = x$, we then get $g(f(y)) = x$ which simplifies to $(g \circ f)(y) = x$. So $y$ is the element of $A$ and the claim is true.
+
+##### Example 2
+
+> *eg.* Prove the claim "Among the first $100$ powers of $17$, there are two distinct powers which differ by a multiple of $57$."
+
+Proof:
+
+> The first $100$ powers of $17$ are $17^1, 17^2, \ldots, 17^{100}$. Considering their remainders $\text{mod }57$ as $r_1, r_2, \ldots, r_{100}$, since there are only $57$ possible remainders $\text{mod }57$, two of the numbers $r_1, r_2, \ldots, r_{100}$ must be equal by the pigeonhole principle. 
+> 
+> Supposing that $r_j$ and $r_k$ are equal, then $17^j$ and $17_k$ have the same remainder $\text{mod }57$, so $17^j$ and $17_k$ differ by a multiple of $57$ and the claim is true.
+
+## Chapter 9: Graphs
 
 ## More on
 
