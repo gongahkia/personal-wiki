@@ -176,6 +176,7 @@ $a^2 + b^2 = c^2$ % pythogarous theorom
 
 ## More on
 
+* [LaTeX math cheatsheet for undergraduates](https://tug.ctan.org/info/undergradmath/undergradmath.pdf)
 * [LaTeX for beginners](https://youtu.be/p5Yr0dkrKG8?si=rJmg6cck1Op1-ALm)
 * [LaTeX for students](https://youtu.be/lgiCpA4zzGU?si=RB3nN03LF328nROK)
 * [Inkscape diagrams within LaTeX documents](https://inkscape.org/learn/tutorials/latex/)

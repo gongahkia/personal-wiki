@@ -978,9 +978,10 @@ Proof:
     * eg. relation $R$ on set $A$ is antisymmetric where $\forall a,b \in A, (a,b) \in R$ and $(b,a) \in R$ implies $a = b$
 7. Transistive: where an element is related to another element which is related to a third element, the **first element is related to the third**
     * eg. relation $R$ on set $A$ is transistive where $\forall a,b,c \in A, (a,b) \in R$ and $(b,c) \in R$ implies $(a,c) \in R$
-
-> ![NOTE] 
-> Continue adding notes here.
+8. Partial order: relation that is *reflexive*, *antisymmetric* and *transitive*
+9. Linear order (total order): partial order where each pair of elements are *comparable*
+10. Strict partial order: relation that is *irreflexive*, *antisymmetric* and *transitive*
+11. Equivalence relation: relation that is *reflexive*, *symmetric* and *transitive*
 
 ## More on
 
