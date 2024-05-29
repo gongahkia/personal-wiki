@@ -991,7 +991,7 @@ Proof:
 2. Domain: set of all possible values accepted as function arguments
 3. Co-domain: set of all possible return values based on function definition
 4. Type signature: **Combination** of a function's domain and co-domain
-5. Onto (map, surjective): every element of a function's co-domain is mapped to *at least one* element of its domain
+5. Onto (map, surjective): every element of a function's co-domain is **mapped** to *at least one* element of its domain
 6. Function composition: **combining** two functions to form a new function
 7. $\circ$: denotes the **second function** having its *co-domain mapped onto the domain* of the **first function** via function composition
     * eg. suppose the functions $f : A \to B$ and $g : B \to C$, then $g \circ f = (g \circ f)(x) = g(f(x))$ which accepts argument $A$ and returns $C$
@@ -1009,7 +1009,9 @@ Proof:
 
 > Let $A$, $B$ and $C$ be sets and $f : A \to B$ and $g : B \to C$ be functions. Also suppose that $f$ and $g$ are onto.
 > 
-> We want to show that $g \circ f$ is onto, which also means that for any element $x$ in $C$, there is an element $y$ in $A$ such that $(g \circ f)(y) = x$. For some element $x$ in $C$, since $g$ is onto, there is an element $z$ in $B$ such that $g(z) = x$. Similarly, since $f$ is onto, there is an element $y$ in $A$ such that $f(y) - z$.
+> We want to show that $g \circ f$ is onto, which also means that for any element $x$ in $C$, there is an element $y$ in $A$ such that $(g \circ f)(y) = x$. 
+> 
+> For some element $x$ in $C$, since $g$ is onto, there is an element $z$ in $B$ such that $g(z) = x$. Similarly, since $f$ is onto, there is an element $y$ in $A$ such that $f(y) - z$.
 > 
 > Substituting the value $f(y) = z$ into the equation $g(z) = x$, we then get $g(f(y)) = x$ which simplifies to $(g \circ f)(y) = x$. So $y$ is the element of $A$ and the claim is true.
 
