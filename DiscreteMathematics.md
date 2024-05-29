@@ -917,7 +917,7 @@ Sets can be defined by...
     * Suppose $|A| = n$ and $|B| = q$, then $|A \times B| = nq$.
     * Put into mathematical english, "If you have $n$ choices for one part of a task, and $q$ choices for a second part, and options for the second part **don't depend** on the first part, you have $nq$ options for the whole task."
 
-### Application in Proofs
+### Applications in Proofs
 
 ##### Example 1
 
@@ -982,6 +982,36 @@ Proof:
 9. Linear order (total order): partial order where each pair of elements are *comparable*
 10. Strict partial order: relation that is *irreflexive*, *antisymmetric* and *transitive*
 11. Equivalence relation: relation that is *reflexive*, *symmetric* and *transitive*
+
+## Chapter 7 & 8: Functions, Onto and One-to-One
+
+### Definitions
+
+1. Function: provides one output value for each input value
+2. Domain: set of all possible values accepted as function arguments
+3. Co-domain: set of all possible return values based on function definition
+4. Type signature: **Combination** of a function's domain and co-domain
+5. Onto (map, surjective): every element of a function's co-domain is mapped to *at least one* element of its domain
+6. Function composition: **combining** two functions to form a new function
+7. $\circ$: denotes the **second function** having its *co-domain mapped onto the domain* of the **first function** via function composition
+    * eg. suppose the functions $f : A \to B$ and $g : B \to C$, then $g \circ f = (g \circ f)(x) = g(f(x))$ which accepts argument $A$ and returns $C$
+
+> [!IMPORTANT]
+> In function composition, examine the *shorthand notation* to describe a function rather than the mathematical english used for which function is applied first.
+
+### Applications in Proofs
+
+##### Example 1
+
+> *eg.* Prove the claim "For any sets $A$, $B$ and $C$ and for any functions $f : A \to B$ and $g : B \to C$, if $f$ and $g$ are onto, then $g \circ f$ is also onto."
+
+Proof:
+
+> Let $A$, $B$ and $C$ be sets and $f : A \to B$ and $g : B \to C$ be functions. Also suppose that $f$ and $g$ are onto.
+> 
+> We want to show that $g \circ f$ is onto, which also means that for any element $x$ in $C$, there is an element $y$ in $A$ such that $(g \circ f)(y) = x$. For some element $x$ in $C$, since $g$ is onto, there is an element $z$ in $B$ such that $g(z) = x$. Similarly, since $f$ is onto, there is an element $y$ in $A$ such that $f(y) - z$.
+> 
+> Substituting the value $f(y) = z$ into the equation $g(z) = x$, we then get $g(f(y)) = x$ which simplifies to $(g \circ f)(y) = x$. So $y$ is the element of $A$ and the claim is true.
 
 ## More on
 
