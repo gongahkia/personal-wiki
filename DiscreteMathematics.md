@@ -1,5 +1,5 @@
 > [!IMPORTANT] 
-> Continue from Chapter 9 Graphs.
+> Continue from Chapter 10 2-way Bounding.
 
 # `Discrete mathematics`
 
@@ -1035,6 +1035,133 @@ Proof:
 > Supposing that $r_j$ and $r_k$ are equal, then $17^j$ and $17_k$ have the same remainder $\text{mod }57$, so $17^j$ and $17_k$ differ by a multiple of $57$ and the claim is true.
 
 ## Chapter 9: Graphs
+
+> [!NOTE]  
+> Moving forward, $V$ represents a set of all nodes and $E$ represents a set of all edges in a graph.
+
+### Defintions
+
+1. Graph: object consisting of *nodes* and *edges*
+    * Graph notation in the format of $(V,E)$
+2. Node: individual **point** on a graph
+3. Edge: **undirected** line *connecting* two nodes
+    * Edges are undirected unless explicitly stated
+    * Edge notation in the format of $xy$ (or $\\{x,y\\}$), which represents an edge connecting the nodes $x$ and $y$
+4. Neighbours: two adjacent nodes connected by an edge 
+5. Directed: an edge can be traversed in *one direction*
+6. Undirected: an edge can be traversed in *both directions*
+7. Multiple edges: *parallel edges* between the same two nodes
+8. Loop edge: an edge with the *same node* as both its endpoints
+9. Simple graph: graph with neither **multiple edges** nor **loop edges**
+    * Graphs are simple graphs unless explicitly stated
+
+```mermaid
+graph LR
+    A((A)) <--"Edge"--> B((B))
+    A <--"Multiple edge A"--> C((C))
+    A <--"Multiple edge B"--> C((C))
+    B <--"Edge"--> C((C))
+    C <--"Edge"--> D((D))
+    D <--"Loop edge"--> D
+```
+
+> [!WARNING]
+> The above is *not* a simple graph since it contains both multiple edges and loop edges.
+
+10. Degree: *number of edges* which have a specified node as an **endpoint**
+    * Loop edges count twice
+11. $deg()$: specifies the degree of a given node
+    * eg. referring to the graph below, $deg(A) = 2$, $deg(B) = 6$, $deg(C) = 3$, $deg(D) = 0$, $deg(E) = 4$, $deg(F) = 3$
+
+```mermaid
+graph LR
+    A((A)) <--> B((B))
+    A((A)) <--> E((E))
+    B <--> B
+    B <--> E
+    B <--> C((C))
+    B <--> F((F))
+    C <--> E
+    C <--> F
+    E <--> F
+    D((D))
+```
+
+12. Handshaking theorem: $\sum_{v \in V} deg(v) = 2|E|$ where $v$ is an individual node 
+13. Complete graph: graph where *every node* is **connected** to *every other node*
+    * A complete graph will have $\sum_{k=1}^{|V|}(|V|-k) = \sum_{k=0}^{|V|-1}k = \frac{|V|(|V|-1)}{2}$ edges
+
+```mermaid
+graph TD
+    A((A)) <--> B((B))
+    A <--> C((C))
+    A <--> D((D))
+    A <--> E((E))
+    B <--> C
+    B <--> D
+    B <--> E
+    C <--> D
+    C <--> E
+    D <--> E
+```
+
+14. Cycle graph: graph where *every node* has exactly 2 neighbours, forming a **closed loop**
+    * A cycle graph has $|V|$ nodes and $|V|$ edges
+15. Wheel graph: cycle graph with an added **central hub node** that is connected to *every other node*
+    * A wheel graph has $|V|$ nodes and $(|V|-1) \times 2$ edges
+16. Graph isomorphism: logical equivalence in graphs
+    * To determine if two graphs are isomorphic...
+        1. graphs must have **same** number of nodes and edges
+        2. for any given node degree $k$, the graphs must have the same number of nodes with degree $k$
+17. Subgraph: smaller graph formed from a *subset of nodes and edges* of a larger graph
+18. Walk: traversal of a graph from a start node to an end node, represented either by a finite sequence of nodes or a finite sequence of edges
+19. Length of a walk: number of edges in a walk's sequence
+20. Closed walk: walk with the same start and end node
+21. Open walk: walk with different start and end nodes
+20. Path: walk where no node is traversed more than once
+21. Cycle: closed walk with a minimum length of three, in which no node is traversed more than once (aside from the start and end node)
+22. Acyclic: graph that contains no cycles
+23. Connected: graph where there is a walk between *every pair* of nodes
+24. Disconnected: graph where there is **not** a walk between *every pair* of nodes
+25. Cut edge: edge, which when removed converts the connected graph into a disconnected graph
+26. Distance: length of *path* connecting two nodes
+    * eg. distance $d(a,b)$ between nodes $a$ and $b$ is the length of the shortest path from $a$ to $b$
+27. Diameter: distance between *furthest pair* of nodes
+28. Euler circuit: closed walk that uses each edge **exactly once**
+    * eg. referring to the graph below, a euler circuit would be $ac, cd, df ,fe ,ec ,cf ,fb, ba$
+
+```mermaid
+graph TD
+    A((A)) <--> B((B))
+    A <--> C((C))
+    C <--> E((E))
+    C <--> F((F))
+    C <--> D((D))
+    D <--> F
+    E <--> F
+    B <--> F
+```
+
+29. Bipartite: graph of $(V,E)$ where $V$ can be split into two non-overlapping subsets $V_1$ and $V_2$ such that *every edge* of the graph connects an element of $V_1$ with $V_2$, and *no edge* connects two nodes from the same part of the division
+    * eg. referring to the cube graph below, it is bipartite since assigning nodes to the $R$ and $G$ groups reveals that there are no edges connecting an $R$ node to a $R$ node, or a $G$ node to a $G$ node
+
+```mermaid
+graph TD
+    A((G)) <--> B((R))
+    A <--> C((R))
+    B <--> D((G))
+    C <--> D
+    A <--> E((R))
+    B <--> F((G))
+    C <--> G((G))
+    D <--> H((R))
+    E <--> F
+    F <--> H
+    E <--> G
+    G <--> H
+```
+
+## Chapter 10: 2-way Bounding
 
 ## More on
 
