@@ -1039,7 +1039,7 @@ Proof:
 > [!NOTE]  
 > Moving forward, $V$ represents a set of all nodes and $E$ represents a set of all edges in a graph.
 
-### Defintions
+### Definitions
 
 1. Graph: object consisting of *nodes* and *edges*
     * Graph notation in the format of $(V,E)$
