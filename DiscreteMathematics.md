@@ -1195,7 +1195,7 @@ Proof:
 
 > Let $x$ be an element of $A$, then by definition of $A$, $x = 15s + 9t$ for some integers $s$ and $t$. Simplifying the expression via factorization, $x = 3(5s + 3t)$, and since $5s + 3t$ is also an integer, $x$ is a multiple of $3$.
 >  
-> Next, notice that $(\text{*}) 15 \cdot (-1) + 9 \cdot 2 = 3$. By extension, supposing $x$ is a multiple of $3$ as shown above, then $x = 3n$ for some integer $n$. Substituting $(\text{*})$ into the equation, we get $x = (15 \cdot (-1) + 9 \cdot 2)n$, which simplifies to $x = 15 \cdot (-n) + 9 \cdot (2n)$. Therefore, $x$ is an element of $A$.
+> Next, notice that $15 \cdot (-1) + 9 \cdot 2 = 3$. By extension, supposing $x$ is a multiple of $3$ as shown above, then $x = 3n$ for some integer $n$. As such, $x = (15 \cdot (-1) + 9 \cdot 2)n$, which simplifies to $x = 15 \cdot (-n) + 9 \cdot (2n)$. Therefore, $x$ is an element of $A$.
 >  
 > Since $A \subseteq \\{ \text{multiples of 3} \\}$ and $\\{\text{multiples of 3}\\} \subseteq A$, we can conclude that $A = \\{\text{multiples of 3}\\}$.
 
