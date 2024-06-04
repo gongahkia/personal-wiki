@@ -1,5 +1,5 @@
 > [!IMPORTANT] 
-> Continue from Chapter 10 2-way Bounding.
+> Continue from Chapter 11 Induction
 
 # `Discrete mathematics`
 
@@ -1162,6 +1162,42 @@ graph TD
 ```
 
 ## Chapter 10: 2-way Bounding
+
+### Definitions
+
+1. 2-way bounding: analysis and proofs regarding properties on discrete quantities using a **lower** and **upper** bound, used to find limits and prove equality
+2. Tight bound: situation in 2-way bounding where the lower and upper bound are *exactly the same*
+3. Pigeonhole principle: suppose $m$ containers to fit $n$ items in, where $n \gt m$, there must be *at least* one container with *more than* one item
+4. Graph coloring: assign colors to graph nodes where *no two* neighbouring nodes share the same color, using the **minimum** number of colors possible
+5. Chromatic number: **minimum** number of colors required for a proper coloring of a graph
+
+### Applications in Proofs
+
+##### Example 1
+
+> *eg.* Prove the claim "Suppose $T$ is an equilateral triangle with sides of length two units, we can place a maximum of four points in the triangle such that every pair of points are more than $1$ unit apart."
+
+Proof:
+
+> To show the maximum is at least four, notice that we can place three points at the corners of the triangle and one point in the centre. The points at the corners are two units apart.
+>  
+> To see that the point in the center is more than one unit from any corner, notice that the center, the corner and the midpoint of the side form a right triangle. The hypotenuse of this triangle connects the center point to the corner point. Since one leg of the triangle has length $1$, the hypotenuse must have a length greater than $1$.
+>  
+> Next, to show that the maximum number of points cannot be greater than four, divide up the triangle into four smaller equilateral triangles.
+>  
+> Suppose we then tried to place five or more points within the big triangle, since there are only four small triangles, by the piegonhole principle, some small triangle would have to then contain at least two points. Since the small triangle has a specified side length of $1$, these points cannot then be separated by more than one unit.
+
+##### Example 2
+
+> *eg.* Prove the claim "Let $A = \\{ 15p + 9q \mid p,q \in \mathbb{Z} \\}$ then $A = \\{ \text{multiples of 3} \\}$."
+
+Proof:
+
+> Let $x$ be an element of $A$, then by definition of $A$, $x = 15s + 9t$ for some integers $s$ and $t$. Simplifying the expression via factorization, $x = 3(5s + 3t)$, and since $5s + 3t$ is also an integer, $x$ is a multiple of $3$.
+>  
+> Next, notice that $(*) 15 \cdot (-1) + 9 \cdot 2 = 3$. By extension, supposing $x$ is a multiple of $3$ as shown above, then $x = 3n$ for some integer $n$. Substituting $(*)$ into the equation, we get $x = (15 \cdot (-1) + 9 \cdot 2)n$, which simplifies to $x = 15 \cdot (-n) + 9 \cdot (2n)$. Therefore, $x$ is an element of $A$.
+>  
+> Since $A \subseteq \\{ \text{multiples of 3} \\}$ and $\\{\text{multiples of 3}\\} \subseteq A$, we can conclude that $A = \\{\text{multiples of 3}\\}$.
 
 ## More on
 
