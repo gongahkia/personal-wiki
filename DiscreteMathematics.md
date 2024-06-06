@@ -1235,7 +1235,7 @@ Suppose that $P(n)$ is true for $n = 1,2,3,\ldots,k-1$. We therefore need to sho
 
 Proof:
 
-> Here, $P(n)$ is the claim "$n^3 - n$ is divisible by $3$." Following the template above, our proof is as follows.
+> Here, $P(n)$ is the claim "natural number $n$ where $n^3 - n$ is divisible by $3$." Following the template above, our proof is as follows.
 >
 > 1. Claim: $P(n)$ is true for all natural numbers $n$.
 > 2. Proof: By induction on $n$.
