@@ -1,5 +1,5 @@
 > [!IMPORTANT] 
-> Continue from Chapter 12 Recursive Definition
+> Continue from Chapter 13 Trees
 
 # `Discrete mathematics`
 
@@ -1256,6 +1256,32 @@ Proof:
 > 4. Induction: Suppose we have to show how to construct $postage$ where $12 \lt postage \lt k-1$, then we need to show how to construct $k$. Above, we've already proved the base case up to $15$, so we'll move forward assuming $k \geq 16$. Since $k \geq 16$, $k-4 \geq 12$. By the inductive hypothesis, we can construct $postage$ for $k-4$ using $m$ $4$'s and $n$ $5$'s, for some natural numbers $m$ and $n$. As such, $k-4=4m+5n$, which simplifies to $k=4(m+1)+5n$. Therefore, we can construct $k$ using $m+1$ $4$'s and $n$ $5$'s, proving the claim by way of induction.
   
 ## Chapter 12: Recursive Definition
+
+### Definitions
+
+1. Recursive definition: defining each term of a sequence in terms of previous terms of the same type, comprising...
+    * Base case(s)
+    * Recursive formula
+2. Closed form: an explicit formula that expresses the $n$-th term of a sequence in terms of $n$, derived by substituting the recursive definition into itself
+
+### Applications in Proofs
+
+Recursive definitions are suited to proofs by way of induction.
+
+##### Example 1
+
+> *eg.* Prove the claim "For any $n \geq 0$, $F_{3n}$ is even."
+
+Proof:
+
+> Checking some concrete values, we see that $F_0 = 3$, $F_3 = 2$, $F_6 = 8$, $F_9 = 34$. The claim looks correct, so we proceed to build an inductive proof. Here, $P(n)$ is the claim that "for natural number $n$ where $n \geq 0$, $F_{3n}$ is even." Following the template for mathematical induction, our proof is as follows.
+>
+> 1. Claim: $P(n)$ is true for all natural numbers $n$.
+> 2. Proof: By induction on $n$.
+> 3. Base: $F_0 = 0$, which is even.
+> 4. Induction: Suppose that $F_{3n}$ is even for $n = 0, 1, 2, \ldots, k$. So we need to show that $F_{3k}$, and by extension, $F_{3(k+1)}$ is even. Simplifying the expression, $F_{3(k+1)} = F_{3k+3} = F_{3k+2} + F_{3k+1}$. However, since $F_{3k+2} = F_{3k+1} + F_{3k}$, substituting this definition into the above equation returns $F_{3(k+1)} = (F_{3k+1} + F_{3k}) + F_{3k + 1} = 2F_{3k+1} + F_{3k}$. As such, by the inductive hypothesis that $F_{3k}$ is even, $2F_{3k+1}$ is even since it is $2$ times an integer. As such, the sum of the two is also even, and $F_{3(k+1)}$ is even, proving the claim by way of induction.  
+
+## Chapter 13: Trees
 
 ## More on
 
