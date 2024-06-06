@@ -1,5 +1,5 @@
 > [!IMPORTANT] 
-> Continue from Chapter 11 Induction
+> Continue from Chapter 12 Recursive Definition
 
 # `Discrete mathematics`
 
@@ -1198,6 +1198,64 @@ Proof:
 > Next, notice that $15 \cdot (-1) + 9 \cdot 2 = 3$. By extension, supposing $x$ is a multiple of $3$ as shown above, then $x = 3n$ for some integer $n$. As such, $x = (15 \cdot (-1) + 9 \cdot 2)n$, which simplifies to $x = 15 \cdot (-n) + 9 \cdot (2n)$. Therefore, $x$ is an element of $A$.
 >  
 > Since $A \subseteq \\{ \text{multiples of 3} \\}$ and $\\{\text{multiples of 3}\\} \subseteq A$, we can conclude that $A = \\{\text{multiples of 3}\\}$.
+
+## Chapter 11: Induction
+
+Mathematical induction provides a template for constructing direct proofs, legitimised by...
+
+* [Domino theory](https://www.math.hkbu.edu.hk/stuarea/revision/section1.pdf)
+* [Recursion fairy](https://otfried.org/courses/cs206/notes/recursion.pdf)
+* [Property of integers](http://www.cs.engr.uky.edu/~cheng/cs275/Notes/RPG-4-Int1.pdf)
+
+### An outline of mathematical induction
+
+Induction generally follows the template below.
+
+##### 1. Claim
+
+$P(n)$ is true for all positive integers $n$
+
+##### 2. Proof
+
+We use mathematical induction on $n$.
+
+##### 3. Base
+
+We need to show that $P(1)$ is true.
+
+##### 4. Induction
+
+Suppose that $P(n)$ is true for $n = 1,2,3,\ldots,k-1$. We therefore need to show that $P(k)$ is true.
+
+### Applications in Proofs
+
+##### Example 1
+
+> *eg.* Prove the claim "For any natural number $n$, $n^3 - n$ is divisible by $3$."
+
+Proof:
+
+> Here, $P(n)$ is the claim "$n^3 - n$ is divisible by $3$." Following the template above, our proof is as follows.
+>
+> 1. Claim: $P(n)$ is true for all natural numbers $n$.
+> 2. Proof: By induction on $n$.
+> 3. Base: Let $n=0$, where we want to prove that $n^3 - n$ is divisible by $3$ when $n=0$. Simplifying the expression, $n^3 - n = 0^3 - 0 = 0$ which is divisible by $3$.
+> 4. Induction: Suppose that $n^3 - n$ is divisible by $3$, for $n=0,1,2,\ldots,k$. Therefore, we need to show that $(k+1)^3 - (k+1)$ is divisible by $3$. Simplifying the expression, $(k+1)^3 - (k+1) = (k^3 + 3k^2 + 3k + 1) - (k + 1) = (k^3-k)+3(k^2+k)$. From the inductive hypothesis, $(k^3 - k)$ is divisible by $3$. Similarly, $3(k^2+k)$ is divisible by $3$ since $(k^2+k)$ is an integer. Therefore, the sum of $(k^3-k)$ and $(k^2+k)$ is divisible by $3$, proving the claim by way of induction.
+
+##### Example 2
+
+> *eg.* Prove the claim "Every amount of postage that is at least $12$ cents can be made from $4$-cent and $5$-cent stamps."
+
+Proof:
+
+> Here, $P(postage)$ is the claim "postage that is at least $12$ cents can be made from $4$-cent and $5$-cent stamps." Following the template above, our proof is as follows.
+>  
+> 1. Claim: $P(postage)$ is true for all natural numbers $postage$.
+> 2. Proof: By induction on $postage$.
+> 3. Base: If $postage$ is $12$, we can make it with three $4$'s. If $postage$ is $13$, we can make it with two $4$'s and one $5$. If $postage$ is $14$, it is made from one $4$ and two $5$'s. For $15$, $postage$ is comprised of three $5$'s.
+> 4. Induction: Suppose we have to show how to construct $postage$ where $12 \lt postage \lt k-1$, then we need to show how to construct $k$. Above, we've already proved the base case up to $15$, so we'll move forward assuming $k \geq 16$. Since $k \geq 16$, $k-4 \geq 12$. By the inductive hypothesis, we can construct $postage$ for $k-4$ using $m$ $4$'s and $n$ $5$'s, for some natural numbers $m$ and $n$. As such, $k-4=4m+5n$, which simplifies to $k=4(m+1)+5n$. Therefore, we can construct $k$ using $m+1$ $4$'s and $n$ $5$'s, proving the claim by way of induction.
+  
+## Chapter 12: Recursive Definition
 
 ## More on
 
