@@ -1,6 +1,3 @@
-> [!IMPORTANT] 
-> Continue from Chapter 13 Trees
-
 # `Discrete mathematics`
 
 **Read** and **write** mathematical proofs and apply them in Computer Science.
@@ -1049,6 +1046,7 @@ Proof:
     * Edge notation in the format of $xy$ (or $\\{x,y\\}$), which represents an edge connecting the nodes $x$ and $y$
 4. Neighbours: two adjacent nodes connected by an edge 
 5. Directed: an edge can be traversed in *one direction*
+    * [State diagrams](https://mfleck.cs.illinois.edu/building-blocks/version-1.3/state-diagrams.pdf) are one application of directed graphs
 6. Undirected: an edge can be traversed in *both directions*
 7. Multiple edges: *parallel edges* between the same two nodes
 8. Loop edge: an edge with the *same node* as both its endpoints
