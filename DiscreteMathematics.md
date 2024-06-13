@@ -1281,7 +1281,24 @@ Proof:
 > 3. Base: $F_0 = 0$, which is even.
 > 4. Induction: Suppose that $F_{3n}$ is even for $n = 0, 1, 2, \ldots, k$. So we need to show that $F_{3k}$, and by extension, $F_{3(k+1)}$ is even. Simplifying the expression, $F_{3(k+1)} = F_{3k+3} = F_{3k+2} + F_{3k+1}$. However, since $F_{3k+2} = F_{3k+1} + F_{3k}$, substituting this definition into the above equation returns $F_{3(k+1)} = (F_{3k+1} + F_{3k}) + F_{3k + 1} = 2F_{3k+1} + F_{3k}$. As such, by the inductive hypothesis that $F_{3k}$ is even, $2F_{3k+1}$ is even since it is $2$ times an integer. As such, the sum of the two is also even, and $F_{3(k+1)}$ is even, proving the claim by way of induction.  
 
-## Chapter 13: Trees
+## Chapter 17: Proof by Contradiction
+
+### Definitions
+
+1. Proof by contradiction: proving a claim $P$ is true by showing that its negation $\neg P$ leads to a contradiction
+2. Contradiction: statement that is well-known to be false or a set of statements that are inconsistent with each other
+
+### Applications in Proofs
+
+##### Example 1
+
+> *eg.* Prove the claim "There are infinitely many prime numbers." (Euclid's theorem)
+
+Proof:
+
+> Suppose the negation of the claim, that "there are only finitely many prime numbers, denoted as $p_1, p_2$ up through $p_n$." Next, consider that $Q = p_1 * p_2 * \ldots * p_n + 1$.
+>
+> If we divide $Q$ by any of the primes on our list, we get a remainder of $1$, so $Q$ itself is not divisible by any of the primes $p_1$, $p_2$ up through $p_n$. However, by the fundamental theory of arithmetic, $Q$ must have a prime factor which might be itself or a smaller number, contradicting our assumption that $p_1, p_2, \ldots, p_n$ was a list of all the prime numbers. As such, we have proven the original claim by way of proof by contradiction.
 
 ## More on
 
