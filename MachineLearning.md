@@ -33,7 +33,7 @@ Covers...
 7. Output layer: final layer in a neural network, where a single neuron's *output* is the returned value of the entire model
 8. Feed forward neural network: *output* from one layer is *input* for another layer, modelled mathematically as $f(g(h(x)))$ where information is only **fed forward**
     * more useful for deep learning models
-9. Recurrent neural network: *output* from one layer is fed as staggered *input* to the **same layer**, allowing recursive feedback loops
+9. Recurrent neural network: *output* from one layer is fed as staggered *input* to the **same layer**, modelled mathematically as $f(f(f(x)))$ where recursive feedback loops are allowed
     * less useful for deep learning models
     * more accurately simulates how the human brain handles and reinforces information
 10. Machine learning: process by which machines *learn* to perform tasks they were not explicitly programmed to, of which there are 4 variants
