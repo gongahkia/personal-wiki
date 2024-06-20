@@ -11,9 +11,7 @@ Covers...
 * Reinforcement Learning
 * Attention (through transformers)
 
-## Chapter 1: Feed Forward Neural Networks
-
-### Definitions
+## Definitions
 
 1. Neural network: model comprised of many *artificial neurons* that takes in *training examples* as input and **infers rules** to arrive at a specified output (accuracy increases as the sample size of training examples grows larger)
 2. Artifical neuron: basic building block of neural networks, of which there are 2 main types
@@ -54,19 +52,15 @@ Covers...
 > [!TIP]  
 > Most situations designed to train deep learning models can be modelled with matrices using [NumPy](https://numpy.org/) and [pandas](https://pandas.pydata.org/).  
 
-## Chapter 2: Convolutional Neural Networks
-
-## Chapter 3: Recurrent Neural Networks
-
-## Chapter 4: Autoencoders
-
-## Chapter 5: Reinforcement Learning
-
-## Chapter 6: Attention 
+13. Natural language processing (NLP): parses text for the following three purposes
+    1. Label a region of text *(speech tagging, sentiment classification, named-entity recognition)*
+    2. Link 2 or more regions of text *(co-reference)*
+    3. Fill in missing information based on context
 
 ## More on 
 
 * [Neural Networks and Deep Learning](https://neuralnetworksanddeeplearning.com/index.html) by Michael Nielsen  
 * [grokking Deep Learning](https://edu.anarcho-copy.org/Algorithm/grokking-deep-learning.pdf) by Andrew W Trask  
 * [The Hundred-page Machine Learning Book](http://ema.cri-info.cm/wp-content/uploads/2019/07/2019BurkovTheHundred-pageMachineLearning.pdf) by Andriy Burkov  
+* [Stanford CS25: V2 Introduction to Transformers](https://youtu.be/XfpMkf4rD6E?si=x--zvoBHV1X9IohG) by Andrej Karpathy  
 * [How to learn machine learning as a complete beginner: a self-study guide](https://youtu.be/0F2paWV4eEA?si=cX3M7lJHLuOZJqKJ)  
