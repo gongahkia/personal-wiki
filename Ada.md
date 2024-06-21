@@ -234,3 +234,4 @@ end;
 ## More on
 
 * [ada documentation](https://ada-lang.io/docs/arm)
+* [learn ada in y minutes](https://learnxinyminutes.com/docs/ada/)
