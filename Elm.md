@@ -1,6 +1,6 @@
 # `Elm`
 
-Functional programming language that compiles to native JavaScript for web development.
+Functional language that compiles to native JavaScript for web development.
 
 ## Comments
 
