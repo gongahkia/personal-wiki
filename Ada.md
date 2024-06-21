@@ -1,6 +1,6 @@
 # `Ada`
 
-Systems programming language for transportation, aerospace and defense.
+Systems language for transportation, aerospace and defense.
 
 ## Comments
 
