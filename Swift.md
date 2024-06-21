@@ -1,6 +1,6 @@
 # `Swift`
 
-> Add description for swift
+Language for native IOS and OSX development.
 
 ## Comments
 
