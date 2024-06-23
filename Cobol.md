@@ -10,8 +10,8 @@ Business-oriented language created in 1960 for enterprise and financial applicat
 * this is a single-line comment
 *> this is an alternative valid syntax for single-line comments
 
-* there is no default Cobol
-* implementation for multi-line comments
+* there is no default COBOL implementation
+* for multi-line comments
 * but writing them like this
 * achieves the same effect
 ```
