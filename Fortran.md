@@ -1,6 +1,6 @@
 # `Fortran`
 
-High-level language for numerical computation and mathematical simulations in scientific and engineering applications.
+High-level language for numerical computation and mathematical simulations.
 
 ## Comments
 
