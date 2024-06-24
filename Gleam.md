@@ -58,9 +58,6 @@ pub fn main() { // main function
     // Bool => true, false
     // Atom => stores a constant value identified by its name where atoms are declared with a : colon prefacing the atom value, the equivalent of atoms in Elixir, symbols in Ruby and keywords in Common Lisp and Clojure
     // String => stores a string value declared within "" double quotation marks, note that characters are handled as strings in Gleam
-    // Tuple => fixed-size ordered collection of elements of multiple datatypes
-    // List => dynamically-sized ordered collection of elements of the same datatype
-    // Type => user-defined collection of named fields and their datatypes declared within {} curly braces, allowing for modelling of representative data in your Gleam program through type aliases, the equivalent of structs in Go and Rust
     // BitString => stores a sequence of bits or bytes mostly used to store binary data, declared within <<>> double angle brackets
 ```
 
@@ -191,20 +188,21 @@ pub fn factorial(n: Int) -> Int {
 
 ```gleam
 // ----- DATA STRUCTURE -----
-    // tuple =>
-    // list =>
-    // record =>
+    // Tuple => fixed-size ordered collection of elements of multiple datatypes declared within () round brackets
+    // List => dynamically-sized ordered collection of elements of the same datatype declared within [] straight brackets
+    // Map => unordered collection of key-value pairs declared within %{} percentage sign and curly braces, the equivalent of dictionaries in Python and tables in Lua and PHP
+    // Type => user-defined collection of comma-delimited named fields and their datatypes declared within {} curly braces, allowing for modelling of representative data in your Gleam program through type aliases, the equivalent of structs in Go and Rust
 
-// Tuple
-let person: (String, Int) = ("Alice", 30)
-
-// List
-let numbers: List(Int) = [1, 2, 3, 4, 5]
-
-// Record
-type User = {
-  name: String,
-  age: Int
+let anExampleTuple: (String, Int) = ("Alice", 30)
+let anExampleList: List(Int) = [1, 2, 3, 4, 5]
+let anExampleMap: Map(String, String) = %{ "red" => "#FF0000", "green" => "#00FF00", "blue" => "#0000FF" }
+type anExampleRecord = {
+    name: String,
+    age: Int
+}
+type coordinate = {
+    X: String,
+    Y: String
 }
 ```
 
@@ -212,11 +210,20 @@ type User = {
 
 ```gleam
 // ----- FUNCTION -----
-    //
+    // similar to other functional languages, Gleam features implicit return of the last expression within a function, there is no explicit return keyword used traditionally in Gleam
+    // fn <functionName> ( <functionParameter(s)> : <functionParameterDatatype(s)> ) -> {returnDatatype(s)} { <functionBodyDefinition> } => declaration and definition of a named function
+    // fn ( <functonParameter(s)> : <functionParameterDatatype(s)> ) -> <returnDatatype(s)> { <functionBodyDefinition> } => declaration and definition of an anonymous function that is normally assigned to a named variable as seen below
 
-pub fn greet(name: String) {
-  io.println("Hello, " ++ name ++ "!")
+fn greet(name: String) { // a named void function
+    io.println("Hello, " ++ name ++ "!")
 }
+greet("Alice")
+
+fn square(x: Int) -> Int { // a named integer function
+    x * x // implicit return of the last expression in the function
+}
+
+let double = fn(x: Int) -> Int { x * 2 } // an anonymous function
 ```
 
 ## More on
