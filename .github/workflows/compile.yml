@@ -30,9 +30,8 @@ jobs:
       - name: Convert Markdown to HTML
         run: |
           for file in $(find notes/ -name '*.md'); do
-            output_dir=output/$(dirname $file)
-            mkdir -p $output_dir
-            npx markdown-to-html-cli $file -o $output_dir/$(basename ${file%.md}.html)
+            filename=$(basename "$file" .md)
+            npx markdown-to-html-cli "$file" -o output/"$filename".html
           done
 
       - name: Commit and Push Changes
