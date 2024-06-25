@@ -1,4 +1,4 @@
-name: Markdown to PDF Conversion
+name: Markdown to HTML Conversion
 
 on:
   push:
@@ -19,11 +19,19 @@ jobs:
       - name: Create Output Directory
         run: mkdir -p output
 
-      - name: Convert Markdown to PDF
+      - name: Install Marp CLI
+        run: npm install -g @marp-team/marp-cli@latest
+
+      - name: Determine Changed Files
+        id: changed_files
         run: |
-          for file in $(find notes/ -name '*.md'); do
+          echo "::set-output name=files::$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} -- '*.md')"
+
+      - name: Convert Markdown to HTML
+        run: |
+          for file in ${{ steps.changed_files.outputs.files }}; do
             filename=$(basename "$file" .md)
-            output_file="output/$filename.pdf"
+            output_file="output/$filename.html"
             echo "Converting $file to $output_file"
             npx @marp-team/marp-cli "$file" -o "$output_file"
           done
@@ -32,11 +40,12 @@ jobs:
         run: ls -R output
 
       - name: Commit and Push Changes
+        if: steps.changed_files.outputs.files != ''
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
           git add output/
-          git diff-index --quiet HEAD || git commit -m "Convert Markdown to PDF and move to output directory"
+          git diff-index --quiet HEAD || git commit -m "Convert Markdown to HTML and move to output directory"
           git push
