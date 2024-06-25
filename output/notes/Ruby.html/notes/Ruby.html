@@ -1,0 +1,915 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+  </head>
+  <body><dark-mode style="position: fixed; top: 8px; left: 10px; z-index: 999;" dark="Dark" light="Light" permanent="true"></dark-mode><script>const t=document;const e="_dark_mode_theme_";const s="permanent";const o="colorschemechange";const i="permanentcolorscheme";const h="light";const r="dark";const n=(t,e,s=e)=>{Object.defineProperty(t,s,{enumerable:true,get(){const t=this.getAttribute(e);return t===null?"":t},set(t){this.setAttribute(e,t)}})};const c=(t,e,s=e)=>{Object.defineProperty(t,s,{enumerable:true,get(){return this.hasAttribute(e)},set(t){if(t){this.setAttribute(e,"")}else{this.removeAttribute(e)}}})};class a extends HTMLElement{static get observedAttributes(){return["mode",h,r,s]}LOCAL_NANE=e;constructor(){super();this.t()}connectedCallback(){n(this,"mode");n(this,r);n(this,h);c(this,s);const a=localStorage.getItem(e);if(a&&[h,r].includes(a)){this.mode=a;this.permanent=true}if(this.permanent&&!a){localStorage.setItem(e,this.mode)}const l=[h,r].includes(a);if(this.permanent&&a){this.o()}else{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches){this.mode=r;this.o()}if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches){this.mode=h;this.o()}}if(!this.permanent&&!l){window.matchMedia("(prefers-color-scheme: light)").onchange=t=>{this.mode=t.matches?h:r;this.o()};window.matchMedia("(prefers-color-scheme: dark)").onchange=t=>{this.mode=t.matches?r:h;this.o()}}const d=new MutationObserver(((s,h)=>{this.mode=t.documentElement.dataset.colorMode;if(this.permanent&&l){localStorage.setItem(e,this.mode);this.i(i,{permanent:this.permanent})}this.h();this.i(o,{colorScheme:this.mode})}));d.observe(t.documentElement,{attributes:true});this.i(o,{colorScheme:this.mode});this.h()}attributeChangedCallback(t,s,o){if(t==="mode"&&s!==o&&[h,r].includes(o)){const t=localStorage.getItem(e);if(this.mode===t){this.mode=o;this.h();this.o()}else if(this.mode&&this.mode!==t){this.h();this.o()}}else if((t===h||t===r)&&s!==o){this.h()}if(t==="permanent"&&typeof this.permanent==="boolean"){this.permanent?localStorage.setItem(e,this.mode):localStorage.removeItem(e)}}o(){t.documentElement.setAttribute("data-color-mode",this.mode)}h(){this.icon.textContent=this.mode===h?"🌒":"🌞";this.text.textContent=this.mode===h?this.getAttribute(r):this.getAttribute(h)}t(){var s=this.attachShadow({mode:"open"});this.label=t.createElement("span");this.label.setAttribute("class","wrapper");this.label.onclick=()=>{this.mode=this.mode===h?r:h;if(this.permanent){localStorage.setItem(e,this.mode)}this.o();this.h()};s.appendChild(this.label);this.icon=t.createElement("span");this.label.appendChild(this.icon);this.text=t.createElement("span");this.label.appendChild(this.text);const o=`
+[data-color-mode*='dark'], [data-color-mode*='dark'] body {
+  color-scheme: dark;
+  --color-theme-bg: #0d1117;
+  --color-theme-text: #c9d1d9;
+  background-color: var(--color-theme-bg);
+  color: var(--color-theme-text);
+}
+
+[data-color-mode*='light'], [data-color-mode*='light'] body {
+  color-scheme: light;
+  --color-theme-bg: #fff;
+  --color-theme-text: #24292f;
+  background-color: var(--color-theme-bg);
+  color: var(--color-theme-text);
+}`;const i="_dark_mode_style_";const n=t.getElementById(i);if(!n){var c=t.createElement("style");c.id=i;c.textContent=o;t.head.appendChild(c)}var a=t.createElement("style");a.textContent=`
+    .wrapper { cursor: pointer; user-select: none; position: relative; }
+    .wrapper > span + span { margin-left: .4rem; }
+    `;s.appendChild(a)}i(t,e){this.dispatchEvent(new CustomEvent(t,{bubbles:true,composed:true,detail:e}))}}customElements.define("dark-mode",a);</script><script>const __TEMPLATE__ = document.createElement('template');
+__TEMPLATE__.innerHTML = `
+<style>
+
+markdown-style h1:hover a.anchor .octicon-link:before,
+markdown-style h2:hover a.anchor .octicon-link:before,
+markdown-style h3:hover a.anchor .octicon-link:before,
+markdown-style h4:hover a.anchor .octicon-link:before,
+markdown-style h5:hover a.anchor .octicon-link:before,
+markdown-style h6:hover a.anchor .octicon-link:before {
+  width: 16px;
+  height: 16px;
+  content: ' ';
+  display: inline-block;
+  background-color: currentColor;
+  -webkit-mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' version='1.1' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg>");
+  mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' version='1.1' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg>");
+}
+[data-color-mode*='light'], [data-color-mode*='light'] body, markdown-style[theme*='light'] { --color-prettylights-syntax-comment: #6e7781; --color-prettylights-syntax-constant: #0550ae; --color-prettylights-syntax-entity: #8250df; --color-prettylights-syntax-storage-modifier-import: #24292f; --color-prettylights-syntax-entity-tag: #116329; --color-prettylights-syntax-keyword: #cf222e; --color-prettylights-syntax-string: #0a3069; --color-prettylights-syntax-variable: #953800; --color-prettylights-syntax-brackethighlighter-unmatched: #82071e; --color-prettylights-syntax-invalid-illegal-text: #f6f8fa; --color-prettylights-syntax-invalid-illegal-bg: #82071e; --color-prettylights-syntax-carriage-return-text: #f6f8fa; --color-prettylights-syntax-carriage-return-bg: #cf222e; --color-prettylights-syntax-string-regexp: #116329; --color-prettylights-syntax-markup-list: #3b2300; --color-prettylights-syntax-markup-heading: #0550ae; --color-prettylights-syntax-markup-italic: #24292f; --color-prettylights-syntax-markup-bold: #24292f; --color-prettylights-syntax-markup-deleted-text: #82071e; --color-prettylights-syntax-markup-deleted-bg: #FFEBE9; --color-prettylights-syntax-markup-inserted-text: #116329; --color-prettylights-syntax-markup-inserted-bg: #dafbe1; --color-prettylights-syntax-markup-changed-text: #953800; --color-prettylights-syntax-markup-changed-bg: #ffd8b5; --color-prettylights-syntax-markup-ignored-text: #eaeef2; --color-prettylights-syntax-markup-ignored-bg: #0550ae; --color-prettylights-syntax-meta-diff-range: #8250df; --color-prettylights-syntax-brackethighlighter-angle: #57606a; --color-prettylights-syntax-sublimelinter-gutter-mark: #8c959f; --color-prettylights-syntax-constant-other-reference-link: #0a3069; --color-fg-default: #24292f; --color-fg-muted: #57606a; --color-fg-subtle: #6e7781; --color-canvas-default: #ffffff; --color-canvas-subtle: #f6f8fa; --color-border-default: #d0d7de; --color-border-muted: hsla(210,18%,87%,1); --color-neutral-muted: rgba(175,184,193,0.2); --color-accent-fg: #0969da; --color-accent-emphasis: #0969da; --color-attention-subtle: #fff8c5; --color-danger-fg: #cf222e; } [data-color-mode*='dark'], [data-color-mode*='dark'] body, markdown-style[theme*='dark'] { --color-prettylights-syntax-comment: #8b949e; --color-prettylights-syntax-constant: #79c0ff; --color-prettylights-syntax-entity: #d2a8ff; --color-prettylights-syntax-storage-modifier-import: #c9d1d9; --color-prettylights-syntax-entity-tag: #7ee787; --color-prettylights-syntax-keyword: #ff7b72; --color-prettylights-syntax-string: #a5d6ff; --color-prettylights-syntax-variable: #ffa657; --color-prettylights-syntax-brackethighlighter-unmatched: #f85149; --color-prettylights-syntax-invalid-illegal-text: #f0f6fc; --color-prettylights-syntax-invalid-illegal-bg: #8e1519; --color-prettylights-syntax-carriage-return-text: #f0f6fc; --color-prettylights-syntax-carriage-return-bg: #b62324; --color-prettylights-syntax-string-regexp: #7ee787; --color-prettylights-syntax-markup-list: #f2cc60; --color-prettylights-syntax-markup-heading: #1f6feb; --color-prettylights-syntax-markup-italic: #c9d1d9; --color-prettylights-syntax-markup-bold: #c9d1d9; --color-prettylights-syntax-markup-deleted-text: #ffdcd7; --color-prettylights-syntax-markup-deleted-bg: #67060c; --color-prettylights-syntax-markup-inserted-text: #aff5b4; --color-prettylights-syntax-markup-inserted-bg: #033a16; --color-prettylights-syntax-markup-changed-text: #ffdfb6; --color-prettylights-syntax-markup-changed-bg: #5a1e02; --color-prettylights-syntax-markup-ignored-text: #c9d1d9; --color-prettylights-syntax-markup-ignored-bg: #1158c7; --color-prettylights-syntax-meta-diff-range: #d2a8ff; --color-prettylights-syntax-brackethighlighter-angle: #8b949e; --color-prettylights-syntax-sublimelinter-gutter-mark: #484f58; --color-prettylights-syntax-constant-other-reference-link: #a5d6ff; --color-fg-default: #c9d1d9; --color-fg-muted: #8b949e; --color-fg-subtle: #484f58; --color-canvas-default: #0d1117; --color-canvas-subtle: #161b22; --color-border-default: #30363d; --color-border-muted: #21262d; --color-neutral-muted: rgba(110,118,129,0.4); --color-accent-fg: #58a6ff; --color-accent-emphasis: #1f6feb; --color-attention-subtle: rgba(187,128,9,0.15); --color-danger-fg: #f85149; } markdown-style { display: block; -webkit-text-size-adjust: 100%; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji"; font-size: 16px; line-height: 1.5; word-wrap: break-word; color: var(--color-fg-default); background-color: var(--color-canvas-default); } markdown-style details, markdown-style figcaption, markdown-style figure { display: block; } markdown-style summary { display: list-item; } markdown-style [hidden] { display: none !important; } markdown-style a { background-color: transparent; color: var(--color-accent-fg); text-decoration: none; } markdown-style a:active, markdown-style a:hover { outline-width: 0; } markdown-style abbr[title] { border-bottom: none; text-decoration: underline dotted; } markdown-style b, markdown-style strong { font-weight: 600; } markdown-style dfn { font-style: italic; } markdown-style h1 { margin: .67em 0; font-weight: 600; padding-bottom: .3em; font-size: 2em; border-bottom: 1px solid var(--color-border-muted); } markdown-style mark { background-color: var(--color-attention-subtle); color: var(--color-text-primary); } markdown-style small { font-size: 90%; } markdown-style sub, markdown-style sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; } markdown-style sub { bottom: -0.25em; } markdown-style sup { top: -0.5em; } markdown-style img { border-style: none; max-width: 100%; box-sizing: content-box; background-color: var(--color-canvas-default); } markdown-style code, markdown-style kbd, markdown-style pre, markdown-style samp { font-family: monospace,monospace; font-size: 1em; } markdown-style figure { margin: 1em 40px; } markdown-style hr { box-sizing: content-box; overflow: hidden; background: transparent; border-bottom: 1px solid var(--color-border-muted); height: .25em; padding: 0; margin: 24px 0; background-color: var(--color-border-default); border: 0; } markdown-style input { font: inherit; margin: 0; overflow: visible; font-family: inherit; font-size: inherit; line-height: inherit; } markdown-style [type=button], markdown-style [type=reset], markdown-style [type=submit] { -webkit-appearance: button; } markdown-style [type=button]::-moz-focus-inner, markdown-style [type=reset]::-moz-focus-inner, markdown-style [type=submit]::-moz-focus-inner { border-style: none; padding: 0; } markdown-style [type=button]:-moz-focusring, markdown-style [type=reset]:-moz-focusring, markdown-style [type=submit]:-moz-focusring { outline: 1px dotted ButtonText; } markdown-style [type=checkbox], markdown-style [type=radio] { box-sizing: border-box; padding: 0; } markdown-style [type=number]::-webkit-inner-spin-button, markdown-style [type=number]::-webkit-outer-spin-button { height: auto; } markdown-style [type=search] { -webkit-appearance: textfield; outline-offset: -2px; } markdown-style [type=search]::-webkit-search-cancel-button, markdown-style [type=search]::-webkit-search-decoration { -webkit-appearance: none; } markdown-style ::-webkit-input-placeholder { color: inherit; opacity: .54; } markdown-style ::-webkit-file-upload-button { -webkit-appearance: button; font: inherit; } markdown-style a:hover { text-decoration: underline; } markdown-style hr::before { display: table; content: ""; } markdown-style hr::after { display: table; clear: both; content: ""; } markdown-style table { border-spacing: 0; border-collapse: collapse; display: block; width: max-content; max-width: 100%; overflow: auto; } markdown-style td, markdown-style th { padding: 0; } markdown-style details summary { cursor: pointer; } markdown-style details:not([open])>*:not(summary) { display: none !important; } markdown-style kbd { display: inline-block; padding: 3px 5px; font: 11px ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace; line-height: 10px; color: var(--color-fg-default); vertical-align: middle; background-color: var(--color-canvas-subtle); border: solid 1px var(--color-neutral-muted); border-bottom-color: var(--color-neutral-muted); border-radius: 6px; box-shadow: inset 0 -1px 0 var(--color-neutral-muted); } markdown-style h1, markdown-style h2, markdown-style h3, markdown-style h4, markdown-style h5, markdown-style h6 { margin-top: 24px; margin-bottom: 16px; font-weight: 600; line-height: 1.25; } markdown-style h2 { font-weight: 600; padding-bottom: .3em; font-size: 1.5em; border-bottom: 1px solid var(--color-border-muted); } markdown-style h3 { font-weight: 600; font-size: 1.25em; } markdown-style h4 { font-weight: 600; font-size: 1em; } markdown-style h5 { font-weight: 600; font-size: .875em; } markdown-style h6 { font-weight: 600; font-size: .85em; color: var(--color-fg-muted); } markdown-style p { margin-top: 0; margin-bottom: 10px; } markdown-style blockquote { margin: 0; padding: 0 1em; color: var(--color-fg-muted); border-left: .25em solid var(--color-border-default); } markdown-style ul, markdown-style ol { margin-top: 0; margin-bottom: 0; padding-left: 2em; } markdown-style ol ol, markdown-style ul ol { list-style-type: lower-roman; } markdown-style ul ul ol, markdown-style ul ol ol, markdown-style ol ul ol, markdown-style ol ol ol { list-style-type: lower-alpha; } markdown-style dd { margin-left: 0; } markdown-style tt, markdown-style code { font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace; font-size: 12px; } markdown-style pre { margin-top: 0; margin-bottom: 0; font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace; font-size: 12px; word-wrap: normal; } markdown-style .octicon { display: inline-block; overflow: visible !important; vertical-align: text-bottom; fill: currentColor; } markdown-style ::placeholder { color: var(--color-fg-subtle); opacity: 1; } markdown-style input::-webkit-outer-spin-button, markdown-style input::-webkit-inner-spin-button { margin: 0; -webkit-appearance: none; appearance: none; }
+markdown-style .token.comment, markdown-style .token.prolog, markdown-style .token.doctype, markdown-style .token.cdata { color: var(--color-prettylights-syntax-comment); } markdown-style .token.namespace { opacity: 0.7; } markdown-style .token.tag, markdown-style .token.selector, markdown-style .token.constant, markdown-style .token.symbol, markdown-style .token.deleted { color: var(--color-prettylights-syntax-entity-tag); } markdown-style .token.maybe-class-name { color: var(--color-prettylights-syntax-variable); } markdown-style .token.property-access, markdown-style .token.operator, markdown-style .token.boolean, markdown-style .token.number, markdown-style .token.selector markdown-style .token.class, markdown-style .token.attr-name, markdown-style .token.string, markdown-style .token.char, markdown-style .token.builtin { color: var(--color-prettylights-syntax-constant); } markdown-style .token.deleted { color: var(--color-prettylights-syntax-markup-deleted-text); } markdown-style .token.property { color: var(--color-prettylights-syntax-constant); } markdown-style .token.punctuation { color: var(--color-prettylights-syntax-markup-bold); } markdown-style .token.function { color: var(--color-prettylights-syntax-entity); } markdown-style .code-line .token.deleted { background-color: var(--color-prettylights-syntax-markup-deleted-bg); } markdown-style .token.inserted { color: var(--color-prettylights-syntax-markup-inserted-text); } markdown-style .code-line .token.inserted { background-color: var(--color-prettylights-syntax-markup-inserted-bg); } markdown-style .token.variable { color: var(--color-prettylights-syntax-constant); } markdown-style .token.entity, markdown-style .token.url, .language-css markdown-style .token.string, .style markdown-style .token.string { color: var(--color-prettylights-syntax-string); } markdown-style .token.color, markdown-style .token.atrule, markdown-style .token.attr-value, markdown-style .token.function, markdown-style .token.class-name { color: var(--color-prettylights-syntax-string); } markdown-style .token.rule, markdown-style .token.regex, markdown-style .token.important, markdown-style .token.keyword { color: var(--color-prettylights-syntax-keyword); } markdown-style .token.coord { color: var(--color-prettylights-syntax-meta-diff-range); } markdown-style .token.important, markdown-style .token.bold { font-weight: bold; } markdown-style .token.italic { font-style: italic; } markdown-style .token.entity { cursor: help; }
+markdown-style [data-catalyst] { display: block; } markdown-style g-emoji { font-family: "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; font-size: 1em; font-style: normal !important; font-weight: 400; line-height: 1; vertical-align: -0.075em; } markdown-style g-emoji img { width: 1em; height: 1em; } markdown-style::before { display: table; content: ""; } markdown-style::after { display: table; clear: both; content: ""; } markdown-style>*:first-child { margin-top: 0 !important; } markdown-style>*:last-child { margin-bottom: 0 !important; } markdown-style a:not([href]) { color: inherit; text-decoration: none; } markdown-style .absent { color: var(--color-danger-fg); } markdown-style a.anchor { float: left; padding-right: 4px; margin-left: -20px; line-height: 1; } markdown-style a.anchor:focus { outline: none; } markdown-style p, markdown-style blockquote, markdown-style ul, markdown-style ol, markdown-style dl, markdown-style table, markdown-style pre, markdown-style details { margin-top: 0; margin-bottom: 16px; } markdown-style blockquote>:first-child { margin-top: 0; } markdown-style blockquote>:last-child { margin-bottom: 0; } markdown-style sup>a::before { content: "["; } markdown-style sup>a::after { content: "]"; }
+markdown-style .octicon-video { border: 1px solid #d0d7de !important; border-radius: 6px !important; display: block; } markdown-style .octicon-video summary { border-bottom: 1px solid #d0d7de !important; padding: 8px 16px !important; cursor: pointer; } markdown-style .octicon-video > video { display: block !important; max-width: 100% !important; padding: 2px; box-sizing: border-box; border-bottom-right-radius: 6px !important; border-bottom-left-radius: 6px !important; } markdown-style details.octicon-video:not([open])>*:not(summary) { display: none !important; } markdown-style details.octicon-video:not([open]) > summary { border-bottom: 0 !important; } markdown-style h1 .octicon-link, markdown-style h2 .octicon-link, markdown-style h3 .octicon-link, markdown-style h4 .octicon-link, markdown-style h5 .octicon-link, markdown-style h6 .octicon-link { color: var(--color-fg-default); vertical-align: middle; visibility: hidden; } markdown-style h1:hover .anchor, markdown-style h2:hover .anchor, markdown-style h3:hover .anchor, markdown-style h4:hover .anchor, markdown-style h5:hover .anchor, markdown-style h6:hover .anchor { text-decoration: none; } markdown-style h1:hover .anchor .octicon-link, markdown-style h2:hover .anchor .octicon-link, markdown-style h3:hover .anchor .octicon-link, markdown-style h4:hover .anchor .octicon-link, markdown-style h5:hover .anchor .octicon-link, markdown-style h6:hover .anchor .octicon-link { visibility: visible; } markdown-style h1 tt, markdown-style h1 code, markdown-style h2 tt, markdown-style h2 code, markdown-style h3 tt, markdown-style h3 code, markdown-style h4 tt, markdown-style h4 code, markdown-style h5 tt, markdown-style h5 code, markdown-style h6 tt, markdown-style h6 code { padding: 0 .2em; font-size: inherit; } markdown-style ul.no-list, markdown-style ol.no-list { padding: 0; list-style-type: none; } markdown-style ol[type="1"] { list-style-type: decimal; } markdown-style ol[type=a] { list-style-type: lower-alpha; } markdown-style ol[type=i] { list-style-type: lower-roman; } markdown-style div>ol:not([type]) { list-style-type: decimal; } markdown-style ul ul, markdown-style ul ol, markdown-style ol ol, markdown-style ol ul { margin-top: 0; margin-bottom: 0; } markdown-style li>p { margin-top: 16px; } markdown-style li+li { margin-top: .25em; } markdown-style dl { padding: 0; } markdown-style dl dt { padding: 0; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: 600; } markdown-style dl dd { padding: 0 16px; margin-bottom: 16px; } markdown-style table th { font-weight: 600; } markdown-style table th, markdown-style table td { padding: 6px 13px; border: 1px solid var(--color-border-default); } markdown-style table tr { background-color: var(--color-canvas-default); border-top: 1px solid var(--color-border-muted); } markdown-style table tr:nth-child(2n) { background-color: var(--color-canvas-subtle); } markdown-style table img { background-color: transparent; vertical-align: middle; } markdown-style img[align=right] { padding-left: 20px; } markdown-style img[align=left] { padding-right: 20px; } markdown-style .emoji { max-width: none; vertical-align: text-top; background-color: transparent; } markdown-style span.frame { display: block; overflow: hidden; } markdown-style span.frame>span { display: block; float: left; width: auto; padding: 7px; margin: 13px 0 0; overflow: hidden; border: 1px solid var(--color-border-default); } markdown-style span.frame span img { display: block; float: left; } markdown-style span.frame span span { display: block; padding: 5px 0 0; clear: both; color: var(--color-fg-default); } markdown-style span.align-center { display: block; overflow: hidden; clear: both; } markdown-style span.align-center>span { display: block; margin: 13px auto 0; overflow: hidden; text-align: center; } markdown-style span.align-center span img { margin: 0 auto; text-align: center; } markdown-style span.align-right { display: block; overflow: hidden; clear: both; } markdown-style span.align-right>span { display: block; margin: 13px 0 0; overflow: hidden; text-align: right; } markdown-style span.align-right span img { margin: 0; text-align: right; } markdown-style span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; } markdown-style span.float-left span { margin: 13px 0 0; } markdown-style span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; } markdown-style span.float-right>span { display: block; margin: 13px auto 0; overflow: hidden; text-align: right; } markdown-style code, markdown-style tt { padding: .2em .4em; margin: 0; font-size: 85%; background-color: var(--color-neutral-muted); border-radius: 6px; } markdown-style code br, markdown-style tt br { display: none; } markdown-style del code { text-decoration: inherit; } markdown-style pre code { font-size: 100%; } markdown-style pre>code { padding: 0; margin: 0; word-break: normal; white-space: pre; background: transparent; border: 0; } markdown-style pre { position: relative; font-size: 85%; line-height: 1.45; background-color: var(--color-canvas-subtle); border-radius: 6px; } markdown-style pre code, markdown-style pre tt { display: inline; max-width: auto; padding: 0; margin: 0; overflow: visible; line-height: inherit; word-wrap: normal; background-color: transparent; border: 0; } markdown-style pre > code { padding: 16px; overflow: auto; display: block; } markdown-style .csv-data td, markdown-style .csv-data th { padding: 5px; overflow: hidden; font-size: 12px; line-height: 1; text-align: left; white-space: nowrap; } markdown-style .csv-data .blob-num { padding: 10px 8px 9px; text-align: right; background: var(--color-canvas-default); border: 0; } markdown-style .csv-data tr { border-top: 0; } markdown-style .csv-data th { font-weight: 600; background: var(--color-canvas-subtle); border-top: 0; } markdown-style .footnotes { font-size: 12px; color: var(--color-fg-muted); border-top: 1px solid var(--color-border-default); } markdown-style .footnotes ol { padding-left: 16px; } markdown-style .footnotes li { position: relative; } markdown-style .footnotes li:target::before { position: absolute; top: -8px; right: -8px; bottom: -8px; left: -24px; pointer-events: none; content: ""; border: 2px solid var(--color-accent-emphasis); border-radius: 6px; } markdown-style .footnotes li:target { color: var(--color-fg-default); } markdown-style .footnotes .data-footnote-backref g-emoji { font-family: monospace; } markdown-style .task-list-item { list-style-type: none; } markdown-style .task-list-item label { font-weight: 400; } markdown-style .task-list-item.enabled label { cursor: pointer; } markdown-style .task-list-item+.task-list-item { margin-top: 3px; } markdown-style .task-list-item .handle { display: none; } markdown-style .task-list-item-checkbox, markdown-style input[type="checkbox"] { margin: 0 .2em .25em -1.6em; vertical-align: middle; } markdown-style .contains-task-list:dir(rtl) .task-list-item-checkbox, markdown-style .contains-task-list:dir(rtl) input[type="checkbox"] { margin: 0 -1.6em .25em .2em; } markdown-style ::-webkit-calendar-picker-indicator { filter: invert(50%); }
+</style>
+<slot></slot>
+`;
+class MarkdownStyle extends HTMLElement {
+    constructor() {
+        super();
+        this.shadow = this.attachShadow({ mode: 'open' });
+        this.shadow.appendChild(__TEMPLATE__.content.cloneNode(true));
+        const style = Array.prototype.slice
+            .call(this.shadow.children)
+            .find((item) => item.tagName === 'STYLE');
+        if (style) {
+            const id = '__MARKDOWN_STYLE__';
+            const findStyle = document.getElementById(id);
+            if (!findStyle) {
+                style.id = id;
+                document.head.append(style);
+            }
+        }
+    }
+    get theme() {
+        const value = this.getAttribute('theme');
+        return value === null ? '' : value;
+    }
+    set theme(name) {
+        this.setAttribute('theme', name);
+    }
+    connectedCallback() {
+        if (!this.theme) {
+            const { colorMode } = document.documentElement.dataset;
+            this.theme = colorMode;
+            const observer = new MutationObserver((mutationsList, observer) => {
+                this.theme = document.documentElement.dataset.colorMode;
+            });
+            observer.observe(document.documentElement, { attributes: true });
+            window.matchMedia('(prefers-color-scheme: light)').onchange = (event) => {
+                this.theme = event.matches ? 'light' : 'dark';
+            };
+            window.matchMedia('(prefers-color-scheme: dark)').onchange = (event) => {
+                this.theme = event.matches ? 'dark' : 'light';
+            };
+        }
+    }
+}
+customElements.define('markdown-style', MarkdownStyle);</script><markdown-style style="max-width: 960px; margin: 0 auto 60px auto; padding: 8px;max-width: 960px;" class="markdown-style">
+    <h1 id="ruby"><a class="anchor" aria-hidden="true" tabindex="-1" href="#ruby"><span class="octicon octicon-link"></span></a><code>Ruby</code></h1>
+    <p>In Ruby, everything is an object.</p>
+    <h2 id="printing"><a class="anchor" aria-hidden="true" tabindex="-1" href="#printing"><span class="octicon octicon-link"></span></a>Printing</h2>
+    <pre class="language-ruby"><code class="language-ruby code-highlight"><span class="code-line line-number" line="1">puts <span class="token string-literal"><span class="token string">"this prints with a newline"</span></span> <span class="token comment"># puts</span>
+</span><span class="code-line line-number" line="2">print <span class="token string-literal"><span class="token string">"this prints without a newline/n"</span></span> <span class="token comment"># print</span>
+</span></code><div onclick="copied(this)" data-code="puts &#x22;this prints with a newline&#x22; # puts
+print &#x22;this prints without a newline/n&#x22; # print
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <h2 id="comment"><a class="anchor" aria-hidden="true" tabindex="-1" href="#comment"><span class="octicon octicon-link"></span></a>Comment</h2>
+    <pre class="language-ruby"><code class="language-ruby code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># single-line comment</span>
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3"><span class="token comment">=begin
+</span></span><span class="code-line line-number" line="4"><span class="token comment">this
+</span></span><span class="code-line line-number" line="5"><span class="token comment">is
+</span></span><span class="code-line line-number" line="6"><span class="token comment">a
+</span></span><span class="code-line line-number" line="7"><span class="token comment">multi-line
+</span></span><span class="code-line line-number" line="8"><span class="token comment">comment
+</span></span><span class="code-line line-number" line="9"><span class="token comment">=end</span>
+</span><span class="code-line line-number" line="10">
+</span><span class="code-line line-number" line="11"><span class="token comment"># everything is an object in Ruby</span>
+</span><span class="code-line line-number" line="12">
+</span><span class="code-line line-number" line="13"><span class="token number">3.</span><span class="token keyword">class</span> <span class="token comment"># Integer</span>
+</span><span class="code-line line-number" line="14"><span class="token string-literal"><span class="token string">"Hello"</span></span><span class="token punctuation">.</span><span class="token keyword">class</span> <span class="token comment"># String</span>
+</span><span class="code-line line-number" line="15"><span class="token string-literal"><span class="token string">"Hello"</span></span><span class="token punctuation">.</span>method<span class="token punctuation">(</span><span class="token symbol">:class</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">class</span> <span class="token comment"># Method</span>
+</span><span class="code-line line-number" line="16"><span class="token symbol">:pending</span><span class="token punctuation">.</span><span class="token keyword">class</span> <span class="token comment"># Symbol</span>
+</span></code><div onclick="copied(this)" data-code="# single-line comment
+
+=begin
+this
+is
+a
+multi-line
+comment
+=end
+
+# everything is an object in Ruby
+
+3.class # Integer
+&#x22;Hello&#x22;.class # String
+&#x22;Hello&#x22;.method(:class).class # Method
+:pending.class # Symbol
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <h2 id="variables-constants-scope"><a class="anchor" aria-hidden="true" tabindex="-1" href="#variables-constants-scope"><span class="octicon octicon-link"></span></a>Variables, Constants, Scope</h2>
+    <pre class="language-ruby"><code class="language-ruby code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># ---------- VARIABLE ----------</span>
+</span><span class="code-line line-number" line="2">    <span class="token comment"># variable assignment returns the value assigned</span>
+</span><span class="code-line line-number" line="3">    <span class="token comment"># by convention, snake_case used for variable names</span>
+</span><span class="code-line line-number" line="4">
+</span><span class="code-line line-number" line="5">a_variable <span class="token operator">=</span> <span class="token number">25</span>
+</span><span class="code-line line-number" line="6">another_variable <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"awesome sauce"</span></span>
+</span><span class="code-line line-number" line="7">yet_another_variable <span class="token operator">=</span> <span class="token boolean">true</span>
+</span><span class="code-line line-number" line="8">
+</span><span class="code-line line-number" line="9">x <span class="token operator">=</span> y <span class="token operator">=</span> <span class="token number">10</span> <span class="token comment"># this will assign 10 to y, and that will then return 10 which is assigned to x</span>
+</span><span class="code-line line-number" line="10">
+</span><span class="code-line line-number" line="11"><span class="token comment"># ---------- SCOPE ----------</span>
+</span><span class="code-line line-number" line="12">    <span class="token comment"># $ for global variables</span>
+</span><span class="code-line line-number" line="13">    <span class="token comment"># @ for instance scope </span>
+</span><span class="code-line line-number" line="14">    <span class="token comment"># @@ for class scope</span>
+</span><span class="code-line line-number" line="15">    <span class="token comment"># capitalised variable names for constants</span>
+</span><span class="code-line line-number" line="16">
+</span><span class="code-line line-number" line="17"><span class="token variable">$var</span> <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"I'm a global variable"</span></span>
+</span><span class="code-line line-number" line="18"><span class="token variable">@var</span> <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"I'm an instance variable"</span></span>
+</span><span class="code-line line-number" line="19"><span class="token variable">@@var</span> <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"I'm a class variable"</span></span>
+</span><span class="code-line line-number" line="20">Var <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"I'm a constant"</span></span>
+</span></code><div onclick="copied(this)" data-code="# ---------- VARIABLE ----------
+    # variable assignment returns the value assigned
+    # by convention, snake_case used for variable names
+
+a_variable = 25
+another_variable = &#x22;awesome sauce&#x22;
+yet_another_variable = true
+
+x = y = 10 # this will assign 10 to y, and that will then return 10 which is assigned to x
+
+# ---------- SCOPE ----------
+    # $ for global variables
+    # @ for instance scope 
+    # @@ for class scope
+    # capitalised variable names for constants
+
+$var = &#x22;I&#x27;m a global variable&#x22;
+@var = &#x22;I&#x27;m an instance variable&#x22;
+@@var = &#x22;I&#x27;m a class variable&#x22;
+Var = &#x22;I&#x27;m a constant&#x22;
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <h2 id="types"><a class="anchor" aria-hidden="true" tabindex="-1" href="#types"><span class="octicon octicon-link"></span></a>Types</h2>
+    <pre class="language-ruby"><code class="language-ruby code-highlight"><span class="code-line line-number" line="1">
+</span><span class="code-line line-number" line="2"><span class="token comment"># ---------- STRING ----------</span>
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4">eg_string <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"hello world"</span></span> 
+</span><span class="code-line line-number" line="5">
+</span><span class="code-line line-number" line="6"><span class="token comment"># FORMATTED STRINGS</span>
+</span><span class="code-line line-number" line="7">
+</span><span class="code-line line-number" line="8">placeholder <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"watermelon"</span></span>
+</span><span class="code-line line-number" line="9">put <span class="token string-literal"><span class="token string">"I really am the largest </span><span class="token interpolation"><span class="token delimiter punctuation">#{</span><span class="token content">placeholder</span><span class="token delimiter punctuation">}</span></span><span class="token string"> in this County."</span></span> <span class="token comment"># formatted string</span>
+</span><span class="code-line line-number" line="10">
+</span><span class="code-line line-number" line="11"><span class="token comment"># STRING CONCATENATION</span>
+</span><span class="code-line line-number" line="12">    <span class="token comment"># + can concatenate two strings together but not with other types</span>
+</span><span class="code-line line-number" line="13">
+</span><span class="code-line line-number" line="14"><span class="token string-literal"><span class="token string">"hello"</span></span> <span class="token operator">+</span> <span class="token string-literal"><span class="token string">"world"</span></span> <span class="token comment"># "hello world"</span>
+</span><span class="code-line line-number" line="15"><span class="token string-literal"><span class="token string">"hello"</span></span> <span class="token operator">+</span> <span class="token number">3.</span>to_s <span class="token comment"># "hello3", this is okay because the number 3 undergoes type conversion</span>
+</span><span class="code-line line-number" line="16"><span class="token string-literal"><span class="token string">"hello</span><span class="token interpolation"><span class="token delimiter punctuation">#{</span><span class="token content"><span class="token number">3</span></span><span class="token delimiter punctuation">}</span></span><span class="token string">"</span></span> <span class="token comment"># "hello3"</span>
+</span><span class="code-line line-number" line="17"><span class="token string-literal"><span class="token string">"hello"</span></span> <span class="token operator">&#x3C;&#x3C;</span> <span class="token string-literal"><span class="token string">" world"</span></span> <span class="token comment"># "hellow world", appends a string to a string</span>
+</span><span class="code-line line-number" line="18">
+</span><span class="code-line line-number" line="19"><span class="token comment"># STRING MULTIPLICATION</span>
+</span><span class="code-line line-number" line="20">    <span class="token comment"># just like Python!</span>
+</span><span class="code-line line-number" line="21">
+</span><span class="code-line line-number" line="22"><span class="token string-literal"><span class="token string">"hello"</span></span> <span class="token operator">*</span> <span class="token number">3</span> <span class="token comment"># evaluates to "hellohellohello"</span>
+</span><span class="code-line line-number" line="23"><span class="token string-literal"><span class="token string">"ok and "</span></span> <span class="token operator">*</span> <span class="token number">2</span> <span class="token comment"># evaluates to "ok and ok and "</span>
+</span><span class="code-line line-number" line="24">
+</span><span class="code-line line-number" line="25"><span class="token comment"># ---------- NUMBER ----------</span>
+</span><span class="code-line line-number" line="26">    <span class="token comment"># covers integers, floats and doubles like Typescript</span>
+</span><span class="code-line line-number" line="27">
+</span><span class="code-line line-number" line="28">eg_number <span class="token operator">=</span> <span class="token number">1000</span>
+</span><span class="code-line line-number" line="29">another_eg_number <span class="token operator">=</span> <span class="token number">1.23</span>
+</span><span class="code-line line-number" line="30">
+</span><span class="code-line line-number" line="31"><span class="token comment"># ARITHMETIC OPERATORS</span>
+</span><span class="code-line line-number" line="32">    <span class="token comment"># arithmetic is just syntatic sugar for calling a method on an object</span>
+</span><span class="code-line line-number" line="33">
+</span><span class="code-line line-number" line="34"><span class="token number">1</span> <span class="token operator">+</span> <span class="token number">1</span> <span class="token comment"># addition</span>
+</span><span class="code-line line-number" line="35"><span class="token number">8</span> <span class="token operator">-</span> <span class="token number">1</span> <span class="token comment"># subtraction</span>
+</span><span class="code-line line-number" line="36"><span class="token number">10</span> <span class="token operator">*</span> <span class="token number">2</span> <span class="token comment"># multiplication</span>
+</span><span class="code-line line-number" line="37"><span class="token number">35</span> <span class="token operator">/</span> <span class="token number">5</span> <span class="token comment"># division</span>
+</span><span class="code-line line-number" line="38"><span class="token number">2</span> <span class="token operator">**</span> <span class="token number">5</span> <span class="token comment"># power </span>
+</span><span class="code-line line-number" line="39"><span class="token number">5</span> <span class="token operator">%</span> <span class="token number">3</span> <span class="token comment"># modulo</span>
+</span><span class="code-line line-number" line="40"><span class="token number">1</span> <span class="token operator">&#x3C;</span> <span class="token number">10</span> <span class="token comment"># comparison operators</span>
+</span><span class="code-line line-number" line="41"><span class="token number">1</span> <span class="token operator">></span> <span class="token number">10</span> <span class="token comment"># comparison operators</span>
+</span><span class="code-line line-number" line="42"><span class="token number">1</span> <span class="token operator">&#x3C;=</span> <span class="token number">10</span> <span class="token comment"># comparison operators</span>
+</span><span class="code-line line-number" line="43"><span class="token number">1</span> <span class="token operator">>=</span> <span class="token number">10</span> <span class="token comment"># comparison operators</span>
+</span><span class="code-line line-number" line="44"><span class="token number">1</span> <span class="token operator">==</span> <span class="token number">1</span> <span class="token comment"># complete equality, of both type and value</span>
+</span><span class="code-line line-number" line="45"><span class="token number">1</span> <span class="token operator">!=</span> <span class="token number">1</span> <span class="token comment"># complete inequality, of both type and value</span>
+</span><span class="code-line line-number" line="46">
+</span><span class="code-line line-number" line="47"><span class="token comment"># ---------- BOOLEAN -----------</span>
+</span><span class="code-line line-number" line="48">
+</span><span class="code-line line-number" line="49">eg_bool <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token comment"># of the TrueClass</span>
+</span><span class="code-line line-number" line="50">other_eg_bool <span class="token operator">=</span> <span class="token boolean">false</span> <span class="token comment"># of the FalseClass</span>
+</span><span class="code-line line-number" line="51">
+</span><span class="code-line line-number" line="52"><span class="token comment"># LOGICAL OPERATORS</span>
+</span><span class="code-line line-number" line="53">
+</span><span class="code-line line-number" line="54"><span class="token boolean">true</span> <span class="token operator">&#x26;&#x26;</span> <span class="token boolean">false</span> <span class="token comment"># and, evaluates to false</span>
+</span><span class="code-line line-number" line="55"><span class="token boolean">true</span> <span class="token operator">||</span> <span class="token boolean">false</span> <span class="token comment"># or, evaluates to true</span>
+</span><span class="code-line line-number" line="56">
+</span><span class="code-line line-number" line="57"><span class="token comment"># by convention, all methods that return booleans end with a question mark</span>
+</span><span class="code-line line-number" line="58"><span class="token number">5.</span>even<span class="token operator">?</span> <span class="token comment"># returns false</span>
+</span><span class="code-line line-number" line="59"><span class="token number">5.</span>odd<span class="token operator">?</span> <span class="token comment"># returns true</span>
+</span><span class="code-line line-number" line="60">
+</span><span class="code-line line-number" line="61"><span class="token comment"># ---------- SYMBOL ----------</span>
+</span><span class="code-line line-number" line="62">    <span class="token comment"># symbols are immutable reusable constants often used in place of strings to convey specific meaning</span>
+</span><span class="code-line line-number" line="63">    <span class="token comment"># represented internally by an integer</span>
+</span><span class="code-line line-number" line="64">
+</span><span class="code-line line-number" line="65">status <span class="token operator">=</span> <span class="token symbol">:pending</span>
+</span><span class="code-line line-number" line="66">status <span class="token operator">==</span> <span class="token symbol">:pending</span> <span class="token comment"># returns true</span>
+</span><span class="code-line line-number" line="67">status <span class="token operator">==</span> <span class="token string-literal"><span class="token string">"pending"</span></span> <span class="token comment"># returns false</span>
+</span><span class="code-line line-number" line="68">status <span class="token operator">==</span> <span class="token symbol">:approved</span> <span class="token comment"># returns false</span>
+</span><span class="code-line line-number" line="69">status <span class="token operator">==</span> <span class="token string-literal"><span class="token string">"pending"</span></span><span class="token punctuation">.</span>to_sym <span class="token comment"># returns true since type conversion of String to Symbol</span>
+</span><span class="code-line line-number" line="70">
+</span><span class="code-line line-number" line="71"><span class="token comment"># ---------- SPECIAL VALUES ----------</span>
+</span><span class="code-line line-number" line="72"><span class="token keyword">nil</span> <span class="token comment"># evaluates to false, same as null, of the NilClass</span>
+</span></code><div onclick="copied(this)" data-code="
+# ---------- STRING ----------
+
+eg_string = &#x22;hello world&#x22; 
+
+# FORMATTED STRINGS
+
+placeholder = &#x22;watermelon&#x22;
+put &#x22;I really am the largest #{placeholder} in this County.&#x22; # formatted string
+
+# STRING CONCATENATION
+    # + can concatenate two strings together but not with other types
+
+&#x22;hello&#x22; + &#x22;world&#x22; # &#x22;hello world&#x22;
+&#x22;hello&#x22; + 3.to_s # &#x22;hello3&#x22;, this is okay because the number 3 undergoes type conversion
+&#x22;hello#{3}&#x22; # &#x22;hello3&#x22;
+&#x22;hello&#x22; << &#x22; world&#x22; # &#x22;hellow world&#x22;, appends a string to a string
+
+# STRING MULTIPLICATION
+    # just like Python!
+
+&#x22;hello&#x22; * 3 # evaluates to &#x22;hellohellohello&#x22;
+&#x22;ok and &#x22; * 2 # evaluates to &#x22;ok and ok and &#x22;
+
+# ---------- NUMBER ----------
+    # covers integers, floats and doubles like Typescript
+
+eg_number = 1000
+another_eg_number = 1.23
+
+# ARITHMETIC OPERATORS
+    # arithmetic is just syntatic sugar for calling a method on an object
+
+1 + 1 # addition
+8 - 1 # subtraction
+10 * 2 # multiplication
+35 / 5 # division
+2 ** 5 # power 
+5 % 3 # modulo
+1 < 10 # comparison operators
+1 > 10 # comparison operators
+1 <= 10 # comparison operators
+1 >= 10 # comparison operators
+1 == 1 # complete equality, of both type and value
+1 != 1 # complete inequality, of both type and value
+
+# ---------- BOOLEAN -----------
+
+eg_bool = true # of the TrueClass
+other_eg_bool = false # of the FalseClass
+
+# LOGICAL OPERATORS
+
+true &#x26;&#x26; false # and, evaluates to false
+true || false # or, evaluates to true
+
+# by convention, all methods that return booleans end with a question mark
+5.even? # returns false
+5.odd? # returns true
+
+# ---------- SYMBOL ----------
+    # symbols are immutable reusable constants often used in place of strings to convey specific meaning
+    # represented internally by an integer
+
+status = :pending
+status == :pending # returns true
+status == &#x22;pending&#x22; # returns false
+status == :approved # returns false
+status == &#x22;pending&#x22;.to_sym # returns true since type conversion of String to Symbol
+
+# ---------- SPECIAL VALUES ----------
+nil # evaluates to false, same as null, of the NilClass
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <h2 id="data-structures"><a class="anchor" aria-hidden="true" tabindex="-1" href="#data-structures"><span class="octicon octicon-link"></span></a>Data structures</h2>
+    <pre class="language-ruby"><code class="language-ruby code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># BOTH ARRAYS AND HASHES ARE ENUMERABLE!</span>
+</span><span class="code-line line-number" line="2">
+</span><span class="code-line line-number" line="3"><span class="token comment"># ---------- ARRAY ----------</span>
+</span><span class="code-line line-number" line="4">    <span class="token comment"># similar to Javascript arrays, arrays can store multiple values of different types</span>
+</span><span class="code-line line-number" line="5">
+</span><span class="code-line line-number" line="6">eg_array <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
+</span><span class="code-line line-number" line="7">mixed_array <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"hello"</span></span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">]</span>
+</span><span class="code-line line-number" line="8">another_mixed_array <span class="token operator">=</span> <span class="token string-literal"><span class="token string">%w[foo bar baz]</span></span> <span class="token comment"># this evaluates to ["foo", "bar", "baz"]</span>
+</span><span class="code-line line-number" line="9">
+</span><span class="code-line line-number" line="10"><span class="token comment"># ARRAY METHODS</span>
+</span><span class="code-line line-number" line="11">
+</span><span class="code-line line-number" line="12"><span class="token comment"># INDEXING and SLICES</span>
+</span><span class="code-line line-number" line="13">    <span class="token comment"># similar to Python</span>
+</span><span class="code-line line-number" line="14">    <span class="token comment"># this is also just syntatic sugar to call the method [] on the array object</span>
+</span><span class="code-line line-number" line="15">
+</span><span class="code-line line-number" line="16">eg_array<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token comment"># returns 1</span>
+</span><span class="code-line line-number" line="17">eg_array<span class="token punctuation">.</span>first <span class="token comment"># also returns 1</span>
+</span><span class="code-line line-number" line="18">eg_array<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span> <span class="token comment"># returns nil since index out of range</span>
+</span><span class="code-line line-number" line="19">
+</span><span class="code-line line-number" line="20">eg_array<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token comment"># returns last element, 5</span>
+</span><span class="code-line line-number" line="21">eg_array<span class="token punctuation">.</span>last <span class="token comment"># also returns 5</span>
+</span><span class="code-line line-number" line="22">
+</span><span class="code-line line-number" line="23">eg_array<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token comment"># returns subarray of start index and length, [3,4,5]</span>
+</span><span class="code-line line-number" line="24">eg_array<span class="token punctuation">[</span><span class="token number">1.</span><span class="token number">.3</span><span class="token punctuation">]</span> <span class="token comment"># returns a subarray of indexes specified in a range, similar to Python, [2,3,4]</span>
+</span><span class="code-line line-number" line="25">
+</span><span class="code-line line-number" line="26"><span class="token comment">## APPEND VALUE</span>
+</span><span class="code-line line-number" line="27">
+</span><span class="code-line line-number" line="28">eg_array <span class="token operator">&#x3C;&#x3C;</span> <span class="token number">6</span> <span class="token comment"># eg_array is now [1,2,3,4,5,6]</span>
+</span><span class="code-line line-number" line="29">eg_array<span class="token punctuation">.</span>push<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span> <span class="token comment"># this does the same as the above</span>
+</span><span class="code-line line-number" line="30">
+</span><span class="code-line line-number" line="31"><span class="token comment">## CHECK IF VALUE IN ARRAY</span>
+</span><span class="code-line line-number" line="32">
+</span><span class="code-line line-number" line="33">eg_array<span class="token punctuation">.</span><span class="token keyword">include</span><span class="token operator">?</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment"># evaluates to true</span>
+</span><span class="code-line line-number" line="34">eg_array<span class="token punctuation">.</span><span class="token keyword">include</span><span class="token operator">?</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span> <span class="token comment"># evaluates to false</span>
+</span><span class="code-line line-number" line="35">
+</span><span class="code-line line-number" line="36"><span class="token comment"># REVERSE AN ARRAY</span>
+</span><span class="code-line line-number" line="37">
+</span><span class="code-line line-number" line="38"><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">.</span>reverse <span class="token comment"># evaluates to [3,2,1]</span>
+</span><span class="code-line line-number" line="39">
+</span><span class="code-line line-number" line="40"><span class="token comment"># ---------- HASH ---------- </span>
+</span><span class="code-line line-number" line="41">    <span class="token comment"># similar to PHP's associative arrays</span>
+</span><span class="code-line line-number" line="42">    <span class="token comment"># the equivalent of Python's dictionaries or Javascript's objects</span>
+</span><span class="code-line line-number" line="43">    <span class="token comment"># stores key-value pairs</span>
+</span><span class="code-line line-number" line="44">    <span class="token comment"># you can use symbols for keys also</span>
+</span><span class="code-line line-number" line="45">
+</span><span class="code-line line-number" line="46">eg_hash <span class="token operator">=</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="47">    <span class="token string-literal"><span class="token string">"color"</span></span> <span class="token operator">=></span> <span class="token string-literal"><span class="token string">"green"</span></span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="48">    <span class="token string-literal"><span class="token string">"number"</span></span> <span class="token operator">=></span> <span class="token number">5</span>
+</span><span class="code-line line-number" line="49"><span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="50">
+</span><span class="code-line line-number" line="51">eg_hash<span class="token punctuation">.</span>keys <span class="token comment"># returns ["color", "number"]</span>
+</span><span class="code-line line-number" line="52">eg_hash<span class="token punctuation">[</span><span class="token string-literal"><span class="token string">"color"</span></span><span class="token punctuation">]</span> <span class="token comment"># returns "green"</span>
+</span><span class="code-line line-number" line="53">eg_hash<span class="token punctuation">[</span><span class="token string-literal"><span class="token string">"number"</span></span><span class="token punctuation">]</span> <span class="token comment"># returns 5</span>
+</span><span class="code-line line-number" line="54">eg_hash<span class="token punctuation">[</span><span class="token string-literal"><span class="token string">"nothing here"</span></span><span class="token punctuation">]</span> <span class="token comment"># returns nil since the key doesn't exist </span>
+</span><span class="code-line line-number" line="55">
+</span><span class="code-line line-number" line="56"><span class="token comment"># to use symbol as keys</span>
+</span><span class="code-line line-number" line="57">another_hash <span class="token operator">=</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="58">    <span class="token symbol">:defcon</span> <span class="token operator">=></span> <span class="token number">3</span><span class="token punctuation">,</span>
+</span><span class="code-line line-number" line="59">    <span class="token symbol">:action</span> <span class="token operator">=></span> <span class="token boolean">true</span>
+</span><span class="code-line line-number" line="60"><span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="61">another_hash<span class="token punctuation">.</span>keys <span class="token comment"># returns [:defcon, :action]</span>
+</span><span class="code-line line-number" line="62">
+</span><span class="code-line line-number" line="63"><span class="token comment"># an alternative syntax when using symbols for keys</span>
+</span><span class="code-line line-number" line="64">
+</span><span class="code-line line-number" line="65">yet_another_hash <span class="token operator">=</span> <span class="token punctuation">{</span>
+</span><span class="code-line line-number" line="66">    <span class="token symbol">defcon</span><span class="token operator">:</span><span class="token number">3</span><span class="token punctuation">,</span> 
+</span><span class="code-line line-number" line="67">    <span class="token symbol">action</span><span class="token symbol">:true</span>
+</span><span class="code-line line-number" line="68"><span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="69">yet_another_hash<span class="token punctuation">.</span>keys <span class="token comment"># also returns [:defcon, :action]</span>
+</span><span class="code-line line-number" line="70">
+</span><span class="code-line line-number" line="71">yet_another_hash<span class="token punctuation">.</span>key<span class="token operator">?</span><span class="token punctuation">(</span><span class="token symbol">:defcon</span><span class="token punctuation">)</span> <span class="token comment"># checks the existence of keys in hash, evaluates to true</span>
+</span><span class="code-line line-number" line="72">yet_another_hash<span class="token punctuation">.</span>value<span class="token operator">?</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token comment"># checks the existence of values in hash, evaluates to true</span>
+</span></code><div onclick="copied(this)" data-code="# BOTH ARRAYS AND HASHES ARE ENUMERABLE!
+
+# ---------- ARRAY ----------
+    # similar to Javascript arrays, arrays can store multiple values of different types
+
+eg_array = [1,2,3,4,5]
+mixed_array = [1, &#x22;hello&#x22;, true]
+another_mixed_array = %w[foo bar baz] # this evaluates to [&#x22;foo&#x22;, &#x22;bar&#x22;, &#x22;baz&#x22;]
+
+# ARRAY METHODS
+
+# INDEXING and SLICES
+    # similar to Python
+    # this is also just syntatic sugar to call the method [] on the array object
+
+eg_array[0] # returns 1
+eg_array.first # also returns 1
+eg_array[12] # returns nil since index out of range
+
+eg_array[-1] # returns last element, 5
+eg_array.last # also returns 5
+
+eg_array[2,3] # returns subarray of start index and length, [3,4,5]
+eg_array[1..3] # returns a subarray of indexes specified in a range, similar to Python, [2,3,4]
+
+## APPEND VALUE
+
+eg_array << 6 # eg_array is now [1,2,3,4,5,6]
+eg_array.push(6) # this does the same as the above
+
+## CHECK IF VALUE IN ARRAY
+
+eg_array.include?(1) # evaluates to true
+eg_array.include?(100) # evaluates to false
+
+# REVERSE AN ARRAY
+
+[1,2,3].reverse # evaluates to [3,2,1]
+
+# ---------- HASH ---------- 
+    # similar to PHP&#x27;s associative arrays
+    # the equivalent of Python&#x27;s dictionaries or Javascript&#x27;s objects
+    # stores key-value pairs
+    # you can use symbols for keys also
+
+eg_hash = {
+    &#x22;color&#x22; => &#x22;green&#x22;,
+    &#x22;number&#x22; => 5
+}
+
+eg_hash.keys # returns [&#x22;color&#x22;, &#x22;number&#x22;]
+eg_hash[&#x22;color&#x22;] # returns &#x22;green&#x22;
+eg_hash[&#x22;number&#x22;] # returns 5
+eg_hash[&#x22;nothing here&#x22;] # returns nil since the key doesn&#x27;t exist 
+
+# to use symbol as keys
+another_hash = {
+    :defcon => 3,
+    :action => true
+}
+another_hash.keys # returns [:defcon, :action]
+
+# an alternative syntax when using symbols for keys
+
+yet_another_hash = {
+    defcon:3, 
+    action:true
+}
+yet_another_hash.keys # also returns [:defcon, :action]
+
+yet_another_hash.key?(:defcon) # checks the existence of keys in hash, evaluates to true
+yet_another_hash.value?(3) # checks the existence of values in hash, evaluates to true
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <h2 id="control-structures-and-logic-flow"><a class="anchor" aria-hidden="true" tabindex="-1" href="#control-structures-and-logic-flow"><span class="octicon octicon-link"></span></a>Control structures and logic flow</h2>
+    <pre class="language-ruby"><code class="language-ruby code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># ---------- CONDITIONALS ----------</span>
+</span><span class="code-line line-number" line="2">    <span class="token comment"># similar syntax to bash</span>
+</span><span class="code-line line-number" line="3">    <span class="token comment"># postfix-if notation is available also</span>
+</span><span class="code-line line-number" line="4">
+</span><span class="code-line line-number" line="5"><span class="token comment"># if elsif else</span>
+</span><span class="code-line line-number" line="6">
+</span><span class="code-line line-number" line="7"><span class="token keyword">if</span> <span class="token boolean">true</span>
+</span><span class="code-line line-number" line="8">    <span class="token string-literal"><span class="token string">"if statement"</span></span>
+</span><span class="code-line line-number" line="9"><span class="token keyword">elsif</span> <span class="token boolean">false</span>
+</span><span class="code-line line-number" line="10">    <span class="token string-literal"><span class="token string">"else if, optional"</span></span>
+</span><span class="code-line line-number" line="11"><span class="token keyword">else</span>
+</span><span class="code-line line-number" line="12">    <span class="token string-literal"><span class="token string">"else, also optional"</span></span>
+</span><span class="code-line line-number" line="13"><span class="token keyword">end</span>
+</span><span class="code-line line-number" line="14">
+</span><span class="code-line line-number" line="15">warnings <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string-literal"><span class="token string">"Patronimic is missing"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Address is too short"</span></span><span class="token punctuation">]</span>
+</span><span class="code-line line-number" line="16">puts<span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Some warnings occured:\n"</span></span> <span class="token operator">+</span> warnings<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"\n"</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">if</span> <span class="token operator">!</span>warnings<span class="token punctuation">.</span>empty<span class="token operator">?</span> <span class="token comment"># postfix-if notation can be used for single statements with no code blocks</span>
+</span><span class="code-line line-number" line="17">puts<span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Some warnings occured:\n"</span></span> <span class="token operator">+</span> warnings<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"\n"</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">unless</span> warnings<span class="token punctuation">.</span>empty<span class="token operator">?</span> <span class="token comment"># unless can be used in place with if</span>
+</span><span class="code-line line-number" line="18">
+</span><span class="code-line line-number" line="19"><span class="token comment"># case when else</span>
+</span><span class="code-line line-number" line="20">    <span class="token comment"># else functions as the default statement</span>
+</span><span class="code-line line-number" line="21">    <span class="token comment"># cases can also use ranges!</span>
+</span><span class="code-line line-number" line="22">
+</span><span class="code-line line-number" line="23">grade <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"B"</span></span>
+</span><span class="code-line line-number" line="24"><span class="token keyword">case</span> grade
+</span><span class="code-line line-number" line="25"><span class="token keyword">when</span> <span class="token string-literal"><span class="token string">"A"</span></span>
+</span><span class="code-line line-number" line="26">    puts <span class="token string-literal"><span class="token string">"lovely"</span></span>
+</span><span class="code-line line-number" line="27"><span class="token keyword">when</span> <span class="token string-literal"><span class="token string">"B"</span></span>
+</span><span class="code-line line-number" line="28">    puts <span class="token string-literal"><span class="token string">"ok but good job"</span></span>
+</span><span class="code-line line-number" line="29"><span class="token keyword">when</span> <span class="token string-literal"><span class="token string">"C"</span></span>
+</span><span class="code-line line-number" line="30">    puts <span class="token string-literal"><span class="token string">"watermelon sugar high"</span></span>
+</span><span class="code-line line-number" line="31"><span class="token keyword">else</span>
+</span><span class="code-line line-number" line="32">    puts <span class="token string-literal"><span class="token string">"Alternative grading system, eh?"</span></span>
+</span><span class="code-line line-number" line="33"><span class="token keyword">end</span>
+</span><span class="code-line line-number" line="34">
+</span><span class="code-line line-number" line="35">num_grade <span class="token operator">=</span> <span class="token number">82</span>
+</span><span class="code-line line-number" line="36"><span class="token keyword">case</span> num<span class="token operator">-</span>grade
+</span><span class="code-line line-number" line="37"><span class="token keyword">when</span> <span class="token number">90.</span><span class="token number">.100</span>
+</span><span class="code-line line-number" line="38">    puts <span class="token string-literal"><span class="token string">"nice one"</span></span>
+</span><span class="code-line line-number" line="39"><span class="token keyword">when</span> <span class="token number">80.</span><span class="token number">.90</span>
+</span><span class="code-line line-number" line="40">    puts <span class="token string-literal"><span class="token string">"lovely job"</span></span>
+</span><span class="code-line line-number" line="41"><span class="token keyword">else</span>
+</span><span class="code-line line-number" line="42">    puts <span class="token string-literal"><span class="token string">"You failed!"</span></span>
+</span><span class="code-line line-number" line="43"><span class="token keyword">end</span>
+</span><span class="code-line line-number" line="44">
+</span><span class="code-line line-number" line="45"><span class="token comment"># ---------- LOOPS ----------</span>
+</span><span class="code-line line-number" line="46">    <span class="token comment"># traditional for loops aren't common</span>
+</span><span class="code-line line-number" line="47">    <span class="token comment"># basic loops are implemented with each enumerable</span>
+</span><span class="code-line line-number" line="48">    <span class="token comment"># also similar syntax to bash and rust</span>
+</span><span class="code-line line-number" line="49">    <span class="token comment"># Ruby has other looping functions like map, reduce and inject</span>
+</span><span class="code-line line-number" line="50">
+</span><span class="code-line line-number" line="51"><span class="token comment"># .each DO AND .each_with_index DO LOOPS</span>
+</span><span class="code-line line-number" line="52">
+</span><span class="code-line line-number" line="53"><span class="token comment"># APPROVED SYNTAX AND COMMONLY SEEN</span>
+</span><span class="code-line line-number" line="54"><span class="token punctuation">(</span><span class="token number">1.</span><span class="token number">.5</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">each</span> <span class="token keyword">do</span> <span class="token operator">|</span>counter<span class="token operator">|</span>
+</span><span class="code-line line-number" line="55">    puts <span class="token string-literal"><span class="token string">"this is the ${counter}"</span></span>
+</span><span class="code-line line-number" line="56"><span class="token keyword">end</span>
+</span><span class="code-line line-number" line="57">
+</span><span class="code-line line-number" line="58"><span class="token comment"># this is also approved syntax since blocks can be wrapped in curly braces</span>
+</span><span class="code-line line-number" line="59"><span class="token punctuation">(</span><span class="token number">1.</span><span class="token number">.5</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">each</span> <span class="token punctuation">{</span><span class="token operator">|</span>counter<span class="token operator">|</span> puts <span class="token string-literal"><span class="token string">"this is also the </span><span class="token interpolation"><span class="token delimiter punctuation">#{</span><span class="token content">counter</span><span class="token delimiter punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="60">
+</span><span class="code-line line-number" line="61"><span class="token comment"># APPROVED SYNTAX BUT RARELY SEEN</span>
+</span><span class="code-line line-number" line="62"><span class="token keyword">for</span> counter <span class="token keyword">in</span> <span class="token number">1.</span><span class="token number">.5</span>
+</span><span class="code-line line-number" line="63">    puts <span class="token string-literal"><span class="token string">"iteration </span><span class="token interpolation"><span class="token delimiter punctuation">#{</span><span class="token content">counter</span><span class="token delimiter punctuation">}</span></span><span class="token string">"</span></span>
+</span><span class="code-line line-number" line="64"><span class="token keyword">end</span>
+</span><span class="code-line line-number" line="65">
+</span><span class="code-line line-number" line="66"><span class="token comment"># you can also iterate over elements in data structrues like Hashes and Maps</span>
+</span><span class="code-line line-number" line="67">array<span class="token punctuation">.</span><span class="token keyword">each</span> <span class="token keyword">do</span> <span class="token operator">|</span>element<span class="token operator">|</span>
+</span><span class="code-line line-number" line="68">    puts <span class="token string-literal"><span class="token string">"this is an </span><span class="token interpolation"><span class="token delimiter punctuation">#{</span><span class="token content">element</span><span class="token delimiter punctuation">}</span></span><span class="token string">"</span></span>
+</span><span class="code-line line-number" line="69"><span class="token keyword">end</span>
+</span><span class="code-line line-number" line="70">hash<span class="token punctuation">.</span><span class="token keyword">each</span> <span class="token keyword">do</span> <span class="token operator">|</span>key<span class="token punctuation">,</span>value<span class="token operator">|</span>
+</span><span class="code-line line-number" line="71">    puts <span class="token string-literal"><span class="token string">"this is a </span><span class="token interpolation"><span class="token delimiter punctuation">#{</span><span class="token content">key</span><span class="token delimiter punctuation">}</span></span><span class="token string"> and this is a </span><span class="token interpolation"><span class="token delimiter punctuation">#{</span><span class="token content">value</span><span class="token delimiter punctuation">}</span></span><span class="token string">"</span></span>
+</span><span class="code-line line-number" line="72"><span class="token keyword">end</span>
+</span><span class="code-line line-number" line="73">
+</span><span class="code-line line-number" line="74"><span class="token comment"># .each_with_index returns an index with an iterable, similar to enumerate() in python</span>
+</span><span class="code-line line-number" line="75">array<span class="token punctuation">.</span>each_with_index <span class="token keyword">do</span> <span class="token operator">|</span>element<span class="token punctuation">,</span> index<span class="token operator">|</span>
+</span><span class="code-line line-number" line="76">    puts <span class="token string-literal"><span class="token string">"</span><span class="token interpolation"><span class="token delimiter punctuation">#{</span><span class="token content">element</span><span class="token delimiter punctuation">}</span></span><span class="token string"> and this is an </span><span class="token interpolation"><span class="token delimiter punctuation">#{</span><span class="token content">index</span><span class="token delimiter punctuation">}</span></span><span class="token string">"</span></span>
+</span><span class="code-line line-number" line="77"><span class="token keyword">end</span>
+</span><span class="code-line line-number" line="78">
+</span><span class="code-line line-number" line="79"><span class="token comment"># WHILE DO LOOPS</span>
+</span><span class="code-line line-number" line="80">counter <span class="token operator">=</span> <span class="token number">1</span>
+</span><span class="code-line line-number" line="81"><span class="token keyword">while</span> counter <span class="token operator">&#x3C;=</span> <span class="token number">5</span> <span class="token keyword">do</span>
+</span><span class="code-line line-number" line="82">    puts <span class="token string-literal"><span class="token string">"iteration </span><span class="token interpolation"><span class="token delimiter punctuation">#{</span><span class="token content">counter</span><span class="token delimiter punctuation">}</span></span><span class="token string">"</span></span>
+</span><span class="code-line line-number" line="83">    counter <span class="token operator">+=</span> <span class="token number">1</span>
+</span><span class="code-line line-number" line="84"><span class="token keyword">end</span>
+</span></code><div onclick="copied(this)" data-code="# ---------- CONDITIONALS ----------
+    # similar syntax to bash
+    # postfix-if notation is available also
+
+# if elsif else
+
+if true
+    &#x22;if statement&#x22;
+elsif false
+    &#x22;else if, optional&#x22;
+else
+    &#x22;else, also optional&#x22;
+end
+
+warnings = [&#x22;Patronimic is missing&#x22;, &#x22;Address is too short&#x22;]
+puts(&#x22;Some warnings occured:\n&#x22; + warnings.join(&#x22;\n&#x22;)) if !warnings.empty? # postfix-if notation can be used for single statements with no code blocks
+puts(&#x22;Some warnings occured:\n&#x22; + warnings.join(&#x22;\n&#x22;)) unless warnings.empty? # unless can be used in place with if
+
+# case when else
+    # else functions as the default statement
+    # cases can also use ranges!
+
+grade = &#x22;B&#x22;
+case grade
+when &#x22;A&#x22;
+    puts &#x22;lovely&#x22;
+when &#x22;B&#x22;
+    puts &#x22;ok but good job&#x22;
+when &#x22;C&#x22;
+    puts &#x22;watermelon sugar high&#x22;
+else
+    puts &#x22;Alternative grading system, eh?&#x22;
+end
+
+num_grade = 82
+case num-grade
+when 90..100
+    puts &#x22;nice one&#x22;
+when 80..90
+    puts &#x22;lovely job&#x22;
+else
+    puts &#x22;You failed!&#x22;
+end
+
+# ---------- LOOPS ----------
+    # traditional for loops aren&#x27;t common
+    # basic loops are implemented with each enumerable
+    # also similar syntax to bash and rust
+    # Ruby has other looping functions like map, reduce and inject
+
+# .each DO AND .each_with_index DO LOOPS
+
+# APPROVED SYNTAX AND COMMONLY SEEN
+(1..5).each do |counter|
+    puts &#x22;this is the ${counter}&#x22;
+end
+
+# this is also approved syntax since blocks can be wrapped in curly braces
+(1..5).each {|counter| puts &#x22;this is also the #{counter}&#x22;}
+
+# APPROVED SYNTAX BUT RARELY SEEN
+for counter in 1..5
+    puts &#x22;iteration #{counter}&#x22;
+end
+
+# you can also iterate over elements in data structrues like Hashes and Maps
+array.each do |element|
+    puts &#x22;this is an #{element}&#x22;
+end
+hash.each do |key,value|
+    puts &#x22;this is a #{key} and this is a #{value}&#x22;
+end
+
+# .each_with_index returns an index with an iterable, similar to enumerate() in python
+array.each_with_index do |element, index|
+    puts &#x22;#{element} and this is an #{index}&#x22;
+end
+
+# WHILE DO LOOPS
+counter = 1
+while counter <= 5 do
+    puts &#x22;iteration #{counter}&#x22;
+    counter += 1
+end
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <h2 id="methods"><a class="anchor" aria-hidden="true" tabindex="-1" href="#methods"><span class="octicon octicon-link"></span></a>Methods</h2>
+    <p>Since Ruby is largely OOP, functions are methods called on objects.</p>
+    <pre class="language-ruby"><code class="language-ruby code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># ---------- METHODS ----------</span>
+</span><span class="code-line line-number" line="2">    <span class="token comment"># similar to Scala and Rust, methods implictly return the value of the last statement</span>
+</span><span class="code-line line-number" line="3">    <span class="token comment"># def</span>
+</span><span class="code-line line-number" line="4">    <span class="token comment"># yield</span>
+</span><span class="code-line line-number" line="5">
+</span><span class="code-line line-number" line="6"><span class="token keyword">def</span> <span class="token method-definition"><span class="token function">double</span></span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+</span><span class="code-line line-number" line="7">    x <span class="token operator">*</span> <span class="token number">2</span> <span class="token comment"># x * 2 is returned</span>
+</span><span class="code-line line-number" line="8"><span class="token keyword">end</span>
+</span><span class="code-line line-number" line="9">
+</span><span class="code-line line-number" line="10">double<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment"># this returns 4</span>
+</span><span class="code-line line-number" line="11">double <span class="token number">3</span> <span class="token comment"># parantheses are optional when interpretation of methods is unambigious, this returns 6</span>
+</span><span class="code-line line-number" line="12">
+</span><span class="code-line line-number" line="13">double double <span class="token number">3</span> <span class="token comment"># this returns 12</span>
+</span><span class="code-line line-number" line="14">
+</span><span class="code-line line-number" line="15"><span class="token keyword">def</span> <span class="token method-definition"><span class="token function">sum</span></span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span>
+</span><span class="code-line line-number" line="16">    x <span class="token operator">+</span> y
+</span><span class="code-line line-number" line="17"><span class="token keyword">end</span>
+</span><span class="code-line line-number" line="18">
+</span><span class="code-line line-number" line="19">sum <span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span> <span class="token comment"># method arguments are separated by commas, this returns 7</span>
+</span><span class="code-line line-number" line="20">sum sum <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">5</span> <span class="token comment"># this returns 12</span>
+</span><span class="code-line line-number" line="21">
+</span><span class="code-line line-number" line="22"><span class="token comment"># yield</span>
+</span><span class="code-line line-number" line="23">    <span class="token comment"># implicit optional block parameter that can be returned</span>
+</span><span class="code-line line-number" line="24">
+</span><span class="code-line line-number" line="25"><span class="token keyword">def</span> <span class="token method-definition"><span class="token function">surround</span></span> 
+</span><span class="code-line line-number" line="26">    puts <span class="token string-literal"><span class="token string">"{"</span></span>
+</span><span class="code-line line-number" line="27">    <span class="token keyword">yield</span>
+</span><span class="code-line line-number" line="28">    puts <span class="token string-literal"><span class="token string">"}"</span></span>
+</span><span class="code-line line-number" line="29"><span class="token keyword">end</span>
+</span><span class="code-line line-number" line="30">
+</span><span class="code-line line-number" line="31">surround <span class="token punctuation">{</span>puts <span class="token string-literal"><span class="token string">"hello world"</span></span><span class="token punctuation">}</span> <span class="token comment"># this returns { hello world } with hello world being a variable</span>
+</span><span class="code-line line-number" line="32">
+</span><span class="code-line line-number" line="33"><span class="token comment"># by convention, if the method name ends with an exclamation mark, the method does something destructive like mutate the receiver</span>
+</span><span class="code-line line-number" line="34">    <span class="token comment"># many methods have ! version that modifies the existing object, and a non-! version that returns a copy of the changed version</span>
+</span></code><div onclick="copied(this)" data-code="# ---------- METHODS ----------
+    # similar to Scala and Rust, methods implictly return the value of the last statement
+    # def
+    # yield
+
+def double(x)
+    x * 2 # x * 2 is returned
+end
+
+double(2) # this returns 4
+double 3 # parantheses are optional when interpretation of methods is unambigious, this returns 6
+
+double double 3 # this returns 12
+
+def sum(x,y)
+    x + y
+end
+
+sum 3,4 # method arguments are separated by commas, this returns 7
+sum sum (3,4), 5 # this returns 12
+
+# yield
+    # implicit optional block parameter that can be returned
+
+def surround 
+    puts &#x22;{&#x22;
+    yield
+    puts &#x22;}&#x22;
+end
+
+surround {puts &#x22;hello world&#x22;} # this returns { hello world } with hello world being a variable
+
+# by convention, if the method name ends with an exclamation mark, the method does something destructive like mutate the receiver
+    # many methods have ! version that modifies the existing object, and a non-! version that returns a copy of the changed version
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <h2 id="class"><a class="anchor" aria-hidden="true" tabindex="-1" href="#class"><span class="octicon octicon-link"></span></a>Class</h2>
+    <pre class="language-ruby"><code class="language-ruby code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># ---------- CLASSES ----------</span>
+</span><span class="code-line line-number" line="2"><span class="token keyword">class</span> <span class="token class-name">Human</span> <span class="token comment"># create a class</span>
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4">    <span class="token variable">@@species</span> <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"Homo Sapiens"</span></span> <span class="token comment"># @@ creates a class variable that is shared across all instances of the Human class</span>
+</span><span class="code-line line-number" line="5">
+</span><span class="code-line line-number" line="6">    <span class="token comment"># INSTANCE METHODS</span>
+</span><span class="code-line line-number" line="7">
+</span><span class="code-line line-number" line="8">    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">initialize</span></span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment"># default constuctor method, it can be named anything really and serves the purpose of assigning values to the attributes of the instance object</span>
+</span><span class="code-line line-number" line="9">        <span class="token variable">@name</span> <span class="token operator">=</span> name
+</span><span class="code-line line-number" line="10">        <span class="token variable">@age</span> <span class="token operator">=</span> age
+</span><span class="code-line line-number" line="11">    <span class="token keyword">end</span>
+</span><span class="code-line line-number" line="12">
+</span><span class="code-line line-number" line="13">    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">name</span></span><span class="token operator">=</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token comment"># basic setter method</span>
+</span><span class="code-line line-number" line="14">        <span class="token variable">@name</span> <span class="token operator">=</span> name
+</span><span class="code-line line-number" line="15">    <span class="token keyword">end</span>
+</span><span class="code-line line-number" line="16">
+</span><span class="code-line line-number" line="17">    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">name</span></span> <span class="token comment"># basic getter method</span>
+</span><span class="code-line line-number" line="18">        <span class="token variable">@name</span>
+</span><span class="code-line line-number" line="19">    <span class="token keyword">end</span>
+</span><span class="code-line line-number" line="20">
+</span><span class="code-line line-number" line="21">    <span class="token comment"># CLASS METHODS</span>
+</span><span class="code-line line-number" line="22">        <span class="token comment"># only be called on the class, not an instance object</span>
+</span><span class="code-line line-number" line="23">
+</span><span class="code-line line-number" line="24">    <span class="token keyword">def</span> <span class="token method-definition"><span class="token keyword">self</span><span class="token punctuation">.</span><span class="token function">say</span></span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span> <span class="token comment"># the self. distinguishes a class method from an instance method</span>
+</span><span class="code-line line-number" line="25">        puts msg
+</span><span class="code-line line-number" line="26">    <span class="token keyword">end</span>
+</span><span class="code-line line-number" line="27">
+</span><span class="code-line line-number" line="28">    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">species</span></span>
+</span><span class="code-line line-number" line="29">        <span class="token variable">@@species</span>
+</span><span class="code-line line-number" line="30">    <span class="token keyword">end</span>
+</span><span class="code-line line-number" line="31">
+</span><span class="code-line line-number" line="32"><span class="token keyword">end</span>
+</span><span class="code-line line-number" line="33">
+</span><span class="code-line line-number" line="34"><span class="token comment"># INSTANTIATING A NEW CLASS OBJECT</span>
+</span><span class="code-line line-number" line="35">    <span class="token comment"># .new()</span>
+</span><span class="code-line line-number" line="36">
+</span><span class="code-line line-number" line="37">jim <span class="token operator">=</span> <span class="token class-name">Human</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Jimmy Neutron"</span></span><span class="token punctuation">)</span>
+</span><span class="code-line line-number" line="38">dwight <span class="token operator">=</span> <span class="token class-name">Human</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Dwight Howard"</span></span><span class="token punctuation">)</span>
+</span><span class="code-line line-number" line="39">
+</span><span class="code-line line-number" line="40"><span class="token comment"># calling instance methods</span>
+</span><span class="code-line line-number" line="41">jim<span class="token punctuation">.</span>species
+</span><span class="code-line line-number" line="42">jim<span class="token punctuation">.</span>name <span class="token comment"># returns the name as a String</span>
+</span><span class="code-line line-number" line="43">jim<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"Jim the science guy"</span></span> <span class="token comment"># takes in the assigned String value as the new instance object attribute</span>
+</span><span class="code-line line-number" line="44">dwight<span class="token punctuation">.</span>species
+</span><span class="code-line line-number" line="45">
+</span><span class="code-line line-number" line="46"><span class="token comment"># calling class methods</span>
+</span><span class="code-line line-number" line="47">Human<span class="token punctuation">.</span>say<span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Hello sir"</span></span><span class="token punctuation">)</span> <span class="token comment"># returns "Hello sir"</span>
+</span><span class="code-line line-number" line="48">
+</span><span class="code-line line-number" line="49"><span class="token comment"># INHERITANCE</span>
+</span><span class="code-line line-number" line="50">
+</span><span class="code-line line-number" line="51"><span class="token keyword">class</span> <span class="token class-name">Worker</span> <span class="token operator">&#x3C;</span> Human <span class="token comment"># class Worker inherits all attributes and methods of the Human class</span>
+</span><span class="code-line line-number" line="52"><span class="token keyword">end</span>
+</span></code><div onclick="copied(this)" data-code="# ---------- CLASSES ----------
+class Human # create a class
+
+    @@species = &#x22;Homo Sapiens&#x22; # @@ creates a class variable that is shared across all instances of the Human class
+
+    # INSTANCE METHODS
+
+    def initialize(name, age=0) # default constuctor method, it can be named anything really and serves the purpose of assigning values to the attributes of the instance object
+        @name = name
+        @age = age
+    end
+
+    def name=(name) # basic setter method
+        @name = name
+    end
+
+    def name # basic getter method
+        @name
+    end
+
+    # CLASS METHODS
+        # only be called on the class, not an instance object
+
+    def self.say(msg) # the self. distinguishes a class method from an instance method
+        puts msg
+    end
+
+    def species
+        @@species
+    end
+
+end
+
+# INSTANTIATING A NEW CLASS OBJECT
+    # .new()
+
+jim = Human.new(&#x22;Jimmy Neutron&#x22;)
+dwight = Human.new(&#x22;Dwight Howard&#x22;)
+
+# calling instance methods
+jim.species
+jim.name # returns the name as a String
+jim.name = &#x22;Jim the science guy&#x22; # takes in the assigned String value as the new instance object attribute
+dwight.species
+
+# calling class methods
+Human.say(&#x22;Hello sir&#x22;) # returns &#x22;Hello sir&#x22;
+
+# INHERITANCE
+
+class Worker < Human # class Worker inherits all attributes and methods of the Human class
+end
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <h2 id="exception-handling"><a class="anchor" aria-hidden="true" tabindex="-1" href="#exception-handling"><span class="octicon octicon-link"></span></a>Exception handling</h2>
+    <pre class="language-ruby"><code class="language-ruby code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># ---------- EXCEPTION HANDLING ----------</span>
+</span><span class="code-line line-number" line="2">    <span class="token comment"># begin</span>
+</span><span class="code-line line-number" line="3">    <span class="token comment"># raise</span>
+</span><span class="code-line line-number" line="4">    <span class="token comment"># rescue =></span>
+</span><span class="code-line line-number" line="5">    <span class="token comment"># ensure</span>
+</span><span class="code-line line-number" line="6">    <span class="token comment"># else</span>
+</span><span class="code-line line-number" line="7">
+</span><span class="code-line line-number" line="8"><span class="token keyword">begin</span>
+</span><span class="code-line line-number" line="9">  <span class="token keyword">raise</span> NoMemoryError<span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">'You ran out of memory.'</span></span> <span class="token comment"># raises an exception</span>
+</span><span class="code-line line-number" line="10"><span class="token keyword">rescue</span> NoMemoryError <span class="token operator">=></span> exception_variable
+</span><span class="code-line line-number" line="11">  puts <span class="token string-literal"><span class="token string">'NoMemoryError was raised'</span></span><span class="token punctuation">,</span> exception_variable
+</span><span class="code-line line-number" line="12"><span class="token keyword">rescue</span> RuntimeError <span class="token operator">=></span> other_exception_variable
+</span><span class="code-line line-number" line="13">  puts <span class="token string-literal"><span class="token string">'RuntimeError was raised now'</span></span>
+</span><span class="code-line line-number" line="14"><span class="token keyword">else</span>
+</span><span class="code-line line-number" line="15">  puts <span class="token string-literal"><span class="token string">'This runs if no exceptions were thrown at all'</span></span>
+</span><span class="code-line line-number" line="16"><span class="token keyword">ensure</span>
+</span><span class="code-line line-number" line="17">  puts <span class="token string-literal"><span class="token string">'This code always runs no matter what'</span></span>
+</span><span class="code-line line-number" line="18"><span class="token keyword">end</span>
+</span></code><div onclick="copied(this)" data-code="# ---------- EXCEPTION HANDLING ----------
+    # begin
+    # raise
+    # rescue =>
+    # ensure
+    # else
+
+begin
+  raise NoMemoryError, &#x27;You ran out of memory.&#x27; # raises an exception
+rescue NoMemoryError => exception_variable
+  puts &#x27;NoMemoryError was raised&#x27;, exception_variable
+rescue RuntimeError => other_exception_variable
+  puts &#x27;RuntimeError was raised now&#x27;
+else
+  puts &#x27;This runs if no exceptions were thrown at all&#x27;
+ensure
+  puts &#x27;This code always runs no matter what&#x27;
+end
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+    <h2 id="more-on"><a class="anchor" aria-hidden="true" tabindex="-1" href="#more-on"><span class="octicon octicon-link"></span></a>More on</h2>
+    <ul>
+      <li>destructuring</li>
+      <li>splat operator</li>
+      <li><a href="https://try.ruby-lang.org/">try ruby</a></li>
+      <li><a href="https://www.ruby-lang.org/en/documentation/quickstart/">ruby documentation</a></li>
+      <li><a href="https://rubygems.org/">rubygems package manager</a></li>
+      <li><a href="https://rvm.io/">ruby version manager</a></li>
+      <li><a href="https://bundler.io/">bundler for ruby dependency management</a></li>
+      <li><a href="https://learnxinyminutes.com/docs/ruby-ecosystem/">ruby ecosystem</a></li>
+      <li><a href="http://www.rubymotion.com/">rubymotion for ios development</a></li>
+    </ul>
+  <style>markdown-style pre .copied {
+  display: flex;
+  position: absolute;
+  cursor: pointer;
+  color: #a5afbb;
+  top: 6px;
+  right: 6px;
+  border-radius: 5px;
+  background: #82828226;
+  padding: 6px;
+  font-size: 12px;
+  transition: all .3s;
+}
+markdown-style pre .copied:not(.active) {
+  visibility: hidden;
+}
+markdown-style pre:hover .copied {
+  visibility: visible;
+}
+markdown-style pre:hover .copied:hover {
+  background: #4caf50;
+  color: #fff;
+}
+markdown-style pre:hover .copied:active,
+markdown-style pre .copied.active {
+  background: #2e9b33;
+  color: #fff;
+}
+markdown-style pre .copied .octicon-copy {
+  display: block;
+}
+markdown-style pre .copied .octicon-check {
+  display: none;
+}
+markdown-style pre .active .octicon-copy {
+  display: none;
+}
+markdown-style pre .active .octicon-check {
+  display: block;
+}</style><script>/*! @uiw/copy-to-clipboard v1.0.12 | MIT (c) 2021 Kenny Wang | https://github.com/uiwjs/copy-to-clipboard.git */
+!function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):(e="undefined"!=typeof globalThis?globalThis:e||self).copyTextToClipboard=t()}(this,(function(){"use strict";return function(e,t){const o=document.createElement("textarea");o.value=e,o.setAttribute("readonly",""),o.style={position:"absolute",left:"-9999px"},document.body.appendChild(o);const n=document.getSelection().rangeCount>0&&document.getSelection().getRangeAt(0);o.select();let c=!1;try{c=!!document.execCommand("copy")}catch(e){c=!1}document.body.removeChild(o),n&&document.getSelection&&(document.getSelection().removeAllRanges(),document.getSelection().addRange(n)),t&&t(c)}}));
+
+function copied(target, str) {
+  target.classList.add('active');
+  copyTextToClipboard(target.dataset.code, function() {
+    setTimeout(() => {
+      target.classList.remove('active');
+    }, 2000);
+  });
+}</script></markdown-style></body>
+</html>
