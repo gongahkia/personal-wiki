@@ -25,21 +25,22 @@ jobs:
         run: npm install @actions/core @actions/github markdown-to-html-cli
 
       - name: Create Output Directory
-        run: mkdir -p output/notes
+        run: mkdir -p output
 
       - name: Convert Markdown to HTML
         run: |
           for file in $(find notes/ -name '*.md'); do
-            mkdir -p $(dirname output/$file)
-            npx markdown-to-html-cli $file -o output/${file%.md}.html
+            output_dir=output/$(dirname $file)
+            mkdir -p $output_dir
+            npx markdown-to-html-cli $file -o $output_dir/$(basename ${file%.md}.html)
           done
 
       - name: Commit and Push Changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git config --global user.email "actions@github.com"
-          git config --global user.name "GitHub Actions"
+          git config --local user.email "actions[bot]@github.com"
+          git config --local user.name "github-actions[bot]"
           git add output/
           git diff-index --quiet HEAD || git commit -m "Convert Markdown to HTML and move to output directory"
           git push
