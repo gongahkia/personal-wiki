@@ -1,0 +1,36 @@
+name: Markdown to HTML Conversion
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install Dependencies
+        run: npm install @actions/core @actions/github markdown-to-html-cli
+
+      - name: Convert Markdown to HTML
+        run: npx markdown-to-html-cli '**/*.md'
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+          git add .
+          git commit -m "Convert Markdown to HTML"
+          git push
