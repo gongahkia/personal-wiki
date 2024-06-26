@@ -1,6 +1,6 @@
 # `C++`
 
-"We have C at home, and it has classes."
+*"We have C at home, and it has classes."*
 
 ## Comments
 
