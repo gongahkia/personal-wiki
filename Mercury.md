@@ -1,6 +1,6 @@
 # `Mercury`
 
-Declarative functional language for applications with complex algorithm implementation and formal verification.
+Functional language for complex algorithm implementation and formal verification.
 
 ## Comments
 
