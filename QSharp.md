@@ -1,6 +1,6 @@
 # `Q#`
 
-> add description of Q# and make it succint accurate and expressive
+Domain-specific language for expressing quantum computations.
 
 ## Comments
 
@@ -30,9 +30,26 @@ Message("this has a newline but only because we explicitly specified it\n");
 ```qs
 // ----- QUICKSTART -----
     // semicolon language
-    // set =>
-    // mutable =>
+    // strongly statically typed with explicit type annotations for variables and functions
+    // hybrid evaluation combining classicial control flow (conditionals and loops) with quantum operations
+    // seamless integration with .NET languages
+    // note that by default Q# variables are immutable 
+    // : => declares the datatype of a given variable or function, effectively acting as type declaration and annotations within Q#
+    // mutable => specifies that a given variable stores a mutable value whose value can be reassigned and modified after initalisation, the equivalent of mut in Rust
+    // let => variable binding for a classical variable of immutable value, where the variable value cannot be reassigned after initalisation
+    // set => used to update the value of a mutable variable within an operation or function
+    // Allocate() => requests and allocates quantum resources (like qubits) for use in quantum computations, receiving an integer number value as an argument that specifies the number of qubits required for usage and returns the allocated resources
+    // Release() => releases previously allocated resources (like qubits), receiving an integer number value as an argument that specifies the number of qubits required for release and returns Unit to indicate succesful release
 
+operation AllocateQubits(numQubits : Int) : Qubit[] {
+    return Allocate(numQubits);
+}
+
+operation ReleaseQubits(qubits : Qubit[]) : Unit {
+    for (q in qubits) {
+        Release(q);
+    }
+}
 ```
 
 ## Types
@@ -111,6 +128,12 @@ operation ExampleIfElse(value : Int) : Unit {
     }
 }
 
+// WHEN
+    // used in the context of newtypes to specify a condition that instances of the newtype must satisfy
+    
+newtype NegativeInt = Int when value < 0;
+newtype PositiveEvenInt = Int when value > 0 && value % 2 == 0;
+
 // MATCH CASE => 
     // provides a degree of basic pattern-matching in Q# similar to Rust, the equivalent of switch case constructs in other languages
     // note that each predicate case condition is ; semicolon-delimited
@@ -155,43 +178,62 @@ operation ExampleWhileLoop() : Unit {
 
 ```qs
 // ----- DATA STRUCTURE -----
-    // array =>
-    // tuple =>
-    // map =>
-    // range =>
-    // struct =>
-    // newtype =>
+    // array => dynamically-size ordered collection of elements of the same datatype
+    // tuple => fixed-size ordered collection of elements of multiple datatypes
+    // map => dynamically-sized unordered collection of specified named key-value pairs of multiple datatypes, the equivalent of dictionaries in Python
+    // range => iterable range of integer values, defined from the rangeStartValue, rangeStepValue and rangeEndValue
+    // struct => user-defined collection of specified named fields and their respective datatypes, affording representation of modelled data via type aliases, the equivalent of structs in Rust and Go
+    // newtype => specifies a new type that is based on an existing declared datatype, except this new type has a distinct identity, used particularly to ensure type safety by distinguishing between similar types
+        // when => used in the context of newtypes to specify a condition that instances of the newtype must satisfy
+        // value => keyword identifier that specifies the value being evaluated against the specified condition
 
+mutable anExampleArray = [1, 2, 3, 4, 5, 6]; 
+
+let anExampleTuple = (name = "Alice", age = 30, isActive = true); 
+
+let anExampleMap = [
+    "name" => "Bob",
+    "age" => 25,
+    "isActive" => false
+]; 
+
+let anExampleRange = Range(1, 2, 10);
+
+struct anExampleStruct {
+    mutable firstName : String;
+    mutable lastName : String;
+}
+
+struct twoDimensionalCoordinate {
+    mutable X : Int;
+    mutable Y : Int;
+}
+
+newtype anExampleNewTypeThatIsAPositiveInteger = Int when value > 0;
 ```
-
-   - **`Array`**: Represents a mutable array of elements of the same type.
-   
-   - **`Tuple`**: Represents an immutable ordered collection of elements of possibly different types.
-   
-   - **`Map`**: Represents a key-value mapping where keys and values can be of any type.
-   
-   - **`Range`**: Represents a range of integer values (`Range Start Step End`).
-
-4. **User-Defined Types:**
-
-   - **Structs and Newtypes**: Allows defining custom data structures using `struct` or `newtype` keywords.
 
 ## Operations and Functions
 
 ```qs
 // ----- OPERATION -----
-    // 
+    // represents quantum operations that perform actions or computations and DO NOT return any value, the equivalent of void functions in other programming languages
+    // operation <operationName> () : Unit { <operationDefinitionBody> } => definition and declaration of an operation or function
+        // Unit => the operation return datatype is Unit since operations by definition do not return a value
+
+operation HelloQuantum() : Unit {
+    Message("Hello, Quantum!");
+}
 
 // ----- FUNCTION -----
-    // 
+    // represents classical functions that return a value, working similarly to value-return functions in other programming languages
+    // note that there are no void functions in Q# by definition since those are written as operations
+    // function <functionName> ( <functionParameterName(s)> : <functionParameterDatatype(s)> ) : <functionReturnDatatype(s)> { <functionDefinitionBody> } => definition and declaration of a named function
+        // return => note that Q# specifies the explicit return keyword for the value(s) to be returned from the function within the function definition body
 
+function Square(x : Int) : Int {
+    return x * x;
+}
 ```
-
-5. **Callable Types:**
-
-   - **Operations**: Represent quantum operations or classical functions.
-   
-   - **Functions**: Represent classical functions that return a value.
 
 ## More on
 
