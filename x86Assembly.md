@@ -1,6 +1,6 @@
 # `x86 Assembly`
 
-Instructions that provide a low-level interface to computer hardware to directly manipulate registers and memory for systems-level programming and optimization.
+Instructions providing a low-level interface to computer hardware for systems-level programming and optimization.
 
 ## Comments
 
