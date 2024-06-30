@@ -184,10 +184,11 @@ let area = (s) => {
 ```re
 // ----- FUNCTION -----
     // functions are first-class citizens, allowing for the creation of user-defined higher-order functions
-    // while the syntax for creation of named and anonymous functions appear to be exactly the same as below, their use cases distinguish them
+    // while the syntax for creation of named and anonymous functions appear to be exactly the same as below, their use cases distinguish them from each other
+    // note that Reason inherits from functional programming paradigms, featuring implicit return of the last expression within the function
     // let <functionName> = (<functionParameter(s)>) => <functionDefinitionBody> => definition and declaration of a named function, which are then called by their function name
     // let <anonymousFunctionVariableIdentifier> = (<functionParameter(s)>) => <functionDefinitionBody> => definition of an anonymous function, which is then assigned to a named variable identifier
-        // note that anonymous functions can also be called directly in the same line as their definition
+        // also observe that anonymous functions can also be called directly in the same line as their definition
 
 let add = (x, y) => x + y; // definition of a named function
 let result1 = add(2, 3); // calling a named function
