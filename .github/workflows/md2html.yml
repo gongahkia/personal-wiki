@@ -51,3 +51,11 @@ jobs:
           git add output/ index.html
           git commit -m "Compiled all markdown notes to HTML and created index.html"
           git push
+
+      - name: Deploy to GitHub Pages
+        if: success()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: . # since this root directory contains index.html
+          commit_message: "Publish GitHub Pages"
