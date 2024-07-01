@@ -65,7 +65,7 @@ say "this does have a newline";
     # % => declares a set data structure 
     # $ => declares a bag data structure
     # $ => declares a mix data structure 
-    # $ => declares a range data structure
+    # @ => declares a range data structure
     # $ => declares a tuple data structure
 
 # --- SPECIALISED TYPES ---
@@ -88,7 +88,7 @@ my %hash = 'name' => 'Alice', 'age' => 30;
 my %set = set('apple', 'banana', 'cherry');
 my $bag = bag('apple' => 3, 'banana' => 2);
 my $mix = mix('apple' => 1.5, 'banana' => 2.5);
-my $range = 1..10;
+my @range = 1..10;
 my $tuple = (1, "two", 3.0);
 
 my Signature $sig = :(Int $x, Str $y);
