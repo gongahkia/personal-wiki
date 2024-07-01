@@ -343,6 +343,6 @@ anotherCountry = "India"; // an error is thrown since the final local variable c
 * dart run
 * dart compile
 * [install dart](https://dart.dev/get-dart)
+* [dart documentation](https://dart.dev/tutorials)
 * [learn dart in y minutes](https://learnxinyminutes.com/docs/dart/)
 * [learn dart in 30 minutes](https://medium.com/nerd-for-tech/dart-for-dummies-learn-dart-in-30-minutes-e212328b81f0)
-* [dart documentation](https://dart.dev/tutorials)
