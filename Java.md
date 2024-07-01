@@ -475,4 +475,13 @@ public class Hero extends person {
 * array of objects
 * access modifiers
 * static
+* [java documentation](https://docs.oracle.com/en/java/)
 * [learn java in y minutes](https://learnxinyminutes.com/docs/java/)
+* [explaining jvm architecture](https://medium.com/java-for-beginners/understanding-java-virtual-machine-jvm-architecture-e68d1c611026)
+* [learn kotlin in y minutes](https://learnxinyminutes.com/docs/kotlin/)
+* [learn ballerina in y minutes](https://learnxinyminutes.com/docs/ballerina/)
+* [learn haxe in y minutes](https://learnxinyminutes.com/docs/haxe/)
+* [learn mercury in y minutes](https://learnxinyminutes.com/docs/mercury/)
+* [learn raku in y minutes](https://learnxinyminutes.com/docs/raku/)
+* [learn groovy in y minutes](https://learnxinyminutes.com/docs/groovy/)
+* [whiley.org](https://whiley.org/)
