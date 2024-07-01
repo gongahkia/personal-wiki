@@ -261,6 +261,6 @@ proc multiSum(numbers: varargs[int]): int=
 * procedure overloading
 * OOP
 * [install nim](https://nim-lang.org/install.html)
-* [learn nim in y minutes](https://learnxinyminutes.com/docs/nim/)
 * [nim documentation](https://nim-lang.org/documentation.html)
+* [learn nim in y minutes](https://learnxinyminutes.com/docs/nim/)
 
