@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>C</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="c"><code>C</code></h1>
+<h2 id="comments">Comments</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co">// single-line comments</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="co">/* multi-line</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="co">comments</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="co">look</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="co">like </span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="co">this */</span></span></code></pre></div>
+<h2 id="importing-headers">Importing headers</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="co">// ---------- HEADER ----------</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>    <span class="co">// headers are the equivalent of Python&#39;s modules</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>    <span class="co">// their contents are syntatically similar to C source files but the file format ends in .h</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a><span class="pp">#include </span><span class="im">&lt;stdlib.h&gt;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a><span class="pp">#include </span><span class="im">&lt;string.h&gt;</span></span></code></pre></div>
+<h2 id="printing">Printing</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="co">// ---------- PRINT ----------</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>    <span class="co">// printf is print formatted, it does not print a newline by default</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>        <span class="co">// %c for char</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>        <span class="co">// %s for strings (char[])</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>        <span class="co">// %d or %I for short signed</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>        <span class="co">// %u for short unsigned</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>        <span class="co">// %ld for long signed</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a>        <span class="co">// %lu for long unsigned</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a>        <span class="co">// %x for unsigned hexadecimal</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a>        <span class="co">// %o for unsigned octal</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true"></a>        <span class="co">// %f for float</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true"></a>        <span class="co">// %lf for double</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true"></a>        <span class="co">// %p for pointer</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true"></a>        <span class="co">// %% to print out %</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true"></a>printf(<span class="st">&quot;watermelon</span><span class="sc">\n</span><span class="st">&quot;</span>);</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true"></a>printf(<span class="st">&quot;%d</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="dv">0</span>); <span class="co">// prints 0</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true"></a><span class="co">// ---------- RECEIVE INPUT ----------</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true"></a>    <span class="co">// scanf takes in an input</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true"></a>    <span class="co">// &amp;input specifies the memory address where we store the input value of type int</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true"></a></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true"></a><span class="dt">int</span> input;</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true"></a>scanf(<span class="st">&quot;%d&quot;</span>, &amp;input);</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true"></a><span class="co">// ---------- SPECIAL CHARACTERS ----------</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true"></a></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true"></a><span class="ch">&#39;\n&#39;</span>; <span class="co">// newline character</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true"></a><span class="ch">&#39;\t&#39;</span>; <span class="co">// tab character (left justifies text)</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true"></a><span class="ch">&#39;\v&#39;</span>; <span class="co">// vertical tab</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true"></a><span class="ch">&#39;\a&#39;</span>; <span class="co">// alert (bell) character</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true"></a><span class="ch">&#39;\f&#39;</span>; <span class="co">// new page (form feed)</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true"></a><span class="ch">&#39;\r&#39;</span>; <span class="co">// carriage return</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true"></a><span class="ch">&#39;\b&#39;</span>; <span class="co">// backspace character</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true"></a><span class="ch">&#39;\0&#39;</span>; <span class="co">// NULL character. Usually put at end of strings in C.</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true"></a><span class="ch">&#39;\\&#39;</span>; <span class="co">// backslash</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true"></a><span class="ch">&#39;\?&#39;</span>; <span class="co">// question mark</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true"></a><span class="ch">&#39;\&#39;&#39;</span>; <span class="co">// single quote</span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true"></a><span class="ch">&#39;\&quot;&#39;</span>; <span class="co">// double quote</span></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true"></a>&#39;\xhh&#39;; <span class="co">// hexadecimal number. Example: &#39;\xb&#39; = vertical tab character</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true"></a>&#39;\<span class="dv">0</span><span class="er">oo</span>&#39;; <span class="co">// octal number. Example: &#39;\013&#39; = vertical tab character</span></span></code></pre></div>
+<h2 id="types">Types</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="co">// ---------- TYPE ----------</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>    <span class="co">// sizeof() operator returns the size of a given data type</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>    <span class="co">// char =&gt; 1 byte, but can be larger, single quotation marks, also known as a character literal</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>    <span class="co">// char[] =&gt; C&#39;s version of strings, take 1 byte * length of array, double quotation marks</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>    <span class="co">// int =&gt; 4 bytes, integer types may be signed or unsigned like in Rust</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>        <span class="co">// short =&gt; 2 bytes</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a>        <span class="co">// long =&gt; 4 - 8 bytes</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a>        <span class="co">// long long =&gt; 8 bytes or more</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a>    <span class="co">// float =&gt; 32-bit </span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a>        <span class="co">// double =&gt; larger float, 64-bit</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true"></a>    <span class="co">// 1 or 0 =&gt; C&#39;s version of booleans, 0 being false, 1 being true (though technically any non-0 value is true)</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true"></a><span class="dt">char</span> x_char = <span class="ch">&#39;y&#39;</span>; <span class="co">// char literals are single quoted</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true"></a><span class="dt">char</span> x_str[<span class="dv">20</span>] = <span class="st">&quot;This is a string&quot;</span>; <span class="co">// strings are double quoted</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true"></a><span class="dt">int</span> x_int = <span class="dv">0</span>;</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true"></a><span class="dt">short</span> x_short = <span class="dv">0</span>;</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true"></a><span class="dt">long</span> x_long = <span class="dv">0</span>;</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true"></a><span class="dt">long</span> <span class="dt">long</span> x_long_long = <span class="dv">0</span>;</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true"></a><span class="dt">unsigned</span> <span class="dt">int</span> y_int = <span class="dv">10</span>;</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true"></a><span class="dt">signed</span> <span class="dt">short</span> z_int = -<span class="dv">5</span>;</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true"></a><span class="dt">signed</span> <span class="dt">long</span> <span class="dt">long</span> a_int = -<span class="dv">1009</span>;</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true"></a><span class="dt">float</span> x_float = <span class="fl">0.01</span>;</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true"></a><span class="dt">double</span> x_double = <span class="fl">0.0</span>;</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true"></a></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true"></a><span class="co">// VARIABLES</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true"></a>    <span class="co">// declared once, value can be reassigned later</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true"></a></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true"></a><span class="co">// CONST</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true"></a>    <span class="co">// declared once, value can only be assigned once</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true"></a>    <span class="co">// const stated before type of constant value</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true"></a></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true"></a><span class="dt">const</span> <span class="dt">float</span> eg_float = <span class="fl">5.8</span>;</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true"></a><span class="dt">const</span> <span class="dt">char</span> eg_char = <span class="ch">&#39;a&#39;</span>;</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true"></a><span class="dt">const</span> <span class="dt">char</span> *str_literal = <span class="st">&quot;this is good practice&quot;</span>; <span class="co">// for string literals you don&#39;t intend to change, it is good practice to declare them as a constant and a pointer to a char (first element of the char array), which represents a char array</span></span></code></pre></div>
+<h2 id="data-structures">Data structures</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="co">// ---------- ARRAY ----------</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>    <span class="co">// ordered list of elements of the same data type</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a>    <span class="co">// initialized with a fixed size and type, though array elements are mutable</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>    <span class="co">// character array is a string (C has no built-in string type)</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>    <span class="co">// arrays are curly-braced in C</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a><span class="dt">char</span> my_char_array[<span class="dv">20</span>]; <span class="co">// allocates 1 * 20 = 20 bytes of space for the char array in memory</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a><span class="dt">char</span> my_int_array[<span class="dv">20</span>]; <span class="co">// allocates 4 * 20 = 80 bytes of space for the int array in memory</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true"></a><span class="dt">int</span> an_eg_int_array[<span class="dv">10</span>] = {<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>}; <span class="co">// note the curly braces</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true"></a><span class="dt">char</span> an_eg_char_array[<span class="dv">5</span>] = {<span class="ch">&#39;a&#39;</span>,<span class="ch">&#39;b&#39;</span>,<span class="ch">&#39;c&#39;</span>,<span class="ch">&#39;d&#39;</span>,<span class="ch">&#39;e&#39;</span>}; <span class="co">// another valid char array, although this also evaluates to &quot;abcde&quot;</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true"></a><span class="co">// ARRAY INITIALIZER</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true"></a>    <span class="co">// {} initializes an array with default value of 0 past the specified values</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true"></a><span class="dt">int</span> my_array[<span class="dv">20</span>] = {<span class="dv">0</span>}; <span class="co">// this initializes an int array of 80 bytes with each int being 0</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true"></a><span class="dt">int</span> another_array[<span class="dv">10</span>] = {<span class="dv">1</span>,<span class="dv">2</span>}; <span class="co">// this initializes an int array [1,2,0,0,0,0,0,0,0,0], the remaining 8 unspecified values being 0</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true"></a><span class="dt">int</span> yet_another_array[] = {<span class="dv">0</span>}; <span class="co">// note that not specifying the size of the array will result in an array of [0] with length 1</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true"></a><span class="co">// ARRAY INDEXING </span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true"></a></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true"></a>my_array[<span class="dv">0</span>]; <span class="co">// returns 0, the element at index 0 is 0</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true"></a>my_array[<span class="dv">10</span>] = <span class="dv">2</span>; <span class="co">// reassigns the element at index 10 to be 2</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true"></a>printf(<span class="st">&quot;%d</span><span class="sc">\n</span><span class="st">&quot;</span>, my_array[<span class="dv">10</span>]); <span class="co">// returns 2</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true"></a><span class="dt">char</span> a_string[<span class="dv">20</span>] = <span class="st">&quot;This is a string&quot;</span>;</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true"></a>printf(<span class="st">&quot;%d</span><span class="sc">\n</span><span class="st">&quot;</span>, a_string[<span class="dv">16</span>]); <span class="co">// returns 0 (as will byte 17-19) since the string only has chars initialized up to index 15</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true"></a></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true"></a><span class="co">// MULTI-DIMENSIONAL ARRAYS</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true"></a></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true"></a><span class="dt">int</span> multi_array[<span class="dv">2</span>][<span class="dv">5</span>] = {</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true"></a>    {<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>},</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true"></a>    {<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>}</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true"></a>};</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true"></a>multi_array[<span class="dv">0</span>][<span class="dv">2</span>]; <span class="co">// returns 3</span></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true"></a></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true"></a><span class="co">// ---------- TYPE DEF ----------</span></span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true"></a>    <span class="co">// typedef creates a type alias</span></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true"></a></span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true"></a><span class="kw">typedef</span> <span class="dt">int</span> my_type; <span class="co">// creates a type alias for int called my_type </span></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true"></a>my_type wow_everyone_so_creative = <span class="dv">10</span>; <span class="co">// declare and assigns an int value to a my_type variable</span></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true"></a></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true"></a><span class="co">// ---------- STRUCT ----------</span></span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true"></a>    <span class="co">// struct creates what is basically a javascript object</span></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true"></a>    <span class="co">// stores key-value pairs</span></span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true"></a>    <span class="co">// note struct fields (attributes) are separated by semicolons, not commas</span></span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true"></a></span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true"></a><span class="kw">struct</span> rectangle {</span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true"></a>    <span class="dt">int</span> width;</span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true"></a>    <span class="dt">int</span> height;</span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true"></a>};</span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true"></a></span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true"></a><span class="co">// INITALIZING STRUCT FIELDS</span></span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true"></a></span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true"></a><span class="kw">struct</span> rectangle my_rect = {<span class="dv">1</span>,<span class="dv">2</span>}; <span class="co">// struct fields can be intialized immediately</span></span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true"></a></span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true"></a><span class="co">// ACCESS STRUCT FIELDS</span></span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true"></a>    <span class="co">// dot notation</span></span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true"></a></span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true"></a>my_rect.width; <span class="co">// returns 1</span></span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true"></a>my_rect.height; <span class="co">// returns 20</span></span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true"></a></span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true"></a><span class="co">// typedefs can be assigned to structs for convenience (and also can be done during struct definition)</span></span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true"></a></span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true"></a><span class="kw">typedef</span> <span class="kw">struct</span> rectangle rect; <span class="co">// this is valid</span></span>
+<span id="cb5-64"><a href="#cb5-64" aria-hidden="true"></a></span>
+<span id="cb5-65"><a href="#cb5-65" aria-hidden="true"></a><span class="dt">int</span> area(rect r) {</span>
+<span id="cb5-66"><a href="#cb5-66" aria-hidden="true"></a>    <span class="cf">return</span> r.width * r.height;</span>
+<span id="cb5-67"><a href="#cb5-67" aria-hidden="true"></a>}</span>
+<span id="cb5-68"><a href="#cb5-68" aria-hidden="true"></a></span>
+<span id="cb5-69"><a href="#cb5-69" aria-hidden="true"></a><span class="kw">typedef</span> <span class="kw">struct</span> {</span>
+<span id="cb5-70"><a href="#cb5-70" aria-hidden="true"></a>    <span class="dt">int</span> width;</span>
+<span id="cb5-71"><a href="#cb5-71" aria-hidden="true"></a>    <span class="dt">int</span> height;</span>
+<span id="cb5-72"><a href="#cb5-72" aria-hidden="true"></a>} rect; <span class="co">// this is also valid</span></span></code></pre></div>
+<h2 id="operators">Operators</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="co">// ---------- OPERATOR ----------</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a><span class="co">// ARITHMETIC</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a><span class="dt">int</span> i1 = <span class="dv">1</span>, i2 = <span class="dv">2</span>; <span class="co">// valid shorthand for multiple declaration</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a><span class="dt">float</span> f1 = <span class="fl">1.0</span>, f2 = <span class="fl">2.0</span>; <span class="co">// same here as well</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a>i1 + i2; <span class="co">// addition</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true"></a>i1 - i2; <span class="co">// subtraction</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true"></a>i1 * i2; <span class="co">// multiplication</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true"></a>i1 / i2; <span class="co">// division, though in this case evaluates to 0.5 is truncated towards 0</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true"></a><span class="dv">11</span> % <span class="dv">3</span>; <span class="co">// modulo, be careful when arguments are negative though</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true"></a><span class="dt">int</span> j = <span class="dv">0</span>;</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true"></a><span class="dt">int</span> s = j++; <span class="co">// increment by 1 operator, returns j then increments it</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true"></a><span class="dt">int</span> z = ++j; <span class="co">// increment by 1 operator, increments j then returns it</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true"></a><span class="dt">int</span> e = j--; <span class="co">// decrement by 1 operator, decrements j then returns it</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true"></a><span class="dt">int</span> f = --j; <span class="co">// decrement by 1 operator, decrements j then returns it</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true"></a>(<span class="dt">float</span>)i1/i2; <span class="co">// evaluates to 0.5f since we need to cast at least one integer to a float to get a floating-point result</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true"></a>i1/(<span class="dt">double</span>)i2; <span class="co">// does the same for doubles</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true"></a>f1 / f2; <span class="co">// evaluates to 0.5 since both are floats here so fulfills the above requirement of at least one operand being a float</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true"></a></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true"></a><span class="co">// COMPARISON </span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true"></a></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true"></a><span class="dv">3</span> == <span class="dv">2</span>; <span class="co">// complete equality in value and type, returns 0</span></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true"></a><span class="dv">3</span> != <span class="dv">2</span>; <span class="co">// complete inequality in value and type, returns 1</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true"></a><span class="dv">3</span> &gt; <span class="dv">2</span>; <span class="co">// comparison operator, returns 1 </span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true"></a><span class="dv">3</span> &lt; <span class="dv">2</span>; <span class="co">// comparison operator, returns 0</span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true"></a><span class="dv">2</span> &lt;= <span class="dv">2</span>; <span class="co">// comparison operator, returns 1</span></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true"></a><span class="dv">2</span> &gt;= <span class="dv">2</span>; <span class="co">// comparison operator, returns 1</span></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true"></a></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true"></a><span class="co">// LOGICAL</span></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true"></a></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true"></a>!<span class="dv">3</span>; <span class="co">// logical not, returns 0</span></span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true"></a><span class="dv">0</span> &amp;&amp; <span class="dv">1</span>; <span class="co">// logical and, returns 0</span></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true"></a><span class="dv">0</span> || <span class="dv">1</span>; <span class="co">// logical or, returns 1</span></span></code></pre></div>
+<h2 id="control-structures">Control structures</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="co">// ---------- CONTROL STRUCTURE ----------</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a><span class="co">// IF ELSE IF ELSE</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a><span class="dt">int</span> x = <span class="dv">5</span>;</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a><span class="cf">if</span> (x &gt; <span class="dv">5</span>) {</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true"></a>    printf(<span class="st">&quot;x is bigger than 5</span><span class="sc">\n</span><span class="st">&quot;</span>);</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true"></a>} <span class="cf">else</span> <span class="cf">if</span> (x &lt; <span class="dv">5</span>) {</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true"></a>    printf(<span class="st">&quot;x is smaller than 5</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true"></a>} <span class="cf">else</span> {</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true"></a>    printf(<span class="st">&quot;x is 5</span><span class="sc">\n</span><span class="st">&quot;</span>);</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true"></a>}</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true"></a><span class="co">// LOOPS</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true"></a><span class="co">// WHILE DO WHILE</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true"></a></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true"></a><span class="dt">int</span> ii = <span class="dv">0</span>;</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true"></a><span class="cf">while</span> (ii &lt; <span class="dv">10</span>) {</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true"></a>    printf(<span class="st">&quot;%d, &quot;</span>, ii++); <span class="co">// recall that ii++ will increment ii after it retruns it, so this prints the string &quot;0, 1, 2, 3, 4, 5, 6, 7, 8, 9, &quot;</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true"></a>}</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true"></a></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true"></a><span class="dt">int</span> kk = <span class="dv">0</span>; <span class="co">// do while loops exist too</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true"></a><span class="cf">do</span> {</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true"></a>    printf(<span class="st">&quot;%d, &quot;</span>, kk);</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true"></a>} <span class="cf">while</span> (++k &lt; <span class="dv">10</span>);</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true"></a></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true"></a><span class="co">// FOR</span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true"></a></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true"></a><span class="cf">for</span> (<span class="dt">int</span> jj = <span class="dv">0</span>; jj &lt; <span class="dv">10</span>; jj++) {</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true"></a>    printf(<span class="st">&quot;%d, &quot;</span>, jj);</span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true"></a>} <span class="co">// prints the string &quot;0, 1, 2, 3, 4, 5, 6, 7, 8, 9, &quot;</span></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true"></a></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true"></a><span class="co">// SWITCH CASE </span></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true"></a>    <span class="co">// remember to include break after each case, otherwise the logic falls through</span></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true"></a>    <span class="co">// default case exists</span></span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true"></a></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true"></a><span class="cf">switch</span> (a) {</span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true"></a>    <span class="cf">case</span> <span class="dv">0</span>:</span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true"></a>        <span class="co">// do something</span></span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true"></a>        <span class="cf">break</span>;</span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true"></a>    <span class="cf">case</span> <span class="dv">1</span>:</span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true"></a>        <span class="co">// do something else:</span></span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true"></a>        <span class="cf">break</span>;</span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true"></a>    <span class="cf">case</span> <span class="dv">2</span>:</span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true"></a>        <span class="co">// do another thing</span></span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true"></a>        <span class="cf">break</span>;</span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true"></a>    <span class="cf">default</span>:</span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true"></a>        <span class="co">// accounts for the default case like the catch-all operator _ in Rust</span></span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true"></a>        <span class="cf">break</span>;</span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true"></a>}</span></code></pre></div>
+<h2 id="functions">Functions</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="co">// ---------- CALL BY VALUE vs CALL BY REFERENCE ----------</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a>    <span class="co">// CALL BY VALUE</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a>        <span class="co">// a copy of the actual variable&#39;s value is called, so we are calling by value (how conventional functions with return values work)</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a>    <span class="co">// CALL BY REFERENCE</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true"></a>        <span class="co">// the actual memory address of the variable is called and any changes are made to the variable itself, so we are calling by reference (how conventional object methods work)</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true"></a><span class="co">// ---------- FUNCTION ----------</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true"></a>    <span class="co">// main function</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true"></a>    <span class="co">// function RETURN type specified at the front, followed by the function name and its arguments with their return types</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true"></a>    <span class="co">// functions are call by value by default, and a copy of the actual arguments are passed to a function (ie. the original argument values are not changed when the function is called) and a value has to be returned</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true"></a>    <span class="co">// pointers should be used if you want to edit the actual argument value</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true"></a>        <span class="co">// arrays are passed in as pointers by default</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true"></a>    <span class="co">// RETURN_TYPE FUNCTION_NAME(FUNCTION_ARGUMENTS_AND_TYPE);</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true"></a></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true"></a><span class="dt">int</span> main(<span class="dt">void</span>) {</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true"></a>    <span class="co">// this is every C program&#39;s entry point, all C code must run within the main function</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true"></a>    <span class="cf">return</span> <span class="dv">0</span>;</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true"></a>}</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true"></a></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true"></a><span class="dt">void</span> function_1(); <span class="co">// you can declare a function ahead of time like this</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true"></a><span class="dt">int</span> function_2(<span class="dt">void</span>); <span class="co">// or like this</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true"></a><span class="dt">int</span> add_two_ints(<span class="dt">int</span> x1, <span class="dt">int</span> x2); <span class="co">// this is also valid function declaration</span></span></code></pre></div>
+<h2 id="pointers">Pointers</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="co">// --------- POINTER ----------</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a>    <span class="co">// pointer is a variable declared that stores a memory address</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a>        <span class="co">// pointers variables are declared with * (once)</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a>        <span class="co">// pointer declaration will also specify the type of the variable it points to</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true"></a>        <span class="co">// by convention, pointer variables are named p{variable name}</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true"></a>    <span class="co">// memory addressed of variables can be accessed and played with</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true"></a>        <span class="co">// memory addresses are accessed with &amp;</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true"></a><span class="dt">int</span> x = <span class="dv">0</span>;</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true"></a><span class="dt">int</span> *px = &amp;x; <span class="co">// stores the memory address of int variable x in pointer variable px (subsequent reference to pointer variable px can be done without the *, that&#39;s used once on declaration only)</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true"></a><span class="co">// DEREFERENCE A POINTER</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true"></a>    <span class="co">// to access the actual value at the memory address a pointer variable is pointing to, use the derefernce operator *</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true"></a>    <span class="co">// it is slightly confusing and odd that the dereference and declaration operator are the same, but just go with it</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true"></a></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true"></a><span class="dt">int</span> value_at_px = *px; <span class="co">// evaluates to 0, the int value of variable x previously declared, and note how the * is not seen since that was only declared once on declaration</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true"></a>(*px)++; <span class="co">// changes the actual value of the variable stored at memory address stored in pointer variable px</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true"></a>printf(<span class="st">&quot;%d</span><span class="sc">\n</span><span class="st">&quot;</span>, *px); <span class="co">// prints 1, accessing the value stored at the memory address in the pointer variable px via the derefencing operator *</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true"></a>printf(<span class="st">&quot;%d</span><span class="sc">\n</span><span class="st">&quot;</span>, x); <span class="co">// this will also print 1</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true"></a></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true"></a><span class="co">// ARRAYS AND POINTERS</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true"></a>    <span class="co">// in memory, an array is just a special chunk of memory that is reserved upon declaration with a fixed size</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true"></a>    <span class="co">// when pointing to an array, pointer variable points to the memory address of the first element of the array even without the &amp; memory address accessing operator</span></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true"></a>    <span class="co">// this is as arrays are implictly type converted into a pointer (stores a memory address of the first element of the array) when they are assigned to functions or to a pointer variable</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true"></a></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true"></a><span class="dt">int</span> x_array[<span class="dv">3</span>] = {<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>}; <span class="co">// declares and initializes an int array [1,2,3] of 12 bytes</span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true"></a><span class="dt">int</span>* px_array = x_array; <span class="co">// notice we don&#39;t need to use the &amp; mem address accesing operator due to implicit type conversion of the array into its pointer (also known as decay)</span></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true"></a></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true"></a><span class="co">// STRINGS AND POINTERS</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true"></a>    <span class="co">// strings are char arrays, but they can also be represented as a pointer to a char (pointer to the first element of the char array as established above)</span></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true"></a>    <span class="co">// this is done by convention, and should be practised as far as possible when creating const string literals </span></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true"></a></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true"></a><span class="dt">const</span> <span class="dt">char</span> *my_str = <span class="st">&quot;This is my very own string literal&quot;</span>; <span class="co">// creates a string literal which should not be modified</span></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true"></a></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true"></a><span class="dt">char</span> foo[] = <span class="st">&quot;foo&quot;</span>; <span class="co">// this is valid if the length of the string or its contents are meant to be changed later on in writable memory</span></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true"></a>foo[<span class="dv">0</span>] = <span class="ch">&#39;a&#39;</span>; <span class="co">// this is legal C code, char array foo variable now stores the char array &quot;aoo&quot; which is also represnted as {&#39;a&#39;,&#39;o&#39;,&#39;o&#39;}</span></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true"></a></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true"></a><span class="co">// there are some exceptions to these rules, but in general they are as defined above</span></span></code></pre></div>
+<h2 id="more-on">More on</h2>
+<ul>
+<li>malloc</li>
+<li>calloc</li>
+<li>free</li>
+<li>enums</li>
+<li>macros</li>
+<li>function prototypes</li>
+<li><a href="https://devdocs.io/c/">c documentation</a></li>
+<li><a href="https://learnxinyminutes.com/docs/c/">learn c in y minutes</a></li>
+<li><a href="https://learncodethehardway.org/c/">learn c the hard way</a></li>
+</ul>
+</body>
+</html>

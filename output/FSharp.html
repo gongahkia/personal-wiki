@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>FSharp</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="f"><code>F#</code></h1>
+<h2 id="quickstart">Quickstart</h2>
+<ul>
+<li>functional</li>
+<li>supports object-oriented patterns</li>
+<li>foss</li>
+<li>runs on linux, osx, windows</li>
+</ul>
+<h2 id="comments">Comments</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode fs"><code class="sourceCode fsharp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>//<span class="co"> single line comment</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="co">(* multi</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="co">line</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="co">comment, </span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="co">similar</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="co">to </span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a><span class="co">OCaml *)</span></span></code></pre></div>
+<h2 id="printing">Printing</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode fs"><code class="sourceCode fsharp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>//<span class="co"> ---------- PRINT ----------</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>    //<span class="co"> printf and printfn can be used to directly print string literals</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>printf <span class="st">&quot;hello world</span><span class="sc">\n</span><span class="st">&quot;</span> //<span class="co"> printf prints without the newline</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>printfn <span class="st">&quot;hello world&quot;</span> //<span class="co"> printfn prints with a newline character</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a>//<span class="co"> ---------- FORMATTED STRING ----------</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a>    //<span class="co"> $ and {} used for string interpolation</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true"></a>    //<span class="co"> both printf and printfn can print formatted strings with format specifiers using the syntax of {PRINT FUNCTION} {STRING WITH FORMAT SPECIFIFERS} {VARIABLES}</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true"></a>        //<span class="co"> %s =&gt; string</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true"></a>        //<span class="co"> %d =&gt; decimal</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true"></a>        //<span class="co"> %i =&gt; integer</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true"></a>        //<span class="co"> %x =&gt; hexadecimal</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true"></a>        //<span class="co"> %f =&gt; floating point number</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true"></a>        //<span class="co"> %e =&gt; exponential</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true"></a>        //<span class="co"> %g =&gt; general format (automatically chooses between %f and %e)</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true"></a>        //<span class="co"> %b =&gt; boolean</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true"></a>        //<span class="co"> %c =&gt; character</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true"></a>        //<span class="co"> %A =&gt; prints values using F#&#39;s default formatting</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true"></a>        //<span class="co"> %Ns =&gt; specifies a minimum field width of N characters for strings</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true"></a>        //<span class="co"> %Nd =&gt; specifies a minimum field width of N characters for decimals</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true"></a>        //<span class="co"> %Ni =&gt; specifies a minimum field width of N characters for integers</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true"></a>        //<span class="co"> %N.Mf =&gt; specifies a minimum field width of N characters and M decimal places for floating point numbers</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true"></a><span class="kw">let</span> dish = <span class="st">&quot;cereal chicken&quot;</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true"></a><span class="kw">let</span> cost = <span class="fl">2.50</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true"></a><span class="kw">let</span> finSentence = $<span class="st">&quot;This {dish} costs {cost}&quot;</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true"></a>printfn <span class="st">&quot;%s&quot;</span> finSentence //<span class="co"> printing of a string variable using string interpolation</span></span></code></pre></div>
+<h2 id="variables">Variables</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode fs"><code class="sourceCode fsharp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a>//<span class="co"> ---------- VARIABLE ----------</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>    //<span class="co"> let defines an immutable variables </span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>    //<span class="co"> type declaration is not required</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a><span class="kw">let</span> anInt = <span class="dv">5</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a><span class="kw">let</span> myFloat = <span class="fl">3.14</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a><span class="kw">let</span> myString = <span class="st">&quot;smacks&quot;</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a>//<span class="co"> NOTE</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true"></a>= //<span class="co"> both the assignment operator AND equality check operator (for equality checks similar to == or === in other languages)</span></span></code></pre></div>
+<h2 id="types">Types</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode fs"><code class="sourceCode fsharp"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a>//<span class="co"> ---------- TYPE ----------</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>    //<span class="co"> expressions and values are immutable by default</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>    //<span class="co"> int =&gt; 32-bit signed int (42)</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>    //<span class="co"> int64 =&gt; 64-bit signed int (10000)</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>    //<span class="co"> float =&gt; 64-bit floating point number (3.42)</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>    //<span class="co"> char =&gt; single unicode character, single-quoted (&#39;a&#39;)</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a>    //<span class="co"> string =&gt; sequence of characters, double-quoted (&quot;watermelon&quot;)</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a>    //<span class="co"> bool =&gt; boolean value (true, false)</span></span></code></pre></div>
+<h2 id="data-structures">Data structures</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode fs"><code class="sourceCode fsharp"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a>//<span class="co"> ---------- LIST ----------</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>    //<span class="co"> lists are immutable, so any functions or operators that are called on the list return a copy or must be reassigned</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a>    //<span class="co"> ordered collections of elements of the same type</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>    //<span class="co"> lists are wrapped with [] square brackets, and ; semicolon delimited (instead of the usual commas)</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a><span class="kw">let</span> aList = [<span class="dv">2</span>; <span class="dv">3</span>; <span class="dv">4</span>; <span class="dv">5</span>]</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a>//<span class="co"> LIST METHODS</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true"></a>    //<span class="co"> see below for other list functions</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true"></a><span class="kw">let</span> addedToList = <span class="dv">1</span> :: aList //<span class="co"> :: adds an element to the front of the list, so this evaluates to [1; 2; 3; 4; 5]</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true"></a><span class="kw">let</span> concatTwoLists = [<span class="dv">0</span>; <span class="dv">1</span>] @ addedToList //<span class="co"> @ concatenates two lists together, so this evaluates to [0; 1; 1; 2; 3; 4; 5]</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true"></a><span class="kw">let</span> aListOfRange = [<span class="fl">1.</span>.<span class="dv">10</span>] //<span class="co"> .. defines an inclusive range within the list, so this evaluates to [1; 2; 3; 4; 5; 6; 7; 8; 9; 10]</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true"></a><span class="kw">let</span> aListFromSeqExp = [<span class="kw">for</span> i <span class="kw">in</span> <span class="fl">1.</span>.<span class="dv">10</span> -&gt; i * i] //<span class="co"> lists can be defined with sequence expressions as well, as seen here this creates a list of squares of integers 1 to 10, which evaluates to [1; 4; 9; 16; 25; 36; 49; 64; 81; 100]</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true"></a><span class="kw">let</span> aListFromListComprehension = [<span class="kw">for</span> i <span class="kw">in</span> <span class="fl">1.</span>.<span class="dv">10</span> <span class="kw">do</span> <span class="kw">yield</span> i * i] //<span class="co"> basically the same as above but achieved via list comprehension</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true"></a>//<span class="co"> --------- ARRAY ----------</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true"></a>    //<span class="co"> arrays are mutable and considered more efficient</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true"></a>    //<span class="co"> ordered collection of elements of the same type</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true"></a>    //<span class="co"> arrays are wrapped with [||] square brackets with bars and ; semicolon delimited</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true"></a></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true"></a><span class="kw">let</span> anArray = [|<span class="st">&quot;a&quot;</span>; <span class="st">&quot;b&quot;</span>|]</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true"></a></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true"></a>//<span class="co"> ---------- SEQUENCE ----------</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true"></a>    //<span class="co"> infinite sequence of elements</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true"></a>    //<span class="co"> basically an enumerator</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true"></a>    //<span class="co"> sequences are wrapped with {} curly braces and ; semicolon delimited and accompanied with seq</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true"></a>    //<span class="co"> yield is used to generate sequence values where required</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true"></a></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true"></a><span class="kw">let</span> aSequence = <span class="dt">seq</span> {<span class="kw">yield</span> <span class="st">&quot;a&quot;</span>; <span class="kw">yield</span> <span class="st">&quot;b&quot;</span>}</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true"></a></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true"></a>//<span class="co"> ---------- TUPLE ----------</span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true"></a>    //<span class="co"> collecton of elements of any data type</span></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true"></a>    //<span class="co"> tuples are anonymous by default</span></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true"></a>    //<span class="co"> , comma delimited</span></span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true"></a>    //<span class="co"> can be unpacked with pattern matching similar to Rust</span></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true"></a></span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true"></a><span class="kw">let</span> aTuple = <span class="dv">1</span>,<span class="dv">2</span></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true"></a><span class="kw">let</span> anotherTuple <span class="st">&quot;a&quot;</span>, <span class="dv">2</span>, <span class="kw">true</span></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true"></a></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true"></a><span class="kw">let</span> x,y = aTuple //<span class="co"> this unpacks the tuple and sets the value of x = 1, y = 2</span></span></code></pre></div>
+<h2 id="functions">Functions</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode fs"><code class="sourceCode fsharp"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a>//<span class="co"> ---------- FUNCTION ----------</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a>    //<span class="co"> let defines a function, which is defined similar to a variable (since we&#39;re in functional land where every statement is an expression that evaluates to a value including functions)</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a>    //<span class="co"> no brackets and implicit return of last expression similar to Haskell</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a>    //<span class="co"> functions are first class entitites and can be chained to create powerful constructs</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a>    //<span class="co"> let {FUNCTION NAME} {FUNCTION PARAMETERS} = {FUNCTION PROCEDURES which are implicitly returned}</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a>    //<span class="co"> multiline functions can be defined with indents</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a>    //<span class="co"> () brackets can be used to define function precedence</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a>    //<span class="co"> |&gt; pipe operator also available to pipe the output of one operation to another, this is very common in F#</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true"></a>    //<span class="co"> anonymous functions (lambdas) can be defined with the fun keyword</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true"></a>    //<span class="co"> modules group functions together (indentation necessary for each nested module)</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true"></a><span class="kw">let</span> square x = x * x //<span class="co"> note that parameter and return values are effectively non-distinguishable</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true"></a>square <span class="dv">3</span> //<span class="co"> evaluates to the value of 9</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true"></a></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true"></a><span class="kw">let</span> add x y = x + y //<span class="co"> implicit return of the x + y calculated value</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true"></a>add <span class="dv">2</span> <span class="dv">3</span> //<span class="co"> runs the function, evaluates to the value of 5</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true"></a></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true"></a>//<span class="co"> MULTILINE FUNCTION</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true"></a>    //<span class="co"> mainly used for greater readibility</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true"></a></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true"></a><span class="kw">let</span> evens list = </span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true"></a>    <span class="kw">let</span> isEven x = x % <span class="dv">2</span> = <span class="dv">0</span> //<span class="co"> defining the sub function isEven within the multiline function evens so that it can only be referenced within the evens function, also the first = is an assignment of an expression, the second = is an equality check </span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true"></a>    List<span class="kw">.</span>filter isEven list //<span class="co"> built-in function List.filter then called on each value of the list parameter received by evens function based on the conditional check laid out in the defined sub function isEven</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true"></a></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true"></a>evens [<span class="dv">1</span>; <span class="dv">2</span>; <span class="dv">3</span>; <span class="dv">4</span>; <span class="dv">5</span>] //<span class="co"> this runs the above function as expected</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true"></a></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true"></a>//<span class="co"> FUNCTION PRECEDENCE</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true"></a>    //<span class="co"> () define function precedence, and help readibility</span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true"></a></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true"></a><span class="kw">let</span> sumOfSquaresTo100 = List<span class="kw">.</span>sum ( List<span class="kw">.</span>map square [<span class="fl">1.</span>.<span class="dv">100</span>] ) //<span class="co"> here, the brackets specify the contents of List.map is to be called on the in t list defined for range 1-100, mapping the square function on each value, the returned value then being passed to List.sum </span></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true"></a></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true"></a>//<span class="co"> PIPING </span></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true"></a>    //<span class="co"> |&gt; lets you pipe</span></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true"></a></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true"></a><span class="kw">let</span> sumOfSquaresTo100WithPipes = [<span class="fl">1.</span>.<span class="dv">100</span>] |&gt; List<span class="kw">.</span>map square |&gt; List<span class="kw">.</span>sum //<span class="co"> this does the same thing as above</span></span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true"></a></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true"></a>//<span class="co"> ANONYMOUS FUNCTIONS</span></span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true"></a>    //<span class="co"> fun defines a lambda function for a one-time use function</span></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true"></a></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true"></a><span class="kw">let</span> sumOfSquaresTo100ButLambda = [<span class="fl">1.</span>.<span class="dv">100</span>] |&gt; List<span class="kw">.</span>map (<span class="kw">fun</span> x -&gt; x * x) |&gt; List<span class="kw">.</span>sum //<span class="co"> this does the same as the above code except it defines its own anonymous function using the fun keyword</span></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true"></a></span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true"></a>//<span class="co"> MODULES</span></span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true"></a>    //<span class="co"> module and indentation groups functions together</span></span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true"></a>    //<span class="co"> note there is no let when defining a module, just module</span></span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true"></a></span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true"></a><span class="ot">module</span> SimpleMathThingies = </span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true"></a></span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true"></a>    <span class="kw">let</span> add x y = x + y</span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true"></a></span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true"></a>    <span class="kw">let</span> subtract x y = x - y</span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true"></a></span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true"></a>    <span class="kw">let</span> multiply x y = x * y</span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true"></a></span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true"></a>    <span class="kw">let</span> divide x y = x / y</span>
+<span id="cb6-55"><a href="#cb6-55" aria-hidden="true"></a></span>
+<span id="cb6-56"><a href="#cb6-56" aria-hidden="true"></a>    <span class="kw">let</span> modulo x y = x % y</span>
+<span id="cb6-57"><a href="#cb6-57" aria-hidden="true"></a></span>
+<span id="cb6-58"><a href="#cb6-58" aria-hidden="true"></a>    <span class="kw">let</span> square x = x * x</span></code></pre></div>
+<h2 id="control-structures">Control structures</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode fs"><code class="sourceCode fsharp"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a>//<span class="co"> ---------- PATTERN MATCHING ----------</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>    //<span class="co"> match with | -&gt; allows for supercharged case switch statement, just like Rust</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a>    //<span class="co"> _ is the catch-all operator also similar to Rust</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a>    //<span class="co"> everything is still an expression, so everything evaluates to a value and is defined with let, even pattern matches</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a>    //<span class="co"> nested definition of expression!</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a>    //<span class="co"> pattern matching works for lists and other data structures as well</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true"></a><span class="kw">let</span> simplePatternMatch = </span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true"></a>    <span class="kw">let</span> x = <span class="st">&quot;a&quot;</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true"></a>    <span class="kw">match</span> x <span class="kw">with</span> </span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true"></a>        | <span class="st">&quot;a&quot;</span> -&gt; printfn <span class="st">&quot;x is a&quot;</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true"></a>        | <span class="st">&quot;b&quot;</span> -&gt; printfn <span class="st">&quot;x is b&quot;</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true"></a>        | _ -&gt; printfn <span class="st">&quot;catch all operator hit&quot;</span> //<span class="co"> F# does not allow nulls by default, an Option type must be used for pattern matching, although None is a valid value</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true"></a></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true"></a>//<span class="co"> ---------- IF ELIF ELSE THEN ----------</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true"></a>    //<span class="co"> F# also has the standard conditional checks, which work as expected</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true"></a>    //<span class="co"> you can assign boolean expressions to variables and functions</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true"></a></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true"></a><span class="kw">let</span> test x y =</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true"></a>    <span class="kw">if</span> x = y <span class="kw">then</span> <span class="st">&quot;they are equals&quot;</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true"></a>    <span class="kw">elif</span> x &lt; y <span class="kw">then</span> <span class="st">&quot;x is less than y&quot;</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true"></a>    <span class="kw">else</span> <span class="st">&quot;x is greater than y&quot;</span></span></code></pre></div>
+<h2 id="loops">Loops</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode fs"><code class="sourceCode fsharp"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a>//<span class="co"> ---------- LOOP ----------</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a>    //<span class="co"> for in do allows you to iterate over a collection of elements</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a>    //<span class="co"> indentation matters</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a>    //<span class="co"> loops can be used to iterate over different patterns as well</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true"></a><span class="kw">let</span> list1 = [<span class="dv">1</span>; <span class="dv">5</span>; <span class="dv">100</span>; <span class="dv">450</span>; <span class="dv">788</span>]</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true"></a><span class="kw">for</span> i <span class="kw">in</span> list1 <span class="kw">do</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true"></a>    printfn <span class="st">&quot;%d&quot;</span> i</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true"></a><span class="kw">let</span> seq1 = <span class="dt">seq</span> {<span class="kw">for</span> i <span class="kw">in</span> <span class="fl">1.</span>.<span class="dv">10</span> -&gt; (i, i*i)}</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true"></a><span class="kw">for</span> (a, asqr) <span class="kw">in</span> seq1 <span class="kw">do</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true"></a>    printfn <span class="st">&quot;%d squared is %d&quot;</span> a asqr</span></code></pre></div>
+<h2 id="helpful-functions">Helpful functions</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode fs"><code class="sourceCode fsharp"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a>//<span class="co"> ----------- USEFUL ----------</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a>    //<span class="co"> note that these work for arrays as well, simply replace the List with Array</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a>    //<span class="co"> so Array.map, Array.filter and Array.iter are all valid</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true"></a><span class="kw">yield</span> //<span class="co"> yield allows for lazy evaluation of variables within loop expressions, often used in F# sequences to generate values only when they are required and called</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true"></a><span class="kw">yield</span>! //<span class="co"> yield! adds a whole subsequence to a sequence, allowing for concise expressions like yield! [5..10]</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true"></a>List<span class="kw">.</span>map //<span class="co"> applies a function to each element in the list and returns a copy of the new list</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true"></a>List<span class="kw">.</span>iter //<span class="co"> applies a function to each element in the list, and used for its side effects, like printing out each element of the list</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true"></a>List<span class="kw">.</span>filter //<span class="co"> filters elements of a list based on a specified predicate (conditional check)</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true"></a>List<span class="kw">.</span>fold //<span class="co"> applies a binary function to elements of the list from an initial defined accumalator value</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true"></a>List<span class="kw">.</span>reduce //<span class="co"> similar to .fold but without an explicit defined accumulator</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true"></a>List<span class="kw">.</span>length //<span class="co"> returns length of list</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true"></a>List<span class="kw">.</span>head //<span class="co"> returns first list element of index 0</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true"></a>List<span class="kw">.</span>tail //<span class="co"> returns last list element of index List.length-1</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true"></a>List<span class="kw">.</span>append //<span class="co"> concatenates two lists together</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true"></a>List<span class="kw">.</span>concat //<span class="co"> concatenates a list of lists into a single list, basically flattening it</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true"></a>List<span class="kw">.</span>rev //<span class="co"> reverses order of elements in the list</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true"></a>List<span class="kw">.</span>sort //<span class="co"> sorts the elements of the list by value</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true"></a>List<span class="kw">.</span>max //<span class="co"> returns the element of max value in the list</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true"></a>List<span class="kw">.</span>min //<span class="co"> returns the element of min value in the list</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true"></a></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true"></a>//<span class="co"> read F# documentation for many others</span></span></code></pre></div>
+<h2 id="more-on">More on</h2>
+<ul>
+<li>ref</li>
+<li>map</li>
+<li>set</li>
+<li>type</li>
+<li>union types</li>
+<li>active patterns (if, elif, else, then)</li>
+<li>rec</li>
+<li>async</li>
+<li>.NET compatibility</li>
+<li>OOP extensibility</li>
+<li><a href="https://try.fsharp.org/">try fsharp</a></li>
+</ul>
+</body>
+</html>

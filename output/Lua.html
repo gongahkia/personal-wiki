@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Lua</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="lua"><code>Lua</code></h1>
+<h2 id="comments">Comments</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode lua"><code class="sourceCode lua"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co">-- single-line comment</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="co">--[[ </span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="co">this is </span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="co">a </span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="co">multi-line</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="co">comment</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a><span class="co">]]--</span></span></code></pre></div>
+<h2 id="printing">Printing</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode lua"><code class="sourceCode lua"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="co">-- ---------- PRINTING ----------</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>    <span class="co">-- print() appends a newline to the output by default</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>    <span class="co">-- io.write() does not append a newline to the output</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>    <span class="co">-- io.read() takes in user input from the stdin</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>    <span class="co">-- .. for string concatenation</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a><span class="fu">print</span><span class="op">(</span><span class="st">&quot;this is just like python, it comes with a newline&quot;</span><span class="op">)</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a><span class="fu">io.write</span><span class="op">(</span><span class="st">&quot;this also works, defaults to the standard out</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">)</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true"></a>watermelon <span class="op">=</span> <span class="fu">io.read</span><span class="op">(</span><span class="st">&quot;Waiting for your input lah: &quot;</span><span class="op">)</span> <span class="co">-- assigns user input to the string variable watermelon</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true"></a>stringOne <span class="op">=</span> <span class="st">&quot;Hello &quot;</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true"></a>stringTwo <span class="op">=</span> <span class="st">&quot;World!&quot;</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true"></a><span class="fu">print</span><span class="op">(</span>stringOne <span class="op">..</span> stringTwo<span class="op">)</span> <span class="co">-- this prints &quot;Hello World!&quot; to the console</span></span></code></pre></div>
+<h2 id="types">Types</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode lua"><code class="sourceCode lua"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="co">-- ---------- VARIABLE ----------</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>    <span class="co">-- variables are global by default</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>    <span class="co">-- local makes them local</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>iAmGlobal <span class="op">=</span> <span class="st">&quot;Gojo Satoru&quot;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a><span class="kw">local</span> iAmLocal <span class="op">=</span> <span class="st">&quot;Geto Suguru&quot;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a><span class="co">-- ---------- TYPE ----------</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a>    <span class="co">-- number (integers, floats, doubles)</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a>    <span class="co">-- string (single, double-quoted, [[]] square brackets; strings are immutable like python)</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true"></a>    <span class="co">-- boolean (true, false; only nil and false evaluate to false, everything else evalautes to true including 0 and &#39;&#39;)</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true"></a>    <span class="co">-- nil (no data; undefined variables evalaute to nil, no error is hit)</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true"></a>aNumber <span class="op">=</span> <span class="dv">42</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true"></a>anotherNumber <span class="op">=</span> <span class="dv">12.890</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true"></a>aString <span class="op">=</span> <span class="st">&quot;watermelon&quot;</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true"></a>aMultilineString <span class="op">=</span> <span class="vs">[[ Double brackets for </span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true"></a><span class="vs">                      multi-line</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true"></a><span class="vs">                      string ]]</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true"></a>aBoolean <span class="op">=</span> <span class="kw">true</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true"></a>aNil <span class="op">=</span> <span class="kw">nil</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true"></a>foo <span class="op">=</span> anUndefinedVariable <span class="co">-- this evaluates to nil and the program continues running</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true"></a><span class="co">-- TYPE CONVERSION </span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true"></a><span class="fu">tostring</span><span class="op">()</span> </span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true"></a><span class="fu">tonumber</span><span class="op">()</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true"></a><span class="op">..</span> <span class="co">-- string concatenation have implicit type conversion from number to string, though for greater readability we try to avoid this as far as possible</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true"></a><span class="op">+</span> <span class="op">-</span> <span class="op">*</span> <span class="op">/</span> <span class="co">-- arithmetic operations have implicit type conversion from boolean to number, true =&gt; 1 and false =&gt; 0, though for greater readability we try to avoid implicit type conversions as far as possible</span></span></code></pre></div>
+<h2 id="operators">Operators</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode lua"><code class="sourceCode lua"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="co">-- ---------- OPERATOR ----------</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a><span class="co">-- ARITHMETIC OPERATOR</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a><span class="op">+</span> <span class="co">-- addition</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a><span class="op">-</span> <span class="co">-- subtraction</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a><span class="op">*</span> <span class="co">-- multiplication</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a><span class="op">/</span> <span class="co">-- divison</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a><span class="op">%</span> <span class="co">-- modulo</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a><span class="op">^</span> <span class="co">-- exponentiation (to the power of)</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true"></a><span class="co">-- RELATIONAL OPERATOR</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true"></a><span class="op">==</span> <span class="co">-- complete equality check of type and value</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true"></a><span class="op">~=</span> <span class="co">-- complete inequality check of type and value</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true"></a><span class="op">&lt;</span> <span class="co">-- comparison operator</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true"></a><span class="op">&gt;</span> <span class="co">-- comparison operator</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true"></a><span class="op">&lt;=</span> <span class="co">-- comparison operator</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true"></a><span class="op">&gt;=</span> <span class="co">-- comparison operator</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true"></a></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true"></a><span class="co">-- LOGICAL OPERATOR</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true"></a></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true"></a><span class="kw">and</span> <span class="co">-- logical and</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true"></a><span class="kw">or</span> <span class="co">-- logical or</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true"></a><span class="kw">not</span> <span class="co">-- logical not</span></span></code></pre></div>
+<h2 id="control-structures">Control structures</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode lua"><code class="sourceCode lua"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="co">-- ---------- BLOCK -----------</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>    <span class="co">-- lua takes a page from bash&#39;s syntax by seperating its code blocks with do/end and indentation </span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a><span class="co">-- ---------- IF ELSEIF ELSE THEN ----------</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>    <span class="co">-- standard conditionals</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a>    <span class="co">-- there are no switch case statements in lua</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a><span class="cf">if</span> num <span class="op">&gt;</span> <span class="dv">40</span> <span class="cf">then</span> </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true"></a>    <span class="fu">print</span><span class="op">(</span><span class="st">&quot;Over 40&quot;</span><span class="op">)</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true"></a><span class="cf">elseif</span> num <span class="op">==</span> <span class="dv">20</span> <span class="cf">then</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true"></a>    <span class="fu">print</span><span class="op">(</span><span class="st">&quot;It&#39;s 20&quot;</span><span class="op">)</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true"></a><span class="cf">else</span> </span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true"></a>    <span class="fu">print</span><span class="op">(</span><span class="st">&quot;Lovely&quot;</span><span class="op">)</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true"></a><span class="co">-- ---------- LOOP ----------</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true"></a><span class="co">-- FOR LOOP</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true"></a>    <span class="co">-- for {VARIABLE BEGINNING}, {VARIABLE </span><span class="re">END</span><span class="co">}, {STEP}</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true"></a>    <span class="co">-- ranges are inclusive on both ends</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true"></a></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true"></a><span class="cf">for</span> i<span class="op">=</span><span class="dv">10</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true"></a><span class="cf">do</span> </span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true"></a>    <span class="fu">print</span><span class="op">(</span>i<span class="op">)</span> <span class="co">-- prints 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 to the console</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true"></a><span class="cf">end</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true"></a></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true"></a><span class="cf">for</span> q<span class="op">=</span><span class="dv">1</span><span class="op">,</span><span class="dv">100</span> <span class="cf">do</span> </span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true"></a>    <span class="fu">print</span><span class="op">(</span>q<span class="op">)</span> <span class="co">-- prints the numbers 1 to 100 to the console</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true"></a><span class="cf">end</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true"></a></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true"></a><span class="co">-- FOR IN LOOP</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true"></a>    <span class="co">-- useful when looping over iterable data structures</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true"></a></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true"></a><span class="cf">for</span> key<span class="op">,</span>value <span class="kw">in</span> <span class="fu">pairs</span><span class="op">(</span>aTable<span class="op">)</span> </span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true"></a><span class="cf">do</span></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true"></a>    aTable<span class="op">[</span>key<span class="op">]</span> <span class="op">=</span> <span class="st">&quot;i am jujutsu kaisen&quot;</span></span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true"></a><span class="cf">end</span></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true"></a></span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true"></a><span class="co">-- WHILE LOOP</span></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true"></a>    <span class="co">-- while do loop</span></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true"></a></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true"></a><span class="cf">while</span> num <span class="op">&lt;</span> <span class="dv">50</span> <span class="cf">do</span> </span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true"></a>    num <span class="op">=</span> num <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true"></a><span class="cf">end</span></span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true"></a></span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true"></a><span class="co">-- REPEAT UNTIL LOOP</span></span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true"></a>    <span class="co">-- basically a do while loop</span></span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true"></a></span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true"></a>breakCase <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true"></a><span class="cf">repeat</span></span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true"></a>    <span class="fu">print</span><span class="op">(</span><span class="st">&quot;watermelon&quot;</span><span class="op">)</span></span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true"></a>    breakCase <span class="op">=</span> breakCase <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true"></a><span class="cf">until</span> breakCase <span class="op">==</span> <span class="dv">0</span></span></code></pre></div>
+<h2 id="data-structures">Data structures</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode lua"><code class="sourceCode lua"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="co">-- --------- </span><span class="al">WARNING</span><span class="co"> ---------</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a>    <span class="co">-- indice count starts at 1 in lua, important for indexing</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a><span class="co">-- ---------- TABLE ----------</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a>    <span class="co">-- lua&#39;s only data structure is the table, similar to PHP&#39;s associative arrays (both a dictionary and a list)</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a>    <span class="co">-- initialised using {} curly braces</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a>    <span class="co">-- table keys are string values by default so quotation marks are unnecessary</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a>    <span class="co">-- table keys can also be non-string values, and are declared via literal notation</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true"></a>    <span class="co">-- table values can be accessed via . dot notation or [] square bracket notation</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true"></a>    <span class="co">-- can assign functions to a table, wherein the function name is the key and the function body is the value (using both named function / anonymous function syntax are valid)</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true"></a>    <span class="co">-- table functions are called using the same . dot notation as other table values</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true"></a>aTable <span class="op">=</span> <span class="op">{</span>key1 <span class="op">=</span> <span class="st">&quot;value1&quot;</span><span class="op">,</span> key2 <span class="op">=</span> <span class="kw">false</span><span class="op">}</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true"></a><span class="fu">print</span><span class="op">(</span>aTable<span class="op">.</span>key1<span class="op">)</span> <span class="co">-- prints the value associated with the key key1 in aTable</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true"></a>aTable<span class="op">.</span>key3 <span class="op">=</span> <span class="dv">200</span> <span class="co">-- adds a new key value pair to aTable of key key3 and value 200</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true"></a>aTable<span class="op">.</span>key2 <span class="op">=</span> <span class="kw">nil</span> <span class="co">-- removes key2 from the table</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true"></a></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true"></a>anotherTable <span class="op">=</span> <span class="op">{[</span><span class="st">&quot;@!#&quot;</span><span class="op">]</span> <span class="op">=</span> <span class="st">&#39;qbert&#39;</span><span class="op">,</span> <span class="op">[{}]</span> <span class="op">=</span> <span class="dv">1729</span><span class="op">,</span> <span class="op">[</span><span class="dv">6.29</span><span class="op">]</span> <span class="op">=</span> <span class="st">&quot;tau&quot;</span><span class="op">}</span> <span class="co">-- initialise a table with non-string non-nil keys</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true"></a><span class="fu">print</span><span class="op">(</span>anotherTable<span class="op">[</span><span class="dv">6.29</span><span class="op">])</span> <span class="co">-- prints the string value &quot;tau&quot;</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true"></a></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true"></a><span class="co">-- ---------- TABLE FUNCTION ----------</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true"></a>    <span class="co">-- note either of the below 2 syntax are valid and achieve the same result</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true"></a></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true"></a><span class="co">-- NAMED FUNCTION SYNTAX</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true"></a></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true"></a><span class="kw">function</span> anotherTable<span class="op">.</span>aFunction<span class="op">()</span> </span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true"></a>    <span class="fu">print</span><span class="op">(</span><span class="st">&quot;Hello from a function!&quot;</span><span class="op">)</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true"></a><span class="kw">end</span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true"></a></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true"></a>anotherTable<span class="op">.</span>aFunction<span class="op">()</span> <span class="co">-- calls the table function, printing &quot;Hello from a function!&quot;</span></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true"></a></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true"></a><span class="co">-- ANONYMOUS FUNCTION SYNTAX</span></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true"></a></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true"></a>anotherTable<span class="op">.</span>anAnonFunction<span class="op">()</span> <span class="op">=</span> <span class="kw">function</span><span class="op">()</span> </span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true"></a>    <span class="fu">print</span><span class="op">(</span><span class="st">&quot;Hello from an anonymous function!&quot;</span><span class="op">)</span></span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true"></a><span class="kw">end</span></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true"></a></span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true"></a>anotherTable<span class="op">.</span>anAnonFunction<span class="op">()</span> <span class="co">-- calls the table function similarly, printing &quot;Hello from an anonymous function!&quot;</span></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true"></a></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true"></a><span class="co">-- ---------- TABLE &#39;LIST&#39; ----------</span></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true"></a>    <span class="co">-- &#39;lists&#39; are really just tables with implicit indice keys associated with each value upon initalisation</span></span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true"></a>    <span class="co">-- # for length of table (number of key value pairs)</span></span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true"></a></span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true"></a>aListButActuallyATable <span class="op">=</span> <span class="op">{</span><span class="st">&quot;value1&quot;</span><span class="op">,</span> <span class="st">&#39;value2&#39;</span><span class="op">,</span> <span class="dv">1.21</span><span class="op">,</span> <span class="kw">true</span><span class="op">}</span></span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true"></a><span class="fu">print</span><span class="op">(#</span>aListButActuallyATable<span class="op">)</span> <span class="co">-- # returns the size of the table, this works on strings too</span></span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true"></a><span class="cf">for</span> i <span class="op">=</span> <span class="dv">1</span><span class="op">,</span> <span class="op">#</span>aListButActuallyATable <span class="cf">do</span>  <span class="co">-- recall that indices start at 1 in lua</span></span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true"></a>    <span class="fu">print</span><span class="op">(</span>v<span class="op">[</span>i<span class="op">])</span> <span class="co">-- this syntax works since we&#39;re technically using tables with implicit indice keys </span></span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true"></a><span class="cf">end</span></span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true"></a></span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true"></a><span class="co">-- ---------- GLOBAL TABLE ----------</span></span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true"></a>    <span class="co">-- every lua program has a special _G global table that stores all global variables and functions (global functionality)</span></span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true"></a>    <span class="co">-- _G is the table name, and it has similar functionality as every other table</span></span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true"></a></span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true"></a>aNumber <span class="op">=</span> <span class="dv">42</span></span>
+<span id="cb6-55"><a href="#cb6-55" aria-hidden="true"></a></span>
+<span id="cb6-56"><a href="#cb6-56" aria-hidden="true"></a><span class="kw">function</span> aFunction<span class="op">()</span> </span>
+<span id="cb6-57"><a href="#cb6-57" aria-hidden="true"></a>    <span class="fu">print</span><span class="op">(</span><span class="st">&quot;Hello my function!&quot;</span><span class="op">)</span></span>
+<span id="cb6-58"><a href="#cb6-58" aria-hidden="true"></a><span class="kw">end</span></span>
+<span id="cb6-59"><a href="#cb6-59" aria-hidden="true"></a></span>
+<span id="cb6-60"><a href="#cb6-60" aria-hidden="true"></a><span class="fu">print</span><span class="op">(</span>_<span class="cn">G</span><span class="op">.</span>aNumber<span class="op">)</span> <span class="co">-- prints 42</span></span>
+<span id="cb6-61"><a href="#cb6-61" aria-hidden="true"></a><span class="cn">_G</span><span class="op">.</span>aFunction <span class="co">-- calls the function, printing &quot;Hello my function!&quot;</span></span>
+<span id="cb6-62"><a href="#cb6-62" aria-hidden="true"></a><span class="cn">_G</span><span class="op">.</span>aNewBoolean <span class="op">=</span> <span class="kw">true</span> <span class="co">-- assigns the key aNewBoolean with value true to the global table, though this is not recommended unless explicitly necessary for the sake of producing readable code</span></span>
+<span id="cb6-63"><a href="#cb6-63" aria-hidden="true"></a></span>
+<span id="cb6-64"><a href="#cb6-64" aria-hidden="true"></a><span class="co">-- ---------- METATABLE -----------</span></span>
+<span id="cb6-65"><a href="#cb6-65" aria-hidden="true"></a>    <span class="co">-- metatables are tables that define and customise table behaviour</span></span>
+<span id="cb6-66"><a href="#cb6-66" aria-hidden="true"></a>    <span class="co">-- setmetatable() sets a metamethod on a specified table, creating a metatable</span></span>
+<span id="cb6-67"><a href="#cb6-67" aria-hidden="true"></a></span>
+<span id="cb6-68"><a href="#cb6-68" aria-hidden="true"></a><span class="co">-- ---------- METAMETHOD ----------</span></span>
+<span id="cb6-69"><a href="#cb6-69" aria-hidden="true"></a>    <span class="co">-- functions that define specific operations on tables, lua has a set of predefined metamethods as below</span></span>
+<span id="cb6-70"><a href="#cb6-70" aria-hidden="true"></a>    <span class="co">-- __add =&gt; define behaviour when adding 2 tables</span></span>
+<span id="cb6-71"><a href="#cb6-71" aria-hidden="true"></a>    <span class="co">-- __sub =&gt; define behaviour when subtracting 2 tables</span></span>
+<span id="cb6-72"><a href="#cb6-72" aria-hidden="true"></a>    <span class="co">-- __mul =&gt; define behaviour when multiplying 2 tables</span></span>
+<span id="cb6-73"><a href="#cb6-73" aria-hidden="true"></a>    <span class="co">-- __div =&gt; define behaviour when dividing 2 tables</span></span>
+<span id="cb6-74"><a href="#cb6-74" aria-hidden="true"></a>    <span class="co">-- __mod =&gt; define behaviour when calling modulo operator on 2 tables</span></span>
+<span id="cb6-75"><a href="#cb6-75" aria-hidden="true"></a>    <span class="co">-- __pow =&gt; define behaviour when calling exponentiation operator on 2 tables</span></span>
+<span id="cb6-76"><a href="#cb6-76" aria-hidden="true"></a>    <span class="co">-- __len =&gt; define behaviour when calling the # length operator on a table or string</span></span>
+<span id="cb6-77"><a href="#cb6-77" aria-hidden="true"></a>    <span class="co">-- __unm =&gt; define behaviour when calling the unary minus operator in a table, used for negating a table</span></span>
+<span id="cb6-78"><a href="#cb6-78" aria-hidden="true"></a>    <span class="co">-- __concat =&gt; define behaviour when calling concatenation operator on 2 tables</span></span>
+<span id="cb6-79"><a href="#cb6-79" aria-hidden="true"></a>    <span class="co">-- __call =&gt; define behaviour when calling a table as a function</span></span>
+<span id="cb6-80"><a href="#cb6-80" aria-hidden="true"></a>    <span class="co">-- __index =&gt; define a fallback method when accessing a table key that no longer exists</span></span>
+<span id="cb6-81"><a href="#cb6-81" aria-hidden="true"></a>    <span class="co">-- __newindex =&gt; define behaviour when assigning a value to a table key that no longer exists</span></span>
+<span id="cb6-82"><a href="#cb6-82" aria-hidden="true"></a>    <span class="co">-- __eq, __lt, __le =&gt; define behaviour for == equality, &lt; less than and &lt;= less than or equal to operators</span></span>
+<span id="cb6-83"><a href="#cb6-83" aria-hidden="true"></a>    <span class="co">-- __tostring =&gt; define behaviour when converting a table to a string</span></span>
+<span id="cb6-84"><a href="#cb6-84" aria-hidden="true"></a></span>
+<span id="cb6-85"><a href="#cb6-85" aria-hidden="true"></a><span class="co">-- attempting to simulate behaviour of fractions via tables</span></span>
+<span id="cb6-86"><a href="#cb6-86" aria-hidden="true"></a>numeratorTable <span class="op">=</span> <span class="op">{</span>a <span class="op">=</span> <span class="dv">1</span><span class="op">,</span> b <span class="op">=</span> <span class="dv">2</span><span class="op">}</span></span>
+<span id="cb6-87"><a href="#cb6-87" aria-hidden="true"></a>denominatorTable <span class="op">=</span> <span class="op">{</span>a <span class="op">=</span> <span class="dv">2</span><span class="op">,</span> b <span class="op">=</span> <span class="dv">3</span><span class="op">}</span></span>
+<span id="cb6-88"><a href="#cb6-88" aria-hidden="true"></a></span>
+<span id="cb6-89"><a href="#cb6-89" aria-hidden="true"></a>metaFraction <span class="op">=</span> <span class="op">{}</span> <span class="co">-- metaFraction is just another table for now</span></span>
+<span id="cb6-90"><a href="#cb6-90" aria-hidden="true"></a></span>
+<span id="cb6-91"><a href="#cb6-91" aria-hidden="true"></a><span class="kw">function</span> metaFraction<span class="op">.</span>__add<span class="op">(</span>numeratorTable<span class="op">,</span> denominatorTable<span class="op">)</span> <span class="co">-- __add is the metamethod called on the metaFraction table to define behaviour when adding 2 tables together</span></span>
+<span id="cb6-92"><a href="#cb6-92" aria-hidden="true"></a>    sum <span class="op">=</span> <span class="op">{}</span></span>
+<span id="cb6-93"><a href="#cb6-93" aria-hidden="true"></a>    sum<span class="op">.</span>b <span class="op">=</span> numeratorTable<span class="op">.</span>b <span class="op">*</span> denominatorTable<span class="op">.</span>b</span>
+<span id="cb6-94"><a href="#cb6-94" aria-hidden="true"></a>    sum<span class="op">.</span>a <span class="op">=</span> numeratorTable<span class="op">.</span>a <span class="op">*</span> denominatorTable<span class="op">.</span>b <span class="op">+</span> denominatorTable<span class="op">.</span>a <span class="op">*</span> numeratorTable<span class="op">.</span>b</span>
+<span id="cb6-95"><a href="#cb6-95" aria-hidden="true"></a>    <span class="cf">return</span> sum</span>
+<span id="cb6-96"><a href="#cb6-96" aria-hidden="true"></a><span class="kw">end</span></span>
+<span id="cb6-97"><a href="#cb6-97" aria-hidden="true"></a></span>
+<span id="cb6-98"><a href="#cb6-98" aria-hidden="true"></a><span class="fu">setmetatable</span><span class="op">(</span>numeratorTable<span class="op">,</span> metaFraction<span class="op">)</span> <span class="co">-- by pairing the table on which the metamethod __add is called with the 2 other tables, we prescribe behaviour and thus crete metatables using the setmetatable() function</span></span>
+<span id="cb6-99"><a href="#cb6-99" aria-hidden="true"></a><span class="fu">setmetatable</span><span class="op">(</span>denominatorTable<span class="op">,</span> metaFraction<span class="op">)</span></span>
+<span id="cb6-100"><a href="#cb6-100" aria-hidden="true"></a></span>
+<span id="cb6-101"><a href="#cb6-101" aria-hidden="true"></a>newSum <span class="op">=</span> numeratorTable <span class="op">+</span> denominatorTable <span class="co">-- this now calls __add(numeratorTable, denominatorTable) on numeratorTable&#39;s metatable</span></span>
+<span id="cb6-102"><a href="#cb6-102" aria-hidden="true"></a></span>
+<span id="cb6-103"><a href="#cb6-103" aria-hidden="true"></a><span class="co">-- ---------- CLASS-LIKE TABLE ----------</span></span>
+<span id="cb6-104"><a href="#cb6-104" aria-hidden="true"></a>    <span class="co">-- lua has no built-in classes, though OOP behaviour can be simulated with tables and metatables</span></span>
+<span id="cb6-105"><a href="#cb6-105" aria-hidden="true"></a>    <span class="co">-- function {TABLE NAME}:{FUNCTION NAME}() is the same as function {TABLE NAME}.{FUNCTION NAME}(self), the : just adds the self as the first argument </span></span>
+<span id="cb6-106"><a href="#cb6-106" aria-hidden="true"></a>    <span class="co">-- self works as you would expect it to in conventional OOP, so here aDog is an object and Dog is the class</span></span>
+<span id="cb6-107"><a href="#cb6-107" aria-hidden="true"></a></span>
+<span id="cb6-108"><a href="#cb6-108" aria-hidden="true"></a>Dog <span class="op">=</span> <span class="op">{}</span> <span class="co">-- Dog might act like a class, but remember its just a table with a metatable and metamethods prescribed on it</span></span>
+<span id="cb6-109"><a href="#cb6-109" aria-hidden="true"></a></span>
+<span id="cb6-110"><a href="#cb6-110" aria-hidden="true"></a><span class="kw">function</span> Dog<span class="op">.</span>new<span class="op">(</span>self<span class="op">)</span></span>
+<span id="cb6-111"><a href="#cb6-111" aria-hidden="true"></a>    newObject <span class="op">=</span> <span class="op">{</span>sound <span class="op">=</span> <span class="st">&quot;Woof&quot;</span><span class="op">}</span></span>
+<span id="cb6-112"><a href="#cb6-112" aria-hidden="true"></a>    self<span class="op">.</span>__index <span class="op">=</span> self</span>
+<span id="cb6-113"><a href="#cb6-113" aria-hidden="true"></a>    <span class="cf">return</span> <span class="fu">setmetatable</span><span class="op">(</span>newObject<span class="op">,</span> self<span class="op">)</span></span>
+<span id="cb6-114"><a href="#cb6-114" aria-hidden="true"></a><span class="kw">end</span></span>
+<span id="cb6-115"><a href="#cb6-115" aria-hidden="true"></a></span>
+<span id="cb6-116"><a href="#cb6-116" aria-hidden="true"></a><span class="kw">function</span> Dog<span class="op">.</span>makeSound<span class="op">()</span></span>
+<span id="cb6-117"><a href="#cb6-117" aria-hidden="true"></a>    <span class="fu">print</span><span class="op">(</span><span class="st">&quot;I say&quot;</span> <span class="op">..</span> self<span class="op">.</span>sound<span class="op">)</span></span>
+<span id="cb6-118"><a href="#cb6-118" aria-hidden="true"></a><span class="kw">end</span></span>
+<span id="cb6-119"><a href="#cb6-119" aria-hidden="true"></a></span>
+<span id="cb6-120"><a href="#cb6-120" aria-hidden="true"></a>aDog <span class="op">=</span> Dog<span class="op">:</span>new<span class="op">()</span></span>
+<span id="cb6-121"><a href="#cb6-121" aria-hidden="true"></a>aDog<span class="op">:</span>makeSound<span class="op">()</span> <span class="co">-- &quot;I say Woof&quot;</span></span>
+<span id="cb6-122"><a href="#cb6-122" aria-hidden="true"></a></span>
+<span id="cb6-123"><a href="#cb6-123" aria-hidden="true"></a><span class="co">-- ---------- INHERITANCE ----------</span></span>
+<span id="cb6-124"><a href="#cb6-124" aria-hidden="true"></a>    <span class="co">-- inheritance can be simulated by creating a new table off the original table and assigning new methods to that table, which is then used as a template for further tables</span></span>
+<span id="cb6-125"><a href="#cb6-125" aria-hidden="true"></a>    <span class="co">-- since we&#39;re effectively copying keys and values off the original table, the new table template &#39;inherits&#39; the keys values and methods off the old table which aren&#39;t overriden</span></span>
+<span id="cb6-126"><a href="#cb6-126" aria-hidden="true"></a>    <span class="co">-- remember that everything here is a table</span></span>
+<span id="cb6-127"><a href="#cb6-127" aria-hidden="true"></a></span>
+<span id="cb6-128"><a href="#cb6-128" aria-hidden="true"></a>loudDog <span class="op">=</span> Dog<span class="op">:</span>new<span class="op">()</span></span>
+<span id="cb6-129"><a href="#cb6-129" aria-hidden="true"></a></span>
+<span id="cb6-130"><a href="#cb6-130" aria-hidden="true"></a><span class="kw">function</span> loudDog<span class="op">.</span>makesound<span class="op">()</span></span>
+<span id="cb6-131"><a href="#cb6-131" aria-hidden="true"></a>    sound <span class="op">=</span> self<span class="op">.</span>sound <span class="op">..</span> <span class="st">&quot; &quot;</span></span>
+<span id="cb6-132"><a href="#cb6-132" aria-hidden="true"></a>    <span class="fu">print</span><span class="op">(</span>sound <span class="op">..</span> sound <span class="op">..</span> sound<span class="op">)</span></span>
+<span id="cb6-133"><a href="#cb6-133" aria-hidden="true"></a><span class="kw">end</span></span>
+<span id="cb6-134"><a href="#cb6-134" aria-hidden="true"></a></span>
+<span id="cb6-135"><a href="#cb6-135" aria-hidden="true"></a>aSuperLoudDog <span class="op">=</span> loudDog<span class="op">:</span>new<span class="op">()</span></span>
+<span id="cb6-136"><a href="#cb6-136" aria-hidden="true"></a>aSuperLoudDog<span class="op">:</span>makesound<span class="op">()</span> <span class="co">-- &quot;Woof Woof Woof &quot;</span></span></code></pre></div>
+<h2 id="functions">Functions</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode lua"><code class="sourceCode lua"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="co">-- ---------- FUNCTIONS ----------</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>    <span class="co">-- function/end declares a function block</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a>    <span class="co">-- return works as expected</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a>    <span class="co">-- closures and anonymous functions are allowed</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a>    <span class="co">-- functions are first-class and can be fed into other functions</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a>    <span class="co">-- fuction scope can be specified using the local/global keyword</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true"></a><span class="kw">function</span> fib<span class="op">(</span>n<span class="op">)</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true"></a>    <span class="cf">if</span> n <span class="op">&lt;</span> <span class="dv">2</span> <span class="cf">then</span> </span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true"></a>        <span class="cf">return</span> <span class="dv">1</span> </span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true"></a>    <span class="cf">end</span> </span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true"></a>    <span class="cf">return</span> fib<span class="op">(</span>n<span class="op">-</span><span class="dv">2</span><span class="op">)</span> <span class="op">+</span> fib<span class="op">(</span>n<span class="op">-</span><span class="dv">1</span><span class="op">)</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true"></a><span class="kw">end</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true"></a></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true"></a><span class="kw">function</span> adder<span class="op">(</span>x<span class="op">)</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true"></a>    <span class="cf">return</span> <span class="kw">function</span> <span class="op">(</span>y<span class="op">)</span> <span class="cf">return</span> x <span class="op">+</span> y <span class="kw">end</span> <span class="co">-- returns an anonymous function which retains the value of x</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true"></a><span class="kw">end</span></span></code></pre></div>
+<h2 id="modules">Modules</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode lua"><code class="sourceCode lua"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="co">-- ---------- MODULE ----------</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a>    <span class="co">-- require() allows for global functionality from the specified file to be brought into global scope of current file</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a>        <span class="co">-- require()&#39;s return values are cached so a file is only run ONCE even if require() is run multiple times</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a>    <span class="co">-- dofile() is like require() but without caching, so a file is run EVERYTIME dofile() is run</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true"></a>    <span class="co">-- loadfile() loads a lua file into the variable but does not run it, the variable is called again as a function to have it run</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true"></a>    <span class="co">-- load() is loadfile() for strings, the variable is called again as a function to have it run</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true"></a>    <span class="co">-- local functionality that is only ever within local scope and never brought into global scope from the specified file will be treated as invisible and unretrievable</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true"></a>    <span class="co">-- functionality is called using . dot notation</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true"></a><span class="co">-- eg. the below code is in seperate.lua</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true"></a><span class="kw">local</span> <span class="cn">M</span> <span class="op">=</span> <span class="op">{}</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true"></a></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true"></a><span class="kw">local</span> <span class="kw">function</span> sayMyName<span class="op">()</span> </span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true"></a>    <span class="fu">print</span><span class="op">(</span><span class="st">&quot;You&#39;re Heisenberg&quot;</span><span class="op">)</span>  </span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true"></a><span class="kw">end</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true"></a></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true"></a><span class="kw">function</span> <span class="cn">M</span><span class="op">.</span>sayHello<span class="op">()</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true"></a>    <span class="fu">print</span><span class="op">(</span><span class="st">&quot;Why hello there&quot;</span><span class="op">)</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true"></a>    sayMyName<span class="op">()</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true"></a><span class="kw">end</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true"></a></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true"></a><span class="cf">return</span> <span class="cn">M</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true"></a></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true"></a><span class="co">-- eg. the below code is in main.lua</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true"></a></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true"></a><span class="kw">local</span> mod <span class="op">=</span> <span class="fu">require</span><span class="op">(</span><span class="st">&quot;seperate&quot;</span><span class="op">)</span> <span class="co">-- require() brings in all globally scoped functionality from seperate.lua, accessed via the variable mod</span></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true"></a>mod<span class="op">.</span>sayHello<span class="op">()</span> <span class="co">-- prints &quot;Why hello thereYou&#39;re Heisenberg&quot;, because sayHello() is in the global scope and it brings in sayMyName() despite that being only within local scope in seperate.lua</span></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true"></a>mod<span class="op">.</span>sayMyName<span class="op">()</span> <span class="co">-- this FAILS because sayMyName() is in the local scope only</span></span></code></pre></div>
+<h2 id="more-on">More on</h2>
+<ul>
+<li><a href="https://learnxinyminutes.com/docs/lua/">learn lua in y minutes</a></li>
+<li><a href="http://www.lua.org/pil/contents.html">lua book</a></li>
+<li><a href="https://devhints.io/lua">lua cheatsheet</a></li>
+</ul>
+</body>
+</html>

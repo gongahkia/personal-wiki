@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Latex</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <script src="/usr/share/javascript/mathjax/tex-mml-chtml.js" type="text/javascript"></script>
+</head>
+<body>
+<h1 id="latex"><code>LaTeX</code></h1>
+<p><span class="math inline">\(\LaTeX\)</span> allows for the typesetting of academic articles in the realm of math and science.</p>
+<h2 id="comments">Comments</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co">% single-line comment</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="co">% there are no multi-line comments </span></span></code></pre></div>
+<h2 id="quickstart">Quickstart</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode tex"><code class="sourceCode latex"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="co">% ---------- QUICKSTART -----------</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>    <span class="co">% LaTeX files end with the file extension .tex</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>    <span class="co">% \ =&gt; backslash prefixes every LaTex command </span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a><span class="co">% ---------- FORMAT ------------</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a>    <span class="co">% every LaTeX document comprises the following composite elements...</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a>        <span class="co">% 1. PREAMBLE</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a>        <span class="co">% 2. DOCUMENT BODY</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true"></a><span class="co">% ----- 1. PREAMBLE -----</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true"></a>  <span class="co">% the preamble contains all document metadata that is relevant for compilation and typesetting of out LaTeX file</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true"></a><span class="co">% --- DOCUMENT DETAILS ---</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true"></a>  <span class="co">% specify document type for later compilation</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true"></a>  <span class="co">% specify fontsize for the document</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true"></a><span class="co">% \documentclass[fontSize]{documentType} </span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true"></a>    <span class="co">% fontSize =&gt; any integer ending with pt</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true"></a>    <span class="co">% documentType =&gt; other classes can be found here https://ctan.org/topic/class</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true"></a>        <span class="co">% article</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true"></a>        <span class="co">% report</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true"></a>        <span class="co">% book</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true"></a>        <span class="co">% slides</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true"></a>        <span class="co">% memoir</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true"></a>        <span class="co">% letter</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true"></a>        <span class="co">% beamer</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true"></a>        <span class="co">% proc</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true"></a>        <span class="co">% minimal</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true"></a><span class="bu">\documentclass</span>[12pt]{<span class="ex">article</span>}</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true"></a><span class="co">% --- PACKAGES ---</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true"></a>  <span class="co">% specifies any LaTeX packages the document requires for compilation</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true"></a>  <span class="co">% other LaTeX packages can be found here https://ctan.org/</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true"></a></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true"></a><span class="co">% \usepackage{packageName} </span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true"></a></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true"></a><span class="bu">\usepackage</span>{<span class="ex">caption</span>}</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true"></a><span class="bu">\usepackage</span>{<span class="ex">float</span>}</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true"></a><span class="bu">\usepackage</span>{<span class="ex">hyperref</span>}</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true"></a></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true"></a><span class="co">% --- AUTHOR, DATE, TITLE ---</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true"></a>  <span class="co">% specify the author(s)</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true"></a>  <span class="co">% specify the date</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true"></a>    <span class="co">% \today =&gt; returns the current date</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true"></a>  <span class="co">% specify the document title</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true"></a></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true"></a><span class="co">% \author{authorNames}</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true"></a><span class="co">% \date{date}</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true"></a><span class="co">% \title{documentTitle}</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true"></a></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true"></a><span class="fu">\author</span>{Chaitanya Krishna Ande, Colton Kohnke}</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true"></a><span class="fu">\date</span>{<span class="fu">\today</span>}</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true"></a><span class="fu">\title</span>{Learn <span class="fu">\LaTeX</span>{} in Y Minutes!}</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true"></a></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true"></a><span class="co">% ----- 2. DOCUMENT BODY -----</span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true"></a>  <span class="co">% any combination of LaTeX commands can be called here</span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true"></a></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true"></a><span class="co">% --- GENERAL COMMANDS ---</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true"></a>  <span class="co">% empty lines between text create seperations between paragraphs</span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true"></a>  <span class="co">% \begin{documentComponent} =&gt; signposts the start of the given document component</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true"></a>  <span class="co">% \end{documentComponent} =&gt; singposts the end of the given document component</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true"></a>    <span class="co">% document =&gt; REQUIRED for every LaTeX document at the beginning and end of the document body</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true"></a>    <span class="co">% abstract =&gt; creates an abstract environment (must be called before the main section of the document body)</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true"></a>    <span class="co">% enumerate =&gt; creates an enumeration environment within which \item list items can be called</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true"></a>      <span class="co">% \item =&gt; indicates a single list item within an enumeration environment</span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true"></a>    <span class="co">% thebibliography =&gt; creates a bibliography environment for references within which \bibitem list items can be called</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true"></a>      <span class="co">% \bibitem =&gt; indicates a single bibliography list item that can be cited directly within the document body</span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true"></a>    <span class="co">% equation =&gt; creates an equation environment within which mathematical equations can be defined with LaTeX commands</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true"></a>    <span class="co">% figure =&gt; creates a figure environment within which a figure and its placement can be specified</span></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true"></a>  <span class="co">% \section{sectionTitle} =&gt; creates a numbered secton with the given title</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true"></a>  <span class="co">% \subsection{subsectionTitle} =&gt; creates a numbered subsection with the given title</span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true"></a>  <span class="co">% \makeTitle =&gt; creates a title page from details within the preamble</span></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true"></a>  <span class="co">% \tableofcontents =&gt; creates a table of contents page</span></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true"></a>  <span class="co">% \newpage =&gt; creates a new page, equivalent to \n in programming languages</span></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true"></a>  <span class="co">% * =&gt; adding the asterisk after any LaTeX command supresses the inbuilt numbering system to create an unnumber area</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true"></a>  <span class="co">% \label{componentType:componentTitle} =&gt; creates a label that allows for later referencing of a given component within the document body</span></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true"></a></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true"></a><span class="kw">\begin</span>{<span class="ex">document</span>}</span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true"></a><span class="fu">\maketitle</span> <span class="co">% create a title page</span></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true"></a></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true"></a><span class="fu">\newpage</span></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true"></a><span class="fu">\tableofcontents</span> <span class="co">% create a table of contents</span></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true"></a><span class="fu">\newpage</span></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true"></a></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true"></a><span class="kw">\begin</span>{<span class="ex">abstract</span>} <span class="co">% create an abstract</span></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true"></a> <span class="fu">\LaTeX</span>{} documentation written as <span class="fu">\LaTeX</span>! How novel and totally not my idea!</span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true"></a><span class="kw">\end</span>{<span class="ex">abstract</span>}</span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true"></a></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true"></a><span class="kw">\section</span>{Introduction} <span class="co">% a section</span></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true"></a>Hello, my name is Colton and together we&#39;re going to explore <span class="fu">\LaTeX</span>!</span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true"></a></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true"></a><span class="kw">\subsection</span>{This is a subsection} <span class="co">% a subsection</span></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true"></a>Steven Universe looking ass.</span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true"></a></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true"></a><span class="kw">\section*</span>{This is an unnumbered section} <span class="co">% an unnumbered section</span></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true"></a>Yeah not all sections have to be numbered!</span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true"></a></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true"></a><span class="kw">\section</span>{Lists}</span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true"></a>Lists are one of the easiest things to create in <span class="fu">\LaTeX</span>! I need to go shopping</span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true"></a>tomorrow, so let&#39;s make a grocery list.</span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true"></a><span class="kw">\begin</span>{<span class="ex">enumerate</span>} <span class="co">% creates a list environment</span></span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true"></a>  <span class="fu">\item</span> salad</span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true"></a>  <span class="fu">\item</span> 27 watermelon</span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true"></a>  <span class="fu">\item</span> a single jackrabbit</span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true"></a><span class="kw">\end</span>{<span class="ex">enumerate</span>} </span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true"></a></span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true"></a><span class="co">% ----- 2.5 MATHEMATICS -----</span></span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true"></a>  <span class="co">% one of the primary functions of LaTeX is creating stylised mathematical equations in the compiled document, below are some examples for different fields of mathematics</span></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true"></a>  <span class="co">% more detailed math commands can be found here https://tug.ctan.org/info/undergradmath/undergradmath.pdf</span></span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true"></a></span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true"></a><span class="co">% --- MATHEMATICS COMMANDS ---</span></span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true"></a>  <span class="co">% greek letters =&gt; other greek letters can be found here https://www.overleaf.com/learn/latex/List_of_Greek_letters_and_math_symbols</span></span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true"></a>    <span class="co">% \xi</span></span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true"></a>    <span class="co">% \beta</span></span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true"></a>    <span class="co">% \gamma</span></span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true"></a>    <span class="co">% \sigma</span></span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true"></a>    <span class="co">% \theta</span></span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true"></a>  <span class="co">% $ =&gt; prefixes and suffixes any math section in LaTeX</span></span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true"></a>  <span class="co">% \[ and \] =&gt; an alternative that also prefixes and suffixes any math section in LaTeX</span></span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true"></a>  <span class="co">% \frac{numerator}{denominator} =&gt; creates a fraction with the given numerator and denominator</span></span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true"></a>  <span class="co">% sum_{} =&gt; draws the summation symbol</span></span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true"></a>  <span class="co">% int_{} =&gt; draws the integral symbol</span></span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true"></a></span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true"></a><span class="co">% MATHEMATICAL FUNCTIONS</span></span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true"></a>(<span class="ss">$</span><span class="sc">\sin</span><span class="ss">$</span>, <span class="ss">$</span><span class="sc">\cos</span><span class="ss">$</span>, <span class="ss">$</span><span class="sc">\tan</span><span class="ss">$</span>) <span class="co">% trigonometric functions</span></span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true"></a>(<span class="ss">$</span><span class="sc">\log</span><span class="ss">$</span>, <span class="ss">$</span><span class="sc">\exp</span><span class="ss">$</span>) <span class="co">% logarithms and exponentials</span></span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true"></a>(<span class="ss">$</span><span class="sc">\lim</span><span class="ss">$</span>) <span class="co">% limits</span></span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true"></a></span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true"></a><span class="co">% SET THEORY</span></span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true"></a><span class="ss">$</span><span class="sc">\forall</span><span class="ss"> x </span><span class="sc">\in</span><span class="ss"> X$</span> <span class="co">% all of X belong to X</span></span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true"></a></span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true"></a><span class="co">% EQUATION</span></span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true"></a><span class="ss">$a^2 + b^2 = c^2$</span> <span class="co">% pythogarous theorom</span></span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true"></a><span class="ss">\[a^2 + b^2 = c^2 \]</span> <span class="co">% pythogarous theorom, using the alternative syntax for signposting the start and end of a math section </span></span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true"></a></span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true"></a><span class="co">% --- FIGURES ---</span></span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true"></a>  <span class="co">% inkscape (https://inkscape.org/) is often used to draw diagrams that can be later embedded in the LaTeX document</span></span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true"></a>  <span class="co">% for more details on captioning figures, see here https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions </span></span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true"></a>  <span class="co">% \includegraphics{imageFilePath} =&gt; draws a specified figure at the given file path, can be further customised with augmenters within the []</span></span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true"></a>  <span class="co">% \caption{captionTitle} =&gt; draws a specified caption within the figure</span></span>
+<span id="cb2-142"><a href="#cb2-142" aria-hidden="true"></a></span>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true"></a><span class="kw">\begin</span>{<span class="ex">figure</span>}[H] <span class="co">% H here denotes the placement of the figure</span></span>
+<span id="cb2-144"><a href="#cb2-144" aria-hidden="true"></a>    <span class="bu">\includegraphics</span>[width=0.8<span class="fu">\linewidth</span>]{<span class="ex">right-triangle.png</span>}</span>
+<span id="cb2-145"><a href="#cb2-145" aria-hidden="true"></a>    <span class="fu">\caption</span>{Right triangle with sides <span class="ss">$a$</span>, <span class="ss">$b$</span>, <span class="ss">$c$</span>}</span>
+<span id="cb2-146"><a href="#cb2-146" aria-hidden="true"></a>    <span class="kw">\label</span>{<span class="ex">fig:right-triangle</span>}</span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true"></a><span class="kw">\end</span>{<span class="ex">figure</span>}</span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true"></a></span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true"></a><span class="kw">\begin</span>{<span class="ex">thebibliography</span>}{1} <span class="co">% bibliography section</span></span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true"></a>  <span class="fu">\bibitem</span>{latexwiki} The amazing <span class="fu">\LaTeX</span>{} wikibook: <span class="fu">\emph</span>{https://en.wikibooks.org/wiki/LaTeX}</span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true"></a>  <span class="fu">\bibitem</span>{latextutorial} An actual tutorial: <span class="fu">\emph</span>{http://www.latex-tutorial.com}</span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true"></a><span class="kw">\end</span>{<span class="ex">thebibliography</span>}</span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true"></a></span>
+<span id="cb2-154"><a href="#cb2-154" aria-hidden="true"></a><span class="kw">\end</span>{<span class="ex">document</span>}</span></code></pre></div>
+<h2 id="tooling">Tooling</h2>
+<ul>
+<li><a href="https://gist.github.com/rain1024/98dd5e2c6c8c28f9ea9d">pdflatex</a></li>
+<li><a href="https://miktex.org/">miktex</a></li>
+<li><a href="https://tug.org/texlive/">tex live</a></li>
+</ul>
+<h2 id="more-on">More on</h2>
+<ul>
+<li><a href="https://tug.ctan.org/info/undergradmath/undergradmath.pdf">LaTeX math cheatsheet for undergraduates</a></li>
+<li><a href="https://youtu.be/p5Yr0dkrKG8?si=rJmg6cck1Op1-ALm">LaTeX for beginners</a></li>
+<li><a href="https://youtu.be/lgiCpA4zzGU?si=RB3nN03LF328nROK">LaTeX for students</a></li>
+<li><a href="https://inkscape.org/learn/tutorials/latex/">Inkscape diagrams within LaTeX documents</a></li>
+<li><a href="https://www.tablesgenerator.com/">LaTeX table generator</a></li>
+<li><a href="https://latex.codecogs.com/eqneditor/editor.php">LaTeX equation editor</a></li>
+<li><a href="https://learnxinyminutes.com/docs/latex/">learn LaTeX in y minutes</a></li>
+<li><a href="https://www.latex-project.org/">LaTeX project</a></li>
+<li><a href="https://www.learnlatex.org/">learn LaTeX.org</a></li>
+<li><a href="https://en.wikibooks.org/wiki/LaTeX">comprehensive LaTeX wiki</a></li>
+<li><a href="https://castel.dev/post/lecture-notes-1/">mathematics in college with LaTeX and Vim</a></li>
+</ul>
+</body>
+</html>

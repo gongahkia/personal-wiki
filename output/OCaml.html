@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>OCaml</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="ocaml"><code>OCaml</code></h1>
+<h2 id="comments">Comments</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode ocaml"><code class="sourceCode ocaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co">(* This is a comment *)</span></span></code></pre></div>
+<h2 id="introduction">Introduction</h2>
+<p>A strictly evaluated, functional language with imperative features.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode ocaml"><code class="sourceCode ocaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="co">(*** FUNCTIONAL LAND ***)</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a><span class="co">(* everything in OCaml is an expression *)</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a><span class="co">(* every expression (* variables, functions *) evaluates to a value *)</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a><span class="co">(* OCaml lacks &quot;procedures&quot; and every function must evaluate to a value, so functions that don&#39;t do that and are called for their side effects (* like print_endline *) return a value of &quot;unit&quot; type *)</span></span></code></pre></div>
+<h2 id="expressions-variables-and-functions">Expressions, Variables and Functions</h2>
+<ul>
+<li>double semicolon language <em>(to separate expressions, though not always necessary)</em></li>
+<li><code>let</code> for function and variable declaration</li>
+<li><a href="https://www.codingame.com/playgrounds/6196/explaining-currying-to-myself">currying</a> and <a href="https://stackoverflow.com/questions/6005176/ocaml-explicit-type-signatures">type signatures</a> like haskell</li>
+<li>optional type declaration <em>(OCaml compiler automatically infers types)</em></li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode ocaml"><code class="sourceCode ocaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="co">(*** EXPRESSIONS ***)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a><span class="co">(* Expressions can be separated by a double semicolon, though in production source code often omits the double semicolon for stylistic purposes. *)</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a><span class="co">(*** VARIABLES ***)</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a><span class="kw">let</span> x = <span class="dv">10</span>;;  <span class="co">(* this is a variable *)</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a><span class="co">(* definitons can be chained together with &quot;let ... in&quot; constructs *)</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true"></a><span class="kw">let</span> x = <span class="dv">10</span> <span class="kw">in</span> </span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true"></a><span class="kw">let</span> y = <span class="dv">20</span> <span class="kw">in</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true"></a>x + y ;; <span class="co">(* this expression evaluates to 30 *)</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true"></a><span class="co">(*** FUNCTIONS ***)</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true"></a><span class="kw">let</span> func_int(x:<span class="dt">int</span>):<span class="dt">int</span> = x + <span class="dv">1</span>;; <span class="co">(* this is a function *)</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true"></a><span class="co">(* invoking functions usually doesn&#39;t require brackets UNLESS the function argument is an expression *)</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true"></a></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true"></a><span class="kw">let</span> func_int_10 = func_int <span class="dv">10</span>;;</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true"></a><span class="kw">let</span> func_inc_idk = func_int (<span class="dv">11-1</span>);;</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true"></a><span class="co">(* every function must take at least one argument *)</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true"></a><span class="kw">let</span> print_hlo_wrld() = <span class="dt">print_endline</span> <span class="st">&quot;hello world&quot;</span>;; <span class="co">(* when creating void functions, we need to specify the bracket to denote the empty function *)</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true"></a>print_hlo_wrld();; <span class="co">(* when calling void functions, we must specify the empty bracket *)</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true"></a></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true"></a><span class="co">(* calling a function with an insufficient number of arguments creates a new function *)</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true"></a><span class="kw">let</span> make_inc x y = x + y;; <span class="co">(* the type signature for make_inc is int -&gt; int -&gt; int *)</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true"></a><span class="kw">let</span> inc_2 = make_inc <span class="dv">2</span>;; <span class="co">(* this creates a new function inc_2 of type signature int -&gt; int *)</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true"></a>inc_2 <span class="dv">3</span>;; <span class="co">(* this will evaluate to 5 *)</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true"></a></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true"></a><span class="co">(* when there are multiple expressions in the function body, the last expression becomes the return value and all other expressions are of &quot;unit&quot; type *)</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true"></a></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true"></a><span class="kw">let</span> print_and_return x = </span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true"></a>    <span class="dt">print_endline</span> (<span class="dt">string_of_int</span> x);</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true"></a>    x</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true"></a>;;</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true"></a></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true"></a><span class="co">(*** RECURSIVE FUNCTIONS ***)</span></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true"></a></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true"></a><span class="co">(* recursive functions must be marked with a rec*)</span></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true"></a></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true"></a><span class="kw">let</span> <span class="kw">rec</span> factorial n = </span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true"></a>    <span class="kw">if</span> n = <span class="dv">0</span> <span class="kw">then</span> <span class="dv">1</span></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true"></a>    <span class="kw">else</span> n * factorial (n<span class="dv">-1</span>)</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true"></a>;;</span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true"></a></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true"></a><span class="co">(* note the above can also be written like this *)</span></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true"></a></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true"></a><span class="kw">let</span> <span class="kw">rec</span> factorial n = <span class="kw">if</span> n = <span class="dv">0</span> <span class="kw">then</span> <span class="dv">1</span> <span class="kw">else</span> n * factorial (n<span class="dv">-1</span>);; <span class="co">(* just that this shit is really virtually unreadable so the above is preferred *)</span></span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true"></a></span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true"></a><span class="co">(* the &quot;let ... and ... in&quot; construct is also available for mutually recursive functions *)</span></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true"></a></span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true"></a><span class="kw">let</span> <span class="kw">rec</span> </span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true"></a>    is_even = <span class="kw">function</span> </span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true"></a>    | <span class="dv">0</span> -&gt; <span class="kw">true</span></span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true"></a>    | n -&gt; is_odd(n<span class="dv">-1</span>)</span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true"></a><span class="kw">and</span> </span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true"></a>    is_odd = <span class="kw">function</span></span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true"></a>    | <span class="dv">0</span> -&gt; <span class="kw">false</span></span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true"></a>    | n -&gt; is_even(n<span class="dv">-1</span>)</span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true"></a>;;</span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true"></a></span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true"></a><span class="co">(*** ANONYMOUS FUNCTIONS ***)</span></span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true"></a></span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true"></a><span class="co">(* anonymous functions are declared with the fun keyword *)</span></span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true"></a></span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true"></a><span class="kw">let</span> my_lambda = <span class="kw">fun</span> x -&gt; x * x;;</span></code></pre></div>
+<h2 id="operators">Operators</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode ocaml"><code class="sourceCode ocaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="co">(*** OPERATORS ***)</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a><span class="co">(* in functional programming land, every operator is a function and can be called as such *)</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>(+) <span class="dv">3</span> <span class="dv">4</span>;; <span class="co">(* evaluates the same way as 3 + 4 *)</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a><span class="co">(* OCaml DOESN&#39;T ONLY refrain from implict type conversion between floats and integers, float arithmetic uses wholly different operators *)</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a><span class="dv">12</span> + <span class="dv">3</span>;; <span class="co">(* integer arithmetic, evaluates to 15 *)</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a><span class="dv">12</span> / <span class="dv">3</span>;; <span class="co">(* integer arithmetic, evalutes to 4 *)</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true"></a><span class="fl">12.0</span> +. <span class="fl">3.0</span>;; <span class="co">(* float arithmetic, evaluates to 15.0 *)</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true"></a><span class="fl">12.0</span> /. <span class="fl">3.0</span>;; <span class="co">(* float arithmetic, evaluates to 4.0 *)</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true"></a><span class="dv">5</span> <span class="kw">mod</span> <span class="dv">2</span>;; <span class="co">(* modulo is universal across floats and integers *)</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true"></a><span class="co">(* Unary minus (* the negation operator *) is a marked exception to this rule as it is polymorphic, although type-specific versions of it do exist as well *)</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true"></a><span class="co">(* Unary operators are operators which are used to calculate the result on only one operand *)</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true"></a><span class="co">(* Binary operators are operatores which are used to calculate the result on two operands *)</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true"></a></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true"></a><span class="co">(* Polymorphic unary operator *)</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true"></a></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true"></a><span class="dv">-3</span>;; <span class="co">(* evaluates to the integer value -3 *)</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true"></a><span class="fl">-4.5</span>;; <span class="co">(* evaluates to the float value -4.5 *)</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true"></a></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true"></a><span class="co">(* Type specific unary operators *)</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true"></a></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true"></a>~- <span class="dv">3</span>;; <span class="co">(* applicable for integers only *)</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true"></a>~-. <span class="fl">3.4</span>;; <span class="co">(* applicable for floats only *)</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true"></a>~- <span class="fl">3.4</span>;; <span class="co">(* this results in a type error *)</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true"></a></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true"></a><span class="co">(* You can also be sneaky and redefine your own operators for fun *)</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true"></a></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true"></a><span class="kw">let</span> (~/) x = <span class="fl">1.0</span> /. x;; <span class="co">(* unary operators must start with ~ *)</span></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true"></a>~/ <span class="fl">4.0</span>;; <span class="co">(* this evaluates to the float value of 0.25 *)</span></span></code></pre></div>
+<h2 id="data-structures">Data structures</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode ocaml"><code class="sourceCode ocaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="co">(*** DATA STRUCTURES ***)</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a><span class="co">(* LIST *)</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a><span class="co">(* square brackets, items are semi-colon separated *)</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a><span class="co">(* dynamically allocated space, size can be casually changed *)</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a><span class="co">(* dynamically allocated space, can store elements of different datat types *)</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true"></a><span class="kw">let</span> my_list = [<span class="dv">1</span>;<span class="dv">2</span>;<span class="dv">3</span>];; <span class="co">(* of type &quot;int list&quot; *)</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true"></a><span class="co">(* LIST METHODS *)</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true"></a><span class="co">(* LIST INDEXING *)</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true"></a><span class="dt">List</span>.nth my_list <span class="dv">1</span>;; <span class="co">(* evaluates to integer 2, the second element in the list of index 1 *)</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true"></a><span class="co">(* LIST MAP *)</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true"></a><span class="co">(* List.map() calls an anonymous function that is user-defined *)</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true"></a></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true"></a><span class="co">(* List.map() applies the given function to each iteration variablein the list *)</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true"></a></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true"></a><span class="dt">List</span>.map(<span class="kw">fun</span> x -&gt; x * <span class="dv">2</span>)  [<span class="dv">1</span>;<span class="dv">2</span>;<span class="dv">3</span>];; <span class="co">(* this should evaulate to [2;4;6] *)</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true"></a></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true"></a><span class="co">(* LIST FILTER *)</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true"></a></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true"></a><span class="co">(* List.filter() also calls an anonymous function that is user-defined *)</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true"></a></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true"></a><span class="co">(* List.filter() applies the specified conditonal check as a function to the list, and only those that pass said check are remaining in the list *)</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true"></a></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true"></a><span class="dt">List</span>.filter (<span class="kw">fun</span> x -&gt; x <span class="kw">mod</span> <span class="dv">2</span> = <span class="dv">0</span>) [<span class="dv">1</span>;<span class="dv">2</span>;<span class="dv">3</span>;<span class="dv">4</span>];; <span class="co">(* this should evaulate to [2;4] *)</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true"></a></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true"></a><span class="co">(* ADDING ELEMENTS *)</span></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true"></a></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true"></a><span class="co">(* add an item to the FRONT of a list with the :: constructor which is often referred to as a &quot;cons&quot; *)</span></span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true"></a></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true"></a><span class="dv">1</span> :: [<span class="dv">2</span>;<span class="dv">3</span>];; <span class="co">(* evaluates to [1;2;3] *)</span></span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true"></a></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true"></a><span class="co">(* TUPLES *)</span></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true"></a></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true"></a><span class="co">(* (* optionally surrounded by *) round brackets, items are comma separated *)</span></span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true"></a></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true"></a><span class="kw">let</span> my_tuple = <span class="dv">3</span>, <span class="dv">4</span>;; <span class="co">(* of type &quot;int * int&quot; *)</span></span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true"></a><span class="kw">let</span> my_other_tuple = (<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>);; <span class="co">(* this is a much clearer more approved syntax *)</span></span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true"></a></span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true"></a><span class="co">(* warning to not separate list items by commas, otherwise you&#39;ll accidentally create a list with a tuple inside *)</span></span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true"></a></span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true"></a><span class="kw">let</span> bad_list = [<span class="dv">1</span>,<span class="dv">2</span>];; <span class="co">(* this shit becomes [(1,2)] *)</span></span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true"></a></span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true"></a><span class="co">(* ARRAYS *)</span></span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true"></a></span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true"></a><span class="co">(* &quot;[| |]&quot; surrounded, items are semicolon seperated *)</span></span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true"></a><span class="co">(* statically allocated space, size of array declared at initialization * )</span></span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true"></a><span class="co">(* statically allocated space, arrays can only contain same data type *)</span></span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true"></a></span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true"></a><span class="co">let my_array = [| 1;2;3 |];;</span></span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true"></a></span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true"></a><span class="co">(* ARRAY INDEXING *)</span></span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true"></a></span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true"></a><span class="co">my_array.(0);; (* this evaluates to the integer 1, the first element of the array with index 0 *)</span></span></code></pre></div>
+<h2 id="strings-and-characters">Strings and Characters</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode ocaml"><code class="sourceCode ocaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="co">(*** STRINGS and CHARACTERS ***)</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a><span class="co">(* double quotes for string literals *)</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a><span class="co">(* single quotes for character literals *)</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a><span class="co">(* single and double quotes are not interchangeable, effects may vary depending on how you mix them up *)</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a><span class="kw">let</span> my_str = <span class="st">&quot;Hello world&quot;</span>;; <span class="co">(* string literal *)</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a><span class="kw">let</span> my_char = <span class="ch">&#39;a&#39;</span>;; <span class="co">(* character literal *)</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true"></a><span class="kw">let</span> unintended_effect = <span class="st">&quot;w&quot;</span>;; <span class="co">(* this creates a single character string, not a character *)</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true"></a><span class="kw">let</span> syntax_error = &#39;syntax error&#39;;; <span class="co">(* this results in a syntax error *)</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true"></a><span class="co">(* STRING CONCATENATION *)</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true"></a><span class="co">(* ^ operator *)</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true"></a></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true"></a><span class="kw">let</span> some_str = <span class="st">&quot;hello&quot;</span> ^ <span class="st">&quot;world&quot;</span>;; <span class="co">(* evaluates to &quot;helloworld&quot; string *)</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true"></a></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true"></a><span class="co">(* CAVEAT *)</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true"></a><span class="co">(* strings are NOT arrays of characters, and the two data types cannot be mixed in expressions *)</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true"></a><span class="co">(* characters are converted to strings with String.make 1 my_char *)</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true"></a></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true"></a><span class="kw">let</span> ocaml = (<span class="dt">String</span>.make <span class="dv">1</span> <span class="ch">&#39;O&#39;</span>) ^ <span class="st">&quot;Caml&quot;</span>;; <span class="co">(* this evaluates to the string value &quot;OCaml&quot; by type converting a character to a string and concatenating that single-character string with the &quot;Caml&quot; string *)</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true"></a></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true"></a><span class="co">(* FORMATTED STRING *)</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true"></a></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true"></a><span class="co">(* C or Bash-like syntax *)</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true"></a></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true"></a><span class="dt">Printf</span>.printf <span class="st">&quot;%d %s&quot;</span> <span class="dv">99</span> <span class="st">&quot;bottles of beer&quot;</span>;; <span class="co">(* evauates to the string value of &quot;99 bottles of beer&quot; *)</span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true"></a></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true"></a><span class="co">(* PRINT STATEMENTS *)</span></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true"></a></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true"></a><span class="dt">print_string</span> <span class="st">&quot;hello world</span><span class="ch">\n</span><span class="st">&quot;</span>;; <span class="co">(* prints string values without the newline character *)</span></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true"></a><span class="dt">print_endline</span> <span class="st">&quot;hello world&quot;</span>;; <span class="co">(* prints string with a newline character *)</span></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true"></a></span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true"></a><span class="co">(* READ STRINGS *)</span></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true"></a></span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true"></a><span class="kw">let</span> line = <span class="dt">read_line</span>();; <span class="co">(* does what it says it does *)</span></span></code></pre></div>
+<h2 id="user-defined-data-types">User-defined data types</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode ocaml"><code class="sourceCode ocaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="co">(*** USER-DEFINED DATA TYPES ***)</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a><span class="co">(* defined using the type keyword *)</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a><span class="kw">type</span> my_int = <span class="dt">int</span>;; <span class="co">(* this is an incredibly useless type alias, refrain from doing this *)</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true"></a><span class="co">(* there are also magic type constructors that must start with a capital letter, do google what these do for more detail *)</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true"></a><span class="kw">type</span> ml = Ocaml | StandardML;; </span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true"></a><span class="kw">let</span> lang = OCaml;; <span class="co">(* has the type &quot;ml&quot; *)</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true"></a><span class="co">(* the below are also valid type constructors *)</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true"></a><span class="kw">type</span> my_number = PlusInfinity | MinusInfinity | Real <span class="kw">of</span> <span class="dt">float</span>;;</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true"></a><span class="kw">let</span> r0 = Real (<span class="fl">-3.4</span>);; <span class="co">(* of type my_number *)</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true"></a></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true"></a><span class="co">(* type constructors can also be used to implement polymorphoc arithmetic *)</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true"></a></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true"></a><span class="kw">type</span> number = Int <span class="kw">of</span> <span class="dt">int</span> | Float <span class="kw">of</span> <span class="dt">float</span>;; </span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true"></a></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true"></a><span class="co">(* an example is of a point on a 2d plane *)</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true"></a></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true"></a><span class="kw">type</span> point2d = Point <span class="kw">of</span> <span class="dt">float</span> * <span class="dt">float</span>;;</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true"></a><span class="kw">let</span> my_point = Point (<span class="fl">2.0</span>, <span class="fl">3.0</span>);;</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true"></a></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true"></a><span class="co">(* types can also be parameterized, like in this type for &quot;list of lists of anything really&quot; where &#39;a can be substituted with any type *)</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true"></a></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true"></a><span class="kw">type</span> &#39;a list_of_lists = &#39;a <span class="dt">list</span> <span class="dt">list</span>;;</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true"></a><span class="kw">type</span> int_list_list = <span class="dt">int</span> list_of_lists;;</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true"></a></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true"></a><span class="co">(* types can also mysteriously be recursive, like this type analogous to a built-in list of integers *)</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true"></a></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true"></a><span class="kw">type</span> my_int_list = EmptyList | IntList <span class="kw">of</span> <span class="dt">int</span> * my_int_list;;</span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true"></a><span class="kw">let</span> l = IntList (<span class="dv">1</span>, EmptyList);;</span></code></pre></div>
+<h2 id="pattern-matching">Pattern matching</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode ocaml"><code class="sourceCode ocaml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="co">(*** PATTERN MATCHING ***)</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a><span class="co">(* all hail the pattern matching statement *)</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a><span class="co">(* matches an argument against an exact value, a predicate or a type constructor *)</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true"></a><span class="co">(* _ acts as the catch-all default statement similar to Rust *)</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true"></a><span class="co">(* MATCHING against exact values *)</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true"></a><span class="kw">let</span> is_zero x = </span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true"></a>    <span class="kw">match</span> x <span class="kw">with</span> </span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true"></a>    | <span class="dv">0</span> -&gt; <span class="kw">true</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true"></a>    | _  -&gt; <span class="kw">false</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true"></a>;;</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true"></a></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true"></a><span class="kw">let</span> is_one = <span class="kw">function</span>  <span class="co">(* the function keyword is interchangeable with the match with *)</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true"></a>    | <span class="dv">1</span> -&gt; <span class="kw">true</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true"></a>    | _ -&gt; <span class="kw">false</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true"></a>;;</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true"></a></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true"></a><span class="co">(* MATCHING predicates *)</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true"></a></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true"></a><span class="co">(* basically guarded pattern matching aka pattern matching with a conditional check *)</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true"></a></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true"></a><span class="kw">let</span> <span class="dt">abs</span> x = </span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true"></a>    <span class="kw">match</span> x <span class="kw">with</span> </span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true"></a>    | x <span class="kw">when</span> x &lt; <span class="dv">0</span> -&gt; -x</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true"></a>    | _ -&gt; x</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true"></a>;;</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true"></a></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true"></a><span class="dt">abs</span> <span class="dv">5</span>;; <span class="co">(* evaluates to 5 *)</span></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true"></a><span class="dt">abs</span> (<span class="dv">-5</span>);; <span class="co">(* also evaluates to 5 *)</span></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true"></a></span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true"></a><span class="co">(* MATCHING type constructors *)</span></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true"></a></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true"></a><span class="kw">type</span> animal = Dog <span class="kw">of</span> <span class="dt">string</span> | Cat <span class="kw">of</span> <span class="dt">string</span>;;</span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true"></a></span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true"></a><span class="kw">let</span> say x = </span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true"></a>    <span class="kw">match</span> x <span class="kw">with</span> </span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true"></a>    | Dog x -&gt; x ^ <span class="st">&quot; says woof&quot;</span> </span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true"></a>    | Cat x -&gt; x ^ <span class="st">&quot; says meow&quot;</span></span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true"></a>;;</span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true"></a></span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true"></a>say (Cat <span class="st">&quot;Fluffy&quot;</span>);; <span class="co">(* evaluates to the string &quot;Fluffy says meow&quot; *)</span></span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true"></a></span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true"></a><span class="co">(* TRAVERSING DATA STRUCTURES with pattern matching *)</span></span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true"></a></span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true"></a><span class="co">(* most commonly used for recursive types *)</span></span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true"></a><span class="co">(* built-in constructor operator :: covered previously can be matched like any other since its a type constructor *)</span></span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true"></a></span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true"></a><span class="kw">let</span> <span class="kw">rec</span> sum_list l = </span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true"></a>    <span class="kw">match</span> l <span class="kw">with</span> </span>
+<span id="cb8-52"><a href="#cb8-52" aria-hidden="true"></a>    | [] -&gt; <span class="dv">0</span></span>
+<span id="cb8-53"><a href="#cb8-53" aria-hidden="true"></a>    | head :: tail -&gt; head + (sum_list tail)</span>
+<span id="cb8-54"><a href="#cb8-54" aria-hidden="true"></a>;;</span>
+<span id="cb8-55"><a href="#cb8-55" aria-hidden="true"></a></span>
+<span id="cb8-56"><a href="#cb8-56" aria-hidden="true"></a>sum_list [<span class="dv">1</span>;<span class="dv">2</span>;<span class="dv">3</span>];; <span class="co">(* evaluates to 6 *)</span></span></code></pre></div>
+<h2 id="more-on">More on</h2>
+<ul>
+<li><a href="https://ocaml.org/">ocaml documentation</a></li>
+<li><a href="https://github.com/ocsigen/eliom">eliom full stack</a></li>
+<li><a href="https://ocaml.org/play">web-based editor and interpreter</a></li>
+<li><a href="https://cs3110.github.io/textbook/cover.html">another tutorial</a></li>
+</ul>
+</body>
+</html>

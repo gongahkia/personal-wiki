@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Zig</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="zig"><code>Zig</code></h1>
+<p>Safe, robust programming language enabling low-level control with high-level performance.</p>
+<h2 id="comments">Comments</h2>
+<pre class="zig"><code>// ----- COMMENT -----
+
+// this is a single-line comment
+
+/* 
+    this is a 
+    multi-line 
+    comment 
+*/</code></pre>
+<h2 id="printing">Printing</h2>
+<pre class="zig"><code>// ----- PRINTING -----
+    // std.debug.print() =&gt; prints the specified string to the stdout without including a newline 
+
+std.debug.print(&quot;hello zig!\n&quot;, .{});</code></pre>
+<h2 id="quickstart">Quickstart</h2>
+<pre class="zig"><code>// ----- QUICKSTART -----
+    // strongly, statically-typed language
+    // all code must be executed within the main function
+    // @import() =&gt; imports the specified standard library or user-defined module into your local zig file
+    // : =&gt; used to specify the datatype of a given variable or constant as type annotation
+    // var =&gt; declares a mutable variable whose value can be reassigned after initialisation
+    // const =&gt; declares an immutable variable or constant whose value cannot be reassigned after initialisation
+
+const std = @import(&quot;std&quot;); // calls the zig standard library for printing to the stdout
+
+pub fn main() void {
+    var x: i32 = 10;
+    x = 30; // this is valid
+    const y: i32 = 30; // this value cannot be reassigned since it is a constant
+    std.debug.print(&quot;hello Ziggler!\n&quot;, .{});
+}</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="co"># ----- RUNNING A ZIG PROGRAM -----</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a><span class="ex">zig</span> run main.zig # transpiles zig to C and runs the zig program</span></code></pre></div>
+<h2 id="types">Types</h2>
+<pre class="zig"><code>// ----- TYPE -----
+    // i8, i16, i32, i64, i128 =&gt; signed integer (positive and negative) with size of integer specified in number of bits
+    // u8, u16, u32, u64, u128 =&gt; unsigned integer (positive) with size of integer specified in number of bits
+    // f16, f32, f64, f128 =&gt; short, single-precision, double-precision and long floating point numbers
+    // bool =&gt; true, false
+    // null =&gt; type for the special null value
+    // ? =&gt; specifies an optional datatype where a value can either be the specified datatype or null
+    // * =&gt; pointer to a given variable, pointing to the location of the value stored within the variable in memory
+    // [&lt;numElements&gt;]&lt;elementDatatype&gt; =&gt; specifies an array of immutable size and datatype, specified at initialisation
+    // []&lt;elementDatatype&gt; =&gt; specifies a slice of mutable size and immutable datatype, where datatype is specified at initialisation</code></pre>
+<h2 id="operators">Operators</h2>
+<pre class="zig"><code>// ----- OPERATOR -----
+
+// --- ARITHMETIC OPERATOR ---
+
++ // addition
+- // subtraction
+* // multiplication
+/ // divison
+% // modulo
+
+// --- COMPARISON OPERATOR ---
+
+== // complete equality, including type
+!= // complete inequality, including type
+&lt; // comparison operator
+&gt; // comparison operator
+&lt;= // comparison operator
+&gt;= // comparison operator
+
+// --- LOGICAL OPERATOR ---
+
+&amp;&amp; // and
+|| // or
+! // not</code></pre>
+<h2 id="control-structures">Control structures</h2>
+<pre class="zig"><code>// ----- CONTROL STRUCTURE -----
+
+// --- CONDITIONALS ---
+
+// IF ELSE IF ELSE 
+
+const x = 10;
+if (x &gt; 5) {
+    std.debug.print(&quot;x is greater than 5\n&quot;, .{});
+} else if (x &lt; 5) {
+    std.debug.print(&quot;x is smaller than 5\n&quot;, .{});
+} else {
+    std.debug.print(&quot;x is 5\n&quot;, .{});
+}
+
+// SWITCH ELSE
+    // equivalent of case when and match case in other languages
+    // else used to indicate the default case
+    // note there is NO requirement for a break statement in zig&#39;s switch, and each option is comma-delimited
+    // allows for powerful pattern-matching extremely similar to Rust
+
+const grade: u8 = 85;
+switch (grade) {
+    90...100 =&gt; std.debug.print(&quot;Grade: A\n&quot;, .{}),
+    80...89 =&gt; std.debug.print(&quot;Grade: B\n&quot;, .{}),
+    70...79 =&gt; std.debug.print(&quot;Grade: C\n&quot;, .{}),
+    60...69 =&gt; std.debug.print(&quot;Grade: D\n&quot;, .{}),
+    else =&gt; std.debug.print(&quot;Grade: F\n&quot;, .{}),
+}
+
+// --- LOOPS ---
+    // break and continue can be used as in other programming languages
+
+// WHILE LOOP
+
+var i: i32 = 0;
+while (i &lt; 5) : (i += 1) {
+    std.debug.print(&quot;i is {}\n&quot;, .{i});
+}
+
+// FOR LOOP
+    // zig for loops provide for both the conventional C-style for loops and the equivalent of for-each loops in PHP, ultimately acting very similarly to Python
+    // for (iterableStructure) |&lt;currentIterationVariable&gt;| =&gt; used to iterate through each iteration variable of an iterable data structure
+
+for (var i: i32 = 0; i &lt; 5; i += 1) { // conventional C-style for loop
+    std.debug.print(&quot;i is {}\n&quot;, .{i});
+}
+
+const array = [_]i32{1, 2, 3, 4, 5};
+for (array) |item| { // effectively a for each loop
+    std.debug.print(&quot;item is {}\n&quot;, .{item});
+}</code></pre>
+<h2 id="data-structures">Data structures</h2>
+<pre class="zig"><code>// ----- DATA STRUCTURE -----
+    // array =&gt; fixed-size collection of elements of the same type
+    // slice =&gt; dynamically-sized collection of elements of the same type
+    // struct =&gt; composite datatype that is a collection of specified fields, effectively functioning as type aliases similar to Typescript
+    // enum =&gt; providing enumerations in Zig, a datatype that allows for a range of predefined values often used to model states and options in zig
+        // note the declared enum is its own unique datatype
+        // enumeration values are called with the . dot syntax
+
+var numbers: [5]i32 = [1, 2, 3, 4, 5];
+
+const slice: []const u8 = &quot;Hello, Zig!&quot;; // a string is a char slice
+
+const Coordinate = struct {
+    x: i32,
+    y: i32,
+};
+
+const Day = enum {
+    Monday,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday,
+    Sunday,
+};
+var today: Day = Day.Wednesday;</code></pre>
+<h2 id="functions">Functions</h2>
+<pre class="zig"><code>// ----- FUNCTION -----
+    // fn &lt;functionName&gt;(&lt;parameterName&gt;:&lt;parameterDatatype&gt;) &lt;returnType&gt; =&gt; declares a named function with the specified function name, parameter and its datatypes, and the function&#39;s return type
+    // fn(&lt;parameterName&gt;:&lt;parameterDatatype&gt;) &lt;returnType&gt; =&gt; declares an anonymous function that can be assigned to a variable or constant
+
+fn add(a: i32, b: i32) i32 { // a named function
+    return a + b;
+}
+
+const multiply = fn(a: i32, b: i32) i32 { // an anonymous function
+    return a * b;
+};
+const result = multiply(3, 4); // calling the anonymous function</code></pre>
+<h2 id="more-on">More on</h2>
+<ul>
+<li><a href="https://ziglang.org/download/">download zig</a></li>
+<li><a href="https://www.openmymind.net/learning_zig/generics/">generics in zig</a></li>
+<li><a href="https://www.aolium.com/karlseguin/4013ac14-2457-479b-e59b-e603c04673c8">error handling in zig</a></li>
+<li><a href="https://ziglang.org/documentation/0.7.0/">zig documentation</a></li>
+<li><a href="https://learnxinyminutes.com/docs/zig/">learn zig in y minutes</a></li>
+<li><a href="https://youtu.be/SBe8DgBCjTc?si=nREZs0J3JRDFBdQA">my zig experiences</a> by theprimeagen</li>
+</ul>
+</body>
+</html>

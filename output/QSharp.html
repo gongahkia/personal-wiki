@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>QSharp</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+</head>
+<body>
+<h1 id="q"><code>Q#</code></h1>
+<p>Domain-specific language for expressing quantum computations.</p>
+<h2 id="comments">Comments</h2>
+<pre class="qs"><code>// ----- COMMENT -----
+
+// this is a single-line comment
+
+// there is no default implementation for 
+// multi-line comments in Q# but this effectively
+// achieves the same effect</code></pre>
+<h2 id="printing">Printing</h2>
+<pre class="qs"><code>// ----- PRINTING -----
+    // Message() =&gt; operation that receives a String argument and prints it to the stdout without including a newline by default
+    // there is no built-in Q# implementation for printing to the stdout with a newline automatically included
+
+Message(&quot;this does not include a newline&quot;);
+Message(&quot;this has a newline but only because we explicitly specified it\n&quot;);</code></pre>
+<h2 id="quickstart">Quickstart</h2>
+<pre class="qs"><code>// ----- QUICKSTART -----
+    // semicolon language
+    // strongly statically typed with explicit type annotations for variables and functions
+    // hybrid evaluation combining classicial control flow (conditionals and loops) with quantum operations
+    // seamless integration with .NET languages
+    // note that by default Q# variables are immutable 
+    // : =&gt; declares the datatype of a given variable or function, effectively acting as type declaration and annotations within Q#
+    // mutable =&gt; specifies that a given variable stores a mutable value whose value can be reassigned and modified after initalisation, the equivalent of mut in Rust
+    // let =&gt; variable binding for a classical variable of immutable value, where the variable value cannot be reassigned after initalisation
+    // set =&gt; used to update the value of a mutable variable within an operation or function
+    // Allocate() =&gt; requests and allocates quantum resources (like qubits) for use in quantum computations, receiving an integer number value as an argument that specifies the number of qubits required for usage and returns the allocated resources
+    // Release() =&gt; releases previously allocated resources (like qubits), receiving an integer number value as an argument that specifies the number of qubits required for release and returns Unit to indicate succesful release
+
+operation AllocateQubits(numQubits : Int) : Qubit[] {
+    return Allocate(numQubits);
+}
+
+operation ReleaseQubits(qubits : Qubit[]) : Unit {
+    for (q in qubits) {
+        Release(q);
+    }
+}</code></pre>
+<h2 id="types">Types</h2>
+<pre class="qs"><code>// ----- TYPE -----
+
+// --- PRIMITIVE DATATYPES ---
+    // Bool =&gt; true, false
+    // Int =&gt; stores a signed 32-bit integer number value
+    // BigInt =&gt; stores a signed arbitrary-precision integer number value
+    // Double =&gt; stores a double-precision floating-point number value
+    // String =&gt; stores a sequence of Unicode characters, declared within &quot;&quot; double quotation marks
+    // Unit =&gt; special value representing the absence of a value, equivalent to void and null in other languages
+
+// --- QUANTUM DATATYPES ---
+    // Qubit =&gt; stores a quantum bit value, the foundational basic unit of quantum information
+    // Result =&gt; stores the result of a quantum measurement
+        // Zero
+        // One
+        // Plus
+        // Minus
+    // Pauli =&gt; stores the value of pauli matrices
+        // PauliI
+        // PauliX
+        // PauliY
+        // PauliZ</code></pre>
+<h2 id="operators">Operators</h2>
+<pre class="qs"><code>// ----- OPERATOR -----
+
+// --- ARITHMETIC OPERATOR ---
+
++ // addition
+- // subtraction
+* // multiplication
+/ // divison
+% // modulo
+
+// --- COMPARISON OPERATOR ---
+
+== // complete equality check for both value and type for primitive types, partial equality check for value for quantum types
+!= // complete inequality check for both value and type for primitive types, partial inequality check for value for quantum types
+&gt; // comparison operator
+&lt; // comparison operator
+&gt;= // comparison operator
+&lt;= // comparison operator
+
+// --- LOGICAL OPERATOR ---
+
+&amp;&amp; // logical and
+|| // logical or
+not // logical not</code></pre>
+<h2 id="control-structures">Control structures</h2>
+<pre class="qs"><code>// ----- CONTROL STRUCTURE -----
+
+// --- CONDITIONALS ---
+
+// IF ELSE IF ELSE
+    // note that the result of a conditional construct can be directly assigned to an operation or variable binding as seen below
+
+operation ExampleIfElse(value : Int) : Unit {
+    if (value &gt; 0) {
+        Message(&quot;Value is positive.&quot;);
+    } else if (value &lt; 0) {
+        Message(&quot;Value is negative.&quot;);
+    } else {
+        Message(&quot;Value is zero.&quot;);
+    }
+}
+
+// WHEN
+    // used in the context of newtypes to specify a condition that instances of the newtype must satisfy
+    
+newtype NegativeInt = Int when value &lt; 0;
+newtype PositiveEvenInt = Int when value &gt; 0 &amp;&amp; value % 2 == 0;
+
+// MATCH CASE =&gt; 
+    // provides a degree of basic pattern-matching in Q# similar to Rust, the equivalent of switch case constructs in other languages
+    // note that each predicate case condition is ; semicolon-delimited
+    // similar to the above conditional construct, the result of a match case construct can be assigned to an operation or variable binding as seen below
+
+operation ExampleMatchCase(result : Result) : Unit {
+    match result {
+        case Result.Zero =&gt; Message(&quot;Result is Zero.&quot;);
+        case Result.One =&gt; Message(&quot;Result is One.&quot;);
+        case Result.Plus =&gt; Message(&quot;Result is Plus.&quot;);
+        case Result.Minus =&gt; Message(&quot;Result is Minus.&quot;);
+    }
+}
+
+// --- LOOPS ---
+
+// FOR IN 
+    // functions similarly to for in and foreaach loops in other programming languages like Python and PHP
+    // .. =&gt; dynamically creates an iterable range structure that allows traversal and iteration over each element of the iterable structure
+
+operation ExampleLoop() : Unit {
+    mutable sum = 0;
+    for (i in 1 .. 5) {
+        set sum += i;
+    }
+    Message($&quot;Sum of numbers from 1 to 5: {sum}&quot;);
+}
+
+// WHILE 
+    // functions similarly to while loops in other programming languages like Python
+
+operation ExampleWhileLoop() : Unit {
+    mutable count = 0;
+    while (count &lt; 5) {
+        Message($&quot;Count: {count}&quot;);
+        set count += 1;
+    }
+}</code></pre>
+<h2 id="data-structures">Data structures</h2>
+<pre class="qs"><code>// ----- DATA STRUCTURE -----
+    // array =&gt; dynamically-size ordered collection of elements of the same datatype
+    // tuple =&gt; fixed-size ordered collection of elements of multiple datatypes
+    // map =&gt; dynamically-sized unordered collection of specified named key-value pairs of multiple datatypes, the equivalent of dictionaries in Python
+    // range =&gt; iterable range of integer values, defined from the rangeStartValue, rangeStepValue and rangeEndValue
+    // struct =&gt; user-defined collection of specified named fields and their respective datatypes, affording representation of modelled data via type aliases, the equivalent of structs in Rust and Go
+    // newtype =&gt; specifies a new type that is based on an existing declared datatype, except this new type has a distinct identity, used particularly to ensure type safety by distinguishing between similar types
+        // when =&gt; used in the context of newtypes to specify a condition that instances of the newtype must satisfy
+        // value =&gt; keyword identifier that specifies the value being evaluated against the specified condition
+
+mutable anExampleArray = [1, 2, 3, 4, 5, 6]; 
+
+let anExampleTuple = (name = &quot;Alice&quot;, age = 30, isActive = true); 
+
+let anExampleMap = [
+    &quot;name&quot; =&gt; &quot;Bob&quot;,
+    &quot;age&quot; =&gt; 25,
+    &quot;isActive&quot; =&gt; false
+]; 
+
+let anExampleRange = Range(1, 2, 10);
+
+struct anExampleStruct {
+    mutable firstName : String;
+    mutable lastName : String;
+}
+
+struct twoDimensionalCoordinate {
+    mutable X : Int;
+    mutable Y : Int;
+}
+
+newtype anExampleNewTypeThatIsAPositiveInteger = Int when value &gt; 0;</code></pre>
+<h2 id="operations-and-functions">Operations and Functions</h2>
+<pre class="qs"><code>// ----- OPERATION -----
+    // represents quantum operations that perform actions or computations and DO NOT return any value, the equivalent of void functions in other programming languages
+    // operation &lt;operationName&gt; () : Unit { &lt;operationDefinitionBody&gt; } =&gt; definition and declaration of an operation or function
+        // Unit =&gt; the operation return datatype is Unit since operations by definition do not return a value
+
+operation HelloQuantum() : Unit {
+    Message(&quot;Hello, Quantum!&quot;);
+}
+
+// ----- FUNCTION -----
+    // represents classical functions that return a value, working similarly to value-return functions in other programming languages
+    // note that there are no void functions in Q# by definition since those are written as operations
+    // function &lt;functionName&gt; ( &lt;functionParameterName(s)&gt; : &lt;functionParameterDatatype(s)&gt; ) : &lt;functionReturnDatatype(s)&gt; { &lt;functionDefinitionBody&gt; } =&gt; definition and declaration of a named function
+        // return =&gt; note that Q# specifies the explicit return keyword for the value(s) to be returned from the function within the function definition body
+
+function Square(x : Int) : Int {
+    return x * x;
+}</code></pre>
+<h2 id="more-on">More on</h2>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/azure/quantum/">Q# documentation</a></li>
+<li><a href="https://learnxinyminutes.com/docs/qsharp/">learn Q# in y minutes</a></li>
+</ul>
+</body>
+</html>

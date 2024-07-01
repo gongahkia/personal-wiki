@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Swift</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+</head>
+<body>
+<h1 id="swift"><code>Swift</code></h1>
+<p>Language for native IOS and OSX development.</p>
+<h2 id="comments">Comments</h2>
+<pre class="swift"><code>// ----- COMMENT -----
+
+// this is a single-line comment
+
+/*
+this is a 
+multi-line 
+comment
+*/</code></pre>
+<h2 id="printing">Printing</h2>
+<pre class="swift"><code>// ----- PRINTING -----
+    // print() =&gt; takes string argument(s) that are printed to the stdout with a newline automatically appended
+    // terminator =&gt; argument to print() used to specify another terminator string, if unspecified will be a &quot;\n&quot; newline character by default
+
+print(&quot;this includes a newline by default&quot;)
+print(&quot;there isn&#39;t a newline following this since we specify an empty string as the terminator&quot;, terminator: &quot;&quot;)</code></pre>
+<h2 id="quickstart">Quickstart</h2>
+<pre class="swift"><code>// ----- QUICKSTART -----
+    // import =&gt; brings modules and frameworks into the local scope within the present file
+    // let =&gt; declares and initialises a constant, whose value cannot be reassigned after initialisation
+    // var =&gt; declares and initialises a variable, whose value can be reassigned and mutated even after intialisation
+    // : =&gt; allows for type annotations of a variable or constant, specified within variable or constant declaration</code></pre>
+<h2 id="types">Types</h2>
+<pre class="swift"><code>// ----- TYPE -----
+    // Int =&gt; 32-bit integer value
+    // Int64 =&gt; 64-bit integer value
+    // Float =&gt; 32-bit single-precision floating point value 
+    // Double =&gt; 64-bit double-precision floating point value
+    // Bool =&gt; true, false
+    // String =&gt; declared with &quot;&quot; double quotation marks, characters in Swift are treated as single-character Strings
+    // [&lt;arrayElementDatatype&gt;] =&gt; declares an array of the given datatype
+    // [&lt;keyDatatype&gt; : &lt;valueDatatype&gt;] =&gt; declares a dictionary (map) comprised of key-value pairs of the specified datatype
+    // (&lt;tupleElementDatatype(s)&gt;) =&gt; declares a tuple of the specified composite datatypes
+    // ? =&gt; declares a variable is an Optional, where the given variable could either be the specified datatype or the special value nil
+    // nil =&gt; special value nil to represent the absence of data</code></pre>
+<h2 id="operators">Operators</h2>
+<pre class="swift"><code>// ----- OPERATOR -----
+
+// --- ARITHMETIC OPERATOR ---
+
++ // addition
+- // subtraction
+* // multiplication
+/ // division
+
+// --- COMPARISON OPERATOR ---
+
+== // complete equality, including type
+!= // complete inequality, including type
+&lt; // comparison operator
+&gt; // comparison operator
+&lt;= // comparison operator
+&gt;= // comparison operator
+
+// --- LOGICAL OPERATOR ---
+
+&amp;&amp; // and
+|| // or
+! // not
+
+// --- NIL-COALESCING OPERATOR ---
+
+?? // nil-coalescing operator that can be called on an Optional datatype, where a default user-designated value is assigned to an Optional variable if its value is nil</code></pre>
+<h2 id="control-structures">Control structures</h2>
+<pre class="swift"><code>// ----- CONTROL STRUCTURE -----
+
+// --- CONDITIONALS ---
+
+// IF ELSE IF ELSE 
+
+if age &gt;= 18 {
+    print(&quot;Adult&quot;)
+} else if age &gt;= 13 {
+    print(&quot;Teenager&quot;)
+} else {
+    print(&quot;Child&quot;)
+}
+
+// SWITCH CASE DEFAULT
+    // provides some degree of basic pattern-matching as an alternative to if else if else constructs
+    // default =&gt; the fall-through default case if all other predicate case conditions are unmet
+
+let color = &quot;red&quot;
+switch color {
+case &quot;red&quot;:
+    print(&quot;The color is red&quot;)
+case &quot;blue&quot;:
+    print(&quot;The color is blue&quot;)
+default:
+    print(&quot;Unknown color&quot;)
+}
+
+// --- LOOPS ---
+
+// FOR IN LOOP
+    // Swift&#39;s for in loops do allow for iteration over an iterable data structure
+    // Swift does not provide for conventional C-style for loops, but the C-style output to the stdout can be replicated using the range operator
+    // .. =&gt; range operator dynamically generates an iterable data structure from the given minimum to maximum range
+
+var numbers: [Int] = [1, 2, 3, 4, 5]
+for number in numbers {
+    print(number)
+}
+
+for i in 0..&lt;10 {
+    print(i)
+}
+
+// WHILE LOOP
+
+var counter = 0
+while counter &lt; 5 {
+    print(counter)
+    counter += 1
+}
+
+// REPEAT WHILE LOOP
+    // the equivalent of a do while loop in Swift
+
+repeat {
+    print(counter)
+    counter -= 1
+} while counter &gt; 0</code></pre>
+<h2 id="data-structures">Data structures</h2>
+<pre class="swift"><code>// ----- DATA STRUCTURE -----
+    // array =&gt; dynamically-sized ordered collection of elements of the same datatype
+    // dictionary =&gt; dynamically-sized unordered collection of key-value pairs of multiple datatypes
+    // set =&gt; unordered collection of unique elements of the same datatype
+    // struct =&gt; user-defined datatype that groups specified fields together under a type alias, allowing for more expressive data-modelling
+    // enum =&gt; user-defined datatype that defines the possible enumerations of a given value, which can then be called using . dot syntax
+
+var anArray: [String] = [&quot;Apple&quot;, &quot;Banana&quot;, &quot;Cherry&quot;]
+
+var aUniqueSet: Set&lt;Int&gt; = [1, 2, 3, 1]
+
+var aDictionary: [String: String] = [&quot;name&quot;: &quot;Alice&quot;, &quot;city&quot;: &quot;Wonderland&quot;]
+
+struct anExampleStruct {
+    var name: String
+    var age: Int
+}
+
+struct Coordinate {
+    var X: Int
+    var Y: Int 
+}
+
+enum anExampleEnum {
+    case imagine
+    case the
+    case possibilities
+}
+
+enum Direction {
+    case north
+    case south
+    case east
+    case west
+}
+var heading = Direction.north</code></pre>
+<h2 id="functions">Functions</h2>
+<pre class="swift"><code>// ----- FUNCTION -----
+    // func &lt;functionName&gt;(&lt;parameterName(s)&gt; : &lt;parameterDatatype(s)&gt;) -&gt; (&lt;returnDatatype(s)&gt;) =&gt; function declaration for a named function
+    // return =&gt; explicit return statement within the function definition
+    // functions can also receive default values for named parameters with the = assignment operator within the function definition
+    
+func add(a: Int, b: Int) -&gt; Int {
+    return a + b
+}
+
+func getFullName(firstName: String, lastName: String) -&gt; (String, Int) {
+    let fullName = &quot;\(firstName) \(lastName)&quot;
+    let length = fullName.count
+    return (fullName, length)
+}
+
+func greet(name: String, greeting: String = &quot;Hello&quot;) { // default parameters
+    print(&quot;\(greeting), \(name)!&quot;)
+}</code></pre>
+<h2 id="more-on">More on</h2>
+<ul>
+<li><a href="https://www.programiz.com/swift-programming/classes-objects">oop in swift</a></li>
+<li><a href="https://docs.swift.org/swift-book/documentation/the-swift-programming-language/protocols/">protocols in swift</a></li>
+<li><a href="https://docs.swift.org/swift-book/documentation/the-swift-programming-language/closures/">closures in swift</a></li>
+<li><a href="https://docs.swift.org/swift-book/documentation/the-swift-programming-language/errorhandling/">error handling in swift</a></li>
+<li><a href="https://www.swift.org/documentation/">swift documentation</a></li>
+<li><a href="https://developer.apple.com/swift/">swift for ios development</a></li>
+<li><a href="https://learnxinyminutes.com/docs/swift/">learn swift in y minutes</a></li>
+</ul>
+</body>
+</html>

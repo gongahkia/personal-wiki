@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Ballerina</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+</head>
+<body>
+<h1 id="ballerina"><code>Ballerina</code></h1>
+<p>Versatile language designed for microservice integration and developing cloud-native applications.</p>
+<h2 id="comments">Comments</h2>
+<pre class="bal"><code>// ----- COMMENT -----
+
+// this is a single-line comment
+
+/*
+this is a 
+multi-line 
+comment
+*/</code></pre>
+<h2 id="printing">Printing</h2>
+<pre class="bal"><code>// ----- PRINTING -----
+    // io:print() =&gt; receives a string argument which is then printed to the stdout and does not include a newline by default
+    // io:println() =&gt; receives a string argument which is then printed to the stdout and includes a newline automatically at the end of the output
+
+io:print(&quot;this does not include a newline and one must be explicitly specified\n&quot;);
+io:println(&quot;this includes a newline by default&quot;);</code></pre>
+<h2 id="quickstart">Quickstart</h2>
+<pre class="bal"><code>// ----- QUICKSTART -----
+    // semicolon-delimited curly brace language, inheriting from the family of C-style languages
+    // as such, Ballerina&#39;s syntax bears many similarities to C and C++
+    // strongly statically-typed with a comprehensive type system
+    // robust support for network and concurrent programming
+    // import =&gt; brings the specified standard library or user-defined modules into the local scope of the current file
+    // : =&gt; used to bring imported modules and their internal functionality into the current namespace
+    // public function main() =&gt; entry-point of the program within which all execution code is written, the equivalent of the main function or method in other programming languages</code></pre>
+<h2 id="types">Types</h2>
+<pre class="bal"><code>// ----- TYPE -----
+    // int =&gt; stores a 32-bit signed integer number value
+    // float =&gt; stores a 64-bit floating-point number value
+    // decimal =&gt; stores a arbitrary-precision decimal number value
+    // boolean =&gt; true, false
+    // string =&gt; stores string values declared within &quot;&quot; double quotation marks, note that characters are handled as single-character strings
+    // byte =&gt; stores a 8-bit unsigned integer number value
+
+int age = 30;
+float height = 5.9;
+decimal salary = 12345.67;
+boolean isStudent = true;
+string name = &quot;John Doe&quot;;
+byte b = 255;</code></pre>
+<h2 id="operators">Operators</h2>
+<pre class="bal"><code>// ----- OPERATOR -----
+
+// --- ARITHMETIC OPERATORS ---
+
++ // addition
+- // subtraction
+* // multiplication
+/ // division
+% // modulo
+
+// --- COMPARISON OPERATORS ---
+
+== // complete equality check for both value and type
+!= // complete inequality check for both value and type
+&gt; // comparison operators
+&lt; // comparison operators
+&gt;= // comparison operators
+&lt;= // comparison operators
+
+// --- LOGICAL OPERATORS ---
+
+&amp;&amp; // logical and
+|| // logical or
+! // logical not</code></pre>
+<h2 id="control-structures">Control structures</h2>
+<pre class="bal"><code>// ----- CONTROL STRUCTURE -----
+
+// --- CONDITIONALS ---
+
+// IF ELSE IF ELSE
+
+int age = 25;
+if (age &lt; 18) {
+    io:println(&quot;Underage&quot;);
+} else if (age &gt;= 18 &amp;&amp; age &lt; 60) {
+    io:println(&quot;Adult&quot;);
+} else {
+    io:println(&quot;Senior&quot;);
+}
+
+// MATCH =&gt; _
+    // provides powerful pattern-matching capabilities in Ballerina, similar to match constructs in Rust where multiple fields and complex data structures can also have their values matched
+    // _ =&gt; acts as the default fall-through case for the match construct where all other predicate conditions fail to be met
+
+int anExampleNumber = 2;
+match anExampleNumber {
+    1 =&gt; {
+        io:println(&quot;One&quot;);
+    }
+    2 =&gt; {
+        io:println(&quot;Two&quot;);
+    }
+    3 =&gt; {
+        io:println(&quot;Three&quot;);
+    }
+    _ =&gt; {
+        io:println(&quot;Other number&quot;);
+    }
+}
+
+json anExampleJSONValue = { name: &quot;Alice&quot; };
+match anExampleJSONValue {
+    { name: &quot;Alice&quot; } =&gt; {
+        io:println(&quot;Hello Alice&quot;);
+    }
+    { name: &quot;Bob&quot; } =&gt; {
+        io:println(&quot;Hello Bob&quot;);
+    }
+    _ =&gt; {
+        io:println(&quot;Hello stranger&quot;);
+    }
+}
+
+[int, string] anExampleTuple = [1, &quot;Ballerina&quot;];
+match anExampleTuple {
+    [1, &quot;Ballerina&quot;] =&gt; {
+        io:println(&quot;Matched tuple: [1, Ballerina]&quot;);
+    }
+    [2, &quot;Ballerina&quot;] =&gt; {
+        io:println(&quot;Matched tuple: [2, Ballerina]&quot;);
+    }
+    _ =&gt; {
+        io:println(&quot;No match for tuple&quot;);
+    }
+}
+
+// --- LOOPS ---
+
+// FOREACH IN LOOP
+    // operates similarly to foreach loops in other programming languages like PHP
+
+string[] fruits = [&quot;Apple&quot;, &quot;Banana&quot;, &quot;Cherry&quot;];
+foreach var fruit in fruits {
+    io:println(fruit);
+}
+
+// WHILE 
+    // operates similarly to while loops in most other programming languages
+
+int count = 0;
+while (count &lt; 5) {
+    io:println(count);
+    count += 1;
+}</code></pre>
+<h2 id="data-structures">Data structures</h2>
+<pre class="bal"><code>// ----- DATA STRUCTURE -----
+    // array =&gt; fixed-size ordered collection of elements of the same datatype, declared within [] square brackets
+    // tuple =&gt; fixed-sized ordered collection of elements of multiple datatypes, with each tuple declared as its own unique composite datatype within [] square brackets
+    // map =&gt; dynamically-sized unordered collection of key-value pairs where keys must be unique and of the string datatype and values can be of multiple datatypes declared within {} curly braces
+    // record =&gt; user-defined collection of named fields and their corresponding datatypes, allowing for the modelling of representative data through type aliases, the equivalent of structs in Go and TypeScript declared within {} curly braces
+
+int[] anExampleArray = [1, 2, 3, 4, 5];
+[int, string, boolean] anExampleTuple = [1, &quot;Ballerina&quot;, true];
+map&lt;string&gt; anExampleMap = {
+    name: &quot;John Doe&quot;,
+    city: &quot;New York&quot;
+};
+
+type anExampleRecord record {
+    string name;
+    int age;
+};
+
+type ThreeDimensionalCoordinate record {
+    X int;
+    Y int;
+    Z int;
+};
+
+ThreeDimensionalCoordinate c = {
+    X: 10,
+    Y: 0, 
+    Z: 5
+};</code></pre>
+<h2 id="functions">Functions</h2>
+<pre class="bal"><code>// ----- FUNCTION -----
+    // function &lt;functionName&gt; (&lt;functionParameterDatatype(s)&gt; , &lt;functionParameterName(s)&gt;) returns &lt;functionReturnDatatype(s)&gt; { &lt;functionDefinitionBody&gt; } =&gt; definition and declaration of a named function
+    // returns =&gt; used when specifying the function return value&#39;s datatype, omitted when the function is a void function
+    // return =&gt; explicit return keyword that specifies the final return value or expression within the function definition body
+
+function add(int x, int y) returns int { // an integer function that returns an integer
+    return x + y;
+}
+
+function greet(string name) { // a void function with no return datatype
+    io:println(&quot;Hello, &quot;, name);
+}</code></pre>
+<h2 id="more-on">More on</h2>
+<ul>
+<li><a href="https://ballerina.io/learn/by-example/unions/">union types in ballerina</a></li>
+<li><a href="https://ballerina.io/learn/by-example/optional-fields/">optionals in ballerina</a></li>
+<li><a href="https://ayesh9303.medium.com/ballerina-data-types-c3d5b4166cd8">all ballerina datatypes</a></li>
+<li><a href="https://ballerina.io/learn/by-example/documentation/">ballerina documentation</a></li>
+<li><a href="https://learnxinyminutes.com/docs/ballerina/">learn ballerina in y minutes</a></li>
+</ul>
+</body>
+</html>

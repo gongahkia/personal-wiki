@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Redis</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="redis"><code>Redis</code></h1>
+<p>RAM in-memory data storage.</p>
+<h2 id="data-types">Data types</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co"># ----- DATA TYPES -----</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>    <span class="co"># String =&gt; foundational datatype composing the key-value pairs that redis is premised upon (used to store text, numbers etc), stored as sequences of BYTES</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>    <span class="co"># Hash =&gt; collection of key-value pairs</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>    <span class="co"># List =&gt; ordered collection of elements, supporting insertion and removal of elements</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>    <span class="co"># Set =&gt; unordered collection of unique elements, supporting membership checks and other useful set operations</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>    <span class="co"># Sorted Set =&gt; ordered collection of unique elements with each element posessing a unique score, supporting efficient range queries and other ordered operations</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>    <span class="co"># Stream =&gt; data structure for real-time data feeds, supporting insertion and removal of elements as well as range checks</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>    <span class="co"># HyperLogLog =&gt; data structures for approximating cardinality (number of unique elements) in large sets</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>    <span class="co"># Geospatial index =&gt; data stucture for effiicent storage and retrieval of geospatial data</span></span></code></pre></div>
+<h2 id="quickstart">Quickstart</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="co"># ---------- QUICKSTART ----------</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>    <span class="co"># redis leverages on in-memory data storage (computer&#39;s RAM) that is not persistent across machine system reboots by design, but redis data can be made persistent using the following</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>        <span class="co"># rdb snapshots </span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>        <span class="co"># append only files</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>    <span class="co"># redis is mainly used for caching, session management, leaderboards, messaging, rate limiting, counting, and dealing with both sorted and unsorted sets</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a>    <span class="co"># redis can be interacted with similar commands in the CLI and using a GUI client called RedisInsight</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a>    <span class="co"># however, redis is most often used via import as a library in Python</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true"></a><span class="im">import</span> redis</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true"></a><span class="co"># ----- GENERAL -----</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true"></a>    <span class="co"># redis.Redis(host=&#39;&lt;hostname&gt;&#39;, port=&lt;portNumber&gt;) =&gt; connects to the specified redis server</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true"></a>    <span class="co"># .set(&lt;valueName&gt;, &lt;value&gt;) =&gt; assigns a value to the specified value name in memory</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true"></a>    <span class="co"># .get(&lt;valueName&gt;) =&gt; retrieves a value from memory based on the specified value name</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true"></a>    <span class="co"># .decode() =&gt; used to decode the bytes to a readable string</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true"></a>    <span class="co"># .hset(&lt;hashName&gt;, mapping=&lt;hashValue&gt;) =&gt; creates a new hash under the specified hash name, where the value is the hash</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true"></a>    <span class="co"># .hget(&lt;hashName&gt;, &lt;key&gt;) =&gt; retrieves a value from the specified hash using the given key</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true"></a>    <span class="co"># .rpsuh(&lt;listName&gt;, &lt;comma-delimited value(s) to be appended&gt;) =&gt; appends any number of comma-delimited values to the specified list</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true"></a>    <span class="co"># .lindex(&lt;index&gt;, &lt;listName&gt;) =&gt; retrives a value from the specified list based on the given index</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true"></a>    <span class="co"># .sadd(&lt;setName&gt;, *&lt;setValue&gt;) =&gt; adds/assigns elements to the specified set name</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true"></a>    <span class="co"># * =&gt; aestricks operator unpacks the List into multiple individual arguments as required by the .sadd() method</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true"></a>    <span class="co"># .sismember(&lt;setName&gt;, &lt;queriedMember&gt;) =&gt; returns a boolean value based on whether the queried element is a member of the specified set</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true"></a>    <span class="co"># .zadd(&lt;orderedSetName&gt;, &lt;orderedSetValue&gt;) =&gt; adds/assigns elements to the specified ordered set name</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true"></a>    <span class="co"># .zrangebyscore(&lt;orderedSetName&gt;, min=&lt;minimumValue&gt;, max=&lt;maximumValue&gt;) =&gt; retrieves elements within the specified score ranges from the specified ordered set</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true"></a>r <span class="op">=</span> redis.Redis(host<span class="op">=</span><span class="st">&#39;localhost&#39;</span>, port<span class="op">=</span><span class="dv">6379</span>)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true"></a>r.<span class="bu">set</span>(<span class="st">&#39;name&#39;</span>, <span class="st">&#39;Alice&#39;</span>)</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true"></a>name <span class="op">=</span> r.get(<span class="st">&#39;name&#39;</span>)</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true"></a><span class="bu">print</span>(name.decode()) <span class="co"># redis Strings are stored as sequences of bytes and have to be decoded</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true"></a>user_data <span class="op">=</span> {<span class="st">&#39;name&#39;</span>: <span class="st">&#39;Bob&#39;</span>, <span class="st">&#39;age&#39;</span>: <span class="dv">30</span>, <span class="st">&#39;city&#39;</span>: <span class="st">&#39;New York&#39;</span>}</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true"></a>r.hset(<span class="st">&#39;user:1&#39;</span>, mapping<span class="op">=</span>user_data)</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true"></a>age <span class="op">=</span> r.hget(<span class="st">&#39;user:1&#39;</span>, <span class="st">&#39;age&#39;</span>)</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true"></a><span class="bu">print</span>(age.decode())</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true"></a></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true"></a>r.rpush(<span class="st">&#39;shopping_list&#39;</span>, <span class="st">&#39;apples&#39;</span>, <span class="st">&#39;bread&#39;</span>, <span class="st">&#39;milk&#39;</span>)</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true"></a>first_item <span class="op">=</span> r.lindex(<span class="dv">0</span>, <span class="st">&#39;shopping_list&#39;</span>)</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true"></a><span class="bu">print</span>(first_item.decode())</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true"></a></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true"></a>fruits <span class="op">=</span> {<span class="st">&#39;apple&#39;</span>, <span class="st">&#39;banana&#39;</span>, <span class="st">&#39;orange&#39;</span>}</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true"></a>r.sadd(<span class="st">&#39;fruits&#39;</span>, <span class="op">*</span>fruits)</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true"></a>is_member <span class="op">=</span> r.sismember(<span class="st">&#39;fruits&#39;</span>, <span class="st">&#39;mango&#39;</span>)</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true"></a><span class="bu">print</span>(is_member)</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true"></a></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true"></a>leaderboard <span class="op">=</span> {(<span class="st">&#39;Alice&#39;</span>, <span class="dv">100</span>), (<span class="st">&#39;Bob&#39;</span>, <span class="dv">80</span>), (<span class="st">&#39;Charlie&#39;</span>, <span class="dv">90</span>)}</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true"></a>r.zadd(<span class="st">&#39;scores&#39;</span>, leaderboard)</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true"></a>top_3 <span class="op">=</span> r.zrangebyscore(<span class="st">&#39;scores&#39;</span>, <span class="bu">min</span><span class="op">=</span><span class="dv">85</span>, <span class="bu">max</span><span class="op">=</span><span class="dv">100</span>)</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true"></a><span class="bu">print</span>(top_3)</span></code></pre></div>
+<h2 id="more-on">More on</h2>
+<ul>
+<li><a href="https://redis.io/docs/latest/">redis documentation</a></li>
+<li><a href="https://redis.io/docs/latest/develop/connect/cli/">redis cli</a></li>
+<li><a href="https://redis.io/insight/">redisinsight</a></li>
+<li><a href="https://redis.io/redis-enterprise/technology/durable-redis/">persisting data in redis</a></li>
+<li><a href="https://www.openmymind.net/2011/11/8/Redis-Zero-To-Master-In-30-Minutes-Part-1/">zero to master in redis part 1</a></li>
+<li><a href="https://www.openmymind.net/2011/11/8/Redis-Zero-To-Master-In-30-Minutes-Part-2/">zero to master in redis part 2</a></li>
+<li><a href="https://medium.com/@aman.parmar17/getting-started-with-redis-73f016315317">getting started with redis</a></li>
+</ul>
+</body>
+</html>
