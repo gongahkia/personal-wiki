@@ -279,4 +279,5 @@ fi
 * heredoc delimiter
 * string concatenation
 * sed
+* [bash documentation](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html)
 * [learn bash in y minutes](https://learnxinyminutes.com/docs/bash/)
