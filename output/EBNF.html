@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>EBNF</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+</head>
+<body>
+<h1 id="ebnf"><code>EBNF</code></h1>
+<p>Extended Backus-Naur Form is a notation <em>(metalanguage)</em> used to define a programming language’s syntax.</p>
+<h2 id="quickstart">Quickstart</h2>
+<pre class="ebnf"><code>(* ---------- QUICKSTART ---------- *)
+    (* every widely used programming language today has an .ebnf file as universally-understandable documentation to describe language grammer *)
+    (* ebnf syntax shares many similarities with regular expressions *)
+    (* ::= =&gt; definition operator that functions similarly to the assignment operator in other languages *)
+    (* | =&gt; alternative operator that functions similarly to the or operator *)
+    (* * =&gt; repetition operator for ZERO or MORE instances of a specified clause *)
+    (* + =&gt; repetition operator for ONE or MORE instances of a specified clause *)
+    (* ? =&gt; repetition operator for ZERO or ONE instances of a specified clause *)
+    (* () =&gt; grouping operator to specify the order of operations *)
+    (* .. =&gt; range operator to denote the full range of characters between the specified start and stop point *)
+
+expression ::= term | term (&#39;+&#39; | &#39;-&#39;) expression
+term ::= factor | factor &#39;*&#39; term
+factor ::= &#39;(&#39; expression &#39;)&#39; | number
+number ::= &quot;0&quot; .. &quot;9&quot;</code></pre>
+<h2 id="more-on">More on</h2>
+<ul>
+<li><a href="https://www.freecodecamp.org/news/what-are-bnf-and-ebnf/">ebnf extended syntax</a></li>
+</ul>
+</body>
+</html>

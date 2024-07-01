@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>x86Assembly</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="x86-assembly"><code>x86 Assembly</code></h1>
+<p>Instructions providing a low-level interface to computer hardware for systems-level programming and optimization.</p>
+<h2 id="comments">Comments</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode asm"><code class="sourceCode fasm"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co">; ----- COMMENT -----</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="co">; this is a single-line comment</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="co">; there is no built-in implementation</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="co">; for multi-line comments in x86 assembly</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="co">; but the same effect can be achieved as </span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a><span class="co">; seen here</span></span></code></pre></div>
+<h2 id="quickstart">Quickstart</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode asm"><code class="sourceCode fasm"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="co">; ----- QUICKSTART -----</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>    <span class="co">; note that there are multiple kinds of assembly languages and each is tailored and optimised to their specific CPU or microcontroller architecture</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>    <span class="co">; each processor architecture has its own instruction set with varying syntax and file extensions, denoted as the ISA (instruction set architecture)</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>    <span class="co">; the more popular ISAs are as follows </span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>        <span class="co">; x86 assembly =&gt; used for Intel and AMD processors</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a>        <span class="co">; ARM assembly =&gt; used for ARM processors in mobile devices and embedded systems</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a>        <span class="co">; MIPS assembly =&gt; used for MIPS processors in academic settings and specialized devices</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a>        <span class="co">; PowerPC assembly =&gt; used for PowerPC processors in older Apple computers and certain embedded systems</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true"></a>        <span class="co">; SPARC assembly =&gt; used for SPARC processors developed by Sun Microsystems</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true"></a>        <span class="co">; AVR assembly =&gt; used for AVR microcontrollers in Arduino systems</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true"></a>        <span class="co">; PIC assembly =&gt; used for PIC microcontrollers in embedded systems</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true"></a>    <span class="co">; this document covers x86 assembly, widely used in most laptop, desktop and server machines today</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true"></a><span class="co">; ----- SYNTAX OVERVIEW -----</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true"></a>    <span class="co">; variables are initialised and assigned values via data definition directives per the following syntax</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true"></a>        <span class="co">; &lt;valueOrConstantIdentifier&gt; &lt;dataDefinitionDirective&gt; &lt;valueToBeAssigned&gt; =&gt; used to assign a specified value to the specified variable or constant identifier </span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true"></a>            <span class="co">; db =&gt; defines a byte and null-terminated string value</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true"></a>            <span class="co">; dt =&gt; defines a ten byte value</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true"></a>            <span class="co">; dw =&gt; defines a word value</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true"></a>            <span class="co">; dd =&gt; defines a double word value</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true"></a>            <span class="co">; dq =&gt; defines a quad word value</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true"></a>            <span class="co">; resb =&gt; reserves a byte without initializing it</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true"></a>            <span class="co">; rest =&gt; reserves ten bytes without initializing it</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true"></a>            <span class="co">; resw =&gt; reserves a word without initializing it</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true"></a>            <span class="co">; resd =&gt; reserves a double word without initializing it</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true"></a>            <span class="co">; resq =&gt; reserves a quad word without initializing it</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true"></a>    <span class="co">; section =&gt; declares a section with an x86 assembly program, where different sections in the program serve different purposes</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true"></a>        <span class="co">; .data =&gt; data section stores variable and constant declaration </span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true"></a>        <span class="co">; .text =&gt; text section stores all code instructions</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true"></a>    <span class="co">; _start =&gt; label marking the beginning of all execution code within the program, the equivalent of the main function or method in other programming languages inheriting from the C family</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true"></a>    <span class="co">; global =&gt; brings a specified label or call into the global scope of the x86 assembly program</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true"></a>    <span class="co">; mov &lt;register&gt; , &lt;valueOrVariableOrConstant&gt; =&gt; moves the specified value literal, variable or constant identifier into the specified register</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true"></a></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true"></a><span class="co">; ----- REGISTER -----</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true"></a>    <span class="co">; small, fast storage locations within the CPU that store data and their respective memory addresses</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true"></a>    <span class="co">; often used for performance of quick operations within x86 assembly programs</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true"></a>    <span class="co">; the types of registers are as follows</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true"></a>        <span class="co">; general-purpose register</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true"></a>        <span class="co">; segment register</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true"></a>        <span class="co">; control register</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true"></a>        <span class="co">; special-purpose register</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true"></a></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true"></a><span class="co">; --- GENERAL-PURPOSE REGISTERS ---</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true"></a>    <span class="co">; EAX =&gt; accumulator register, used for arithmetic operations, IO operations, and as a register that stores function return values</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true"></a>    <span class="co">; EDX =&gt; data register, used for IO operations, arithmetic operations as a 64-bit extension of EAX</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true"></a>    <span class="co">; EBX =&gt; base register, used to hold store memory addresses for memory access operations</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true"></a>    <span class="co">; ECX =&gt; counter register, used as a loop counter and for shift/rotate operations</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true"></a>    <span class="co">; ESI =&gt; source index, used to store pointers for string and array operations</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true"></a>    <span class="co">; EDI =&gt; destination index, also used to store pointers for string and array operations similar to ESI</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true"></a>    <span class="co">; EBP =&gt; base pointer, used to store the pointer which points to the bottom of the stack</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true"></a>    <span class="co">; ESP =&gt; stack pointer, used to store the pointer which points to the top of the stack</span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true"></a></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true"></a><span class="co">; --- SEGMENT REGISTERS ---</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true"></a>    <span class="co">; CS =&gt; code segment, storing the pointer that points to the segment containing current program code</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true"></a>    <span class="co">; DS =&gt; data segment, storing the pointer that points to the segment containing data</span></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true"></a>    <span class="co">; ES =&gt; extra segment, acting as an additional data segment register on top of the existing DS</span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true"></a>    <span class="co">; SS =&gt; stack segment, storing the pointer that points to the segment containing the stack</span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true"></a>    <span class="co">; FS =&gt; additional segment, used for thread-local storage</span></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true"></a>    <span class="co">; GS =&gt; another additional segment, used for thread-local storage</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true"></a></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true"></a><span class="co">; --- CONTROL REGISTERS ---</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true"></a>    <span class="co">; CR0 =&gt; contains flags that control the CPU&#39;s operating mode</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true"></a>    <span class="co">; CR2 =&gt; contains the page fault linear address</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true"></a>    <span class="co">; CR3 =&gt; contains the physical address of the page directory required for paging</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true"></a>    <span class="co">; CR4 =&gt; contains flags that control additional CPU features</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true"></a></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true"></a><span class="co">; --- SPECIAL-PURPOSE REGISTERS ---</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true"></a>    <span class="co">; EIP =&gt; instruction pointer, storing the pointer that points to the next instruction to be executed</span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true"></a>    <span class="co">; EFLAGS =&gt; flags register, containing status, control, and system flags</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true"></a></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true"></a><span class="co">; ----- PRINTING -----</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true"></a>    <span class="co">; printing in x86 assembly involves system calls to interact with the local machine&#39;s operating system</span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true"></a></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true"></a><span class="bu">section</span> .<span class="bu">data</span></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true"></a>    hello <span class="dt">db</span> <span class="st">&#39;Hello, world!&#39;</span>, <span class="dv">0</span> <span class="co">; defines a null terminated string and assigns it to the variable hello</span></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true"></a></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true"></a><span class="bu">section</span> .text</span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true"></a>    global _start <span class="co">; places the _start label within the program&#39;s global scope</span></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true"></a></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true"></a><span class="fu">_start:</span></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true"></a>    <span class="bu">mov</span> <span class="kw">eax</span>, <span class="dv">4</span> </span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true"></a>    <span class="bu">mov</span> <span class="kw">ebx</span>, <span class="dv">1</span> </span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true"></a>    <span class="bu">mov</span> <span class="kw">ecx</span>, hello </span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true"></a>    <span class="bu">mov</span> <span class="kw">edx</span>, <span class="dv">13</span> </span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true"></a>    <span class="bu">int</span><span class="bn"> 0x80 </span><span class="co">; triggers a software interrupt to invoke a syetem call to the kernel</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true"></a>    <span class="bu">mov</span> <span class="kw">eax</span>, <span class="dv">1</span> </span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true"></a>    <span class="bu">xor</span> <span class="kw">ebx</span>, <span class="kw">ebx</span> </span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true"></a>    <span class="bu">int</span><span class="bn"> 0x80 </span><span class="co">; triggers the same software interrupt as above</span></span></code></pre></div>
+<h2 id="types">Types</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode asm"><code class="sourceCode fasm"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="co">; ----- TYPE -----</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>    <span class="co">; note that the data definition directives are different for each datatype as seen below</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>    <span class="co">; byte =&gt; 1-byte value</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>    <span class="co">; word =&gt; 2-byte value</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>    <span class="co">; double word =&gt; 4-byte value</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>    <span class="co">; quad word =&gt; 8-byte value</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>    <span class="co">; ten byte =&gt; 10-byte value</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a>    <span class="co">; null-terminated string =&gt; string value declared within &#39;&#39; single quotation marks, comma-delimited and suffixed with a 0 (null character)</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a><span class="bu">section</span> .<span class="bu">data</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true"></a>    anExampleByte  <span class="dt">db</span><span class="bn">  0x01</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true"></a>    anExampleWord  <span class="dt">dw</span><span class="bn">  0x1234</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true"></a>    anExampleDoubleword <span class="dt">dd</span><span class="bn">  0x12345678</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true"></a>    anExampleQuadword <span class="dt">dq</span><span class="bn">  0x123456789ABCDEF0</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true"></a>    anExampleTenByte <span class="dt">dt</span> <span class="fl">1.234567890123456789</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true"></a>    anExampleNullTerminatedString <span class="dt">db</span> <span class="st">&#39;Hello, world!&#39;</span>, <span class="dv">0</span></span></code></pre></div>
+<h2 id="operators">Operators</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode asm"><code class="sourceCode fasm"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="co">; ----- OPERATOR -----</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a><span class="co">; --- ARITHMETIC OPERATORS ---</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a><span class="bu">add</span> <span class="co">; addition</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a><span class="bu">sub</span> <span class="co">; subtraction</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a><span class="bu">imul</span> <span class="co">; multiplication</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a><span class="bu">div</span> <span class="co">; unsigned division</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a><span class="bu">idiv</span> <span class="co">; signed division</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a><span class="bu">inc</span> <span class="co">; increment by 1</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true"></a><span class="bu">dec</span> <span class="co">; decrement by 1</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true"></a><span class="co">; --- COMPARISON OPERATOR ---</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true"></a>    <span class="co">; x86 assembly does not feature direct comparison operators as in other programming languages</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true"></a>    <span class="co">; the equivalent logical flow can be effected with a combination of cmp and conditional jumps </span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true"></a></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true"></a><span class="bu">cmp</span> &lt;operand1&gt; , &lt;operand2&gt; <span class="co">; compares the two specified , comma-delimited operands</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true"></a><span class="bu">jl</span> <span class="co">; jump if compared values are lesser than</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true"></a><span class="bu">jle</span> <span class="co">; jump if compared values are lesser than or equal</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true"></a><span class="bu">jg</span> <span class="co">; jump if compared values are greater than </span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true"></a><span class="bu">jge</span> <span class="co">; jump if compared values are greater than or equal</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true"></a><span class="bu">jb</span> <span class="co">; jump if compared values are below</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true"></a><span class="bu">jbe</span> <span class="co">; jump if compared values are below or equal</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true"></a><span class="bu">ja</span> <span class="co">; jump if compared values are above</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true"></a><span class="bu">jae</span> <span class="co">; jump if compared values are above or equal</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true"></a><span class="bu">je</span> <span class="co">; jump if compared values are equal</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true"></a><span class="bu">jmp</span> <span class="co">; unconditional jump used to jump to a specified label, bypassing any code in between</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true"></a><span class="bu">jnz</span> <span class="co">; jump if the given value is not zero</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true"></a></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true"></a><span class="co">; --- BITWISE (LOGICAL) OPERATORS ---</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true"></a></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true"></a><span class="bu">and</span> <span class="co">; bitwise and</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true"></a><span class="bu">or</span> <span class="co">; bitwise or</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true"></a><span class="bu">xor</span> <span class="co">; bitwise xor</span></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true"></a><span class="bu">not</span> <span class="co">; bitwise not</span></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true"></a><span class="bu">shl</span> <span class="co">; shifts a given operand to the left by the specified number of bits </span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true"></a><span class="bu">shr</span> <span class="co">; shifts a given operand to the right by the specified number of bits </span></span></code></pre></div>
+<h2 id="control-structures">Control structures</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode asm"><code class="sourceCode fasm"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="co">; ----- CONTROL STRUCTURE -----</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a><span class="co">; --- CONDITIONALS ---</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>    <span class="co">; there are no conventional conditional IF ELSE IF ELSE constructs in x86 assembly as in other programming languages</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>    <span class="co">; instead, similar effects can be achieved with the use of the comparison operator and jumps (especially the unconditional jump operator) as mentioned above</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a><span class="co">; --- LOOPS ---</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a>    <span class="co">; similarly, there are no conventional loop constructs in x86 assembly as in other programming languages</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true"></a>    <span class="co">; instead, similar effects can be achieved with the use of increment and decrement operators, as well as the jump operators specified above</span></span></code></pre></div>
+<h2 id="data-structures">Data structures</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode asm"><code class="sourceCode fasm"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="co">; ----- DATA STRUCTURE -----</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a>    <span class="co">; x86 assembly and most assembly languages do not have built-in high-level data structures in the conventional sense as in other programming languages</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a>    <span class="co">; instead, these data structures can be user-defined as with some examples below</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a><span class="co">; --- ARRAY ---</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a><span class="bu">section</span> .<span class="bu">data</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a>    myArray <span class="dt">db</span> <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span> <span class="co">; array of bytes</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true"></a><span class="bu">section</span> .text</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true"></a>    global _start</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true"></a><span class="fu">_start:</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true"></a>    <span class="bu">lea</span> <span class="kw">esi</span>, [myArray] <span class="co">; load the address of myArray into esi register</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true"></a>    <span class="bu">mov</span> <span class="kw">ecx</span>, <span class="dv">5</span> <span class="co">; set the counter to 5</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true"></a></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true"></a><span class="fu">array_loop:</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true"></a>    <span class="bu">mov</span> <span class="kw">al</span>, [<span class="kw">esi</span>] <span class="co">; load a byte from the array into al</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true"></a>    <span class="bu">inc</span> <span class="kw">esi</span> <span class="co">; move to next array element</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true"></a>    <span class="bu">loop</span> array_loop <span class="co">; continue looping until ecx is zero</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true"></a></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true"></a><span class="co">; --- STRUCTURE ---</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true"></a></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true"></a><span class="bu">section</span> .<span class="bu">data</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true"></a><span class="fu">    myStruct:</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true"></a>        <span class="dt">db</span> <span class="dv">1</span> <span class="co">; declares a byte field</span></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true"></a>        <span class="dt">dw</span> <span class="dv">2</span> <span class="co">; declares a word field</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true"></a>        <span class="dt">dd</span> <span class="dv">3</span> <span class="co">; declares a double word field</span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true"></a></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true"></a><span class="bu">section</span> .text</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true"></a>    global _start</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true"></a></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true"></a><span class="fu">_start:</span></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true"></a>    <span class="bu">lea</span> <span class="kw">esi</span>, [myStruct] <span class="co">; loads the memory address of myStruct into esi</span></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true"></a>    <span class="bu">mov</span> <span class="kw">al</span>, [<span class="kw">esi</span>] <span class="co">; access stored first byte</span></span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true"></a>    <span class="bu">mov</span> <span class="kw">ax</span>, [<span class="kw">esi</span> + <span class="dv">1</span>] <span class="co">; access stored word</span></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true"></a>    <span class="bu">mov</span> <span class="kw">eax</span>, [<span class="kw">esi</span> + <span class="dv">3</span>] <span class="co">; access stored double word</span></span></code></pre></div>
+<h2 id="functions">Functions</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode asm"><code class="sourceCode fasm"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="co">; ----- FUNCTION -----</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>    <span class="co">; note that functions are usually prefixed with global scope modifier to make them callable within the global scope of the program</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a>    <span class="co">; : =&gt; seperates the function name from the indented function definition body underneath</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a>    <span class="co">; ret =&gt; return instruction specifies the function return call or expression within the function body, and no value can be returned</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a>    <span class="co">; call =&gt; used to invoke a function call</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true"></a><span class="bu">section</span> .text</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true"></a>    global _start</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true"></a>    global myFunction</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true"></a><span class="fu">_start:</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true"></a>    <span class="bu">call</span> myFunction <span class="co">; calls the function</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true"></a>    <span class="co">; exits the x86 assembly program</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true"></a>    <span class="bu">mov</span> <span class="kw">eax</span>, <span class="dv">1</span> </span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true"></a>    <span class="bu">xor</span> <span class="kw">ebx</span>, <span class="kw">ebx</span> </span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true"></a>    <span class="bu">int</span><span class="bn"> 0x80 </span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true"></a></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true"></a><span class="co">; named function declaration and definition </span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true"></a><span class="fu">myFunction:</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true"></a>    <span class="bu">mov</span> <span class="kw">eax</span>, <span class="dv">4</span> </span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true"></a>    <span class="bu">mov</span> <span class="kw">ebx</span>, <span class="dv">1</span> </span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true"></a>    <span class="bu">mov</span> <span class="kw">ecx</span>, message </span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true"></a>    <span class="bu">mov</span> <span class="kw">edx</span>, <span class="dv">13</span> </span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true"></a>    <span class="bu">int</span><span class="bn"> 0x80 </span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true"></a>    <span class="bu">ret</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true"></a></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true"></a><span class="bu">section</span> .<span class="bu">data</span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true"></a>    message <span class="dt">db</span> <span class="st">&#39;hello and welcome from myFunction!&#39;</span>, <span class="dv">0</span></span></code></pre></div>
+<h2 id="more-on">More on</h2>
+<ul>
+<li><a href="https://docs.oracle.com/cd/E19253-01/817-5477/817-5477.pdf">x86 assembly documentation</a></li>
+<li><a href="https://gpfault.net/posts/asm-tut-0.txt.html">lets learn x86 assembly</a></li>
+<li><a href="https://www.cs.virginia.edu/~evans/cs216/guides/x86.html">x86 assembly quickstart guide</a></li>
+<li><a href="https://iitd-plos.github.io/col718/ref/arm-instructionset.pdf">ARM assembly documentation</a></li>
+<li><a href="https://learnxinyminutes.com/docs/mips/">learn MIPS assembly in y minutes</a></li>
+<li><a href="https://www.ibm.com/docs/kk/aix/7.3?topic=reference-appendix-f-powerpc-instructions">PowerPC assembly documentation</a></li>
+<li><a href="https://docs.oracle.com/cd/E19641-01/802-1947/802-1947.pdf">SPARC assembly documentation</a></li>
+<li><a href="https://ww1.microchip.com/downloads/en/devicedoc/atmel-0856-avr-instruction-set-manual.pdf">AVR assembly documentation</a></li>
+<li><a href="https://ww1.microchip.com/downloads/en/DeviceDoc/MPLAB%20XC8%20PIC%20Assembler%20User%27s%20Guide%2050002974A.pdf">PIC assembly documentation</a></li>
+</ul>
+</body>
+</html>

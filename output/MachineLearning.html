@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>MachineLearning</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <script src="/usr/share/javascript/mathjax/tex-mml-chtml.js" type="text/javascript"></script>
+</head>
+<body>
+<h1 id="machine-learning"><code>Machine learning</code></h1>
+<p><strong>Understand</strong> theoretical basis for neural networks and <strong>practise</strong> tools to build deep learning models.</p>
+<p>Covers…</p>
+<ul>
+<li>Feed Forward Neural Networks</li>
+<li>Convolutional Neural Networks</li>
+<li>Recurrent Neural Networks</li>
+<li>Autoencoders</li>
+<li>Reinforcement Learning</li>
+<li>Attention (through transformers)</li>
+</ul>
+<h2 id="definitions">Definitions</h2>
+<ol type="1">
+<li>Neural network: model comprised of many <em>artificial neurons</em> that takes in <em>training examples</em> as input and <strong>infers rules</strong> to arrive at a specified output (accuracy increases as the sample size of training examples grows larger)</li>
+<li>Artifical neuron: basic building block of neural networks, of which there are 2 main types
+<ol type="1">
+<li>Perceptron
+<ul>
+<li>older model developed in 1950s to 1960s by Frank Rosenblatt</li>
+<li>each perceptron receives a <strong>binary</strong> input and returns a single <strong>binary</strong> output</li>
+<li>binary output is determined by whether the weighted sum surpasses a designated <em>threshold value</em></li>
+<li>perceptron’s model too simplistic since even a small <span class="math inline">\(\Delta\)</span> in a perceptron’s weight could result in a large <span class="math inline">\(\Delta\)</span> flip of its binary output</li>
+</ul></li>
+<li>Sigmoid neuron
+<ul>
+<li>deep learning models required an artificial neuron that allowed a small <span class="math inline">\(\Delta\)</span> in its weight to result in a corresponding small <span class="math inline">\(\Delta\)</span> in its output</li>
+<li>each sigmoid neuron receives one or more inputs of <strong>floating-point</strong> value and returns a single <strong>floating-point</strong> output</li>
+<li>output is calculated by mapping the <a href="https://www.learndatasci.com/glossary/sigmoid-function/">sigmoid function</a> onto each input training example</li>
+</ul></li>
+</ol></li>
+<li>Weights: real number (<span class="math inline">\(\mathbb{R}\)</span>) that expresses the importance a given <em>input</em> has to its corresponding <em>output</em></li>
+<li>Bias: negative threshold value</li>
+<li>Input layer: first layer of neurons in a neural network that are fed as <em>input</em> to the model</li>
+<li>Hidden layer(s): any number of intermediary layers of neurons in a neural network whose <em>outputs</em> are fed as <em>inputs</em> to the next layer of neurons</li>
+<li>Output layer: final layer in a neural network, where a single neuron’s <em>output</em> is the returned value of the entire model</li>
+<li>Feed forward neural network: <em>output</em> from one layer is <em>input</em> for another layer, modelled mathematically as <span class="math inline">\(f(g(h(x)))\)</span> where information is only <strong>fed forward</strong>
+<ul>
+<li>more useful for deep learning models</li>
+</ul></li>
+<li>Recurrent neural network: <em>output</em> from one layer is fed as staggered <em>input</em> to the <strong>same layer</strong>, modelled mathematically as <span class="math inline">\(f(f(f(x)))\)</span> where recursive feedback loops are allowed
+<ul>
+<li>less useful for deep learning models</li>
+<li>more accurately simulates how the human brain handles and reinforces information</li>
+</ul></li>
+<li>Machine learning: process by which machines <em>learn</em> to perform tasks they were not explicitly programmed to, of which there are 4 variants
+<ul>
+<li>supervised: model takes in known <em>input</em> and purposefully <strong>predicts</strong> a desired <em>output</em></li>
+<li>unsupervised: model takes in known <em>input</em> and derives/describes <strong>patterns</strong> observed from the <em>input</em></li>
+<li>parametric: model takes in a <em>fixed</em> number of input parameters</li>
+<li>non-parametric: model takes in an <em>unspecified, possibly infinite</em> number of input parameters</li>
+</ul></li>
+</ol>
+<blockquote>
+<p>[!NOTE]<br />
+Machine learning models are either Parametric OR Non-parametric <em>and</em> Supervised OR Unsupervised.</p>
+</blockquote>
+<ol start="11" type="1">
+<li>Mean squared error (MSE): measures <strong>degree of inaccuracy</strong> a predicted <em>output</em> has compared to the actual <em>output</em></li>
+<li>Gradient descent: attributes error by <strong>allocating blame</strong> for a non-zero MSE value to a specific neuron’s <em>weight</em>, then tweaking that <em>weight</em> to decrease the MSE in one of three ways
+<ol type="1">
+<li>Full gradient descent: neural network calculates the AVERAGE <em>weights</em> over the entire training example dataset for a minimum MSE, and weights are tweaked after the FULL AVERAGE has been computed</li>
+<li>Stochastic gradient descent: repeatedly iterates through the entire training example dataset, tweaking weights for EACH <em>input</em> value based on the MSE, until a weight configuration that works for ALL training examples is arrived at<br />
+</li>
+<li>Batch gradient descent: a BATCH size of <span class="math inline">\(n\)</span> is specified beforehand, and the neural network updates the <em>weights</em> after <span class="math inline">\(n\)</span> training examples have been fed to the model as <em>input</em></li>
+</ol></li>
+</ol>
+<blockquote>
+<p>[!TIP]<br />
+Most situations designed to train deep learning models can be modelled with matrices using <a href="https://numpy.org/">NumPy</a> and <a href="https://pandas.pydata.org/">pandas</a>.</p>
+</blockquote>
+<ol start="13" type="1">
+<li>Natural language processing (NLP): parses text for the following three purposes
+<ol type="1">
+<li>Label a region of text <em>(speech tagging, sentiment classification, named-entity recognition)</em></li>
+<li>Link 2 or more regions of text <em>(co-reference)</em></li>
+<li>Fill in missing information based on context</li>
+</ol></li>
+</ol>
+<h2 id="more-on">More on</h2>
+<ul>
+<li><a href="https://neuralnetworksanddeeplearning.com/index.html">Neural Networks and Deep Learning</a> by Michael Nielsen<br />
+</li>
+<li><a href="https://edu.anarcho-copy.org/Algorithm/grokking-deep-learning.pdf">grokking Deep Learning</a> by Andrew W Trask<br />
+</li>
+<li><a href="http://ema.cri-info.cm/wp-content/uploads/2019/07/2019BurkovTheHundred-pageMachineLearning.pdf">The Hundred-page Machine Learning Book</a> by Andriy Burkov<br />
+</li>
+<li><a href="https://youtu.be/XfpMkf4rD6E?si=x--zvoBHV1X9IohG">Stanford CS25: V2 Introduction to Transformers</a> by Andrej Karpathy<br />
+</li>
+<li><a href="https://youtu.be/0F2paWV4eEA?si=cX3M7lJHLuOZJqKJ">How to learn machine learning as a complete beginner: a self-study guide</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Clojure</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="clojure"><code>Clojure</code></h1>
+<p>A Lisp dialect with a stronger emphasis on functional programming than Common Lisp.</p>
+<h2 id="comments">Comments</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode clj"><code class="sourceCode clojure"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co">; ---------- COMMENT -----------</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>    <span class="co">; single-line comments begin with a semicolon</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>    <span class="co">; there is no built-in implementation for multi-line comments</span></span></code></pre></div>
+<h2 id="printing">Printing</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode clj"><code class="sourceCode clojure"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="co">; ---------- PRINT ----------</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>    <span class="co">; println =&gt; prints strings to stdout and appends a newline to the output</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>    <span class="co">; prn =&gt; prints a more readable representation of data structures to the stdout and appends a newline to the output</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>(<span class="kw">println</span> <span class="st">&quot;Hello world!&quot;</span>) <span class="co">; prints &quot;Hello world!&quot; to the console with a newline</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a>(<span class="kw">prn</span> {<span class="at">:cereal-chicken</span> <span class="fl">2.50</span> <span class="at">:thai-fish</span> <span class="fl">3.00</span> <span class="at">:egg</span> <span class="fl">1.25</span>}) <span class="co">; prints the array map in a human-readable format to the console with a newline</span></span></code></pre></div>
+<h2 id="quickstart">Quickstart</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode clj"><code class="sourceCode clojure"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="co">; ----------- QUICKSTART -----------</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>    <span class="co">; clojure is comprised of forms (list of whitespace delimited things surrounded by () parantheses, similar to expressions)</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>    <span class="co">; clojure assumes the first thing is a function or macro call, and the remaining things are arguments</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>    <span class="co">; clojure types are immutable, so remember to reassign returned values (functional programming!)</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>    <span class="co">; ns =&gt; first call in a clojure file to set the namespace</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>(<span class="kw">ns</span> parklane-cai-fan) <span class="co">; sets everything in the file to be within the parklane-cai-fan namespace</span></span></code></pre></div>
+<h2 id="variables">Variables</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode clj"><code class="sourceCode clojure"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="co">; --------- VARIABLE ----------</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>    <span class="co">; def =&gt; creates a global variable and assigns a corresponding value</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>    <span class="co">; let =&gt; creates a local variable lexically scoped to the current scope of () brackets and assigns a corresponding value, and has an implicit return of the last expression</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>(<span class="bu">def</span><span class="fu"> an-int </span><span class="dv">1</span>) <span class="co">; global-binding of a variable (global variable)</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>(<span class="bu">def</span><span class="fu"> a-float </span><span class="fl">2.2</span>) <span class="co">; global-binding of a variable (global variable)</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a>(<span class="bu">def</span><span class="fu"> a-string </span><span class="st">&quot;cereal chicken&quot;</span>) <span class="co">; global-binding of a variable (global variable)</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a>(<span class="bu">def</span><span class="fu"> a-bool </span><span class="va">true</span>) <span class="co">; global-binding of a variable (global variable)</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a>(<span class="kw">let</span> [a <span class="dv">1</span> b <span class="dv">2</span>]</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true"></a>  (<span class="kw">&gt;</span> a b)) <span class="co">; this creates local bindings, then evaluates to false from the last expression</span></span></code></pre></div>
+<h2 id="types">Types</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode clj"><code class="sourceCode clojure"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="co">; ---------- TYPE -----------</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>    <span class="co">; integer </span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a>    <span class="co">; float =&gt; floating point numbers</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>    <span class="co">; string =&gt; double quotation marks</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>    <span class="co">; boolean =&gt; true, false</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a>    <span class="co">; nil =&gt; special value to represent the absence of data</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a>    <span class="co">; keyword =&gt; strings with efficiency bonuses, declared with : colon in front of keyword</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true"></a><span class="dv">1</span> <span class="co">; integer</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true"></a><span class="fl">1.23</span> <span class="co">; float</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true"></a><span class="st">&quot;watermelon&quot;</span> <span class="co">; string</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true"></a><span class="va">false</span> <span class="co">; boolean</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true"></a><span class="va">nil</span> <span class="co">; special value nil</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true"></a><span class="at">:a</span> <span class="co">; keyword</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true"></a><span class="co">; USEFUL TYPE FUNCTIONS</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true"></a>    <span class="co">; quote =&gt; prevents literal data from being evaluated, has a shorthand &#39;</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true"></a>    <span class="co">; &#39; =&gt; prevents literal data from being evaluated, the shorthand for quote</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true"></a>    <span class="co">; eval =&gt; evaluates a literal list</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true"></a></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true"></a>(quote (<span class="kw">+</span> <span class="dv">1</span> <span class="dv">2</span>)) <span class="co">; this literal list of data won&#39;t be evaluated and will evaluate to value of (+ 1 2)</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true"></a>&#39;(<span class="kw">+</span> <span class="dv">1</span> <span class="dv">2</span>) <span class="co">; this literal list of data won&#39;t be evaluated, evaluates to value of (+ 1 2)</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true"></a>(<span class="kw">eval</span> &#39;(<span class="kw">+</span> <span class="dv">3</span> <span class="dv">4</span>)) <span class="co">; this forces an evaluation on a quoted list, thus evaluating this to the value of 7</span></span></code></pre></div>
+<h2 id="operators">Operators</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode clj"><code class="sourceCode clojure"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="co">; ---------- OPERATOR ----------</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a><span class="co">; ARITHMETIC OPERATORS</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a>    <span class="co">; + =&gt; addition</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a>    <span class="co">; - =&gt; subtraction</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a>    <span class="co">; * =&gt; multiplication</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a>    <span class="co">; / =&gt; division</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a>    <span class="co">; mod =&gt; modulo</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true"></a><span class="co">; LOGICAL OPERATORS</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true"></a>    <span class="co">; and</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true"></a>    <span class="co">; or</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true"></a>    <span class="co">; not</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true"></a></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true"></a><span class="co">; COMPARISON OPERATORS</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true"></a>    <span class="co">; = =&gt; partial equality check for value</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true"></a>    <span class="co">; not= =&gt; partial inequality check for value</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true"></a>    <span class="co">; == =&gt; complete equality check for type and value</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true"></a>    <span class="co">; not== =&gt; complete inequality check for type and value</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true"></a>    <span class="co">; &lt; &gt; &lt;= &gt;= for other comparison checks</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true"></a></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true"></a>(<span class="kw">+</span> <span class="dv">1</span> <span class="dv">1</span>) <span class="co">; evaluates to 2</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true"></a>(<span class="kw">-</span> <span class="dv">2</span> <span class="dv">1</span>) <span class="co">; evaluates to 1</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true"></a>(<span class="kw">*</span> <span class="dv">1</span> <span class="dv">2</span>) <span class="co">; evaluates to 2</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true"></a>(<span class="kw">/</span> <span class="dv">2</span> <span class="dv">1</span>) <span class="co">; evaluates to 2</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true"></a>(<span class="kw">mod</span> <span class="dv">5</span> <span class="dv">2</span>) <span class="co">; evaluates to 1</span></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true"></a></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true"></a>(<span class="kw">not</span> <span class="va">true</span>) <span class="co">; evaluates to false</span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true"></a>(<span class="va">false</span> <span class="kw">and</span> <span class="va">true</span>) <span class="co">; evaluates to false</span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true"></a>(<span class="va">false</span> <span class="kw">or</span> <span class="va">true</span>) <span class="co">; evaluates to true</span></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true"></a></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true"></a>(<span class="kw">=</span> <span class="dv">1</span> <span class="dv">1</span>) <span class="co">; evaluates to true</span></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true"></a>(<span class="kw">=</span> <span class="dv">2</span> <span class="dv">1</span>) <span class="co">; evaluates to false</span></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true"></a>(<span class="kw">=</span> <span class="dv">1</span> <span class="st">&quot;1&quot;</span>) <span class="co">; evaluates to true</span></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true"></a>(<span class="kw">==</span> <span class="dv">1</span> <span class="st">&quot;1&quot;</span>) <span class="co">; evaluates to false</span></span></code></pre></div>
+<h2 id="control-structures">Control structures</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode clj"><code class="sourceCode clojure"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="co">; ---------- CONTROL STRUCTURE ----------</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a><span class="co">; CONDITIONAL CHECKS</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a>    <span class="co">; if =&gt; operates as you&#39;d expect, called as a function like everything else in clojure</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a>        <span class="co">; general syntax is (if {CONDITIONAL CHECK} {THEN EXPRESSION} {ELSE EXPRESSION})</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a>    <span class="co">; cond =&gt; evaluates each specified predicate in order and evaluates to the value of the first true condition, equivalent to an if elseif else chain in other languages</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true"></a>        <span class="co">; :else =&gt; added as the final else case in a cond chain</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true"></a>    <span class="co">; case =&gt; equivalent to match-case chain in other languages</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true"></a>        <span class="co">; :else =&gt; added as the final default case in a case chain</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true"></a>(<span class="bu">def</span><span class="fu"> x </span><span class="dv">10</span>)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true"></a>(<span class="kw">if</span> (<span class="kw">&gt;</span> x <span class="dv">5</span>)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true"></a>  <span class="st">&quot;Greater than 5&quot;</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true"></a>  <span class="st">&quot;Less than or equal to 5&quot;</span>) <span class="co">; this evaluates to &quot;Greater than 5&quot;</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true"></a>(<span class="bu">def</span><span class="fu"> y </span><span class="dv">10</span>)</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true"></a>(<span class="kw">cond</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true"></a>  (<span class="kw">&gt;</span> y <span class="dv">15</span>) <span class="st">&quot;Greater than 15&quot;</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true"></a>  (<span class="kw">&gt;</span> y <span class="dv">10</span>) <span class="st">&quot;Greater than 10&quot;</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true"></a>  <span class="at">:else</span> <span class="st">&quot;10 or less&quot;</span>) <span class="co">; this evaluates to &quot;10 or less&quot;</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true"></a></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true"></a>(<span class="bu">def</span><span class="fu"> day-of-week </span><span class="dv">3</span>)</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true"></a>(<span class="kw">case</span> day-of-week</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true"></a>  <span class="dv">1</span> <span class="st">&quot;Sunday&quot;</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true"></a>  <span class="dv">2</span> <span class="st">&quot;Monday&quot;</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true"></a>  <span class="dv">3</span> <span class="st">&quot;Tuesday&quot;</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true"></a>  <span class="at">:else</span> <span class="st">&quot;Unknown day&quot;</span>) <span class="co">; this evaluates to &quot;Tuesday&quot;</span></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true"></a></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true"></a><span class="co">; LOOPS</span></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true"></a>    <span class="co">; for most iterative solutions, clojure&#39;s functional programming constructs are encouraged instead of loops (map, reduce, filter)</span></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true"></a>    <span class="co">; loop =&gt; creates and defines the lexical scope of a loop, used alongside recur</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true"></a>    <span class="co">; recur =&gt; indicates to initiate another iteration of the current loop with recursion</span></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true"></a>    <span class="co">; doseq =&gt; creates a loop that iterates over a specified structure, achieved without explicit recursion</span></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true"></a></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true"></a>(<span class="bu">defn</span><span class="fu"> countdown-recur </span>[n]</span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true"></a>  (<span class="kw">loop</span> [i n]</span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true"></a>    (<span class="kw">if</span> (<span class="kw">&lt;=</span> i <span class="dv">0</span>)</span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true"></a>      <span class="st">&quot;Blast off!&quot;</span></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true"></a>      (<span class="kw">do</span></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true"></a>        (<span class="kw">println</span> i)</span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true"></a>        (<span class="kw">recur</span> (<span class="kw">dec</span> i)))))) <span class="co">; function definition for a function that contains a recursive loop which counts down from n to 0, then prints blast off, here recur is used to decrement i by 1 and initiate another iteration of the loop</span></span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true"></a></span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true"></a>(<span class="bu">defn</span><span class="fu"> countdown-iter </span>[n]</span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true"></a>  (<span class="kw">doseq</span> [i (<span class="kw">range</span> n <span class="dv">0</span> <span class="dv">-1</span>)]</span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true"></a>    (<span class="kw">println</span> i))</span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true"></a>  (<span class="kw">println</span> <span class="st">&quot;Blast off!&quot;</span>)) <span class="co">; function defintion for a function that achieves the same thing as the above function, but does it using doseq to create a loop that does not rely on explicit recursion but instead iterates over a vector created using the range function</span></span></code></pre></div>
+<h2 id="data-structures">Data structures</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode clj"><code class="sourceCode clojure"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="co">; ---------- DATA STRUCTURE -----------</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a>    <span class="co">; collection =&gt; groups of data (lists, vectors)</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a>    <span class="co">; sequence =&gt; abstract descriptions of lists of data (lists)</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true"></a><span class="co">; LIST</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true"></a>    <span class="co">; linked-list data structure</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true"></a>    <span class="co">; declared with () brackets, must be quoted as a literal with &#39; to prevent clojure from thinking its a function</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true"></a>    <span class="co">; list =&gt; creates a list literal, an alternative to declaring a list literal with &#39;</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true"></a>    <span class="co">; range =&gt; creates a list of range 0 to a specified length, no specification results in an infinite series</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true"></a>    <span class="co">; take =&gt; retrieve a slice of a list based on length from the front</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true"></a>    <span class="co">; cons =&gt; insert an item to the start of a list</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true"></a>    <span class="co">; conj =&gt; inserts an item to the start of a list (the most efficient method of insertion for a list)</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true"></a>    <span class="co">; concat =&gt; concatenates collections (both lists and vectors) together and returns them as a list</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true"></a>    <span class="co">; map =&gt; apply a specified function on every item within the list</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true"></a>    <span class="co">; filter =&gt; apply a specified function on every item within the list and keep those that meet the specified function predicate</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true"></a>    <span class="co">; reduce =&gt; aggregate multiple items within a list to a single result by applying the specified function to each item and accumulating the result, can take an initial argument value also</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true"></a></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true"></a>(<span class="kw">list</span> <span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span>) <span class="co">; creates a list literal of value (1 2 3), the equivalent of &#39;(1 2 3)</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true"></a>(<span class="kw">range</span>) <span class="co">; creates an infinite series of value (0 1 2 3 4 ...)</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true"></a>(<span class="kw">range</span> <span class="dv">4</span>) <span class="co">; creates a list of value (0 1 2 3) with length 4</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true"></a>(<span class="kw">take</span> <span class="dv">4</span> (<span class="kw">range</span>)) <span class="co">; retrieves a slice of length 4 from an infinite list, evaluating to (0 1 2 3)</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true"></a>(<span class="kw">cons</span> <span class="dv">4</span> &#39;(<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span>)) <span class="co">; this evaluates to (4 1 2 3)</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true"></a>(<span class="kw">conj</span> &#39;(<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span>) <span class="dv">4</span>) <span class="co">; this evaluates to (4 1 2 3) also by inserting the element at the start of the list</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true"></a>(<span class="kw">concat</span> &#39;(<span class="dv">1</span> <span class="dv">2</span>) &#39;(<span class="dv">3</span> <span class="dv">4</span>)) <span class="co">; this evaluates to (1 2 3 4)</span></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true"></a>(<span class="kw">concat</span> [<span class="dv">1</span> <span class="dv">2</span>] &#39;(<span class="dv">3</span> <span class="dv">4</span>)) <span class="co">; this also evaluates to (1 2 3 4)</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true"></a>(<span class="kw">map</span> <span class="kw">inc</span> &#39;(<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span>)) <span class="co">; this evaluates to (2 3 4)</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true"></a>(<span class="kw">filter</span> <span class="kw">even?</span> &#39;(<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span>)) <span class="co">; this evaluates to (2)</span></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true"></a>(<span class="kw">reduce</span> <span class="kw">+</span> &#39;(<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span>)) <span class="co">; this evaluates to 10</span></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true"></a>(<span class="kw">reduce</span> <span class="kw">conj</span> [] &#39;(<span class="dv">3</span> <span class="dv">2</span> <span class="dv">1</span>)) <span class="co">; this evaluates to [3 2 1]</span></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true"></a></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true"></a><span class="co">; VECTOR</span></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true"></a>    <span class="co">; array-backed vector</span></span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true"></a>    <span class="co">; declared with [] square brackets</span></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true"></a>    <span class="co">; cons =&gt; insert an item to the start of a vector</span></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true"></a>    <span class="co">; conj =&gt; appends an item to the end of a vector (the most efficient method of insertion for a vector)</span></span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true"></a>    <span class="co">; concat =&gt; concatenates collections (both lists and vectors) together and returns them as a list</span></span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true"></a>    <span class="co">; map =&gt; apply a specified function on every item within the vector</span></span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true"></a>    <span class="co">; filter =&gt; apply a specified function on every item within the vector and keep those that meet the specified function predicate</span></span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true"></a>    <span class="co">; reduce =&gt; aggregate multiple items within a vector to a single result by applying the specified function to each item and accumulating the result, can take an initial argument value also</span></span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true"></a></span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true"></a>[<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span>] <span class="co">; creates a vector literal of value [1 2 3]</span></span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true"></a>(<span class="kw">cons</span> <span class="dv">4</span> [<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span>]) <span class="co">; this evaluates to (4 1 2 3)</span></span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true"></a>(<span class="kw">conj</span> [<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span>] <span class="dv">4</span>) <span class="co">; this evaluates to [1 2 3 4] by appending the element to the end of the vector</span></span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true"></a>(<span class="kw">concat</span> [<span class="dv">1</span> <span class="dv">2</span>] [<span class="dv">3</span> <span class="dv">4</span>]) <span class="co">; this evaluates to (1 2 3 4)</span></span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true"></a>(<span class="kw">concat</span> [<span class="dv">1</span> <span class="dv">2</span>] &#39;(<span class="dv">3</span> <span class="dv">4</span>)) <span class="co">; this also evaluates to (1 2 3 4)</span></span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true"></a>(<span class="kw">map</span> <span class="kw">inc</span> [<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span>]) <span class="co">; this evaluates to (2 3 4)</span></span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true"></a>(<span class="kw">filter</span> <span class="kw">even?</span> [<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span>]) <span class="co">; this evaluates to (2)</span></span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true"></a>(<span class="kw">reduce</span> <span class="kw">+</span> [<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span>]) <span class="co">; this evaluates to 10</span></span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true"></a>(<span class="kw">reduce</span> <span class="kw">conj</span> [] [<span class="dv">3</span> <span class="dv">2</span> <span class="dv">1</span>]) <span class="co">; this evaluates to [3 2 1]</span></span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true"></a></span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true"></a><span class="co">; ARRAY MAP</span></span>
+<span id="cb8-52"><a href="#cb8-52" aria-hidden="true"></a>    <span class="co">; declared with {} curly braces</span></span>
+<span id="cb8-53"><a href="#cb8-53" aria-hidden="true"></a>    <span class="co">; assoc =&gt; adds new key-value pairs to an array map and returns the new array map</span></span>
+<span id="cb8-54"><a href="#cb8-54" aria-hidden="true"></a>    <span class="co">; dissoc =&gt; removes key-value pairs from an array map and returns the new array map</span></span>
+<span id="cb8-55"><a href="#cb8-55" aria-hidden="true"></a>    <span class="co">; retains key-value pair order, slower lookups than hash maps</span></span>
+<span id="cb8-56"><a href="#cb8-56" aria-hidden="true"></a>    <span class="co">; keys can be any hashable type, but keywords are used as keys by convention</span></span>
+<span id="cb8-57"><a href="#cb8-57" aria-hidden="true"></a>    <span class="co">; array maps are automatically converted to hash maps when their size gets big enough</span></span>
+<span id="cb8-58"><a href="#cb8-58" aria-hidden="true"></a>    <span class="co">; retrieve a value from its key by calling the array map as a function, retrieving an absent key returns nil</span></span>
+<span id="cb8-59"><a href="#cb8-59" aria-hidden="true"></a></span>
+<span id="cb8-60"><a href="#cb8-60" aria-hidden="true"></a>{<span class="at">:a</span> <span class="dv">1</span> <span class="at">:b</span> <span class="dv">2</span> <span class="at">:c</span> <span class="dv">3</span>} <span class="co">; an array map literal</span></span>
+<span id="cb8-61"><a href="#cb8-61" aria-hidden="true"></a>(<span class="bu">def</span><span class="fu"> watermelon-array-map </span>{<span class="st">&quot;a&quot;</span> <span class="dv">4</span> <span class="st">&quot;cd&quot;</span> <span class="dv">10</span> <span class="st">&quot;ef&quot;</span> <span class="dv">100</span>}) <span class="co">; creates an array map and assigns it to a variable</span></span>
+<span id="cb8-62"><a href="#cb8-62" aria-hidden="true"></a>(watermelon-array-map <span class="st">&quot;cd&quot;</span>) <span class="co">; evaluates to the integer value 10</span></span>
+<span id="cb8-63"><a href="#cb8-63" aria-hidden="true"></a>(<span class="bu">def</span><span class="fu"> new-watermelon-array-map </span>(<span class="kw">assoc</span> watermelon-array-map <span class="st">&quot;watermelon-pie&quot;</span> <span class="dv">2000</span>)) <span class="co">; adds a new key-value pair to watermelon-array-map, then assigns the new array map value to the variable new-watermelon-array-map since clojure types are immutable</span></span>
+<span id="cb8-64"><a href="#cb8-64" aria-hidden="true"></a>(<span class="bu">def</span><span class="fu"> edited-watermelon-array-map </span>(<span class="kw">dissoc</span> new-watermelon-array-map <span class="st">&quot;a&quot;</span> <span class="st">&quot;cd&quot;</span>)) <span class="co">; removes the key-value pairs of key &quot;a&quot; and &quot;cd&quot; from the new-watermelon-array-map and returns the new array map, then assigns that value to the variable edited-watermelon-array-map since clojure types are immutable</span></span>
+<span id="cb8-65"><a href="#cb8-65" aria-hidden="true"></a></span>
+<span id="cb8-66"><a href="#cb8-66" aria-hidden="true"></a><span class="co">; HASH MAP</span></span>
+<span id="cb8-67"><a href="#cb8-67" aria-hidden="true"></a>    <span class="co">; hash-map =&gt; creates a hash map literal</span></span>
+<span id="cb8-68"><a href="#cb8-68" aria-hidden="true"></a>    <span class="co">; assoc =&gt; adds new key-value pairs to a hash map and returns the new hash map</span></span>
+<span id="cb8-69"><a href="#cb8-69" aria-hidden="true"></a>    <span class="co">; dissoc =&gt; removes key-value pairs from a hash map and returns the new hash map</span></span>
+<span id="cb8-70"><a href="#cb8-70" aria-hidden="true"></a>    <span class="co">; does not retain key-value pair order, faster lookups than array maps</span></span>
+<span id="cb8-71"><a href="#cb8-71" aria-hidden="true"></a>    <span class="co">; keys can be any hashable type, but keywords are used as keys by convention</span></span>
+<span id="cb8-72"><a href="#cb8-72" aria-hidden="true"></a>    <span class="co">; retrieve a value from its key by calling the hash map as a function, retrieving an absent key returns nil</span></span>
+<span id="cb8-73"><a href="#cb8-73" aria-hidden="true"></a></span>
+<span id="cb8-74"><a href="#cb8-74" aria-hidden="true"></a>(<span class="kw">hash-map</span> <span class="at">:a</span> <span class="dv">1</span> <span class="at">:b</span> <span class="dv">2</span> <span class="at">:c</span> <span class="dv">4</span>) <span class="co">; a hash map literal</span></span>
+<span id="cb8-75"><a href="#cb8-75" aria-hidden="true"></a>(<span class="bu">def</span><span class="fu"> apple-hash-map </span>(<span class="kw">hash-map</span> <span class="at">:z</span> <span class="fl">100.00</span> <span class="at">:in</span> <span class="dv">6</span> <span class="at">:kl</span> <span class="dv">2</span>)) <span class="co">; creates a hash map and assigns it to a variable</span></span>
+<span id="cb8-76"><a href="#cb8-76" aria-hidden="true"></a>(apple-hash-map <span class="at">:z</span>) <span class="co">; evaluates to the float value of 100.00</span></span>
+<span id="cb8-77"><a href="#cb8-77" aria-hidden="true"></a>(<span class="bu">def</span><span class="fu"> new-apple-hash-map </span>(<span class="kw">assoc</span> apple-hash-map <span class="at">:apple-pie</span> <span class="dv">10</span>)) <span class="co">; adds a new key-value pair to apple-hash-map, then assigns the new hash map value to the variable new-apple-hash-map since clojure types are immutable</span></span>
+<span id="cb8-78"><a href="#cb8-78" aria-hidden="true"></a>(<span class="bu">def</span><span class="fu"> edited-apple-hash-map </span>(<span class="kw">dissoc</span> new-apple-hash-map <span class="at">:z</span> <span class="at">:kl</span>)) <span class="co">; removes the key-value pairs of key :z and :kl from new-apple-hash-map and returns the new hash map, then assigns that value to the variable edited-apple-hash-map since clojure types are immutable</span></span>
+<span id="cb8-79"><a href="#cb8-79" aria-hidden="true"></a></span>
+<span id="cb8-80"><a href="#cb8-80" aria-hidden="true"></a><span class="co">; SET</span></span>
+<span id="cb8-81"><a href="#cb8-81" aria-hidden="true"></a>    <span class="co">; declared with #{} </span></span>
+<span id="cb8-82"><a href="#cb8-82" aria-hidden="true"></a>    <span class="co">; set =&gt; creates a set, alongside [] square brackets</span></span>
+<span id="cb8-83"><a href="#cb8-83" aria-hidden="true"></a>    <span class="co">; conj =&gt; appends a specified member to the set</span></span>
+<span id="cb8-84"><a href="#cb8-84" aria-hidden="true"></a>    <span class="co">; disj =&gt; removes a member from a set by value</span></span>
+<span id="cb8-85"><a href="#cb8-85" aria-hidden="true"></a>    <span class="co">; test for set members by calling the set as a function</span></span>
+<span id="cb8-86"><a href="#cb8-86" aria-hidden="true"></a>    <span class="co">; similar to sets in other languages, with a range of functions for operation (see clojure.sets namespace)</span></span>
+<span id="cb8-87"><a href="#cb8-87" aria-hidden="true"></a></span>
+<span id="cb8-88"><a href="#cb8-88" aria-hidden="true"></a>#{<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span>} <span class="co">; creates a set literal</span></span>
+<span id="cb8-89"><a href="#cb8-89" aria-hidden="true"></a>(<span class="kw">set</span> [<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span>]) <span class="co">; also creates a set literal which evaluates to the value #{1 2 3 4}</span></span>
+<span id="cb8-90"><a href="#cb8-90" aria-hidden="true"></a>(<span class="kw">conj</span> #{<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span>} <span class="dv">4</span>) <span class="co">; this evaluates to #{1 2 3 4}</span></span>
+<span id="cb8-91"><a href="#cb8-91" aria-hidden="true"></a>(<span class="kw">disj</span> #{<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span>} <span class="dv">1</span>) <span class="co">; this evaluates to #{2 3}</span></span>
+<span id="cb8-92"><a href="#cb8-92" aria-hidden="true"></a>(#{<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span>} <span class="dv">1</span>) <span class="co">; this evaluates to 1, which evaluates to boolean true</span></span>
+<span id="cb8-93"><a href="#cb8-93" aria-hidden="true"></a>(#{<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span>} <span class="dv">4</span>) <span class="co">; this evaluates to nil, which evaluates to boolean false</span></span></code></pre></div>
+<h2 id="functions">Functions</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode clj"><code class="sourceCode clojure"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="co">; ---------- FUNCTION -----------</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a>    <span class="co">; functions have implicit return on their last statement</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a>    <span class="co">; functions can take multiple kinds of arguments and evaluate differently, just specify them with separate [] square brackets and () brackets</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a>    <span class="co">; fn =&gt; creates a new anonymous function, where [] square brackets list function arguments</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true"></a>        <span class="co">; anonymous functions are called with (()) double brackets</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true"></a>    <span class="co">; def =&gt; assigns an anonymous function to a variable to create a named function</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true"></a>    <span class="co">; defn =&gt; creates a named function, where [] square brackets list function arguments</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true"></a>    <span class="co">; &amp; =&gt; recieves extra arguments and packs them in a list, can be mixed with normal arguments</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true"></a><span class="co">; ANONYMOUS FUNCTIONS</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true"></a>(<span class="kw">fn</span> [] <span class="st">&quot;Hello World&quot;</span>) <span class="co">; evaluates to fn </span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true"></a>((<span class="kw">fn</span> [] <span class="st">&quot;Shit ass&quot;</span>)) <span class="co">; calls the anonymous function, evaluating to the string &quot;Shit ass&quot;</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true"></a>(<span class="bu">def</span><span class="fu"> hello-world-ass </span>(<span class="kw">fn</span> [] <span class="st">&quot;Hello World Ass&quot;</span>)) <span class="co">; creates the anonymous function which returns the string &quot;Hello World Ass&quot; then assigns it to the variable hello-world-ass to make it a named function</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true"></a>(hello-world-ass) <span class="co">; this calls the named function, evaluating to the string &quot;Hello World Ass&quot;</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true"></a></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true"></a><span class="co">; NAMED FUNCTIONS</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true"></a></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true"></a>(<span class="bu">defn</span><span class="fu"> watermelon </span>[] <span class="st">&quot;watermelon&quot;</span>) <span class="co">; creates a named function watermelon which evaluates to the string value &quot;watermelon&quot;</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true"></a>(watermelon) <span class="co">; calls the specified function, evaluating to the string value &quot;watermelon&quot;</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true"></a></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true"></a>(<span class="bu">defn</span><span class="fu"> hello </span>[<span class="kw">name</span>]</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true"></a>  (<span class="kw">str</span> <span class="st">&quot;Hello &quot;</span> <span class="kw">name</span>)) <span class="co">; another function definition</span></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true"></a>(hello <span class="st">&quot;Steve&quot;</span>) <span class="co">; calls the specified function, evaluating to string value &quot;Hello Steve&quot;</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true"></a></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true"></a><span class="co">; MULTI-VARIADIC FUNCTIONS</span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true"></a></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true"></a>(<span class="bu">defn</span><span class="fu"> hello-flexible</span></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true"></a>  ([] <span class="st">&quot;Hello World&quot;</span>)</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true"></a>  ([<span class="kw">name</span>] (<span class="kw">str</span> <span class="st">&quot;Hello &quot;</span> <span class="kw">name</span>))) <span class="co">; a multi-variadic function definition that can take different arguments and evaluates differently based on arguments provided</span></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true"></a>(hello-flexible <span class="st">&quot;Jake&quot;</span>) <span class="co">; this will evaluate to &quot;Hello Jake&quot;</span></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true"></a>(hello-flexible) <span class="co">; this will evaluate &quot;Hello World&quot;</span></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true"></a></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true"></a><span class="co">; VARIABLE NUMBER OF FUNCTION ARGUMENTS</span></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true"></a></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true"></a>(<span class="bu">defn</span><span class="fu"> count-args </span>[&amp; achoo]</span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true"></a>  (<span class="kw">str</span> <span class="st">&quot;You passed &quot;</span> (<span class="kw">count</span> achoo) <span class="st">&quot; arguments: &quot;</span> achoo)) <span class="co">; function definition for a function that accepts multiple arguments under the argument name achoo</span></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true"></a>(count-args <span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span>) <span class="co">; this evaluates to the string value of &quot;You passed 3 args: (1 2 3)&quot;</span></span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true"></a></span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true"></a>(<span class="bu">defn</span><span class="fu"> hello-count </span>[<span class="kw">name</span> &amp; orange]</span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true"></a>  (<span class="kw">str</span> <span class="st">&quot;Hello &quot;</span> <span class="kw">name</span> <span class="st">&quot;, you passed &quot;</span> (<span class="kw">count</span> orange) <span class="st">&quot; extra arguments&quot;</span>)) <span class="co">; function definition for a function that mixes a variable number of arguments with other named arguments</span></span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true"></a>(hello-count <span class="st">&quot;Finn&quot;</span> <span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span>) <span class="co">; this evaluates to the string value of &quot;Hello Finn, you passed 3 extra args&quot;</span></span></code></pre></div>
+<h2 id="modules">Modules</h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode clj"><code class="sourceCode clojure"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="co">; ----------- MODULE -----------</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a>    <span class="co">; use =&gt; brings all functions from the specified module into the current global scope, does not requires namespace qualification</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true"></a>    <span class="co">; require =&gt; imports a module and its functions but requires namespace qualification when calling module functions</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true"></a>    <span class="co">; ns =&gt; namespaces can be used to require a module as well, doing so means we don&#39;t need to quote the module </span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true"></a>(<span class="kw">use</span> <span class="at">&#39;clojure.set</span>) <span class="co">; brings all set functions within the global scope</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true"></a>(<span class="kw">intersection</span> #{<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span>} #{<span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span>}) <span class="co">; we can now call set functions, this evaluates to #{2 3}</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true"></a>(<span class="kw">require</span> <span class="at">&#39;clojure.string</span>) <span class="co">; imports the clojure string module within the global scope but namespace qualfiication required when calling string functions</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true"></a>(clojure.string/blank? <span class="st">&quot;&quot;</span>) <span class="co">; we can now call string functions but must reference the clojure.string namespace, this evaluates to true</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true"></a>(<span class="kw">ns</span> <span class="kw">test</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true"></a>  (<span class="at">:require</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true"></a>    [clojure.string <span class="at">:as</span> <span class="kw">str</span>]</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true"></a>    [clojure.<span class="kw">set</span> <span class="at">:as</span> <span class="kw">set</span>])) <span class="co">; this has the same effect as above and gives the modules shorter names, note there is no need to quote &#39; the module here</span></span></code></pre></div>
+<h2 id="more-on">More on</h2>
+<ul>
+<li>-&gt;</li>
+<li>-&gt;&gt;</li>
+<li>as-&gt;</li>
+<li><a href="https://clojure.org/reference/refs">clojure STM</a></li>
+<li><a href="https://clojure.org/reference/libs">clojure java standard library</a></li>
+<li><a href="https://learnxinyminutes.com/docs/clojure-macros/">learn clojure macros in y minutes</a></li>
+<li><a href="https://4clojure.oxal.org/">clojure exercises</a></li>
+<li><a href="https://clojuredocs.org/quickref">clojure quick reference</a></li>
+<li><a href="https://learnxinyminutes.com/docs/clojure/">learn clojure in y minutes</a></li>
+<li><a href="https://clojure-doc.org/">clojure documentation</a></li>
+</ul>
+</body>
+</html>

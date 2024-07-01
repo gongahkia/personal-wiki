@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Dart</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+</head>
+<body>
+<h1 id="dart"><code>Dart</code></h1>
+<p>Single-threaded language that supports web and app development for multiple platforms.</p>
+<h2 id="quickstart">Quickstart</h2>
+<pre class="dart"><code>// ---------- COMPILE TIME VS RUNTIME ----------
+    // compile time
+        // when program is compiling to byte code or machine code
+        // syntax errors, typechecking errors, compiler crashes occur at this stage
+        // code compiles to assembly, object code or executable file that can be run
+    // runtime
+        // when executable file is run
+        // logical errors, memory errors, file path errros, URL errors etc occur at this stage
+        // executable file will output what was intended in the program if successful
+
+// ---------- QUICKSTART -----------
+    // dart is used in the Fluttr framework for cross-platform application and web development
+    // all dart code runs within the void main() function
+    // dart is dynamically typed but types can be statically specified
+
+void main() {
+    // add your code here
+}</code></pre>
+<h2 id="printing">Printing</h2>
+<pre class="dart"><code>// ---------- PRINT ----------
+    // print() =&gt; prints a string to the stdout and appends a newline to the end of the output
+    // ${} =&gt; allows for string interpolation to create a formatted string
+
+const int numWatermelon = 10;
+print(&quot;You have ${numWatermelon} watermelons.&quot;); // prints &quot;You have 10 watermelons.&quot; to the stdout</code></pre>
+<h2 id="comments">Comments</h2>
+<pre class="dart"><code>// ---------- COMMENT ----------
+ 
+// this is a single-line comment
+
+/* 
+this is 
+a multi-line
+comment in 
+dart 
+*/</code></pre>
+<h2 id="variables-final-and-constants">Variables, Final and Constants</h2>
+<pre class="dart"><code>// ---------- VARIABLE ----------
+    // variable data types are immutable after variable assignment
+    // default value of an unassigned variable is null
+    // var =&gt; declares and creates a variable
+    // dynamic =&gt; specifies a variable can change its data type after initial assignment
+
+var String songLyric = &quot;watermelon sugar&quot;
+
+// ---------- FINAL -----------
+    // final =&gt; declares and creates a constant (immutable value after assignment) whose value is assigned and initialised at runtime when executable file is run
+    // used when a costant value is unknown at compile-time and will be assigned later (user input, requesting API data)
+
+final String userInput = stdin.readLineSync()!;
+
+// ---------- CONSTANT -----------
+    // const =&gt; declares and creates a constant (immutable value after assignment) whose value is already assigned and initialised at compile-time when dart script is written
+    // used when a constant value is known by the programmer at compile-time and can be assigned definitively without need for reassignment during runtime
+
+const double pi = 3.14;</code></pre>
+<h2 id="types">Types</h2>
+<pre class="dart"><code>// ---------- TYPE ----------
+    // int =&gt; integer number
+    // double =&gt; long floating point number
+    // String =&gt; double quotation marks
+    // bool =&gt; true, false 
+    // dynamic =&gt; allows for type inference of a given value&#39;s type
+    // List&lt;DATA_TYPE&gt; =&gt; an ordered sequence of elements
+    // Map&lt;KEY_DATA_TYPE, VALUE_DATA_TYPE&gt; =&gt; a collection of key-value pairs</code></pre>
+<h2 id="operators">Operators</h2>
+<pre class="dart"><code>// ---------- OPERATOR ----------
+
+// ARITHMETIC OPERATORS
+    // + =&gt; addition
+    // - =&gt; subtraction
+    // * =&gt; multiplication
+    // / =&gt; divison
+    // ~/ =&gt; floor divison
+    // % =&gt; modulo
+    // ++ =&gt; increment by 1
+    // -- =&gt; decrement by 1
+
+// LOGICAL OPERATORS
+    // &amp;&amp; =&gt; logical and
+    // || =&gt; logical or
+    // ! =&gt; logical not
+
+// COMPARISON OPERATORS
+    // == =&gt; complete equality check for value and type
+    // != =&gt; complete inequality check for value and type
+    // is =&gt; mostly used to check if object is of a specific type
+    // !is =&gt; mostly used to check if object is not of a specific type
+    // &gt;, &lt;, &gt;=, &lt;= are comparison operators and operate as you&#39;d expect
+
+// ASSIGNMENT OPERATORS
+    // = =&gt; simple assignment
+    // ??= =&gt; assigns value only if variable is null
+    // += =&gt; increment by specified value and reassign
+    // -= =&gt; decrement by specified value and reassign
+    // *= =&gt; multiply by specified value and reassign
+    // /= =&gt; divide by specified value and reassign</code></pre>
+<h2 id="control-structures">Control structures</h2>
+<pre class="dart"><code>// ---------- CONTROL STRUCTURE ----------
+
+// CONDITIONAL CHECKS
+    // if 
+    // else if
+    // else
+
+if (booleanExpression0) {
+    // do something
+} else if (booleanExpression1) {
+    // do something else
+} else {
+    // do another thing
+}
+
+// SWITCH CASE DEFAULT
+    // break =&gt; included at the end of each case statement to prevent logic from dropping through
+    
+switch (variableExpression) {
+    case constantExpression1: {
+        // do something
+    }
+    break;
+    case constantExpression2: {
+        // do something else
+    }
+    break;
+    default: {
+        // do another thing
+    }
+    break;
+}
+
+// LOOPS
+    // for loop
+    // while loop
+
+for (var i=0; i&lt;3; i++){
+    print(&quot;Loop:${i}&quot;);
+}
+
+var num = 3;
+while (num &gt;= 1){
+    print(&quot;New count:${num}&quot;);
+    num--;
+}</code></pre>
+<h2 id="data-structures">Data structures</h2>
+<pre class="dart"><code>// ---------- DATA STRUCTURE ----------
+
+// LIST
+    // declared with [] square brackets, a comma-delimited ordered sequence of elements of variable length 
+
+List&lt;int&gt; listOfIntegers = [1,2,3,4,5,6,7,8,9,10];
+
+// MAP
+    // declared with {} curly braces, a comma-delimited collection of key-value pairs similar to a Javascript object
+
+Map&lt;String, String&gt; userDetails = {
+    &quot;Username&quot;: &quot;cheers&quot;, 
+    &quot;Password&quot;: &quot;Password123&quot;
+};</code></pre>
+<h2 id="functions">Functions</h2>
+<pre class="dart"><code>// ---------- FUNCTION ----------
+    // specify return value and parameter data type in function declaration
+    // void =&gt; used to prefix functions that don&#39;t return any value
+    // return =&gt; used to specify the return value of the function
+
+// NAMED FUNCTIONS
+
+int addSum (int a, int b) {
+    return a + b;
+};
+
+double calculateGST (double itemCost) {
+    return itemCost/100 * 108;
+};
+
+String aString () {
+    return &quot;here&#39;s a default string&quot;;
+};
+
+bool twoBooleans (bool a, bool b) {
+    return a &amp;&amp; b;
+};
+
+// ANONYMOUS FUNCTIONS
+    // written as a single line by convention 
+    // both below syntax are valid
+        // with the syntax {RETURN TYPE} {FUNCTION NAME} ({PARAMETERS}) =&gt; FUNCTION EXPRESSION 
+        // {RETURN TYPE} {FUNCTION NAME} ({PARAMETERS}) {{FUNCTION EXPRESSION}}
+
+int test() =&gt; 123;
+String anotherTest () {return &quot;apple juice is delicious&quot;;};</code></pre>
+<h2 id="oop">OOP</h2>
+<pre class="dart"><code>// ---------- OOP ----------
+
+// ---------- CONSTRUCTOR ----------
+
+// DEFAULT CONSTRUCTOR
+
+class Cat {
+    DateTime birthday; // default constructor is here even if not explicitely mentioned
+}
+
+// NAMED CONSTRUCTOR
+
+class Cat {
+    DateTime birthday; // named constructor
+    Cat.baby() {
+        birthday = DateTime.now();
+    }
+}
+
+// REDIRECTING CALL TO MAIN CONSTRUCTOR
+
+class Cat {
+    DateTime birthday;
+    Cat(this.birthda); // main constructor
+    Cat.withBirthday(DateTime Birthday): this(birthday); // delegating call to main constructor
+}
+
+// ---------- OBJECT ----------
+
+// CREATING AN IMMUTABLE OBJECT
+
+class CatTreat {
+    final num quantity;
+    constant CatTreat(this.quantity)
+}
+
+// ---------- GENERATOR ----------
+    // lazily produces a sequence of values
+
+// SYNCHRONOUS GENERATOR 
+    // returns an iterable object
+
+Iterable&lt;Cat&gt; kittens(int toSpawn) sync* {
+    int kittenIndex = 0;
+    while (kittenIndex &lt; n) {
+        kittenIndex++;
+        yield Cat.baby();
+    }
+}
+
+// ASYNCHRONOUS GENERATOR
+    // returns a stream object
+
+Stream&lt;Cat&gt; kittens(int toSpawn) async* {
+    int kittenIndex = 0;
+    while (kittenIndex &lt; n) {
+        kittenIndex++;
+        yield Cat.baby();
+    }
+}
+
+// ---------- ENCAPSULATION ----------
+    // encapsulation occurs at a library level and not class level
+    // dart has no access-modifier keywords like public, protected or private
+    // _ =&gt; specifies a variable, constant or final is private to its library
+
+// ---------- INTERFACE ----------
+    // implements =&gt; allows interfaces to be implemented for a specific class, comma delimited if more than one
+
+class identifier implements interface-1, interface-2, interface-3</code></pre>
+<h2 id="null-safety">Null-safety</h2>
+<pre class="dart"><code>// ----------- NULL-SAFETY ----------
+    // variable values are non-nullable by default, null has to be explicitly allowed and stated
+    // ? =&gt; used alongside a value&#39;s type declaration to indicate that variable, final or constant can have a null value
+    // ! =&gt; appended to a value to indicate a variable will never store the value null
+
+int? thisIntMightBeNull = null; // no error will be thrown at compile time
+String? country = &quot;USA&quot;; // variable country might store a null value
+String myCountry = country!; // throws an error as myCountry is non-nullable by definition, but country might store a null value
+
+// LATE
+    // late =&gt; specifies a value will be initialised later upon access, despite not being initialised upon declaration
+    // late final =&gt; a value that will be initialised later upon access but can only be assigned once
+
+late String country; // late variable that is by default non-nullable
+print(value); // this throws a runtime error if you try to run it
+country = &quot;USA&quot;; // subsequent assignment of country late variable
+
+late final String anotherCountry; // a late final variable that is by default non-nullable but can only have a value assigned once
+anotherCountry = &quot;USA&quot;;
+print(anotherCountry); // this is working since value assigned already, no error is thrown
+anotherCountry = &quot;India&quot;; // an error is thrown since the final local variable cannot be reassigned </code></pre>
+<h2 id="more-on">More on</h2>
+<ul>
+<li>abstract classes</li>
+<li>mixins</li>
+<li>asynchronous programming</li>
+<li>future</li>
+<li>async</li>
+<li>await</li>
+<li>isolates &amp; concurrency</li>
+<li>dart run</li>
+<li>dart compile</li>
+<li><a href="https://dart.dev/get-dart">install dart</a></li>
+<li><a href="https://learnxinyminutes.com/docs/dart/">learn dart in y minutes</a></li>
+<li><a href="https://medium.com/nerd-for-tech/dart-for-dummies-learn-dart-in-30-minutes-e212328b81f0">learn dart in 30 minutes</a></li>
+<li><a href="https://dart.dev/tutorials">dart documentation</a></li>
+</ul>
+</body>
+</html>

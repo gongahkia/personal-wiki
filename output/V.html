@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>V</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="v"><code>V</code></h1>
+<h2 id="comments">Comments</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode v"><code class="sourceCode verilog"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co">// ----- COMMENT -----</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="co">// this is a single-line comment</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="co">/*</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="co">this is a </span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="co">multi-line</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a><span class="co">comment</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a><span class="co">*/</span></span></code></pre></div>
+<h2 id="printing">Printing</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode v"><code class="sourceCode verilog"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="co">// ----- PRINTING -----</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>    <span class="co">// print() =&gt; receives a string argument that is then printed to the stdout and does not include a newline by default</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>    <span class="co">// println() =&gt; receives a string argument that is then printed to the stdout and includes a newline automatically</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>print(<span class="st">&quot;this does not include a newline and one must be explicitly specified as seen here</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a>println(<span class="st">&quot;this already has a newline&quot;</span>)</span></code></pre></div>
+<h2 id="quickstart">Quickstart</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode v"><code class="sourceCode verilog"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="co">// ----- QUICKSTART -----</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>    <span class="co">// strongly statically-typed language for high performance and safety</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>    <span class="co">// compiles directly to machine bytecode similar to languages from the C family</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>    <span class="co">// V is heavily inspired by and thus draws many syntactical and foundational similarities to other low-level systems programming languages like C, Rust and Go</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>    <span class="co">// most often used for systems programming, backend development and as an intermediary language for service integration</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>    <span class="co">// fn main() =&gt; acts as the entry point for the program within which all execution code is written, the equivalent of the main function or method in many other C-style programming languages</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>    <span class="co">// mut =&gt; specifies that a given variable is mutable, wherein mutable variables can have their values reassigned or modified even after the initial assignment, similar to mut in Rust</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a>    <span class="co">// := =&gt; simultaneous variable intialization and assignment, operating similarly to := in Go</span></span></code></pre></div>
+<h2 id="types">Types</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode v"><code class="sourceCode verilog"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="co">// ----- TYPE -----</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>    <span class="co">// i32 =&gt; 32-bit signed integer number value</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>    <span class="co">// i64 =&gt; 64-bit signed integer number value</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>    <span class="co">// u32 =&gt; 32-bit unsigned integer number value</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>    <span class="co">// u64 =&gt; 64-bit unsigned integer number value</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>    <span class="co">// f32 =&gt; 32-bit single-precision floating-point number value</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a>    <span class="co">// f64 =&gt; 64-bit double-precision floating-point number value</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a>    <span class="co">// Character =&gt; character value declared within &#39;&#39; single quotation marks</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a>    <span class="co">// String =&gt; string value declared within &quot;&quot; double quotation marks</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a>    <span class="co">// Boolean =&gt; true, false</span></span></code></pre></div>
+<h2 id="operators">Operators</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode v"><code class="sourceCode verilog"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="co">// ----- OPERATOR -----</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a><span class="co">// --- ARITHMETIC OPERATOR ---</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>+ <span class="co">// addition</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a>- <span class="co">// subtraction</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a>* <span class="co">// multiplication</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a>/ <span class="co">// divison</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true"></a>% <span class="co">// modulo</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true"></a><span class="co">// --- COMPARISON OPERATOR ---</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true"></a>== <span class="co">// complete equality check for both value and type</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true"></a>!= <span class="co">// complete inequality check for both value and type</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true"></a>&gt; <span class="co">// comparison operator</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true"></a>&lt; <span class="co">// comparison operator</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true"></a>&gt;= <span class="co">// comparison operator</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true"></a>&lt;= <span class="co">// comparison operator</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true"></a><span class="co">// --- LOGICAL OPERATOR ---</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true"></a></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true"></a>&amp;&amp; <span class="co">// logical and</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true"></a>|| <span class="co">// logical or</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true"></a>! <span class="co">// logical not</span></span></code></pre></div>
+<h2 id="control-structures">Control structures</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode v"><code class="sourceCode verilog"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="co">// ----- CONTROL STRUCTURE -----</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a><span class="co">// --- CONDITIONALS ---</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a><span class="co">// IF ELSE IF ELSE </span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a><span class="dv">age :</span>= <span class="dv">20</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a><span class="kw">if</span> age &lt; <span class="dv">18</span> {</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true"></a>    println(&#39;You are a minor.&#39;)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true"></a>} <span class="kw">else</span> <span class="kw">if</span> age &gt;= <span class="dv">18</span> &amp;&amp; age &lt; <span class="dv">65</span> {</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true"></a>    println(&#39;You are an adult.&#39;)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true"></a>} <span class="kw">else</span> {</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true"></a>    println(&#39;You are a senior citizen.&#39;)</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true"></a>}</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true"></a></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true"></a><span class="co">// MATCH =&gt; _</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true"></a>    <span class="co">// provides advanced pattern-matching capabilities in V on par with those of Rust, seen below with conditional constructs specified within each pattern predicate case condition</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true"></a>    <span class="co">// the equivalent of select case or switch case in other programming languages</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true"></a>    <span class="co">// _ =&gt; specifies the default fall-through case which executes when all other predicate case conditions are unmet </span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true"></a></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true"></a><span class="dv">number :</span>= <span class="dv">42</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true"></a>match number {</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true"></a>    <span class="dv">0</span> =&gt; {</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true"></a>        println(&#39;Zero&#39;)</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true"></a>    }</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true"></a>    n <span class="kw">if</span> n &gt; <span class="dv">0</span> =&gt; {</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true"></a>        println(&#39;Positive number&#39;)</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true"></a>    }</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true"></a>    n <span class="kw">if</span> n &lt; <span class="dv">0</span> =&gt; {</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true"></a>        println(&#39;Negative number&#39;)</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true"></a>    }</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true"></a>    _ =&gt; {</span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true"></a>        println(&#39;Unknown&#39;)</span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true"></a>    }</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true"></a>}</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true"></a></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true"></a><span class="co">// --- LOOPS ---</span></span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true"></a></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true"></a><span class="co">// FOR IN</span></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true"></a>    <span class="co">// allows iteration and traversal over an iterable data structure</span></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true"></a>    <span class="co">// operates similar to for in loops in Python and foreach loops in PHP</span></span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true"></a></span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true"></a><span class="kw">for</span> i in <span class="dv">1</span>..=<span class="dv">5</span> {</span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true"></a>    println(&#39;Current number: <span class="dt">$i</span>&#39;)</span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true"></a>}</span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true"></a></span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true"></a><span class="co">// WHILE</span></span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true"></a>    <span class="co">// operates similarly to while loops in most other programming languages</span></span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true"></a></span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true"></a>mut count i32 = <span class="dv">0</span></span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true"></a><span class="kw">while</span> count &lt; <span class="dv">5</span> {</span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true"></a>    println(&#39;Count: <span class="dt">$count</span>&#39;)</span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true"></a>    count += <span class="dv">1</span></span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true"></a>}</span></code></pre></div>
+<h2 id="data-structures">Data structures</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode v"><code class="sourceCode verilog"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="co">// ----- DATA STRUCTURE -----</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>    <span class="co">// array =&gt; fixed-size ordered collection of elements of the same datatype, the equivalent of lists in Python</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a>    <span class="co">// map =&gt; fixed-size unordered collection of key-value pairs of multiple datatypes, the equivalent of dictionaries in Python</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a>    <span class="co">// set =&gt; dynamically-sized unordered collection of unique elements upon which various set operations can be called, the equivalent of sets in Python</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a>    <span class="co">// struct =&gt; user-defined collection of specified named fields and their corresponding datatypes, the equivalent of structs in Rust and Typescript, allowing modelling of representative data via type aliases</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true"></a><span class="dv">anExampleArray :</span>= [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true"></a><span class="dv">anExampleMap :</span>= {</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true"></a>    &#39;name&#39;: &#39;Alice&#39;,</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true"></a>    &#39;age&#39;: <span class="dv">30</span>,</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true"></a>    &#39;city&#39;: &#39;New York&#39;</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true"></a>}</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true"></a></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true"></a><span class="dv">anExampleSet :</span>= set{&#39;apple&#39;, &#39;banana&#39;, &#39;orange&#39;}</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true"></a></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true"></a>struct anExampleStruct {</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true"></a>    name string</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true"></a>    age int</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true"></a>}</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true"></a>struct threeDimensionalCoordinate {</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true"></a>    X int</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true"></a>    Y int</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true"></a>    Z int</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true"></a>}</span></code></pre></div>
+<h2 id="functions">Functions</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode v"><code class="sourceCode verilog"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="co">// ----- FUNCTION -----</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a>    <span class="co">// fn &lt;functionName&gt; ( &lt;functionParameterName(s)&gt; &lt;functionParameterDatatype(s)&gt; ) &lt;functionReturnDatatype(s)&gt; { &lt;functionDefinitionBody&gt; } =&gt; declaration and definition of a named function</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a>    <span class="co">// fn ( &lt;functionParameterName(s)&gt; &lt;functionParameterDatatype(s)&gt; ) &lt;functionReturnDatatype(s)&gt; { &lt;functionDefinitionBody&gt; } =&gt; declaration and definition of an anonymous function, which is then normally assigned to a named variable identifier</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a>    <span class="co">// return =&gt; explicit return keyword that specifies the return expression or value of the given function</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true"></a>fn aNamedAdditionFunction(a i32, b i32) i32 {</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true"></a>    return a + b</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true"></a>}</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true"></a><span class="dv">anAnonymousFunctionLiteralForAdditionLikeAbove :</span>= fn (a int, b int) int {</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true"></a>    return a + b</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true"></a>}</span></code></pre></div>
+<h2 id="more-on">More on</h2>
+<ul>
+<li><a href="https://www.reddit.com/r/ProgrammingLanguages/comments/vq4ul6/why_does_v_language_get_so_much_hate/">controversy surrounding v</a></li>
+<li><a href="https://vlang.io/">vlang.io</a></li>
+<li><a href="https://docs.vlang.io/introduction.html">v documentation</a></li>
+<li><a href="https://learnxinyminutes.com/docs/v/">learn v in y minutes</a></li>
+</ul>
+</body>
+</html>

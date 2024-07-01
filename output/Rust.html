@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Rust</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="rust"><code>Rust</code></h1>
+<p>Stack Overflow’s favourite programming language.</p>
+<h2 id="comments">Comments</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode rs"><code class="sourceCode rust"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co">// ---------- COMMENT ----------</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="co">// this is a single-line comment</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="co">/*</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="co">this is</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="co">a multi-line</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a><span class="co">comment</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a><span class="co">*/</span></span></code></pre></div>
+<h2 id="printing">Printing</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode rs"><code class="sourceCode rust"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="co">// ---------- PRINT ----------</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>    <span class="co">// print! =&gt; prints a string to the stdout and does not include a newline</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>    <span class="co">// println! =&gt; prints a string to the stdout and appends a newline to the output</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>    <span class="co">// eprint! =&gt; prints a string to the stderr and does not include a newline</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>    <span class="co">// eprintln! =&gt; prints a string to the stderr and appends a newline to the output</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a>    <span class="co">// {} =&gt; allow for string interpolation with values embedded in a formatted string</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a><span class="kw">let</span> message<span class="op">:&amp;</span><span class="dt">str</span> <span class="op">=</span> <span class="st">&quot;yes ok thank you&quot;</span><span class="op">;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true"></a><span class="pp">print!</span>(<span class="st">&quot;watermelon and this does not include a newline by default and we must specify it explicitly</span><span class="sc">\n</span><span class="st">&quot;</span>)<span class="op">;</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true"></a><span class="pp">println!</span>(<span class="st">&quot;this does include a newline automatically so there is no issue&quot;</span>)<span class="op">;</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true"></a><span class="pp">println!</span>(<span class="st">&quot;{}&quot;</span><span class="op">,</span> message)<span class="op">;</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true"></a><span class="kw">let</span> error_message<span class="op">:&amp;</span><span class="dt">str</span> <span class="op">=</span> <span class="st">&quot;help me this is an error message&quot;</span><span class="op">;</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true"></a><span class="pp">eprint!</span>(<span class="st">&quot;this is an error message which does not include a newline by default and we have to specify it explicitly</span><span class="sc">\n</span><span class="st">&quot;</span>)<span class="op">;</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true"></a><span class="pp">eprintln!</span>(<span class="st">&quot;this error message does include a newline automatically so there is no issue&quot;</span>)<span class="op">;</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true"></a><span class="pp">eprintln!</span>(<span class="st">&quot;{}&quot;</span><span class="op">,</span> error_message)<span class="op">;</span></span></code></pre></div>
+<h2 id="quickstart">Quickstart</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode rs"><code class="sourceCode rust"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="co">// ---------- QUICKSTART ----------</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>    <span class="co">// statically-typed compiled language developed by Mozilla research used for systems programming and web development</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>    <span class="co">// compile time vs runtime</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>        <span class="co">// compile time =&gt; source file is currently compiling, syntax errors, type errors, compiler crashes can occur, binary executable created if compilation succesful</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>        <span class="co">// runtime =&gt; executable binary and program logic is run, logical errors, memory errors, file path errors can occur, whatever the programmer intended for runs if no runtime errors</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a><span class="co">// NAMESPACES</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a>    <span class="co">// :: =&gt; specifies the relationship between rust crates, modules and symbols within a given namespace</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a>    <span class="co">// use =&gt; bring names from other namespaces into local scope</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a>    <span class="co">// {} =&gt; a glob that allows us to import multiple names into a namespace easily</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true"></a>    <span class="co">// * =&gt; wildcard operator that imports every name from a namespace</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true"></a><span class="kw">let</span> least<span class="op">:</span><span class="dt">i16</span> <span class="op">=</span> <span class="pp">std::cmp::</span>min(<span class="dv">3</span><span class="op">,</span><span class="dv">8</span>)<span class="op">;</span> <span class="co">// std is a crate, cmp is a module, min is a function</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true"></a><span class="kw">use</span> <span class="pp">std::cmp::</span>min<span class="op">;</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true"></a><span class="kw">let</span> least <span class="op">=</span> min(<span class="dv">7</span><span class="op">,</span><span class="dv">1</span>)<span class="op">;</span> <span class="co">// this assigns i32 value of 1 to the variable least by bringing the function min into local scope</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true"></a><span class="kw">use</span> <span class="pp">std::cmp::</span>min<span class="op">;</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true"></a><span class="kw">use</span> <span class="pp">std::cmp::</span>max<span class="op">;</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true"></a><span class="kw">use</span> <span class="pp">std::cmp::</span><span class="op">{</span>min<span class="op">,</span> max<span class="op">};</span> <span class="co">// this is the equivalent of the two lines above</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true"></a><span class="kw">use</span> <span class="pp">std::</span><span class="op">{</span><span class="pp">cmp::</span>min<span class="op">,</span> <span class="pp">cmp::</span>max<span class="op">};</span> <span class="co">// this is also valid rust code</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true"></a><span class="kw">use</span> <span class="pp">std::cmp::</span><span class="op">*;</span> <span class="co">// this brings min, max and many other names from the std::cmp namespace into local scope</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true"></a><span class="co">// BLOCKS AND SCOPE</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true"></a>    <span class="co">// all rust code is an expression that evaluates to a value indicated by the omission of a semicolon (expression tail), allowing for implicit return of values within functions</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true"></a>    <span class="co">// expressions can have multiple declaration and assignment statements within them, enclosed by {} curly braces</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true"></a></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true"></a><span class="kw">let</span> x <span class="op">=</span> <span class="op">{</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true"></a>    <span class="kw">let</span> y <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true"></a>    <span class="kw">let</span> z <span class="op">=</span> <span class="dv">20</span><span class="op">;</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true"></a>    y <span class="op">+</span> z <span class="co">// y + z is the expression tail, which evaluates to the int32 integer value of 21, assigned to x</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true"></a><span class="op">};</span></span></code></pre></div>
+<h2 id="usage">Usage</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="co"># ---------- USAGE ----------</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>    <span class="co"># rustc =&gt; compiles the individual source file and creates a binary executable under the same name</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>    <span class="co"># cargo new =&gt; creates a new rust project under the specified name, source code to be written in src/main.rs </span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>    <span class="co"># cargo build =&gt; compiles the rust project, creating a binary executable under the same name in target/debug</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>    <span class="co"># cargo run =&gt; compiles and runs the rust project immediately</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>    <span class="co"># cargo check =&gt; checks whether rust can compile the source file without errors</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a>$ <span class="ex">rustc</span> main.rs # rust compiler compiles an executable file</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a>$ <span class="ex">./main</span> <span class="co"># run the created executable</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true"></a>$ <span class="ex">cargo</span> new exampleProject # creates a new rust project called exampleProject</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true"></a>$ <span class="ex">cargo</span> build # compiles the project</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true"></a>$ <span class="bu">cd</span> exampleProject/target/debug</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true"></a>$ <span class="ex">./exampleProject</span> <span class="co"># runs the compiled executable</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true"></a></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true"></a>$ <span class="bu">cd</span> ../../ </span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true"></a>$ <span class="ex">cargo</span> run # recompiles and runs the executable binary file</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true"></a>$ <span class="ex">cargo</span> check # checks for any issues with the source file without compiling</span></code></pre></div>
+<h2 id="operators">Operators</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode rs"><code class="sourceCode rust"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="co">// ---------- OPERATOR ----------</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a><span class="co">// ARITHMETIC OPERATORS</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>    <span class="co">// + =&gt; addition</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>    <span class="co">// - =&gt; subtraction</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a>    <span class="co">// * =&gt; multiplication</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a>    <span class="co">// / =&gt; division</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a>    <span class="co">// % =&gt; modulo operator</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true"></a><span class="co">// LOGICAL OPERATORS</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true"></a>    <span class="co">// &amp;&amp; =&gt; logical and</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true"></a>    <span class="co">// || =&gt; logical or</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true"></a>    <span class="co">// ! =&gt; logical not</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true"></a><span class="co">// COMPARISON OPERATORS</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true"></a>    <span class="co">// == =&gt; partial equality check for value</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true"></a>    <span class="co">// != =&gt; partial inequality check for value</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true"></a>    <span class="co">// eq =&gt; complete equality check for value and type</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true"></a>    <span class="co">// ne =&gt; complete inequality check for value and type</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true"></a>    <span class="co">// &gt; &lt; &gt;= &lt;= are also comparison operators</span></span></code></pre></div>
+<h2 id="variables-and-constants">Variables and Constants</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode rs"><code class="sourceCode rust"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="co">// ---------- VARIABLE ----------</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a>    <span class="co">// variables in rust are immutable by default</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a>    <span class="co">// let =&gt; declares and initialies a variable whose value and type are immutable at runtime</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a>    <span class="co">// : =&gt; explicitly specify a variable&#39;s type</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a>    <span class="co">// mut =&gt; specifies a variable can be mutable and that its value can be reassigned later at runtime</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a><span class="co">// ---------- CONSTANT ----------</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a>    <span class="co">// const =&gt; declares and initializes a constant whose value and type are immutable at compile time</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true"></a>    <span class="co">// constant names are capitalised by convention</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true"></a><span class="kw">let</span> x<span class="op">;</span> <span class="co">// variable declaration and </span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true"></a>x <span class="op">=</span> <span class="dv">100</span><span class="op">;</span> <span class="co">// assignment can occur on two different lines</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true"></a><span class="kw">let</span> y<span class="op">:</span><span class="dt">i32</span> <span class="op">=</span> <span class="dv">10</span><span class="op">;</span> <span class="co">// variables are immutable by default at runtime</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true"></a></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true"></a><span class="kw">let</span> <span class="kw">mut</span> z<span class="op">:</span><span class="dt">i32</span> <span class="op">=</span> <span class="dv">45</span><span class="op">;</span> <span class="co">// mut creates a mutable variable</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true"></a>z <span class="op">=</span> <span class="dv">100</span><span class="op">;</span> <span class="co">// this mutable variable can then have its value reassigned</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true"></a><span class="pp">println!</span>(<span class="st">&quot;y is {}&quot;</span><span class="op">,</span> y)<span class="op">;</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true"></a></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true"></a><span class="kw">const</span> SECONDS_IN_MINUTES<span class="op">:</span><span class="dt">u32</span> <span class="op">=</span> <span class="dv">60</span><span class="op">;</span> <span class="co">// const creates a constant, whose value is immutable at compile time</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true"></a><span class="pp">println!</span>(<span class="st">&quot;{}&quot;</span><span class="op">,</span> SECONDS_IN_MINUTES)<span class="op">;</span></span></code></pre></div>
+<h2 id="types">Types</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode rs"><code class="sourceCode rust"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="co">// ---------- TYPE ----------</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>    <span class="co">// i8, i16, i32, i64, i128 =&gt; signed integer (positive and negative) with size of integer specified in number of bits</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a>    <span class="co">// u8, u16, u32, u64, u128 =&gt; unsigned integer (positive) with size of integer specified in number of bits</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a>    <span class="co">// f32, f64 =&gt; single-precision and double-precision floating point numbers</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a>    <span class="co">// bool =&gt; true, false</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a>    <span class="co">// char =&gt; character declared with &#39;&#39; single quotation marks</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true"></a>    <span class="co">// &amp;str =&gt; immutable string literal, stored on the stack with &quot;&quot; double quotation marks</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true"></a>    <span class="co">// String =&gt; mutable string vector, stored as a Vec&lt;u8&gt; on the heap with &quot;&quot; double quotation marks</span></span></code></pre></div>
+<h2 id="control-structures">Control structures</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode rs"><code class="sourceCode rust"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="co">// ---------- CONTROL STRUCTURE ----------</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a><span class="co">// ---------- CONDITIONALS ----------</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true"></a><span class="co">// IF ELSE IF ELSE</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true"></a><span class="kw">let</span> number<span class="op">:</span><span class="dt">i16</span> <span class="op">=</span> <span class="dv">42</span><span class="op">;</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true"></a><span class="kw">if</span> number <span class="op">&lt;</span> <span class="dv">0</span> <span class="op">{</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true"></a>    <span class="pp">println!</span>(<span class="st">&quot;number is negative&quot;</span>)<span class="op">;</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true"></a><span class="op">}</span> <span class="kw">else</span> <span class="kw">if</span> number <span class="op">==</span> <span class="dv">0</span> <span class="op">{</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true"></a>    <span class="pp">println!</span>(<span class="st">&quot;number is zero&quot;</span>)<span class="op">;</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true"></a><span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true"></a>    <span class="pp">println!</span>(<span class="st">&quot;number is positive&quot;</span>)<span class="op">;</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true"></a><span class="op">}</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true"></a></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true"></a><span class="co">// MATCH EXPRESSION</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true"></a>    <span class="co">// rust&#39;s powerful pattern-matching construct similar to switch case in other languages</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true"></a>    <span class="co">// match and =&gt; define a match expression, where every match expression evaluates to a single value since matches are exhaustive and each match-arm (=&gt;) points to an expression</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true"></a>    <span class="co">// _ =&gt; match-all pattern which acts as the default case for match expressions, required in every match expression to cover every possible match-arm since matches are exhaustive</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true"></a></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true"></a><span class="kw">fn</span> im_feeling_lucky(feeling_lucky<span class="op">:</span><span class="dt">bool</span>) <span class="op">-&gt;</span> <span class="dt">i32</span> <span class="op">{</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true"></a>    <span class="kw">match</span> feeling_lucky <span class="op">{</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true"></a>        <span class="cn">true</span> <span class="op">=&gt;</span> <span class="dv">100</span><span class="op">,</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true"></a>        <span class="cn">false</span> <span class="op">=&gt;</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true"></a>    <span class="op">}</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true"></a><span class="op">}</span> <span class="co">// a match expression within a function</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true"></a></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true"></a><span class="kw">enum</span> Coin <span class="op">{</span></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true"></a>    Penny<span class="op">,</span></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true"></a>    Nickel<span class="op">,</span></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true"></a>    Dime<span class="op">,</span></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true"></a>    Quarter<span class="op">,</span></span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true"></a><span class="op">}</span> <span class="co">// create the enum Coin</span></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true"></a></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true"></a><span class="kw">fn</span> value_in_cents(coin<span class="op">:</span>Coin) <span class="op">{</span></span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true"></a>    <span class="kw">match</span> coin <span class="op">{</span></span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true"></a>        <span class="pp">Coin::</span>Penny <span class="op">=&gt;</span> <span class="op">{</span></span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true"></a>            <span class="pp">println!</span>(<span class="st">&quot;Lucky penny!&quot;</span>)<span class="op">;</span></span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true"></a>            <span class="dv">1</span></span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true"></a>        <span class="op">},</span></span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true"></a>        <span class="pp">Coin::</span>Nickel <span class="op">=&gt;</span> <span class="dv">5</span><span class="op">,</span></span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true"></a>        <span class="pp">Coin::</span>Dime <span class="op">=&gt;</span> <span class="dv">10</span><span class="op">,</span></span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true"></a>        <span class="pp">Coin::</span>Quarter <span class="op">=&gt;</span> <span class="dv">25</span><span class="op">,</span></span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true"></a>    <span class="op">}</span></span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true"></a><span class="op">}</span> <span class="co">// match expressions can be used alongside enums to leverage on powerful pattern-matching capabilities</span></span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true"></a></span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true"></a><span class="kw">let</span> some_u8_value <span class="op">=</span> <span class="dv">0u8</span><span class="op">;</span></span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true"></a><span class="kw">match</span> some_u8_value <span class="op">{</span></span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true"></a>    <span class="dv">1</span> <span class="op">=&gt;</span> <span class="pp">println!</span>(<span class="st">&quot;one&quot;</span>)<span class="op">,</span></span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true"></a>    <span class="dv">2</span> <span class="op">=&gt;</span> <span class="pp">println!</span>(<span class="st">&quot;two&quot;</span>)<span class="op">,</span></span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true"></a>    <span class="dv">3</span> <span class="op">=&gt;</span> <span class="pp">println!</span>(<span class="st">&quot;three&quot;</span>)<span class="op">,</span></span>
+<span id="cb8-52"><a href="#cb8-52" aria-hidden="true"></a>    _ <span class="op">=&gt;</span> ()<span class="op">,</span></span>
+<span id="cb8-53"><a href="#cb8-53" aria-hidden="true"></a><span class="op">}</span></span>
+<span id="cb8-54"><a href="#cb8-54" aria-hidden="true"></a></span>
+<span id="cb8-55"><a href="#cb8-55" aria-hidden="true"></a><span class="co">// UNDERSCORE</span></span>
+<span id="cb8-56"><a href="#cb8-56" aria-hidden="true"></a>    <span class="co">// _ =&gt; catch-all pattern that specifies a value to be discarded and can be used for destructuring, also a match-all pattern in match expressions</span></span>
+<span id="cb8-57"><a href="#cb8-57" aria-hidden="true"></a>    <span class="co">// prefixing a variable with _ will indicate to the compiler to ignore it even if its unused</span></span>
+<span id="cb8-58"><a href="#cb8-58" aria-hidden="true"></a></span>
+<span id="cb8-59"><a href="#cb8-59" aria-hidden="true"></a><span class="kw">let</span> _ <span class="op">=</span> get_thing()<span class="op">;</span> <span class="co">// calls the function get_thing but throws away the returned value</span></span>
+<span id="cb8-60"><a href="#cb8-60" aria-hidden="true"></a><span class="kw">let</span> _unused <span class="op">=</span> <span class="dv">42</span><span class="op">;</span> <span class="co">// the rust compiler will not warn about this variable even if its unused</span></span>
+<span id="cb8-61"><a href="#cb8-61" aria-hidden="true"></a><span class="kw">let</span> (_<span class="op">,</span> right) <span class="op">=</span> slice<span class="op">.</span>split_at(middle)<span class="op">;</span> <span class="co">// throw away the left side of the destructured tuple and only return the right</span></span>
+<span id="cb8-62"><a href="#cb8-62" aria-hidden="true"></a></span>
+<span id="cb8-63"><a href="#cb8-63" aria-hidden="true"></a><span class="co">// ---------- LOOPS ----------</span></span>
+<span id="cb8-64"><a href="#cb8-64" aria-hidden="true"></a>    <span class="co">// continue =&gt; skips to the next iteration of the loop</span></span>
+<span id="cb8-65"><a href="#cb8-65" aria-hidden="true"></a>    <span class="co">// break =&gt; exits the loop </span></span>
+<span id="cb8-66"><a href="#cb8-66" aria-hidden="true"></a></span>
+<span id="cb8-67"><a href="#cb8-67" aria-hidden="true"></a><span class="co">// WHILE LOOPS</span></span>
+<span id="cb8-68"><a href="#cb8-68" aria-hidden="true"></a></span>
+<span id="cb8-69"><a href="#cb8-69" aria-hidden="true"></a><span class="kw">while</span> <span class="dv">1</span> <span class="op">==</span> <span class="dv">1</span> <span class="op">{</span></span>
+<span id="cb8-70"><a href="#cb8-70" aria-hidden="true"></a>    <span class="pp">println!</span>(<span class="st">&quot;this operates as you&#39;d expect, but this is an infinite loop my guy&quot;</span>)<span class="op">;</span></span>
+<span id="cb8-71"><a href="#cb8-71" aria-hidden="true"></a><span class="op">}</span></span>
+<span id="cb8-72"><a href="#cb8-72" aria-hidden="true"></a></span>
+<span id="cb8-73"><a href="#cb8-73" aria-hidden="true"></a><span class="co">// FOR IN LOOPS</span></span>
+<span id="cb8-74"><a href="#cb8-74" aria-hidden="true"></a>    <span class="co">// for in =&gt; allows for iteration over a specified iterable collection of data, including ranges</span></span>
+<span id="cb8-75"><a href="#cb8-75" aria-hidden="true"></a></span>
+<span id="cb8-76"><a href="#cb8-76" aria-hidden="true"></a><span class="kw">let</span> an_array<span class="op">:</span>[<span class="dt">i32</span><span class="op">;</span><span class="dv">3</span>] <span class="op">=</span> [<span class="dv">1</span><span class="op">,</span><span class="dv">2</span><span class="op">,</span><span class="dv">3</span>]<span class="op">;</span></span>
+<span id="cb8-77"><a href="#cb8-77" aria-hidden="true"></a><span class="kw">for</span> i<span class="op">:</span><span class="dt">i32</span> <span class="kw">in</span> an_array <span class="op">{</span> </span>
+<span id="cb8-78"><a href="#cb8-78" aria-hidden="true"></a>    <span class="pp">print!</span>(<span class="st">&quot;{}&quot;</span><span class="op">,</span> i)<span class="op">;</span></span>
+<span id="cb8-79"><a href="#cb8-79" aria-hidden="true"></a><span class="op">}</span> <span class="co">// this prints 123 to the stdout</span></span>
+<span id="cb8-80"><a href="#cb8-80" aria-hidden="true"></a></span>
+<span id="cb8-81"><a href="#cb8-81" aria-hidden="true"></a><span class="kw">for</span> i <span class="kw">in</span> <span class="dv">0u32</span><span class="op">..</span><span class="dv">10</span> <span class="op">{</span></span>
+<span id="cb8-82"><a href="#cb8-82" aria-hidden="true"></a>    <span class="pp">print!</span>(<span class="st">&quot;{}&quot;</span><span class="op">,</span> i)<span class="op">;</span> </span>
+<span id="cb8-83"><a href="#cb8-83" aria-hidden="true"></a><span class="op">}</span> <span class="co">// this prints 0123456789 to the stdout</span></span>
+<span id="cb8-84"><a href="#cb8-84" aria-hidden="true"></a></span>
+<span id="cb8-85"><a href="#cb8-85" aria-hidden="true"></a><span class="co">// LOOP</span></span>
+<span id="cb8-86"><a href="#cb8-86" aria-hidden="true"></a>    <span class="co">// loop =&gt; shorthand to create an infinite loop</span></span>
+<span id="cb8-87"><a href="#cb8-87" aria-hidden="true"></a></span>
+<span id="cb8-88"><a href="#cb8-88" aria-hidden="true"></a><span class="kw">loop</span> <span class="op">{</span></span>
+<span id="cb8-89"><a href="#cb8-89" aria-hidden="true"></a>    <span class="pp">println!</span>(<span class="st">&quot;alahoo&quot;</span>)<span class="op">;</span> </span>
+<span id="cb8-90"><a href="#cb8-90" aria-hidden="true"></a><span class="op">}</span></span></code></pre></div>
+<h2 id="data-structures">Data structures</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode rs"><code class="sourceCode rust"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="co">// ---------- DATA STRUCTURE ----------</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a><span class="co">// ARRAY</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a>    <span class="co">// fixed-length ordered sequence of elements of the same type</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true"></a>    <span class="co">// declared with [] square brackets and size and data type specified</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true"></a><span class="kw">let</span> int_array<span class="op">:</span>[<span class="dt">i32</span><span class="op">;</span> <span class="dv">10</span>] <span class="op">=</span> [<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">6</span><span class="op">,</span> <span class="dv">7</span><span class="op">,</span> <span class="dv">8</span><span class="op">,</span> <span class="dv">9</span><span class="op">,</span> <span class="dv">10</span>]<span class="op">;</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true"></a><span class="pp">println!</span>(<span class="st">&quot;{}&quot;</span><span class="op">,</span> int_array[<span class="dv">7</span>])<span class="op">;</span> <span class="co">// prints 8 to the stdout</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true"></a><span class="co">// VECTOR</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true"></a>    <span class="co">// dynamic length ordered sequence of elements of the same type</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true"></a>    <span class="co">// vec![] =&gt; declares and creates a vector with size and data type specified</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true"></a></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true"></a><span class="kw">let</span> <span class="kw">mut</span> int_vector<span class="op">:</span><span class="dt">Vec</span><span class="op">&lt;</span><span class="dt">i32</span><span class="op">&gt;</span> <span class="op">=</span> <span class="pp">vec!</span>[<span class="dv">1</span><span class="op">,</span><span class="dv">2</span><span class="op">,</span><span class="dv">3</span><span class="op">,</span><span class="dv">4</span><span class="op">,</span><span class="dv">5</span><span class="op">,</span><span class="dv">59</span><span class="op">,</span><span class="dv">132</span>]<span class="op">;</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true"></a>vector<span class="op">.</span>push(<span class="dv">5</span>)<span class="op">;</span> <span class="co">// appends the i32 integer of value 5 to the vector int_vector</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true"></a></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true"></a><span class="co">// TUPLE</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true"></a>    <span class="co">// fixed-length ordered sequence of elements of different types</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true"></a>    <span class="co">// declared with () brackets and size and data type of each element specified</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true"></a></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true"></a><span class="kw">let</span> mixed_tuple<span class="op">:</span>(<span class="dt">i32</span><span class="op">,</span> <span class="dt">bool</span><span class="op">,</span> <span class="dt">char</span>) <span class="op">=</span> (<span class="dv">1</span><span class="op">,</span> <span class="cn">true</span><span class="op">,</span> <span class="ch">&#39;A&#39;</span>)<span class="op">;</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true"></a><span class="pp">println!</span>(<span class="st">&quot;{}&quot;</span><span class="op">,</span> mixed_tuple<span class="op">.</span><span class="dv">1</span>)<span class="op">;</span> <span class="co">// prints true to the stdout</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true"></a></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true"></a><span class="co">// STRUCT</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true"></a>    <span class="co">// collections of data and functions in rust where each new struct is its own data type, similar to objects in javascript or tables in lua</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true"></a>    <span class="co">// struct =&gt; declares and creates a new struct with struct data and functions within {} curly braces</span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true"></a>    <span class="co">// impl =&gt; implements methods, associated functions and traits on a specified struct</span></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true"></a>        <span class="co">// &amp;self always fed as the first parameter to a struct method to reference the given instance of a struct, with methods called using . dot notation</span></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true"></a>    <span class="co">// associated functions are functions that don&#39;t take &amp;self as a parameter and thus don&#39;t require an instance of a struct to be called, but are still associated with the struct</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true"></a>        <span class="co">// associated functions called using the {STRUCT NAME}::{ASSOCIATED FUNCTION NAME}</span></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true"></a></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true"></a><span class="kw">struct</span> User <span class="op">{</span></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true"></a>    username<span class="op">:</span> <span class="dt">String</span><span class="op">,</span></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true"></a>    email<span class="op">:</span> <span class="dt">String</span><span class="op">,</span></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true"></a>    sign_in_count<span class="op">:</span> <span class="dt">u64</span><span class="op">,</span></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true"></a>    active<span class="op">:</span> <span class="dt">bool</span><span class="op">,</span></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true"></a><span class="op">}</span> <span class="co">// declares and creates a struct</span></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true"></a></span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true"></a><span class="kw">let</span> user1 <span class="op">=</span> User <span class="op">{</span></span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true"></a>    email<span class="op">:</span> <span class="dt">String</span><span class="pp">::</span>from(<span class="st">&quot;hotman@hotmail.com&quot;</span>)<span class="op">,</span></span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true"></a>    username<span class="op">:</span> <span class="dt">String</span><span class="pp">::</span>from(<span class="st">&quot;someusername123&quot;</span>)<span class="op">,</span></span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true"></a>    active<span class="op">:</span> <span class="cn">true</span><span class="op">,</span></span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true"></a>    sign_in_count<span class="op">:</span> <span class="dv">1</span><span class="op">,</span></span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true"></a><span class="op">}</span> <span class="co">// initialization of a struct literal with its values assigned</span></span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true"></a></span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true"></a><span class="kw">struct</span> Vec2 <span class="op">{</span> </span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true"></a>    x<span class="op">:</span><span class="dt">f64</span><span class="op">,</span></span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true"></a>    y<span class="op">:</span><span class="dt">f64</span><span class="op">,</span></span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true"></a><span class="op">}</span> <span class="co">// declares and creates another struct</span></span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true"></a></span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true"></a><span class="kw">impl</span> Vec2 <span class="op">{</span> </span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true"></a>    <span class="kw">fn</span> is_strictly_positive(<span class="op">&amp;</span><span class="kw">self</span>) <span class="op">-&gt;</span> <span class="dt">bool</span> <span class="op">{</span></span>
+<span id="cb9-53"><a href="#cb9-53" aria-hidden="true"></a>        <span class="kw">self</span><span class="op">.</span>x <span class="op">&gt;</span> <span class="dv">0</span></span>
+<span id="cb9-54"><a href="#cb9-54" aria-hidden="true"></a>    <span class="op">}</span></span>
+<span id="cb9-55"><a href="#cb9-55" aria-hidden="true"></a><span class="op">}</span> <span class="co">// implements the method is_strictly_positive on the struct Vec2</span></span>
+<span id="cb9-56"><a href="#cb9-56" aria-hidden="true"></a></span>
+<span id="cb9-57"><a href="#cb9-57" aria-hidden="true"></a><span class="kw">let</span> v1 <span class="op">=</span> Vec2 <span class="op">{</span> x<span class="op">:</span><span class="dv">1.0</span><span class="op">,</span> y<span class="op">:</span><span class="dv">3.0</span> <span class="op">};</span> <span class="co">// initialization of a struct literal</span></span>
+<span id="cb9-58"><a href="#cb9-58" aria-hidden="true"></a><span class="kw">let</span> v2 <span class="op">=</span> Vec2 <span class="op">{</span> y<span class="op">:</span><span class="dv">2.0</span><span class="op">,</span> x<span class="op">:</span><span class="dv">4.0</span> <span class="op">};</span> <span class="co">// initialization of another struct literal</span></span>
+<span id="cb9-59"><a href="#cb9-59" aria-hidden="true"></a></span>
+<span id="cb9-60"><a href="#cb9-60" aria-hidden="true"></a><span class="pp">println!</span>(<span class="st">&quot;{}&quot;</span><span class="op">,</span> v1<span class="op">.</span>is_strictly_positive())<span class="op">;</span> <span class="co">// specified method is called using . dot notation on an instance of the struct, a struct literal</span></span>
+<span id="cb9-61"><a href="#cb9-61" aria-hidden="true"></a></span>
+<span id="cb9-62"><a href="#cb9-62" aria-hidden="true"></a><span class="kw">impl</span> Rectangle <span class="op">{</span></span>
+<span id="cb9-63"><a href="#cb9-63" aria-hidden="true"></a>    <span class="kw">fn</span> square(size<span class="op">:</span> <span class="dt">u32</span>) <span class="op">-&gt;</span> Rectangle <span class="op">{</span> <span class="co">// notice the return type is specified as the struct Rectangle, which is considered its own type</span></span>
+<span id="cb9-64"><a href="#cb9-64" aria-hidden="true"></a>        Rectangle <span class="op">{</span> width<span class="op">:</span> size<span class="op">,</span> height<span class="op">:</span> size <span class="op">}</span> <span class="co">// omission of semicolon for implicit return</span></span>
+<span id="cb9-65"><a href="#cb9-65" aria-hidden="true"></a>    <span class="op">}</span></span>
+<span id="cb9-66"><a href="#cb9-66" aria-hidden="true"></a><span class="op">}</span> <span class="co">// here, the associated function acts as a constructor that returns the struct Rectangle</span></span>
+<span id="cb9-67"><a href="#cb9-67" aria-hidden="true"></a></span>
+<span id="cb9-68"><a href="#cb9-68" aria-hidden="true"></a><span class="kw">let</span> square1 <span class="op">=</span> <span class="pp">Rectangle::</span>square(<span class="dv">3</span>)<span class="op">;</span> <span class="co">// calls the associated function</span></span>
+<span id="cb9-69"><a href="#cb9-69" aria-hidden="true"></a></span>
+<span id="cb9-70"><a href="#cb9-70" aria-hidden="true"></a><span class="co">// TRAITS</span></span>
+<span id="cb9-71"><a href="#cb9-71" aria-hidden="true"></a>    <span class="co">// specifies attributes and methods a type must have without defining them, similar to interfaces in Java</span></span>
+<span id="cb9-72"><a href="#cb9-72" aria-hidden="true"></a>    <span class="co">// trait =&gt; declares and creates a trait with a specified name to be implemented on a struct</span></span>
+<span id="cb9-73"><a href="#cb9-73" aria-hidden="true"></a>    <span class="co">// impl for =&gt; implement a specified trait on a struct</span></span>
+<span id="cb9-74"><a href="#cb9-74" aria-hidden="true"></a>    <span class="co">// rust&#39;s orphan rules</span></span>
+<span id="cb9-75"><a href="#cb9-75" aria-hidden="true"></a>        <span class="co">// can implement one of your traits on foreign and primitive types</span></span>
+<span id="cb9-76"><a href="#cb9-76" aria-hidden="true"></a>        <span class="co">// can implement other rust-defined traits on one of our types</span></span>
+<span id="cb9-77"><a href="#cb9-77" aria-hidden="true"></a>        <span class="co">// cannot implement a foreign trait on a foreign type</span></span>
+<span id="cb9-78"><a href="#cb9-78" aria-hidden="true"></a></span>
+<span id="cb9-79"><a href="#cb9-79" aria-hidden="true"></a><span class="kw">struct</span> Number <span class="op">{</span> </span>
+<span id="cb9-80"><a href="#cb9-80" aria-hidden="true"></a>    odd<span class="op">:</span> <span class="dt">bool</span><span class="op">;</span></span>
+<span id="cb9-81"><a href="#cb9-81" aria-hidden="true"></a>    value<span class="op">:</span> <span class="dt">i32</span><span class="op">;</span></span>
+<span id="cb9-82"><a href="#cb9-82" aria-hidden="true"></a><span class="op">}</span> <span class="co">// declare and create a struct</span></span>
+<span id="cb9-83"><a href="#cb9-83" aria-hidden="true"></a></span>
+<span id="cb9-84"><a href="#cb9-84" aria-hidden="true"></a><span class="kw">trait</span> Signed <span class="op">{</span></span>
+<span id="cb9-85"><a href="#cb9-85" aria-hidden="true"></a>    <span class="kw">fn</span> isStrictlyNegative(<span class="op">&amp;</span><span class="kw">self</span>) <span class="op">-&gt;</span> <span class="dt">bool</span><span class="op">;</span> </span>
+<span id="cb9-86"><a href="#cb9-86" aria-hidden="true"></a><span class="op">}</span> <span class="co">// all this does is specify that the type must have a method called isStrictlyNegative that returns a boolean</span></span>
+<span id="cb9-87"><a href="#cb9-87" aria-hidden="true"></a></span>
+<span id="cb9-88"><a href="#cb9-88" aria-hidden="true"></a><span class="kw">impl</span> Signed <span class="kw">for</span> Number <span class="op">{</span> </span>
+<span id="cb9-89"><a href="#cb9-89" aria-hidden="true"></a>    <span class="kw">fn</span> isStrictlyNegative(<span class="op">&amp;</span><span class="kw">self</span>) <span class="op">-&gt;</span> (<span class="dt">bool</span>) <span class="op">{</span></span>
+<span id="cb9-90"><a href="#cb9-90" aria-hidden="true"></a>        <span class="kw">self</span><span class="op">.</span>value <span class="op">&lt;</span> <span class="dv">0</span></span>
+<span id="cb9-91"><a href="#cb9-91" aria-hidden="true"></a>    <span class="op">}</span></span>
+<span id="cb9-92"><a href="#cb9-92" aria-hidden="true"></a><span class="op">}</span> <span class="co">// this implements the trait Signed on the struct Number and we see the implementation of the method within the struct defintiion</span></span>
+<span id="cb9-93"><a href="#cb9-93" aria-hidden="true"></a></span>
+<span id="cb9-94"><a href="#cb9-94" aria-hidden="true"></a><span class="kw">let</span> n <span class="op">=</span> Number <span class="op">{</span> odd<span class="op">:</span><span class="cn">false</span><span class="op">,</span> value<span class="op">:-</span><span class="dv">44</span> <span class="op">};</span> <span class="co">// struct literal initialization</span></span>
+<span id="cb9-95"><a href="#cb9-95" aria-hidden="true"></a><span class="pp">println!</span>(<span class="st">&quot;{}&quot;</span><span class="op">,</span> n<span class="op">.</span>isStrictlyNegative())<span class="op">;</span> <span class="co">// calling the method on the instance of the struct</span></span>
+<span id="cb9-96"><a href="#cb9-96" aria-hidden="true"></a></span>
+<span id="cb9-97"><a href="#cb9-97" aria-hidden="true"></a><span class="co">// ENUMS</span></span>
+<span id="cb9-98"><a href="#cb9-98" aria-hidden="true"></a>    <span class="co">// enums allow for powerful state-modelling in rust to make invalid states unrepresentable, especially powerful since enums are their own type in rust</span></span>
+<span id="cb9-99"><a href="#cb9-99" aria-hidden="true"></a>    <span class="co">// enum =&gt; declares and creates an enum and its many possible states</span></span>
+<span id="cb9-100"><a href="#cb9-100" aria-hidden="true"></a>    <span class="co">// :: =&gt; namespace operator specifies the relationship between an enum and an enum member</span></span>
+<span id="cb9-101"><a href="#cb9-101" aria-hidden="true"></a>    <span class="co">// instance of an enum is created using let {ENUM_INSTANCE_NAME} = {ENUM NAME}::{ENUM VARIANT NAME}</span></span>
+<span id="cb9-102"><a href="#cb9-102" aria-hidden="true"></a></span>
+<span id="cb9-103"><a href="#cb9-103" aria-hidden="true"></a><span class="kw">enum</span> IP_address_type <span class="op">{</span></span>
+<span id="cb9-104"><a href="#cb9-104" aria-hidden="true"></a>    V4(<span class="dt">u8</span><span class="op">,</span><span class="dt">u8</span><span class="op">,</span><span class="dt">u8</span><span class="op">,</span><span class="dt">u8</span>)<span class="op">,</span> <span class="co">// V4 variant is able to store a value of (127,0,0,1)</span></span>
+<span id="cb9-105"><a href="#cb9-105" aria-hidden="true"></a>    V6(<span class="dt">String</span>)<span class="op">,</span> <span class="co">// V6 variant is able to store a String of value &quot;::1&quot;</span></span>
+<span id="cb9-106"><a href="#cb9-106" aria-hidden="true"></a><span class="op">}</span> <span class="co">// declares and creates an enum IP_address_type and its respective variants, V4 and V6, where an ip address can only ever be V4 or V6</span></span>
+<span id="cb9-107"><a href="#cb9-107" aria-hidden="true"></a></span>
+<span id="cb9-108"><a href="#cb9-108" aria-hidden="true"></a><span class="kw">let</span> four <span class="op">=</span> <span class="pp">IP_address_type::</span>V4<span class="op">;</span> <span class="co">// creates an instance of an enum</span></span>
+<span id="cb9-109"><a href="#cb9-109" aria-hidden="true"></a><span class="kw">let</span> five <span class="op">=</span> <span class="pp">IP_address_type::</span>V4(<span class="dv">127</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">1</span>)<span class="op">;</span> <span class="co">// we can also specify the value of the enum member upon initialization</span></span></code></pre></div>
+<h2 id="functions">Functions</h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode rs"><code class="sourceCode rust"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="co">// ---------- FUNCTION ----------</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a>    <span class="co">// rust functions have implicit return of the value the last expression evaluates to, specified by omitting the ; semicolon</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true"></a>    <span class="co">// fn =&gt; declares and creates a function with their parameter and return type specified</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true"></a>    <span class="co">// -&gt; =&gt; specifies the relationship between the function name and return type and function body</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true"></a>    <span class="co">// return =&gt; specifies the return expression but not madantory due to implicit return</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true"></a><span class="kw">fn</span> a_fair_dice_roll() <span class="op">-&gt;</span> <span class="dt">i32</span> <span class="op">{</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true"></a>    <span class="kw">return</span> <span class="dv">4</span><span class="op">;</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true"></a><span class="op">}</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true"></a><span class="kw">fn</span> unfair_dice_roll() <span class="op">-&gt;</span> <span class="dt">i32</span> <span class="op">{</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true"></a>    <span class="dv">10</span> <span class="co">// this is valid since 10 is implicitly returned</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true"></a><span class="op">}</span></span></code></pre></div>
+<h2 id="ownership">Ownership</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode rs"><code class="sourceCode rust"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true"></a><span class="co">// ---------- OWNERSHIP ----------</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true"></a>    <span class="co">// variables, constants and references have a fixed lifetime specified by the lexical scope of the {} curly braces they are enclosed within</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true"></a>    <span class="co">// rust ownership hinges on the concept that it automatically returns memory once the variable that owns said value in memory goes out of scope</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true"></a><span class="co">// STACK VS HEAP</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true"></a>    <span class="co">// both the stack and heap are part of computer memory for program usage at runtime</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true"></a>    <span class="co">// stack</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true"></a>        <span class="co">// blazingly fast, last-in first-out structure with operations like pushing and popping of data</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true"></a>        <span class="co">// stack only ever has to refer to the top of the stack for storage and retrieval</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true"></a>        <span class="co">// stack data is of a fixed-size at compile time</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true"></a>    <span class="co">// heap</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true"></a>        <span class="co">// less fast, values stored at different memory addresses in the heap allocated based on the amount of space required for each value</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true"></a>        <span class="co">// values retrieved via a pointer that stores the memory address of a given value</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true"></a>        <span class="co">// heap data is of an unknown size at compile time</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true"></a></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true"></a><span class="co">// OWNERSHIP RULES</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true"></a>    <span class="co">// each value belongs to a variable (its owner)</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true"></a>    <span class="co">// there can only be one owner at a time</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true"></a>    <span class="co">// when the owner goes out of scope, the value will be dropped</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true"></a></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true"></a><span class="co">// here is an example of ownership rules in action</span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true"></a><span class="co">// variable s is not valid here, it has not been declared yet</span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true"></a><span class="op">{</span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true"></a>    <span class="kw">let</span> s<span class="op">:</span><span class="dt">String</span> <span class="op">=</span> <span class="st">&quot;hello&quot;</span><span class="op">;</span> <span class="co">// variable s is valid from this point forward till the end of the local lexical scope (curly braces), s is a string vector and is heap-allocated</span></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true"></a><span class="op">}</span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true"></a><span class="co">// the lexical scope is now over and the variable s is no longer valid, rust returns the space the variable s took up with its value in heap memory</span></span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true"></a></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true"></a><span class="co">// REFERENCES</span></span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true"></a>    <span class="co">// references are immutable by default</span></span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true"></a>    <span class="co">// &amp; =&gt; specifies a given variable is a reference, allowing us to refer to a value without taking ownership of it</span></span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true"></a>    <span class="co">// having a reference as a function parameter is called borrowing</span></span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true"></a></span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true"></a>    <span class="kw">let</span> s1 <span class="op">=</span> <span class="dt">String</span><span class="pp">::</span>from(<span class="st">&quot;hello&quot;</span>)<span class="op">;</span> <span class="co">// string vector of dynamic length, heap-allocated created</span></span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true"></a>    <span class="kw">let</span> len <span class="op">=</span> calculate_length(<span class="op">&amp;</span>s1)<span class="op">;</span> <span class="co">// pass the heap-allocated string vector s1 by reference to the function calculate_length(), to prevent the string s1 from being moved after the function runs</span></span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true"></a>    <span class="pp">println!</span>(<span class="st">&quot;length of {} is {}&quot;</span><span class="op">,</span> s1<span class="op">,</span> le)<span class="op">;</span></span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true"></a><span class="op">}</span></span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true"></a></span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true"></a><span class="kw">fn</span> calculate_length(s<span class="op">:&amp;</span><span class="dt">String</span>) <span class="op">-&gt;</span> <span class="dt">usize</span> <span class="op">{</span> <span class="co">// this function recieves a parameter of type reference to a string vector type by borrowing it, x is also brought into local scope as a function parameter</span></span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true"></a>    s<span class="op">.</span>len() <span class="co">// s is within lexical scope here</span></span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true"></a><span class="op">}</span></span>
+<span id="cb11-42"><a href="#cb11-42" aria-hidden="true"></a><span class="co">// s goes out of scope here, but since it does not have ownership of what it refers to, nothing happens</span></span></code></pre></div>
+<h2 id="more-on">More on</h2>
+<ul>
+<li>enum functions</li>
+<li>enum methods</li>
+<li>Option type</li>
+<li>copy</li>
+<li>clone</li>
+<li>mutable references</li>
+<li>slices as references</li>
+<li>smart pointers</li>
+<li>struct update syntax</li>
+<li>tuple structs</li>
+<li>lifetimes</li>
+<li>macros</li>
+<li>if let</li>
+<li>result</li>
+<li>option</li>
+<li>packages</li>
+<li>generics</li>
+<li>error handling</li>
+<li>concurrency</li>
+<li>modules</li>
+<li><a href="https://www.rust-lang.org/tools/install">install rust</a></li>
+<li><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2021">rust playground</a></li>
+<li><a href="https://learnxinyminutes.com/docs/rust/">learn rust in y minutes</a></li>
+<li><a href="https://fasterthanli.me/articles/a-half-hour-to-learn-rust">rust in 30 minutes</a></li>
+<li><a href="https://doc.rust-lang.org/stable/book/">rust lang book</a></li>
+<li><a href="https://doc.rust-lang.org/stable/rust-by-example/">rust by example</a></li>
+</ul>
+</body>
+</html>

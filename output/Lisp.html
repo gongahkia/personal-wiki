@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Lisp</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="lisp"><code>Lisp</code></h1>
+<p>The programmable programming language.</p>
+<h2 id="quickstart">Quickstart</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co">;;; ----------- QUICKSTART ----------</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>    <span class="co">; everything in Common Lisp is comprised of atoms or s-expressions</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>    <span class="co">; functional expression-based programming language, so all expressions evaluate to a value</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>    <span class="co">; mutation and side-effects are avoided as far as possible, where possible, rely on function returns to return a copy of data instead of modifying existing data</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="co">;; ATOM</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>    <span class="co">; symbols or numbers</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>        <span class="co">; symbol =&gt; general concept representing a name or identifier (variable names, function names, entity names)</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>        <span class="co">; number =&gt; integer, floating-point</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a><span class="co">;; S-EXPRESSION</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a>    <span class="co">; function or operator and its arguments enclosed in () parantheses</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a>    <span class="co">; arguments can be atoms or lists</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a>        <span class="co">; list =&gt; collection of s-expressions enclosed in () parentheses, that contain atoms or other lists</span></span></code></pre></div>
+<h2 id="comments">Comments</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="co">;;; ----------- COMMENT ----------</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a><span class="co">;; SINGLE-LINE COMMENTS</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>    <span class="co">; 4 semicolons for file-level comments</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>    <span class="co">; 3 semicolons for section-level descriptions</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a>    <span class="co">; 2 semicolons for definitions within code</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a>    <span class="co">; 1 semicolon for definitions outside code</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true"></a><span class="co">;; MULTI-LINE COMMENTS</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true"></a>    <span class="co">;; delimited by #| and |#</span></span></code></pre></div>
+<h2 id="printing">Printing</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="co">;;; ---------- PRINTING ----------</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>    <span class="co">; format =&gt; prints formatted text to stdout, t is included for true</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>    <span class="co">; print =&gt; prints text to stdout as a string literal with &quot;&quot; double quotation marks</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>    <span class="co">; princ =&gt; prints text to stdout without double quotation marks</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>(<span class="kw">format</span> <span class="kw">t</span> <span class="st">&quot;Hello, World!&quot;</span>) <span class="co">; prints &quot;Hello, World!&quot; to the stdout</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>(<span class="kw">print</span> <span class="st">&quot;Hello&quot;</span>) <span class="co">; prints &quot;Hello&quot; to the stdout</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a>(<span class="kw">princ</span> <span class="st">&quot;Hello&quot;</span>) <span class="co">; prints Hello to the stdout</span></span></code></pre></div>
+<h2 id="variables-and-constants">Variables and Constants</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="co">;;; ---------- VARIABLE ----------</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>    <span class="co">; a variable is an instance of a symbol that is associated with a value stored in memory (value assignment for a variable)</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>    <span class="co">; let =&gt; creates a local variable within the given () lexical scope, and returns the last value specified in the let scope</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>    <span class="co">; defvar =&gt; creates a global variable whose value does not change upon re-evaluation, global variable names are ** (earmuff) asterisk delimited</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>    <span class="co">; defparameter =&gt; creates a global variable whose value does change upon re-evaluation, global variable names are ** (earmuff) asterisk delimited</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a>(<span class="kw">let</span> ((me <span class="st">&quot;dance with you&quot;</span>)) me) <span class="co">; creates the local variable me and assigns the string value of &quot;dance with you&quot; to it, then evaluates to &quot;dance with you&quot;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a>(<span class="kw">defparameter</span><span class="fu"> *a</span>_var* <span class="dv">5</span>) <span class="co">; assigns the global variable *a_var* the number value of 5</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a>*a_var* <span class="co">; evaluates to 5</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true"></a><span class="co">;;; ---------- CONSTANT ----------</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true"></a>    <span class="co">; a constant stores a piece of immutable data</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true"></a>    <span class="co">; defconstant =&gt; creates a constant</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true"></a>(<span class="kw">defconstant</span><span class="fu"> PI </span><span class="fl">3.141592</span>) <span class="co">; creates the constant PI which stores the number value of 3.141592, the value is immutable and cannot be changed</span></span></code></pre></div>
+<h2 id="types">Types</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="co">;;; ---------- TYPE -----------</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a><span class="co">;; PRIMITIVE DATATYPE</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>    <span class="co">; all these below values can be assigned to variables</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>    <span class="co">; symbol =&gt; uppercased automatically upon evaluation</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a>        <span class="co">; intern =&gt; intern operator creates a symbol from a string</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a>    <span class="co">; number =&gt; integer, binary, octal, hexadecimal, single, double, ratio, complex numbers</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a>        <span class="co">; quote / &#39; =&gt; quote operator creates literal data without evaluating it (it has the &#39; shorthand)</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true"></a>    <span class="co">; boolean =&gt; any non-nil value is t (true) including expressions, nil (false) and () empty list evaluates to nil</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true"></a>    <span class="co">; char =&gt; char literals declared with #\</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true"></a>    <span class="co">; string =&gt; fixed-length char array, declared with &quot;&quot; double quotation marks</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true"></a>&#39;foo <span class="co">; evaluates to FOO, symbol literal</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true"></a>(<span class="kw">intern</span> <span class="st">&quot;abc&quot;</span>) <span class="co">; create the symbol |abc| from a string</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true"></a>(<span class="kw">intern</span> <span class="st">&quot;EFG&quot;</span>) <span class="co">; create the symbol EFG from a string</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true"></a><span class="dv">9999</span> <span class="co">; number integer</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true"></a><span class="ch">#b</span>111 ; number binary</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true"></a><span class="ch">#o</span>111 ; number octal</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true"></a><span class="ch">#x</span>111 ; number hexadecimal</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true"></a><span class="fl">3.14159</span>s0 <span class="co">; number single</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true"></a><span class="fl">3.14159</span>d0 <span class="co">; number double</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true"></a><span class="dv">1</span>/<span class="dv">2</span> <span class="co">; number ratio</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true"></a>#C(<span class="dv">1</span> <span class="dv">2</span>) <span class="co">; complex number</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true"></a></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true"></a>(<span class="kw">quote</span> (<span class="op">+</span> <span class="dv">1</span> <span class="dv">2</span>)) <span class="co">; quote creates literal data, and does not evaluate this function (+ 1 2)</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true"></a>&#39;(<span class="op">+</span> <span class="dv">1</span> <span class="dv">2</span>) <span class="co">; &#39; is the shorthand for quote, and it does the same thing, creating a literal data</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true"></a></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true"></a><span class="kw">t</span> <span class="co">; evaluates to t (true)</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true"></a><span class="kw">nil</span> <span class="co">; evaluates to nil (false)</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true"></a>() <span class="co">; evaluates to nil (false)</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true"></a></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true"></a><span class="ch">#\A</span> <span class="co">; char literal </span></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true"></a></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true"></a><span class="st">&quot;Hello, world!&quot;</span> <span class="co">; string</span></span></code></pre></div>
+<h2 id="operators">Operators</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="co">;;; ---------- OPERATOR -----------</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a><span class="co">;; ARITHMETIC OPERATORS</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a>    <span class="co">; + =&gt; addition</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a>    <span class="co">; - =&gt; subtraction</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a>    <span class="co">; * =&gt; multiplication</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a>    <span class="co">; / =&gt; division</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a>    <span class="co">; expt =&gt; exponentiation</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true"></a>    <span class="co">; mod =&gt; modulo</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true"></a>    <span class="co">; #C =&gt; creates a complex number</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true"></a>(<span class="op">+</span> <span class="dv">1</span> <span class="dv">1</span>) <span class="co">; evaluates to 2</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true"></a>(<span class="op">-</span> <span class="dv">8</span> <span class="dv">1</span>) <span class="co">; evaluates to 7</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true"></a>(<span class="op">*</span> <span class="dv">10</span> <span class="dv">2</span>) <span class="co">; evaluates to 20</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true"></a>(<span class="kw">expt</span> <span class="dv">2</span> <span class="dv">3</span>) <span class="co">; evaluates to 8</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true"></a>(<span class="kw">mod</span> <span class="dv">5</span> <span class="dv">2</span>) <span class="co">; evaluates to 1</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true"></a>(<span class="op">/</span> <span class="dv">35</span> <span class="dv">5</span>) <span class="co">; evaluates to 7</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true"></a>(<span class="op">/</span> <span class="dv">1</span> <span class="dv">3</span>) <span class="co">; evaluates to 1/3</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true"></a>(<span class="op">+</span> #C(<span class="dv">1</span> <span class="dv">2</span>) #C(<span class="dv">6</span> <span class="dv">-4</span>)) <span class="co">; evaluates to #C(7 -2)</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true"></a></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true"></a><span class="co">;; COMPARISON OPERATORS</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true"></a>    <span class="co">; = =&gt; complete equality check for numbers</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true"></a>    <span class="co">; /= =&gt; complete inequality check for numbers</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true"></a>    <span class="co">; &lt; &gt; &lt;= &gt;= are also comparison operators for numbers</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true"></a>    <span class="co">; equal =&gt; complete equality check for structure (value) for lists, strings, bit-vectors</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true"></a>    <span class="co">; eql =&gt; stricter than equal, complete equality check for object identity (whether two arguments refer to the same object in memory)</span></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true"></a></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true"></a>(<span class="op">=</span> <span class="dv">3</span> <span class="fl">3.0</span>) <span class="co">; evaluates to t</span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true"></a>(<span class="op">=</span> <span class="dv">2</span> <span class="dv">1</span>) <span class="co">; evaluates to nil</span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true"></a>(<span class="op">/=</span> <span class="dv">2</span> <span class="dv">1</span>) <span class="co">; evaluates to t</span></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true"></a>(<span class="op">&lt;</span> <span class="dv">1</span> <span class="dv">2</span>) <span class="co">; evalutes to t</span></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true"></a>(<span class="op">&gt;</span> <span class="dv">3</span> <span class="dv">1</span>) <span class="co">; evaluates to t</span></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true"></a>(<span class="op">&lt;=</span> <span class="dv">1</span> <span class="dv">1</span>) <span class="co">; evaluates to t</span></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true"></a>(<span class="op">&gt;=</span> <span class="dv">2</span> <span class="dv">1</span>) <span class="co">; evaluates to t</span></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true"></a></span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true"></a>(<span class="kw">equal</span> (<span class="kw">list</span> <span class="dv">3</span>) (<span class="kw">list</span> <span class="dv">3</span>)) <span class="co">; this evaluates to t since equal checks for structural equality and compares the value of the contents of the lists instead of their place in memory</span></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true"></a>(<span class="kw">equal</span> (<span class="kw">list</span> &#39;a &#39;b) (<span class="kw">list</span> &#39;b &#39;a)) <span class="co">; evaluates to nil</span></span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true"></a></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true"></a>(<span class="kw">eql</span> <span class="dv">3</span> <span class="dv">3</span>) <span class="co">; evaluates to t</span></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true"></a>(<span class="kw">eql</span> <span class="dv">3</span> <span class="fl">3.0</span>) <span class="co">; evaluates to nil</span></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true"></a>(<span class="kw">eql</span> (<span class="kw">list</span> <span class="dv">3</span>) (<span class="kw">list</span> <span class="dv">3</span>)) <span class="co">; this evaluates to nil since not same object in memory despite having structural equality</span></span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true"></a></span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true"></a><span class="co">;; LOGICAL OPERATORS</span></span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true"></a>    <span class="co">; and </span></span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true"></a>    <span class="co">; or</span></span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true"></a>    <span class="co">; not</span></span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true"></a></span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true"></a>(<span class="kw">and</span> <span class="kw">t</span> <span class="kw">t</span>) <span class="co">; evaluates to t</span></span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true"></a>(<span class="kw">and</span> <span class="kw">t</span> <span class="kw">nil</span>) <span class="co">; evaluates to nil</span></span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true"></a>(<span class="kw">or</span> <span class="kw">t</span> <span class="kw">nil</span>) <span class="co">; evaluates to t</span></span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true"></a>(<span class="kw">or</span> <span class="kw">nil</span> <span class="kw">nil</span>) <span class="co">; evaluates to nil</span></span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true"></a>(<span class="kw">not</span> <span class="kw">t</span>) <span class="co">; evaluates to nil</span></span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true"></a>(<span class="kw">not</span> <span class="kw">nil</span>) <span class="co">; evaluates to t</span></span></code></pre></div>
+<h2 id="control-structures">Control structures</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="co">;;; ---------- CONTROL STRUCTURE ----------</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a><span class="co">;; CONDITIONALS</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a>    <span class="co">; as established previously, only nil is false (and () empty list which evaluates to nil), everything else is true (t)</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a>    <span class="co">; conditional syntax =&gt; (if {TEST EXPRESSION} {IF TEST EXPRESSION TRUE} {ELSE EXPRESSION})</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a>    <span class="co">; cond =&gt; chains a series of conditional checks to arrive at a final result</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true"></a>    <span class="co">; typecase =&gt; switch case statement but for type of value</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true"></a>(<span class="kw">if</span> <span class="kw">t</span> </span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true"></a>    <span class="st">&quot;this is true&quot;</span> </span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true"></a>    <span class="st">&quot;this is false&quot;</span>) <span class="co">; evaluates to &quot;this is true&quot;</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true"></a>(<span class="kw">member</span> &#39;Groucho &#39;(Harpo Groucho Zeppo)) <span class="co">; evaluates to &#39;(GROUCHO ZEPPO)</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true"></a>(<span class="kw">if</span> (<span class="kw">member</span> &#39;Groucho &#39;(Harpo Groucho Zeppo)) </span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true"></a>    &#39;yep </span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true"></a>    &#39;nope) <span class="co">; evaluates to &#39;YEP since all non-nil values including &#39;(GROUCHO ZEPPO) are t</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true"></a></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true"></a>(<span class="kw">cond</span> ((<span class="op">&gt;</span> <span class="dv">2</span> <span class="dv">2</span>) (<span class="kw">error</span> <span class="st">&quot;wrong!&quot;</span>)) </span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true"></a>      ((<span class="op">&lt;</span> <span class="dv">2</span> <span class="dv">2</span>) (<span class="kw">error</span> <span class="st">&quot;wrong again!&quot;</span>)) </span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true"></a>      (<span class="kw">t</span> &#39;ok)) <span class="co">; evaluates to &#39;OK symbol since the first 2 checks were incorrect</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true"></a></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true"></a>(<span class="kw">typecase</span> <span class="dv">1</span> </span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true"></a>    (<span class="kw">string</span> :string) </span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true"></a>    (<span class="kw">integer</span> :int)) <span class="co">; evaluates to :int since 1 is of type integer</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true"></a></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true"></a><span class="co">;; LOOPS</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true"></a>    <span class="co">; loop =&gt; creates a loop iteratively that can be augmented with different keywords (:for :from :to :then :finally :across :collect)</span></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true"></a>    <span class="co">; there is no while loop implementation by default</span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true"></a></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true"></a><span class="co">;; ITERATION</span></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true"></a></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true"></a>(<span class="kw">defun</span><span class="fu"> fact </span>(n)</span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true"></a>  (<span class="kw">loop</span> :for result <span class="op">=</span> <span class="dv">1</span> :then (<span class="op">*</span> result i)</span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true"></a>     :for i :from <span class="dv">2</span> :to n</span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true"></a>     :finally (<span class="kw">return</span> result)))</span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true"></a></span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true"></a>(fact <span class="dv">5</span>) <span class="co">; evaluates to 120</span></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true"></a></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true"></a>(<span class="kw">loop</span> :for x :across <span class="st">&quot;abcd&quot;</span> :collect x) <span class="co">; evaluates to (#\a #\b #\c #\d)</span></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true"></a></span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true"></a>(<span class="kw">dolist</span> (i &#39;(<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span>))</span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true"></a>  (<span class="kw">format</span> <span class="kw">t</span> <span class="st">&quot;~A&quot;</span> i)) <span class="co">; evaluates to 1234</span></span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true"></a></span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true"></a><span class="co">;; RECURSION</span></span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true"></a>    <span class="co">; recursion allows us to achieve the same effect as an iterative loop without actually using a loop</span></span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true"></a></span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true"></a>(<span class="kw">defun</span><span class="fu"> fact </span>(n)</span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true"></a>  (<span class="kw">if</span> (<span class="op">&lt;</span> n <span class="dv">2</span>)</span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true"></a>      <span class="dv">1</span></span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true"></a>    (<span class="op">*</span> n (fact(<span class="op">-</span> n <span class="dv">1</span>))))) <span class="co">; function defintion for a recursive function</span></span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true"></a></span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true"></a>(fact <span class="dv">5</span>) <span class="co">; similarly evaluates to 120</span></span></code></pre></div>
+<h2 id="data-structures">Data structures</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="co">;;; ---------- DATA STRUCTURE -----------</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a><span class="co">;; STRUCT</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a>    <span class="co">; defstruct =&gt; creates a struct</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true"></a>    <span class="co">; defparameter =&gt; used to assign struct field values</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true"></a>(<span class="kw">defstruct</span><span class="fu"> dog </span>name breed age) <span class="co">; defining dog struct</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true"></a>(<span class="kw">defparameter</span><span class="fu"> *rover* </span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true"></a>    (make-dog : name <span class="st">&quot;rover&quot;</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true"></a>              : breed <span class="st">&quot;collie&quot;</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true"></a>              : age <span class="dv">5</span>)) <span class="co">; assigning struct field values</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true"></a>*rover* <span class="co">; evaluates to #S(DOG :NAME &quot;rover&quot; :BREED &quot;collie&quot; :AGE 5)</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true"></a>(dog-name *rover*) <span class="co">; evaluates to &quot;rover&quot;</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true"></a></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true"></a><span class="co">;; PAIR</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true"></a>    <span class="co">; cons =&gt; creates a pair</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true"></a>    <span class="co">; car =&gt; returns the head of a pair</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true"></a>    <span class="co">; cdr =&gt; returns the tail of a pair</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true"></a></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true"></a>(<span class="kw">cons</span> &#39;SUBJECT &#39;VERB) <span class="co">; evaluates to &#39;(SUBJECT . VERB)</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true"></a>(<span class="kw">car</span> (<span class="kw">cons</span> &#39;SUBJECT &#39;VERB)) <span class="co">; evaluates to SUBJECT</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true"></a>(<span class="kw">cdr</span> (<span class="kw">cons</span> &#39;SUBJECT &#39;VERB)) <span class="co">; evaluates to VERB</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true"></a></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true"></a><span class="co">;; LIST</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true"></a>    <span class="co">; every list is a linked-list comprised of cons pairs, the final element ending in a nil or &#39;() to mark the end of the list</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true"></a>    <span class="co">; list =&gt; convenient constructor to create a list </span></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true"></a>    <span class="co">; append =&gt; join two lists</span></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true"></a>    <span class="co">; concatenate =&gt; join two lists when used alongside &#39;list</span></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true"></a>    <span class="co">; mapcar =&gt; equivalent of .map</span></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true"></a>    <span class="co">; remove-if-not =&gt; equivalent of .reduce</span></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true"></a>    <span class="co">; every =&gt; checks if every list element fulfills a predicate</span></span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true"></a>    <span class="co">; some =&gt; checks if at least one list element fulfills a predicate</span></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true"></a>    <span class="co">; butlast =&gt; returns a list but removes the last element</span></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true"></a></span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true"></a>(<span class="kw">cons</span> <span class="dv">1</span> (<span class="kw">cons</span> <span class="dv">2</span> (<span class="kw">cons</span> <span class="dv">3</span> <span class="kw">nil</span>))) <span class="co">; evaluates to &#39;(1 2 3)</span></span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true"></a>(<span class="kw">list</span> <span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span>) <span class="co">; evaluates to &#39;(1 2 3)</span></span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true"></a></span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true"></a>(<span class="kw">cons</span> <span class="dv">4</span> &#39;(<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span>)) <span class="co">; this syntax therefore is the equivalent of inserting an element at the front of a list, and evaluates to &#39;(4 1 2 3)</span></span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true"></a>(<span class="kw">append</span> &#39;(<span class="dv">1</span> <span class="dv">2</span>) &#39;(<span class="dv">3</span> <span class="dv">4</span>)) <span class="co">; evaluates to &#39;(1 2 3 4)</span></span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true"></a>(<span class="kw">concatenate</span> &#39;list (<span class="dv">1</span> <span class="dv">2</span>) &#39;(<span class="dv">3</span> <span class="dv">4</span>)) <span class="co">; evaluates to &#39;(1 2 3 4)</span></span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true"></a>(<span class="kw">mapcar</span> #&#39;<span class="dv">1</span>+ &#39;(<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span>)) <span class="co">; evaluates to &#39;(2 3 4)</span></span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true"></a>(<span class="kw">mapcar</span> #&#39;+ &#39;(<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span>) &#39;(<span class="dv">10</span> <span class="dv">20</span> <span class="dv">30</span>)) <span class="co">; evaluates to &#39;(11 22 33)</span></span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true"></a>(<span class="kw">remove-if-not</span> #&#39;evenp &#39;(<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span>)) <span class="co">; evaluates to &#39;(2 4)</span></span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true"></a>(<span class="kw">every</span> #&#39;evenp &#39;(<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span>)) <span class="co">; evaluates to () which is nil</span></span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true"></a>(<span class="kw">some</span> #&#39;oddp &#39;(<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span>)) <span class="co">; evaluates to t</span></span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true"></a>(<span class="kw">butlast</span> &#39;(subject verb object))<span class="co">; evaluates to (SUBJECT VERB)</span></span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true"></a></span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true"></a><span class="co">;; VECTOR</span></span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true"></a>    <span class="co">; vector literals are fixed-length arrays</span></span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true"></a>    <span class="co">; #() =&gt; declares a vector literal</span></span>
+<span id="cb8-52"><a href="#cb8-52" aria-hidden="true"></a>    <span class="co">; concatenate =&gt; joins two vectors</span></span>
+<span id="cb8-53"><a href="#cb8-53" aria-hidden="true"></a></span>
+<span id="cb8-54"><a href="#cb8-54" aria-hidden="true"></a>#(<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span>) <span class="co">; evaluates to #(1 2 3)</span></span>
+<span id="cb8-55"><a href="#cb8-55" aria-hidden="true"></a>(<span class="kw">concatenate</span> &#39;vector #(<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span>) #(<span class="dv">4</span> <span class="dv">5</span> <span class="dv">6</span>)) <span class="co">; evaluates to #(1 2 3 4 5 6)</span></span>
+<span id="cb8-56"><a href="#cb8-56" aria-hidden="true"></a></span>
+<span id="cb8-57"><a href="#cb8-57" aria-hidden="true"></a><span class="co">;; SET</span></span>
+<span id="cb8-58"><a href="#cb8-58" aria-hidden="true"></a>    <span class="co">; sets are just lists that you call set functions on</span></span>
+<span id="cb8-59"><a href="#cb8-59" aria-hidden="true"></a>    <span class="co">; operates the same as you&#39;d expect in other languages like Python</span></span>
+<span id="cb8-60"><a href="#cb8-60" aria-hidden="true"></a>    <span class="co">; set-difference =&gt; returns the difference between two lists</span></span>
+<span id="cb8-61"><a href="#cb8-61" aria-hidden="true"></a>    <span class="co">; intersection =&gt; returns the similar elements between two lists</span></span>
+<span id="cb8-62"><a href="#cb8-62" aria-hidden="true"></a>    <span class="co">; union =&gt; returns two lists and removes duplicates</span></span>
+<span id="cb8-63"><a href="#cb8-63" aria-hidden="true"></a>    <span class="co">; adjoin =&gt; adds a specified element to the front of the list if element not already present and returns that list</span></span>
+<span id="cb8-64"><a href="#cb8-64" aria-hidden="true"></a></span>
+<span id="cb8-65"><a href="#cb8-65" aria-hidden="true"></a>(<span class="kw">set-difference</span> &#39;(<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span>) &#39;(<span class="dv">4</span> <span class="dv">5</span> <span class="dv">6</span> <span class="dv">7</span>)) <span class="co">; evaluates to (3 2 1)</span></span>
+<span id="cb8-66"><a href="#cb8-66" aria-hidden="true"></a>(<span class="kw">intersection</span> &#39;(<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span>) &#39;(<span class="dv">4</span> <span class="dv">5</span> <span class="dv">6</span> <span class="dv">7</span>)) <span class="co">; evaluates to 4</span></span>
+<span id="cb8-67"><a href="#cb8-67" aria-hidden="true"></a>(<span class="kw">union</span> &#39;(<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span>) &#39;(<span class="dv">4</span> <span class="dv">5</span> <span class="dv">6</span> <span class="dv">7</span>)) <span class="co">; evaluates to (3 2 1 4 5 6 7)</span></span>
+<span id="cb8-68"><a href="#cb8-68" aria-hidden="true"></a>(<span class="kw">adjoin</span> <span class="dv">4</span> &#39;(<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span>)) <span class="co">; evaluates to (1 2 3 4)</span></span>
+<span id="cb8-69"><a href="#cb8-69" aria-hidden="true"></a></span>
+<span id="cb8-70"><a href="#cb8-70" aria-hidden="true"></a><span class="co">;; HASH TABLE</span></span>
+<span id="cb8-71"><a href="#cb8-71" aria-hidden="true"></a>    <span class="co">; equivalent of dictionary </span></span>
+<span id="cb8-72"><a href="#cb8-72" aria-hidden="true"></a>    <span class="co">; make-hash-table =&gt; creates a hash table, used alongside defparameter</span></span>
+<span id="cb8-73"><a href="#cb8-73" aria-hidden="true"></a>    <span class="co">; setf =&gt; sets a hash value</span></span>
+<span id="cb8-74"><a href="#cb8-74" aria-hidden="true"></a>    <span class="co">; gethash =&gt; retrieves a value at a specified hash and returns both the stored value and a boolean (t, nil) depending on whether a value can be found, used for assignment and simple retrieval</span></span>
+<span id="cb8-75"><a href="#cb8-75" aria-hidden="true"></a></span>
+<span id="cb8-76"><a href="#cb8-76" aria-hidden="true"></a>(<span class="kw">defparameter</span><span class="fu"> *m* </span>(<span class="kw">make-hash-table</span>)) <span class="co">; creates a global hash table *m*</span></span>
+<span id="cb8-77"><a href="#cb8-77" aria-hidden="true"></a>(<span class="kw">setf</span> (<span class="kw">gethash</span> &#39;a *m*) <span class="dv">1</span>) <span class="co">; sets a number value of 1 to the hash &#39;a</span></span>
+<span id="cb8-78"><a href="#cb8-78" aria-hidden="true"></a>(<span class="kw">gethash</span> &#39;a *m*) <span class="co">; retrieves the value stored at the hash &#39;a in the global hash table *m*, evaluating to 1, T</span></span></code></pre></div>
+<h2 id="functions">Functions</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="co">;;; ---------- FUNCTION -----------</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a>    <span class="co">; functions always return the evaluated value of the last expression</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a>    <span class="co">; function call syntax where f is function name and x y z are arguments is (f x y z)</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a>    <span class="co">; defun =&gt; creates a function, () is a list accepting arguments to the function</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true"></a>    <span class="co">; &amp;optional =&gt; specifies optional arguments to a function</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true"></a><span class="co">;; FUNCTION CREATION</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true"></a>(<span class="kw">defun</span><span class="fu"> hello-world </span>() <span class="st">&quot;Hello World&quot;</span>) <span class="co">; creates the function hello-world that evaluates to the string &quot;Hello World&quot;</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true"></a>(hello-world) <span class="co">; evaluates to &quot;Hello World&quot;</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true"></a>(<span class="kw">defun</span><span class="fu"> hello </span>(name) (<span class="kw">format</span> <span class="kw">nil</span> <span class="st">&quot;Hello, ~A&quot;</span> name)) <span class="co">; creates the function hello that accepts the argument name</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true"></a>(hello <span class="st">&quot;Steve&quot;</span>) <span class="co">; evaluates to &quot;Hello, Steve&quot;</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true"></a></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true"></a><span class="co">;; OPTIONAL ARGUMENTS</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true"></a></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true"></a>(<span class="kw">defun</span><span class="fu"> hello </span>(name &amp;optional from)</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true"></a>  (<span class="kw">if</span> from</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true"></a>      (<span class="kw">format</span> <span class="kw">t</span> <span class="st">&quot;Hello, ~A, from ~A&quot;</span> name from)</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true"></a>      (<span class="kw">format</span> <span class="kw">t</span> <span class="st">&quot;Hello, ~A&quot;</span> name))) <span class="co">; optional function arguments (from) default to nil</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true"></a>(hello <span class="st">&quot;Jim&quot;</span> <span class="st">&quot;Alpacas&quot;</span>) <span class="co">; evaluates to &quot;Hello, Jim, from Alpacas&quot;</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true"></a></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true"></a>(<span class="kw">defun</span><span class="fu"> hello </span>(name &amp;optional (from <span class="st">&quot;The world&quot;</span>))</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true"></a>   (<span class="kw">format</span> <span class="kw">nil</span> <span class="st">&quot;Hello, ~A, from ~A&quot;</span> name from)) <span class="co">; default values (from&#39;s default value is the string &quot;The World&quot;) can also be specified </span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true"></a>(hello <span class="st">&quot;Steve&quot;</span>) <span class="co">; default value invoked, evaluates to &quot;Hello, Steve, from The world&quot;</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true"></a>(hello <span class="st">&quot;Steve&quot;</span> <span class="st">&quot;the alpacas&quot;</span>) <span class="co">; default value not invoked, evaluates to &quot;Hello, Steve, from the alpacas&quot;</span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true"></a></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true"></a><span class="co">;; ANONYMOUS FUNCTIONS</span></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true"></a>    <span class="co">; lambda =&gt; creates an anonymous function</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true"></a>    <span class="co">; funcall =&gt; calls an anonymous function with specified known arguments</span></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true"></a>    <span class="co">; apply =&gt; calls an anonymous function when arguments are not known</span></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true"></a></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true"></a>(<span class="kw">lambda</span> () <span class="st">&quot;Hello World&quot;</span>) <span class="co">; creation of anonymous function evaluates to #&lt;FUNCTION (LAMBDA ()) {1004E7818B}&gt;</span></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true"></a>(<span class="kw">funcall</span> (<span class="kw">lambda</span> () <span class="st">&quot;Hello World&quot;</span>)) <span class="co">; =&gt; evaluates to &quot;Hello World&quot;</span></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true"></a>(<span class="kw">apply</span> (<span class="kw">lambda</span> () <span class="st">&quot;Hello World&quot;</span>) <span class="kw">nil</span>) <span class="co">; evaluates to &quot;Hello World&quot;</span></span></code></pre></div>
+<h2 id="macros">Macros</h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode lisp"><code class="sourceCode commonlisp"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="co">;;; ---------- MACRO ----------</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a>    <span class="co">; macros let us extend the syntax of our language (imagine writing and calling your own functions, except that works for any other part of the language)</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true"></a>    <span class="co">; macros are incredibly complex and a lot of detail has been omitted here</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true"></a>(<span class="kw">defmacro</span><span class="fu"> while </span>(<span class="kw">condition</span> &amp;body body) <span class="co">; this macro implements a while loop in common lisp</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true"></a>  `(<span class="kw">loop</span> while ,<span class="kw">condition</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true"></a>         <span class="kw">do</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true"></a>         (<span class="kw">progn</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true"></a>            ,@body)))</span></code></pre></div>
+<h2 id="more-on">More on</h2>
+<ul>
+<li>format</li>
+<li>array</li>
+<li>adjustable vector</li>
+<li>values</li>
+<li>&amp;key</li>
+<li>classes and objects</li>
+<li>macros</li>
+<li><a href="https://lisp-lang.org/">common lisp wiki</a></li>
+<li><a href="https://gigamonkeys.com/book/">practical common lisp</a></li>
+<li><a href="http://weitz.de/cl-recipes/">lisp recipes</a></li>
+<li><a href="https://github.com/CodyReichert/awesome-cl">awesome common lisp</a></li>
+<li><a href="https://learnxinyminutes.com/docs/common-lisp/">learn common lisp in y minutes</a></li>
+<li><a href="https://learnxinyminutes.com/docs/elisp/">learn elisp in y minutes</a></li>
+</ul>
+</body>
+</html>

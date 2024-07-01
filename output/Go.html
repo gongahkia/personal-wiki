@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Go</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="go"><code>Go</code></h1>
+<p>Google’s programming language authored by the creator of C.</p>
+<h2 id="comments">Comments</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode go"><code class="sourceCode go"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co">// ---------- COMMENT ----------</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="co">// this is a single-line comment</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="co">/* </span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="co">this is a</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="co">multi-line</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a><span class="co">comment</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a><span class="co">*/</span></span></code></pre></div>
+<h2 id="printing">Printing</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode go"><code class="sourceCode go"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="co">// ---------- PRINT ----------</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>    <span class="co">// printing requires the fmt package which provides functions for file IO</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>    <span class="co">// Print =&gt; prints a string to the stdout and does not include a newline at the end of the output</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>    <span class="co">// Println =&gt; prints a string to the stdout and appends a newline to the output</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>    <span class="co">// Printf =&gt; allows for printing of formatted text augmented with format specifiers for different data types and does not include a newline at the end of the output</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a>        <span class="co">// %c =&gt; character</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a>        <span class="co">// %s =&gt; string</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a>        <span class="co">// %d =&gt; integer</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true"></a>        <span class="co">// %f =&gt; floating point</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true"></a>        <span class="co">// %t =&gt; boolean</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true"></a>        <span class="co">// %p =&gt; pointer</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true"></a>        <span class="co">// %T =&gt; returns the data type of the specified value </span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true"></a>    <span class="co">// ``` =&gt; signposts the start and end of a multi-line string (does not interpret escape sequences)</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true"></a>fmt.Print(<span class="st">&quot;apple pie but also this does not include a newline at the end and we must specify its inclusion</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true"></a>fmt.Println(<span class="st">&quot;this includes a newline at the end of the string by default&quot;</span>)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true"></a>fmt.Printf(<span class="st">&quot;the value of pi is approximately %f and we need to explicitly include a newline at the end</span><span class="ch">\n</span><span class="st">&quot;</span>, <span class="dv">3</span><span class="fl">.14159</span>)</span></code></pre></div>
+<h2 id="quickstart">Quickstart</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode go"><code class="sourceCode go"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="co">// ---------- QUICKSTART ----------</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>    <span class="co">// Go is not a semicolon language (semicolons are optional but the Go transpiler removes them and idiomatic Go does not use semicolons whatsoever)</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>    <span class="co">// every script file contains the main function within which all program code is run, acting as the entry point for the executable file</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>    <span class="co">// import =&gt; specifies library packages referenced within the present file, can include an alias in front of the package name as an alias for easier reference</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>    <span class="co">// package =&gt; required at the beginning of a script file, main is a special name declaring an executable for the main function</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a><span class="kw">package</span> main </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a><span class="kw">import</span> (</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a>    <span class="st">&quot;fmt&quot;</span> <span class="co">// part of the Go standard library</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true"></a>    <span class="st">&quot;io/ioutil&quot;</span> <span class="co">// introduces file IO utilties</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true"></a>    <span class="st">&quot;os&quot;</span> <span class="co">// library to handle OS functions </span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true"></a>    <span class="st">&quot;strconv&quot;</span> <span class="co">// string conversion library</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true"></a>    m <span class="st">&quot;math&quot;</span> <span class="co">// math library with the local alias m</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true"></a>    n <span class="st">&quot;net/http&quot;</span> <span class="co">// web server library with the local alias n</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true"></a>)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true"></a><span class="kw">func</span> main() {</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true"></a>    <span class="co">// add your code here</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true"></a>}</span></code></pre></div>
+<h2 id="variables">Variables</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode go"><code class="sourceCode go"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="co">// ---------- VARIABLE ----------</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>    <span class="co">// := =&gt; shorthand declaration and assignment operator</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>    <span class="co">// _ =&gt; catchall wildcard operator allows us to discard an unused variable, generally used within the context of functions</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a><span class="kw">var</span> name <span class="dt">string</span> <span class="co">// variable declaration</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>name = John <span class="co">// variable assignment</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a>name := <span class="st">&quot;John&quot;</span> <span class="co">// this both declares the string variable name and assigns the string value &quot;John&quot; to the variable name, being equivalent to the above two lines of code (note that variable type does not then need to be specified)</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a><span class="kw">func</span> giveTwoNames() (name1, name2 <span class="dt">string</span>) {</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true"></a>    <span class="kw">return</span> <span class="st">&quot;johnny bravo&quot;</span>, <span class="st">&quot;chuck norris&quot;</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true"></a>}</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true"></a>_, name2 := giveTwoNames() <span class="co">// the _ discards the first name returned by the giveTwoNames function, assigning the string value of &quot;chuck norris&quot; to the string variable name2</span></span></code></pre></div>
+<h2 id="types">Types</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode go"><code class="sourceCode go"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="co">// ---------- TYPE ----------</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>    <span class="co">// int =&gt; signed integer number</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a>    <span class="co">// uint =&gt; unsigned integer number</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>    <span class="co">// float32, float64 =&gt; single-precision and double-precision floating-point numbers</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>    <span class="co">// complex64, complex128 =&gt; complex numbers</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a>    <span class="co">// byte (alias for uint 8) =&gt; stores any ASCII character which are normally single-byte, &#39;&#39; single quotation marks</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a>    <span class="co">// rune (alias for int32) =&gt; stores any UNICODE character, allowing storage of multi-byte characters typically seen in characters from other languages, &#39;&#39; single quotation marks</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a>    <span class="co">// string =&gt; &quot;&quot; double quotation marks</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true"></a>    <span class="co">// bool =&gt; true, false</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true"></a>    <span class="co">// pointer =&gt; pointer type declared with * asterisk in front of the data type of the specified variable the pointer points toward</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true"></a>        <span class="co">// &amp; =&gt; address-of operator, used to retrieve the memory address of a specified variable</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true"></a>        <span class="co">// Go has garbage collection, so there is no pointer arithmetic although pointers are still valid</span></span></code></pre></div>
+<h2 id="operators">Operators</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode go"><code class="sourceCode go"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="co">// ---------- OPERATOR ----------</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a><span class="co">// ARITHMETIC OPERATORS</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a>    <span class="co">// + =&gt; addition</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a>    <span class="co">// - =&gt; subtraction</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a>    <span class="co">// * =&gt; multiplication</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a>    <span class="co">// / =&gt; division</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a>    <span class="co">// % =&gt; modulo operator</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true"></a><span class="co">// LOGICAL OPERATORS</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true"></a>    <span class="co">// &amp;&amp; =&gt; logical and</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true"></a>    <span class="co">// || =&gt; logical or</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true"></a>    <span class="co">// ! =&gt; logical not</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true"></a></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true"></a><span class="co">// COMPARISON OPERATORS</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true"></a>    <span class="co">// == =&gt; complete equality check for value and type</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true"></a>    <span class="co">// != =&gt; complete inequality check for value and type</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true"></a>    <span class="co">// &gt; &lt; &gt;= &lt;= are also comparison operators</span></span></code></pre></div>
+<h2 id="control-structures">Control structures</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode go"><code class="sourceCode go"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="co">// ---------- CONTROL STRUCTURE ----------</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>    <span class="co">// Go does not have brackets to segregate its predicate conditional and loop statements</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a><span class="co">// CONDITIONALS</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a><span class="co">// IF ELSE IF ELSE</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true"></a>x := <span class="dv">10</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true"></a><span class="kw">if</span> x &gt; <span class="dv">10</span> {</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true"></a>    fmt.Print(<span class="st">&quot;x is greater than 10&quot;</span>)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true"></a>} <span class="kw">else</span> <span class="kw">if</span> x &lt; <span class="dv">10</span> {</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true"></a>    fmt.Print(<span class="st">&quot;x is smaller than 10&quot;</span>)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true"></a>} <span class="kw">else</span> {</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true"></a>    fmt.Print(<span class="st">&quot;x is equals to 10&quot;</span>)</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true"></a>}</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true"></a></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true"></a><span class="co">// SWITCH CASE DEFAULT  </span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true"></a>    <span class="co">// note there is no break statement required for each case statement here unlike other languages</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true"></a>    <span class="co">// default =&gt; specifies the default case if logic falls through every other case statement within the switch clause</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true"></a></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true"></a>day := <span class="st">&quot;Monday&quot;</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true"></a><span class="kw">switch</span> day {</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true"></a>    <span class="kw">case</span> <span class="st">&quot;Monday&quot;</span>:</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true"></a>        fmt.Print(<span class="st">&quot;it&#39;s Monday&quot;</span>)</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true"></a>    <span class="kw">case</span> <span class="st">&quot;Tuesday&quot;</span>:</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true"></a>        fmt.Print(<span class="st">&quot;it&#39;s Tuesday&quot;</span>)</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true"></a>    <span class="kw">default</span>:</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true"></a>        fmt.Print(<span class="st">&quot;it&#39;s another day and this is the default case&quot;</span>)</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true"></a>}</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true"></a></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true"></a><span class="co">// LOOPS</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true"></a>    <span class="co">// Go has no while loop construct, but the equivalent can be implemented with for loops</span></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true"></a></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true"></a><span class="co">// FOR LOOP</span></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true"></a>    <span class="co">// for =&gt; allows for creation of simple and complex iteration-based for loops based on context of usage</span></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true"></a>    <span class="co">// range =&gt; allows for iteration over an iterable data structure (array, slice, string, map, channel) and supports multiple value deconstruction</span></span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true"></a>    <span class="co">// break and continue operate similarly as in other languages</span></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true"></a></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true"></a><span class="kw">for</span> i := <span class="dv">0</span>; i &lt; <span class="dv">5</span>; i++ { <span class="co">// a basic for range-based for loop</span></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true"></a>    fmt.Print(i)</span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true"></a>}</span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true"></a></span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true"></a>numbers := []<span class="dt">int</span>{<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>}</span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true"></a><span class="kw">for</span> index, value := <span class="kw">range</span> numbers { </span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true"></a>    fmt.Print(index, value)</span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true"></a>}</span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true"></a></span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true"></a><span class="co">// INFINITE FOR LOOP</span></span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true"></a>    <span class="co">// specifying a for loop with no predicate or loop condition will result in an infinite loop</span></span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true"></a>    <span class="co">// effectively creates a while true loop</span></span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true"></a></span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true"></a><span class="kw">for</span> {</span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true"></a>    fmt.Println(<span class="st">&quot;trapped in an infinite loop please help me&quot;</span>) </span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true"></a>}</span></code></pre></div>
+<h2 id="data-structures">Data structures</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode go"><code class="sourceCode go"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="co">// ---------- DATA STRUCTURE ----------</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a><span class="co">// ARRAY</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a>    <span class="co">// declared with [] square brackets, the array size and {} curly braces</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true"></a>    <span class="co">// fixed-size ordered sequence of elements of the same type</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true"></a>anArray := [<span class="dv">5</span>]<span class="dt">int</span>{<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>} <span class="co">// this declares and assigns an int array of size 5 elements</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true"></a><span class="co">// SLICES</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true"></a>    <span class="co">// declared with [] square brackets, no specified array size and {} curly braces</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true"></a>    <span class="co">// dynamically-sized ordered sequence of elements of the same type, a more flexible array</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true"></a>aSlice := []<span class="dt">int</span>{<span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>} <span class="co">// this declares and assigns an int slice of dynamic size</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true"></a></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true"></a><span class="co">// MAP</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true"></a>    <span class="co">// map =&gt; creates and declares a map storing key-value pairs of a specified type with [] square brackets and {} curly braces</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true"></a>    <span class="co">// : =&gt; specified the relationship between a key-value pair</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true"></a>    <span class="co">// dynamically-sized unordered sequence of key-value pairs, whose type we specify during declaration and assignment</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true"></a></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true"></a>aMap := <span class="kw">map</span>[<span class="dt">string</span>]<span class="dt">int</span>{</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true"></a>    <span class="st">&quot;cerealChicken&quot;</span>: <span class="dv">200</span>,</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true"></a>    <span class="st">&quot;thaiFish&quot;</span>: <span class="dv">300</span>,</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true"></a>    <span class="st">&quot;vegetables&quot;</span>: <span class="dv">150</span>,</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true"></a>    <span class="st">&quot;egg&quot;</span>: <span class="dv">50</span>,</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true"></a>} <span class="co">// this declares and assigns a string to int map of dynamic size</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true"></a></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true"></a><span class="co">// STRUCT</span></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true"></a>    <span class="co">// type =&gt; creates a custom data type as a type definition that can be later referenced when instances of the type are created </span></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true"></a>    <span class="co">// struct =&gt; creates and declares a struct that stores multiple values of different specified types within {} curly braces</span></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true"></a>    <span class="co">// Go&#39;s equivalent of structs in Rust, objects in Javascript, tables in Lua (Go does NOT support OOP and the closest analogue we can get are structs)</span></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true"></a></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true"></a><span class="kw">type</span> Person <span class="kw">struct</span> {</span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true"></a>    Name <span class="dt">string</span></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true"></a>    Age <span class="dt">int</span></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true"></a>} <span class="co">// this creates a type definition for the Person struct</span></span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true"></a></span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true"></a><span class="co">// STRUCT METHODS</span></span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true"></a>    <span class="co">// declare a specified method on a struct, where the attributes and methods of a struct instance can be called via . dot syntax</span></span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true"></a>    <span class="co">// there are 2 kinds of struct methods</span></span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true"></a>        <span class="co">// 1. VALUE RECEIVER METHOD =&gt; func (structAlias structName) methodName() { methodBody }</span></span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true"></a>            <span class="co">// struct method operates on a COPY of the struct</span></span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true"></a>            <span class="co">// method DOES NOT modify struct state</span></span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true"></a>            <span class="co">// modifications made to the struct within the method are LOCAL to the method </span></span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true"></a>        <span class="co">// 2. POINTER RECEIVER METHOD =&gt; func (structAlias *structName) methodName() { methodBody } </span></span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true"></a>            <span class="co">// struct method operates DIRECTLY ON that original struct</span></span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true"></a>            <span class="co">// method MODIFIES struct state</span></span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true"></a>            <span class="co">// modifications made to the struct within the method WILL MODIFY original struct state</span></span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true"></a></span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true"></a><span class="kw">func</span> (p Person) Introduce() {</span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true"></a>    fmt.Printf(<span class="st">&quot;Hello, my name is %s and I am %d years old.</span><span class="ch">\n</span><span class="st">&quot;</span>, p.Name, p.Age)</span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true"></a>} <span class="co">// this declares the value receiver Introduce method on the Person struct, appropriate since the method DOES NOT need to modify struct state at all (note the syntax to declare the function as a method on the struct Person)</span></span>
+<span id="cb8-52"><a href="#cb8-52" aria-hidden="true"></a></span>
+<span id="cb8-53"><a href="#cb8-53" aria-hidden="true"></a><span class="kw">func</span> (p *Person) DrinkFromFountainOfYouth() {</span>
+<span id="cb8-54"><a href="#cb8-54" aria-hidden="true"></a>    p.Age -= <span class="dv">10</span>;</span>
+<span id="cb8-55"><a href="#cb8-55" aria-hidden="true"></a>    fmt.Printf(<span class="st">&quot;You have drank from the fountain of youth and you are now %d years old.</span><span class="ch">\n</span><span class="st">&quot;</span>, p.Age)</span>
+<span id="cb8-56"><a href="#cb8-56" aria-hidden="true"></a>} <span class="co">// this declares the pointer receiver DrinkFromFountainOfYouth method on the Person struct, appropriate since the method DOES need to modify struct state (note the syntax to declare the function as a method on the struct Person)</span></span>
+<span id="cb8-57"><a href="#cb8-57" aria-hidden="true"></a></span>
+<span id="cb8-58"><a href="#cb8-58" aria-hidden="true"></a><span class="kw">func</span> main(){</span>
+<span id="cb8-59"><a href="#cb8-59" aria-hidden="true"></a></span>
+<span id="cb8-60"><a href="#cb8-60" aria-hidden="true"></a>    <span class="co">// --- actual execution of code ---</span></span>
+<span id="cb8-61"><a href="#cb8-61" aria-hidden="true"></a></span>
+<span id="cb8-62"><a href="#cb8-62" aria-hidden="true"></a>    john := Person{ <span class="co">// this declares and assigns an instance of the Person struct to the variable john</span></span>
+<span id="cb8-63"><a href="#cb8-63" aria-hidden="true"></a>        Name: <span class="st">&quot;John&quot;</span>,</span>
+<span id="cb8-64"><a href="#cb8-64" aria-hidden="true"></a>        Age: <span class="dv">30</span>,</span>
+<span id="cb8-65"><a href="#cb8-65" aria-hidden="true"></a>    }</span>
+<span id="cb8-66"><a href="#cb8-66" aria-hidden="true"></a></span>
+<span id="cb8-67"><a href="#cb8-67" aria-hidden="true"></a>    john.Introduce(); <span class="co">// calls the Introduce method on the john instance </span></span>
+<span id="cb8-68"><a href="#cb8-68" aria-hidden="true"></a>    john.DrinkFromFountainOfYouth(); <span class="co">// calls the DrinkFromFountainOfYouth method on the john instance, deaging john 10 years</span></span>
+<span id="cb8-69"><a href="#cb8-69" aria-hidden="true"></a></span>
+<span id="cb8-70"><a href="#cb8-70" aria-hidden="true"></a>}</span>
+<span id="cb8-71"><a href="#cb8-71" aria-hidden="true"></a></span>
+<span id="cb8-72"><a href="#cb8-72" aria-hidden="true"></a><span class="co">// CHANNEL</span></span>
+<span id="cb8-73"><a href="#cb8-73" aria-hidden="true"></a>    <span class="co">// backbone of concurrent programming that affords communication between goroutines to synchronise process execution </span></span>
+<span id="cb8-74"><a href="#cb8-74" aria-hidden="true"></a>    <span class="co">// make(chan desiredDatatype) =&gt; creates an unbuffered channel of a specified datatype </span></span>
+<span id="cb8-75"><a href="#cb8-75" aria-hidden="true"></a>    <span class="co">// make(chan desiredDatatype, bufferCapacity) =&gt; creates a buffered channel of a specified datatype with a specified buffer capacity</span></span>
+<span id="cb8-76"><a href="#cb8-76" aria-hidden="true"></a>    <span class="co">// &lt;- =&gt; sends and receives data through channels, arrow direction indicating flow of data from destination to origin</span></span>
+<span id="cb8-77"><a href="#cb8-77" aria-hidden="true"></a>    <span class="co">// close() =&gt; closes a specified channel per the given channel name</span></span>
+<span id="cb8-78"><a href="#cb8-78" aria-hidden="true"></a>    <span class="co">// select { case ... } =&gt; equivalent of switch-case statements but select is specifically designed for concurrent programming, to allow waiting on multiple channel simultaneously, where the select clause MATCHES one case when the communication operation (sending or receiving data) is ready to proceed</span></span>
+<span id="cb8-79"><a href="#cb8-79" aria-hidden="true"></a>        <span class="co">// default =&gt; similarly specifies the default case if logic falls through every other case statement within the select clause</span></span>
+<span id="cb8-80"><a href="#cb8-80" aria-hidden="true"></a></span>
+<span id="cb8-81"><a href="#cb8-81" aria-hidden="true"></a>ch := <span class="bu">make</span>(<span class="kw">chan</span> <span class="dt">int</span>) <span class="co">// creates an unbuffered channel of integers and assigns it to the channel variable ch</span></span>
+<span id="cb8-82"><a href="#cb8-82" aria-hidden="true"></a>ch := <span class="bu">make</span>(<span class="kw">chan</span> <span class="dt">int</span>, <span class="dv">3</span>) <span class="co">// creates a buffered channel with a buffer capacity of 3 integers and assigns it to the channel variable ch</span></span>
+<span id="cb8-83"><a href="#cb8-83" aria-hidden="true"></a></span>
+<span id="cb8-84"><a href="#cb8-84" aria-hidden="true"></a>ch &lt;- <span class="dv">42</span> <span class="co">// sends data (integer 42) to the channel variable ch</span></span>
+<span id="cb8-85"><a href="#cb8-85" aria-hidden="true"></a>value := &lt;-ch <span class="co">// receives data from a channel variable ch and returns that data to the variable value</span></span>
+<span id="cb8-86"><a href="#cb8-86" aria-hidden="true"></a></span>
+<span id="cb8-87"><a href="#cb8-87" aria-hidden="true"></a><span class="bu">close</span>(ch) <span class="co">// closes the channel variable ch</span></span>
+<span id="cb8-88"><a href="#cb8-88" aria-hidden="true"></a></span>
+<span id="cb8-89"><a href="#cb8-89" aria-hidden="true"></a><span class="kw">select</span> { <span class="co">// imagine the channels ch1 and ch2 exist</span></span>
+<span id="cb8-90"><a href="#cb8-90" aria-hidden="true"></a>    <span class="kw">case</span> msg1 := &lt;-ch1:</span>
+<span id="cb8-91"><a href="#cb8-91" aria-hidden="true"></a>        fmt.Println(<span class="st">&quot;Received message from ch1:&quot;</span>, msg1)</span>
+<span id="cb8-92"><a href="#cb8-92" aria-hidden="true"></a>    <span class="kw">case</span> msg2 := &lt;-ch2:</span>
+<span id="cb8-93"><a href="#cb8-93" aria-hidden="true"></a>        fmt.Println(<span class="st">&quot;Received message from ch2:&quot;</span>, msg2)</span>
+<span id="cb8-94"><a href="#cb8-94" aria-hidden="true"></a>    <span class="kw">default</span>:</span>
+<span id="cb8-95"><a href="#cb8-95" aria-hidden="true"></a>        fmt.Println(<span class="st">&quot;No channel ready&quot;</span>)</span>
+<span id="cb8-96"><a href="#cb8-96" aria-hidden="true"></a>} <span class="co">// whichever channel&#39;s communication operation of receiving data is first ready will be matched and have its resulting predicate logic executed</span></span></code></pre></div>
+<h2 id="functions">Functions</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode go"><code class="sourceCode go"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="co">// ---------- FUNCTION ----------</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a>    <span class="co">// functions are first-class citizens in Go, allowing for implementation of higher-order functions common in functional programming </span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a>    <span class="co">// func =&gt; declares and creates a function, and function definition specifies the parameter and return type (more than one return value to be specified within brackets)</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a>    <span class="co">// return =&gt; specifies the return expression, functions can have multiple return values and named return values</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true"></a><span class="kw">func</span> add(a, b <span class="dt">int</span>) <span class="dt">int</span> { <span class="co">// specifies that both parameters a and b are of type int, and the function&#39;s type signature specifies it returns an int</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true"></a>    <span class="kw">return</span> a + b</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true"></a>}</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true"></a><span class="kw">func</span> receiveMultiple(x, y <span class="dt">int</span>) (sum, prod <span class="dt">int</span>) { <span class="co">// specifies that both parameters x and y are of type int, and returns two named values of type int</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true"></a>    <span class="kw">return</span> x + y, x * y <span class="co">// returns two values, allowing for immediate shorthand assignment via deconstruction when the function is called</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true"></a>}</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true"></a>sum, product := receiveMultiple(<span class="dv">1</span>,<span class="dv">2</span>) <span class="co">// this assigns the two results returned by the receiveMultiple function to the sum and product variable respectively</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true"></a></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true"></a><span class="co">// FUNCTION LITERALS</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true"></a>    <span class="co">// anonymous functions, another cornerstone of functional programming</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true"></a>    <span class="co">// functionDefinition(){ functionBody }(functionArguments) =&gt; defines and calls function literals immediately</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true"></a></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true"></a>isXBig := <span class="kw">func</span>() <span class="dt">bool</span> {</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true"></a>    <span class="kw">return</span> x &gt; <span class="dv">10000</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true"></a>} <span class="co">// function literals are effectively closures</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true"></a></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true"></a>fmt.Println(<span class="st">&quot;Add + double these two numbers: &quot;</span>, </span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true"></a>    <span class="kw">func</span> (a, b <span class="dt">int</span>) <span class="dt">int</span> {</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true"></a>        <span class="kw">return</span> (a + b) * <span class="dv">2</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true"></a>    }(<span class="dv">10</span>, <span class="dv">2</span>) <span class="co">// immediately calls the function literal inline by providing it with the arguments a = 10 and b = 2</span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true"></a>) <span class="co">// prints &quot;Add + double these two numbers: 24&quot; to the stdout</span></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true"></a></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true"></a><span class="co">// DEFER</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true"></a>    <span class="co">// defer =&gt; pushes a function call onto a stack, where stacked functions are executed in last in, first out (LIFO) order after the surrounding parent function the defer statement is called within has been returned but before it exits</span></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true"></a>    <span class="co">// normally used to close files, unlock mutexes, release resources and run any cleanup actions after a function has been executed but before it exits</span></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true"></a></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true"></a><span class="kw">func</span> usingDefer() (ok <span class="dt">bool</span>) {</span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true"></a>    <span class="kw">defer</span> fmt.Println(<span class="st">&quot;deferred statements execute in LIFO order only after the parent function usingDefer() has been fully executed.&quot;</span>)</span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true"></a>    <span class="kw">defer</span> fmt.Println(<span class="st">&quot;this line is being printed first because&quot;</span>)</span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true"></a>    <span class="kw">return</span> <span class="ot">true</span> <span class="co">// after this value is returned, the above 2 lines execute in reverse lifo order</span></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true"></a>}</span></code></pre></div>
+<h2 id="more-on">More on</h2>
+<ul>
+<li>ok</li>
+<li>pointer</li>
+<li>interface</li>
+<li>Goroutines</li>
+<li><a href="https://go.dev/play/p/tnWMjr16Mm">go playground</a></li>
+<li><a href="https://gobyexample.com/">go by example</a></li>
+<li><a href="https://go.dev/doc/">go documentation</a></li>
+<li><a href="https://learnxinyminutes.com/docs/go/">learn go in y minutes</a></li>
+<li><a href="https://youtube.com/playlist?list=PLEcwzBXTPUE9V1o8mZdC9tNnRZaTgI-1P&amp;si=s8757iY2O_h2H6GM">golang university 101</a></li>
+<li><a href="https://youtube.com/playlist?list=PLEcwzBXTPUE_5m_JaMXmGEFgduH8EsuTs&amp;si=G_H7npEdjK5EB-KJ">golang university 201</a></li>
+<li><a href="https://youtube.com/playlist?list=PLEcwzBXTPUE8KvXRFmmfPEUmKoy9LfmAf&amp;si=1Y7Bn8Ez_k7lt1Ds">golang university 301</a></li>
+</ul>
+</body>
+</html>
