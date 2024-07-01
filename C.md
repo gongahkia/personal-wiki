@@ -361,5 +361,6 @@ foo[0] = 'a'; // this is legal C code, char array foo variable now stores the ch
 * enums
 * macros
 * function prototypes
-* [c programming language book](https://kremlin.cc/k&r.pdf)
+* [c documentation](https://devdocs.io/c/)
+* [learn c in y minutes](https://learnxinyminutes.com/docs/c/)
 * [learn c the hard way](https://learncodethehardway.org/c/)
