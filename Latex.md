@@ -1,6 +1,6 @@
 # `LaTeX`
 
-LaTeX allows for the typesetting of academic articles in the realm of math and science.
+$\LaTeX$ allows for the typesetting of academic articles in the realm of math and science.
 
 ## Comments
 
