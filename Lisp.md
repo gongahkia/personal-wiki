@@ -371,7 +371,7 @@ nil ; evaluates to nil (false)
 * &key
 * classes and objects
 * macros
-* [common lisp wiki](https://lisp-lang.org/)
+* [lisp-lang.org](https://lisp-lang.org/)
 * [practical common lisp](https://gigamonkeys.com/book/)
 * [lisp recipes](http://weitz.de/cl-recipes/)
 * [awesome common lisp](https://github.com/CodyReichert/awesome-cl)
