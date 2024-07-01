@@ -1,6 +1,6 @@
-# `Typescript`
+# `TypeScript`
 
-Javascript with type safety.
+JavaScript with type safety.
 
 ## Installation and Usage
 

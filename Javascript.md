@@ -1,4 +1,4 @@
-# `Javascript`
+# `JavaScript`
 
 ## Comments
 
@@ -279,7 +279,25 @@ function myOtherFunction(thing) {
 }
 ```
 
+## Flavours
+
+JavaScript also comes in many other flavours.
+
+* TypeScript
+* Elm
+* CoffeeScript
+* PureScript
+* PogoScript
+* [etc.](https://gist.github.com/matthiasak/c3c9c40d0f98ca91def1)
+
 ## More on
 
 * constructors
 * prototypes
+* [javascript documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [learn javascript in y minutes](https://learnxinyminutes.com/docs/javascript/)
+* [learn typescript in y minutes](https://learnxinyminutes.com/docs/typescript/)
+* [learn elm in y minutes](https://learnxinyminutes.com/docs/elm/)
+* [learn coffeescript in y minutes](https://learnxinyminutes.com/docs/coffeescript/)
+* [learn purescript in y minutes](https://learnxinyminutes.com/docs/purescript/)
+* [learn pogoscript in y minutes](https://learnxinyminutes.com/docs/pogo/)
