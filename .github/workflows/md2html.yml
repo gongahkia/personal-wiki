@@ -34,10 +34,19 @@ jobs:
             fi
           done
 
+      - name: Generate index.html
+        run: |
+          echo "<html><head><title>Converted HTML Pages</title></head><body><h1>List of Converted HTML Pages</h1><ul>" > index.html
+          for htmlfile in output/*.html; do
+            filename=$(basename "$htmlfile")
+            echo "<li><a href=\"output/$filename\">$filename</a></li>" >> index.html
+          done
+          echo "</ul></body></html>" >> index.html
+
       - name: Commit and push changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add output/
-          git commit -m "Compile Markdown to HTML"
+          git add output/ index.html
+          git commit -m "Compiled all markdown notes to HTML and created index.html"
           git push
