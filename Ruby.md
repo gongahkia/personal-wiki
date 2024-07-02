@@ -425,8 +425,11 @@ end
 * splat operator
 * [try ruby](https://try.ruby-lang.org/)
 * [ruby documentation](https://www.ruby-lang.org/en/documentation/quickstart/)
+* [learn ruby in y minutes](https://learnxinyminutes.com/docs/ruby/)
 * [rubygems package manager](https://rubygems.org/)
 * [ruby version manager](https://rvm.io/)
-* [bundler for ruby dependency management](https://bundler.io/)
-* [ruby ecosystem](https://learnxinyminutes.com/docs/ruby-ecosystem/)
 * [rubymotion for ios development](http://www.rubymotion.com/)
+* [bundler for ruby dependency management](https://bundler.io/)
+* [learn ruby's ecosystem in y minutes](https://learnxinyminutes.com/docs/ruby-ecosystem/)
+* [haml documentation](https://haml.info/docs.html)
+* [learn haml in y minutes](https://learnxinyminutes.com/docs/haml/)
