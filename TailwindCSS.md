@@ -6,7 +6,7 @@ Powerful inline styling with CSS classes.
 
 * no CSS rules, instead pre-defined utility classes are applied to style each HTML element
 * each Tailwind CSS class corresponds to a single CSS property (or group of related properties) via atomic classes affording minute tweaks in styling
-* responsive design built-in
+* responsive design is built-in
 * supports rapid iteration and flexible development
 * stay within your HTML file throughout production
 
@@ -23,8 +23,6 @@ Powerful inline styling with CSS classes.
   <title>watermelon Tailwind CSS pineapple</title>
   <script src="https://cdn.tailwindcss.com"></script> <!-- include Tailwind CSS play CDN for quick development, not for final production -->
 </head>
-
-<!-- use of Tailwind CSS starts here -->
 
 <body class="bg-gray-100"> 
 <!-- bg-gray-100 => sets the background color of the body to a light gray -->
@@ -83,3 +81,4 @@ Powerful inline styling with CSS classes.
 * [tailwindcss.com](https://tailwindcss.com/)
 * [tailwind css documentation](https://tailwindcss.com/docs/installation)
 * [going into production with tailwind css](https://tailwindcss.com/docs/optimizing-for-production)
+* [why use tailwind css](https://www.reddit.com/r/webdev/comments/p4sfrh/why_is_tailwind_so_popular/)
