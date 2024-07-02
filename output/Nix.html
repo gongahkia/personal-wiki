@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Nix</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="nix"><code>Nix</code></h1>
+<p>Powerful Linux and Unix package manager for reliable, reproducible configurations.</p>
+<h2 id="comments">Comments</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode nix"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co"># ----- COMMENT -----</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="co"># this is a single-line comment</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="ex">/*</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="ex">this</span> is a</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="ex">multi-line</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a><span class="ex">comment</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a><span class="ex">*/</span></span></code></pre></div>
+<h2 id="printing">Printing</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode nix"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="co"># ----- PRINTING -----</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>    <span class="co"># builtins.trace =&gt; receives a string argument and a second optional argument that is then printed to the stdout and includes a newline depending on the arguments provided</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a><span class="ex">builtins.trace</span> <span class="st">&quot;this does not have a newline&quot;</span> <span class="st">&quot;&quot;</span><span class="kw">;</span> # <span class="ex">specifying</span> an empty string as the second argument will omit the newline </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a><span class="ex">builtins.trace</span> <span class="st">&quot;this has a newline but only because we explicitly specified it\n&quot;</span><span class="kw">;</span></span></code></pre></div>
+<h2 id="quickstart">Quickstart</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode nix"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="co"># ----- QUICKSTART -----</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>    <span class="co"># pure functional language, where everything is an expression and every expression must evaluate to a single value</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>    <span class="co"># all values in Nix are immutable by default</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>    <span class="co"># powerful, expressive syntax used for configuration management, package deployment, and software reproducibility within NixOS</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>    <span class="co"># semicolon-delimited language</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>    <span class="co"># let =&gt; provides variable binding of an immutable value to the specified named variable identifier</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a><span class="co"># --- EXAMPLE NIX PACKAGE ---</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a>    <span class="co"># below is an example of a nix package definition</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true"></a><span class="kw">{</span> <span class="ex">stdenv</span>, fetchurl <span class="kw">}</span>:</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true"></a><span class="ex">stdenv.mkDerivation</span> {</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true"></a>    <span class="ex">name</span> = <span class="st">&quot;hello-2.10&quot;</span><span class="kw">;</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true"></a>    <span class="ex">src</span> = fetchurl {</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true"></a>        <span class="ex">url</span> = <span class="st">&quot;http://ftp.gnu.org/gnu/hello/hello-2.10.tar.gz&quot;</span><span class="kw">;</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true"></a>        <span class="ex">sha256</span> = <span class="st">&quot;0ssi1wpaf7plaswqqjwigppsg5fyh99vdlb9kzl7c9lng89nd3fi&quot;</span><span class="kw">;</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true"></a>    };</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true"></a>    <span class="ex">buildInputs</span> = [ ]<span class="kw">;</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true"></a>    <span class="ex">meta</span> = {</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true"></a>        <span class="ex">description</span> = <span class="st">&quot;A program that produces a familiar, friendly greeting&quot;</span><span class="kw">;</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true"></a>        <span class="ex">license</span> = stdenv.lib.licenses.gpl3<span class="kw">;</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true"></a>    };</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true"></a>}</span></code></pre></div>
+<h2 id="types">Types</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode nix"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="co"># ----- TYPE -----</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>    <span class="co"># Integer =&gt; stores an integer number value</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>    <span class="co"># Float =&gt; stores a floating-point number value</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>    <span class="co"># String =&gt; stores a string value declared within &quot;&quot; double quotation marks, note that characters are handled as single-character long strings</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>    <span class="co"># Boolean =&gt; true, false</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>    <span class="co"># null =&gt; represents the absence of a value, the equivalent of void in other programming languages</span></span></code></pre></div>
+<h2 id="operators">Operators</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode nix"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="co"># ----- OPERATOR -----</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a><span class="co"># ----- ARITHMETIC OPERATORS ----- </span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a><span class="ex">+</span> # addition</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a><span class="ex">-</span> # subtraction</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a><span class="ex">*</span> # multiplication</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a><span class="ex">/</span> <span class="co"># division</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true"></a><span class="ex">%</span> # modulo</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true"></a><span class="co"># ----- COMPARISON OPERATORS -----</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true"></a>== # <span class="bu">complete</span> equality check for both value and type</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true"></a>!= # <span class="bu">complete</span> inequality check for both value and type</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true"></a><span class="op">&gt;</span> # <span class="ex">comparison</span> operator</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true"></a><span class="op">&lt;</span> # <span class="ex">comparison</span> operator</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true"></a><span class="op">&gt;</span>= # <span class="ex">comparison</span> operator</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true"></a><span class="op">&lt;</span>= # <span class="ex">comparison</span> operator</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true"></a><span class="co"># ----- LOGICAL OPERATORS -----</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true"></a></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true"></a><span class="kw">&amp;&amp;</span> # <span class="ex">logical</span> and</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true"></a><span class="kw">||</span> # <span class="ex">logical</span> or</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true"></a>! # <span class="ex">logical</span> not</span></code></pre></div>
+<h2 id="control-structures">Control structures</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode nix"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="co"># ----- CONTROL STRUCTURE -----</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a><span class="co"># --- CONDITIONALS ---</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a><span class="ex">IF</span> ELSE IF ELSE</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a><span class="bu">let</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a>    <span class="ex">age</span> = 25<span class="kw">;</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true"></a><span class="kw">in</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true"></a>    <span class="kw">if</span> <span class="ex">age</span> <span class="op">&lt;</span> 13 then</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true"></a>        <span class="st">&quot;Child&quot;</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true"></a>    <span class="kw">else</span> <span class="kw">if</span> <span class="ex">age</span> <span class="op">&lt;</span> 20 then</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true"></a>        <span class="st">&quot;Teenager&quot;</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true"></a>    <span class="kw">else</span> <span class="kw">if</span> <span class="ex">age</span> <span class="op">&lt;</span> 65 then</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true"></a>        <span class="st">&quot;Adult&quot;</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true"></a>    <span class="kw">else</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true"></a>        <span class="st">&quot;Senior&quot;</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true"></a></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true"></a><span class="co"># --- LOOPS ---</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true"></a>    <span class="co"># there are no traditional loop constructs in Nix as in other programming languages</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true"></a>    <span class="co"># instead, Nix relies on recursion and other higher-order functions to handle iteration and traversal of iterable data structures</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true"></a></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true"></a><span class="co"># RECURSION</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true"></a></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true"></a><span class="bu">let</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true"></a>    <span class="ex">factorial</span> = n: if n == 0 then 1 else n * factorial (n - 1);</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true"></a><span class="kw">in</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true"></a>    <span class="ex">factorial</span> 5</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true"></a></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true"></a><span class="co"># HIGHER-ORDER FUNCTIONS</span></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true"></a>    <span class="co"># below are examples of some higher-order functions in Nix such as </span></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true"></a>        <span class="co"># map =&gt; applies a specified function to each element of the iterable data structure</span></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true"></a>        <span class="co"># filter =&gt; selects elements of a list that satisfy the specified predicate condition</span></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true"></a>        <span class="co"># fold =&gt; reduces a list to a single value using a specified binary function, the equivalent of reduce in other programming languages</span></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true"></a></span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true"></a><span class="bu">let</span></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true"></a>    <span class="ex">myList</span> = [1 2 3 4 5]<span class="kw">;</span></span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true"></a>    <span class="ex">square</span> = x: x * x<span class="kw">;</span></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true"></a>    <span class="ex">squaredList</span> = map square myList<span class="kw">;</span></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true"></a><span class="kw">in</span></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true"></a>    <span class="ex">squaredList</span> </span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true"></a></span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true"></a><span class="bu">let</span></span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true"></a>    <span class="ex">myList</span> = [1 2 3 4 5]<span class="kw">;</span></span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true"></a>    <span class="ex">isEven</span> = x: x % 2 == 0<span class="kw">;</span></span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true"></a>    <span class="ex">evenList</span> = filter isEven myList<span class="kw">;</span></span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true"></a><span class="kw">in</span></span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true"></a>    <span class="ex">evenList</span></span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true"></a></span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true"></a><span class="bu">let</span></span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true"></a>    <span class="ex">myList</span> = [1 2 3 4 5]<span class="kw">;</span></span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true"></a>    <span class="fu">sum</span> = foldl (acc: x: acc + x) <span class="ex">0</span> myList<span class="kw">;</span></span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true"></a><span class="kw">in</span></span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true"></a>    <span class="fu">sum</span> </span></code></pre></div>
+<h2 id="data-structures">Data structures</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode nix"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="co"># ----- DATA STRUCTURE -----</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>    <span class="co"># list =&gt; fixed-size immutable ordered collection of elements of multiple datatypes, declared within [] square brackets, featuring lazy evaluation</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a>    <span class="co"># attribute set =&gt; fixed-size immutable unordered collection of key-value pairs with string keys and values of multiple datatypes, the equivalent of dictionaries in Python and maps in other programming langauges, declared within {} curly braces</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a><span class="bu">let</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a>    <span class="ex">anExampleAttributeSet</span> = {</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true"></a>        <span class="ex">name</span> = <span class="st">&quot;example&quot;</span><span class="kw">;</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true"></a>        <span class="ex">version</span> = <span class="st">&quot;1.0&quot;</span><span class="kw">;</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true"></a>    };</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true"></a><span class="kw">in</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true"></a>    <span class="ex">anExampleAttributeSet.name</span> # evaluates to <span class="st">&quot;example&quot;</span> string literal</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true"></a><span class="bu">let</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true"></a>    <span class="ex">anExampleList</span> = [1 2 3]<span class="kw">;</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true"></a><span class="kw">in</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true"></a>    <span class="ex">anExampleList</span> # evaluates to [1 2 3] list literal</span></code></pre></div>
+<h2 id="functions">Functions</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode nix"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="co"># ----- FUNCTION -----</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a>    <span class="co"># &lt;functionName&gt; = &lt;functionParameter1Name : functionParameter2Name : etc...&gt; : &lt;functionDefinitionBody&gt; =&gt; definition and declaration of a named function</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a>    <span class="co"># as a functional language, Nix features implicit return of the last expression within a function body</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true"></a><span class="ex">myFunction</span> = x: x + 1<span class="kw">;</span> # <span class="ex">named</span> function with a single argument</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true"></a><span class="ex">myFunction</span> 5 # evaluates to 6</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true"></a><span class="ex">myAdd</span> = a: b: a + b<span class="kw">;</span> # <span class="ex">named</span> function with multiple arguments</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true"></a><span class="ex">myAdd</span> 2 3 # evaluates to 5</span></code></pre></div>
+<h2 id="more-on">More on</h2>
+<ul>
+<li><a href="https://nixos.org/">nixos.org</a></li>
+<li><a href="https://nix.dev/reference/nix-manual.html">nix documentation</a></li>
+<li><a href="https://learnxinyminutes.com/docs/nix/">learn nix in y minutes</a></li>
+<li><a href="https://zero-to-nix.com/">zero to nix</a></li>
+<li><a href="https://ops.functionalalgebra.com/nix-by-example/">nix by example</a></li>
+<li><a href="https://web.archive.org/web/20210121042658/https://ebzzry.io/en/nix/#nix">a gentle introduction to the nix family</a></li>
+</ul>
+</body>
+</html>
