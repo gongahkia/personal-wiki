@@ -50,8 +50,8 @@ createApp(App).mount('#app')
 
 ## More on
 
-* [install vite](https://vitejs.dev/guide/#scaffolding-your-first-vite-project)
 * [vitejs.dev](https://vitejs.dev/)
+* [install vite](https://vitejs.dev/guide/#scaffolding-your-first-vite-project)
 * [vite documentation](https://devdocs.io/vite/)
 * [what's the hype with vite](https://www.reddit.com/r/webdev/comments/z4rbe4/whats_the_hype_with_vite/)
 * [vuejs.org](https://vuejs.org/)
