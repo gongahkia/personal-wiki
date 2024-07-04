@@ -7,13 +7,13 @@ Lightweight modeling language for software modeling and language specification.
 Alloy comes in two parts.
 
 1. [Alloy language](#alloy-language)
-  * file extension `.als`
-  * declarative language that specifies what a system should do
-  * runs on relational logic with models expressed as sets and relations
-  * intuitively expresses complex structures and behaviors
+    * file extension `.als`
+    * declarative language that specifies what a system should do
+    * runs on relational logic with models expressed as sets and relations
+    * intuitively expresses complex structures and behaviors
 2. [Alloy analyser](#alloy-analyser)
-  * tool that checks the properties of a user-specified model
-  * visualization capabilities
+    * tool that checks the properties of a user-specified model
+    * visualization capabilities
 
 ## Alloy language
 
@@ -88,9 +88,9 @@ Alloy comes in two parts.
 // ----- SPECIFYING THE MODEL -----
 
 // --- EXAMPLE 1: SMALL EXPRESSION LANGUAGE --- 
-  // abstract syntax definition for a small expression-based language with Expression, Literal and BinaryOperation
-  // specify a constraint that no binary operation has the same left and right expression.
-  // assert and check there are no cyclic expressions within the language
+    // abstract syntax definition for a small expression-based language with Expression, Literal and BinaryOperation
+    // specify a constraint that no binary operation has the same left and right expression.
+    // assert and check there are no cyclic expressions within the language
 
 // ABSTRACT SYNTAX DEFINITIONS (via signatures, fields and extends)
 
@@ -117,14 +117,14 @@ assert NoCyclicExpressions {
 check NoCyclicExpressions
 
 // --- EXAMPLE 2: FILE SYSTEM --- 
-  // abstract syntax definition for a file
-  // abstract syntax definition for a folder, where each folder can contain a set of files or subfolders
-  // specify a constraint that no folder can be its own subfolder
-  // specify a constraint that there should be no cyclical folder structure
-  // predicate check to determine whether a folder contains a specific file
-  // assertion check to determine that no file exists without being contained in some folder
-  // assert and check there are no cyclic expressions within the language
-  // runs the assertion to check the model with the scope of 5 folders and 10 files
+    // abstract syntax definition for a file
+    // abstract syntax definition for a folder, where each folder can contain a set of files or subfolders
+    // specify a constraint that no folder can be its own subfolder
+    // specify a constraint that there should be no cyclical folder structure
+    // predicate check to determine whether a folder contains a specific file
+    // assertion check to determine that no file exists without being contained in some folder
+    // assert and check there are no cyclic expressions within the language
+    // runs the assertion to check the model with the scope of 5 folders and 10 files
 
 // ABSTRACT SYNTAX DEFINITIONS (via signatures and fields)
 
@@ -157,12 +157,12 @@ assert AllFilesInFolders {
 check AllFilesInFolders for 5 Folder, 10 File
 
 // --- EXAMPLE 3: SMALL SOCIAL NETWORK ---
-  // abstract syntax definition for a Person
-  // specify a constraint that no person is their own friend
-  // specify a constraint that friendship is always mutual
-  // helper function to retrieve the number of friends a person has
-  // assert and check whether two given persons are friends
-  // assert and check there are no cyclic friendships
+    // abstract syntax definition for a Person
+    // specify a constraint that no person is their own friend
+    // specify a constraint that friendship is always mutual
+    // helper function to retrieve the number of friends a person has
+    // assert and check whether two given persons are friends
+    // assert and check there are no cyclic friendships
 
 // ABSTRACT SYNTAX DEFINITIONS (via signatures and fields)
 
@@ -211,8 +211,8 @@ check NoCyclicFriendship for 5
 3. Set the scope of the check under the *Execute* pane
 4. Run the check
 5. Then
-  * if the model's assertion holds, the alloy analyser will indicate the check passed with no counterexamples found
-  * if the model's assertion fails, the alloy analyser will provide a counterexample of a scenario where the assertion does not hold
+    * if the model's assertion holds, the alloy analyser will indicate the check passed with no counterexamples found
+    * if the model's assertion fails, the alloy analyser will provide a counterexample of a scenario where the assertion does not hold
 
 ## More on
 

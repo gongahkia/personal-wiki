@@ -20,21 +20,19 @@
 <h2 id="introduction">Introduction</h2>
 <p>Alloy comes in two parts.</p>
 <ol type="1">
-<li><a href="#alloy-language">Alloy language</a></li>
-</ol>
+<li><a href="#alloy-language">Alloy language</a>
 <ul>
 <li>file extension <code>.als</code></li>
 <li>declarative language that specifies what a system should do</li>
 <li>runs on relational logic with models expressed as sets and relations</li>
 <li>intuitively expresses complex structures and behaviors</li>
-</ul>
-<ol start="2" type="1">
-<li><a href="#alloy-analyser">Alloy analyser</a></li>
-</ol>
+</ul></li>
+<li><a href="#alloy-analyser">Alloy analyser</a>
 <ul>
 <li>tool that checks the properties of a user-specified model</li>
 <li>visualization capabilities</li>
-</ul>
+</ul></li>
+</ol>
 <h2 id="alloy-language">Alloy language</h2>
 <pre class="als"><code>// ----- ALLOY LANGUAGE SYNTAX OVERVIEW -----
 
@@ -102,9 +100,9 @@
 <pre class="als"><code>// ----- SPECIFYING THE MODEL -----
 
 // --- EXAMPLE 1: SMALL EXPRESSION LANGUAGE --- 
-  // abstract syntax definition for a small expression-based language with Expression, Literal and BinaryOperation
-  // specify a constraint that no binary operation has the same left and right expression.
-  // assert and check there are no cyclic expressions within the language
+    // abstract syntax definition for a small expression-based language with Expression, Literal and BinaryOperation
+    // specify a constraint that no binary operation has the same left and right expression.
+    // assert and check there are no cyclic expressions within the language
 
 // ABSTRACT SYNTAX DEFINITIONS (via signatures, fields and extends)
 
@@ -131,14 +129,14 @@ assert NoCyclicExpressions {
 check NoCyclicExpressions
 
 // --- EXAMPLE 2: FILE SYSTEM --- 
-  // abstract syntax definition for a file
-  // abstract syntax definition for a folder, where each folder can contain a set of files or subfolders
-  // specify a constraint that no folder can be its own subfolder
-  // specify a constraint that there should be no cyclical folder structure
-  // predicate check to determine whether a folder contains a specific file
-  // assertion check to determine that no file exists without being contained in some folder
-  // assert and check there are no cyclic expressions within the language
-  // runs the assertion to check the model with the scope of 5 folders and 10 files
+    // abstract syntax definition for a file
+    // abstract syntax definition for a folder, where each folder can contain a set of files or subfolders
+    // specify a constraint that no folder can be its own subfolder
+    // specify a constraint that there should be no cyclical folder structure
+    // predicate check to determine whether a folder contains a specific file
+    // assertion check to determine that no file exists without being contained in some folder
+    // assert and check there are no cyclic expressions within the language
+    // runs the assertion to check the model with the scope of 5 folders and 10 files
 
 // ABSTRACT SYNTAX DEFINITIONS (via signatures and fields)
 
@@ -171,12 +169,12 @@ assert AllFilesInFolders {
 check AllFilesInFolders for 5 Folder, 10 File
 
 // --- EXAMPLE 3: SMALL SOCIAL NETWORK ---
-  // abstract syntax definition for a Person
-  // specify a constraint that no person is their own friend
-  // specify a constraint that friendship is always mutual
-  // helper function to retrieve the number of friends a person has
-  // assert and check whether two given persons are friends
-  // assert and check there are no cyclic friendships
+    // abstract syntax definition for a Person
+    // specify a constraint that no person is their own friend
+    // specify a constraint that friendship is always mutual
+    // helper function to retrieve the number of friends a person has
+    // assert and check whether two given persons are friends
+    // assert and check there are no cyclic friendships
 
 // ABSTRACT SYNTAX DEFINITIONS (via signatures and fields)
 
@@ -221,12 +219,12 @@ check NoCyclicFriendship for 5</code></pre>
 <li>Open the <code>.als</code> file from step 1 in the alloy analyser application</li>
 <li>Set the scope of the check under the <em>Execute</em> pane</li>
 <li>Run the check</li>
-<li>Then</li>
-</ol>
+<li>Then
 <ul>
 <li>if the model’s assertion holds, the alloy analyser will indicate the check passed with no counterexamples found</li>
 <li>if the model’s assertion fails, the alloy analyser will provide a counterexample of a scenario where the assertion does not hold</li>
-</ul>
+</ul></li>
+</ol>
 <h2 id="more-on">More on</h2>
 <ul>
 <li><a href="https://alloytools.org/download.html">install alloy analyser</a></li>
