@@ -1,6 +1,6 @@
 # `Alloy`
 
-Lightweight modeling language for software modeling and language specification to intuitively express complex structures and behaviors.
+Lightweight modeling language for software modeling and language specification. 
 
 ## Introduction
 
@@ -8,11 +8,11 @@ Alloy comes in two parts.
 
 1. [Alloy language](#alloy-language)
   * file extension `.als`
-  * declarative language that specifies what a system should do *(but not how it should do it)*
-  * runs on relational logic *(models are expressed as sets and relations)*
+  * declarative language that specifies what a system should do
+  * runs on relational logic with models expressed as sets and relations
+  * intuitively expresses complex structures and behaviors
 2. [Alloy analyser](#alloy-analyser)
   * tool that checks the properties of a user-specified model
-  * automatically generates instances of models that satisfy the specified predicate constraints
   * visualization capabilities
 
 ## Alloy language
@@ -61,7 +61,7 @@ Alloy comes in two parts.
 // | => separates the set or relation in question from the constraint or predicate condition being applied to it
 
 // --- DATATYPES ---
-  // there are only two primitive datatypes in Alloy for purely representative purposes
+  // there are only two primitive datatypes in alloy language for purely representative purposes
 
 // Int => stores an integer number value
 // String => stores a string value 
