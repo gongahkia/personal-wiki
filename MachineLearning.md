@@ -59,6 +59,10 @@ Covers...
 
 ## More on 
 
+* [No bullshit guide to math and physics](https://www.amazon.com/No-bullshit-guide-math-physics/dp/0992001005) by Ivan Savov
+* [No bullshit guide to linear algebra](https://www.amazon.sg/No-Bullshit-Guide-Linear-Algebra/dp/0992001021) by Ivan Savov
+* [Data Science from Scratch: First Principles with Python](https://www.amazon.sg/Data-Science-Scratch-Principles-Python/dp/1492041130) by Joel Grus
+* [The StatQuest Illustrated Guide To Machine Learning](https://www.amazon.sg/StatQuest-Illustrated-Guide-Machine-Learning/dp/B0BLM4TLPY) by Josh Starmer
 * [Neural Networks and Deep Learning](https://neuralnetworksanddeeplearning.com/index.html) by Michael Nielsen  
 * [grokking Deep Learning](https://edu.anarcho-copy.org/Algorithm/grokking-deep-learning.pdf) by Andrew W Trask  
 * [The Hundred-page Machine Learning Book](http://ema.cri-info.cm/wp-content/uploads/2019/07/2019BurkovTheHundred-pageMachineLearning.pdf) by Andriy Burkov  

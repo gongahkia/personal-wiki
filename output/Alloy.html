@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Alloy</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+</head>
+<body>
+<h1 id="alloy"><code>Alloy</code></h1>
+<p>Lightweight modeling language for software modeling and language specification.</p>
+<h2 id="introduction">Introduction</h2>
+<p>Alloy comes in two parts.</p>
+<ol type="1">
+<li><a href="#alloy-language">Alloy language</a></li>
+</ol>
+<ul>
+<li>file extension <code>.als</code></li>
+<li>declarative language that specifies what a system should do</li>
+<li>runs on relational logic with models expressed as sets and relations</li>
+<li>intuitively expresses complex structures and behaviors</li>
+</ul>
+<ol start="2" type="1">
+<li><a href="#alloy-analyser">Alloy analyser</a></li>
+</ol>
+<ul>
+<li>tool that checks the properties of a user-specified model</li>
+<li>visualization capabilities</li>
+</ul>
+<h2 id="alloy-language">Alloy language</h2>
+<pre class="als"><code>// ----- ALLOY LANGUAGE SYNTAX OVERVIEW -----
+
+// --- GENERAL ---
+
+// // =&gt; declares a single-line comment which is ignored by the alloy analyser, note there is no built-in implementation for multi-line comments
+
+// --- CORE FORMS ---
+
+// sig &lt;signatureName&gt; { &lt;signatureBody&gt; } =&gt; declares a signature as the basic type or set in the model within {} curly braces
+// &lt;fieldName&gt; : &lt;datatype&gt; =&gt; found within the signature body, named fields specify the relationship between signatures via their corresponding datatype
+// fact &lt;factName&gt; { &lt;factConstraintBody&gt; } =&gt; declares a fact, which is an invariant constraint that must ALWAYS be held within the model
+// assert &lt;assertionName&gt; { &lt;assertionProperties&gt; } =&gt; declares an assertion, which is a property that MUST be checked by the alloy analyser
+// pred &lt;predicateName&gt;[ &lt;predicateArgument(s)&gt; ] { &lt;predicateBody&gt; } =&gt; specifies a predicate, which is a reusable chunk of logic that can be called with provided arguments but do not return a value, equivalent to a void function in conventional programming languages
+// fun &lt;functionName&gt; [ &lt;functionArgument(s)&gt; ]: &lt;functionReturnDatatype&gt; { &lt;functionDefinitionBody&gt; } =&gt; specifies a function with a return value
+// run &lt;commandName&gt; for &lt;commandScope&gt; =&gt; direct instructions to the alloy analyser to run the specified predicate
+// check &lt;commandName&gt; for &lt;commandScope&gt; =&gt; direct instructions to the alloy analyser to check the specified assertion
+
+// --- FIELD AUGMENTERS ---
+
+// set =&gt; declares a given field is a set
+// in =&gt; indicates an entity has membership within a set or relation
+// extends =&gt; specifies that one signature is a subset of another
+// one =&gt; declares a field has exactly ONE element
+// lone =&gt; declares a field has either ZERO or ONE element
+// some =&gt; declares a field has at least ONE element
+
+// --- SET / RELATION AUGMENTERS ---
+
+// no =&gt; specifies a set is empty
+// one =&gt; specifies a set has exactly ONE element
+// some =&gt; specifies a set has at least ONE element
+// lone =&gt; specifies a set has either ZERO or ONE element
+// + =&gt; UNION of sets
+// &amp; =&gt; INTERSECTION of sets
+// - =&gt; DIFFERENCE between sets
+// -&gt; =&gt; CARTESIAN PRODUCT of sets
+// . =&gt; Navigation through relations
+// ~ =&gt; Inverse of a relation
+// ^ =&gt; Transitive closure of a relation
+// * =&gt; Reflexive transitive closure of a relation
+// | =&gt; separates the set or relation in question from the constraint or predicate condition being applied to it
+
+// --- DATATYPES ---
+  // there are only two primitive datatypes in alloy language for purely representative purposes
+
+// Int =&gt; stores an integer number value
+// String =&gt; stores a string value 
+
+// --- LOGICAL OPERATORS ---
+
+// and =&gt; logical and
+// or =&gt; logical or
+// not =&gt; logical not
+// implies =&gt; logical implication
+// iff =&gt; logical equivalence
+
+// --- OTHERS ---
+
+// let =&gt; introduces a local variable binding
+// disj =&gt; specifies that elements are DISTINCT
+// all =&gt; universal quantifier
+// some =&gt; existential quantifier</code></pre>
+<h3 id="specifying-the-model">Specifying the model</h3>
+<pre class="als"><code>// ----- SPECIFYING THE MODEL -----
+
+// --- EXAMPLE 1: SMALL EXPRESSION LANGUAGE --- 
+  // abstract syntax definition for a small expression-based language with Expression, Literal and BinaryOperation
+  // specify a constraint that no binary operation has the same left and right expression.
+  // assert and check there are no cyclic expressions within the language
+
+// ABSTRACT SYNTAX DEFINITIONS (via signatures, fields and extends)
+
+sig Expression {}
+sig Literal extends Expression {
+  value: Int
+}
+sig BinaryOperation extends Expression {
+  left: Expression,
+  right: Expression
+}
+
+// SPECIFY A CONSTRAINT (via a fact)
+
+fact WellFormedBinaryOperation {
+  all b: BinaryOperation | b.left != b.right
+}
+
+// CHECK A PROPERTY (via an assertion and explicit check)
+
+assert NoCyclicExpressions {
+  no e: Expression | e in e.^(left + right)
+}
+check NoCyclicExpressions
+
+// --- EXAMPLE 2: FILE SYSTEM --- 
+  // abstract syntax definition for a file
+  // abstract syntax definition for a folder, where each folder can contain a set of files or subfolders
+  // specify a constraint that no folder can be its own subfolder
+  // specify a constraint that there should be no cyclical folder structure
+  // predicate check to determine whether a folder contains a specific file
+  // assertion check to determine that no file exists without being contained in some folder
+  // assert and check there are no cyclic expressions within the language
+  // runs the assertion to check the model with the scope of 5 folders and 10 files
+
+// ABSTRACT SYNTAX DEFINITIONS (via signatures and fields)
+
+sig File {}
+sig Folder {
+    files: set File,
+    subfolders: set Folder
+}
+
+// SPECIFY CONSTRAINTS (via facts)
+
+fact NoFolderIsItsOwnSubfolder {
+    all f: Folder | f !in f.subfolders
+}
+
+fact NoCyclicFolders {
+    all f: Folder | f !in f.^(subfolders)
+}
+
+// CHECK PROPERTIES (via a predicate, assertion and explicit check)
+
+pred folderContainsFile[f: Folder, fl: File] {
+    fl in f.files or fl in f.*(subfolders).files
+}
+
+assert AllFilesInFolders {
+    all fl: File | some f: Folder | fl in f.*(subfolders).files + f.files
+}
+
+check AllFilesInFolders for 5 Folder, 10 File
+
+// --- EXAMPLE 3: SMALL SOCIAL NETWORK ---
+  // abstract syntax definition for a Person
+  // specify a constraint that no person is their own friend
+  // specify a constraint that friendship is always mutual
+  // helper function to retrieve the number of friends a person has
+  // assert and check whether two given persons are friends
+  // assert and check there are no cyclic friendships
+
+// ABSTRACT SYNTAX DEFINITIONS (via signatures and fields)
+
+sig Person {}
+sig Person {
+    name: one String, 
+    age: one Int, 
+    friends: set Person 
+}
+
+// SPECIFY CONSTRAINTS (via facts)
+
+fact NoSelfFriend {
+    all p: Person | p !in p.friends
+}
+
+fact MutualFriendship {
+    all p, q: Person | p in q.friends iff q in p.friends
+}
+
+// HELPER FUNCTION
+
+fun numFriends[p: Person]: Int {
+    #p.friends
+}
+
+// CHECK PROPERTIES (via a predicate, assertion and explicit check)
+
+pred isFriend[p1, p2: Person] {
+    p2 in p1.friends
+}
+
+assert NoCyclicFriendship {
+    no p: Person | p in p.^friends
+}
+
+check NoCyclicFriendship for 5</code></pre>
+<h2 id="alloy-analyser">Alloy analyser</h2>
+<h3 id="checking-the-model">Checking the model</h3>
+<ol type="1">
+<li>Save the model or language specification as an <code>.als</code> file</li>
+<li>Open the <code>.als</code> file from step 1 in the alloy analyser application</li>
+<li>Set the scope of the check under the <em>Execute</em> pane</li>
+<li>Run the check</li>
+<li>Then</li>
+</ol>
+<ul>
+<li>if the model’s assertion holds, the alloy analyser will indicate the check passed with no counterexamples found</li>
+<li>if the model’s assertion fails, the alloy analyser will provide a counterexample of a scenario where the assertion does not hold</li>
+</ul>
+<h2 id="more-on">More on</h2>
+<ul>
+<li><a href="https://alloytools.org/download.html">install alloy analyser</a></li>
+<li><a href="https://alloytools.org/">alloytools.org</a></li>
+<li><a href="https://alloy.readthedocs.io/en/latest/">alloy documentation</a></li>
+<li><a href="https://alloytools.org/download/alloy-language-reference.pdf">alloy language reference</a></li>
+</ul>
+</body>
+</html>
