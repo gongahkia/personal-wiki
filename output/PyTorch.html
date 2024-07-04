@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>PyTorch</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="pytorch"><code>PyTorch</code></h1>
+<p>Deep learning in Python that runs on the GPU.</p>
+<h2 id="introduction">Introduction</h2>
+<h3 id="definitions">Definitions</h3>
+<ol type="1">
+<li>Deep learning: program infers relationships between user-defined <em>inputs</em> and <em>outputs</em> (supervised learning)</li>
+<li>Deep learning is good for
+<ul>
+<li>problems with long lists of rules that would be difficult to hardcode</li>
+<li>continually changing environments</li>
+<li>large unstructured datasets with unclear patterns</li>
+</ul></li>
+<li>Deep learning is mostly achieved through a multilayered neural network <em>(hence deep)</em></li>
+</ol>
+<p><img src="https://www.researchgate.net/publication/363930739/figure/fig2/AS:11431281224920472@1708517958416/Venn-Diagram-relationship-between-artificial-intelligence-machine-learning-and-deep.jpg" /></p>
+<ol start="4" type="1">
+<li>Neural networks work by
+<ol type="1">
+<li><strong>Input layer</strong>: <em>inputs</em> are numerically encoded into multi-dimensional vectors</li>
+<li><strong>Hidden layer</strong>: vectors are processed by the many hidden layers, program finds patterns in the vectors</li>
+<li><strong>Output layer</strong>: <em>output</em> is returned in the form of multi-dimensional vectors</li>
+</ol></li>
+</ol>
+<p><img src="https://www.researchgate.net/publication/332158639/figure/fig1/AS:743347375312897@1554239233244/Simple-neural-network-diagram.png" /></p>
+<ol start="5" type="1">
+<li>There are multiple types of neural networks
+<ul>
+<li>convolutional neural network (images)</li>
+<li>transformer (NLP)</li>
+</ul></li>
+<li>There are a few kinds of learning
+<ul>
+<li>supervised learning: BOTH <em>inputs</em> and <em>outputs</em> are specified for the program</li>
+<li>unsupervised / self-supervised learning: ONLY <em>input</em> is specified for the program</li>
+<li>transfer learning: one program’s <em>output</em> is FED to another program as <em>input</em></li>
+<li>reinforcement learning: program is REWARDED for <em>ideal</em> behaviour and discouraged from <em>unideal</em> behaviour</li>
+</ul></li>
+</ol>
+<p><img src="https://www.researchgate.net/publication/343748539/figure/fig6/AS:963538214465538@1606736820183/Supervised-unsupervised-and-reinforcement-learning-165-171.png" /></p>
+<ol start="7" type="1">
+<li>Tensor: any numerical representation of data <em>(most commonly multi-dimensional vectors)</em></li>
+<li>General workflow of building a deep learning program is
+<ol type="1">
+<li>convert raw data to <em>input tensors</em></li>
+<li>build a model
+<ul>
+<li>pick a loss function and optimizer</li>
+<li>create the training loop</li>
+</ul></li>
+<li>tweak the model to fit the <em>data</em> and make a prediction with <em>output tensors</em></li>
+<li>evaluate the model</li>
+<li>improve the model through iterative experimentation</li>
+<li>save and reload</li>
+</ol></li>
+</ol>
+<p><img src="https://www.scaler.com/topics/images/this-detailed-resource.webp" /></p>
+<h2 id="quickstart">Quickstart</h2>
+<blockquote>
+<p>continue from 1:08:052 of <a href="https://youtu.be/Z_ikDlimN6A?si=40CGjign3YYuEN3D">this video</a></p>
+</blockquote>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"></code></pre></div>
+<h2 id="more-on">More on</h2>
+<h3 id="core-resources">Core resources</h3>
+<ul>
+<li><a href="https://pytorch.org/">pytorch.org</a></li>
+<li><a href="https://pytorch.org/docs/stable/index.html">pytorch documentation</a></li>
+<li><a href="https://paperswithcode.com/trends">papers with code trends</a></li>
+<li><a href="https://www.reddit.com/r/MLQuestions/comments/112sege/pytorch_vs_tensorflow/">why pytorch over tensorflow</a></li>
+<li><a href="https://www.learnpytorch.io/">zero to mastery: learn pytorch for deep learning</a></li>
+</ul>
+<h3 id="additional-resources">Additional resources</h3>
+<ul>
+<li><a href="https://colab.google/">colab.google</a></li>
+<li><a href="https://www.tensorflow.org/">tensorflow.org</a></li>
+<li><a href="https://keras.io/">keras.io</a></li>
+</ul>
+</body>
+</html>
