@@ -1,6 +1,6 @@
 # `PyTorch`
 
-Deep learning in Python that runs on the GPU.
+Deep learning in Python.
 
 ## Introduction
 
@@ -39,12 +39,13 @@ Deep learning in Python that runs on the GPU.
    2. vector: a number with a direction of *1 dimension*
    3. matrix: a *2-dimensional* array of numbers
    4. tensor: a *n-dimensional* array of numbers
-10. Random tensors: important because neural networks take in tensors full of *random numbers* and then adjust those numbers to **better represent** data
+10. Random tensors: important because neural networks take in tensors full of *random numbers* and then adjust those numbers via tensor operations (addition, subtraction, simple, element and matrix multiplication, division) to **better represent** data
 
 ### Quickstart
 
 ```py
 # ----- QUICKSTART -----
+    # %%time => CPU time and Wall time for the execution of a given Jupyter notebook cell
     # torch.__version__ => current PyTorch version
     # torch.tensor() => initialises a tensor object literal, and can receive additional arguments
         # dtype => specifies the datatype of each element of the tensor
@@ -81,8 +82,8 @@ Deep learning in Python that runs on the GPU.
             # True
             # False
     # torch.rand() => initialises a random tensor object of the specified torch.Size()
-    # torch.zeros() => initialises a tensor of all zeros of the specified torch.Size()
-    # torch.ones() => initialises a tensor of all ones of the specified torch.Size()
+    # torch.zeros() => initialises a tensor of all zeros of the specified torch.Size(), most commonly used to create a mask
+    # torch.ones() => initialises a tensor of all ones of the specified torch.Size(), most commonly used to create a mask
     # torch.zeros_like => initialises a tensor of all zeros of the torch.Size() from another specified tensor
     # torch.ones_like => initialises a tensor of all ones of the torch.Size() from another specified tensor
     # torch.arange(start, end, step) # initialises a tensor object literal from a range created from the specified start, end and step
@@ -91,6 +92,7 @@ Deep learning in Python that runs on the GPU.
         # observe that the rule of thumb is one dimension is added for every degree of [] square bracket nesting within a tensor object
     # .shape => recursive call on a tensor object to return the number of list elements within a given tensor
     # .dtype => method that returns the datatype of the specified variable it is called upon, PyTorch assigns the default datatype of .float32 if unspecified
+    # .device => method that returns the current device of a given tensor object
 
 # --- DATA SCIENCE PACKAGES TO IMPORT ---
 
@@ -164,23 +166,100 @@ ONE_TENSOR = torch.ones(size=(3, 4)) # initialises a tensor of all ones of the t
 zero_to_nine = torch.arange(0, 10) # initialises the tensor object literal tensor([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 two_to_eleven = torch.arange(start=2, end=11, step=1) # initialises the tensor object literal tensor([2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
 
-# --- TENSORS-LIKE ---
+# --- TENSORS LIKE ---
 
 ten_zeroes = torch.zeros_like(input=zero_to_nine) # initialises a zero tensor of the same shape as the specified input tensor
 ten_ones = torch.ones_like(input=zero_to_nine) # initialises a one tensor of the same shape as the specified input tensor
 ```
 
-> continue from 2:02:59 of [this video](https://youtu.be/Z_ikDlimN6A?si=40CGjign3YYuEN3D) and add code above here
-
 ### Tensor operations
 
 ```py
+# ----- TENSOR OPERATIONS -----
 
+# --- ARITHMETIC METHODS ---
+    # + => addition applied to each element of the tensor
+    # - => subtraction applied to each element of the tensor
+    # * => simple multiplication of a matrix against a scalar number
+    # / => division applied to each element of the tensor
+    # * => ELEMENT multiplication of two matrices, where each element of a matrix is multipled against its corresponding element in the other matrix
+    # torch.matmul() => MATRIX multiplication that finds the DOT PRODUCT of two specified matrices by multiplying them together
+        # observe that matrix multiplication must satisfy the following 2 rules
+            # 1. inner dimensions of the two matrices must match
+                # torch.matmul(torch.rand(2, 3), torch.rand(2, 3)) WON'T work
+                # torch.matmul(torch.rand(2, 3), torch.rand(3, 2)) WILL work
+                # torch.matmul(torch.rand(3, 2), torch.rand(2, 3)) WILL work
+            # 2. result matrix must have the shape of the outer dimensions
+                # torch.matmul(torch.rand(2, 3), torch.rand(3, 2)) results in torch.Size([2, 2]) so this WILL work
+                # torch.matmul(torch.rand(3, 2), torch.rand(2, 3)) results in torch.Size([3, 3]) so this WILL work
+
+# --- AGGREGATOR METHODS ---
+    # torch.min() => finds the element with the minimum value in a given tensor 
+    # torch.max() => finds the element with the maximum value in a given tensor 
+    # torch.mean() => finds the average value of all elements within a given tensor, note the element datatype must be a floating or complex type
+    # torch.sum() => finds the sum of all elements within a given tensor
+    # torch.argmin() => finds the index of the element with the minimum value in a given tensor 
+    # torch.argmax() => finds the index of the element with the maximum value in a given tensor 
+
+# --- MANIPULATION METHODS ---
+    # one of the most common issues relating to tensors arises due to shape and dimension, which is combated by
+        # reshaping => reshaping an input tensor to a specified shape
+        # view => returns a view of an input tensor in a specified shape while pointing to the same place in memory as the original tensor
+        # stacking => combine multiple tensors together in a vertical (vstack) or horizontal (hstack) stack
+        # squeeze => remove all 1 dimensions from a given tensor
+        # unsqueeze => add a 1 dimension to a given tensor
+        # permute => returns a view of an input tensor with its dimensions swapped in a certain way
+    # the PyTorch methods are as follows
+        # .T => method that tranposes the shape of the specified tensor by switching its dimensions (axis), particularly useful for when tensor shape errors occur
+        # .reshape() => method that reshapes a specified tensor to the new provided dimensions, note that the total corresponding number of elements must stay the same across a reshape
+        # .view() => method that merely displays an existing tensor differenly according to the new provided dimensions whilst pointing to the original tensor's memory address (which means changing the new tensor variable assigned to a view changes the value of the original tensor being viewed)
+        # torch.stack() => method that stacks multiple provided tensors together, with an optional dim argument that further allows augmentation of the desired number of dimensions within the new tensor
+            # torch.vstack
+            # torch.hstack
+        # torch.squeeze() => method that removes all SINGLE dimensions from a given tensor
+        # torch.unsqueeze() => method that adds a SINGLE dimension to a given tensor, with a dim argument that further specifies which dimension to add the single dimension at
+        # torch.permute() => method that rearranges the dimensions of a given tensor to a new specified order and returns a VIEW of that new tensor (which means changing the new tensor variable assigned to a permute changes the value of the original tensor being permuted)
+
+# - NOTE -
+    # recall that we have to reassign the result of a tensor operation to a variable for the value to be stored, similar to anywhere else in Python and most other programming languages really
+    # the examples below are selected samples of the above methods and are not comprehensive, more detailed use cases can be found in PyTorch's documentation
+
+# intialisation of tensor object literals
+tensor = torch.tensor([1, 2, 3]) 
+another_tensor = torch.tensor(
+    [[7, 8],
+    [9, 10],
+    [11, 12]]
+)
+yet_another_tensor = torch.arange(1, 10) # initialises the tensor object literal tensor([1, 2, 3, 4, 5, 6, 7, 8, 9])
+
+tensor + 10 # addition that evaluates to the tensor object literal tensor([101, 102, 103])
+tensor - 10 # subtraction that evaluates to the tensor object literal tensor([-9, -8, -7])
+tensor * 10 # simple multiplication evaluates to the tensor object literal tensor([10, 20, 30])
+tensor / 10 # divison evaluates to the tensor object literal tensor([0.1, 0.2, 0.3])
+
+tensor * tensor # element multiplication evaluates to the tensor object literal tensor([1, 4, 9])
+torch.matmul(tensor, tensor) # matrix multiplication evalutes to the dot product value torch(14)
+
+another_tensor.T # transpose operation that evaluates to the tensor object literal tensor([[7, 9, 11], [8, 10, 12]])
+another_tensor.T.shape # transpose operation means this will now return the torch.Size([2, 3])
+
+yet_another_tensor.shape # returns torch.Size([9])
+reshaped_tensor = yet_another_tensor.reshape(9, 1)
+reshaped_tensor.shape # returns torch.Size([9, 1])
+
+view_tensor = yet_another_tensor.view(9, 1)
+view_tensor.shape # returns torch.Size([9, 1]), but note that modifying view_tensor will also modify the value of yet_another_tensor
+
+stack_tensor = torch.stack([yet_another_tensor, yet_another_tensor, yet_another_tensor, yet_another_tensor], dim = 0) # restacks the tensor according to dimension 0
+stack_tensor = torch.stack([yet_another_tensor, yet_another_tensor, yet_another_tensor, yet_another_tensor], dim = 1) # restacks the tensor according to dimension 1
 ```
+
+> continue from 3:23:15 of [this video](https://youtu.be/Z_ikDlimN6A?si=40CGjign3YYuEN3D) and add code above here
 
 ## Doing actual things with Tensors
 
-Enough yapping, I want to build something.
+*"Enough yapping, I want to build something."*
 
 ### Encode an Image to a Tensor
 
@@ -204,6 +283,11 @@ Enough yapping, I want to build something.
 * [papers with code trends](https://paperswithcode.com/trends)
 * [why pytorch over tensorflow](https://www.reddit.com/r/MLQuestions/comments/112sege/pytorch_vs_tensorflow/)
 * [zero to mastery: learn pytorch for deep learning](https://www.learnpytorch.io/)
+
+### Prerequisite knowledge 
+
+* [learn python in y minutes](https://learnxinyminutes.com/docs/python/)
+* [how to find dot product](https://www.mathsisfun.com/algebra/matrix-multiplying.html)
 
 ### Additional resources
 
