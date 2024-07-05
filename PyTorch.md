@@ -1,6 +1,6 @@
 # `PyTorch`
 
-Deep learning in Python that runs on the GPU.
+Deep learning in Python.
 
 ## Introduction
 
@@ -176,6 +176,8 @@ ten_ones = torch.ones_like(input=zero_to_nine) # initialises a one tensor of the
 
 ```py
 # ----- TENSOR OPERATIONS -----
+
+# --- ARITHMETIC METHODS ---
     # + => addition applied to each element of the tensor
     # - => subtraction applied to each element of the tensor
     # * => simple multiplication of a matrix against a scalar number
@@ -190,16 +192,37 @@ ten_ones = torch.ones_like(input=zero_to_nine) # initialises a one tensor of the
             # 2. result matrix must have the shape of the outer dimensions
                 # torch.matmul(torch.rand(2, 3), torch.rand(3, 2)) results in torch.Size([2, 2]) so this WILL work
                 # torch.matmul(torch.rand(3, 2), torch.rand(2, 3)) results in torch.Size([3, 3]) so this WILL work
-    # .T => method that tranposes the shape of the specified tensor by switching its dimensions (axis), particularly useful for when tensor shape errors occur
-    # torch.min() => aggregator method that finds the element with the minimum value in a given tensor 
-    # torch.max() => aggregator method that finds the element with the maximum value in a given tensor 
-    # torch.mean() => aggregator method that finds the average value of all elements within a given tensor, note the element datatype must be a floating or complex type
-    # torch.sum() => aggregator method that finds the sum of all elements within a given tensor
-    # torch.argmin() => aggregator method that finds the index of the element with the minimum value in a given tensor 
-    # torch.argmax() => aggregator method that finds the index of the element with the maximum value in a given tensor 
+
+# --- AGGREGATOR METHODS ---
+    # torch.min() => finds the element with the minimum value in a given tensor 
+    # torch.max() => finds the element with the maximum value in a given tensor 
+    # torch.mean() => finds the average value of all elements within a given tensor, note the element datatype must be a floating or complex type
+    # torch.sum() => finds the sum of all elements within a given tensor
+    # torch.argmin() => finds the index of the element with the minimum value in a given tensor 
+    # torch.argmax() => finds the index of the element with the maximum value in a given tensor 
+
+# --- MANIPULATION METHODS ---
+    # one of the most common issues relating to tensors arises due to shape and dimension, which is combated by
+        # reshaping => reshaping an input tensor to a specified shape
+        # view => returns a view of an input tensor in a specified shape while pointing to the same place in memory as the original tensor
+        # stacking => combine multiple tensors together in a vertical (vstack) or horizontal (hstack) stack
+        # squeeze => remove all 1 dimensions from a given tensor
+        # unsqueeze => add a 1 dimension to a given tensor
+        # permute => returns a view of an input tensor with its dimensions swapped in a certain way
+    # the PyTorch methods are as follows
+        # .T => method that tranposes the shape of the specified tensor by switching its dimensions (axis), particularly useful for when tensor shape errors occur
+        # .reshape() => method that reshapes a specified tensor to the new provided dimensions, note that the total corresponding number of elements must stay the same across a reshape
+        # .view() => method that merely displays an existing tensor differenly according to the new provided dimensions whilst pointing to the original tensor's memory address (which means changing the new tensor variable assigned to a view changes the value of the original tensor being viewed)
+        # torch.stack() => method that stacks multiple provided tensors together, with an optional dim argument that further allows augmentation of the desired number of dimensions within the new tensor
+            # torch.vstack
+            # torch.hstack
+        # torch.squeeze() => method that removes all SINGLE dimensions from a given tensor
+        # torch.unsqueeze() => method that adds a SINGLE dimension to a given tensor, with a dim argument that further specifies which dimension to add the single dimension at
+        # torch.permute() => method that rearranges the dimensions of a given tensor to a new specified order and returns a VIEW of that new tensor (which means changing the new tensor variable assigned to a permute changes the value of the original tensor being permuted)
 
 # - NOTE -
     # recall that we have to reassign the result of a tensor operation to a variable for the value to be stored, similar to anywhere else in Python and most other programming languages really
+    # the examples below are selected samples of the above methods and are not comprehensive, more detailed use cases can be found in PyTorch's documentation
 
 # intialisation of tensor object literals
 tensor = torch.tensor([1, 2, 3]) 
@@ -208,6 +231,7 @@ another_tensor = torch.tensor(
     [9, 10],
     [11, 12]]
 )
+yet_another_tensor = torch.arange(1, 10) # initialises the tensor object literal tensor([1, 2, 3, 4, 5, 6, 7, 8, 9])
 
 tensor + 10 # addition that evaluates to the tensor object literal tensor([101, 102, 103])
 tensor - 10 # subtraction that evaluates to the tensor object literal tensor([-9, -8, -7])
@@ -219,13 +243,23 @@ torch.matmul(tensor, tensor) # matrix multiplication evalutes to the dot product
 
 another_tensor.T # transpose operation that evaluates to the tensor object literal tensor([[7, 9, 11], [8, 10, 12]])
 another_tensor.T.shape # transpose operation means this will now return the torch.Size([2, 3])
+
+yet_another_tensor.shape # returns torch.Size([9])
+reshaped_tensor = yet_another_tensor.reshape(9, 1)
+reshaped_tensor.shape # returns torch.Size([9, 1])
+
+view_tensor = yet_another_tensor.view(9, 1)
+view_tensor.shape # returns torch.Size([9, 1]), but note that modifying view_tensor will also modify the value of yet_another_tensor
+
+stack_tensor = torch.stack([yet_another_tensor, yet_another_tensor, yet_another_tensor, yet_another_tensor], dim = 0) # restacks the tensor according to dimension 0
+stack_tensor = torch.stack([yet_another_tensor, yet_another_tensor, yet_another_tensor, yet_another_tensor], dim = 1) # restacks the tensor according to dimension 1
 ```
 
-> continue from 2:02:59 of [this video](https://youtu.be/Z_ikDlimN6A?si=40CGjign3YYuEN3D) and add code above here
+> continue from 3:23:15 of [this video](https://youtu.be/Z_ikDlimN6A?si=40CGjign3YYuEN3D) and add code above here
 
 ## Doing actual things with Tensors
 
-Enough yapping, I want to build something.
+*"Enough yapping, I want to build something."*
 
 ### Encode an Image to a Tensor
 
