@@ -35,23 +35,62 @@ Deep learning in Python that runs on the GPU.
     6. save and reload
 8. Tensor: any numerical representation of data *(most commonly multi-dimensional vectors)*
 9. There are different kinds of tensors
-   1. scalar: a single number of 0 dimensions
-   2. vector: a number with a *direction* of 1 dimension
+   1. scalar: a single number of *0 dimensions*
+   2. vector: a number with a direction of *1 dimension*
    3. matrix: a *2-dimensional* array of numbers
    4. tensor: a *n-dimensional* array of numbers
 10. Random tensors: important because neural networks take in tensors full of *random numbers* and then adjust those numbers to **better represent** data
 
-## Quickstart
+### Quickstart
 
 ```py
 # ----- QUICKSTART -----
     # torch.__version__ => current PyTorch version
-    # torch.tensor() => initialises a tensor object
-    # .rand() => initialises a random tensor object of the specified size
+    # torch.tensor() => initialises a tensor object literal, and can receive additional arguments
+        # dtype => specifies the datatype of each element of the tensor
+            # None
+            # .bool => True, False
+            # .float16
+            # .float32 (assigned by default)
+            # .float64
+            # .complex32
+            # .complex64
+            # .complex128
+            # .int8
+            # .int16
+            # .int32
+            # .int64
+            # .uint8
+            # .uint16
+            # .uint32
+            # .uint64
+            # .quint8
+            # .qint8
+            # .qint32
+            # .quint4x2
+            # .float8_e4m3fn
+            # .float8_e5m2
+        # device => specifies the device each tensor lives on
+            # cpu
+            # cuda
+            # mps
+            # xpu
+            # xla
+            # meta
+        # requires_grad => specifies whether PyTorch should track the gradient of a tensor when it undergoes numerical calculations
+            # True
+            # False
+    # torch.rand() => initialises a random tensor object of the specified torch.Size()
+    # torch.zeros() => initialises a tensor of all zeros of the specified torch.Size()
+    # torch.ones() => initialises a tensor of all ones of the specified torch.Size()
+    # torch.zeros_like => initialises a tensor of all zeros of the torch.Size() from another specified tensor
+    # torch.ones_like => initialises a tensor of all ones of the torch.Size() from another specified tensor
+    # torch.arange(start, end, step) # initialises a tensor object literal from a range created from the specified start, end and step
     # .item() => called on a tensor object, which is then returned as a value literal (integer, list literal etc.)
     # .ndim => called on a tensor object to return the number of dimensions a given tensor has
         # observe that the rule of thumb is one dimension is added for every degree of [] square bracket nesting within a tensor object
     # .shape => recursive call on a tensor object to return the number of list elements within a given tensor
+    # .dtype => method that returns the datatype of the specified variable it is called upon, PyTorch assigns the default datatype of .float32 if unspecified
 
 # --- DATA SCIENCE PACKAGES TO IMPORT ---
 
@@ -75,7 +114,7 @@ vector.ndim # returns 1 dimension
 vector.shape # returns torch.Size(2) to indicate 2 elements
 
 # - NOTE -
-    # by convention. scalar and vector variables are declared in lowercase while matrix and tensor variables are declared in UPPERCASE
+    # by convention, scalar and vector variables are declared in lowercase while matrix and tensor variables are declared in UPPERCASE
 
 MATRIX = torch.tensor(
     [[7, 8], 
@@ -101,15 +140,58 @@ WATERMELON = torch.tensor(
     [11, 12]]]]
 )
 WATERMELON.ndim # returns 4 dimensions
-WATERMELON.shape # returns torch.Size([1,1,6,2]) to indicate 1 list element that contains 1 list element that contains 6 list elements which then contains 2 elements each
+WATERMELON.shape # returns torch.Size([1, 1, 6, 2]) to indicate 1 list element that contains 1 list element that contains 6 list elements which then contains 2 elements each
 
 # --- RANDOM TENSOR ---
 
-random_tensor = torch.rand(3, 4) # initialises a random tensor of torch.Size([3,4])
-random_tensor.ndim # returns 2 dimensions
+RANDOM_TENSOR = torch.rand(3, 4) # initialises a random tensor of torch.Size([3, 4])
+RANDOM_TENSOR.ndim # returns 2 dimensions
+
+RANDOM_IMAGE_SIZE_TENSOR = torch.rand(size=(224, 224, 3)) # initialises a random tensor with a similar shape to an image tensor, specifying the height, width and color channel
+RANDOM_IMAGE_SIZE_TENSOR.ndim # returns 3 dimensions as we specified above
+RANDOM_IMAGE_SIZE_TENSOR.shape # returns torch.Size([224, 224, 3]) as we specified above
+
+# --- TENSOR OF ALL 0s ---
+
+ZERO_TENSOR = torch.zeros(size=(3, 4)) # initialises a tensor of all zeros of the torch.Size([3, 4])
+
+# --- TENSOR OF ALL 1s ---
+
+ONE_TENSOR = torch.ones(size=(3, 4)) # initialises a tensor of all ones of the torch.Size([3, 4])
+
+# --- RANGE TENSOR ---
+
+zero_to_nine = torch.arange(0, 10) # initialises the tensor object literal tensor([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+two_to_eleven = torch.arange(start=2, end=11, step=1) # initialises the tensor object literal tensor([2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
+
+# --- TENSORS-LIKE ---
+
+ten_zeroes = torch.zeros_like(input=zero_to_nine) # initialises a zero tensor of the same shape as the specified input tensor
+ten_ones = torch.ones_like(input=zero_to_nine) # initialises a one tensor of the same shape as the specified input tensor
 ```
 
-> continue from 1:08:052 of [this video](https://youtu.be/Z_ikDlimN6A?si=40CGjign3YYuEN3D)
+> continue from 2:02:59 of [this video](https://youtu.be/Z_ikDlimN6A?si=40CGjign3YYuEN3D) and add code above here
+
+### Tensor operations
+
+```py
+
+```
+
+## Doing actual things with Tensors
+
+Enough yapping, I want to build something.
+
+### Encode an Image to a Tensor
+
+> FUA continue adding here later when its covered in the video
+
+1. Split the image into its RGB *(red green blue)* color channels
+2. Represent that as a tensor with the shape *(`color_channels`, `image_height`, `image_width`)*
+
+```py
+
+```
 
 ## More on
 
