@@ -39,12 +39,13 @@ Deep learning in Python that runs on the GPU.
    2. vector: a number with a direction of *1 dimension*
    3. matrix: a *2-dimensional* array of numbers
    4. tensor: a *n-dimensional* array of numbers
-10. Random tensors: important because neural networks take in tensors full of *random numbers* and then adjust those numbers to **better represent** data
+10. Random tensors: important because neural networks take in tensors full of *random numbers* and then adjust those numbers via tensor operations (addition, subtraction, simple, element and matrix multiplication, division) to **better represent** data
 
 ### Quickstart
 
 ```py
 # ----- QUICKSTART -----
+    # %%time => CPU time and Wall time for the execution of a given Jupyter notebook cell
     # torch.__version__ => current PyTorch version
     # torch.tensor() => initialises a tensor object literal, and can receive additional arguments
         # dtype => specifies the datatype of each element of the tensor
@@ -81,8 +82,8 @@ Deep learning in Python that runs on the GPU.
             # True
             # False
     # torch.rand() => initialises a random tensor object of the specified torch.Size()
-    # torch.zeros() => initialises a tensor of all zeros of the specified torch.Size()
-    # torch.ones() => initialises a tensor of all ones of the specified torch.Size()
+    # torch.zeros() => initialises a tensor of all zeros of the specified torch.Size(), most commonly used to create a mask
+    # torch.ones() => initialises a tensor of all ones of the specified torch.Size(), most commonly used to create a mask
     # torch.zeros_like => initialises a tensor of all zeros of the torch.Size() from another specified tensor
     # torch.ones_like => initialises a tensor of all ones of the torch.Size() from another specified tensor
     # torch.arange(start, end, step) # initialises a tensor object literal from a range created from the specified start, end and step
@@ -91,6 +92,7 @@ Deep learning in Python that runs on the GPU.
         # observe that the rule of thumb is one dimension is added for every degree of [] square bracket nesting within a tensor object
     # .shape => recursive call on a tensor object to return the number of list elements within a given tensor
     # .dtype => method that returns the datatype of the specified variable it is called upon, PyTorch assigns the default datatype of .float32 if unspecified
+    # .device => method that returns the current device of a given tensor object
 
 # --- DATA SCIENCE PACKAGES TO IMPORT ---
 
@@ -164,19 +166,62 @@ ONE_TENSOR = torch.ones(size=(3, 4)) # initialises a tensor of all ones of the t
 zero_to_nine = torch.arange(0, 10) # initialises the tensor object literal tensor([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 two_to_eleven = torch.arange(start=2, end=11, step=1) # initialises the tensor object literal tensor([2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
 
-# --- TENSORS-LIKE ---
+# --- TENSORS LIKE ---
 
 ten_zeroes = torch.zeros_like(input=zero_to_nine) # initialises a zero tensor of the same shape as the specified input tensor
 ten_ones = torch.ones_like(input=zero_to_nine) # initialises a one tensor of the same shape as the specified input tensor
 ```
 
-> continue from 2:02:59 of [this video](https://youtu.be/Z_ikDlimN6A?si=40CGjign3YYuEN3D) and add code above here
-
 ### Tensor operations
 
 ```py
+# ----- TENSOR OPERATIONS -----
+    # + => addition applied to each element of the tensor
+    # - => subtraction applied to each element of the tensor
+    # * => simple multiplication of a matrix against a scalar number
+    # / => division applied to each element of the tensor
+    # * => ELEMENT multiplication of two matrices, where each element of a matrix is multipled against its corresponding element in the other matrix
+    # torch.matmul() => MATRIX multiplication that finds the DOT PRODUCT of two specified matrices by multiplying them together
+        # observe that matrix multiplication must satisfy the following 2 rules
+            # 1. inner dimensions of the two matrices must match
+                # torch.matmul(torch.rand(2, 3), torch.rand(2, 3)) WON'T work
+                # torch.matmul(torch.rand(2, 3), torch.rand(3, 2)) WILL work
+                # torch.matmul(torch.rand(3, 2), torch.rand(2, 3)) WILL work
+            # 2. result matrix must have the shape of the outer dimensions
+                # torch.matmul(torch.rand(2, 3), torch.rand(3, 2)) results in torch.Size([2, 2]) so this WILL work
+                # torch.matmul(torch.rand(3, 2), torch.rand(2, 3)) results in torch.Size([3, 3]) so this WILL work
+    # .T => method that tranposes the shape of the specified tensor by switching its dimensions (axis), particularly useful for when tensor shape errors occur
+    # torch.min() => aggregator method that finds the element with the minimum value in a given tensor 
+    # torch.max() => aggregator method that finds the element with the maximum value in a given tensor 
+    # torch.mean() => aggregator method that finds the average value of all elements within a given tensor, note the element datatype must be a floating or complex type
+    # torch.sum() => aggregator method that finds the sum of all elements within a given tensor
+    # torch.argmin() => aggregator method that finds the index of the element with the minimum value in a given tensor 
+    # torch.argmax() => aggregator method that finds the index of the element with the maximum value in a given tensor 
 
+# - NOTE -
+    # recall that we have to reassign the result of a tensor operation to a variable for the value to be stored, similar to anywhere else in Python and most other programming languages really
+
+# intialisation of tensor object literals
+tensor = torch.tensor([1, 2, 3]) 
+another_tensor = torch.tensor(
+    [[7, 8],
+    [9, 10],
+    [11, 12]]
+)
+
+tensor + 10 # addition that evaluates to the tensor object literal tensor([101, 102, 103])
+tensor - 10 # subtraction that evaluates to the tensor object literal tensor([-9, -8, -7])
+tensor * 10 # simple multiplication evaluates to the tensor object literal tensor([10, 20, 30])
+tensor / 10 # divison evaluates to the tensor object literal tensor([0.1, 0.2, 0.3])
+
+tensor * tensor # element multiplication evaluates to the tensor object literal tensor([1, 4, 9])
+torch.matmul(tensor, tensor) # matrix multiplication evalutes to the dot product value torch(14)
+
+another_tensor.T # transpose operation that evaluates to the tensor object literal tensor([[7, 9, 11], [8, 10, 12]])
+another_tensor.T.shape # transpose operation means this will now return the torch.Size([2, 3])
 ```
+
+> continue from 2:02:59 of [this video](https://youtu.be/Z_ikDlimN6A?si=40CGjign3YYuEN3D) and add code above here
 
 ## Doing actual things with Tensors
 
@@ -204,6 +249,11 @@ Enough yapping, I want to build something.
 * [papers with code trends](https://paperswithcode.com/trends)
 * [why pytorch over tensorflow](https://www.reddit.com/r/MLQuestions/comments/112sege/pytorch_vs_tensorflow/)
 * [zero to mastery: learn pytorch for deep learning](https://www.learnpytorch.io/)
+
+### Prerequisite knowledge 
+
+* [learn python in y minutes](https://learnxinyminutes.com/docs/python/)
+* [how to find dot product](https://www.mathsisfun.com/algebra/matrix-multiplying.html)
 
 ### Additional resources
 
