@@ -304,53 +304,93 @@
 <span id="cb2-43"><a href="#cb2-43" aria-hidden="true"></a>        <span class="co"># torch.unsqueeze() =&gt; method that adds a SINGLE dimension to a given tensor, with a dim argument that further specifies which dimension to add the single dimension at</span></span>
 <span id="cb2-44"><a href="#cb2-44" aria-hidden="true"></a>        <span class="co"># torch.permute() =&gt; method that rearranges the dimensions of a given tensor to a new specified order and returns a VIEW of that new tensor (which means changing the new tensor variable assigned to a permute changes the value of the original tensor being permuted)</span></span>
 <span id="cb2-45"><a href="#cb2-45" aria-hidden="true"></a></span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true"></a><span class="co"># - </span><span class="al">NOTE</span><span class="co"> -</span></span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true"></a>    <span class="co"># recall that we have to reassign the result of a tensor operation to a variable for the value to be stored, similar to anywhere else in Python and most other programming languages really</span></span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true"></a>    <span class="co"># the examples below are selected samples of the above methods and are not comprehensive, more detailed use cases can be found in PyTorch&#39;s documentation</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true"></a><span class="co"># --- SELECTION METHODS ---</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true"></a>    <span class="co"># [] =&gt; indexing in PyTorch is similar to indexing in Python and NumPy, where list values are zero-indexed and can have nested calls</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true"></a>    <span class="co"># : =&gt; specifies to select ALL of a given target dimension</span></span>
 <span id="cb2-49"><a href="#cb2-49" aria-hidden="true"></a></span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true"></a><span class="co"># intialisation of tensor object literals</span></span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true"></a>tensor <span class="op">=</span> torch.tensor([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]) </span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true"></a>another_tensor <span class="op">=</span> torch.tensor(</span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true"></a>    [[<span class="dv">7</span>, <span class="dv">8</span>],</span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true"></a>    [<span class="dv">9</span>, <span class="dv">10</span>],</span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true"></a>    [<span class="dv">11</span>, <span class="dv">12</span>]]</span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true"></a>)</span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true"></a>yet_another_tensor <span class="op">=</span> torch.arange(<span class="dv">1</span>, <span class="dv">10</span>) <span class="co"># initialises the tensor object literal tensor([1, 2, 3, 4, 5, 6, 7, 8, 9])</span></span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true"></a></span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true"></a>tensor <span class="op">+</span> <span class="dv">10</span> <span class="co"># addition that evaluates to the tensor object literal tensor([101, 102, 103])</span></span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true"></a>tensor <span class="op">-</span> <span class="dv">10</span> <span class="co"># subtraction that evaluates to the tensor object literal tensor([-9, -8, -7])</span></span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true"></a>tensor <span class="op">*</span> <span class="dv">10</span> <span class="co"># simple multiplication evaluates to the tensor object literal tensor([10, 20, 30])</span></span>
-<span id="cb2-62"><a href="#cb2-62" aria-hidden="true"></a>tensor <span class="op">/</span> <span class="dv">10</span> <span class="co"># divison evaluates to the tensor object literal tensor([0.1, 0.2, 0.3])</span></span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true"></a></span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true"></a>tensor <span class="op">*</span> tensor <span class="co"># element multiplication evaluates to the tensor object literal tensor([1, 4, 9])</span></span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true"></a>torch.matmul(tensor, tensor) <span class="co"># matrix multiplication evalutes to the dot product value torch(14)</span></span>
-<span id="cb2-66"><a href="#cb2-66" aria-hidden="true"></a></span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true"></a>another_tensor.T <span class="co"># transpose operation that evaluates to the tensor object literal tensor([[7, 9, 11], [8, 10, 12]])</span></span>
-<span id="cb2-68"><a href="#cb2-68" aria-hidden="true"></a>another_tensor.T.shape <span class="co"># transpose operation means this will now return the torch.Size([2, 3])</span></span>
-<span id="cb2-69"><a href="#cb2-69" aria-hidden="true"></a></span>
-<span id="cb2-70"><a href="#cb2-70" aria-hidden="true"></a>yet_another_tensor.shape <span class="co"># returns torch.Size([9])</span></span>
-<span id="cb2-71"><a href="#cb2-71" aria-hidden="true"></a>reshaped_tensor <span class="op">=</span> yet_another_tensor.reshape(<span class="dv">9</span>, <span class="dv">1</span>)</span>
-<span id="cb2-72"><a href="#cb2-72" aria-hidden="true"></a>reshaped_tensor.shape <span class="co"># returns torch.Size([9, 1])</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true"></a><span class="co"># - </span><span class="al">NOTE</span><span class="co"> -</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true"></a>    <span class="co"># recall that we have to reassign the result of a tensor operation to a variable for the value to be stored, similar to anywhere else in Python and most other programming languages really</span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true"></a>    <span class="co"># the examples below are selected samples of the above methods and are not comprehensive, more detailed use cases can be found in PyTorch&#39;s documentation</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true"></a></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true"></a><span class="im">import</span> torch</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true"></a></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true"></a><span class="co"># intialisation of tensor object literals</span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true"></a>tensor <span class="op">=</span> torch.tensor([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]) </span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true"></a>another_tensor <span class="op">=</span> torch.tensor(</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true"></a>    [[<span class="dv">7</span>, <span class="dv">8</span>],</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true"></a>    [<span class="dv">9</span>, <span class="dv">10</span>],</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true"></a>    [<span class="dv">11</span>, <span class="dv">12</span>]]</span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true"></a>)</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true"></a>yet_another_tensor <span class="op">=</span> torch.arange(<span class="dv">1</span>, <span class="dv">10</span>) <span class="co"># initialises the tensor object literal tensor([1, 2, 3, 4, 5, 6, 7, 8, 9])</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true"></a>final_tensor <span class="op">=</span> torch.arange(<span class="dv">1</span>, <span class="dv">10</span>).reshape(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">3</span>) <span class="co"># initialises the tensor object literal tensor([[[1, 2, 3], [4, 5, 6], [7, 8, 9]]]) </span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true"></a></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true"></a>tensor <span class="op">+</span> <span class="dv">10</span> <span class="co"># addition that evaluates to the tensor object literal tensor([101, 102, 103])</span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true"></a>tensor <span class="op">-</span> <span class="dv">10</span> <span class="co"># subtraction that evaluates to the tensor object literal tensor([-9, -8, -7])</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true"></a>tensor <span class="op">*</span> <span class="dv">10</span> <span class="co"># simple multiplication evaluates to the tensor object literal tensor([10, 20, 30])</span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true"></a>tensor <span class="op">/</span> <span class="dv">10</span> <span class="co"># divison evaluates to the tensor object literal tensor([0.1, 0.2, 0.3])</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true"></a></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true"></a>tensor <span class="op">*</span> tensor <span class="co"># element multiplication evaluates to the tensor object literal tensor([1, 4, 9])</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true"></a>torch.matmul(tensor, tensor) <span class="co"># matrix multiplication evalutes to the dot product value torch(14)</span></span>
 <span id="cb2-73"><a href="#cb2-73" aria-hidden="true"></a></span>
-<span id="cb2-74"><a href="#cb2-74" aria-hidden="true"></a>view_tensor <span class="op">=</span> yet_another_tensor.view(<span class="dv">9</span>, <span class="dv">1</span>)</span>
-<span id="cb2-75"><a href="#cb2-75" aria-hidden="true"></a>view_tensor.shape <span class="co"># returns torch.Size([9, 1]), but note that modifying view_tensor will also modify the value of yet_another_tensor</span></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true"></a>another_tensor.T <span class="co"># transpose operation that evaluates to the tensor object literal tensor([[7, 9, 11], [8, 10, 12]])</span></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true"></a>another_tensor.T.shape <span class="co"># transpose operation means this will now return the torch.Size([2, 3])</span></span>
 <span id="cb2-76"><a href="#cb2-76" aria-hidden="true"></a></span>
-<span id="cb2-77"><a href="#cb2-77" aria-hidden="true"></a>stack_tensor <span class="op">=</span> torch.stack([yet_another_tensor, yet_another_tensor, yet_another_tensor, yet_another_tensor], dim <span class="op">=</span> <span class="dv">0</span>) <span class="co"># restacks the tensor according to dimension 0</span></span>
-<span id="cb2-78"><a href="#cb2-78" aria-hidden="true"></a>stack_tensor <span class="op">=</span> torch.stack([yet_another_tensor, yet_another_tensor, yet_another_tensor, yet_another_tensor], dim <span class="op">=</span> <span class="dv">1</span>) <span class="co"># restacks the tensor according to dimension 1</span></span></code></pre></div>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true"></a>yet_another_tensor.shape <span class="co"># returns torch.Size([9])</span></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true"></a>reshaped_tensor <span class="op">=</span> yet_another_tensor.reshape(<span class="dv">9</span>, <span class="dv">1</span>)</span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true"></a>reshaped_tensor.shape <span class="co"># returns torch.Size([9, 1])</span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true"></a></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true"></a>view_tensor <span class="op">=</span> yet_another_tensor.view(<span class="dv">9</span>, <span class="dv">1</span>)</span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true"></a>view_tensor.shape <span class="co"># returns torch.Size([9, 1]), but note that modifying view_tensor will also modify the value of yet_another_tensor</span></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true"></a></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true"></a>stack_tensor <span class="op">=</span> torch.stack([yet_another_tensor, yet_another_tensor, yet_another_tensor, yet_another_tensor], dim <span class="op">=</span> <span class="dv">0</span>) <span class="co"># restacks the tensor according to dimension 0</span></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true"></a>stack_tensor <span class="op">=</span> torch.stack([yet_another_tensor, yet_another_tensor, yet_another_tensor, yet_another_tensor], dim <span class="op">=</span> <span class="dv">1</span>) <span class="co"># restacks the tensor according to dimension 1</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true"></a></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true"></a>final_tensor.shape <span class="co"># unmodified tensor will return torch.Size([1, 3, 3])</span></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true"></a>final_tensor[<span class="dv">0</span>] <span class="co"># evaluates to tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])</span></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true"></a>final_tensor[<span class="dv">0</span>][<span class="dv">0</span>] <span class="co"># evaluates to tensor([1, 2, 3])</span></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true"></a>final_tensor[<span class="dv">0</span>][<span class="dv">0</span>][<span class="dv">0</span>] <span class="co"># evaluates to tensor(1)</span></span></code></pre></div>
+<h3 id="pytorch-and-numpy">PyTorch and NumPy</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="co"># ----- NUMPY -----</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>    <span class="co"># torch.from_numpy() =&gt; receives NumPy data and converts it to a PyTorch tensor</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>    <span class="co"># torch.Tensor.numpy() =&gt; receives a PyTorch tensor and converts it to NumPy data</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>    <span class="co"># observe that NumPy&#39;s default datatype is float64 while PyTorch&#39;s default datatype is float32</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a><span class="im">import</span> torch</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a><span class="im">import</span> numpy</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a>array <span class="op">=</span> numpy.arange(<span class="fl">1.0</span>, <span class="fl">8.0</span>) <span class="co"># initialise a NumPy array</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a>tensor <span class="op">=</span> torch.from_numpy(array) <span class="co"># convert that NumPy array to a PyTorch tensor</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true"></a>back_to_array <span class="op">=</span> torch.Tensor.numpy(tensor) <span class="co"># converting that PyTorch tensor back to a NumPy array</span></span></code></pre></div>
+<h3 id="reproducibility">Reproducibility</h3>
+<p>Introduce a <strong>random seed</strong> to flavour the randomness of <code>torch.rand()</code>.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="co"># ----- REPRODUCIBILITY -----</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>    <span class="co"># torch.manual_seed() =&gt; sets the provided value as the seed for generating the next random tensor value to ensuring reproducibility</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>        <span class="co"># note that this method must be called EVERY TIME we want to invoke the torch.rand() method to reassign the user-defined seed value</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a><span class="im">import</span> torch</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a>RANDOM_SEED <span class="op">=</span> <span class="dv">42</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a>torch.manual_seed(RANDOM_SEED) <span class="co"># assign a seed value</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a>random_tensor_1 <span class="op">=</span> torch.rand(<span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a>torch.manual_seed(RANDOM_SEED) <span class="co"># assign a seed value</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true"></a>random_tensor_2 <span class="op">=</span> torch.rand(<span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true"></a>random_tensor_1 <span class="op">==</span> random_tensor_2 <span class="co"># this evaluates to True</span></span></code></pre></div>
 <blockquote>
-<p>continue from 3:23:15 of <a href="https://youtu.be/Z_ikDlimN6A?si=40CGjign3YYuEN3D">this video</a> and add code above here</p>
+<p>continue from 4:17:00 of <a href="https://youtu.be/Z_ikDlimN6A?si=40CGjign3YYuEN3D">this video</a> and continue adding above here</p>
 </blockquote>
 <h2 id="doing-actual-things-with-tensors">Doing actual things with Tensors</h2>
 <p><em>“Enough yapping, I want to build something.”</em></p>
 <h3 id="encode-an-image-to-a-tensor">Encode an Image to a Tensor</h3>
-<blockquote>
-<p>FUA continue adding here later when its covered in the video</p>
-</blockquote>
 <ol type="1">
 <li>Split the image into its RGB <em>(red green blue)</em> color channels</li>
 <li>Represent that as a tensor with the shape <em>(<code>color_channels</code>, <code>image_height</code>, <code>image_width</code>)</em></li>
+<li></li>
 </ol>
-<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"></code></pre></div>
+<blockquote>
+<p>FUA continue adding here later when its covered in the video</p>
+</blockquote>
+<div class="sourceCode" id="cb5"><pre class="sourceCode py"><code class="sourceCode python"></code></pre></div>
 <h2 id="more-on">More on</h2>
 <h3 id="core-resources">Core resources</h3>
 <ul>
@@ -365,11 +405,16 @@
 <h3 id="prerequisite-knowledge">Prerequisite knowledge</h3>
 <ul>
 <li><a href="https://learnxinyminutes.com/docs/python/">learn python in y minutes</a></li>
+<li><a href="https://numpy.org/">numpy</a></li>
+<li><a href="https://pandas.pydata.org/">pandas</a></li>
+<li><a href="https://matplotlib.org/">matplotlib</a></li>
 <li><a href="https://www.mathsisfun.com/algebra/matrix-multiplying.html">how to find dot product</a></li>
+<li><a href="https://aws.amazon.com/what-is-cloud-computing/">what is cloud computing</a></li>
 </ul>
 <h3 id="additional-resources">Additional resources</h3>
 <ul>
 <li><a href="https://colab.google/">colab.google</a></li>
+<li><a href="https://aws.amazon.com/">aws.amazon</a></li>
 <li><a href="https://www.tensorflow.org/">tensorflow.org</a></li>
 <li><a href="https://keras.io/">keras.io</a></li>
 </ul>

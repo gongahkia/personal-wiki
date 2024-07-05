@@ -220,9 +220,15 @@ ten_ones = torch.ones_like(input=zero_to_nine) # initialises a one tensor of the
         # torch.unsqueeze() => method that adds a SINGLE dimension to a given tensor, with a dim argument that further specifies which dimension to add the single dimension at
         # torch.permute() => method that rearranges the dimensions of a given tensor to a new specified order and returns a VIEW of that new tensor (which means changing the new tensor variable assigned to a permute changes the value of the original tensor being permuted)
 
+# --- SELECTION METHODS ---
+    # [] => indexing in PyTorch is similar to indexing in Python and NumPy, where list values are zero-indexed and can have nested calls
+    # : => specifies to select ALL of a given target dimension
+
 # - NOTE -
     # recall that we have to reassign the result of a tensor operation to a variable for the value to be stored, similar to anywhere else in Python and most other programming languages really
     # the examples below are selected samples of the above methods and are not comprehensive, more detailed use cases can be found in PyTorch's documentation
+
+import torch
 
 # intialisation of tensor object literals
 tensor = torch.tensor([1, 2, 3]) 
@@ -232,6 +238,7 @@ another_tensor = torch.tensor(
     [11, 12]]
 )
 yet_another_tensor = torch.arange(1, 10) # initialises the tensor object literal tensor([1, 2, 3, 4, 5, 6, 7, 8, 9])
+final_tensor = torch.arange(1, 10).reshape(1, 3, 3) # initialises the tensor object literal tensor([[[1, 2, 3], [4, 5, 6], [7, 8, 9]]]) 
 
 tensor + 10 # addition that evaluates to the tensor object literal tensor([101, 102, 103])
 tensor - 10 # subtraction that evaluates to the tensor object literal tensor([-9, -8, -7])
@@ -253,9 +260,50 @@ view_tensor.shape # returns torch.Size([9, 1]), but note that modifying view_ten
 
 stack_tensor = torch.stack([yet_another_tensor, yet_another_tensor, yet_another_tensor, yet_another_tensor], dim = 0) # restacks the tensor according to dimension 0
 stack_tensor = torch.stack([yet_another_tensor, yet_another_tensor, yet_another_tensor, yet_another_tensor], dim = 1) # restacks the tensor according to dimension 1
+
+final_tensor.shape # unmodified tensor will return torch.Size([1, 3, 3])
+final_tensor[0] # evaluates to tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+final_tensor[0][0] # evaluates to tensor([1, 2, 3])
+final_tensor[0][0][0] # evaluates to tensor(1)
 ```
 
-> continue from 3:23:15 of [this video](https://youtu.be/Z_ikDlimN6A?si=40CGjign3YYuEN3D) and add code above here
+### PyTorch and NumPy
+
+```py
+# ----- NUMPY -----
+    # torch.from_numpy() => receives NumPy data and converts it to a PyTorch tensor
+    # torch.Tensor.numpy() => receives a PyTorch tensor and converts it to NumPy data
+    # observe that NumPy's default datatype is float64 while PyTorch's default datatype is float32
+
+import torch
+import numpy
+
+array = numpy.arange(1.0, 8.0) # initialise a NumPy array
+tensor = torch.from_numpy(array) # convert that NumPy array to a PyTorch tensor
+back_to_array = torch.Tensor.numpy(tensor) # converting that PyTorch tensor back to a NumPy array
+```
+
+### Reproducibility
+
+Introduce a **random seed** to flavour the randomness of `torch.rand()`.
+
+```py
+# ----- REPRODUCIBILITY -----
+    # torch.manual_seed() => sets the provided value as the seed for generating the next random tensor value to ensuring reproducibility
+        # note that this method must be called EVERY TIME we want to invoke the torch.rand() method to reassign the user-defined seed value
+
+import torch
+
+RANDOM_SEED = 42
+torch.manual_seed(RANDOM_SEED) # assign a seed value
+random_tensor_1 = torch.rand(3, 4)
+torch.manual_seed(RANDOM_SEED) # assign a seed value
+random_tensor_2 = torch.rand(3, 4)
+
+random_tensor_1 == random_tensor_2 # this evaluates to True
+```
+
+> continue from 4:17:00 of [this video](https://youtu.be/Z_ikDlimN6A?si=40CGjign3YYuEN3D) and continue adding above here
 
 ## Doing actual things with Tensors
 
@@ -263,10 +311,12 @@ stack_tensor = torch.stack([yet_another_tensor, yet_another_tensor, yet_another_
 
 ### Encode an Image to a Tensor
 
-> FUA continue adding here later when its covered in the video
-
 1. Split the image into its RGB *(red green blue)* color channels
 2. Represent that as a tensor with the shape *(`color_channels`, `image_height`, `image_width`)*
+3. 
+
+> FUA continue adding here later when its covered in the video
+
 
 ```py
 
@@ -287,10 +337,15 @@ stack_tensor = torch.stack([yet_another_tensor, yet_another_tensor, yet_another_
 ### Prerequisite knowledge 
 
 * [learn python in y minutes](https://learnxinyminutes.com/docs/python/)
+* [numpy](https://numpy.org/)
+* [pandas](https://pandas.pydata.org/)
+* [matplotlib](https://matplotlib.org/)
 * [how to find dot product](https://www.mathsisfun.com/algebra/matrix-multiplying.html)
+* [what is cloud computing](https://aws.amazon.com/what-is-cloud-computing/)
 
 ### Additional resources
 
 * [colab.google](https://colab.google/)
+* [aws.amazon](https://aws.amazon.com/)
 * [tensorflow.org](https://www.tensorflow.org/)
 * [keras.io](https://keras.io/)
