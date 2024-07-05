@@ -108,7 +108,6 @@
 <li>transfer learning: one program’s <em>output</em> is FED to another program as <em>input</em></li>
 <li>reinforcement learning: program is REWARDED for <em>ideal</em> behaviour and discouraged from <em>unideal</em> behaviour</li>
 </ul></li>
-<li>Tensor: any numerical representation of data <em>(most commonly multi-dimensional vectors)</em></li>
 <li>General workflow of building a deep learning program is
 <ol type="1">
 <li>convert raw data to <em>input tensors</em></li>
@@ -122,15 +121,88 @@
 <li>improve the model through iterative experimentation</li>
 <li>save and reload</li>
 </ol></li>
+<li>Tensor: any numerical representation of data <em>(most commonly multi-dimensional vectors)</em></li>
+<li>There are different kinds of tensors
+<ol type="1">
+<li>scalar: a single number of 0 dimensions</li>
+<li>vector: a number with a <em>direction</em> of 1 dimension</li>
+<li>matrix: a <em>2-dimensional</em> array of numbers</li>
+<li>tensor: a <em>n-dimensional</em> array of numbers</li>
+</ol></li>
+<li>Random tensors: important because neural networks take in tensors full of <em>random numbers</em> and then adjust those numbers to <strong>better represent</strong> data</li>
 </ol>
 <h2 id="quickstart">Quickstart</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co"># ----- QUICKSTART -----</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>    <span class="co"># torch.__version__ =&gt; current PyTorch version</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>    <span class="co"># torch.tensor() =&gt; initialises a tensor object</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>    <span class="co"># .rand() =&gt; initialises a random tensor object of the specified size</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>    <span class="co"># .item() =&gt; called on a tensor object, which is then returned as a value literal (integer, list literal etc.)</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>    <span class="co"># .ndim =&gt; called on a tensor object to return the number of dimensions a given tensor has</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>        <span class="co"># observe that the rule of thumb is one dimension is added for every degree of [] square bracket nesting within a tensor object</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>    <span class="co"># .shape =&gt; recursive call on a tensor object to return the number of list elements within a given tensor</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a><span class="co"># --- DATA SCIENCE PACKAGES TO IMPORT ---</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a><span class="im">import</span> torch </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a><span class="im">import</span> pandas</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a><span class="im">import</span> numpy</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> p</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true"></a><span class="bu">print</span>(torch.__version__) <span class="co"># display the current PyTorch version</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true"></a><span class="co"># --- USER-DEFINED TENSORS ---</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true"></a>scalar <span class="op">=</span> torch.tensor(<span class="dv">7</span>) <span class="co"># initialise a scalar tensor object</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true"></a>scalar.item() <span class="co"># returns 7</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true"></a>scalar.ndim <span class="co"># returns 0 dimensions</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true"></a>scalar.shape <span class="co"># returns torch.Size([]) to indicate that there are no list elements</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true"></a>vector <span class="op">=</span> torch.tensor([<span class="dv">7</span>, <span class="dv">7</span>]) <span class="co"># intialise a vector tensor object</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true"></a>vector.item() <span class="co"># returns [7, 7]</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true"></a>vector.ndim <span class="co"># returns 1 dimension</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true"></a>vector.shape <span class="co"># returns torch.Size(2) to indicate 2 elements</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true"></a><span class="co"># - </span><span class="al">NOTE</span><span class="co"> -</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true"></a>    <span class="co"># by convention. scalar and vector variables are declared in lowercase while matrix and tensor variables are declared in UPPERCASE</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true"></a>MATRIX <span class="op">=</span> torch.tensor(</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true"></a>    [[<span class="dv">7</span>, <span class="dv">8</span>], </span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true"></a>    [<span class="dv">9</span>, <span class="dv">10</span>]]</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true"></a>)</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true"></a>MATRIX.ndim() <span class="co"># returns 2 dimensions</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true"></a>MATRIX.shape <span class="co"># returns torch.Size([2, 2]) to indicate 2 list elements each containing 2 elements</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true"></a>TENSOR <span class="op">=</span> torch.tensor(</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true"></a>    [[[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true"></a>    [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>],</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true"></a>    [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]]]</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true"></a>)</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true"></a>TENSOR.ndim <span class="co"># returns 3 dimensions</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true"></a>TENSOR.shape <span class="co"># returns torch.Size([1, 3, 3]) to indicate 1 list element which contains 3 list elements which contain 3 elements each</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true"></a></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true"></a>WATERMELON <span class="op">=</span> torch.tensor(</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true"></a>    [[[[<span class="dv">1</span>, <span class="dv">2</span>],</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true"></a>    [<span class="dv">3</span>, <span class="dv">4</span>],</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true"></a>    [<span class="dv">5</span>, <span class="dv">6</span>],</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true"></a>    [<span class="dv">7</span>, <span class="dv">8</span>],</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true"></a>    [<span class="dv">9</span>, <span class="dv">10</span>],</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true"></a>    [<span class="dv">11</span>, <span class="dv">12</span>]]]]</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true"></a>)</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true"></a>WATERMELON.ndim <span class="co"># returns 4 dimensions</span></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true"></a>WATERMELON.shape <span class="co"># returns torch.Size([1,1,6,2]) to indicate 1 list element that contains 1 list element that contains 6 list elements which then contains 2 elements each</span></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true"></a></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true"></a><span class="co"># --- RANDOM TENSOR ---</span></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true"></a></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true"></a>random_tensor <span class="op">=</span> torch.rand(<span class="dv">3</span>, <span class="dv">4</span>) <span class="co"># initialises a random tensor of torch.Size([3,4])</span></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true"></a>random_tensor.ndim <span class="co"># returns 2 dimensions</span></span></code></pre></div>
 <blockquote>
 <p>continue from 1:08:052 of <a href="https://youtu.be/Z_ikDlimN6A?si=40CGjign3YYuEN3D">this video</a></p>
 </blockquote>
-<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"></code></pre></div>
 <h2 id="more-on">More on</h2>
 <h3 id="core-resources">Core resources</h3>
 <ul>
+<li><a href="https://pytorch.org/get-started/locally/">install pytorch locally</a></li>
+<li><a href="https://github.com/mrdbourke/pytorch-deep-learning/blob/main/SETUP.md">getting setup with pytorch</a></li>
 <li><a href="https://pytorch.org/">pytorch.org</a></li>
 <li><a href="https://pytorch.org/docs/stable/index.html">pytorch documentation</a></li>
 <li><a href="https://paperswithcode.com/trends">papers with code trends</a></li>
