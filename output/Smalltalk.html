@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Smalltalk</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+</head>
+<body>
+<h1 id="smalltalk"><code>Smalltalk</code></h1>
+<p>Everything is an object in Smalltalk.</p>
+<h2 id="introduction">Introduction</h2>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Dynamic_typing">dynamically-typed</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Object-oriented_programming">fully object-oriented</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Reflective_programming">reflective programming</a></li>
+<li>used for <a href="http://bitsavers.informatik.uni-stuttgart.de/pdf/xerox/parc/techReports/SSL-77-2_Teaching_Smalltalk.pdf">educational purposes</a> and <a href="https://www.pi-top.com/blog/2018/11/06/defining-constructionist-learning">constructionist learning</a></li>
+</ul>
+<h2 id="quickstart">Quickstart</h2>
+<ol type="1">
+<li>every statement is . period-delimited</li>
+<li>there are NO function calls, instead, <em>messages</em> are sent to <em>objects</em> which then run a <em>method</em> in response which themselves return an <em>object</em></li>
+<li>a basic operation is to send a message to an object in the format <code>&lt;objectName&gt; &lt;desiredMessage&gt;</code></li>
+<li>there are three types of messages
+<ol type="1">
+<li>Unary: a single symbol comprised of several words in camelCase with <strong>no arguments</strong>
+<ul>
+<li>here are some examples
+<ul>
+<li><em>size</em></li>
+<li><em>reverseBytes</em></li>
+<li><em>convertToLargerFormatPixels</em></li>
+</ul></li>
+</ul></li>
+<li>Binary: small set of reserved symbols often used for arithmetic operations in most other programming languages, that receive a <strong>single argument</strong>
+<ul>
+<li>note there is no traditional arithmetic precendece in binary messages</li>
+<li>here are some examples
+<ul>
+<li><em>3 + 4</em></li>
+<li><em>10 - 5</em></li>
+<li><em>6 </em> 7*</li>
+<li><em>20 / 4</em></li>
+<li><em>15 // 4</em></li>
+<li><em>15 \ 4</em></li>
+<li><em>5 = 5</em></li>
+<li><em>5 ~= 4</em></li>
+<li><em>5 &lt; 10</em></li>
+<li><em>10 &gt; 5</em></li>
+<li><em>5 &lt;= 5</em></li>
+<li><em>10 &gt;= 5</em></li>
+<li><em>true &amp; false</em></li>
+<li><em>true | false</em></li>
+<li><em>true not</em></li>
+</ul></li>
+</ul></li>
+<li>Keyword: general form in camelCase that receives <strong>multiple arguments</strong> which are : colon-delimited
+<ul>
+<li>here are some examples
+<ul>
+<li><em>setTemperature:</em></li>
+<li><em>at:put:</em></li>
+<li><em>drawFrom:to:lineWidth:fillColor:</em></li>
+</ul></li>
+</ul></li>
+</ol></li>
+</ol>
+<pre class="st"><code>&quot; ----- QUICKSTART ----- &quot;
+    &quot; below is some annotated Smalltalk code &quot;
+    &quot; honestly if you&#39;re struggling to understand, don&#39;t worry because I am too &quot;
+
+&quot; --- CLASS DEFINITION --- &quot;
+
+Object subclass: Person [ &quot; define a new class Person which is a subclass of Object &quot;
+
+    | name age | &quot; define instance variables for the class &quot;
+
+    Person class &gt;&gt; newName: aName age: anAge [ &quot; class method to create a new Person instance with a name and age and return it &quot;
+        ^ self new setName: aName; setAge: anAge; yourself.
+    ]
+
+    setName: aName [ &quot; method to set the name of the person &quot;
+        name := aName.
+    ]
+    setAge: anAge [ &quot; method to set the age of the person &quot;
+        age := anAge.
+    ]
+
+    printPerson [ &quot; method to print the details of the person &quot;
+        Transcript show: &#39;Name: &#39;, name; cr.
+        Transcript show: &#39;Age: &#39;, age printString; cr.
+    ]
+
+]
+
+&quot; --- EXECUTION CODE --- &quot; 
+
+| person |
+person := Person newName: &#39;Alice&#39; age: 30. &quot; create an instance of the Person class with the name &#39;Alice&#39; and age 30 &quot;
+person printPerson. &quot; print the details of the person instance by calling the printPerson method &quot;</code></pre>
+<h2 id="more-on">More on</h2>
+<ul>
+<li><a href="https://www.gnu.org/software/smalltalk/manual/gst.html">smalltalk documentation</a></li>
+<li><a href="https://www.angelfire.com/tx4/cus/notes/smalltalk.html">smalltalk cheatsheet</a></li>
+<li><a href="https://learnxinyminutes.com/docs/smalltalk/">learn smalltalk in y minutes</a></li>
+</ul>
+</body>
+</html>
