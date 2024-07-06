@@ -31,23 +31,15 @@ comment
 
 ```pl
 % ----- QUICKSTART -----
-    % 
-
-
-CLEAN THIS UP AND ADD EXPLANATION FROM LEARN PROLOG IN Y MINUTES LATER
-
-% Run all examples
-run_examples :-
-    atom_example,
-    numbers_example,
-    variables_example,
-    compound_terms_example,
-    lists_example,
-    strings_example,
-    dictionaries_example.
-
-% To run the examples, query the predicate `run_examples`.
-% ?- run_examples.
+    % declarative programming language
+    % Prolog programs are composed of sets of logical rules and facts written as terms
+        % terms => statements composed of atoms and compound structures
+        % atoms => constants, variables
+        % compound structures => functors, arguments
+    % Prolog code is . period-delimited
+    % excellent at representing and reasoning about logical relationships and symbolic data
+    % most commonly used for natural language processing in AI, expert systems, symbolic mathematics, theorem proving and formal verification
+    % features backtracking, which enables Prolog to explore alternative solutions to a given query in an execution-safe, controlled manner
 ```
 
 ## Types
@@ -60,8 +52,8 @@ run_examples :-
     % variable => stores an unknown or mutable value declared as beginning with an uppercase letter or an _ underscore, the equivalent of variable declaration in most other programming languages
         % note that _ underscore-prefixed variables create only a TEMPORARY variable binding
     % compound term => represents user-defined structured data, consisting of both a functor and an argument, called similarly to function calls in most other programming languages
-        % functor =>
-        % argument =>
+        % functor => the equivalent of functions in most other programming languages
+        % argument => arguments provided to a functor, the equivalent of function parameters or arguments in most other programming languages
 
 atom_example :- 
     A1 = atom, % simple lowercase atom
@@ -153,8 +145,8 @@ comparison_operators_example :-
 
 % --- LOGICAL OPERATORS ---
 
-, % logical and operator
-; % logical or operator
+, % conjunction operator, the equivalent of the logical and operator
+; % disjunction operator, the equivalent of the logical or operator
 \+ % logical not operator
 
 logical_operators_example :-
@@ -170,67 +162,91 @@ logical_operators_example :-
 
 % --- CONDITIONALS ---
 
+% IF ELSE IF ELSE
+    % Prolog does not provide conventional if else if else conditional constructs available in most other programming languages
+    % instead, the logical operators (specifically the , conjunction and ; disjunction operators) and pattern-matching can both be used to achieve the same effect of conditional constructs
+
+% CONJUNCTION DISJUNCTION OPERATORS
+
+member_of_family(john) :- writeln('John is a family member.'), !. % Cut (!) to prevent backtracking
+member_of_family(mary) :- writeln('Mary is a family member.'), !.
+member_of_family(_).
+
+% PATTERN-MATCHING
+    % Prolog's powerful pattern-matching is powered by unification which helps evaluate logical queries blazingly fast
+    % unification => where the compiler finds substitutions for variables that make two terms identical during evaluation
+
+animal_sound(dog) :- writeln('Woof!').
+animal_sound(cat) :- writeln('Meow!').
+animal_sound(_) :- writeln('Unknown animal sound!').
+
 % --- LOOPS ---
+    % as a declarative language, Prolog similarly does not provide conventional for, foreach, for in or while loop constructs as in most other programming languages
+    % instead, recursion is the default choice when explicit traversal or iteration over elements in an iterable data structure is required
+
+% RECURSION
+
+iterate_through_list([]). % iterating through a list with a recursive functor call
+iterate_through_list([Head | Tail]) :- % compound term definition
+    writeln(Head),
+    iterate_through_list(Tail).
 ```
 
 ## Data structures
 
 ```pl
 % ----- DATA STRUCTURE -----
-    % 
+    % note that in Prolog, all data structures are represented by terms (comprised of functors and arguments)
+    % this flexible syntax allows for the user to implement both standard data structures that would be built-in in most other programming languages, as well as other user-defined data structures
+    % below are some of the more common data structures implemented in Prolog
+        % list => ordered collection of elements of multiple datatypes declared within [] square brackets
+        % dictionary => unordered collection of key-value pairs of multiple datatypes declared within dict{} where keys and their corresponding values are separated by a : colon
+            % note that SWI-Prolog provides for a default implementation of the dictionary as a shipped data structure
+        % record => user-defined collection of named fields and their corresponding interior values allowing for modelling of representative data, note that this implementation of records is equivalent to a struct LITERAL in Typescript and Go and not a struct itself (there is only one instance of the struct in Prolog, which is as defined, therefore a struct literal and not a conventional struct that you can template off)
+        % tree => user-defined recursive data structure that facilitates hierarchical representation of data
+        % graph => user-defined data structure composed of nodes which are connected by edges, facilitating representation of data involving relationships and networks
 
-% list => 
-% dictionary =>
+% LIST
 
+anExampleEmptyList = [].
+anExampleNumberList = [1, 2, 3, 4, 5].
+anExampleAtomList = [apple, banana, cherry].
+anExampleVariableList = [X, Y, Z].
+anExampleNestedList = [1, [a, b, c], 3.14, [X, Y]].
 
-% Lists
-% Lists are ordered collections of elements. 
+% DICTIONARY
 
-lists_example :- 
-    L1 = [],                       % Empty list
-    L2 = [1, 2, 3, 4],             % List of integers
-    L3 = [1, foo, X, [a, b]],      % List with mixed types and a sublist
-    L4 = [Head | Tail],            % List constructed with head and tail notation
-    writeln(L1),
-    writeln(L2),
-    writeln(L3),
-    (L2 = [H | T],                 % Deconstruct list L2 into head H and tail T
-    writeln(H),                    % Write head of L2
-    writeln(T)),                   % Write tail of L2
-    writeln(L4).
+anExampleDictionary = dict{name: "Alice", age: 30}.
 
+% RECORD
 
+% Facts representing records
+employee(john_doe, 50000, 'IT').
+employee(jane_smith, 60000, 'HR').
 
-% Dictionaries
-% Dictionaries store key-value pairs. Note that this is specific to some Prolog implementations, like SWI-Prolog.
+% TREE
 
-dictionaries_example :- 
-    Dict = dict{name: "Alice", age: 30},  % Dictionary with keys `name` and `age`
-    writeln(Dict).
+Tree = tree(tree(leaf, 1, leaf), 2, tree(leaf, 3, leaf)).
 
-% Run all examples
-run_examples :-
-    lists_example,
-    dictionaries_example.
+% GRAPH
+    % below are facts representing each node and edge of the graph
 
-% To run the examples, query the predicate `run_examples`.
-% ?- run_examples.
-```
-
-## Functions
-
-```pl
-% ----- FUNCTION -----
-    % 
-
+edge(a, b).
+edge(b, c).
+edge(c, a).
+node(a).
+node(b).
+node(c).
 ```
 
 ## More on
 
+* [functors](https://stackoverflow.com/questions/19115712/in-prolog-is-a-fact-the-same-as-a-functor)
 * [swi-prolog.org](https://www.swi-prolog.org/)
 * [swi-prolog documentation](https://www.swi-prolog.org/pldoc/index.html)
 * [learn prolog in y minutes](https://learnxinyminutes.com/docs/prolog/)
 * [introduction to prolog](https://www.sfu.ca/~tjd/383summer2019/prolog_intro.html)
+* [what is declarative programming](https://stackoverflow.com/questions/129628/what-is-declarative-programming)
 * [learn logtalk in y minutes](https://learnxinyminutes.com/docs/logtalk/)
 * [learn clojure in y minutes](https://learnxinyminutes.com/docs/clojure/)
 * [learn erlang in y minutes](https://learnxinyminutes.com/docs/erlang/)
