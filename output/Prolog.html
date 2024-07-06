@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Prolog</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="prolog"><code>Prolog</code></h1>
+<p>Logic programming language from 1972 that has inspired many modern languages.</p>
+<h2 id="comments">Comments</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode pl"><code class="sourceCode perl"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>% ----- COMMENT -----</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>% this is a single-line comment</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="kw">/</span><span class="ch">*</span><span class="ot"> </span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="ot">this is a </span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="ot">multi-line </span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a><span class="ot">comment</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a><span class="ch">*</span><span class="kw">/</span></span></code></pre></div>
+<h2 id="printing">Printing</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode pl"><code class="sourceCode perl"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>% ----- PRINTING -----</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>    % <span class="fu">write</span>() =&gt; receives a string argument which is then printed to the stdout <span class="kw">and</span> does <span class="kw">not</span> include a newline automatically</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>    % writeln() =&gt; receives a string argument which is then printed to the stdout <span class="kw">and</span> includes a newline by <span class="kw">default</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>?- <span class="fu">write</span>(<span class="kw">&#39;</span><span class="st">this does not have a newline and we must explicitly specify its inclusion\n</span><span class="kw">&#39;</span>).</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a>?- writeln(<span class="kw">&#39;</span><span class="st">this does have a newline by default</span><span class="kw">&#39;</span>).</span></code></pre></div>
+<h2 id="quickstart">Quickstart</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode pl"><code class="sourceCode perl"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a>% ----- QUICKSTART -----</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>    % declarative programming language</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>    % Prolog programs are composed of sets of logical rules <span class="kw">and</span> facts written as terms</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>        % terms =&gt; statements composed of atoms <span class="kw">and</span> compound structures</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>        % atoms =&gt; constants, variables</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>        % compound structures =&gt; functors, arguments</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a>    % Prolog code is . period-delimited</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a>    % excellent at representing <span class="kw">and</span> reasoning about logical relationships <span class="kw">and</span> symbolic data</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a>    % most commonly used <span class="kw">for</span> natural language processing in AI, expert systems, symbolic mathematics, theorem proving <span class="kw">and</span> formal verification</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a>    % features backtracking, which enables Prolog to explore alternative solutions to a <span class="kw">given</span> query in an execution-safe, controlled manner</span></code></pre></div>
+<h2 id="types">Types</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode pl"><code class="sourceCode perl"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a>% ----- TYPE -----</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>    % atom =&gt; symbolic constants declared as unquoted lowercase words, special characters <span class="kw">or</span> quoted strings, the equivalent of atoms in Lisp <span class="kw">and</span> Erlang <span class="kw">and</span> symbols in Ruby</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>    % number =&gt; covers both <span class="kw">integer</span> number <span class="fu">values</span> <span class="kw">and</span> floating-point number <span class="fu">values</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>    % string =&gt; stored as a list of character codes</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>    % variable =&gt; stores an unknown <span class="kw">or</span> mutable value declared as beginning with an uppercase letter <span class="kw">or</span> an _ underscore, the equivalent of variable declaration in most other programming languages</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>        % note that _ underscore-prefixed variables create only a TEMPORARY variable binding</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a>    % compound term =&gt; represents user-<span class="fu">defined</span> structured data, consisting of both a functor <span class="kw">and</span> an argument, called similarly to function calls in most other programming languages</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a>        % functor =&gt; the equivalent of functions in most other programming languages</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a>        % argument =&gt; arguments provided to a functor, the equivalent of function parameters <span class="kw">or</span> arguments in most other programming languages</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true"></a>atom_example :- </span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true"></a>    A1 = atom, % simple lowercase atom</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true"></a>    A2 = <span class="kw">&#39;</span><span class="st">Hello World</span><span class="kw">&#39;</span>, % atom with spaces, requiring quotes</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true"></a>    A3 = +, % special character atom</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true"></a>    writeln(A1),</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true"></a>    writeln(A2),</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true"></a>    writeln(A3).</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true"></a></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true"></a>numbers_example :- </span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true"></a>    N1 = <span class="dv">42</span>, % an <span class="kw">integer</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true"></a>    N2 = <span class="dv">-7</span>, % a negative <span class="kw">integer</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true"></a>    N3 = <span class="fl">3.14</span>, % a floating-point number</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true"></a>    writeln(N1),</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true"></a>    writeln(N2),</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true"></a>    writeln(N3).</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true"></a></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true"></a>variables_example :- </span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true"></a>    X = <span class="dv">10</span>, % variable X bound to the number value <span class="dv">10</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true"></a>    Result = X + <span class="dv">5</span>, % variable result stores the value X + <span class="dv">5</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true"></a>    _Temp = Result <span class="kw">*</span> <span class="dv">2</span>, % temporary variable _Temp stores the value Result <span class="kw">*</span> <span class="dv">2</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true"></a>    writeln(X),</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true"></a>    writeln(Result),</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true"></a>    writeln(_Temp).</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true"></a></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true"></a>compound_terms_example :- </span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true"></a>    Term1 = person(john, <span class="dv">25</span>), % compound term with the functor <span class="kw">`</span><span class="st">person</span><span class="kw">`</span> <span class="kw">and</span> provided arguments <span class="kw">`</span><span class="st">john</span><span class="kw">`</span> <span class="kw">and</span> <span class="kw">`</span><span class="st">25</span><span class="kw">`</span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true"></a>    Term2 = point(<span class="dv">3</span>, <span class="dv">4</span>), % compound term with the functor <span class="kw">`</span><span class="st">point</span><span class="kw">`</span> <span class="kw">and</span> provided arguments <span class="kw">`</span><span class="st">3</span><span class="kw">`</span> <span class="kw">and</span> <span class="kw">`</span><span class="st">4</span><span class="kw">`</span></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true"></a>    Term3 = tree(node, left_subtree, right_subtree), % compound term representing a tree</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true"></a>    writeln(Term1),</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true"></a>    writeln(Term2),</span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true"></a>    writeln(Term3).</span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true"></a></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true"></a>strings_example :- </span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true"></a>    S = <span class="kw">&quot;</span><span class="st">Hello, Prolog!</span><span class="kw">&quot;</span>, % example of a string</span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true"></a>    writeln(S).</span></code></pre></div>
+<h2 id="operators">Operators</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode pl"><code class="sourceCode perl"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a>% ----- OPERATOR -----</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a>% --- ARITHMETIC OPERATORS ---</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>+ % addition</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a>- % subtraction</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a><span class="kw">*</span> % multiplication</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a><span class="kw">/</span><span class="ot"> % division</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true"></a><span class="kw">//</span><span class="ot"> % integer division</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true"></a><span class="ot">mod % modulo</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true"></a><span class="ch">**</span><span class="ot"> % exponentiation </span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true"></a><span class="ot">arithmetic_operators_example :-</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true"></a><span class="ot">    A is 5 </span><span class="ch">+</span><span class="ot"> 3, % an example of addition</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true"></a><span class="ot">    B is 10 - 2, % an example of subtraction</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true"></a><span class="ot">    C is 4 </span><span class="ch">*</span><span class="ot"> 7, % an example of multiplication</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true"></a><span class="ot">    D is 8 </span><span class="kw">/</span> <span class="dv">2</span>, % an example of division</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true"></a>    E is <span class="dv">8</span> // <span class="dv">2</span>, % an example of <span class="kw">integer</span> division</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true"></a>    F is <span class="dv">5</span> mod <span class="dv">2</span>, % an example of modulus</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true"></a>    G is <span class="dv">2</span> *<span class="kw">*</span> <span class="dv">3</span>, % an example of exponentiation</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true"></a>    writeln(A),</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true"></a>    writeln(B),</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true"></a>    writeln(C),</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true"></a>    writeln(D),</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true"></a>    writeln(E),</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true"></a>    writeln(F),</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true"></a>    writeln(G).</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true"></a></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true"></a>% --- COMPARISON OPERATORS ---</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true"></a></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true"></a>= % assignment operator, the equivalent of variable assignment in most other programming languages</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true"></a>=:= % partial equality check <span class="kw">for</span> value but <span class="kw">not</span> type, but note that this is purely <span class="kw">for</span> arithmetic comparison <span class="kw">and</span> so only checks <span class="kw">for</span> equality in value of evaluated numbers at both ends of the operator</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true"></a>=\= % partial inequality check <span class="kw">for</span> value but <span class="kw">not</span> type, but note that this is purely <span class="kw">for</span> arithmetic comparison <span class="kw">and</span> so only checks <span class="kw">for</span> inequality in value of evaluated numbers at both ends of the operator</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true"></a>&lt; % comparison operator</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true"></a>&gt; % comparison operator</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true"></a>&lt;= % comparison operator</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true"></a>&gt;= % comparison operator</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true"></a></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true"></a>comparison_operators_example :-</span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true"></a>    X = <span class="dv">5</span>, % variable assignment </span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true"></a>    Y = <span class="dv">10</span>, % variable assignment</span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true"></a>    (X =:= <span class="dv">5</span> -&gt; writeln(<span class="kw">&#39;</span><span class="st">X is equal to 5</span><span class="kw">&#39;</span>); writeln(<span class="kw">&#39;</span><span class="st">X is not equal to 5</span><span class="kw">&#39;</span>)), % equality</span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true"></a>    (X =\= Y -&gt; writeln(<span class="kw">&#39;</span><span class="st">X is not equal to Y</span><span class="kw">&#39;</span>); writeln(<span class="kw">&#39;</span><span class="st">X is equal to Y</span><span class="kw">&#39;</span>)), % inequality</span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true"></a>    (X &lt; Y -&gt; writeln(<span class="kw">&#39;</span><span class="st">X is less than Y</span><span class="kw">&#39;</span>); writeln(<span class="kw">&#39;</span><span class="st">X is not less than Y</span><span class="kw">&#39;</span>)), % <span class="kw">less</span> than</span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true"></a>    (X =&lt; Y -&gt; writeln(<span class="kw">&#39;</span><span class="st">X is less than or equal to Y</span><span class="kw">&#39;</span>); writeln(<span class="kw">&#39;</span><span class="st">X is greater than Y</span><span class="kw">&#39;</span>)), % <span class="kw">less</span> than <span class="kw">or</span> equal</span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true"></a>    (X &gt; Y -&gt; writeln(<span class="kw">&#39;</span><span class="st">X is greater than Y</span><span class="kw">&#39;</span>); writeln(<span class="kw">&#39;</span><span class="st">X is not greater than Y</span><span class="kw">&#39;</span>)), % greater than</span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true"></a>    (X &gt;= <span class="dv">5</span> -&gt; writeln(<span class="kw">&#39;</span><span class="st">X is greater than or equal to 5</span><span class="kw">&#39;</span>); writeln(<span class="kw">&#39;</span><span class="st">X is less than 5</span><span class="kw">&#39;</span>)). % greater than <span class="kw">or</span> equal</span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true"></a></span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true"></a>% --- LOGICAL OPERATORS ---</span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true"></a></span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true"></a>, % conjunction operator, the equivalent of the logical <span class="kw">and</span> operator</span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true"></a>; % disjunction operator, the equivalent of the logical <span class="kw">or</span> operator</span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true"></a>\+ % logical <span class="kw">not</span> operator</span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true"></a></span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true"></a>logical_operators_example :-</span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true"></a>    (true, writeln(<span class="kw">&#39;</span><span class="st">Logical AND (true and true)</span><span class="kw">&#39;</span>)),</span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true"></a>    (fail; writeln(<span class="kw">&#39;</span><span class="st">Logical OR (fail or true)</span><span class="kw">&#39;</span>)),</span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true"></a>    (\+ fail -&gt; writeln(<span class="kw">&#39;</span><span class="st">Logical NOT (not fail)</span><span class="kw">&#39;</span>)).</span></code></pre></div>
+<h2 id="control-structures">Control structures</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode pl"><code class="sourceCode perl"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a>% ----- CONTROL STRUCTURE -----</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a>% --- CONDITIONALS ---</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a>% IF ELSE IF ELSE</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a>    % Prolog does <span class="kw">not</span> provide conventional <span class="kw">if</span> <span class="kw">else</span> <span class="kw">if</span> <span class="kw">else</span> conditional constructs available in most other programming languages</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a>    % instead, the logical operators (specifically the , conjunction <span class="kw">and</span> ; disjunction operators) <span class="kw">and</span> pattern-matching can both be used to achieve the same effect of conditional constructs</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true"></a>% CONJUNCTION DISJUNCTION OPERATORS</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true"></a>member_of_family(john) :- writeln(<span class="kw">&#39;</span><span class="st">John is a family member.</span><span class="kw">&#39;</span>), !. % Cut (!) to prevent backtracking</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true"></a>member_of_family(mary) :- writeln(<span class="kw">&#39;</span><span class="st">Mary is a family member.</span><span class="kw">&#39;</span>), !.</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true"></a>member_of_family(_).</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true"></a></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true"></a>% PATTERN-MATCHING</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true"></a>    % Prolog<span class="kw">&#39;</span><span class="st">s powerful pattern-matching is powered by unification which helps evaluate logical queries blazingly fast</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true"></a><span class="st">    % unification =&gt; where the compiler finds substitutions for variables that make two terms identical during evaluation</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true"></a></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true"></a><span class="st">animal_sound(dog) :- writeln(</span><span class="kw">&#39;</span>Woof!<span class="kw">&#39;</span><span class="st">).</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true"></a><span class="st">animal_sound(cat) :- writeln(</span><span class="kw">&#39;</span>Meow!<span class="kw">&#39;</span><span class="st">).</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true"></a><span class="st">animal_sound(_) :- writeln(</span><span class="kw">&#39;</span>Unknown animal sound!<span class="kw">&#39;</span><span class="st">).</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true"></a></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true"></a><span class="st">% --- LOOPS ---</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true"></a><span class="st">    % as a declarative language, Prolog similarly does not provide conventional for, foreach, for in or while loop constructs as in most other programming languages</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true"></a><span class="st">    % instead, recursion is the default choice when explicit traversal or iteration over elements in an iterable data structure is required</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true"></a></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true"></a><span class="st">% RECURSION</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true"></a></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true"></a><span class="st">iterate_through_list([]). % iterating through a list with a recursive functor call</span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true"></a><span class="st">iterate_through_list([Head | Tail]) :- % compound term definition</span></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true"></a><span class="st">    writeln(Head),</span></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true"></a><span class="st">    iterate_through_list(Tail).</span></span></code></pre></div>
+<h2 id="data-structures">Data structures</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode pl"><code class="sourceCode perl"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a>% ----- DATA STRUCTURE -----</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>    % note that in Prolog, all data structures are represented by terms (comprised of functors <span class="kw">and</span> arguments)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a>    % this flexible syntax allows <span class="kw">for</span> the user to implement both standard data structures that would be built-in in most other programming languages, as well as other user-<span class="fu">defined</span> data structures</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a>    % below are some of the more common data structures implemented in Prolog</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a>        % list =&gt; ordered collection of elements of multiple datatypes declared within [] square brackets</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a>        % dictionary =&gt; unordered collection of key-value pairs of multiple datatypes declared within dict{} where <span class="fu">keys</span> <span class="kw">and</span> their corresponding <span class="fu">values</span> are separated by a : colon</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true"></a>            % note that SWI-Prolog provides <span class="kw">for</span> a <span class="kw">default</span> implementation of the dictionary as a shipped data structure</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true"></a>        % record =&gt; user-<span class="fu">defined</span> collection of named fields <span class="kw">and</span> their corresponding interior <span class="fu">values</span> allowing <span class="kw">for</span> modelling of representative data, note that this implementation of records is equivalent to a struct LITERAL in Typescript <span class="kw">and</span> Go <span class="kw">and</span> <span class="kw">not</span> a struct itself (there is only one instance of the struct in Prolog, which is as <span class="fu">defined</span>, therefore a struct literal <span class="kw">and</span> <span class="kw">not</span> a conventional struct that you can template off)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true"></a>        % tree =&gt; user-<span class="fu">defined</span> recursive data structure that facilitates hierarchical representation of data</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true"></a>        % graph =&gt; user-<span class="fu">defined</span> data structure composed of nodes which are connected by edges, facilitating representation of data involving relationships <span class="kw">and</span> networks</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true"></a>% LIST</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true"></a>anExampleEmptyList = [].</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true"></a>anExampleNumberList = [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>].</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true"></a>anExampleAtomList = [apple, banana, cherry].</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true"></a>anExampleVariableList = [X, Y, Z].</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true"></a>anExampleNestedList = [<span class="dv">1</span>, [a, b, c], <span class="fl">3.14</span>, [X, Y]].</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true"></a></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true"></a>% DICTIONARY</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true"></a></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true"></a>anExampleDictionary = dict{name: <span class="kw">&quot;</span><span class="st">Alice</span><span class="kw">&quot;</span>, age: <span class="dv">30</span>}.</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true"></a></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true"></a>% RECORD</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true"></a></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true"></a>% Facts representing records</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true"></a>employee(john_doe, <span class="dv">50000</span>, <span class="kw">&#39;</span><span class="st">IT</span><span class="kw">&#39;</span>).</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true"></a>employee(jane_smith, <span class="dv">60000</span>, <span class="kw">&#39;</span><span class="st">HR</span><span class="kw">&#39;</span>).</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true"></a></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true"></a>% TREE</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true"></a></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true"></a>Tree = tree(tree(leaf, <span class="dv">1</span>, leaf), <span class="dv">2</span>, tree(leaf, <span class="dv">3</span>, leaf)).</span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true"></a></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true"></a>% GRAPH</span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true"></a>    % below are facts representing <span class="kw">each</span> node <span class="kw">and</span> edge of the graph</span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true"></a></span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true"></a>edge(a, b).</span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true"></a>edge(b, c).</span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true"></a>edge(c, a).</span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true"></a>node(a).</span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true"></a>node(b).</span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true"></a>node(c).</span></code></pre></div>
+<h2 id="more-on">More on</h2>
+<ul>
+<li><a href="https://stackoverflow.com/questions/19115712/in-prolog-is-a-fact-the-same-as-a-functor">functors</a></li>
+<li><a href="https://www.swi-prolog.org/">swi-prolog.org</a></li>
+<li><a href="https://www.swi-prolog.org/pldoc/index.html">swi-prolog documentation</a></li>
+<li><a href="https://learnxinyminutes.com/docs/prolog/">learn prolog in y minutes</a></li>
+<li><a href="https://www.sfu.ca/~tjd/383summer2019/prolog_intro.html">introduction to prolog</a></li>
+<li><a href="https://stackoverflow.com/questions/129628/what-is-declarative-programming">what is declarative programming</a></li>
+<li><a href="https://learnxinyminutes.com/docs/logtalk/">learn logtalk in y minutes</a></li>
+<li><a href="https://learnxinyminutes.com/docs/clojure/">learn clojure in y minutes</a></li>
+<li><a href="https://learnxinyminutes.com/docs/erlang/">learn erlang in y minutes</a></li>
+<li><a href="https://learnxinyminutes.com/docs/mercury/">learn mercury in y minutes</a></li>
+<li><a href="https://learnxinyminutes.com/docs/haskell/">learn haskell in y minutes</a></li>
+<li><a href="https://learnxinyminutes.com/docs/common-lisp/">learn common lisp in y minutes</a></li>
+<li><a href="https://learnxinyminutes.com/docs/ruby/">learn ruby in y minutes</a></li>
+<li><a href="https://clojure.github.io/clojure-contrib/doc/datalog.html">datalog documentation</a></li>
+<li><a href="https://www-ps.informatik.uni-kiel.de/currywiki/">curry documentation</a></li>
+</ul>
+</body>
+</html>
