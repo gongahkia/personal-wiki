@@ -6,15 +6,85 @@ The thing they say in anime.
 
 ## Table of contents
 
+* [Foundations](#foundations)
+    * [Numbers](#numbers)
 * [N5](#n5)
+    * [Vocab](#vocab)
+    * [Grammer](#grammer)
+* [Template](#template)
 * [More on](#more-on)
     * [Core resources](#core-resources)
     * [Additional resources](#additional-resources)
     * [Prerequisite knowledge](#prerequisite-knowledge)
 
+## Foundations
+
+### Numbers
+
+| Kanji | Kana | Romaji | Meaning |
+| :--- | :--- | :--- | :--- | 
+| 一 | いち | ichi | one |
+| ニ | に | ni | two |
+| 三 | さん | san | three |
+| 四 | し, よん | shi, yon | four |
+| 五 | ご | go | five |
+| 六 | ろく | roku | six |
+| 七 | しち, なな | shichi, nana | seven |
+| 八 | はち | hachi | eight |
+| 九 | きゅう, く | kyuu, ku | nine |
+| 十 | じゅう | jyuu | ten |
+
 ## N5
 
+### Vocab
 
+| Kanji | Kana | Romaji | Meaning | Sentence |
+| :--- | :--- | :--- | :--- | :--- |
+| わたし | | watashi | i | |
+| わたしたち | | watashi tachi | we | |
+| あなた | | anata | you | |
+| あのひと | | ano hito | that person | |
+| みなさん | | minna san | everyone | |
+| さん | | san | mr, ms | |
+| ちゃん | | chan | *suffix* for addressing children | |
+| くん | | kun | *suffix* for addressing young boys | |
+| せんせい | | sensei | teacher (**not used** when referring to one's own job) | |
+| きょうし | | kyoushi | teacher, instructor | |
+| がくせい | | gakusei | student | |
+| 会社員 | かいしゃいん | kai shain | company employee | わたしは会社員じゃありません。 |
+| ~しゃいん | | ~ shain | ~ company employee | |
+| いしゃ | | isha | doctor | |
+| けんきゅうしゃ | | ken kyuusha | researcher, scholar | |
+| エンジニア | | en jiina | engineer | |
+| だいがく | | dai gaku | university | |
+| びょういん | | byou in | hospital | |
+| でんき | | denki | electricity, light | |
+| だれ, どなた | dare, donata | who | |
+| ~さい | | ~sai | ~ years old | |
+| おいくつですか, なんさい | | oiku desuka, nan sai | how old are you? | |
+| はい | | hai | yes | |
+| いいえ | | iie | no | |
+| はじめまして | | hajime mashite | hello, how are you? | はじめまして、ガブリエルです、しんがぽるからきました、どぞ、よるしくおんえがいします！ |
+| ～です | | ~ desu | i’m ~ (insert name) | |
+| こちらわ～さんです | | kochi rawa ~ san desu | this is mr/ms ~ (used to introduce someone) | |
+| ～からきました | | ~ kara kimashita | i am from ~ (insert place of origin) | |
+| おなまえは？ | | ona maeha | what’s your name? | |
+| しつわいですか~ | | shitsu wai desuka | excuse me but ~ | |
+| どぞ、よろしく、おねがいします | | dozo、 yorushiku、 onegaishimasu | nice to meet you all | |
+| おつかれさまでした | | otsukare sama deshita | thank you for your hard work | |
+| いっていきます | | iitei kimasu | i am leaving now | |
+| いってらっしゃい | | itte rasshai | stay safe | |
+| ただいま | | tadai ma| i am home | |
+| おかっりなさい | | okarri nasai | welcome home | |
+
+### Grammer
+
+
+
+## Template
+
+| Kanji | Kana | Romaji | Meaning | Sentence |
+| :--- | :--- | :--- | :--- | :--- |
 
 ## More on
 
