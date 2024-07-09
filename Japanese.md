@@ -10,11 +10,14 @@ The thing they say in anime.
 * [Foundations](#foundations)
     * [Numbers](#numbers)
     * [Days of the week](#days-of-the-week)
+    * [Time](#time)
+    * [5W1H](#5w1h)
+    * [Demonstratives](#demonstratives)
 * [N5](#n5)
-    * [Vocab](#vocab)
-        * [1](#1)
-        * [2](#1)
-    * [Grammer](#grammer)
+    * [Vocab 1](#vocab-1)
+    * [Vocab 2](#vocab-2)
+    * [Grammer 1](#1)
+    * [Grammer 2](#1)
 * [Template](#template)
 * [More on](#more-on)
     * [Core resources](#core-resources)
@@ -54,9 +57,49 @@ This document is structured according to the [JLPT](https://www.jlpt.jp/e/) syll
 | 土 | どようび | do youbi | Saturday |
 | 日 | にちようび | nichi youbi | Sunday |
 
+### Time
+
+| Kanji | Kana | Romaji | Meaning |
+| :--- | :--- | :--- | :--- | 
+| 今 | いま | ima | now |
+| 今日 | きょう | kyou | today |
+| 昨日 | きのう | kinou | yesterday |
+| 明日 | あした | ashita | tomorrow |
+| 時間 | じかん | jikan | time |
+| 月 | つき | tsuki | month, moon |
+| 年 | とし | toshi | year |
+
+### 5W1H
+
+| Kanji | Kana | Romaji | Meaning |
+| :--- | :--- | :--- | :--- | 
+| 何 | なに | nani | what |
+| 誰 | だれ | dare | who |
+| どこ | | doko | where |
+| いつ | | itsu | when |
+| どうして | | dou shite | why |
+| どうやって | | dou yatte | how |
+
+### Demonstratives
+
+| Kanji | Kana | Romaji | Meaning |
+| :--- | :--- | :--- | :--- | 
+| これ | これ | kore | this (near speaker) |
+| それ | それ | sore | that (near listener) |
+| あれ | あれ | are | that (over there, far from both speaker and listener) |
+| どれ | どれ | dore | which (specific) |
+| この | この | kono | this (near speaker) |
+| その | その | sono | that (near listener) |
+| あの | あの | ano | that (over there, far from both speaker and listener) |
+| どの | どの | dono | which (specific) |
+| ここ | ここ | koko | here (place near speaker) |
+| そこ | そこ | soko | there (place near listener) |
+| あそこ | あそこ | asoko | over there (place far from both speaker and listener) |
+| どこ | どこ | doko | where |
+
 ## N5
 
-### Vocab
+### Vocab 1
 
 | Kanji | Kana | Romaji | Meaning | Sentence |
 | :--- | :--- | :--- | :--- | :--- |
@@ -97,8 +140,13 @@ This document is structured according to the [JLPT](https://www.jlpt.jp/e/) syll
 | ただいま | | tadai ma| i am home | |
 | おかっりなさい | | okarri nasai | welcome home | |
 
-### Grammer
+### Vocab 2
 
+
+
+### Grammer 1
+
+### Grammer 2
 
 
 ## Template
