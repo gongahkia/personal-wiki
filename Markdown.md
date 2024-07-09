@@ -98,7 +98,7 @@ Create a <hr/> element with ---.
 [This is the text associated with the link.](http://heresTheLink.com)
 [As well as supporting relative paths.](README.md)
 [Alongside supporting reference style links.](link1)
-[And finally header links within the same file.](#Quickstart)
+[And finally header links within the same file.](#quickstart)
 
 [link1]: http://heresAReferenceStyleLink.com
 
@@ -182,3 +182,4 @@ Rendered, they look like this.
 * [markdown mathematical expressions](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions)
 * [alerts](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts)
 * [further markdown syntax](https://www.markdownguide.org/hacks/)
+* [handling markdown anchor links with same name](https://stackoverflow.com/questions/57935181/markdown-anchor-link-with-same-name-but-different-sections)

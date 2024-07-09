@@ -6,16 +6,24 @@ The thing they say in anime.
 
 ## Table of contents
 
+* [Introduction](#introduction)
 * [Foundations](#foundations)
     * [Numbers](#numbers)
+    * [Days of the week](#days-of-the-week)
 * [N5](#n5)
     * [Vocab](#vocab)
+        * [1](#1)
+        * [2](#1)
     * [Grammer](#grammer)
 * [Template](#template)
 * [More on](#more-on)
     * [Core resources](#core-resources)
     * [Additional resources](#additional-resources)
     * [Prerequisite knowledge](#prerequisite-knowledge)
+
+## Introduction
+
+This document is structured according to the [JLPT](https://www.jlpt.jp/e/) syllabus.
 
 ## Foundations
 
@@ -33,6 +41,18 @@ The thing they say in anime.
 | 八 | はち | hachi | eight |
 | 九 | きゅう, く | kyuu, ku | nine |
 | 十 | じゅう | jyuu | ten |
+
+### Days of the week
+
+| Kanji | Kana | Romaji | Meaning |
+| :--- | :--- | :--- | :--- | 
+| 月 | げつようび | getsu youbi | Monday |
+| 火 | かようび | ka youbi | Tuesday |
+| 水 | すいようび | sui youbi | Wednesday |
+| 木 | もくようび | moku youbi | Thursday |
+| 金 | きんようび | kin youbi | Friday |
+| 土 | どようび | do youbi | Saturday |
+| 日 | にちようび | nichi youbi | Sunday |
 
 ## N5
 
