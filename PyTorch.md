@@ -349,3 +349,4 @@ random_tensor_1 == random_tensor_2 # this evaluates to True
 * [aws.amazon](https://aws.amazon.com/)
 * [tensorflow.org](https://www.tensorflow.org/)
 * [keras.io](https://keras.io/)
+* [llama2](https://github.com/meta-llama/llama)
