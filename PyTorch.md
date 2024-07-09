@@ -317,7 +317,6 @@ random_tensor_1 == random_tensor_2 # this evaluates to True
 
 > FUA continue adding here later when its covered in the video
 
-
 ```py
 
 ```
@@ -334,6 +333,14 @@ random_tensor_1 == random_tensor_2 # this evaluates to True
 * [why pytorch over tensorflow](https://www.reddit.com/r/MLQuestions/comments/112sege/pytorch_vs_tensorflow/)
 * [zero to mastery: learn pytorch for deep learning](https://www.learnpytorch.io/)
 
+### Additional resources
+
+* [colab.google](https://colab.google/)
+* [aws.amazon](https://aws.amazon.com/)
+* [tensorflow.org](https://www.tensorflow.org/)
+* [keras.io](https://keras.io/)
+* [llama2](https://github.com/meta-llama/llama)
+
 ### Prerequisite knowledge 
 
 * [learn python in y minutes](https://learnxinyminutes.com/docs/python/)
@@ -342,11 +349,3 @@ random_tensor_1 == random_tensor_2 # this evaluates to True
 * [matplotlib](https://matplotlib.org/)
 * [how to find dot product](https://www.mathsisfun.com/algebra/matrix-multiplying.html)
 * [what is cloud computing](https://aws.amazon.com/what-is-cloud-computing/)
-
-### Additional resources
-
-* [colab.google](https://colab.google/)
-* [aws.amazon](https://aws.amazon.com/)
-* [tensorflow.org](https://www.tensorflow.org/)
-* [keras.io](https://keras.io/)
-* [llama2](https://github.com/meta-llama/llama)
