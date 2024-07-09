@@ -141,8 +141,8 @@ This document is structured according to the [JLPT](https://www.jlpt.jp/e/) syll
 | あのひと | | ano hito | that person | 
 | みなさん | | minna san | everyone | 
 | さん | | san | mr, ms | 
-| ちゃん | | chan | *suffix* for addressing children | 
-| くん | | kun | *suffix* for addressing young boys | 
+| ちゃん | | chan | suffix for addressing children | 
+| くん | | kun | suffix for addressing young boys | 
 | せんせい | | sensei | teacher (**not used** when referring to one's own job) | 
 | きょうし | | kyoushi | teacher, instructor | 
 | がくせい | | gakusei | student | 
@@ -154,7 +154,7 @@ This document is structured according to the [JLPT](https://www.jlpt.jp/e/) syll
 | だいがく | | dai gaku | university | 
 | びょういん | | byou in | hospital | 
 | でんき | | denki | electricity, light | 
-| だれ, どなた | dare, donata | who | 
+| だれ, どなた | | dare, donata | who | 
 | ~さい | | ~sai | ~ years old | 
 | おいくつですか, なんさい | | oiku desuka, nan sai | how old are you? | 
 | はい | | hai | yes | 
@@ -305,8 +305,10 @@ This document is structured according to the [JLPT](https://www.jlpt.jp/e/) syll
 
 ### Sentence 1
 
-1. わたしは**会社員**じゃありません。
+1. わたしは会社員じゃありません。
+   * I am not an office worker.
 2. はじめまして、ガブリエルです、しんがぽるからきました、どぞ、よるしくおんえがいします！ 
+   * Nice to meet you, I'm Gabriel, I come from Singapore. Please treat me kindly!
 
 ### Sentence 2
 
