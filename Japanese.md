@@ -16,8 +16,10 @@ The thing they say in anime.
 * [N5](#n5)
     * [Vocab 1](#vocab-1)
     * [Vocab 2](#vocab-2)
-    * [Grammer 1](#1)
-    * [Grammer 2](#1)
+    * [Vocab 3](#vocab-3)
+    * [Grammer 1](#grammer-1)
+    * [Grammer 2](#grammer-2)
+    * [Grammer 3](#grammer-3)
 * [Template](#template)
 * [More on](#more-on)
     * [Core resources](#core-resources)
@@ -142,17 +144,29 @@ This document is structured according to the [JLPT](https://www.jlpt.jp/e/) syll
 
 ### Vocab 2
 
+> continue adding from notes google doc
 
+### Vocab 3
+
+> continue adding from notes google doc
 
 ### Grammer 1
 
+> continue adding from notes google doc
+
 ### Grammer 2
 
+> continue adding from notes google doc
+
+### Grammer 3
+
+> continue adding from notes google doc
 
 ## Template
 
 | Kanji | Kana | Romaji | Meaning | Sentence |
 | :--- | :--- | :--- | :--- | :--- |
+| | | | | |
 
 ## More on
 
