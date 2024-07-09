@@ -1,28 +1,109 @@
 # `Japanese`
 
+The thing they say in anime.
+
+![](https://i.pinimg.com/originals/33/3f/b1/333fb11a919390152d8017637223146d.gif)
+
 ## Table of contents
 
+* [Foundations](#foundations)
+    * [Numbers](#numbers)
+* [N5](#n5)
+    * [Vocab](#vocab)
+    * [Grammer](#grammer)
+* [Template](#template)
 * [More on](#more-on)
     * [Core resources](#core-resources)
     * [Additional resources](#additional-resources)
     * [Prerequisite knowledge](#prerequisite-knowledge)
 
-## Header 1 probably
+## Foundations
 
-> replace this below placeholder with actual content
+### Numbers
 
-日本の桜は春に美しい花を咲かせます。桜の花見は日本の伝統的な行事で、家族や友人たちと一緒に楽しむものです。春の風が心地よく、桜の木の下でお弁当を食べるのはとても幸せな時間です。
+| Kanji | Kana | Romaji | Meaning |
+| :--- | :--- | :--- | :--- | 
+| 一 | いち | ichi | one |
+| ニ | に | ni | two |
+| 三 | さん | san | three |
+| 四 | し, よん | shi, yon | four |
+| 五 | ご | go | five |
+| 六 | ろく | roku | six |
+| 七 | しち, なな | shichi, nana | seven |
+| 八 | はち | hachi | eight |
+| 九 | きゅう, く | kyuu, ku | nine |
+| 十 | じゅう | jyuu | ten |
+
+## N5
+
+### Vocab
+
+| Kanji | Kana | Romaji | Meaning | Sentence |
+| :--- | :--- | :--- | :--- | :--- |
+| わたし | | watashi | i | |
+| わたしたち | | watashi tachi | we | |
+| あなた | | anata | you | |
+| あのひと | | ano hito | that person | |
+| みなさん | | minna san | everyone | |
+| さん | | san | mr, ms | |
+| ちゃん | | chan | *suffix* for addressing children | |
+| くん | | kun | *suffix* for addressing young boys | |
+| せんせい | | sensei | teacher (**not used** when referring to one's own job) | |
+| きょうし | | kyoushi | teacher, instructor | |
+| がくせい | | gakusei | student | |
+| 会社員 | かいしゃいん | kai shain | company employee | わたしは会社員じゃありません。 |
+| ~しゃいん | | ~ shain | ~ company employee | |
+| いしゃ | | isha | doctor | |
+| けんきゅうしゃ | | ken kyuusha | researcher, scholar | |
+| エンジニア | | en jiina | engineer | |
+| だいがく | | dai gaku | university | |
+| びょういん | | byou in | hospital | |
+| でんき | | denki | electricity, light | |
+| だれ, どなた | dare, donata | who | |
+| ~さい | | ~sai | ~ years old | |
+| おいくつですか, なんさい | | oiku desuka, nan sai | how old are you? | |
+| はい | | hai | yes | |
+| いいえ | | iie | no | |
+| はじめまして | | hajime mashite | hello, how are you? | はじめまして、ガブリエルです、しんがぽるからきました、どぞ、よるしくおんえがいします！ |
+| ～です | | ~ desu | i’m ~ (insert name) | |
+| こちらわ～さんです | | kochi rawa ~ san desu | this is mr/ms ~ (used to introduce someone) | |
+| ～からきました | | ~ kara kimashita | i am from ~ (insert place of origin) | |
+| おなまえは？ | | ona maeha | what’s your name? | |
+| しつわいですか~ | | shitsu wai desuka | excuse me but ~ | |
+| どぞ、よろしく、おねがいします | | dozo、 yorushiku、 onegaishimasu | nice to meet you all | |
+| おつかれさまでした | | otsukare sama deshita | thank you for your hard work | |
+| いっていきます | | iitei kimasu | i am leaving now | |
+| いってらっしゃい | | itte rasshai | stay safe | |
+| ただいま | | tadai ma| i am home | |
+| おかっりなさい | | okarri nasai | welcome home | |
+
+### Grammer
+
+
+
+## Template
+
+| Kanji | Kana | Romaji | Meaning | Sentence |
+| :--- | :--- | :--- | :--- | :--- |
 
 ## More on
 
 ### Core resources
 
 * [Minna no Nihongo Shokyu](https://www.3anet.co.jp/np/en/list.html?series_id=1)
+* [Minna no Nihongo audio](https://www.youtube.com/@Takashi_teaches_Japanese/playlists)
 * [Anki Japanese Core 2k](https://ankiweb.net/shared/info/2141233552)
+* [jlptstudy.net](http://jlptstudy.net/)
 
 ### Additional resources
 
+* [JLPT level summary](https://www.jlpt.jp/e/about/levelsummary.html)
 * [Genki](https://omgjapan.com/pages/genki)
+* [Tobira: Gateway to Advanced Japanese](https://www.amazon.sg/Tobira-Advanced-Japanese-Learning-Multimedia/dp/4874244475)
+* [how should a beginner learn japanese?](https://www.quora.com/How-should-a-beginner-learn-Japanese)
+* [how do i start learning japanese?](https://www.reddit.com/r/languagelearning/comments/7rhc1y/how_do_i_start_in_learning_japanese/)
+* [r/LearnJapanese](https://www.reddit.com/r/LearnJapanese/)
+* [how to use minna no nihongo to study](https://www.reddit.com/r/LearnJapanese/comments/p5d3fj/how_do_you_use_minna_no_nihonho_for_self_study/)
 * [why Genki is good](https://www.thejapanguy.com/ultimate-genki-textbook-review/)
 
 ### Prerequisite knowledge
