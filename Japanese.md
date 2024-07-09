@@ -84,6 +84,13 @@ This document is structured according to the [JLPT](https://www.jlpt.jp/e/) syll
 
 ### Demonstratives
 
+| これ | これ | kore | this thing here |
+| それ | それ | sore | that thing near you |
+| あれ | あれ | are | that thing over there |
+| この～ | この～ | kono～ | this ~ / this ~ here |
+| その～ | その～ | sono～ | that ~ / that ~ near you |
+| あの～ | あの～ | ano～ | that ~ / that ~ over there |
+
 | Kanji | Kana | Romaji | Meaning |
 | :--- | :--- | :--- | :--- | 
 | これ | これ | kore | this (near speaker) |
@@ -144,7 +151,53 @@ This document is structured according to the [JLPT](https://www.jlpt.jp/e/) syll
 
 ### Vocab 2
 
-> continue adding from notes google doc
+| Kanji | Kana | Romaji | Meaning |
+| :--- | :--- | :--- | :--- | 
+| 本 | ほん | hon | book |
+| 辞書 | じしょ | jisho | dictionary |
+| 雑誌 | ざっし | zasshi | magazine |
+| 新聞 | しんぶん | shin bun | newspaper |
+| ノート | | noo to | notebook |
+| 手帳 | てちょう | te chou | pocket notebook |
+| 名刺 | めいし | meishi | business card |
+| カード | | kaado | credit card |
+| テレホンカード | | terehon kaado | telephone card |
+| 鉛筆 | えんぴつ | en pitsu | pencil |
+| ボールペン | | booru pen | ballpoint pen |
+| シャープペンシル | | shaapu pen shiru | mechanical pencil |
+| 鍵 | かぎ | kagi | key |
+| 時計 | とけい | tokei | watch, clock |
+| 傘 | かさ | kasa | umbrella |
+| 鞄 | かばん | kaban | bag, briefcase |
+| カセットテープ | | kasetto teepu | cassette tape |
+| テープレコーダー | | teepu rekooda | tape recorder |
+| テレビ | | terebi | television |
+| ラジオ | | rajio | radio |
+| カメラ | | kamera | camera |
+| コンピューター | | kon pyuu taa | computer |
+| 車 | くるま | kuruma | car |
+| 机 | つくえ | tsukue | desk |
+| 椅子 | いす | isu | chair |
+| チョコレート | | choko reeto | chocolate |
+| コーヒー | | koohii | coffee |
+| お土産 | おみやげ | omi yage | souvenir, present |
+| 英語 | えいご | eigo | english language |
+| 日本語 | にほんご | nihongo | japanese language |
+| ～語 | ～ご | ～go | ~ (referring to a language) |
+| 何 | なに | nani | what |
+| そう | | sou | so |
+| 練習 | れんしゅう | renshuu | practice |
+| 会話 | かいわ | kaiwa | conversation |
+| あ | | a | oh! (used when becoming aware of something) |
+| あのう | | anou | err… (used to show hesitation) |
+| えっ | | e | oh what? (used when hearing something unexpected) |
+| どうぞ | | douzo | here you are (used when offering someone something) |
+| そうですか | | sou desu ka | I see |
+| どうも ありがとう ございます | | doumo arigatou gozaimasu | thank you very much |
+| 違います | ちがいます | chigaimasu | no, it isn’t, you are wrong |
+| 本の 気持ちです | ほんの きもちです | honno kimochi desu | it’s nothing |
+| これから お世話に なります | | kore kara osewani narimasu | thank you in advance for your kindness |
+| こちらこそ どうぞ よろしく お願いします | | kochira koso douzo yoroshiku onegaishimasu | i am pleased to meet you as well (used in response to はじめまして or よるしく) |
 
 ### Vocab 3
 
