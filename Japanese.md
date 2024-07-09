@@ -21,6 +21,9 @@ The thing they say in anime.
     * [Grammer 1](#grammer-1)
     * [Grammer 2](#grammer-2)
     * [Grammer 3](#grammer-3)
+    * [Sentence 1](#sentence-1)
+    * [Sentence 2](#sentence-2)
+    * [Sentence 3](#sentence-3)
 * [Template](#template)
 * [More on](#more-on)
     * [Core resources](#core-resources)
@@ -130,44 +133,44 @@ This document is structured according to the [JLPT](https://www.jlpt.jp/e/) syll
 
 ### Vocab 1
 
-| Kanji | Kana | Romaji | Meaning | Sentence |
-| :--- | :--- | :--- | :--- | :--- |
-| わたし | | watashi | i | |
-| わたしたち | | watashi tachi | we | |
-| あなた | | anata | you | |
-| あのひと | | ano hito | that person | |
-| みなさん | | minna san | everyone | |
-| さん | | san | mr, ms | |
-| ちゃん | | chan | *suffix* for addressing children | |
-| くん | | kun | *suffix* for addressing young boys | |
-| せんせい | | sensei | teacher (**not used** when referring to one's own job) | |
-| きょうし | | kyoushi | teacher, instructor | |
-| がくせい | | gakusei | student | |
-| 会社員 | かいしゃいん | kai shain | company employee | わたしは会社員じゃありません。 |
-| ~しゃいん | | ~ shain | ~ company employee | |
-| いしゃ | | isha | doctor | |
-| けんきゅうしゃ | | ken kyuusha | researcher, scholar | |
-| エンジニア | | en jiina | engineer | |
-| だいがく | | dai gaku | university | |
-| びょういん | | byou in | hospital | |
-| でんき | | denki | electricity, light | |
-| だれ, どなた | dare, donata | who | |
-| ~さい | | ~sai | ~ years old | |
-| おいくつですか, なんさい | | oiku desuka, nan sai | how old are you? | |
-| はい | | hai | yes | |
-| いいえ | | iie | no | |
-| はじめまして | | hajime mashite | hello, how are you? | はじめまして、ガブリエルです、しんがぽるからきました、どぞ、よるしくおんえがいします！ |
-| ～です | | ~ desu | i’m ~ (insert name) | |
-| こちらわ～さんです | | kochi rawa ~ san desu | this is mr/ms ~ (used to introduce someone) | |
-| ～からきました | | ~ kara kimashita | i am from ~ (insert place of origin) | |
-| おなまえは？ | | ona maeha | what’s your name? | |
-| しつわいですか~ | | shitsu wai desuka | excuse me but ~ | |
-| どぞ、よろしく、おねがいします | | dozo、 yorushiku、 onegaishimasu | nice to meet you all | |
-| おつかれさまでした | | otsukare sama deshita | thank you for your hard work | |
-| いっていきます | | iitei kimasu | i am leaving now | |
-| いってらっしゃい | | itte rasshai | stay safe | |
-| ただいま | | tadai ma| i am home | |
-| おかっりなさい | | okarri nasai | welcome home | |
+| Kanji | Kana | Romaji | Meaning | 
+| :--- | :--- | :--- | :--- | 
+| わたし | | watashi | i | 
+| わたしたち | | watashi tachi | we | 
+| あなた | | anata | you | 
+| あのひと | | ano hito | that person | 
+| みなさん | | minna san | everyone | 
+| さん | | san | mr, ms | 
+| ちゃん | | chan | *suffix* for addressing children | 
+| くん | | kun | *suffix* for addressing young boys | 
+| せんせい | | sensei | teacher (**not used** when referring to one's own job) | 
+| きょうし | | kyoushi | teacher, instructor | 
+| がくせい | | gakusei | student | 
+| 会社員 | かいしゃいん | kai shain | company employee | 
+| ~しゃいん | | ~ shain | ~ company employee | 
+| いしゃ | | isha | doctor | 
+| けんきゅうしゃ | | ken kyuusha | researcher, scholar | 
+| エンジニア | | en jiina | engineer | 
+| だいがく | | dai gaku | university | 
+| びょういん | | byou in | hospital | 
+| でんき | | denki | electricity, light | 
+| だれ, どなた | dare, donata | who | 
+| ~さい | | ~sai | ~ years old | 
+| おいくつですか, なんさい | | oiku desuka, nan sai | how old are you? | 
+| はい | | hai | yes | 
+| いいえ | | iie | no | 
+| はじめまして | | hajime mashite | hello, how are you? | 
+| ～です | | ~ desu | i’m ~ (insert name) | 
+| こちらわ～さんです | | kochi rawa ~ san desu | this is mr/ms ~ (used to introduce someone) | 
+| ～からきました | | ~ kara kimashita | i am from ~ (insert place of origin) | 
+| おなまえは？ | | ona maeha | what’s your name? | 
+| しつわいですか~ | | shitsu wai desuka | excuse me but ~ | 
+| どぞ、よろしく、おねがいします | | dozo、 yorushiku、 onegaishimasu | nice to meet you all | 
+| おつかれさまでした | | otsukare sama deshita | thank you for your hard work | 
+| いっていきます | | iitei kimasu | i am leaving now | 
+| いってらっしゃい | | itte rasshai | stay safe | 
+| ただいま | | tadai ma| i am home | 
+| おかっりなさい | | okarri nasai | welcome home | 
 
 ### Vocab 2
 
@@ -300,11 +303,24 @@ This document is structured according to the [JLPT](https://www.jlpt.jp/e/) syll
 
 > continue adding from notes google doc
 
+### Sentence 1
+
+1. わたしは**会社員**じゃありません。
+2. はじめまして、ガブリエルです、しんがぽるからきました、どぞ、よるしくおんえがいします！ 
+
+### Sentence 2
+
+> continue adding from notes google doc
+
+### Sentence 3
+
+> continue adding from notes google doc
+
 ## Template
 
-| Kanji | Kana | Romaji | Meaning | Sentence |
-| :--- | :--- | :--- | :--- | :--- |
-| | | | | |
+| Kanji | Kana | Romaji | Meaning |
+| :--- | :--- | :--- | :--- | 
+| | | | |
 
 ## More on
 
