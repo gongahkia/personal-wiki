@@ -1,9 +1,30 @@
 # `Japanese`
 
-Just testing out whether this renders properly first.
+## Table of contents
 
-日本の桜は春に美しい花を咲かせます。  
+* [More on](#more-on)
+    * [Core resources](#core-resources)
+    * [Additional resources](#additional-resources)
+    * [Prerequisite knowledge](#prerequisite-knowledge)
 
-桜の花見は日本の伝統的な行事で、家族や友人たちと一緒に楽しむものです。  
+## Header 1 probably
 
-春の風が心地よく、桜の木の下でお弁当を食べるのはとても幸せな時間です。  
+> edit this and add more here
+
+## More on
+
+### Core resources
+
+* [Minna no Nihongo Shokyu](https://www.3anet.co.jp/np/en/list.html?series_id=1)
+* [Anki Japanese Core 2k](https://ankiweb.net/shared/info/2141233552)
+
+### Additional resources
+
+* [Genki](https://omgjapan.com/pages/genki)
+* [why Genki is good](https://www.thejapanguy.com/ultimate-genki-textbook-review/)
+
+### Prerequisite knowledge
+
+* [learn Hiragana](https://www.tofugu.com/japanese/learn-hiragana/)
+* [learn Katakana](https://www.tofugu.com/japanese/learn-katakana/)
+* [Hiragana and Katakana quiz](https://kana-quiz.tofugu.com/)
