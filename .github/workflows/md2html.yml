@@ -36,7 +36,7 @@ jobs:
 
       - name: Generate index.html
         run: |
-          echo "<html><head><title>notes</title><link rel='shortcut icon' href='asset/book.ico' type='image/x-icon'></head><body><h1 align='center'>Personal Notes</h1><div style='text-align: center;'><p style='max-width: 600px; margin: 0 auto; text-align: left;'>Hi!<br><br>As someone who taught himself Computer Science, I know how intimidating it can be.<br>That's why I've published my notes for every concept and language I've ever studied here.<br>I hope it helps.<br><br>Godspeed,<br>Gabriel<p></div><hr><ul>" > index.html
+          echo "<html><head><title>notes</title><link rel='shortcut icon' href='asset/book.ico' type='image/x-icon'></head><body><h1 align='center'>Personal Notes</h1><div style='text-align: center;'><p style='max-width: 600px; margin: 0 auto; text-align: left;'>Hi!<br><br>As someone who taught himself Computer Science, I know how intimidating learning things from scratch can be.<br>That's why I've published my notes for every concept and language I've ever studied here.<br>I hope it helps.<br><br>Godspeed,<br>Gabriel<p></div><hr><ul>" > index.html
           for htmlfile in output/*.html; do
             filename=$(basename "$htmlfile")
             filename_no_ext="${filename%.html}" # removes the file extension
