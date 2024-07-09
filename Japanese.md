@@ -13,6 +13,7 @@ The thing they say in anime.
     * [Time](#time)
     * [5W1H](#5w1h)
     * [Demonstratives](#demonstratives)
+    * [Common family names](#common-family-names)
 * [N5](#n5)
     * [Vocab 1](#vocab-1)
     * [Vocab 2](#vocab-2)
@@ -84,27 +85,42 @@ This document is structured according to the [JLPT](https://www.jlpt.jp/e/) syll
 
 ### Demonstratives
 
-| これ | これ | kore | this thing here |
-| それ | それ | sore | that thing near you |
-| あれ | あれ | are | that thing over there |
-| この～ | この～ | kono～ | this ~ / this ~ here |
-| その～ | その～ | sono～ | that ~ / that ~ near you |
-| あの～ | あの～ | ano～ | that ~ / that ~ over there |
-
 | Kanji | Kana | Romaji | Meaning |
 | :--- | :--- | :--- | :--- | 
-| これ | これ | kore | this (near speaker) |
-| それ | それ | sore | that (near listener) |
-| あれ | あれ | are | that (over there, far from both speaker and listener) |
-| どれ | どれ | dore | which (specific) |
-| この | この | kono | this (near speaker) |
-| その | その | sono | that (near listener) |
-| あの | あの | ano | that (over there, far from both speaker and listener) |
-| どの | どの | dono | which (specific) |
+| これ | これ | kore | this thing here (near speaker) |
+| それ | それ | sore | that thing near you (near listener) |
+| あれ | あれ | are | that thing over there (far from both speaker and listener) |
+| どれ | どれ | dore | which thing (specific) |
+| この | この | kono | this ~, this ~ here (near speaker) |
+| その | その | sono | that ~, that ~ near you (near listener) |
+| あの | あの | ano | that ~, that ~ over there (far from both speaker and listener) |
+| どの | どの | dono | which ~ (specific) |
 | ここ | ここ | koko | here (place near speaker) |
 | そこ | そこ | soko | there (place near listener) |
 | あそこ | あそこ | asoko | over there (place far from both speaker and listener) |
 | どこ | どこ | doko | where |
+
+### Common family names
+
+| Kanji | Kana | Romaji |
+| :--- | :--- | :--- | 
+| 佐藤 | さとう | Satou |
+| 高橋 | たかはし | Taka hashi |
+| 田中 | たなか | Tanaka |
+| 渡辺 | わたなべ | Wata nabe |
+| 伊藤 | いとう | Itou |
+| 中村 | なかむら | Naka mura |
+| 山本 | やまもと | Yama moto |
+| 小林 | こばやし | Koba yashi |
+| 斉藤 | さいとう | Saitou |
+| 加藤 | かとう | Katou |
+| 吉田 | よしだ | Yo shida |
+| 山田 | やまだ | Ya mada |
+| 佐々木 | ささき | Sa saki |
+| 松本 | まつもと | Matsu moto |
+| 山口 | やまぐち | Yama guchi |
+| 井上 | いのうえ | Inoue |
+| 林 | はやし | Hayashi |
 
 ## N5
 
