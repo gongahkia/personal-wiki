@@ -87,18 +87,22 @@ This document is structured according to the [JLPT](https://www.jlpt.jp/e/) syll
 
 | Kanji | Kana | Romaji | Meaning |
 | :--- | :--- | :--- | :--- | 
-| これ | これ | kore | this thing here (near speaker) |
-| それ | それ | sore | that thing near you (near listener) |
-| あれ | あれ | are | that thing over there (far from both speaker and listener) |
-| どれ | どれ | dore | which thing (specific) |
-| この | この | kono | this ~, this ~ here (near speaker) |
-| その | その | sono | that ~, that ~ near you (near listener) |
-| あの | あの | ano | that ~, that ~ over there (far from both speaker and listener) |
-| どの | どの | dono | which ~ (specific) |
-| ここ | ここ | koko | here (place near speaker) |
-| そこ | そこ | soko | there (place near listener) |
-| あそこ | あそこ | asoko | over there (place far from both speaker and listener) |
-| どこ | どこ | doko | where |
+| これ | | kore | this thing here (near speaker) |
+| それ | | sore | that thing near you (near listener) |
+| あれ | | are | that thing over there (far from both speaker and listener) |
+| どれ | | dore | which thing (specific) |
+| この | | kono | this ~, this ~ here (near speaker) |
+| その | | sono | that ~, that ~ near you (near listener) |
+| あの | | ano | that ~, that ~ over there (far from both speaker and listener) |
+| どの | | dono | which ~ (specific) |
+| ここ | | koko | here (this place near speaker) |
+| そこ | | soko | there (that place near listener) |
+| あそこ | | asoko | over there (that place far from both speaker and listener) |
+| どこ | | doko | where |
+| こちら | | kochira | this way (polite way of saying this place) |
+| そちら | | sochira | that way (polite way of saying that place near listener) |
+| あちら | | achira | that way over there (polite way of saying that place far from both speaker and listener) |
+| どちら | | dochira | which way (polite way of saying where) |
 
 ### Common family names
 
@@ -217,7 +221,72 @@ This document is structured according to the [JLPT](https://www.jlpt.jp/e/) syll
 
 ### Vocab 3
 
-> continue adding from notes google doc
+| Kanji | Kana | Romaji | Meaning |
+| :--- | :--- | :--- | :--- | 
+| 教室 | きょうしつ | kyou shitsu | classroom |
+| 食堂 | しょくどう | sho ku dou | canteen, dining hall |
+| 事務所 | じむしょ | ji mu sho | office |
+| 会議室 | かいぎしつ | kai gi shitsu | conference room, meeting room |
+| 受付 | うけつけ | uke tsu ke | reception desk |
+| ロビー | | robi | lobby |
+| 部屋 | へや | heya | room |
+| トイレ, お手洗い | トイレ, おてあらい | toire, otearai | toilet, restroom |
+| 階段 | かいだん | kai dan | staircase |
+| エレベーター | | erebee taa | elevator |
+| エスカレーター | | esukaree taa | escalator |
+| 自動販売機 | じどうはんばいき | jidou han baiki | vending machine |
+| 電話 | でんわ | denwa | telephone |
+| 国 | くに | kuni | country (becomes おくに where お prefixes the greeting as a sign of respect) |
+| イタリア | | itaria | Italy |
+| スイス | | suisu | Switzerland |
+| フランス | | furansu | France |
+| ジャカルタ | | jakaruta | Jakarta |
+| バンコク | | bankoku | Bangkok |
+| ベルリン | | berurin | Berlin |
+| 新大阪 | しんおおさか | shin osaka | Osaka train station name |
+| ネクタイ | | nekutai | necktie, tie |
+| ワイン | | wain | wine |
+| デパート | | de paato | department store |
+| 屋上 | おくじょう | okujou | roof |
+| 遊園地 | ゆうえんち | yuuenchi | amusement area |
+| レストラン | | resutoran | restaurant |
+| 催し物会場 | もよおしものかいじょう | moyou shimono kai jou | event hall |
+| 時計 | とけい | tokei | watches |
+| 眼鏡 | めがね | megane | glasses, spectacles |
+| ～用品 | ～ようひん | ～youhin | ~ goods |
+| スポーツ用品 | スポーツようひん | supootsu youhin | sporting goods |
+| 旅行用品 | りょこうようひん | ryokou youhin | leisure goods |
+| 子供服 | こどもふく | kodomofuku | children clothes |
+| おもちゃ | | omocha | toys |
+| 本 | ほん | hon | books |
+| 文房具 | ぶんぼうぐ | bunbougu | stationery |
+| 家具 | かぐ | kagu | furniture |
+| 食器 | しょうき | shouki | kitchenware |
+| 電化製品 | でんかせいひん | denka seihin | electrical appliances |
+| 紳士服 | しんしふく | shinshi fuku | men clothing |
+| 婦人服 | ふじんふく | fujin fuku | women clothing |
+| アクセサリー | | akusesarii | accessories |
+| 化粧品 | けしょうひん | keshouhin | cosmetics |
+| 食品 | しょくひん | shokuhin | food |
+| 駐車場 | ちゅうしゃじょう | chuushajou | parking lot |
+| 会社 | かいしゃ | kai sha | company |
+| 家 | うち | uchi | home |
+| 靴 | くつ | kutsu | shoes |
+| 売り場 | うりば | uriba | department, counter |
+| 地下 | ちか | chika | basement (can be combined with かい to specify which basement floor it is in the format of ちか N かい where N is the basement floor number) |
+| ～階 | ～かい, ～がい | ~kai, ~gai | ~th floor |
+| 何階 | なんがい | nan gai | what floor |
+| ～円 | ～えん | ~en | ~ yen |
+| 幾ら | いくら | ikura | how much |
+| 百 | ひゃく | hya ku | hundred |
+| 千 | せん | sen | thousand |
+| 万 | まん | man | ten thousand |
+| すみません | | sumi masen | excuse me |
+| どうも | | doumo | thanks (the casual form of ありがとうございました) |
+| いらしゃいません | | irasshaimasen | welcome, how may I help you (used when greeting a customer entering a shop) |
+| 見せてください | みせてください | misete kudasai | please show me |
+| じゃ | | jya | well, in that case (often used when leaving) |
+| ください | | kudasai | please |
 
 ### Grammer 1
 
