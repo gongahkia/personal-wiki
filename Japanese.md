@@ -143,7 +143,7 @@ This document is structured according to the [JLPT](https://www.jlpt.jp/e/) syll
 | さん | | san | mr, ms | 
 | ちゃん | | chan | suffix for addressing children | 
 | くん | | kun | suffix for addressing young boys | 
-| せんせい | | sensei | teacher (**not used** when referring to one's own job) | 
+| せんせい | | sensei | teacher (not used when referring to one's own job) | 
 | きょうし | | kyoushi | teacher, instructor | 
 | がくせい | | gakusei | student | 
 | 会社員 | かいしゃいん | kai shain | company employee | 
@@ -293,15 +293,232 @@ This document is structured according to the [JLPT](https://www.jlpt.jp/e/) syll
 
 ### Grammer 1
 
-> continue adding from notes google doc
+1. N1 は N2 です
+    * は particle => indicates that the noun BEFORE it (N1) is the subject matter (topic) of the sentence
+        * Speaker adds は to what they are talking about and makes statements about it.
+        * Eg. わたしはガブリエルです。
+            * I’m Gabriel.
+    * です => nouns that come with it (N2) are predicates (part of a sentence that gives information about the subject matter)
+        * Shows politeness to listeners 
+        * です inflects when sentence negative or in past tense
+        * Eg. わたしは会社員です。
+            * I’m a company employee.
+
+2. N1 は N2 じゃ / では ありません
+    * じゃ / では ありません => negative form of です that similarly acts as a predicate for N2
+        * Essentially means NOT
+    * じゃありません => used in EVERYDAY conversation
+        * Eg. サントスさんはがくせいじゃありません。
+            * Mr Santos is not a student (informal).
+    * ではありません => used in FORMAL speech, WRITING
+        * Eg. サントスさんはがくせいではありません。
+            * Mr Santos is not a student (formal).
+
+3. N1 は N2 ですか
+    * か particle => appending か to the end of a sentence makes it a QUESTION
+        * Generally ends with rising intonation
+        * Expresses uncertainty and doubt
+    * Questions asking if a STATEMENT IS CORRECT OR NOT
+        * Append か to the end of the given statement
+        * Replies begin with はい for yes or いいえ for no
+            * Eg. ミラっさんはアメリカじんですか。
+                * Is Mr Miller an American?
+            * Eg. はい、アメリカじんです。
+                * Yes, he is an American.
+            * Eg. ミラっさんはせんせいですか。
+                * Is Mr Miller a teacher?
+            * Eg. いいえ、せんせいじゃありません。
+                * No, he is not a teacher.
+    * Questions with INTERROGATIVES (sentences that explicitly ask a question to request information)
+        * Interrogative replaces the part of the sentence that states what the speaker wants to ask about
+        * Append か to the end of the given statement
+            * Eg. あの方はどなたですか。
+                * Who is that person?
+            * Eg. あの方はミラっさんです。
+                * That is Mr Miller.
+
+4. N1 も
+    * も => replaces は particle in a sentence when the SAME THING IS REPEATED
+        * Applicable in both STATEMENTS and QUESTIONS
+        * Effectively means ALSO
+        * Eg. ミラっさんは会社員です。グプタさんも会社員です。
+            * Mr Miller is a company employee. Mr Gupta is also a company employee
+
+5. N1 の N2
+    * の => CONNECTS two nouns when a noun N1 modifies a following noun N2
+        * Eg. ミラさんは IMC の 社員です。
+            * Mr Miller is an IMC employee.
+
+6. ~さん
+    * さん => appended to given name or family name of listener or third party to show RESPECT
+        * Never appended to the speaker’s own name
+    * ちゃん => appended to child’s name to indicate familiarity
+    * あなた => Means YOU
+        * あなた is used to address someone you are VERY FAMILIAR with (romantic partner, husband or wife)
+        * Rarely used if the listener or third party’s name is known since calling someone "you" directly is considered IMPOLITE
+        * Where the name is known, use ~さん instead
 
 ### Grammer 2
 
-> continue adding from notes google doc
+1. これ / それ / あれ
+    * Demonstratives => refer to a THING but does not explicitly specify subject
+        * “What is that?”
+    * これ => thing NEAR SPEAKER (this)
+    * それ => thing NEAR LISTENER (that)
+    * あれ => thing FAR from SPEAKER AND LISTENER (that but far)
+        * Eg. それは辞書ですか。
+            * Is that a dictionary?
+        * Eg. これをください。
+            * I’ll take this (but polite).
+
+2. このＮ / そのＮ / あのＮ
+    * Modify nouns => refer to N as the specific subject, where N is a THING or PERSON
+        * Note that は still suffixes N as previously established above in basic sentence structure
+        * “What is that dictionary?”
+    * この N => thing or person NEAR SPEAKER (this)
+    * その N => thing or person NEAR LISTENER (that)
+    * あの N => thing or person FAR from SPEAKER AND LISTENER (that but far)
+        * Eg. この 本は わたしのです。
+            * This book is mine.
+        * Eg. あの かたは どなたですか。
+            * Who is that person?
+        * Eg. この かぎは だれのですか。
+            * Whose is this key?
+
+3. はい、そうです / いいえ、そうじゃ ありません/いいえ、違うます
+    * そう => prefix REPLY for questions requiring AFFIRMATIVE or NEGATIVE answer paired with the です or じゃありません suffix previously learnt
+        * Eg. それはテレホンカードですか。
+            * Is that a telephone card?
+        * Eg. はい、そうです。
+            * Yes, it is. 
+        * Eg. それはテレホンカードですか。
+            * Is that a telephone card?
+        * Eg. いいえ、そうじゃありません。
+            * No, it isn’t.
+    * 違います => ちがいます => same meaning as そうじゃありません
+        * Note that this does NOT replace the いいえ which still has to be said
+        * Eg. それはテレホンカードですか。
+            * Is that a telephone card?
+        * Eg. いいえ、違います。
+            * No, it isn’t.
+
+4. S1か、S2か
+    * Question asking for CHOICE between alternatives S1 and S2 as the answer
+        * Replied with chosen option S1 or S2
+        * はい/いいえ are not used
+        * Standard suffixes です apply
+    * Eg. これは９ですか、７ですか。
+        * Is this a 9 or a 7?
+    * Eg. ９です。	
+        * It’s a 9.
+
+5. N1のN2
+    * Modify 
+        * の => connect nouns when noun N1 MODIFIES noun N2
+    * Explanation of subject matter 
+        * の => connect nouns when noun N1 EXPLAINS WHAT N2 is ABOUT
+    * Ownership 
+        * の => connects nouns when noun N1 INDICATES WHO OWNS N2
+        * N2 sometimes omitted and の substitutes N2 where ownership has been established and is obvious 
+        * N2 CANNOT be omitted if N2 is a person 
+    * Eg. これはコンピュータのほんです。
+        * This is a book on computers. (explanation of subject matter)
+    * Eg. これはわたしのほんです。
+        * This is my book. (ownership)
+    * Eg. あれはだれのかばんですか。
+        * Whose bag is that? (ownership)
+    * Eg. 佐藤さんのです。
+        * It’s Ms Sato’s. (ownership where N2 has been substituted by の since ownership relationship between N1 佐藤さん and N2 かばん established in question asked)
+    * Eg. このかばんはあなたのですか。
+        * Is this bag yours? (ownership)
+    * Eg. いいえ、わたしのじゃありません。
+        * No, it’s not mine. (ownership)
+    * Eg. ミラさんはIMCの社員ですか。
+        * Is Mr Miller an employee of IMC? (ownership)
+    * Eg. はい、IMCの社員です。
+        * Yes, he is. (ownership)
+
+6. お～
+    * Sometimes prefixes words when speaking POLITELY
+    * Eg. おみやげ
+        * Souvenir / Present
+    * Eg. おさけ
+        * Japanese rice wine
+
+7. そうですか
+    * Expression when speaker UNDERSTAND new information received => I SEE 
+    * Eg. この傘はあなたのですか。
+        * Is this umbrella yours?
+    * Eg. いいえ、違います。シュミットさんのです。
+        * No, it's Mr Schmidt’s (ownership where N2 has been substituted by の since ownership relationship between N1 シュミットさん and N2 傘 established in question asked)
+    * Eg. そうですか
+        * I see.
 
 ### Grammer 3
 
-> continue adding from notes google doc
+1. ここ / そこ / あそこ / こちら / そちら / あちら
+    * Takes after これ (this thing) それ (that thing near listener) あれ (that thing far from listener), paired with は and です as established
+    * ～こ refers to PLACES (this place, that place, that place over there)
+        * ここ => place where SPEAKER IS (this place)
+        * そこ => place where LISTENER IS (that place)
+        * あそこ => place FAR FROM SPEAKER AND LISTENER (that place over there)
+        * If Speaker regards Listener as SHARING same territory, the place both are standing in is referred to as ここ, and そこ would refer to somewhere distant from both speaker and listener and あそこ would be somewhere even further away
+    * ～ちら refers to DIRECTIONS (this way, that way, that way but far), and POLITE alternatives to ending with ～こ
+        * こちら => this way
+        * そちら => that way (near listener)
+        * あちら => that way (far from speaker and listener)
+
+2. N は PLACE です
+    * は used appropriately as previously established to indicate the LOCATION of a PLACE, THING or PERSON
+        * Eg. トイレはあそこです。
+            * The toliet is OVER THERE.
+        * Eg. でんわはニかいです。
+            * The telephone is on the SECOND FLOOR.
+        * Eg. やまださんは じむしょです。
+            * Mr Yamada is in his OFFICE.
+
+3. どこ / どちら
+    * ど => ASKING for location of something OR ASKING for NAME of Country, Company, School or Organisation one belongs to, paired with は and です as established 
+    * どこ asks WHERE
+    * どちら asks WHICH DIRECTION (polite alternative to どこ)
+        * Eg. トイレはどこですか。
+            * WHERE is the toilet?
+        * Eg. あそこです。
+            * It’s OVER THERE.
+        * Eg. エレベーターは どちらですか。
+            * WHICH DIRECTION (WHERE) is the lift?
+        * Eg. あちらです。
+            * It's in THAT DIRECTION (It’s OVER THERE).
+        * Eg. がっこうは どこですか。
+            * WHAT school do you go to?
+        * Eg. かいしゃは どちらですか。
+            * WHAT company do you work for?
+
+4. どこ の N2
+    * Interrogative どこ => Asks WHERE or WHAT source an item is from, where N2 is the ITEM OF INQUIRY
+        * の => Indicates OWNERSHIP or PROVENANCE of an item, where N1 is the SOURCE and N2 is the ITEM as previously established in N1 の N2
+            * Eg. N1 is a Country name, N2 is a Product name, meaning the product was made in that country
+            * Eg. N1 is a Company name, N2 is a Product name, meaning the product is made by that company
+    * Eg. これは どこの コンピューターですか。
+        * WHERE is this computer made? / WHAT company is this computer made by?
+    * Eg. 日本の コンピューターです。
+        * It’s made in Japan.
+    * Eg. パワーてんきの コンピューターです。
+        * It’s made by Power Electric Company.
+
+5. お～
+    * お prefixes things related to OTHERS to show RESPECT to the person
+        * Eg. おくには どちらですか。
+            * What country are you from?
+
+Here is a summary of the more commonly used demonstratives.
+
+|   | こ series | そ series | あ series | ど series |
+| :--- | :--- | :--- | :--- | :--- | 
+| **THING** | これ | それ | あれ | どれ |
+| **THING / PERSON** | この N | その N | あの N | どの N |
+| **PLACE** | ここ | そこ | あそこ | どこ |
+| **DIRECTION (place but polite)** | こちら | そちら | あちら | どちら |
 
 ### Sentence 1
 
@@ -312,11 +529,16 @@ This document is structured according to the [JLPT](https://www.jlpt.jp/e/) syll
 
 ### Sentence 2
 
-> continue adding from notes google doc
+1. いまなんじですか。
+    * What is the time?
+2. ホテルはどこですか。
+    * Where is the hotel?
+3. くこはどこですか。
+    * Where is the airport?
 
 ### Sentence 3
 
-> continue adding from notes google doc
+> continue adding sentences from translation exercises
 
 ## Template
 
