@@ -312,11 +312,16 @@ This document is structured according to the [JLPT](https://www.jlpt.jp/e/) syll
 
 ### Sentence 2
 
-> continue adding from notes google doc
+1. いまなんじですか。
+    * What is the time?
+2. ホテルはどこですか。
+    * Where is the hotel?
+3. くこはどこですか。
+    * Where is the airport?
 
 ### Sentence 3
 
-> continue adding from notes google doc
+> continue adding sentences from translation exercises
 
 ## Template
 
