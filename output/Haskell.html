@@ -126,11 +126,35 @@
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true"></a><span class="co">-- ---------- DEFINITION ----------</span></span>
 <span id="cb4-16"><a href="#cb4-16" aria-hidden="true"></a>    <span class="co">-- as a functional language, Haskell has no concept of &#39;variables&#39; and every binding is immutable by default since modification of a value binding entails side-effects and instead, every value can be modified through a function expression which evaluates to a transformed return value</span></span>
 <span id="cb4-17"><a href="#cb4-17" aria-hidden="true"></a>    <span class="co">-- these are called definitions, the equivalent of constant bindings in other languages</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true"></a>    <span class="co">-- let =&gt; creates a local binding within a specified lexical scope that can only be accessed within its own local scope</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true"></a>    <span class="co">-- raw definition creates a global binding that can be accessed anywhere in the program</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true"></a></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true"></a><span class="kw">let</span> jimmyFallon <span class="ot">=</span> <span class="st">&quot;It&#39;s a me, Jimmy Fallon!&quot;</span> <span class="co">-- this creates a local binding</span></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true"></a>conanOBrien <span class="ot">=</span> <span class="st">&quot;It&#39;s a me, Conan O&#39;Brien!&quot;</span> <span class="co">-- this creates a global binding</span></span></code></pre></div>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true"></a>    <span class="co">-- where =&gt; adds a local definition to an existing definition</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true"></a>    <span class="co">-- let ... in =&gt; creates a local binding for expressions within a specified lexical scope</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true"></a>        <span class="co">-- both &#39;where&#39; and &#39;let ... in&#39; achieve the same purpose, just that their positional syntax is different when used</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true"></a>        <span class="co">-- note that functions can also be locally defined </span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true"></a>    <span class="co">-- raw definition creates a global binding that can be accessed anywhere in the program</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true"></a></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true"></a><span class="ot">circleArea ::</span> <span class="dt">Double</span> <span class="ot">-&gt;</span> <span class="dt">Double</span> <span class="co">-- a function&#39;s type signature</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true"></a></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true"></a><span class="co">-- this is a function defined with &#39;where&#39; to create local bindings that can only be accessed within the function circleArea</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true"></a>circleArea r <span class="ot">=</span> <span class="fu">pi</span> <span class="op">*</span> rsquare</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true"></a>    <span class="kw">where</span> <span class="fu">pi</span> <span class="ot">=</span> <span class="fl">3.1415926</span> <span class="co">-- pi is a local binding </span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true"></a>          rsquare <span class="ot">=</span> r <span class="op">*</span> r <span class="co">-- rsquare is also a local binding </span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true"></a></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true"></a><span class="co">-- this is the same function if defined with &#39;let ... in&#39; that can only be accessed within the function circleArea</span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true"></a>circleArea r <span class="ot">=</span> <span class="kw">let</span> <span class="fu">pi</span> <span class="ot">=</span> <span class="fl">3.1415926</span> <span class="co">-- pi is a local binding here as well</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true"></a>                   rsquare <span class="ot">=</span> r <span class="op">*</span> r <span class="co">-- rsquare here is also a local binding</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true"></a>               <span class="kw">in</span> <span class="fu">pi</span> <span class="op">*</span> rsquare</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true"></a></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true"></a><span class="co">-- using &#39;where&#39; </span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true"></a>circleArea r <span class="ot">=</span> <span class="fu">pi</span> <span class="op">*</span> square r</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true"></a>    <span class="kw">where</span> <span class="fu">pi</span> <span class="ot">=</span> <span class="fl">3.1415926</span></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true"></a>          square x <span class="ot">=</span> x <span class="op">*</span> x <span class="co">-- square is a function locally defined within circleArea</span></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true"></a></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true"></a><span class="co">-- using &#39;let .. in&#39;</span></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true"></a>circleArea r <span class="ot">=</span> <span class="kw">let</span> <span class="fu">pi</span> <span class="ot">=</span> <span class="fl">3.1415926</span></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true"></a>                   square x <span class="ot">=</span> x <span class="op">*</span> x <span class="co">-- square here is also a local function defined within circleArea</span></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true"></a>               <span class="kw">in</span> <span class="fu">pi</span> <span class="op">*</span> square r</span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true"></a></span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true"></a>conanOBrien <span class="ot">=</span> <span class="st">&quot;It&#39;s a me, Conan O&#39;Brien!&quot;</span> <span class="co">-- this creates a global binding</span></span></code></pre></div>
 <h2 id="types">Types</h2>
 <div class="sourceCode" id="cb5"><pre class="sourceCode hs"><code class="sourceCode haskell"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="co">-- ---------- TYPE ----------</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>    <span class="co">-- Int =&gt; bounded integer number with a minimum and maximum value</span></span>
@@ -342,7 +366,6 @@
 <li>ranges</li>
 <li>enumeration</li>
 <li>guards</li>
-<li>where</li>
 <li>let</li>
 <li>case</li>
 <li><a href="https://haskell.mooc.fi/">haskell mooc</a></li>
