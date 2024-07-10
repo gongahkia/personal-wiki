@@ -304,8 +304,8 @@ This document is structured according to the [JLPT](https://www.jlpt.jp/e/) syll
         * Eg. わたしは会社員です。
             * I’m a company employee.
 
-2. N1 は N2 じゃ/では ありません
-    * じゃ/では ありません => negative form of です that similarly acts as a predicate for N2
+2. N1 は N2 じゃ / では ありません
+    * じゃ / では ありません => negative form of です that similarly acts as a predicate for N2
         * Essentially means NOT
     * じゃありません => used in EVERYDAY conversation
         * Eg. サントスさんはがくせいじゃありません。
@@ -360,7 +360,7 @@ This document is structured according to the [JLPT](https://www.jlpt.jp/e/) syll
 
 ### Grammer 2
 
-1. これ/それ/あれ
+1. これ / それ / あれ
     * Demonstratives => refer to a THING but does not explicitly specify subject
         * “What is that?”
     * これ => thing NEAR SPEAKER (this)
@@ -371,7 +371,7 @@ This document is structured according to the [JLPT](https://www.jlpt.jp/e/) syll
         * Eg. これをください。
             * I’ll take this (but polite).
 
-2. このＮ/そのＮ/あのＮ
+2. このＮ / そのＮ / あのＮ
     * Modify nouns => refer to N as the specific subject, where N is a THING or PERSON
         * Note that は still suffixes N as previously established above in basic sentence structure
         * “What is that dictionary?”
@@ -385,7 +385,7 @@ This document is structured according to the [JLPT](https://www.jlpt.jp/e/) syll
         * Eg. この かぎは だれのですか。
             * Whose is this key?
 
-3. はい、そうです/いいえ、そうじゃ ありません/いいえ、違うます
+3. はい、そうです / いいえ、そうじゃ ありません/いいえ、違うます
     * そう => prefix REPLY for questions requiring AFFIRMATIVE or NEGATIVE answer paired with the です or じゃありません suffix previously learnt
         * Eg. それはテレホンカードですか。
             * Is that a telephone card?
@@ -456,7 +456,60 @@ This document is structured according to the [JLPT](https://www.jlpt.jp/e/) syll
 
 ### Grammer 3
 
-> continue adding from notes google doc
+1. ここ / そこ / あそこ / こちら / そちら / あちら
+    * Takes after これ (this thing) それ (that thing near listener) あれ (that thing far from listener), paired with は and です as established
+    * ～こ refers to PLACES (this place, that place, that place over there)
+        * ここ => place where SPEAKER IS (this place)
+        * そこ => place where LISTENER IS (that place)
+        * あそこ => place FAR FROM SPEAKER AND LISTENER (that place over there)
+        * If Speaker regards Listener as SHARING same territory, the place both are standing in is referred to as ここ, and そこ would refer to somewhere distant from both speaker and listener and あそこ would be somewhere even further away
+    * ～ちら refers to DIRECTIONS (this way, that way, that way but far), and POLITE alternatives to ending with ～こ
+        * こちら => this way
+        * そちら => that way (near listener)
+        * あちら => that way (far from speaker and listener)
+
+2. N は PLACE です
+    * は used appropriately as previously established to indicate the LOCATION of a PLACE, THING or PERSON
+        * Eg. トイレはあそこです。
+            * The toliet is OVER THERE.
+        * Eg. でんわはニかいです。
+            * The telephone is on the SECOND FLOOR.
+        * Eg. やまださんは じむしょです。
+            * Mr Yamada is in his OFFICE.
+
+3. どこ / どちら
+    * ど => ASKING for location of something OR ASKING for NAME of Country, Company, School or Organisation one belongs to, paired with は and です as established 
+    * どこ asks WHERE
+    * どちら asks WHICH DIRECTION (polite alternative to どこ)
+        * Eg. トイレはどこですか。
+            * WHERE is the toilet?
+        * Eg. あそこです。
+            * It’s OVER THERE.
+        * Eg. エレベーターは どちらですか。
+            * WHICH DIRECTION (WHERE) is the lift?
+        * Eg. あちらです。
+            * It's in THAT DIRECTION (It’s OVER THERE).
+        * Eg. がっこうは どこですか。
+            * WHAT school do you go to?
+        * Eg. かいしゃは どちらですか。
+            * WHAT company do you work for?
+
+4. どこ の N2
+    * Interrogative どこ => Asks WHERE or WHAT source an item is from, where N2 is the ITEM OF INQUIRY
+        * の => Indicates OWNERSHIP or PROVENANCE of an item, where N1 is the SOURCE and N2 is the ITEM as previously established in N1 の N2
+            * Eg. N1 is a Country name, N2 is a Product name, meaning the product was made in that country
+            * Eg. N1 is a Company name, N2 is a Product name, meaning the product is made by that company
+    * Eg. これは どこの コンピューターですか。
+        * WHERE is this computer made? / WHAT company is this computer made by?
+    * Eg. 日本の コンピューターです。
+        * It’s made in Japan.
+    * Eg. パワーてんきの コンピューターです。
+        * It’s made by Power Electric Company.
+
+5. お～
+    * お prefixes things related to OTHERS to show RESPECT to the person
+        * Eg. おくには どちらですか。
+            * What country are you from?
 
 ### Sentence 1
 
