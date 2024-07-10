@@ -63,10 +63,34 @@ doubleUs x y = x*2 + y*2
 -- ---------- DEFINITION ----------
     -- as a functional language, Haskell has no concept of 'variables' and every binding is immutable by default since modification of a value binding entails side-effects and instead, every value can be modified through a function expression which evaluates to a transformed return value
     -- these are called definitions, the equivalent of constant bindings in other languages
-    -- let => creates a local binding within a specified lexical scope that can only be accessed within its own local scope
+    -- where => adds a local definition to an existing definition
+    -- let ... in => creates a local binding for expressions within a specified lexical scope
+        -- both 'where' and 'let ... in' achieve the same purpose, just that their positional syntax is different when used
+        -- note that functions can also be locally defined 
     -- raw definition creates a global binding that can be accessed anywhere in the program
 
-let jimmyFallon = "It's a me, Jimmy Fallon!" -- this creates a local binding
+circleArea :: Double -> Double -- a function's type signature
+
+-- this is a function defined with 'where' to create local bindings that can only be accessed within the function circleArea
+circleArea r = pi * rsquare
+    where pi = 3.1415926 -- pi is a local binding 
+          rsquare = r * r -- rsquare is also a local binding 
+
+-- this is the same function if defined with 'let ... in' that can only be accessed within the function circleArea
+circleArea r = let pi = 3.1415926 -- pi is a local binding here as well
+                   rsquare = r * r -- rsquare here is also a local binding
+               in pi * rsquare
+
+-- using 'where' 
+circleArea r = pi * square r
+    where pi = 3.1415926
+          square x = x * x -- square is a function locally defined within circleArea
+
+-- using 'let .. in'
+circleArea r = let pi = 3.1415926
+                   square x = x * x -- square here is also a local function defined within circleArea
+               in pi * square r
+
 conanOBrien = "It's a me, Conan O'Brien!" -- this creates a global binding
 ```
 
@@ -297,7 +321,6 @@ zippedList = zip list1 list2 -- this evaluates to the Int tuple list value of [(
 * ranges
 * enumeration
 * guards
-* where
 * let
 * case
 * [haskell mooc](https://haskell.mooc.fi/)
