@@ -300,6 +300,12 @@ zippedList = zip list1 list2 -- this evaluates to the Int tuple list value of [(
 * where
 * let
 * case
-* [install haskell](https://www.haskell.org/downloads/)
-* [learn haskell in y minutes](https://learnxinyminutes.com/docs/haskell/)
+* [haskell mooc](https://haskell.mooc.fi/)
 * [learn you a haskell for great good](https://learnyouahaskell.com/chapters)
+* [a gentle introduction to haskell version 98](https://www.haskell.org/tutorial/)
+* [install haskell](https://www.haskell.org/downloads/)
+* [haskell.org](https://www.haskell.org/)
+* [haskell documentation](https://www.haskell.org/documentation/)
+* [learn haskell in y minutes](https://learnxinyminutes.com/docs/haskell/)
+* [haskell programming from first principles](https://haskellbook.com/)
+* [the haskell school of expression](https://www.cs.yale.edu/homes/hudak/SOE/index.htm)
