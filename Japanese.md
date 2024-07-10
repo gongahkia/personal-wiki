@@ -143,7 +143,7 @@ This document is structured according to the [JLPT](https://www.jlpt.jp/e/) syll
 | さん | | san | mr, ms | 
 | ちゃん | | chan | suffix for addressing children | 
 | くん | | kun | suffix for addressing young boys | 
-| せんせい | | sensei | teacher (**not used** when referring to one's own job) | 
+| せんせい | | sensei | teacher (not used when referring to one's own job) | 
 | きょうし | | kyoushi | teacher, instructor | 
 | がくせい | | gakusei | student | 
 | 会社員 | かいしゃいん | kai shain | company employee | 
@@ -294,6 +294,71 @@ This document is structured according to the [JLPT](https://www.jlpt.jp/e/) syll
 ### Grammer 1
 
 > continue adding from notes google doc
+
+1. N1 は N2 です
+    * は particle => indicates that the noun BEFORE it (N1) is the subject matter (topic) of the sentence
+        * Speaker adds は to what they are talking about and makes statements about it.
+        * Eg. わたしはガブリエルです。
+            * I’m Gabriel.
+    * です => nouns that come with it (N2) are predicates (part of a sentence that gives information about the subject matter)
+        * Shows politeness to listeners 
+        * です inflects when sentence negative or in past tense
+        * Eg. わたしは会社員です。
+            * I’m a company employee.
+
+2. N1 は N2 じゃ/では ありません
+    * じゃ/では ありません => negative form of です that similarly acts as a predicate for N2
+        * Essentially means NOT
+    * じゃありません => used in EVERYDAY conversation
+        * Eg. サントスさんはがくせいじゃありません。
+            * Mr Santos is not a student (informal).
+    * ではありません => used in FORMAL speech, WRITING
+        * Eg. サントスさんはがくせいではありません。
+            * Mr Santos is not a student (formal).
+
+3. N1 は N2 ですか
+    * か particle => appending か to the end of a sentence makes it a QUESTION
+        * Generally ends with rising intonation
+        * Expresses uncertainty and doubt
+    * Questions asking if a STATEMENT IS CORRECT OR NOT
+        * Append か to the end of the given statement
+        * Replies begin with はい for yes or いいえ for no
+            * Eg. ミラっさんはアメリカじんですか。
+                * Is Mr Miller an American?
+            * Eg. はい、アメリカじんです。
+                * Yes, he is an American.
+            * Eg. ミラっさんはせんせいですか。
+                * Is Mr Miller a teacher?
+            * Eg. いいえ、せんせいじゃありません。
+                * No, he is not a teacher.
+    * Questions with INTERROGATIVES (sentences that explicitly ask a question to request information)
+        * Interrogative replaces the part of the sentence that states what the speaker wants to ask about
+        * Append か to the end of the given statement
+            * Eg. あの方はどなたですか。
+                * Who is that person?
+            * Eg. あの方はミラっさんです。
+                * That is Mr Miller.
+
+4. N1 も
+    * も => replaces は particle in a sentence when the SAME THING IS REPEATED
+        * Applicable in both STATEMENTS and QUESTIONS
+        * Effectively means ALSO
+        * Eg. ミラっさんは会社員です。グプタさんも会社員です。
+            * Mr Miller is a company employee. Mr Gupta is also a company employee
+
+5. N1 の N2
+    * の => CONNECTS two nouns when a noun N1 modifies a following noun N2
+        * Eg. ミラさんは IMC の 社員です。
+            * Mr Miller is an IMC employee.
+
+6. ~さん
+    * さん => appended to given name or family name of listener or third party to show RESPECT
+        * Never appended to the speaker’s own name
+    * ちゃん => appended to child’s name to indicate familiarity
+    * あなた => Means YOU
+        * あなた is used to address someone you are VERY FAMILIAR with (romantic partner, husband or wife)
+        * Rarely used if the listener or third party’s name is known since calling someone "you" directly is considered IMPOLITE
+        * Where the name is known, use ~さん instead
 
 ### Grammer 2
 
