@@ -293,8 +293,6 @@ This document is structured according to the [JLPT](https://www.jlpt.jp/e/) syll
 
 ### Grammer 1
 
-> continue adding from notes google doc
-
 1. N1 は N2 です
     * は particle => indicates that the noun BEFORE it (N1) is the subject matter (topic) of the sentence
         * Speaker adds は to what they are talking about and makes statements about it.
@@ -362,7 +360,99 @@ This document is structured according to the [JLPT](https://www.jlpt.jp/e/) syll
 
 ### Grammer 2
 
-> continue adding from notes google doc
+1. これ/それ/あれ
+    * Demonstratives => refer to a THING but does not explicitly specify subject
+        * “What is that?”
+    * これ => thing NEAR SPEAKER (this)
+    * それ => thing NEAR LISTENER (that)
+    * あれ => thing FAR from SPEAKER AND LISTENER (that but far)
+        * Eg. それは辞書ですか。
+            * Is that a dictionary?
+        * Eg. これをください。
+            * I’ll take this (but polite).
+
+2. このＮ/そのＮ/あのＮ
+    * Modify nouns => refer to N as the specific subject, where N is a THING or PERSON
+        * Note that は still suffixes N as previously established above in basic sentence structure
+        * “What is that dictionary?”
+    * この N => thing or person NEAR SPEAKER (this)
+    * その N => thing or person NEAR LISTENER (that)
+    * あの N => thing or person FAR from SPEAKER AND LISTENER (that but far)
+        * Eg. この 本は わたしのです。
+            * This book is mine.
+        * Eg. あの かたは どなたですか。
+            * Who is that person?
+        * Eg. この かぎは だれのですか。
+            * Whose is this key?
+
+3. はい、そうです/いいえ、そうじゃ ありません/いいえ、違うます
+    * そう => prefix REPLY for questions requiring AFFIRMATIVE or NEGATIVE answer paired with the です or じゃありません suffix previously learnt
+        * Eg. それはテレホンカードですか。
+            * Is that a telephone card?
+        * Eg. はい、そうです。
+            * Yes, it is. 
+        * Eg. それはテレホンカードですか。
+            * Is that a telephone card?
+        * Eg. いいえ、そうじゃありません。
+            * No, it isn’t.
+    * 違います => ちがいます => same meaning as そうじゃありません
+        * Note that this does NOT replace the いいえ which still has to be said
+        * Eg. それはテレホンカードですか。
+            * Is that a telephone card?
+        * Eg. いいえ、違います。
+            * No, it isn’t.
+
+4. S1か、S2か
+    * Question asking for CHOICE between alternatives S1 and S2 as the answer
+        * Replied with chosen option S1 or S2
+        * はい/いいえ are not used
+        * Standard suffixes です apply
+    * Eg. これは９ですか、７ですか。
+        * Is this a 9 or a 7?
+    * Eg. ９です。	
+        * It’s a 9.
+
+5. N1のN2
+    * Modify 
+        * の => connect nouns when noun N1 MODIFIES noun N2
+    * Explanation of subject matter 
+        * の => connect nouns when noun N1 EXPLAINS WHAT N2 is ABOUT
+    * Ownership 
+        * の => connects nouns when noun N1 INDICATES WHO OWNS N2
+        * N2 sometimes omitted and の substitutes N2 where ownership has been established and is obvious 
+        * N2 CANNOT be omitted if N2 is a person 
+    * Eg. これはコンピュータのほんです。
+        * This is a book on computers. (explanation of subject matter)
+    * Eg. これはわたしのほんです。
+        * This is my book. (ownership)
+    * Eg. あれはだれのかばんですか。
+        * Whose bag is that? (ownership)
+    * Eg. 佐藤さんのです。
+        * It’s Ms Sato’s. (ownership where N2 has been substituted by の since ownership relationship between N1 佐藤さん and N2 かばん established in question asked)
+    * Eg. このかばんはあなたのですか。
+        * Is this bag yours? (ownership)
+    * Eg. いいえ、わたしのじゃありません。
+        * No, it’s not mine. (ownership)
+    * Eg. ミラさんはIMCの社員ですか。
+        * Is Mr Miller an employee of IMC? (ownership)
+    * Eg. はい、IMCの社員です。
+        * Yes, he is. (ownership)
+
+6. お～
+    * Sometimes prefixes words when speaking POLITELY
+    * Eg. おみやげ
+        * Souvenir / Present
+    * Eg. おさけ
+        * Japanese rice wine
+
+7. そうですか
+    * Expression when speaker UNDERSTAND new information received => I SEE 
+    * Eg. この傘はあなたのですか。
+        * Is this umbrella yours?
+    * Eg. いいえ、違います。シュミットさんのです。
+        * No, it's Mr Schmidt’s (ownership where N2 has been substituted by の since ownership relationship between N1 シュミットさん and N2 傘 established in question asked)
+    * Eg. そうですか
+        * I see.
 
 ### Grammer 3
 
