@@ -385,7 +385,7 @@ This document is structured according to the [JLPT](https://www.jlpt.jp/e/) syll
         * Eg. この かぎは だれのですか。
             * Whose is this key?
 
-3. はい、そうです / いいえ、そうじゃ ありません/いいえ、違うます
+3. はい、そうです / いいえ、そうじゃ ありません / いいえ、違うます
     * そう => prefix REPLY for questions requiring AFFIRMATIVE or NEGATIVE answer paired with the です or じゃありません suffix previously learnt
         * Eg. それはテレホンカードですか。
             * Is that a telephone card?
