@@ -191,6 +191,7 @@ square = \x -> x * x -- anonymous function that squares the function parameters
 
 ## More on
 
+* [elm-lang.org](https://elm-lang.org/)
 * [elm documentation](https://elm-lang.org/docs)
 * [learn elm in y minutes](https://learnxinyminutes.com/docs/elm/)
 * [higher order functions in elm](https://learnyouanelm.github.io/pages/06-higher-order-functions.html)
