@@ -309,3 +309,4 @@ zippedList = zip list1 list2 -- this evaluates to the Int tuple list value of [(
 * [learn haskell in y minutes](https://learnxinyminutes.com/docs/haskell/)
 * [haskell programming from first principles](https://haskellbook.com/)
 * [the haskell school of expression](https://www.cs.yale.edu/homes/hudak/SOE/index.htm)
+* [haskell wiki on functional programming](https://wiki.haskell.org/Functional_programming)
