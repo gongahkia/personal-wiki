@@ -511,6 +511,15 @@ This document is structured according to the [JLPT](https://www.jlpt.jp/e/) syll
         * Eg. おくには どちらですか。
             * What country are you from?
 
+Here is a summary of the more commonly used demonstratives.
+
+|   | こ series | そ series | あ series | ど series |
+| :--- | :--- | :--- | :--- | :--- | 
+| **THING** | これ | それ | あれ | どれ |
+| **THING / PERSON** | この N | その N | あの N | どの N |
+| **PLACE** | ここ | そこ | あそこ | どこ |
+| **DIRECTION (place but polite)** | こちら | そちら | あちら | どちら |
+
 ### Sentence 1
 
 1. わたしは会社員じゃありません。
