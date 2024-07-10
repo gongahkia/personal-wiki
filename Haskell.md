@@ -129,8 +129,8 @@ fst :: (a,b) -> a -- similarly, the type signature of the fst function employs a
     -- not => logical not
 
 -- COMPARISON OPERATORS
-    -- == => partial equality check for value
-    -- /= => partial inequality check for value
+    -- == => partial equality check for value but not type
+    -- /= => partial inequality check for value but not type
     -- > < <= >= are also comparsion operators
 ```
 
