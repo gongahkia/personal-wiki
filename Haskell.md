@@ -158,120 +158,6 @@ fst :: (a,b) -> a -- similarly, the type signature of the fst function employs a
     -- > < <= >= are also comparsion operators
 ```
 
-## Control structures
-
-```hs
--- ---------- CONTROL STRUCTURE ----------
-
--- CONDITIONALS
-
--- IF THEN ELSE
-    -- else => required in every if statement since every expression (including conditional expressions) must evalaute to a value
-
-doubleSmallNumber :: (Int a, Ord a) => a -> a
-doubleSmallNumber x = if x > 100
-                      then x 
-                      else x*2 
-
--- CASE OF _
-    -- Haskell features extremely powerful pattern-matching construct similar to the match case statements in other languages
-    -- pattern cases are checked in order from top to bottom so arrangement matters
-    -- _ => wildcard catch-all operator that acts as the equivalent of the default statement in other languages
-
-numberAsString :: Int -> String -- static type declaration of an expression prior to expression initialisation
-numberAsString num = case num of
-    1 -> "One"
-    2 -> "Two"
-    3 -> "Three"
-    _ -> "Unknown but also the catch-call wildcard operator"
-
--- pattern-matching can technically also be executed on functions
--- a function definition can consist of multiple equations, where each equation is matched in order against the arguments until a suitable one is found
--- here _ serves the same role as the catch-all operator where it evaluates when all other predicate equations fail to be matched
-
-greet :: String -> String -> String -- type annotation
-greet "Finland" name = "Hei, " ++ name -- case 1
-greet "Italy"   name = "Ciao, " ++ name -- case 2
-greet "England" name = "How do you do, " ++ name -- case 2
-greet _ name = "Hello, " ++ name -- default case
-
--- the logical extension is that pattern-matching can occur on any number of arguments as seen below
-
-login :: String -> String -> String
-login "unicorn73" "f4bulous!" = "unicorn73 logged in"
-login "unicorn73" _ = "wrong password"
-login _ _ = "unknown user"
-
--- LOOPS DON'T EXIST
-    -- higher-order functions, recursion and list comprehension are used in place of imperative loop constructs like for or while loops, which Haskell does not have
-    -- this is in line with most other functional programming paradigms that Haskell adheres to
-
--- HIGHER-ORDER FUNCTIONS
-    -- map => applies a specified function on each element of an iterable structure and returns the transformed data structure
-    -- filter => applies a specified predicate to each element of an iterable structure and returns the data structure with elements that fulfil the predicate
-    -- foldl, foldr => reduces a list to a single value by repeatedly applying a specified binary function to each element of the list, the equivalent of reduce in Haskell
-    -- zipWith => combines two lists with a specified function
-    -- compose => declared with a . period, combines two functions into a new function
-    -- flip => receives a function, reverses its first two arguments and returns that new function
-
-squareList :: Int a => [a] -> [a]
-squareList xs = map (\x -> x * x) xs -- calling map function
-
-evenNumbers :: Integral a => [a] -> [a]
-evenNumbers xs = filter even xs -- calling filter function
-
-sumList :: Int a => [a] -> a
-sumList xs = foldl (+) 0 xs -- calling reduce function
-
-addLists :: Int a => [a] -> [a] -> [a]
-addLists xs ys = zipWith (+) xs ys -- calling zipWith function
-
-squareAndDouble :: Int a => a -> a
-squareAndDouble = (*2) . (^2) -- calling compose function
-
-subtractFrom :: Int a => a -> a -> a
-subtractFrom = flip (-) -- calling flip function
-
--- RECURSION
-    -- Haskell function calls are very efficient, so performance is rarely a concern when it comes to recursion
-    -- in reality recursion is merely a natural application of Haskell's powerful pattern-matching construct that occurs even in definitions
-
--- to find the factorial! of a given number, noting the definition of factorial is n! = n * (n-1) * … * 1
-factorial :: Int -> Int
-factorial 1 = 1 -- base case
-factorial n = n * factorial (n-1)
-
--- to find the sum of squares of all numbers from 1 to the given number, noting the definition of the squared sum is 1^2 + 2^2 + 3^2 + ... + n^2
-squareSum :: Int -> Int
-squareSum 0 = 0 -- base case
-squareSum n = n^2 + squareSum (n-1)
-
--- to sum the elements of a list
-sumList :: Int a => [a] -> a 
-sumList [] = 0 -- base case
-sumList (x:xs) = x + sumList xs 
-
--- LIST COMPREHENSION
-    -- given Haskell's mathematical roots, concepts like list comprehension originate from set theory
-    -- list comprehension syntax => [{OUTPUT FUNCTION} | {VARIABLE AND INPUT SET}, {PREDICATE}]
-        -- output function => function applied on each element
-        -- variable => element iterated over within the input set, commas can be used to delimit multiple variables
-        -- input set => iterable collection over which the variable iterates over, can be expressed as a range in Haskell, commas can be used to delimit multiple input sets
-        -- predicate => specifies conditional check on the variable that limits what values from the input set can have the output function applied to them, the equivalent of a filter in other programming languages, commas can be used to delimit multiple predicates
-    -- <- => specifies the relationship between the variable and input set
-    -- _ => catch-all operator also acts as a throwaway variable that is not needed later
-
-multiplyByTwo = [x*2 | x <- [1..10]] -- this evaluates to the Int list of [2,4,6,8,10,12,14,16,18,20] using list comprehension
-multiplyByTwoWithPredicate = [x*2 | x <- [1..10], x*2 >= 12] -- this evaluates to the Int list of [12,14,16,18,20] using list comprehension when x fulfills the predicate of 2 * x is bigger or equals to 12
-applyAnotherPredicate = [x | x <- [50..100], x `mod` 7 == 3]  -- this evaluates to the Int list of [52,59,66,73,80,87,94] using list comprehension where x fulfills the predicate of x mod 7 == 3
-applyMultiplePredicates = [x | x <- [10..20], x /= 13, x /= 15, x /= 19] -- commas are used to delimit multiple predicates that specify x cannot be equals to 13, 15, 19
-applyMultipleVariableAndInputSets = [x*y | x <- [2,5,10] , y <- [8,10,11], x*y > 50] -- commas are used to delimit multiple variable and inpiut sets to evaluate to a list of all the possible products from a list that are more than 50, which is [55,80,100,110]
-removeNonUppercase inputString = [ c | c <- inputString, c `elem` ['A'..'Z']] -- Strings are just Char lists so we can use list comprehension to removes all non-uppercase letters from a string
-length` xs = sum [1 | _ <- xs] -- _ catch-all wildcard operator used to signify throwing away that variable, so this function evaluates to the length of the list where every element of the list is replaced with 1 and the value of the Int list is summed up
-squareList :: Int a => [a] -> [a] -- note this employs typeclasses for a generic function that does not have type-specific behaviour
-squareList xs = [x * x | x <- xs] -- list comprehension can also be used with functions to generate an Int list where each value is its value squared
-```
-
 ## Data structures
 
 ```hs
@@ -347,13 +233,182 @@ list2 = ["one", "two", "three"]
 zippedList = zip list1 list2 -- this evaluates to the Int tuple list value of [(1, "one"), (2, "two"), (3, "three")]
 ```
 
+## Control structures
+
+```hs
+-- ---------- CONTROL STRUCTURE ----------
+
+-- CONDITIONALS
+
+-- IF THEN ELSE
+    -- else => required in every if statement since every expression (including conditional expressions) must evalaute to a value
+
+doubleSmallNumber :: (Int a, Ord a) => a -> a
+doubleSmallNumber x = if x > 100
+                      then x 
+                      else x*2 
+
+-- CASE OF _
+    -- Haskell features extremely powerful pattern-matching construct similar to the match case statements in other languages
+    -- pattern cases are checked in order from top to bottom so arrangement matters
+    -- _ => wildcard catch-all operator that acts as the equivalent of the default statement in other languages
+
+numberAsString :: Int -> String -- static type declaration of an expression prior to expression initialisation
+numberAsString num = case num of
+    1 -> "One"
+    2 -> "Two"
+    3 -> "Three"
+    _ -> "Unknown but also the catch-call wildcard operator"
+
+-- pattern-matching can technically also be executed on functions
+-- a function definition can consist of multiple equations, where each equation is matched in order against the arguments until a suitable one is found
+-- here _ serves the same role as the catch-all operator where it evaluates when all other predicate equations fail to be matched
+
+greet :: String -> String -> String -- type annotation
+greet "Finland" name = "Hei, " ++ name -- case 1
+greet "Italy"   name = "Ciao, " ++ name -- case 2
+greet "England" name = "How do you do, " ++ name -- case 2
+greet _ name = "Hello, " ++ name -- default case
+
+-- the logical extension is that pattern-matching can occur on any number of arguments as seen below
+
+login :: String -> String -> String
+login "unicorn73" "f4bulous!" = "unicorn73 logged in"
+login "unicorn73" _ = "wrong password"
+login _ _ = "unknown user"
+
+-- GUARDED DEFINITIONS
+    -- provided as an alternative to the cumbersome IF THEN ELSE conditional constructs especially when there are multiple predicate cases
+    -- instead, Haskell provides conditional definitions, AKA guarded definitions
+    -- these operate similarly to pattern-matching by providing multiple equations that run based on specified predicate case conditions, and are particularly useful in recursive function call definitions
+    -- | => pipe operator specifies the predicate case condition to be fulfilled 
+    -- = => specifies the relationship between a defined case condition and the arbitrary equation to be run when that case condition is fulfilled
+    -- otherwise => acts as the default fall-through case, the equivalent of the _ catch-all operator in match-case constructs in most other programming languages
+
+-- a simple conditional definition
+describe :: Int -> String
+describe n
+    | n == 2 = "Two"
+    | even n = "Even"
+    | n == 3 = "Three"
+    | n > 100 = "Big!!"
+    | otherwise = "The number " ++ show n -- default fall-through case
+
+-- recursive function call with conditional definitions
+factorial :: Int -> Int
+factorial n
+    | n < 0 = -1
+    | n == 0 = 1
+    | otherwise = n * factorial (n-1)
+
+-- guards can even be COMBINED with existing pattern-matching constructs as below
+guessAge :: String -> Int -> String
+guessAge "Griselda" age
+    | age < 47 = "Too low!"
+    | age > 47 = "Too high!"
+    | otherwise = "Correct!"
+guessAge "Hansel" age
+    | age < 12 = "Too low!"
+    | age > 12 = "Too high!"
+    | otherwise = "Correct!"
+guessAge name age = "Wrong name!"
+
+-- LOOPS DON'T EXIST
+    -- higher-order functions, recursion and list comprehension are used in place of imperative loop constructs like for or while loops, which Haskell does not have
+    -- this is in line with most other functional programming paradigms that Haskell adheres to
+
+-- HIGHER-ORDER FUNCTIONS
+    -- map => applies a specified function on each element of an iterable structure and returns the transformed data structure
+    -- filter => applies a specified predicate to each element of an iterable structure and returns the data structure with elements that fulfil the predicate
+    -- foldl, foldr => reduces a list to a single value by repeatedly applying a specified binary function to each element of the list, the equivalent of reduce in Haskell
+    -- zipWith => combines two lists with a specified function
+    -- compose => declared with a . period, combines two functions into a new function
+    -- flip => receives a function, reverses its first two arguments and returns that new function
+
+squareList :: Int a => [a] -> [a]
+squareList xs = map (\x -> x * x) xs -- calling map function
+
+evenNumbers :: Integral a => [a] -> [a]
+evenNumbers xs = filter even xs -- calling filter function
+
+sumList :: Int a => [a] -> a
+sumList xs = foldl (+) 0 xs -- calling reduce function
+
+addLists :: Int a => [a] -> [a] -> [a]
+addLists xs ys = zipWith (+) xs ys -- calling zipWith function
+
+squareAndDouble :: Int a => a -> a
+squareAndDouble = (*2) . (^2) -- calling compose function
+
+subtractFrom :: Int a => a -> a -> a
+subtractFrom = flip (-) -- calling flip function
+
+-- RECURSION
+    -- Haskell function calls are very efficient, so performance is rarely a concern when it comes to recursion
+    -- in reality recursion is merely a natural application of Haskell's powerful pattern-matching construct that occurs even in definitions
+    -- helper functions are also very useful to declutter and simplify the visible logic of a recursive call, wherein helper functions are named originalFunctionName' which is read as originalFunctionNamePrime by convention
+    -- a simple way to think about recursion is always 
+        -- 1. FIRST define what the base case of a recursive function call that the call recurses to should be
+        -- 2. THEN write out the otherwise case that runs when the base case is not yet called
+        -- 3. WORK it out on paper if need be to visualise each iteration of the function call
+
+-- to find the factorial! of a given number, noting the definition of factorial is n! = n * (n-1) * … * 1
+factorial :: Int -> Int
+factorial 1 = 1 -- base case
+factorial n = n * factorial (n-1)
+
+-- to find the sum of squares of all numbers from 1 to the given number, noting the definition of the squared sum is 1^2 + 2^2 + 3^2 + ... + n^2
+squareSum :: Int -> Int
+squareSum 0 = 0 -- base case
+squareSum n = n^2 + squareSum (n-1)
+
+-- to sum the elements of a list
+sumList :: Int a => [a] -> a 
+sumList [] = 0 -- base case
+sumList (x:xs) = x + sumList xs 
+
+-- helper function 
+repeatHelper :: Int -> String -> String -> String -- type signature
+repeatHelper n str result = if (n==0) 
+                            then result
+                            else repeatHelper (n-1) str (result++str)
+
+-- helper function that has the same type signature as above but now we use pattern-matching INSTEAD of the if else construct within the function definition
+repeatHelper 0 _   result = result -- as long as n == 0, then it does not matter what the string is, this first case will run
+repeatHelper n str result = repeatHelper (n-1) str (result++str)
+
+-- actual recursive function call
+repeatString :: Int -> String -> String -- type signature
+repeatString n str = repeatHelper n str ""
+
+-- LIST COMPREHENSION
+    -- given Haskell's mathematical roots, concepts like list comprehension originate from set theory
+    -- list comprehension syntax => [{OUTPUT FUNCTION} | {VARIABLE AND INPUT SET}, {PREDICATE}]
+        -- output function => function applied on each element
+        -- variable => element iterated over within the input set, commas can be used to delimit multiple variables
+        -- input set => iterable collection over which the variable iterates over, can be expressed as a range in Haskell, commas can be used to delimit multiple input sets
+        -- predicate => specifies conditional check on the variable that limits what values from the input set can have the output function applied to them, the equivalent of a filter in other programming languages, commas can be used to delimit multiple predicates
+    -- <- => specifies the relationship between the variable and input set
+    -- _ => catch-all operator also acts as a throwaway variable that is not needed later
+
+multiplyByTwo = [x*2 | x <- [1..10]] -- this evaluates to the Int list of [2,4,6,8,10,12,14,16,18,20] using list comprehension
+multiplyByTwoWithPredicate = [x*2 | x <- [1..10], x*2 >= 12] -- this evaluates to the Int list of [12,14,16,18,20] using list comprehension when x fulfills the predicate of 2 * x is bigger or equals to 12
+applyAnotherPredicate = [x | x <- [50..100], x `mod` 7 == 3]  -- this evaluates to the Int list of [52,59,66,73,80,87,94] using list comprehension where x fulfills the predicate of x mod 7 == 3
+applyMultiplePredicates = [x | x <- [10..20], x /= 13, x /= 15, x /= 19] -- commas are used to delimit multiple predicates that specify x cannot be equals to 13, 15, 19
+applyMultipleVariableAndInputSets = [x*y | x <- [2,5,10] , y <- [8,10,11], x*y > 50] -- commas are used to delimit multiple variable and inpiut sets to evaluate to a list of all the possible products from a list that are more than 50, which is [55,80,100,110]
+removeNonUppercase inputString = [ c | c <- inputString, c `elem` ['A'..'Z']] -- Strings are just Char lists so we can use list comprehension to removes all non-uppercase letters from a string
+length` xs = sum [1 | _ <- xs] -- _ catch-all wildcard operator used to signify throwing away that variable, so this function evaluates to the length of the list where every element of the list is replaced with 1 and the value of the Int list is summed up
+squareList :: Int a => [a] -> [a] -- note this employs typeclasses for a generic function that does not have type-specific behaviour
+squareList xs = [x * x | x <- xs] -- list comprehension can also be used with functions to generate an Int list where each value is its value squared
+```
+
 ## More on
 
 * show
-* shadowing
 * ranges
 * enumeration
-* guards
+* tail recursion
+* shadowing
 * [haskell mooc](https://haskell.mooc.fi/)
 * [learn you a haskell for great good](https://learnyouahaskell.com/chapters)
 * [a gentle introduction to haskell version 98](https://www.haskell.org/tutorial/)
