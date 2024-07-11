@@ -174,8 +174,8 @@ doubleSmallNumber x = if x > 100
                       else x*2 
 
 -- CASE OF _
-    -- powerful pattern-matching construct similar to the match case statements in other languages
-    -- cases are checked top to bottom so order matters
+    -- Haskell features extremely powerful pattern-matching construct similar to the match case statements in other languages
+    -- pattern cases are checked in order from top to bottom so arrangement matters
     -- _ => wildcard catch-all operator that acts as the equivalent of the default statement in other languages
 
 numberAsString :: Int -> String -- static type declaration of an expression prior to expression initialisation
@@ -185,8 +185,26 @@ numberAsString num = case num of
     3 -> "Three"
     _ -> "Unknown but also the catch-call wildcard operator"
 
+-- pattern-matching can technically also be executed on functions
+-- a function definition can consist of multiple equations, where each equation is matched in order against the arguments until a suitable one is found
+-- here _ serves the same role as the catch-all operator where it evaluates when all other predicate equations fail to be matched
+
+greet :: String -> String -> String -- type annotation
+greet "Finland" name = "Hei, " ++ name -- case 1
+greet "Italy"   name = "Ciao, " ++ name -- case 2
+greet "England" name = "How do you do, " ++ name -- case 2
+greet _ name = "Hello, " ++ name -- default case
+
+-- the logical extension is that pattern-matching can occur on any number of arguments as seen below
+
+login :: String -> String -> String
+login "unicorn73" "f4bulous!" = "unicorn73 logged in"
+login "unicorn73" _ = "wrong password"
+login _ _ = "unknown user"
+
 -- LOOPS DON'T EXIST
-    -- higher-order functions, recursion, list comprehension are used in place of imperative loop constructs like for or while loops, which Haskell does not have
+    -- higher-order functions, recursion and list comprehension are used in place of imperative loop constructs like for or while loops, which Haskell does not have
+    -- this is in line with most other functional programming paradigms that Haskell adheres to
 
 -- HIGHER-ORDER FUNCTIONS
     -- map => applies a specified function on each element of an iterable structure and returns the transformed data structure
@@ -215,10 +233,23 @@ subtractFrom :: Int a => a -> a -> a
 subtractFrom = flip (-) -- calling flip function
 
 -- RECURSION
+    -- Haskell function calls are very efficient, so performance is rarely a concern when it comes to recursion
+    -- in reality recursion is merely a natural application of Haskell's powerful pattern-matching construct that occurs even in definitions
 
+-- to find the factorial! of a given number, noting the definition of factorial is n! = n * (n-1) * … * 1
+factorial :: Int -> Int
+factorial 1 = 1 -- base case
+factorial n = n * factorial (n-1)
+
+-- to find the sum of squares of all numbers from 1 to the given number, noting the definition of the squared sum is 1^2 + 2^2 + 3^2 + ... + n^2
+squareSum :: Int -> Int
+squareSum 0 = 0 -- base case
+squareSum n = n^2 + squareSum (n-1)
+
+-- to sum the elements of a list
 sumList :: Int a => [a] -> a 
-sumList [] = 0
-sumList (x:xs) = x + sumList xs -- simple recursion to sum the elements of a list
+sumList [] = 0 -- base case
+sumList (x:xs) = x + sumList xs 
 
 -- LIST COMPREHENSION
     -- given Haskell's mathematical roots, concepts like list comprehension originate from set theory
@@ -318,11 +349,11 @@ zippedList = zip list1 list2 -- this evaluates to the Int tuple list value of [(
 
 ## More on
 
+* show
+* shadowing
 * ranges
 * enumeration
 * guards
-* let
-* case
 * [haskell mooc](https://haskell.mooc.fi/)
 * [learn you a haskell for great good](https://learnyouahaskell.com/chapters)
 * [a gentle introduction to haskell version 98](https://www.haskell.org/tutorial/)
