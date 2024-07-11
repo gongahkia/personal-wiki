@@ -225,8 +225,8 @@
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true"></a>                      <span class="kw">else</span> x<span class="op">*</span><span class="dv">2</span> </span>
 <span id="cb7-12"><a href="#cb7-12" aria-hidden="true"></a></span>
 <span id="cb7-13"><a href="#cb7-13" aria-hidden="true"></a><span class="co">-- CASE OF _</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true"></a>    <span class="co">-- powerful pattern-matching construct similar to the match case statements in other languages</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true"></a>    <span class="co">-- cases are checked top to bottom so order matters</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true"></a>    <span class="co">-- Haskell features extremely powerful pattern-matching construct similar to the match case statements in other languages</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true"></a>    <span class="co">-- pattern cases are checked in order from top to bottom so arrangement matters</span></span>
 <span id="cb7-16"><a href="#cb7-16" aria-hidden="true"></a>    <span class="co">-- _ =&gt; wildcard catch-all operator that acts as the equivalent of the default statement in other languages</span></span>
 <span id="cb7-17"><a href="#cb7-17" aria-hidden="true"></a></span>
 <span id="cb7-18"><a href="#cb7-18" aria-hidden="true"></a><span class="ot">numberAsString ::</span> <span class="dt">Int</span> <span class="ot">-&gt;</span> <span class="dt">String</span> <span class="co">-- static type declaration of an expression prior to expression initialisation</span></span>
@@ -236,60 +236,91 @@
 <span id="cb7-22"><a href="#cb7-22" aria-hidden="true"></a>    <span class="dv">3</span> <span class="ot">-&gt;</span> <span class="st">&quot;Three&quot;</span></span>
 <span id="cb7-23"><a href="#cb7-23" aria-hidden="true"></a>    _ <span class="ot">-&gt;</span> <span class="st">&quot;Unknown but also the catch-call wildcard operator&quot;</span></span>
 <span id="cb7-24"><a href="#cb7-24" aria-hidden="true"></a></span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true"></a><span class="co">-- LOOPS DON&#39;T EXIST</span></span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true"></a>    <span class="co">-- higher-order functions, recursion, list comprehension are used in place of imperative loop constructs like for or while loops, which Haskell does not have</span></span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true"></a></span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true"></a><span class="co">-- HIGHER-ORDER FUNCTIONS</span></span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true"></a>    <span class="co">-- map =&gt; applies a specified function on each element of an iterable structure and returns the transformed data structure</span></span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true"></a>    <span class="co">-- filter =&gt; applies a specified predicate to each element of an iterable structure and returns the data structure with elements that fulfil the predicate</span></span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true"></a>    <span class="co">-- foldl, foldr =&gt; reduces a list to a single value by repeatedly applying a specified binary function to each element of the list, the equivalent of reduce in Haskell</span></span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true"></a>    <span class="co">-- zipWith =&gt; combines two lists with a specified function</span></span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true"></a>    <span class="co">-- compose =&gt; declared with a . period, combines two functions into a new function</span></span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true"></a>    <span class="co">-- flip =&gt; receives a function, reverses its first two arguments and returns that new function</span></span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true"></a></span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true"></a><span class="ot">squareList ::</span> <span class="dt">Int</span> a <span class="ot">=&gt;</span> [a] <span class="ot">-&gt;</span> [a]</span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true"></a>squareList xs <span class="ot">=</span> <span class="fu">map</span> (\x <span class="ot">-&gt;</span> x <span class="op">*</span> x) xs <span class="co">-- calling map function</span></span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true"></a></span>
-<span id="cb7-39"><a href="#cb7-39" aria-hidden="true"></a><span class="ot">evenNumbers ::</span> <span class="dt">Integral</span> a <span class="ot">=&gt;</span> [a] <span class="ot">-&gt;</span> [a]</span>
-<span id="cb7-40"><a href="#cb7-40" aria-hidden="true"></a>evenNumbers xs <span class="ot">=</span> <span class="fu">filter</span> <span class="fu">even</span> xs <span class="co">-- calling filter function</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true"></a><span class="co">-- pattern-matching can technically also be executed on functions</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true"></a><span class="co">-- a function definition can consist of multiple equations, where each equation is matched in order against the arguments until a suitable one is found</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true"></a><span class="co">-- here _ serves the same role as the catch-all operator where it evaluates when all other predicate equations fail to be matched</span></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true"></a></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true"></a><span class="ot">greet ::</span> <span class="dt">String</span> <span class="ot">-&gt;</span> <span class="dt">String</span> <span class="ot">-&gt;</span> <span class="dt">String</span> <span class="co">-- type annotation</span></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true"></a>greet <span class="st">&quot;Finland&quot;</span> name <span class="ot">=</span> <span class="st">&quot;Hei, &quot;</span> <span class="op">++</span> name <span class="co">-- case 1</span></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true"></a>greet <span class="st">&quot;Italy&quot;</span>   name <span class="ot">=</span> <span class="st">&quot;Ciao, &quot;</span> <span class="op">++</span> name <span class="co">-- case 2</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true"></a>greet <span class="st">&quot;England&quot;</span> name <span class="ot">=</span> <span class="st">&quot;How do you do, &quot;</span> <span class="op">++</span> name <span class="co">-- case 2</span></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true"></a>greet _ name <span class="ot">=</span> <span class="st">&quot;Hello, &quot;</span> <span class="op">++</span> name <span class="co">-- default case</span></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true"></a></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true"></a><span class="co">-- the logical extension is that pattern-matching can occur on any number of arguments as seen below</span></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true"></a></span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true"></a><span class="ot">login ::</span> <span class="dt">String</span> <span class="ot">-&gt;</span> <span class="dt">String</span> <span class="ot">-&gt;</span> <span class="dt">String</span></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true"></a>login <span class="st">&quot;unicorn73&quot;</span> <span class="st">&quot;f4bulous!&quot;</span> <span class="ot">=</span> <span class="st">&quot;unicorn73 logged in&quot;</span></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true"></a>login <span class="st">&quot;unicorn73&quot;</span> _ <span class="ot">=</span> <span class="st">&quot;wrong password&quot;</span></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true"></a>login _ _ <span class="ot">=</span> <span class="st">&quot;unknown user&quot;</span></span>
 <span id="cb7-41"><a href="#cb7-41" aria-hidden="true"></a></span>
-<span id="cb7-42"><a href="#cb7-42" aria-hidden="true"></a><span class="ot">sumList ::</span> <span class="dt">Int</span> a <span class="ot">=&gt;</span> [a] <span class="ot">-&gt;</span> a</span>
-<span id="cb7-43"><a href="#cb7-43" aria-hidden="true"></a>sumList xs <span class="ot">=</span> <span class="fu">foldl</span> (<span class="op">+</span>) <span class="dv">0</span> xs <span class="co">-- calling reduce function</span></span>
-<span id="cb7-44"><a href="#cb7-44" aria-hidden="true"></a></span>
-<span id="cb7-45"><a href="#cb7-45" aria-hidden="true"></a><span class="ot">addLists ::</span> <span class="dt">Int</span> a <span class="ot">=&gt;</span> [a] <span class="ot">-&gt;</span> [a] <span class="ot">-&gt;</span> [a]</span>
-<span id="cb7-46"><a href="#cb7-46" aria-hidden="true"></a>addLists xs ys <span class="ot">=</span> <span class="fu">zipWith</span> (<span class="op">+</span>) xs ys <span class="co">-- calling zipWith function</span></span>
-<span id="cb7-47"><a href="#cb7-47" aria-hidden="true"></a></span>
-<span id="cb7-48"><a href="#cb7-48" aria-hidden="true"></a><span class="ot">squareAndDouble ::</span> <span class="dt">Int</span> a <span class="ot">=&gt;</span> a <span class="ot">-&gt;</span> a</span>
-<span id="cb7-49"><a href="#cb7-49" aria-hidden="true"></a>squareAndDouble <span class="ot">=</span> (<span class="op">*</span><span class="dv">2</span>) <span class="op">.</span> (<span class="op">^</span><span class="dv">2</span>) <span class="co">-- calling compose function</span></span>
-<span id="cb7-50"><a href="#cb7-50" aria-hidden="true"></a></span>
-<span id="cb7-51"><a href="#cb7-51" aria-hidden="true"></a><span class="ot">subtractFrom ::</span> <span class="dt">Int</span> a <span class="ot">=&gt;</span> a <span class="ot">-&gt;</span> a <span class="ot">-&gt;</span> a</span>
-<span id="cb7-52"><a href="#cb7-52" aria-hidden="true"></a>subtractFrom <span class="ot">=</span> <span class="fu">flip</span> (<span class="op">-</span>) <span class="co">-- calling flip function</span></span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true"></a><span class="co">-- LOOPS DON&#39;T EXIST</span></span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true"></a>    <span class="co">-- higher-order functions, recursion and list comprehension are used in place of imperative loop constructs like for or while loops, which Haskell does not have</span></span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true"></a>    <span class="co">-- this is in line with most other functional programming paradigms that Haskell adheres to</span></span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true"></a></span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true"></a><span class="co">-- HIGHER-ORDER FUNCTIONS</span></span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true"></a>    <span class="co">-- map =&gt; applies a specified function on each element of an iterable structure and returns the transformed data structure</span></span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true"></a>    <span class="co">-- filter =&gt; applies a specified predicate to each element of an iterable structure and returns the data structure with elements that fulfil the predicate</span></span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true"></a>    <span class="co">-- foldl, foldr =&gt; reduces a list to a single value by repeatedly applying a specified binary function to each element of the list, the equivalent of reduce in Haskell</span></span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true"></a>    <span class="co">-- zipWith =&gt; combines two lists with a specified function</span></span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true"></a>    <span class="co">-- compose =&gt; declared with a . period, combines two functions into a new function</span></span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true"></a>    <span class="co">-- flip =&gt; receives a function, reverses its first two arguments and returns that new function</span></span>
 <span id="cb7-53"><a href="#cb7-53" aria-hidden="true"></a></span>
-<span id="cb7-54"><a href="#cb7-54" aria-hidden="true"></a><span class="co">-- RECURSION</span></span>
-<span id="cb7-55"><a href="#cb7-55" aria-hidden="true"></a></span>
-<span id="cb7-56"><a href="#cb7-56" aria-hidden="true"></a><span class="ot">sumList ::</span> <span class="dt">Int</span> a <span class="ot">=&gt;</span> [a] <span class="ot">-&gt;</span> a </span>
-<span id="cb7-57"><a href="#cb7-57" aria-hidden="true"></a>sumList [] <span class="ot">=</span> <span class="dv">0</span></span>
-<span id="cb7-58"><a href="#cb7-58" aria-hidden="true"></a>sumList (x<span class="op">:</span>xs) <span class="ot">=</span> x <span class="op">+</span> sumList xs <span class="co">-- simple recursion to sum the elements of a list</span></span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true"></a><span class="ot">squareList ::</span> <span class="dt">Int</span> a <span class="ot">=&gt;</span> [a] <span class="ot">-&gt;</span> [a]</span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true"></a>squareList xs <span class="ot">=</span> <span class="fu">map</span> (\x <span class="ot">-&gt;</span> x <span class="op">*</span> x) xs <span class="co">-- calling map function</span></span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true"></a></span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true"></a><span class="ot">evenNumbers ::</span> <span class="dt">Integral</span> a <span class="ot">=&gt;</span> [a] <span class="ot">-&gt;</span> [a]</span>
+<span id="cb7-58"><a href="#cb7-58" aria-hidden="true"></a>evenNumbers xs <span class="ot">=</span> <span class="fu">filter</span> <span class="fu">even</span> xs <span class="co">-- calling filter function</span></span>
 <span id="cb7-59"><a href="#cb7-59" aria-hidden="true"></a></span>
-<span id="cb7-60"><a href="#cb7-60" aria-hidden="true"></a><span class="co">-- LIST COMPREHENSION</span></span>
-<span id="cb7-61"><a href="#cb7-61" aria-hidden="true"></a>    <span class="co">-- given Haskell&#39;s mathematical roots, concepts like list comprehension originate from set theory</span></span>
-<span id="cb7-62"><a href="#cb7-62" aria-hidden="true"></a>    <span class="co">-- list comprehension syntax =&gt; [{OUTPUT FUNCTION} | {VARIABLE AND INPUT SET}, {PREDICATE}]</span></span>
-<span id="cb7-63"><a href="#cb7-63" aria-hidden="true"></a>        <span class="co">-- output function =&gt; function applied on each element</span></span>
-<span id="cb7-64"><a href="#cb7-64" aria-hidden="true"></a>        <span class="co">-- variable =&gt; element iterated over within the input set, commas can be used to delimit multiple variables</span></span>
-<span id="cb7-65"><a href="#cb7-65" aria-hidden="true"></a>        <span class="co">-- input set =&gt; iterable collection over which the variable iterates over, can be expressed as a range in Haskell, commas can be used to delimit multiple input sets</span></span>
-<span id="cb7-66"><a href="#cb7-66" aria-hidden="true"></a>        <span class="co">-- predicate =&gt; specifies conditional check on the variable that limits what values from the input set can have the output function applied to them, the equivalent of a filter in other programming languages, commas can be used to delimit multiple predicates</span></span>
-<span id="cb7-67"><a href="#cb7-67" aria-hidden="true"></a>    <span class="co">-- &lt;- =&gt; specifies the relationship between the variable and input set</span></span>
-<span id="cb7-68"><a href="#cb7-68" aria-hidden="true"></a>    <span class="co">-- _ =&gt; catch-all operator also acts as a throwaway variable that is not needed later</span></span>
-<span id="cb7-69"><a href="#cb7-69" aria-hidden="true"></a></span>
-<span id="cb7-70"><a href="#cb7-70" aria-hidden="true"></a>multiplyByTwo <span class="ot">=</span> [x<span class="op">*</span><span class="dv">2</span> <span class="op">|</span> x <span class="ot">&lt;-</span> [<span class="dv">1</span><span class="op">..</span><span class="dv">10</span>]] <span class="co">-- this evaluates to the Int list of [2,4,6,8,10,12,14,16,18,20] using list comprehension</span></span>
-<span id="cb7-71"><a href="#cb7-71" aria-hidden="true"></a>multiplyByTwoWithPredicate <span class="ot">=</span> [x<span class="op">*</span><span class="dv">2</span> <span class="op">|</span> x <span class="ot">&lt;-</span> [<span class="dv">1</span><span class="op">..</span><span class="dv">10</span>], x<span class="op">*</span><span class="dv">2</span> <span class="op">&gt;=</span> <span class="dv">12</span>] <span class="co">-- this evaluates to the Int list of [12,14,16,18,20] using list comprehension when x fulfills the predicate of 2 * x is bigger or equals to 12</span></span>
-<span id="cb7-72"><a href="#cb7-72" aria-hidden="true"></a>applyAnotherPredicate <span class="ot">=</span> [x <span class="op">|</span> x <span class="ot">&lt;-</span> [<span class="dv">50</span><span class="op">..</span><span class="dv">100</span>], x <span class="ot">`mod`</span> <span class="dv">7</span> <span class="op">==</span> <span class="dv">3</span>]  <span class="co">-- this evaluates to the Int list of [52,59,66,73,80,87,94] using list comprehension where x fulfills the predicate of x mod 7 == 3</span></span>
-<span id="cb7-73"><a href="#cb7-73" aria-hidden="true"></a>applyMultiplePredicates <span class="ot">=</span> [x <span class="op">|</span> x <span class="ot">&lt;-</span> [<span class="dv">10</span><span class="op">..</span><span class="dv">20</span>], x <span class="op">/=</span> <span class="dv">13</span>, x <span class="op">/=</span> <span class="dv">15</span>, x <span class="op">/=</span> <span class="dv">19</span>] <span class="co">-- commas are used to delimit multiple predicates that specify x cannot be equals to 13, 15, 19</span></span>
-<span id="cb7-74"><a href="#cb7-74" aria-hidden="true"></a>applyMultipleVariableAndInputSets <span class="ot">=</span> [x<span class="op">*</span>y <span class="op">|</span> x <span class="ot">&lt;-</span> [<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">10</span>] , y <span class="ot">&lt;-</span> [<span class="dv">8</span>,<span class="dv">10</span>,<span class="dv">11</span>], x<span class="op">*</span>y <span class="op">&gt;</span> <span class="dv">50</span>] <span class="co">-- commas are used to delimit multiple variable and inpiut sets to evaluate to a list of all the possible products from a list that are more than 50, which is [55,80,100,110]</span></span>
-<span id="cb7-75"><a href="#cb7-75" aria-hidden="true"></a>removeNonUppercase inputString <span class="ot">=</span> [ c <span class="op">|</span> c <span class="ot">&lt;-</span> inputString, c <span class="ot">`elem`</span> [<span class="ch">&#39;A&#39;</span><span class="op">..</span><span class="ch">&#39;Z&#39;</span>]] <span class="co">-- Strings are just Char lists so we can use list comprehension to removes all non-uppercase letters from a string</span></span>
-<span id="cb7-76"><a href="#cb7-76" aria-hidden="true"></a>length<span class="ot">` xs = sum [1 | _ &lt;- xs] -- _ catch-all wildcard operator used to signify throwing away that variable, so this function evaluates to the length of the list where every element of the list is replaced with 1 and the value of the Int list is summed up</span></span>
-<span id="cb7-77"><a href="#cb7-77" aria-hidden="true"></a><span class="ot">squareList :: Int a =&gt; [a] -&gt; [a] -- note this employs typeclasses for a generic function that does not have type-specific behaviour</span></span>
-<span id="cb7-78"><a href="#cb7-78" aria-hidden="true"></a><span class="ot">squareList xs = [x * x | x &lt;- xs] -- list comprehension can also be used with functions to generate an Int list where each value is its value squared</span></span></code></pre></div>
+<span id="cb7-60"><a href="#cb7-60" aria-hidden="true"></a><span class="ot">sumList ::</span> <span class="dt">Int</span> a <span class="ot">=&gt;</span> [a] <span class="ot">-&gt;</span> a</span>
+<span id="cb7-61"><a href="#cb7-61" aria-hidden="true"></a>sumList xs <span class="ot">=</span> <span class="fu">foldl</span> (<span class="op">+</span>) <span class="dv">0</span> xs <span class="co">-- calling reduce function</span></span>
+<span id="cb7-62"><a href="#cb7-62" aria-hidden="true"></a></span>
+<span id="cb7-63"><a href="#cb7-63" aria-hidden="true"></a><span class="ot">addLists ::</span> <span class="dt">Int</span> a <span class="ot">=&gt;</span> [a] <span class="ot">-&gt;</span> [a] <span class="ot">-&gt;</span> [a]</span>
+<span id="cb7-64"><a href="#cb7-64" aria-hidden="true"></a>addLists xs ys <span class="ot">=</span> <span class="fu">zipWith</span> (<span class="op">+</span>) xs ys <span class="co">-- calling zipWith function</span></span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true"></a></span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true"></a><span class="ot">squareAndDouble ::</span> <span class="dt">Int</span> a <span class="ot">=&gt;</span> a <span class="ot">-&gt;</span> a</span>
+<span id="cb7-67"><a href="#cb7-67" aria-hidden="true"></a>squareAndDouble <span class="ot">=</span> (<span class="op">*</span><span class="dv">2</span>) <span class="op">.</span> (<span class="op">^</span><span class="dv">2</span>) <span class="co">-- calling compose function</span></span>
+<span id="cb7-68"><a href="#cb7-68" aria-hidden="true"></a></span>
+<span id="cb7-69"><a href="#cb7-69" aria-hidden="true"></a><span class="ot">subtractFrom ::</span> <span class="dt">Int</span> a <span class="ot">=&gt;</span> a <span class="ot">-&gt;</span> a <span class="ot">-&gt;</span> a</span>
+<span id="cb7-70"><a href="#cb7-70" aria-hidden="true"></a>subtractFrom <span class="ot">=</span> <span class="fu">flip</span> (<span class="op">-</span>) <span class="co">-- calling flip function</span></span>
+<span id="cb7-71"><a href="#cb7-71" aria-hidden="true"></a></span>
+<span id="cb7-72"><a href="#cb7-72" aria-hidden="true"></a><span class="co">-- RECURSION</span></span>
+<span id="cb7-73"><a href="#cb7-73" aria-hidden="true"></a>    <span class="co">-- Haskell function calls are very efficient, so performance is rarely a concern when it comes to recursion</span></span>
+<span id="cb7-74"><a href="#cb7-74" aria-hidden="true"></a>    <span class="co">-- in reality recursion is merely a natural application of Haskell&#39;s powerful pattern-matching construct that occurs even in definitions</span></span>
+<span id="cb7-75"><a href="#cb7-75" aria-hidden="true"></a></span>
+<span id="cb7-76"><a href="#cb7-76" aria-hidden="true"></a><span class="co">-- to find the factorial! of a given number, noting the definition of factorial is n! = n * (n-1) * … * 1</span></span>
+<span id="cb7-77"><a href="#cb7-77" aria-hidden="true"></a><span class="ot">factorial ::</span> <span class="dt">Int</span> <span class="ot">-&gt;</span> <span class="dt">Int</span></span>
+<span id="cb7-78"><a href="#cb7-78" aria-hidden="true"></a>factorial <span class="dv">1</span> <span class="ot">=</span> <span class="dv">1</span> <span class="co">-- base case</span></span>
+<span id="cb7-79"><a href="#cb7-79" aria-hidden="true"></a>factorial n <span class="ot">=</span> n <span class="op">*</span> factorial (n<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb7-80"><a href="#cb7-80" aria-hidden="true"></a></span>
+<span id="cb7-81"><a href="#cb7-81" aria-hidden="true"></a><span class="co">-- to find the sum of squares of all numbers from 1 to the given number, noting the definition of the squared sum is 1^2 + 2^2 + 3^2 + ... + n^2</span></span>
+<span id="cb7-82"><a href="#cb7-82" aria-hidden="true"></a><span class="ot">squareSum ::</span> <span class="dt">Int</span> <span class="ot">-&gt;</span> <span class="dt">Int</span></span>
+<span id="cb7-83"><a href="#cb7-83" aria-hidden="true"></a>squareSum <span class="dv">0</span> <span class="ot">=</span> <span class="dv">0</span> <span class="co">-- base case</span></span>
+<span id="cb7-84"><a href="#cb7-84" aria-hidden="true"></a>squareSum n <span class="ot">=</span> n<span class="op">^</span><span class="dv">2</span> <span class="op">+</span> squareSum (n<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb7-85"><a href="#cb7-85" aria-hidden="true"></a></span>
+<span id="cb7-86"><a href="#cb7-86" aria-hidden="true"></a><span class="co">-- to sum the elements of a list</span></span>
+<span id="cb7-87"><a href="#cb7-87" aria-hidden="true"></a><span class="ot">sumList ::</span> <span class="dt">Int</span> a <span class="ot">=&gt;</span> [a] <span class="ot">-&gt;</span> a </span>
+<span id="cb7-88"><a href="#cb7-88" aria-hidden="true"></a>sumList [] <span class="ot">=</span> <span class="dv">0</span> <span class="co">-- base case</span></span>
+<span id="cb7-89"><a href="#cb7-89" aria-hidden="true"></a>sumList (x<span class="op">:</span>xs) <span class="ot">=</span> x <span class="op">+</span> sumList xs </span>
+<span id="cb7-90"><a href="#cb7-90" aria-hidden="true"></a></span>
+<span id="cb7-91"><a href="#cb7-91" aria-hidden="true"></a><span class="co">-- LIST COMPREHENSION</span></span>
+<span id="cb7-92"><a href="#cb7-92" aria-hidden="true"></a>    <span class="co">-- given Haskell&#39;s mathematical roots, concepts like list comprehension originate from set theory</span></span>
+<span id="cb7-93"><a href="#cb7-93" aria-hidden="true"></a>    <span class="co">-- list comprehension syntax =&gt; [{OUTPUT FUNCTION} | {VARIABLE AND INPUT SET}, {PREDICATE}]</span></span>
+<span id="cb7-94"><a href="#cb7-94" aria-hidden="true"></a>        <span class="co">-- output function =&gt; function applied on each element</span></span>
+<span id="cb7-95"><a href="#cb7-95" aria-hidden="true"></a>        <span class="co">-- variable =&gt; element iterated over within the input set, commas can be used to delimit multiple variables</span></span>
+<span id="cb7-96"><a href="#cb7-96" aria-hidden="true"></a>        <span class="co">-- input set =&gt; iterable collection over which the variable iterates over, can be expressed as a range in Haskell, commas can be used to delimit multiple input sets</span></span>
+<span id="cb7-97"><a href="#cb7-97" aria-hidden="true"></a>        <span class="co">-- predicate =&gt; specifies conditional check on the variable that limits what values from the input set can have the output function applied to them, the equivalent of a filter in other programming languages, commas can be used to delimit multiple predicates</span></span>
+<span id="cb7-98"><a href="#cb7-98" aria-hidden="true"></a>    <span class="co">-- &lt;- =&gt; specifies the relationship between the variable and input set</span></span>
+<span id="cb7-99"><a href="#cb7-99" aria-hidden="true"></a>    <span class="co">-- _ =&gt; catch-all operator also acts as a throwaway variable that is not needed later</span></span>
+<span id="cb7-100"><a href="#cb7-100" aria-hidden="true"></a></span>
+<span id="cb7-101"><a href="#cb7-101" aria-hidden="true"></a>multiplyByTwo <span class="ot">=</span> [x<span class="op">*</span><span class="dv">2</span> <span class="op">|</span> x <span class="ot">&lt;-</span> [<span class="dv">1</span><span class="op">..</span><span class="dv">10</span>]] <span class="co">-- this evaluates to the Int list of [2,4,6,8,10,12,14,16,18,20] using list comprehension</span></span>
+<span id="cb7-102"><a href="#cb7-102" aria-hidden="true"></a>multiplyByTwoWithPredicate <span class="ot">=</span> [x<span class="op">*</span><span class="dv">2</span> <span class="op">|</span> x <span class="ot">&lt;-</span> [<span class="dv">1</span><span class="op">..</span><span class="dv">10</span>], x<span class="op">*</span><span class="dv">2</span> <span class="op">&gt;=</span> <span class="dv">12</span>] <span class="co">-- this evaluates to the Int list of [12,14,16,18,20] using list comprehension when x fulfills the predicate of 2 * x is bigger or equals to 12</span></span>
+<span id="cb7-103"><a href="#cb7-103" aria-hidden="true"></a>applyAnotherPredicate <span class="ot">=</span> [x <span class="op">|</span> x <span class="ot">&lt;-</span> [<span class="dv">50</span><span class="op">..</span><span class="dv">100</span>], x <span class="ot">`mod`</span> <span class="dv">7</span> <span class="op">==</span> <span class="dv">3</span>]  <span class="co">-- this evaluates to the Int list of [52,59,66,73,80,87,94] using list comprehension where x fulfills the predicate of x mod 7 == 3</span></span>
+<span id="cb7-104"><a href="#cb7-104" aria-hidden="true"></a>applyMultiplePredicates <span class="ot">=</span> [x <span class="op">|</span> x <span class="ot">&lt;-</span> [<span class="dv">10</span><span class="op">..</span><span class="dv">20</span>], x <span class="op">/=</span> <span class="dv">13</span>, x <span class="op">/=</span> <span class="dv">15</span>, x <span class="op">/=</span> <span class="dv">19</span>] <span class="co">-- commas are used to delimit multiple predicates that specify x cannot be equals to 13, 15, 19</span></span>
+<span id="cb7-105"><a href="#cb7-105" aria-hidden="true"></a>applyMultipleVariableAndInputSets <span class="ot">=</span> [x<span class="op">*</span>y <span class="op">|</span> x <span class="ot">&lt;-</span> [<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">10</span>] , y <span class="ot">&lt;-</span> [<span class="dv">8</span>,<span class="dv">10</span>,<span class="dv">11</span>], x<span class="op">*</span>y <span class="op">&gt;</span> <span class="dv">50</span>] <span class="co">-- commas are used to delimit multiple variable and inpiut sets to evaluate to a list of all the possible products from a list that are more than 50, which is [55,80,100,110]</span></span>
+<span id="cb7-106"><a href="#cb7-106" aria-hidden="true"></a>removeNonUppercase inputString <span class="ot">=</span> [ c <span class="op">|</span> c <span class="ot">&lt;-</span> inputString, c <span class="ot">`elem`</span> [<span class="ch">&#39;A&#39;</span><span class="op">..</span><span class="ch">&#39;Z&#39;</span>]] <span class="co">-- Strings are just Char lists so we can use list comprehension to removes all non-uppercase letters from a string</span></span>
+<span id="cb7-107"><a href="#cb7-107" aria-hidden="true"></a>length<span class="ot">` xs = sum [1 | _ &lt;- xs] -- _ catch-all wildcard operator used to signify throwing away that variable, so this function evaluates to the length of the list where every element of the list is replaced with 1 and the value of the Int list is summed up</span></span>
+<span id="cb7-108"><a href="#cb7-108" aria-hidden="true"></a><span class="ot">squareList :: Int a =&gt; [a] -&gt; [a] -- note this employs typeclasses for a generic function that does not have type-specific behaviour</span></span>
+<span id="cb7-109"><a href="#cb7-109" aria-hidden="true"></a><span class="ot">squareList xs = [x * x | x &lt;- xs] -- list comprehension can also be used with functions to generate an Int list where each value is its value squared</span></span></code></pre></div>
 <h2 id="data-structures">Data structures</h2>
 <div class="sourceCode" id="cb8"><pre class="sourceCode hs"><code class="sourceCode haskell"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="co">-- ---------- DATA STRUCTURE ----------</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a></span>
@@ -363,11 +394,11 @@
 <span id="cb8-70"><a href="#cb8-70" aria-hidden="true"></a>zippedList <span class="ot">=</span> <span class="fu">zip</span> list1 list2 <span class="co">-- this evaluates to the Int tuple list value of [(1, &quot;one&quot;), (2, &quot;two&quot;), (3, &quot;three&quot;)]</span></span></code></pre></div>
 <h2 id="more-on">More on</h2>
 <ul>
+<li>show</li>
+<li>shadowing</li>
 <li>ranges</li>
 <li>enumeration</li>
 <li>guards</li>
-<li>let</li>
-<li>case</li>
 <li><a href="https://haskell.mooc.fi/">haskell mooc</a></li>
 <li><a href="https://learnyouahaskell.com/chapters">learn you a haskell for great good</a></li>
 <li><a href="https://www.haskell.org/tutorial/">a gentle introduction to haskell version 98</a></li>
