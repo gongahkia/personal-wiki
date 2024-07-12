@@ -364,7 +364,7 @@ guessAge name age = "Wrong name!"
 -- CASE OF _
     -- Haskell features extremely powerful pattern-matching construct similar to the match case statements in other languages
     -- pattern cases are checked in order from top to bottom so arrangement matters
-    -- this effectively enables pattern-matching within expressions as opposed to merely within definitions
+    -- this effectively enables pattern-matching within expressions as opposed to merely within definitions, as well as pattern-matching against function outputs
     -- _ => wildcard catch-all operator that acts as the equivalent of the default statement in other languages
 
 numberAsString :: Int -> String -- static type declaration of an expression prior to expression initialisation
