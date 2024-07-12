@@ -4,7 +4,7 @@ Language for hardware and software verification and co-design.
 
 ## Introduction
 
-Cogent combines functional programming paradigms with hardware description languages.
+Cogent combines functional programming paradigms with system description languages.
 
 1. [Cogent language](#specifying-the-model)
     * file extension `.cog`
