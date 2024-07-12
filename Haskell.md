@@ -108,6 +108,11 @@ conanOBrien = "It's a me, Conan O'Brien!" -- this creates a global binding
     -- Maybe <a> => specifies a special nullable datatype where the value stored within the variable can either be of the specified type declared after the Maybe specifier or Nothing
         -- Nothing => special constant value representing the absence of a value
         -- Just <literal value of a> => special value that takes a parameter, the literal value of the non-null value stored within the Maybe <a> datatype
+    -- Either <a> <b> => specifies a datatype that could one of two specified datatypes, referred to with Left and Right
+        -- Left <literal value of a> => special value that takes a parameter, the literal value of the left-defined datatype a
+        -- Right <literal value of b> => special value that takes a parameter, the literal value of the right-defined datatype b
+
+-- Here's an example of Maybe in use
 
 login :: String -> Maybe String -- type signature of a function that returns the username if login is succesful, and nothing if otherwise
 login "f4bulous!" = Just "unicorn73" -- function definition via pattern-matching
@@ -119,6 +124,24 @@ login _ = Nothing
 perhapsMultiply :: Int -> Maybe Int -> Int -- type signature
 perhapsMultiply i Nothing = i -- if empty argument provided
 perhapsMultiply i (Just j) = i*j   -- where non-empty argument provided
+
+-- Here's an example of Either in use
+
+readInt :: String -> Either String Int -- type signature
+readInt "0" = Right 0
+readInt "1" = Right 1
+readInt s = Left ("Unsupported string: " ++ s)
+
+-- Either can also be called on function parameters
+
+iWantAString :: Either Int String -> String -- type signature
+iWantAString (Right str) = str
+iWantAString (Left number) = show number
+
+-- Either allows for flexible definitions of the given datatype within a list as well
+
+lectureParticipants :: [Either String Int]
+lectureParticipants = [Left "lecturer was sick", Left "easter vacation", Right 3, Right 10, Right 13, Right 17]
 
 -- TYPE SIGNATURES
     -- functions have their parameter and return type's type signatures explicitly declared before the function definition
@@ -284,21 +307,10 @@ doubleSmallNumber x = if x > 100
                       then x 
                       else x*2 
 
--- CASE OF _
-    -- Haskell features extremely powerful pattern-matching construct similar to the match case statements in other languages
-    -- pattern cases are checked in order from top to bottom so arrangement matters
-    -- _ => wildcard catch-all operator that acts as the equivalent of the default statement in other languages
-
-numberAsString :: Int -> String -- static type declaration of an expression prior to expression initialisation
-numberAsString num = case num of
-    1 -> "One"
-    2 -> "Two"
-    3 -> "Three"
-    _ -> "Unknown but also the catch-call wildcard operator"
-
--- pattern-matching can technically also be executed on functions
--- a function definition can consist of multiple equations, where each equation is matched in order against the arguments until a suitable one is found
--- here _ serves the same role as the catch-all operator where it evaluates when all other predicate equations fail to be matched
+-- PATTERN-MATCHING WITHIN DEFINITION
+    -- pattern-matching is most commonly executed on functions within the function definition
+    -- a function definition can consist of multiple equations, where each equation is matched in order against the arguments until a suitable one is found
+    -- here _ serves the same role as the catch-all operator where it evaluates when all other predicate equations fail to be matched
 
 greet :: String -> String -> String -- type annotation
 greet "Finland" name = "Hei, " ++ name -- case 1
@@ -348,6 +360,19 @@ guessAge "Hansel" age
     | age > 12 = "Too high!"
     | otherwise = "Correct!"
 guessAge name age = "Wrong name!"
+
+-- CASE OF _
+    -- Haskell features extremely powerful pattern-matching construct similar to the match case statements in other languages
+    -- pattern cases are checked in order from top to bottom so arrangement matters
+    -- this effectively enables pattern-matching within expressions as opposed to merely within definitions
+    -- _ => wildcard catch-all operator that acts as the equivalent of the default statement in other languages
+
+numberAsString :: Int -> String -- static type declaration of an expression prior to expression initialisation
+numberAsString num = case num of
+    1 -> "One"
+    2 -> "Two"
+    3 -> "Three"
+    _ -> "Unknown but also the catch-call wildcard operator"
 
 -- LOOPS DON'T EXIST
     -- higher-order functions, recursion and list comprehension are used in place of imperative loop constructs like for or while loops, which Haskell does not have
