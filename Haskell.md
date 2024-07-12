@@ -105,6 +105,43 @@ conanOBrien = "It's a me, Conan O'Brien!" -- this creates a global binding
     -- Bool => True, False
     -- Char => single quotation marks
     -- String => double quotation marks, a string list
+    -- Maybe <a> => specifies a special nullable datatype where the value stored within the variable can either be of the specified type declared after the Maybe specifier or Nothing
+        -- Nothing => special constant value representing the absence of a value
+        -- Just <literal value of a> => special value that takes a parameter, the literal value of the non-null value stored within the Maybe <a> datatype
+    -- Either <a> <b> => specifies a datatype that could one of two specified datatypes, referred to with Left and Right
+        -- Left <literal value of a> => special value that takes a parameter, the literal value of the left-defined datatype a
+        -- Right <literal value of b> => special value that takes a parameter, the literal value of the right-defined datatype b
+
+-- Here's an example of Maybe in use
+
+login :: String -> Maybe String -- type signature of a function that returns the username if login is succesful, and nothing if otherwise
+login "f4bulous!" = Just "unicorn73" -- function definition via pattern-matching
+login "swordfish" = Just "megahacker"
+login _ = Nothing
+
+-- Maybe can also be called on function paramters
+
+perhapsMultiply :: Int -> Maybe Int -> Int -- type signature
+perhapsMultiply i Nothing = i -- if empty argument provided
+perhapsMultiply i (Just j) = i*j   -- where non-empty argument provided
+
+-- Here's an example of Either in use
+
+readInt :: String -> Either String Int -- type signature
+readInt "0" = Right 0
+readInt "1" = Right 1
+readInt s = Left ("Unsupported string: " ++ s)
+
+-- Either can also be called on function parameters
+
+iWantAString :: Either Int String -> String -- type signature
+iWantAString (Right str) = str
+iWantAString (Left number) = show number
+
+-- Either allows for flexible definitions of the given datatype within a list as well
+
+lectureParticipants :: [Either String Int]
+lectureParticipants = [Left "lecturer was sick", Left "easter vacation", Right 3, Right 10, Right 13, Right 17]
 
 -- TYPE SIGNATURES
     -- functions have their parameter and return type's type signatures explicitly declared before the function definition
@@ -120,9 +157,10 @@ addThree x y z = x + y + z
 -- TYPE VARIABLES
     -- used in type signatures for functions that don't have type-specific behaviour and accept arguments of multiple types, Haskell's equivalent of generics in other languages
     -- these functions are called polymorphic functions
-    -- type variables are specified with single-character names like 'a' as seen below
+    -- type variables are specified with single-character names like 'a' as seen below by convention
 
 head :: [a] -> a -- the type signature of the head function employs a type variable since its behaviour could apply to tuples of Int, Char, Bool, Float or any other type
+tail :: [a] -> [a] -- the same logic applies for the type signatures of the tail function, which take in a list of any datatype and return a list of that same datatype
 fst :: (a,b) -> a -- similarly, the type signature of the fst function employs a type variables since its behaviour is not type-specific
 
 -- TYPECLASSES
@@ -132,6 +170,12 @@ fst :: (a,b) -> a -- similarly, the type signature of the fst function employs a
 
 (==) :: (Eq a) => a -> a -> Bool -- the equality function's type signature (a -> a) specifies that it receives any two values that are the same type as arguments and returns a Boolean, while the typeclass specifies that the argument's type must be a member of the Eq class (Eq a)
 (>) :: (Ord a) => a -> a -> Bool -- the comparison function's type signature (a -> a) specifies that it receives any two values that are the same type as arguments and returns a Boolean, while the typeclass specifies that the argument's type must be a member of the Ord class (Ord a)
+
+-- ADDITIONAL TERMINOLOGY
+    -- type parameter => refers to a within the type [a]
+    -- parameterized type => refers to data structure types like the list that require a type parameter
+    -- polymorphism => where a function can receive many different types of arguments
+    -- parametric polymorphism => refers to the use of type variables within functions
 ```
 
 ## Operators
@@ -164,15 +208,21 @@ fst :: (a,b) -> a -- similarly, the type signature of the fst function employs a
 -- ---------- DATA STRUCTURE ----------
 
 -- LIST
-    -- ordered sequence of elements of the same type (so strings are char lists)
-    -- declared with [] square brackets, elements are comma-delimited 
+    -- ordered sequence of elements of the same type, declared with [] square brackets where elements are comma-delimited 
+    -- therefore a String is a type alias for [Char], which means all list operations can also be run on Strings
+    -- observe that Haskell lists are implemented as singly-linked lists on the backend
+    -- .. => creates an inclusive integer range that is an iterable data structure beginning from the start index and ending at the specified end index
 
-lostNumbers = [1,2,3,4,5] -- an Int list in Haskell
+lostNumbers :: [Int] -- type signature
+anotherRange :: [Int] -- also a type signature
+lostNumbers = [1,2,3,4,5] -- an Int list literal in Haskell
+anotherRange = [1..10] -- evaluates to [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 -- LIST OPERATIONS
+    -- Haskell is pure and all variables are immutable by default (including lists), so list operations return the value of the modified list and do NOT modify the list itself in memory
     -- ++ => concatenates two lists together, though Haskell has to traverse the entire left list before processing the concatenation
     -- : => inserts a value to the start of the list immediately, much faster than concatenation
-    -- !! => extracts a list element by index
+    -- !! => extracts a list element by index, the equivalent of [] square bracket indexing in Python
     -- < > == => compares list elements in lexographical order
     -- head => returns the first element of a list
     -- tail => returns everything but the list's head
@@ -188,32 +238,41 @@ lostNumbers = [1,2,3,4,5] -- an Int list in Haskell
     -- sum => returns the sum of all elements in a list
     -- product => returns the product of all elements in a list
     -- elem => checks whether a specified element is part of a list and returns a Boolean
+    -- further list operations can be found within the module Data.List
 
-yesList = [1,2,3,4,5] ++ [6,7,8,9,10] -- this evaluates to the list value [1,2,3,4,5,6,7,8,9,10]
-yesGreeting = "hello" ++ " " ++ "uncle" -- this evaluates to the String (Char list) value "hello uncle"
-observation = 'a':" small cat" -- this evaluates to the String (Char list) value "a small cat"
-theHero = "Steve Buscemi" !! 6 -- this evaluates to the Char value 'B', which has an index of 6 in the String (Char list)
-booleanYesOrNo = [3,4,2] > [3,2] -- this evaluates to Boolean True
-theHead = head [5,4,3,2,1] -- this evaluats to the Int value 5
-theTail = tail [5,4,3,2,1] -- this evaluates to the Int list of [4,3,2,1] 
-theLastElement = last [1,2,3,4,5] -- this evaluates to the Int value 5
-theInit = init [5,4,3,2,1] -- this evaluates to the Int list of [5,4,3,2]
-theLength = length [1,2,3,4,5] -- this evaluates to the Int value 5
-theNullCheck = null [] -- this evaluates to Boolean True
-anotherNullCheck = null [1,2,3] -- this evaluates to Boolean False
-theReversedList = reverse [5,4,3,2,1] -- this evaluates to the Int list of [1,2,3,4,5]
-extractedList = take 3 [1,2,3,4,5] -- this evaluates to the Int list of [1,2,3]
-anotherExtractedList = take 0 [6,6,6] -- this evaluates to the empty list of [] since 0 elements were extracted
-yetAnotherExtractedList = take 5 [1,2] -- this evaluates to the Int list of [1,2] since the entire list was extracted
-droppedList = drop 3 [1,2,3,4,5,6,7,8] -- this evaluates to the Int list of [4,5,6,7,8]
-anotherDroppedList = drop 0 [1,2,3,4] -- this evaluates to the Int list of [1,2,3,4] since no values were dropped
-yetAnotherDroppedList = drop 100 [1,2,3,4] -- this evaluates to the empty list of [] since all the values were dropped
-maximumValue = maximum [1,2,3,4,5,83,10] -- this evaluates to the Int value of 83
-minimumValue = minimum [0,2,200,1,7] -- this evaluates to the Int value of 0
-sumOfValues = sum [2,3,5,129] -- this evaluates to the Int value of 139
-productOfValues = product [2,3,10,4] -- this evaluates to the Int value of 240
-isItPartOfList = 4 `elem` [3,4,5,6] -- this evaluates to Boolean True
-isItAlsoPartOfList = 10 `elem` [3,4,5,6] -- this evaluates to Boolean False
+yesList = [1,2,3,4,5] ++ [6,7,8,9,10] -- evaluates to the list value [1,2,3,4,5,6,7,8,9,10]
+yesGreeting = "hello" ++ " " ++ "uncle" -- evaluates to the String (Char list) value "hello uncle"
+observation = 'a':" small cat" -- evaluates to the String (Char list) value "a small cat"
+theHero = "Steve Buscemi" !! 6 -- evaluates to the Char value 'B', which has an index of 6 in the String (Char list)
+booleanYesOrNo = [3,4,2] > [3,2] -- evaluates to Boolean True
+theHead = head [5,4,3,2,1] -- evaluates to the Int value 5
+theTail = tail [5,4,3,2,1] -- evaluates to the Int list of [4,3,2,1] 
+theLastElement = last [1,2,3,4,5] -- evaluates to the Int value 5
+theInit = init [5,4,3,2,1] -- evaluates to the Int list of [5,4,3,2]
+theLength = length [1,2,3,4,5] -- evaluates to the Int value 5
+theNullCheck = null [] -- evaluates to Boolean True
+anotherNullCheck = null [1,2,3] -- evaluates to Boolean False
+theReversedList = reverse [5,4,3,2,1] -- evaluates to the Int list of [1,2,3,4,5]
+extractedList = take 3 [1,2,3,4,5] -- evaluates to the Int list of [1,2,3]
+anotherExtractedList = take 0 [6,6,6] -- evaluates to the empty list of [] since 0 elements were extracted
+yetAnotherExtractedList = take 5 [1,2] -- evaluates to the Int list of [1,2] since the entire list was extracted
+droppedList = drop 3 [1,2,3,4,5,6,7,8] -- evaluates to the Int list of [4,5,6,7,8]
+anotherDroppedList = drop 0 [1,2,3,4] -- evaluates to the Int list of [1,2,3,4] since no values were dropped
+yetAnotherDroppedList = drop 100 [1,2,3,4] -- evaluates to the empty list of [] since all the values were dropped
+maximumValue = maximum [1,2,3,4,5,83,10] -- evaluates to the Int value of 83
+minimumValue = minimum [0,2,200,1,7] -- evaluates to the Int value of 0
+sumOfValues = sum [2,3,5,129] -- evaluates to the Int value of 139
+productOfValues = product [2,3,10,4] -- evaluates to the Int value of 240
+isItPartOfList = 4 `elem` [3,4,5,6] -- evaluates to Boolean True
+isItAlsoPartOfList = 10 `elem` [3,4,5,6] -- evaluates to Boolean False
+
+-- we can also combine multiple list operations as seen below
+
+f :: [a] -> [a]
+f xs = take 2 xs ++ drop 4 xs -- function that discards the 3rd and fourth element of a list
+
+g :: [a] -> [a]
+g xs = tail xs ++ [head xs] -- function that rotates a list by taking the first element and moving it to the back of the list
 
 -- TUPLE
     -- ordered sequence of elements of a fixed size that can store different types
@@ -248,21 +307,10 @@ doubleSmallNumber x = if x > 100
                       then x 
                       else x*2 
 
--- CASE OF _
-    -- Haskell features extremely powerful pattern-matching construct similar to the match case statements in other languages
-    -- pattern cases are checked in order from top to bottom so arrangement matters
-    -- _ => wildcard catch-all operator that acts as the equivalent of the default statement in other languages
-
-numberAsString :: Int -> String -- static type declaration of an expression prior to expression initialisation
-numberAsString num = case num of
-    1 -> "One"
-    2 -> "Two"
-    3 -> "Three"
-    _ -> "Unknown but also the catch-call wildcard operator"
-
--- pattern-matching can technically also be executed on functions
--- a function definition can consist of multiple equations, where each equation is matched in order against the arguments until a suitable one is found
--- here _ serves the same role as the catch-all operator where it evaluates when all other predicate equations fail to be matched
+-- PATTERN-MATCHING WITHIN DEFINITION
+    -- pattern-matching is most commonly executed on functions within the function definition
+    -- a function definition can consist of multiple equations, where each equation is matched in order against the arguments until a suitable one is found
+    -- here _ serves the same role as the catch-all operator where it evaluates when all other predicate equations fail to be matched
 
 greet :: String -> String -> String -- type annotation
 greet "Finland" name = "Hei, " ++ name -- case 1
@@ -312,6 +360,19 @@ guessAge "Hansel" age
     | age > 12 = "Too high!"
     | otherwise = "Correct!"
 guessAge name age = "Wrong name!"
+
+-- CASE OF _
+    -- Haskell features extremely powerful pattern-matching construct similar to the match case statements in other languages
+    -- pattern cases are checked in order from top to bottom so arrangement matters
+    -- this effectively enables pattern-matching within expressions as opposed to merely within definitions, as well as pattern-matching against function outputs
+    -- _ => wildcard catch-all operator that acts as the equivalent of the default statement in other languages
+
+numberAsString :: Int -> String -- static type declaration of an expression prior to expression initialisation
+numberAsString num = case num of
+    1 -> "One"
+    2 -> "Two"
+    3 -> "Three"
+    _ -> "Unknown but also the catch-call wildcard operator"
 
 -- LOOPS DON'T EXIST
     -- higher-order functions, recursion and list comprehension are used in place of imperative loop constructs like for or while loops, which Haskell does not have
@@ -404,11 +465,11 @@ squareList xs = [x * x | x <- xs] -- list comprehension can also be used with fu
 
 ## More on
 
-* show
-* ranges
-* enumeration
-* tail recursion
 * shadowing
+* tail recursion
+* Data.List
+* show
+* enumeration
 * [haskell mooc](https://haskell.mooc.fi/)
 * [learn you a haskell for great good](https://learnyouahaskell.com/chapters)
 * [a gentle introduction to haskell version 98](https://www.haskell.org/tutorial/)
