@@ -2,34 +2,39 @@
 
 Anyone can learn Computer Science.  
   
-## Curriculum
+## Introduction
 
 I based the curriculum on [this reference material](#reference-material).  
+
+It [does not cover](#not-covered) all that a CS degree in school will give you, but I found the below topics essential in getting me up and writing code as quickly as possible.  
   
-This curriculum [does not cover](#not-covered) all that a CS degree in school will give you, but I found learning these topics essential in getting me up and running quickly as a programmer.
+This syllabus might work for you, it might not.  
   
-It might work for you, it might not.  
-  
-Go as deep as you want and stop when you want to.  
+Go as deep as you want and stop when you want.  
 
 Do not be afraid to google.
   
 All the best.  
 
-### 1. Programming languages
+## Curriculum
 
-* [Python](https://learnxinyminutes.com/docs/python/)
-* [C](https://learnxinyminutes.com/docs/c/)
-* [Java](https://learnxinyminutes.com/docs/java/)
-* [JavaScript](https://learnxinyminutes.com/docs/javascript/), [HTML](https://learnxinyminutes.com/docs/html/) and [CSS](https://learnxinyminutes.com/docs/css/)
-* [Go](https://learnxinyminutes.com/docs/go/)
+### 1. Foundations
+
+* [Python](https://learnxinyminutes.com/docs/python/): a soft introduction to programming concepts  
+* [C](https://learnxinyminutes.com/docs/c/): program with only the basics  
+* [Java](https://learnxinyminutes.com/docs/java/): object-oriented programming  
+* [JavaScript](https://learnxinyminutes.com/docs/javascript/), [HTML](https://learnxinyminutes.com/docs/html/) and [CSS](https://learnxinyminutes.com/docs/css/): front-end development  
+* [PHP](https://learnxinyminutes.com/docs/php/): traditional server-side programming  
+* [SQL](https://learnxinyminutes.com/docs/sql/): interacting with relational databases  
+* [Go](https://learnxinyminutes.com/docs/go/): modern server-side programming  
+* [Markdown](https://learnxinyminutes.com/docs/markdown/): not a programming language but essential for writing documentation
 
 ### 2. [Algorithms and Data Structures](https://github.com/ossu/computer-science?tab=readme-ov-file#core-theory)
 
-### 3. Command Line *(a.k.a CLI, Shell etc.)*
+### 3. Command Line
 
 * CLI
-    * [Setting up CLI environment](https://flaviocopes.com/cli-for-beginners/)
+    * [Setting up CLI environment (a.k.a the Shell)](https://flaviocopes.com/cli-for-beginners/)
     * [CLI basics](https://www.learnenough.com/command-line-tutorial/basics)
 * Version Control
     * [Git CLI](https://rogerdudler.github.io/git-guide/)
@@ -61,12 +66,11 @@ All the best.
 
 ## Not covered
 
-These are important topics that have not been included here. Please look into them as well.
+These are important topics that have not been included above for brevity. Please look into them as well.
 
 * Distributed Systems  
-* Databases 	
-* Operating Systems 	
-* Computer Networking 	
+* Operating Systems  
+* Computer Networking  
 * Computer Architecture  
 
 ## More on
@@ -75,13 +79,13 @@ Many people on the internet have made awesome resources free and publicly availa
 
 ### Reference material
 
-* [OSSU: Computer Science](https://github.com/ossu/computer-science)
-* [OSSU: Mathematics](https://github.com/ossu/math)
+* [OSSU: Computer Science](https://github.com/ossu/computer-science) Github repository
+* [OSSU: Mathematics](https://github.com/ossu/math) Github repository
 * [Teach yourself Computer Science](https://teachyourselfcs.com/) by Oz Nova and Myles Byrne
 * [Self-learning Computer Science](https://github.com/PKUFlyingPig/Self-learning-Computer-Science) by PKUFlyingPig
 * [Open-source CS](https://github.com/ForrestKnight/open-source-cs) by ForrestKnight
-* [The Missing Semester of Your CS Education](https://missing.csail.mit.edu/)
-* [Learn X in Y minutes](https://learnxinyminutes.com/)
+* [The Missing Semester of Your CS Education](https://missing.csail.mit.edu/) by Elaine Mello, Jim Cain and MIT Open Learning
+* [Learn X in Y minutes](https://learnxinyminutes.com/) by Adam Bard
 
 ### Supplementary reading
 
@@ -90,5 +94,5 @@ Many people on the internet have made awesome resources free and publicly availa
 * [My (5 + 5)-step self-taught CS curriculum](https://www.reddit.com/r/learnprogramming/comments/gsansp/my_55step_selftaught_cs_curriculum_updated/) Reddit post
 * [Can Computer Science be self-taught without going to a University or College?](https://www.quora.com/Can-computer-science-be-self-taught-without-going-to-a-university-or-college-Is-it-possible-for-me-to-self-study-computer-science) Quora article
 * [How far can self-taught Mathematics take you?](https://www.reddit.com/r/math/comments/cdg8s7/how_far_can_selftaught_mathematics_take_you/) Reddit post
-* [Mathematics for the adventurous self-learner](https://www.neilwithdata.com/mathematics-self-learner)
-* [OSSU: Data Science](https://github.com/ossu/data-science)
+* [Mathematics for the adventurous self-learner](https://www.neilwithdata.com/mathematics-self-learner) by Neil Sainsbury
+* [OSSU: Data Science](https://github.com/ossu/data-science) Github repository
