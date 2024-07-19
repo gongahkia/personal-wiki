@@ -64,6 +64,17 @@ All the best.
 * [Writing an Interpreter in Go](https://interpreterbook.com/) by Thorsten Ball
 * [Writing a Compiler in Go](https://compilerbook.com/) by Thorsten Ball
 
+## Practice
+
+I had to practise lots to become a better programmer. Here are some resources I used.
+
+* [Advent of Code](https://adventofcode.com/)
+* [LeetCode](https://leetcode.com/)
+* [Codewars](https://www.codewars.com/)
+* [HackerRank](https://www.hackerrank.com/)
+* [ProjectLearn.io](https://projectlearn.io/)
+* [Project Based Learning](https://github.com/practical-tutorials/project-based-learning) Github repository
+
 ## Not covered
 
 These are important topics that have not been included above for brevity. Please look into them as well.
