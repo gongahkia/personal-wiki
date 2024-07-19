@@ -57,7 +57,7 @@ All the best.
     * [Ubuntu](https://ubuntu.com/)
     * [Debian](https://www.debian.org/)
     * [Fedora](https://fedoraproject.org/)
-    * [Ricing your Linux setup](https://excaliburzero.gitbooks.io/an-introduction-to-linux-ricing/content/ricing.html)
+    * [Ricing your Linux setup](https://www.reddit.com/r/unixporn/comments/zgmpj9/wherehow_to_start_ricing/)
 
 ### 4. Mathematics for Computer Science
 
