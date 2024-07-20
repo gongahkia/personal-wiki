@@ -81,6 +81,7 @@ I had to practise lots to become a better programmer. Here are some resources I 
 * [LeetCode](https://leetcode.com/)
 * [Codewars](https://www.codewars.com/)
 * [HackerRank](https://www.hackerrank.com/)
+* [Codility](https://www.codility.com/)
 * [ProjectLearn.io](https://projectlearn.io/)
 * [Project Based Learning](https://github.com/practical-tutorials/project-based-learning) Github repository
 
