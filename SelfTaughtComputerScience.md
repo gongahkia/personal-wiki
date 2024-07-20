@@ -115,7 +115,9 @@ Many people on the internet have made awesome resources free and publicly availa
 * [How to learn machine learning as a complete beginner: a self-study guide](https://youtu.be/0F2paWV4eEA?si=OvOo3ZSieoRDnhwV) by Aleph 0
 * [My (5 + 5)-step self-taught CS curriculum](https://www.reddit.com/r/learnprogramming/comments/gsansp/my_55step_selftaught_cs_curriculum_updated/) Reddit post
 * [Can Computer Science be self-taught without going to a University or College?](https://www.quora.com/Can-computer-science-be-self-taught-without-going-to-a-university-or-college-Is-it-possible-for-me-to-self-study-computer-science) Quora article
-* [How do you learn Data Structures and Algorithms?](https://www.reddit.com/r/learnprogramming/comments/zh9brb/how_do_you_learn_data_structures_and_algorithms/)
+* [How do you learn Data Structures and Algorithms?](https://www.reddit.com/r/learnprogramming/comments/zh9brb/how_do_you_learn_data_structures_and_algorithms/) Reddit post
+* [Linux Ricing](https://youtu.be/RuofJYG2yak?si=iyttqUmlxKGUMc68) by Baiaphilia
+* [The Art of Linux CLIs](https://youtu.be/KdoaiGTIBY4?si=HNwNnVBuk4gYU0jB) by Mults
 * [How far can self-taught Mathematics take you?](https://www.reddit.com/r/math/comments/cdg8s7/how_far_can_selftaught_mathematics_take_you/) Reddit post
 * [Mathematics for the adventurous self-learner](https://www.neilwithdata.com/mathematics-self-learner) by Neil Sainsbury
 * [OSSU: Data Science](https://github.com/ossu/data-science) Github repository
