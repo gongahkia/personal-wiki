@@ -8,7 +8,7 @@ Frontend frameworks streamline the development of web apps by providing pre-buil
 
 ## Quickstart
 
-First, learn [HTMl](https://developer.mozilla.org/en-US/docs/Web/HTML), [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) and [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript).  
+First, learn [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML), [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) and [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript).  
 
 Optionally, learn [Ruby](https://www.ruby-lang.org/en/documentation/).  
 
