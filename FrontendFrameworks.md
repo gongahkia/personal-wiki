@@ -4,7 +4,7 @@ The world is big and full of frontend frameworks.
 
 ## Introduction
 
-Frontend frameworks streamline the development of web apps by providing pre-built components that create visually appealing, responsive user interfaces.  
+Frontend frameworks streamline the development of web apps by providing pre-built components that create visually appealing and responsive user interfaces.  
 
 ## Quickstart
 
@@ -22,7 +22,7 @@ Then pick a frontend framework from below and get started.
 * [Astro](https://astro.build/)
 * [Vite](https://vitejs.dev/)
 * [Next](https://nextjs.org/)
-* [Mithril JS](https://mithril.js.org/)
+* [Mithril](https://mithril.js.org/)
 * [Preact](https://preactjs.com/)
 * [Ruby on Rails](https://rubyonrails.org/)
 
