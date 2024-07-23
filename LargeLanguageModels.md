@@ -31,6 +31,7 @@ Then choose a library from below.
 * [Hugging Face Transformers](https://huggingface.co/docs/transformers/en/index)
 * [Natural Language Toolkit](https://www.nltk.org/)
 * [spaCy](https://spacy.io/)
+* [Aphrodite Engine](https://github.com/PygmalionAI/aphrodite-engine)
 
 #### R
 
@@ -58,7 +59,13 @@ Then choose a library from below.
 
 #### Go
 
+* [Hugot](https://github.com/knights-analytics/hugot)
 * [Gorgonia](https://gorgonia.org/)
+
+#### Language-agnostic
+
+* [Ollama](https://ollama.com/)
+* [TabbyAPI](https://github.com/theroyallab/tabbyAPI)
 
 ## Use a prebuilt model
 
@@ -114,6 +121,9 @@ In 2024, there are many existing LLM implementations to choose from. The more pr
 * [StableLM](https://github.com/Stability-AI/StableLM)
     * Stability AI-developed
     * robust model for NLP tasks
+* [LocalAI](https://localai.io/)
+    * LocalAI-developed
+    * facilitates local deployment of existing LLMs without relying on cloud-based services
 
 ## More on
 
