@@ -7,12 +7,12 @@ Also known as LLMs.
 LLMs are typically built upon the following infrastructure.
 
 1. [Text Generation Interface (TGI)](https://huggingface.co/docs/text-generation-inference/en/index): framework that features optimized transformer code, quantization, accelerated weight loading and logits warping
-2. [Hugging Face Transformers (HG)](https://github.com/huggingface/transformers): open-source library that provides many pre-trained models for NLP and other custom tasks
-3. [Versatile Large Language Model (vLLM)](https://github.com/vllm-project/vllm): framework that features efficient memory management with paged attention, optimized CUDA kernels, decoding algorithms and high-performance serving throughput *(outperforming HF and TGI by significant margins)*
+2. [Hugging Face Transformers (HF)](https://github.com/huggingface/transformers): open-source library that provides many pre-trained models for NLP and other custom tasks
+3. [Versatile Large Language Model (vLLM)](https://github.com/vllm-project/vllm): framework that features efficient memory management with paged attention, optimized CUDA kernels, decoding algorithms and high-performance serving throughput *(significantly outperforming TGI and HF)*
 
 ## Quickstart
 
-You can [train your own model](#train-your-own-model), or [use existing ones](#use-a-prebuilt-model).
+You can [train your own model](#train-your-own-model) or [use existing ones](#use-a-prebuilt-model).
 
 ## Train your own model
 
