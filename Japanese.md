@@ -4,32 +4,6 @@ The thing they say in anime.
 
 ![](https://i.pinimg.com/originals/33/3f/b1/333fb11a919390152d8017637223146d.gif)
 
-## Table of contents
-
-* [Introduction](#introduction)
-* [Foundations](#foundations)
-    * [Numbers](#numbers)
-    * [Days of the week](#days-of-the-week)
-    * [Time](#time)
-    * [5W1H](#5w1h)
-    * [Demonstratives](#demonstratives)
-    * [Common family names](#common-family-names)
-* [N5](#n5)
-    * [Vocab 1](#vocab-1)
-    * [Vocab 2](#vocab-2)
-    * [Vocab 3](#vocab-3)
-    * [Grammer 1](#grammer-1)
-    * [Grammer 2](#grammer-2)
-    * [Grammer 3](#grammer-3)
-    * [Sentence 1](#sentence-1)
-    * [Sentence 2](#sentence-2)
-    * [Sentence 3](#sentence-3)
-* [Template](#template)
-* [More on](#more-on)
-    * [Core resources](#core-resources)
-    * [Additional resources](#additional-resources)
-    * [Prerequisite knowledge](#prerequisite-knowledge)
-
 ## Introduction
 
 This document is structured according to the [JLPT](https://www.jlpt.jp/e/) syllabus.
