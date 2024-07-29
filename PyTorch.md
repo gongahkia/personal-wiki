@@ -303,22 +303,111 @@ random_tensor_2 = torch.rand(3, 4)
 random_tensor_1 == random_tensor_2 # this evaluates to True
 ```
 
-> continue from 4:17:00 of [this video](https://youtu.be/Z_ikDlimN6A?si=40CGjign3YYuEN3D) and continue adding above here
-
 ## Doing actual things with Tensors
 
 *"Enough yapping, I want to build something."*
 
 ### Encode an Image to a Tensor
 
-1. Split the image into its RGB *(red green blue)* color channels
-2. Represent that as a tensor with the shape *(`color_channels`, `image_height`, `image_width`)*
-3. 
+The model will be trained on the [CIFAR-10 dataset](https://www.cs.toronto.edu/~kriz/cifar.html).  
 
-> FUA continue adding here later when its covered in the video
+1. Split the image into its RGB *(red green blue)* color channels.
+2. Represent that as a tensor with the shape *(`color_channels`, `image_height`, `image_width`)*.
+3. Train the model using a basic convolutional neural network (CNN).
 
 ```py
+# ----- PREPARATION WORK -----
 
+# --- required imports ---
+
+import torch
+import torch.nn as nn
+import torch.optim as optim
+import torchvision
+import torchvision.transforms as transforms
+import torch.nn.functional as F
+
+# --- preprocess the CIFAR-10 image dataset ---
+    # defines transformations for the training set
+    # flips the images randomly for additional fed data
+    # load the actual training set and test set
+
+transform = transforms.Compose([
+    transforms.RandomHorizontalFlip(),  # randomly flip the image horizontally
+    transforms.RandomCrop(32, padding=4),  # crop the image to 32x32 with padding
+    transforms.ToTensor(),  # convert the image to a PyTorch tensor
+    transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),  # normalize the image
+])
+
+trainset = torchvision.datasets.CIFAR10(root='./data', train=True, download=True, transform=transform)  # download and transform training data
+trainloader = torch.utils.data.DataLoader(trainset, batch_size=100, shuffle=True, num_workers=2)  # create data loader for training
+testset = torchvision.datasets.CIFAR10(root='./data', train=False, download=True, transform=transform)  # download and transform test data
+testloader = torch.utils.data.DataLoader(testset, batch_size=100, shuffle=False, num_workers=2)  # create data loader for testing
+
+classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck')  # class labels
+
+# --- specifying CNN architecture ---
+
+class SimpleCNN(nn.Module):  
+    def __init__(self):
+        super(SimpleCNN, self).__init__()  # initialize the parent class
+        self.conv1 = nn.Conv2d(3, 32, kernel_size=3, padding=1)  # first convolutional layer
+        self.conv2 = nn.Conv2d(32, 64, kernel_size=3, padding=1)  # second convolutional layer
+        self.pool = nn.MaxPool2d(kernel_size=2, stride=2, padding=0)  # max pooling layer
+        self.fc1 = nn.Linear(64 * 8 * 8, 512)  # first fully connected layer
+        self.fc2 = nn.Linear(512, 10)  # second fully connected layer
+
+    def forward(self, x):
+        x = self.pool(F.relu(self.conv1(x)))  # apply first conv layer + ReLU + pooling
+        x = self.pool(F.relu(self.conv2(x)))  # apply second conv layer + ReLU + pooling
+        x = x.view(-1, 64 * 8 * 8)  # flatten the tensor
+        x = F.relu(self.fc1(x))  # apply first FC layer + ReLU
+        x = self.fc2(x)  # apply second FC layer
+        return x
+
+# ----- EXECUTION CODE -----
+
+net = SimpleCNN()  # instantiate an instance of the CNN model
+
+criterion = nn.CrossEntropyLoss()  # define the loss function
+optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)  # define the optimizer
+
+# --- training loop ---
+
+for epoch in range(10):  # loop over the dataset multiple times
+    running_loss = 0.0  # initialize loss
+    for i, data in enumerate(trainloader, 0):  # iterate through batches
+
+        inputs, labels = data  # get the inputs and labels
+
+        optimizer.zero_grad()  # zero the parameter gradients
+
+        outputs = net(inputs)  # forward pass
+        loss = criterion(outputs, labels)  # compute loss
+        loss.backward()  # backward pass
+        optimizer.step()  # update weights
+
+        running_loss += loss.item()  # accumulate loss
+
+        if i % 100 == 99:  # print every 100 mini-batches
+            print(f'[{epoch + 1}, {i + 1}] loss: {running_loss / 100:.3f}')  # print loss
+            running_loss = 0.0  # reset running loss
+
+print('we have finished training the model hooray!')  # indicate end of training loop
+
+# --- evaluate accuracy of the model ---
+
+correct = 0
+total = 0
+with torch.no_grad():  # turn off gradient computation
+    for data in testloader:  # iterate through test data
+        images, labels = data  # get the images and labels
+        outputs = net(images)  # forward pass
+        _, predicted = torch.max(outputs.data, 1)  # get the predicted labels
+        total += labels.size(0)  # update total count
+        correct += (predicted == labels).sum().item()  # update correct count
+
+print(f'accuracy of the network on the 10000 test images: {100 * correct / total} %')  # model accuracy
 ```
 
 ## More on
