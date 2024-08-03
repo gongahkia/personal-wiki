@@ -11,14 +11,14 @@ The bane of every programmer's existence.
 ## Quickstart
 
 * Regular expressions consist of both **literal characters** and **metacharacters**
-    1. Literal character: character literals *(eg. `a`, `b`, `1`, `2`, `3` etc.)*
+    1. Literal character: character literals *(eg. `a`, `b`, `c`, `1`, `2`, `3`)*
     2. Metacharacter: special character with a specific meaning *(eg. `.`, `^`, `$`, `*`)*
 
 ### Literal character
 
 * Alphanumeric characters: `a`, `b`, `c`, ... and  `1`, `2`, `3`, ...
-* Whitespace characters: spaces, tabs, newline, etc. *(unless explicitly escaped)*
-* Punctuation and symbols: `@`, `#`, `$`, etc. *(unless they are already designated metacharacters)*
+* Whitespace characters: spaces, tabs, newline, ... *(unless explicitly escaped)*
+* Punctuation and symbols: `@`, `#`, `$`, ... *(unless they are already designated metacharacters)*
 
 ### Metacharacters
 
