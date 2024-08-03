@@ -17,8 +17,8 @@ The bane of every programmer's existence.
 ### Literal character
 
 * Alphanumeric characters: `a`, `b`, `c`, ... and  `1`, `2`, `3`, ...
-* Whitespace characters: spaces, tabs, newline, etc. *(unless explicitly escaped)*
-* Punctuation and symbols: `@`, `#`, `$`, etc. *(unless they are already designated metacharacters)*
+* Whitespace characters: spaces, tabs, newline, ... *(unless explicitly escaped)*
+* Punctuation and symbols: `@`, `#`, `$`, ... *(unless they are already designated metacharacters)*
 
 ### Metacharacters
 
