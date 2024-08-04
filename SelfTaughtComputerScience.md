@@ -118,6 +118,7 @@ Many people on the internet have made awesome resources free and publicly availa
 * [How do you learn Data Structures and Algorithms?](https://www.reddit.com/r/learnprogramming/comments/zh9brb/how_do_you_learn_data_structures_and_algorithms/) Reddit post
 * [Linux Ricing](https://youtu.be/RuofJYG2yak?si=iyttqUmlxKGUMc68) by Baiaphilia
 * [The Art of Linux CLIs](https://youtu.be/KdoaiGTIBY4?si=HNwNnVBuk4gYU0jB) by Mults
+* [r/unixporn](https://www.reddit.com/r/unixporn/)
 * [How far can self-taught Mathematics take you?](https://www.reddit.com/r/math/comments/cdg8s7/how_far_can_selftaught_mathematics_take_you/) Reddit post
 * [Mathematics for the adventurous self-learner](https://www.neilwithdata.com/mathematics-self-learner) by Neil Sainsbury
 * [OSSU: Data Science](https://github.com/ossu/data-science) Github repository
