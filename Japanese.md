@@ -15,8 +15,8 @@ Vocabulary and Grammar is seperated by lesson.
 
 ## Foundations
 
-<details>
-<summary><h3>Numbers</h3></summary>
+### Numbers
+
 | Kanji | Kana | Romaji | Meaning |
 | :--- | :--- | :--- | :--- | 
 | 一 | いち | ichi | one |
@@ -29,7 +29,6 @@ Vocabulary and Grammar is seperated by lesson.
 | 八 | はち | hachi | eight |
 | 九 | きゅう, く | kyuu, ku | nine |
 | 十 | じゅう | jyuu | ten |
-</details>
 
 ### Days of the week
 
