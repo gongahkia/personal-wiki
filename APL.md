@@ -29,10 +29,12 @@ A programming language.
 
 ```apl
 ⍝ ----- QUICKSTART -----
-    ⍝ APL is an array-oriented programming langauge 
-    ⍝ this means that scalars are also just arrays comprising of 1 element
-    ⍝ 
-    ⍝ 
+    ⍝ array-oriented programming langauge 
+    ⍝ syntax defined by a unique character set comprising many special symbols
+    ⍝ APL is 1-indexed, unlike most other programming languages which are 0-indexed
+
+    ⍝ Statements are composed of functions and operators
+    ⍝ Functions are either monadic (one argument) or dyadic (two arguments)
 ```
 
 ## Types
@@ -41,6 +43,7 @@ A programming language.
 ⍝ ----- TYPE -----
 
 ⍝ --- SCALAR TYPES ---
+    ⍝ scalars: arrays comprising of 1 element
     ⍝ integer number
     ⍝ floating-point number
     ⍝ character value, declared within '' single quotation marks
@@ -55,6 +58,7 @@ A programming language.
 1 ⍝ boolean TRUE, can be combined with logical operators
 
 ⍝ --- ARRAY TYPES ---
+    ⍝ arrays are the fundamental data type in APL
     ⍝ vector: one-dimensional array generated along a single axis, the equivalent of a list in most other programming languages
     ⍝ matrix: two-dimensional array with rows and columns
 
