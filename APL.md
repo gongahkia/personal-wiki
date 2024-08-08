@@ -22,7 +22,7 @@ A programming language.
     ⍝ `⎕← ⍴⊢` => function that receives a string argument which is then displayed to the stdout and this includes a newline by default
 
 ⎕ ← 'this does not include a newline by default and one must be explicitly specified\n'
-'this includes a newline and we don't need to specify its inclusion ⎕← ⍴⊢ 
+'this includes a newline and we don't need to specify its inclusion' ⎕← ⍴⊢ 
 ```
 
 ## Quickstart
@@ -164,7 +164,7 @@ results ⍝ evaluates to the integer vector 1, 2, 3, 4, 5
 ⍝ ----- FUNCTION -----
     ⍝ APL functions can receive either...
         ⍝ 1 argument (monadic)
-        2 ⍝ arguments (dyadic)
+        ⍝ 2 arguments (dyadic)
     ⍝ {} => specify a user-defined function within the 2 curly braces, which can then be assigned to a variable name to be a named function
 
 - 5 ⍝ this is techically a monadic negation function that evaluates to -5 
