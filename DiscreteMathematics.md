@@ -1301,3 +1301,4 @@ Proof:
 ## More on
 
 * [Building Blocks for Theoretical Computer Science](https://mfleck.cs.illinois.edu/building-blocks/index-sp2020.html) by Margaret M Fleck
+* [Abstract Algebra in 3 Hours](https://www.slideshare.net/slideshow/abstract-algebra-in-3-hours/70763563) by Ashwin Rao
