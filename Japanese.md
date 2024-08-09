@@ -210,12 +210,16 @@ Here are some sentences and their translations.
   
 Here are some sentences and their translations.  
   
-1. いまなんじですか。
-    * What is the time?
-2. ホテルはどこですか。
+1. ホテルはどこですか。
     * Where is the hotel?
-3. くこはどこですか。
+2. くこはどこですか。
     * Where is the airport?
+3. これをください。
+   * Please give me this.
+4. いくらですか。
+   * How much is it?
+5. わたしはアメリカじんです。
+   * I am American.
 
 ### Vocab 3
 
@@ -288,7 +292,12 @@ Here are some sentences and their translations.
 
 Here are some sentences and their translations.  
 
-> !! continue adding sentences and refining vocab list from vocab 3 onwards !!
+1. すみません、もういちどおねがいします。
+   * Excuse me, please say it one more time.
+2. これはなんですか。
+   * What is this?
+3. わたしのいえはここです。
+   * My house is here.
 
 ### Vocab 4
 
@@ -338,6 +347,15 @@ Here are some sentences and their translations.
 | ～から | | ~kara | from ~ |
 | ～まで | | ~made | until ~ |
 | そちら | | sochira | your place, there |
+
+Here are some sentences and their translations.  
+
+1. いま、なんじですか。
+   * What time is it now?
+2. こうえんはどこですか。
+   * Where is the park?
+3. このへやはあかるいです。
+   * This room is bright.
 
 ### Vocab 5
 
@@ -398,6 +416,15 @@ Here are some sentences and their translations.
 | 次の | つぎの | tsugino | next |
 | どういたしまして | | douitashimashite | you are welcome |
 
+Here are some sentences and their translations.  
+
+1. わたしはきょうとにいきます。
+   * I am going to Kyoto.
+2. ここにえきがあります。
+   * There is a station here.
+3. しんおおさかまでいくらですか。
+   * How much to Shin-Osaka?
+
 ### Vocab 6
 
 | Kanji | Kana | Romaji | Meaning |
@@ -452,6 +479,15 @@ Here are some sentences and their translations.
 | 何ですか | なんですか | nan desu ka | what is it |
 | じゃ、また | | jya, mata | see you later |
 
+Here are some sentences and their translations.  
+
+1. このほんは500えんです。
+   * This book is 500 yen.
+2. いぬをさんぽさせます。
+   * I take my dog for a walk.
+3. りんごを3つください。
+   * Please give me three apples.
+
 ### Vocab 7
 
 | Kanji | Kana | Romaji | Meaning |
@@ -500,6 +536,15 @@ Here are some sentences and their translations.
 | いただきます | | itadakimasu | thank you, I accept (said before starting to eat or drink) |
 | 旅行 | りょこう | ryokou | trip, tour |
 | お土産 | おみやげ | omiyage | souvenir |
+
+Here are some sentences and their translations.  
+
+1. いぬはかわいいです。
+   * The dog is cute.
+2. しんぶんをよみます。
+   * I read the newspaper.
+3. にほんごのべんきょうをしています。
+   * I am studying Japanese.
 
 ### Vocab 8
 
@@ -558,6 +603,15 @@ Here are some sentences and their translations.
 | いいえ | | iie | no |
 | またいらっしゃってください | | mata irasshatte kudasai | please come again |
 
+Here are some sentences and their translations.  
+
+1. きょうのてんきはどうですか。
+   * How is the weather today?
+2. わたしのへやはちいさいです。
+   * My room is small.
+3. あしたのてんきはどうですか。
+   * What will the weather be like tomorrow?
+
 ### Vocab 9
 
 | Kanji | Kana | Romaji | Meaning |
@@ -610,6 +664,15 @@ Here are some sentences and their translations.
 | だめですか | | dame desu ka | so you cannot (come) |
 | また今度お願いします | またこんどおねがいします | mata kondo onegaishimasu | please ask me again some other time (used when refusing an invitation indirectly)
 
+Here are some sentences and their translations.  
+
+1. どこでおひるごはんをたべますか。
+   * Where do you have lunch?
+2. あのレストランはおいしいです。
+   * That restaurant is delicious.
+3. きょうはしごとがあります。
+   * I have work today.
+
 ### Vocab 10
 
 | Kanji | Kana | Romaji | Meaning |
@@ -660,6 +723,15 @@ Here are some sentences and their translations.
 | チリソース | | chirisoosu | chili sauce |
 | 奥 | おく | oku | the inner part |
 | スパイス・コーナー | | supaisu koonaa | spice corner |
+
+Here are some sentences and their translations.  
+
+1. あした、なにをしますか。
+   * What will you do tomorrow?
+2. ちかくのスーパーでかいものをします。
+   * I will shop at the nearby supermarket.
+3. わたしのうちはあたらしいです。
+   * My house is new.
 
 ### Vocab 11
 
@@ -720,6 +792,15 @@ Here are some sentences and their translations.
 | 行ってまいります | いってまいります | itte mairimasu | so long (lit. I'm going and coming back) |
 | それから | | sorekara | and, furthermore |
 
+Here are some sentences and their translations.  
+
+1. どこでかいものをしますか。
+   * Where do you do your shopping?
+2. えきのまえにカフェがあります。
+   * There is a café in front of the station.
+3. いっしょにあそびましょう。
+   * Let's play together.
+
 ### Vocab 12
 
 | Kanji | Kana | Romaji | Meaning |
@@ -765,6 +846,15 @@ Here are some sentences and their translations.
 | 疲れました | つかれました | tsukaremashita | I'm tired |
 | 祇園祭 | ぎおんまつり | gion matsuri | Gion Festival (the most famous festival in Kyoto) |
 
+Here are some sentences and their translations.  
+
+1. わたしのいえはここからちょっととおいです。
+   * My house is a little far from here.
+2. どこでおおきいパーティーがありますか。
+   * Where is the big party?
+3. くるまはどこにありますか。
+   * Where is the car?
+
 ### Vocab 13
 
 | Kanji | Kana | Romaji | Meaning |
@@ -808,6 +898,15 @@ Here are some sentences and their translations.
 | 牛丼 | ぎゅうどん | gyuudon | bowl of rice with beef |
 | [少々]お待ちください | [しょうしょう]おまちください | [shoushou] omachi kudasai | please wait [a moment] |
 | 別々に | べつべつに | betsubetsu ni | separately |
+
+Here are some sentences and their translations.  
+
+1. いま、いっしゅうかんまえにいきました。
+   * I went a week ago.
+2. あさごはんにパンをたべます。
+   * I eat bread for breakfast.
+3. さくばん、ばんごはんにすしをたべました。
+   * Last night, I ate sushi for dinner.
 
 ### Vocab 14
 
@@ -858,6 +957,15 @@ Here are some sentences and their translations.
 | これでお願いします | | kore de onegaishimasu | I'd like to pay with this |
 | お釣り | おつり | otsuri | change (money) |
 
+Here are some sentences and their translations.  
+
+1. このかばんはいくらですか。
+   * How much is this bag?
+2. りょこうにいきたいです。
+   * I want to go on a trip.
+3. わたしのともだちにあいます。
+   * I will meet my friend.
+
 ### Vocab 15
 
 | Kanji | Kana | Romaji | Meaning |
@@ -885,6 +993,15 @@ Here are some sentences and their translations.
 | 思い出します | おもいだします | omoidasu | to remember, to recollect |
 | ご家族 | ごかぞく | gokazoku | family (someone else's) |
 | いらっしゃいます | | irasshaimasu | to be (honorific equivalent of います) |
+
+Here are some sentences and their translations.  
+
+1. おいしいレストランをしっていますか。
+   * Do you know a good restaurant?
+2. ゆうびんきょくはどこですか。
+   * Where is the post office?
+3. わたしはよくうちでしごとをします。
+   * I often work at home.
 
 ### Vocab 16
 
@@ -938,6 +1055,15 @@ Here are some sentences and their translations.
 | 確認 | かくにん | kakunin | confirmation (をします: to confirm) |
 | ボタン | | botan | button |
 
+Here are some sentences and their translations.  
+
+1. いま、どこにいますか。
+   * Where are you now?
+2. しゅうまつにどこへいきますか。
+   * Where will you go on the weekend?
+3. すぐにいけます。
+   * I can go immediately.
+
 ### Vocab 17
 
 | Kanji | Kana | Romaji | Meaning |
@@ -981,6 +1107,15 @@ Here are some sentences and their translations.
 | のど | | nodo | throat |
 | お大事に | おだいじに | odaijini | take care of yourself (said to people who are ill) |
 
+Here are some sentences and their translations.  
+
+1. わたしはあしたしごとがあります。
+   * I have work tomorrow.
+2. おおきいしごとがひとつあります。
+   * There is a big job.
+3. わたしはよくカフェでべんきょうします。
+   * I often study at a café.
+
 ### Vocab 18
 
 | Kanji | Kana | Romaji | Meaning |
@@ -1012,6 +1147,15 @@ Here are some sentences and their translations.
 | なかなか | | nakanaka | not easily (used with negatives) |
 | 牧場 | ぼくじょう | bokujou | ranch, stock farm |
 | ぜひ | | zehi | by all means |
+
+Here are some sentences and their translations.  
+
+1. あのホテルはとてもたかいです。
+   * That hotel is very expensive.
+2. いぬはしろいです。
+   * The dog is white.
+3. おいしいりょうりをつくります。
+   * I make delicious dishes.
 
 ### Vocab 19
 
@@ -1047,6 +1191,15 @@ Here are some sentences and their translations.
 | 無理[な] | むり[な] | muri[na] | excessive, impossible |
 | 体にいい | からだにいい | karada ni ii | good for one's health |
 
+Here are some sentences and their translations.  
+
+1. ちかくにおいしいレストランがあります。
+   * There is a good restaurant nearby.
+2. すぐにえきにいけます。
+   * You can go to the station right away.
+3. わたしのうちのちかくにこうえんがあります。
+   * There is a park near my house.
+
 ### Vocab 20
 
 | Kanji | Kana | Romaji | Meaning |
@@ -1078,6 +1231,15 @@ Here are some sentences and their translations.
 | どうするの | | dou suru no | what will you do |
 | どうしようかな | | dou shiyou kana | what shall I do |
 | よかったら | | yokattara | if you like |
+
+Here are some sentences and their translations.  
+
+1. いまなんじですか。
+   * What time is it now?
+2. このえいがはどうでしたか。
+   * How was this movie?
+3. とてもたのしかったです。
+   * It was very fun.
 
 ### Vocab 21
 
@@ -1119,6 +1281,15 @@ Here are some sentences and their translations.
 | 見ないと | みないと | minaito | I've got to watch it |
 | もちろん | | mochiron | of course |
 
+Here are some sentences and their translations.  
+
+1. あしたのてんきはどうですか。
+   * How is the weather tomorrow?
+2. このしごとはとてもむずかしいです。
+   * This work is very difficult.
+3. どこであいましょうか。
+   * Where shall we meet?
+
 ### Vocab 22
 
 | Kanji | Kana | Romaji | Meaning |
@@ -1146,6 +1317,15 @@ Here are some sentences and their translations.
 | ふとん | | futon | Japanese-style mattress and quilt |
 | パリ | | pari | Paris |
 | 万里の長城 | ばんりのちょうじょう | banri no choujou | Great Wall of China |
+
+Here are some sentences and their translations.  
+
+1. あのスーパーはひろいです。
+   * That supermarket is spacious.
+2. おしごとのじかんはなんじからなんじまでですか。
+   * What time is your work from and to?
+3. やすいほんをさがしています。
+   * I am looking for a cheap book.
 
 ### Vocab 23
 
@@ -1178,6 +1358,15 @@ Here are some sentences and their translations.
 | 建物 | たてもの | tatemono | building |
 | 外国人登録証 | がいこくじんとうろくしょう | gaikokujin tourokushou | alien registration card |
 
+Here are some sentences and their translations.  
+
+1. しごとのあとでえいがをみます。
+   * I watch a movie after work.
+2. おいしいおすしをたべました。
+   * I ate delicious sushi.
+3. このへやはすこしさむいです。
+   * This room is a little cold.
+
 ### Vocab 24
 
 | Kanji | Kana | Romaji | Meaning |
@@ -1194,6 +1383,15 @@ Here are some sentences and their translations.
 | 全部 | ぜんぶ | zenbu | all |
 | 自分で | じぶんで | jibunde | by oneself |
 | 母の日 | ははのひ | haha no hi | Mother's Day |
+
+Here are some sentences and their translations.  
+
+1. しんおおさかまでのきっぷをください。
+   * Please give me a ticket to Shin-Osaka.
+2. ここはあまりおおきくないです。
+   * It is not very large here.
+3. いちばんちかいえきはどこですか。
+   * Where is the nearest station?
 
 ### Vocab 25
 
@@ -1216,6 +1414,15 @@ Here are some sentences and their translations.
 | [いろいろ]お世話になりました | [いろいろ]おせわになりました | [iroiro] osewa ni narimashita | thank you for everything you've done for me |
 | 頑張ります | がんばります | ganbarimasu | to do one's best |
 | どうぞお元気で | どうぞおげんきで | douzo ogenkide | best of luck (said when expecting a long separation) |
+
+Here are some sentences and their translations.  
+
+1. きょうはとてもさむいです。
+   * Today is very cold.
+2. おさけをのみませんか。
+   * Would you like to drink sake?
+3. いちばんおいしいレストランはどこですか。
+   * Where is the best restaurant?
 
 ### Grammar 1
 
