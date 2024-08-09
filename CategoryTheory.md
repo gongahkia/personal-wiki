@@ -18,7 +18,7 @@ Covers...
 
 1. **Category**
     * A category ![C](https://latex.codecogs.com/png.latex?%5Cmathcal%7BC%7D) consists of:
-        * **Objects**: Denoted by symbols such as ![A](https://latex.codecogs.com/png.latex?A), ![B](https://latex.codecogs.com/png.latex?B), ![C](https://latex.codecogs.com/png.latex?C), $\ldots$
+        * **Objects**: Denoted by symbols such as ![A](https://latex.codecogs.com/png.latex?A), ![B](https://latex.codecogs.com/png.latex?B), ![C](https://latex.codecogs.com/png.latex?C), ...
         * **Morphisms** (or **Arrows**): Denoted by ![f: A \to B](https://latex.codecogs.com/png.latex?f%3A%20A%20%5Cto%20B), representing a relationship from object ![A](https://latex.codecogs.com/png.latex?A) to object ![B](https://latex.codecogs.com/png.latex?B)
         * **Composition**: For morphisms ![f: A \to B](https://latex.codecogs.com/png.latex?f%3A%20A%20%5Cto%20B) and ![g: B \to C](https://latex.codecogs.com/png.latex?g%3A%20B%20%5Cto%20C), the composition ![g \circ f: A \to C](https://latex.codecogs.com/png.latex?g%20%5Ccirc%20f%3A%20A%20%5Cto%20C)
         * **Identity Morphisms**: For each object ![A](https://latex.codecogs.com/png.latex?A), there is an identity morphism ![id_A: A \to A](https://latex.codecogs.com/png.latex?id_A%3A%20A%20%5Cto%20A) such that ![id_A \circ f = f](https://latex.codecogs.com/png.latex?id_A%20%5Ccirc%20f%20%3D%20f) and ![g \circ id_A = g](https://latex.codecogs.com/png.latex?g%20%5Ccirc%20id_A%20%3D%20g) for all ![f](https://latex.codecogs.com/png.latex?f) and ![g](https://latex.codecogs.com/png.latex?g) involving ![A](https://latex.codecogs.com/png.latex?A)
