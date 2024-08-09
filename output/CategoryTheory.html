@@ -57,13 +57,7 @@
 <li>A natural transformation <span class="math inline">\(\eta\)</span> between functors <span class="math inline">\(F, G: \mathcal{C} \to \mathcal{D}\)</span> consists of:
 <ul>
 <li>A collection of morphisms <span class="math inline">\(\eta_A: F(A) \to G(A)\)</span> for each object <span class="math inline">\(A \in \mathcal{C}\)</span></li>
-<li>Such that for any morphism <span class="math inline">\(f: A \to B\)</span> in <span class="math inline">\(\mathcal{C}\)</span>, the following diagram commutes: <span class="math display">\[
-\begin{array}{ccc}
-F(A) &amp; \xrightarrow{\eta_A} &amp; G(A) \\
-\downarrow{F(f)} &amp; &amp; \downarrow{G(f)} \\
-F(B) &amp; \xrightarrow{\eta_B} &amp; G(B)
-\end{array}
-\]</span></li>
+<li>Such that for any morphism <span class="math inline">\(f: A \to B\)</span> in <span class="math inline">\(\mathcal{C}\)</span>, the diagram <embed src="https://latex.codecogs.com/png.latex?%24%24%5Cbegin%7Barray%7D%7Bccc%7DF(A)%20%26%20%5Cxrightarrow%7B%5Ceta_A%7D%20%26%20G(A)%20%5C%5C%20%5Cdownarrow%7BF(f)%7D%20%26%20%26%20%5Cdownarrow%7BG(f)%7D%20%5C%5C%20F(B)%20%26%20%5Cxrightarrow%7B%5Ceta_B%7D%20%26%20G(B)%5Cend%7Barray%7D%24%24" /> commutes</li>
 </ul></li>
 </ul></li>
 <li><strong>Monoid</strong>
@@ -92,7 +86,7 @@ F(B) &amp; \xrightarrow{\eta_B} &amp; G(B)
 <ul>
 <li>An adjunction between categories <span class="math inline">\(\mathcal{C}\)</span> and <span class="math inline">\(\mathcal{D}\)</span> consists of a pair of functors <span class="math inline">\(F: \mathcal{C} \to \mathcal{D}\)</span> and <span class="math inline">\(G: \mathcal{D} \to \mathcal{C}\)</span> such that:
 <ul>
-<li>For each pair of objects <span class="math inline">\(A \in \mathcal{C}\)</span> and <span class="math inline">\(B \in \mathcal{D}\)</span>, there is a natural isomorphism between <span class="math inline">\(\text{Hom}_{\mathcal{D}}(F(A), B)\)</span> and <span class="math inline">\(\text{Hom}_{\mathcal{C}}(A, G(B))\)</span>.</li>
+<li>For each pair of objects <span class="math inline">\(A \in \mathcal{C}\)</span> and <span class="math inline">\(B \in \mathcal{D}\)</span>, there is a natural isomorphism between <embed src="https://latex.codecogs.com/png.latex?%5Ctext%7BHom%7D_%7B%5Cmathcal%7BD%7D%7D%28F%28A%29%2C%20B%29%20%5Ctext%7B" /> and <embed src="https://latex.codecogs.com/png.latex?%5Ctext%7BHom%7D_%7B%5Cmathcal%7BC%7D%7D%28A%2C%20G%28B%29%29" />.</li>
 </ul></li>
 </ul></li>
 <li><strong>Monads</strong>
@@ -114,12 +108,10 @@ F(B) &amp; \xrightarrow{\eta_B} &amp; G(B)
 </ul></li>
 <li><strong>Yoneda Lemma</strong>
 <ul>
-<li>The Yoneda Lemma states that for any category <span class="math inline">\(\mathcal{C}\)</span>, object <span class="math inline">\(A \in \mathcal{C}\)</span>, and functor <span class="math inline">\(F: \mathcal{C} \to \textbf{Set}\)</span>, there is a natural isomorphism: <span class="math display">\[
-\text{Nat}(\text{Hom}_{\mathcal{C}}(-, A), F) \cong F(A)
-\]</span> where:
+<li>The Yoneda Lemma states that for any category <span class="math inline">\(\mathcal{C}\)</span>, object <span class="math inline">\(A \in \mathcal{C}\)</span>, and functor <span class="math inline">\(F: \mathcal{C} \to \textbf{Set}\)</span>, there is a natural isomorphism <embed src="https://latex.codecogs.com/png.latex?%5Ctext%7BNat%7D%28%5Ctext%7BHom%7D_%7B%5Cmathcal%7BC%7D%7D%28-%2C%20A%29%2C%20F%29%20%5Ccong%20F%28A%29" /> where:
 <ul>
-<li><span class="math inline">\(\text{Hom}_{\mathcal{C}}(-, A)\)</span> is the functor that maps an object <span class="math inline">\(X\)</span> to the set of morphisms <span class="math inline">\(\text{Hom}_{\mathcal{C}}(X, A)\)</span>.</li>
-<li><span class="math inline">\(\text{Nat}(\text{Hom}_{\mathcal{C}}(-, A), F)\)</span> denotes the set of natural transformations from <span class="math inline">\(\text{Hom}_{\mathcal{C}}(-, A)\)</span> to <span class="math inline">\(F\)</span>.</li>
+<li><embed src="https://latex.codecogs.com/png.latex?%5Ctext%7BHom%7D_%7B%5Cmathcal%7BC%7D%7D%28-%2C%20A%29" /> is the functor that maps an object <span class="math inline">\(X\)</span> to the set of morphisms <embed src="https://latex.codecogs.com/png.latex?%5Ctext%7BHom%7D_%7B%5Cmathcal%7BC%7D%7D%28X%2C%20A%29" />.</li>
+<li><embed src="https://latex.codecogs.com/png.latex?%5Ctext%7BNat%7D%28%5Ctext%7BHom%7D_%7B%5Cmathcal%7BC%7D%7D%28-%2C%20A%29%2C%20F%29" /> denotes the set of natural transformations from <embed src="https://latex.codecogs.com/png.latex?%5Ctext%7BHom%7D_%7B%5Cmathcal%7BC%7D%7D%28-%2C%20A%29" /> to <span class="math inline">\(F\)</span>.</li>
 </ul></li>
 </ul></li>
 <li><strong>Representable Functors</strong>

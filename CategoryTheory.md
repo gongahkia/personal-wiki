@@ -33,14 +33,7 @@ Covers...
 3. **Natural Transformation**
     * A natural transformation $\eta$ between functors $F, G: \mathcal{C} \to \mathcal{D}$ consists of:
         * A collection of morphisms $\eta_A: F(A) \to G(A)$ for each object $A \in \mathcal{C}$
-        * Such that for any morphism $f: A \to B$ in $\mathcal{C}$, the following diagram commutes:
-          $$
-          \begin{array}{ccc}
-          F(A) & \xrightarrow{\eta_A} & G(A) \\
-          \downarrow{F(f)} & & \downarrow{G(f)} \\
-          F(B) & \xrightarrow{\eta_B} & G(B)
-          \end{array}
-          $$
+        * Such that for any morphism $f: A \to B$ in $\mathcal{C}$, the diagram ![commutative diagram](https://latex.codecogs.com/png.latex?%24%24%5Cbegin%7Barray%7D%7Bccc%7DF(A)%20%26%20%5Cxrightarrow%7B%5Ceta_A%7D%20%26%20G(A)%20%5C%5C%20%5Cdownarrow%7BF(f)%7D%20%26%20%26%20%5Cdownarrow%7BG(f)%7D%20%5C%5C%20F(B)%20%26%20%5Cxrightarrow%7B%5Ceta_B%7D%20%26%20G(B)%5Cend%7Barray%7D%24%24) commutes
 
 4. **Monoid**
     * A monoid $(M, \cdot, e)$ is a set $M$ equipped with a binary operation $\cdot: M \times M \to M$ and an identity element $e \in M$ such that:
@@ -60,7 +53,7 @@ Covers...
 
 8. **Adjunctions**
     * An adjunction between categories $\mathcal{C}$ and $\mathcal{D}$ consists of a pair of functors $F: \mathcal{C} \to \mathcal{D}$ and $G: \mathcal{D} \to \mathcal{C}$ such that:
-        * For each pair of objects $A \in \mathcal{C}$ and $B \in \mathcal{D}$, there is a natural isomorphism between $\text{Hom}_{\mathcal{D}}(F(A), B)$ and $\text{Hom}_{\mathcal{C}}(A, G(B))$.
+        * For each pair of objects $A \in \mathcal{C}$ and $B \in \mathcal{D}$, there is a natural isomorphism between ![math expression](https://latex.codecogs.com/png.latex?%5Ctext%7BHom%7D_%7B%5Cmathcal%7BD%7D%7D%28F%28A%29%2C%20B%29%20%5Ctext%7B) and ![math expression](https://latex.codecogs.com/png.latex?%5Ctext%7BHom%7D_%7B%5Cmathcal%7BC%7D%7D%28A%2C%20G%28B%29%29).
 
 9. **Monads**
     * A monad on a category $\mathcal{C}$ consists of:
@@ -75,13 +68,9 @@ Covers...
     * Two categories $\mathcal{C}$ and $\mathcal{D}$ are said to be **equivalent** if there exist functors $F: \mathcal{C} \to \mathcal{D}$ and $G: \mathcal{D} \to \mathcal{C}$ such that $G \circ F$ is naturally isomorphic to the identity functor on $\mathcal{C}$, and $F \circ G$ is naturally isomorphic to the identity functor on $\mathcal{D}$.
 
 12. **Yoneda Lemma**
-    * The Yoneda Lemma states that for any category $\mathcal{C}$, object $A \in \mathcal{C}$, and functor $F: \mathcal{C} \to \textbf{Set}$, there is a natural isomorphism:
-      $$
-      \text{Nat}(\text{Hom}_{\mathcal{C}}(-, A), F) \cong F(A)
-      $$
-      where:
-      * $\text{Hom}_{\mathcal{C}}(-, A)$ is the functor that maps an object $X$ to the set of morphisms $\text{Hom}_{\mathcal{C}}(X, A)$.
-      * $\text{Nat}(\text{Hom}_{\mathcal{C}}(-, A), F)$ denotes the set of natural transformations from $\text{Hom}_{\mathcal{C}}(-, A)$ to $F$.
+    * The Yoneda Lemma states that for any category $\mathcal{C}$, object $A \in \mathcal{C}$, and functor $F: \mathcal{C} \to \textbf{Set}$, there is a natural isomorphism ![Yoneda Lemma](https://latex.codecogs.com/png.latex?%5Ctext%7BNat%7D%28%5Ctext%7BHom%7D_%7B%5Cmathcal%7BC%7D%7D%28-%2C%20A%29%2C%20F%29%20%5Ccong%20F%28A%29) where:
+       * ![Hom](https://latex.codecogs.com/png.latex?%5Ctext%7BHom%7D_%7B%5Cmathcal%7BC%7D%7D%28-%2C%20A%29) is the functor that maps an object $X$ to the set of morphisms ![Hom](https://latex.codecogs.com/png.latex?%5Ctext%7BHom%7D_%7B%5Cmathcal%7BC%7D%7D%28X%2C%20A%29).
+       * ![Nat](https://latex.codecogs.com/png.latex?%5Ctext%7BNat%7D%28%5Ctext%7BHom%7D_%7B%5Cmathcal%7BC%7D%7D%28-%2C%20A%29%2C%20F%29) denotes the set of natural transformations from ![Hom](https://latex.codecogs.com/png.latex?%5Ctext%7BHom%7D_%7B%5Cmathcal%7BC%7D%7D%28-%2C%20A%29) to $F$.
 
 13. **Representable Functors**
     * A functor $F: \mathcal{C} \to \textbf{Set}$ is called **representable** if it is naturally isomorphic to the hom-functor $\text{Hom}_{\mathcal{C}}(C, -)$ for some object $C \in \mathcal{C}$.
