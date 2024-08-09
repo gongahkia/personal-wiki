@@ -50,7 +50,7 @@ Covers...
     * **Colimit**: Dual to limits, capturing the “coarsest” structure that can be mapped to from the diagram.
 
 7. **Functor Categories**
-    * The category **Fun**![(\mathcal{C}, \mathcal{D})](https://latex.codecogs.com/png.latex?%5CFun%28%5Cmathcal%7BC%7D%2C%20%5Cmathcal%7BD%7D%29) consists of all functors from ![\mathcal{C}](https://latex.codecogs.com/png.latex?%5Cmathcal%7BC%7D) to ![\mathcal{D}](https://latex.codecogs.com/png.latex?%5Cmathcal%7BD%7D) and natural transformations between them.
+    * The category **Fun** ![](https://latex.codecogs.com/png.latex?%5CFun%28%5Cmathcal%7BC%7D%2C%20%5Cmathcal%7BD%7D%29) consists of all functors from ![\mathcal{C}](https://latex.codecogs.com/png.latex?%5Cmathcal%7BC%7D) to ![\mathcal{D}](https://latex.codecogs.com/png.latex?%5Cmathcal%7BD%7D) and natural transformations between them.
 
 8. **Adjunctions**
     * An adjunction between categories ![\mathcal{C}](https://latex.codecogs.com/png.latex?%5Cmathcal%7BC%7D) and ![\mathcal{D}](https://latex.codecogs.com/png.latex?%5Cmathcal%7BD%7D) consists of a pair of functors ![F: \mathcal{C} \to \mathcal{D}](https://latex.codecogs.com/png.latex?F%3A%20%5Cmathcal%7BC%7D%20%5Cto%20%5Cmathcal%7BD%7D) and ![G: \mathcal{D} \to \mathcal{C}](https://latex.codecogs.com/png.latex?G%3A%20%5Cmathcal%7BD%7D%20%5Cto%20%5Cmathcal%7BC%7D) such that:
