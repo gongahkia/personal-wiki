@@ -79,7 +79,7 @@ exampleMap = #{name => "Erlang", type => "Functional"}.
 * % multiplication
 / % division
 div % integer division
-rem % remainder (modulo)
+rem % modulo
 
 % --- COMPARISON OPERATORS ---
 
@@ -170,8 +170,8 @@ anotherExampleMap = #{key1 => 10, key2 => 20}.
 
 ```erl
 % ----- FUNCTION -----
-    % <function_name> (<function_parameter(s)>) -> <function_body>. => defines a named function in a module
-    % fun (<function_parameter(s)>) -> <function_body> end. => defines an anonymous function
+    % <function_name> (<function_parameter(s)>) -> <function_body>. => defines a named function
+    % fun (<function_parameter(s)>) -> <function_body> end. => defines an anonymous function which is then assigned to a named variable
 
 -module(math).
 -export([add/2]).
