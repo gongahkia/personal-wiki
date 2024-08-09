@@ -33,8 +33,7 @@ Covers...
 3. **Natural Transformation**
     * A natural transformation $\eta$ between functors $F, G: \mathcal{C} \to \mathcal{D}$ consists of:
         * A collection of morphisms $\eta_A: F(A) \to G(A)$ for each object $A \in \mathcal{C}$
-        * Such that for any morphism $f: A \to B$ in $\mathcal{C}$, the following diagram commutes:
-            * ![commutative diagram](https://latex.codecogs.com/png.latex?%24%24%5Cbegin%7Barray%7D%7Bccc%7DF(A)%20%26%20%5Cxrightarrow%7B%5Ceta_A%7D%20%26%20G(A)%20%5C%5C%20%5Cdownarrow%7BF(f)%7D%20%26%20%26%20%5Cdownarrow%7BG(f)%7D%20%5C%5C%20F(B)%20%26%20%5Cxrightarrow%7B%5Ceta_B%7D%20%26%20G(B)%5Cend%7Barray%7D%24%24)
+        * Such that for any morphism $f: A \to B$ in $\mathcal{C}$, the diagram ![commutative diagram](https://latex.codecogs.com/png.latex?%24%24%5Cbegin%7Barray%7D%7Bccc%7DF(A)%20%26%20%5Cxrightarrow%7B%5Ceta_A%7D%20%26%20G(A)%20%5C%5C%20%5Cdownarrow%7BF(f)%7D%20%26%20%26%20%5Cdownarrow%7BG(f)%7D%20%5C%5C%20F(B)%20%26%20%5Cxrightarrow%7B%5Ceta_B%7D%20%26%20G(B)%5Cend%7Barray%7D%24%24) commutes
 
 4. **Monoid**
     * A monoid $(M, \cdot, e)$ is a set $M$ equipped with a binary operation $\cdot: M \times M \to M$ and an identity element $e \in M$ such that:
