@@ -91,7 +91,6 @@ Covers...
 * [Category theory for Programmers](https://unglueit-files.s3.amazonaws.com/ebf/e90890f0a6ea420c9825657d6f3a851d.pdf) by Bartosz Milewski
 * [Abstract Algebra in 3 Hours](https://www.slideshare.net/slideshow/abstract-algebra-in-3-hours/70763563) by Ashwin Rao
 * [Category theory made easy with (ugly) pictures](https://www.slideshare.net/slideshow/category-theory-made-easy-with-ugly-pictures-73745930/73745930) by Ashwin Rao
-* [Category theory in Context](https://www.maths.ox.ac.uk/system/files/attachments/Category%20Theory%20in%20Context.pdf) by Emily Riehl and Charles A. Stewart
 * [A Gentle Introduction to Category theory (the calculational approach)](https://maartenfokkinga.github.io/utwente/mmf92b.pdf) by Maarten M Fokkinga
 * [What is Category theory Anyway?](https://www.math3ma.com/blog/what-is-category-theory-anyway) by math3m
 * [Basic Category theory](https://arxiv.org/pdf/1612.09375) by Tom Leinster
