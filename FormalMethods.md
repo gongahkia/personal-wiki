@@ -60,3 +60,4 @@ Formal methods comprise the following 2 steps
 * [Formal Verification, Casually Explained](https://ahelwer.ca/post/2018-02-12-formal-verification/) by Andrew Helwer
 * [A Gentle Introduction to Formal Verification](https://www.systemverilog.io/verification/gentle-introduction-to-formal-verification/) by sv:io
 * [Introduction to Formal Verification](https://www.eeweb.com/introduction-to-formal-verification/) by EEWeb
+* [Context-Free Grammars](https://web.stanford.edu/class/archive/cs/cs103/cs103.1164/lectures/18/Small18.pdf) by Stanford University

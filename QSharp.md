@@ -237,5 +237,13 @@ function Square(x : Int) : Int {
 
 ## More on
 
+### Core reading
+
 * [Q# documentation](https://learn.microsoft.com/en-us/azure/quantum/)
 * [learn Q# in y minutes](https://learnxinyminutes.com/docs/qsharp/)
+
+### Additional reading
+
+* [Quipper documentation](https://hackage.haskell.org/package/quipper-language)
+* [Silq documentation](https://www.sri.inf.ethz.ch/publications/bichsel2020silq)
+* [Qiskit documentation](https://www.ibm.com/quantum/qiskit)
