@@ -6,7 +6,7 @@
 
 ## Quickstart
 
-Formal methods comprises the following 2 steps
+Formal methods comprise the following 2 steps
 
 1. ***Specification***
     * Describe the desired properties (and behaviors) of a system 
