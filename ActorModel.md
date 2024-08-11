@@ -48,3 +48,4 @@ Often used in
 * [43 years of actors: a taxonomy of actor models and their key properties](https://dl.acm.org/doi/10.1145/3001886.3001890) by Joeri De Koster, Tom Van Cutsem, Wolfgang De Meuter
 * [erlang.org](https://www.erlang.org/)
 * [akka.io](https://akka.io/)
+* [Communicating sequential processes](https://www.cs.cmu.edu/~crary/819-f09/Hoare78.pdf) by SL Graham (CMU School of Computer Science)
