@@ -481,3 +481,4 @@ squareList xs = [x * x | x <- xs] -- list comprehension can also be used with fu
 * [the haskell school of expression](https://www.cs.yale.edu/homes/hudak/SOE/index.htm)
 * [haskell wiki on functional programming](https://wiki.haskell.org/Functional_programming)
 * [the fuss about || haskell || scala || f#](https://www.slideshare.net/slideshow/the-fuss/44059475)
+* [the quipper language](https://www.mathstat.dal.ca/~selinger/quipper/)
