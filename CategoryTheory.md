@@ -53,7 +53,7 @@ Covers...
 
 8. **Adjunctions**
     * An adjunction between categories $\mathcal{C}$ and $\mathcal{D}$ consists of a pair of functors $F: \mathcal{C} \to \mathcal{D}$ and $G: \mathcal{D} \to \mathcal{C}$ such that:
-        * For each pair of objects $A \in \mathcal{C}$ and $B \in \mathcal{D}$, there is a natural isomorphism between $\text{Hom}_{\mathcal{D}}(F(A), B)$ and $\text{Hom}_{\mathcal{C}}(A, G(B))$.
+        * For each pair of objects $A \in \mathcal{C}$ and $B \in \mathcal{D}$, there is a natural isomorphism between ![\text{Hom}_{\mathcal{D}}(F(A), B)](https://latex.codecogs.com/png.latex?%5Ctext%7BHom%7D_%7B%5Cmathcal%7BD%7D%7D%28F%28A%29%2C%20B%29) and ![\text{Hom}_{\mathcal{C}}(A, G(B))](https://latex.codecogs.com/png.latex?%5Ctext%7BHom%7D_%7B%5Cmathcal%7BC%7D%7D%28A%2C%20G%28B%29%29).
 
 9. **Monads**
     * A monad on a category $\mathcal{C}$ consists of:
@@ -69,8 +69,8 @@ Covers...
 
 12. **Yoneda Lemma**
     * The Yoneda Lemma states that for any category $\mathcal{C}$, object $A \in \mathcal{C}$, and functor $F: \mathcal{C} \to \textbf{Set}$, there is a natural isomorphism ![\text{Nat}(\text{Hom}_{\mathcal{C}}(-, A), F) \cong F(A)](https://latex.codecogs.com/png.latex?%5Ctext%7BNat%7D%28%5Ctext%7BHom%7D_%7B%5Cmathcal%7BC%7D%7D%28-%2C%20A%29%2C%20F%29%20%5Ccong%20F%28A%29) where: 
-        * $\text{Hom}_{\mathcal{C}}(-, A)$ is the functor that maps an object $X$ to the set of morphisms $\text{Hom}_{\mathcal{C}}(X, A)$.
-        * $\text{Nat}(\text{Hom}_{\mathcal{C}}(-, A), F)$ denotes the set of natural transformations from $\text{Hom}_{\mathcal{C}}(-, A)$ to $F$.
+        * ![\text{Hom}_{\mathcal{C}}(-, A)](https://latex.codecogs.com/png.latex?%5Ctext%7BHom%7D_%7B%5Cmathcal%7BC%7D%7D%28-%2C%20A%29) is the functor that maps an object ![X](https://latex.codecogs.com/png.latex?X) to the set of morphisms ![\text{Hom}_{\mathcal{C}}(X, A)](https://latex.codecogs.com/png.latex?%5Ctext%7BHom%7D_%7B%5Cmathcal%7BC%7D%7D%28X%2C%20A%29).
+        * ![\text{Nat}(\text{Hom}_{\mathcal{C}}(-, A), F)](https://latex.codecogs.com/png.latex?%5Ctext%7BNat%7D%28%5Ctext%7BHom%7D_%7B%5Cmathcal%7BC%7D%7D%28-%2C%20A%29%2C%20F%29) denotes the set of natural transformations from ![\text{Hom}_{\mathcal{C}}(-, A)](https://latex.codecogs.com/png.latex?%5Ctext%7BHom%7D_%7B%5Cmathcal%7BC%7D%7D%28-%2C%20A%29) to ![F](https://latex.codecogs.com/png.latex?F).
 
 13. **Representable Functors**
     * A functor $F: \mathcal{C} \to \textbf{Set}$ is called **representable** if it is naturally isomorphic to the hom-functor $\text{Hom}_{\mathcal{C}}(C, -)$ for some object $C \in \mathcal{C}$.
