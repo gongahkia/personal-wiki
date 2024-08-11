@@ -28,7 +28,7 @@
 ## Benefits
 
 * **Concurrency**: naturally supported since actors operate independently
-* **Fault tolerance**: actors that supervise other actors (restarting them if they fail) can be designed
+* **Fault tolerance**: actors that supervise other actors *(restarting them if they fail)* can be implemented
 * **Scalability**: actors can be created on demand
 * **Avoid deadlocks**: sidesteps issues created by traditional concurrency *(reliant on threads and locks)* with NO shared state and message-passing
 
