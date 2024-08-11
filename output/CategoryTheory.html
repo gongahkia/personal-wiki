@@ -13,6 +13,7 @@
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
   </style>
+  <script src="/usr/share/javascript/mathjax/tex-mml-chtml.js" type="text/javascript"></script>
 </head>
 <body>
 <h1 id="category-theory"><code>Category theory</code></h1>
@@ -33,89 +34,89 @@
 <ol type="1">
 <li><strong>Category</strong>
 <ul>
-<li>A category <embed src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BC%7D" /> consists of:
+<li>A category <span class="math inline">\(\mathcal{C}\)</span> consists of:
 <ul>
-<li><strong>Objects</strong>: Denoted by symbols such as <embed src="https://latex.codecogs.com/png.latex?A" />, <embed src="https://latex.codecogs.com/png.latex?B" />, <embed src="https://latex.codecogs.com/png.latex?C" />, …</li>
-<li><strong>Morphisms</strong> (or <strong>Arrows</strong>): Denoted by <embed src="https://latex.codecogs.com/png.latex?f%3A%20A%20%5Cto%20B" />, representing a relationship from object <embed src="https://latex.codecogs.com/png.latex?A" /> to object <embed src="https://latex.codecogs.com/png.latex?B" /></li>
-<li><strong>Composition</strong>: For morphisms <embed src="https://latex.codecogs.com/png.latex?f%3A%20A%20%5Cto%20B" /> and <embed src="https://latex.codecogs.com/png.latex?g%3A%20B%20%5Cto%20C" />, the composition <embed src="https://latex.codecogs.com/png.latex?g%20%5Ccirc%20f%3A%20A%20%5Cto%20C" /></li>
-<li><strong>Identity Morphisms</strong>: For each object <embed src="https://latex.codecogs.com/png.latex?A" />, there is an identity morphism <embed src="https://latex.codecogs.com/png.latex?id_A%3A%20A%20%5Cto%20A" /> such that <embed src="https://latex.codecogs.com/png.latex?id_A%20%5Ccirc%20f%20%3D%20f" /> and <embed src="https://latex.codecogs.com/png.latex?g%20%5Ccirc%20id_A%20%3D%20g" /> for all <embed src="https://latex.codecogs.com/png.latex?f" /> and <embed src="https://latex.codecogs.com/png.latex?g" /> involving <embed src="https://latex.codecogs.com/png.latex?A" /></li>
-<li><strong>Associativity</strong>: Composition of morphisms is associative: <embed src="https://latex.codecogs.com/png.latex?%28h%20%5Ccirc%20g%29%20%5Ccirc%20f%20%3D%20h%20%5Ccirc%20%28g%20%5Ccirc%20f%29" /></li>
+<li><strong>Objects</strong>: Denoted by symbols such as <span class="math inline">\(A, B, C, \ldots\)</span></li>
+<li><strong>Morphisms</strong> (or <strong>Arrows</strong>): Denoted by <span class="math inline">\(f: A \to B\)</span>, representing a relationship from object <span class="math inline">\(A\)</span> to object <span class="math inline">\(B\)</span></li>
+<li><strong>Composition</strong>: For morphisms <span class="math inline">\(f: A \to B\)</span> and <span class="math inline">\(g: B \to C\)</span>, the composition <span class="math inline">\(g \circ f: A \to C\)</span></li>
+<li><strong>Identity Morphisms</strong>: For each object <span class="math inline">\(A\)</span>, there is an identity morphism <span class="math inline">\(id_A: A \to A\)</span> such that <span class="math inline">\(id_A \circ f = f\)</span> and <span class="math inline">\(g \circ id_A = g\)</span> for all <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> involving <span class="math inline">\(A\)</span></li>
+<li><strong>Associativity</strong>: Composition of morphisms is associative: <span class="math inline">\((h \circ g) \circ f = h \circ (g \circ f)\)</span></li>
 </ul></li>
 </ul></li>
 <li><strong>Functor</strong>
 <ul>
-<li>A functor <embed src="https://latex.codecogs.com/png.latex?F%3A%20%5Cmathcal%7BC%7D%20%5Cto%20%5Cmathcal%7BD%7D" /> between categories <embed src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BC%7D" /> and <embed src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BD%7D" /> consists of:
+<li>A functor <span class="math inline">\(F: \mathcal{C} \to \mathcal{D}\)</span> between categories <span class="math inline">\(\mathcal{C}\)</span> and <span class="math inline">\(\mathcal{D}\)</span> consists of:
 <ul>
-<li>A mapping of objects: For each object <embed src="https://latex.codecogs.com/png.latex?A%20%5Cin%20%5Cmathcal%7BC%7D" />, there is an object <embed src="https://latex.codecogs.com/png.latex?F%28A%29%20%5Cin%20%5Cmathcal%7BD%7D" /></li>
-<li>A mapping of morphisms: For each morphism <embed src="https://latex.codecogs.com/png.latex?f%3A%20A%20%5Cto%20B" /> in <embed src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BC%7D" />, there is a morphism <embed src="https://latex.codecogs.com/png.latex?F%28f%29%3A%20F%28A%29%20%5Cto%20F%28B%29" /> in <embed src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BD%7D" /></li>
-<li>Preservation of composition and identity: <embed src="https://latex.codecogs.com/png.latex?F%28g%20%5Ccirc%20f%29%20%3D%20F%28g%29%20%5Ccirc%20F%28f%29" /> and <embed src="https://latex.codecogs.com/png.latex?F%28id_A%29%20%3D%20id_%7BF%28A%29%7D" /></li>
+<li>A mapping of objects: For each object <span class="math inline">\(A \in \mathcal{C}\)</span>, there is an object <span class="math inline">\(F(A) \in \mathcal{D}\)</span></li>
+<li>A mapping of morphisms: For each morphism <span class="math inline">\(f: A \to B\)</span> in <span class="math inline">\(\mathcal{C}\)</span>, there is a morphism <span class="math inline">\(F(f): F(A) \to F(B)\)</span> in <span class="math inline">\(\mathcal{D}\)</span></li>
+<li>Preservation of composition and identity: <span class="math inline">\(F(g \circ f) = F(g) \circ F(f)\)</span> and <span class="math inline">\(F(id_A) = id_{F(A)}\)</span></li>
 </ul></li>
 </ul></li>
 <li><strong>Natural Transformation</strong>
 <ul>
-<li>A natural transformation <embed src="https://latex.codecogs.com/png.latex?%5Ceta" /> between functors <embed src="https://latex.codecogs.com/png.latex?F" />, <embed src="https://latex.codecogs.com/png.latex?G%3A%20%5Cmathcal%7BC%7D%20%5Cto%20%5Cmathcal%7BD%7D" /> consists of:
+<li>A natural transformation <span class="math inline">\(\eta\)</span> between functors <span class="math inline">\(F, G: \mathcal{C} \to \mathcal{D}\)</span> consists of:
 <ul>
-<li>A collection of morphisms <embed src="https://latex.codecogs.com/png.latex?%5Ceta_A%3A%20F%28A%29%20%5Cto%20G%28A%29" /> for each object <embed src="https://latex.codecogs.com/png.latex?A%20%5Cin%20%5Cmathcal%7BC%7D" /></li>
-<li>Such that for any morphism <embed src="https://latex.codecogs.com/png.latex?f%3A%20A%20%5Cto%20B" /> in <embed src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BC%7D" />, the following diagram commutes: <embed src="https://latex.codecogs.com/png.latex?%5Cbegin%7Barray%7D%7Bccc%7D%0AF%28A%29%20%26%20%5Cxrightarrow%7B%5Ceta_A%7D%20%26%20G%28A%29%20%5C%5C%0A%5Cdownarrow%7BF%28f%29%7D%20%26%20%26%20%5Cdownarrow%7BG%28f%29%7D%20%5C%5C%0AF%28B%29%20%26%20%5Cxrightarrow%7B%5Ceta_B%7D%20%26%20G%28B%29%0A%5Cend%7Barray%7D" /></li>
+<li>A collection of morphisms <span class="math inline">\(\eta_A: F(A) \to G(A)\)</span> for each object <span class="math inline">\(A \in \mathcal{C}\)</span></li>
+<li>Such that for any morphism <span class="math inline">\(f: A \to B\)</span> in <span class="math inline">\(\mathcal{C}\)</span>, the diagram <embed src="https://latex.codecogs.com/png.latex?%5Cbegin%7Barray%7D%7Bccc%7D%0AF%28A%29%20%26%20%5Cxrightarrow%7B%5Ceta_A%7D%20%26%20G%28A%29%20%5C%5C%0A%5Cdownarrow%7BF%28f%29%7D%20%26%20%26%20%5Cdownarrow%7BG%28f%29%7D%20%5C%5C%0AF%28B%29%20%26%20%5Cxrightarrow%7B%5Ceta_B%7D%20%26%20G%28B%29%0A%5Cend%7Barray%7D" /> commutes</li>
 </ul></li>
 </ul></li>
 <li><strong>Monoid</strong>
 <ul>
-<li>A monoid <embed src="https://latex.codecogs.com/png.latex?%28M%2C%20%5Ccdot%2C%20e%29" /> is a set <embed src="https://latex.codecogs.com/png.latex?M" /> equipped with a binary operation <embed src="https://latex.codecogs.com/png.latex?%5Ccdot%3A%20M%20%5Ctimes%20M%20%5Cto%20M" /> and an identity element <embed src="https://latex.codecogs.com/png.latex?e%20%5Cin%20M" /> such that:
+<li>A monoid <span class="math inline">\((M, \cdot, e)\)</span> is a set <span class="math inline">\(M\)</span> equipped with a binary operation <span class="math inline">\(\cdot: M \times M \to M\)</span> and an identity element <span class="math inline">\(e \in M\)</span> such that:
 <ul>
-<li><strong>Associativity</strong>: <embed src="https://latex.codecogs.com/png.latex?%28a%20%5Ccdot%20b%29%20%5Ccdot%20c%20%3D%20a%20%5Ccdot%20%28b%20%5Ccdot%20c%29" /> for all <embed src="https://latex.codecogs.com/png.latex?a%2C%20b%2C%20c%20%5Cin%20M" /></li>
-<li><strong>Identity</strong>: <embed src="https://latex.codecogs.com/png.latex?a%20%5Ccdot%20e%20%3D%20e%20%5Ccdot%20a%20%3D%20a" /> for all <embed src="https://latex.codecogs.com/png.latex?a%20%5Cin%20M" /></li>
+<li><strong>Associativity</strong>: <span class="math inline">\((a \cdot b) \cdot c = a \cdot (b \cdot c)\)</span> for all <span class="math inline">\(a, b, c \in M\)</span></li>
+<li><strong>Identity</strong>: <span class="math inline">\(a \cdot e = a\)</span> and <span class="math inline">\(e \cdot a = a\)</span> for all <span class="math inline">\(a \in M\)</span></li>
 </ul></li>
 </ul></li>
 <li><strong>Product and Sum Types</strong>
 <ul>
-<li><strong>Product Types</strong>: Denoted by <embed src="https://latex.codecogs.com/png.latex?A%20%5Ctimes%20B" />, represent pairs of elements from sets <embed src="https://latex.codecogs.com/png.latex?A" /> and <embed src="https://latex.codecogs.com/png.latex?B" />.</li>
-<li><strong>Sum Types</strong>: Denoted by <embed src="https://latex.codecogs.com/png.latex?A%20%2B%20B" />, represent elements that belong to either set <embed src="https://latex.codecogs.com/png.latex?A" /> or set <embed src="https://latex.codecogs.com/png.latex?B" />.</li>
+<li><strong>Product Types</strong>: Denoted by <span class="math inline">\(A \times B\)</span>, represent pairs of elements from sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>.</li>
+<li><strong>Sum Types</strong>: Denoted by <span class="math inline">\(A + B\)</span>, represent elements that belong to either set <span class="math inline">\(A\)</span> or set <span class="math inline">\(B\)</span>.</li>
 </ul></li>
 <li><strong>Limits and Colimits</strong>
 <ul>
-<li><strong>Limit</strong>: The limit of a diagram (a functor from an index category to <embed src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BC%7D" />) is an object that captures the idea of the “best approximation” to the diagram.</li>
+<li><strong>Limit</strong>: The limit of a diagram (a functor from an index category to <span class="math inline">\(\mathcal{C}\)</span>) is an object that captures the idea of the “best approximation” to the diagram.</li>
 <li><strong>Colimit</strong>: Dual to limits, capturing the “coarsest” structure that can be mapped to from the diagram.</li>
 </ul></li>
 <li><strong>Functor Categories</strong>
 <ul>
-<li>The category <strong>Fun</strong> <embed src="https://latex.codecogs.com/png.latex?%5CFun%28%5Cmathcal%7BC%7D%2C%20%5Cmathcal%7BD%7D%29" /> consists of all functors from <embed src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BC%7D" /> to <embed src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BD%7D" /> and natural transformations between them.</li>
+<li>The category <strong>Fun</strong><span class="math inline">\((\mathcal{C}, \mathcal{D})\)</span> consists of all functors from <span class="math inline">\(\mathcal{C}\)</span> to <span class="math inline">\(\mathcal{D}\)</span> and natural transformations between them.</li>
 </ul></li>
 <li><strong>Adjunctions</strong>
 <ul>
-<li>An adjunction between categories <embed src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BC%7D" /> and <embed src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BD%7D" /> consists of a pair of functors <embed src="https://latex.codecogs.com/png.latex?F%3A%20%5Cmathcal%7BC%7D%20%5Cto%20%5Cmathcal%7BD%7D" /> and <embed src="https://latex.codecogs.com/png.latex?G%3A%20%5Cmathcal%7BD%7D%20%5Cto%20%5Cmathcal%7BC%7D" /> such that:
+<li>An adjunction between categories <span class="math inline">\(\mathcal{C}\)</span> and <span class="math inline">\(\mathcal{D}\)</span> consists of a pair of functors <span class="math inline">\(F: \mathcal{C} \to \mathcal{D}\)</span> and <span class="math inline">\(G: \mathcal{D} \to \mathcal{C}\)</span> such that:
 <ul>
-<li>For each pair of objects <embed src="https://latex.codecogs.com/png.latex?A%20%5Cin%20%5Cmathcal%7BC%7D" /> and <embed src="https://latex.codecogs.com/png.latex?B%20%5Cin%20%5Cmathcal%7BD%7D" />, there is a natural isomorphism between <embed src="https://latex.codecogs.com/png.latex?%5Ctext%7BHom%7D_%7B%5Cmathcal%7BD%7D%7D%28F%28A%29%2C%20B%29" /> and <embed src="https://latex.codecogs.com/png.latex?%5Ctext%7BHom%7D_%7B%5Cmathcal%7BC%7D%7D%28A%2C%20G%28B%29%29" />.</li>
+<li>For each pair of objects <span class="math inline">\(A \in \mathcal{C}\)</span> and <span class="math inline">\(B \in \mathcal{D}\)</span>, there is a natural isomorphism between <span class="math inline">\(\text{Hom}_{\mathcal{D}}(F(A), B)\)</span> and <span class="math inline">\(\text{Hom}_{\mathcal{C}}(A, G(B))\)</span>.</li>
 </ul></li>
 </ul></li>
 <li><strong>Monads</strong>
 <ul>
-<li>A monad on a category <embed src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BC%7D" /> consists of:
+<li>A monad on a category <span class="math inline">\(\mathcal{C}\)</span> consists of:
 <ul>
-<li>A functor <embed src="https://latex.codecogs.com/png.latex?T%3A%20%5Cmathcal%7BC%7D%20%5Cto%20%5Cmathcal%7BC%7D" /></li>
-<li>Two natural transformations: <embed src="https://latex.codecogs.com/png.latex?%5Ceta%3A%201_%7B%5Cmathcal%7BC%7D%7D%20%5Cto%20T" /> (unit) and <embed src="https://latex.codecogs.com/png.latex?%5Cmu%3A%20T%5E2%20%5Cto%20T" /> (multiplication) satisfying certain coherence conditions.</li>
+<li>A functor <span class="math inline">\(T: \mathcal{C} \to \mathcal{C}\)</span></li>
+<li>Two natural transformations: <span class="math inline">\(\eta: 1_{\mathcal{C}} \to T\)</span> (unit) and <span class="math inline">\(\mu: T^2 \to T\)</span> (multiplication) satisfying certain coherence conditions.</li>
 </ul></li>
 </ul></li>
 <li><strong>Initial and Terminal Objects</strong>
 <ul>
-<li><strong>Initial Object</strong>: An object <embed src="https://latex.codecogs.com/png.latex?I" /> in a category <embed src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BC%7D" /> such that for every object <embed src="https://latex.codecogs.com/png.latex?A%20%5Cin%20%5Cmathcal%7BC%7D" />, there exists a unique morphism from <embed src="https://latex.codecogs.com/png.latex?I" /> to <embed src="https://latex.codecogs.com/png.latex?A" />.</li>
-<li><strong>Terminal Object</strong>: An object <embed src="https://latex.codecogs.com/png.latex?T" /> in a category <embed src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BC%7D" /> such that for every object <embed src="https://latex.codecogs.com/png.latex?A%20%5Cin%20%5Cmathcal%7BC%7D" />, there exists a unique morphism from <embed src="https://latex.codecogs.com/png.latex?A" /> to <embed src="https://latex.codecogs.com/png.latex?T" />.</li>
+<li><strong>Initial Object</strong>: An object <span class="math inline">\(I\)</span> in a category <span class="math inline">\(\mathcal{C}\)</span> such that for every object <span class="math inline">\(A \in \mathcal{C}\)</span>, there exists a unique morphism from <span class="math inline">\(I\)</span> to <span class="math inline">\(A\)</span>.</li>
+<li><strong>Terminal Object</strong>: An object <span class="math inline">\(T\)</span> in a category <span class="math inline">\(\mathcal{C}\)</span> such that for every object <span class="math inline">\(A \in \mathcal{C}\)</span>, there exists a unique morphism from <span class="math inline">\(A\)</span> to <span class="math inline">\(T\)</span>.</li>
 </ul></li>
 <li><strong>Equivalence of Categories</strong>
 <ul>
-<li>Two categories <embed src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BC%7D" /> and <embed src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BD%7D" /> are said to be <strong>equivalent</strong> if there exist functors <embed src="https://latex.codecogs.com/png.latex?F%3A%20%5Cmathcal%7BC%7D%20%5Cto%20%5Cmathcal%7BD%7D" /> and <embed src="https://latex.codecogs.com/png.latex?G%3A%20%5Cmathcal%7BD%7D%20%5Cto%20%5Cmathcal%7BC%7D" /> such that <embed src="https://latex.codecogs.com/png.latex?G%20%5Ccirc%20F" /> is naturally isomorphic to the identity functor on <embed src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BC%7D" />, and <embed src="https://latex.codecogs.com/png.latex?F%20%5Ccirc%20G" /> is naturally isomorphic to the identity functor on <embed src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BD%7D" />.</li>
+<li>Two categories <span class="math inline">\(\mathcal{C}\)</span> and <span class="math inline">\(\mathcal{D}\)</span> are said to be <strong>equivalent</strong> if there exist functors <span class="math inline">\(F: \mathcal{C} \to \mathcal{D}\)</span> and <span class="math inline">\(G: \mathcal{D} \to \mathcal{C}\)</span> such that <span class="math inline">\(G \circ F\)</span> is naturally isomorphic to the identity functor on <span class="math inline">\(\mathcal{C}\)</span>, and <span class="math inline">\(F \circ G\)</span> is naturally isomorphic to the identity functor on <span class="math inline">\(\mathcal{D}\)</span>.</li>
 </ul></li>
 <li><strong>Yoneda Lemma</strong>
 <ul>
-<li>The Yoneda Lemma states that for any category <embed src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BC%7D" />, object <embed src="https://latex.codecogs.com/png.latex?A%20%5Cin%20%5Cmathcal%7BC%7D" />, and functor <embed src="https://latex.codecogs.com/png.latex?F%3A%20%5Cmathcal%7BC%7D%20%5Cto%20%5Ctextbf%7BSet%7D" />, there is a natural isomorphism: <embed src="https://latex.codecogs.com/png.latex?%5Ctext%7BNat%7D%28%5Ctext%7BHom%7D_%7B%5Cmathcal%7BC%7D%7D%28-%2C%20A%29%2C%20F%29%20%5Ccong%20F%28A%29" /> where:
+<li>The Yoneda Lemma states that for any category <span class="math inline">\(\mathcal{C}\)</span>, object <span class="math inline">\(A \in \mathcal{C}\)</span>, and functor <span class="math inline">\(F: \mathcal{C} \to \textbf{Set}\)</span>, there is a natural isomorphism <embed src="https://latex.codecogs.com/png.latex?%5Ctext%7BNat%7D%28%5Ctext%7BHom%7D_%7B%5Cmathcal%7BC%7D%7D%28-%2C%20A%29%2C%20F%29%20%5Ccong%20F%28A%29" /> where:
 <ul>
-<li><embed src="https://latex.codecogs.com/png.latex?%5Ctext%7BHom%7D_%7B%5Cmathcal%7BC%7D%7D%28-%2C%20A%29" /> is the functor that maps an object <embed src="https://latex.codecogs.com/png.latex?X" /> to the set of morphisms <embed src="https://latex.codecogs.com/png.latex?%5Ctext%7BHom%7D_%7B%5Cmathcal%7BC%7D%7D%28X%2C%20A%29" />.</li>
-<li><embed src="https://latex.codecogs.com/png.latex?%5Ctext%7BNat%7D%28%5Ctext%7BHom%7D_%7B%5Cmathcal%7BC%7D%7D%28-%2C%20A%29%2C%20F%29" /> denotes the set of natural transformations from <embed src="https://latex.codecogs.com/png.latex?%5Ctext%7BHom%7D_%7B%5Cmathcal%7BC%7D%7D%28-%2C%20A%29" /> to <embed src="https://latex.codecogs.com/png.latex?F" />.</li>
+<li><span class="math inline">\(\text{Hom}_{\mathcal{C}}(-, A)\)</span> is the functor that maps an object <span class="math inline">\(X\)</span> to the set of morphisms <span class="math inline">\(\text{Hom}_{\mathcal{C}}(X, A)\)</span>.</li>
+<li><span class="math inline">\(\text{Nat}(\text{Hom}_{\mathcal{C}}(-, A), F)\)</span> denotes the set of natural transformations from <span class="math inline">\(\text{Hom}_{\mathcal{C}}(-, A)\)</span> to <span class="math inline">\(F\)</span>.</li>
 </ul></li>
 </ul></li>
 <li><strong>Representable Functors</strong>
 <ul>
-<li>A functor <embed src="https://latex.codecogs.com/png.latex?F%3A%20%5Cmathcal%7BC%7D%20%5Cto%20%5Ctextbf%7BSet%7D" /> is called <strong>representable</strong> if it is naturally isomorphic to the hom-functor <embed src="https://latex.codecogs.com/png.latex?%5Ctext%7BHom%7D_%7B%5Cmathcal%7BC%7D%7D%28C%2C%20-%29" /> for some object <embed src="https://latex.codecogs.com/png.latex?C%20%5Cin%20%5Cmathcal%7BC%7D" />.</li>
+<li>A functor <span class="math inline">\(F: \mathcal{C} \to \textbf{Set}\)</span> is called <strong>representable</strong> if it is naturally isomorphic to the hom-functor <span class="math inline">\(\text{Hom}_{\mathcal{C}}(C, -)\)</span> for some object <span class="math inline">\(C \in \mathcal{C}\)</span>.</li>
 </ul></li>
 </ol>
 <h2 id="more-on">More on</h2>
