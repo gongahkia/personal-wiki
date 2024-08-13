@@ -210,3 +210,6 @@ a block comment
 * [Benefits of learning scheme?](https://stackoverflow.com/questions/98641/benefits-of-learning-scheme)
 * [Introduction to Scheme Programming](https://youtu.be/6k78c8EctXI?si=eHNUfCLjGkpHhkZM) by BP Learning
 * [Why Learn Scheme](https://irreal.org/blog/?p=10339) by Irreal
+* [racket-lang.org](https://racket-lang.org/books.html)
+* [Racket Documentation](https://docs.racket-lang.org/)
+* [CS3540: Programming Languages and Paradigms](https://www.cs.uni.edu/~wallingf/teaching/cs3540/resources.html) by Eugene Wallingford
