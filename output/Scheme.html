@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Scheme</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="scheme"><code>Scheme</code></h1>
+<p>Baby’s first Lisp dialect.</p>
+<h2 id="comments">Comments</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode scm"><code class="sourceCode scheme"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co">; ----- COMMENT -----</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="co">; this is a single-line comment</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>#|</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>this is a </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>multi-line </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>comment a.k.a </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>a block comment</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a>|#</span></code></pre></div>
+<h2 id="printing">Printing</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode scm"><code class="sourceCode scheme"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="co">; ----- PRINT -----</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>    <span class="co">; (display) =&gt; receives a string argument which is then displayed to the stdout, this does not include a newline by default</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>    <span class="co">; (write) =&gt; receives a string argument which is then displayed to the stdout and includes the quotation marks around the string</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>    <span class="co">; (newline) =&gt; displays a newline to the stdout</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a>(<span class="kw">display</span> <span class="st">&quot;this does not have a newline and if required must have its inclusion explicitly specified like here\n&quot;</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a>(<span class="kw">write</span> <span class="st">&quot;when this is printed, it will show the two double quotation marks surrounding this string&quot;</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a>(<span class="kw">newline</span>)</span></code></pre></div>
+<h2 id="quickstart">Quickstart</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode scm"><code class="sourceCode scheme"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="co">; ----- QUICKSTART -----</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>    <span class="co">; minimalist, lexically scoped Lisp dialect with small core of powerful features</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>    <span class="co">; functional language with first-class procedures and support for recursive algorithms</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>    <span class="co">; emphasizes simple and consistent syntax with a focus on expressions rather than statements</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>    <span class="co">; commonly used for educational purposes, language research, and writing interpreters and compilers</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>    <span class="co">; define =&gt; creates variable bindings and used in function defintions</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true"></a>(<span class="ex">define</span><span class="fu"> x </span><span class="dv">10</span>) <span class="co">; creates the variable binding assigning the number value 10 to the variable x</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true"></a>(<span class="ex">define</span><span class="fu"> </span>(square x) <span class="co">; defines the named function square that receives a single number argument and multiplies it against itself</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true"></a>    (* x x))</span></code></pre></div>
+<h2 id="types">Types</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode scm"><code class="sourceCode scheme"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="co">; ----- TYPE -----</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>    <span class="co">; Number =&gt; covers the following number types</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>        <span class="co">; integer</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>        <span class="co">; rational number</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>        <span class="co">; real number (floating-point number)</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>        <span class="co">; complex number</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a>    <span class="co">; Boolean =&gt; #t, #f</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a>    <span class="co">; Character =&gt; declared with #\ to prefix the character</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a>    <span class="co">; String =&gt; declared within &quot;&quot; double quotation marks</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a>    <span class="co">; Symbol =&gt; declared with &#39; </span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true"></a>(<span class="ex">define</span><span class="fu"> int </span><span class="dv">42</span>)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true"></a>(<span class="ex">define</span><span class="fu"> rational </span><span class="dv">3</span>/<span class="dv">4</span>)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true"></a>(<span class="ex">define</span><span class="fu"> real </span><span class="fl">3.14</span>)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true"></a>(<span class="ex">define</span><span class="fu"> complex </span><span class="dv">3</span>+4i)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true"></a>(<span class="ex">define</span><span class="fu"> truthy </span><span class="dv">#t</span>)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true"></a>(<span class="ex">define</span><span class="fu"> falsey </span><span class="dv">#f</span>)</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true"></a>(<span class="ex">define</span><span class="fu"> char </span><span class="ch">#\a</span>)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true"></a>(<span class="ex">define</span><span class="fu"> newlineCharacter </span><span class="ch">#\newline</span>)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true"></a>(<span class="ex">define</span><span class="fu"> str </span><span class="st">&quot;hello, world!&quot;</span>)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true"></a>(<span class="ex">define</span><span class="fu"> sym </span>&#39;foo)</span></code></pre></div>
+<h2 id="operators">Operators</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode scm"><code class="sourceCode scheme"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="co">; ----- OPERATOR-----</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a><span class="co">; --- ARITHMETIC OPERATORS ----</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>(<span class="op">+</span>) <span class="co">; addition</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a>(<span class="op">-</span>) <span class="co">; subtraction</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a>(*) <span class="co">; multiplication</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a>(<span class="op">/</span>) <span class="co">; division</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true"></a>(<span class="kw">modulo</span>) <span class="co">; modulo operator</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true"></a><span class="co">; --- COMPARISON OPERATORS ----</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true"></a>(<span class="op">=</span>) <span class="co">; equality operator</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true"></a>(<span class="op">&gt;</span>) <span class="co">; comparison operator</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true"></a>(<span class="op">&lt;</span>) <span class="co">; comparison operator</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true"></a>(<span class="op">&gt;=</span>) <span class="co">; comparison operator</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true"></a>(<span class="op">&lt;=</span>) <span class="co">; comparison operator</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true"></a><span class="co">; --- LOGICAL OPERATORS ---</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true"></a></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true"></a>(<span class="kw">and</span>) <span class="co">; Logical AND</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true"></a>(<span class="kw">or</span>) <span class="co">; Logical OR</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true"></a>(<span class="kw">not</span>) <span class="co">; Logical NOT</span></span></code></pre></div>
+<h2 id="control-structures">Control structures</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode scm"><code class="sourceCode scheme"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="co">; ----- CONTROL STRUCTURE -----</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a><span class="co">; --- CONDITIONALS ---</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a><span class="co">; IF </span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a>    <span class="co">; the equivalent of a if else conditional constructs in other programming languages</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a>(<span class="kw">if</span> (<span class="op">&gt;</span> <span class="dv">5</span> <span class="dv">3</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true"></a>    (<span class="kw">display</span> <span class="st">&quot;True branch&quot;</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true"></a>    (<span class="kw">display</span> <span class="st">&quot;False branch&quot;</span>))</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true"></a><span class="co">; COND</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true"></a>    <span class="co">; the equivalent of if else if else conditional constructs in other programming languages</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true"></a>    <span class="co">; affords more than the two conditions allowed within the basic IF predicate construct covered above</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true"></a>    <span class="co">; else =&gt; specifies the final else case that runs if none of the other specified predicate conditions are met</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true"></a></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true"></a>(<span class="kw">cond</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true"></a>    ((<span class="op">=</span> x <span class="dv">1</span>) (<span class="kw">display</span> <span class="st">&quot;x is 1&quot;</span>))</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true"></a>    ((<span class="op">=</span> x <span class="dv">2</span>) (<span class="kw">display</span> <span class="st">&quot;x is 2&quot;</span>))</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true"></a>    (<span class="kw">else</span> (<span class="kw">display</span> <span class="st">&quot;x is something else&quot;</span>)))</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true"></a></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true"></a><span class="co">; CASE </span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true"></a>    <span class="co">; the equivalent of match case statements in most other programming languages</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true"></a>    <span class="co">; provides a degree of pattern-matching within Scheme, similar to Rust </span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true"></a>    <span class="co">; else =&gt; specifies the fall-through case that executes when all other predicate case conditions fail to be met, similar to _ in Rust and other functional languages</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true"></a></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true"></a>(<span class="kw">case</span> (<span class="op">+</span> <span class="dv">2</span> <span class="dv">2</span>)</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true"></a>    ((<span class="dv">2</span> <span class="dv">3</span>) (<span class="kw">display</span> <span class="st">&quot;2 or 3&quot;</span>))</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true"></a>    ((<span class="dv">4</span> <span class="dv">5</span> <span class="dv">6</span>) (<span class="kw">display</span> <span class="st">&quot;4, 5, or 6&quot;</span>))</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true"></a>    (<span class="kw">else</span> (<span class="kw">display</span> <span class="st">&quot;something else&quot;</span>)))</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true"></a></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true"></a><span class="co">; --- LOOPS ---</span></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true"></a>    <span class="co">; Scheme does not feature conventional for or while loop constructs as in most other programming languages</span></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true"></a>    <span class="co">; this inherits from hallmarks of the functional programming paradigm</span></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true"></a></span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true"></a><span class="co">; RECURSION</span></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true"></a>    <span class="co">; instead, recursion allows for the equivalent iteration and traversal over iterable data structures</span></span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true"></a>    <span class="co">; below is the definition of a recursive function</span></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true"></a></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true"></a>(<span class="ex">define</span><span class="fu"> </span>(factorial n) <span class="co">; recursive function definition</span></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true"></a>    (<span class="kw">if</span> (<span class="op">=</span> n <span class="dv">0</span>)</span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true"></a>        <span class="dv">1</span></span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true"></a>        (* n (factorial (<span class="op">-</span> n <span class="dv">1</span>)))))</span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true"></a></span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true"></a>(factorial <span class="dv">5</span>) <span class="co">; this returns 120</span></span></code></pre></div>
+<h2 id="data-structures">Data structures</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode scm"><code class="sourceCode scheme"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="co">; ----- DATA STRUCTURE -----</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>    <span class="co">; List =&gt; ordered collection of elements, typically of the same type, but can contain elements of different types, note that lists are linked and mutable, commonly used in functional programming</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a>    <span class="co">; Pair =&gt; fundamental building block of lists, representing a cons cell with two elements: `car` (first) and `cdr` (rest), note that pairs are mutable</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a>    <span class="co">; Vector =&gt; mutable, fixed-size indexed collection of elements, offering efficient random access, note that elements can be of different types</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a>    <span class="co">; Hashtable =&gt; collection of key-value pairs with unique keys, providing efficient lookup, insertion, and deletion operations, note that keys and values can be of any type</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a>    <span class="co">; Record =&gt; custom data structure with named fields, similar to structs in other languages, allowing the grouping of related data under a single identifier</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true"></a>(<span class="ex">define</span><span class="fu"> exampleList </span>&#39;(<span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span> <span class="dv">5</span>))</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true"></a>(<span class="kw">car</span> exampleList)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true"></a>(<span class="kw">cdr</span> exampleList) </span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true"></a>(<span class="kw">cons</span> <span class="dv">0</span> exampleList) </span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true"></a>(<span class="ex">define</span><span class="fu"> examplePair </span>(<span class="kw">cons</span> <span class="dv">1</span> <span class="dv">2</span>))</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true"></a>(<span class="kw">car</span> examplePair) </span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true"></a>(<span class="kw">cdr</span> examplePair) </span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true"></a></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true"></a>(<span class="ex">define</span><span class="fu"> exampleVec </span>(<span class="kw">vector</span> <span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span>))</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true"></a>(<span class="kw">vector-ref</span> exampleVec <span class="dv">2</span>)</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true"></a></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true"></a>(<span class="ex">define</span><span class="fu"> exampleHashtable </span>(make-hashtable))</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true"></a></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true"></a>(define-record-type point</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true"></a>    (make-point x y)</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true"></a>    point?</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true"></a>    (x point-x)</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true"></a>    (y point-y))</span></code></pre></div>
+<h2 id="functions">Functions</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode scm"><code class="sourceCode scheme"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="co">; ----- FUNCTION -----</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a>    <span class="co">; (define (&lt;function_name&gt; &lt;function_parameter(s)&gt;) &lt;function_body&gt;) =&gt; defines a named function</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a>    <span class="co">; (lambda (&lt;function_parameter(s)&gt;) &lt;function_body&gt;) =&gt; defines an anonymous function, which can be passed around or assigned to a variable</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true"></a>(<span class="ex">define</span><span class="fu"> </span>(square x) <span class="co">; named function definition</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true"></a>  (* x x))</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true"></a>(<span class="ex">define</span><span class="fu"> </span>(map f lst) <span class="co">; we can also define higher-order functions common in other functional languages</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true"></a>  (<span class="kw">if</span> (<span class="kw">null?</span> lst)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true"></a>      &#39;()</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true"></a>      (<span class="kw">cons</span> (f (<span class="kw">car</span> lst)) (map f (<span class="kw">cdr</span> lst)))))</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true"></a>(<span class="kw">lambda</span> (x) (* x x)) <span class="co">; anonymous function definition</span></span></code></pre></div>
+<h2 id="more-on">More on</h2>
+<ul>
+<li><a href="https://www.scheme.org/">scheme.org</a></li>
+<li><a href="https://docs.scheme.org/">Scheme Documentation</a></li>
+<li><a href="https://jaredkrinke.github.io/learn-scheme/">A Complete Environment for Learning Scheme</a></li>
+<li><a href="https://docs.scheme.org/guide/common-lisp/">Comparison of Scheme and Common Lisp</a></li>
+<li><a href="https://softwareengineering.stackexchange.com/questions/115252/why-is-scheme-my-first-language-in-university">Why is Scheme my first language in university?</a></li>
+<li><a href="https://stackoverflow.com/questions/5368090/what-are-the-actual-differences-between-scheme-and-common-lisp-or-any-other-tw">What are the actual differences between Scheme and Common Lisp?</a></li>
+<li><a href="https://stackoverflow.com/questions/98641/benefits-of-learning-scheme">Benefits of learning scheme?</a></li>
+<li><a href="https://youtu.be/6k78c8EctXI?si=eHNUfCLjGkpHhkZM">Introduction to Scheme Programming</a> by BP Learning</li>
+<li><a href="https://irreal.org/blog/?p=10339">Why Learn Scheme</a> by Irreal</li>
+<li><a href="https://racket-lang.org/books.html">racket-lang.org</a></li>
+<li><a href="https://docs.racket-lang.org/">Racket Documentation</a></li>
+<li><a href="https://www.cs.uni.edu/~wallingf/teaching/cs3540/resources.html">CS3540: Programming Languages and Paradigms</a> by Eugene Wallingford</li>
+</ul>
+</body>
+</html>
