@@ -38,6 +38,7 @@ print(f"here, the name {a_name} is interpolated in the string")
     # Python scripts end in the .py file extension
     # loosely, dynamically-typed language
     # simple syntax that's easy to pick up and start writing code in 
+    # Python generally adheres to the snake_case naming scheme 
     # mature community with extensive machine-learning packages allows Python to excel at data science tasks
 ```
 
