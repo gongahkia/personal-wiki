@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Python</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="python"><code>Python</code></h1>
+<p>If coding were natural.</p>
+<h2 id="comments">Comments</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co"># ---------- COMMENT ----------</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="co"># this is a single-line comment</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="co">this is a </span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="co">multi-line</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a><span class="co">comment</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a><span class="co">&quot;&quot;&quot;</span></span></code></pre></div>
+<h2 id="printing">Printing</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="co"># ---------- PRINT ----------</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>    <span class="co"># print() =&gt; receives a string argument which is then displayed to the stdout and includes a newline by default  </span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>        <span class="co"># end=&#39;&#39; =&gt; second optional argument which specifies for a string to be printed without a newline</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>        <span class="co"># f&quot;&#39; =&gt; specifies a formatted string which affords interpolation of variables and values specified within {} curly braces in a string</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a><span class="bu">print</span>(<span class="st">&quot;this includes a newline by default and its inclusion must be specified as here</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a><span class="bu">print</span>(<span class="st">&quot;this does not include a newline automatically&quot;</span>, end<span class="op">=</span><span class="st">&#39;&#39;</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true"></a>a_name <span class="op">=</span> <span class="st">&quot;keshi&quot;</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true"></a><span class="bu">print</span>(<span class="ss">f&quot;here, the name </span><span class="sc">{</span>a_name<span class="sc">}</span><span class="ss"> is interpolated in the string&quot;</span>)</span></code></pre></div>
+<h2 id="quickstart">Quickstart</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="co"># ---------- QUICKSTART ----------</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>    <span class="co"># Python scripts end in the .py file extension</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>    <span class="co"># loosely, dynamically-typed language</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>    <span class="co"># simple syntax that&#39;s easy to pick up and start writing code in </span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>    <span class="co"># Python generally adheres to the snake_case naming scheme </span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a>    <span class="co"># mature community with extensive machine-learning packages allows Python to excel at data science tasks</span></span></code></pre></div>
+<h2 id="types">Types</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="co"># ---------- TYPE ----------</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a>    <span class="co"># bool =&gt; True, False</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a>    <span class="co"># int =&gt; stores an integer number value (eg. 1, 100, -100)</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>    <span class="co"># float =&gt; stores a floating-point number value (eg. 1.0, 100.5)</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>    <span class="co"># str =&gt; string value declared within &quot;&quot; double quotation marks</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>        <span class="co"># note that characters are handled as strings in Python</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a>        <span class="co"># also note that strings are treated as character lists, so they can be iterated over with for loops and higher-order functions</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a>    <span class="co"># list =&gt; an ordered mutable sequence of elements of the same datatype</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a>    <span class="co"># tuple =&gt; an ordered immutable sequence of elements of multiple datatypes</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a>    <span class="co"># dict =&gt; an unordered collection of key-value pairs of datatypes that follow the established type signature</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true"></a>    <span class="co"># set =&gt; an unordered collection of unique elements of the same datatype</span></span></code></pre></div>
+<h2 id="operators">Operators</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="co"># ---------- OPERATOR ----------</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a><span class="co"># ARITHMETIC OPERATORS</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>    <span class="co"># + =&gt; addition</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>    <span class="co"># - =&gt; subtraction</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a>    <span class="co"># * =&gt; multiplication</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a>    <span class="co"># / =&gt; division</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a>    <span class="co"># // =&gt; integer division</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true"></a>    <span class="co"># % =&gt; modulo operator</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true"></a>    <span class="co"># ** =&gt; exponentiation operator</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true"></a>    <span class="co"># += =&gt; addition and reassignment operator</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true"></a>    <span class="co"># -= =&gt; subtraction and reassignment operator</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true"></a>    <span class="co"># *= =&gt; multiplication and reassignment operator</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true"></a>    <span class="co"># /= =&gt; division and reassignment operator</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true"></a>    <span class="co"># %= =&gt; modulo and reassignment operator</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true"></a>    <span class="co"># **= =&gt; exponentiation and reassignment operator</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true"></a></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true"></a><span class="co"># LOGICAL OPERATORS</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true"></a>    <span class="co"># and =&gt; logical AND</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true"></a>    <span class="co"># or =&gt; logical OR</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true"></a>    <span class="co"># not =&gt; logical NOT</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true"></a></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true"></a><span class="co"># COMPARISON OPERATORS</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true"></a>    <span class="co"># == =&gt; complete strict equality check for both value and type</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true"></a>    <span class="co"># != =&gt; complete strict inequality check for both value and type</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true"></a>    <span class="co"># is =&gt; exact identity check for whether two variables point to the same object in memory </span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true"></a>    <span class="co"># in =&gt; membership check for whether a specified element exists within a sequential data structure </span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true"></a>    <span class="co"># &gt; =&gt; comparison operator </span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true"></a>    <span class="co"># &lt; =&gt; comparison operator </span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true"></a>    <span class="co"># &gt;= =&gt; comparison operator </span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true"></a>    <span class="co"># &lt;= =&gt; comparison operator</span></span></code></pre></div>
+<h2 id="control-structures">Control structures</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="co"># ---------- CONTROL STRUCTURE ----------</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a><span class="co"># ----- CONDITIONALS -----</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a><span class="co"># IF ELIF ELSE</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a>age <span class="op">=</span> <span class="dv">75</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a><span class="cf">if</span> age <span class="op">&gt;=</span> <span class="dv">75</span>:</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="st">&quot;you&#39;re a senior citizen&quot;</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true"></a><span class="cf">elif</span> age <span class="op">==</span> <span class="dv">18</span>:</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="st">&quot;you&#39;re just an adult&quot;</span>)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true"></a><span class="cf">else</span>:</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="st">&quot;you&#39;re not even a senior&quot;</span>)</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true"></a></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true"></a><span class="co"># ----- LOOPS -----</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true"></a></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true"></a><span class="co"># WHILE LOOPS</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true"></a></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true"></a>count <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true"></a><span class="cf">while</span> count <span class="op">&lt;</span> <span class="dv">5</span>:</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true"></a>    <span class="bu">print</span>(count)</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true"></a>    count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true"></a></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true"></a><span class="co"># FOR IN LOOPS</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true"></a>    <span class="co"># allows for iteration over iterable data structures like lists, tuples, or strings</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true"></a></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true"></a>    <span class="bu">print</span>(i)</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true"></a></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true"></a>animals <span class="op">=</span> [<span class="st">&quot;cat&quot;</span>, <span class="st">&quot;dog&quot;</span>, <span class="st">&quot;bird&quot;</span>, <span class="st">&quot;elephant&quot;</span>]</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true"></a><span class="cf">for</span> animal <span class="kw">in</span> animals:</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true"></a>    <span class="bu">print</span>(animal)</span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true"></a></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true"></a><span class="co"># TRY EXCEPT FINALLY</span></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true"></a>    <span class="co"># try =&gt; wraps code that might raise exceptions</span></span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true"></a>    <span class="co"># except =&gt; handles exceptions if they occur</span></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true"></a>    <span class="co"># finally =&gt; always executes at the end of a try except finally construct regardless of whether any exceptions occur</span></span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true"></a></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true"></a><span class="cf">try</span>:</span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true"></a>    x <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;enter a number: &quot;</span>))</span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true"></a>    y <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;enter another number: &quot;</span>))</span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true"></a>    z <span class="op">=</span> x <span class="op">/</span> y</span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="ss">f&quot;result: </span><span class="sc">{z}</span><span class="ss">&quot;</span>)</span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true"></a><span class="cf">except</span> <span class="pp">ZeroDivisionError</span> <span class="im">as</span> e:</span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="st">&quot;cannot divide by zero!&quot;</span>)</span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true"></a><span class="cf">except</span> <span class="pp">ValueError</span> <span class="im">as</span> e:</span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="st">&quot;please enter a valid number!&quot;</span>)</span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true"></a><span class="cf">finally</span>:</span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="st">&quot;this will always print!&quot;</span>)</span></code></pre></div>
+<h2 id="data-structures">Data structures</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="co"># ---------- DATA STRUCTURE ----------</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a><span class="co"># LIST</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a>    <span class="co"># [] =&gt; declares and creates a mutable ordered sequence of elements of the same datatype</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a>    <span class="co"># .append() =&gt; appends an element to the list</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a>    <span class="co"># .remove() =&gt; removes the first matching element from the list</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true"></a>    <span class="co"># .pop() =&gt; removes an element at a specific index</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true"></a>    <span class="co"># .extend() =&gt; extends the list by appending elements from another list</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true"></a>    <span class="co"># .insert() =&gt; inserts an element at a specific index</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true"></a>    <span class="co"># .clear() =&gt; removes all elements from the list</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true"></a>    <span class="co"># len() =&gt; returns the length of the list</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true"></a>fruits <span class="op">=</span> [<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>]</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true"></a>fruits.append(<span class="st">&quot;orange&quot;</span>)</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true"></a>fruits.remove(<span class="st">&quot;banana&quot;</span>)</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true"></a><span class="bu">print</span>(fruits[<span class="dv">1</span>]) <span class="co"># prints &quot;cherry&quot;</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true"></a></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true"></a><span class="co"># TUPLE</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true"></a>    <span class="co"># () =&gt; declares and creates an immutable ordered sequence of elements of multiple datatypes</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true"></a></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true"></a>coordinates <span class="op">=</span> (<span class="dv">10</span>, <span class="dv">20</span>)</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true"></a><span class="bu">print</span>(coordinates[<span class="dv">0</span>]) <span class="co"># prints 10</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true"></a></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true"></a><span class="co"># DICTIONARY</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true"></a>    <span class="co"># {} =&gt; declares and creates a collection of key-value pairs where the elements adhere to the previously established type signature</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true"></a>    <span class="co"># .get() =&gt; retrieves a value by its key</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true"></a>    <span class="co"># .keys() =&gt; returns all keys in the dictionary</span></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true"></a>    <span class="co"># .values() =&gt; returns all values in the dictionary</span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true"></a>    <span class="co"># .items() =&gt; returns all key-value pairs as tuples</span></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true"></a>    <span class="co"># .update() =&gt; updates the dictionary with elements from another dictionary or iterable of key-value pairs</span></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true"></a>    <span class="co"># .pop() =&gt; removes a key-value pair by key</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true"></a></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true"></a>person <span class="op">=</span> {<span class="st">&quot;name&quot;</span>: <span class="st">&quot;John&quot;</span>, <span class="st">&quot;age&quot;</span>: <span class="dv">30</span>}</span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true"></a><span class="bu">print</span>(person[<span class="st">&quot;name&quot;</span>]) <span class="co"># prints &quot;John&quot;</span></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true"></a><span class="bu">print</span>(person.get(<span class="st">&quot;age&quot;</span>)) <span class="co"># prints 30</span></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true"></a></span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true"></a><span class="co"># SET</span></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true"></a>    <span class="co"># {} =&gt; declares and creates an unordered collection of unique elements of the same datatype</span></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true"></a>    <span class="co"># .add() =&gt; adds an element to the set</span></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true"></a>    <span class="co"># .remove() =&gt; removes a specified element from the set</span></span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true"></a>    <span class="co"># .union() =&gt; returns the union of two sets</span></span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true"></a>    <span class="co"># .intersection() =&gt; returns the intersection of two sets</span></span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true"></a>    <span class="co"># .difference() =&gt; returns the difference between two sets</span></span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true"></a></span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true"></a>unique_numbers <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">4</span>}</span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true"></a>unique_numbers.add(<span class="dv">5</span>)</span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true"></a><span class="bu">print</span>(unique_numbers) <span class="co"># prints {1, 2, 3, 4, 5}</span></span></code></pre></div>
+<h2 id="functions">Functions</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="co"># ---------- FUNCTIONS ----------</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a>    <span class="co"># def =&gt; declares a function</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a>    <span class="co"># return =&gt; specifies the return value of the function</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true"></a><span class="kw">def</span> greet(name): <span class="co"># named function definition</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true"></a>    <span class="cf">return</span> <span class="ss">f&quot;Hello, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!&quot;</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true"></a><span class="bu">print</span>(greet(<span class="st">&quot;Alice&quot;</span>)) <span class="co"># prints &quot;Hello, Alice!&quot;</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true"></a><span class="co"># DEFAULT PARAMETERS</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true"></a>    <span class="co"># default values can be specified in function arguments the same way as any other variable with the = assignment operator</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true"></a><span class="kw">def</span> greet(name<span class="op">=</span><span class="st">&quot;Stranger&quot;</span>): <span class="co"># named function definition with default parameters</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true"></a>    <span class="cf">return</span> <span class="ss">f&quot;Hello, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!&quot;</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true"></a></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true"></a><span class="bu">print</span>(greet()) <span class="co"># prints &quot;Hello, Stranger!&quot;</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true"></a></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true"></a><span class="co"># VARIABLE LENGTH ARGUMENTS</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true"></a>    <span class="co"># *args =&gt; allows passing a variable number of positional arguments</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true"></a>    <span class="co"># **kwargs =&gt; allows passing a variable number of keyword arguments</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true"></a></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true"></a><span class="kw">def</span> print_args(<span class="op">*</span>args): <span class="co"># named function definition with variable length positional arguments</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true"></a>    <span class="cf">for</span> arg <span class="kw">in</span> args:</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true"></a>        <span class="bu">print</span>(arg)</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true"></a></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true"></a><span class="kw">def</span> print_kwargs(<span class="op">**</span>kwargs): <span class="co"># named function definition with variable length keyword arguments</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true"></a>    <span class="cf">for</span> key, value <span class="kw">in</span> kwargs.items():</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true"></a>        <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span>key<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>value<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true"></a></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true"></a>print_args(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>) <span class="co"># prints 1, 2, 3 on separate lines</span></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true"></a>print_kwargs(name<span class="op">=</span><span class="st">&quot;Alice&quot;</span>, age<span class="op">=</span><span class="dv">30</span>) <span class="co"># prints &quot;name: Alice&quot; and &quot;age: 30&quot; on separate lines</span></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true"></a></span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true"></a><span class="co"># LAMBDA FUNCTIONS</span></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true"></a>    <span class="co"># anonymous functions can also be defined with the `lambda` keyword</span></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true"></a>    <span class="co"># these are more useful for general shorthand utility throw-away functions</span></span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true"></a>    <span class="co"># however, their inclusion mean higher-order functions are also theoretically supported and fully possible in Python</span></span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true"></a></span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true"></a>add <span class="op">=</span> <span class="kw">lambda</span> x, y: x <span class="op">+</span> y</span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true"></a><span class="bu">print</span>(add(<span class="dv">2</span>, <span class="dv">3</span>)) <span class="co"># prints 5</span></span></code></pre></div>
+<h2 id="more-on">More on</h2>
+<ul>
+<li><a href="https://www.python.org/">python.org</a></li>
+<li><a href="https://docs.python.org/3/">Python 3.12.5 documentation</a></li>
+<li><a href="https://learnxinyminutes.com/docs/python/">learn Python in y minutes</a></li>
+<li><a href="https://realpython.com/python3-object-oriented-programming/">object-oriented programming in Python</a></li>
+<li><a href="https://www.w3schools.com/datascience/ds_python.asp">data science in Python</a></li>
+<li><a href="https://www.w3schools.com/python/python_ml_getting_started.asp">machine learning in Python</a></li>
+<li><a href="https://numpy.org/">NumPy</a></li>
+<li><a href="https://matplotlib.org/">matplotlib</a></li>
+<li><a href="https://pandas.pydata.org/">pandas</a></li>
+<li><a href="https://docs.python.org/3/library/index.html">Python standard library</a></li>
+<li><a href="https://pypi.org/">PyPI</a></li>
+</ul>
+</body>
+</html>
