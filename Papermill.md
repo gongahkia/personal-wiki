@@ -5,7 +5,7 @@ If Jupyter notebooks were functions.
 ## Introduction
 
 * Python library
-* CLI tool (?)
+* CLI tool
 * tool for parameterizing and executing of Jupyter Notebooks programatically
 * affords the easy replacement of inputs, which allows the reexecution of Jupyter notebooks with different parameters
 * used for batch processing, pipeline automation, and report generation
