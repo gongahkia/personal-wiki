@@ -13,8 +13,8 @@ If Jupyter notebooks were functions.
     * `.ipynb` *(Jupyter notebooks)*: native Jupyter notebook format that allows execution of cells and evaluation of results
     * `.html` *(HTML)* : web-friendly format for viewing executed notebooks in the browser
     * `.pdf` *(PDF)* : universal printable document format of the executed notebook for formal reports
-    *`.md` *(Markdown)*: markdown format for simpler text-based documentation and inclusion in Markdown-based systems
-    *`.tex` *(LaTeX)* : LaTeX format for high-quality typesetting of academic documents
+    * `.md` *(Markdown)*: markdown format for simpler text-based documentation and inclusion in Markdown-based systems
+    * `.tex` *(LaTeX)* : LaTeX format for high-quality typesetting of academic documents
 
 ## Quickstart
 
