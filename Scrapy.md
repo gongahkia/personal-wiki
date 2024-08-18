@@ -6,7 +6,7 @@ Complete webscraping toolkit.
 
 * open-source and collaborative web crawling framework specifically for Python
 * powerful tool for data mining, automation, and building custom web crawlers
-* capable of handling large-scale scraping tasks since base is built on Twisted *(asynchronous networking framework)*
+* capable of handling large-scale scraping tasks because base is built on Twisted *(asynchronous networking framework)*
 * extracts website data, processes it, then stores it to the following target outputs
     * `.json` *(JSON)*: lightweight and widely-used data interchange format ideal for web applications and APIs
     * `.csv` *(CSV)*: comma-separated values is a simple format used to store tabular data, compatible with applications like Excel, Google Sheets, and most databases
@@ -15,7 +15,7 @@ Complete webscraping toolkit.
     * `.py` *(Python)*: scraped data can be stored in Python's data structures *(lists, dictionaries, custom objects)* for custom processing 
     * ElasticSearch: a powerful search engine ideal for handling large volumes of data and complex queries
     * MongoDB: a NoSQL database well-suited for storing unstructured or semi-structured data
-    * direct API calls: scraped data can be directly piped to a REST API or other service endpoints
+    * Direct API calls: scraped data can be directly piped to a REST API or other service endpoints
 
 ## Installation
 
@@ -33,7 +33,7 @@ $ scrapy startproject myproject # creates a new Scrapy project in the current di
 
 A spider is a class that defines how to follow links through a website and extract data from its webpages. 
 
-The below sample code creates a simple spider that scrapes quotes from the website *Quotes to Scrape*.
+The below sample code creates a simple spider that scrapes quotes from the website [*Quotes to Scrape*](http://quotes.toscrape.com/).
 
 ```py
 import scrapy
