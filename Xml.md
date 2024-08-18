@@ -6,7 +6,7 @@ Extensible Markup Language.
 
 * XML files have the `.xml` file extension
 * flexible text format for representing structured data
-* allows definition of custom tags and document structures
+* allows definition of custom tags *(extremely similar to HTML)* and document structures
 * designed to be both human-readable and machine-readable
 * used for web services, configuration files, data interchange and storage
 
@@ -58,6 +58,58 @@ Here,
 * `<book>` represents an individual book entry
 * `<title>`, `<author>`, `<genre>`, `<price>`, `<pub_date>`, `<description>` are all **child elements** providing details about each book
 
+XML entries can then be called from a variety of programming languages using XML Path Language *(XPath)*.
+
+Below are some sample XPath expressions that can be used to call specific entries.
+
+1. ALL book titles
+
+```xml
+/library/book/title
+```
+
+2. Author of the first book
+
+```xml
+/library/book[1]/author
+```
+
+3. ALL books with the genre *"Fantasy"*
+
+```xml
+/library/book[genre='Fantasy']
+```
+
+4. Price of the book titled *"Maeve Ascendant"*
+
+```xml
+/library/book[title='Maeve Ascendant']/price
+```
+
+5. Publication date of the last book
+
+```xml
+/library/book[last()]/pub_date
+```
+
+6. Description of the book with the highest price
+
+```xml
+/library/book[price = max(/library/book/price)]/description
+```
+
+7. ALL book elements
+
+```xml
+/library/book
+```
+
+8. Titles and authors of ALL books
+
+```xml
+/library/book/title | /library/book/author
+```
+
 ## More on
 
 * [learn XML in y minutes](https://learnxinyminutes.com/docs/xml/)
@@ -68,3 +120,8 @@ Here,
 * [Advantages of XML](https://www.ibm.com/docs/en/i/7.3?topic=introduction-advantages-xml) by IBM
 * [What's the point of XML?](https://www.reddit.com/r/learnprogramming/comments/np92a0/whats_the_point_of_xml/) by r/learnprogramming
 * [XML, what is it good for?](https://stackoverflow.com/questions/4229113/xml-what-is-it-good-for) by Stack Overflow
+* [XPath documentation](https://developer.mozilla.org/en-US/docs/Web/XPath)
+* [XPath Syntax Tutorial](https://www.w3schools.com/xml/xpath_syntax.asp) by W3Schools
+* [What is XPath | How to create XPath | for Beginners](https://youtu.be/U-MZJ6rbqi4?si=-hj4HCgVjualhR7q) by Automation Step by Step
+* [Learn XPath in 5 minutes — A tutorial for beginners](https://medium.com/@sunwrn/learn-xpath-in-5-minutes-a-tutorial-for-beginners-3a29925c9178) by Sun Weiran
+* [A Comprehensive XPath Tutorial – XML Path Language](https://www.softwaretestinghelp.com/xml-path-language-xpath-tutorial/) by Sruthy from Software Testing Help
