@@ -62,6 +62,8 @@ XML entries can then be called from a variety of programming languages using XML
 
 Below are some sample XPath expressions that can be used to call specific entries.
 
+*(Note that XPath expressions can also be used to call HTML elements since HTML and XML share many similarities.)*
+
 1. ALL book titles
 
 ```xml
