@@ -241,6 +241,20 @@ func (s *Stack) Pop() interface{} {
 ```
 
 ```py
+# continue implementing this 
+
+class Stack:
+
+    def __init__(self, value):
+        print("a stack has been instantiated")
+        self.value = value
+        
+    def See(self):
+        print(self.value)
+
+    def Push(self, ):
+    
+    def Pop(self, )
 ```
 
 ### Queue
