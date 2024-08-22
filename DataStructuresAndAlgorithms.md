@@ -3,9 +3,6 @@
 > [!NOTE]  
 > Code snippets below are written in Go and Python.
 
-> [!WARNING]  
-> CONTINUE ADDING IMPLEMENTATION IN PYTHON FROM LINE 243
-
 ## Definitions
 
 * data structure: ordered collection of data provided by the language or defined and enforced by the programmer
@@ -209,16 +206,15 @@ def factorial(n:int) -> int:
 
 ## Data Structures
 
-### Stack
-
-* last-in first-out (LIFO) data structure
-* push(): appends an element to the TOP of the stack
-* pop(): removes an element from the TOP of the stack
-* usecases
-    * undo/redo features in text editors
-    * moving backward/forward in browser history
-    * backtracking algorithms (mazes, file directories)
-    * function call stacks
+1. Stack
+    * Last-in First-out (LIFO) data structure
+    * `push()`: appends an element to the TOP of the stack
+    * `pop()`: removes an element from the TOP of the stack
+    * Used in
+        * undo/redo features in text editors
+        * moving backward/forward in browser history
+        * backtracking algorithms (mazes, file directories)
+        * function call stacks
 
 ```go
 type Stack struct {
@@ -241,30 +237,32 @@ func (s *Stack) Pop() interface{} {
 ```
 
 ```py
-# continue implementing this 
-
 class Stack:
 
-    def __init__(self, value):
-        print("a stack has been instantiated")
-        self.value = value
-        
-    def See(self):
-        print(self.value)
+    def __init__(self):
+        self.items = []
 
-    def Push(self, ):
-    
-    def Pop(self, )
+    def push(self, item):
+        self.items.append(item)
+
+    def pop(self):
+        if not self.items: # if empty stack
+            return None
+        return self.items.pop()
 ```
 
-### Queue
+2. Queue
+    * First-in First-out (FIFO) data structure
+    * `add()`: enqueues an element to the END of the queue
+    * `remove()`: dequeues an element from the FRONT of the queue
+    * Used in
+        * keyboard buffers
+        * printer queues
+        * priority queues
+        * linked lists
+        * breadth-first search algorithm
 
 ```go
-// --- QUEUE ---
-    // first-in first-out (FIFO) data structure
-    // add() => enqueues an element to the END of the queue
-    // remove() => dequeues an element from the FRONT of the queue
-
 type Queue struct {
     items []interface{} // interface is used here to allow the slice to hold elements of any datatype
 }
@@ -281,28 +279,34 @@ func (q *Queue) Remove() interface{} {
     q.items = q.items[1:] 
     return item
 }
-
-// --- USES ---
-    // keyboard buffers
-    // printer queues
-    // priority queues
-    // linked lists
-    // breadth-first search algorithm
 ```
 
 ```py
+class Queue:
 
+    def __init__(self):
+        self.items = []
+
+    def add(self, item):
+        self.items.append(item)
+
+    def remove(self):
+        if not self.items: # if empty queue
+            return None
+        return self.items.pop(0)
 ```
 
-### Priority Queue
+3. Priority Queue
+    * First-in First-out (FIFO) data structure
+    * SORTS elements by PRIORITY, then dequeues elements of HIGHEST PRIORITY before elements of LOWER PRIORITY
+    * `add()`: enqueues an element to the END of the queue with a specified value and priority
+    * `remove()`: dequeues element of HIGHEST priority 
+    * Used in
+        * sorting algorithms *(heap sort)*
+        * graph algorithms *(dijkstra's algorithm, prim's algorithm)*
+        * system-related functions *(load balancing and interrupt handling)*
 
 ```go
-// --- PRIORITY QUEUE ---
-    // first-in first-out (FIFO) data structure
-    // SORTS elements by PRIORITY, then dequeues elements of HIGHEST PRIORITY before elements of LOWER PRIORITY
-    // add() => enqueues an element to the END of the queue with a specified value and priority
-    // remove() => dequeues element of HIGHEST priority 
-
 type Item struct { // item being EACH ELEMENT of the priority queue
     value interface{} // interface is used here to allow the value to hold elements of any datatype
     priority int
@@ -329,32 +333,54 @@ func (pq *PriorityQueue) Remove() interface{} {
     *pq = (*pq)[1:] 
     return item.value
 }
-
-// --- USES ---
-    // sorting algorithms (heap sort)
-    // graph algorithms (dijkstra's algorithm, prim's algorithm)
-    // system-related functions (load balancing and interrupt handling)
 ```
 
 ```py
+import heapq
 
+class Item:
+
+    def __init__(self, value, priority):
+        self.value = value
+        self.priority = priority
+
+    def __lt__(self, other):
+        return self.priority < other.priority
+
+class PriorityQueue:
+
+    def __init__(self):
+        self.items = []
+
+    def add(self, value, priority):
+        item = Item(value, priority)
+        heapq.heappush(self.items, item)
+
+    def remove(self):
+        if not self.items: # if empty priority queue
+            return None
+        item = heapq.heappop(self.items)
+        return item.value
 ```
 
-### Linked List
+4. Linked List
+    * Collection of nodes that are stored in non-consecutive memory locations *(each node comprising a VALUE + pointer(s) to OTHER NODE'S memory address(es))*
+    * **SINGLY LINKED LIST**
+        * nodes comprise...
+            1. VALUE
+            2. NEXT node's memory address
+    * **DOUBLY LINKED LIST**
+        * nodes comprise...
+            1. VALUE
+            2. PREVIOUS node's memory address
+            3. NEXT node's memory address
+    * Used because
+        * advantageous to arraylists
+            * faster insertion and deletion of nodes with $0(1)$ time complexity
+            * low memory waste
+        * dynamically allocates memory as required
 
 ```go
-// --- LINKED LIST --- 
-    // collection of nodes (each node comprising a VALUE + pointer(s) to OTHER NODE'S memory address(es)) stored in non-consecutive memory locations
-    // SINGLY LINKED LIST
-        // nodes comprise...
-            // 1. VALUE
-            // 2. NEXT node's memory address
-    // DOUBLY LINKED LIST
-        // nodes comprise...
-            // 1. VALUE
-            // 2. PREVIOUS node's memory address
-            // 3. NEXT node's memory address
-
 type Node struct { // type definition for an element in a singly linked list
     value interface{} // interface is used here to allow the value to hold elements of any datatype
     next *Node // pointer to the next node
@@ -449,28 +475,90 @@ func (list *LinkedList) display() { // display all linkedlist nodes
     }
     fmt.Println("nil")
 }
-
-// --- USES ---
-    // advantageous to arraylists
-        // faster insertion and deletion of nodes with 0(1) time complexity
-        // low memory waste
-    // dynamically allocates memory as required
 ```
 
 ```py
+class Node:
 
+    def __init__(self, value):
+        self.value = value  # store value of the node
+        self.next = None  # pointer to the next node
+
+class LinkedList:
+
+    def __init__(self):
+        self.head = None  # initialize the head of the list as None
+
+    def append(self, value):
+        new_node = Node(value)  # create a new node
+        if self.head is None:  # if the list is empty, set the new node as the head
+            self.head = new_node
+            return
+        last_node = self.head
+        while last_node.next:  # traverse to the last node
+            last_node = last_node.next
+        last_node.next = new_node  # set the new node as the next of the last node
+
+    def add(self, value, position):
+        if position < 0:  # negative index is invalid
+            raise ValueError("Invalid position")
+        
+        new_node = Node(value)  # create a new node
+        if position == 0:  # if inserting at the head of the list
+            new_node.next = self.head
+            self.head = new_node
+            return
+        
+        prev_node = self.head
+        for _ in range(position - 1):
+            if prev_node is None:
+                raise ValueError("Position out of range")  # index is outside the length of the list
+            prev_node = prev_node.next
+        
+        if prev_node is None:
+            raise ValueError("Position out of range")
+        
+        new_node.next = prev_node.next  # link the new node to the node after the previous node
+        prev_node.next = new_node  # link the previous node to the new node
+
+    def remove(self, value):
+        if self.head is None:  # if the list is empty
+            raise ValueError("Empty list")
+        
+        if self.head.value == value:  # if the head is the node to remove
+            self.head = self.head.next
+            return
+        
+        prev_node = self.head
+        while prev_node.next and prev_node.next.value != value:  # traverse to the node before the one to remove
+            prev_node = prev_node.next
+        
+        if prev_node.next is None:  # node to remove was not found
+            raise ValueError("Element not found")
+        
+        prev_node.next = prev_node.next.next  # remove the node by bypassing it
+
+    def display(self):
+        current = self.head  # start from the head node
+        while current:  # traverse through the entire linked list
+            print(f"{current.value} -> ", end="")
+            current = current.next
+        print("None")  # end the display with 'None'
 ```
 
-### Hash Table
+5. Hash Table
+    * Collection of unique entries that enables fast insertion, lookup and deletion of entries by leveraging on hashing and buckets
+    * Entry: a key-value pair
+    * Hashing: computing an integer based on a key *(formulas vary depending on the key's datatype)* to determine an entry's index
+    * Collision: when hashing a key returns the SAME index for more than one key
+    * Bucket: indexed storage location for one or more entries that functions like a LINKED LIST, allowing multiple entries to be stored in cases of collision
+    * Used because
+        * best case **CONSTANT time complexity** of $O(1)$
+        * worst case **LINEAR time complexity** of $O(n)$
+            * less efficient for smaller datasets
+            * extremely efficient for larger datasets
 
 ```go
-// --- HASH TABLE ---
-    // collection of unique entries that enables fast insertion, lookup and deletion of entries by leveraging on hashing and buckets
-    // entry: a key-value pair
-    // hashing: computing an integer based on a key (formulas vary depending on the key's datatype) to determine an entry's index
-    // collision: when hashing a key returns the SAME index for more than one key
-    // bucket: indexed storage location for one or more entries that functions like a LINKED LIST, allowing multiple entries to be stored in cases of collision
-
 type Node struct { // type definition for a node in a hashtable
     key   string
     value string
@@ -546,52 +634,106 @@ func (ht *HashTable) Delete(key string) { // delete a key-value pair from the ha
         current = current.next
     }
 }
-
-// --- USES ---
-    // best case CONSTANT time complexity of O(1)
-    // worst case LINEAR time complexity of O(n)
-        // less efficient for smaller datasets
-        // extremely efficient for larger datasets
 ```
 
 ```py
+class Node:
 
+    def __init__(self, key, value):
+        self.key = key
+        self.value = value
+        self.next = None
+
+class HashTable:
+
+    def __init__(self, size):
+        self.size = size
+        self.table = [None] * size
+
+    def hash(self, key):
+        # Simple hash function: sum the ASCII values of all characters in the key and modulo by size
+        return sum(ord(char) for char in key) % self.size
+
+    def insert(self, key, value):
+        index = self.hash(key)
+        new_node = Node(key, value)
+        if self.table[index] is None:
+            # No collision, insert directly
+            self.table[index] = new_node
+        else:
+            # Collision handling: chain nodes in a linked list
+            current = self.table[index]
+            while current.next is not None:
+                current = current.next
+            current.next = new_node
+
+    def get(self, key):
+        index = self.hash(key)
+        current = self.table[index]
+        while current is not None:
+            if current.key == key:
+                return current.value, True
+            current = current.next
+        return "", False
+
+    def delete(self, key):
+        index = self.hash(key)
+        current = self.table[index]
+        if current is None:
+            return
+        if current.key == key:
+            # The node to delete is the first node in the chain
+            self.table[index] = current.next
+            return
+        prev = current
+        current = current.next
+        while current is not None:
+            if current.key == key:
+                # Unlink the node from the chain
+                prev.next = current.next
+                return
+            prev = current
+            current = current.next
+
+    def display(self):
+        for i in range(self.size):
+            print(f"Index {i}:", end="")
+            current = self.table[i]
+            while current:
+                print(f" -> ({current.key}: {current.value})", end="")
+                current = current.next
+            print()
 ```
 
-### Graph
+6. Graph
+    * Non-linear aggregation of nodes and edges
+        * node: vertex that stores data
+        * edge: connection between two nodes
+        * adjacency: relationship between two nodes when they are connected by an edge
+    * **UNDIRECTED GRAPH**
+        * graph with bi-directional adjacency by default
+        * eg. graph of a social network
+    * **DIRECTED GRAPH**
+        * graph with uni-directional adjacency by default *(arrowheads specify direction adjacency flows in)*, and bi-directional adjacency has to be specified with two seperate arrows
+        * eg. graph of a street map *(some roads only allow one-way traffic)*
+    * graphs can be represented by ADJACENCY MATRIXes or ADJACENCY LISTs as covered below
+    * Used in 
+        * representing social networks
+        * visualising network routing
+        * recommendation engines
+        * GPS mapping applications
+        * knowledge graphs
+
+7. Adjacency Matrix 
+    * 2d nested array of 0s and 1s which acts as a conceptual representation of adjacency between any two nodes in the graph
+    * Used because
+        * **CONSTANT time complexity** of $O(1)$
+            * relatively quicker compared to an ADJACENCY LIST for any given dataset
+        * **QUADRATIC space complexity** of $O(n^2)$
+            * less efficient for smaller graph datasets
+            * extremely efficient for larger graph datasets
 
 ```go
-// --- GRAPH ---
-    // non-linear aggregation of nodes and edges
-        // node: vertex that stores data
-        // edge: connection between two nodes
-        // adjacency: relationship between two nodes when they are connected by an edge
-    // UNDIRECTED GRAPH
-        // graph with bi-directional adjacency by default
-        // eg. graph of a social network
-    // DIRECTED GRAPH  
-        // graph with uni-directional adjacency by default (arrowheads specify direction adjacency flows in), and bi-directional adjacency has to be specified with two seperate arrows
-        // eg. graph of a street map (some roads only allow one-way traffic)
-    // graphs can be represented by ADJACENCY MATRIXes or ADJACENCY LISTs as covered below
-
-// --- USES ---
-    // representing social networks
-    // visualising network routing
-    // recommendation engines
-    // gps mapping applications
-    // knowledge graphs
-```
-
-```py
-
-```
-
-### Adjacency Matrix 
-
-```go
-// --- ADJACENCY MATRIX ---
-    // 2d nested array of 0s and 1s which acts as a conceptual representation of adjacency between any two nodes in the graph
-
 type Graph struct { // type definition for an undirected graph represented by an adjacency matrix
     vertices int
     matrix   [][]bool
@@ -620,25 +762,33 @@ func (g *Graph) PrintMatrix() { // displays adjacency matrix
         fmt.Println(row)
     }
 }
-
-// --- USES ---
-    // CONSTANT time complexity of O(1)
-        // relatively quicker compared to an ADJACENCY LIST for any given dataset
-    // QUADRATIC space complexity of O(n^2)
-        // less efficient for smaller graph datasets
-        // extremely efficient for larger graph datasets
 ```
 
 ```py
+class Graph:
 
+    def __init__(self, vertices):
+        self.vertices = vertices  # Number of vertices in the graph
+        self.matrix = [[False] * vertices for _ in range(vertices)]  # Initialize the adjacency matrix
+
+    def add_edge(self, v1, v2):
+        if 0 <= v1 < self.vertices and 0 <= v2 < self.vertices:  # Check if vertices are valid
+            self.matrix[v1][v2] = True  # Add edge from v1 to v2
+            self.matrix[v2][v1] = True  # Add edge from v2 to v1 since it's an undirected graph
+
+    def print_matrix(self):
+        for row in self.matrix:  # Print each row of the adjacency matrix
+            print(row)
 ```
 
-### Adjacency List
+8. Adjacency List
+    * Array of LINKED LISTs, where each LINKED LIST head represents a unique node and its adjacent neighbour nodes
+    * Used because
+        * **LINEAR time complexity** of $O(n)$
+        * space complexity of $O(numVertex + numEdge)$
+            * uses less space compared to an ADJACENCY MATRIX for any given dataset
 
 ```go
-// --- ADJACENCY LIST ---
-    // array of LINKED LISTs, where each LINKED LIST head represents a unique node and its adjacent neighbour nodes
-
 type Node struct { // type definition for a node within an undirected graph 
     vertex int
     next   *Node
@@ -676,51 +826,71 @@ func (g *Graph) PrintList() { // displays adjacency list
         fmt.Println()
     }
 }
-
-// --- USES ---
-    // LINEAR time complexity of O(n)
-    // space complexity of O(numVertex + numEdge)
-        // uses less space compared to an ADJACENCY MATRIX for any given dataset
 ```
 
 ```py
+class Node:
 
+    def __init__(self, vertex):
+        self.vertex = vertex
+        self.next = None
+
+class Graph:
+
+    def __init__(self, vertices):
+        self.vertices = vertices
+        self.adj_list = [None] * vertices  # Initialize the adjacency list with None for each vertex
+
+    def add_edge(self, v1, v2):
+        if 0 <= v1 < self.vertices and 0 <= v2 < self.vertices:
+            # Add the edge from v1 to v2
+            node_v2 = Node(v2)
+            node_v2.next = self.adj_list[v1]
+            self.adj_list[v1] = node_v2
+
+            # Add the edge from v2 to v1 (since the graph is undirected)
+            node_v1 = Node(v1)
+            node_v1.next = self.adj_list[v2]
+            self.adj_list[v2] = node_v1
+
+    def print_list(self):
+        for vertex in range(self.vertices):
+            print(f"Vertex {vertex} ->", end=" ")
+            temp = self.adj_list[vertex]
+            while temp:
+                print(f"{temp.vertex}", end=" ")
+                temp = temp.next
+            print()
 ```
 
-### Tree
+9. Tree
+    * Non-linear collection of nodes *(which store data)* organised in a hierachy, where nodes are connected by edges
+    * Root node: top-most node with no incoming edges
+    * Leaf node: bottom-most nodes with no outgoing edges
+    * Branch nodes: nodes in the middle with both incoming and outgoing edges
+    * Parent nodes: any node with an outgoing edge
+    * Child nodes: any node with an incoming edge
+    * Sibling nodes: any nodes sharing the same parent node
+    * Subtree: smaller tree nested within a larger tree
+    * Size of tree: total number of nodes
+    * Depth of node: number of edges below root node
+    * Height of node: number of edges above furthest leaf node
+    * Used in
+        * file explorers
+        * database searches
+        * domain name servers
+        * HTML DOM structure
+        * expression parsing in interpreters and transpilers
+
+10. Binary Search Tree
+    * Ordered tree where each parent node has only two child nodes *(binary)* and each parent node's value is greater than the left child node and smaller than the right child node, including the root node
+    * Used because
+        * easier to locate a node when they are ordered within a binary search tree
+        * best case **LOGARITHMIC time complexity** of $O(log n)$
+        * worst case **LINEAR time complexity** of $O(n)$
+        * **LINEAR space complexity** of $O(n)$
 
 ```go
-// --- TREE ---
-    // non-linear collection of nodes (which store data) organised in a hierachy, where nodes are connected by edges
-    // root node: top-most node with no incoming edges
-    // leaf node: bottom-most nodes with no outgoing edges
-    // branch nodes: nodes in the middle with both incoming and outgoing edges
-    // parent nodes: any node with an outgoing edge
-    // child nodes: any node with an incoming edge
-    // sibling nodes: any nodes sharing the same parent node
-    // subtree: smaller tree nested within a larger tree
-    // size of tree => total number of nodes
-    // depth of node => number of edges below root node
-    // height of node => number of edges above furthest leaf node
-
-// --- USES ---
-    // file explorers
-    // database searches
-    // domain name servers
-    // HTML DOM structure
-    // expression parsing in interpreters and transpilers
-```
-
-```py
-
-```
-
-### Binary Search Tree
-
-```go
-// --- BINARY SEARCH TREE ---
-    // ordered tree where each parent node has only two child nodes (binary) and each parent node's value is greater than the left child node and smaller than the right child node, including the root node
-
 type Node struct { // type definition for a generic node within a binary search tree
     key   int
     left  *Node
@@ -790,16 +960,61 @@ func inOrderRecursive(node *Node) { // helper function for recursive in-order tr
         inOrderRecursive(node.right)
     }
 }
-
-// --- USES ---
-    // easier to locate a node when they are ordered within a binary search tree
-    // best case LOGARITHMIC time complexity of O(log n)
-    // worst case LINEAR time complexity of O(n)
-    // LINEAR space complexity of O(n)
 ```
 
 ```py
+class Node:
 
+    def __init__(self, key):
+        self.key = key
+        self.left = None
+        self.right = None
+
+class BST:
+
+    def __init__(self):
+        self.root = None
+
+    def insert(self, key):
+        if self.root is None:
+            self.root = Node(key)
+        else:
+            self._insert_recursive(self.root, key)
+
+    def _insert_recursive(self, node, key):
+        if key < node.key:
+            if node.left is None:
+                node.left = Node(key)
+            else:
+                self._insert_recursive(node.left, key)
+        elif key > node.key:
+            if node.right is None:
+                node.right = Node(key)
+            else:
+                self._insert_recursive(node.right, key)
+
+    def search(self, key):
+        return self._search_recursive(self.root, key)
+
+    def _search_recursive(self, node, key):
+        if node is None:
+            return False
+        if key == node.key:
+            return True
+        elif key < node.key:
+            return self._search_recursive(node.left, key)
+        else:
+            return self._search_recursive(node.right, key)
+
+    def in_order_traversal(self):
+        self._in_order_recursive(self.root)
+        print()  # Newline for cleaner output
+
+    def _in_order_recursive(self, node):
+        if node is not None:
+            self._in_order_recursive(node.left)
+            print(node.key, end=' ')
+            self._in_order_recursive(node.right)
 ```
 
 ## Algorithms
@@ -825,10 +1040,6 @@ func linearSearch(arr []interface{}, target interface{}) int { // returns index 
     }
     return -1 // returns -1 if target element not found
 }
-```
-
-```py
-
 ```
 
 ### Binary Search
@@ -858,10 +1069,6 @@ func binarySearch(arr []interface{}, target interface{}) int {
     }
     return -1 // returns -1 if target element not found
 }
-```
-
-```py
-
 ```
 
 ### Interpolation Search
@@ -904,10 +1111,6 @@ func interpolationSearch(arr []interface{}, target interface{}) int {
 }
 ```
 
-```py
-
-```
-
 ### Depth First Search
 
 ```go
@@ -945,10 +1148,6 @@ func (g *Graph) DFS() {
 }
 ```
 
-```py
-
-```
-
 ### Breadth First Search
 
 ```go
@@ -984,10 +1183,6 @@ func (g *Graph) BFS(startVertex int) {
 }
 ```
 
-```py
-
-```
-
 ### Bubble Sort
 
 ```go
@@ -1011,10 +1206,6 @@ func bubbleSort(arr []int) { // slices are reference types in Go so changes made
         }
     }
 }
-```
-
-```py
-
 ```
 
 ### Selection Sort
@@ -1044,10 +1235,6 @@ func selectionSort(arr []int) { // slices are reference types in Go so changes m
 }
 ```
 
-```py
-
-```
-
 ### Insertion Sort
 
 ```go
@@ -1075,10 +1262,6 @@ func insertionSort(arr []int) { // slices are reference types in Go so changes m
         arr[j+1] = key
     }
 }
-```
-
-```py
-
 ```
 
 ### Merge Sort
@@ -1124,10 +1307,6 @@ func merge(left, right []int) []int {
 }
 ```
 
-```py
-
-```
-
 ### Quick Sort
 
 ```go
@@ -1163,10 +1342,6 @@ func partition(arr []int) int {
     arr[i+1], arr[len(arr)-1] = arr[len(arr)-1], arr[i+1]
     return i + 1
 }
-```
-
-```py
-
 ```
 
 The below algorithms are often used within Leetcode problems.
@@ -1212,10 +1387,6 @@ func findMaxSum(arr []int, k int) int {
     // Leetcode Problem #128: Longest Consecutive Sequence
 ```
 
-```py
-
-```
-
 ### Two Pointer
 
 ```go
@@ -1250,10 +1421,6 @@ func findPairSum(arr []int, target int) []int {
     // Leetcode Problem #167: Two Sum II - Input array is sorted
     // Leetcode Problem #19: Remove Nth Node From End of List
     // Leetcode Problem #11: Container With Most Water
-```
-
-```py
-
 ```
 
 ### Three Pointer
@@ -1297,10 +1464,6 @@ func findTriplet(arr []int, target int) []int {
     // Leetcode Problem #15: 3Sum
     // Leetcode Problem #21: Merge Two Sorted Lists
     // Leetcode Problem #23: Merge k Sorted Lists
-```
-
-```py
-
 ```
 
 ## More on
