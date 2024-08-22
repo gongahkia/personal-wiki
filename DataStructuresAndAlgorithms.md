@@ -1,7 +1,10 @@
 # `Data Structures and Algorithms`
 
 > [!NOTE]  
-> Code snippets below are written in [Go](Go.md).
+> Code snippets below are written in Go and Python.
+
+> [!WARNING]  
+> CONTINUE ADDING IMPLEMENTATION IN PYTHON FROM LINE 159
 
 ## Definitions
 
@@ -26,6 +29,13 @@ func addUp(int n) int{ // computation here has a time complexity of O(1)
 }
 ```
 
+```py
+def add_up(n:int) -> int:
+    sum = 0
+    sum = n * (n+1)/2
+    return sum
+```
+
 2. LOGARITHMIC time
     * $O(\log n)$
     * number of steps for algorithm to complete execution is MARGINALLY LOWER as size of dataset increases
@@ -48,6 +58,21 @@ func binarySearch(arr []int, target int) int { // computation here has a time co
 }
 ```
 
+```py
+def binary_search(arr: [int], target:int) -> int: # note that the binary search here assumes a sorted integer array, which affords value comparison below
+    left_ptr, right_ptr = 0, len(arr) - 1
+    for left_ptr <= right_ptr: 
+        mid_ptr = (right_ptr - left_ptr)/2 + left_ptr
+        if arr[mid_ptr] == target:
+            return mid_ptr
+        else:
+            if arr[mid_ptr] < target:
+                left_ptr = mid_ptr +1
+            else:
+                right_ptr = mid_ptr - 1
+    return -1
+```
+
 3. LINEAR time
     * $O(n)$
     * number of steps for algorithm to complete execution INCREASES PROPORTIONALLY to size of dataset
@@ -61,6 +86,14 @@ func addUp(int n) int{ // computation here has a time complexity of O(n)
     }
     return sum
 }
+```
+
+```py
+def add_up(n:int) -> int:
+    sum = 0
+    for i in range(n):
+        sum += i
+    return sum
 ```
 
 4. QUASILINEAR time
@@ -99,6 +132,31 @@ func merge(left, right []int) []int {
 }
 ```
 
+```py
+def merge_sort(arr:[int]) -> [int]:
+    if len(arr) <= 1:
+        return arr
+    else:
+        mid_ptr = len(arr) / 2
+        left = merge_sort(arr[:mid_ptr])
+        right = merge_sort(arr[mid_ptr:])
+        return merge(left, right) # called once
+
+def merge(left:[int], right:[int]) -> [int]: # helper function called once
+    result = [0]
+    while len(left) > 0 or len(right) > 0:
+        if len(left) == 0:
+            return result.append(right)
+        if len(right) == 0:
+            return result.append(left)
+        if left[0] <= right[0]:
+            result.append(left[0])
+        else:
+            result.append(right[0])
+            right = right[1:]
+    return result
+```
+
 5. QUADRATIC time
     * $O(n^2)$
     * QUADRATIC increase in number of steps for algorithm to complete execution for a given increase in size of dataset
@@ -116,6 +174,10 @@ func bubbleSort(arr []int) { // computation here has a time complexity of O(n^2)
 }
 ```
 
+```py
+
+```
+
 6. FACTORIAL time
     * $O(n!)$
     * extremely slow and rarely used
@@ -127,6 +189,10 @@ func factorial(n int) int { // computation here has a time complexity of O(n!)
     }
     return n * factorial(n-1)
 }
+```
+
+```py
+
 ```
 
 ### Summary
@@ -168,6 +234,10 @@ func (s *Stack) Pop() interface{} {
     // function call stacks
 ```
 
+```py
+
+```
+
 ### Queue
 
 ```go
@@ -199,6 +269,10 @@ func (q *Queue) Remove() interface{} {
     // priority queues
     // linked lists
     // breadth-first search algorithm
+```
+
+```py
+
 ```
 
 ### Priority Queue
@@ -241,6 +315,10 @@ func (pq *PriorityQueue) Remove() interface{} {
     // sorting algorithms (heap sort)
     // graph algorithms (dijkstra's algorithm, prim's algorithm)
     // system-related functions (load balancing and interrupt handling)
+```
+
+```py
+
 ```
 
 ### Linked List
@@ -360,6 +438,10 @@ func (list *LinkedList) display() { // display all linkedlist nodes
     // dynamically allocates memory as required
 ```
 
+```py
+
+```
+
 ### Hash Table
 
 ```go
@@ -453,6 +535,10 @@ func (ht *HashTable) Delete(key string) { // delete a key-value pair from the ha
         // extremely efficient for larger datasets
 ```
 
+```py
+
+```
+
 ### Graph
 
 ```go
@@ -475,6 +561,10 @@ func (ht *HashTable) Delete(key string) { // delete a key-value pair from the ha
     // recommendation engines
     // gps mapping applications
     // knowledge graphs
+```
+
+```py
+
 ```
 
 ### Adjacency Matrix 
@@ -518,6 +608,10 @@ func (g *Graph) PrintMatrix() { // displays adjacency matrix
     // QUADRATIC space complexity of O(n^2)
         // less efficient for smaller graph datasets
         // extremely efficient for larger graph datasets
+```
+
+```py
+
 ```
 
 ### Adjacency List
@@ -570,6 +664,10 @@ func (g *Graph) PrintList() { // displays adjacency list
         // uses less space compared to an ADJACENCY MATRIX for any given dataset
 ```
 
+```py
+
+```
+
 ### Tree
 
 ```go
@@ -592,6 +690,10 @@ func (g *Graph) PrintList() { // displays adjacency list
     // domain name servers
     // HTML DOM structure
     // expression parsing in interpreters and transpilers
+```
+
+```py
+
 ```
 
 ### Binary Search Tree
@@ -677,6 +779,10 @@ func inOrderRecursive(node *Node) { // helper function for recursive in-order tr
     // LINEAR space complexity of O(n)
 ```
 
+```py
+
+```
+
 ## Algorithms
 
 ### Linear Search
@@ -700,6 +806,10 @@ func linearSearch(arr []interface{}, target interface{}) int { // returns index 
     }
     return -1 // returns -1 if target element not found
 }
+```
+
+```py
+
 ```
 
 ### Binary Search
@@ -729,6 +839,10 @@ func binarySearch(arr []interface{}, target interface{}) int {
     }
     return -1 // returns -1 if target element not found
 }
+```
+
+```py
+
 ```
 
 ### Interpolation Search
@@ -771,6 +885,10 @@ func interpolationSearch(arr []interface{}, target interface{}) int {
 }
 ```
 
+```py
+
+```
+
 ### Depth First Search
 
 ```go
@@ -808,6 +926,10 @@ func (g *Graph) DFS() {
 }
 ```
 
+```py
+
+```
+
 ### Breadth First Search
 
 ```go
@@ -843,6 +965,10 @@ func (g *Graph) BFS(startVertex int) {
 }
 ```
 
+```py
+
+```
+
 ### Bubble Sort
 
 ```go
@@ -866,6 +992,10 @@ func bubbleSort(arr []int) { // slices are reference types in Go so changes made
         }
     }
 }
+```
+
+```py
+
 ```
 
 ### Selection Sort
@@ -895,6 +1025,10 @@ func selectionSort(arr []int) { // slices are reference types in Go so changes m
 }
 ```
 
+```py
+
+```
+
 ### Insertion Sort
 
 ```go
@@ -922,6 +1056,10 @@ func insertionSort(arr []int) { // slices are reference types in Go so changes m
         arr[j+1] = key
     }
 }
+```
+
+```py
+
 ```
 
 ### Merge Sort
@@ -967,6 +1105,10 @@ func merge(left, right []int) []int {
 }
 ```
 
+```py
+
+```
+
 ### Quick Sort
 
 ```go
@@ -1002,6 +1144,10 @@ func partition(arr []int) int {
     arr[i+1], arr[len(arr)-1] = arr[len(arr)-1], arr[i+1]
     return i + 1
 }
+```
+
+```py
+
 ```
 
 The below algorithms are often used within Leetcode problems.
@@ -1047,11 +1193,16 @@ func findMaxSum(arr []int, k int) int {
     // Leetcode Problem #128: Longest Consecutive Sequence
 ```
 
+```py
+
+```
+
 ### Two Pointer
 
 ```go
 // --- TWO POINTER ---
     // two pointers traverse an array simultaneously (from different ends or with a stipulated distance between them)
+    // just a glorified way of saying two values are being stored for a given solution
 
 func findPairSum(arr []int, target int) []int {
 
@@ -1080,6 +1231,10 @@ func findPairSum(arr []int, target int) []int {
     // Leetcode Problem #167: Two Sum II - Input array is sorted
     // Leetcode Problem #19: Remove Nth Node From End of List
     // Leetcode Problem #11: Container With Most Water
+```
+
+```py
+
 ```
 
 ### Three Pointer
@@ -1123,6 +1278,10 @@ func findTriplet(arr []int, target int) []int {
     // Leetcode Problem #15: 3Sum
     // Leetcode Problem #21: Merge Two Sorted Lists
     // Leetcode Problem #23: Merge k Sorted Lists
+```
+
+```py
+
 ```
 
 ## More on
