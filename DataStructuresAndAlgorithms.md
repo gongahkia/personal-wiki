@@ -4,7 +4,7 @@
 > Code snippets below are written in Go and Python.
 
 > [!WARNING]  
-> CONTINUE ADDING IMPLEMENTATION IN PYTHON FROM LINE 159
+> CONTINUE ADDING IMPLEMENTATION IN PYTHON FROM LINE 243
 
 ## Definitions
 
@@ -175,7 +175,11 @@ func bubbleSort(arr []int) { // computation here has a time complexity of O(n^2)
 ```
 
 ```py
-
+def bubble_sort(arr:[int]):
+    for i in range(len(arr)):
+        for q in range(len(arr)-i):
+            if arr[q] > arr[q+1]:
+                arr[q], arr[q+1] = arr[q+1], arr[q] # just swap the values
 ```
 
 6. FACTORIAL time
@@ -192,7 +196,11 @@ func factorial(n int) int { // computation here has a time complexity of O(n!)
 ```
 
 ```py
-
+def factorial(n:int) -> int:
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1) # recursive function call
 ```
 
 ### Summary
@@ -203,12 +211,16 @@ func factorial(n int) int { // computation here has a time complexity of O(n!)
 
 ### Stack
 
-```go
-// --- STACK ---
-    // last-in first-out (LIFO) data structure
-    // push() => appends elements to the TOP of the stack
-    // pop() => removes elements from the TOP of the stack
+* last-in first-out (LIFO) data structure
+* push(): appends an element to the TOP of the stack
+* pop(): removes an element from the TOP of the stack
+* usecases
+    * undo/redo features in text editors
+    * moving backward/forward in browser history
+    * backtracking algorithms (mazes, file directories)
+    * function call stacks
 
+```go
 type Stack struct {
     items []interface{} // interface is used here to allow the slice to hold elements of any datatype
 }
@@ -226,16 +238,9 @@ func (s *Stack) Pop() interface{} {
     s.items = s.items[:index] 
     return item
 }
-
-// --- USES ---
-    // undo/redo features in text editors
-    // moving backward/forward in browser history
-    // backtracking algorithms (mazes, file directories)
-    // function call stacks
 ```
 
 ```py
-
 ```
 
 ### Queue
