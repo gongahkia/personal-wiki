@@ -85,7 +85,7 @@ Code snippets below are written in Go and Python.</p>
 </blockquote>
 <blockquote>
 <p>[!WARNING]<br />
-CONTINUE ADDING IMPLEMENTATION IN PYTHON FROM LINE 159</p>
+CONTINUE ADDING IMPLEMENTATION IN PYTHON FROM LINE 243</p>
 </blockquote>
 <h2 id="definitions">Definitions</h2>
 <ul>
@@ -244,7 +244,11 @@ CONTINUE ADDING IMPLEMENTATION IN PYTHON FROM LINE 159</p>
 <span id="cb9-8"><a href="#cb9-8" aria-hidden="true"></a>        }</span>
 <span id="cb9-9"><a href="#cb9-9" aria-hidden="true"></a>    }</span>
 <span id="cb9-10"><a href="#cb9-10" aria-hidden="true"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb10"><pre class="sourceCode py"><code class="sourceCode python"></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="kw">def</span> bubble_sort(arr:[<span class="bu">int</span>]):</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(arr)):</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true"></a>        <span class="cf">for</span> q <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(arr)<span class="op">-</span>i):</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true"></a>            <span class="cf">if</span> arr[q] <span class="op">&gt;</span> arr[q<span class="op">+</span><span class="dv">1</span>]:</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true"></a>                arr[q], arr[q<span class="op">+</span><span class="dv">1</span>] <span class="op">=</span> arr[q<span class="op">+</span><span class="dv">1</span>], arr[q] <span class="co"># just swap the values</span></span></code></pre></div>
 <ol start="6" type="1">
 <li>FACTORIAL time
 <ul>
@@ -258,40 +262,58 @@ CONTINUE ADDING IMPLEMENTATION IN PYTHON FROM LINE 159</p>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true"></a>    }</span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true"></a>    <span class="kw">return</span> n * factorial(n<span class="dv">-1</span>)</span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb12"><pre class="sourceCode py"><code class="sourceCode python"></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true"></a><span class="kw">def</span> factorial(n:<span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true"></a>    <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true"></a>        <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true"></a>    <span class="cf">else</span>:</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true"></a>        <span class="cf">return</span> n <span class="op">*</span> factorial(n<span class="op">-</span><span class="dv">1</span>) <span class="co"># recursive function call</span></span></code></pre></div>
 <h3 id="summary">Summary</h3>
 <p><img src="https://paper-attachments.dropbox.com/s_2D428973624E7FC84C7D69D11421DE762BEA6B6F3361231FCDCAE0425D14526F_1664885448372_Untitled.drawio+17.png" /></p>
 <h2 id="data-structures">Data Structures</h2>
 <h3 id="stack">Stack</h3>
-<div class="sourceCode" id="cb13"><pre class="sourceCode go"><code class="sourceCode go"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true"></a><span class="co">// --- STACK ---</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true"></a>    <span class="co">// last-in first-out (LIFO) data structure</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true"></a>    <span class="co">// push() =&gt; appends elements to the TOP of the stack</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true"></a>    <span class="co">// pop() =&gt; removes elements from the TOP of the stack</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true"></a></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true"></a><span class="kw">type</span> Stack <span class="kw">struct</span> {</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true"></a>    items []<span class="kw">interface</span>{} <span class="co">// interface is used here to allow the slice to hold elements of any datatype</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true"></a>}</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true"></a></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true"></a><span class="kw">func</span> (s *Stack) Push(item <span class="kw">interface</span>{}) {</span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true"></a>    s.items = <span class="bu">append</span>(s.items, item)</span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true"></a>}</span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true"></a></span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true"></a><span class="kw">func</span> (s *Stack) Pop() <span class="kw">interface</span>{} {</span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true"></a>    <span class="kw">if</span> <span class="bu">len</span>(s.items) == <span class="dv">0</span> { <span class="co">// empty stack</span></span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true"></a>        <span class="kw">return</span> <span class="ot">nil</span> </span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true"></a>    }</span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true"></a>    index := <span class="bu">len</span>(s.items) - <span class="dv">1</span></span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true"></a>    item := s.items[index]</span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true"></a>    s.items = s.items[:index] </span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true"></a>    <span class="kw">return</span> item</span>
-<span id="cb13-22"><a href="#cb13-22" aria-hidden="true"></a>}</span>
-<span id="cb13-23"><a href="#cb13-23" aria-hidden="true"></a></span>
-<span id="cb13-24"><a href="#cb13-24" aria-hidden="true"></a><span class="co">// --- USES ---</span></span>
-<span id="cb13-25"><a href="#cb13-25" aria-hidden="true"></a>    <span class="co">// undo/redo features in text editors</span></span>
-<span id="cb13-26"><a href="#cb13-26" aria-hidden="true"></a>    <span class="co">// moving backward/forward in browser history</span></span>
-<span id="cb13-27"><a href="#cb13-27" aria-hidden="true"></a>    <span class="co">// backtracking algorithms (mazes, file directories)</span></span>
-<span id="cb13-28"><a href="#cb13-28" aria-hidden="true"></a>    <span class="co">// function call stacks</span></span></code></pre></div>
-<div class="sourceCode" id="cb14"><pre class="sourceCode py"><code class="sourceCode python"></code></pre></div>
+<ul>
+<li>last-in first-out (LIFO) data structure</li>
+<li>push(): appends an element to the TOP of the stack</li>
+<li>pop(): removes an element from the TOP of the stack</li>
+<li>usecases
+<ul>
+<li>undo/redo features in text editors</li>
+<li>moving backward/forward in browser history</li>
+<li>backtracking algorithms (mazes, file directories)</li>
+<li>function call stacks</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb13"><pre class="sourceCode go"><code class="sourceCode go"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true"></a><span class="kw">type</span> Stack <span class="kw">struct</span> {</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true"></a>    items []<span class="kw">interface</span>{} <span class="co">// interface is used here to allow the slice to hold elements of any datatype</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true"></a>}</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true"></a><span class="kw">func</span> (s *Stack) Push(item <span class="kw">interface</span>{}) {</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true"></a>    s.items = <span class="bu">append</span>(s.items, item)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true"></a>}</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true"></a><span class="kw">func</span> (s *Stack) Pop() <span class="kw">interface</span>{} {</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true"></a>    <span class="kw">if</span> <span class="bu">len</span>(s.items) == <span class="dv">0</span> { <span class="co">// empty stack</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true"></a>        <span class="kw">return</span> <span class="ot">nil</span> </span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true"></a>    }</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true"></a>    index := <span class="bu">len</span>(s.items) - <span class="dv">1</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true"></a>    item := s.items[index]</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true"></a>    s.items = s.items[:index] </span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true"></a>    <span class="kw">return</span> item</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true"></a><span class="co"># continue implementing this </span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true"></a><span class="kw">class</span> Stack:</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, value):</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true"></a>        <span class="bu">print</span>(<span class="st">&quot;a stack has been instantiated&quot;</span>)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true"></a>        <span class="va">self</span>.value <span class="op">=</span> value</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true"></a>        </span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true"></a>    <span class="kw">def</span> See(<span class="va">self</span>):</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true"></a>        <span class="bu">print</span>(<span class="va">self</span>.value)</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true"></a></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true"></a>    <span class="kw">def</span> Push(<span class="va">self</span>, ):</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true"></a>    </span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true"></a>    <span class="kw">def</span> Pop(<span class="va">self</span>, )</span></code></pre></div>
 <h3 id="queue">Queue</h3>
 <div class="sourceCode" id="cb15"><pre class="sourceCode go"><code class="sourceCode go"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true"></a><span class="co">// --- QUEUE ---</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true"></a>    <span class="co">// first-in first-out (FIFO) data structure</span></span>
