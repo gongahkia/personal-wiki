@@ -1,5 +1,7 @@
 # `Work better`
 
+Mindset is everything.  
+  
 Learn from the best.  
 
 ## Jean-Michel Basquiat
@@ -35,6 +37,16 @@ Learn from the best.
 6. Seek nothing outside of yourself  
 7. No matter where you go, there you are  
 
+## Yuto Horigome
+
+![](https://www.si.com/.image/t_share/MTgyNjcyOTQwNzU4NzM4Mjcy/yuto-horigome.jpg)
+
+1. There's times when I feel like I'm not really sure who I am. It's like I'm battling with myself.  
+2. In Japan, skateboarding is really frowned upon. Maybe because of that, having to overcome that, I think it made me a stronger person.  
+3. Having trust in yourself is the most important thing. Having the confidence in yourself.  
+4. I want to create something that people won't be able to forget. Something that can be passed on to the next generation.
+5. Accomplish something that noone else has yet, is what I want to do next.  
+
 ## My work ethic
 
 ![](https://i.kym-cdn.com/photos/images/newsfeed/001/919/939/366.jpg)
@@ -57,6 +69,7 @@ I am still learning. Here are some things I practise.
 * [BASQUIAT's work ethic](https://youtu.be/8G9pnE0bnfE?si=CctB7li65nd_WoTJ) by Make art not content.  
 * [PRINCE's work ethic](https://youtu.be/ECGcTM_gk4s?si=by73D7gabuU-rKfz) by Make art not content.  
 * [The Way of The Superior Man - Miyamoto Musashi](https://youtu.be/DksWmWmhWvg?si=hpJTKAPq1U01gmZQ) by Solaris  
+* [Yuto Horigome | What Are You Working On? (E32) | Nike](https://youtu.be/RBLCePz-BVk?si=_1FVbFvRpRdv-j-7) by Nike
 * [The Cult of Done Manifesto](https://medium.com/@bre/the-cult-of-done-manifesto-724ca1c2ff13) by Bre Pettis  
   
 ### Additonal reading  
