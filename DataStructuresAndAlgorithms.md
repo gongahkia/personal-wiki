@@ -5,12 +5,12 @@
 
 ## Definitions
 
-* data structure: ordered collection of data provided by the language or defined and enforced by the programmer
-* algorithm: sequence of steps to solve a problem
-* big o notation: describes performance of an algorithm as size of the dataset increases
+* Data structure: ordered collection of data provided by the language or defined and enforced by the programmer
+* Algorithm: sequence of steps to solve a problem
+* Big $O$ notation: describes performance of an algorithm as size of the dataset increases
     * $n$: variable representing size of dataset
-* time complexity: time taken for an algorithm to complete execution
-* space complexity: memory taken for an algorithm to complete execution
+* Time complexity: time taken for an algorithm to complete execution
+* Space complexity: memory taken for an algorithm to complete execution
 
 ## Big O Notation
 
@@ -19,6 +19,8 @@
     * number of steps for algorithm to complete execution is CONSTANT regardless of size of dataset
 
 ```go
+// ----- Go implementation -----
+
 func addUp(int n) int{ // computation here has a time complexity of O(1)
     var sum int
     sum = n * (n + 1)/2
@@ -27,6 +29,8 @@ func addUp(int n) int{ // computation here has a time complexity of O(1)
 ```
 
 ```py
+# ----- Python implementation -----
+
 def add_up(n:int) -> int:
     sum = 0
     sum = n * (n+1)/2
@@ -38,6 +42,8 @@ def add_up(n:int) -> int:
     * number of steps for algorithm to complete execution is MARGINALLY LOWER as size of dataset increases
 
 ```go
+// ----- Go implementation -----
+
 func binarySearch(arr []int, target int) int { // computation here has a time complexity of O(log n)
     left, right := 0, len(arr)-1
     for left <= right {
@@ -56,6 +62,8 @@ func binarySearch(arr []int, target int) int { // computation here has a time co
 ```
 
 ```py
+# ----- Python implementation -----
+
 def binary_search(arr: [int], target:int) -> int: # note that the binary search here assumes a sorted integer array, which affords value comparison below
     left_ptr, right_ptr = 0, len(arr) - 1
     for left_ptr <= right_ptr: 
@@ -75,6 +83,8 @@ def binary_search(arr: [int], target:int) -> int: # note that the binary search 
     * number of steps for algorithm to complete execution INCREASES PROPORTIONALLY to size of dataset
 
 ```go
+// ----- Go implementation -----
+
 func addUp(int n) int{ // computation here has a time complexity of O(n)
     var sum int
     sum = 0
@@ -86,6 +96,8 @@ func addUp(int n) int{ // computation here has a time complexity of O(n)
 ```
 
 ```py
+# ----- Python implementation -----
+
 def add_up(n:int) -> int:
     sum = 0
     for i in range(n):
@@ -98,6 +110,8 @@ def add_up(n:int) -> int:
     * similar to LINEAR time, but slows down further when working with larger datasets
 
 ```go
+// ----- Go implementation -----
+
 func mergeSort(arr []int) []int { // computation here has a time complexity of O(n log n)
     if len(arr) <= 1 {
         return arr
@@ -130,6 +144,8 @@ func merge(left, right []int) []int {
 ```
 
 ```py
+# ----- Python implementation -----
+
 def merge_sort(arr:[int]) -> [int]:
     if len(arr) <= 1:
         return arr
@@ -159,6 +175,8 @@ def merge(left:[int], right:[int]) -> [int]: # helper function called once
     * QUADRATIC increase in number of steps for algorithm to complete execution for a given increase in size of dataset
 
 ```go
+// ----- Go implementation -----
+
 func bubbleSort(arr []int) { // computation here has a time complexity of O(n^2)
     n := len(arr)
     for i := 0; i < n-1; i++ {
@@ -172,6 +190,8 @@ func bubbleSort(arr []int) { // computation here has a time complexity of O(n^2)
 ```
 
 ```py
+# ----- Python implementation -----
+
 def bubble_sort(arr:[int]):
     for i in range(len(arr)):
         for q in range(len(arr)-i):
@@ -184,6 +204,8 @@ def bubble_sort(arr:[int]):
     * extremely slow and rarely used
 
 ```go
+// ----- Go implementation -----
+
 func factorial(n int) int { // computation here has a time complexity of O(n!)
     if n == 0 {
         return 1
@@ -193,6 +215,8 @@ func factorial(n int) int { // computation here has a time complexity of O(n!)
 ```
 
 ```py
+# ----- Python implementation -----
+
 def factorial(n:int) -> int:
     if n == 0:
         return 1
@@ -207,16 +231,18 @@ def factorial(n:int) -> int:
 ## Data Structures
 
 1. Stack
-    * Last-in First-out (LIFO) data structure
+    * Last-in First-out *(LIFO)* data structure
     * `push()`: appends an element to the TOP of the stack
     * `pop()`: removes an element from the TOP of the stack
     * Used in
         * undo/redo features in text editors
         * moving backward/forward in browser history
-        * backtracking algorithms (mazes, file directories)
+        * backtracking algorithms *(mazes, file directories)*
         * function call stacks
 
 ```go
+// ----- Go implementation -----
+
 type Stack struct {
     items []interface{} // interface is used here to allow the slice to hold elements of any datatype
 }
@@ -237,6 +263,8 @@ func (s *Stack) Pop() interface{} {
 ```
 
 ```py
+# ----- Python implementation -----
+
 class Stack:
 
     def __init__(self):
@@ -252,7 +280,7 @@ class Stack:
 ```
 
 2. Queue
-    * First-in First-out (FIFO) data structure
+    * First-in First-out *(FIFO)* data structure
     * `add()`: enqueues an element to the END of the queue
     * `remove()`: dequeues an element from the FRONT of the queue
     * Used in
@@ -263,6 +291,8 @@ class Stack:
         * breadth-first search algorithm
 
 ```go
+// ----- Go implementation -----
+
 type Queue struct {
     items []interface{} // interface is used here to allow the slice to hold elements of any datatype
 }
@@ -282,6 +312,8 @@ func (q *Queue) Remove() interface{} {
 ```
 
 ```py
+# ----- Python implementation -----
+
 class Queue:
 
     def __init__(self):
@@ -297,7 +329,7 @@ class Queue:
 ```
 
 3. Priority Queue
-    * First-in First-out (FIFO) data structure
+    * First-in First-out *(FIFO)* data structure
     * SORTS elements by PRIORITY, then dequeues elements of HIGHEST PRIORITY before elements of LOWER PRIORITY
     * `add()`: enqueues an element to the END of the queue with a specified value and priority
     * `remove()`: dequeues element of HIGHEST priority 
@@ -307,6 +339,8 @@ class Queue:
         * system-related functions *(load balancing and interrupt handling)*
 
 ```go
+// ----- Go implementation -----
+
 type Item struct { // item being EACH ELEMENT of the priority queue
     value interface{} // interface is used here to allow the value to hold elements of any datatype
     priority int
@@ -336,6 +370,8 @@ func (pq *PriorityQueue) Remove() interface{} {
 ```
 
 ```py
+# ----- Python implementation -----
+
 import heapq
 
 class Item:
@@ -381,6 +417,8 @@ class PriorityQueue:
         * dynamically allocates memory as required
 
 ```go
+// ----- Go implementation -----
+
 type Node struct { // type definition for an element in a singly linked list
     value interface{} // interface is used here to allow the value to hold elements of any datatype
     next *Node // pointer to the next node
@@ -478,6 +516,8 @@ func (list *LinkedList) display() { // display all linkedlist nodes
 ```
 
 ```py
+# ----- Python implementation -----
+
 class Node:
 
     def __init__(self, value):
@@ -559,6 +599,8 @@ class LinkedList:
             * extremely efficient for larger datasets
 
 ```go
+// ----- Go implementation -----
+
 type Node struct { // type definition for a node in a hashtable
     key   string
     value string
@@ -637,6 +679,8 @@ func (ht *HashTable) Delete(key string) { // delete a key-value pair from the ha
 ```
 
 ```py
+# ----- Python implementation -----
+
 class Node:
 
     def __init__(self, key, value):
@@ -734,6 +778,8 @@ class HashTable:
             * extremely efficient for larger graph datasets
 
 ```go
+// ----- Go implementation -----
+
 type Graph struct { // type definition for an undirected graph represented by an adjacency matrix
     vertices int
     matrix   [][]bool
@@ -765,6 +811,8 @@ func (g *Graph) PrintMatrix() { // displays adjacency matrix
 ```
 
 ```py
+# ----- Python implementation -----
+
 class Graph:
 
     def __init__(self, vertices):
@@ -789,6 +837,8 @@ class Graph:
             * uses less space compared to an ADJACENCY MATRIX for any given dataset
 
 ```go
+// ----- Go implementation -----
+
 type Node struct { // type definition for a node within an undirected graph 
     vertex int
     next   *Node
@@ -829,6 +879,8 @@ func (g *Graph) PrintList() { // displays adjacency list
 ```
 
 ```py
+# ----- Python implementation -----
+
 class Node:
 
     def __init__(self, vertex):
@@ -891,6 +943,8 @@ class Graph:
         * **LINEAR space complexity** of $O(n)$
 
 ```go
+// ----- Go implementation -----
+
 type Node struct { // type definition for a generic node within a binary search tree
     key   int
     left  *Node
@@ -963,6 +1017,8 @@ func inOrderRecursive(node *Node) { // helper function for recursive in-order tr
 ```
 
 ```py
+# ----- Python implementation -----
+
 class Node:
 
     def __init__(self, key):
@@ -1019,18 +1075,18 @@ class BST:
 
 ## Algorithms
 
-### Linear Search
+1. Linear Search
+    * **LINEAR time complexity** of $O(n)$
+    * iterates through a collection one element at a time
+    * pros
+        * dataset can be unsorted
+        * fast for searching small to medium-sized datasets
+        * useful for data structures without random access 
+    * cons
+        * slow for large datasets
 
 ```go
-// --- LINEAR SEARCH ---
-    // LINEAR time complexity of O(n)
-    // iterates through a collection one element at a time
-    // pros
-        // dataset can be unsorted
-        // fast for searching small to medium-sized datasets
-        // useful for data structures without random access 
-    // cons
-        // slow for large datasets
+// ----- Go implementation -----
 
 func linearSearch(arr []interface{}, target interface{}) int { // returns index of target element if found
     for i, item := range arr {
@@ -1042,17 +1098,27 @@ func linearSearch(arr []interface{}, target interface{}) int { // returns index 
 }
 ```
 
-### Binary Search
+```py
+# ----- Python implementation -----
+
+def linear_search(arr, target):
+    for i, item in enumerate(arr):
+        if item == target:
+            return i
+    return -1
+```
+
+2. Binary Search
+    * **LOGARITHMIC time complexity** of $O(log n)$
+    * eliminates half of the collection at each step to find the target element
+    * pros
+        * more efficient for large datasets
+    * cons
+        * dataset has to be sorted
+        * less efficient for smaller datasets
 
 ```go
-// --- BINARY SEARCH ---
-    // LOGARITHMIC time complexity of O(log n)
-    // eliminates half of the collection at each step to find the target element
-    // pros
-        // more efficient for large datasets
-    // cons
-        // dataset has to be sorted
-        // less efficient for smaller datasets
+// ----- Go implementation -----
 
 func binarySearch(arr []interface{}, target interface{}) int { 
     left, right := 0, len(arr)-1
@@ -1071,20 +1137,36 @@ func binarySearch(arr []interface{}, target interface{}) int {
 }
 ```
 
-### Interpolation Search
+```py
+# ----- Python implementation -----
+
+def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = left + (right - left) * 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1
+```
+
+3. Interpolation Search
+    * **average time complexity** of $O(log(log n))$
+    * **worst case LINEAR time complexity** of $O(n)$
+    * guesses where a value might be based on estimated probe results, with incorrect probes narrowing the search area and recalculating a new probe
+    * improvement over BINARY searches that are best used for uniformly distributed datasets
+    * pros
+        * more efficient for uniformly distributed datasets
+        * more efficient for large datasets
+    * cons
+        * dataset has to be sorted
+        * dataset has to be uniformly distributed
 
 ```go
-// --- INTERPOLATION SEARCH ---
-    // average time complexity of O(log(log n))
-    // worst case LINEAR time complexity of O(n)
-    // guesses where a value might be based on estimated probe results, with incorrect probes narrowing the search area and recalculating a new probe
-    // improvement over BINARY searches that are best used for uniformly distributed datasets
-    // pros
-        // more efficient for uniformly distributed datasets
-        // more efficient for large datasets
-    // cons
-        // dataset has to be sorted
-        // dataset has to be uniformly distributed
+// ----- Go implementation -----
 
 func interpolationSearch(arr []interface{}, target interface{}) int {
 
@@ -1111,23 +1193,43 @@ func interpolationSearch(arr []interface{}, target interface{}) int {
 }
 ```
 
-### Depth First Search
+```py
+# ----- Python implementation -----
+
+def interpolation_search(arr, target):
+    low = 0
+    high = len(arr) - 1
+
+    while low <= high and target >= arr[low] and target <= arr[high]:
+        pos = low + ((target - arr[low]) * (high - low)) * (arr[high] - arr[low])
+
+        if arr[pos] == target:
+            return pos
+        elif arr[pos] < target:
+            low = pos + 1
+        else:
+            high = pos - 1
+
+    return -1
+```
+
+4. Depth First Search
+    * search algorithm to traverse a tree or graph one BRANCH at a time
+        1. pick a route
+        2. keep on going until a dead end or previously visited node is reached
+        3. backtrack to last node with unvisited adjacent neighbour nodes
+        4. repeat step 1
+    * **time complexity** of $O(numVertex + numEdge)$
+    * **LINEAR space complexity** of $O(n)$
+    * pros
+        * utilises a STACK
+        * child nodes are visited before sibling nodes
+        * better if destination node is on average FURTHER from start node
+    * cons
+        * often returns non-optimal paths
 
 ```go
-// --- DEPTH FIRST SEARCH ---
-    // search algorithm to traverse a tree or graph one BRANCH at a time
-        // 1. pick a route
-        // 2. keep on going until a dead end or previously visited node is reached
-        // 3. backtrack to last node with unvisited adjacent neighbour nodes
-        // 4. repeat step 1
-    // time complexity of O(numVertex + numEdge)
-    // LINEAR space complexity of O(n)
-    // pros
-        // utilises a STACK
-        // child nodes are visited before sibling nodes
-        // better if destination node is on average FURTHER from start node
-    // cons
-        // often returns non-optimal paths
+// ----- Go implementation -----
 
 func (g *Graph) DFSUtil(v int) { // helper function for DFS
     g.visited[v] = true
@@ -1148,22 +1250,48 @@ func (g *Graph) DFS() {
 }
 ```
 
-### Breadth First Search
+```py
+# ----- Python implementation -----
+
+class Graph:
+
+    def __init__(self, vertices):
+        self.vertices = vertices
+        self.adj_list = [[] for _ in range(vertices)]
+        self.visited = [False] * vertices
+
+    def add_edge(self, u, v):
+        self.adj_list[u].append(v)
+
+    def dfs_util(self, v):
+        self.visited[v] = True
+        print(v, end=" ")
+        for node in self.adj_list[v]:
+            if not self.visited[node]:
+                self.dfs_util(node)
+
+    def dfs(self):
+        for i in range(self.vertices):
+            if not self.visited[i]:
+                self.dfs_util(i)
+```
+
+5. Breadth First Search
+    * search algorithm to traverse a tree or graph one LEVEL at a time
+        1. traverse one node at a time in every direction
+        2. once all directions have been expanded one node, repeat step 1
+    * **time complexity** of $O(numVertex + numEdge)$
+    * **LINEAR space complexity** of $O(n)$ if implemented with a queue
+    * **space complexity** of $O(numVertex + numEdge)$ if implemented with an adjacency list
+    * pros
+        * utilises a QUEUE
+        * sibling nodes are visited before child nodes
+        * better if destination node is on average CLOSER to start node
+    * cons
+        * less efficient on denser graph datasets with many edges
 
 ```go
-// --- BREADTH FIRST SEARCH ---
-    // search algorithm to traverse a tree or graph one LEVEL at a time
-        // 1. traverse one node at a time in every direction
-        // 2. once all directions have been expanded one node, repeat step 1
-    // time complexity of O(numVertex + numEdge)
-    // LINEAR space complexity of O(n) if implemented with a queue
-    // space complexity of O(numVertex + numEdge) if implemented with an adjacency list
-    // pros
-        // utilises a QUEUE
-        // sibling nodes are visited before child nodes
-        // better if destination node is on average CLOSER to start node
-    // cons
-        // less efficient on denser graph datasets with many edges
+// ----- Go implementation -----
 
 func (g *Graph) BFS(startVertex int) {
     queue := []int{} // initializes a queue for BFS traversal
@@ -1183,18 +1311,48 @@ func (g *Graph) BFS(startVertex int) {
 }
 ```
 
-### Bubble Sort
+```py
+# ----- Python implementation -----
+
+from collections import deque
+
+class Graph:
+
+    def __init__(self, vertices):
+        self.vertices = vertices
+        self.adj_list = [[] for _ in range(vertices)]
+        self.visited = [False] * vertices
+
+    def add_edge(self, u, v):
+        self.adj_list[u].append(v)
+
+    def bfs(self, start_vertex):
+        queue = deque()
+        self.visited[start_vertex] = True
+        queue.append(start_vertex)
+
+        while queue:
+            current_vertex = queue.popleft()
+            print(current_vertex, end=" ")
+
+            for node in self.adj_list[current_vertex]:
+                if not self.visited[node]:
+                    self.visited[node] = True
+                    queue.append(node)
+```
+
+6. Bubble Sort
+    * **QUADRATIC time complexity** of $O(n^2)$
+    * **CONSTANT space complexity** of $O(1)$
+    * compares pairs of adjacent elements and swaps them if they are not in order
+    * pros
+        * relatively fast for small datasets
+        * lower CONSTANT space complexity since collection sorted in place
+    * cons
+        * extremely slow for medium and large datasets
 
 ```go
-// --- BUBBLE SORT ---
-    // QUADRATIC time complexity of O(n^2)
-    // CONSTANT space complexity of O(1)
-    // compares pairs of adjacent elements and swaps them if they are not in order
-    // pros
-        // relatively fast for small datasets
-        // lower CONSTANT space complexity since collection sorted in place
-    // cons
-        // extremely slow for medium and large datasets
+// ----- Go implementation -----
 
 func bubbleSort(arr []int) { // slices are reference types in Go so changes made to the slice within the function are reflected outside the function
     n := len(arr)
@@ -1208,18 +1366,29 @@ func bubbleSort(arr []int) { // slices are reference types in Go so changes made
 }
 ```
 
-### Selection Sort
+```py
+# ----- Python implementation -----
+
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n - 1):
+        for j in range(n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+```
+
+7. Selection Sort
+    * **QUADRATIC time complexity** of $O(n^2)$
+    * **CONSTANT space complexity** of $O(1)$
+    * iterates across each element in a collection and compares against and stores the minimum value, swapping variables after each iteration
+    * pros
+        * relatively fast for small and medium datasets
+        * lower CONSTANT space complexity since collection sorted in place
+    * cons
+        * slower for large datasets
 
 ```go
-// --- SELECTION SORT ---
-    // QUADRATIC time complexity of O(n^2)
-    // CONSTANT space complexity of O(1)
-    // iterates across each element in a collection and compares against and stores the minimum value, swapping variables after each iteration
-    // pros
-        // relatively fast for small and medium datasets
-        // lower CONSTANT space complexity since collection sorted in place
-    // cons
-        // slower for large datasets
+// ----- Go implementation -----
 
 func selectionSort(arr []int) { // slices are reference types in Go so changes made to the slice within the function are reflected outside the function
     n := len(arr)
@@ -1235,20 +1404,33 @@ func selectionSort(arr []int) { // slices are reference types in Go so changes m
 }
 ```
 
-### Insertion Sort
+```py
+# ----- Python implementation -----
+
+def selection_sort(arr):
+    n = len(arr)
+    for i in range(n - 1):
+        min_index = i
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_index]:
+                min_index = j
+        arr[i], arr[min_index] = arr[min_index], arr[i]
+```
+
+8. Insertion Sort
+    * **QUADRATIC time complexity** of $O(n^2)$
+    * **CONSTANT space complexity** of $O(1)$
+    * compares all elements to the left of a given element, then shift elements to the right to make room to insert a value
+    * pros
+        * fast for small and medium datasets
+        * fewer steps than BUBBLE SORT
+        * best case LINEAR time complexity is $O(n)$ compared to SELECTION SORT'S $O(n^2)$
+        * lower CONSTANT space complexity since collection sorted in place
+    * cons
+        * slower for large datasets
 
 ```go
-// --- INSERTION SORT ---
-    // QUADRATIC time complexity of O(n^2)
-    // CONSTANT space complexity of O(1)
-    // compares all elements to the left of a given element, then shift elements to the right to make room to insert a value
-    // pros
-        // fast for small and medium datasets
-        // fewer steps than BUBBLE SORT
-        // best case LINEAR time complexity is O(n) compared to SELECTION SORT'S O(n^2)
-        // lower CONSTANT space complexity since collection sorted in place
-    // cons
-        // slower for large datasets
+// ----- Go implementation -----
 
 func insertionSort(arr []int) { // slices are reference types in Go so changes made to the slice within the function are reflected outside the function
     n := len(arr)
@@ -1264,17 +1446,31 @@ func insertionSort(arr []int) { // slices are reference types in Go so changes m
 }
 ```
 
-### Merge Sort
+```py
+# ----- Python implementation -----
+
+def insertion_sort(arr):
+    n = len(arr)
+    for i in range(1, n):
+        key = arr[i]
+        j = i - 1
+        while j >= 0 and arr[j] > key:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key
+```
+
+9. Merge Sort
+    * **QUASILINEAR time complexity** of $O(n log n)$
+    * **LINEAR space complexity** of $O(n)$
+    * recursively split collection in half, sort each half, then recombine the two halves
+    * pros
+        * faster than all sorting algorithms with QUADRATIC time complexity *(bubble sort, selection sort, insertion sort)*
+    * cons
+        * higher LINEAR space complexity since new subarrays are created to store elements for each level of recursion
 
 ```go
-// --- MERGE SORT ---
-    // QUASILINEAR time complexity of O(n log n)
-    // LINEAR space complexity of O(n)
-    // recursively split collection in half, sort each half, then recombine the two halves
-    // pros
-        // faster than all sorting algorithms with QUADRATIC time complexity (bubble sort, selection sort, insertion sort)
-    // cons
-        // higher LINEAR space complexity since new subarrays are created to store elements for each level of recursion
+// ----- Go implementation -----
 
 func mergeSort(arr []int) []int { 
     if len(arr) <= 1 {
@@ -1307,19 +1503,46 @@ func merge(left, right []int) []int {
 }
 ```
 
-### Quick Sort
+```py
+# ----- Python implementation -----
+
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) * 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+    return merge(left, right)
+
+def merge(left, right):
+    result = []
+    while len(left) > 0 or len(right) > 0:
+        if len(left) == 0:
+            return result + right
+        if len(right) == 0:
+            return result + left
+        if left[0] <= right[0]:
+            result.append(left[0])
+            left = left[1:]
+        else:
+            result.append(right[0])
+            right = right[1:]
+    return result
+```
+
+10. Quick Sort
+    * **QUASILINEAR time complexity** of $O(n log n)$ in best case and average case
+    * **QUADRATIC time complexity** of $O(n^2)$ in worst case 
+    * **LOGARITHMIC space complexity** of $O(log n)$
+    * moves smaller elements in a collection to left side of a pivot element, then recursively divide the collection into 2 partitions
+    * pros
+        * faster than all sorting algorithms with QUADRATIC time complexity *(bubble sort, selection sort, insertion sort)* in best and average cases
+        * lower LOGARITHMIC space complexity than MERGE SORT'S LINEAR space complexity since collection sorted in place
+    * cons
+        * higher LOGARITHMIC space complexity since quick sort relies on recursion 
 
 ```go
-// --- QUICK SORT ---
-    // QUASILINEAR time complexity of O(n log n) in best case and average case
-    // QUADRATIC time complexity of O(n^2) in worst case 
-    // LOGARITHMIC space complexity of O(log n)
-    // moves smaller elements in a collection to left side of a pivot element, then recursively divide the collection into 2 partitions
-    // pros
-        // faster than all sorting algorithms with QUADRATIC time complexity (bubble sort, selection sort, insertion sort) in best and average cases
-        // lower LOGARITHMIC space complexity than MERGE SORT'S LINEAR space complexity since collection sorted in place
-    // cons
-        // higher LOGARITHMIC space complexity since quick sort relies on recursion 
+// ----- Go implementation -----
 
 func quickSort(arr []int) { // slices are reference types in Go so changes made to the slice within the function are reflected outside the function
     if len(arr) <= 1 {
@@ -1344,13 +1567,42 @@ func partition(arr []int) int {
 }
 ```
 
+```py
+# ----- Python implementation -----
+
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot_index = partition(arr)
+    return quick_sort(arr[:pivot_index]) + [arr[pivot_index]] + quick_sort(arr[pivot_index + 1:])
+
+def partition(arr):
+    pivot = arr[-1]
+    i = -1
+    for j in range(len(arr) - 1):
+        if arr[j] < pivot:
+            i += 1
+            arr[i], arr[j] = arr[j], arr[i]
+    arr[i + 1], arr[-1] = arr[-1], arr[i + 1]
+    return i + 1
+```
+
+### Leetcode Algorithms
+
 The below algorithms are often used within Leetcode problems.
 
-### Sliding Window 
+1. Sliding Window 
+    * Create a fixed-size window that moves through an array and performs a given operation
+    * Used in problems involving
+        * substring searches 
+        * subarray slice searches
+    * Example questions 
+        * [Leetcode Problem #53: Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
+        * [Leetcode Problem #3: Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/description/)
+        * [Leetcode Problem #128: Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/description/)
 
 ```go
-// --- SLIDING WINDOW ---
-    // create a fixed-size window that moves through an array and performs a given operation
+// ----- Go implementation -----
 
 func findMaxSum(arr []int, k int) int {
 
@@ -1377,22 +1629,41 @@ func findMaxSum(arr []int, k int) int {
     return maxSum
 
 }
-
-// --- USES ---
-    // problems involving... 
-        // substring searches 
-        // subarray slice searches
-    // Leetcode Problem #53: Maximum Subarray
-    // Leetcode Problem #3: Longest Substring Without Repeating Characters
-    // Leetcode Problem #128: Longest Consecutive Sequence
 ```
 
-### Two Pointer
+```py
+# ----- Python implementation -----
+
+def find_max_sum(arr, k):
+
+    n = len(arr)
+    if n < k:
+        return -1  # out of range index error
+
+    window_sum = sum(arr[:k])
+    max_sum = window_sum
+
+    for i in range(k, n):
+        window_sum += arr[i] - arr[i - k]
+        if window_sum > max_sum:
+            max_sum = window_sum
+
+    return max_sum
+```
+
+2. Two Pointer
+    * Two pointers traverse an array simultaneously *(from different ends or with a stipulated distance between them)*
+    * Just a glorified way of saying two values are being stored for a given solution
+    * Used in problems involving
+        * finding pairs in a sorted array 
+        * merging two sorted arrays
+    * Example questions
+        * [Leetcode Problem #167: Two Sum II - Input array is sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
+        * [Leetcode Problem #19: Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
+        * [Leetcode Problem #11: Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
 
 ```go
-// --- TWO POINTER ---
-    // two pointers traverse an array simultaneously (from different ends or with a stipulated distance between them)
-    // just a glorified way of saying two values are being stored for a given solution
+// ----- Go implementation -----
 
 func findPairSum(arr []int, target int) []int {
 
@@ -1413,22 +1684,47 @@ func findPairSum(arr []int, target int) []int {
     return nil // nothing found
 
 }
-
-// --- USES ---
-    // problems involving... 
-        // finding pairs in a sorted array 
-        // merging two sorted arrays
-    // Leetcode Problem #167: Two Sum II - Input array is sorted
-    // Leetcode Problem #19: Remove Nth Node From End of List
-    // Leetcode Problem #11: Container With Most Water
 ```
 
-### Three Pointer
+```py
+# ----- Python implementation -----
+
+def find_pair_sum(arr, target):
+
+    left = 0
+    right = len(arr) - 1
+
+    while left < right:
+
+        current_sum = arr[left] + arr[right]
+
+        if current_sum == target:
+            return [arr[left], arr[right]]
+
+        elif current_sum < target:
+            left += 1
+
+        else:
+            right -= 1
+
+    return None
+```
+
+3. Three Pointer
+    * Extension of two pointer algorithm
+    * Three pointers traverse an array simultaneously *(from different ends or with a stipulated distance between them)*
+    * Just a glorified way of saying three values are being stored for a given solution
+    * Used in problems involving
+        * finding triplets satisfying a predicate
+        * merging three or more sorted arrays
+        * partitioning 
+    * Example questions
+        * [Leetcode Problem #15: 3Sum](https://leetcode.com/problems/3sum/)
+        * [Leetcode Problem #21: Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/description/)
+        * [Leetcode Problem #23: Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)
 
 ```go
-// --- THREE POINTER ---
-    // extension of two pointer algorithm
-    // three pointers traverse an array simultaneously (from different ends or with a stipulated distance between them)
+// ----- Go implementation -----
 
 func findTriplet(arr []int, target int) []int {
 
@@ -1455,15 +1751,34 @@ func findTriplet(arr []int, target int) []int {
     return nil // nothing found
 
 }
+```
 
-// --- USES ---
-    // problems involving... 
-        // finding triplets satisfying a predicate
-        // merging three or more sorted arrays
-        // partitioning 
-    // Leetcode Problem #15: 3Sum
-    // Leetcode Problem #21: Merge Two Sorted Lists
-    // Leetcode Problem #23: Merge k Sorted Lists
+```py
+# ----- Python implementation -----
+
+def find_triplet(arr, target):
+
+    n = len(arr)
+
+    for i in range(n - 2):
+
+        left = i + 1
+        right = n - 1
+
+        while left < right:
+
+            current_sum = arr[i] + arr[left] + arr[right]
+
+            if current_sum == target:
+                return [arr[i], arr[left], arr[right]]
+
+            elif current_sum < target:
+                left += 1
+
+            else:
+                right -= 1
+
+    return None
 ```
 
 ## More on
