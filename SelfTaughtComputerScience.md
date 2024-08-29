@@ -163,6 +163,7 @@ Many people on the internet have made awesome resources free and publicly availa
 * [r/unixporn](https://www.reddit.com/r/unixporn/)
 * [How far can self-taught Mathematics take you?](https://www.reddit.com/r/math/comments/cdg8s7/how_far_can_selftaught_mathematics_take_you/) Reddit post
 * [Mathematics for the adventurous self-learner](https://www.neilwithdata.com/mathematics-self-learner) by Neil Sainsbury
+* [Explaining Gojo's Infinity with Calculus](https://youtu.be/wPSnOqOJYM4?si=nQR-G_M7fh5hSIlL) by Phanimations
 * [OSSU: Data Science](https://github.com/ossu/data-science) Github repository
 * [awesome-falsehood](https://github.com/kdeldycke/awesome-falsehood) Github repository
 * [papers-we-love](https://github.com/papers-we-love/papers-we-love/tree/main) Github repository
