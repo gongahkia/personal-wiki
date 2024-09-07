@@ -182,3 +182,4 @@ Many people on the internet have made awesome resources free and publicly availa
 * [The Debugging Mindset: *Understanding the psychology of learning strategies leads to effective problem-solving skills*](https://queue.acm.org/detail.cfm?id=3068754) by Devon H O'Dell
 * [The Art And Craft of Problem Solving](https://www.goodreads.com/book/show/593458.The_Art_and_Craft_of_Problem_Solving) by Paul Zeitz
 * [How to Solve It: *A New Aspect of Mathematical Method*](https://www.goodreads.com/book/show/192221.How_to_Solve_It) by G Pólya
+* [notes-to-cs-freshmen-from-the-future](https://github.com/nushackers/notes-to-cs-freshmen-from-the-future) Github repository
