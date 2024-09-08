@@ -1,7 +1,6 @@
 # `Data Structures and Algorithms`
 
-> [!NOTE]  
-> Code snippets below are written in Go and Python.
+Code snippets in Go and Python.
 
 ## Definitions
 
