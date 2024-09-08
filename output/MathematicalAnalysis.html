@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>MathematicalAnalysis</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="mathematical-analysis"><code>Mathematical analysis</code></h1>
+<p>Code snippets in Python.</p>
+<h2 id="limits">Limits</h2>
+<ul>
+<li>Describes the value a function approaches as its input approaches a specified value</li>
+<li>Useful for understanding continuity and differentiability</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="im">import</span> math</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="kw">def</span> limit(f, x, x_val):</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>    delta <span class="op">=</span> <span class="fl">0.001</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>    <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>        x_low <span class="op">=</span> x_val <span class="op">-</span> delta</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>        x_high <span class="op">=</span> x_val <span class="op">+</span> delta</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>        <span class="cf">if</span> f(x_low) <span class="op">==</span> f(x_high):</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>            <span class="cf">break</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a>        delta <span class="op">*=</span> <span class="fl">0.5</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a>    <span class="cf">return</span> f(x_val)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a>f <span class="op">=</span> <span class="kw">lambda</span> x: (x<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="dv">1</span>)<span class="op">/</span>(x <span class="op">-</span> <span class="dv">1</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a>x_val <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a>result <span class="op">=</span> limit(f, <span class="fl">0.9999</span>, x_val)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a><span class="bu">print</span>(<span class="ss">f&quot;the limit of f(x) as x approaches </span><span class="sc">{</span>x_val<span class="sc">}</span><span class="ss"> is </span><span class="sc">{</span>result<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<h2 id="continuity">Continuity</h2>
+<ul>
+<li>Functions are continuous if there are no breaks or holes in the function range</li>
+<li>Useful for differentiation</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="kw">def</span> is_continuous(f, x, x_val, delta<span class="op">=</span><span class="fl">1e-6</span>):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>    x_low <span class="op">=</span> x_val <span class="op">-</span> delta</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>    x_high <span class="op">=</span> x_val <span class="op">+</span> delta</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>    limit_exists <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>    <span class="cf">try</span>:</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a>        lim <span class="op">=</span> limit(f, x, x_val)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a>    <span class="cf">except</span>:</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a>        limit_exists <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true"></a>    <span class="cf">return</span> limit_exists <span class="kw">and</span> (f(x_low) <span class="op">-</span> lim)<span class="op">**</span><span class="dv">2</span> <span class="op">&lt;</span> delta <span class="kw">and</span> (f(x_high) <span class="op">-</span> lim)<span class="op">**</span><span class="dv">2</span> <span class="op">&lt;</span> delta</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true"></a>f <span class="op">=</span> <span class="kw">lambda</span> x: x<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true"></a>x_val <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true"></a><span class="bu">print</span>(is_continuous(f, <span class="kw">lambda</span> x: x, x_val))</span></code></pre></div>
+<h2 id="differentiation">Differentiation</h2>
+<ul>
+<li>A.K.A Derivative</li>
+<li>Measures a function’s rate of change</li>
+<li>Useful for optimization, physics and other areas of applied mathematics</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">def</span> derivative(f, x, h<span class="op">=</span><span class="fl">1e-5</span>):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>    <span class="cf">return</span> (f(x<span class="op">+</span>h) <span class="op">-</span> f(x))<span class="op">/</span>h</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>f <span class="op">=</span> <span class="kw">lambda</span> x: x<span class="op">**</span><span class="dv">3</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true"></a>x <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true"></a><span class="bu">print</span>(<span class="ss">f&quot;derivative of f(x)=x^3 at x=</span><span class="sc">{x}</span><span class="ss"> is </span><span class="sc">{</span>derivative(f, x)<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<h2 id="derivatives-of-polynomials">Derivatives of Polynomials</h2>
+<ul>
+<li>Applying the <a href="https://youtu.be/9Yz-RCdS2Tg?si=AXuFQ7r5kNW6cQzQ">power rule</a></li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="im">from</span> math <span class="im">import</span> factorial</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a><span class="kw">def</span> poly_deriv(coeffs):</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>    derived_coeffs <span class="op">=</span> []</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a>    <span class="cf">for</span> i, c <span class="kw">in</span> <span class="bu">enumerate</span>(coeffs[<span class="dv">1</span>:]):</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a>        derived_coeffs.append(c <span class="op">*</span> (<span class="bu">len</span>(coeffs) <span class="op">-</span> i <span class="op">-</span> <span class="dv">1</span>))</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a>    <span class="cf">return</span> derived_coeffs</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true"></a>f <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">4</span>] <span class="co"># 1 + 2x + x^2 + 3x^3 + 4x^4</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true"></a><span class="bu">print</span>(<span class="ss">f&quot;f&#39;(x) coefficients are </span><span class="sc">{</span>poly_deriv(f)<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<h2 id="integration">Integration</h2>
+<ul>
+<li>Applies the <a href="https://www.sfu.ca/math-coursenotes/Math%20158%20Course%20Notes/sec_riemann.html">Riemann sum</a></li>
+<li>Inverse of <a href="#differentiation">differentiation</a></li>
+<li>Measures the accumulated change of a function over a specified interval</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a><span class="kw">def</span> riemann_sum(f, a, b, n<span class="op">=</span><span class="dv">100</span>):</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a>    x <span class="op">=</span> np.linspace(a, b, n<span class="op">+</span><span class="dv">1</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>    dx <span class="op">=</span> (b <span class="op">-</span> a) <span class="op">/</span> n</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a>    area <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a>        area <span class="op">+=</span> f(x[i]) <span class="op">*</span> dx</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true"></a>    <span class="cf">return</span> area</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true"></a>f <span class="op">=</span> <span class="kw">lambda</span> x: x<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true"></a>a <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true"></a>b <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true"></a><span class="bu">print</span>(<span class="ss">f&quot;integral of f(x)=x^2 from </span><span class="sc">{a}</span><span class="ss"> to </span><span class="sc">{b}</span><span class="ss"> is </span><span class="sc">{</span>riemann_sum(f, a, b)<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<h2 id="numerical-integration-error">Numerical Integration Error</h2>
+<ul>
+<li><a href="https://www.sfu.ca/math-coursenotes/Math%20158%20Course%20Notes/sec_riemann.html">Riemann sum</a> suffers from errors as the value of n decreases</li>
+<li>Higher n yields a lower error</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a>actual_int <span class="op">=</span> <span class="dv">4</span><span class="op">/</span><span class="dv">3</span>  <span class="co"># Integral of x^2 from 0 to 2</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a>n_values <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">1000</span>, <span class="dv">10000</span>]</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a><span class="cf">for</span> n <span class="kw">in</span> n_values:</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a>    approx <span class="op">=</span> riemann_sum(<span class="kw">lambda</span> x: x<span class="op">**</span><span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">2</span>, n)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a>    error <span class="op">=</span> <span class="bu">abs</span>(actual_int <span class="op">-</span> approx)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a>    <span class="bu">print</span>(<span class="ss">f&quot;for n=</span><span class="sc">{n}</span><span class="ss">, approx=</span><span class="sc">{</span>approx<span class="sc">:.6f}</span><span class="ss">, error=</span><span class="sc">{</span>error<span class="sc">:.6f}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<h2 id="sequences">Sequences</h2>
+<ul>
+<li>Ordered list of elements of finite or infinite length</li>
+<li>Sequence limits are useful for mathematical analysis</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="kw">def</span> seq_limit(seq, n):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>    <span class="cf">if</span> n <span class="op">&gt;=</span> <span class="bu">len</span>(seq):</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a>        <span class="cf">return</span> <span class="va">None</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a>    s <span class="op">=</span> seq[n]</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n<span class="op">+</span><span class="dv">1</span>, <span class="bu">len</span>(seq)):</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true"></a>        <span class="cf">if</span> <span class="bu">abs</span>(seq[i] <span class="op">-</span> s) <span class="op">&gt;</span> <span class="fl">1e-6</span>:</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true"></a>            <span class="cf">return</span> <span class="va">None</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true"></a>    <span class="cf">return</span> s</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true"></a>seq <span class="op">=</span> [<span class="dv">1</span><span class="op">/</span>n <span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">21</span>)]</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true"></a>n <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true"></a>limit <span class="op">=</span> seq_limit(seq, n)</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true"></a><span class="bu">print</span>(<span class="ss">f&quot;the limit of the sequence 1/n as n-&gt;inf is </span><span class="sc">{</span>limit<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<h2 id="infinite-series">Infinite Series</h2>
+<ul>
+<li>Sums the terms of an infinite sequence</li>
+<li>Convergence is determined by the limits of a sequence of partial sums</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="kw">def</span> sum_series(seq, n):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a>    total <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a>        total <span class="op">+=</span> seq[i]</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true"></a>    <span class="cf">return</span> total</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true"></a><span class="kw">def</span> series_conv(seq, abs_tol<span class="op">=</span><span class="fl">1e-6</span>, max_terms<span class="op">=</span><span class="dv">100</span>):</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true"></a>    prev_sum <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true"></a>    <span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, max_terms<span class="op">+</span><span class="dv">1</span>):</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true"></a>        curr_sum <span class="op">=</span> sum_series(seq, n)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true"></a>        <span class="cf">if</span> <span class="bu">abs</span>(curr_sum <span class="op">-</span> prev_sum) <span class="op">&lt;</span> abs_tol:</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true"></a>            <span class="cf">return</span> curr_sum</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true"></a>        prev_sum <span class="op">=</span> curr_sum</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true"></a>    <span class="cf">return</span> <span class="va">None</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true"></a></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true"></a>harmonic <span class="op">=</span> [<span class="dv">1</span><span class="op">/</span>n <span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">51</span>)]</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true"></a><span class="bu">print</span>(<span class="ss">f&quot;sum of harmonic series is </span><span class="sc">{</span>series_conv(harmonic)<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<h2 id="power-series">Power Series</h2>
+<ul>
+<li>Series representation of a function as an infinite sum of terms calculated from the derivatives at a single point</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="im">from</span> math <span class="im">import</span> factorial</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a><span class="kw">def</span> power_series(f, a, n):</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a>    coeffs <span class="op">=</span> []</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n<span class="op">+</span><span class="dv">1</span>):</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true"></a>        coeffs.append(derivative(f, a, i)<span class="op">/</span>factorial(i))</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true"></a>    <span class="cf">return</span> coeffs</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true"></a>f <span class="op">=</span> <span class="kw">lambda</span> x: <span class="dv">1</span> <span class="op">/</span> (<span class="dv">1</span> <span class="op">-</span> x)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true"></a>a <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true"></a><span class="bu">print</span>(<span class="ss">f&quot;power series of f(x)=1/(1-x) around x=</span><span class="sc">{a}</span><span class="ss"> is </span><span class="sc">{</span>power_series(f, a, <span class="dv">5</span>)<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<h2 id="taylor-series">Taylor Series</h2>
+<ul>
+<li>Representation of a function as an infinite sum of terms calculated from its derivatives at a single point</li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="im">from</span> math <span class="im">import</span> factorial, exp</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true"></a><span class="kw">def</span> factorial(n):</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true"></a>    <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true"></a>        <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true"></a>    <span class="cf">else</span>:</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true"></a>        <span class="cf">return</span> n <span class="op">*</span> factorial(n<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true"></a><span class="kw">def</span> exp_taylor(x, n):</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true"></a>    approx <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n<span class="op">+</span><span class="dv">1</span>):</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true"></a>        approx <span class="op">+=</span> x<span class="op">**</span>i <span class="op">/</span> factorial(i)</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true"></a>    <span class="cf">return</span> approx</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true"></a></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true"></a>x <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true"></a>n <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true"></a><span class="bu">print</span>(<span class="ss">f&quot;e^(x) approximated by the Taylor series expansion to </span><span class="sc">{n}</span><span class="ss"> terms is </span><span class="sc">{</span>exp_taylor(x, n)<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<h2 id="taylor-polynomial-error">Taylor Polynomial Error</h2>
+<ul>
+<li>Taylor Polynomial approximates a function by truncating its Taylor Series</li>
+<li>Approximation error depends on the value of n and the function’s smoothness</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true"></a><span class="im">import</span> sympy <span class="im">as</span> sp</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true"></a><span class="kw">def</span> taylor_error(f, x0, n, interval):</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true"></a>    f_symb <span class="op">=</span> sp.lambdify(f.args[<span class="dv">0</span>], f, <span class="st">&#39;numpy&#39;</span>)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true"></a>    exact_vals <span class="op">=</span> f_symb(interval)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true"></a>    taylor_vals <span class="op">=</span> sp.lambdify(f.args[<span class="dv">0</span>], sp.series(f, x0, n).removeO(), <span class="st">&#39;numpy&#39;</span>)(interval)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true"></a>    max_err <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true"></a>    <span class="cf">for</span> x_val, exact_val, taylor_val <span class="kw">in</span> <span class="bu">zip</span>(interval, exact_vals, taylor_vals):</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true"></a>        err <span class="op">=</span> <span class="bu">abs</span>(exact_val <span class="op">-</span> taylor_val)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true"></a>        <span class="cf">if</span> err <span class="op">&gt;</span> max_err:</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true"></a>            max_err <span class="op">=</span> err</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true"></a>    <span class="cf">return</span> max_err</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true"></a></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true"></a>f <span class="op">=</span> sp.exp(sp.Symbol(<span class="st">&#39;x&#39;</span>))</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true"></a>x0 <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true"></a>n <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true"></a>interval <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">101</span>)</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true"></a>max_err <span class="op">=</span> taylor_error(f, x0, n, interval)</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true"></a><span class="bu">print</span>(<span class="ss">f&quot;maximum error in approximating exp(x) by a degree </span><span class="sc">{n}</span><span class="ss"> Taylor polynomial around x=</span><span class="sc">{x0}</span><span class="ss"> on [-1, 1] is </span><span class="sc">{</span>max_err<span class="sc">:.6f}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<h2 id="fourier-series">Fourier Series</h2>
+<ul>
+<li>Represents a periodic function as an infinite sum of sines and cosines</li>
+<li>Useful for analysing functions as superpositions of simple waves</li>
+</ul>
+<div class="sourceCode" id="cb12"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true"></a><span class="im">from</span> scipy <span class="im">import</span> integrate</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true"></a><span class="kw">def</span> fourier_series(f, L, n):</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true"></a>    coeffs <span class="op">=</span> {}</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true"></a>    <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="op">-</span>n, n<span class="op">+</span><span class="dv">1</span>):</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true"></a>        <span class="cf">if</span> k <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true"></a>            coeffs[k] <span class="op">=</span> <span class="dv">1</span><span class="op">/</span>L <span class="op">*</span> scipy.integrate.quad(f, <span class="dv">0</span>, L)[<span class="dv">0</span>]</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true"></a>        <span class="cf">else</span>:</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true"></a>            <span class="kw">def</span> int_func(x):</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true"></a>                <span class="cf">return</span> f(x) <span class="op">*</span> np.cos(<span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span>k<span class="op">*</span>x<span class="op">/</span>L)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true"></a>            coeffs[k] <span class="op">=</span> <span class="dv">2</span><span class="op">/</span>L <span class="op">*</span> scipy.integrate.quad(int_func, <span class="dv">0</span>, L)[<span class="dv">0</span>]</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true"></a>    <span class="cf">return</span> coeffs</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true"></a></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true"></a><span class="kw">def</span> square_wave(x):</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true"></a>    <span class="cf">return</span> <span class="dv">1</span> <span class="cf">if</span> x <span class="op">&lt;</span> <span class="fl">0.5</span> <span class="cf">else</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true"></a></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true"></a>L <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true"></a>n <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true"></a>coeffs <span class="op">=</span> fourier_series(square_wave, L, n)</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true"></a><span class="bu">print</span>(<span class="ss">f&quot;first </span><span class="sc">{</span><span class="dv">2</span><span class="op">*</span><span class="sc">n</span><span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss"> Fourier coefficients of square wave </span><span class="sc">{</span>coeffs<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<h2 id="convergence-of-fourier-series">Convergence of Fourier Series</h2>
+<ul>
+<li>Converges pointwise to the periodic function for well-behaved functions</li>
+<li>Fourier Series might still diverge at certain points of discontinuity</li>
+</ul>
+<div class="sourceCode" id="cb13"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true"></a><span class="kw">def</span> plot_fourier_approx(f, L, coeffs, x_vals):</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true"></a>    approx <span class="op">=</span> np.zeros(<span class="bu">len</span>(x_vals))</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true"></a>    <span class="cf">for</span> k, ak <span class="kw">in</span> coeffs.items():</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true"></a>        <span class="cf">if</span> k <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true"></a>            approx <span class="op">+=</span> ak</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true"></a>        <span class="cf">else</span>:</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true"></a>            approx <span class="op">+=</span> ak <span class="op">*</span> np.cos(<span class="dv">2</span><span class="op">*</span>np.pi<span class="op">*</span>k<span class="op">/</span>L <span class="op">*</span> x_vals)</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true"></a>    <span class="cf">return</span> approx</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true"></a></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true"></a>x_vals <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">2</span><span class="op">*</span>L, <span class="dv">1000</span>)</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true"></a>approx <span class="op">=</span> plot_fourier_approx(square_wave, L, coeffs, x_vals)</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true"></a>plt.plot(x_vals, [square_wave(x) <span class="cf">for</span> x <span class="kw">in</span> x_vals], label<span class="op">=</span><span class="st">&#39;Actual&#39;</span>)</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true"></a>plt.plot(x_vals, approx, <span class="st">&#39;--&#39;</span>, label<span class="op">=</span><span class="ss">f&#39;Fourier Approx (n=</span><span class="sc">{n}</span><span class="ss">)&#39;</span>)</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true"></a>plt.legend()</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true"></a>plt.show()</span></code></pre></div>
+<h2 id="more-on">More on</h2>
+<ul>
+<li><a href="https://xbe.at/index.php?uid=08e094a068cbde4ecb3dda7b224e4eb8">Introduction to Mathematical Analysis in Python</a></li>
+<li><a href="https://math.mit.edu/~djk/calculus_beginners/">Calculus for Beginners and Artists</a></li>
+<li><a href="https://xbe.at/index.php?uid=08e094a068cbde4ecb3dda7b224e4eb8">xbe.at</a></li>
+<li><a href="https://math.mit.edu/">MIT Mathematics</a></li>
+</ul>
+</body>
+</html>
