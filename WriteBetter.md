@@ -40,3 +40,4 @@
 * [Clean Code](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882) by Robert C Martin
 * [The Pragmatic Programmer](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/) by David Thomas, Andrew Hunt
 * [The Software Craftsman](https://www.amazon.com/Software-Craftsman-Professionalism-Pragmatism-Robert/dp/0134052501) by Sandro Mancuso
+* [Plain Language](https://www.plainlanguage.gov/) by plainlanguage.gov
