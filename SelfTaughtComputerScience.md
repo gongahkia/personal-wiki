@@ -183,3 +183,5 @@ Many people on the internet have made awesome resources free and publicly availa
 * [The Art And Craft of Problem Solving](https://www.goodreads.com/book/show/593458.The_Art_and_Craft_of_Problem_Solving) by Paul Zeitz
 * [How to Solve It: *A New Aspect of Mathematical Method*](https://www.goodreads.com/book/show/192221.How_to_Solve_It) by G Pólya
 * [notes-to-cs-freshmen-from-the-future](https://github.com/nushackers/notes-to-cs-freshmen-from-the-future) Github repository
+* [The Bulk of Software Engineering in 2018 is Just Plumbing](https://www.reddit.com/r/programming/comments/8x1dgg/the_bulk_of_software_engineering_in_2018_is_just/) by r/programming
+* [Difference between frontend, backend, and middleware in web development](https://stackoverflow.com/questions/636689/difference-between-frontend-backend-and-middleware-in-web-development) by Stack Overflow
