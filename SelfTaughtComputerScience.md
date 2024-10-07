@@ -185,3 +185,4 @@ Many people on the internet have made awesome resources free and publicly availa
 * [notes-to-cs-freshmen-from-the-future](https://github.com/nushackers/notes-to-cs-freshmen-from-the-future) Github repository
 * [The Bulk of Software Engineering in 2018 is Just Plumbing](https://www.reddit.com/r/programming/comments/8x1dgg/the_bulk_of_software_engineering_in_2018_is_just/) by r/programming
 * [Difference between frontend, backend, and middleware in web development](https://stackoverflow.com/questions/636689/difference-between-frontend-backend-and-middleware-in-web-development) by Stack Overflow
+* [How To Become A Hacker](http://www.catb.org/~esr/faqs/hacker-howto.html) by Eric Steven Raymond
