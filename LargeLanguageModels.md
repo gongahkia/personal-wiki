@@ -133,8 +133,9 @@ In 2024, there are many existing LLM implementations to choose from. The more pr
 
 ## More on
 
+* [huggingface.co](https://huggingface.co/)
+* [MachineLearning.md](./MachineLearning.md)
 * [Open LLMs](https://github.com/eugeneyan/open-llms) Github repository
 * [Awesome-LLM](https://github.com/Hannibal046/Awesome-LLM) Github repository
 * [TGI vs vLLM](https://medium.com/@rohit.k/tgi-vs-vllm-making-informed-choices-for-llm-deployment-37c56d7ff705) by Rohit Kewalramani
 * [Which is faster, vLLM, TGI or TensorRT?](https://www.reddit.com/r/LocalLLaMA/comments/1cb8i7f/which_is_faster_vllm_tgi_or_tensorrt/) Reddit post
-* [MachineLearning.md](./MachineLearning.md)
