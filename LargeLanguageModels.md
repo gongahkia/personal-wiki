@@ -2,15 +2,21 @@
 
 Also known as LLMs.
 
-## Introduction
+## Theory 
+
+* Tokenizer: splits strings into tokens
+* Lemmatization: reverts tokens to their root forms
+* Encoder: makes each token a vector via embedding, shifts weights to capture meaning/context of tokens via attention
+* Decoder: generates new text using encoded representations to predict next token in a sequence, can access current and previous encoder outputs
+* Transformers: Encoder + Decoder
+
+## Quickstart
 
 LLMs are typically built upon the following infrastructure.
 
 1. [Text Generation Interface (TGI)](https://huggingface.co/docs/text-generation-inference/en/index): framework that features optimized transformer code, quantization, accelerated weight loading and logits warping
 2. [Hugging Face Transformers (HF)](https://github.com/huggingface/transformers): open-source library that provides many pre-trained models for NLP and other custom tasks
 3. [Versatile Large Language Model (vLLM)](https://github.com/vllm-project/vllm): framework that features efficient memory management with paged attention, optimized CUDA kernels, decoding algorithms and high-performance serving throughput *(significantly outperforming TGI and HF)*
-
-## Quickstart
 
 You can [train your own model](#train-your-own-model) or [use existing ones](#use-a-prebuilt-model).
 
@@ -131,3 +137,4 @@ In 2024, there are many existing LLM implementations to choose from. The more pr
 * [Awesome-LLM](https://github.com/Hannibal046/Awesome-LLM) Github repository
 * [TGI vs vLLM](https://medium.com/@rohit.k/tgi-vs-vllm-making-informed-choices-for-llm-deployment-37c56d7ff705) by Rohit Kewalramani
 * [Which is faster, vLLM, TGI or TensorRT?](https://www.reddit.com/r/LocalLLaMA/comments/1cb8i7f/which_is_faster_vllm_tgi_or_tensorrt/) Reddit post
+* [MachineLearning.md](./MachineLearning.md)
