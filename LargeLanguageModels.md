@@ -34,6 +34,7 @@ Then choose a library from below.
 
 * [PyTorch](https://pytorch.org/)
 * [TensorFlow](https://www.tensorflow.org/)
+* [Ollama](https://ollama.com/)
 * [Hugging Face Transformers](https://huggingface.co/docs/transformers/en/index)
 * [Natural Language Toolkit](https://www.nltk.org/)
 * [spaCy](https://spacy.io/)
@@ -133,6 +134,7 @@ In 2024, there are many existing LLM implementations to choose from. The more pr
 
 ## More on
 
+* [Ollama](https://ollama.com/)
 * [huggingface.co](https://huggingface.co/)
 * [MachineLearning.md](./MachineLearning.md)
 * [Open LLMs](https://github.com/eugeneyan/open-llms) Github repository
