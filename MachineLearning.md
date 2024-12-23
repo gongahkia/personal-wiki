@@ -59,6 +59,7 @@ Covers...
 
 ## More on 
 
+* [Neural networks](https://youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&si=S1lkZW9JTJvN3wSh) youtube playlist by 3Blue1Brown
 * [No bullshit guide to math and physics](https://www.amazon.com/No-bullshit-guide-math-physics/dp/0992001005) by Ivan Savov
 * [No bullshit guide to linear algebra](https://www.amazon.sg/No-Bullshit-Guide-Linear-Algebra/dp/0992001021) by Ivan Savov
 * [Data Science from Scratch: First Principles with Python](https://www.amazon.sg/Data-Science-Scratch-Principles-Python/dp/1492041130) by Joel Grus
