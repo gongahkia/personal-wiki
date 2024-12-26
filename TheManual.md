@@ -4,8 +4,7 @@ I believe reading is an [irreplacable](https://humanspsychology.quora.com/What-s
 
 These are a collection of things I would ask my people to read if I were to ever start a company.
 
-![](https://i.pinimg.com/originals/05/f8/bc/05f8bc1937a7d260fad00660dbde7f6b.gif)
-
+![](https://i.pinimg.com/originals/cf/67/72/cf67722c3556cb12975efb0e50474a2d.gif)
 ## Management
 
 * [*What silicon valley gets right on software engineers*](https://blog.pragmaticengineer.com/what-silicon-valley-gets-right-on-software-engineers/) by Gergely Orosz
