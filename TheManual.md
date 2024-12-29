@@ -31,4 +31,3 @@ These are a collection of things I would ask my people to read if I were to ever
 ## Books
 
 * [*What I Talk About When I Talk About Running*](https://en.wikipedia.org/wiki/What_I_Talk_About_When_I_Talk_About_Running) by Haruki Murakami
-
