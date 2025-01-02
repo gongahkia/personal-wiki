@@ -7,10 +7,14 @@
 * Data confidentiality: ensuring data is protected from unauthorized access and disclosure
 * Encryption: Conversion of readable information to an unreadable format using an algorithm and key, used to ensure data confidentiality
 * Hashing: One-way mathematical function that irreversibly transforms data to a fixed-size character string, used to ensure data integrity
+* Red team: Group that acts as malicious actors, simulating real-world attacks that identify and exploit vulnerabilities in an organization's defenses
+* Blue team: Group that acts as the targetted organisation, defending their systems and networks against the Red team's attacks
+* Purple team: Group that acts as both the Red and Blue team, improving an organisation's security posture with offensive and defensive measures
+* Pentesting: A.K.A penetration testing, a simulated cyber attack by ethical hackers to evaluate an organisation's system vulnerabilities and security posture
 
-## Cybersecurity attacks
+## Cyber attacks
 
-There are 7 main types of cybersecurity attacks.
+There are 7 main types of cyber attacks.
 
 1. [Phishing](#phishing-🎣)
 2. [Malware](#malware-💻)
@@ -22,7 +26,7 @@ There are 7 main types of cybersecurity attacks.
 
 ```Mermaid
 flowchart TD;
-    A[Cybersecurity Attacks] --> B[Phishing Attacks 🎣]
+    A[Cyber Attacks] --> B[Phishing Attacks 🎣]
     A --> C[Malware Attacks 💻]
     A --> D[Denial of Service Attacks ⛔]
     A --> E[Identity-Based Attacks 🧟]
