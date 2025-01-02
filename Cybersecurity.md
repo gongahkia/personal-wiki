@@ -16,12 +16,12 @@
 
 There are 7 main types of cyber attacks.
 
-1. [Phishing](#phishing-🎣)
-2. [Malware](#malware-💻)
-3. [DoS](#denial-of-service-⛔)
-4. [Identity-Based attacks](#identity-based-attacks-🧟)
-5. [Code injection](#code-injection-💉)
-6. [MitM attacks](#man-in-the-middle-attacks-🖕)
+1. [Phishing](#phishing-)
+2. [Malware](#malware-)
+3. [DoS](#denial-of-service-)
+4. [Identity-Based attacks](#identity-based-attacks-)
+5. [Code injection](#code-injection-)
+6. [MitM attacks](#man-in-the-middle-attacks-)
 7. [Supply chain attacks](#supply-chain-attacks-)
 
 ```mermaid
