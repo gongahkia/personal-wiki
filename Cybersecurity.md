@@ -24,7 +24,7 @@ There are 7 main types of cyber attacks.
 6. [MitM attacks](#man-in-the-middle-attacks-🖕)
 7. [Supply chain attacks](#supply-chain-attacks-🚚)
 
-```Mermaid
+```mermaid
 flowchart TD;
     A[Cyber Attacks] --> B[Phishing Attacks 🎣]
     A --> C[Malware Attacks 💻]
