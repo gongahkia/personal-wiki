@@ -22,7 +22,7 @@ There are 7 main types of cyber attacks.
 4. [Identity-Based attacks](#identity-based-attacks-🧟)
 5. [Code injection](#code-injection-💉)
 6. [MitM attacks](#man-in-the-middle-attacks-🖕)
-7. [Supply chain attacks](#supply-chain-attacks-🚚)
+7. [Supply chain attacks](#supply-chain-attacks-)
 
 ```mermaid
 flowchart TD;
