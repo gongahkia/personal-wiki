@@ -136,6 +136,14 @@ These are important topics that have not been included above for brevity. Please
 * Cybersecurity  
 * UX/UI Design
 
+## Final words
+
+Learn as much as you can, across as many disciplines as you can.  
+
+[Think about what's fun, not what's easy.](https://haikyuu.fandom.com/wiki/Completely_Absorbed)
+
+Follow your nose, stay curious and be excited.
+
 ## More on
 
 Many people on the internet have made awesome resources free and publicly available.  
@@ -153,6 +161,7 @@ Many people on the internet have made awesome resources free and publicly availa
 
 ### Supplementary reading
 
+* [Vim Fundamentals: Making vim approachable!](https://theprimeagen.github.io/vim-fundamentals/) by ThePrimeagen
 * [How to self study pure math - a step-by-step guide](https://youtu.be/byNaO_zn2fI?si=Fo9kSgE4m6pvhNWE) by Aleph 0
 * [How to learn machine learning as a complete beginner: a self-study guide](https://youtu.be/0F2paWV4eEA?si=OvOo3ZSieoRDnhwV) by Aleph 0
 * [My (5 + 5)-step self-taught CS curriculum](https://www.reddit.com/r/learnprogramming/comments/gsansp/my_55step_selftaught_cs_curriculum_updated/) Reddit post
