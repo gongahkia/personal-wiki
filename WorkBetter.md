@@ -56,6 +56,7 @@ Learn from the best.
 3. Anything worth being, anything historical, anything new, anything impossible, all that shit takes sacrifice. And it takes risk. 
 4. When you doing something creative and shit, and everything feels too easy, that's a red flag. That means its beneath you. You gotta go hard.
 5. Keep hungry and motivated. There's always more you can do. The world is yours.
+6. I want everybody to be their own pioneers. Dream big. If you're an outcast, be an outcast. If you fit in, fit in. Just be yourself.
 
 ## My work ethic
 
@@ -65,14 +66,13 @@ I am still learning. Here are some things I practise.
   
 1. Make useless distraction impossible  
 2. Read more  
-3. Watch more  
-4. Write more  
-5. Create more  
-6. Experiment more  
-7. Produce fast, like you're being chased  
-8. Be picky with your tastes  
-9. Know your audience  
-10. Express yourself  
+3. Write more  
+4. Experiment more  
+5. Create and produce fast, like you're being chased  
+6. Be picky with your tastes  
+7. Know your audience  
+8. Know and be proud of yourself
+9. Express your ideas clearly in your own way
 
 ## More on  
 
@@ -82,6 +82,7 @@ I am still learning. Here are some things I practise.
 * [PRINCE's work ethic](https://youtu.be/ECGcTM_gk4s?si=by73D7gabuU-rKfz) by Make art not content.  
 * [The Way of The Superior Man - Miyamoto Musashi](https://youtu.be/DksWmWmhWvg?si=hpJTKAPq1U01gmZQ) by Solaris  
 * [Yuto Horigome | What Are You Working On? (E32) | Nike](https://youtu.be/RBLCePz-BVk?si=_1FVbFvRpRdv-j-7) by Nike
+* [When a rapper finally doesn’t give a f*ck about people's opinions](https://youtu.be/kAI2DfrKW3c?si=fkrXvVmp1C7dOKHs) by Dexter Rain
 * [The Cult of Done Manifesto](https://medium.com/@bre/the-cult-of-done-manifesto-724ca1c2ff13) by Bre Pettis  
   
 ### Additonal reading  
