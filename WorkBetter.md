@@ -49,7 +49,7 @@ Learn from the best.
 
 ## A$AP Rocky
 
-![](https://www.klarna.com/press-media/images/1037/download_url-Asap%20Rocky%20-%20Photo%20courtesy%20of%20Klarna.jpg)
+![](https://media.gq.com/photos/59e9040298a70509f42ed8d1/master/pass/asap%20rocky%20gq%20style%20cover%20b.jpg)
 
 1. Wealth is in the mind, not the pocket, in that case I’ve been paid
 2. All of the young people, the artsy people, people who get overlooked because they’re weird or they don’t have hype around them, they need to get some shine.
