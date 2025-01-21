@@ -47,6 +47,16 @@ Learn from the best.
 4. I want to create something that people won't be able to forget. Something that can be passed on to the next generation.
 5. Accomplish something that noone else has yet, is what I want to do next.  
 
+## A$AP Rocky
+
+![](https://www.klarna.com/press-media/images/1037/download_url-Asap%20Rocky%20-%20Photo%20courtesy%20of%20Klarna.jpg)
+
+1. Wealth is in the mind, not the pocket, in that case I’ve been paid
+2. All of the young people, the artsy people, people who get overlooked because they’re weird or they don’t have hype around them, they need to get some shine.
+3. Anything worth being, anything historical, anything new, anything impossible, all that shit takes sacrifice. And it takes risk. 
+4. When you doing something creative and shit, and everything feels too easy, that's a red flag. That means its beneath you. You gotta go hard.
+5. Keep hungry and motivated. There's always more you can do. The world is yours.
+
 ## My work ethic
 
 ![](https://i.kym-cdn.com/photos/images/newsfeed/001/919/939/366.jpg)
@@ -55,12 +65,14 @@ I am still learning. Here are some things I practise.
   
 1. Make useless distraction impossible  
 2. Read more  
-3. Write more  
-4. Experiment more  
-5. Create fast  
-6. Be picky with your tastes  
-7. Keep a commonplace book  
-8. Know your audience  
+3. Watch more  
+4. Write more  
+5. Create more  
+6. Experiment more  
+7. Produce fast, like you're being chased  
+8. Be picky with your tastes  
+9. Know your audience  
+10. Express yourself  
 
 ## More on  
 
