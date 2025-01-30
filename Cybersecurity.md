@@ -482,3 +482,4 @@ hash = ph.hash(data)
 * [*Cryptographic Attacks*](https://www.codecademy.com/article/cryptographic-attacks) by Codecademy
 * [*Types Of Cyber Attacks*](https://www.fortinet.com/resources/cyberglossary/types-of-cyber-attacks) by Fortinet
 * [*Friendly Intro to Hardware Security Modules (HSMs)*](https://youtu.be/uewhaNg1BhE?feature=shared) by Studying With Alex
+* [*Intro to Encryption, in Friendly Terms: Cryptography, AES, Man In The Middle, and HTTPS*](https://youtu.be/AXkRoFOP-ug?feature=shared) by Studying With Alex
