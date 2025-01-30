@@ -481,3 +481,4 @@ hash = ph.hash(data)
 * [*The Pigeonhole Principle*](https://www.baeldung.com/cs/pigeonhole-principle) by baeldung
 * [*Cryptographic Attacks*](https://www.codecademy.com/article/cryptographic-attacks) by Codecademy
 * [*Types Of Cyber Attacks*](https://www.fortinet.com/resources/cyberglossary/types-of-cyber-attacks) by Fortinet
+* [*Friendly Intro to Hardware Security Modules (HSMs)*](https://youtu.be/uewhaNg1BhE?feature=shared) by Studying With Alex
