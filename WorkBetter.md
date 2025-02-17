@@ -58,6 +58,12 @@ Learn from the best.
 5. Keep hungry and motivated. There's always more you can do. The world is yours.
 6. I want everybody to be their own pioneers. Dream big. If you're an outcast, be an outcast. If you fit in, fit in. Just be yourself.
 
+## Grant Sanderson (3Blue1Brown)
+
+![](https://cdn.firespring.com/images/1ccfc825-9ceb-406d-bbc6-94a3f59261e3.png)
+
+1. The mechanism behind the exponential function is that it applies when the rate of change is proportional to the thing in and of itself. So it's like where software you write enables you to write more software. The things that you develop should enable increasingly greater development of those things.
+
 ## My work ethic
 
 ![](https://i.kym-cdn.com/photos/images/newsfeed/001/919/939/366.jpg)
@@ -73,6 +79,7 @@ I am still learning. Here are some things I practise.
 7. Know your audience  
 8. Know and be proud of yourself
 9. Express your ideas clearly in your own way
+10. Exploit the exponential function
 
 ## More on  
 
@@ -83,7 +90,8 @@ I am still learning. Here are some things I practise.
 * [The Way of The Superior Man - Miyamoto Musashi](https://youtu.be/DksWmWmhWvg?si=hpJTKAPq1U01gmZQ) by Solaris  
 * [Yuto Horigome | What Are You Working On? (E32) | Nike](https://youtu.be/RBLCePz-BVk?si=_1FVbFvRpRdv-j-7) by Nike
 * [When a rapper finally doesn’t give a f*ck about people's opinions](https://youtu.be/kAI2DfrKW3c?si=fkrXvVmp1C7dOKHs) by Dexter Rain
-* [The Cult of Done Manifesto](https://medium.com/@bre/the-cult-of-done-manifesto-724ca1c2ff13) by Bre Pettis  
+* [The Cult of Done Manifesto](https://medium.com/@bre/the-cult-of-done-manifesto-724ca1c2ff13) by Bre Pettis
+* [Grant Sanderson: Math, Manim, Neural Networks & Teaching with 3Blue1Brown | Lex Fridman Podcast #118](https://youtu.be/U_6AYX42gkU?feature=shared) by Lex Fridman 
   
 ### Additonal reading  
   
