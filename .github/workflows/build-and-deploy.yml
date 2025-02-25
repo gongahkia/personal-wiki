@@ -31,9 +31,27 @@ jobs:
       - name: Convert Markdown to HTML
         run: |
           for file in src/*.md; do
-            filename=$(basename "$file" .md)
-            if [ "$filename" != "README.md" ]; then
-              markdown-it "$file" -o "output/${filename%.md}.html" --highlight
+          if [ "$(basename "$file")" != "README.md" ]; then
+            node -e "
+              const fs = require('fs');
+              const MarkdownIt = require('markdown-it');
+              const hljs = require('highlight.js');
+              
+              const md = new MarkdownIt({
+                highlight: function (str, lang) {
+                  if (lang && hljs.getLanguage(lang)) {
+                    try {
+                      return hljs.highlight(str, { language: lang }).value;
+                    } catch (__) {}
+                  }
+                  return ''; // use external default escaping
+                }
+              });
+              
+              const input = fs.readFileSync('$file', 'utf8');
+              const output = md.render(input);
+              fs.writeFileSync('output/$(basename "$file" .md).html', output);
+            "
             fi
           done
 

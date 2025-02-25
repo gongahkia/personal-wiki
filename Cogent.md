@@ -132,4 +132,3 @@ module ExampleIntegration {
 * [trustworthy systems](https://trustworthy.systems/projects/OLD/cogent/)
 * [what is co-design](https://www.beyondstickynotes.com/what-is-codesign)
 * [cogent: uniqueness types and certifying compilation](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/47AC86F02534818B95A56FA1A283A0A6/S095679682100023Xa.pdf/cogent-uniqueness-types-and-certifying-compilation.pdf)
-
