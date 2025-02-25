@@ -15,6 +15,7 @@ These are a collection of things I would ask my people to read if I were to ever
 * [*Rubber Duck Debugging*](https://rubberduckdebugging.com/) by rubberduckdebugging.com
 * [*Ikigai: The Japanese Secret to a Joyful Life*](https://www.japan.go.jp/kizuna/2022/03/ikigai_japanese_secret_to_a_joyful_life.html) by japan.go.jp
 * [*The XY Problem*](https://xyproblem.info/) by xyproblem.info
+* [*Grant Sanderson: Math, Manim, Neural Networks & Teaching with 3Blue1Brown | Lex Fridman Podcast #118*](https://youtu.be/U_6AYX42gkU?feature=shared) by Lex Fridman
 
 ## Admin
 
