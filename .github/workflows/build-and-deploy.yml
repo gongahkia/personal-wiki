@@ -29,7 +29,7 @@ jobs:
 
       - name: Convert Markdown to HTML
         run: |
-          for file in src/*.md; do
+          for file in *.md; do
             if [ "$(basename "$file")" != "README.md" ]; then
               node -e "
                 const fs = require('fs');
