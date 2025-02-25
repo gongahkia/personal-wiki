@@ -1,0 +1,284 @@
+<h1><code>JavaScript</code></h1>
+<h2>Comments</h2>
+<pre><code class="language-javascript"><span class="hljs-comment">// single line comments</span>
+<span class="hljs-comment">/* Multiline
+comments
+are 
+like
+this */</span>
+</code></pre>
+<h2>Print statement</h2>
+<pre><code class="language-javascript"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;hello&quot;</span>);
+</code></pre>
+<h2>Variable</h2>
+<ul>
+<li>var</li>
+<li>const</li>
+</ul>
+<pre><code class="language-javascript"><span class="hljs-comment">// VAR</span>
+    <span class="hljs-comment">// var creates a variable within the scope the variable is defined in</span>
+    <span class="hljs-comment">// omission of var will create a variable within the global scope</span>
+    <span class="hljs-comment">// a variable&#x27;s value can be reassigned after assignment</span>
+
+<span class="hljs-keyword">var</span> aVariable = <span class="hljs-number">1500</span>; 
+aVariable = <span class="hljs-number">10</span>; <span class="hljs-comment">// variable reassignment</span>
+
+<span class="hljs-comment">// CONST</span>
+    <span class="hljs-comment">// const creates a constant within the scope the constant is defined in</span>
+    <span class="hljs-comment">// a constant&#x27;s value cannot be reassigned after assignment</span>
+
+<span class="hljs-keyword">const</span> water = <span class="hljs-string">&quot;melon&quot;</span>; 
+</code></pre>
+<h2>Types</h2>
+<ul>
+<li>number</li>
+<li>string</li>
+<li>boolean</li>
+<li>null</li>
+<li>undefined</li>
+</ul>
+<pre><code class="language-javascript"><span class="hljs-comment">// ---------- NUMBERS ----------</span>
+    <span class="hljs-comment">// the number data type covers integers, floats and doubles</span>
+    <span class="hljs-comment">// 64-bit IEEE 754 double, a 52-bit mantissa</span>
+    <span class="hljs-comment">// stores integers up to 9x10^15 </span>
+
+a = <span class="hljs-number">1</span>; <span class="hljs-comment">// this is a number</span>
+b = <span class="hljs-number">1.5</span>; <span class="hljs-comment">// this is also a number</span>
+
+<span class="hljs-comment">// ARITHMETIC OPERATORS</span>
+
+a + b; <span class="hljs-comment">// addition</span>
+b - a; <span class="hljs-comment">// subtraction</span>
+a * b; <span class="hljs-comment">// multiplication</span>
+a / b; <span class="hljs-comment">// division</span>
+a % b; <span class="hljs-comment">// modulo</span>
+(a + b) * a; <span class="hljs-comment">// parentheses</span>
+a += b; <span class="hljs-comment">// addition and reassignment shorthand</span>
+a -= b; <span class="hljs-comment">// subtraction and reassignment shorthand</span>
+a *= b; <span class="hljs-comment">// multiplication and reassignment shorthand</span>
+a /= b; <span class="hljs-comment">// division and reassignment shorthand</span>
+a %= b; <span class="hljs-comment">// modulo and reassignment shorthand</span>
+a ++; <span class="hljs-comment">// increment by one</span>
+a --; <span class="hljs-comment">// decrement by one</span>
+<span class="hljs-title class_">Infinity</span>; <span class="hljs-comment">// result of 1/0</span>
+-<span class="hljs-title class_">Infinity</span>; <span class="hljs-comment">// result of -1/0</span>
+<span class="hljs-title class_">Nan</span>; <span class="hljs-comment">// Not a Number, result of 0/0</span>
+
+<span class="hljs-comment">// ---------- BOOLEAN ----------</span>
+
+c = <span class="hljs-literal">true</span>;
+d = <span class="hljs-literal">false</span>;
+
+<span class="hljs-comment">// ---------- STRINGS ----------</span>
+    <span class="hljs-comment">// single (&#x27;&#x27;) or double (&quot;&quot;) quotes are both accepted</span>
+
+e = <span class="hljs-string">&#x27;this is a string&#x27;</span>;
+f = <span class="hljs-string">&quot;this is also a string&quot;</span>;
+
+<span class="hljs-comment">// STRING METHODS</span>
+
+<span class="hljs-comment">// STRING CONCATENATION</span>
+    <span class="hljs-comment">// + for string concatentation </span>
+    <span class="hljs-comment">// works for diff data types besides strings</span>
+
+i = <span class="hljs-string">&quot;Hello &quot;</span> + <span class="hljs-string">&quot;World&quot;</span>; <span class="hljs-comment">// &quot;Hello World&quot;</span>
+j = <span class="hljs-string">&quot;Hello &quot;</span> + <span class="hljs-number">1</span> + <span class="hljs-string">&quot; World&quot;</span>; <span class="hljs-comment">// &quot;Hello 1 World&quot;</span>
+k = <span class="hljs-string">&quot;Hello &quot;</span> + [<span class="hljs-string">&quot;World &quot;</span>, <span class="hljs-number">100</span>]; <span class="hljs-comment">// &quot;Hello World 100&quot;</span>
+
+<span class="hljs-comment">// STRING SLICING</span>
+    <span class="hljs-comment">// .charAt()</span>
+    <span class="hljs-comment">// .substring()</span>
+
+<span class="hljs-string">&quot;This is a string&quot;</span>.<span class="hljs-title function_">charAt</span>(<span class="hljs-number">0</span>); <span class="hljs-comment">// returns &quot;T&quot;</span>
+<span class="hljs-string">&quot;Hello world!&quot;</span>.<span class="hljs-title function_">substr</span>(<span class="hljs-number">0</span>,<span class="hljs-number">5</span>); <span class="hljs-comment">// returns &quot;Hello&quot;</span>
+
+<span class="hljs-comment">// STRING LENGTH</span>
+    <span class="hljs-comment">// .length</span>
+
+<span class="hljs-string">&quot;Hello&quot;</span>.<span class="hljs-property">length</span>; <span class="hljs-comment">// returns 5</span>
+
+<span class="hljs-comment">// ---------- OTHERS ---------- </span>
+
+l = <span class="hljs-literal">null</span>; <span class="hljs-comment">// indicates deliberate non-value</span>
+m = <span class="hljs-literal">undefined</span>; <span class="hljs-comment">// indicates a value is currently absent but intended to be filled later&#x27;</span>
+
+<span class="hljs-comment">// false, null, undefined, NaN, 0, &quot;&quot; evaluate to false</span>
+<span class="hljs-comment">// everything else evaluates to true</span>
+
+<span class="hljs-comment">// ---------- LOGICAL OPERATORS ----------</span>
+
+g = !<span class="hljs-literal">true</span>; <span class="hljs-comment">// false</span>
+h = !<span class="hljs-literal">false</span>; <span class="hljs-comment">// true</span>
+<span class="hljs-number">1</span> === <span class="hljs-number">1</span>; <span class="hljs-comment">// COMPLETE EQUALITY of value and type</span>
+<span class="hljs-number">1</span> !== <span class="hljs-number">1</span>; <span class="hljs-comment">// COMPLETE INEQUALITY of value and type</span>
+<span class="hljs-number">1</span> == <span class="hljs-string">&quot;1&quot;</span>; <span class="hljs-comment">// PARTIAL EQUALITY of value</span>
+<span class="hljs-literal">null</span> != <span class="hljs-literal">undefined</span>; <span class="hljs-comment">// PARTIAL EQUALITY of value</span>
+
+<span class="hljs-comment">// COMPARISON OPERATOR</span>
+
+<span class="hljs-number">1</span> &lt; <span class="hljs-number">10</span>; <span class="hljs-comment">// true</span>
+<span class="hljs-number">1</span> &gt; <span class="hljs-number">10</span>; <span class="hljs-comment">// false</span>
+<span class="hljs-number">2</span> &lt;= <span class="hljs-number">2</span>; <span class="hljs-comment">// true </span>
+<span class="hljs-number">2</span> &gt;= <span class="hljs-number">2</span>; <span class="hljs-comment">// true</span>
+</code></pre>
+<h2>Data structures</h2>
+<ul>
+<li>array</li>
+<li>object</li>
+</ul>
+<pre><code class="language-javascript"><span class="hljs-comment">// ---------- ARRAY ----------</span>
+    <span class="hljs-comment">// Javascript arrays allow storing multiple values of different data types together with []</span>
+
+<span class="hljs-keyword">var</span> myArray = [<span class="hljs-string">&quot;Hello&quot;</span>, <span class="hljs-number">45</span>, <span class="hljs-literal">true</span>];
+
+<span class="hljs-comment">// ARRAY METHODS</span>
+
+<span class="hljs-keyword">var</span> yes = myArray[<span class="hljs-number">1</span>]; <span class="hljs-comment">// square bracket notation to obtain array elements via index, arrays are zero-indexed</span>
+myArray.<span class="hljs-property">length</span>; <span class="hljs-comment">// returns the length of the array</span>
+myArray.<span class="hljs-title function_">push</span>(<span class="hljs-string">&quot;neat&quot;</span>); <span class="hljs-comment">// appends an element to the array</span>
+myArray.<span class="hljs-title function_">unshift</span>(<span class="hljs-string">&quot;ass&quot;</span>); <span class="hljs-comment">// add value as first element to the array</span>
+myArray.<span class="hljs-title function_">shift</span>(); <span class="hljs-comment">// removes first element from array and returns it</span>
+myArray.<span class="hljs-title function_">pop</span>(); <span class="hljs-comment">// removes last element from array and returns it</span>
+myArray.<span class="hljs-title function_">join</span>(<span class="hljs-string">&quot;;&quot;</span>); <span class="hljs-comment">// joins all elements in an array with semicolon</span>
+myArray.<span class="hljs-title function_">slice</span>(<span class="hljs-number">1</span>,<span class="hljs-number">4</span>); <span class="hljs-comment">// allows indexing of multiple elements from an array to create a subarray</span>
+myArray.<span class="hljs-title function_">splice</span>(<span class="hljs-number">2</span>,<span class="hljs-number">4</span>,<span class="hljs-string">&quot;hello&quot;</span>,<span class="hljs-string">&quot;the&quot;</span>,<span class="hljs-string">&quot;world&quot;</span>); <span class="hljs-comment">// removes 4 elements from the array from index 2, and inserts the subsequent specified 3 elements at index 2, then returns the removed subarray of 4 elements</span>
+
+<span class="hljs-comment">// ---------- OBJECTS ----------</span>
+    <span class="hljs-comment">// similar to Python dictionaries and C structs, storing key-value pairs</span>
+    <span class="hljs-comment">// object keys are always strings, but they can be created without quotation marks</span>
+    <span class="hljs-comment">// object values can be accessed via their keys using square bracket [] or . dot notation</span>
+
+<span class="hljs-keyword">var</span> anObject = {
+    <span class="hljs-attr">key1</span>: <span class="hljs-string">&quot;hello&quot;</span>,
+    <span class="hljs-attr">key2</span>: <span class="hljs-string">&quot;goodbye
+    key3: 1000,
+    key4: true
+};
+
+anObject[&quot;</span>key1<span class="hljs-string">&quot;]; // &quot;</span>hello<span class="hljs-string">&quot;
+anObject.key2; // &quot;</span>goodbye<span class="hljs-string">&quot;
+anObject.key5 = &quot;</span>lovely and thanks<span class="hljs-string">&quot;; // can assign new keys to objects as well
+
+// objects can contain functions
+
+var myObject = {
+    water:&quot;</span>melonsugarhigh<span class="hljs-string">&quot;;
+    myFunc: function() {
+        return &quot;</span>hello world<span class="hljs-string">&quot;;
+    }
+    harry: function() {
+        return this.water; // .this operates similar to .self in python objects
+    }
+};
+
+myObject.myFunc(); // returns &quot;</span>hello world<span class="hljs-string">&quot;
+myObject.harry(); // returns &quot;</span>melonsugarhigh<span class="hljs-string">&quot;
+</span></code></pre>
+<h2>Logic and control structures</h2>
+<pre><code class="language-javascript"><span class="hljs-comment">// CONDITIONAL CHECKS</span>
+    <span class="hljs-comment">// if</span>
+    <span class="hljs-comment">// else</span>
+    <span class="hljs-comment">// else if</span>
+    <span class="hljs-comment">// &amp;&amp; logical and</span>
+    <span class="hljs-comment">// || logical or </span>
+    <span class="hljs-comment">// switch case</span>
+
+<span class="hljs-keyword">var</span> count = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">if</span> (count === <span class="hljs-number">3</span>){
+    <span class="hljs-comment">// do something    </span>
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (count === <span class="hljs-number">4</span> || count === -<span class="hljs-number">500</span> &amp;&amp; count &lt; <span class="hljs-number">0</span>){
+    <span class="hljs-comment">// do something else</span>
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-comment">// do something else instead</span>
+};
+
+<span class="hljs-keyword">var</span> grade = <span class="hljs-string">&quot;B&quot;</span>;
+<span class="hljs-keyword">switch</span> (grade) {
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;A&quot;</span>:
+        <span class="hljs-comment">// do something if A</span>
+        <span class="hljs-keyword">break</span>; <span class="hljs-comment">// REMEMBER to include the break statement otherwise the logic will fall through</span>
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;B&quot;</span>:
+        <span class="hljs-comment">// do something if B</span>
+        <span class="hljs-keyword">break</span>
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;C&quot;</span>:
+        <span class="hljs-comment">// do something if C</span>
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-attr">default</span>: <span class="hljs-comment">// default case, similar to the catch-all operator in Rust _</span>
+        <span class="hljs-keyword">break</span>;
+};
+
+<span class="hljs-comment">// LOOPS</span>
+    <span class="hljs-comment">// while</span>
+    <span class="hljs-comment">// do while</span>
+    <span class="hljs-comment">// for</span>
+    <span class="hljs-comment">// for in</span>
+    <span class="hljs-comment">// for of</span>
+    <span class="hljs-comment">// break</span>
+
+<span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
+    <span class="hljs-comment">// do something that will create an infinite loop</span>
+};
+
+<span class="hljs-keyword">do</span> {
+    count ++;
+    <span class="hljs-keyword">break</span> <span class="hljs-comment">// breaks out of the loop</span>
+} <span class="hljs-keyword">while</span> (count !== <span class="hljs-number">3</span>);
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++){
+    <span class="hljs-comment">// do something 5 times</span>
+};
+
+<span class="hljs-comment">// FOR IN </span>
+    <span class="hljs-comment">// used to iterate over key-value pairs in an object</span>
+
+<span class="hljs-keyword">var</span> anotherObject = {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Kirby&quot;</span>,
+    <span class="hljs-attr">age</span>: <span class="hljs-number">18</span>,
+    <span class="hljs-attr">old</span>: <span class="hljs-literal">false</span>
+};
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> x <span class="hljs-keyword">in</span> anotherObject) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x);
+    <span class="hljs-comment">// do something else for every key-value pair in the object</span>
+};
+
+<span class="hljs-comment">// FOR OF</span>
+    <span class="hljs-comment">// used to iterate over elements in other iterable objects</span>
+
+<span class="hljs-keyword">var</span> pets = [<span class="hljs-string">&quot;cat&quot;</span>, <span class="hljs-string">&quot;dog&quot;</span>, <span class="hljs-string">&quot;hamter&quot;</span>, <span class="hljs-string">&quot;hedgehog&quot;</span>];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> pet <span class="hljs-keyword">of</span> pets) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(pet); 
+    <span class="hljs-comment">// do something else for every element in the array</span>
+};
+</code></pre>
+<h2>Functions</h2>
+<pre><code class="language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">myFunction</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;ass&quot;</span>);
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">myOtherFunction</span>(<span class="hljs-params">thing</span>) {
+    <span class="hljs-keyword">return</span> thing.<span class="hljs-title function_">toUpperCase</span>();
+}
+</code></pre>
+<h2>Flavours</h2>
+<p>JavaScript also comes in many other flavours.</p>
+<ul>
+<li>TypeScript</li>
+<li>Elm</li>
+<li>CoffeeScript</li>
+<li>PureScript</li>
+<li>PogoScript</li>
+<li><a href="https://gist.github.com/matthiasak/c3c9c40d0f98ca91def1">etc.</a></li>
+</ul>
+<h2>More on</h2>
+<ul>
+<li>constructors</li>
+<li>prototypes</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">javascript documentation</a></li>
+<li><a href="https://learnxinyminutes.com/docs/javascript/">learn javascript in y minutes</a></li>
+<li><a href="https://learnxinyminutes.com/docs/typescript/">learn typescript in y minutes</a></li>
+<li><a href="https://learnxinyminutes.com/docs/elm/">learn elm in y minutes</a></li>
+<li><a href="https://learnxinyminutes.com/docs/coffeescript/">learn coffeescript in y minutes</a></li>
+<li><a href="https://learnxinyminutes.com/docs/purescript/">learn purescript in y minutes</a></li>
+<li><a href="https://learnxinyminutes.com/docs/pogo/">learn pogoscript in y minutes</a></li>
+</ul>

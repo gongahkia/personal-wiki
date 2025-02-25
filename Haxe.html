@@ -1,0 +1,229 @@
+<h1><code>Haxe</code></h1>
+<p>Versatile open-source language for cross-platform applications, games, and multimedia projects.</p>
+<h2>Comments</h2>
+<pre><code class="language-hx"><span class="hljs-comment">// ----- COMMENT -----</span>
+    
+<span class="hljs-comment">// this is a single-line comment</span>
+
+<span class="hljs-comment">/*
+this is a 
+multi-line
+comment
+*/</span>
+</code></pre>
+<h2>Printing</h2>
+<pre><code class="language-hx"><span class="hljs-comment">// ----- PRINTING -----</span>
+    <span class="hljs-comment">// Sys.stdout.write() =&gt; receives a string argument that is then printed to the stdout and does not include a newline by default</span>
+    <span class="hljs-comment">// trace() =&gt; receives a string argument that is then printed to the stdout and includes a newline automatically at the end of the output</span>
+
+Sys.stdout.write(<span class="hljs-string">&quot;this does not have a newline and one must be explicitly specified for its inclusion\n&quot;</span>); 
+<span class="hljs-built_in">trace</span>(<span class="hljs-string">&quot;this already has a newline&quot;</span>);
+</code></pre>
+<h2>Quickstart</h2>
+<pre><code class="language-hx"><span class="hljs-comment">// ----- QUICKSTART -----</span>
+    <span class="hljs-comment">// Haxe compiles to multiple target platforms (JavaScript, C++, Java, C#, Python, Lua) to write once deploy anywhere</span>
+    <span class="hljs-comment">// strongly, statically-typed with type inference</span>
+    <span class="hljs-comment">// used for both frontend (web apps) and backend (servers)</span>
+    <span class="hljs-comment">// supports meta-programming via macros</span>
+    <span class="hljs-comment">// wealth of functionality with external libraries </span>
+    <span class="hljs-comment">// provides syntax for both object-oriented and functional programming paradigms</span>
+    <span class="hljs-comment">// class Main() =&gt; main class within which all methods including the main method must run, similar to Java&#x27;s main class</span>
+    <span class="hljs-comment">// static public function main() =&gt; static public main method which acts as the entry point for the Haxe program within which all execution code is run, equivalent to the main method in other programming languages like Java or the main function in C-style languages</span>
+    <span class="hljs-comment">// : =&gt; specifies the datatype of the given variable, providing type annotations in Haxe</span>
+    <span class="hljs-comment">// var =&gt; declares a mutable variable whose value can be reassigned and modified even after initial assignment</span>
+    <span class="hljs-comment">// const =&gt; declares an immutable constant whose value cannot be reassigned and modified after initial assignment</span>
+</code></pre>
+<h2>Types</h2>
+<pre><code class="language-hx"><span class="hljs-comment">// ----- TYPE -----</span>
+    <span class="hljs-comment">// Int =&gt; stores a signed 32-bit integer number value if unspecified</span>
+    <span class="hljs-comment">// UInt =&gt; stores an unsigned 32-bit integer number value if unspecified</span>
+    <span class="hljs-comment">// Int32 =&gt; stores a signed 32-bit integer number value</span>
+    <span class="hljs-comment">// UInt32 =&gt; stores an unsigned 32-bit integer number value</span>
+    <span class="hljs-comment">// Int64 =&gt; stores a signed 64-bit integer number value</span>
+    <span class="hljs-comment">// UInt64 =&gt; stores an unsigned 64-bit integer number value</span>
+    <span class="hljs-comment">// Float =&gt; stores a 64-bit double-precision floating-point number value if unspecified</span>
+    <span class="hljs-comment">// Float32 =&gt; stores a 32-bit single-precision floating-point number value</span>
+    <span class="hljs-comment">// Float64 =&gt; stores a 64-bit double-precision floating-point number value </span>
+    <span class="hljs-comment">// Bool =&gt; true, false</span>
+    <span class="hljs-comment">// Char =&gt; stores a single-character long value declared within &#x27;&#x27; single quotation marks</span>
+    <span class="hljs-comment">// String =&gt; stores a string value declared within &quot;&quot; double quotation marks</span>
+    <span class="hljs-comment">// Dynamic =&gt; represents a special datatype that can store any value, affording type inference in Haxe</span>
+    <span class="hljs-comment">// null =&gt; special value representing the absence of a value</span>
+    <span class="hljs-comment">// Null&lt;specifiedDatatype&gt; =&gt; represents a datatype that can either store a value of the specified datatype or be the special value null</span>
+    <span class="hljs-comment">// Void =&gt; special datatype that represents the absencem of a value, most often used in the declaration of the type signature of void functions </span>
+</code></pre>
+<h2>Operators</h2>
+<pre><code class="language-hx"><span class="hljs-comment">// ----- OPERATOR -----</span>
+
+<span class="hljs-comment">// --- ARITHMETIC OPERATORS ---</span>
+
++ <span class="hljs-comment">// addition</span>
+- <span class="hljs-comment">// subtraction</span>
+* <span class="hljs-comment">// multiplication</span>
+/ <span class="hljs-comment">// division</span>
+% <span class="hljs-comment">// modulo</span>
+
+<span class="hljs-comment">// --- COMPARISON OPERATORS ---</span>
+
+== <span class="hljs-comment">// complete equality check for both value and type</span>
+!= <span class="hljs-comment">// complete inequality check for both value and type</span>
+&gt; <span class="hljs-comment">// comparison operator</span>
+&lt; <span class="hljs-comment">// comparison operator</span>
+&gt;= <span class="hljs-comment">// comparison operator</span>
+&lt;= <span class="hljs-comment">// comparison operator</span>
+
+<span class="hljs-comment">// --- LOGICAL OPERATORS ---</span>
+
+&amp;&amp; <span class="hljs-comment">// logical and</span>
+|| <span class="hljs-comment">// logical or</span>
+! <span class="hljs-comment">// logical not</span>
+
+<span class="hljs-comment">// --- BITWISE OPERATORS ---</span>
+
+&amp; <span class="hljs-comment">// bitwise and</span>
+| <span class="hljs-comment">// bitwise or</span>
+^ <span class="hljs-comment">// bitwise xor</span>
+~ <span class="hljs-comment">// bitwise not</span>
+&lt;&lt; <span class="hljs-comment">// bitwise left shift</span>
+&gt;&gt; <span class="hljs-comment">// bitwise right shift</span>
+</code></pre>
+<h2>Control structures</h2>
+<pre><code class="language-hx"><span class="hljs-comment">// ----- CONTROL STRUCTURE -----</span>
+    
+<span class="hljs-comment">// --- CONDITIONALS ---</span>
+
+<span class="hljs-comment">// IF ELSE IF ELSE</span>
+
+<span class="hljs-keyword">var</span> age = <span class="hljs-number">25</span>;
+<span class="hljs-keyword">if</span> (age &lt; <span class="hljs-number">13</span>) {
+    <span class="hljs-built_in">trace</span>(<span class="hljs-string">&quot;Child&quot;</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (age &gt;= <span class="hljs-number">13</span> &amp;&amp; age &lt; <span class="hljs-number">20</span>) {
+    <span class="hljs-built_in">trace</span>(<span class="hljs-string">&quot;Teenager&quot;</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (age &gt;= <span class="hljs-number">20</span> &amp;&amp; age &lt; <span class="hljs-number">65</span>) {
+    <span class="hljs-built_in">trace</span>(<span class="hljs-string">&quot;Adult&quot;</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">trace</span>(<span class="hljs-string">&quot;Senior&quot;</span>);
+}
+
+<span class="hljs-comment">// SWITCH CASE DEFAULT</span>
+    <span class="hljs-comment">// the equivalent of match case and switch case in other programming languages, providing a degree of basic pattern-matching in Haxe</span>
+    <span class="hljs-comment">// often combined with enums for state modelling and checking in Haxe similar to sophisticated pattern-matching in Rust</span>
+    <span class="hljs-comment">// default =&gt; specifies the default fall-through case which executes when all other predicate case conditions fail</span>
+
+<span class="hljs-title class_"><span class="hljs-keyword">enum</span> <span class="hljs-title">Color</span> {</span>
+    Red;
+    Green;
+    Blue;
+}
+
+<span class="hljs-keyword">var</span> color:<span class="hljs-type">Color </span>= Color.Green;
+
+<span class="hljs-keyword">switch</span> (color) {
+    <span class="hljs-keyword">case</span> Color.Red:<span class="hljs-type"></span>
+        <span class="hljs-built_in">trace</span>(<span class="hljs-string">&quot;Red&quot;</span>);
+    <span class="hljs-keyword">case</span> Color.Green:<span class="hljs-type"></span>
+        <span class="hljs-built_in">trace</span>(<span class="hljs-string">&quot;Green&quot;</span>);
+    <span class="hljs-keyword">case</span> Color.Blue:<span class="hljs-type"></span>
+        <span class="hljs-built_in">trace</span>(<span class="hljs-string">&quot;Blue&quot;</span>);
+}
+
+<span class="hljs-comment">// --- LOOPS ---</span>
+
+<span class="hljs-comment">// FOR IN</span>
+    <span class="hljs-comment">// allows for iteration and traversal over each element in an iterable data structure (such as a dynamically generated integer range construct)</span>
+
+<span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> <span class="hljs-number">0.</span>.<span class="hljs-number">.10</span>) {
+    <span class="hljs-built_in">trace</span>(i);
+}
+
+<span class="hljs-comment">// WHILE</span>
+    <span class="hljs-comment">// operates similarly to while loops in most other programming languages</span>
+
+<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">while</span> (i &lt; <span class="hljs-number">10</span>) {
+    <span class="hljs-built_in">trace</span>(i);
+    i++;
+}
+
+<span class="hljs-comment">// DO WHILE</span>
+    <span class="hljs-comment">// operates similarly to do while loops in most other programming languages</span>
+
+<span class="hljs-keyword">var</span> j = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">do</span> {
+    <span class="hljs-built_in">trace</span>(j);
+    j++;
+} <span class="hljs-keyword">while</span> (j &lt; <span class="hljs-number">10</span>);
+
+<span class="hljs-comment">// --- EXCEPTION HANDLING --- </span>
+
+<span class="hljs-comment">// THROW</span>
+    <span class="hljs-comment">// throw =&gt; combined with if construct to act as the inline equivalent of try catch finally construct covered below</span>
+    <span class="hljs-comment">// throws an exception if the specified predicate case condition is fulfilled, where the function call immediately exits</span>
+
+<span class="hljs-keyword">static</span> <span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">divide</span></span>(a:<span class="hljs-type">Int</span>, b:<span class="hljs-type">Int</span>):<span class="hljs-type">Float </span>{
+    <span class="hljs-keyword">if</span> (b == <span class="hljs-number">0</span>) <span class="hljs-keyword">throw</span> <span class="hljs-string">&quot;Division by zero is not allowed.&quot;</span>;
+    <span class="hljs-keyword">return</span> a / b;
+}
+
+<span class="hljs-comment">// TRY CATCH FINALLY</span>
+    <span class="hljs-comment">// try =&gt; specifies execution code that is first run</span>
+    <span class="hljs-comment">// catch =&gt; handles the exception situation where the code within the try block fails to be run, then the catch block executes</span>
+    <span class="hljs-comment">// finally =&gt; block that always runs regardless of whether any exception has occured at the end of the try catch construct</span>
+
+<span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">var</span> result = divide(<span class="hljs-number">10</span>, <span class="hljs-number">0</span>);
+    <span class="hljs-built_in">trace</span>(<span class="hljs-string">&quot;Result: &quot;</span> + result);
+} <span class="hljs-keyword">catch</span> (e:<span class="hljs-type">Dynamic</span>) {
+    <span class="hljs-built_in">trace</span>(<span class="hljs-string">&quot;An error occurred: &quot;</span> + e);
+} finally {
+    <span class="hljs-built_in">trace</span>(<span class="hljs-string">&quot;Execution completed.&quot;</span>);
+}
+</code></pre>
+<h2>Data structures</h2>
+<pre><code class="language-hx"><span class="hljs-comment">// ----- DATA STRUCTURE -----</span>
+    <span class="hljs-comment">// array =&gt; dynamically-sized ordered collection of elements of the same datatype, declared with Array&lt;&gt; and the specified array element datatype within [] square brackets</span>
+    <span class="hljs-comment">// map =&gt; dynamically-sized unordered collection of key-value pairs of multiple datatypes, declared with Map&lt;&gt; and the specified key-value datatypes within [] square brackets</span>
+    <span class="hljs-comment">// enum =&gt; user-defined datatype where the datatype has a fixed set of predefined constant values, affording pattern-matching and operating similarly to enums in most other programming languages, declared with enum within {} curly braces</span>
+    
+<span class="hljs-keyword">var</span> anExampleArray:<span class="hljs-type">Array</span>&lt;<span class="hljs-keyword">Int</span>&gt; = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+
+<span class="hljs-keyword">var</span> anExampleMap:<span class="hljs-type">Map</span>&lt;<span class="hljs-keyword">String</span>, <span class="hljs-keyword">Int</span>&gt; = [<span class="hljs-string">&quot;one&quot;</span> =&gt; <span class="hljs-number">1</span>, <span class="hljs-string">&quot;two&quot;</span> =&gt; <span class="hljs-number">2</span>];
+
+<span class="hljs-title class_"><span class="hljs-keyword">enum</span> <span class="hljs-title">anExampleEnum</span> {</span>
+  Red;
+  Green;
+  Blue;
+}
+</code></pre>
+<h2>Functions</h2>
+<pre><code class="language-hx"><span class="hljs-comment">// ----- FUNCTION -----</span>
+    <span class="hljs-comment">// function &lt;functionName&gt; ( &lt;functionParamterName(s)&gt; : &lt;functionParameterDatatype(s)&gt; = &lt;functionParameterDefaultValue(s)&gt; ) : &lt;functionReturnDatatype(s)&gt; { &lt;functionDefinitionBody&gt; } =&gt; declaration and definition of a named function</span>
+    <span class="hljs-comment">// function ( &lt;functionParamterName(s)&gt; : &lt;functionParameterDatatype(s)&gt; = &lt;functionParameterDefaultValue(s)&gt; ) : &lt;functionReturnDatatype(s)&gt; { &lt;functionDefinitionBody&gt; } =&gt; declaration and definition of an anonymous function, which is then normally assigned to a named variable identifier</span>
+    <span class="hljs-comment">// return =&gt; explicit return keyword that specifies the function&#x27;s return expression or value</span>
+
+<span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span></span>(a:<span class="hljs-type">Int</span>, b:<span class="hljs-type">Int</span>):<span class="hljs-type">Int </span>{ <span class="hljs-comment">// named function</span>
+    <span class="hljs-keyword">return</span> a + b;
+}
+
+<span class="hljs-title function_"><span class="hljs-keyword">function</span> <span class="hljs-title">greet</span></span>(name:<span class="hljs-type">String</span>, greeting:<span class="hljs-type">String </span>= <span class="hljs-string">&quot;Hello&quot;</span>) { <span class="hljs-comment">// default arguments provided</span>
+    <span class="hljs-built_in">trace</span>(greeting + <span class="hljs-string">&quot;, &quot;</span> + name);
+}
+
+<span class="hljs-keyword">var</span> multiply = <span class="hljs-title function_"><span class="hljs-keyword">function</span></span>(a:<span class="hljs-type">Int</span>, b:<span class="hljs-type">Int</span>):<span class="hljs-type">Int </span>{ <span class="hljs-comment">// anonymous function declaration and assignment</span>
+    <span class="hljs-keyword">return</span> a * b;
+};
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li><a href="https://haxe.org/manual/class-field-inline.html">inline functions</a></li>
+<li><a href="https://haxe.org/manual/types-class-instance.html">classes</a></li>
+<li><a href="https://haxe.org/manual/types-anonymous-structure.html">anonymous struct</a></li>
+<li><a href="https://haxe.org/manual/types-abstract.html">abstract</a></li>
+<li><a href="https://haxe.org/manual/macro.html">macros</a></li>
+<li><a href="https://haxe.org/manual/type-system-type-parameters.html">type parameters</a></li>
+<li><a href="https://haxe.org/manual/cr-features.html">haxe compiler features</a></li>
+<li><a href="https://haxe.org/download/">install haxe</a></li>
+<li><a href="https://haxe.org/documentation/introduction/">haxe documentation</a></li>
+<li><a href="https://lib.haxe.org/">haxe libraries</a></li>
+<li><a href="https://learnxinyminutes.com/docs/haxe/">learn haxe in y minutes</a></li>
+</ul>

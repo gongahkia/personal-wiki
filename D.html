@@ -1,0 +1,221 @@
+<h1><code>D</code></h1>
+<p>Modern programming language that supports both low-level features and high-level abstractions.</p>
+<h2>Comments</h2>
+<pre><code class="language-d"><span class="hljs-comment">// ---------- COMMENT ----------</span>
+
+<span class="hljs-comment">// this is a single-line comment</span>
+
+<span class="hljs-comment">/* 
+this is a 
+multi-line 
+comment
+*/</span>
+</code></pre>
+<h2>Printing</h2>
+<pre><code class="language-d"><span class="hljs-comment">// ---------- PRINT ----------</span>
+    <span class="hljs-comment">// writeln =&gt; prints a string to the stdout and appends a newline to the output</span>
+    <span class="hljs-comment">// writef =&gt; prints a formatted string to the stdout and does not include a newline at the end of the output</span>
+
+writeln(<span class="hljs-string">&quot;watermelon with a newline automatically appended&quot;</span>);
+writef(<span class="hljs-string">&quot;this does not include a newline by default, we have to include it\n&quot;</span>)
+</code></pre>
+<h2>Quickstart</h2>
+<pre><code class="language-d"><span class="hljs-comment">// ---------- QUICKSTART ----------</span>
+    <span class="hljs-comment">// D heavily borrows C-style syntax, so code is written within the main void function</span>
+    <span class="hljs-comment">// D supports garbage collection (automatic memory management) so malloc and free are rarely used</span>
+    <span class="hljs-comment">// D has built-in support for dynamic arrays and strings, preventing buffer overflow errors from C</span>
+
+<span class="hljs-keyword">void</span> main() {
+    <span class="hljs-comment">// add code here</span>
+}
+</code></pre>
+<h2>Types</h2>
+<pre><code class="language-d"><span class="hljs-comment">// ---------- TYPE ----------</span>
+    <span class="hljs-comment">// int =&gt; integer number</span>
+    <span class="hljs-comment">// float =&gt; floating point number</span>
+    <span class="hljs-comment">// char =&gt; &#x27;&#x27; single quotation marks</span>
+    <span class="hljs-comment">// string =&gt; &quot;&quot; double quotation marks</span>
+    <span class="hljs-comment">// bool =&gt; true, false</span>
+    <span class="hljs-comment">// void =&gt; absence of a type</span>
+    <span class="hljs-comment">// auto =&gt; allows for dynamic type inference of a given value</span>
+</code></pre>
+<h2>Operators</h2>
+<pre><code class="language-d"><span class="hljs-comment">// ---------- OPERATOR ----------</span>
+
+<span class="hljs-comment">// ARITHMETIC OPERATORS</span>
+    <span class="hljs-comment">// + =&gt; addition</span>
+    <span class="hljs-comment">// - =&gt; subtraction</span>
+    <span class="hljs-comment">// * =&gt; multiplication</span>
+    <span class="hljs-comment">// / =&gt; division</span>
+    <span class="hljs-comment">// % =&gt; modulo operator</span>
+    <span class="hljs-comment">// ++ =&gt; increment by one operator, position of the increment operator and the operand affects whether increment occurs before or after value access</span>
+    <span class="hljs-comment">// -- =&gt; decrement by one operator, position of the decrement operator and the operand affects whether decrement occurs before or after value access</span>
+
+<span class="hljs-comment">// LOGICAL OPERATORS</span>
+    <span class="hljs-comment">// &amp;&amp; =&gt; and</span>
+    <span class="hljs-comment">// || =&gt; or</span>
+    <span class="hljs-comment">// ! =&gt; not</span>
+
+<span class="hljs-comment">// COMPARISON OPERATORS</span>
+    <span class="hljs-comment">// == =&gt; complete equality check for value and type</span>
+    <span class="hljs-comment">// != =&gt; complete inequality check for value and type</span>
+    <span class="hljs-comment">// &gt; &lt; &gt;= &lt;= are also comparsion operators</span>
+</code></pre>
+<h2>Control structures</h2>
+<pre><code class="language-d"><span class="hljs-comment">// ---------- CONTROL STRUCTURE ----------</span>
+
+<span class="hljs-comment">// CONDITIONALS</span>
+
+<span class="hljs-comment">// IF ELSE IF ELSE</span>
+
+<span class="hljs-keyword">int</span> x = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">if</span> (x &lt; <span class="hljs-number">10</span>) {
+    writeln(<span class="hljs-string">&quot;x is smaller than 10&quot;</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (x &gt; <span class="hljs-number">10</span>) {
+    writeln(<span class="hljs-string">&quot;x is bigger than 10&quot;</span>);
+} <span class="hljs-keyword">else</span> {
+    writeln(<span class="hljs-string">&quot;x is equals to 10&quot;</span>);
+}
+
+<span class="hljs-comment">// SWITCH CASE DEFAULT</span>
+    <span class="hljs-comment">// break =&gt; remember to include break below each case, otherwise logic will flow through after each case statement</span>
+    <span class="hljs-comment">// default =&gt; represents the default case</span>
+
+<span class="hljs-keyword">int</span> y = <span class="hljs-number">5</span>;
+<span class="hljs-keyword">switch</span> (y) {
+    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
+        println(<span class="hljs-string">&quot;y is equals to 1&quot;</span>);
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:
+        println(<span class="hljs-string">&quot;y is equals to 2&quot;</span>);
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>:
+        println(<span class="hljs-string">&quot;y is equals to 3&quot;</span>);
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">4</span>:
+        println(<span class="hljs-string">&quot;y is equals to 4&quot;</span>);
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">5</span>:
+        println(<span class="hljs-string">&quot;y is equals to 5&quot;</span>);
+        <span class="hljs-keyword">break</span>
+    <span class="hljs-keyword">default</span>:
+        println(<span class="hljs-string">&quot;welcome to the default case where y isn&#x27;t 1 to 5&quot;</span>);
+}
+
+<span class="hljs-comment">// LOOPS</span>
+
+<span class="hljs-comment">// FOR LOOPS</span>
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>; i&lt;<span class="hljs-number">1000</span>; i++) { <span class="hljs-comment">// allows creation of basic for loops</span>
+    writeln(i);
+}
+
+<span class="hljs-comment">// FOREACH LOOPS</span>
+    <span class="hljs-comment">// .. =&gt; creates a continuous range that is first-value inclusive and last-value exclusive</span>
+    <span class="hljs-comment">// foreach =&gt; allows for iteration over a created loop or iterable data structure</span>
+    <span class="hljs-comment">// foreach_reverse =&gt; allows for iteration over a created loop or iterable data structure in reverse order</span>
+
+<span class="hljs-keyword">foreach</span> (n;<span class="hljs-number">1.</span>.<span class="hljs-number">1000</span>) {
+    <span class="hljs-keyword">if</span> (n % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>) {
+        writeln(n);
+    }
+}
+
+<span class="hljs-keyword">foreach_reverse</span> (n;<span class="hljs-number">1.</span>.<span class="hljs-number">1000</span>) {
+    <span class="hljs-keyword">if</span> (n % <span class="hljs-number">2</span> == <span class="hljs-number">1</span>) {
+        writeln(n); <span class="hljs-comment">// odd</span>
+    } <span class="hljs-keyword">else</span> {
+        writeln(<span class="hljs-string">&quot;even!&quot;</span>);
+    }
+}
+
+<span class="hljs-comment">// WHILE LOOPS</span>
+
+<span class="hljs-keyword">int</span> n = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">while</span> (n &lt; <span class="hljs-number">10000</span>) {
+    n += n;
+}
+
+<span class="hljs-comment">// DO WHILE LOOPS</span>
+
+<span class="hljs-keyword">do</span> {
+    n -= (n/<span class="hljs-number">2</span>);
+} <span class="hljs-keyword">while</span> (n&gt;<span class="hljs-number">0</span>);
+</code></pre>
+<h2>Data structures</h2>
+<pre><code class="language-d"><span class="hljs-comment">// ---------- DATA STRUCTURE ----------</span>
+    <span class="hljs-comment">// ref =&gt; specifies a parameter is to be passed by reference</span>
+    <span class="hljs-comment">// alias =&gt; operates similarly to Bash aliases, creating specified abbreviations for other existing types</span>
+
+<span class="hljs-comment">// STRUCT</span>
+    <span class="hljs-comment">// passed by value (value is shallowly-copied) to functions</span>
+    <span class="hljs-comment">// stack-allocated with automatic memory management</span>
+    <span class="hljs-comment">// struct visibility can be augmented with public, private and protected keywords</span>
+    <span class="hljs-comment">// struct =&gt; declares and creates a struct, whose values can be declared first or initialised immediately, struct instances are immutable by default</span>
+    <span class="hljs-comment">// mutable =&gt; declares and creates a mutable struct, whose value can be declared first or initilaised immediately, and can be reassigned later</span>
+
+<span class="hljs-keyword">struct</span> LinkedList(T) { <span class="hljs-comment">// T is a type parameter that declares a generic type for the LinkedList struct</span>
+    T data = <span class="hljs-literal">null</span>;
+    LinkedList!(T)* next; <span class="hljs-comment">// ! instantiates a parametized type, here T</span>
+}
+
+<span class="hljs-comment">// CLASS</span>
+    <span class="hljs-comment">// passed by reference to functions</span>
+    <span class="hljs-comment">// heap-allocated and manual memory management required</span>
+    <span class="hljs-comment">// class visibility can be augmented with public, private and protected keywords</span>
+    <span class="hljs-comment">// class =&gt; declares and creates a class, where a class instance is mutable by default</span>
+    <span class="hljs-comment">// : =&gt; indicates the relationship between child and parent class, where one child class can inherit from a list of parent classes to support single and multiple inheritance</span>
+
+<span class="hljs-keyword">class</span> BinTree(T) {
+    T data = <span class="hljs-literal">null</span>;
+    BinTree!T left;
+    BinTree!T right;
+}
+
+<span class="hljs-keyword">class</span> Matrix(<span class="hljs-built_in">uint</span> m, <span class="hljs-built_in">uint</span> n, T = <span class="hljs-keyword">int</span>) { <span class="hljs-comment">// we can also parametize on values</span>
+    T[m] rows;
+    T[n] columns;
+}
+
+<span class="hljs-comment">// ENUM</span>
+    <span class="hljs-comment">// enum =&gt; declares and creates an enum, operates similarly to enums in other languages, with enum values listed within {} curly braces</span>
+
+<span class="hljs-keyword">enum</span> Day {
+    Sunday,
+    Monday,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday,
+}
+</code></pre>
+<h2>Functions</h2>
+<pre><code class="language-d"><span class="hljs-comment">// ---------- FUNCTION ----------</span>
+    <span class="hljs-comment">// specify parameter and return value types within the function definition</span>
+    <span class="hljs-comment">// return =&gt; specifies the expression or value to be returned</span>
+
+<span class="hljs-keyword">void</span> helloLah() {
+    writeln(<span class="hljs-string">&quot;Neato pronto!&quot;</span>);
+}
+
+<span class="hljs-keyword">int</span> twoSum(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b) {
+    <span class="hljs-keyword">return</span> a + b;
+}
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li>module</li>
+<li>std.algorithm</li>
+<li>std.parallelism</li>
+<li>properties</li>
+<li>getter and setter methods</li>
+<li>union</li>
+<li>templates</li>
+<li>function templates</li>
+<li>templates</li>
+<li>contracts</li>
+<li><a href="https://www.drdobbs.com/cpp/uniform-function-call-syntax/232700394">uniform function call syntax</a></li>
+<li><a href="https://learnxinyminutes.com/docs/d/">learn d in y minutes</a></li>
+<li><a href="https://dlang.org/">d-lang documentation</a></li>
+</ul>

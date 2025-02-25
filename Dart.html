@@ -1,0 +1,314 @@
+<h1><code>Dart</code></h1>
+<p>Single-threaded language that supports web and app development for multiple platforms.</p>
+<h2>Quickstart</h2>
+<pre><code class="language-dart"><span class="hljs-comment">// ---------- COMPILE TIME VS RUNTIME ----------</span>
+    <span class="hljs-comment">// compile time</span>
+        <span class="hljs-comment">// when program is compiling to byte code or machine code</span>
+        <span class="hljs-comment">// syntax errors, typechecking errors, compiler crashes occur at this stage</span>
+        <span class="hljs-comment">// code compiles to assembly, object code or executable file that can be run</span>
+    <span class="hljs-comment">// runtime</span>
+        <span class="hljs-comment">// when executable file is run</span>
+        <span class="hljs-comment">// logical errors, memory errors, file path errros, URL errors etc occur at this stage</span>
+        <span class="hljs-comment">// executable file will output what was intended in the program if successful</span>
+
+<span class="hljs-comment">// ---------- QUICKSTART -----------</span>
+    <span class="hljs-comment">// dart is used in the Fluttr framework for cross-platform application and web development</span>
+    <span class="hljs-comment">// all dart code runs within the void main() function</span>
+    <span class="hljs-comment">// dart is dynamically typed but types can be statically specified</span>
+
+<span class="hljs-keyword">void</span> main() {
+    <span class="hljs-comment">// add your code here</span>
+}
+</code></pre>
+<h2>Printing</h2>
+<pre><code class="language-dart"><span class="hljs-comment">// ---------- PRINT ----------</span>
+    <span class="hljs-comment">// print() =&gt; prints a string to the stdout and appends a newline to the end of the output</span>
+    <span class="hljs-comment">// ${} =&gt; allows for string interpolation to create a formatted string</span>
+
+<span class="hljs-keyword">const</span> <span class="hljs-built_in">int</span> numWatermelon = <span class="hljs-number">10</span>;
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;You have <span class="hljs-subst">${numWatermelon}</span> watermelons.&quot;</span>); <span class="hljs-comment">// prints &quot;You have 10 watermelons.&quot; to the stdout</span>
+</code></pre>
+<h2>Comments</h2>
+<pre><code class="language-dart"><span class="hljs-comment">// ---------- COMMENT ----------</span>
+ 
+<span class="hljs-comment">// this is a single-line comment</span>
+
+<span class="hljs-comment">/* 
+this is 
+a multi-line
+comment in 
+dart 
+*/</span>
+</code></pre>
+<h2>Variables, Final and Constants</h2>
+<pre><code class="language-dart"><span class="hljs-comment">// ---------- VARIABLE ----------</span>
+    <span class="hljs-comment">// variable data types are immutable after variable assignment</span>
+    <span class="hljs-comment">// default value of an unassigned variable is null</span>
+    <span class="hljs-comment">// var =&gt; declares and creates a variable</span>
+    <span class="hljs-comment">// dynamic =&gt; specifies a variable can change its data type after initial assignment</span>
+
+<span class="hljs-keyword">var</span> <span class="hljs-built_in">String</span> songLyric = <span class="hljs-string">&quot;watermelon sugar&quot;</span>
+
+<span class="hljs-comment">// ---------- FINAL -----------</span>
+    <span class="hljs-comment">// final =&gt; declares and creates a constant (immutable value after assignment) whose value is assigned and initialised at runtime when executable file is run</span>
+    <span class="hljs-comment">// used when a costant value is unknown at compile-time and will be assigned later (user input, requesting API data)</span>
+
+<span class="hljs-keyword">final</span> <span class="hljs-built_in">String</span> userInput = stdin.readLineSync()!;
+
+<span class="hljs-comment">// ---------- CONSTANT -----------</span>
+    <span class="hljs-comment">// const =&gt; declares and creates a constant (immutable value after assignment) whose value is already assigned and initialised at compile-time when dart script is written</span>
+    <span class="hljs-comment">// used when a constant value is known by the programmer at compile-time and can be assigned definitively without need for reassignment during runtime</span>
+
+<span class="hljs-keyword">const</span> <span class="hljs-built_in">double</span> pi = <span class="hljs-number">3.14</span>;
+</code></pre>
+<h2>Types</h2>
+<pre><code class="language-dart"><span class="hljs-comment">// ---------- TYPE ----------</span>
+    <span class="hljs-comment">// int =&gt; integer number</span>
+    <span class="hljs-comment">// double =&gt; long floating point number</span>
+    <span class="hljs-comment">// String =&gt; double quotation marks</span>
+    <span class="hljs-comment">// bool =&gt; true, false </span>
+    <span class="hljs-comment">// dynamic =&gt; allows for type inference of a given value&#x27;s type</span>
+    <span class="hljs-comment">// List&lt;DATA_TYPE&gt; =&gt; an ordered sequence of elements</span>
+    <span class="hljs-comment">// Map&lt;KEY_DATA_TYPE, VALUE_DATA_TYPE&gt; =&gt; a collection of key-value pairs</span>
+</code></pre>
+<h2>Operators</h2>
+<pre><code class="language-dart"><span class="hljs-comment">// ---------- OPERATOR ----------</span>
+
+<span class="hljs-comment">// ARITHMETIC OPERATORS</span>
+    <span class="hljs-comment">// + =&gt; addition</span>
+    <span class="hljs-comment">// - =&gt; subtraction</span>
+    <span class="hljs-comment">// * =&gt; multiplication</span>
+    <span class="hljs-comment">// / =&gt; divison</span>
+    <span class="hljs-comment">// ~/ =&gt; floor divison</span>
+    <span class="hljs-comment">// % =&gt; modulo</span>
+    <span class="hljs-comment">// ++ =&gt; increment by 1</span>
+    <span class="hljs-comment">// -- =&gt; decrement by 1</span>
+
+<span class="hljs-comment">// LOGICAL OPERATORS</span>
+    <span class="hljs-comment">// &amp;&amp; =&gt; logical and</span>
+    <span class="hljs-comment">// || =&gt; logical or</span>
+    <span class="hljs-comment">// ! =&gt; logical not</span>
+
+<span class="hljs-comment">// COMPARISON OPERATORS</span>
+    <span class="hljs-comment">// == =&gt; complete equality check for value and type</span>
+    <span class="hljs-comment">// != =&gt; complete inequality check for value and type</span>
+    <span class="hljs-comment">// is =&gt; mostly used to check if object is of a specific type</span>
+    <span class="hljs-comment">// !is =&gt; mostly used to check if object is not of a specific type</span>
+    <span class="hljs-comment">// &gt;, &lt;, &gt;=, &lt;= are comparison operators and operate as you&#x27;d expect</span>
+
+<span class="hljs-comment">// ASSIGNMENT OPERATORS</span>
+    <span class="hljs-comment">// = =&gt; simple assignment</span>
+    <span class="hljs-comment">// ??= =&gt; assigns value only if variable is null</span>
+    <span class="hljs-comment">// += =&gt; increment by specified value and reassign</span>
+    <span class="hljs-comment">// -= =&gt; decrement by specified value and reassign</span>
+    <span class="hljs-comment">// *= =&gt; multiply by specified value and reassign</span>
+    <span class="hljs-comment">// /= =&gt; divide by specified value and reassign</span>
+</code></pre>
+<h2>Control structures</h2>
+<pre><code class="language-dart"><span class="hljs-comment">// ---------- CONTROL STRUCTURE ----------</span>
+
+<span class="hljs-comment">// CONDITIONAL CHECKS</span>
+    <span class="hljs-comment">// if </span>
+    <span class="hljs-comment">// else if</span>
+    <span class="hljs-comment">// else</span>
+
+<span class="hljs-keyword">if</span> (booleanExpression0) {
+    <span class="hljs-comment">// do something</span>
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (booleanExpression1) {
+    <span class="hljs-comment">// do something else</span>
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-comment">// do another thing</span>
+}
+
+<span class="hljs-comment">// SWITCH CASE DEFAULT</span>
+    <span class="hljs-comment">// break =&gt; included at the end of each case statement to prevent logic from dropping through</span>
+    
+<span class="hljs-keyword">switch</span> (variableExpression) {
+    <span class="hljs-keyword">case</span> constantExpression1: {
+        <span class="hljs-comment">// do something</span>
+    }
+    <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> constantExpression2: {
+        <span class="hljs-comment">// do something else</span>
+    }
+    <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">default</span>: {
+        <span class="hljs-comment">// do another thing</span>
+    }
+    <span class="hljs-keyword">break</span>;
+}
+
+<span class="hljs-comment">// LOOPS</span>
+    <span class="hljs-comment">// for loop</span>
+    <span class="hljs-comment">// while loop</span>
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>; i&lt;<span class="hljs-number">3</span>; i++){
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Loop:<span class="hljs-subst">${i}</span>&quot;</span>);
+}
+
+<span class="hljs-keyword">var</span> <span class="hljs-built_in">num</span> = <span class="hljs-number">3</span>;
+<span class="hljs-keyword">while</span> (<span class="hljs-built_in">num</span> &gt;= <span class="hljs-number">1</span>){
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;New count:<span class="hljs-subst">${num}</span>&quot;</span>);
+    <span class="hljs-built_in">num</span>--;
+}
+</code></pre>
+<h2>Data structures</h2>
+<pre><code class="language-dart"><span class="hljs-comment">// ---------- DATA STRUCTURE ----------</span>
+
+<span class="hljs-comment">// LIST</span>
+    <span class="hljs-comment">// declared with [] square brackets, a comma-delimited ordered sequence of elements of variable length </span>
+
+<span class="hljs-built_in">List</span>&lt;<span class="hljs-built_in">int</span>&gt; listOfIntegers = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">10</span>];
+
+<span class="hljs-comment">// MAP</span>
+    <span class="hljs-comment">// declared with {} curly braces, a comma-delimited collection of key-value pairs similar to a Javascript object</span>
+
+<span class="hljs-built_in">Map</span>&lt;<span class="hljs-built_in">String</span>, <span class="hljs-built_in">String</span>&gt; userDetails = {
+    <span class="hljs-string">&quot;Username&quot;</span>: <span class="hljs-string">&quot;cheers&quot;</span>, 
+    <span class="hljs-string">&quot;Password&quot;</span>: <span class="hljs-string">&quot;Password123&quot;</span>
+};
+</code></pre>
+<h2>Functions</h2>
+<pre><code class="language-dart"><span class="hljs-comment">// ---------- FUNCTION ----------</span>
+    <span class="hljs-comment">// specify return value and parameter data type in function declaration</span>
+    <span class="hljs-comment">// void =&gt; used to prefix functions that don&#x27;t return any value</span>
+    <span class="hljs-comment">// return =&gt; used to specify the return value of the function</span>
+
+<span class="hljs-comment">// NAMED FUNCTIONS</span>
+
+<span class="hljs-built_in">int</span> addSum (<span class="hljs-built_in">int</span> a, <span class="hljs-built_in">int</span> b) {
+    <span class="hljs-keyword">return</span> a + b;
+};
+
+<span class="hljs-built_in">double</span> calculateGST (<span class="hljs-built_in">double</span> itemCost) {
+    <span class="hljs-keyword">return</span> itemCost/<span class="hljs-number">100</span> * <span class="hljs-number">108</span>;
+};
+
+<span class="hljs-built_in">String</span> aString () {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;here&#x27;s a default string&quot;</span>;
+};
+
+<span class="hljs-built_in">bool</span> twoBooleans (<span class="hljs-built_in">bool</span> a, <span class="hljs-built_in">bool</span> b) {
+    <span class="hljs-keyword">return</span> a &amp;&amp; b;
+};
+
+<span class="hljs-comment">// ANONYMOUS FUNCTIONS</span>
+    <span class="hljs-comment">// written as a single line by convention </span>
+    <span class="hljs-comment">// both below syntax are valid</span>
+        <span class="hljs-comment">// with the syntax {RETURN TYPE} {FUNCTION NAME} ({PARAMETERS}) =&gt; FUNCTION EXPRESSION </span>
+        <span class="hljs-comment">// {RETURN TYPE} {FUNCTION NAME} ({PARAMETERS}) {{FUNCTION EXPRESSION}}</span>
+
+<span class="hljs-built_in">int</span> test() =&gt; <span class="hljs-number">123</span>;
+<span class="hljs-built_in">String</span> anotherTest () {<span class="hljs-keyword">return</span> <span class="hljs-string">&quot;apple juice is delicious&quot;</span>;};
+</code></pre>
+<h2>OOP</h2>
+<pre><code class="language-dart"><span class="hljs-comment">// ---------- OOP ----------</span>
+
+<span class="hljs-comment">// ---------- CONSTRUCTOR ----------</span>
+
+<span class="hljs-comment">// DEFAULT CONSTRUCTOR</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cat</span> </span>{
+    <span class="hljs-built_in">DateTime</span> birthday; <span class="hljs-comment">// default constructor is here even if not explicitely mentioned</span>
+}
+
+<span class="hljs-comment">// NAMED CONSTRUCTOR</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cat</span> </span>{
+    <span class="hljs-built_in">DateTime</span> birthday; <span class="hljs-comment">// named constructor</span>
+    Cat.baby() {
+        birthday = <span class="hljs-built_in">DateTime</span>.now();
+    }
+}
+
+<span class="hljs-comment">// REDIRECTING CALL TO MAIN CONSTRUCTOR</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cat</span> </span>{
+    <span class="hljs-built_in">DateTime</span> birthday;
+    Cat(<span class="hljs-keyword">this</span>.birthda); <span class="hljs-comment">// main constructor</span>
+    Cat.withBirthday(<span class="hljs-built_in">DateTime</span> Birthday): <span class="hljs-keyword">this</span>(birthday); <span class="hljs-comment">// delegating call to main constructor</span>
+}
+
+<span class="hljs-comment">// ---------- OBJECT ----------</span>
+
+<span class="hljs-comment">// CREATING AN IMMUTABLE OBJECT</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CatTreat</span> </span>{
+    <span class="hljs-keyword">final</span> <span class="hljs-built_in">num</span> quantity;
+    constant CatTreat(<span class="hljs-keyword">this</span>.quantity)
+}
+
+<span class="hljs-comment">// ---------- GENERATOR ----------</span>
+    <span class="hljs-comment">// lazily produces a sequence of values</span>
+
+<span class="hljs-comment">// SYNCHRONOUS GENERATOR </span>
+    <span class="hljs-comment">// returns an iterable object</span>
+
+<span class="hljs-built_in">Iterable</span>&lt;Cat&gt; kittens(<span class="hljs-built_in">int</span> toSpawn) <span class="hljs-keyword">sync</span>* {
+    <span class="hljs-built_in">int</span> kittenIndex = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">while</span> (kittenIndex &lt; n) {
+        kittenIndex++;
+        <span class="hljs-keyword">yield</span> Cat.baby();
+    }
+}
+
+<span class="hljs-comment">// ASYNCHRONOUS GENERATOR</span>
+    <span class="hljs-comment">// returns a stream object</span>
+
+Stream&lt;Cat&gt; kittens(<span class="hljs-built_in">int</span> toSpawn) <span class="hljs-keyword">async</span>* {
+    <span class="hljs-built_in">int</span> kittenIndex = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">while</span> (kittenIndex &lt; n) {
+        kittenIndex++;
+        <span class="hljs-keyword">yield</span> Cat.baby();
+    }
+}
+
+<span class="hljs-comment">// ---------- ENCAPSULATION ----------</span>
+    <span class="hljs-comment">// encapsulation occurs at a library level and not class level</span>
+    <span class="hljs-comment">// dart has no access-modifier keywords like public, protected or private</span>
+    <span class="hljs-comment">// _ =&gt; specifies a variable, constant or final is private to its library</span>
+
+<span class="hljs-comment">// ---------- INTERFACE ----------</span>
+    <span class="hljs-comment">// implements =&gt; allows interfaces to be implemented for a specific class, comma delimited if more than one</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">identifier</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">interface</span>-1, <span class="hljs-title">interface</span>-2, <span class="hljs-title">interface</span>-3
+</span></code></pre>
+<h2>Null-safety</h2>
+<pre><code class="language-dart"><span class="hljs-comment">// ----------- NULL-SAFETY ----------</span>
+    <span class="hljs-comment">// variable values are non-nullable by default, null has to be explicitly allowed and stated</span>
+    <span class="hljs-comment">// ? =&gt; used alongside a value&#x27;s type declaration to indicate that variable, final or constant can have a null value</span>
+    <span class="hljs-comment">// ! =&gt; appended to a value to indicate a variable will never store the value null</span>
+
+<span class="hljs-built_in">int?</span> thisIntMightBeNull = <span class="hljs-keyword">null</span>; <span class="hljs-comment">// no error will be thrown at compile time</span>
+<span class="hljs-built_in">String?</span> country = <span class="hljs-string">&quot;USA&quot;</span>; <span class="hljs-comment">// variable country might store a null value</span>
+<span class="hljs-built_in">String</span> myCountry = country!; <span class="hljs-comment">// throws an error as myCountry is non-nullable by definition, but country might store a null value</span>
+
+<span class="hljs-comment">// LATE</span>
+    <span class="hljs-comment">// late =&gt; specifies a value will be initialised later upon access, despite not being initialised upon declaration</span>
+    <span class="hljs-comment">// late final =&gt; a value that will be initialised later upon access but can only be assigned once</span>
+
+<span class="hljs-keyword">late</span> <span class="hljs-built_in">String</span> country; <span class="hljs-comment">// late variable that is by default non-nullable</span>
+<span class="hljs-built_in">print</span>(value); <span class="hljs-comment">// this throws a runtime error if you try to run it</span>
+country = <span class="hljs-string">&quot;USA&quot;</span>; <span class="hljs-comment">// subsequent assignment of country late variable</span>
+
+<span class="hljs-keyword">late</span> <span class="hljs-keyword">final</span> <span class="hljs-built_in">String</span> anotherCountry; <span class="hljs-comment">// a late final variable that is by default non-nullable but can only have a value assigned once</span>
+anotherCountry = <span class="hljs-string">&quot;USA&quot;</span>;
+<span class="hljs-built_in">print</span>(anotherCountry); <span class="hljs-comment">// this is working since value assigned already, no error is thrown</span>
+anotherCountry = <span class="hljs-string">&quot;India&quot;</span>; <span class="hljs-comment">// an error is thrown since the final local variable cannot be reassigned </span>
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li>abstract classes</li>
+<li>mixins</li>
+<li>asynchronous programming</li>
+<li>future</li>
+<li>async</li>
+<li>await</li>
+<li>isolates &amp; concurrency</li>
+<li>dart run</li>
+<li>dart compile</li>
+<li><a href="https://dart.dev/get-dart">install dart</a></li>
+<li><a href="https://dart.dev/tutorials">dart documentation</a></li>
+<li><a href="https://learnxinyminutes.com/docs/dart/">learn dart in y minutes</a></li>
+<li><a href="https://medium.com/nerd-for-tech/dart-for-dummies-learn-dart-in-30-minutes-e212328b81f0">learn dart in 30 minutes</a></li>
+</ul>

@@ -1,0 +1,106 @@
+<h1><code>SurrealDB</code></h1>
+<p>Schrödinger's multi-model database.</p>
+<h2>Introduction</h2>
+<ul>
+<li>engine written in Rust</li>
+<li>combines elements of relational, graph and document database paradigms</li>
+<li>used for modern web, mobile, and server application development</li>
+<li>has both SQL and NoSQL features for powerful querying capabilities with flexible data modelling</li>
+<li>SurrealDB also supports
+<ul>
+<li>ACID transactions</li>
+<li>real-time notifications</li>
+<li>geospatial data</li>
+<li>predefined analytics</li>
+<li>multi-tenancy</li>
+<li>built-in authentication</li>
+<li>permissions authorization</li>
+<li>integrated full-text search</li>
+<li>optimistic concurrency control</li>
+</ul>
+</li>
+</ul>
+<h2>Quickstart</h2>
+<pre><code class="language-sql"><span class="hljs-comment">-- ----- QUICKSTART -----</span>
+    <span class="hljs-comment">-- there isn&#x27;t a syntax overview here since SurrealDB extends upon existing SQL syntax which most developers are familiar with</span>
+    <span class="hljs-comment">-- recall that SurrealDB allows developers to leverage on both the default schemaless (NoSQL) modelling, and the more structured schemafull (conventional SQL) modelling as desired</span>
+    <span class="hljs-comment">-- however, note that there are no JOIN constructs in SurrealDB, and it instead handles relational database modelling via record links and graph connections</span>
+
+<span class="hljs-comment">-- --- SCHEMAFULL MODELLING ---</span>
+    <span class="hljs-comment">-- below is an example of SurrealDB handling conventional SQL queries with structured data </span>
+    <span class="hljs-comment">-- this should be nothing new for developers well-acquainted with SQL&#x27;s syntax</span>
+
+<span class="hljs-keyword">CONNECT</span> <span class="hljs-keyword">TO</span> surrealdb:<span class="hljs-operator">/</span><span class="hljs-operator">/</span>localhost:<span class="hljs-number">8000</span>; <span class="hljs-comment">-- connects to the local database</span>
+<span class="hljs-keyword">CREATE</span> DATABASE my_database; <span class="hljs-comment">-- creates a new database</span>
+USE my_database; <span class="hljs-comment">-- select the created database</span>
+
+<span class="hljs-keyword">CREATE TABLE</span> users (
+    id STRING <span class="hljs-keyword">PRIMARY KEY</span>,
+    name STRING,
+    email STRING,
+    age <span class="hljs-type">INT</span>,
+    address OBJECT
+); <span class="hljs-comment">-- create a new table with a defined schema and structure</span>
+
+<span class="hljs-keyword">INSERT INTO</span> users (id, name, email, age, address) <span class="hljs-keyword">VALUES</span> (
+    <span class="hljs-string">&#x27;user1&#x27;</span>,
+    <span class="hljs-string">&#x27;John Doe&#x27;</span>,
+    <span class="hljs-string">&#x27;john@example.com&#x27;</span>,
+    <span class="hljs-number">30</span>,
+    { street: <span class="hljs-string">&#x27;123 Main St&#x27;</span>, city: <span class="hljs-string">&#x27;Anytown&#x27;</span>, zip: <span class="hljs-string">&#x27;12345&#x27;</span> }
+); <span class="hljs-comment">-- insert data into the table</span>
+
+<span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> users <span class="hljs-keyword">WHERE</span> age <span class="hljs-operator">&gt;</span> <span class="hljs-number">25</span>; <span class="hljs-comment">-- querying data</span>
+<span class="hljs-keyword">UPDATE</span> users <span class="hljs-keyword">SET</span> email <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;john.doe@example.com&#x27;</span>, age <span class="hljs-operator">=</span> <span class="hljs-number">31</span> <span class="hljs-keyword">WHERE</span> id <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;user1&#x27;</span>; <span class="hljs-comment">-- updating data</span>
+<span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> users <span class="hljs-keyword">WHERE</span> id <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;user1&#x27;</span>; <span class="hljs-comment">-- deleting data</span>
+
+<span class="hljs-comment">-- --- SCHEMALESS MODELLING ---</span>
+    <span class="hljs-comment">-- below is an example of SurrealDB then handling unstructured data in the same database as above</span>
+
+<span class="hljs-keyword">CREATE TABLE</span> documents; <span class="hljs-comment">-- create a new table without a predefined schema, thereby leveraging on NoSQL capabilities</span>
+
+<span class="hljs-keyword">INSERT INTO</span> documents (id, content) <span class="hljs-keyword">VALUES</span> (
+    <span class="hljs-string">&#x27;doc1&#x27;</span>,
+    {
+        &quot;title&quot;: &quot;SurrealDB Overview&quot;,
+        &quot;body&quot;: &quot;SurrealDB is a scalable, distributed database...&quot;,
+        &quot;tags&quot;: [&quot;database&quot;, &quot;scalable&quot;, &quot;distributed&quot;],
+        &quot;metadata&quot;: {
+            &quot;author&quot;: &quot;John Doe&quot;,
+            &quot;created_at&quot;: &quot;2024-07-03&quot;,
+            &quot;revisions&quot;: <span class="hljs-number">3</span>
+        }
+    }
+); <span class="hljs-comment">-- insert first instance of unstructured data into the table</span>
+
+<span class="hljs-keyword">INSERT INTO</span> documents (id, content) <span class="hljs-keyword">VALUES</span> (
+    <span class="hljs-string">&#x27;doc2&#x27;</span>,
+    {
+        &quot;title&quot;: &quot;Getting Started with SurrealDB&quot;,
+        &quot;content&quot;: &quot;This guide will help you get started with SurrealDB...&quot;,
+        &quot;tags&quot;: [&quot;guide&quot;, &quot;tutorial&quot;],
+        &quot;metadata&quot;: {
+            &quot;author&quot;: &quot;Jane Smith&quot;,
+            &quot;created_at&quot;: &quot;2024-07-03&quot;
+        },
+        &quot;related_documents&quot;: [&quot;doc1&quot;]
+    }
+); <span class="hljs-comment">-- insert another document instance with a different structure into the table, SurrealDB handles this just fine</span>
+
+<span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> documents <span class="hljs-keyword">WHERE</span> content<span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span><span class="hljs-string">&#x27;metadata&#x27;</span><span class="hljs-operator">-</span><span class="hljs-operator">&gt;&gt;</span><span class="hljs-string">&#x27;author&#x27;</span> <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;John Doe&#x27;</span>; <span class="hljs-comment">-- querying data</span>
+<span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> documents <span class="hljs-keyword">WHERE</span> <span class="hljs-string">&#x27;database&#x27;</span> <span class="hljs-keyword">IN</span> content<span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span><span class="hljs-string">&#x27;tags&#x27;</span>; <span class="hljs-comment">-- querying data with tags</span>
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li><a href="https://surrealdb.com/docs/surrealdb/surrealql/datamodel/records">record links</a></li>
+<li><a href="https://surrealdb.com/docs/surrealdb/surrealql/statements/relate">graph connections</a></li>
+<li><a href="https://surrealdb.com/docs/surrealdb/surrealql/statements/define/event">events</a></li>
+<li><a href="https://www.databricks.com/glossary/acid-transactions">acid transaction</a></li>
+<li><a href="https://surrealdb.com/docs/surrealdb/tutorials/">implement a feature in surrealdb</a></li>
+<li><a href="https://github.com/surrealdb/examples">surrealdb by example</a></li>
+<li><a href="https://surrealdb.com/install">install surrealdb</a></li>
+<li><a href="https://surrealdb.com/">surrealdb.com</a></li>
+<li><a href="https://surrealdb.com/docs/">surrealdb documentation</a></li>
+<li><a href="https://www.reddit.com/r/rust/comments/1b69gsp/have_any_of_you_used_surrealdb_and_what_are_your/">why use surrealdb</a></li>
+<li><a href="https://youtu.be/LCAIkx1p1k0?si=WLthG0cjpL6AxfoQ">beyond surrealdb with fireship</a></li>
+</ul>

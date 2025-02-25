@@ -1,0 +1,154 @@
+<h1><code>Julia</code></h1>
+<p>Python-like language for numerical and scientific computing.</p>
+<h2>Comments</h2>
+<pre><code class="language-jl"># ----- COMMENT -----
+
+# this is a single-line comment
+
+&quot;&quot;&quot;
+this is a 
+multi-line
+comment
+&quot;&quot;&quot;
+</code></pre>
+<h2>Printing</h2>
+<pre><code class="language-jl"># ----- PRINT -----
+
+# print() =&gt; receives a string argument which is then displayed to the stdout without including a newline by default
+# println() =&gt; receives a string argument which is then displayed to the stdout and automatically includes a newline
+
+print(&quot;this does not have a newline and its inclusion must be explicitly specified as here\n&quot;)
+println(&quot;this does have a newline automatically included already&quot;)
+</code></pre>
+<h2>Quickstart</h2>
+<pre><code class="language-jl"># ----- QUICKSTART -----
+    # dynamically typed language that also supports type annotations for further performance optimization
+    # high-level, high-performance language for technical computing, 
+    # provides familiar syntax which bears many similarities to Python
+    # for quick prototyping and large-scale software development
+    # ships with a JIT (just-in-time) compiler that efficiently transpiles Julia source code into native machine code
+</code></pre>
+<h2>Types</h2>
+<pre><code class="language-jl"># ----- TYPE -----
+    # :: =&gt; specifies the datatype of a given variable, providing type annotations within Julia
+
+# --- SCALAR TYPES ---
+    # Int =&gt; stores an integer value
+    # Float64 =&gt; stores a floating-point number value
+    # Bool =&gt; true, false
+    # Char =&gt; stores a single Unicode character declared within '' single quotation marks
+
+# --- COLLECTION TYPES ---
+    # Array =&gt; a multi-dimensional array, the equivalent of lists in Python, declared within [] square brackets
+    # Tuple =&gt; an immutable ordered collection, operating the same as tuples in Python, declared within () round brackets
+    # Dict =&gt; a dictionary storing key-value pairs, operating the same as hash tables in other programming languages, declared within Dict() and () round brackets with =&gt; specifying the relationship between a given key-value pair
+    # Set =&gt; an unordered collection of unique elements, operating the same as sets in Python, declared within Set([]) with a mixture of round and nested square brackets
+
+x::Int = 10
+y::Float64 = 3.14
+flag::Bool = true
+letter::Char = 'A'
+
+arr = [1, 2, 3, 4, 5]
+tup = (1, &quot;two&quot;, 3.0)
+dct = Dict(&quot;key1&quot; =&gt; 10, &quot;key2&quot; =&gt; 20)
+st = Set([1, 2, 3])
+</code></pre>
+<h2>Operators</h2>
+<pre><code class="language-jl"># ----- OPERATOR -----
+
+# --- ARITHMETIC OPERATORS ---
+
++ # addition
+- # subtraction
+* # multiplication
+/ # division
+% # modulo
+
+# --- COMPARISON OPERATORS ---
+
+== # equality operator
+!= # inequality operator
+&gt; # comparison operator
+&lt; # comparison operator
+&gt;= # comparison operator
+&lt;= # comparison operator
+
+# --- LOGICAL OPERATORS ---
+
+&amp;&amp; # logical AND
+|| # logical OR
+! # logical NOT
+</code></pre>
+<h2>Control structures</h2>
+<pre><code class="language-jl"># ----- CONTROL STRUCTURE -----
+
+# --- CONDITIONALS ---
+
+# IF ELSE IF ELSE
+    # operates the same as in Python
+    # note that end is used to specify the end of the if else if else conditional construct, similar to Bash
+
+x = 10
+if x &gt; 5
+    println(&quot;x is greater than 5&quot;)
+elseif x == 5
+    println(&quot;x is equal to 5&quot;)
+else
+    println(&quot;x is less than 5&quot;)
+end
+
+# --- LOOPS ---
+
+# FOR LOOP
+    # operates the same as in Python
+    # note that similar to above, end delimits the end of the for loop construct
+
+for i in 1:5
+    println(i)
+end
+
+# WHILE LOOP
+    # operates the same as in Python
+    # note that similar to above, end delimits the end of the while loop construct
+
+i = 1
+while i ≤ 5
+    println(i)
+    i += 1
+end
+</code></pre>
+<h2>Data structures</h2>
+<pre><code class="language-jl"># ----- DATA STRUCTURE -----
+    # array: mutable indexed multi-dimensional collection of elements of the same datatype
+    # tuple: immutable ordered collection of elements of multiple datatypes
+    # dictionary: mutable collection of key-value pairs of the same established type signature
+    # set: mutable collection of unique elements
+
+example_arr = [1, 2, 3, 4]
+example_tup = (1, &quot;two&quot;, 3.0)
+example_dict = Dict(&quot;key1&quot; =&gt; 10, &quot;key2&quot; =&gt; 20)
+example_set = Set([1, 2, 3])
+</code></pre>
+<h2>Functions</h2>
+<pre><code class="language-jl"># ----- FUNCTION -----
+    # function &lt;function_name&gt; (&lt;function_parameter(s)&gt;) &lt;function_body&gt; end =&gt; specifies and declares a named function
+    # return =&gt; explicitly specifies the return value or expression of a function within the function body
+
+function add(a, b) # function definition
+    return a + b
+end
+result = add(2, 3) # calling the above defined named function add
+
+function greet(name=&quot;World&quot;) # functions can also be called with default parameters
+    println(&quot;Hello, $name!&quot;)
+end
+greet(&quot;Alice&quot;) # this evaluates to &quot;Hello, Alice!&quot;
+greet() # this evaluates to &quot;Hello, World!&quot;
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li><a href="https://learnxinyminutes.com/docs/julia/">learn Julia in y minutes</a></li>
+<li><a href="https://docs.julialang.org/en/v1/">Julia documentation</a></li>
+<li><a href="https://julialang.org/">julialang.org</a></li>
+</ul>

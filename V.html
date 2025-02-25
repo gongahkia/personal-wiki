@@ -1,0 +1,172 @@
+<h1><code>V</code></h1>
+<h2>Comments</h2>
+<pre><code class="language-v"><span class="hljs-comment">// ----- COMMENT -----</span>
+
+<span class="hljs-comment">// this is a single-line comment</span>
+
+<span class="hljs-comment">/*
+this is a 
+multi-line
+comment
+*/</span>
+</code></pre>
+<h2>Printing</h2>
+<pre><code class="language-v"><span class="hljs-comment">// ----- PRINTING -----</span>
+    <span class="hljs-comment">// print() =&gt; receives a string argument that is then printed to the stdout and does not include a newline by default</span>
+    <span class="hljs-comment">// println() =&gt; receives a string argument that is then printed to the stdout and includes a newline automatically</span>
+
+print(<span class="hljs-string">&quot;this does not include a newline and one must be explicitly specified as seen here\n&quot;</span>)
+println(<span class="hljs-string">&quot;this already has a newline&quot;</span>)
+</code></pre>
+<h2>Quickstart</h2>
+<pre><code class="language-v"><span class="hljs-comment">// ----- QUICKSTART -----</span>
+    <span class="hljs-comment">// strongly statically-typed language for high performance and safety</span>
+    <span class="hljs-comment">// compiles directly to machine bytecode similar to languages from the C family</span>
+    <span class="hljs-comment">// V is heavily inspired by and thus draws many syntactical and foundational similarities to other low-level systems programming languages like C, Rust and Go</span>
+    <span class="hljs-comment">// most often used for systems programming, backend development and as an intermediary language for service integration</span>
+    <span class="hljs-comment">// fn main() =&gt; acts as the entry point for the program within which all execution code is written, the equivalent of the main function or method in many other C-style programming languages</span>
+    <span class="hljs-comment">// mut =&gt; specifies that a given variable is mutable, wherein mutable variables can have their values reassigned or modified even after the initial assignment, similar to mut in Rust</span>
+    <span class="hljs-comment">// := =&gt; simultaneous variable intialization and assignment, operating similarly to := in Go</span>
+</code></pre>
+<h2>Types</h2>
+<pre><code class="language-v"><span class="hljs-comment">// ----- TYPE -----</span>
+    <span class="hljs-comment">// i32 =&gt; 32-bit signed integer number value</span>
+    <span class="hljs-comment">// i64 =&gt; 64-bit signed integer number value</span>
+    <span class="hljs-comment">// u32 =&gt; 32-bit unsigned integer number value</span>
+    <span class="hljs-comment">// u64 =&gt; 64-bit unsigned integer number value</span>
+    <span class="hljs-comment">// f32 =&gt; 32-bit single-precision floating-point number value</span>
+    <span class="hljs-comment">// f64 =&gt; 64-bit double-precision floating-point number value</span>
+    <span class="hljs-comment">// Character =&gt; character value declared within &#x27;&#x27; single quotation marks</span>
+    <span class="hljs-comment">// String =&gt; string value declared within &quot;&quot; double quotation marks</span>
+    <span class="hljs-comment">// Boolean =&gt; true, false</span>
+</code></pre>
+<h2>Operators</h2>
+<pre><code class="language-v"><span class="hljs-comment">// ----- OPERATOR -----</span>
+
+<span class="hljs-comment">// --- ARITHMETIC OPERATOR ---</span>
+
++ <span class="hljs-comment">// addition</span>
+- <span class="hljs-comment">// subtraction</span>
+* <span class="hljs-comment">// multiplication</span>
+/ <span class="hljs-comment">// divison</span>
+% <span class="hljs-comment">// modulo</span>
+
+<span class="hljs-comment">// --- COMPARISON OPERATOR ---</span>
+
+== <span class="hljs-comment">// complete equality check for both value and type</span>
+!= <span class="hljs-comment">// complete inequality check for both value and type</span>
+&gt; <span class="hljs-comment">// comparison operator</span>
+&lt; <span class="hljs-comment">// comparison operator</span>
+&gt;= <span class="hljs-comment">// comparison operator</span>
+&lt;= <span class="hljs-comment">// comparison operator</span>
+
+<span class="hljs-comment">// --- LOGICAL OPERATOR ---</span>
+
+&amp;&amp; <span class="hljs-comment">// logical and</span>
+|| <span class="hljs-comment">// logical or</span>
+! <span class="hljs-comment">// logical not</span>
+</code></pre>
+<h2>Control structures</h2>
+<pre><code class="language-v"><span class="hljs-comment">// ----- CONTROL STRUCTURE -----</span>
+
+<span class="hljs-comment">// --- CONDITIONALS ---</span>
+
+<span class="hljs-comment">// IF ELSE IF ELSE </span>
+
+age := <span class="hljs-number">20</span>
+<span class="hljs-keyword">if</span> age &lt; <span class="hljs-number">18</span> {
+    println(&#x27;You are a minor.&#x27;)
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> age &gt;= <span class="hljs-number">18</span> &amp;&amp; age &lt; <span class="hljs-number">65</span> {
+    println(&#x27;You are an adult.&#x27;)
+} <span class="hljs-keyword">else</span> {
+    println(&#x27;You are a senior citizen.&#x27;)
+}
+
+<span class="hljs-comment">// MATCH =&gt; _</span>
+    <span class="hljs-comment">// provides advanced pattern-matching capabilities in V on par with those of Rust, seen below with conditional constructs specified within each pattern predicate case condition</span>
+    <span class="hljs-comment">// the equivalent of select case or switch case in other programming languages</span>
+    <span class="hljs-comment">// _ =&gt; specifies the default fall-through case which executes when all other predicate case conditions are unmet </span>
+
+number := <span class="hljs-number">42</span>
+match number {
+    <span class="hljs-number">0</span> =&gt; {
+        println(&#x27;Zero&#x27;)
+    }
+    n <span class="hljs-keyword">if</span> n &gt; <span class="hljs-number">0</span> =&gt; {
+        println(&#x27;Positive number&#x27;)
+    }
+    n <span class="hljs-keyword">if</span> n &lt; <span class="hljs-number">0</span> =&gt; {
+        println(&#x27;Negative number&#x27;)
+    }
+    _ =&gt; {
+        println(&#x27;Unknown&#x27;)
+    }
+}
+
+<span class="hljs-comment">// --- LOOPS ---</span>
+
+<span class="hljs-comment">// FOR IN</span>
+    <span class="hljs-comment">// allows iteration and traversal over an iterable data structure</span>
+    <span class="hljs-comment">// operates similar to for in loops in Python and foreach loops in PHP</span>
+
+<span class="hljs-keyword">for</span> i in <span class="hljs-number">1</span>..=<span class="hljs-number">5</span> {
+    println(&#x27;Current number: $i&#x27;)
+}
+
+<span class="hljs-comment">// WHILE</span>
+    <span class="hljs-comment">// operates similarly to while loops in most other programming languages</span>
+
+mut count i32 = <span class="hljs-number">0</span>
+<span class="hljs-keyword">while</span> count &lt; <span class="hljs-number">5</span> {
+    println(&#x27;Count: $count&#x27;)
+    count += <span class="hljs-number">1</span>
+}
+</code></pre>
+<h2>Data structures</h2>
+<pre><code class="language-v"><span class="hljs-comment">// ----- DATA STRUCTURE -----</span>
+    <span class="hljs-comment">// array =&gt; fixed-size ordered collection of elements of the same datatype, the equivalent of lists in Python</span>
+    <span class="hljs-comment">// map =&gt; fixed-size unordered collection of key-value pairs of multiple datatypes, the equivalent of dictionaries in Python</span>
+    <span class="hljs-comment">// set =&gt; dynamically-sized unordered collection of unique elements upon which various set operations can be called, the equivalent of sets in Python</span>
+    <span class="hljs-comment">// struct =&gt; user-defined collection of specified named fields and their corresponding datatypes, the equivalent of structs in Rust and Typescript, allowing modelling of representative data via type aliases</span>
+
+anExampleArray := [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
+
+anExampleMap := {
+    &#x27;name&#x27;: &#x27;Alice&#x27;,
+    &#x27;age&#x27;: <span class="hljs-number">30</span>,
+    &#x27;city&#x27;: &#x27;New York&#x27;
+}
+
+anExampleSet := set{&#x27;apple&#x27;, <span class="hljs-number">&#x27;ba</span>nana&#x27;, &#x27;orange&#x27;}
+
+<span class="hljs-keyword">struct</span> anExampleStruct {
+    name <span class="hljs-keyword">string</span>
+    age <span class="hljs-keyword">int</span>
+}
+<span class="hljs-keyword">struct</span> threeDimensionalCoordinate {
+    X <span class="hljs-keyword">int</span>
+    Y <span class="hljs-keyword">int</span>
+    Z <span class="hljs-keyword">int</span>
+}
+</code></pre>
+<h2>Functions</h2>
+<pre><code class="language-v"><span class="hljs-comment">// ----- FUNCTION -----</span>
+    <span class="hljs-comment">// fn &lt;functionName&gt; ( &lt;functionParameterName(s)&gt; &lt;functionParameterDatatype(s)&gt; ) &lt;functionReturnDatatype(s)&gt; { &lt;functionDefinitionBody&gt; } =&gt; declaration and definition of a named function</span>
+    <span class="hljs-comment">// fn ( &lt;functionParameterName(s)&gt; &lt;functionParameterDatatype(s)&gt; ) &lt;functionReturnDatatype(s)&gt; { &lt;functionDefinitionBody&gt; } =&gt; declaration and definition of an anonymous function, which is then normally assigned to a named variable identifier</span>
+    <span class="hljs-comment">// return =&gt; explicit return keyword that specifies the return expression or value of the given function</span>
+
+fn aNamedAdditionFunction(a i32, b i32) i32 {
+    <span class="hljs-keyword">return</span> a + b
+}
+
+anAnonymousFunctionLiteralForAdditionLikeAbove := fn (a <span class="hljs-keyword">int</span>, b <span class="hljs-keyword">int</span>) <span class="hljs-keyword">int</span> {
+    <span class="hljs-keyword">return</span> a + b
+}
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li><a href="https://www.reddit.com/r/ProgrammingLanguages/comments/vq4ul6/why_does_v_language_get_so_much_hate/">controversy surrounding v</a></li>
+<li><a href="https://vlang.io/">vlang.io</a></li>
+<li><a href="https://docs.vlang.io/introduction.html">v documentation</a></li>
+<li><a href="https://learnxinyminutes.com/docs/v/">learn v in y minutes</a></li>
+</ul>

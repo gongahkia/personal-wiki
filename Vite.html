@@ -1,0 +1,49 @@
+<h1><code>Vite</code></h1>
+<p>Elite JavaScript build tool.</p>
+<h2>Introduction</h2>
+<ul>
+<li>opinionated JavaScript build tool with sane defaults for speed and simplicity</li>
+<li>leverages on native ES modules in the browser to load web code at blazingly fast speeds regardless of application size</li>
+<li>built-in hot module replacement</li>
+<li>serves a local development server</li>
+<li>bundles JavaScript, CSS and other source files for production</li>
+<li>pairs excellently with first-class support for the JavaScript front-end framework Vue</li>
+</ul>
+<h2>Quickstart</h2>
+<p>A basic Vite project has the following structure.</p>
+<pre><code class="language-txt">my-watermelon-and-vite-powered-app/
+├── index.html
+├── src/
+│   ├── main.js
+│   └── App.vue
+├── package.json
+└── vite.config.js
+</code></pre>
+<ul>
+<li><code>vite.config.js</code>: Vite configuration file that specifies project behavior and defines custom functionality <em>(plugins, build rollup options, server configuration, import aliases, environment variables, library integration)</em></li>
+<li><code>main.js</code>: entry point of a Vite project that bootstraps your application by importing necessary modules and mounting root components to DOM elements, allowing the app to be rendered in the browser</li>
+</ul>
+<h3>an example <code>vite.config.js</code></h3>
+<pre><code class="language-js"><span class="hljs-keyword">import</span> { defineConfig } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vite&#x27;</span>
+<span class="hljs-keyword">import</span> vue <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@vitejs/plugin-vue&#x27;</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title function_">defineConfig</span>({
+    <span class="hljs-attr">plugins</span>: [<span class="hljs-title function_">vue</span>()]
+})
+</code></pre>
+<h3>an example <code>main.js</code></h3>
+<pre><code class="language-js"><span class="hljs-keyword">import</span> { createApp } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span>
+<span class="hljs-keyword">import</span> <span class="hljs-title class_">App</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./App.vue&#x27;</span>
+
+<span class="hljs-title function_">createApp</span>(<span class="hljs-title class_">App</span>).<span class="hljs-title function_">mount</span>(<span class="hljs-string">&#x27;#app&#x27;</span>)
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li><a href="https://vitejs.dev/">vitejs.dev</a></li>
+<li><a href="https://vitejs.dev/guide/#scaffolding-your-first-vite-project">install vite</a></li>
+<li><a href="https://devdocs.io/vite/">vite documentation</a></li>
+<li><a href="https://www.reddit.com/r/webdev/comments/z4rbe4/whats_the_hype_with_vite/">what's the hype with vite</a></li>
+<li><a href="https://vuejs.org/">vuejs.org</a></li>
+<li><a href="https://webpack.js.org/">webpack.js.org</a></li>
+<li><a href="https://rollupjs.org/">rollupjs.org</a></li>
+</ul>

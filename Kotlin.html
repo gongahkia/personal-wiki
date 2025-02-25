@@ -1,0 +1,246 @@
+<h1><code>Kotlin</code></h1>
+<p>Language for native android development and the browser.</p>
+<h2>Comments</h2>
+<pre><code class="language-kt"><span class="hljs-comment">// ---------- COMMENT ----------</span>
+
+<span class="hljs-comment">// this is a single-line comment</span>
+
+<span class="hljs-comment">/* 
+this is a 
+multi-line
+comment
+*/</span>
+</code></pre>
+<h2>Printing</h2>
+<pre><code class="language-kt"><span class="hljs-comment">// ---------- PRINT ----------</span>
+    <span class="hljs-comment">// print =&gt; prints a string to the stdout and does not include a newline</span>
+    <span class="hljs-comment">// println =&gt; prints a string to the stdout and appends a newline to the output</span>
+    <span class="hljs-comment">// $ =&gt; allows for string interpolation to embed values within a formatted string</span>
+
+print(<span class="hljs-string">&quot;this does not include a newline and one must be explicitly specified\n&quot;</span>)
+println(<span class="hljs-string">&quot;this already includes a newline&quot;</span>)
+
+<span class="hljs-keyword">val</span> x:String = <span class="hljs-string">&quot;okay&quot;</span>
+print(<span class="hljs-string">&quot;<span class="hljs-variable">$x</span> thanks&quot;</span>) <span class="hljs-comment">// allows for string interpolation</span>
+</code></pre>
+<h2>Quickstart</h2>
+<pre><code class="language-kt"><span class="hljs-comment">// ---------- QUICKSTART ----------</span>
+    <span class="hljs-comment">// package =&gt; declares a namespace for code within the current source file</span>
+    <span class="hljs-comment">// all kotlin code runs within the main function</span>
+
+<span class="hljs-keyword">package</span> learningKotlin
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-comment">// add your code here</span>
+}
+</code></pre>
+<h2>Variables</h2>
+<pre><code class="language-kt"><span class="hljs-comment">// ---------- VARIABLE ----------</span>
+    <span class="hljs-comment">// variable values are non-nullable by default</span>
+    <span class="hljs-comment">// val =&gt; declares and assigns a variable that cannot be reassigned after assignment</span>
+    <span class="hljs-comment">// var =&gt; declares and assigns a variable that can be reassigned after assignment</span>
+    <span class="hljs-comment">// : =&gt; specifies data type of a given variable</span>
+    <span class="hljs-comment">// ? =&gt; specified a variable can store a null value</span>
+        <span class="hljs-comment">// ?. =&gt; access an attribute of a nullable variable</span>
+        <span class="hljs-comment">// ?: =&gt; specifies a default value to use if the variable value is null</span>
+
+<span class="hljs-keyword">val</span> permInt:<span class="hljs-built_in">Int</span> = <span class="hljs-number">10</span> <span class="hljs-comment">// cannot be reassigned</span>
+<span class="hljs-keyword">var</span> tempInt:<span class="hljs-built_in">Int</span> = <span class="hljs-number">100</span> 
+tempInt = <span class="hljs-number">5</span> <span class="hljs-comment">// this is valid kotlin and tempInt can continue to be reassigned later</span>
+
+<span class="hljs-keyword">val</span> stringButNullable:String? = <span class="hljs-string">&quot;watermelon but could also be null&quot;</span>
+print(stringButNullable?.length) <span class="hljs-comment">// this prints 33 to the stdout</span>
+
+<span class="hljs-keyword">val</span> blud:String? = <span class="hljs-literal">null</span>
+print(blud?.length ?: -<span class="hljs-number">1</span>) <span class="hljs-comment">// this prints -1 to the stdout since blud&#x27;s value is null so it defaults to -1 when getting null for blud&#x27;s length</span>
+</code></pre>
+<h2>Types</h2>
+<pre><code class="language-kt"><span class="hljs-comment">// ---------- TYPE ----------</span>
+    <span class="hljs-comment">// Byte =&gt; 8-bit integer number</span>
+    <span class="hljs-comment">// Short =&gt; 16-bit integer number</span>
+    <span class="hljs-comment">// Int =&gt; 32-bit integer number</span>
+    <span class="hljs-comment">// Long =&gt; 64-bit integer number</span>
+    <span class="hljs-comment">// Float =&gt; 32-bit single-precision floating point number</span>
+    <span class="hljs-comment">// Double =&gt; 64-bit double-precision floating point number</span>
+    <span class="hljs-comment">// Boolean =&gt; true, false</span>
+    <span class="hljs-comment">// Char =&gt; &#x27;&#x27; single quotation marks</span>
+    <span class="hljs-comment">// String =&gt; &quot;&quot; double quotation marks</span>
+</code></pre>
+<h2>Operators</h2>
+<pre><code class="language-kt"><span class="hljs-comment">// ---------- OPERATOR ----------</span>
+
+<span class="hljs-comment">// ARITHMETIC OPERATORS</span>
+    <span class="hljs-comment">// + =&gt; addition</span>
+    <span class="hljs-comment">// - =&gt; subtraction</span>
+    <span class="hljs-comment">// * =&gt; multiplication</span>
+    <span class="hljs-comment">// / =&gt; divison</span>
+    <span class="hljs-comment">// % =&gt; modulo operator</span>
+    <span class="hljs-comment">// += =&gt; addition and reassignment</span>
+    <span class="hljs-comment">// -= =&gt; subtraction and reassignment</span>
+    <span class="hljs-comment">// *= =&gt; multiplication and reassignment</span>
+    <span class="hljs-comment">// /= =&gt; divison and reassignment</span>
+    <span class="hljs-comment">// %= =&gt; modulus and reassignment</span>
+
+<span class="hljs-comment">// LOGICAL OPERATORS</span>
+    <span class="hljs-comment">// &amp;&amp; =&gt; logical and</span>
+    <span class="hljs-comment">// || =&gt; logical or</span>
+    <span class="hljs-comment">// ! =&gt; logical not</span>
+
+<span class="hljs-comment">// COMPARISON OPERATORS</span>
+    <span class="hljs-comment">// == =&gt; partial equality check for structural equality in value</span>
+    <span class="hljs-comment">// != =&gt; partial inequality check for structural equality in value</span>
+    <span class="hljs-comment">// === =&gt; complete equality check for referential equality in value and type by pointing to the same object in memory</span>
+    <span class="hljs-comment">// !== =&gt; complete inequality check for referential equality in value and type by pointing to the same object in memory</span>
+    <span class="hljs-comment">// &lt; &gt; &lt;= &gt;= are also comparison operators</span>
+</code></pre>
+<h2>Control structures</h2>
+<pre><code class="language-kt"><span class="hljs-comment">// ---------- CONTROL STRUCTURE ----------</span>
+
+<span class="hljs-comment">// ---------- CONDITIONALS ----------</span>
+
+<span class="hljs-comment">// IF ELSE IF ELSE </span>
+
+<span class="hljs-keyword">val</span> x = <span class="hljs-number">10</span>
+<span class="hljs-keyword">if</span> (x &gt; <span class="hljs-number">10</span>) {
+    print(<span class="hljs-string">&quot;x is bigger than 10&quot;</span>)
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (x &lt; <span class="hljs-number">10</span>) {
+    print(<span class="hljs-string">&quot;x is smaller than 10&quot;</span>)
+} <span class="hljs-keyword">else</span> {
+    print(<span class="hljs-string">&quot;x equals to 10&quot;</span>)
+}
+
+<span class="hljs-comment">// WHEN </span>
+    <span class="hljs-comment">// Kotlin&#x27;s powerful pattern-matching construct similar to switch case statements in other languages, which can be embedded in expressions as well</span>
+    <span class="hljs-comment">// -&gt; =&gt; specifies the relationship between each case statement and the expression block to be run, note that indentation and line breaks matter</span>
+    <span class="hljs-comment">// else =&gt; specifies the default case if all other conditions fail to be met</span>
+
+<span class="hljs-keyword">val</span> dayOfWeek = <span class="hljs-number">3</span>
+<span class="hljs-keyword">when</span> (dayOfWeek) {
+    <span class="hljs-number">1</span> -&gt; print(<span class="hljs-string">&quot;Monday&quot;</span>)
+    <span class="hljs-number">2</span> -&gt; print(<span class="hljs-string">&quot;Tuesday&quot;</span>)
+    <span class="hljs-number">3</span> -&gt; print(<span class="hljs-string">&quot;Wednesday&quot;</span>)
+    <span class="hljs-number">4</span> -&gt; print(<span class="hljs-string">&quot;Thursday&quot;</span>)
+    <span class="hljs-number">5</span> -&gt; print(<span class="hljs-string">&quot;Friday&quot;</span>)
+    <span class="hljs-number">6</span>, <span class="hljs-number">7</span> -&gt; print(<span class="hljs-string">&quot;Weekend&quot;</span>)
+    <span class="hljs-keyword">else</span> -&gt; print(<span class="hljs-string">&quot;Invalid day&quot;</span>)
+} <span class="hljs-comment">// when block evaluating to a value</span>
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">getDayType</span><span class="hljs-params">(dayOfWeek: <span class="hljs-type">Int</span>)</span></span>: String {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">when</span> (dayOfWeek) {
+        <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span> -&gt; <span class="hljs-string">&quot;Weekday&quot;</span>
+        <span class="hljs-number">6</span>, <span class="hljs-number">7</span> -&gt; <span class="hljs-string">&quot;Weekend&quot;</span>
+        <span class="hljs-keyword">else</span> -&gt; <span class="hljs-string">&quot;Invalid day&quot;</span>
+    }
+} <span class="hljs-comment">// when block within a function expression</span>
+
+<span class="hljs-comment">// ---------- LOOPS ----------</span>
+
+<span class="hljs-comment">// WHILE LOOP</span>
+
+<span class="hljs-keyword">var</span> count = <span class="hljs-number">0</span>
+<span class="hljs-keyword">while</span> (count &lt; <span class="hljs-number">5</span>) {
+    print(count)
+    count++
+} <span class="hljs-comment">// prints 01234 to the stdout</span>
+
+<span class="hljs-comment">// DO WHILE LOOP</span>
+
+<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>
+<span class="hljs-keyword">do</span> {
+    println(i)
+    i++
+} <span class="hljs-keyword">while</span> (i &lt; <span class="hljs-number">3</span>) <span class="hljs-comment">// prints 012 to the stdout</span>
+
+<span class="hljs-comment">// FOR LOOP</span>
+    <span class="hljs-comment">// for in =&gt; iteration over an iterable data structure, including ranges</span>
+
+<span class="hljs-keyword">for</span> (i <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span><span class="hljs-number">.5</span>) {
+    print(i)
+} <span class="hljs-comment">// this prints 12345 to the stdout</span>
+
+<span class="hljs-comment">// RANGES</span>
+    <span class="hljs-comment">// .. =&gt; creates an inclusive range on both ends that can be iterated over</span>
+
+<span class="hljs-keyword">val</span> rangeList = (<span class="hljs-number">10.</span><span class="hljs-number">.15</span>).toList() <span class="hljs-comment">// evaluates to [10, 11, 12, 13, 14, 15]</span>
+<span class="hljs-keyword">val</span> checkIfInRange = <span class="hljs-number">3</span> <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span><span class="hljs-number">.5</span> <span class="hljs-comment">// evaluates to boolean true</span>
+</code></pre>
+<h2>Data structures</h2>
+<pre><code class="language-kt"><span class="hljs-comment">// ---------- DATA STRUCTURE ----------</span>
+
+<span class="hljs-comment">// ARRAY</span>
+    <span class="hljs-comment">// fixed-sized ordered sequence of elements of the same type, limited functionality for array manipiulation but kotlin arrays are mutable by default so array values can be reassigned after initial declaration and assignment, although their size cannot be changed</span>
+    <span class="hljs-comment">// arrayOf =&gt; declares and creates an array literal with the type Array&lt;{ELEMENT TYPE}&gt;</span>
+
+<span class="hljs-keyword">val</span> array: Array&lt;<span class="hljs-built_in">Int</span>&gt; = arrayOf(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>)
+array[<span class="hljs-number">2</span>] = <span class="hljs-number">10</span> <span class="hljs-comment">// arrays are inherently mutable so we can reassign existing values, but cannot modify the size of the array</span>
+
+<span class="hljs-comment">// LIST</span>
+    <span class="hljs-comment">// fixed-size or dynamically-sized ordered sequence of elements of the same type, higher-order functions like filter, map and reduce can be called on lists</span>
+    <span class="hljs-comment">// listOf =&gt; declares and creates an immutable list with the type List&lt;{ELEMENT TYPE}&gt; that cannot be modified after declaration and initial assignment</span>
+    <span class="hljs-comment">// mutableListOf =&gt; declares and creates a mutable list with the type MutableList&lt;{ELEMENT TYPE}&gt; that can be modified after declaration and initial assignment</span>
+
+<span class="hljs-keyword">val</span> numbers: List&lt;<span class="hljs-built_in">Int</span>&gt; = listOf(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>)
+
+<span class="hljs-keyword">val</span> mutableNumbers: MutableList&lt;<span class="hljs-built_in">Int</span>&gt; = mutableListOf(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>)
+mutableNumbers.add(<span class="hljs-number">6</span>) <span class="hljs-comment">// this and other list functions exist to interact with lists</span>
+
+<span class="hljs-comment">// MAP</span>
+    <span class="hljs-comment">// fixed-size or dynamically-sized unordered collections of key-value pairs</span>
+    <span class="hljs-comment">// mapOf =&gt; declares and creates an immutable map with the type Map&lt;{KEY TYPE}, {VALUE TYPE}&gt; that cannot be modified after declaration and initial assignment, immutable maps are read-only</span>
+    <span class="hljs-comment">// mutableMapOf =&gt; declares and creates a mutable map with the type MutableMap&lt;{KEY TYPE}, {VALUE TYPE}&gt; that can be modified after declaration and initial assignment</span>
+    <span class="hljs-comment">// to =&gt; specifies the relationship between a key and a value in a Map</span>
+
+<span class="hljs-keyword">val</span> map: Map&lt;String, <span class="hljs-built_in">Int</span>&gt; = mapOf(<span class="hljs-string">&quot;one&quot;</span> to <span class="hljs-number">1</span>, <span class="hljs-string">&quot;two&quot;</span> to <span class="hljs-number">2</span>, <span class="hljs-string">&quot;three&quot;</span> to <span class="hljs-number">3</span>)
+
+<span class="hljs-keyword">val</span> mutableMap: MutableMap&lt;String, <span class="hljs-built_in">Int</span>&gt; = mutableMapOf(<span class="hljs-string">&quot;one&quot;</span> to <span class="hljs-number">1</span>, <span class="hljs-string">&quot;two&quot;</span> to <span class="hljs-number">2</span>, <span class="hljs-string">&quot;three&quot;</span> to <span class="hljs-number">3</span>)
+<span class="hljs-keyword">val</span> valueOne:<span class="hljs-built_in">Int</span> = mutableMap[<span class="hljs-string">&quot;one&quot;</span>] <span class="hljs-comment">// this retreives the Int value 1 stored at the corresponding String key &quot;one&quot; and assigns it to a variable</span>
+mutableMap[<span class="hljs-string">&quot;four&quot;</span>] = <span class="hljs-number">4</span> <span class="hljs-comment">// this adds a new key-value pair</span>
+mutableMap[<span class="hljs-string">&quot;two&quot;</span>] = <span class="hljs-number">20</span> <span class="hljs-comment">// this updates an existing value</span>
+mutableMap.remove(<span class="hljs-string">&quot;three&quot;</span>) <span class="hljs-comment">// this removes a key-value pair</span>
+
+<span class="hljs-comment">// SET</span>
+    <span class="hljs-comment">// fixed-size or dynamically-sized unordered collections of unique elements</span>
+    <span class="hljs-comment">// setOf =&gt; declares and creates an immutable set with the type Set&lt;{ELEMENT TYPE}&gt; that cannot be modified after declaration and initial assignment</span>
+    <span class="hljs-comment">// mutableSetOf =&gt; declares and creates a mutable set with the type MutableSet&lt;{ELEMENT TYPE}&gt; that can be modified after declaration and initial assignment</span>
+
+<span class="hljs-keyword">val</span> uniqueNumbers: Set&lt;<span class="hljs-built_in">Int</span>&gt; = setOf(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>)
+
+<span class="hljs-keyword">val</span> uniqueFruits: MutableSet&lt;String&gt; = mutableSetOf(<span class="hljs-string">&quot;apple&quot;</span>, <span class="hljs-string">&quot;banana&quot;</span>, <span class="hljs-string">&quot;orange&quot;</span>)
+uniqueFruits.add(<span class="hljs-string">&quot;grape&quot;</span>)
+uniqueFruits.remove(<span class="hljs-string">&quot;banana&quot;</span>)
+</code></pre>
+<h2>Functions</h2>
+<pre><code class="language-kt"><span class="hljs-comment">// ---------- FUNCTION ----------</span>
+    <span class="hljs-comment">// functions are first-class citizens, allowing for higher-order functions like map, filter and reduce</span>
+    <span class="hljs-comment">// fun =&gt; declares and creates a function and specifies its parameter and return type with : colon</span>
+    <span class="hljs-comment">// return =&gt; specifies the return expression, though kotlin functions support implicit return of the last expression provided</span>
+    <span class="hljs-comment">// vararg =&gt; allows for a variable number of arguments to be passed to a function</span>
+    <span class="hljs-comment">// functions that are a single expression can be expressed as a single-line expression with an = assignment operator</span>
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">hello</span><span class="hljs-params">(name: <span class="hljs-type">String</span>)</span></span>: String {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Hello, <span class="hljs-variable">$name</span>!&quot;</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">varargExample</span><span class="hljs-params">(<span class="hljs-keyword">vararg</span> names: <span class="hljs-type">Int</span>)</span></span> {
+    print(<span class="hljs-string">&quot;argument has <span class="hljs-subst">${names.size}</span> elements&quot;</span>)
+} <span class="hljs-comment">// takes in a variable number of arguments and prints out the number of arguments provided</span>
+
+<span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">odd</span><span class="hljs-params">(x: <span class="hljs-type">Int</span>)</span></span>: <span class="hljs-built_in">Boolean</span> = x % <span class="hljs-number">2</span> == <span class="hljs-number">1</span> <span class="hljs-comment">// a single-line expression</span>
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li>anonymous functions</li>
+<li>with</li>
+<li>is</li>
+<li>enum</li>
+<li>object</li>
+<li>operator</li>
+<li>OOP</li>
+<li>data classes</li>
+<li>destructuring</li>
+<li><a href="https://play.kotlinlang.org/#eyJ2ZXJzaW9uIjoiMS45LjIxIiwicGxhdGZvcm0iOiJqYXZhIiwiYXJncyI6IiIsIm5vbmVNYXJrZXJzIjp0cnVlLCJ0aGVtZSI6ImlkZWEiLCJjb2RlIjoiLyoqXG4gKiBZb3UgY2FuIGVkaXQsIHJ1biwgYW5kIHNoYXJlIHRoaXMgY29kZS5cbiAqIHBsYXkua290bGlubGFuZy5vcmdcbiAqL1xuZnVuIG1haW4oKSB7XG4gICAgcHJpbnRsbihcIkhlbGxvLCB3b3JsZCEhIVwiKVxufSJ9">kotlin playground</a></li>
+<li><a href="https://kotlinlang.org/docs/home.html">kotlin documentation</a></li>
+<li><a href="https://learnxinyminutes.com/docs/kotlin/">learn kotlin in y minutes</a></li>
+<li><a href="https://developer.android.com/codelabs/build-your-first-android-app-kotlin#0">app development in kotlin</a></li>
+<li><a href="https://tjah.medium.com/lets-build-an-android-app-with-kotlin-6fa0fe977e1c">fact app in kotlin</a></li>
+</ul>

@@ -1,0 +1,216 @@
+<h1><code>Perl</code></h1>
+<p>The language for powerful string parsing.</p>
+<h2>Comments</h2>
+<pre><code class="language-pl"><span class="hljs-comment"># ---------- COMMENT ----------</span>
+
+<span class="hljs-comment"># this is a single-line comment</span>
+
+<span class="hljs-comment"># there is no built-in </span>
+<span class="hljs-comment"># syntax for multi-line </span>
+<span class="hljs-comment"># comments</span>
+</code></pre>
+<h2>Printing</h2>
+<pre><code class="language-pl"><span class="hljs-comment"># ---------- PRINT ----------</span>
+    <span class="hljs-comment"># print =&gt; prints a string to the stdout and appends a newline to the output</span>
+    <span class="hljs-comment"># printf =&gt; prints formatted strings to the stdout and does not append a newline to the output</span>
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;this will include a newline automatically&quot;</span>;
+<span class="hljs-keyword">printf</span> <span class="hljs-string">&quot;this will not include a newline and we need to specify its inclusion\n&quot;</span>;
+</code></pre>
+<h2>Quickstart</h2>
+<pre><code class="language-pl"><span class="hljs-comment"># ---------- QUICKSTART ----------</span>
+    <span class="hljs-comment"># all Perl scripts include these lines at the start</span>
+    <span class="hljs-comment"># strict =&gt; module that causes compilation to fail when variable names are misspelt </span>
+    <span class="hljs-comment"># warnings =&gt; module that prints pre-emptive warning messages to the stdout for common pitfalls</span>
+
+<span class="hljs-keyword">use</span> strict;
+<span class="hljs-keyword">use</span> warnings;
+</code></pre>
+<h2>Types</h2>
+<pre><code class="language-pl"><span class="hljs-comment"># ---------- TYPE ----------</span>
+    <span class="hljs-comment"># scalar =&gt; Integer, Float, String, Reference, declared with $</span>
+    <span class="hljs-comment"># array =&gt; ordered sequence of scalar values, declared with @</span>
+    <span class="hljs-comment"># hash =&gt; unordered sequence of key-value pairs, declared with %</span>
+    <span class="hljs-comment"># scalar reference =&gt; declared with \$</span>
+    <span class="hljs-comment"># array reference =&gt; declared with \@</span>
+    <span class="hljs-comment"># hash reference =&gt; declared with \%</span>
+    <span class="hljs-comment"># code reference =&gt; declared with \&amp;</span>
+    <span class="hljs-comment"># glob =&gt; represents an entire symbol table entry like scalars, arrays and hashes, declared with *</span>
+</code></pre>
+<h2>Variables</h2>
+<pre><code class="language-pl"><span class="hljs-comment"># ---------- VARIABLE ----------</span>
+    <span class="hljs-comment"># variable names start with a sigil specifying their variable type</span>
+        <span class="hljs-comment"># $ =&gt; specifies a scalar variable containing a single value, can be an Integer, Float, String, Reference</span>
+        <span class="hljs-comment"># @ =&gt; specifies an array variable containing an ordered sequence of values of different types, similar to lists in other languages</span>
+        <span class="hljs-comment"># % =&gt; specifies a hash variable containing an unordered sequence of comma-delimited key-value pairs, similar to hashmaps in other languages</span>
+        <span class="hljs-comment"># \ =&gt; placed in front of another data type to create a reference to it, allowing creation of nested arrays and hashes, note that a Reference is of the scalar data type</span>
+
+<span class="hljs-comment"># SCALAR</span>
+
+<span class="hljs-keyword">my</span> <span class="hljs-variable">$a_string</span> = <span class="hljs-string">&quot;camel&quot;</span>;
+<span class="hljs-keyword">my</span> <span class="hljs-variable">$an_integer</span> = <span class="hljs-number">42</span>;
+<span class="hljs-keyword">my</span> <span class="hljs-variable">$a_floating_point</span> = <span class="hljs-number">2.312</span>;
+<span class="hljs-keyword">my</span> <span class="hljs-variable">$a_reference_to_a_hash</span> = \<span class="hljs-variable">%imagine_a_hash</span>;
+
+<span class="hljs-comment"># ARRAY</span>
+
+<span class="hljs-keyword">my</span> <span class="hljs-variable">@a_string_array</span> = (<span class="hljs-string">&quot;camel&quot;</span>, <span class="hljs-string">&quot;llama&quot;</span>, <span class="hljs-string">&quot;owl&quot;</span>);
+<span class="hljs-keyword">my</span> <span class="hljs-variable">@an_integer_array</span> = (<span class="hljs-number">1</span>, <span class="hljs-number">21</span>, <span class="hljs-number">321</span>);
+<span class="hljs-keyword">my</span> <span class="hljs-variable">@a_mixed_array</span> = (<span class="hljs-string">&quot;camel&quot;</span>, <span class="hljs-number">42</span>, <span class="hljs-number">1.2378</span>);
+
+<span class="hljs-comment"># HASH</span>
+    <span class="hljs-comment"># =&gt; =&gt; specifies the relationship between a key and value in a key-value pair</span>
+
+<span class="hljs-keyword">my</span> <span class="hljs-variable">@a_fruity_hash</span> = {
+    <span class="hljs-string">apple  =&gt;</span> <span class="hljs-string">&quot;red&quot;</span>,
+    <span class="hljs-string">banana =&gt;</span> <span class="hljs-string">&quot;yellow&quot;</span>, 
+};
+
+<span class="hljs-comment"># REFERENCES</span>
+    <span class="hljs-comment"># $, @, % =&gt; dereference a given reference by prefixing it with the appropriate sigil</span>
+    <span class="hljs-comment"># -&gt; =&gt; dereferences and access a single value</span>
+
+<span class="hljs-keyword">my</span> <span class="hljs-variable">$scalar_ref</span> = \<span class="hljs-variable">$a_string</span>; <span class="hljs-comment"># creates a reference to a scalar variable</span>
+<span class="hljs-keyword">my</span> <span class="hljs-variable">$array_ref</span> = \<span class="hljs-variable">@a_string_list</span>; <span class="hljs-comment"># creates a reference to an array variable</span>
+<span class="hljs-keyword">my</span> <span class="hljs-variable">$hash_ref</span> = \<span class="hljs-variable">%a_fruity_hash</span>; <span class="hljs-comment"># creates a reference to a hash variable</span>
+
+<span class="hljs-keyword">my</span> <span class="hljs-variable">@string_array</span> = <span class="hljs-variable">@$</span>array_ref; <span class="hljs-comment"># dereference a reference to an array</span>
+<span class="hljs-keyword">my</span> <span class="hljs-variable">%fruity_hash</span> = <span class="hljs-variable">%$</span>hash_ref; <span class="hljs-comment"># dereference a reference to a hash</span>
+
+<span class="hljs-keyword">my</span> <span class="hljs-variable">$first_value_string_array</span> = <span class="hljs-variable">$array_ref</span>-&gt;[<span class="hljs-number">0</span>]; <span class="hljs-comment"># access array element by index</span>
+<span class="hljs-keyword">my</span> <span class="hljs-variable">$banana_value_fruity_hash</span> = <span class="hljs-variable">$hash_ref</span>-&gt;{banana} <span class="hljs-comment"># access hash value by its corresponding key</span>
+</code></pre>
+<h2>Operators</h2>
+<pre><code class="language-pl"><span class="hljs-comment"># ---------- OPERATOR ----------</span>
+
+<span class="hljs-comment"># ARITHMETIC OPERATORS</span>
+    <span class="hljs-comment"># + =&gt; addition</span>
+    <span class="hljs-comment"># - =&gt; subtraction</span>
+    <span class="hljs-comment"># * =&gt; multiplication</span>
+    <span class="hljs-comment"># / =&gt; divison</span>
+    <span class="hljs-comment"># % =&gt; modulo operator</span>
+    <span class="hljs-comment"># ** =&gt; exponentiation operator</span>
+    <span class="hljs-comment"># += =&gt; increment by specified value and reassign</span>
+    <span class="hljs-comment"># -= =&gt; decrement by specified value and reassign</span>
+
+<span class="hljs-comment"># LOGICAL OPERATORS</span>
+    <span class="hljs-comment"># &amp;&amp; =&gt; logical and</span>
+    <span class="hljs-comment"># || =&gt; logical or</span>
+    <span class="hljs-comment"># ! =&gt; logical not</span>
+
+<span class="hljs-comment"># COMPARSION OPERATORS</span>
+    <span class="hljs-comment"># eq =&gt; complete equality check for value and type</span>
+    <span class="hljs-comment"># ne =&gt; complete inequality check for value and type</span>
+    <span class="hljs-comment"># == =&gt; partial equality check for value</span>
+    <span class="hljs-comment"># != =&gt; partial inequality check for value</span>
+    <span class="hljs-comment"># &gt;, &lt;, &gt;=, &lt;= are also comparison operators</span>
+</code></pre>
+<h2>Control structures</h2>
+<pre><code class="language-pl"><span class="hljs-comment"># ---------- CONTROL STRUCTURE ----------</span>
+
+<span class="hljs-comment"># CONDITIONALS</span>
+
+<span class="hljs-comment"># IF ELSIF ELSE</span>
+
+<span class="hljs-keyword">my</span> <span class="hljs-variable">$x</span> = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">if</span> (<span class="hljs-variable">$x</span> &gt; <span class="hljs-number">10</span>) {
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;x is bigger than 10&quot;</span>;
+} <span class="hljs-keyword">elsif</span> (<span class="hljs-variable">$x</span> &lt; <span class="hljs-number">10</span>) {
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;x is smaller than 10&quot;</span>;
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;x is equals to 10&quot;</span>;
+}
+
+<span class="hljs-comment"># UNLESS</span>
+    <span class="hljs-comment"># equivalent of if (!predicate)</span>
+
+<span class="hljs-keyword">unless</span> (<span class="hljs-variable">$x</span> == <span class="hljs-number">10</span>) {
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;x is not equals to 10&quot;</span>;
+}
+
+<span class="hljs-comment"># LOOPS</span>
+    <span class="hljs-comment"># imperative-style loops are available, however Perl also provides higher-order functions like map, grep (similar to filter in other languages), reduce</span>
+
+<span class="hljs-comment"># FOR LOOPS AND FOREACH LOOPS</span>
+    <span class="hljs-comment"># for, foreach =&gt; allows for iteration over a specified iterable collection of data</span>
+    <span class="hljs-comment"># for and foreach are equivalent in Perl</span>
+
+<span class="hljs-keyword">my</span> <span class="hljs-variable">$max</span> = <span class="hljs-number">5</span>;
+<span class="hljs-keyword">for</span> <span class="hljs-keyword">my</span> <span class="hljs-variable">$i</span> (<span class="hljs-number">0</span> .. <span class="hljs-variable">$max</span>) { <span class="hljs-comment"># iterates over elements within a specified range</span>
+  <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;index is <span class="hljs-variable">$i</span>&quot;</span>;
+}
+
+<span class="hljs-keyword">for</span> <span class="hljs-keyword">my</span> <span class="hljs-variable">$element</span> (<span class="hljs-variable">@elements</span>) { <span class="hljs-comment"># iterates over elements within an existing array</span>
+  <span class="hljs-keyword">print</span> <span class="hljs-variable">$element</span>;
+}
+
+<span class="hljs-comment"># WHILE LOOPS</span>
+
+<span class="hljs-keyword">my</span> <span class="hljs-variable">$y</span> = <span class="hljs-number">5</span>;
+<span class="hljs-keyword">while</span> (<span class="hljs-variable">$y</span> &gt; <span class="hljs-number">1</span>) {
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;y is not 1&quot;</span>;
+    <span class="hljs-variable">$y</span> -= <span class="hljs-number">1</span>;
+}
+</code></pre>
+<h2>Data structures</h2>
+<pre><code class="language-pl"><span class="hljs-comment"># ---------- DATA STRUCTURE ----------</span>
+
+<span class="hljs-comment"># ARRAY</span>
+    <span class="hljs-comment"># @ =&gt; declares an array variable that can store an array value within () brackets</span>
+    <span class="hljs-comment"># array elements accessed by index using [] square bracket notation</span>
+    <span class="hljs-comment"># array size accessed by assigning the array to a scalar variable</span>
+    <span class="hljs-comment"># scalar() =&gt; returns the size of an array</span>
+
+<span class="hljs-keyword">my</span> <span class="hljs-variable">@numbers</span> = (<span class="hljs-number">23</span>, <span class="hljs-number">42</span>, <span class="hljs-number">69</span>); <span class="hljs-comment"># creates an array numbers</span>
+<span class="hljs-keyword">my</span> <span class="hljs-variable">$second</span> = <span class="hljs-variable">$animals</span>[<span class="hljs-number">1</span>]; <span class="hljs-comment"># this evaluates to 42</span>
+<span class="hljs-keyword">my</span> <span class="hljs-variable">$num_numbers</span> = <span class="hljs-variable">@numbers</span>; <span class="hljs-comment"># this returns 3, the size of the array</span>
+<span class="hljs-keyword">my</span> <span class="hljs-variable">$also_num_numbers</span> = <span class="hljs-keyword">scalar</span>(<span class="hljs-variable">@numbers</span>); <span class="hljs-comment"># this also returns 3 for the size of the array</span>
+
+<span class="hljs-comment"># HASH</span>
+    <span class="hljs-comment"># % =&gt; declares a hash variable that can store a hash value within () brackets</span>
+    <span class="hljs-comment"># hash elements accessed by key using {} curly brace notation</span>
+    <span class="hljs-comment"># keys =&gt; returns all the keys of an array</span>
+    <span class="hljs-comment"># values =&gt; returns all the values of an array</span>
+
+<span class="hljs-keyword">my</span> <span class="hljs-variable">%parklane_dishes</span> = (
+    <span class="hljs-string">fish =&gt;</span> <span class="hljs-number">2.50</span>,
+    <span class="hljs-string">chicken =&gt;</span> <span class="hljs-number">2.00</span>,
+    <span class="hljs-string">vegetable =&gt;</span> <span class="hljs-number">1.00</span>,
+    <span class="hljs-string">egg =&gt;</span> <span class="hljs-number">0.50</span>,
+);
+<span class="hljs-keyword">my</span> <span class="hljs-variable">$parklane_fish</span> = <span class="hljs-variable">$parklane_dishes</span><span class="hljs-string">{fish}</span>; <span class="hljs-comment"># access the value stored at the fish key within the parklane_dishes hash</span>
+<span class="hljs-keyword">my</span> <span class="hljs-variable">$all_dishes</span> = <span class="hljs-keyword">keys</span> <span class="hljs-variable">%parklane_dishes</span>; <span class="hljs-comment"># returns all the keys stored within the parklane_dishes hash</span>
+<span class="hljs-keyword">my</span> <span class="hljs-variable">$all_costs</span> = <span class="hljs-keyword">values</span> <span class="hljs-variable">%parklane_dishes</span>; <span class="hljs-comment"># returns all the values stored within the parklane_dishes hash</span>
+</code></pre>
+<h2>Functions</h2>
+<pre><code class="language-pl"><span class="hljs-comment"># ---------- FUNCTION ----------</span>
+    <span class="hljs-comment"># sub =&gt; declares and creates a function</span>
+    <span class="hljs-comment"># return =&gt; specifies the return expression, similar to return in other languages</span>
+    <span class="hljs-comment"># shift =&gt; procedurally retrieves the arguments passed to the function</span>
+    <span class="hljs-comment"># @_ =&gt; assigns function arguments to an array which then allows their retrieval via index or implicit deconstruction</span>
+    <span class="hljs-comment"># function parameters are not explicitly declared and must be assigned within the function</span>
+
+<span class="hljs-function"><span class="hljs-keyword">sub</span> <span class="hljs-title">greet</span> </span>{
+    <span class="hljs-keyword">my</span> <span class="hljs-variable">$name</span> = <span class="hljs-keyword">shift</span>;  <span class="hljs-comment"># retrieves the first argument passed to the function and assigns it to the scalar variable name</span>
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Hello, <span class="hljs-variable">$name</span>!&quot;</span>;
+}
+greet(<span class="hljs-string">&quot;Alice&quot;</span>); <span class="hljs-comment"># this prints &quot;Hello, Alice!&quot; to the stdout</span>
+
+<span class="hljs-function"><span class="hljs-keyword">sub</span> <span class="hljs-title">multiply</span> </span>{
+    <span class="hljs-keyword">my</span> (<span class="hljs-variable">$num1</span>, <span class="hljs-variable">$num2</span>) = <span class="hljs-variable">@_</span>; <span class="hljs-comment"># deconstructs and assigns the arguments passed to the function to the scalar variables num1 and num2</span>
+    <span class="hljs-keyword">my</span> <span class="hljs-variable">$result</span> = <span class="hljs-variable">$num1</span> * <span class="hljs-variable">$num2</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$result</span>;
+}
+<span class="hljs-keyword">my</span> <span class="hljs-variable">$product</span> = multiply(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>); <span class="hljs-comment"># this evaluates to the scalar value 12</span>
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li>regular expressions</li>
+<li>subroutines</li>
+<li>anonymous arrays and hashes</li>
+<li>modules</li>
+<li>objects</li>
+<li><a href="https://learnxinyminutes.com/docs/perl/">learn perl in y minutes</a></li>
+<li><a href="https://perldoc.perl.org/">perl documentation</a></li>
+<li><a href="https://www.cheat-sheets.org/saved-copy/perl-regexp-refcard-a4.pdf">perl regex cheatsheet</a></li>
+</ul>

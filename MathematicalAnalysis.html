@@ -1,0 +1,270 @@
+<h1><code>Mathematical analysis</code></h1>
+<p>Code snippets in Python.</p>
+<h2>Limits</h2>
+<ul>
+<li>Describes the value a function approaches as its input approaches a specified value</li>
+<li>Useful for understanding continuity and differentiability</li>
+</ul>
+<pre><code class="language-py"><span class="hljs-keyword">import</span> math
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">limit</span>(<span class="hljs-params">f, x, x_val</span>):
+    delta = <span class="hljs-number">0.001</span>
+    <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:
+        x_low = x_val - delta
+        x_high = x_val + delta
+        <span class="hljs-keyword">if</span> f(x_low) == f(x_high):
+            <span class="hljs-keyword">break</span>
+        delta *= <span class="hljs-number">0.5</span>
+    <span class="hljs-keyword">return</span> f(x_val)
+
+f = <span class="hljs-keyword">lambda</span> x: (x**<span class="hljs-number">2</span> - <span class="hljs-number">1</span>)/(x - <span class="hljs-number">1</span>)
+x_val = <span class="hljs-number">1</span>
+result = limit(f, <span class="hljs-number">0.9999</span>, x_val)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;the limit of f(x) as x approaches <span class="hljs-subst">{x_val}</span> is <span class="hljs-subst">{result}</span>&quot;</span>)
+</code></pre>
+<h2>Continuity</h2>
+<ul>
+<li>Functions are continuous if there are no breaks or holes in the function range</li>
+<li>Useful for differentiation</li>
+</ul>
+<pre><code class="language-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">is_continuous</span>(<span class="hljs-params">f, x, x_val, delta=<span class="hljs-number">1e-6</span></span>):
+    x_low = x_val - delta
+    x_high = x_val + delta
+    limit_exists = <span class="hljs-literal">True</span>
+    <span class="hljs-keyword">try</span>:
+        lim = limit(f, x, x_val)
+    <span class="hljs-keyword">except</span>:
+        limit_exists = <span class="hljs-literal">False</span>
+    <span class="hljs-keyword">return</span> limit_exists <span class="hljs-keyword">and</span> (f(x_low) - lim)**<span class="hljs-number">2</span> &lt; delta <span class="hljs-keyword">and</span> (f(x_high) - lim)**<span class="hljs-number">2</span> &lt; delta
+
+f = <span class="hljs-keyword">lambda</span> x: x**<span class="hljs-number">2</span>
+x_val = <span class="hljs-number">2</span>
+<span class="hljs-built_in">print</span>(is_continuous(f, <span class="hljs-keyword">lambda</span> x: x, x_val))
+</code></pre>
+<h2>Differentiation</h2>
+<ul>
+<li>A.K.A Derivative</li>
+<li>Measures a function's rate of change</li>
+<li>Useful for optimization, physics and other areas of applied mathematics</li>
+</ul>
+<pre><code class="language-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">derivative</span>(<span class="hljs-params">f, x, h=<span class="hljs-number">1e-5</span></span>):
+    <span class="hljs-keyword">return</span> (f(x+h) - f(x))/h
+
+f = <span class="hljs-keyword">lambda</span> x: x**<span class="hljs-number">3</span>
+x = <span class="hljs-number">2</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;derivative of f(x)=x^3 at x=<span class="hljs-subst">{x}</span> is <span class="hljs-subst">{derivative(f, x)}</span>&quot;</span>)
+</code></pre>
+<h2>Derivatives of Polynomials</h2>
+<ul>
+<li>Applying the <a href="https://youtu.be/9Yz-RCdS2Tg?si=AXuFQ7r5kNW6cQzQ">power rule</a></li>
+</ul>
+<pre><code class="language-py"><span class="hljs-keyword">from</span> math <span class="hljs-keyword">import</span> factorial
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">poly_deriv</span>(<span class="hljs-params">coeffs</span>):
+    derived_coeffs = []
+    <span class="hljs-keyword">for</span> i, c <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(coeffs[<span class="hljs-number">1</span>:]):
+        derived_coeffs.append(c * (<span class="hljs-built_in">len</span>(coeffs) - i - <span class="hljs-number">1</span>))
+    <span class="hljs-keyword">return</span> derived_coeffs
+
+f = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>] <span class="hljs-comment"># 1 + 2x + x^2 + 3x^3 + 4x^4</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;f&#x27;(x) coefficients are <span class="hljs-subst">{poly_deriv(f)}</span>&quot;</span>)
+</code></pre>
+<h2>Integration</h2>
+<ul>
+<li>Applies the <a href="https://www.sfu.ca/math-coursenotes/Math%20158%20Course%20Notes/sec_riemann.html">Riemann sum</a></li>
+<li>Inverse of <a href="#differentiation">differentiation</a></li>
+<li>Measures the accumulated change of a function over a specified interval</li>
+</ul>
+<pre><code class="language-py"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">riemann_sum</span>(<span class="hljs-params">f, a, b, n=<span class="hljs-number">100</span></span>):
+    x = np.linspace(a, b, n+<span class="hljs-number">1</span>)
+    dx = (b - a) / n
+    area = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n):
+        area += f(x[i]) * dx
+    <span class="hljs-keyword">return</span> area
+
+f = <span class="hljs-keyword">lambda</span> x: x**<span class="hljs-number">2</span>
+a = <span class="hljs-number">0</span>
+b = <span class="hljs-number">2</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;integral of f(x)=x^2 from <span class="hljs-subst">{a}</span> to <span class="hljs-subst">{b}</span> is <span class="hljs-subst">{riemann_sum(f, a, b)}</span>&quot;</span>)
+</code></pre>
+<h2>Numerical Integration Error</h2>
+<ul>
+<li><a href="https://www.sfu.ca/math-coursenotes/Math%20158%20Course%20Notes/sec_riemann.html">Riemann sum</a> suffers from errors as the value of n decreases</li>
+<li>Higher n yields a lower error</li>
+</ul>
+<pre><code class="language-py">actual_int = <span class="hljs-number">4</span>/<span class="hljs-number">3</span>  <span class="hljs-comment"># Integral of x^2 from 0 to 2</span>
+n_values = [<span class="hljs-number">10</span>, <span class="hljs-number">100</span>, <span class="hljs-number">1000</span>, <span class="hljs-number">10000</span>]
+
+<span class="hljs-keyword">for</span> n <span class="hljs-keyword">in</span> n_values:
+    approx = riemann_sum(<span class="hljs-keyword">lambda</span> x: x**<span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>, n)
+    error = <span class="hljs-built_in">abs</span>(actual_int - approx)
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;for n=<span class="hljs-subst">{n}</span>, approx=<span class="hljs-subst">{approx:<span class="hljs-number">.6</span>f}</span>, error=<span class="hljs-subst">{error:<span class="hljs-number">.6</span>f}</span>&quot;</span>)
+</code></pre>
+<h2>Sequences</h2>
+<ul>
+<li>Ordered list of elements of finite or infinite length</li>
+<li>Sequence limits are useful for mathematical analysis</li>
+</ul>
+<pre><code class="language-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">seq_limit</span>(<span class="hljs-params">seq, n</span>):
+    <span class="hljs-keyword">if</span> n &gt;= <span class="hljs-built_in">len</span>(seq):
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+
+    s = seq[n]
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n+<span class="hljs-number">1</span>, <span class="hljs-built_in">len</span>(seq)):
+        <span class="hljs-keyword">if</span> <span class="hljs-built_in">abs</span>(seq[i] - s) &gt; <span class="hljs-number">1e-6</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+
+    <span class="hljs-keyword">return</span> s
+
+seq = [<span class="hljs-number">1</span>/n <span class="hljs-keyword">for</span> n <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, <span class="hljs-number">21</span>)]
+n = <span class="hljs-number">5</span>
+limit = seq_limit(seq, n)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;the limit of the sequence 1/n as n-&gt;inf is <span class="hljs-subst">{limit}</span>&quot;</span>)
+</code></pre>
+<h2>Infinite Series</h2>
+<ul>
+<li>Sums the terms of an infinite sequence</li>
+<li>Convergence is determined by the limits of a sequence of partial sums</li>
+</ul>
+<pre><code class="language-py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">sum_series</span>(<span class="hljs-params">seq, n</span>):
+    total = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n):
+        total += seq[i]
+    <span class="hljs-keyword">return</span> total
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">series_conv</span>(<span class="hljs-params">seq, abs_tol=<span class="hljs-number">1e-6</span>, max_terms=<span class="hljs-number">100</span></span>):
+    prev_sum = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> n <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, max_terms+<span class="hljs-number">1</span>):
+        curr_sum = sum_series(seq, n)
+        <span class="hljs-keyword">if</span> <span class="hljs-built_in">abs</span>(curr_sum - prev_sum) &lt; abs_tol:
+            <span class="hljs-keyword">return</span> curr_sum
+        prev_sum = curr_sum
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+
+harmonic = [<span class="hljs-number">1</span>/n <span class="hljs-keyword">for</span> n <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, <span class="hljs-number">51</span>)]
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;sum of harmonic series is <span class="hljs-subst">{series_conv(harmonic)}</span>&quot;</span>)
+</code></pre>
+<h2>Power Series</h2>
+<ul>
+<li>Series representation of a function as an infinite sum of terms calculated from the derivatives at a single point</li>
+</ul>
+<pre><code class="language-py"><span class="hljs-keyword">from</span> math <span class="hljs-keyword">import</span> factorial
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">power_series</span>(<span class="hljs-params">f, a, n</span>):
+    coeffs = []
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n+<span class="hljs-number">1</span>):
+        coeffs.append(derivative(f, a, i)/factorial(i))
+    <span class="hljs-keyword">return</span> coeffs
+
+f = <span class="hljs-keyword">lambda</span> x: <span class="hljs-number">1</span> / (<span class="hljs-number">1</span> - x)
+a = <span class="hljs-number">0</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;power series of f(x)=1/(1-x) around x=<span class="hljs-subst">{a}</span> is <span class="hljs-subst">{power_series(f, a, <span class="hljs-number">5</span>)}</span>&quot;</span>)
+</code></pre>
+<h2>Taylor Series</h2>
+<ul>
+<li>Representation of a function as an infinite sum of terms calculated from its derivatives at a single point</li>
+</ul>
+<pre><code class="language-py"><span class="hljs-keyword">from</span> math <span class="hljs-keyword">import</span> factorial, exp
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">factorial</span>(<span class="hljs-params">n</span>):
+    <span class="hljs-keyword">if</span> n == <span class="hljs-number">0</span>:
+        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">return</span> n * factorial(n-<span class="hljs-number">1</span>)
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">exp_taylor</span>(<span class="hljs-params">x, n</span>):
+    approx = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n+<span class="hljs-number">1</span>):
+        approx += x**i / factorial(i)
+    <span class="hljs-keyword">return</span> approx
+
+x = <span class="hljs-number">1</span>
+n = <span class="hljs-number">10</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;e^(x) approximated by the Taylor series expansion to <span class="hljs-subst">{n}</span> terms is <span class="hljs-subst">{exp_taylor(x, n)}</span>&quot;</span>)
+</code></pre>
+<h2>Taylor Polynomial Error</h2>
+<ul>
+<li>Taylor Polynomial approximates a function by truncating its Taylor Series</li>
+<li>Approximation error depends on the value of n and the function's smoothness</li>
+</ul>
+<pre><code class="language-py"><span class="hljs-keyword">import</span> sympy <span class="hljs-keyword">as</span> sp
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">taylor_error</span>(<span class="hljs-params">f, x0, n, interval</span>):
+    f_symb = sp.lambdify(f.args[<span class="hljs-number">0</span>], f, <span class="hljs-string">&#x27;numpy&#x27;</span>)
+    exact_vals = f_symb(interval)
+    taylor_vals = sp.lambdify(f.args[<span class="hljs-number">0</span>], sp.series(f, x0, n).removeO(), <span class="hljs-string">&#x27;numpy&#x27;</span>)(interval)
+    max_err = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> x_val, exact_val, taylor_val <span class="hljs-keyword">in</span> <span class="hljs-built_in">zip</span>(interval, exact_vals, taylor_vals):
+        err = <span class="hljs-built_in">abs</span>(exact_val - taylor_val)
+        <span class="hljs-keyword">if</span> err &gt; max_err:
+            max_err = err
+    <span class="hljs-keyword">return</span> max_err
+
+f = sp.exp(sp.Symbol(<span class="hljs-string">&#x27;x&#x27;</span>))
+x0 = <span class="hljs-number">0</span>
+n = <span class="hljs-number">10</span>
+interval = np.linspace(-<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">101</span>)
+max_err = taylor_error(f, x0, n, interval)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;maximum error in approximating exp(x) by a degree <span class="hljs-subst">{n}</span> Taylor polynomial around x=<span class="hljs-subst">{x0}</span> on [-1, 1] is <span class="hljs-subst">{max_err:<span class="hljs-number">.6</span>f}</span>&quot;</span>)
+</code></pre>
+<h2>Fourier Series</h2>
+<ul>
+<li>Represents a periodic function as an infinite sum of sines and cosines</li>
+<li>Useful for analysing functions as superpositions of simple waves</li>
+</ul>
+<pre><code class="language-py"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">from</span> scipy <span class="hljs-keyword">import</span> integrate
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">fourier_series</span>(<span class="hljs-params">f, L, n</span>):
+    coeffs = {}
+    <span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(-n, n+<span class="hljs-number">1</span>):
+        <span class="hljs-keyword">if</span> k == <span class="hljs-number">0</span>:
+            coeffs[k] = <span class="hljs-number">1</span>/L * scipy.integrate.quad(f, <span class="hljs-number">0</span>, L)[<span class="hljs-number">0</span>]
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">def</span> <span class="hljs-title function_">int_func</span>(<span class="hljs-params">x</span>):
+                <span class="hljs-keyword">return</span> f(x) * np.cos(<span class="hljs-number">2</span>*np.pi*k*x/L)
+            coeffs[k] = <span class="hljs-number">2</span>/L * scipy.integrate.quad(int_func, <span class="hljs-number">0</span>, L)[<span class="hljs-number">0</span>]
+    <span class="hljs-keyword">return</span> coeffs
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">square_wave</span>(<span class="hljs-params">x</span>):
+    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span> <span class="hljs-keyword">if</span> x &lt; <span class="hljs-number">0.5</span> <span class="hljs-keyword">else</span> -<span class="hljs-number">1</span>
+
+L = <span class="hljs-number">1</span>
+n = <span class="hljs-number">10</span>
+coeffs = fourier_series(square_wave, L, n)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;first <span class="hljs-subst">{<span class="hljs-number">2</span>*n+<span class="hljs-number">1</span>}</span> Fourier coefficients of square wave <span class="hljs-subst">{coeffs}</span>&quot;</span>)
+</code></pre>
+<h2>Convergence of Fourier Series</h2>
+<ul>
+<li>Converges pointwise to the periodic function for well-behaved functions</li>
+<li>Fourier Series might still diverge at certain points of discontinuity</li>
+</ul>
+<pre><code class="language-py"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">plot_fourier_approx</span>(<span class="hljs-params">f, L, coeffs, x_vals</span>):
+    approx = np.zeros(<span class="hljs-built_in">len</span>(x_vals))
+    <span class="hljs-keyword">for</span> k, ak <span class="hljs-keyword">in</span> coeffs.items():
+        <span class="hljs-keyword">if</span> k == <span class="hljs-number">0</span>:
+            approx += ak
+        <span class="hljs-keyword">else</span>:
+            approx += ak * np.cos(<span class="hljs-number">2</span>*np.pi*k/L * x_vals)
+    <span class="hljs-keyword">return</span> approx
+
+x_vals = np.linspace(<span class="hljs-number">0</span>, <span class="hljs-number">2</span>*L, <span class="hljs-number">1000</span>)
+approx = plot_fourier_approx(square_wave, L, coeffs, x_vals)
+plt.plot(x_vals, [square_wave(x) <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> x_vals], label=<span class="hljs-string">&#x27;Actual&#x27;</span>)
+plt.plot(x_vals, approx, <span class="hljs-string">&#x27;--&#x27;</span>, label=<span class="hljs-string">f&#x27;Fourier Approx (n=<span class="hljs-subst">{n}</span>)&#x27;</span>)
+plt.legend()
+plt.show()
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li><a href="https://xbe.at/index.php?uid=08e094a068cbde4ecb3dda7b224e4eb8">Introduction to Mathematical Analysis in Python</a></li>
+<li><a href="https://math.mit.edu/~djk/calculus_beginners/">Calculus for Beginners and Artists</a></li>
+<li><a href="https://xbe.at/index.php?uid=08e094a068cbde4ecb3dda7b224e4eb8">xbe.at</a></li>
+<li><a href="https://math.mit.edu/">MIT Mathematics</a></li>
+</ul>

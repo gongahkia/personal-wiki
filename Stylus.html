@@ -1,0 +1,205 @@
+<h1><code>Stylus</code></h1>
+<p>Preprocessor scripting language that transpiles to CSS.</p>
+<h2>Comments</h2>
+<pre><code class="language-styl"><span class="hljs-comment">// ----- COMMENT -----</span>
+
+<span class="hljs-comment">// this is a single-line comment</span>
+
+<span class="hljs-comment">/*
+this is 
+a multi-line
+comment
+*/</span>
+</code></pre>
+<h2>Quickstart</h2>
+<pre><code class="language-styl"><span class="hljs-comment">// ----- QUICKSTART -----</span>
+    <span class="hljs-comment">// flexible, maintainable, concise syntax allowing for dynamic variable declaration and subsequent assignment of CSS styles</span>
+    <span class="hljs-comment">// used for rapid prototyping in web development, alongside seamless integration with web frameworks (such as Node.js, React, Vue.js)</span>
+    <span class="hljs-comment">// Stylus is often aided by build tools like Webpack to further streamline and automate its transpilation</span>
+    <span class="hljs-comment">// ; semicolons and {} curly braces are optional and often unused, rendering Stylus more readable than CSS</span>
+    <span class="hljs-comment">// @import =&gt; receives a string argument specifying other Stylus files that can be brought into the local scope of the current file to enable added modular functionality</span>
+    <span class="hljs-comment">// $ =&gt; specifies a variable declaration, operating exactly the same as $ in PHP</span>
+
+<span class="hljs-keyword">@import</span> <span class="hljs-string">&#x27;variables&#x27;</span>
+<span class="hljs-keyword">@import</span> <span class="hljs-string">&#x27;mixins&#x27;</span>
+
+<span class="hljs-variable">$base</span>-<span class="hljs-attribute">font-size</span> = <span class="hljs-number">14px</span>
+<span class="hljs-variable">$base</span>-<span class="hljs-attribute">line-height</span> = <span class="hljs-number">1.5</span>
+
+<span class="hljs-selector-tag">body</span>
+  <span class="hljs-attribute">font</span> <span class="hljs-variable">$base</span>-font-size Helvetica, Arial, sans-serif
+  <span class="hljs-attribute">line-height</span> <span class="hljs-variable">$base</span>-line-height
+
+<span class="hljs-selector-tag">header</span>
+  <span class="hljs-attribute">background</span> <span class="hljs-number">#333</span>
+  <span class="hljs-attribute">color</span> <span class="hljs-number">#fff</span>
+
+<span class="hljs-selector-tag">a</span>
+  <span class="hljs-attribute">text-decoration</span> none
+  <span class="hljs-selector-pseudo">&amp;:hover</span>
+    <span class="hljs-attribute">text-decoration</span> underline
+</code></pre>
+<h2>Types</h2>
+<pre><code class="language-styl"><span class="hljs-comment">// ----- TYPE -----</span>
+    <span class="hljs-comment">// Stylus does not offer datatypes in the conventional programming language sense (such as integers, floats etc.)</span>
+    <span class="hljs-comment">// instead, Stylus offers the following style elements as datatypes below used to specify different CSS styles</span>
+
+<span class="hljs-comment">// ----- STYLE ELEMENTS -----</span>
+    <span class="hljs-comment">// colors =&gt; color values are specified in one of the following ways</span>
+        <span class="hljs-comment">// hex =&gt; represented as a hexadecimal number</span>
+        <span class="hljs-comment">// RGB =&gt; declared with rgb()</span>
+        <span class="hljs-comment">// RGBA =&gt; declared with rgba()</span>
+        <span class="hljs-comment">// HSL =&gt; declared with hsl()</span>
+        <span class="hljs-comment">// HSLA =&gt; declared with hsla()</span>
+    <span class="hljs-comment">// font names =&gt; declared as a string with &#x27;&#x27; single quotation marks</span>
+    <span class="hljs-comment">// font size =&gt; declared as a number suffixed by one of the following units</span>
+        <span class="hljs-comment">// px</span>
+        <span class="hljs-comment">// %</span>
+        <span class="hljs-comment">// em</span>
+        <span class="hljs-comment">// rem</span>
+    <span class="hljs-comment">// URLs =&gt; declared as a string with &#x27;&#x27; single quotation marks</span>
+    <span class="hljs-comment">// boolean values =&gt; true, false</span>
+    <span class="hljs-comment">// null =&gt; special null value representing the absence of a value</span>
+    <span class="hljs-comment">// raw CSS code =&gt; CSS literal declared within {} curly braces</span>
+
+<span class="hljs-variable">$primary</span>-<span class="hljs-attribute">color</span> = <span class="hljs-number">#3498db</span>
+<span class="hljs-variable">$secondary</span>-<span class="hljs-attribute">color</span> = <span class="hljs-built_in">rgba</span>(<span class="hljs-number">46</span>, <span class="hljs-number">204</span>, <span class="hljs-number">113</span>, <span class="hljs-number">0.5</span>)
+<span class="hljs-variable">$font</span>-family = <span class="hljs-string">&#x27;Helvetica Neue&#x27;</span>, Helvetica, Arial, sans-serif
+<span class="hljs-variable">$image</span>-url = <span class="hljs-string">&#x27;https://example.com/images/logo.png&#x27;</span>
+<span class="hljs-variable">$base</span>-<span class="hljs-attribute">font-size</span> = <span class="hljs-number">16px</span>
+<span class="hljs-variable">$is</span>-responsive = true
+<span class="hljs-variable">$not</span>-set = null
+<span class="hljs-variable">$box</span>-shadow = {<span class="hljs-number">0</span> <span class="hljs-number">1px</span> <span class="hljs-number">3px</span> <span class="hljs-built_in">rgba</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.12</span>)}
+</code></pre>
+<h2>Operators</h2>
+<pre><code class="language-styl"><span class="hljs-comment">// ----- OPERATOR -----</span>
+
+<span class="hljs-comment">// --- ARITHMETIC OPERATOR ---</span>
+
++ <span class="hljs-comment">// addition</span>
+- <span class="hljs-comment">// subtraction</span>
+* <span class="hljs-comment">// multiplication</span>
+/ <span class="hljs-comment">// divison</span>
+% <span class="hljs-comment">// modulo</span>
+
+<span class="hljs-comment">// --- COMPARISON OPERATOR ---</span>
+
+== <span class="hljs-comment">// partial equality check for value but not type, wherein type coercion is performed as required</span>
+!= <span class="hljs-comment">// partial inequality check for value but not type, wherein type coercion is performed as required</span>
+&gt; <span class="hljs-comment">// comparison operator</span>
+&lt; <span class="hljs-comment">// comparison operator</span>
+&gt;= <span class="hljs-comment">// comparison operator</span>
+&lt;= <span class="hljs-comment">// comparison operator</span>
+
+<span class="hljs-comment">// --- LOGICAL OPERATOR ---</span>
+
+&amp;&amp; <span class="hljs-comment">// logical and</span>
+|| <span class="hljs-comment">// logical or</span>
+! <span class="hljs-comment">// logical not</span>
+</code></pre>
+<h2>Control structures</h2>
+<pre><code class="language-styl"><span class="hljs-comment">// ----- CONTROL STRUCTURE -----</span>
+
+<span class="hljs-comment">// --- CONDITIONALS ---</span>
+
+<span class="hljs-comment">// IF ELSE IF ELSE</span>
+    <span class="hljs-comment">// Stylus&#x27; syntax does afford it a great degree of flexibility in assigning an entire conditional construct as below to a single HTML element</span>
+    <span class="hljs-comment">// this interestingly ends up bearing great similarity to functional expressive programming paradigms</span>
+
+<span class="hljs-variable">$color</span>-mode = <span class="hljs-string">&#x27;dark&#x27;</span>
+<span class="hljs-selector-tag">body</span>
+  <span class="hljs-keyword">if</span> <span class="hljs-variable">$color</span>-mode == <span class="hljs-string">&#x27;dark&#x27;</span>
+    <span class="hljs-attribute">background</span> <span class="hljs-number">#000</span>
+    <span class="hljs-attribute">color</span> <span class="hljs-number">#fff</span>
+  <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> <span class="hljs-variable">$color</span>-mode == <span class="hljs-string">&#x27;light&#x27;</span>
+    <span class="hljs-attribute">background</span> <span class="hljs-number">#fff</span>
+    <span class="hljs-attribute">color</span> <span class="hljs-number">#000</span>
+  <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> <span class="hljs-variable">$color</span>-mode == <span class="hljs-string">&#x27;blue&#x27;</span>
+    <span class="hljs-attribute">background</span> <span class="hljs-number">#00f</span>
+    <span class="hljs-attribute">color</span> <span class="hljs-number">#fff</span>
+  <span class="hljs-keyword">else</span>
+    <span class="hljs-attribute">background</span> <span class="hljs-number">#ccc</span>
+    <span class="hljs-attribute">color</span> <span class="hljs-number">#333</span>
+
+<span class="hljs-comment">// TERNARY OPERATOR</span>
+    <span class="hljs-comment">// &lt;predicateCondition&gt; ? &lt;executeIfTrue&gt; : &lt;executeIfFalse&gt; =&gt; the ternary operator is also provided as an alternative to conventional if else if else constructs in Stylus</span>
+
+<span class="hljs-variable">$is</span>-dark-mode = true
+<span class="hljs-variable">$background</span>-<span class="hljs-attribute">color</span> = <span class="hljs-variable">$is</span>-dark-mode ? <span class="hljs-number">#000</span> : <span class="hljs-number">#fff</span>
+
+<span class="hljs-comment">// --- LOOPS --- </span>
+
+<span class="hljs-comment">// FOR IN</span>
+    <span class="hljs-comment">// enables basic iteration and traversal over an iterable data structure</span>
+    <span class="hljs-comment">// operates similarly to for in loops in Python and foreach loops in PHP</span>
+
+<span class="hljs-variable">$colors</span> = red, green, blue
+<span class="hljs-keyword">for</span> <span class="hljs-attribute">color</span> in <span class="hljs-variable">$colors</span>
+  .bg-{<span class="hljs-attribute">color</span>}
+    <span class="hljs-attribute">background</span> color
+
+<span class="hljs-comment">// WHILE </span>
+    <span class="hljs-comment">// operates similarly to while loops in most other programming languages</span>
+    <span class="hljs-comment">// most often used in Stylus to perform repetitive tasks</span>
+
+<span class="hljs-variable">$i</span> = <span class="hljs-number">0</span>
+while <span class="hljs-variable">$i</span> &lt; <span class="hljs-number">5</span>
+  .item-{<span class="hljs-variable">$i</span>}
+    <span class="hljs-attribute">width</span>: <span class="hljs-variable">$i</span> * <span class="hljs-number">20%</span>
+  <span class="hljs-variable">$i</span>++
+</code></pre>
+<h2>Data structures</h2>
+<pre><code class="language-styl"><span class="hljs-comment">// ----- DATA STRUCTURE -----</span>
+    <span class="hljs-comment">// list =&gt; fixed-size ordered collection of comma-delimited elements of the same style datatype</span>
+        <span class="hljs-comment">// note that lists are not declared within [] square brackets or () round brackets as in most other programming languages</span>
+    <span class="hljs-comment">// hash =&gt; fixed-size unordered collection of comma-delimited key-value pairs of multiple style datatypes declared within {} curly braces, wherein specific values are called by their unique key via . dot syntax</span>
+
+<span class="hljs-variable">$font</span>-sizes = <span class="hljs-number">12px</span>, <span class="hljs-number">14px</span>, <span class="hljs-number">16px</span>, <span class="hljs-number">18px</span>
+<span class="hljs-keyword">for</span> size <span class="hljs-keyword">in</span> <span class="hljs-variable">$font</span>-sizes
+  .<span class="hljs-attribute">font-size</span>-{size}
+    <span class="hljs-attribute">font-size</span> size
+
+<span class="hljs-variable">$fonts</span> = {
+  primary: <span class="hljs-string">&#x27;Helvetica&#x27;</span>,
+  secondary: <span class="hljs-string">&#x27;Arial&#x27;</span>,
+  <span class="hljs-selector-tag">code</span>: <span class="hljs-string">&#x27;Courier New&#x27;</span>
+}
+<span class="hljs-selector-tag">body</span>
+  <span class="hljs-attribute">font-family</span> <span class="hljs-variable">$fonts</span>.primary
+<span class="hljs-selector-tag">code</span>
+  <span class="hljs-attribute">font-family</span> <span class="hljs-variable">$fonts</span>.code
+</code></pre>
+<h2>Functions</h2>
+<pre><code class="language-styl"><span class="hljs-comment">// ----- FUNCTION -----</span>
+    <span class="hljs-comment">// &lt;functionName&gt; ( &lt;functionParameterName(s)&gt; = &lt;functionOptionalDefaultParameterAssignment(s)&gt; ) &lt;functionDefinitionBody&gt; =&gt; declaration and definition of a named function, note that indentation matters in Stylus</span>
+    <span class="hljs-comment">// most often used for performance of a repeated common tasks</span>
+    <span class="hljs-comment">// observe that default parameters can also be specified within function declaration</span>
+
+<span class="hljs-function"><span class="hljs-title">add</span><span class="hljs-params">(a, b)</span></span>
+  <span class="hljs-selector-tag">a</span> + <span class="hljs-selector-tag">b</span>
+
+<span class="hljs-function"><span class="hljs-title">multiply</span><span class="hljs-params">(a, b)</span></span>
+  <span class="hljs-selector-tag">a</span> * <span class="hljs-selector-tag">b</span>
+
+<span class="hljs-selector-tag">body</span>
+  <span class="hljs-attribute">margin</span> <span class="hljs-built_in">add</span>(<span class="hljs-number">10px</span>, <span class="hljs-number">5px</span>)
+  <span class="hljs-attribute">padding</span> <span class="hljs-built_in">multiply</span>(<span class="hljs-number">2</span>, <span class="hljs-number">10px</span>)
+
+<span class="hljs-function"><span class="hljs-title">border-radius</span><span class="hljs-params">(n = <span class="hljs-number">5px</span>)</span></span> <span class="hljs-comment">// specified default parameter</span>
+  -webkit-<span class="hljs-attribute">border-radius</span> n
+  -moz-<span class="hljs-attribute">border-radius</span> n
+  <span class="hljs-attribute">border-radius</span> n
+
+<span class="hljs-selector-tag">button</span>
+  <span class="hljs-attribute">border-radius</span>()
+  <span class="hljs-selector-pseudo">&amp;:hover</span>
+    <span class="hljs-attribute">border-radius</span>(<span class="hljs-number">10px</span>)
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li><a href="https://stylus-lang.com/docs/executable.html">install stylus</a></li>
+<li><a href="https://stylus-lang.com/docs/mixins.html">mixins in stylus</a></li>
+<li><a href="https://stylus-lang.com/docs/selectors.html">nested selectors in stylus</a></li>
+<li><a href="https://stylus-lang.com/">stylus documentation</a></li>
+<li><a href="https://learnxinyminutes.com/docs/stylus/">learn stylus in y minutes</a></li>
+</ul>

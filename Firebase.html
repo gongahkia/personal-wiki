@@ -1,0 +1,81 @@
+<h1><code>Firebase</code></h1>
+<p>Google's suite of backend services supporting mobile and web app development.</p>
+<ol>
+<li><a href="https://firebase.google.com/docs/firestore">Firestore</a>: NoSQL cloud database that stores and syncs user data in real-time</li>
+<li><a href="https://firebase.google.com/products/auth">User authentication</a>: Easy implementation of end-to-end identity verification</li>
+<li><a href="https://firebase.google.com/products/storage">Cloud storage</a>: Store and serve user-generated content securely</li>
+<li><a href="https://firebase.google.com/products/functions">Serverless functions</a>: Backend code run on Firebase servers</li>
+<li><a href="https://firebase.google.com/products/app-hosting">Google Cloud app deployment</a>: Full-stack web apps hosted with Google Cloud tools</li>
+</ol>
+<h2>Quickstart</h2>
+<pre><code class="language-js"><span class="hljs-comment">// ---------- QUICKSTART ----------</span>
+    <span class="hljs-comment">// JS is the main language used to interact with Firebase and its suite of tools</span>
+    <span class="hljs-comment">// below is a brief skeleton to reference when using Firebase&#x27;s authentication and Firestore in any JS project</span>
+
+<span class="hljs-comment">// ----- USER AUTHENTICATION -----</span>
+    <span class="hljs-comment">// import firebase from &#x27;firebase/app&#x27; =&gt; calls the firebase module in your JS app and brings it within local scope</span>
+    <span class="hljs-comment">// import &#x27;firebase/auth&#x27; =&gt; calls the authentication library firebase provides to your JS app and brings it within local scope</span>
+    <span class="hljs-comment">// .initializeApp(&lt;yourFirebaseConfiguration&gt;) =&gt; intiializes the firebase app with the provided configuration saved as a JS object</span>
+    <span class="hljs-comment">// .auth() =&gt; initalizes the authentication object within the firebase app, upon which many authentication methods can be called</span>
+    <span class="hljs-comment">// .signInWithEmailAndPassword(&lt;userEmail&gt;, &lt;userPassword&gt;) =&gt; handles the authentication process for a login that requires both the user&#x27;s email and password, called on the authentication object</span>
+
+<span class="hljs-keyword">import</span> firebase <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;firebase/app&#x27;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;firebase/auth&#x27;</span>;
+
+<span class="hljs-keyword">const</span> firebaseConfig = {
+    <span class="hljs-comment">// blah blah</span>
+    <span class="hljs-comment">// your firebase configuration here</span>
+    <span class="hljs-comment">// blah blah</span>
+};
+
+firebase.<span class="hljs-title function_">initializeApp</span>(firebaseConfig);
+<span class="hljs-keyword">const</span> auth = firebase.<span class="hljs-title function_">auth</span>();
+
+auth.<span class="hljs-title function_">signInWithEmailAndPassword</span>(email, password).<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">userCredential</span>) =&gt;</span> {
+    <span class="hljs-comment">// blah blah</span>
+    <span class="hljs-comment">// if the user signed in successfully</span>
+    <span class="hljs-comment">// blah blah</span>
+}).<span class="hljs-title function_">catch</span>(<span class="hljs-function">(<span class="hljs-params">error</span>) =&gt;</span> {
+    <span class="hljs-comment">// blah blah</span>
+    <span class="hljs-comment">// handle any errors generated</span>
+    <span class="hljs-comment">// blah blah</span>
+});
+
+<span class="hljs-comment">// ----- FIRESTORE -----</span>
+    <span class="hljs-comment">// import { getFireStore } from &#x27;firebase/firestore/lite&#x27; =&gt; calls the getFirestore() method in your JS app and brings it within local scope</span>
+    <span class="hljs-comment">// getFireStore(&lt;firebaseAppObject&gt;) =&gt; initialises a firestore instance</span>
+    <span class="hljs-comment">// .collection(&lt;collectionName&gt;) =&gt; initialises an existing collection in the firestore database into a collection object</span>
+    <span class="hljs-comment">// .doc(&lt;documentName&gt;) =&gt; initialises existing documents in the firestore database into a document object</span>
+    <span class="hljs-comment">// .set(&lt;documentValueLiteral&gt;) =&gt; adds the specified document value literal to the current document object within the selected collection</span>
+    <span class="hljs-comment">// .get().then((&lt;documentObject&gt;)=&gt;{}) =&gt; reads the current document object selected</span>
+
+<span class="hljs-keyword">import</span> { getFirestore } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;firebase/firestore/lite&#x27;</span>;
+<span class="hljs-keyword">const</span> db = <span class="hljs-title function_">getFirestore</span>(firebaseApp);
+
+<span class="hljs-keyword">const</span> colRef = db.<span class="hljs-title function_">collection</span>(<span class="hljs-string">&#x27;users&#x27;</span>);
+<span class="hljs-keyword">const</span> docRef = colRef.<span class="hljs-title function_">doc</span>(<span class="hljs-string">&#x27;uid&#x27;</span>);
+
+docRef.<span class="hljs-title function_">set</span>({
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Bob&#x27;</span>,
+    <span class="hljs-attr">age</span>: <span class="hljs-number">30</span>
+});
+
+docRef.<span class="hljs-title function_">get</span>().<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">doc</span>) =&gt;</span> {
+    <span class="hljs-keyword">if</span> (doc.<span class="hljs-property">exists</span>) {
+        <span class="hljs-keyword">const</span> data = doc.<span class="hljs-title function_">data</span>();
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(data);
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;No such document!&#x27;</span>);
+    }
+});
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li><a href="https://firebase.google.com/docs/web/setup">set up firebase</a></li>
+<li><a href="https://console.firebase.google.com">firebase console</a></li>
+<li><a href="https://firebase.google.com/docs">firebase documentation</a></li>
+<li><a href="https://firebase.google.com/docs/firestore">firestore documentation</a></li>
+<li><a href="https://firebaseopensource.com/projects/firebase/firebase-tools/">firebase cli</a></li>
+<li><a href="https://firebaseopensource.com/">firebase open source</a></li>
+<li><a href="https://firebase.google.com/">app development in firebase</a></li>
+</ul>

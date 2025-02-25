@@ -1,0 +1,461 @@
+<h1><code>Java</code></h1>
+<p>Write once run anywhere.</p>
+<h2>Comments</h2>
+<pre><code class="language-java"><span class="hljs-comment">// ---------- COMMENT ----------</span>
+
+<span class="hljs-comment">// this is a single-line comment</span>
+
+<span class="hljs-comment">/* 
+this is a 
+multi-line
+comment
+*/</span>
+</code></pre>
+<h2>Printing</h2>
+<pre><code class="language-java"><span class="hljs-comment">// ---------- PRINT ----------</span>
+    <span class="hljs-comment">// System.out.print() =&gt; prints a string and does not include a newline</span>
+    <span class="hljs-comment">// System.out.println() =&gt; prints a string and appends a newline to the output</span>
+    <span class="hljs-comment">// System.out.printf() =&gt; allows printing of a formatted string that can be augmented with further modifiers</span>
+        <span class="hljs-comment">// % =&gt; specifies the position of the interpolated variable within the string</span>
+        <span class="hljs-comment">// conversion character</span>
+            <span class="hljs-comment">// %b =&gt; boolean</span>
+            <span class="hljs-comment">// %c =&gt; character</span>
+            <span class="hljs-comment">// %s =&gt; string</span>
+            <span class="hljs-comment">// %d =&gt; integer</span>
+            <span class="hljs-comment">// %f =&gt; float</span>
+        <span class="hljs-comment">// flags</span>
+            <span class="hljs-comment">// - =&gt; left-justify text</span>
+            <span class="hljs-comment">// + =&gt; output + and - operators for numeric values</span>
+            <span class="hljs-comment">// 0 =&gt; pads numeric values with zeros</span>
+            <span class="hljs-comment">// , =&gt; separates groups of numbers exceeding 1000</span>
+
+System.out.print(<span class="hljs-string">&quot;this does not include a newline by default and we must explicitly specify it\n&quot;</span>);
+System.out.println(<span class="hljs-string">&quot;this includes a newline by default&quot;</span>);
+
+<span class="hljs-type">boolean</span> <span class="hljs-variable">myBool</span> <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;
+<span class="hljs-type">char</span> <span class="hljs-variable">myChar</span> <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;@&#x27;</span>;
+<span class="hljs-type">String</span> <span class="hljs-variable">myString</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;shit&quot;</span>;
+<span class="hljs-type">int</span> <span class="hljs-variable">myInt</span> <span class="hljs-operator">=</span> <span class="hljs-number">200</span>;
+<span class="hljs-type">double</span> <span class="hljs-variable">myDouble</span> <span class="hljs-operator">=</span> <span class="hljs-number">10.000</span>;
+
+System.out.printf(<span class="hljs-string">&quot;shit, %b&quot;</span>, myBool);
+System.out.printf(<span class="hljs-string">&quot;aight %c&quot;</span>, myChar);
+System.out.printf(<span class="hljs-string">&quot;this is the string, %s&quot;</span>, myString);
+System.out.printf(<span class="hljs-string">&quot;Good morning %d people&quot;</span>, myInt);
+System.out.printf(<span class="hljs-string">&quot;float and double heaven with %f&quot;</span>, myDouble);
+</code></pre>
+<h2>Quickstart</h2>
+<pre><code class="language-java"><span class="hljs-comment">// ---------- QUICKSTART ----------</span>
+    <span class="hljs-comment">// java programs which end in .java compile to bytecode (cross-platform intermediary code) which end in .class, then being compiled to machine code for each client device</span>
+    <span class="hljs-comment">// usage</span>
+        <span class="hljs-comment">// javac =&gt; compiles java program to a .class file as bytecode</span>
+        <span class="hljs-comment">// java =&gt; runs bytecode on the java virtual machine</span>
+    <span class="hljs-comment">// java enforces strict verbose object-oriented programming patterns, so all program code must run within the main method with the boilerplate =&gt; public static void main(String[] args)</span>
+    <span class="hljs-comment">// the name of java file must be the same as the name of the main class</span>
+    <span class="hljs-comment">// variables have mutable values that can be reassigned after initial assignment, and have its datatype specified upon declaration</span>
+    <span class="hljs-comment">// final =&gt; declares and creates a constant with an immutable value that cannot be reassigned after initial assignment, and it has its datatype specified upon declaration</span>
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">shit</span> {
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> { <span class="hljs-comment">// main method</span>
+        System.out.println(<span class="hljs-string">&quot;pangsai walao eh&quot;</span>);
+    }
+
+    <span class="hljs-type">int</span> <span class="hljs-variable">x</span> <span class="hljs-operator">=</span> <span class="hljs-number">123</span>; <span class="hljs-comment">// variable declaration and assignment</span>
+    String veryImportantMessage; <span class="hljs-comment">// variable declaration and no assignment</span>
+    veryImportantMessage = <span class="hljs-string">&quot;neato sheeto&quot;</span>
+
+    <span class="hljs-keyword">final</span> <span class="hljs-type">double</span> <span class="hljs-variable">PI</span> <span class="hljs-operator">=</span> <span class="hljs-number">3.14159</span>; <span class="hljs-comment">// final initialization</span>
+
+} <span class="hljs-comment">// this has to be stored within a file named shit.java</span>
+</code></pre>
+<h2>Types</h2>
+<pre><code class="language-java"><span class="hljs-comment">// ---------- TYPE ----------</span>
+    <span class="hljs-comment">// boolean =&gt; true, false</span>
+    <span class="hljs-comment">// byte =&gt; -128 to 127, 1 byte in size</span>
+    <span class="hljs-comment">// short =&gt; -32,768 to 32,767, 2 bytes in size</span>
+    <span class="hljs-comment">// int =&gt; -2 billion to 2 billion, 4 bytes in size</span>
+    <span class="hljs-comment">// long =&gt; -9 quintillion to 9 quintillion, 8 bytes in size, L to be appended after a long value</span>
+    <span class="hljs-comment">// float =&gt; single-precision floating point number up to 7 digits, 4 bytes in size, f to be appended after a float value</span>
+    <span class="hljs-comment">// double =&gt; double-precision floating point number up to 15 digits, 8 bytes in size</span>
+    <span class="hljs-comment">// char =&gt; declared with &#x27;&#x27; single quotation marks, 2 bytes in size</span>
+    <span class="hljs-comment">// String =&gt; declared with &quot;&quot; double quotation marks, variable size</span>
+</code></pre>
+<h2>Operators</h2>
+<pre><code class="language-java"><span class="hljs-comment">// ---------- OPERATOR ----------</span>
+
+<span class="hljs-comment">// ARITHMETIC OPERATORS</span>
+    <span class="hljs-comment">// + =&gt; addition</span>
+    <span class="hljs-comment">// - =&gt; subtraction</span>
+    <span class="hljs-comment">// * =&gt; multiplication</span>
+    <span class="hljs-comment">// / =&gt; divison</span>
+    <span class="hljs-comment">// % =&gt; modulo operator</span>
+    <span class="hljs-comment">// += =&gt; addition and reassignment</span>
+    <span class="hljs-comment">// ++ =&gt; increment by one</span>
+    <span class="hljs-comment">// -= =&gt; subtraction and reassignment</span>
+    <span class="hljs-comment">// -- =&gt; decrement by one</span>
+    <span class="hljs-comment">// *= =&gt; multiplication and reassignment</span>
+    <span class="hljs-comment">// /= =&gt; division and reassignment</span>
+    <span class="hljs-comment">// %= =&gt; modulo and reassignment</span>
+
+<span class="hljs-comment">// LOGICAL OPERATORS</span>
+    <span class="hljs-comment">// &amp;&amp; =&gt; logical and</span>
+    <span class="hljs-comment">// || =&gt; logical or</span>
+    <span class="hljs-comment">// ! =&gt; logical not</span>
+
+<span class="hljs-comment">// COMPARISON OPERATORS</span>
+    <span class="hljs-comment">// == =&gt; partial equality check for value</span>
+    <span class="hljs-comment">// != =&gt; partial inequality check for value</span>
+    <span class="hljs-comment">// instanceof =&gt; returns the type of a specified value</span>
+    <span class="hljs-comment">// &gt; &lt; &gt;= &lt;= are also comparison operators</span>
+</code></pre>
+<h2>Control structures</h2>
+<pre><code class="language-java"><span class="hljs-comment">// ---------- CONTROL STRUCTURE ----------</span>
+
+<span class="hljs-comment">// CONDITIONALS</span>
+
+<span class="hljs-comment">// IF ELSE IF ELSE</span>
+
+<span class="hljs-type">int</span> <span class="hljs-variable">age</span> <span class="hljs-operator">=</span> <span class="hljs-number">75</span>;
+<span class="hljs-keyword">if</span> (age &gt;= <span class="hljs-number">75</span>) {
+    System.out.prinln(<span class="hljs-string">&quot;aight bet&quot;</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (age == <span class="hljs-number">18</span>) {
+    System.out.println(<span class="hljs-string">&quot;this rose is very nice&quot;</span>);
+} <span class="hljs-keyword">else</span> {
+    System.out.println(<span class="hljs-string">&quot;You are an adult!&quot;</span>);
+} <span class="hljs-comment">// this prints out &quot;aight bet&quot; to the stdout</span>
+
+<span class="hljs-comment">// SWITCH CASE BREAK DEFAULT</span>
+    <span class="hljs-comment">// remember to include break statement to prevent logic from falling through all cases</span>
+    <span class="hljs-comment">// default =&gt; specifies the default case if all other conditional checks fail</span>
+
+<span class="hljs-keyword">switch</span>(Day) {
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;Sunday&quot;</span>: System.out.println(<span class="hljs-string">&quot;Today is Sunday!&quot;</span>);
+    <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;Monday&quot;</span>: System.out.println(<span class="hljs-string">&quot;Today is Monday!&quot;</span>);
+    <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;Tuesday&quot;</span>: System.out.println(<span class="hljs-string">&quot;Today is Tuesday!&quot;</span>);
+    <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">default</span>: System.out.println(<span class="hljs-string">&quot;Ohh shittt&quot;</span>);
+}
+
+<span class="hljs-comment">// TRY CATCH FINALLY</span>
+    <span class="hljs-comment">// try =&gt; try block surrounds any potentially dangerous code, similar to try except in Python</span>
+    <span class="hljs-comment">// catch =&gt; code within the catch block runs if try block fails, otherwise this catch block is ignored if the try block runs succesfully, and can receive specific error messages and variable names as required, there can also be multiple catch statements</span>
+    <span class="hljs-comment">// finally =&gt; finally block always executes regardless of whether an exception is caught or not, placed at the end of a try catch chain</span>
+
+<span class="hljs-keyword">try</span> {
+    <span class="hljs-type">Scanner</span> <span class="hljs-variable">scanner</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scanner</span>(System.in);
+    System.out.println(<span class="hljs-string">&quot;Enter a whole number to divide: &quot;</span>);
+    <span class="hljs-type">int</span> <span class="hljs-variable">x</span> <span class="hljs-operator">=</span> scanner.nextInt();
+    System.out.println(<span class="hljs-string">&quot;Enter a whole number to divide by: &quot;</span>);
+    <span class="hljs-type">int</span> <span class="hljs-variable">y</span> <span class="hljs-operator">=</span> scanner.nextInt();
+    <span class="hljs-type">int</span> <span class="hljs-variable">z</span> <span class="hljs-operator">=</span> x/y;
+    System.out.println(<span class="hljs-string">&quot;result: &quot;</span> + z);
+}
+
+<span class="hljs-keyword">catch</span>(ArithmeticExpression e) { <span class="hljs-comment">// to handle the exception generated by the java error log in the stdout, &quot;java.lang.ArithmeticExpression&quot;</span>
+    System.out.println(<span class="hljs-string">&quot;Stop being clown please I beg&quot;</span>);
+}
+
+<span class="hljs-keyword">catch</span>(InputMismatchException e) { <span class="hljs-comment">// to handle the exception generated by the java error log in the stdout, &quot;java.lang.InputMismatchException&quot;</span>
+    System.out.println(<span class="hljs-string">&quot;Enter a number you idiot!&quot;</span>);
+}
+
+<span class="hljs-keyword">finally</span> {
+    System.out.println(<span class="hljs-string">&quot;This will alwyas print!&quot;</span>);
+    scanner.close();
+}
+
+<span class="hljs-comment">// LOOPS</span>
+
+<span class="hljs-comment">// WHILE LOOPS</span>
+
+<span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
+    System.out.println(<span class="hljs-string">&quot;I&#x27;m trapped in an endless loop!&quot;</span>);
+} <span class="hljs-comment">// a conventional while loop, though the while true has created an infinite loop</span>
+
+<span class="hljs-comment">// DO WHILE LOOPS</span>
+
+<span class="hljs-type">String</span> <span class="hljs-variable">yes_or_no</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;yes&quot;</span>;
+<span class="hljs-keyword">do</span> {
+    System.out.println(<span class="hljs-string">&quot;Eh ok&quot;</span>);
+} <span class="hljs-keyword">while</span> (yes_or_no == <span class="hljs-string">&quot;yes&quot;</span>); <span class="hljs-comment">// also an infinite do while loop since no break condition set</span>
+
+<span class="hljs-comment">// FOR LOOPS</span>
+    <span class="hljs-comment">// allows for rudimentary implementation of a for loop like in other languages</span>
+
+<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>; i &lt;= <span class="hljs-number">10</span>; i++) {
+    System.out.println(i); 
+} <span class="hljs-comment">// this prints out 0 to 10 to the stdout, separated by newlines</span>
+
+<span class="hljs-comment">// FOR EACH LOOP</span>
+    <span class="hljs-comment">// : =&gt; specifies the iteration variable over an iterable data structure</span>
+
+String[] animals = {<span class="hljs-string">&quot;cat&quot;</span>, <span class="hljs-string">&quot;dog&quot;</span>, <span class="hljs-string">&quot;bird&quot;</span>, <span class="hljs-string">&quot;elephant&quot;</span>};
+<span class="hljs-keyword">for</span> (String animal: animals) {
+    System.out.println(animal); <span class="hljs-comment">// this would iterate over every element in the String Array animals, assigning each element to the String variable animal, and printing said variable to the stdout</span>
+}
+</code></pre>
+<h2>Data structures</h2>
+<pre><code class="language-java"><span class="hljs-comment">// ---------- DATA STRUCTURE ----------</span>
+
+<span class="hljs-comment">// ARRAY</span>
+    <span class="hljs-comment">// [] =&gt; declares and creates a fixed-size ordered sequence of elements of the same type within {} curly braces, where the datatype of elements are specified next to the [] square brackets</span>
+    <span class="hljs-comment">// .length =&gt; returns the length of the specified array</span>
+
+String[] peepee = {<span class="hljs-string">&quot;poopoo&quot;</span>, <span class="hljs-string">&quot;Aight&quot;</span>, <span class="hljs-string">&quot;full metal alchemist&quot;</span>}; <span class="hljs-comment">// creates a string array</span>
+System.out.println(peepee[<span class="hljs-number">1</span>]); <span class="hljs-comment">// prints out the element of index 1 &quot;Aight&quot; to the stdout</span>
+
+<span class="hljs-comment">// ARRAYLIST</span>
+    <span class="hljs-comment">// ArrayLists stores reference datatypes</span>
+    <span class="hljs-comment">// ArrayList&lt;{ELEMENT TYPE}&gt; =&gt; declares and creates a dynamically-sized ordered sequence of elements of the same type, where the datatype of elements are specified within the &lt;&gt; angled brackets</span>
+    <span class="hljs-comment">// .add =&gt; appends new elements to the specified ArrayList</span>
+    <span class="hljs-comment">// .get =&gt; retrieves an ArrayList element by the specified index</span>
+    <span class="hljs-comment">// .set =&gt; reassigns a specified element at a specified index within an ArrayList</span>
+    <span class="hljs-comment">// .size =&gt; returns the length of the ArrayList</span>
+    <span class="hljs-comment">// .remove =&gt; removes an ArrayList element at the specified index</span>
+    <span class="hljs-comment">// .clear =&gt; removes every single element in an ArrayList</span>
+    <span class="hljs-comment">// brought into the present namespace using import java.util.ArrayList</span>
+
+ArrayList&lt;String&gt; food = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;String&gt;(); <span class="hljs-comment">// creating a new ArrayList class object off the ArrayList class</span>
+food.add(<span class="hljs-string">&quot;cheese&quot;</span>);
+food.add(<span class="hljs-string">&quot;bayashi&quot;</span>);
+food.add(<span class="hljs-string">&quot;hamburger&quot;</span>);
+
+<span class="hljs-comment">// HASHMAPS</span>
+    <span class="hljs-comment">// HashMap&lt;{KEY DATATYPE}, {VALUE DATATYPE}&gt; =&gt; declares and creates an unordered collection of key-value pairs similar to tables in Lua and dictionaries in Python</span>
+    <span class="hljs-comment">// .put =&gt; adds a key-value pair to a given HashMap</span>
+    <span class="hljs-comment">// .putIfAbsent =&gt; adds a key-value pair to a given HashMap if the existing key does not already exist in the HashMap</span>
+    <span class="hljs-comment">// .replace =&gt; replaces an existing key-value pair with a new specified key-value pair in a HashMap</span>
+    <span class="hljs-comment">// .get =&gt; retrieves a value by its key from the HashMap</span>
+    <span class="hljs-comment">// .getOrDefault =&gt; retrieves a value by its key from the HashMap, if the key does not exist, return a default value</span>
+    <span class="hljs-comment">// .remove =&gt; removes a specified key-value pair by its key from a HashMap</span>
+    <span class="hljs-comment">// .containsKey =&gt; checks whether a given key exists within a HashMap and returns a boolean value</span>
+    <span class="hljs-comment">// .containsValue =&gt; checks whether a given value exists within a HashMap and returns a boolean value</span>
+    <span class="hljs-comment">// .clear =&gt; removes every key-value pair in a HashMap</span>
+    <span class="hljs-comment">// .size =&gt; returns the number of key-value pairs in a HashMap</span>
+    <span class="hljs-comment">// .isEmpty =&gt; checks whether a specified HashMap is empty and returns a boolean value</span>
+    <span class="hljs-comment">// .forEach =&gt; iterates over a given key-value pair in a HashMap</span>
+    <span class="hljs-comment">// brought into the present namespace using import java.util.HashMap</span>
+
+HashMap&lt;String, Integer&gt; examScores = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;String, Integer&gt;;
+</code></pre>
+<h2>OOP</h2>
+<pre><code class="language-java"><span class="hljs-comment">// ---------- OBJECT-ORIENTED PROGRAMMING ----------</span>
+    <span class="hljs-comment">// encapsulation means class attributes are private by default and instance attributes are accessed and modified via getter and setter methods</span>
+    <span class="hljs-comment">// local scope refers to attributes and methods can only be called within a given method, although local variables can enter the global scope via constructor methods and use of return</span>
+    <span class="hljs-comment">// global scope refers to attributes and methods that can be accessed outside a method within a class, visible to and accessible by all parts of a class</span>
+    <span class="hljs-comment">// class =&gt; declares and creates a new class which has its own methods and attributes</span>
+        <span class="hljs-comment">// constructor methods are given the same name as the class, automatically called when an instance object is first instantiated off a class</span>
+        <span class="hljs-comment">// .this =&gt; assigns a specified argument to an object&#x27;s instance attribute, often done within the constructor, the equivalent of .self in Python</span>
+    <span class="hljs-comment">// new =&gt; intiializes a new instance object off a previously declared class </span>
+        <span class="hljs-comment">// . =&gt; object attributes and methods are called via . dot notation</span>
+        <span class="hljs-comment">// it is possible to pass instance objects as arguments to a method and the datatype of the instance object (its class) is to be specified</span>
+    <span class="hljs-comment">// extends =&gt; specifies the relationship between a parent class and child class</span>
+        <span class="hljs-comment">// @Override =&gt; an annotation that marks an overriden method, which allows for a child class to redefine an inherited method by simply reimplementing it differently under the same name</span>
+
+<span class="hljs-comment">// take it that the code below belongs in a few different files</span>
+
+<span class="hljs-comment">// Main.java </span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> {
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
+        <span class="hljs-type">Streamer</span> <span class="hljs-variable">Emiru</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Streamer</span>(<span class="hljs-string">&quot;water&quot;</span>, <span class="hljs-number">10</span>, <span class="hljs-number">20.12</span>); <span class="hljs-comment">// initialized an instance object off the streamer class called Emiru with some arguments for the constructor, and the String &quot;Streamer has been instantiated!&quot; is printed to the stdout</span>
+        System.out.println(Emiru.type); <span class="hljs-comment">// this would print out the String value &quot;Adin Ross&quot; to the stdout, an instance attribute of the class object Streamer</span>
+        System.out.println(Emiru.price); <span class="hljs-comment">// this would print out the double value 1.28843 to the stdout, an instance attribute of the class object Streamer</span>
+
+        Emiru.missTate(); <span class="hljs-comment">// this would call the missTate() void class method on the Emiru instance object, printing the String &quot;Man, Andrew I miss you so much man&quot; to the stdout</span>
+
+        <span class="hljs-type">Homies</span> <span class="hljs-variable">central_c</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Homies</span>();
+
+        Homies.hug(Emiru); <span class="hljs-comment">// this would print out the String &quot;Where are all my homies at? Eh yo water&quot; to the stdout</span>
+
+        <span class="hljs-type">Entertainer</span> <span class="hljs-variable">pyrocynical</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Entertainer</span>; <span class="hljs-comment">// child class instantiated</span>
+        pyrocynical.emote(); <span class="hljs-comment">// this will print out the string &quot;Its 202020203&quot; to the stdout, an inherited method that the child Entertainer class inherited from the parent Streamer class</span>
+        System.out.println(pyrocyncial.shits_to_give); <span class="hljs-comment">// this will print out the integer 20, an instance attribute that is unique to the child Entertainer class</span>
+
+        pyrocycnical.missTate(); <span class="hljs-comment">// this will print the String &quot;Man, I have nothing against the guy&quot; to the stdout, as we have overriden the missTate() void method from the parent Streamer class in the Entertainer child class</span>
+    }
+
+}
+
+<span class="hljs-comment">// Streamer.java</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Streamer</span> {
+
+    <span class="hljs-comment">// global scope within the Streamer class </span>
+    <span class="hljs-type">String</span> <span class="hljs-variable">type</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Adin Ross&quot;</span>;
+    <span class="hljs-type">int</span> <span class="hljs-variable">year</span> <span class="hljs-operator">=</span> <span class="hljs-number">2023</span>;
+    <span class="hljs-type">double</span> <span class="hljs-variable">price</span> <span class="hljs-operator">=</span> <span class="hljs-number">1.28843</span>;
+
+    <span class="hljs-comment">// an object&#x27;s instance attributes for the constructor, remember to statically declare them first!</span>
+    String name;
+    <span class="hljs-type">int</span> age;
+    <span class="hljs-type">float</span> weight;
+
+    Streamer(String name, <span class="hljs-type">int</span> age, <span class="hljs-type">float</span> weight){
+        System.out.println(<span class="hljs-string">&quot;Streamer has been instantiated!&quot;</span>);
+        <span class="hljs-built_in">this</span>.name = name;
+        <span class="hljs-built_in">this</span>.age = age;
+        <span class="hljs-built_in">this</span>.weight = weight;
+        <span class="hljs-comment">// technically, the name, age and weight arguments taken in by the constructor are local scoped, but because we assign them to the object&#x27;s instance attributes with &quot;this&quot;, they become global scoped</span>
+    }
+    
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">emote</span><span class="hljs-params">()</span> {
+        System.out.println(<span class="hljs-string">&quot;Its 202020203&quot;</span>);
+    }
+
+    <span class="hljs-keyword">void</span> <span class="hljs-title function_">missTate</span><span class="hljs-params">()</span> {
+        System.out.println(<span class="hljs-string">&quot;Man, Andrew I miss you so much man&quot;</span>);
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Homies</span> {
+
+        <span class="hljs-keyword">void</span> <span class="hljs-title function_">hug</span><span class="hljs-params">(Streamer streamer_obj)</span> { <span class="hljs-comment">// note that the data type of the void method called on the Homies class object here is Streamer, which is the class of the object taken in as an argument by this method</span>
+            System.out.println(<span class="hljs-string">&quot;Where all my homies at? Eh yo &quot;</span> + streamer_obj.name);
+        }
+
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Entertainer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Streamer</span> { <span class="hljs-comment">// child class Entertainer inheriting the attributes and methods of the Streamer parent class</span>
+
+        <span class="hljs-type">int</span> <span class="hljs-variable">shits_to_give</span> <span class="hljs-operator">=</span> <span class="hljs-number">20</span>; <span class="hljs-comment">// unique instance attribute that is globally scoped</span>
+
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-keyword">void</span> <span class="hljs-title function_">missTate</span><span class="hljs-params">()</span> { <span class="hljs-comment">// method overriding to redefine the inherited missTate() void method from the Streamer parent class in the Entertainer child class</span>
+            System.out.println(<span class="hljs-string">&quot;Man, I have nothing against the guy&quot;</span>);
+        }
+    }
+
+}
+
+<span class="hljs-comment">// ---------- METHODS ----------</span>
+    <span class="hljs-comment">// there are no functions in java, only methods, which are called alongside (not within) the main method</span>
+    <span class="hljs-comment">// methods are declared with their parameter and return types specified in the method definition</span>
+    <span class="hljs-comment">// return =&gt; specifies the return expression</span>
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
+    hello(); <span class="hljs-comment">// note that the hello method can be called even though it is declared only after the main method</span>
+
+    <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>;
+    <span class="hljs-type">int</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> <span class="hljs-number">200</span>;
+    addition(a,b); <span class="hljs-comment">// this returns the int value 210</span>
+}
+
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">hello</span><span class="hljs-params">()</span> { 
+    System.out.println(<span class="hljs-string">&quot;Hello!&quot;</span>);
+} <span class="hljs-comment">// note that this void method must be preceded with the static declaration, to allow for the main method to call it </span>
+
+<span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">addition</span><span class="hljs-params">(<span class="hljs-type">int</span> x, <span class="hljs-type">int</span> y)</span> {
+    <span class="hljs-keyword">return</span> x + y; <span class="hljs-comment">// this is an int method that takes in 2 arguments that takes in 2 arguments of type int, and returns an int value</span>
+}
+
+<span class="hljs-comment">// OVERLOADED METHODS</span>
+    <span class="hljs-comment">// methods that take in a variable number of parameters and parameters of different types but are declared under the same name, similar to overloaded functions in other languages, possible since each method has a distinct method type signature</span>
+    <span class="hljs-comment">// overloaded methods are declared and created by simply adding method declarations for each version of the method, under the same name</span>
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
+    <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>;
+    <span class="hljs-type">int</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> <span class="hljs-number">20</span>;
+    <span class="hljs-type">int</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> <span class="hljs-number">6.31249</span>;
+    <span class="hljs-type">int</span> <span class="hljs-variable">d</span> <span class="hljs-operator">=</span> <span class="hljs-number">70</span>;
+
+    addition(a, b); <span class="hljs-comment">// this returns the integer value of 30</span>
+    addition(a, b, c, d); <span class="hljs-comment">// this returns the integer value of 106 (since the addition method returns an integer value)</span>
+}
+
+<span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">addition</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span> {
+    <span class="hljs-keyword">return</span> a + b;
+}
+
+<span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">addition</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b, <span class="hljs-type">double</span> c, <span class="hljs-type">int</span> d)</span> {
+    <span class="hljs-keyword">return</span> a + b + c + d;
+} <span class="hljs-comment">// an example of an overloaded method, the integer method addition is able to take in 2 variations of arguments, which have a varying number of parameters</span>
+
+<span class="hljs-comment">// ---------- SUPER ----------</span>
+    <span class="hljs-comment">// super =&gt; allows the specified child class to access and customize its inherited attributes and methods from the parent superclass without any method overriding required, similar to .this but super references the parent class&#x27; members (attributes and methods)</span>
+
+<span class="hljs-comment">// take it that the code below belongs in a few different files</span>
+
+<span class="hljs-comment">// Main.java</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> {
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> {
+        <span class="hljs-type">Hero</span> <span class="hljs-variable">hero1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Hero</span>(<span class="hljs-string">&quot;spongebob&quot;</span>, <span class="hljs-number">42</span>, <span class="hljs-string">&quot;$$$&quot;</span>); <span class="hljs-comment">// we are still able to initialize our instance object hero1 with the constructor values from our child class Hero and the constructor values from our parent class person</span>
+
+        System.out.println(hero1.name); <span class="hljs-comment">// this would print out the String &quot;spongebob&quot; to the stdout</span>
+        System.out.println(hero1.age); <span class="hljs-comment">// this would print out the integer 42 to the stdout</span>
+        System.out.println(hero1.power); <span class="hljs-comment">// this would print out the String &quot;$$$&quot; to the stdout</span>
+        System.out.println(hero1.toString); <span class="hljs-comment">// this works due to the super keyword, which allows the child Hero class to access the toString method of the parent person class and copy its existing method, only modifying it by adding additional behaviours as desired</span>
+    }
+
+}
+
+<span class="hljs-comment">// person.java</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">person</span> {
+
+    String name;
+    <span class="hljs-type">int</span> age;
+
+    person(String name, <span class="hljs-type">int</span> age){
+        <span class="hljs-built_in">this</span>.name = name;
+        <span class="hljs-built_in">this</span>.age = age;
+    }
+
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">toString</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.name + <span class="hljs-string">&quot;\n&quot;</span> + <span class="hljs-built_in">this</span>.age + <span class="hljs-string">&quot;\n&quot;</span>;
+    }
+
+}
+
+<span class="hljs-comment">// Hero.java</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Hero</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">person</span> {
+
+    String power;
+
+    Hero(String name, <span class="hljs-type">int</span> age, String power){
+        <span class="hljs-built_in">super</span>(name, age); <span class="hljs-comment">// input the variable names of the parent class&#x27;s constructor values as arguments to the super keyword, allowing the Hero constructor to be called using the same constructor values as the parent class and more</span>
+        <span class="hljs-built_in">this</span>.power = power;
+    }
+
+    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">toString</span><span class="hljs-params">()</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">super</span>.toString() + <span class="hljs-built_in">this</span>.power;
+    }
+
+}
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li>generics</li>
+<li>serialization</li>
+<li>deserialization</li>
+<li>threads</li>
+<li>multithreading</li>
+<li>packages</li>
+<li>.jar file</li>
+<li>variable swapping</li>
+<li>2d ArrayLists</li>
+<li>String methods</li>
+<li>file IO</li>
+<li>java GUI libraries</li>
+<li>wrapper classes</li>
+<li>autoboxing</li>
+<li>unboxing</li>
+<li>polymorphism</li>
+<li>abstract</li>
+<li>interface</li>
+<li>overloaded constructors</li>
+<li>array of objects</li>
+<li>access modifiers</li>
+<li>static</li>
+<li><a href="https://docs.oracle.com/en/java/">java documentation</a></li>
+<li><a href="https://learnxinyminutes.com/docs/java/">learn java in y minutes</a></li>
+<li><a href="https://medium.com/java-for-beginners/understanding-java-virtual-machine-jvm-architecture-e68d1c611026">explaining jvm architecture</a></li>
+<li><a href="https://learnxinyminutes.com/docs/kotlin/">learn kotlin in y minutes</a></li>
+<li><a href="https://learnxinyminutes.com/docs/ballerina/">learn ballerina in y minutes</a></li>
+<li><a href="https://learnxinyminutes.com/docs/haxe/">learn haxe in y minutes</a></li>
+<li><a href="https://learnxinyminutes.com/docs/mercury/">learn mercury in y minutes</a></li>
+<li><a href="https://learnxinyminutes.com/docs/raku/">learn raku in y minutes</a></li>
+<li><a href="https://learnxinyminutes.com/docs/groovy/">learn groovy in y minutes</a></li>
+<li><a href="https://whiley.org/">whiley.org</a></li>
+</ul>

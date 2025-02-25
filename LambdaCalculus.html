@@ -1,0 +1,111 @@
+<h1><code>Lambda calculus</code></h1>
+<p>Abstract notation to describe functions and application, providing the basis for functional programming.</p>
+<h2>Introduction</h2>
+<ul>
+<li>written as <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">λ</span></span></span></span>-calculus</li>
+<li>created by <a href="https://www.britannica.com/biography/Alonzo-Church">Alonzo Church</a></li>
+<li>can represent any <a href="https://brilliant.org/wiki/turing-machines/">turing machine</a></li>
+<li>by definition <a href="https://users.cs.utah.edu/~mflatt/past-courses/cs7520/public_html/s06/notes.pdf">the world's smallest programming language</a></li>
+</ul>
+<h2>Quickstart</h2>
+<h3>Datatypes</h3>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">λ</span></span></span></span>-calculus has 3 foundational datatypes.</p>
+<ol>
+<li>Variable
+<ul>
+<li><code>&lt;name&gt;</code></li>
+</ul>
+</li>
+<li>Function
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">λ</span></span></span></span> <code>&lt;parameter&gt;</code>.<code>&lt;body&gt;</code></li>
+<li>function parameter and body are . period-delimited</li>
+<li>functions are single parameter</li>
+</ul>
+</li>
+<li>Application
+<ul>
+<li><code>&lt;function&gt;&lt;variable OR function&gt;</code></li>
+</ul>
+</li>
+</ol>
+<p>In practice, it looks like this.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Example</th>
+<th style="text-align:center">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span></span></span></span></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span></span></span></span> is a variable</td>
+</tr>
+<tr>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mi>x</mi><mi mathvariant="normal">.</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\lambda x . x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">λ</span><span class="mord mathit">x</span><span class="mord mathrm">.</span><span class="mord mathit">x</span></span></span></span></td>
+<td style="text-align:center">function definition for a function with parameter <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span></span></span></span> and body <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span></span></span></span></td>
+</tr>
+<tr>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>λ</mi><mi>x</mi><mi mathvariant="normal">.</mi><mi>x</mi><mo>)</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">(\lambda x . x)a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mopen">(</span><span class="mord mathit">λ</span><span class="mord mathit">x</span><span class="mord mathrm">.</span><span class="mord mathit">x</span><span class="mclose">)</span><span class="mord mathit">a</span></span></span></span></td>
+<td style="text-align:center">function call for the previously declared function <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mi>x</mi><mi mathvariant="normal">.</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\lambda x . x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">λ</span><span class="mord mathit">x</span><span class="mord mathrm">.</span><span class="mord mathit">x</span></span></span></span> with the argument <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">a</span></span></span></span></td>
+</tr>
+</tbody>
+</table>
+<h3>Free and Bound variables</h3>
+<ul>
+<li><strong>Free</strong> variable: variable that is <em>never</em> declared prior to its specification in a function body</li>
+<li><strong>Bound</strong> variable: variable that is declared within <em>both</em> the function parameter and body</li>
+</ul>
+<p>In practice, they look like this.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Example</th>
+<th style="text-align:center">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mi>x</mi><mi mathvariant="normal">.</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\lambda x . x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">λ</span><span class="mord mathit">x</span><span class="mord mathrm">.</span><span class="mord mathit">x</span></span></span></span></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span></span></span></span> is a bound variable</td>
+</tr>
+<tr>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mi>x</mi><mi mathvariant="normal">.</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">\lambda x . y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit">λ</span><span class="mord mathit">x</span><span class="mord mathrm">.</span><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span></span></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span></span> is a free variable</td>
+</tr>
+</tbody>
+</table>
+<h3>Evaluation</h3>
+<ul>
+<li>application evaluation is performed via <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05278em;">β</span></span></span></span>-reduction</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05278em;">β</span></span></span></span>-reduction: lexically-scoped substitution, a concept most of us are familiar with from foundational mathematical functions</li>
+<li>allows for higher-order functions, where functions themselves are provided as arguments to another function</li>
+</ul>
+<p>In practice, it looks like this.</p>
+<p><em>example 1</em></p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>λ</mi><mi>x</mi><mi mathvariant="normal">.</mi><mi>x</mi><mo>)</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">(\lambda x . x)a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mopen">(</span><span class="mord mathit">λ</span><span class="mord mathit">x</span><span class="mord mathrm">.</span><span class="mord mathit">x</span><span class="mclose">)</span><span class="mord mathit">a</span></span></span></span> evaluates to <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">a</span></span></span></span></li>
+</ul>
+<p><em>example 2</em></p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>λ</mi><mi>x</mi><mi mathvariant="normal">.</mi><mi>y</mi><mo>)</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">(\lambda x . y)a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mopen">(</span><span class="mord mathit">λ</span><span class="mord mathit">x</span><span class="mord mathrm">.</span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord mathit">a</span></span></span></span> evaluates to <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span></span></li>
+</ul>
+<p><em>example 3</em></p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>λ</mi><mi>x</mi><mi mathvariant="normal">.</mi><mo>(</mo><mi>λ</mi><mi>y</mi><mi mathvariant="normal">.</mi><mi>x</mi><mo>)</mo><mo>)</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">(\lambda x . (\lambda y . x ))a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mopen">(</span><span class="mord mathit">λ</span><span class="mord mathit">x</span><span class="mord mathrm">.</span><span class="mopen">(</span><span class="mord mathit">λ</span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mord mathrm">.</span><span class="mord mathit">x</span><span class="mclose">)</span><span class="mclose">)</span><span class="mord mathit">a</span></span></span></span> evaluates to <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mi>y</mi><mi mathvariant="normal">.</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">\lambda y . a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit">λ</span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mord mathrm">.</span><span class="mord mathit">a</span></span></span></span></li>
+<li>this is an example of a higher-order function evaluated using <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05278em;">β</span></span></span></span>-reduction</li>
+</ul>
+<h2>More on</h2>
+<ul>
+<li><a href="https://math.stackexchange.com/questions/1972022/lambda-calculus-identity-function">identity function</a></li>
+<li><a href="https://www.matthiaspreu.com/posts/lambda-calculus-fundamentals/#currying---application-of-multiple-arguments">currying</a></li>
+<li><a href="https://www.cs.rice.edu/~javaplt/311/Readings/supplemental.pdf">church numerals</a></li>
+<li><a href="https://www.cs.columbia.edu/~sedwards/classes/2012/w4115-fall/lambda.pdf">boolean logic in lambda calculus</a></li>
+<li><a href="https://crypto.stanford.edu/~blynn/lambda/cl.html">combinators</a></li>
+<li><a href="https://plato.stanford.edu/entries/lambda-calculus/">standard encyclopedia of philosophy on lambda calculus</a></li>
+<li><a href="https://learnxinyminutes.com/docs/lambda-calculus/">learn lambda calculus in y minutes</a></li>
+<li><a href="http://www.inf.fu-berlin.de/lehre/WS03/alpi/lambda.pdf">a tutorial introduction to lambda calculus</a></li>
+<li><a href="http://www.cs.cornell.edu/courses/cs3110/2008fa/recitations/rec26.html">cornell CS312 on lambda calculus</a></li>
+<li><a href="https://codewords.recurse.com/issues/one/an-introduction-to-functional-programming">an introduction to functional programming</a></li>
+</ul>

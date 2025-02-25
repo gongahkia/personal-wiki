@@ -1,0 +1,176 @@
+<h1><code>Awk</code></h1>
+<p>Standard UNIX tool for text-processing that's more readable than Perl.</p>
+<h2>Comments</h2>
+<pre><code class="language-awk"><span class="hljs-comment"># ---------- COMMENT ----------</span>
+
+<span class="hljs-comment"># this is a single-line comment</span>
+
+<span class="hljs-comment"># there is no built-in</span>
+<span class="hljs-comment"># syntax for multi-line</span>
+<span class="hljs-comment"># comments</span>
+</code></pre>
+<h2>Printing</h2>
+<pre><code class="language-awk"><span class="hljs-comment"># ---------- PRINT ----------</span>
+    <span class="hljs-comment"># print =&gt; prints a string to the stdout and appends a newline to the output</span>
+    <span class="hljs-comment"># printf =&gt; prints a string to the stdout and does not include a newline, allows for format specifiers for further string interpolation</span>
+        <span class="hljs-comment"># %s =&gt; string</span>
+        <span class="hljs-comment"># %c =&gt; char</span>
+        <span class="hljs-comment"># %d =&gt; integer number</span>
+        <span class="hljs-comment"># %f =&gt; floating-point number</span>
+        <span class="hljs-comment"># %x =&gt; hexadecimal number </span>
+        <span class="hljs-comment"># %o =&gt; octal number</span>
+        <span class="hljs-comment"># %% =&gt; literal percent sign</span>
+
+printf <span class="hljs-string">&quot;this does not include a newline and we must explicitly specify its inclusion\n&quot;</span>;
+a_number = <span class="hljs-number">10</span>;
+printf <span class="hljs-string">&quot;this too %d needs a newline explicitly specified\n&quot;</span>, a_number;
+print <span class="hljs-string">&quot;this includes a newline automatically&quot;</span>;
+</code></pre>
+<h2>Quickstart</h2>
+<pre><code class="language-awk"><span class="hljs-comment"># ---------- QUICKSTART ----------</span>
+    <span class="hljs-comment"># ; semicolons aren&#x27;t required but encouraged for awk&#x27;s one-liners</span>
+    <span class="hljs-comment"># awk programs consist of a collection of patterns and actions that are iterated over for each white-space delimited file supplied</span>
+    <span class="hljs-comment"># #!/usr/bin/awk -f =&gt; conventionally placed at the start of every awk script file, to specify awk is to be used to interpret this program</span>
+    <span class="hljs-comment"># BEGIN =&gt; runs at the beginning of the program and typically used to setup any preliminary code before files are read, pattern that is true before any of the specified files are read</span>
+    <span class="hljs-comment"># END =&gt; runs at the end of the program after all text files are processed, pattern that is true after an end-of-file from the last specified file is provided</span>
+    <span class="hljs-comment"># variables are global by default</span>
+
+<span class="hljs-comment">#!/usr/bin/awk -f</span>
+
+pattern1 { action; }
+pattern2 { action; }
+
+<span class="hljs-keyword">BEGIN</span> {
+    count = <span class="hljs-number">0</span>; <span class="hljs-comment"># this is a global variable by default</span>
+}
+
+<span class="hljs-keyword">END</span> {
+    print <span class="hljs-string">&quot;all done&quot;</span>;
+}
+</code></pre>
+<h2>Types</h2>
+<pre><code class="language-awk"><span class="hljs-comment"># ---------- TYPE ----------</span>
+    <span class="hljs-comment"># Integer</span>
+    <span class="hljs-comment"># Float</span>
+    <span class="hljs-comment"># Char =&gt; &#x27;&#x27; single quotation marks</span>
+    <span class="hljs-comment"># String =&gt; &quot;&quot; double quotation marks</span>
+    <span class="hljs-comment"># Boolean =&gt; 0 is false, any non-0 value is true</span>
+</code></pre>
+<h2>Operators</h2>
+<pre><code class="language-awk"><span class="hljs-comment"># ---------- OPERATOR ----------</span>
+
+<span class="hljs-comment"># ARITHMETIC OPERATORS</span>
+    <span class="hljs-comment"># + =&gt; addition</span>
+    <span class="hljs-comment"># - =&gt; subtraction</span>
+    <span class="hljs-comment"># * =&gt; multiplication</span>
+    <span class="hljs-comment"># / =&gt; division</span>
+    <span class="hljs-comment"># % =&gt; modulo operator</span>
+    <span class="hljs-comment"># ^ =&gt; exponentiation operator</span>
+    <span class="hljs-comment"># ++ =&gt; increment by one</span>
+    <span class="hljs-comment"># -- =&gt; decrement by one</span>
+    <span class="hljs-comment"># += =&gt; addition and reassignment</span>
+    <span class="hljs-comment"># -= =&gt; subtraction and reassignment</span>
+    <span class="hljs-comment"># *= =&gt; multiplication and reassignment</span>
+    <span class="hljs-comment"># /= =&gt; division and reassignment</span>
+    <span class="hljs-comment"># %= =&gt; modulus reassignment</span>
+    <span class="hljs-comment"># ^= =&gt; exponentiation and reassignment</span>
+
+<span class="hljs-comment"># LOGICAL OPERATORS</span>
+    <span class="hljs-comment"># &amp;&amp; =&gt; logical and</span>
+    <span class="hljs-comment"># || =&gt; logical or</span>
+    <span class="hljs-comment"># ! =&gt; logical not</span>
+
+<span class="hljs-comment"># COMPARISON OPERATORS</span>
+    <span class="hljs-comment"># == =&gt; partial equality check for value</span>
+    <span class="hljs-comment"># != =&gt; partial inequality check for value</span>
+    <span class="hljs-comment"># ~ =&gt; equality check for a match using regular expressions</span>
+    <span class="hljs-comment"># !~ =&gt; inequality check for a match using regular expressions </span>
+    <span class="hljs-comment"># &lt; &gt; &lt;= &gt;= are also comparison operators</span>
+</code></pre>
+<h2>Control structures</h2>
+<pre><code class="language-awk"><span class="hljs-comment"># ---------- CONTROL STRUCTURE ----------</span>
+
+<span class="hljs-comment"># CONDITIONALS</span>
+
+<span class="hljs-comment"># IF ELSE IF ELSE</span>
+
+<span class="hljs-keyword">if</span> (<span class="hljs-variable">$1</span> == <span class="hljs-string">&quot;apple&quot;</span>) {
+    print <span class="hljs-string">&quot;It&#x27;s an apple!&quot;</span>;
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-variable">$1</span> == <span class="hljs-string">&quot;banana&quot;</span>) {
+    print <span class="hljs-string">&quot;It&#x27;s a banana!&quot;</span>;
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-variable">$1</span> == <span class="hljs-string">&quot;orange&quot;</span>) {
+    print <span class="hljs-string">&quot;It&#x27;s an orange!&quot;</span>;
+} <span class="hljs-keyword">else</span> {
+    print <span class="hljs-string">&quot;It&#x27;s something else.&quot;</span>;
+}
+
+<span class="hljs-comment"># TERNARY OPERATOR</span>
+    <span class="hljs-comment"># ternary syntax is =&gt; {PREDICATE} ? {TRUE FORM} : {FALSE FORM}</span>
+
+result = (<span class="hljs-variable">$1</span> == <span class="hljs-string">&quot;apple&quot;</span>) ? <span class="hljs-string">&quot;It&#x27;s an apple!&quot;</span> : <span class="hljs-string">&quot;It&#x27;s not an apple.&quot;</span>
+
+<span class="hljs-comment"># LOOPS</span>
+
+<span class="hljs-comment"># WHILE LOOPS</span>
+
+<span class="hljs-keyword">while</span> (a &lt; <span class="hljs-number">10</span>) {
+    print <span class="hljs-string">&quot;string concatenation is done&quot;</span> <span class="hljs-string">&quot; with a series&quot;</span> <span class="hljs-string">&quot; of&quot;</span> <span class="hljs-string">&quot; space-delimited strings&quot;</span>;
+    print a;
+    a++;
+}
+
+<span class="hljs-comment"># FOR LOOPS</span>
+    <span class="hljs-comment"># for =&gt; allows for a rudimentary for loop implementation</span>
+    <span class="hljs-comment"># for in =&gt; allows for iteration of an element across an iterable data structure like an associative array</span>
+
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++)
+    print <span class="hljs-string">&quot;we gonna keep looping until we hit 9&quot;</span>;
+
+an_arr[<span class="hljs-number">0</span>] = <span class="hljs-string">&quot;watermelon&quot;</span>;
+an_arr[<span class="hljs-number">1</span>] = <span class="hljs-string">&quot;sugar&quot;</span>;
+an_arr[<span class="hljs-number">2</span>] = <span class="hljs-string">&quot;low&quot;</span>;
+
+<span class="hljs-keyword">for</span> (key <span class="hljs-keyword">in</span> an_arr)
+    print an_arr[key];
+</code></pre>
+<h2>Data structures</h2>
+<pre><code class="language-awk"><span class="hljs-comment"># ---------- DATA STRUCTURE ----------</span>
+
+<span class="hljs-comment"># ASSOCIATIVE ARRAYS</span>
+    <span class="hljs-comment"># combination of an array and a hash comprised of key-value pairs, similar to tables in Lua or associative arrays in PHP</span>
+    <span class="hljs-comment"># split =&gt; splits a string by a specified delimiter and returns an associative array </span>
+    <span class="hljs-comment"># in =&gt; checks for an element&#x27;s membership in a specified associative array</span>
+
+string_arr[<span class="hljs-number">0</span>] = <span class="hljs-string">&quot;foo&quot;</span>;
+string_arr[<span class="hljs-number">1</span>] = <span class="hljs-string">&quot;bar&quot;</span>; <span class="hljs-comment"># creates an associative array called string_arr with two string values that have integer keys</span>
+
+string_assoc[<span class="hljs-string">&quot;foo&quot;</span>] = <span class="hljs-string">&quot;bar&quot;</span>;
+string_assoc[<span class="hljs-string">&quot;bar&quot;</span>] = <span class="hljs-string">&quot;baz&quot;</span>; <span class="hljs-comment"># creates another associative array called string_assoc with two string values that have string keys</span>
+
+n = split(<span class="hljs-string">&quot;foo:bar:baz&quot;</span>, arr, <span class="hljs-string">&quot;:&quot;</span>); <span class="hljs-comment"># split() also initializes an array, similar to Python</span>
+
+<span class="hljs-keyword">if</span> (<span class="hljs-string">&quot;foo&quot;</span> <span class="hljs-keyword">in</span> assoc)
+    print <span class="hljs-string">&quot;Fooey!&quot;</span>; <span class="hljs-comment"># checks for array membership</span>
+</code></pre>
+<h2>Functions</h2>
+<pre><code class="language-awk"><span class="hljs-comment"># ---------- FUNCTION ----------</span>
+    <span class="hljs-comment"># function =&gt; declares and creates a function</span>
+    <span class="hljs-comment"># return =&gt; specifies the function return expression</span>
+    <span class="hljs-comment"># only function parameters are local to the function, every other variable including those declared first within the function are global, so the workaround is to declare more function parameters than required and using those extra parameters as local variables</span>
+
+<span class="hljs-keyword">function</span> hello() {
+    print <span class="hljs-string">&quot;hello world&quot;</span>;
+}
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li>file IO</li>
+<li>pipes</li>
+<li>ARGV</li>
+<li>ARGC</li>
+<li><a href="https://www.gnu.org/software/gawk/manual/gawk.html">awk documentation</a></li>
+<li><a href="https://learnxinyminutes.com/docs/awk/">learn awk in y minutes</a></li>
+<li><a href="http://tuxgraphics.org/~guido/scripts/awk-one-liner.html">awk one-liners</a></li>
+<li><a href="https://github.com/dubiousjim/awkenough">awk libraries</a></li>
+<li><a href="https://www.grymoire.com/Unix/Awk.html">awk made easy</a></li>
+</ul>

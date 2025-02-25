@@ -1,0 +1,173 @@
+<h1><code>Markdown</code></h1>
+<p>Markdown is an easy-to-read markup format with various downstream targets available for transpilation.</p>
+<h2>Quickstart</h2>
+<p>Different markdown flavours will have their own unique syntax quirks.</p>
+<p>The below is the <strong>shared syntax</strong> that most flavours support.</p>
+<pre><code class="language-md">----- HEADER -----
+
+<span class="hljs-section"># this is a header equivalent to <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span></span></span>
+<span class="hljs-section">## this is a header equivalent to <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span></span></span>
+<span class="hljs-section">### this is a header equivalent to <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span></span></span>
+<span class="hljs-section">#### this is a header equivalent to <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span></span></span>
+<span class="hljs-section">##### this is a header equivalent to <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">h5</span>&gt;</span></span></span>
+<span class="hljs-section">###### this is a header equivalent to <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">h6</span>&gt;</span></span></span>
+
+----- ITALIC -----
+
+<span class="hljs-emphasis">*this is italicised text*</span>
+<span class="hljs-emphasis">_this is also italicised text_</span>
+
+----- BOLD -----
+
+<span class="hljs-strong">**this is bolded text**</span>
+<span class="hljs-strong">__this is also bolded text__</span>
+
+----- ITALIC AND BOLD -----
+
+<span class="hljs-strong">**<span class="hljs-emphasis">*this is italicised and bolded text*</span>**</span>
+<span class="hljs-strong">__<span class="hljs-emphasis">_this is also italicised and bolded text_</span>__</span>
+
+----- BLOCK QUOTE -----
+
+<span class="hljs-quote">&gt; This is a block quote.</span>
+&gt;&gt; This is an indented block quote.
+
+----- PARAGRAPH -----
+
+Markdown paragraphs are just adjacent lines of text seperated by one or more blank lines.
+
+----- LIST -----
+
+--- UNORDERED LIST ---
+
+<span class="hljs-bullet">*</span> this is an unordered list item
+<span class="hljs-bullet">*</span> this is also an unordered list item
+<span class="hljs-bullet">*</span> this is a final unordered list item
+
+<span class="hljs-bullet">+</span> this synatx works too
+<span class="hljs-bullet">+</span> look at me!
+<span class="hljs-bullet">+</span> wow!
+
+<span class="hljs-bullet">-</span> as does this syntax
+<span class="hljs-bullet">-</span> with these dashes
+<span class="hljs-bullet">-</span> to create an unordered list
+
+--- ORDERED LIST ---
+
+<span class="hljs-bullet">1.</span> there is only one way to 
+<span class="hljs-bullet">2.</span> create an
+<span class="hljs-bullet">3.</span> ordered list
+<span class="hljs-bullet">4.</span> however
+<span class="hljs-bullet">5.</span> and its with numbers like this
+<span class="hljs-bullet">6.</span> note that 
+<span class="hljs-bullet">    *</span> sublists like this are 
+<span class="hljs-bullet">    *</span> also valid
+
+--- TASK LIST ---
+
+<span class="hljs-bullet">-</span> [ ] task lists are also
+<span class="hljs-bullet">-</span> [ ] created as shown here
+<span class="hljs-bullet">-</span> [x] this checkbox is ticked
+<span class="hljs-bullet">-</span> [ ] and all checkboxes will render as HTML checkboxes
+<span class="hljs-bullet">-</span> [ ] in your markdown document
+
+----- CODE BLOCK ----- 
+
+<span class="hljs-code">`Smaller code blocks`</span> can be integrated in plain text with a single backtick <span class="hljs-code">` `</span>.
+
+Larger code blocks can also be defined as shown with triple backticks <span class="hljs-code">``` ``` </span>to provide syntax-specific highlighting for the code block.
+
+<span class="hljs-code">```ruby
+def foobar
+  puts &quot;as below&quot;
+end
+```</span>
+
+----- HORIZONTAL RULE ----- 
+
+Create a <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">hr</span>/&gt;</span></span> element with ---.
+
+----- LINK -----
+
+[<span class="hljs-string">This is the text associated with the link.</span>](<span class="hljs-link">http://heresTheLink.com</span>)
+[<span class="hljs-string">As well as supporting relative paths.</span>](<span class="hljs-link">README.md</span>)
+[<span class="hljs-string">Alongside supporting reference style links.</span>](<span class="hljs-link">link1</span>)
+[<span class="hljs-string">And finally header links within the same file.</span>](<span class="hljs-link">#quickstart</span>)
+
+[<span class="hljs-symbol">link1</span>]: <span class="hljs-link">http://heresAReferenceStyleLink.com</span>
+
+----- IMAGE -----
+
+![<span class="hljs-string">This is an image</span>](<span class="hljs-link">http://heresTheImageUrl.com</span>)
+![<span class="hljs-string">Images can also be relative paths</span>](<span class="hljs-link">asset/hypotheticalImage.jpg</span>)
+</code></pre>
+<h2>Github flavoured markdown</h2>
+<p>The below two features have been implemented in <a href="https://github.github.com/gfm/">GFM</a>.</p>
+<h3>Mathematical expressions</h3>
+<p>Github flavoured markdown supports <a href="https://en.wikibooks.org/wiki/LaTeX/Mathematics">LaTeX formatted mathematical expressions</a>.</p>
+<pre><code class="language-md">--- MATHEMATICAL EXPRESSION ---
+
+Mathematical expressions are rendered inline with <span class="hljs-code">`$`</span> characters.
+
+$\sqrt{3x-1}+(1+x)^2$
+
+Block mathematical expressions (automatically centralised) are rendered with <span class="hljs-code">`$$`</span> characters.
+
+$$\left( \sum<span class="hljs-emphasis">_{k=1}^n a_</span>k b<span class="hljs-emphasis">_k \right)^2 \leq \left( \sum_</span>{k=1}^n a<span class="hljs-emphasis">_k^2 \right) \left( \sum_</span>{k=1}^n b<span class="hljs-emphasis">_k^2 \right)$$
+
+Block mathematical expressions can also be rendered with `math` as a code block (the below will render the same as the above).
+
+```math
+\left( \sum_</span>{k=1}^n a<span class="hljs-emphasis">_k b_</span>k \right)^2 \leq \left( \sum<span class="hljs-emphasis">_{k=1}^n a_</span>k^2 \right) \left( \sum<span class="hljs-emphasis">_{k=1}^n b_</span>k^2 \right)
+<span class="hljs-code">```
+</span></code></pre>
+<h3>Alerts</h3>
+<p>Github flavoured markdown also supports alerts to signpost significant content.</p>
+<pre><code class="language-md">----- ALERT -----
+
+<span class="hljs-quote">&gt; [!NOTE]</span>
+<span class="hljs-quote">&gt; blue circle containing exclamation mark</span>
+
+<span class="hljs-quote">&gt; [!TIP]</span>
+<span class="hljs-quote">&gt; green lightbulb</span>
+
+<span class="hljs-quote">&gt; [!IMPORTANT]</span>
+<span class="hljs-quote">&gt; purple speech bubble containing exclamation mark</span>
+
+<span class="hljs-quote">&gt; [!WARNING]</span>
+<span class="hljs-quote">&gt; yellow triangle containing exclamation mark</span>
+
+<span class="hljs-quote">&gt; [!CAUTION]</span>
+<span class="hljs-quote">&gt; red octagon containing exclamation mark</span>
+</code></pre>
+<p>Rendered, they look like this.</p>
+<blockquote>
+<p>[!NOTE]
+blue circle containing exclamation mark</p>
+</blockquote>
+<blockquote>
+<p>[!TIP]
+green lightbulb</p>
+</blockquote>
+<blockquote>
+<p>[!IMPORTANT]
+purple speech bubble containing exclamation mark</p>
+</blockquote>
+<blockquote>
+<p>[!WARNING]
+yellow triangle containing exclamation mark</p>
+</blockquote>
+<blockquote>
+<p>[!CAUTION]
+red octagon containing exclamation mark</p>
+</blockquote>
+<h2>More on</h2>
+<ul>
+<li><a href="https://learnxinyminutes.com/docs/markdown/">learn markdown in y minutes</a></li>
+<li><a href="https://www.markdownguide.org/">markdown guide</a></li>
+<li><a href="https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-tables">GFM tables</a></li>
+<li><a href="https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions">markdown mathematical expressions</a></li>
+<li><a href="https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts">alerts</a></li>
+<li><a href="https://www.markdownguide.org/hacks/">further markdown syntax</a></li>
+<li><a href="https://stackoverflow.com/questions/57935181/markdown-anchor-link-with-same-name-but-different-sections">handling markdown anchor links with same name</a></li>
+</ul>

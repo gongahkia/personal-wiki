@@ -1,0 +1,167 @@
+<h1><code>Sass</code></h1>
+<p>Syntactically awesome style sheets.</p>
+<h2>Introduction</h2>
+<ul>
+<li>preprocessor scripting language that enhances CSS syntax with modern programming language constructs</li>
+<li><code>.scss</code> transpiles to <code>.css</code></li>
+<li>SassScript has two different syntax options
+<ol>
+<li><code>.scss</code>: enhances existing <code>.css</code> syntax with Sass features, covered below</li>
+<li><code>.sass</code>: original Sass syntax, features indentation in place of {} curly braces and ; semicolons</li>
+</ol>
+</li>
+</ul>
+<h2>Quickstart</h2>
+<pre><code class="language-bash"><span class="hljs-comment"># ----- QUICKSTART -----</span>
+
+$ npm install -g sass <span class="hljs-comment"># install Sass with npm via node.js</span>
+$ sass styles.scss styles.css <span class="hljs-comment"># transpiles .scss files to .css files</span>
+</code></pre>
+<h2>Syntax overview</h2>
+<pre><code class="language-scss"><span class="hljs-comment">// ----- SYNTAX OVERVIEW -----</span>
+
+<span class="hljs-comment">// --- COMMENT ---</span>
+
+<span class="hljs-comment">// this is a single-line comment</span>
+
+<span class="hljs-comment">/* this is a 
+multi-line
+comment */</span>
+
+<span class="hljs-comment">// --- VARIABLE ---</span>
+    <span class="hljs-comment">// $ =&gt; declares a variable that stores CSS values for subsequent quick reference, similar to $ in PHP</span>
+    <span class="hljs-comment">// all intermediary Sass code here is transpiled to vanilla CSS eventually, so redeclaring variables is also worry-free and will not cause unexpected issues</span>
+    <span class="hljs-comment">// tldr: USE VARIABLES MORE!!!</span>
+
+<span class="hljs-variable">$primary-color</span>: <span class="hljs-number">#A3A4FF</span>;
+<span class="hljs-variable">$secondary-color</span>: <span class="hljs-number">#51527F</span>;
+<span class="hljs-variable">$body-font</span>: <span class="hljs-string">&#x27;Roboto&#x27;</span>, sans-serif;
+
+<span class="hljs-selector-tag">body</span> {
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$primary-color</span>;
+    <span class="hljs-attribute">color</span>: <span class="hljs-variable">$secondary-color</span>;
+    <span class="hljs-attribute">font-family</span>: <span class="hljs-variable">$body-font</span>;
+}
+
+<span class="hljs-comment">// --- CONTROL STRUCTURES --- </span>
+    <span class="hljs-comment">// note all the control structure construct keywords are prefixed with @ an ampersand character</span>
+        <span class="hljs-comment">// @if</span>
+        <span class="hljs-comment">// @else if</span>
+        <span class="hljs-comment">// @else</span>
+        <span class="hljs-comment">// @for</span>
+        <span class="hljs-comment">// @while</span>
+        <span class="hljs-comment">// @each</span>
+
+<span class="hljs-comment">// IF ELSE IF ELSE </span>
+    <span class="hljs-comment">// interesting to observe how we can just place if else if else constructs within the HTML element declaration, similar to how many functional languages handle expression evaluation</span>
+
+<span class="hljs-variable">$theme</span>: dark;
+<span class="hljs-selector-tag">body</span> {
+    <span class="hljs-keyword">@if</span> <span class="hljs-variable">$theme</span> == light {
+        <span class="hljs-attribute">background</span>: white;
+        <span class="hljs-attribute">color</span>: black;
+    } <span class="hljs-keyword">@else</span> if <span class="hljs-variable">$theme</span> == dark {
+        <span class="hljs-attribute">background</span>: black;
+        <span class="hljs-attribute">color</span>: white;
+    } <span class="hljs-keyword">@else</span> {
+        <span class="hljs-attribute">background</span>: gray;
+        <span class="hljs-attribute">color</span>: black;
+    }
+}
+
+<span class="hljs-comment">// FOR LOOPS</span>
+    <span class="hljs-comment">// closer to a C-style for loop (start;stop;step) which iterates over an integer-defined range</span>
+    <span class="hljs-comment">// most commonly used to set styles on a collection of items</span>
+
+<span class="hljs-comment">// FOR FROM TO</span>
+    <span class="hljs-comment">// for from to =&gt; excludes the last element of the integer-defined range</span>
+
+<span class="hljs-keyword">@for</span> <span class="hljs-variable">$c</span> from <span class="hljs-number">1</span> to <span class="hljs-number">4</span> {
+    <span class="hljs-selector-tag">div</span><span class="hljs-selector-pseudo">:nth-of-type</span>(#{$c}) {
+        <span class="hljs-attribute">left</span>: (<span class="hljs-variable">$c</span> - <span class="hljs-number">1</span>) * <span class="hljs-number">900</span> / <span class="hljs-number">3</span>;
+    }
+}
+
+<span class="hljs-comment">// FOR FROM THROUGH</span>
+    <span class="hljs-comment">// for from through =&gt; includes the last element of the integer-defined range</span>
+
+<span class="hljs-keyword">@for</span> <span class="hljs-variable">$c</span> from <span class="hljs-number">1</span> through <span class="hljs-number">3</span> {
+    <span class="hljs-selector-class">.myclass-</span>#{<span class="hljs-variable">$c</span>} {
+        <span class="hljs-attribute">color</span>: <span class="hljs-built_in">rgb</span>(<span class="hljs-variable">$c</span> * <span class="hljs-number">255</span> / <span class="hljs-number">3</span>, <span class="hljs-variable">$c</span> * <span class="hljs-number">255</span> / <span class="hljs-number">3</span>, <span class="hljs-variable">$c</span> * <span class="hljs-number">255</span> / <span class="hljs-number">3</span>);
+    }
+}
+
+<span class="hljs-comment">// WHILE LOOPS</span>
+    <span class="hljs-comment">// operates as you&#x27;d expect, exactly the same as while loops in most other programming languages</span>
+
+<span class="hljs-variable">$columns</span>: <span class="hljs-number">4</span>;
+<span class="hljs-variable">$column-width</span>: <span class="hljs-number">80px</span>;
+<span class="hljs-keyword">@while</span> <span class="hljs-variable">$columns</span> &gt; <span class="hljs-number">0</span> {
+    <span class="hljs-selector-class">.col-</span>#{<span class="hljs-variable">$columns</span>} {
+        <span class="hljs-attribute">width</span>: <span class="hljs-variable">$column-width</span>;
+        <span class="hljs-attribute">left</span>: <span class="hljs-variable">$column-width</span> * (<span class="hljs-variable">$columns</span> - <span class="hljs-number">1</span>);
+    }
+    <span class="hljs-variable">$columns</span>: <span class="hljs-variable">$columns</span> - <span class="hljs-number">1</span>;
+}
+
+<span class="hljs-comment">// EACH LOOPS</span>
+    <span class="hljs-comment">// closer to for in loops in Python and foreach loops in PHP</span>
+    <span class="hljs-comment">// traverses and iterates through each element of an iterable data structure (most commonly a list)</span>
+    <span class="hljs-comment">// list items are whitespace-delimited</span>
+
+<span class="hljs-variable">$social-links</span>: facebook twitter linkedin reddit; <span class="hljs-comment">// peep the whitespace between each list element, how bold and innovative</span>
+<span class="hljs-selector-class">.social-links</span> {
+    <span class="hljs-keyword">@each</span> <span class="hljs-variable">$sm</span> in <span class="hljs-variable">$social-links</span> {
+        <span class="hljs-selector-class">.icon-</span>#{<span class="hljs-variable">$sm</span>} {
+            <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">&quot;images/#{$sm}.png&quot;</span>);
+        }
+    }
+}
+
+<span class="hljs-comment">// --- MIXIN ---</span>
+    <span class="hljs-comment">// @mixin =&gt; declares a mixin under the specified name, where a mixin is effectively a variable that can store multiple CSS styles, declared within {} curly braces</span>
+    <span class="hljs-comment">// @include =&gt; specifies the use of the mixin within the desired CSS element in your Sass file</span>
+    <span class="hljs-comment">// mixins are best for generating CSS &#x27;code literals&#x27; (actual .css code)</span>
+
+<span class="hljs-keyword">@mixin</span> center {
+    <span class="hljs-attribute">display</span>: block;
+    <span class="hljs-attribute">margin-left</span>: auto;
+    <span class="hljs-attribute">margin-right</span>: auto;
+    <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-selector-tag">div</span> {
+    <span class="hljs-keyword">@include</span> center;
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$primary-color</span>;
+}
+
+<span class="hljs-comment">// --- FUNCTION ---</span>
+    <span class="hljs-comment">// @function &lt;functionName&gt; ( $&lt;functionParameterName(s)&gt; ) { &lt;functionDefinitionBody&gt; } =&gt; definition and declaration of a named function</span>
+    <span class="hljs-comment">// @return =&gt; explicit return keyword specifies the return value or expression of the named function</span>
+    <span class="hljs-comment">// functions are best for handling logic that might be used repeatedly in your Sass file</span>
+
+<span class="hljs-keyword">@function</span> calculate-percentage(<span class="hljs-variable">$target-size</span>, <span class="hljs-variable">$parent-size</span>) {
+    <span class="hljs-keyword">@return</span> <span class="hljs-variable">$target-size</span> / <span class="hljs-variable">$parent-size</span> * <span class="hljs-number">100%</span>;
+}
+
+<span class="hljs-variable">$main-content</span>: <span class="hljs-built_in">calculate-percentage</span>(<span class="hljs-number">600px</span>, <span class="hljs-number">960px</span>);
+<span class="hljs-selector-class">.main-content</span> {
+    <span class="hljs-attribute">width</span>: <span class="hljs-variable">$main-content</span>;
+}
+
+<span class="hljs-selector-class">.sidebar</span> {
+    <span class="hljs-attribute">width</span>: <span class="hljs-built_in">calculate-percentage</span>(<span class="hljs-number">300px</span>, <span class="hljs-number">960px</span>);
+}
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li><a href="https://sass-lang.com/documentation/at-rules/debug/">debug</a></li>
+<li><a href="https://sass-lang.com/documentation/at-rules/extend/">extend</a></li>
+<li><a href="https://sass-lang.com/documentation/at-rules/use/">use</a></li>
+<li><a href="https://sass-lang.com/documentation/style-rules/placeholder-selectors/">placeholder selectors</a></li>
+<li><a href="https://sass-lang.com/">sass-lang.com</a></li>
+<li><a href="https://sass-lang.com/documentation/">sass documentation</a></li>
+<li><a href="https://learnxinyminutes.com/docs/sass/">learn sass in y minutes</a></li>
+<li><a href="https://www.sassmeister.com/">try sass with sassmeister</a></li>
+</ul>

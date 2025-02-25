@@ -1,0 +1,252 @@
+<h1><code>Bash</code></h1>
+<p>Shell scripting language to pimp out your Arch-Neovim-Tmux development setup.</p>
+<h2>Comments</h2>
+<pre><code class="language-bash"><span class="hljs-comment"># ---------- COMMENT ----------</span>
+
+<span class="hljs-comment"># this is a single-line comment</span>
+
+:<span class="hljs-string">&#x27;
+this is a 
+multi-line
+comment
+&#x27;</span>
+</code></pre>
+<h2>Printing</h2>
+<pre><code class="language-bash"><span class="hljs-comment"># ---------- PRINT ----------</span>
+    <span class="hljs-comment"># echo =&gt; prints a string and appends a newline to the output by default</span>
+        <span class="hljs-comment"># -n =&gt; flag specifies not to include a newline in the output</span>
+
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;i want to play dead space and this includes a newline automatically&quot;</span>
+<span class="hljs-built_in">echo</span> -n <span class="hljs-string">&quot;this does not include a newline by default and we must explicitly specify it\n&quot;</span>
+</code></pre>
+<h2>Quickstart</h2>
+<pre><code class="language-bash"><span class="hljs-comment"># ---------- QUICKSTART ----------</span>
+    <span class="hljs-comment"># running a bash file requires us to first convert it to an executable using =&gt; chmod +x {FILENAME}, then run it using =&gt; ./{FILENAME}</span>
+    <span class="hljs-comment"># within the cli, the one input source is stdin and the two outputs sourced are stdout and stderr comprising the three streams</span>
+        <span class="hljs-comment"># stdin =&gt; 0, standard input, where user input taken in using read goes</span>
+        <span class="hljs-comment"># stdout =&gt; 1, standard output to the console in response to a command by the programmer running succesfully</span>
+        <span class="hljs-comment"># stderr =&gt; 2, standard error to the console when a command by the programmer results in an error</span>
+    <span class="hljs-comment"># Bash is powerful because most unix-compatible cli commands are valid commands that can be used within a Bash script</span>
+</code></pre>
+<h2>Variables</h2>
+<pre><code class="language-bash"><span class="hljs-comment"># ---------- VARIABLE ----------</span>
+    <span class="hljs-comment"># $ =&gt; inserted in front of variable names whenever a variable is called similar to PHP</span>
+</code></pre>
+<h2>Types</h2>
+<pre><code class="language-bash"><span class="hljs-comment"># ---------- TYPE ----------</span>
+    <span class="hljs-comment"># String =&gt; strings and chars, declared with &quot;&quot; double quotation marks</span>
+    <span class="hljs-comment"># Number =&gt; integers and floats, though numbers are treated as Strings by default</span>
+    <span class="hljs-comment"># Boolean =&gt; Bash has no default true or false values, instead the success and failure of commands model boolean values</span>
+</code></pre>
+<h2>Operators</h2>
+<pre><code class="language-bash"><span class="hljs-comment"># ---------- OPERATOR ----------</span>
+
+<span class="hljs-comment"># ARITHMETIC OPERATORS</span>
+    <span class="hljs-comment"># + =&gt; addition</span>
+    <span class="hljs-comment"># - =&gt; subtraction</span>
+    <span class="hljs-comment"># * =&gt; multiplication</span>
+    <span class="hljs-comment"># / =&gt; division</span>
+    <span class="hljs-comment"># % =&gt; modulo operator</span>
+
+<span class="hljs-comment"># LOGICAL OPERATORS</span>
+    <span class="hljs-comment"># &amp;&amp; =&gt; logical and</span>
+    <span class="hljs-comment"># || =&gt; logical or</span>
+    <span class="hljs-comment"># ! =&gt; logical not</span>
+
+<span class="hljs-comment"># COMPARISON OPERATORS</span>
+    <span class="hljs-comment"># == =&gt; partial equality check for string values, not type</span>
+    <span class="hljs-comment"># != =&gt; partial inequality check for string values, not type</span>
+    <span class="hljs-comment"># -eq =&gt; partial equality check for numeric values, not type</span>
+    <span class="hljs-comment"># -ne =&gt; partial inequality check for numeric values, not type</span>
+    <span class="hljs-comment"># &gt; &lt; &gt;= &lt;= are also valid comparison operators</span>
+</code></pre>
+<h2>Control structures</h2>
+<pre><code class="language-bash"><span class="hljs-comment"># ---------- CONTROL STRUCTURE ----------</span>
+
+<span class="hljs-comment"># ---------- CONDITIONALS ----------</span>
+
+<span class="hljs-comment"># IF ELIF ELSE</span>
+    <span class="hljs-comment"># predicate is surrounded by [] square brackets</span>
+
+peepee = 10
+<span class="hljs-keyword">if</span> [<span class="hljs-variable">$peepee</span> -eq 10]; <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;peepee is equal to 10!&quot;</span>
+<span class="hljs-keyword">elif</span> [<span class="hljs-variable">$peepee</span> -ne 10]; <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;peepee is not equal to 10!&quot;</span>
+<span class="hljs-keyword">else</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;logically speaking this should not be possible&quot;</span>
+<span class="hljs-keyword">fi</span>
+
+<span class="hljs-comment"># CASE IN *</span>
+    <span class="hljs-comment"># case in =&gt; declares a case block similar to switch case statements in other languages</span>
+    <span class="hljs-comment"># ) =&gt; appends every case statement&#x27;s specified value</span>
+    <span class="hljs-comment"># ;; =&gt; append every case statement&#x27;s logic, acting as the equivalent of a break statement to ensure logic breaks out after a given case is hit</span>
+    <span class="hljs-comment"># * =&gt; specifies the default case should all other conditions fall through</span>
+
+car = 10
+<span class="hljs-keyword">case</span> <span class="hljs-variable">$car</span> <span class="hljs-keyword">in</span>
+    <span class="hljs-string">&quot;BMW&quot;</span> )
+        <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;your kar is a BMW&quot;</span>;;
+    <span class="hljs-string">&quot;Toyota&quot;</span> )
+        <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;aigh bet&quot;</span>;;
+    <span class="hljs-string">&quot;Honda&quot;</span> )
+        <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;your car is a Hoonda&quot;</span>;;
+    <span class="hljs-string">&quot;Toyota&quot;</span> )
+        <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;car ni na&quot;</span>;;
+    * )
+        <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;this is the default case&quot;</span>;;
+<span class="hljs-keyword">esac</span>
+
+<span class="hljs-comment"># ---------- LOOPS ----------</span>
+    <span class="hljs-comment"># break =&gt; breaks out of the current loop</span>
+    <span class="hljs-comment"># condition =&gt; skips to the next iteration of the given loop</span>
+
+<span class="hljs-comment"># WHILE DO LOOPS</span>
+    <span class="hljs-comment"># loop condition specified within [] square brackets</span>
+
+number = 1
+<span class="hljs-keyword">while</span> [ <span class="hljs-variable">$number</span> -lt 10 ]
+<span class="hljs-keyword">do</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$number</span>&quot;</span>
+    number = $((number+<span class="hljs-number">1</span>))
+<span class="hljs-keyword">done</span>
+
+<span class="hljs-comment"># UNTIL LOOPS</span>
+    <span class="hljs-comment"># loop condition specified within [] square brackets</span>
+    <span class="hljs-comment"># equivalent of a while false loop in Bash</span>
+
+number = 1
+<span class="hljs-keyword">until</span> [ <span class="hljs-variable">$number</span> -ge 10 ]
+<span class="hljs-keyword">do</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-variable">$number</span>
+    number $((number+<span class="hljs-number">1</span>))
+<span class="hljs-keyword">done</span>
+
+<span class="hljs-comment"># FOR LOOPS</span>
+    <span class="hljs-comment"># allows for rudimentary for loops with an explicit start, step and end</span>
+
+<span class="hljs-keyword">for</span> (( i=<span class="hljs-number">0</span>; i&lt;<span class="hljs-number">5</span>; i++ )) 
+<span class="hljs-keyword">do</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-variable">$i</span>
+<span class="hljs-keyword">done</span>
+
+<span class="hljs-comment"># FOR IN LOOPS</span>
+    <span class="hljs-comment"># allows for iteration over a specified range</span>
+    <span class="hljs-comment"># .. =&gt; allows for creation of implicit ranges with the syntax =&gt; {START..END..STEP}</span>
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> 1 2 3 4 5
+<span class="hljs-keyword">do</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-variable">$i</span>
+<span class="hljs-keyword">done</span> <span class="hljs-comment"># prints 1\n2\n3\n4\n5\n to the stdout</span>
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> {0..20..2}
+<span class="hljs-keyword">do</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-variable">$i</span>
+<span class="hljs-keyword">done</span> <span class="hljs-comment"># prints 0\n2\n4\n6\n8\n10\n12\n14\n16\n18\n20\n</span>
+</code></pre>
+<h2>Data structures</h2>
+<pre><code class="language-bash"><span class="hljs-comment"># ---------- DATA STRUCTURE ----------</span>
+
+<span class="hljs-comment"># ARRAY</span>
+    <span class="hljs-comment"># dynamically-sized ordered sequence of space-delimited elements of the same type declared with () brackets</span>
+    <span class="hljs-comment"># [] =&gt; access elements within the array via their index and assigning new elements to the array using square bracket notation</span>
+    <span class="hljs-comment"># @ =&gt; used as an index to access all elements within the array</span>
+    <span class="hljs-comment"># # =&gt; returns the length of the array</span>
+    <span class="hljs-comment"># unset =&gt; removes an element from the array</span>
+
+cars = (<span class="hljs-string">&quot;BMW&quot;</span> <span class="hljs-string">&quot;Toyota&quot;</span> <span class="hljs-string">&quot;Honda&quot;</span>)
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">${cars[1]}</span>&quot;</span> <span class="hljs-comment"># prints out Toyota, the element of index 1</span>
+cars[3] = <span class="hljs-string">&quot;Tesla&quot;</span> <span class="hljs-comment"># adds the element of value &quot;Tesla&quot; to the cars array at index 3</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">${cars[@]}</span>&quot;</span> <span class="hljs-comment"># prints out all the elements within the array</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">${#cars[@]}</span>&quot;</span> <span class="hljs-comment"># prints out the length of the array, 3</span>
+<span class="hljs-built_in">unset</span> cars[1] <span class="hljs-comment"># removes the element Toyota of index 1</span>
+
+<span class="hljs-comment"># ASSOCIATIVE ARRAY</span>
+    <span class="hljs-comment"># dynamically-sized unordered sequence of key-value pairs of different types similar to associative arrays in PHP or tables in Lua</span>
+    <span class="hljs-comment"># declare -A =&gt; used to specify a declaration and creation of an associative array at a given name</span>
+    <span class="hljs-comment"># [] =&gt; used to assign and retrieve key-value pairs from the asssociative array</span>
+
+<span class="hljs-built_in">declare</span> -A my_assoc_array
+my_assoc_array[<span class="hljs-string">&quot;name&quot;</span>]=<span class="hljs-string">&quot;John&quot;</span>
+my_assoc_array[<span class="hljs-string">&quot;age&quot;</span>]=25
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">${my_assoc_array[&quot;name&quot;]}</span>&quot;</span>
+</code></pre>
+<h2>Functions</h2>
+<pre><code class="language-bash"><span class="hljs-comment"># ---------- FUNCTION ----------</span>
+    <span class="hljs-comment"># bash functions don&#x27;t list function parameters within the bracket after the function name, but within the function logic</span>
+    <span class="hljs-comment"># $ =&gt; accompanied with a number starting from 1 to indicate the function parameters</span>
+    <span class="hljs-comment"># function =&gt; declares and creates a new function of a specified name</span>
+
+<span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">test_function</span></span>() 
+{
+    <span class="hljs-built_in">echo</span> -n <span class="hljs-string">&quot;this is a new function&quot;</span>
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">test_function</span></span>()
+{
+    <span class="hljs-built_in">echo</span> -n <span class="hljs-string">&quot;hello <span class="hljs-variable">$1</span>, <span class="hljs-variable">$2</span>, <span class="hljs-variable">$3</span>, <span class="hljs-variable">$4</span>&quot;</span> <span class="hljs-comment"># function takes in 4 arguments and prints them sequentially to the stdout</span>
+}
+</code></pre>
+<h2>Bash tooling</h2>
+<pre><code class="language-bash"><span class="hljs-comment"># ---------- TOOLING ----------</span>
+    <span class="hljs-comment"># cat =&gt; returns all text within a specified file</span>
+        <span class="hljs-comment"># &gt; =&gt; writes the specified output to a given file</span>
+        <span class="hljs-comment"># &gt;&gt; =&gt; appends the specified output to a given file</span>
+    <span class="hljs-comment"># mkdir =&gt; creates a folder within the local directory</span>
+        <span class="hljs-comment"># -p =&gt; prevents an error if the Bash executable runs more than once</span>
+        <span class="hljs-comment"># -d =&gt; checks for the existence of a file directory at the specified name</span>
+    <span class="hljs-comment"># touch =&gt; creates a file within the local directory</span>
+        <span class="hljs-comment"># -f =&gt; checks for the existence of a file at the specified name</span>
+    <span class="hljs-comment"># curl =&gt; client url that makes a call request from a local client device to the server</span>
+        <span class="hljs-comment"># -O =&gt; specifies the downloaded file should inherit the name assigned to it by the remote server</span>
+        <span class="hljs-comment"># -o =&gt; specifies the downloaded file should be saved under a specified name as provided by the programmer</span>
+        <span class="hljs-comment"># -I =&gt; retrieves downloaded file metadata</span>
+    <span class="hljs-comment"># grep =&gt; powerful search construct within files that supports regular expressions in the syntax grep {SEARCH PARAMETERS} {FILENAME}</span>
+        <span class="hljs-comment"># -i =&gt; removes case sensitivity</span>
+        <span class="hljs-comment"># -n =&gt; adds line numbers to each returned matched pattern</span>
+        <span class="hljs-comment"># -c =&gt; return matched pattern and the number of matches found</span>
+        <span class="hljs-comment"># -v =&gt; return number of lines within the specified file that don&#x27;t have the pattern</span>
+
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;directory name: &quot;</span>
+<span class="hljs-built_in">read</span> directory_name
+<span class="hljs-keyword">if</span> [ -d <span class="hljs-string">&quot;<span class="hljs-variable">$directory_name</span>&quot;</span> ]
+<span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">mkdir</span> -p <span class="hljs-variable">$directory_name</span>
+<span class="hljs-keyword">fi</span>
+
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;file name: &quot;</span>
+<span class="hljs-built_in">read</span> file_name
+<span class="hljs-keyword">if</span> [ -f <span class="hljs-string">&quot;<span class="hljs-variable">$file_name</span>&quot;</span> ]
+<span class="hljs-keyword">then</span> 
+    <span class="hljs-built_in">touch</span> <span class="hljs-variable">$file_name</span>
+<span class="hljs-keyword">fi</span>
+
+url = <span class="hljs-string">&quot;https://proof.ovh.net/files/1Mb.dat&quot;</span>
+curl <span class="hljs-variable">${url}</span>
+
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;filename: &quot;</span>
+<span class="hljs-built_in">read</span> file_name
+<span class="hljs-keyword">if</span> [ -f <span class="hljs-string">&quot;<span class="hljs-variable">$file_name</span>&quot;</span> ]
+<span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;search parameters: &quot;</span>
+    <span class="hljs-built_in">read</span> search_param
+    grep -i -n -c -v <span class="hljs-variable">$search_param</span> <span class="hljs-variable">$file_name</span>
+<span class="hljs-keyword">else</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$file_name</span> does not exist&quot;</span>
+<span class="hljs-keyword">fi</span>
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li>select in</li>
+<li>^</li>
+<li>^^</li>
+<li>export</li>
+<li>IFS</li>
+<li>user input</li>
+<li>file IO</li>
+<li>heredoc delimiter</li>
+<li>string concatenation</li>
+<li>sed</li>
+<li><a href="https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html">bash documentation</a></li>
+<li><a href="https://learnxinyminutes.com/docs/bash/">learn bash in y minutes</a></li>
+</ul>

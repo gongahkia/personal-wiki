@@ -1,0 +1,65 @@
+<h1><code>PostgreSQL</code></h1>
+<p>Open-source SQL relational database.</p>
+<h2>Data types</h2>
+<pre><code class="language-sql"><span class="hljs-comment">-- ---------- DATA TYPES ----------</span>
+    <span class="hljs-comment">-- INT =&gt; integers</span>
+    <span class="hljs-comment">-- FLOAT =&gt; floating points</span>
+    <span class="hljs-comment">-- DECIMAL =&gt; decimal numbers with greater precision than floating points</span>
+    <span class="hljs-comment">-- CHAR =&gt; fixed-length strings</span>
+    <span class="hljs-comment">-- VARCHAR =&gt; variable-length strings</span>
+    <span class="hljs-comment">-- TEXT =&gt; strings of large length</span>
+    <span class="hljs-comment">-- BOOLEAN =&gt; true/false values</span>
+    <span class="hljs-comment">-- DATE =&gt; provides the date</span>
+    <span class="hljs-comment">-- TIME =&gt; provides the time</span>
+    <span class="hljs-comment">-- TIMESTAMP =&gt; combination of the date and time</span>
+    <span class="hljs-comment">-- ARRAY =&gt; ordered collection of elements of the same datatype</span>
+    <span class="hljs-comment">-- JSON =&gt; internal collection equivalent to the JSON datatype, allowing for manipulation of flexible data stuctures</span>
+    <span class="hljs-comment">-- POINT, LINE, POLYGON =&gt; used to represent geometric objects</span>
+</code></pre>
+<h2>Quickstart</h2>
+<pre><code class="language-sql"><span class="hljs-comment">-- ---------- QUICKSTART ----------</span>
+    <span class="hljs-comment">-- PostgreSQL uses SQL as its query language, below is a quick rundown of general SQL syntax</span>
+    <span class="hljs-comment">-- SQL is a semicolon language</span>
+
+<span class="hljs-comment">-- ----- GENERAL -----</span>
+    <span class="hljs-comment">-- CREATE DATABASE &lt;databaseName&gt; =&gt; creates a database with the specified name</span>
+    <span class="hljs-comment">-- USE &lt;database&gt; =&gt; specifies the named database for use presently in the SQL queries</span>
+    <span class="hljs-comment">-- CREATE TABLE &lt;tableName&gt; (&lt;columnName&gt; &lt;datatype&gt; &lt;augmenter(s)&gt;) =&gt; creates a table under the specified name and assigns it the specified values with as many columns as the table has</span>
+    <span class="hljs-comment">-- INSERT INTO &lt;tableName&gt; &lt;columnTypeSignature&gt; VALUES &lt;valuesToBeInserted&gt; =&gt; inserts a record (row) of the specified values to the given table, SQL is strict about the type signature of the table and values must be appropriate as to the type signature of the columns, otherwise an error is thrown</span>
+    <span class="hljs-comment">-- UPDATE &lt;tableName&gt; SET &lt;changedColumnValue&gt; WHERE &lt;predicate(s)&gt; =&gt; updates the specified record which matches the predicate check with the new value in the given table</span>
+    <span class="hljs-comment">-- DELETE FROM &lt;tableName&gt; WHERE &lt;predicate(s)&gt; =&gt; deletes records from the specified table when the record matches the predictae check</span>
+    <span class="hljs-comment">-- SELECT &lt;sqlQuery&gt; FROM &lt;tableName(s)&gt; WHERE &lt;predicates(s)&gt; =&gt; the foundation of any sql query, used to display the queried tables, records or results after augmenting the query with the specified predicates</span>
+
+<span class="hljs-keyword">CREATE</span> DATABASE mydatabase;
+USE mydatabase;
+
+<span class="hljs-keyword">CREATE TABLE</span> users (
+    id SERIAL <span class="hljs-keyword">PRIMARY KEY</span>,  <span class="hljs-comment">-- Auto-incrementing integer for unique ID</span>
+    username <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">50</span>) <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">UNIQUE</span>, <span class="hljs-comment">-- Username, max 50 characters, unique</span>
+    email <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">100</span>) <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">UNIQUE</span> <span class="hljs-comment">-- Email address, max 100 characters, unique</span>
+);
+
+<span class="hljs-keyword">INSERT INTO</span> users (name, age, email) <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">&#x27;Alice&#x27;</span>, <span class="hljs-number">30</span>, <span class="hljs-string">&#x27;alice@example.com&#x27;</span>);
+<span class="hljs-keyword">INSERT INTO</span> users (name, age, email) <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">&#x27;Bob&#x27;</span>, <span class="hljs-number">25</span>, <span class="hljs-string">&#x27;bob@example.com&#x27;</span>);
+
+<span class="hljs-keyword">UPDATE</span> users <span class="hljs-keyword">SET</span> age <span class="hljs-operator">=</span> <span class="hljs-number">31</span> <span class="hljs-keyword">WHERE</span> name <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;Alice&#x27;</span>;
+
+<span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> users <span class="hljs-keyword">WHERE</span> name <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;Bob&#x27;</span>;
+
+<span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> users;
+<span class="hljs-keyword">SELECT</span> name, age <span class="hljs-keyword">FROM</span> users <span class="hljs-keyword">WHERE</span> age <span class="hljs-operator">&gt;</span> <span class="hljs-number">25</span>;
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li><a href="https://www.w3schools.com/sql/sql_aggregate_functions.asp">sql aggregate functions</a></li>
+<li><a href="https://www.w3schools.com/sql/sql_join.asp">sql joins</a></li>
+<li><a href="https://www.geeksforgeeks.org/sql-subquery/">sql subqueries</a></li>
+<li><a href="https://www.geeksforgeeks.org/sql-trigger-student-database/">sql triggers</a></li>
+<li><a href="https://www.w3schools.com/sql/sql_stored_procedures.asp">sql stored procedures</a></li>
+<li><a href="https://www.geeksforgeeks.org/sql-indexes/">sql indexes</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/sql-commit-sql-rollback">sql rollback</a></li>
+<li><a href="https://www.w3schools.com/sql/sql_view.asp">sql views</a></li>
+<li><a href="https://www.postgresql.org/docs/">postgresql documentation</a></li>
+<li><a href="https://www.postgresqltutorial.com/postgresql-python/">python and postgresql</a></li>
+<li><a href="https://youtu.be/4QN1BzxF8wM?si=usqdY2lKvbkV5kK2">8 postgres orms</a></li>
+</ul>

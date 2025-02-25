@@ -1,0 +1,1946 @@
+<h1><code>Data Structures and Algorithms</code></h1>
+<p>Code snippets in Go and Python.</p>
+<h2>Definitions</h2>
+<ul>
+<li>Data structure: ordered collection of data provided by the language or defined and enforced by the programmer</li>
+<li>Algorithm: sequence of steps to solve a problem</li>
+<li>Big <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi></mrow><annotation encoding="application/x-tex">O</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span></span></span></span> notation: describes performance of an algorithm as size of the dataset increases
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span></span></span></span>: variable representing size of dataset</li>
+</ul>
+</li>
+<li>Time complexity: time taken for an algorithm to complete execution</li>
+<li>Space complexity: memory taken for an algorithm to complete execution</li>
+</ul>
+<h2>Big O Notation</h2>
+<ol>
+<li>CONSTANT time
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathrm">1</span><span class="mclose">)</span></span></span></span></li>
+<li>number of steps for algorithm to complete execution is CONSTANT regardless of size of dataset</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-go"><span class="hljs-comment">// ----- Go implementation -----</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">addUp</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span></span> <span class="hljs-type">int</span>{ <span class="hljs-comment">// computation here has a time complexity of O(1)</span>
+    <span class="hljs-keyword">var</span> sum <span class="hljs-type">int</span>
+    sum = n * (n + <span class="hljs-number">1</span>)/<span class="hljs-number">2</span>
+    <span class="hljs-keyword">return</span> sum
+}
+</code></pre>
+<pre><code class="language-py"><span class="hljs-comment"># ----- Python implementation -----</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">add_up</span>(<span class="hljs-params">n:<span class="hljs-built_in">int</span></span>) -&gt; <span class="hljs-built_in">int</span>:
+    <span class="hljs-built_in">sum</span> = <span class="hljs-number">0</span>
+    <span class="hljs-built_in">sum</span> = n * (n+<span class="hljs-number">1</span>)/<span class="hljs-number">2</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">sum</span>
+</code></pre>
+<ol start="2">
+<li>LOGARITHMIC time
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>log</mi><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(\log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span></li>
+<li>number of steps for algorithm to complete execution is MARGINALLY LOWER as size of dataset increases</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-go"><span class="hljs-comment">// ----- Go implementation -----</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">binarySearch</span><span class="hljs-params">(arr []<span class="hljs-type">int</span>, target <span class="hljs-type">int</span>)</span></span> <span class="hljs-type">int</span> { <span class="hljs-comment">// computation here has a time complexity of O(log n)</span>
+    left, right := <span class="hljs-number">0</span>, <span class="hljs-built_in">len</span>(arr)<span class="hljs-number">-1</span>
+    <span class="hljs-keyword">for</span> left &lt;= right {
+        mid := left + (right-left)/<span class="hljs-number">2</span>
+        <span class="hljs-keyword">if</span> arr[mid] == target {
+            <span class="hljs-keyword">return</span> mid
+        }
+        <span class="hljs-keyword">if</span> arr[mid] &lt; target {
+            left = mid + <span class="hljs-number">1</span>
+        } <span class="hljs-keyword">else</span> {
+            right = mid - <span class="hljs-number">1</span>
+        }
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span> <span class="hljs-comment">// target not found</span>
+}
+</code></pre>
+<pre><code class="language-py"><span class="hljs-comment"># ----- Python implementation -----</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">binary_search</span>(<span class="hljs-params">arr: [<span class="hljs-built_in">int</span>], target:<span class="hljs-built_in">int</span></span>) -&gt; <span class="hljs-built_in">int</span>: <span class="hljs-comment"># note that the binary search here assumes a sorted integer array, which affords value comparison below</span>
+    left_ptr, right_ptr = <span class="hljs-number">0</span>, <span class="hljs-built_in">len</span>(arr) - <span class="hljs-number">1</span>
+    <span class="hljs-keyword">for</span> left_ptr &lt;= right_ptr: 
+        mid_ptr = (right_ptr - left_ptr)/<span class="hljs-number">2</span> + left_ptr
+        <span class="hljs-keyword">if</span> arr[mid_ptr] == target:
+            <span class="hljs-keyword">return</span> mid_ptr
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">if</span> arr[mid_ptr] &lt; target:
+                left_ptr = mid_ptr +<span class="hljs-number">1</span>
+            <span class="hljs-keyword">else</span>:
+                right_ptr = mid_ptr - <span class="hljs-number">1</span>
+    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>
+</code></pre>
+<ol start="3">
+<li>LINEAR time
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span></li>
+<li>number of steps for algorithm to complete execution INCREASES PROPORTIONALLY to size of dataset</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-go"><span class="hljs-comment">// ----- Go implementation -----</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">addUp</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span></span> <span class="hljs-type">int</span>{ <span class="hljs-comment">// computation here has a time complexity of O(n)</span>
+    <span class="hljs-keyword">var</span> sum <span class="hljs-type">int</span>
+    sum = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt;= n; i++ {
+        sum += i;
+    }
+    <span class="hljs-keyword">return</span> sum
+}
+</code></pre>
+<pre><code class="language-py"><span class="hljs-comment"># ----- Python implementation -----</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">add_up</span>(<span class="hljs-params">n:<span class="hljs-built_in">int</span></span>) -&gt; <span class="hljs-built_in">int</span>:
+    <span class="hljs-built_in">sum</span> = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n):
+        <span class="hljs-built_in">sum</span> += i
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">sum</span>
+</code></pre>
+<ol start="4">
+<li>QUASILINEAR time
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>log</mi><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n \log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span></li>
+<li>similar to LINEAR time, but slows down further when working with larger datasets</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-go"><span class="hljs-comment">// ----- Go implementation -----</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">mergeSort</span><span class="hljs-params">(arr []<span class="hljs-type">int</span>)</span></span> []<span class="hljs-type">int</span> { <span class="hljs-comment">// computation here has a time complexity of O(n log n)</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(arr) &lt;= <span class="hljs-number">1</span> {
+        <span class="hljs-keyword">return</span> arr
+    }
+    mid := <span class="hljs-built_in">len</span>(arr) / <span class="hljs-number">2</span>
+    left := mergeSort(arr[:mid])
+    right := mergeSort(arr[mid:])
+    <span class="hljs-keyword">return</span> merge(left, right)
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">merge</span><span class="hljs-params">(left, right []<span class="hljs-type">int</span>)</span></span> []<span class="hljs-type">int</span> {
+    result := <span class="hljs-built_in">make</span>([]<span class="hljs-type">int</span>, <span class="hljs-number">0</span>)
+    <span class="hljs-keyword">for</span> <span class="hljs-built_in">len</span>(left) &gt; <span class="hljs-number">0</span> || <span class="hljs-built_in">len</span>(right) &gt; <span class="hljs-number">0</span> {
+        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(left) == <span class="hljs-number">0</span> {
+            <span class="hljs-keyword">return</span> <span class="hljs-built_in">append</span>(result, right...)
+        }
+        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(right) == <span class="hljs-number">0</span> {
+            <span class="hljs-keyword">return</span> <span class="hljs-built_in">append</span>(result, left...)
+        }
+        <span class="hljs-keyword">if</span> left[<span class="hljs-number">0</span>] &lt;= right[<span class="hljs-number">0</span>] {
+            result = <span class="hljs-built_in">append</span>(result, left[<span class="hljs-number">0</span>])
+            left = left[<span class="hljs-number">1</span>:]
+        } <span class="hljs-keyword">else</span> {
+            result = <span class="hljs-built_in">append</span>(result, right[<span class="hljs-number">0</span>])
+            right = right[<span class="hljs-number">1</span>:]
+        }
+    }
+    <span class="hljs-keyword">return</span> result
+}
+</code></pre>
+<pre><code class="language-py"><span class="hljs-comment"># ----- Python implementation -----</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">merge_sort</span>(<span class="hljs-params">arr:[<span class="hljs-built_in">int</span>]</span>) -&gt; [<span class="hljs-built_in">int</span>]:
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(arr) &lt;= <span class="hljs-number">1</span>:
+        <span class="hljs-keyword">return</span> arr
+    <span class="hljs-keyword">else</span>:
+        mid_ptr = <span class="hljs-built_in">len</span>(arr) / <span class="hljs-number">2</span>
+        left = merge_sort(arr[:mid_ptr])
+        right = merge_sort(arr[mid_ptr:])
+        <span class="hljs-keyword">return</span> merge(left, right) <span class="hljs-comment"># called once</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">merge</span>(<span class="hljs-params">left:[<span class="hljs-built_in">int</span>], right:[<span class="hljs-built_in">int</span>]</span>) -&gt; [<span class="hljs-built_in">int</span>]: <span class="hljs-comment"># helper function called once</span>
+    result = [<span class="hljs-number">0</span>]
+    <span class="hljs-keyword">while</span> <span class="hljs-built_in">len</span>(left) &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> <span class="hljs-built_in">len</span>(right) &gt; <span class="hljs-number">0</span>:
+        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(left) == <span class="hljs-number">0</span>:
+            <span class="hljs-keyword">return</span> result.append(right)
+        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(right) == <span class="hljs-number">0</span>:
+            <span class="hljs-keyword">return</span> result.append(left)
+        <span class="hljs-keyword">if</span> left[<span class="hljs-number">0</span>] &lt;= right[<span class="hljs-number">0</span>]:
+            result.append(left[<span class="hljs-number">0</span>])
+        <span class="hljs-keyword">else</span>:
+            result.append(right[<span class="hljs-number">0</span>])
+            right = right[<span class="hljs-number">1</span>:]
+    <span class="hljs-keyword">return</span> result
+</code></pre>
+<ol start="5">
+<li>QUADRATIC time
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathit">n</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">)</span></span></span></span></li>
+<li>QUADRATIC increase in number of steps for algorithm to complete execution for a given increase in size of dataset</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-go"><span class="hljs-comment">// ----- Go implementation -----</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">bubbleSort</span><span class="hljs-params">(arr []<span class="hljs-type">int</span>)</span></span> { <span class="hljs-comment">// computation here has a time complexity of O(n^2)</span>
+    n := <span class="hljs-built_in">len</span>(arr)
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; n<span class="hljs-number">-1</span>; i++ {
+        <span class="hljs-keyword">for</span> j := <span class="hljs-number">0</span>; j &lt; n-i<span class="hljs-number">-1</span>; j++ {
+            <span class="hljs-keyword">if</span> arr[j] &gt; arr[j+<span class="hljs-number">1</span>] {
+                arr[j], arr[j+<span class="hljs-number">1</span>] = arr[j+<span class="hljs-number">1</span>], arr[j]
+            }
+        }
+    }
+}
+</code></pre>
+<pre><code class="language-py"><span class="hljs-comment"># ----- Python implementation -----</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">bubble_sort</span>(<span class="hljs-params">arr:[<span class="hljs-built_in">int</span>]</span>):
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(arr)):
+        <span class="hljs-keyword">for</span> q <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(arr)-i):
+            <span class="hljs-keyword">if</span> arr[q] &gt; arr[q+<span class="hljs-number">1</span>]:
+                arr[q], arr[q+<span class="hljs-number">1</span>] = arr[q+<span class="hljs-number">1</span>], arr[q] <span class="hljs-comment"># just swap the values</span>
+</code></pre>
+<ol start="6">
+<li>FACTORIAL time
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>!</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n!)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">!</span><span class="mclose">)</span></span></span></span></li>
+<li>extremely slow and rarely used</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-go"><span class="hljs-comment">// ----- Go implementation -----</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">factorial</span><span class="hljs-params">(n <span class="hljs-type">int</span>)</span></span> <span class="hljs-type">int</span> { <span class="hljs-comment">// computation here has a time complexity of O(n!)</span>
+    <span class="hljs-keyword">if</span> n == <span class="hljs-number">0</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>
+    }
+    <span class="hljs-keyword">return</span> n * factorial(n<span class="hljs-number">-1</span>)
+}
+</code></pre>
+<pre><code class="language-py"><span class="hljs-comment"># ----- Python implementation -----</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">factorial</span>(<span class="hljs-params">n:<span class="hljs-built_in">int</span></span>) -&gt; <span class="hljs-built_in">int</span>:
+    <span class="hljs-keyword">if</span> n == <span class="hljs-number">0</span>:
+        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">return</span> n * factorial(n-<span class="hljs-number">1</span>) <span class="hljs-comment"># recursive function call</span>
+</code></pre>
+<h3>Summary</h3>
+<p><img src="https://paper-attachments.dropbox.com/s_2D428973624E7FC84C7D69D11421DE762BEA6B6F3361231FCDCAE0425D14526F_1664885448372_Untitled.drawio+17.png" alt=""></p>
+<h2>Data Structures</h2>
+<ol>
+<li>Stack
+<ul>
+<li>Last-in First-out <em>(LIFO)</em> data structure</li>
+<li><code>push()</code>: appends an element to the TOP of the stack</li>
+<li><code>pop()</code>: removes an element from the TOP of the stack</li>
+<li>Used in
+<ul>
+<li>undo/redo features in text editors</li>
+<li>moving backward/forward in browser history</li>
+<li>backtracking algorithms <em>(mazes, file directories)</em></li>
+<li>function call stacks</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-go"><span class="hljs-comment">// ----- Go implementation -----</span>
+
+<span class="hljs-keyword">type</span> Stack <span class="hljs-keyword">struct</span> {
+    items []<span class="hljs-keyword">interface</span>{} <span class="hljs-comment">// interface is used here to allow the slice to hold elements of any datatype</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s *Stack)</span></span> Push(item <span class="hljs-keyword">interface</span>{}) {
+    s.items = <span class="hljs-built_in">append</span>(s.items, item)
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s *Stack)</span></span> Pop() <span class="hljs-keyword">interface</span>{} {
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(s.items) == <span class="hljs-number">0</span> { <span class="hljs-comment">// empty stack</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span> 
+    }
+    index := <span class="hljs-built_in">len</span>(s.items) - <span class="hljs-number">1</span>
+    item := s.items[index]
+    s.items = s.items[:index] 
+    <span class="hljs-keyword">return</span> item
+}
+</code></pre>
+<pre><code class="language-py"><span class="hljs-comment"># ----- Python implementation -----</span>
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Stack</span>:
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-variable language_">self</span>.items = []
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">push</span>(<span class="hljs-params">self, item</span>):
+        <span class="hljs-variable language_">self</span>.items.append(item)
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">pop</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> <span class="hljs-variable language_">self</span>.items: <span class="hljs-comment"># if empty stack</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.items.pop()
+</code></pre>
+<ol start="2">
+<li>Queue
+<ul>
+<li>First-in First-out <em>(FIFO)</em> data structure</li>
+<li><code>add()</code>: enqueues an element to the END of the queue</li>
+<li><code>remove()</code>: dequeues an element from the FRONT of the queue</li>
+<li>Used in
+<ul>
+<li>keyboard buffers</li>
+<li>printer queues</li>
+<li>priority queues</li>
+<li>linked lists</li>
+<li>breadth-first search algorithm</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-go"><span class="hljs-comment">// ----- Go implementation -----</span>
+
+<span class="hljs-keyword">type</span> Queue <span class="hljs-keyword">struct</span> {
+    items []<span class="hljs-keyword">interface</span>{} <span class="hljs-comment">// interface is used here to allow the slice to hold elements of any datatype</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(q *Queue)</span></span> Add(item <span class="hljs-keyword">interface</span>{}) {
+    q.items = <span class="hljs-built_in">append</span>(q.items, item)
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(q *Queue)</span></span> Remove() <span class="hljs-keyword">interface</span>{} {
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(q.items) == <span class="hljs-number">0</span> { <span class="hljs-comment">// empty queue</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>
+    }
+    item := q.items[<span class="hljs-number">0</span>]
+    q.items = q.items[<span class="hljs-number">1</span>:] 
+    <span class="hljs-keyword">return</span> item
+}
+</code></pre>
+<pre><code class="language-py"><span class="hljs-comment"># ----- Python implementation -----</span>
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Queue</span>:
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-variable language_">self</span>.items = []
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">self, item</span>):
+        <span class="hljs-variable language_">self</span>.items.append(item)
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">remove</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> <span class="hljs-variable language_">self</span>.items: <span class="hljs-comment"># if empty queue</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.items.pop(<span class="hljs-number">0</span>)
+</code></pre>
+<ol start="3">
+<li>Priority Queue
+<ul>
+<li>First-in First-out <em>(FIFO)</em> data structure</li>
+<li>SORTS elements by PRIORITY, then dequeues elements of HIGHEST PRIORITY before elements of LOWER PRIORITY</li>
+<li><code>add()</code>: enqueues an element to the END of the queue with a specified value and priority</li>
+<li><code>remove()</code>: dequeues element of HIGHEST priority</li>
+<li>Used in
+<ul>
+<li>sorting algorithms <em>(heap sort)</em></li>
+<li>graph algorithms <em>(dijkstra's algorithm, prim's algorithm)</em></li>
+<li>system-related functions <em>(load balancing and interrupt handling)</em></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-go"><span class="hljs-comment">// ----- Go implementation -----</span>
+
+<span class="hljs-keyword">type</span> Item <span class="hljs-keyword">struct</span> { <span class="hljs-comment">// item being EACH ELEMENT of the priority queue</span>
+    value <span class="hljs-keyword">interface</span>{} <span class="hljs-comment">// interface is used here to allow the value to hold elements of any datatype</span>
+    priority <span class="hljs-type">int</span>
+}
+
+<span class="hljs-keyword">type</span> PriorityQueue []*Item <span class="hljs-comment">// priority queue is implemented via a sorted slice of Item elements</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(pq *PriorityQueue)</span></span> Add(value <span class="hljs-keyword">interface</span>{}, priority <span class="hljs-type">int</span>) {
+    item := &amp;Item{
+        value: value,
+        priority: priority,
+    }
+    *pq = <span class="hljs-built_in">append</span>(*pq, item)
+    sort.Slice(*pq, <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(i <span class="hljs-type">int</span>, j <span class="hljs-type">int</span>)</span></span> <span class="hljs-type">bool</span> { <span class="hljs-comment">// sort the priority queue based on priority</span>
+        <span class="hljs-keyword">return</span> (*pq)[i].priority &lt; (*pq)[j].priority
+    })
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(pq *PriorityQueue)</span></span> Remove() <span class="hljs-keyword">interface</span>{} {
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(*pq) == <span class="hljs-number">0</span> { <span class="hljs-comment">// empty priority queue</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>
+    }
+    item := (*pq)[<span class="hljs-number">0</span>]
+    *pq = (*pq)[<span class="hljs-number">1</span>:] 
+    <span class="hljs-keyword">return</span> item.value
+}
+</code></pre>
+<pre><code class="language-py"><span class="hljs-comment"># ----- Python implementation -----</span>
+
+<span class="hljs-keyword">import</span> heapq
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Item</span>:
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, value, priority</span>):
+        <span class="hljs-variable language_">self</span>.value = value
+        <span class="hljs-variable language_">self</span>.priority = priority
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__lt__</span>(<span class="hljs-params">self, other</span>):
+        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.priority &lt; other.priority
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">PriorityQueue</span>:
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-variable language_">self</span>.items = []
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">self, value, priority</span>):
+        item = Item(value, priority)
+        heapq.heappush(<span class="hljs-variable language_">self</span>.items, item)
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">remove</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> <span class="hljs-variable language_">self</span>.items: <span class="hljs-comment"># if empty priority queue</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+        item = heapq.heappop(<span class="hljs-variable language_">self</span>.items)
+        <span class="hljs-keyword">return</span> item.value
+</code></pre>
+<ol start="4">
+<li>Linked List
+<ul>
+<li>Collection of nodes that are stored in non-consecutive memory locations <em>(each node comprising a VALUE + pointer(s) to OTHER NODE'S memory address(es))</em></li>
+<li><strong>SINGLY LINKED LIST</strong>
+<ul>
+<li>nodes comprise...
+<ol>
+<li>VALUE</li>
+<li>NEXT node's memory address</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><strong>DOUBLY LINKED LIST</strong>
+<ul>
+<li>nodes comprise...
+<ol>
+<li>VALUE</li>
+<li>PREVIOUS node's memory address</li>
+<li>NEXT node's memory address</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Used because
+<ul>
+<li>advantageous to arraylists
+<ul>
+<li>faster insertion and deletion of nodes with <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">0(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">0</span><span class="mopen">(</span><span class="mord mathrm">1</span><span class="mclose">)</span></span></span></span> time complexity</li>
+<li>low memory waste</li>
+</ul>
+</li>
+<li>dynamically allocates memory as required</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-go"><span class="hljs-comment">// ----- Go implementation -----</span>
+
+<span class="hljs-keyword">type</span> Node <span class="hljs-keyword">struct</span> { <span class="hljs-comment">// type definition for an element in a singly linked list</span>
+    value <span class="hljs-keyword">interface</span>{} <span class="hljs-comment">// interface is used here to allow the value to hold elements of any datatype</span>
+    next *Node <span class="hljs-comment">// pointer to the next node</span>
+}
+
+<span class="hljs-keyword">type</span> LinkedList <span class="hljs-keyword">struct</span> { <span class="hljs-comment">// type definition for a singly linked list</span>
+    head *Node <span class="hljs-comment">// define the head node</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(list *LinkedList)</span></span> <span class="hljs-built_in">append</span>(value <span class="hljs-keyword">interface</span>{}) { <span class="hljs-comment">// appends a new node to the END of the linked list</span>
+
+    newNode := &amp;Node{ <span class="hljs-comment">// creation of current node</span>
+        value: value, 
+        next: <span class="hljs-literal">nil</span>,
+    }
+
+    <span class="hljs-keyword">if</span> list.head == <span class="hljs-literal">nil</span> { <span class="hljs-comment">// if linked list empty, make current node the new head node</span>
+        list.head = newNode
+        <span class="hljs-keyword">return</span>
+    }
+
+    lastNode := list.head <span class="hljs-comment">// traverse through the entire linked list until we reach the actual last node in the linkedlist where the next node is nil</span>
+    <span class="hljs-keyword">for</span> lastNode.next != <span class="hljs-literal">nil</span> {
+        lastNode = lastNode.next 
+    }
+    lastNode.next = newNode <span class="hljs-comment">// make the current node the new last node</span>
+
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(list *LinkedList)</span></span> add(value <span class="hljs-keyword">interface</span>{}, position <span class="hljs-type">int</span>) <span class="hljs-type">error</span> { <span class="hljs-comment">// adds a new node to a specified position in the linked list</span>
+
+    <span class="hljs-keyword">if</span> position &lt; <span class="hljs-number">0</span> { <span class="hljs-comment">// if negative index, invalid index</span>
+        <span class="hljs-keyword">return</span> fmt.Errorf(<span class="hljs-string">&quot;invalid position&quot;</span>) <span class="hljs-comment">// error</span>
+    }
+
+    newNode := &amp;Node{ <span class="hljs-comment">// creation of current node</span>
+        value: value, 
+        next: <span class="hljs-literal">nil</span>,
+    }
+
+    <span class="hljs-keyword">if</span> position == <span class="hljs-number">0</span> { <span class="hljs-comment">// if insert current node at start of linked list, then just point current node&#x27;s next at the old head</span>
+        newNode.next = list.head
+        list.head = newNode
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span> 
+    }
+
+    prevNode := list.head <span class="hljs-comment">// traverse through the entire linked list until we reach the node at the desired position</span>
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; position<span class="hljs-number">-1</span> &amp;&amp; prevNode != <span class="hljs-literal">nil</span>; i++ { 
+        prevNode = prevNode.next
+    }
+
+    <span class="hljs-keyword">if</span> prevNode == <span class="hljs-literal">nil</span> { <span class="hljs-comment">// if insert current node at index outside length of the list, invalid index</span>
+        <span class="hljs-keyword">return</span> fmt.Errorf(<span class="hljs-string">&quot;position out of range&quot;</span>) <span class="hljs-comment">// error</span>
+    } <span class="hljs-keyword">else</span> { <span class="hljs-comment">// assuming no error</span>
+        newNode.next = prevNode.next <span class="hljs-comment">// assigns current node pointer to the previousnode&#x27;s pointer to insert the current node in between the old previous node and its old next node</span>
+        prevNode.next = newNode <span class="hljs-comment">// assigns pointer from previousnode to point to current node</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>
+    }
+
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(list *LinkedList)</span></span> remove(value <span class="hljs-keyword">interface</span>{}) <span class="hljs-type">error</span> { <span class="hljs-comment">// remove a node from the linked list by value</span>
+
+    <span class="hljs-keyword">if</span> list.head == <span class="hljs-literal">nil</span> { <span class="hljs-comment">// empty list</span>
+        <span class="hljs-keyword">return</span> fmt.Errorf(<span class="hljs-string">&quot;empty list&quot;</span>) <span class="hljs-comment">// error</span>
+    }
+
+    <span class="hljs-keyword">if</span> list.head.value == value { <span class="hljs-comment">// check if current list head is node with desired value</span>
+        list.head = list.head.next
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>
+    }
+
+    prevNode := list.head <span class="hljs-comment">// traverse through the entire linked list until we reach the node with the desired value</span>
+    <span class="hljs-keyword">for</span> prevNode.next != <span class="hljs-literal">nil</span> &amp;&amp; prevNode.next.value != value {
+        prevNode = prevNode.next
+    }
+
+    <span class="hljs-keyword">if</span> prevNode.next == <span class="hljs-literal">nil</span> { <span class="hljs-comment">// if reach the end of the linked list and the node with desired value not found</span>
+        <span class="hljs-keyword">return</span> fmt.Errorf(<span class="hljs-string">&quot;element not found&quot;</span>) <span class="hljs-comment">// error</span>
+    } <span class="hljs-keyword">else</span> { <span class="hljs-comment">// node with desired value is found and it is the next node</span>
+        prevNode.next = prevNode.next.next <span class="hljs-comment">// assigns pointer from current node to one node after the next node, to effectively &quot;remove&quot; it from the linked list</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>
+    }
+
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(list *LinkedList)</span></span> display() { <span class="hljs-comment">// display all linkedlist nodes</span>
+    current := list.head <span class="hljs-comment">// assigns current node to starting node</span>
+    <span class="hljs-keyword">for</span> current != <span class="hljs-literal">nil</span> { <span class="hljs-comment">// traverses through the entire linked list from start to finish</span>
+        fmt.Printf(<span class="hljs-string">&quot;%v -&gt; &quot;</span>, current.value)
+        current = current.next
+    }
+    fmt.Println(<span class="hljs-string">&quot;nil&quot;</span>)
+}
+</code></pre>
+<pre><code class="language-py"><span class="hljs-comment"># ----- Python implementation -----</span>
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Node</span>:
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, value</span>):
+        <span class="hljs-variable language_">self</span>.value = value  <span class="hljs-comment"># store value of the node</span>
+        <span class="hljs-variable language_">self</span>.<span class="hljs-built_in">next</span> = <span class="hljs-literal">None</span>  <span class="hljs-comment"># pointer to the next node</span>
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">LinkedList</span>:
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-variable language_">self</span>.head = <span class="hljs-literal">None</span>  <span class="hljs-comment"># initialize the head of the list as None</span>
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">append</span>(<span class="hljs-params">self, value</span>):
+        new_node = Node(value)  <span class="hljs-comment"># create a new node</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-variable language_">self</span>.head <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:  <span class="hljs-comment"># if the list is empty, set the new node as the head</span>
+            <span class="hljs-variable language_">self</span>.head = new_node
+            <span class="hljs-keyword">return</span>
+        last_node = <span class="hljs-variable language_">self</span>.head
+        <span class="hljs-keyword">while</span> last_node.<span class="hljs-built_in">next</span>:  <span class="hljs-comment"># traverse to the last node</span>
+            last_node = last_node.<span class="hljs-built_in">next</span>
+        last_node.<span class="hljs-built_in">next</span> = new_node  <span class="hljs-comment"># set the new node as the next of the last node</span>
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">self, value, position</span>):
+        <span class="hljs-keyword">if</span> position &lt; <span class="hljs-number">0</span>:  <span class="hljs-comment"># negative index is invalid</span>
+            <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">&quot;Invalid position&quot;</span>)
+        
+        new_node = Node(value)  <span class="hljs-comment"># create a new node</span>
+        <span class="hljs-keyword">if</span> position == <span class="hljs-number">0</span>:  <span class="hljs-comment"># if inserting at the head of the list</span>
+            new_node.<span class="hljs-built_in">next</span> = <span class="hljs-variable language_">self</span>.head
+            <span class="hljs-variable language_">self</span>.head = new_node
+            <span class="hljs-keyword">return</span>
+        
+        prev_node = <span class="hljs-variable language_">self</span>.head
+        <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(position - <span class="hljs-number">1</span>):
+            <span class="hljs-keyword">if</span> prev_node <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+                <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">&quot;Position out of range&quot;</span>)  <span class="hljs-comment"># index is outside the length of the list</span>
+            prev_node = prev_node.<span class="hljs-built_in">next</span>
+        
+        <span class="hljs-keyword">if</span> prev_node <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+            <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">&quot;Position out of range&quot;</span>)
+        
+        new_node.<span class="hljs-built_in">next</span> = prev_node.<span class="hljs-built_in">next</span>  <span class="hljs-comment"># link the new node to the node after the previous node</span>
+        prev_node.<span class="hljs-built_in">next</span> = new_node  <span class="hljs-comment"># link the previous node to the new node</span>
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">remove</span>(<span class="hljs-params">self, value</span>):
+        <span class="hljs-keyword">if</span> <span class="hljs-variable language_">self</span>.head <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:  <span class="hljs-comment"># if the list is empty</span>
+            <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">&quot;Empty list&quot;</span>)
+        
+        <span class="hljs-keyword">if</span> <span class="hljs-variable language_">self</span>.head.value == value:  <span class="hljs-comment"># if the head is the node to remove</span>
+            <span class="hljs-variable language_">self</span>.head = <span class="hljs-variable language_">self</span>.head.<span class="hljs-built_in">next</span>
+            <span class="hljs-keyword">return</span>
+        
+        prev_node = <span class="hljs-variable language_">self</span>.head
+        <span class="hljs-keyword">while</span> prev_node.<span class="hljs-built_in">next</span> <span class="hljs-keyword">and</span> prev_node.<span class="hljs-built_in">next</span>.value != value:  <span class="hljs-comment"># traverse to the node before the one to remove</span>
+            prev_node = prev_node.<span class="hljs-built_in">next</span>
+        
+        <span class="hljs-keyword">if</span> prev_node.<span class="hljs-built_in">next</span> <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:  <span class="hljs-comment"># node to remove was not found</span>
+            <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">&quot;Element not found&quot;</span>)
+        
+        prev_node.<span class="hljs-built_in">next</span> = prev_node.<span class="hljs-built_in">next</span>.<span class="hljs-built_in">next</span>  <span class="hljs-comment"># remove the node by bypassing it</span>
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">display</span>(<span class="hljs-params">self</span>):
+        current = <span class="hljs-variable language_">self</span>.head  <span class="hljs-comment"># start from the head node</span>
+        <span class="hljs-keyword">while</span> current:  <span class="hljs-comment"># traverse through the entire linked list</span>
+            <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">{current.value}</span> -&gt; &quot;</span>, end=<span class="hljs-string">&quot;&quot;</span>)
+            current = current.<span class="hljs-built_in">next</span>
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;None&quot;</span>)  <span class="hljs-comment"># end the display with &#x27;None&#x27;</span>
+</code></pre>
+<ol start="5">
+<li>Hash Table
+<ul>
+<li>Collection of unique entries that enables fast insertion, lookup and deletion of entries by leveraging on hashing and buckets</li>
+<li>Entry: a key-value pair</li>
+<li>Hashing: computing an integer based on a key <em>(formulas vary depending on the key's datatype)</em> to determine an entry's index</li>
+<li>Collision: when hashing a key returns the SAME index for more than one key</li>
+<li>Bucket: indexed storage location for one or more entries that functions like a LINKED LIST, allowing multiple entries to be stored in cases of collision</li>
+<li>Used because
+<ul>
+<li>best case <strong>CONSTANT time complexity</strong> of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathrm">1</span><span class="mclose">)</span></span></span></span></li>
+<li>worst case <strong>LINEAR time complexity</strong> of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>
+<ul>
+<li>less efficient for smaller datasets</li>
+<li>extremely efficient for larger datasets</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-go"><span class="hljs-comment">// ----- Go implementation -----</span>
+
+<span class="hljs-keyword">type</span> Node <span class="hljs-keyword">struct</span> { <span class="hljs-comment">// type definition for a node in a hashtable</span>
+    key   <span class="hljs-type">string</span>
+    value <span class="hljs-type">string</span>
+    next  *Node
+}
+
+<span class="hljs-keyword">type</span> HashTable <span class="hljs-keyword">struct</span> { <span class="hljs-comment">// type definition for the actual hash table struct</span>
+    size  <span class="hljs-type">int</span>
+    table []*Node
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">NewHashTable</span><span class="hljs-params">(size <span class="hljs-type">int</span>)</span></span> *HashTable { <span class="hljs-comment">// initialize a hash table of a specified size</span>
+    <span class="hljs-keyword">return</span> &amp;HashTable{
+        size:  size,
+        table: <span class="hljs-built_in">make</span>([]*Node, size),
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(ht *HashTable)</span></span> hash(key <span class="hljs-type">string</span>) <span class="hljs-type">int</span> { <span class="hljs-comment">// generates an index from a key</span>
+    sum := <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> _, char := <span class="hljs-keyword">range</span> key {
+        sum += <span class="hljs-type">int</span>(char)
+    }
+    <span class="hljs-keyword">return</span> sum % ht.size
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(ht *HashTable)</span></span> Insert(key, value <span class="hljs-type">string</span>) { <span class="hljs-comment">// insert a new key-value pair into the hash table</span>
+    index := ht.hash(key)
+    newNode := &amp;Node{
+        key:   key,
+        value: value,
+    }
+    <span class="hljs-keyword">if</span> ht.table[index] == <span class="hljs-literal">nil</span> { <span class="hljs-comment">// handle collisions within the same bucket by implementing a linked list</span>
+        ht.table[index] = newNode
+    } <span class="hljs-keyword">else</span> {
+        current := ht.table[index]
+        <span class="hljs-keyword">for</span> current.next != <span class="hljs-literal">nil</span> {
+            current = current.next
+        }
+        current.next = newNode
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(ht *HashTable)</span></span> Get(key <span class="hljs-type">string</span>) (<span class="hljs-type">string</span>, <span class="hljs-type">bool</span>) { <span class="hljs-comment">// retrieve a value based on its key within the hash table</span>
+    index := ht.hash(key)
+    current := ht.table[index]
+    <span class="hljs-keyword">for</span> current != <span class="hljs-literal">nil</span> {
+        <span class="hljs-keyword">if</span> current.key == key {
+            <span class="hljs-keyword">return</span> current.value, <span class="hljs-literal">true</span>
+        }
+        current = current.next
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span>, <span class="hljs-literal">false</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(ht *HashTable)</span></span> Delete(key <span class="hljs-type">string</span>) { <span class="hljs-comment">// delete a key-value pair from the hash table</span>
+    index := ht.hash(key)
+    <span class="hljs-keyword">if</span> ht.table[index] == <span class="hljs-literal">nil</span> {
+        <span class="hljs-keyword">return</span>
+    }
+    <span class="hljs-keyword">if</span> ht.table[index].key == key {
+        ht.table[index] = ht.table[index].next
+        <span class="hljs-keyword">return</span>
+    }
+    prev := ht.table[index]
+    current := prev.next
+    <span class="hljs-keyword">for</span> current != <span class="hljs-literal">nil</span> {
+        <span class="hljs-keyword">if</span> current.key == key {
+            prev.next = current.next
+            <span class="hljs-keyword">return</span>
+        }
+        prev = current
+        current = current.next
+    }
+}
+</code></pre>
+<pre><code class="language-py"><span class="hljs-comment"># ----- Python implementation -----</span>
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Node</span>:
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, key, value</span>):
+        <span class="hljs-variable language_">self</span>.key = key
+        <span class="hljs-variable language_">self</span>.value = value
+        <span class="hljs-variable language_">self</span>.<span class="hljs-built_in">next</span> = <span class="hljs-literal">None</span>
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">HashTable</span>:
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, size</span>):
+        <span class="hljs-variable language_">self</span>.size = size
+        <span class="hljs-variable language_">self</span>.table = [<span class="hljs-literal">None</span>] * size
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">hash</span>(<span class="hljs-params">self, key</span>):
+        <span class="hljs-comment"># Simple hash function: sum the ASCII values of all characters in the key and modulo by size</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">sum</span>(<span class="hljs-built_in">ord</span>(char) <span class="hljs-keyword">for</span> char <span class="hljs-keyword">in</span> key) % <span class="hljs-variable language_">self</span>.size
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">insert</span>(<span class="hljs-params">self, key, value</span>):
+        index = <span class="hljs-variable language_">self</span>.<span class="hljs-built_in">hash</span>(key)
+        new_node = Node(key, value)
+        <span class="hljs-keyword">if</span> <span class="hljs-variable language_">self</span>.table[index] <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+            <span class="hljs-comment"># No collision, insert directly</span>
+            <span class="hljs-variable language_">self</span>.table[index] = new_node
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-comment"># Collision handling: chain nodes in a linked list</span>
+            current = <span class="hljs-variable language_">self</span>.table[index]
+            <span class="hljs-keyword">while</span> current.<span class="hljs-built_in">next</span> <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>:
+                current = current.<span class="hljs-built_in">next</span>
+            current.<span class="hljs-built_in">next</span> = new_node
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">get</span>(<span class="hljs-params">self, key</span>):
+        index = <span class="hljs-variable language_">self</span>.<span class="hljs-built_in">hash</span>(key)
+        current = <span class="hljs-variable language_">self</span>.table[index]
+        <span class="hljs-keyword">while</span> current <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>:
+            <span class="hljs-keyword">if</span> current.key == key:
+                <span class="hljs-keyword">return</span> current.value, <span class="hljs-literal">True</span>
+            current = current.<span class="hljs-built_in">next</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span>, <span class="hljs-literal">False</span>
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">delete</span>(<span class="hljs-params">self, key</span>):
+        index = <span class="hljs-variable language_">self</span>.<span class="hljs-built_in">hash</span>(key)
+        current = <span class="hljs-variable language_">self</span>.table[index]
+        <span class="hljs-keyword">if</span> current <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+            <span class="hljs-keyword">return</span>
+        <span class="hljs-keyword">if</span> current.key == key:
+            <span class="hljs-comment"># The node to delete is the first node in the chain</span>
+            <span class="hljs-variable language_">self</span>.table[index] = current.<span class="hljs-built_in">next</span>
+            <span class="hljs-keyword">return</span>
+        prev = current
+        current = current.<span class="hljs-built_in">next</span>
+        <span class="hljs-keyword">while</span> current <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>:
+            <span class="hljs-keyword">if</span> current.key == key:
+                <span class="hljs-comment"># Unlink the node from the chain</span>
+                prev.<span class="hljs-built_in">next</span> = current.<span class="hljs-built_in">next</span>
+                <span class="hljs-keyword">return</span>
+            prev = current
+            current = current.<span class="hljs-built_in">next</span>
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">display</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-variable language_">self</span>.size):
+            <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Index <span class="hljs-subst">{i}</span>:&quot;</span>, end=<span class="hljs-string">&quot;&quot;</span>)
+            current = <span class="hljs-variable language_">self</span>.table[i]
+            <span class="hljs-keyword">while</span> current:
+                <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot; -&gt; (<span class="hljs-subst">{current.key}</span>: <span class="hljs-subst">{current.value}</span>)&quot;</span>, end=<span class="hljs-string">&quot;&quot;</span>)
+                current = current.<span class="hljs-built_in">next</span>
+            <span class="hljs-built_in">print</span>()
+</code></pre>
+<ol start="6">
+<li>
+<p>Graph</p>
+<ul>
+<li>Non-linear aggregation of nodes and edges
+<ul>
+<li>node: vertex that stores data</li>
+<li>edge: connection between two nodes</li>
+<li>adjacency: relationship between two nodes when they are connected by an edge</li>
+</ul>
+</li>
+<li><strong>UNDIRECTED GRAPH</strong>
+<ul>
+<li>graph with bi-directional adjacency by default</li>
+<li>eg. graph of a social network</li>
+</ul>
+</li>
+<li><strong>DIRECTED GRAPH</strong>
+<ul>
+<li>graph with uni-directional adjacency by default <em>(arrowheads specify direction adjacency flows in)</em>, and bi-directional adjacency has to be specified with two seperate arrows</li>
+<li>eg. graph of a street map <em>(some roads only allow one-way traffic)</em></li>
+</ul>
+</li>
+<li>graphs can be represented by ADJACENCY MATRIXes or ADJACENCY LISTs as covered below</li>
+<li>Used in
+<ul>
+<li>representing social networks</li>
+<li>visualising network routing</li>
+<li>recommendation engines</li>
+<li>GPS mapping applications</li>
+<li>knowledge graphs</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Adjacency Matrix</p>
+<ul>
+<li>2d nested array of 0s and 1s which acts as a conceptual representation of adjacency between any two nodes in the graph</li>
+<li>Used because
+<ul>
+<li><strong>CONSTANT time complexity</strong> of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathrm">1</span><span class="mclose">)</span></span></span></span>
+<ul>
+<li>relatively quicker compared to an ADJACENCY LIST for any given dataset</li>
+</ul>
+</li>
+<li><strong>QUADRATIC space complexity</strong> of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathit">n</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">)</span></span></span></span>
+<ul>
+<li>less efficient for smaller graph datasets</li>
+<li>extremely efficient for larger graph datasets</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-go"><span class="hljs-comment">// ----- Go implementation -----</span>
+
+<span class="hljs-keyword">type</span> Graph <span class="hljs-keyword">struct</span> { <span class="hljs-comment">// type definition for an undirected graph represented by an adjacency matrix</span>
+    vertices <span class="hljs-type">int</span>
+    matrix   [][]<span class="hljs-type">bool</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">NewGraph</span><span class="hljs-params">(vertices <span class="hljs-type">int</span>)</span></span> *Graph { <span class="hljs-comment">// initializes an undirected graph with a given number of vertices</span>
+    matrix := <span class="hljs-built_in">make</span>([][]<span class="hljs-type">bool</span>, vertices)
+    <span class="hljs-keyword">for</span> i := <span class="hljs-keyword">range</span> matrix {
+        matrix[i] = <span class="hljs-built_in">make</span>([]<span class="hljs-type">bool</span>, vertices)
+    }
+    <span class="hljs-keyword">return</span> &amp;Graph{
+        vertices: vertices,
+        matrix:   matrix,
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(g *Graph)</span></span> AddEdge(v1, v2 <span class="hljs-type">int</span>) { <span class="hljs-comment">// adds an undirected edge between two vertices</span>
+    <span class="hljs-keyword">if</span> v1 &gt;= <span class="hljs-number">0</span> &amp;&amp; v1 &lt; g.vertices &amp;&amp; v2 &gt;= <span class="hljs-number">0</span> &amp;&amp; v2 &lt; g.vertices {
+        g.matrix[v1][v2] = <span class="hljs-literal">true</span>
+        g.matrix[v2][v1] = <span class="hljs-literal">true</span>
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(g *Graph)</span></span> PrintMatrix() { <span class="hljs-comment">// displays adjacency matrix</span>
+    <span class="hljs-keyword">for</span> _, row := <span class="hljs-keyword">range</span> g.matrix {
+        fmt.Println(row)
+    }
+}
+</code></pre>
+<pre><code class="language-py"><span class="hljs-comment"># ----- Python implementation -----</span>
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Graph</span>:
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, vertices</span>):
+        <span class="hljs-variable language_">self</span>.vertices = vertices  <span class="hljs-comment"># Number of vertices in the graph</span>
+        <span class="hljs-variable language_">self</span>.matrix = [[<span class="hljs-literal">False</span>] * vertices <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(vertices)]  <span class="hljs-comment"># Initialize the adjacency matrix</span>
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">add_edge</span>(<span class="hljs-params">self, v1, v2</span>):
+        <span class="hljs-keyword">if</span> <span class="hljs-number">0</span> &lt;= v1 &lt; <span class="hljs-variable language_">self</span>.vertices <span class="hljs-keyword">and</span> <span class="hljs-number">0</span> &lt;= v2 &lt; <span class="hljs-variable language_">self</span>.vertices:  <span class="hljs-comment"># Check if vertices are valid</span>
+            <span class="hljs-variable language_">self</span>.matrix[v1][v2] = <span class="hljs-literal">True</span>  <span class="hljs-comment"># Add edge from v1 to v2</span>
+            <span class="hljs-variable language_">self</span>.matrix[v2][v1] = <span class="hljs-literal">True</span>  <span class="hljs-comment"># Add edge from v2 to v1 since it&#x27;s an undirected graph</span>
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">print_matrix</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-keyword">for</span> row <span class="hljs-keyword">in</span> <span class="hljs-variable language_">self</span>.matrix:  <span class="hljs-comment"># Print each row of the adjacency matrix</span>
+            <span class="hljs-built_in">print</span>(row)
+</code></pre>
+<ol start="8">
+<li>Adjacency List
+<ul>
+<li>Array of LINKED LISTs, where each LINKED LIST head represents a unique node and its adjacent neighbour nodes</li>
+<li>Used because
+<ul>
+<li><strong>LINEAR time complexity</strong> of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span></li>
+<li>space complexity of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>u</mi><mi>m</mi><mi>V</mi><mi>e</mi><mi>r</mi><mi>t</mi><mi>e</mi><mi>x</mi><mo>+</mo><mi>n</mi><mi>u</mi><mi>m</mi><mi>E</mi><mi>d</mi><mi>g</mi><mi>e</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(numVertex + numEdge)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mord mathit">u</span><span class="mord mathit">m</span><span class="mord mathit" style="margin-right:0.22222em;">V</span><span class="mord mathit">e</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit">t</span><span class="mord mathit">e</span><span class="mord mathit">x</span><span class="mbin">+</span><span class="mord mathit">n</span><span class="mord mathit">u</span><span class="mord mathit">m</span><span class="mord mathit" style="margin-right:0.05764em;">E</span><span class="mord mathit">d</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">e</span><span class="mclose">)</span></span></span></span>
+<ul>
+<li>uses less space compared to an ADJACENCY MATRIX for any given dataset</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-go"><span class="hljs-comment">// ----- Go implementation -----</span>
+
+<span class="hljs-keyword">type</span> Node <span class="hljs-keyword">struct</span> { <span class="hljs-comment">// type definition for a node within an undirected graph </span>
+    vertex <span class="hljs-type">int</span>
+    next   *Node
+}
+
+<span class="hljs-keyword">type</span> Graph <span class="hljs-keyword">struct</span> { <span class="hljs-comment">// type definition for an undirected graph represented by an adjacency list</span>
+    vertices <span class="hljs-type">int</span>
+    adjList  []*Node
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">NewGraph</span><span class="hljs-params">(vertices <span class="hljs-type">int</span>)</span></span> *Graph { <span class="hljs-comment">// initializes an undirected graph with a given number of vertices</span>
+    adjList := <span class="hljs-built_in">make</span>([]*Node, vertices)
+    <span class="hljs-keyword">return</span> &amp;Graph{
+        vertices: vertices,
+        adjList:  adjList,
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(g *Graph)</span></span> AddEdge(v1, v2 <span class="hljs-type">int</span>) { <span class="hljs-comment">// adds an undirected edge between two vertices</span>
+    <span class="hljs-keyword">if</span> v1 &gt;= <span class="hljs-number">0</span> &amp;&amp; v1 &lt; g.vertices &amp;&amp; v2 &gt;= <span class="hljs-number">0</span> &amp;&amp; v2 &lt; g.vertices {
+        nodeV1 := &amp;Node{vertex: v2, next: g.adjList[v1]}
+        g.adjList[v1] = nodeV1
+        nodeV2 := &amp;Node{vertex: v1, next: g.adjList[v2]}
+        g.adjList[v2] = nodeV2
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(g *Graph)</span></span> PrintList() { <span class="hljs-comment">// displays adjacency list</span>
+    <span class="hljs-keyword">for</span> vertex, node := <span class="hljs-keyword">range</span> g.adjList {
+        fmt.Printf(<span class="hljs-string">&quot;Vertex %d -&gt; &quot;</span>, vertex)
+        <span class="hljs-keyword">for</span> node != <span class="hljs-literal">nil</span> {
+            fmt.Printf(<span class="hljs-string">&quot;%d &quot;</span>, node.vertex)
+            node = node.next
+        }
+        fmt.Println()
+    }
+}
+</code></pre>
+<pre><code class="language-py"><span class="hljs-comment"># ----- Python implementation -----</span>
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Node</span>:
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, vertex</span>):
+        <span class="hljs-variable language_">self</span>.vertex = vertex
+        <span class="hljs-variable language_">self</span>.<span class="hljs-built_in">next</span> = <span class="hljs-literal">None</span>
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Graph</span>:
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, vertices</span>):
+        <span class="hljs-variable language_">self</span>.vertices = vertices
+        <span class="hljs-variable language_">self</span>.adj_list = [<span class="hljs-literal">None</span>] * vertices  <span class="hljs-comment"># Initialize the adjacency list with None for each vertex</span>
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">add_edge</span>(<span class="hljs-params">self, v1, v2</span>):
+        <span class="hljs-keyword">if</span> <span class="hljs-number">0</span> &lt;= v1 &lt; <span class="hljs-variable language_">self</span>.vertices <span class="hljs-keyword">and</span> <span class="hljs-number">0</span> &lt;= v2 &lt; <span class="hljs-variable language_">self</span>.vertices:
+            <span class="hljs-comment"># Add the edge from v1 to v2</span>
+            node_v2 = Node(v2)
+            node_v2.<span class="hljs-built_in">next</span> = <span class="hljs-variable language_">self</span>.adj_list[v1]
+            <span class="hljs-variable language_">self</span>.adj_list[v1] = node_v2
+
+            <span class="hljs-comment"># Add the edge from v2 to v1 (since the graph is undirected)</span>
+            node_v1 = Node(v1)
+            node_v1.<span class="hljs-built_in">next</span> = <span class="hljs-variable language_">self</span>.adj_list[v2]
+            <span class="hljs-variable language_">self</span>.adj_list[v2] = node_v1
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">print_list</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-keyword">for</span> vertex <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-variable language_">self</span>.vertices):
+            <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Vertex <span class="hljs-subst">{vertex}</span> -&gt;&quot;</span>, end=<span class="hljs-string">&quot; &quot;</span>)
+            temp = <span class="hljs-variable language_">self</span>.adj_list[vertex]
+            <span class="hljs-keyword">while</span> temp:
+                <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">{temp.vertex}</span>&quot;</span>, end=<span class="hljs-string">&quot; &quot;</span>)
+                temp = temp.<span class="hljs-built_in">next</span>
+            <span class="hljs-built_in">print</span>()
+</code></pre>
+<ol start="9">
+<li>
+<p>Tree</p>
+<ul>
+<li>Non-linear collection of nodes <em>(which store data)</em> organised in a hierachy, where nodes are connected by edges</li>
+<li>Root node: top-most node with no incoming edges</li>
+<li>Leaf node: bottom-most nodes with no outgoing edges</li>
+<li>Branch nodes: nodes in the middle with both incoming and outgoing edges</li>
+<li>Parent nodes: any node with an outgoing edge</li>
+<li>Child nodes: any node with an incoming edge</li>
+<li>Sibling nodes: any nodes sharing the same parent node</li>
+<li>Subtree: smaller tree nested within a larger tree</li>
+<li>Size of tree: total number of nodes</li>
+<li>Depth of node: number of edges below root node</li>
+<li>Height of node: number of edges above furthest leaf node</li>
+<li>Used in
+<ul>
+<li>file explorers</li>
+<li>database searches</li>
+<li>domain name servers</li>
+<li>HTML DOM structure</li>
+<li>expression parsing in interpreters and transpilers</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Binary Search Tree</p>
+<ul>
+<li>Ordered tree where each parent node has only two child nodes <em>(binary)</em> and each parent node's value is greater than the left child node and smaller than the right child node, including the root node</li>
+<li>Used because
+<ul>
+<li>easier to locate a node when they are ordered within a binary search tree</li>
+<li>best case <strong>LOGARITHMIC time complexity</strong> of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">o</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span></li>
+<li>worst case <strong>LINEAR time complexity</strong> of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span></li>
+<li><strong>LINEAR space complexity</strong> of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-go"><span class="hljs-comment">// ----- Go implementation -----</span>
+
+<span class="hljs-keyword">type</span> Node <span class="hljs-keyword">struct</span> { <span class="hljs-comment">// type definition for a generic node within a binary search tree</span>
+    key   <span class="hljs-type">int</span>
+    left  *Node
+    right *Node
+}
+
+<span class="hljs-keyword">type</span> BST <span class="hljs-keyword">struct</span> { <span class="hljs-comment">// type definition for a binary search tree, which begins with its root node</span>
+    root *Node
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">NewNode</span><span class="hljs-params">(key <span class="hljs-type">int</span>)</span></span> *Node { <span class="hljs-comment">// initializes a new node with a given key</span>
+    <span class="hljs-keyword">return</span> &amp;Node{
+        key: key,
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(bst *BST)</span></span> Insert(key <span class="hljs-type">int</span>) { <span class="hljs-comment">// inserts a key into the binary search tree</span>
+    <span class="hljs-keyword">if</span> bst.root == <span class="hljs-literal">nil</span> {
+        bst.root = NewNode(key)
+    } <span class="hljs-keyword">else</span> {
+        insertRecursive(bst.root, key)
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">insertRecursive</span><span class="hljs-params">(node *Node, key <span class="hljs-type">int</span>)</span></span> { <span class="hljs-comment">// helper function for recursive insertion</span>
+    <span class="hljs-keyword">if</span> key &lt; node.key {
+        <span class="hljs-keyword">if</span> node.left == <span class="hljs-literal">nil</span> {
+            node.left = NewNode(key)
+        } <span class="hljs-keyword">else</span> {
+            insertRecursive(node.left, key)
+        }
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> key &gt; node.key {
+        <span class="hljs-keyword">if</span> node.right == <span class="hljs-literal">nil</span> {
+            node.right = NewNode(key)
+        } <span class="hljs-keyword">else</span> {
+            insertRecursive(node.right, key)
+        }
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(bst *BST)</span></span> Search(key <span class="hljs-type">int</span>) <span class="hljs-type">bool</span> { <span class="hljs-comment">// searches for a key within the binary search tree</span>
+    <span class="hljs-keyword">return</span> searchRecursive(bst.root, key)
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">searchRecursive</span><span class="hljs-params">(node *Node, key <span class="hljs-type">int</span>)</span></span> <span class="hljs-type">bool</span> { <span class="hljs-comment">// helper function for recursive search</span>
+    <span class="hljs-keyword">if</span> node == <span class="hljs-literal">nil</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+    }
+    <span class="hljs-keyword">if</span> key == node.key {
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> key &lt; node.key {
+        <span class="hljs-keyword">return</span> searchRecursive(node.left, key)
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">return</span> searchRecursive(node.right, key)
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(bst *BST)</span></span> InOrderTraversal() { <span class="hljs-comment">// performs in-order traversal of binary search tree</span>
+    inOrderRecursive(bst.root)
+    fmt.Println()
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">inOrderRecursive</span><span class="hljs-params">(node *Node)</span></span> { <span class="hljs-comment">// helper function for recursive in-order traversal</span>
+    <span class="hljs-keyword">if</span> node != <span class="hljs-literal">nil</span> {
+        inOrderRecursive(node.left)
+        fmt.Printf(<span class="hljs-string">&quot;%d &quot;</span>, node.key)
+        inOrderRecursive(node.right)
+    }
+}
+</code></pre>
+<pre><code class="language-py"><span class="hljs-comment"># ----- Python implementation -----</span>
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Node</span>:
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, key</span>):
+        <span class="hljs-variable language_">self</span>.key = key
+        <span class="hljs-variable language_">self</span>.left = <span class="hljs-literal">None</span>
+        <span class="hljs-variable language_">self</span>.right = <span class="hljs-literal">None</span>
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">BST</span>:
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-variable language_">self</span>.root = <span class="hljs-literal">None</span>
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">insert</span>(<span class="hljs-params">self, key</span>):
+        <span class="hljs-keyword">if</span> <span class="hljs-variable language_">self</span>.root <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+            <span class="hljs-variable language_">self</span>.root = Node(key)
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-variable language_">self</span>._insert_recursive(<span class="hljs-variable language_">self</span>.root, key)
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">_insert_recursive</span>(<span class="hljs-params">self, node, key</span>):
+        <span class="hljs-keyword">if</span> key &lt; node.key:
+            <span class="hljs-keyword">if</span> node.left <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+                node.left = Node(key)
+            <span class="hljs-keyword">else</span>:
+                <span class="hljs-variable language_">self</span>._insert_recursive(node.left, key)
+        <span class="hljs-keyword">elif</span> key &gt; node.key:
+            <span class="hljs-keyword">if</span> node.right <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+                node.right = Node(key)
+            <span class="hljs-keyword">else</span>:
+                <span class="hljs-variable language_">self</span>._insert_recursive(node.right, key)
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">search</span>(<span class="hljs-params">self, key</span>):
+        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>._search_recursive(<span class="hljs-variable language_">self</span>.root, key)
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">_search_recursive</span>(<span class="hljs-params">self, node, key</span>):
+        <span class="hljs-keyword">if</span> node <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span>
+        <span class="hljs-keyword">if</span> key == node.key:
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">True</span>
+        <span class="hljs-keyword">elif</span> key &lt; node.key:
+            <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>._search_recursive(node.left, key)
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>._search_recursive(node.right, key)
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">in_order_traversal</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-variable language_">self</span>._in_order_recursive(<span class="hljs-variable language_">self</span>.root)
+        <span class="hljs-built_in">print</span>()  <span class="hljs-comment"># Newline for cleaner output</span>
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">_in_order_recursive</span>(<span class="hljs-params">self, node</span>):
+        <span class="hljs-keyword">if</span> node <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>:
+            <span class="hljs-variable language_">self</span>._in_order_recursive(node.left)
+            <span class="hljs-built_in">print</span>(node.key, end=<span class="hljs-string">&#x27; &#x27;</span>)
+            <span class="hljs-variable language_">self</span>._in_order_recursive(node.right)
+</code></pre>
+<h2>Algorithms</h2>
+<ol>
+<li>Linear Search
+<ul>
+<li><strong>LINEAR time complexity</strong> of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span></li>
+<li>iterates through a collection one element at a time</li>
+<li>pros
+<ul>
+<li>dataset can be unsorted</li>
+<li>fast for searching small to medium-sized datasets</li>
+<li>useful for data structures without random access</li>
+</ul>
+</li>
+<li>cons
+<ul>
+<li>slow for large datasets</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-go"><span class="hljs-comment">// ----- Go implementation -----</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">linearSearch</span><span class="hljs-params">(arr []<span class="hljs-keyword">interface</span>{}, target <span class="hljs-keyword">interface</span>{})</span></span> <span class="hljs-type">int</span> { <span class="hljs-comment">// returns index of target element if found</span>
+    <span class="hljs-keyword">for</span> i, item := <span class="hljs-keyword">range</span> arr {
+        <span class="hljs-keyword">if</span> item == target {
+            <span class="hljs-keyword">return</span> i 
+        }
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span> <span class="hljs-comment">// returns -1 if target element not found</span>
+}
+</code></pre>
+<pre><code class="language-py"><span class="hljs-comment"># ----- Python implementation -----</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">linear_search</span>(<span class="hljs-params">arr, target</span>):
+    <span class="hljs-keyword">for</span> i, item <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(arr):
+        <span class="hljs-keyword">if</span> item == target:
+            <span class="hljs-keyword">return</span> i
+    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>
+</code></pre>
+<ol start="2">
+<li>Binary Search
+<ul>
+<li><strong>LOGARITHMIC time complexity</strong> of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">o</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span></li>
+<li>eliminates half of the collection at each step to find the target element</li>
+<li>pros
+<ul>
+<li>more efficient for large datasets</li>
+</ul>
+</li>
+<li>cons
+<ul>
+<li>dataset has to be sorted</li>
+<li>less efficient for smaller datasets</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-go"><span class="hljs-comment">// ----- Go implementation -----</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">binarySearch</span><span class="hljs-params">(arr []<span class="hljs-keyword">interface</span>{}, target <span class="hljs-keyword">interface</span>{})</span></span> <span class="hljs-type">int</span> { 
+    left, right := <span class="hljs-number">0</span>, <span class="hljs-built_in">len</span>(arr)<span class="hljs-number">-1</span>
+    <span class="hljs-keyword">for</span> left &lt;= right {
+        mid := left + (right-left)/<span class="hljs-number">2</span>
+        <span class="hljs-keyword">if</span> arr[mid] == target {
+            <span class="hljs-keyword">return</span> mid <span class="hljs-comment">// returns index of target element</span>
+        }
+        <span class="hljs-keyword">if</span> arr[mid] &lt; target {
+            left = mid + <span class="hljs-number">1</span>
+        } <span class="hljs-keyword">else</span> {
+            right = mid - <span class="hljs-number">1</span>
+        }
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span> <span class="hljs-comment">// returns -1 if target element not found</span>
+}
+</code></pre>
+<pre><code class="language-py"><span class="hljs-comment"># ----- Python implementation -----</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">binary_search</span>(<span class="hljs-params">arr, target</span>):
+    left, right = <span class="hljs-number">0</span>, <span class="hljs-built_in">len</span>(arr) - <span class="hljs-number">1</span>
+    <span class="hljs-keyword">while</span> left &lt;= right:
+        mid = left + (right - left) * <span class="hljs-number">2</span>
+        <span class="hljs-keyword">if</span> arr[mid] == target:
+            <span class="hljs-keyword">return</span> mid
+        <span class="hljs-keyword">elif</span> arr[mid] &lt; target:
+            left = mid + <span class="hljs-number">1</span>
+        <span class="hljs-keyword">else</span>:
+            right = mid - <span class="hljs-number">1</span>
+    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>
+</code></pre>
+<ol start="3">
+<li>Interpolation Search
+<ul>
+<li><strong>average time complexity</strong> of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mo>(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">O(log(log n))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">o</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">o</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">n</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span></li>
+<li><strong>worst case LINEAR time complexity</strong> of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span></li>
+<li>guesses where a value might be based on estimated probe results, with incorrect probes narrowing the search area and recalculating a new probe</li>
+<li>improvement over BINARY searches that are best used for uniformly distributed datasets</li>
+<li>pros
+<ul>
+<li>more efficient for uniformly distributed datasets</li>
+<li>more efficient for large datasets</li>
+</ul>
+</li>
+<li>cons
+<ul>
+<li>dataset has to be sorted</li>
+<li>dataset has to be uniformly distributed</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-go"><span class="hljs-comment">// ----- Go implementation -----</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">interpolationSearch</span><span class="hljs-params">(arr []<span class="hljs-keyword">interface</span>{}, target <span class="hljs-keyword">interface</span>{})</span></span> <span class="hljs-type">int</span> {
+
+    low := <span class="hljs-number">0</span>
+    high := <span class="hljs-built_in">len</span>(arr) - <span class="hljs-number">1</span>
+
+    <span class="hljs-keyword">for</span> low &lt;= high &amp;&amp; target &gt;= arr[low] &amp;&amp; target &lt;= arr[high] {
+        pos := low + ((target - arr[low]) * (high - low)) / (arr[high] - arr[low])
+
+        <span class="hljs-keyword">if</span> arr[pos] == target {
+            <span class="hljs-keyword">return</span> pos <span class="hljs-comment">// returns index of target element</span>
+        }
+
+        <span class="hljs-keyword">if</span> arr[pos] &lt; target {
+            low = pos + <span class="hljs-number">1</span>
+        } <span class="hljs-keyword">else</span> {
+            high = pos - <span class="hljs-number">1</span>
+        }
+
+    }
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span> <span class="hljs-comment">// returns -1 if target element not found</span>
+
+}
+</code></pre>
+<pre><code class="language-py"><span class="hljs-comment"># ----- Python implementation -----</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">interpolation_search</span>(<span class="hljs-params">arr, target</span>):
+    low = <span class="hljs-number">0</span>
+    high = <span class="hljs-built_in">len</span>(arr) - <span class="hljs-number">1</span>
+
+    <span class="hljs-keyword">while</span> low &lt;= high <span class="hljs-keyword">and</span> target &gt;= arr[low] <span class="hljs-keyword">and</span> target &lt;= arr[high]:
+        pos = low + ((target - arr[low]) * (high - low)) * (arr[high] - arr[low])
+
+        <span class="hljs-keyword">if</span> arr[pos] == target:
+            <span class="hljs-keyword">return</span> pos
+        <span class="hljs-keyword">elif</span> arr[pos] &lt; target:
+            low = pos + <span class="hljs-number">1</span>
+        <span class="hljs-keyword">else</span>:
+            high = pos - <span class="hljs-number">1</span>
+
+    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>
+</code></pre>
+<ol start="4">
+<li>Depth First Search
+<ul>
+<li>search algorithm to traverse a tree or graph one BRANCH at a time
+<ol>
+<li>pick a route</li>
+<li>keep on going until a dead end or previously visited node is reached</li>
+<li>backtrack to last node with unvisited adjacent neighbour nodes</li>
+<li>repeat step 1</li>
+</ol>
+</li>
+<li><strong>time complexity</strong> of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>u</mi><mi>m</mi><mi>V</mi><mi>e</mi><mi>r</mi><mi>t</mi><mi>e</mi><mi>x</mi><mo>+</mo><mi>n</mi><mi>u</mi><mi>m</mi><mi>E</mi><mi>d</mi><mi>g</mi><mi>e</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(numVertex + numEdge)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mord mathit">u</span><span class="mord mathit">m</span><span class="mord mathit" style="margin-right:0.22222em;">V</span><span class="mord mathit">e</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit">t</span><span class="mord mathit">e</span><span class="mord mathit">x</span><span class="mbin">+</span><span class="mord mathit">n</span><span class="mord mathit">u</span><span class="mord mathit">m</span><span class="mord mathit" style="margin-right:0.05764em;">E</span><span class="mord mathit">d</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">e</span><span class="mclose">)</span></span></span></span></li>
+<li><strong>LINEAR space complexity</strong> of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span></li>
+<li>pros
+<ul>
+<li>utilises a STACK</li>
+<li>child nodes are visited before sibling nodes</li>
+<li>better if destination node is on average FURTHER from start node</li>
+</ul>
+</li>
+<li>cons
+<ul>
+<li>often returns non-optimal paths</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-go"><span class="hljs-comment">// ----- Go implementation -----</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(g *Graph)</span></span> DFSUtil(v <span class="hljs-type">int</span>) { <span class="hljs-comment">// helper function for DFS</span>
+    g.visited[v] = <span class="hljs-literal">true</span>
+    fmt.Printf(<span class="hljs-string">&quot;%d &quot;</span>, v)
+    <span class="hljs-keyword">for</span> node := g.adjList[v]; node != <span class="hljs-literal">nil</span>; node = node.next { <span class="hljs-comment">// recur for all adjacent vertices</span>
+        <span class="hljs-keyword">if</span> !g.visited[node.vertex] {
+            g.DFSUtil(node.vertex)
+        }
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(g *Graph)</span></span> DFS() {
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; g.vertices; i++ {
+        <span class="hljs-keyword">if</span> !g.visited[i] {
+            g.DFSUtil(i)
+        }
+    }
+}
+</code></pre>
+<pre><code class="language-py"><span class="hljs-comment"># ----- Python implementation -----</span>
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Graph</span>:
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, vertices</span>):
+        <span class="hljs-variable language_">self</span>.vertices = vertices
+        <span class="hljs-variable language_">self</span>.adj_list = [[] <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(vertices)]
+        <span class="hljs-variable language_">self</span>.visited = [<span class="hljs-literal">False</span>] * vertices
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">add_edge</span>(<span class="hljs-params">self, u, v</span>):
+        <span class="hljs-variable language_">self</span>.adj_list[u].append(v)
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">dfs_util</span>(<span class="hljs-params">self, v</span>):
+        <span class="hljs-variable language_">self</span>.visited[v] = <span class="hljs-literal">True</span>
+        <span class="hljs-built_in">print</span>(v, end=<span class="hljs-string">&quot; &quot;</span>)
+        <span class="hljs-keyword">for</span> node <span class="hljs-keyword">in</span> <span class="hljs-variable language_">self</span>.adj_list[v]:
+            <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> <span class="hljs-variable language_">self</span>.visited[node]:
+                <span class="hljs-variable language_">self</span>.dfs_util(node)
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">dfs</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-variable language_">self</span>.vertices):
+            <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> <span class="hljs-variable language_">self</span>.visited[i]:
+                <span class="hljs-variable language_">self</span>.dfs_util(i)
+</code></pre>
+<ol start="5">
+<li>Breadth First Search
+<ul>
+<li>search algorithm to traverse a tree or graph one LEVEL at a time
+<ol>
+<li>traverse one node at a time in every direction</li>
+<li>once all directions have been expanded one node, repeat step 1</li>
+</ol>
+</li>
+<li><strong>time complexity</strong> of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>u</mi><mi>m</mi><mi>V</mi><mi>e</mi><mi>r</mi><mi>t</mi><mi>e</mi><mi>x</mi><mo>+</mo><mi>n</mi><mi>u</mi><mi>m</mi><mi>E</mi><mi>d</mi><mi>g</mi><mi>e</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(numVertex + numEdge)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mord mathit">u</span><span class="mord mathit">m</span><span class="mord mathit" style="margin-right:0.22222em;">V</span><span class="mord mathit">e</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit">t</span><span class="mord mathit">e</span><span class="mord mathit">x</span><span class="mbin">+</span><span class="mord mathit">n</span><span class="mord mathit">u</span><span class="mord mathit">m</span><span class="mord mathit" style="margin-right:0.05764em;">E</span><span class="mord mathit">d</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">e</span><span class="mclose">)</span></span></span></span></li>
+<li><strong>LINEAR space complexity</strong> of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span> if implemented with a queue</li>
+<li><strong>space complexity</strong> of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>u</mi><mi>m</mi><mi>V</mi><mi>e</mi><mi>r</mi><mi>t</mi><mi>e</mi><mi>x</mi><mo>+</mo><mi>n</mi><mi>u</mi><mi>m</mi><mi>E</mi><mi>d</mi><mi>g</mi><mi>e</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(numVertex + numEdge)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mord mathit">u</span><span class="mord mathit">m</span><span class="mord mathit" style="margin-right:0.22222em;">V</span><span class="mord mathit">e</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit">t</span><span class="mord mathit">e</span><span class="mord mathit">x</span><span class="mbin">+</span><span class="mord mathit">n</span><span class="mord mathit">u</span><span class="mord mathit">m</span><span class="mord mathit" style="margin-right:0.05764em;">E</span><span class="mord mathit">d</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">e</span><span class="mclose">)</span></span></span></span> if implemented with an adjacency list</li>
+<li>pros
+<ul>
+<li>utilises a QUEUE</li>
+<li>sibling nodes are visited before child nodes</li>
+<li>better if destination node is on average CLOSER to start node</li>
+</ul>
+</li>
+<li>cons
+<ul>
+<li>less efficient on denser graph datasets with many edges</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-go"><span class="hljs-comment">// ----- Go implementation -----</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(g *Graph)</span></span> BFS(startVertex <span class="hljs-type">int</span>) {
+    queue := []<span class="hljs-type">int</span>{} <span class="hljs-comment">// initializes a queue for BFS traversal</span>
+    g.visited[startVertex] = <span class="hljs-literal">true</span>
+    queue = <span class="hljs-built_in">append</span>(queue, startVertex)
+    <span class="hljs-keyword">for</span> <span class="hljs-built_in">len</span>(queue) &gt; <span class="hljs-number">0</span> { 
+        currentVertex := queue[<span class="hljs-number">0</span>]
+        queue = queue[<span class="hljs-number">1</span>:] <span class="hljs-comment">// dequeues a vertex from the queue</span>
+        fmt.Printf(<span class="hljs-string">&quot;%d &quot;</span>, currentVertex)
+        <span class="hljs-keyword">for</span> node := g.adjList[currentVertex]; node != <span class="hljs-literal">nil</span>; node = node.next { <span class="hljs-comment">// check to ensure adjacent vertices have not been visited</span>
+            <span class="hljs-keyword">if</span> !g.visited[node.vertex] {
+                g.visited[node.vertex] = <span class="hljs-literal">true</span>
+                queue = <span class="hljs-built_in">append</span>(queue, node.vertex)
+            }
+        }
+    }
+}
+</code></pre>
+<pre><code class="language-py"><span class="hljs-comment"># ----- Python implementation -----</span>
+
+<span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> deque
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Graph</span>:
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, vertices</span>):
+        <span class="hljs-variable language_">self</span>.vertices = vertices
+        <span class="hljs-variable language_">self</span>.adj_list = [[] <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(vertices)]
+        <span class="hljs-variable language_">self</span>.visited = [<span class="hljs-literal">False</span>] * vertices
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">add_edge</span>(<span class="hljs-params">self, u, v</span>):
+        <span class="hljs-variable language_">self</span>.adj_list[u].append(v)
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">bfs</span>(<span class="hljs-params">self, start_vertex</span>):
+        queue = deque()
+        <span class="hljs-variable language_">self</span>.visited[start_vertex] = <span class="hljs-literal">True</span>
+        queue.append(start_vertex)
+
+        <span class="hljs-keyword">while</span> queue:
+            current_vertex = queue.popleft()
+            <span class="hljs-built_in">print</span>(current_vertex, end=<span class="hljs-string">&quot; &quot;</span>)
+
+            <span class="hljs-keyword">for</span> node <span class="hljs-keyword">in</span> <span class="hljs-variable language_">self</span>.adj_list[current_vertex]:
+                <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> <span class="hljs-variable language_">self</span>.visited[node]:
+                    <span class="hljs-variable language_">self</span>.visited[node] = <span class="hljs-literal">True</span>
+                    queue.append(node)
+</code></pre>
+<ol start="6">
+<li>Bubble Sort
+<ul>
+<li><strong>QUADRATIC time complexity</strong> of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathit">n</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">)</span></span></span></span></li>
+<li><strong>CONSTANT space complexity</strong> of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathrm">1</span><span class="mclose">)</span></span></span></span></li>
+<li>compares pairs of adjacent elements and swaps them if they are not in order</li>
+<li>pros
+<ul>
+<li>relatively fast for small datasets</li>
+<li>lower CONSTANT space complexity since collection sorted in place</li>
+</ul>
+</li>
+<li>cons
+<ul>
+<li>extremely slow for medium and large datasets</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-go"><span class="hljs-comment">// ----- Go implementation -----</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">bubbleSort</span><span class="hljs-params">(arr []<span class="hljs-type">int</span>)</span></span> { <span class="hljs-comment">// slices are reference types in Go so changes made to the slice within the function are reflected outside the function</span>
+    n := <span class="hljs-built_in">len</span>(arr)
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; n<span class="hljs-number">-1</span>; i++ {
+        <span class="hljs-keyword">for</span> j := <span class="hljs-number">0</span>; j &lt; n-i<span class="hljs-number">-1</span>; j++ {
+            <span class="hljs-keyword">if</span> arr[j] &gt; arr[j+<span class="hljs-number">1</span>] {
+                arr[j], arr[j+<span class="hljs-number">1</span>] = arr[j+<span class="hljs-number">1</span>], arr[j]
+            }
+        }
+    }
+}
+</code></pre>
+<pre><code class="language-py"><span class="hljs-comment"># ----- Python implementation -----</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">bubble_sort</span>(<span class="hljs-params">arr</span>):
+    n = <span class="hljs-built_in">len</span>(arr)
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n - <span class="hljs-number">1</span>):
+        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n - i - <span class="hljs-number">1</span>):
+            <span class="hljs-keyword">if</span> arr[j] &gt; arr[j + <span class="hljs-number">1</span>]:
+                arr[j], arr[j + <span class="hljs-number">1</span>] = arr[j + <span class="hljs-number">1</span>], arr[j]
+</code></pre>
+<ol start="7">
+<li>Selection Sort
+<ul>
+<li><strong>QUADRATIC time complexity</strong> of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathit">n</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">)</span></span></span></span></li>
+<li><strong>CONSTANT space complexity</strong> of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathrm">1</span><span class="mclose">)</span></span></span></span></li>
+<li>iterates across each element in a collection and compares against and stores the minimum value, swapping variables after each iteration</li>
+<li>pros
+<ul>
+<li>relatively fast for small and medium datasets</li>
+<li>lower CONSTANT space complexity since collection sorted in place</li>
+</ul>
+</li>
+<li>cons
+<ul>
+<li>slower for large datasets</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-go"><span class="hljs-comment">// ----- Go implementation -----</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">selectionSort</span><span class="hljs-params">(arr []<span class="hljs-type">int</span>)</span></span> { <span class="hljs-comment">// slices are reference types in Go so changes made to the slice within the function are reflected outside the function</span>
+    n := <span class="hljs-built_in">len</span>(arr)
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; n<span class="hljs-number">-1</span>; i++ {
+        minIndex := i 
+        <span class="hljs-keyword">for</span> j := i + <span class="hljs-number">1</span>; j &lt; n; j++ {
+            <span class="hljs-keyword">if</span> arr[j] &lt; arr[minIndex] {
+                minIndex = j
+            }
+        }
+        arr[i], arr[minIndex] = arr[minIndex], arr[i]
+    }
+}
+</code></pre>
+<pre><code class="language-py"><span class="hljs-comment"># ----- Python implementation -----</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">selection_sort</span>(<span class="hljs-params">arr</span>):
+    n = <span class="hljs-built_in">len</span>(arr)
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n - <span class="hljs-number">1</span>):
+        min_index = i
+        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(i + <span class="hljs-number">1</span>, n):
+            <span class="hljs-keyword">if</span> arr[j] &lt; arr[min_index]:
+                min_index = j
+        arr[i], arr[min_index] = arr[min_index], arr[i]
+</code></pre>
+<ol start="8">
+<li>Insertion Sort
+<ul>
+<li><strong>QUADRATIC time complexity</strong> of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathit">n</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">)</span></span></span></span></li>
+<li><strong>CONSTANT space complexity</strong> of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathrm">1</span><span class="mclose">)</span></span></span></span></li>
+<li>compares all elements to the left of a given element, then shift elements to the right to make room to insert a value</li>
+<li>pros
+<ul>
+<li>fast for small and medium datasets</li>
+<li>fewer steps than BUBBLE SORT</li>
+<li>best case LINEAR time complexity is <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span> compared to SELECTION SORT'S <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathit">n</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">)</span></span></span></span></li>
+<li>lower CONSTANT space complexity since collection sorted in place</li>
+</ul>
+</li>
+<li>cons
+<ul>
+<li>slower for large datasets</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-go"><span class="hljs-comment">// ----- Go implementation -----</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">insertionSort</span><span class="hljs-params">(arr []<span class="hljs-type">int</span>)</span></span> { <span class="hljs-comment">// slices are reference types in Go so changes made to the slice within the function are reflected outside the function</span>
+    n := <span class="hljs-built_in">len</span>(arr)
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">1</span>; i &lt; n; i++ {
+        key := arr[i]
+        j := i - <span class="hljs-number">1</span>
+        <span class="hljs-keyword">for</span> j &gt;= <span class="hljs-number">0</span> &amp;&amp; arr[j] &gt; key {
+            arr[j+<span class="hljs-number">1</span>] = arr[j]
+            j = j - <span class="hljs-number">1</span>
+        }
+        arr[j+<span class="hljs-number">1</span>] = key
+    }
+}
+</code></pre>
+<pre><code class="language-py"><span class="hljs-comment"># ----- Python implementation -----</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">insertion_sort</span>(<span class="hljs-params">arr</span>):
+    n = <span class="hljs-built_in">len</span>(arr)
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, n):
+        key = arr[i]
+        j = i - <span class="hljs-number">1</span>
+        <span class="hljs-keyword">while</span> j &gt;= <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> arr[j] &gt; key:
+            arr[j + <span class="hljs-number">1</span>] = arr[j]
+            j -= <span class="hljs-number">1</span>
+        arr[j + <span class="hljs-number">1</span>] = key
+</code></pre>
+<ol start="9">
+<li>Merge Sort
+<ul>
+<li><strong>QUASILINEAR time complexity</strong> of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">o</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span></li>
+<li><strong>LINEAR space complexity</strong> of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span></li>
+<li>recursively split collection in half, sort each half, then recombine the two halves</li>
+<li>pros
+<ul>
+<li>faster than all sorting algorithms with QUADRATIC time complexity <em>(bubble sort, selection sort, insertion sort)</em></li>
+</ul>
+</li>
+<li>cons
+<ul>
+<li>higher LINEAR space complexity since new subarrays are created to store elements for each level of recursion</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-go"><span class="hljs-comment">// ----- Go implementation -----</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">mergeSort</span><span class="hljs-params">(arr []<span class="hljs-type">int</span>)</span></span> []<span class="hljs-type">int</span> { 
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(arr) &lt;= <span class="hljs-number">1</span> {
+        <span class="hljs-keyword">return</span> arr
+    }
+    mid := <span class="hljs-built_in">len</span>(arr) / <span class="hljs-number">2</span>
+    left := mergeSort(arr[:mid])
+    right := mergeSort(arr[mid:])
+    <span class="hljs-keyword">return</span> merge(left, right)
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">merge</span><span class="hljs-params">(left, right []<span class="hljs-type">int</span>)</span></span> []<span class="hljs-type">int</span> {
+    result := <span class="hljs-built_in">make</span>([]<span class="hljs-type">int</span>, <span class="hljs-number">0</span>)
+    <span class="hljs-keyword">for</span> <span class="hljs-built_in">len</span>(left) &gt; <span class="hljs-number">0</span> || <span class="hljs-built_in">len</span>(right) &gt; <span class="hljs-number">0</span> {
+        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(left) == <span class="hljs-number">0</span> {
+            <span class="hljs-keyword">return</span> <span class="hljs-built_in">append</span>(result, right...)
+        }
+        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(right) == <span class="hljs-number">0</span> {
+            <span class="hljs-keyword">return</span> <span class="hljs-built_in">append</span>(result, left...)
+        }
+        <span class="hljs-keyword">if</span> left[<span class="hljs-number">0</span>] &lt;= right[<span class="hljs-number">0</span>] {
+            result = <span class="hljs-built_in">append</span>(result, left[<span class="hljs-number">0</span>])
+            left = left[<span class="hljs-number">1</span>:]
+        } <span class="hljs-keyword">else</span> {
+            result = <span class="hljs-built_in">append</span>(result, right[<span class="hljs-number">0</span>])
+            right = right[<span class="hljs-number">1</span>:]
+        }
+    }
+    <span class="hljs-keyword">return</span> result
+}
+</code></pre>
+<pre><code class="language-py"><span class="hljs-comment"># ----- Python implementation -----</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">merge_sort</span>(<span class="hljs-params">arr</span>):
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(arr) &lt;= <span class="hljs-number">1</span>:
+        <span class="hljs-keyword">return</span> arr
+    mid = <span class="hljs-built_in">len</span>(arr) * <span class="hljs-number">2</span>
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+    <span class="hljs-keyword">return</span> merge(left, right)
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">merge</span>(<span class="hljs-params">left, right</span>):
+    result = []
+    <span class="hljs-keyword">while</span> <span class="hljs-built_in">len</span>(left) &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> <span class="hljs-built_in">len</span>(right) &gt; <span class="hljs-number">0</span>:
+        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(left) == <span class="hljs-number">0</span>:
+            <span class="hljs-keyword">return</span> result + right
+        <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(right) == <span class="hljs-number">0</span>:
+            <span class="hljs-keyword">return</span> result + left
+        <span class="hljs-keyword">if</span> left[<span class="hljs-number">0</span>] &lt;= right[<span class="hljs-number">0</span>]:
+            result.append(left[<span class="hljs-number">0</span>])
+            left = left[<span class="hljs-number">1</span>:]
+        <span class="hljs-keyword">else</span>:
+            result.append(right[<span class="hljs-number">0</span>])
+            right = right[<span class="hljs-number">1</span>:]
+    <span class="hljs-keyword">return</span> result
+</code></pre>
+<ol start="10">
+<li>Quick Sort
+<ul>
+<li><strong>QUASILINEAR time complexity</strong> of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">o</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span> in best case and average case</li>
+<li><strong>QUADRATIC time complexity</strong> of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8141079999999999em;"></span><span class="strut bottom" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathit">n</span><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">)</span></span></span></span> in worst case</li>
+<li><strong>LOGARITHMIC space complexity</strong> of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">o</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span></li>
+<li>moves smaller elements in a collection to left side of a pivot element, then recursively divide the collection into 2 partitions</li>
+<li>pros
+<ul>
+<li>faster than all sorting algorithms with QUADRATIC time complexity <em>(bubble sort, selection sort, insertion sort)</em> in best and average cases</li>
+<li>lower LOGARITHMIC space complexity than MERGE SORT'S LINEAR space complexity since collection sorted in place</li>
+</ul>
+</li>
+<li>cons
+<ul>
+<li>higher LOGARITHMIC space complexity since quick sort relies on recursion</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-go"><span class="hljs-comment">// ----- Go implementation -----</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">quickSort</span><span class="hljs-params">(arr []<span class="hljs-type">int</span>)</span></span> { <span class="hljs-comment">// slices are reference types in Go so changes made to the slice within the function are reflected outside the function</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(arr) &lt;= <span class="hljs-number">1</span> {
+        <span class="hljs-keyword">return</span>
+    }
+    pivotIndex := partition(arr)
+    quickSort(arr[:pivotIndex])
+    quickSort(arr[pivotIndex+<span class="hljs-number">1</span>:])
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">partition</span><span class="hljs-params">(arr []<span class="hljs-type">int</span>)</span></span> <span class="hljs-type">int</span> {
+    pivot := arr[<span class="hljs-built_in">len</span>(arr)<span class="hljs-number">-1</span>]
+    i := <span class="hljs-number">-1</span>
+    <span class="hljs-keyword">for</span> j := <span class="hljs-number">0</span>; j &lt; <span class="hljs-built_in">len</span>(arr)<span class="hljs-number">-1</span>; j++ {
+        <span class="hljs-keyword">if</span> arr[j] &lt; pivot {
+            i++
+            arr[i], arr[j] = arr[j], arr[i]
+        }
+    }
+    arr[i+<span class="hljs-number">1</span>], arr[<span class="hljs-built_in">len</span>(arr)<span class="hljs-number">-1</span>] = arr[<span class="hljs-built_in">len</span>(arr)<span class="hljs-number">-1</span>], arr[i+<span class="hljs-number">1</span>]
+    <span class="hljs-keyword">return</span> i + <span class="hljs-number">1</span>
+}
+</code></pre>
+<pre><code class="language-py"><span class="hljs-comment"># ----- Python implementation -----</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">quick_sort</span>(<span class="hljs-params">arr</span>):
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(arr) &lt;= <span class="hljs-number">1</span>:
+        <span class="hljs-keyword">return</span> arr
+    pivot_index = partition(arr)
+    <span class="hljs-keyword">return</span> quick_sort(arr[:pivot_index]) + [arr[pivot_index]] + quick_sort(arr[pivot_index + <span class="hljs-number">1</span>:])
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">partition</span>(<span class="hljs-params">arr</span>):
+    pivot = arr[-<span class="hljs-number">1</span>]
+    i = -<span class="hljs-number">1</span>
+    <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(arr) - <span class="hljs-number">1</span>):
+        <span class="hljs-keyword">if</span> arr[j] &lt; pivot:
+            i += <span class="hljs-number">1</span>
+            arr[i], arr[j] = arr[j], arr[i]
+    arr[i + <span class="hljs-number">1</span>], arr[-<span class="hljs-number">1</span>] = arr[-<span class="hljs-number">1</span>], arr[i + <span class="hljs-number">1</span>]
+    <span class="hljs-keyword">return</span> i + <span class="hljs-number">1</span>
+</code></pre>
+<h3>Leetcode Algorithms</h3>
+<p>The below algorithms are often used within Leetcode problems.</p>
+<ol>
+<li>Sliding Window
+<ul>
+<li>Create a fixed-size window that moves through an array and performs a given operation</li>
+<li>Used in problems involving
+<ul>
+<li>substring searches</li>
+<li>subarray slice searches</li>
+</ul>
+</li>
+<li>Example questions
+<ul>
+<li><a href="https://leetcode.com/problems/maximum-subarray/">Leetcode Problem #53: Maximum Subarray</a></li>
+<li><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/description/">Leetcode Problem #3: Longest Substring Without Repeating Characters</a></li>
+<li><a href="https://leetcode.com/problems/longest-consecutive-sequence/description/">Leetcode Problem #128: Longest Consecutive Sequence</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-go"><span class="hljs-comment">// ----- Go implementation -----</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">findMaxSum</span><span class="hljs-params">(arr []<span class="hljs-type">int</span>, k <span class="hljs-type">int</span>)</span></span> <span class="hljs-type">int</span> {
+
+    windowSum := <span class="hljs-number">0</span>
+    maxSum := <span class="hljs-number">0</span>
+
+    n := <span class="hljs-built_in">len</span>(arr)
+    <span class="hljs-keyword">if</span> n &lt; k {
+        <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span> <span class="hljs-comment">// out of range index error</span>
+    }
+
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; k; i++ {
+        windowSum += arr[i]
+    }
+    maxSum = windowSum
+
+    <span class="hljs-keyword">for</span> i := k; i &lt; n; i++ {
+        windowSum += arr[i] - arr[i-k]
+        <span class="hljs-keyword">if</span> windowSum &gt; maxSum {
+            maxSum = windowSum
+        }
+    }
+
+    <span class="hljs-keyword">return</span> maxSum
+
+}
+</code></pre>
+<pre><code class="language-py"><span class="hljs-comment"># ----- Python implementation -----</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">find_max_sum</span>(<span class="hljs-params">arr, k</span>):
+
+    n = <span class="hljs-built_in">len</span>(arr)
+    <span class="hljs-keyword">if</span> n &lt; k:
+        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>  <span class="hljs-comment"># out of range index error</span>
+
+    window_sum = <span class="hljs-built_in">sum</span>(arr[:k])
+    max_sum = window_sum
+
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(k, n):
+        window_sum += arr[i] - arr[i - k]
+        <span class="hljs-keyword">if</span> window_sum &gt; max_sum:
+            max_sum = window_sum
+
+    <span class="hljs-keyword">return</span> max_sum
+</code></pre>
+<ol start="2">
+<li>Two Pointer
+<ul>
+<li>Two pointers traverse an array simultaneously <em>(from different ends or with a stipulated distance between them)</em></li>
+<li>Just a glorified way of saying two values are being stored for a given solution</li>
+<li>Used in problems involving
+<ul>
+<li>finding pairs in a sorted array</li>
+<li>merging two sorted arrays</li>
+</ul>
+</li>
+<li>Example questions
+<ul>
+<li><a href="https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/">Leetcode Problem #167: Two Sum II - Input array is sorted</a></li>
+<li><a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/">Leetcode Problem #19: Remove Nth Node From End of List</a></li>
+<li><a href="https://leetcode.com/problems/container-with-most-water/">Leetcode Problem #11: Container With Most Water</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-go"><span class="hljs-comment">// ----- Go implementation -----</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">findPairSum</span><span class="hljs-params">(arr []<span class="hljs-type">int</span>, target <span class="hljs-type">int</span>)</span></span> []<span class="hljs-type">int</span> {
+
+    left := <span class="hljs-number">0</span> <span class="hljs-comment">// left pointer index</span>
+    right := <span class="hljs-built_in">len</span>(arr) - <span class="hljs-number">1</span> <span class="hljs-comment">// right pointer index</span>
+
+    <span class="hljs-keyword">for</span> left &lt; right {
+        sum := arr[left] + arr[right]
+        <span class="hljs-keyword">if</span> sum == target {
+            <span class="hljs-keyword">return</span> []<span class="hljs-type">int</span>{arr[left], arr[right]}
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> sum &lt; target {
+            left++
+        } <span class="hljs-keyword">else</span> {
+            right--
+        }
+    }
+
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span> <span class="hljs-comment">// nothing found</span>
+
+}
+</code></pre>
+<pre><code class="language-py"><span class="hljs-comment"># ----- Python implementation -----</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">find_pair_sum</span>(<span class="hljs-params">arr, target</span>):
+
+    left = <span class="hljs-number">0</span>
+    right = <span class="hljs-built_in">len</span>(arr) - <span class="hljs-number">1</span>
+
+    <span class="hljs-keyword">while</span> left &lt; right:
+
+        current_sum = arr[left] + arr[right]
+
+        <span class="hljs-keyword">if</span> current_sum == target:
+            <span class="hljs-keyword">return</span> [arr[left], arr[right]]
+
+        <span class="hljs-keyword">elif</span> current_sum &lt; target:
+            left += <span class="hljs-number">1</span>
+
+        <span class="hljs-keyword">else</span>:
+            right -= <span class="hljs-number">1</span>
+
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+</code></pre>
+<ol start="3">
+<li>Three Pointer
+<ul>
+<li>Extension of two pointer algorithm</li>
+<li>Three pointers traverse an array simultaneously <em>(from different ends or with a stipulated distance between them)</em></li>
+<li>Just a glorified way of saying three values are being stored for a given solution</li>
+<li>Used in problems involving
+<ul>
+<li>finding triplets satisfying a predicate</li>
+<li>merging three or more sorted arrays</li>
+<li>partitioning</li>
+</ul>
+</li>
+<li>Example questions
+<ul>
+<li><a href="https://leetcode.com/problems/3sum/">Leetcode Problem #15: 3Sum</a></li>
+<li><a href="https://leetcode.com/problems/merge-two-sorted-lists/description/">Leetcode Problem #21: Merge Two Sorted Lists</a></li>
+<li><a href="https://leetcode.com/problems/merge-k-sorted-lists/">Leetcode Problem #23: Merge k Sorted Lists</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-go"><span class="hljs-comment">// ----- Go implementation -----</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">findTriplet</span><span class="hljs-params">(arr []<span class="hljs-type">int</span>, target <span class="hljs-type">int</span>)</span></span> []<span class="hljs-type">int</span> {
+
+    n := <span class="hljs-built_in">len</span>(arr)
+
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; n<span class="hljs-number">-2</span>; i++ {
+
+        left := i + <span class="hljs-number">1</span> <span class="hljs-comment">// left pointer</span>
+        right := n - <span class="hljs-number">1</span> <span class="hljs-comment">// right pointer</span>
+
+        <span class="hljs-keyword">for</span> left &lt; right {
+            sum := arr[i] + arr[left] + arr[right]
+            <span class="hljs-keyword">if</span> sum == target {
+                <span class="hljs-keyword">return</span> []<span class="hljs-type">int</span>{arr[i], arr[left], arr[right]}
+            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> sum &lt; target {
+                left++
+            } <span class="hljs-keyword">else</span> {
+                right--
+            }
+        }
+
+    }
+
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span> <span class="hljs-comment">// nothing found</span>
+
+}
+</code></pre>
+<pre><code class="language-py"><span class="hljs-comment"># ----- Python implementation -----</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">find_triplet</span>(<span class="hljs-params">arr, target</span>):
+
+    n = <span class="hljs-built_in">len</span>(arr)
+
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(n - <span class="hljs-number">2</span>):
+
+        left = i + <span class="hljs-number">1</span>
+        right = n - <span class="hljs-number">1</span>
+
+        <span class="hljs-keyword">while</span> left &lt; right:
+
+            current_sum = arr[i] + arr[left] + arr[right]
+
+            <span class="hljs-keyword">if</span> current_sum == target:
+                <span class="hljs-keyword">return</span> [arr[i], arr[left], arr[right]]
+
+            <span class="hljs-keyword">elif</span> current_sum &lt; target:
+                left += <span class="hljs-number">1</span>
+
+            <span class="hljs-keyword">else</span>:
+                right -= <span class="hljs-number">1</span>
+
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li><a href="https://frontendmasters.com/courses/algorithms/">primeagen's last algorithms course</a></li>
+<li><a href="https://youtube.com/playlist?list=PLZPZq0r_RZON1eaqfafTnEexRzuHbfZX8&amp;si=Fdvpj73H-3FqQpBs">brocode playlist</a></li>
+<li><a href="https://youtu.be/8hly31xKli0?si=aEbuILtMyqXl5PPu">freecodecamp</a></li>
+<li><a href="https://cs50.harvard.edu/x/2024/weeks/5/">cs50 week 5 data structures</a></li>
+<li><a href="https://youtu.be/5NgNicANyqM?si=qYD6DDvV5Fe3n-AA">cs50 ai with python</a></li>
+<li><a href="https://visualgo.net/en/sorting">sorting algorithms explained</a></li>
+<li><a href="https://www.toptal.com/developers/sorting-algorithms">sorting algorithms visualised</a></li>
+<li><a href="https://www.bigocheatsheet.com/">big o notation cheatsheet</a></li>
+<li><a href="https://learnxinyminutes.com/docs/asymptotic-notation/">learn asymptotic notation in y minutes</a></li>
+</ul>

@@ -1,0 +1,194 @@
+<h1><code>Mercury</code></h1>
+<p>Functional language for complex algorithm implementation and formal verification.</p>
+<h2>Comments</h2>
+<pre><code class="language-m"><span class="hljs-comment">% ----- COMMENT -----</span>
+
+<span class="hljs-comment">% this is a single-line comment</span>
+
+<span class="hljs-comment">/* this is a
+multi-line 
+comment */</span>
+</code></pre>
+<h2>Printing</h2>
+<pre><code class="language-m"><span class="hljs-comment">% ----- PRINTING -----</span>
+    <span class="hljs-comment">% io.write_string() =&gt; receives a string argument that is then printed to the stdout and does not include a newline by default</span>
+        <span class="hljs-comment">% !IO =&gt; provided as the second argument to the io.write_string() function</span>
+    <span class="hljs-comment">% note there is no built-in implementation for printing to the stdout with a newline included automatically</span>
+
+io.write_string(<span class="hljs-string">&quot;this does not have a newline&quot;</span>, !IO).
+io.write_string(<span class="hljs-string">&quot;this includes a newline but only because we explicitly specify its inclusion\n&quot;</span>, !IO).
+</code></pre>
+<h2>Quickstart</h2>
+<pre><code class="language-m"><span class="hljs-comment">% ----- QUICKSTART -----</span>
+    <span class="hljs-comment">% period-delimited programming language</span>
+    <span class="hljs-comment">% strongly, statically typed</span>
+    <span class="hljs-comment">% encourages declarative programming with a sophisticated determinism system </span>
+    <span class="hljs-comment">% supports concurrency and automatic garbage collection</span>
+    <span class="hljs-comment">% main(!IO) =&gt; specifies the entry point of a Mercury program wherein all execution code is written, the equivalent of the main function in many other programming languages within the C family</span>
+    <span class="hljs-comment">% import_module =&gt; brings other user-defined and Mercury built-in modules into the current module&#x27;s local scope</span>
+    <span class="hljs-comment">% module =&gt; declares the beginning of a module</span>
+    <span class="hljs-comment">% :- =&gt; general-purpose syntax used for variable declaration, directives, and clauses</span>
+</code></pre>
+<h2>Types</h2>
+<pre><code class="language-m"><span class="hljs-comment">% ----- TYPE -----</span>
+    <span class="hljs-comment">% int =&gt; stores signed and unsigned integer number values</span>
+    <span class="hljs-comment">% float =&gt; stores signed and unsigned floating-point number values</span>
+    <span class="hljs-comment">% char =&gt; stores a single Unicode character value, declared within &#x27;&#x27; single quotation marks</span>
+    <span class="hljs-comment">% bool =&gt; true, false</span>
+    <span class="hljs-comment">% string =&gt; stores a string value, declared within &quot;&quot; double quotation marks</span>
+
+:- <span class="hljs-keyword">type</span> int.
+:- <span class="hljs-keyword">type</span> float.
+:- <span class="hljs-keyword">type</span> char.
+:- <span class="hljs-keyword">type</span> bool.
+:- <span class="hljs-keyword">type</span> string.
+</code></pre>
+<h2>Operators</h2>
+<pre><code class="language-m"><span class="hljs-comment">% ----- OPERATOR -----</span>
+
+<span class="hljs-comment">% --- ARITHMETIC OPERATOR ---</span>
+
++ <span class="hljs-comment">% addition</span>
+- <span class="hljs-comment">% subtraction</span>
+* <span class="hljs-comment">% multiplication</span>
+/ <span class="hljs-comment">% division</span>
+<span class="hljs-comment">% % modulo</span>
+
+<span class="hljs-comment">% --- COMPARISON OPERATOR ---</span>
+
+<span class="hljs-built_in">=</span> <span class="hljs-comment">% partial equality check for value but not type</span>
+\<span class="hljs-built_in">=</span> <span class="hljs-comment">% partial inequality check for value but not type</span>
+&gt; <span class="hljs-comment">% comparison operator</span>
+&lt; <span class="hljs-comment">% comparison operator</span>
+&gt;<span class="hljs-built_in">=</span> <span class="hljs-comment">% comparison operator</span>
+<span class="hljs-built_in">&lt;=</span> <span class="hljs-comment">% comparison operator</span>
+
+<span class="hljs-comment">% --- LOGICAL OPERATOR ---</span>
+
+, <span class="hljs-comment">% conjunction operator, used as logical and</span>
+; <span class="hljs-comment">% disjunction operator, used as logical or</span>
+<span class="hljs-built_in">not</span> <span class="hljs-comment">% negation operator, used as logical not</span>
+</code></pre>
+<h2>Control structures</h2>
+<pre><code class="language-m"><span class="hljs-comment">% ----- CONTROL STRUCTURE -----</span>
+
+<span class="hljs-comment">% --- CONDITIONALS ---</span>
+
+<span class="hljs-comment">% IF ELSE IF ELSE </span>
+
+:- <span class="hljs-keyword">pred</span> check_age(int::in) <span class="hljs-keyword">is</span> <span class="hljs-keyword">semidet</span>.
+check_age(Age) :-
+    ( <span class="hljs-built_in">if</span> Age &gt;<span class="hljs-built_in">=</span> <span class="hljs-number">18</span> <span class="hljs-built_in">then</span>
+        io.write_string(<span class="hljs-string">&quot;Adult\n&quot;</span>)
+    <span class="hljs-built_in">else</span> <span class="hljs-built_in">if</span> Age &gt;<span class="hljs-built_in">=</span> <span class="hljs-number">13</span> <span class="hljs-built_in">then</span>
+        io.write_string(<span class="hljs-string">&quot;Teenager\n&quot;</span>)
+    <span class="hljs-built_in">else</span>
+        io.write_string(<span class="hljs-string">&quot;Child\n&quot;</span>) ).
+
+<span class="hljs-comment">% CASE = -&gt;</span>
+    <span class="hljs-comment">% provides basic pattern-matching similar to Rust and other programming languages</span>
+
+:- <span class="hljs-keyword">type</span> color ---&gt; red ; blue ; green.
+:- <span class="hljs-keyword">pred</span> describe_color(color::in, io::di, io::uo) <span class="hljs-keyword">is</span> <span class="hljs-keyword">det</span>.
+describe_color(Color, !IO) :-
+    ( Color <span class="hljs-built_in">=</span> red -&gt;
+        io.write_string(<span class="hljs-string">&quot;Color is Red\n&quot;</span>, !IO)
+    ; Color <span class="hljs-built_in">=</span> blue -&gt;
+        io.write_string(<span class="hljs-string">&quot;Color is Blue\n&quot;</span>, !IO)
+    ; Color <span class="hljs-built_in">=</span> green -&gt;
+        io.write_string(<span class="hljs-string">&quot;Color is Green\n&quot;</span>, !IO)
+    ).
+
+<span class="hljs-comment">% --- LOOPS ---</span>
+    <span class="hljs-comment">% Mercury lacks coventional for and while loop constructs as in other programming languages</span>
+    <span class="hljs-comment">% instead, recursion can be used as seen below to iterate over and traverse an iterable data structure similar to Clojure and other Lisp dialects in a manner similar to for loops</span>
+    <span class="hljs-comment">% while loops can also be effected by including a recursive construct and adding a conditional predicate check that breaks out of the loop when the predicate condition is met</span>
+
+<span class="hljs-comment">% RECURSION TO ITERATE OVER ITERABLE STRUCTURE</span>
+
+:- <span class="hljs-keyword">pred</span> sum_list(list(int)::in, int::out, io::di, io::uo) <span class="hljs-keyword">is</span> <span class="hljs-keyword">det</span>.
+sum_list(List, Sum, !IO) :-
+    sum_list_loop(List, <span class="hljs-number">0</span>, Sum, !IO).
+
+:- <span class="hljs-keyword">pred</span> sum_list_loop(list(int)::in, int::in, int::out, io::di, io::uo) <span class="hljs-keyword">is</span> <span class="hljs-keyword">det</span>.
+sum_list_loop([], Acc, Acc, !IO).
+sum_list_loop([Head | Tail], Acc, Sum, !IO) :-
+    NewAcc <span class="hljs-built_in">=</span> Acc + Head,
+    sum_list_loop(Tail, NewAcc, Sum, !IO).
+
+<span class="hljs-comment">% RECURSION WITH EXIT PREDICATE CONDITION</span>
+
+:- <span class="hljs-keyword">pred</span> count_down(int::in, io::di, io::uo) <span class="hljs-keyword">is</span> <span class="hljs-keyword">det</span>.
+count_down(N, !IO) :-
+    ( <span class="hljs-built_in">if</span> N &gt; <span class="hljs-number">0</span> <span class="hljs-built_in">then</span>
+        io.write_string(string.format(<span class="hljs-string">&quot;Counting down: %d\n&quot;</span>, [i(N)]), !IO),
+        count_down(N - <span class="hljs-number">1</span>, !IO)
+    <span class="hljs-built_in">else</span>
+        io.write_string(<span class="hljs-string">&quot;Countdown complete!\n&quot;</span>, !IO)
+    ).
+</code></pre>
+<h2>Data structures</h2>
+<pre><code class="language-m"><span class="hljs-comment">% ----- DATA STRUCTURE -----</span>
+    <span class="hljs-comment">% list =&gt; dynamically-sized ordered collection of elements of the same datatype</span>
+    <span class="hljs-comment">% array =&gt; fixed-size ordered collection of elements of the same datatype</span>
+    <span class="hljs-comment">% type =&gt; used to specify one of the following user-defined datatypes</span>
+        <span class="hljs-comment">% user-defined set of named constants, the equivalent of enums in other languages</span>
+        <span class="hljs-comment">% user-defined collection of named fields and their specified corresponding datatypes, the equivalent of structs in Rust and Go allowing for the modelling of structured data</span>
+        <span class="hljs-comment">% option() =&gt; creates a nullable datatype that can either store a value of the specified datatype as some() or the special value none</span>
+        <span class="hljs-comment">% some() =&gt; represents the presence of a value stored in a variable that is nullable and could be storing the none value</span>
+        <span class="hljs-comment">% none =&gt; represents the absence of a value</span>
+        <span class="hljs-comment">% alias =&gt; special keyword that creates a type alias for existing datatypes, from which that aliased datatype can then be called</span>
+
+:- <span class="hljs-keyword">type</span> list(T).
+:- <span class="hljs-keyword">type</span> array(T, N).
+:- <span class="hljs-keyword">type</span> color. <span class="hljs-comment">% enum equivalent</span>
+:- <span class="hljs-keyword">type</span> person. <span class="hljs-comment">% struct equivalent</span>
+:- <span class="hljs-keyword">type</span> option(T).
+:- <span class="hljs-keyword">type</span> alias Name <span class="hljs-built_in">=</span><span class="hljs-built_in">=</span> string. <span class="hljs-comment">% alias Name for the existing datatype string</span>
+</code></pre>
+<h2>Functions and Predicates</h2>
+<pre><code class="language-m"><span class="hljs-comment">% ----- FUNCTION -----</span>
+    <span class="hljs-comment">% used for computation and deterministic, producing a single output for a given number of inputs</span>
+    <span class="hljs-comment">% Mercury function definitions bear many similarities to functional languages like Haskell, where the function&#x27;s type signature is specified first and function implementation within the function body is specified after</span>
+    <span class="hljs-comment">% bearing hallmarks of the functional paradigm, Mercury&#x27;s functions feature implicit return of the last expression within the function definition, and each function returns a single value</span>
+    <span class="hljs-comment">% func &lt;functionName&gt; ( &lt;functionParameterDatatype(s)&gt; ) = &lt;functionReturnDatatype&gt; . &lt;functionName&gt; ( &lt;functionParameterName(s)&gt; ) &lt;functionBody&gt; =&gt; function declaration and definition of type signature of a named function</span>
+
+:- <span class="hljs-keyword">func</span> add(int, int) <span class="hljs-built_in">=</span> int. <span class="hljs-comment">% named function&#x27;s type signature</span>
+add(X, Y) <span class="hljs-built_in">=</span> X + Y. <span class="hljs-comment">% named function&#x27;s function body</span>
+
+:- <span class="hljs-keyword">func</span> multiply(int, int) <span class="hljs-built_in">=</span> int. <span class="hljs-comment">% another named function&#x27;s type signature</span>
+multiply(X, Y) <span class="hljs-built_in">=</span> X * Y. <span class="hljs-comment">% named function&#x27;s function body</span>
+
+:- <span class="hljs-keyword">func</span> factorial(int) <span class="hljs-built_in">=</span> int. <span class="hljs-comment">% a final named function&#x27;s type signature</span>
+factorial(N) <span class="hljs-built_in">=</span> ( <span class="hljs-built_in">if</span> N <span class="hljs-built_in">=</span>&lt; <span class="hljs-number">0</span> <span class="hljs-built_in">then</span> <span class="hljs-number">1</span> <span class="hljs-built_in">else</span> N * factorial(N - <span class="hljs-number">1</span>) ). <span class="hljs-comment">% that named function&#x27;s function body</span>
+
+<span class="hljs-comment">% ----- PREDICATE -----</span>
+    <span class="hljs-comment">% used for logical assertions that can succeed or fail, with the following determinism categories such as the following</span>
+        <span class="hljs-comment">% det =&gt; always succeeds exactly once</span>
+        <span class="hljs-comment">% semidet =&gt; succeeds at most once and may fail</span>
+        <span class="hljs-comment">% nondet =&gt; can succeed multiple times</span>
+        <span class="hljs-comment">% multi =&gt; must succeed at least once, but can succeed multiple times</span>
+    <span class="hljs-comment">% pred &lt;predicateName&gt; ( &lt;predicateParameterDatatype(s)&gt; :: &lt;predicateModeParameterDescriptions&gt;) is &lt;determinismCategory&gt; . &lt;predicateName&gt; ( &lt;predicateParameterName(s)&gt; ) :- &lt;predicateBody&gt; =&gt; predicate declaration and definition for a named predicate</span>
+    <span class="hljs-comment">% predicate mode parameter descriptions are used to specify how parameters are passed to and from predicates</span>
+        <span class="hljs-comment">% in =&gt; the predicate parameter will be read by the predicate but will not be modified by it</span>
+        <span class="hljs-comment">% di =&gt; the predicate parameter will be consumed (destroyed) by the predicate</span>
+        <span class="hljs-comment">% uo =&gt; the predicate parameter will be used to produce an output returned value</span>
+
+:- <span class="hljs-keyword">pred</span> is_even(int::in) <span class="hljs-keyword">is</span> <span class="hljs-keyword">semidet</span>. <span class="hljs-comment">% type signature for a predicate</span>
+is_even(N) :- N mod <span class="hljs-number">2</span> <span class="hljs-built_in">=</span> <span class="hljs-number">0</span>. <span class="hljs-comment">% predicate implementation</span>
+
+:- <span class="hljs-keyword">pred</span> check_age(int::in, io::di, io::uo) <span class="hljs-keyword">is</span> <span class="hljs-keyword">det</span>. <span class="hljs-comment">% type signature for a more complex predicate</span>
+check_age(Age, !IO) :- <span class="hljs-comment">% predicate implementation</span>
+    ( <span class="hljs-built_in">if</span> Age &gt;<span class="hljs-built_in">=</span> <span class="hljs-number">18</span> <span class="hljs-built_in">then</span>
+        io.write_string(<span class="hljs-string">&quot;Adult\n&quot;</span>, !IO)
+    <span class="hljs-built_in">else</span> <span class="hljs-built_in">if</span> Age &gt;<span class="hljs-built_in">=</span> <span class="hljs-number">13</span> <span class="hljs-built_in">then</span>
+        io.write_string(<span class="hljs-string">&quot;Teenager\n&quot;</span>, !IO)
+    <span class="hljs-built_in">else</span>
+        io.write_string(<span class="hljs-string">&quot;Child\n&quot;</span>, !IO)
+    ).
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li><a href="https://mercurylang.org/documentation/documentation.html">mercury documentation</a></li>
+<li><a href="https://learnxinyminutes.com/docs/mercury/">learn mercury in y minutes</a></li>
+</ul>

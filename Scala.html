@@ -1,0 +1,289 @@
+<h1><code>Scala</code></h1>
+<p>Hybrid functional and object-oriented programming language that compiles to Java bytecode.</p>
+<h2>REPL</h2>
+<p>Scala features a REPL analogous to a commandline interpreter. Any Scala expression received will be evaluated and printed to the stdout.</p>
+<pre><code class="language-sh"><span class="hljs-comment"># ----- Scala REPL -----</span>
+
+$ scala <span class="hljs-comment"># initialises a Scala REPL as below</span>
+scala&gt;
+
+scala&gt; 2 + 2 <span class="hljs-comment"># each typed expression is automatically saved as a new numbered value</span>
+res0: Int = 4
+
+scala&gt; res0 + 2 <span class="hljs-comment"># previously declared values can be called</span>
+res1: Int = 6
+
+scala&gt; :<span class="hljs-built_in">type</span> (<span class="hljs-literal">true</span>, 2.0) <span class="hljs-comment"># checking type of a literal without evaluating an expression</span>
+(Boolean, Double)
+
+scala&gt; :save /sites/repl-test.scala <span class="hljs-comment"># saves a Scala REPL session</span>
+
+scala&gt; :load /sites/repl-test.scala <span class="hljs-comment"># load a Scala file into the REPL to automatically evaluate it</span>
+Loading /sites/repl-test.scala...
+res2: Int = 4
+res3: Int = 6
+
+scala&gt; :h? <span class="hljs-comment"># browse REPL history to see past expressions entered</span>
+1 2 + 2
+2 res0 + 2
+3 :save /sites/repl-test.scala
+4 :load /sites/repl-test.scala
+5 :h?
+</code></pre>
+<h2>Comments</h2>
+<pre><code class="language-scala"><span class="hljs-comment">// ----- COMMENT -----</span>
+
+<span class="hljs-comment">// this is a single-line comment</span>
+
+<span class="hljs-comment">/* 
+this is a 
+multi-line
+comment
+*/</span>
+</code></pre>
+<h2>Printing</h2>
+<pre><code class="language-scala"><span class="hljs-comment">// ----- PRINT -----</span>
+    <span class="hljs-comment">// print() =&gt; print text to the stdout without a newline</span>
+    <span class="hljs-comment">// println() =&gt; print text to the stdout with a newline</span>
+
+print(<span class="hljs-string">&quot;there&#x27;s no newline and we must explicitly specify it\n&quot;</span>)
+println(<span class="hljs-string">&quot;this includes a newline automatically&quot;</span>)
+</code></pre>
+<h2>Imports</h2>
+<pre><code class="language-scala"><span class="hljs-comment">// ----- IMPORT -----</span>
+    <span class="hljs-comment">// a Scala file can contain multiple classes and objects</span>
+    <span class="hljs-comment">// import =&gt; specifies packages, sub packages and classes to bring into the local scope of the current Scala file</span>
+    <span class="hljs-comment">// {} =&gt; group multiple import items together</span>
+    <span class="hljs-comment">// =&gt; =&gt; rename an import item within the local scope for easier reference</span>
+        <span class="hljs-comment">// _ =&gt; can be combined with above to exclude specific import items from being imported</span>
+
+<span class="hljs-keyword">import</span> scala.collection.immutable.<span class="hljs-type">List</span>
+<span class="hljs-keyword">import</span> scala.collection.immutable._ <span class="hljs-comment">// this is a sub package</span>
+<span class="hljs-keyword">import</span> scala.collection.immutable.{<span class="hljs-type">List</span>, <span class="hljs-type">Map</span>} <span class="hljs-comment">// import multiple classes at once</span>
+<span class="hljs-keyword">import</span> scala.collection.immutable.{<span class="hljs-type">List</span> =&gt; <span class="hljs-type">ImmutableList</span>} <span class="hljs-comment">// rename the import from List to ImmutableList</span>
+<span class="hljs-keyword">import</span> scala.collection.immutable.{<span class="hljs-type">Map</span> =&gt; _, <span class="hljs-type">Set</span> =&gt; _, _} <span class="hljs-comment">// import all classes except the specified Map and Set</span>
+</code></pre>
+<h2>Input and Output</h2>
+<pre><code class="language-scala"><span class="hljs-comment">// ----- INPUT AND OUTPUT -----</span>
+    <span class="hljs-comment">// scala.io.Source =&gt; package containing read and write methods, has to be imported</span>
+        <span class="hljs-comment">// .fromFile() =&gt; opens file at specified file path</span>
+        <span class="hljs-comment">// .getLines() =&gt; retrieves all the lines within a file and stores them within an iterable structure that can be iterated over with a loop</span>
+    <span class="hljs-comment">// PrintWriter() =&gt; initialses a new PrintWriter write object on the file at the specified file path</span>
+        <span class="hljs-comment">// util.Properties =&gt; package containing further formatting options for writing to the specified file</span>
+        <span class="hljs-comment">// .write() =&gt; writes the designated text as a string to the file</span>
+        <span class="hljs-comment">// .close() =&gt; closes the PrintWriter object</span>
+
+<span class="hljs-comment">// --- INPUT ---</span>
+    <span class="hljs-comment">// performs read actions</span>
+
+<span class="hljs-keyword">import</span> scala.io.<span class="hljs-type">Source</span> <span class="hljs-comment">// required import</span>
+<span class="hljs-keyword">for</span>(line &lt;- <span class="hljs-type">Source</span>.fromFile(<span class="hljs-string">&quot;myfile.txt&quot;</span>).getLines())
+    println(line)
+
+<span class="hljs-comment">// --- OUTPUT ---</span>
+    <span class="hljs-comment">// performs write actions</span>
+
+<span class="hljs-keyword">val</span> writer = <span class="hljs-keyword">new</span> <span class="hljs-type">PrintWriter</span>(<span class="hljs-string">&quot;myfile.txt&quot;</span>)
+writer.write(<span class="hljs-string">&quot;Writing line for line&quot;</span> + util.<span class="hljs-type">Properties</span>.lineSeparator)
+writer.write(<span class="hljs-string">&quot;Another line here&quot;</span> + util.<span class="hljs-type">Properties</span>.lineSeparator)
+writer.close()
+</code></pre>
+<h2>Quickstart</h2>
+<pre><code class="language-scala"><span class="hljs-comment">// ----- QUICKSTART -----</span>
+    <span class="hljs-comment">// Scala is statically typed but affords type inference (Scala compiler determines the type of a given variable if not explicitly defined)</span>
+    <span class="hljs-comment">// a Scala program&#x27;s entry point is defined within an object&#x27;s main method</span>
+    <span class="hljs-comment">// scalac =&gt; CLI command to compile the .scala file</span>
+    <span class="hljs-comment">// val =&gt; declares an immutable value that cannot be reassigned</span>
+    <span class="hljs-comment">// var =&gt; declares a mutable value that can be reassigned</span>
+    <span class="hljs-comment">// : =&gt; declares the type of a variable</span>
+
+<span class="hljs-class"><span class="hljs-keyword">object</span> <span class="hljs-title">Application</span> </span>{ <span class="hljs-comment">// object declaration</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span></span>(args: <span class="hljs-type">Array</span>[<span class="hljs-type">String</span>]): <span class="hljs-type">Unit</span> = { <span class="hljs-comment">// main method</span>
+        <span class="hljs-keyword">val</span> x:<span class="hljs-type">Int</span> = <span class="hljs-number">10</span> 
+        x = <span class="hljs-number">20</span> <span class="hljs-comment">// this causes an error</span>
+        <span class="hljs-keyword">var</span> y:<span class="hljs-type">Int</span> = <span class="hljs-number">10</span>
+        <span class="hljs-keyword">var</span> z:<span class="hljs-type">Double</span> = <span class="hljs-number">1.0</span>
+        y = <span class="hljs-number">20</span> <span class="hljs-comment">// this is okay</span>
+        z = <span class="hljs-number">2.5</span> <span class="hljs-comment">// this is also okay</span>
+    }
+}
+</code></pre>
+<h2>Types</h2>
+<pre><code class="language-scala"><span class="hljs-comment">// ----- TYPE -----</span>
+    <span class="hljs-comment">// Scala features a rich type system consisting of both primitive and complex types</span>
+
+<span class="hljs-comment">// --- PRIMITIVE TYPE --- </span>
+    <span class="hljs-comment">// Byte =&gt; 8-bit signed integer</span>
+    <span class="hljs-comment">// Short =&gt; 16-bit signed integer</span>
+    <span class="hljs-comment">// Int =&gt; 32-bit signed integer</span>
+    <span class="hljs-comment">// Long =&gt; 64-bit signed integer</span>
+    <span class="hljs-comment">// Float =&gt; 32-bit single-precision floating point number</span>
+    <span class="hljs-comment">// Double =&gt; 64-bit double-precision floating point number</span>
+    <span class="hljs-comment">// Char =&gt; 16-bit Unicode character declared with &#x27;&#x27; single quotes</span>
+    <span class="hljs-comment">// Boolean =&gt; true or false</span>
+    <span class="hljs-comment">// Unit =&gt; represents the absence of a value with only one instance (), equivalent to void in Java</span>
+
+<span class="hljs-comment">// --- REFERENCE TYPE ---</span>
+    <span class="hljs-comment">// String =&gt; sequence of Char primitives, immutable and backed by the Java String class, declared with &quot;&quot; double quotes</span>
+    <span class="hljs-comment">// Option =&gt; datatype representing either an optional value or None</span>
+    <span class="hljs-comment">// Tuple =&gt; data structure storing a fixed number of items of different types, declared with () round brackets</span>
+    <span class="hljs-comment">// List =&gt; immutable linked list</span>
+    <span class="hljs-comment">// Seq =&gt; ordered sequence of elements</span>
+    <span class="hljs-comment">// Set =&gt; unordered sequence of unique elements</span>
+    <span class="hljs-comment">// Map =&gt; collection of key-value pairs</span>
+
+<span class="hljs-comment">// --- ANY ---</span>
+    <span class="hljs-comment">// Any =&gt; root type of all datatypes in Scala, allowing for Scala&#x27;s type inference</span>
+    <span class="hljs-comment">// AnyVal =&gt; parent type of all primitive types</span>
+    <span class="hljs-comment">// AnyRef =&gt; parent type of all reference types</span>
+</code></pre>
+<h2>Operators</h2>
+<pre><code class="language-scala"><span class="hljs-comment">// ----- OPERATOR -----</span>
+
+<span class="hljs-comment">// ARITHMETIC OPERATORS</span>
+    <span class="hljs-comment">// + =&gt; addition</span>
+    <span class="hljs-comment">// - =&gt; subtraction</span>
+    <span class="hljs-comment">// * =&gt; multiplication</span>
+    <span class="hljs-comment">// / =&gt; divison</span>
+    <span class="hljs-comment">// % =&gt; modulo</span>
+
+<span class="hljs-comment">// LOGICAL OPERATORS</span>
+    <span class="hljs-comment">// &amp;&amp; =&gt; logical and</span>
+    <span class="hljs-comment">// || =&gt; logical or</span>
+    <span class="hljs-comment">// ! =&gt; logical not</span>
+
+<span class="hljs-comment">// COMPARISON OPERATORS</span>
+    <span class="hljs-comment">// == =&gt; complete equality check for value and type</span>
+    <span class="hljs-comment">// != =&gt; complete inequality check for value and type</span>
+    <span class="hljs-comment">// .isInstanceOf[] =&gt; mostly used to check if object is of a specific type</span>
+    <span class="hljs-comment">// &gt;, &lt;, &gt;=, &lt;= are comparison operators and operate as you&#x27;d expect</span>
+
+<span class="hljs-comment">// ASSIGNMENT OPERATORS</span>
+    <span class="hljs-comment">// = =&gt; simple assignment</span>
+    <span class="hljs-comment">// += =&gt; increment by specified value and reassign</span>
+    <span class="hljs-comment">// -= =&gt; decrement by specified value and reassign</span>
+    <span class="hljs-comment">// *= =&gt; multiply by specified value and reassign</span>
+    <span class="hljs-comment">// /= =&gt; divide by specified value and reassign</span>
+</code></pre>
+<h2>Control structures</h2>
+<pre><code class="language-scala"><span class="hljs-comment">// ----- CONTROL STRUCTURE -----</span>
+
+<span class="hljs-comment">// ----- CONDITIONAL -----</span>
+    <span class="hljs-comment">// conditionals can be specified for later evaluation within function calls and assignment statements</span>
+    <span class="hljs-comment">// conditionals, like many other things in Scala, can also flexibly be written in a single line</span>
+        <span class="hljs-comment">// if </span>
+        <span class="hljs-comment">// else</span>
+        <span class="hljs-comment">// else if</span>
+
+<span class="hljs-keyword">val</span> x:<span class="hljs-type">Int</span> = <span class="hljs-number">10</span>
+<span class="hljs-keyword">if</span> (x == <span class="hljs-number">1</span>) println(<span class="hljs-string">&quot;this won&#x27;t run&quot;</span>)
+<span class="hljs-keyword">if</span> (x == <span class="hljs-number">10</span>) println(<span class="hljs-string">&quot;this will run&quot;</span>)
+<span class="hljs-keyword">if</span> (x == <span class="hljs-number">11</span>) println(<span class="hljs-string">&quot;meanwhile this won&#x27;t run&quot;</span>) <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (x == <span class="hljs-number">12</span>) println(<span class="hljs-string">&quot;this also won&#x27;t run&quot;</span>) <span class="hljs-keyword">else</span> println(<span class="hljs-string">&quot;but this will&quot;</span>)
+println(<span class="hljs-keyword">if</span> (x == <span class="hljs-number">10</span>) <span class="hljs-string">&quot;yeah&quot;</span> <span class="hljs-keyword">else</span> <span class="hljs-string">&quot;nope&quot;</span>) <span class="hljs-comment">// conditionals can be nested within other functions</span>
+<span class="hljs-keyword">val</span> text = <span class="hljs-keyword">if</span> (x == <span class="hljs-number">10</span>) <span class="hljs-string">&quot;yeah&quot;</span> <span class="hljs-keyword">else</span> <span class="hljs-string">&quot;nope&quot;</span> <span class="hljs-comment">// as well as assignment</span>
+
+<span class="hljs-comment">// ----- LOOP -----</span>
+    <span class="hljs-comment">// Scala does not feature &#x27;conventional&#x27; for loops, but rather employs special keywords like to and by to generate similar structures</span>
+        <span class="hljs-comment">// to =&gt; creates an iterable structure, equivalent of range in Python</span>
+        <span class="hljs-comment">// by =&gt; specifies the step within the given iterable structure being created</span>
+    <span class="hljs-comment">// .foreach() =&gt; equivalent of map() as a signature of functional programming, applies the given function call on a given iterable structure</span>
+        <span class="hljs-comment">// this can be called without dots and brackets also, Scala is generally quite lenient with the function call syntax</span>
+    <span class="hljs-comment">// while loop</span>
+        <span class="hljs-comment">// while =&gt; specifies the predicate condition upon which the while loop runs a check on every iteration</span>
+    <span class="hljs-comment">// do while loop</span>
+        <span class="hljs-comment">// do =&gt; specify the action to be executed every loop iteration</span>
+        <span class="hljs-comment">// while =&gt; specifies the predicate condition upon which the while loop runs a check on every iteration</span>
+
+<span class="hljs-keyword">val</span> r = <span class="hljs-number">1</span> to <span class="hljs-number">5</span> <span class="hljs-comment">// creates an iterable structure with Int&#x27;s from 1 to 5 and assigns it to r</span>
+r.foreach(println) <span class="hljs-comment">// prints &quot;1\n2\n3\n4\n5\n&quot; to the stdout</span>
+(<span class="hljs-number">5</span> to <span class="hljs-number">1</span> by <span class="hljs-number">-1</span>) foreach (println) <span class="hljs-comment">// initialises an iterable structure literal and iterates over it and prints out each item accordingly</span>
+
+<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>
+<span class="hljs-keyword">while</span> (i &lt; <span class="hljs-number">10</span>) { <span class="hljs-comment">// classic while loop</span>
+    println(<span class="hljs-string">&quot;i &quot;</span> + i)
+    i += <span class="hljs-number">1</span> 
+}
+
+i = <span class="hljs-number">0</span>
+<span class="hljs-keyword">do</span> {
+    println(<span class="hljs-string">&quot;i is still less than 10&quot;</span>) <span class="hljs-comment">// classic do while loop</span>
+    i += <span class="hljs-number">1</span>
+} <span class="hljs-keyword">while</span> (i &lt; <span class="hljs-number">10</span>)
+</code></pre>
+<h2>Data structures</h2>
+<pre><code class="language-scala"><span class="hljs-comment">// ----- DATA STRUCTURE -----</span>
+    <span class="hljs-comment">// () =&gt; declares a tuple with its specified element datatypes</span>
+    <span class="hljs-comment">// Option[] =&gt; declares an option type that could either be the specified datatype or None</span>
+    <span class="hljs-comment">// List[] =&gt; declared a linked list with elements of the specified type</span>
+    <span class="hljs-comment">// Set[] =&gt; declares a set with elements of the specified type</span>
+    <span class="hljs-comment">// Map[] =&gt; declares a Map with key-value pairs of the specified types</span>
+        <span class="hljs-comment">// -&gt; =&gt; specifies the relationship between a key-value pair</span>
+
+<span class="hljs-keyword">val</span> tuple: (<span class="hljs-type">Int</span>, <span class="hljs-type">String</span>, <span class="hljs-type">Boolean</span>) = (<span class="hljs-number">1</span>, <span class="hljs-string">&quot;Scala&quot;</span>, <span class="hljs-literal">true</span>)
+<span class="hljs-keyword">val</span> someValue: <span class="hljs-type">Option</span>[<span class="hljs-type">Int</span>] = <span class="hljs-type">Some</span>(<span class="hljs-number">5</span>)
+<span class="hljs-keyword">val</span> noValue: <span class="hljs-type">Option</span>[<span class="hljs-type">Int</span>] = <span class="hljs-type">None</span>
+<span class="hljs-keyword">val</span> list: <span class="hljs-type">List</span>[<span class="hljs-type">Int</span>] = <span class="hljs-type">List</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+<span class="hljs-keyword">val</span> set: <span class="hljs-type">Set</span>[<span class="hljs-type">String</span>] = <span class="hljs-type">Set</span>(<span class="hljs-string">&quot;apple&quot;</span>, <span class="hljs-string">&quot;banana&quot;</span>, <span class="hljs-string">&quot;cherry&quot;</span>)
+<span class="hljs-keyword">val</span> map: <span class="hljs-type">Map</span>[<span class="hljs-type">String</span>, <span class="hljs-type">Int</span>] = <span class="hljs-type">Map</span>(<span class="hljs-string">&quot;a&quot;</span> -&gt; <span class="hljs-number">1</span>, <span class="hljs-string">&quot;b&quot;</span> -&gt; <span class="hljs-number">2</span>, <span class="hljs-string">&quot;c&quot;</span> -&gt; <span class="hljs-number">3</span>)
+</code></pre>
+<h2>Functions</h2>
+<pre><code class="language-scala"><span class="hljs-comment">// ----- FUNCTION -----</span>
+    <span class="hljs-comment">// Scala features implicit return of the last expression within a function block, so there is no return keyword</span>
+        <span class="hljs-comment">// the {} surrounding the function body can be omitted if the entire function body is a single expression that evaluates to the function&#x27;s return value</span>
+    <span class="hljs-comment">// def =&gt; defines a function similar to Python</span>
+    <span class="hljs-comment">// : =&gt; specifies the datatype of a function&#x27;s arguments and return values</span>
+    <span class="hljs-comment">// = =&gt; used to assign default values to certain function arguments</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sumOfSquares</span></span>(x: <span class="hljs-type">Int</span>, y: <span class="hljs-type">Int</span>): <span class="hljs-type">Int</span> = {
+    <span class="hljs-keyword">val</span> x2 = x * x
+    <span class="hljs-keyword">val</span> y2 = y * y
+    x2 + y2 <span class="hljs-comment">// this last expression is implicitly returned</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sumOfSquaresShort</span></span>(x: <span class="hljs-type">Int</span>, y: <span class="hljs-type">Int</span>): <span class="hljs-type">Int</span> = x * x + y * y <span class="hljs-comment">// this one-line function evaluates to the single return expression</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">addWithDefault</span></span>(x: <span class="hljs-type">Int</span>, y: <span class="hljs-type">Int</span> = <span class="hljs-number">5</span>) = x + y <span class="hljs-comment">// default argument provided to this function</span>
+
+<span class="hljs-comment">// --- ANONYMOUS FUNCTION ---</span>
+    <span class="hljs-comment">// a hallmark of functional programming languages, where anonymous functions can be assigned to variables</span>
+    <span class="hljs-comment">// =&gt; =&gt; defines an anonymous function and the relationship between the anonymous function&#x27;s parameters and its return value</span>
+        <span class="hljs-comment">// def and function name are completly omitted in anonymous function declarations</span>
+
+(x: <span class="hljs-type">Int</span>) =&gt; x * x <span class="hljs-comment">// this is an anonymous function</span>
+<span class="hljs-keyword">val</span> sq: <span class="hljs-type">Int</span> =&gt; <span class="hljs-type">Int</span> = x =&gt; x * x <span class="hljs-comment">// datatype of the anonymous function&#x27;s parameters and return type can also be specified with this syntax which appears nearly identical to Haskell</span>
+</code></pre>
+<h2>Pattern Matching</h2>
+<pre><code class="language-scala"><span class="hljs-comment">// ----- PATTERN MATCHING -----</span>
+    <span class="hljs-comment">// Scala features powerful pattern matching for multiple predicates that uniquely does not require breaks, fall-through simply does not occur</span>
+        <span class="hljs-comment">// Scala even has regex support built in</span>
+    <span class="hljs-comment">// match, case =&gt; creates a match-case expression that allows for pattern matching</span>
+        <span class="hljs-comment">// =&gt; =&gt; specifies the relationship between a give case statement and the relevant execution code</span>
+        <span class="hljs-comment">// _ =&gt; final catch-all character, equivalent of default in other languages</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">matchPerson</span></span>(person: <span class="hljs-type">Person</span>): <span class="hljs-type">String</span> = person <span class="hljs-keyword">match</span> {
+    <span class="hljs-keyword">case</span> <span class="hljs-type">Person</span>(<span class="hljs-string">&quot;George&quot;</span>, number) =&gt; <span class="hljs-string">&quot;We found George! His number is &quot;</span> + number
+    <span class="hljs-keyword">case</span> <span class="hljs-type">Person</span>(<span class="hljs-string">&quot;Kate&quot;</span>, number) =&gt; <span class="hljs-string">&quot;We found Kate! Her number is &quot;</span> + number
+    <span class="hljs-keyword">case</span> <span class="hljs-type">Person</span>(name, number) =&gt; <span class="hljs-string">&quot;We matched someone : &quot;</span> + name + <span class="hljs-string">&quot;, phone : &quot;</span> + number
+}
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">matchEverything</span></span>(obj: <span class="hljs-type">Any</span>): <span class="hljs-type">String</span> = obj <span class="hljs-keyword">match</span> { <span class="hljs-comment">// this function&#x27;s match statement takes in an object of any type</span>
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;Hello world&quot;</span> =&gt; <span class="hljs-string">&quot;Got the string Hello world&quot;</span> <span class="hljs-comment">// matches a value</span>
+    <span class="hljs-keyword">case</span> x: <span class="hljs-type">Double</span> =&gt; <span class="hljs-string">&quot;Got a Double: &quot;</span> + x <span class="hljs-comment">// match by type</span>
+    <span class="hljs-keyword">case</span> x: <span class="hljs-type">Int</span> <span class="hljs-keyword">if</span> x &gt; <span class="hljs-number">10000</span> =&gt; <span class="hljs-string">&quot;Got a pretty big number!&quot;</span> <span class="hljs-comment">// matches a condition</span>
+    <span class="hljs-keyword">case</span> <span class="hljs-type">Person</span>(name, number) =&gt; <span class="hljs-string">s&quot;Got contact info for <span class="hljs-subst">$name</span>!&quot;</span> <span class="hljs-comment">// match the class of a case</span>
+    <span class="hljs-keyword">case</span> email(name, domain) =&gt; <span class="hljs-string">s&quot;Got email address <span class="hljs-subst">$name</span>@<span class="hljs-subst">$domain</span>&quot;</span> <span class="hljs-comment">// match a regular expression</span>
+    <span class="hljs-keyword">case</span> (a: <span class="hljs-type">Int</span>, b: <span class="hljs-type">Double</span>, c: <span class="hljs-type">String</span>) =&gt; <span class="hljs-string">s&quot;Got a tuple: <span class="hljs-subst">$a</span>, <span class="hljs-subst">$b</span>, <span class="hljs-subst">$c</span>&quot;</span> <span class="hljs-comment">// multiple matching within a tuple</span>
+    <span class="hljs-keyword">case</span> <span class="hljs-type">List</span>(<span class="hljs-number">1</span>, b, c) =&gt; <span class="hljs-string">s&quot;Got a list with three elements and starts with 1: 1, <span class="hljs-subst">$b</span>, <span class="hljs-subst">$c</span>&quot;</span> <span class="hljs-comment">// match a data structure</span>
+    <span class="hljs-keyword">case</span> <span class="hljs-type">List</span>(<span class="hljs-type">List</span>((<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-string">&quot;YAY&quot;</span>))) =&gt; <span class="hljs-string">&quot;Got a list of list of tuple&quot;</span> <span class="hljs-comment">// nested patterns</span>
+    <span class="hljs-keyword">case</span> _ =&gt; <span class="hljs-string">&quot;Got unknown object&quot;</span> <span class="hljs-comment">// match any uncaught case</span>
+}
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li>Intersection types</li>
+<li>Union types</li>
+<li>Implicit</li>
+<li>Object Oriented Programming</li>
+<li>Combinators</li>
+<li><a href="https://learnxinyminutes.com/docs/scala/">learn scala in y minutes</a></li>
+<li><a href="https://www.scala-lang.org/">scala official documentation</a></li>
+</ul>

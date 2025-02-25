@@ -1,0 +1,161 @@
+<h1><code>Fortran</code></h1>
+<p>High-level language for numerical computation and mathematical simulations.</p>
+<h2>Comments</h2>
+<pre><code class="language-f90"><span class="hljs-comment">! ----- COMMENT -----</span>
+
+<span class="hljs-comment">! this is a single-line comment</span>
+
+<span class="hljs-comment">! there is no default implementation</span>
+<span class="hljs-comment">! for multi-line comments within Fortran</span>
+<span class="hljs-comment">! but this syntax is generally used to achieve</span>
+<span class="hljs-comment">! the same intended effect</span>
+</code></pre>
+<h2>Printing</h2>
+<pre><code class="language-f90"><span class="hljs-comment">! ----- PRINTING -----</span>
+    <span class="hljs-comment">! WRITE(*,*) =&gt; receives multiple strings as comma-delimited arguments that are printed to the stdout, automatically including a newline in the displayed output</span>
+    <span class="hljs-comment">! WRITE(*,&#x27;(A)&#x27;, ADVANCE=&#x27;NO&#x27;) =&gt; receives multiple strings as comma-delimited arguments that are printed to the stdout, and does not include a newline by default due to the augmenter specifier ADVANCE=&#x27;NO&#x27;</span>
+
+<span class="hljs-built_in">WRITE</span>(*,*) <span class="hljs-string">&quot;this incldues a newline by default&quot;</span>
+<span class="hljs-built_in">WRITE</span>(*,<span class="hljs-string">&#x27;(A)&#x27;</span>,<span class="hljs-keyword">ADVANCE</span>=<span class="hljs-string">&#x27;NO&#x27;</span>) <span class="hljs-string">&quot;there is no newline here by default and it must be explicitly specified&quot;</span>
+<span class="hljs-built_in">WRITE</span>(*,<span class="hljs-string">&#x27;(A)&#x27;</span>,<span class="hljs-keyword">ADVANCE</span>=<span class="hljs-string">&#x27;NO&#x27;</span>) <span class="hljs-string">&quot;like so \n&quot;</span>
+</code></pre>
+<h2>Quickstart</h2>
+<pre><code class="language-f90"><span class="hljs-comment">! ----- QUICKSTART -----</span>
+    <span class="hljs-comment">! strong statically typed language with explicit variable declaration</span>
+    <span class="hljs-comment">! :: =&gt; specifies datatype of variables and dimensions, providing type declaration in Fortran where the datatype is specified, followed by ::, followed by the variable or dimension name</span>
+    <span class="hljs-comment">! PROGRAM &lt;programName&gt; =&gt; prefixes a program unit of the given name</span>
+    <span class="hljs-comment">! END PROGRAM &lt;programName&gt; =&gt; suffixes the program unit of the given name </span>
+
+<span class="hljs-function"><span class="hljs-keyword">PROGRAM</span></span> HelloWorld
+    <span class="hljs-keyword">CHARACTER</span>(len=<span class="hljs-number">20</span>) :: <span class="hljs-keyword">name</span>
+    <span class="hljs-keyword">name</span> = <span class="hljs-string">&quot;John Doe&quot;</span>
+    <span class="hljs-built_in">WRITE</span>(*,*) <span class="hljs-string">&quot;hello world from this Fortran program, sent by&quot;</span>, <span class="hljs-keyword">name</span>
+<span class="hljs-keyword">END</span> <span class="hljs-function"><span class="hljs-keyword">PROGRAM</span></span> HelloWorld
+</code></pre>
+<h2>Types</h2>
+<pre><code class="language-f90"><span class="hljs-comment">! ----- TYPE -----</span>
+    <span class="hljs-comment">! note that the size of integers, real numbers and complex numbers can be specified with the KIND=&lt;integerNumberOfBytes&gt; syntax as below for 1, 2, 4 and 8 bytes</span>
+    <span class="hljs-comment">! INTEGER(KIND=4) =&gt; declares a 4-byte integer value</span>
+    <span class="hljs-comment">! INTEGER(KIND=8) =&gt; declares an 8-byte integer value</span>
+    <span class="hljs-comment">! REAL(KIND=4) =&gt; declares a real number value of 4-bytes</span>
+    <span class="hljs-comment">! REAL(KIND=8) =&gt; declares a real number value of 8-bytes</span>
+    <span class="hljs-comment">! COMPLEX(KIND=4) =&gt; declares a complex number value of 4-bytes</span>
+    <span class="hljs-comment">! COMPLEX(KIND=8) =&gt; declares a complex number value of 8-bytes</span>
+    <span class="hljs-comment">! LOGICAL =&gt; the equivalent of boolean values in Fortran with the two possible .TRUE. and .FALSE.</span>
+    <span class="hljs-comment">! CHARACTER(len= &lt;integerNumber&gt; ) =&gt; declares a fixed-length string of the specified length</span>
+    <span class="hljs-comment">! CHARACTER(len=*) =&gt; declares a variable-length string of dynamic size</span>
+    <span class="hljs-comment">! &lt;variableBeingPointedAtDatatype&gt; , POINTER =&gt; declares a pointer type that points to a variable of the specified datatype</span>
+</code></pre>
+<h2>Operators</h2>
+<pre><code class="language-f90"><span class="hljs-comment">! ----- OPERATOR -----</span>
+
+<span class="hljs-comment">! --- ARITHMETIC OPERATORS ---</span>
+
++ <span class="hljs-comment">! addition</span>
+- <span class="hljs-comment">! subtraction</span>
+* <span class="hljs-comment">! multiplication</span>
+/ <span class="hljs-comment">! division</span>
+** <span class="hljs-comment">! exponentiation</span>
+
+<span class="hljs-comment">! --- COMPARISON OPERATORS ---</span>
+
+== <span class="hljs-comment">! partial equality check for value but not type</span>
+/= <span class="hljs-comment">! partial inequality check for value but not type</span>
+&lt; <span class="hljs-comment">! comparison operator</span>
+&gt; <span class="hljs-comment">! comparison operator</span>
+&lt;= <span class="hljs-comment">! comparison operator</span>
+&gt;= <span class="hljs-comment">! comparison operator</span>
+
+<span class="hljs-comment">! --- LOGICAL OPERATORS ---</span>
+
+<span class="hljs-keyword">.AND.</span> <span class="hljs-comment">! logical and</span>
+<span class="hljs-keyword">.OR.</span> <span class="hljs-comment">! logical or</span>
+<span class="hljs-keyword">.NOT.</span> <span class="hljs-comment">! logical not</span>
+</code></pre>
+<h2>Control structures</h2>
+<pre><code class="language-f90"><span class="hljs-comment">! ----- CONTROL STRUCTURE -----</span>
+
+<span class="hljs-comment">! --- CONDITIONALS ---</span>
+    <span class="hljs-comment">! note the THEN and END IF statements similar to Bash when declaring a conditional construct</span>
+
+<span class="hljs-comment">! IF ELSE IF ELSE END IF </span>
+
+<span class="hljs-keyword">IF</span> (condition) <span class="hljs-keyword">THEN</span>
+    <span class="hljs-comment">! statements</span>
+<span class="hljs-keyword">ELSE</span> <span class="hljs-keyword">IF</span> (another_condition) <span class="hljs-keyword">THEN</span>
+    <span class="hljs-comment">! more statements</span>
+<span class="hljs-keyword">ELSE</span>
+    <span class="hljs-comment">! default statements</span>
+<span class="hljs-keyword">END</span> <span class="hljs-keyword">IF</span>
+
+<span class="hljs-comment">! SELECT CASE END SELECT </span>
+    <span class="hljs-comment">! provides the equivalent of switch and match case constructs in Python and other programming languages</span>
+    <span class="hljs-comment">! effectively provides basic pattern-matching in Fortran</span>
+    <span class="hljs-comment">! CASE DEFAULT =&gt; acts as the default fall-through case for situations where all other predicate conditions are not met within the select case construct, wherein the logic specified within CASE DEFAULT will run</span>
+
+<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">CASE</span> (variable)
+    <span class="hljs-keyword">CASE</span> (value1)
+        <span class="hljs-comment">! add statement logic for value1 here</span>
+    <span class="hljs-keyword">CASE</span> (value2)
+        <span class="hljs-comment">! add statement logic for value2 here</span>
+    <span class="hljs-keyword">CASE</span> <span class="hljs-keyword">DEFAULT</span>
+        <span class="hljs-comment">! add statement logic for the default value here</span>
+<span class="hljs-keyword">END</span> <span class="hljs-keyword">SELECT</span>
+
+<span class="hljs-comment">! --- LOOPS ---</span>
+    <span class="hljs-comment">! Fortran provides syntax to create both conventional C-style for loops, as well as while loops as in other programming languages</span>
+    <span class="hljs-comment">! DO &lt;iterationVariableStartValueDeclaration&gt; , &lt;iterationVariableEndValue&gt; =&gt; prefixes the specified loop construct&#x27;s logic, declaring the beginning of a C-style for loop, where both the start and end values are inclusive </span>
+    <span class="hljs-comment">! DO WHILE &lt;whileLoopPredicate&gt; =&gt; prefixes the specified loop construct&#x27;s logic, declaring the beginning of a traditional while loop</span>
+    <span class="hljs-comment">! END DO =&gt; suffixes the specified loop construct&#x27;s logic</span>
+
+<span class="hljs-keyword">DO</span> i = <span class="hljs-number">1</span>, <span class="hljs-number">10</span>
+    <span class="hljs-comment">! loop statements</span>
+<span class="hljs-keyword">END</span> <span class="hljs-keyword">DO</span>
+
+<span class="hljs-keyword">DO</span> <span class="hljs-keyword">WHILE</span> (condition)
+    <span class="hljs-comment">! Loop statements</span>
+<span class="hljs-keyword">END</span> <span class="hljs-keyword">DO</span>
+</code></pre>
+<h2>Data structures</h2>
+<pre><code class="language-f90"><span class="hljs-comment">! ----- DATA STRUCTURE -----</span>
+    <span class="hljs-comment">! array =&gt; both fixed-size and dynamically-sized ordered collections of elements of the same datatype</span>
+        <span class="hljs-comment">! note that dynamic arrays are created using pointers</span>
+    <span class="hljs-comment">! type =&gt; user-defined collection of named fields with their specified datatypes, the equivalent of structs in Typescript and Go via type aliases</span>
+        <span class="hljs-comment">! note both the TYPE and END TYPE syntax required for declaration of the user-defined type</span>
+
+<span class="hljs-keyword">INTEGER</span>, <span class="hljs-keyword">DIMENSION</span>(<span class="hljs-number">5</span>) :: staticArrayExample <span class="hljs-comment">! this is a static array</span>
+<span class="hljs-keyword">INTEGER</span>, <span class="hljs-keyword">POINTER</span> :: dynamicArrayExample(:) <span class="hljs-comment">! this is a dynamic array created using pointers</span>
+<span class="hljs-built_in">ALLOCATE</span>(dynamicArray(<span class="hljs-number">10</span>)) <span class="hljs-comment">! allocates space for 10 elements</span>
+<span class="hljs-built_in">DEALLOCATE</span>(dynamicArray) <span class="hljs-comment">! deallocates space taken up by the array in memory</span>
+
+<span class="hljs-keyword">TYPE</span> :: Person
+    <span class="hljs-keyword">CHARACTER</span>(len=<span class="hljs-number">30</span>) :: <span class="hljs-keyword">name</span>
+    <span class="hljs-keyword">INTEGER</span> :: age
+<span class="hljs-keyword">END</span> <span class="hljs-keyword">TYPE</span> Person
+
+<span class="hljs-keyword">TYPE</span> :: Address
+    <span class="hljs-keyword">CHARACTER</span>(len=<span class="hljs-number">50</span>) :: street
+    <span class="hljs-keyword">CHARACTER</span>(len=<span class="hljs-number">30</span>) :: city
+    <span class="hljs-keyword">CHARACTER</span>(len=<span class="hljs-number">2</span>) :: state
+    <span class="hljs-keyword">CHARACTER</span>(len=<span class="hljs-number">5</span>) :: zip
+<span class="hljs-keyword">END</span> <span class="hljs-keyword">TYPE</span> Address
+</code></pre>
+<h2>Functions</h2>
+<pre><code class="language-f90"><span class="hljs-comment">! ----- FUNCTION -----</span>
+    <span class="hljs-comment">! FUNCTION &lt;functionName&gt; =&gt; prefixes the declaration and definition of a named function</span>
+    <span class="hljs-comment">! END FUNCTION &lt;functionName&gt; =&gt; suffixes the declaration and definition of a named function, after the function body</span>
+
+<span class="hljs-function"><span class="hljs-keyword">FUNCTION</span></span> factorial(n)
+    <span class="hljs-keyword">INTEGER</span> :: n
+    <span class="hljs-keyword">IF</span> (n == <span class="hljs-number">0</span>) <span class="hljs-keyword">THEN</span>
+        factorial = <span class="hljs-number">1</span>
+    <span class="hljs-keyword">ELSE</span>
+        factorial = n * factorial(n-<span class="hljs-number">1</span>)
+    <span class="hljs-keyword">END</span> <span class="hljs-keyword">IF</span>
+<span class="hljs-keyword">END</span> <span class="hljs-function"><span class="hljs-keyword">FUNCTION</span></span> factorial
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li><a href="https://www.fortran90.org/">fortran documentation</a></li>
+<li><a href="https://learnxinyminutes.com/docs/fortran/">learn fortran in y minutes</a></li>
+</ul>

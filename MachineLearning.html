@@ -1,0 +1,99 @@
+<h1><code>Machine learning</code></h1>
+<p><strong>Understand</strong> theoretical basis for neural networks and <strong>practise</strong> tools to build deep learning models.</p>
+<p>Covers...</p>
+<ul>
+<li>Feed Forward Neural Networks</li>
+<li>Convolutional Neural Networks</li>
+<li>Recurrent Neural Networks</li>
+<li>Autoencoders</li>
+<li>Reinforcement Learning</li>
+<li>Attention (through transformers)</li>
+</ul>
+<h2>Definitions</h2>
+<ol>
+<li>Neural network: model comprised of many <em>artificial neurons</em> that takes in <em>training examples</em> as input and <strong>infers rules</strong> to arrive at a specified output (accuracy increases as the sample size of training examples grows larger)</li>
+<li>Artifical neuron: basic building block of neural networks, of which there are 2 main types
+<ol>
+<li>Perceptron
+<ul>
+<li>older model developed in 1950s to 1960s by Frank Rosenblatt</li>
+<li>each perceptron receives a <strong>binary</strong> input and returns a single <strong>binary</strong> output</li>
+<li>binary output is determined by whether the weighted sum surpasses a designated <em>threshold value</em></li>
+<li>perceptron's model too simplistic since even a small <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi></mrow><annotation encoding="application/x-tex">\Delta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">Δ</span></span></span></span> in a perceptron's weight could result in a large <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi></mrow><annotation encoding="application/x-tex">\Delta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">Δ</span></span></span></span> flip of its binary output</li>
+</ul>
+</li>
+<li>Sigmoid neuron
+<ul>
+<li>deep learning models required an artificial neuron that allowed a small <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi></mrow><annotation encoding="application/x-tex">\Delta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">Δ</span></span></span></span> in its weight to result in a corresponding small <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi></mrow><annotation encoding="application/x-tex">\Delta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">Δ</span></span></span></span> in its output</li>
+<li>each sigmoid neuron receives one or more inputs of <strong>floating-point</strong> value and returns a single <strong>floating-point</strong> output</li>
+<li>output is calculated by mapping the <a href="https://www.learndatasci.com/glossary/sigmoid-function/">sigmoid function</a> onto each input training example</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>Weights: real number (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="double-struck">R</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbb{R}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68889em;"></span><span class="strut bottom" style="height:0.68889em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathbb">R</span></span></span></span></span>) that expresses the importance a given <em>input</em> has to its corresponding <em>output</em></li>
+<li>Bias: negative threshold value</li>
+<li>Input layer: first layer of neurons in a neural network that are fed as <em>input</em> to the model</li>
+<li>Hidden layer(s): any number of intermediary layers of neurons in a neural network whose <em>outputs</em> are fed as <em>inputs</em> to the next layer of neurons</li>
+<li>Output layer: final layer in a neural network, where a single neuron's <em>output</em> is the returned value of the entire model</li>
+<li>Feed forward neural network: <em>output</em> from one layer is <em>input</em> for another layer, modelled mathematically as <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>g</mi><mo>(</mo><mi>h</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">f(g(h(x)))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathit">h</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mclose">)</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span> where information is only <strong>fed forward</strong>
+<ul>
+<li>more useful for deep learning models</li>
+</ul>
+</li>
+<li>Recurrent neural network: <em>output</em> from one layer is fed as staggered <em>input</em> to the <strong>same layer</strong>, modelled mathematically as <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>f</mi><mo>(</mo><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">f(f(f(x)))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mclose">)</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span> where recursive feedback loops are allowed
+<ul>
+<li>less useful for deep learning models</li>
+<li>more accurately simulates how the human brain handles and reinforces information</li>
+</ul>
+</li>
+<li>Machine learning: process by which machines <em>learn</em> to perform tasks they were not explicitly programmed to, of which there are 4 variants
+<ul>
+<li>supervised: model takes in known <em>input</em> and purposefully <strong>predicts</strong> a desired <em>output</em></li>
+<li>unsupervised: model takes in known <em>input</em> and derives/describes <strong>patterns</strong> observed from the <em>input</em></li>
+<li>parametric: model takes in a <em>fixed</em> number of input parameters</li>
+<li>non-parametric: model takes in an <em>unspecified, possibly infinite</em> number of input parameters</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>[!NOTE]<br>
+Machine learning models are either Parametric OR Non-parametric <em>and</em> Supervised OR Unsupervised.</p>
+</blockquote>
+<ol start="11">
+<li>Mean squared error (MSE): measures <strong>degree of inaccuracy</strong> a predicted <em>output</em> has compared to the actual <em>output</em></li>
+<li>Gradient descent: attributes error by <strong>allocating blame</strong> for a non-zero MSE value to a specific neuron's <em>weight</em>, then tweaking that <em>weight</em> to decrease the MSE in one of three ways
+<ol>
+<li>Full gradient descent: neural network calculates the AVERAGE <em>weights</em> over the entire training example dataset for a minimum MSE, and weights are tweaked after the FULL AVERAGE has been computed</li>
+<li>Stochastic gradient descent: repeatedly iterates through the entire training example dataset, tweaking weights for EACH <em>input</em> value based on the MSE, until a weight configuration that works for ALL training examples is arrived at</li>
+<li>Batch gradient descent: a BATCH size of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span></span></span></span> is specified beforehand, and the neural network updates the <em>weights</em> after <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span></span></span></span> training examples have been fed to the model as <em>input</em></li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<p>[!TIP]<br>
+Most situations designed to train deep learning models can be modelled with matrices using <a href="https://numpy.org/">NumPy</a> and <a href="https://pandas.pydata.org/">pandas</a>.</p>
+</blockquote>
+<ol start="13">
+<li>Natural language processing (NLP): parses text for the following three purposes
+<ol>
+<li>Label a region of text <em>(speech tagging, sentiment classification, named-entity recognition)</em></li>
+<li>Link 2 or more regions of text <em>(co-reference)</em></li>
+<li>Fill in missing information based on context</li>
+</ol>
+</li>
+</ol>
+<h2>More on</h2>
+<ul>
+<li><a href="https://youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&amp;si=S1lkZW9JTJvN3wSh">Neural networks</a> youtube playlist by 3Blue1Brown</li>
+<li><a href="https://youtu.be/KuXjwB4LzSA?feature=shared">But what is a convolution?</a> by 3Blue1Brown</li>
+<li><a href="https://www.amazon.com/No-bullshit-guide-math-physics/dp/0992001005">No bullshit guide to math and physics</a> by Ivan Savov</li>
+<li><a href="https://www.amazon.sg/No-Bullshit-Guide-Linear-Algebra/dp/0992001021">No bullshit guide to linear algebra</a> by Ivan Savov</li>
+<li><a href="https://www.amazon.sg/Data-Science-Scratch-Principles-Python/dp/1492041130">Data Science from Scratch: First Principles with Python</a> by Joel Grus</li>
+<li><a href="https://www.amazon.sg/StatQuest-Illustrated-Guide-Machine-Learning/dp/B0BLM4TLPY">The StatQuest Illustrated Guide To Machine Learning</a> by Josh Starmer</li>
+<li><a href="https://neuralnetworksanddeeplearning.com/index.html">Neural Networks and Deep Learning</a> by Michael Nielsen</li>
+<li><a href="https://edu.anarcho-copy.org/Algorithm/grokking-deep-learning.pdf">grokking Deep Learning</a> by Andrew W Trask</li>
+<li><a href="http://ema.cri-info.cm/wp-content/uploads/2019/07/2019BurkovTheHundred-pageMachineLearning.pdf">The Hundred-page Machine Learning Book</a> by Andriy Burkov</li>
+<li><a href="https://youtu.be/XfpMkf4rD6E?si=x--zvoBHV1X9IohG">Stanford CS25: V2 Introduction to Transformers</a> by Andrej Karpathy</li>
+<li><a href="https://youtu.be/0F2paWV4eEA?si=cX3M7lJHLuOZJqKJ">How to learn machine learning as a complete beginner: a self-study guide</a></li>
+</ul>

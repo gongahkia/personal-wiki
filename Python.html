@@ -1,0 +1,234 @@
+<h1><code>Python</code></h1>
+<p>If coding were natural.</p>
+<h2>Comments</h2>
+<pre><code class="language-py"><span class="hljs-comment"># ---------- COMMENT ----------</span>
+
+<span class="hljs-comment"># this is a single-line comment</span>
+
+<span class="hljs-string">&quot;&quot;&quot;
+this is a 
+multi-line
+comment
+&quot;&quot;&quot;</span>
+</code></pre>
+<h2>Printing</h2>
+<pre><code class="language-py"><span class="hljs-comment"># ---------- PRINT ----------</span>
+    <span class="hljs-comment"># print() =&gt; receives a string argument which is then displayed to the stdout and includes a newline by default  </span>
+        <span class="hljs-comment"># end=&#x27;&#x27; =&gt; second optional argument which specifies for a string to be printed without a newline</span>
+        <span class="hljs-comment"># f&quot;&#x27; =&gt; specifies a formatted string which affords interpolation of variables and values specified within {} curly braces in a string</span>
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;this includes a newline by default and its inclusion must be specified as here\n&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;this does not include a newline automatically&quot;</span>, end=<span class="hljs-string">&#x27;&#x27;</span>)
+
+a_name = <span class="hljs-string">&quot;keshi&quot;</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;here, the name <span class="hljs-subst">{a_name}</span> is interpolated in the string&quot;</span>)
+</code></pre>
+<h2>Quickstart</h2>
+<pre><code class="language-py"><span class="hljs-comment"># ---------- QUICKSTART ----------</span>
+    <span class="hljs-comment"># Python scripts end in the .py file extension</span>
+    <span class="hljs-comment"># loosely, dynamically-typed language</span>
+    <span class="hljs-comment"># simple syntax that&#x27;s easy to pick up and start writing code in </span>
+    <span class="hljs-comment"># Python generally adheres to the snake_case naming scheme </span>
+    <span class="hljs-comment"># mature community with extensive machine-learning packages allows Python to excel at data science tasks</span>
+</code></pre>
+<h2>Types</h2>
+<pre><code class="language-py"><span class="hljs-comment"># ---------- TYPE ----------</span>
+    <span class="hljs-comment"># bool =&gt; True, False</span>
+    <span class="hljs-comment"># int =&gt; stores an integer number value (eg. 1, 100, -100)</span>
+    <span class="hljs-comment"># float =&gt; stores a floating-point number value (eg. 1.0, 100.5)</span>
+    <span class="hljs-comment"># str =&gt; string value declared within &quot;&quot; double quotation marks</span>
+        <span class="hljs-comment"># note that characters are handled as strings in Python</span>
+        <span class="hljs-comment"># also note that strings are treated as character lists, so they can be iterated over with for loops and higher-order functions</span>
+    <span class="hljs-comment"># list =&gt; an ordered mutable sequence of elements of the same datatype</span>
+    <span class="hljs-comment"># tuple =&gt; an ordered immutable sequence of elements of multiple datatypes</span>
+    <span class="hljs-comment"># dict =&gt; an unordered collection of key-value pairs of datatypes that follow the established type signature</span>
+    <span class="hljs-comment"># set =&gt; an unordered collection of unique elements of the same datatype</span>
+</code></pre>
+<h2>Operators</h2>
+<pre><code class="language-py"><span class="hljs-comment"># ---------- OPERATOR ----------</span>
+
+<span class="hljs-comment"># ARITHMETIC OPERATORS</span>
+    <span class="hljs-comment"># + =&gt; addition</span>
+    <span class="hljs-comment"># - =&gt; subtraction</span>
+    <span class="hljs-comment"># * =&gt; multiplication</span>
+    <span class="hljs-comment"># / =&gt; division</span>
+    <span class="hljs-comment"># // =&gt; integer division</span>
+    <span class="hljs-comment"># % =&gt; modulo operator</span>
+    <span class="hljs-comment"># ** =&gt; exponentiation operator</span>
+    <span class="hljs-comment"># += =&gt; addition and reassignment operator</span>
+    <span class="hljs-comment"># -= =&gt; subtraction and reassignment operator</span>
+    <span class="hljs-comment"># *= =&gt; multiplication and reassignment operator</span>
+    <span class="hljs-comment"># /= =&gt; division and reassignment operator</span>
+    <span class="hljs-comment"># %= =&gt; modulo and reassignment operator</span>
+    <span class="hljs-comment"># **= =&gt; exponentiation and reassignment operator</span>
+
+<span class="hljs-comment"># LOGICAL OPERATORS</span>
+    <span class="hljs-comment"># and =&gt; logical AND</span>
+    <span class="hljs-comment"># or =&gt; logical OR</span>
+    <span class="hljs-comment"># not =&gt; logical NOT</span>
+
+<span class="hljs-comment"># COMPARISON OPERATORS</span>
+    <span class="hljs-comment"># == =&gt; complete strict equality check for both value and type</span>
+    <span class="hljs-comment"># != =&gt; complete strict inequality check for both value and type</span>
+    <span class="hljs-comment"># is =&gt; exact identity check for whether two variables point to the same object in memory </span>
+    <span class="hljs-comment"># in =&gt; membership check for whether a specified element exists within a sequential data structure </span>
+    <span class="hljs-comment"># &gt; =&gt; comparison operator </span>
+    <span class="hljs-comment"># &lt; =&gt; comparison operator </span>
+    <span class="hljs-comment"># &gt;= =&gt; comparison operator </span>
+    <span class="hljs-comment"># &lt;= =&gt; comparison operator</span>
+</code></pre>
+<h2>Control structures</h2>
+<pre><code class="language-py"><span class="hljs-comment"># ---------- CONTROL STRUCTURE ----------</span>
+
+<span class="hljs-comment"># ----- CONDITIONALS -----</span>
+
+<span class="hljs-comment"># IF ELIF ELSE</span>
+
+age = <span class="hljs-number">75</span>
+<span class="hljs-keyword">if</span> age &gt;= <span class="hljs-number">75</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;you&#x27;re a senior citizen&quot;</span>)
+<span class="hljs-keyword">elif</span> age == <span class="hljs-number">18</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;you&#x27;re just an adult&quot;</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;you&#x27;re not even a senior&quot;</span>)
+
+<span class="hljs-comment"># ----- LOOPS -----</span>
+
+<span class="hljs-comment"># WHILE LOOPS</span>
+
+count = <span class="hljs-number">0</span>
+<span class="hljs-keyword">while</span> count &lt; <span class="hljs-number">5</span>:
+    <span class="hljs-built_in">print</span>(count)
+    count += <span class="hljs-number">1</span>
+
+<span class="hljs-comment"># FOR IN LOOPS</span>
+    <span class="hljs-comment"># allows for iteration over iterable data structures like lists, tuples, or strings</span>
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">5</span>):
+    <span class="hljs-built_in">print</span>(i)
+
+animals = [<span class="hljs-string">&quot;cat&quot;</span>, <span class="hljs-string">&quot;dog&quot;</span>, <span class="hljs-string">&quot;bird&quot;</span>, <span class="hljs-string">&quot;elephant&quot;</span>]
+<span class="hljs-keyword">for</span> animal <span class="hljs-keyword">in</span> animals:
+    <span class="hljs-built_in">print</span>(animal)
+
+<span class="hljs-comment"># TRY EXCEPT FINALLY</span>
+    <span class="hljs-comment"># try =&gt; wraps code that might raise exceptions</span>
+    <span class="hljs-comment"># except =&gt; handles exceptions if they occur</span>
+    <span class="hljs-comment"># finally =&gt; always executes at the end of a try except finally construct regardless of whether any exceptions occur</span>
+
+<span class="hljs-keyword">try</span>:
+    x = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;enter a number: &quot;</span>))
+    y = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;enter another number: &quot;</span>))
+    z = x / y
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;result: <span class="hljs-subst">{z}</span>&quot;</span>)
+<span class="hljs-keyword">except</span> ZeroDivisionError <span class="hljs-keyword">as</span> e:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;cannot divide by zero!&quot;</span>)
+<span class="hljs-keyword">except</span> ValueError <span class="hljs-keyword">as</span> e:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;please enter a valid number!&quot;</span>)
+<span class="hljs-keyword">finally</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;this will always print!&quot;</span>)
+</code></pre>
+<h2>Data structures</h2>
+<pre><code class="language-py"><span class="hljs-comment"># ---------- DATA STRUCTURE ----------</span>
+
+<span class="hljs-comment"># LIST</span>
+    <span class="hljs-comment"># [] =&gt; declares and creates a mutable ordered sequence of elements of the same datatype</span>
+    <span class="hljs-comment"># .append() =&gt; appends an element to the list</span>
+    <span class="hljs-comment"># .remove() =&gt; removes the first matching element from the list</span>
+    <span class="hljs-comment"># .pop() =&gt; removes an element at a specific index</span>
+    <span class="hljs-comment"># .extend() =&gt; extends the list by appending elements from another list</span>
+    <span class="hljs-comment"># .insert() =&gt; inserts an element at a specific index</span>
+    <span class="hljs-comment"># .clear() =&gt; removes all elements from the list</span>
+    <span class="hljs-comment"># len() =&gt; returns the length of the list</span>
+
+fruits = [<span class="hljs-string">&quot;apple&quot;</span>, <span class="hljs-string">&quot;banana&quot;</span>, <span class="hljs-string">&quot;cherry&quot;</span>]
+fruits.append(<span class="hljs-string">&quot;orange&quot;</span>)
+fruits.remove(<span class="hljs-string">&quot;banana&quot;</span>)
+<span class="hljs-built_in">print</span>(fruits[<span class="hljs-number">1</span>]) <span class="hljs-comment"># prints &quot;cherry&quot;</span>
+
+<span class="hljs-comment"># TUPLE</span>
+    <span class="hljs-comment"># () =&gt; declares and creates an immutable ordered sequence of elements of multiple datatypes</span>
+
+coordinates = (<span class="hljs-number">10</span>, <span class="hljs-number">20</span>)
+<span class="hljs-built_in">print</span>(coordinates[<span class="hljs-number">0</span>]) <span class="hljs-comment"># prints 10</span>
+
+<span class="hljs-comment"># DICTIONARY</span>
+    <span class="hljs-comment"># {} =&gt; declares and creates a collection of key-value pairs where the elements adhere to the previously established type signature</span>
+    <span class="hljs-comment"># .get() =&gt; retrieves a value by its key</span>
+    <span class="hljs-comment"># .keys() =&gt; returns all keys in the dictionary</span>
+    <span class="hljs-comment"># .values() =&gt; returns all values in the dictionary</span>
+    <span class="hljs-comment"># .items() =&gt; returns all key-value pairs as tuples</span>
+    <span class="hljs-comment"># .update() =&gt; updates the dictionary with elements from another dictionary or iterable of key-value pairs</span>
+    <span class="hljs-comment"># .pop() =&gt; removes a key-value pair by key</span>
+
+person = {<span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;John&quot;</span>, <span class="hljs-string">&quot;age&quot;</span>: <span class="hljs-number">30</span>}
+<span class="hljs-built_in">print</span>(person[<span class="hljs-string">&quot;name&quot;</span>]) <span class="hljs-comment"># prints &quot;John&quot;</span>
+<span class="hljs-built_in">print</span>(person.get(<span class="hljs-string">&quot;age&quot;</span>)) <span class="hljs-comment"># prints 30</span>
+
+<span class="hljs-comment"># SET</span>
+    <span class="hljs-comment"># {} =&gt; declares and creates an unordered collection of unique elements of the same datatype</span>
+    <span class="hljs-comment"># .add() =&gt; adds an element to the set</span>
+    <span class="hljs-comment"># .remove() =&gt; removes a specified element from the set</span>
+    <span class="hljs-comment"># .union() =&gt; returns the union of two sets</span>
+    <span class="hljs-comment"># .intersection() =&gt; returns the intersection of two sets</span>
+    <span class="hljs-comment"># .difference() =&gt; returns the difference between two sets</span>
+
+unique_numbers = {<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>}
+unique_numbers.add(<span class="hljs-number">5</span>)
+<span class="hljs-built_in">print</span>(unique_numbers) <span class="hljs-comment"># prints {1, 2, 3, 4, 5}</span>
+</code></pre>
+<h2>Functions</h2>
+<pre><code class="language-py"><span class="hljs-comment"># ---------- FUNCTIONS ----------</span>
+    <span class="hljs-comment"># def =&gt; declares a function</span>
+    <span class="hljs-comment"># return =&gt; specifies the return value of the function</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">greet</span>(<span class="hljs-params">name</span>): <span class="hljs-comment"># named function definition</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">f&quot;Hello, <span class="hljs-subst">{name}</span>!&quot;</span>
+
+<span class="hljs-built_in">print</span>(greet(<span class="hljs-string">&quot;Alice&quot;</span>)) <span class="hljs-comment"># prints &quot;Hello, Alice!&quot;</span>
+
+<span class="hljs-comment"># DEFAULT PARAMETERS</span>
+    <span class="hljs-comment"># default values can be specified in function arguments the same way as any other variable with the = assignment operator</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">greet</span>(<span class="hljs-params">name=<span class="hljs-string">&quot;Stranger&quot;</span></span>): <span class="hljs-comment"># named function definition with default parameters</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">f&quot;Hello, <span class="hljs-subst">{name}</span>!&quot;</span>
+
+<span class="hljs-built_in">print</span>(greet()) <span class="hljs-comment"># prints &quot;Hello, Stranger!&quot;</span>
+
+<span class="hljs-comment"># VARIABLE LENGTH ARGUMENTS</span>
+    <span class="hljs-comment"># *args =&gt; allows passing a variable number of positional arguments</span>
+    <span class="hljs-comment"># **kwargs =&gt; allows passing a variable number of keyword arguments</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">print_args</span>(<span class="hljs-params">*args</span>): <span class="hljs-comment"># named function definition with variable length positional arguments</span>
+    <span class="hljs-keyword">for</span> arg <span class="hljs-keyword">in</span> args:
+        <span class="hljs-built_in">print</span>(arg)
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">print_kwargs</span>(<span class="hljs-params">**kwargs</span>): <span class="hljs-comment"># named function definition with variable length keyword arguments</span>
+    <span class="hljs-keyword">for</span> key, value <span class="hljs-keyword">in</span> kwargs.items():
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">{key}</span>: <span class="hljs-subst">{value}</span>&quot;</span>)
+
+print_args(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>) <span class="hljs-comment"># prints 1, 2, 3 on separate lines</span>
+print_kwargs(name=<span class="hljs-string">&quot;Alice&quot;</span>, age=<span class="hljs-number">30</span>) <span class="hljs-comment"># prints &quot;name: Alice&quot; and &quot;age: 30&quot; on separate lines</span>
+
+<span class="hljs-comment"># LAMBDA FUNCTIONS</span>
+    <span class="hljs-comment"># anonymous functions can also be defined with the `lambda` keyword</span>
+    <span class="hljs-comment"># these are more useful for general shorthand utility throw-away functions</span>
+    <span class="hljs-comment"># however, their inclusion mean higher-order functions are also theoretically supported and fully possible in Python</span>
+
+add = <span class="hljs-keyword">lambda</span> x, y: x + y
+<span class="hljs-built_in">print</span>(add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>)) <span class="hljs-comment"># prints 5</span>
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li><a href="https://www.python.org/">python.org</a></li>
+<li><a href="https://docs.python.org/3/">Python 3.12.5 documentation</a></li>
+<li><a href="https://learnxinyminutes.com/docs/python/">learn Python in y minutes</a></li>
+<li><a href="https://realpython.com/python3-object-oriented-programming/">object-oriented programming in Python</a></li>
+<li><a href="https://www.w3schools.com/datascience/ds_python.asp">data science in Python</a></li>
+<li><a href="https://www.w3schools.com/python/python_ml_getting_started.asp">machine learning in Python</a></li>
+<li><a href="https://numpy.org/">NumPy</a></li>
+<li><a href="https://matplotlib.org/">matplotlib</a></li>
+<li><a href="https://pandas.pydata.org/">pandas</a></li>
+<li><a href="https://docs.python.org/3/library/index.html">Python standard library</a></li>
+<li><a href="https://pypi.org/">PyPI</a></li>
+</ul>

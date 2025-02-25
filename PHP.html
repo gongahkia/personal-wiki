@@ -1,0 +1,1678 @@
+<h1><code>PHP</code></h1>
+<p>PHP is a scripting language for the server.</p>
+<h2>Comments</h2>
+<pre><code class="language-php"><span class="hljs-comment">// ---------- COMMENT ----------</span>
+
+<span class="hljs-comment">// this is a single-line comment </span>
+
+<span class="hljs-comment"># this is also a single-line comment but the above is more common</span>
+
+<span class="hljs-comment">/* 
+    this is a multi-line
+    comment so tyvm
+*/</span>
+</code></pre>
+<h2>Quickstart</h2>
+<pre><code class="language-php"><span class="hljs-comment">// ---------- QUICKSTART ----------</span>
+    <span class="hljs-comment">// semicolon language</span>
+    <span class="hljs-comment">// all runnable php code must be enclosed within &lt;?php and &gt; tags, anything outside of those tags is echoed automatically</span>
+    <span class="hljs-comment">// values are printed to the stdout by default but can be printed to the webpage if php is running within the browser</span>
+        <span class="hljs-comment">// print =&gt; prints a string to the stdout and does not include a newline, brackets are optional</span>
+        <span class="hljs-comment">// echo =&gt; prints a string to the stdout and also does not include a newline, brackets are optional</span>
+
+<span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">print</span>(<span class="hljs-string">&#x27;Hello and this does not include a newline&#x27;</span>); 
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;World and this also does not include a newline&#x27;</span>;
+<span class="hljs-keyword">echo</span> <span class="hljs-number">100</span>; <span class="hljs-comment">// prints scalar integer value of 100 directly</span>
+
+&gt;
+</code></pre>
+<h2>Variables and Types</h2>
+<pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-comment">// ---------- VARIABLE ----------</span>
+    <span class="hljs-comment">// variables declared with a $</span>
+    <span class="hljs-comment">// variables CANNOT be declared, they are created at value assignment and their type is immediately assigned to them</span>
+
+<span class="hljs-comment">// ---------- TYPE ----------</span>
+
+<span class="hljs-comment">// BOOLEAN </span>
+<span class="hljs-variable">$boolean_val</span> = <span class="hljs-literal">true</span>; <span class="hljs-comment">// case-insensitive, can be TRUE or True</span>
+<span class="hljs-variable">$another_boolean_val</span> = <span class="hljs-literal">false</span>; <span class="hljs-comment">// case-insensitive, can be FALSE or False</span>
+
+<span class="hljs-comment">// INT</span>
+<span class="hljs-variable">$int_val</span> = <span class="hljs-number">100</span>; <span class="hljs-comment">// these are normal integer values</span>
+<span class="hljs-variable">$another_int_val</span> = -<span class="hljs-number">12</span>;
+<span class="hljs-variable">$octal_int_val</span> = <span class="hljs-number">012</span>; <span class="hljs-comment">// a leading 0 denotes an octal number value</span>
+<span class="hljs-variable">$hexa_int_val</span> = <span class="hljs-number">0x0F</span>; <span class="hljs-comment">// a leading 0x denotes a hexadecimal number value</span>
+<span class="hljs-variable">$bin_int_val</span> = <span class="hljs-number">0b11111111</span>; <span class="hljs-comment">// a leading 0b denotes a binary number value</span>
+
+<span class="hljs-comment">// DELETE VARIABLES</span>
+<span class="hljs-keyword">unset</span>(<span class="hljs-variable">$int_val</span>);
+
+<span class="hljs-comment">// FLOAT (aka double)</span>
+<span class="hljs-variable">$float_val</span> = <span class="hljs-number">1.234</span>;
+<span class="hljs-variable">$another_float_val</span> = <span class="hljs-number">1.2e3</span>;
+<span class="hljs-variable">$also_a_float_val</span> = <span class="hljs-number">7E-10</span>;
+
+<span class="hljs-comment">// ARITHMETIC</span>
+<span class="hljs-variable">$sum</span> = <span class="hljs-number">1</span> + <span class="hljs-number">1</span>; <span class="hljs-comment">// addition</span>
+<span class="hljs-variable">$difference</span> = <span class="hljs-number">2</span> - <span class="hljs-number">1</span>; <span class="hljs-comment">// subtraction</span>
+<span class="hljs-variable">$product</span> = <span class="hljs-number">2</span> * <span class="hljs-number">2</span>; <span class="hljs-comment">// multiplication</span>
+<span class="hljs-variable">$quotient</span> = <span class="hljs-number">2</span> / <span class="hljs-number">1</span>; <span class="hljs-comment">// division</span>
+
+<span class="hljs-comment">// SHORTHAND ARITHMETIC</span>
+<span class="hljs-variable">$funny</span> = <span class="hljs-number">0</span>;
+<span class="hljs-variable">$funny</span> += <span class="hljs-number">1</span>; <span class="hljs-comment">// increments by one</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$funny</span>++; <span class="hljs-comment">// increments by one after print statement (so prints 1 here)</span>
+<span class="hljs-keyword">echo</span> ++<span class="hljs-variable">$funny</span>; <span class="hljs-comment">// increments by one before print statement (so prints 3 here)</span>
+<span class="hljs-variable">$funny</span> /= <span class="hljs-variable">$float_val</span>; <span class="hljs-comment">// divide $funny by $float_val and assign the quotient to $funny</span>
+
+<span class="hljs-comment">// STRING</span>
+<span class="hljs-variable">$string_val</span> = <span class="hljs-string">&#x27;quote&#x27;</span>; <span class="hljs-comment">// strings are enclosed in single quotes</span>
+<span class="hljs-variable">$formatted_string</span> = <span class="hljs-string">&quot;This is a <span class="hljs-subst">$string_val</span>&quot;</span>; <span class="hljs-comment">// functions as a formatted string that embeds the $string_val variable in the string</span>
+<span class="hljs-variable">$another_formatted_string</span> = <span class="hljs-string">&quot;This is also a formatted string as seen in <span class="hljs-subst">{$string_val}</span> here.&quot;</span>; <span class="hljs-comment">// enclosing a variables in curly braces allows for evaluation of more complex statements within a string</span>
+<span class="hljs-variable">$escaped</span> = <span class="hljs-string">&quot;This will reflect as 4 spaces /t&quot;</span>; <span class="hljs-comment">// special characters like /t and /n are escaped only in double quotes</span>
+<span class="hljs-variable">$unescaped</span> = <span class="hljs-string">&#x27;This will literally show a slash and a t&#x27;</span>; <span class="hljs-comment">// special characters are unescaped in single quotes</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;This string&#x27;</span> . <span class="hljs-string">&#x27; is concatenated&#x27;</span>; <span class="hljs-comment">// the . supports string concatenation</span>
+<span class="hljs-variable">$test</span> = <span class="hljs-string">&#x27;watermelon&#x27;</span>;
+<span class="hljs-variable">$test</span> .= <span class="hljs-string">&#x27; sugar high&#x27;</span> <span class="hljs-comment">// string concatenation means .= also works for strings</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$test</span>; <span class="hljs-comment">// this will print out &quot;watermelon sugar high&quot;</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;Multiple&#x27;</span>, <span class="hljs-string">&#x27;Parameters&#x27;</span>, <span class="hljs-string">&#x27;Valid&#x27;</span>; <span class="hljs-comment">// the , also supports string concatenation</span>
+
+<span class="hljs-comment">// NULL values</span>
+<span class="hljs-variable">$var_null</span> = <span class="hljs-literal">null</span>;
+
+&gt;
+</code></pre>
+<h2>Constants</h2>
+<pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-comment">// ---------- CONSTANT ----------</span>
+    <span class="hljs-comment">// constants are defined using define() or the keyword const WITHOUT $ and cannot be changed at runtime</span>
+    <span class="hljs-comment">// constants can be accessed by calling it without a $</span>
+
+<span class="hljs-keyword">const</span> <span class="hljs-variable constant_">watermelon</span> = <span class="hljs-string">&quot;I cannot be changed at runtime, change me upon intialization only&quot;</span>;
+<span class="hljs-title function_ invoke__">define</span>(<span class="hljs-string">&quot;FOO&quot;</span>, <span class="hljs-string">&quot;something&quot;</span>); <span class="hljs-comment">// defines a constant variable called FOO of string value &#x27;something&#x27;</span>
+<span class="hljs-keyword">echo</span> FOO; <span class="hljs-comment">// prints &#x27;something&#x27;</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;This outputs &#x27;</span> . FOO <span class="hljs-comment">// prints &#x27;This outputs something&#x27;</span>
+
+&gt;
+</code></pre>
+<h2>Type conversion</h2>
+<pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-comment">// ---------- TYPE CONVERSION ----------</span>
+
+<span class="hljs-variable">$integer</span> = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$integer</span> + <span class="hljs-variable">$integer</span>; <span class="hljs-comment">// returns 2</span>
+
+<span class="hljs-variable">$string</span> = <span class="hljs-string">&#x27;1&#x27;</span>;
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$string</span> + <span class="hljs-variable">$string</span>; <span class="hljs-comment">// variable $string coerced into type conversion to become an integer due to the + operator, returns 2</span>
+
+<span class="hljs-variable">$string1</span> = <span class="hljs-string">&#x27;one&#x27;</span>;
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$string1</span> + <span class="hljs-variable">$string1</span>; <span class="hljs-comment">// variable $string1 cannot be coerced into being type converted into an integer, so this returns 0</span>
+
+<span class="hljs-comment">// there are also other dedicated functions for just type conversion such as strval()</span>
+
+&gt;
+</code></pre>
+<h2>References</h2>
+<pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-comment">// ---------- REFERENCE ----------</span>
+    <span class="hljs-comment">// &amp; =&gt; ampersand operator creates a reference to a variable which points to its place in memory</span>
+
+<span class="hljs-variable">$x</span> = <span class="hljs-number">1</span>; <span class="hljs-comment">// assigns scalar integer value of 1 to variable $x</span>
+<span class="hljs-variable">$y</span> = <span class="hljs-number">2</span>; <span class="hljs-comment">// assigns scalar integer value of 2 to variable $y</span>
+<span class="hljs-variable">$x</span> = <span class="hljs-variable">$y</span>; <span class="hljs-comment">// variable $x now contains same value as variable $y as value is copied over</span>
+<span class="hljs-variable">$z</span> = &amp;<span class="hljs-variable">$y</span>; <span class="hljs-comment">// variable $z contains a reference that points to variable $y</span>
+    <span class="hljs-comment">// changing value of $z will change value of $y</span>
+    <span class="hljs-comment">// changing value of $y will change value of $z</span>
+    <span class="hljs-comment">// $x will remain unchanged in both cases since original value of $y copied to variable $x</span>
+
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-variable">$z</span>); <span class="hljs-comment">// prints int(0) to stdout</span>
+<span class="hljs-title function_ invoke__">print_r</span>(<span class="hljs-variable">$array_literal</span>); <span class="hljs-comment">// prints a variable in a human-readable format</span>
+
+&gt;
+</code></pre>
+<h2>Associative Arrays</h2>
+<pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-comment">// ---------- ASSOCIATIVE ARRAYS ----------</span>
+    <span class="hljs-comment">// similar to Lua&#x27;s tables, all php arrays are implictly associative arrays with integer keys</span>
+
+<span class="hljs-variable">$eg_array</span> = <span class="hljs-keyword">array</span>(<span class="hljs-string">&#x27;One&#x27;</span> =&gt; <span class="hljs-number">1</span>, <span class="hljs-string">&#x27;Two&#x27;</span> =&gt; <span class="hljs-number">2</span>, <span class="hljs-string">&#x27;Three&#x27;</span> =&gt; <span class="hljs-number">3</span>); <span class="hljs-comment">// works in all PHP versions to instantiate an array</span>
+<span class="hljs-variable">$another_eg_array</span> = [<span class="hljs-string">&#x27;One&#x27;</span> =&gt; <span class="hljs-number">1</span>, <span class="hljs-string">&#x27;Two&#x27;</span> =&gt; <span class="hljs-number">2</span>, <span class="hljs-string">&#x27;Three&#x27;</span> =&gt; <span class="hljs-number">3</span>]; <span class="hljs-comment">// works in PHP 5.4</span>
+
+<span class="hljs-title function_ invoke__">print_r</span>(<span class="hljs-variable">$eg_array</span>); <span class="hljs-comment">// prints all key value pairs, print_r() is useful for debugging</span>
+<span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-variable">$eg_array</span>); <span class="hljs-comment">// displays more information than print_r(), is useful for debugging</span>
+
+<span class="hljs-variable">$another_eg_array</span>[<span class="hljs-string">&#x27;Four&#x27;</span>] = <span class="hljs-number">4</span>; <span class="hljs-comment">// assigns a new element to the array</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$eg_array</span>[<span class="hljs-string">&#x27;One&#x27;</span>]; <span class="hljs-comment">// prints 1, this tells me the least as compared to print_r() or var_dump()</span>
+
+<span class="hljs-comment">// ARRAY LITERALS</span>
+
+<span class="hljs-variable">$array_literal</span> = [<span class="hljs-string">&#x27;One&#x27;</span>, <span class="hljs-string">&#x27;Two&#x27;</span>, <span class="hljs-string">&#x27;Three&#x27;</span>]; <span class="hljs-comment">// implictly assigns integer key for array literals per their index</span>
+
+<span class="hljs-variable">$array_literal</span>[] = <span class="hljs-string">&#x27;Four&#x27;</span>; <span class="hljs-comment">// appends an element to the end of the array</span>
+<span class="hljs-title function_ invoke__">array_push</span>(<span class="hljs-variable">$array_literal</span>, <span class="hljs-string">&#x27;Five&#x27;</span>); <span class="hljs-comment">// also appends an element to the end of the array</span>
+
+<span class="hljs-keyword">unset</span>(<span class="hljs-variable">$array_literal</span>[<span class="hljs-number">3</span>]); <span class="hljs-comment">// removes element from array</span>
+
+<span class="hljs-variable">$num</span> = <span class="hljs-number">2</span>;
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$array_literal</span>[<span class="hljs-number">1</span>]; <span class="hljs-comment">// prints &#x27;Two&#x27;</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$array_literal</span>[<span class="hljs-variable">$num</span>]; <span class="hljs-comment">// prints &#x27;Three&#x27;</span>
+
+<span class="hljs-comment">// ITERATING THROUGH AN ARRAY</span>
+    <span class="hljs-comment">// iterate through a hashmap array or an array literal using the foreach() loop</span>
+
+<span class="hljs-keyword">foreach</span>(<span class="hljs-variable">$stuff</span> <span class="hljs-keyword">as</span> <span class="hljs-variable">$k</span> =&gt; <span class="hljs-variable">$v</span>) {
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Key=&quot;</span>, <span class="hljs-variable">$k</span>, <span class="hljs-string">&quot;Val=&quot;</span>, <span class="hljs-variable">$v</span>;
+}
+
+<span class="hljs-comment">// ARRAY FUNCTIONS</span>
+
+<span class="hljs-title function_ invoke__">array_key_exists</span>(<span class="hljs-variable">$key</span>, <span class="hljs-variable">$array</span>); <span class="hljs-comment">// checks whether a key is in the array</span>
+<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$array</span>[<span class="hljs-string">&quot;key&quot;</span>]); <span class="hljs-comment">// also checks whether a key is in the array</span>
+<span class="hljs-title function_ invoke__">count</span>(<span class="hljs-variable">$array</span>); <span class="hljs-comment">// length of the array</span>
+<span class="hljs-title function_ invoke__">is_array</span>(<span class="hljs-variable">$array</span>); <span class="hljs-comment">// checks whether a variable is an array</span>
+<span class="hljs-title function_ invoke__">sort</span>(<span class="hljs-variable">$array</span>); <span class="hljs-comment">// sorts the array by its values, loses the key value pair associations</span>
+<span class="hljs-title function_ invoke__">ksort</span>(<span class="hljs-variable">$array</span>); <span class="hljs-comment">// sorts the array key-value pairs by its keys</span>
+<span class="hljs-title function_ invoke__">asort</span>(<span class="hljs-variable">$array</span>); <span class="hljs-comment">// sorts the array key-value pairs by its values</span>
+<span class="hljs-title function_ invoke__">shuffle</span>(<span class="hljs-variable">$array</span>); <span class="hljs-comment">// randomly sorts the array</span>
+<span class="hljs-title function_ invoke__">explode</span>(<span class="hljs-variable">$delimiter</span>, <span class="hljs-variable">$string</span>); <span class="hljs-comment">// splits a string by a specified delimiter and assigns that to an array</span>
+
+<span class="hljs-keyword">echo</span> <span class="hljs-keyword">isset</span>(<span class="hljs-variable">$eg_array</span>[<span class="hljs-string">&quot;name&quot;</span>]) ? <span class="hljs-string">&quot;name is set&quot;</span> : <span class="hljs-string">&quot;name is not set&quot;</span>; <span class="hljs-comment">// utilising the ternary operator to check whether a key exists in an array, this can be avoided using the null coalescing operator</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$_GET</span>[<span class="hljs-string">&quot;name&quot;</span>] ?? <span class="hljs-string">&quot;nobody&quot;</span>; <span class="hljs-comment">// PHP 7&#x27;s null coalescing operator can also be used here</span>
+
+&gt;
+</code></pre>
+<h2>Logic</h2>
+<pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-comment">// ---------- LOGIC ----------</span>
+
+<span class="hljs-comment">// assert() throws a warning if an argument evaluates to false</span>
+
+<span class="hljs-variable">$a</span> = <span class="hljs-number">0</span>;
+<span class="hljs-variable">$b</span> = <span class="hljs-string">&#x27;0&#x27;</span>;
+<span class="hljs-variable">$c</span> = <span class="hljs-number">1</span>;
+<span class="hljs-variable">$d</span> = <span class="hljs-string">&#x27;1&#x27;</span>;
+
+<span class="hljs-comment">// PARTIAL EQUALITY</span>
+    <span class="hljs-comment">// only checks for value, not type</span>
+
+<span class="hljs-title function_ invoke__">assert</span>(<span class="hljs-variable">$a</span> == <span class="hljs-variable">$b</span>); <span class="hljs-comment">// equality check returns true</span>
+<span class="hljs-title function_ invoke__">assert</span>(<span class="hljs-variable">$a</span> != <span class="hljs-variable">$c</span>); <span class="hljs-comment">// inequality check returns true</span>
+<span class="hljs-title function_ invoke__">assert</span>(<span class="hljs-variable">$a</span> &lt;&gt; <span class="hljs-variable">$c</span>); <span class="hljs-comment">// also an inequality check returns true</span>
+<span class="hljs-title function_ invoke__">assert</span>(<span class="hljs-variable">$a</span> &lt; <span class="hljs-variable">$c</span>); <span class="hljs-comment">// comparison check returns true</span>
+<span class="hljs-title function_ invoke__">assert</span>(<span class="hljs-variable">$c</span> &gt; <span class="hljs-variable">$b</span>); <span class="hljs-comment">// comparison check returns true</span>
+<span class="hljs-title function_ invoke__">assert</span>(<span class="hljs-variable">$a</span> &lt;= <span class="hljs-variable">$b</span>); <span class="hljs-comment">// comparison and equality check returns true</span>
+<span class="hljs-title function_ invoke__">assert</span>(<span class="hljs-variable">$c</span> &gt;= <span class="hljs-variable">$d</span>); <span class="hljs-comment">// comparison and equality check returns true</span>
+
+<span class="hljs-comment">// COMPLETE EQUALITY</span>
+    <span class="hljs-comment">// checks for value and type</span>
+
+<span class="hljs-title function_ invoke__">assert</span>(<span class="hljs-variable">$c</span> === <span class="hljs-variable">$d</span>); <span class="hljs-comment">// complete equality check returns true</span>
+<span class="hljs-title function_ invoke__">assert</span>(<span class="hljs-variable">$a</span> !== <span class="hljs-variable">$d</span>); <span class="hljs-comment">// complete inequality check returns true</span>
+<span class="hljs-title function_ invoke__">assert</span>(<span class="hljs-number">1</span> === <span class="hljs-string">&#x27;1&#x27;</span>); <span class="hljs-comment">// complete equality check returns false</span>
+<span class="hljs-title function_ invoke__">assert</span>(<span class="hljs-number">1</span> !== <span class="hljs-string">&#x27;1&#x27;</span>); <span class="hljs-comment">// complete inequality check returns false</span>
+
+<span class="hljs-comment">// SPACESHIP OPERATOR</span>
+    <span class="hljs-comment">// introduced from PHP 7 onwards</span>
+    <span class="hljs-comment">// kinda odd behaviour, avoid usage until fully understand how it works</span>
+
+<span class="hljs-variable">$a</span> = <span class="hljs-number">100</span>;
+<span class="hljs-variable">$b</span> = <span class="hljs-number">1000</span>;
+
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$a</span> &lt;=&gt; <span class="hljs-variable">$a</span>; <span class="hljs-comment">// prints 0 since they are equal</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$a</span> &lt;=&gt; <span class="hljs-variable">$b</span>; <span class="hljs-comment">// prints -1 since $a &lt; $b</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$b</span> &lt;=&gt; <span class="hljs-variable">$a</span>; <span class="hljs-comment">// prints 1 since $b &gt; $a</span>
+
+&gt;
+</code></pre>
+<h2>Control structures</h2>
+<pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-comment">// ---------- CONTROL STRUCTURE ----------</span>
+
+<span class="hljs-comment">// IF ELSEIF ELSE STRUCTURES</span>
+
+<span class="hljs-keyword">if</span> (<span class="hljs-literal">true</span>) {
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&#x27;Kill me&#x27;</span>;
+}
+
+<span class="hljs-keyword">if</span> (<span class="hljs-literal">false</span>) {
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&#x27;Isle eating house&#x27;</span>;
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&#x27;Hurt Hurt Skrt Skrt&#x27;</span>;
+}
+
+<span class="hljs-variable">$watermelon</span> = <span class="hljs-number">10</span>;
+
+<span class="hljs-keyword">if</span> (<span class="hljs-variable">$watermelon</span> &gt; <span class="hljs-number">10</span>) {
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&#x27;Watermelon is bigger than 10&#x27;</span>;
+} <span class="hljs-keyword">elseif</span> (<span class="hljs-variable">$watermelon</span> === <span class="hljs-number">10</span>) {
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&#x27;Watermelon is 10&#x27;</span>;
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&#x27;Watermelon is smaller than 10&#x27;</span>;
+}
+
+<span class="hljs-comment">// TERNARY OPERATOR</span>
+    <span class="hljs-comment">// additional ternary shortcut since PHP 5.3</span>
+
+<span class="hljs-comment">// general structure is as follows</span>
+    <span class="hljs-comment">// CONDITIONAL CHECK ? IF EVALUATES TRUE : IF EVALUATES FALSE</span>
+
+<span class="hljs-keyword">print</span> (<span class="hljs-literal">false</span> ? <span class="hljs-string">&#x27;Isle eating house&#x27;</span> : <span class="hljs-string">&#x27;Hurt Hurt Skrt Skrt&#x27;</span>);
+<span class="hljs-variable">$x</span> = <span class="hljs-literal">false</span>;
+<span class="hljs-keyword">print</span>(<span class="hljs-variable">$x</span> ?: <span class="hljs-string">&#x27;Hurt Hurt Skrt Skrt&#x27;</span>); <span class="hljs-comment">// ternary operator shortcut in ?:</span>
+
+<span class="hljs-comment">// SWITCH CASE STATEMENTS</span>
+    <span class="hljs-comment">// remember to include break statements</span>
+    <span class="hljs-comment">// without a break statement, logic flow falls through as in case &#x27;two&#x27; as below</span>
+    <span class="hljs-comment">// default: case exists</span>
+
+<span class="hljs-variable">$x</span> = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">switch</span> (<span class="hljs-variable">$x</span>) {
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;0&#x27;</span>:
+        <span class="hljs-keyword">print</span> <span class="hljs-string">&#x27;Switch can do type coercion so this evaluates.&#x27;</span>;
+        <span class="hljs-keyword">break</span>; <span class="hljs-comment">// break statements are necessary</span>
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;two&#x27;</span>: <span class="hljs-comment">// a case flow can be left empty, nothing will occur if this case is hit and since no break statement, logic falls through and case &#x27;three&#x27; is evaluated</span>
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;three&#x27;</span>: 
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">default</span>:
+        <span class="hljs-keyword">break</span>;
+}
+
+&gt;
+</code></pre>
+<h2>Null coalescing operator</h2>
+<pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-comment">// ---------- NULL COALESCING OPERATOR -----------</span>
+    <span class="hljs-comment">// ?? =&gt; colescing operators assigns a default value if a variable stores a value of null </span>
+        <span class="hljs-comment">// syntax is as follows =&gt; {VALUE TO CHECK} ?? {DEFAULT VALUE TO ASSIGN IF THE AFOREMENTIONED VALUE IS NULL}</span>
+    <span class="hljs-comment">// shorthand operator also available</span>
+
+<span class="hljs-variable">$variable</span> = <span class="hljs-variable">$value</span> ?? <span class="hljs-variable">$default</span>; <span class="hljs-comment">// if $value is not null, $variable takes value of $value, else $variable takes value of $default</span>
+<span class="hljs-variable">$a</span> = <span class="hljs-literal">null</span>;
+<span class="hljs-variable">$b</span> = <span class="hljs-string">&#x27;Cereal chicken&#x27;</span>;
+<span class="hljs-variable">$a</span> ?? <span class="hljs-string">&#x27;Sambal beans&#x27;</span>; <span class="hljs-comment">// since $a is of value null, it is assigned the value &#x27;Sambal beans&#x27;</span>
+<span class="hljs-variable">$b</span> ?? <span class="hljs-string">&#x27;Thai fish&#x27;</span>; <span class="hljs-comment">// since $b already has value &#x27;Cereal chicken&#x27;, it keeps that value</span>
+
+&gt;
+</code></pre>
+<h2>Loops</h2>
+<pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-comment">// ---------- LOOP ----------</span>
+    <span class="hljs-comment">// continue and break operate as expected in other languages</span>
+
+<span class="hljs-comment">// WHILE loop</span>
+
+<span class="hljs-variable">$i</span> = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">while</span> (<span class="hljs-variable">$i</span> &lt; <span class="hljs-number">5</span>) {
+    <span class="hljs-keyword">echo</span> <span class="hljs-variable">$i</span>++; <span class="hljs-comment">// prints 01234</span>
+}
+
+<span class="hljs-variable">$i</span> = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">while</span> (<span class="hljs-variable">$i</span> &lt; <span class="hljs-number">5</span>) {
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable">$i</span> === <span class="hljs-number">3</span>) {
+        <span class="hljs-keyword">break</span>; <span class="hljs-comment">// exits out of the entire while loop</span>
+    }
+    <span class="hljs-keyword">echo</span> <span class="hljs-variable">$i</span>++; <span class="hljs-comment">// prints 012</span>
+}
+
+<span class="hljs-comment">// DO WHILE loop</span>
+
+<span class="hljs-variable">$i</span> = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">do</span> {
+    <span class="hljs-keyword">echo</span> <span class="hljs-variable">$i</span>++;
+} <span class="hljs-keyword">while</span> (<span class="hljs-variable">$i</span> &lt; <span class="hljs-number">5</span>); <span class="hljs-comment">// prints 01234</span>
+
+<span class="hljs-comment">// FOR loop</span>
+    <span class="hljs-comment">// C-style for loops</span>
+
+<span class="hljs-keyword">for</span> (<span class="hljs-variable">$x</span> = <span class="hljs-number">0</span>; <span class="hljs-variable">$x</span> &lt; <span class="hljs-number">10</span>; <span class="hljs-variable">$x</span>++) {
+    <span class="hljs-keyword">echo</span> <span class="hljs-variable">$x</span>; <span class="hljs-comment">// prints 0123456789</span>
+}
+
+<span class="hljs-keyword">for</span> (<span class="hljs-variable">$i</span> = <span class="hljs-number">0</span>; <span class="hljs-variable">$i</span> &lt; <span class="hljs-number">5</span>; <span class="hljs-variable">$i</span>++) {
+    <span class="hljs-keyword">if</span> (<span class="hljs-variable">$i</span> === <span class="hljs-number">3</span>) {
+        <span class="hljs-keyword">continue</span>; <span class="hljs-comment">// skips to next iteration of the loop</span>
+    }
+    <span class="hljs-keyword">echo</span> <span class="hljs-variable">$i</span>; <span class="hljs-comment">// prints 0124</span>
+}
+
+<span class="hljs-comment">// FOREACH loops</span>
+    <span class="hljs-comment">// can iterate over iterable structures like arrays for values or keys and values</span>
+
+<span class="hljs-variable">$meta</span> = [<span class="hljs-string">&#x27;cereal chicken&#x27;</span> =&gt; <span class="hljs-number">1</span>, <span class="hljs-string">&#x27;thai fish&#x27;</span> =&gt; <span class="hljs-number">2</span>, <span class="hljs-string">&#x27;nonya veg&#x27;</span> =&gt; <span class="hljs-number">3</span>];
+
+<span class="hljs-comment">// iterating over array for values</span>
+<span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$meta</span> <span class="hljs-keyword">as</span> <span class="hljs-variable">$food_item_level</span>) {
+    <span class="hljs-keyword">echo</span> <span class="hljs-variable">$food_item_level</span>; <span class="hljs-comment">// prints 123</span>
+}
+
+<span class="hljs-comment">// iterating over array for keys and values</span>
+<span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$meta</span> <span class="hljs-keyword">as</span> <span class="hljs-variable">$food_item</span> =&gt; <span class="hljs-variable">$food_item_level</span>) {
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Parklane cai fan menu item <span class="hljs-subst">$food_item</span> has a level of <span class="hljs-subst">$food_item_level</span>&quot;</span>;
+}
+
+&gt;
+</code></pre>
+<h2>Functions</h2>
+<pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-comment">// ---------- FUNCTION ----------</span>
+    <span class="hljs-comment">// parameter =&gt; variable used in the function definition</span>
+    <span class="hljs-comment">// argument =&gt; value passed during function invocation</span>
+    <span class="hljs-comment">// function =&gt; declares and creates a function</span>
+    <span class="hljs-comment">// return =&gt; specifies the return expression</span>
+    <span class="hljs-comment">// &amp; =&gt; reference operator as covered above, allowing us to call values by reference simiar to C</span>
+    <span class="hljs-comment">// default parameter values can be assigned</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">shit</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;Shit&#x27;</span>;
+}
+<span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">shit</span>(); <span class="hljs-comment">// prints &#x27;Shit&#x27;</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params"><span class="hljs-variable">$x</span>, <span class="hljs-variable">$y</span>=<span class="hljs-number">1</span></span>) </span>{ <span class="hljs-comment">// $y assigned a default value of 1 and it is an optional parameter</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$x</span> + <span class="hljs-variable">$y</span>;
+}
+
+<span class="hljs-comment">// CALL BY VALUE</span>
+    <span class="hljs-comment">// function arguments are an alias for the actual variable, they are stored as a separate variable with a copy of the value of the argument during function invocation</span>
+    <span class="hljs-comment">// PHP handles this similarly to most other programming languages</span>
+    <span class="hljs-comment">// this safeguards the function arguments from being modified directly as a copy is returned, the function argument itself will not be altered by the function in memory (unlike a method)</span>
+    <span class="hljs-comment">// this is calling by value</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">call_by_value</span>(<span class="hljs-params"><span class="hljs-variable">$alias</span></span>) </span>{
+    <span class="hljs-variable">$alias</span> = <span class="hljs-variable">$alias</span> * <span class="hljs-number">2</span>; <span class="hljs-comment">// the $alias being assigned here stores a different value from the $alias function argument</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$alias</span>;
+}
+
+<span class="hljs-comment">// CALL BY REFERENCE</span>
+    <span class="hljs-comment">// PHP has references using the &amp; (ampersand) operator</span>
+    <span class="hljs-comment">// this allows the function arguments to be directly modified by pointing the function to the function argument in memory, effectively creating a method (since the function does not need to return any value)</span>
+    <span class="hljs-comment">// this is calling by reference</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">call_by_reference</span>(<span class="hljs-params">&amp;<span class="hljs-variable">$realthing</span></span>) </span>{ <span class="hljs-comment">// the &amp; indicates that we are calling the function argument by reference</span>
+    <span class="hljs-variable">$realthing</span> = <span class="hljs-variable">$realthing</span> * <span class="hljs-number">3</span>; <span class="hljs-comment">// this will modify the actual value of the funtion argument directly, multiplying it by 3, and no value has to be returned explicitly since the function argument has already been modified</span>
+}
+
+<span class="hljs-comment">// SCOPE</span>
+    <span class="hljs-comment">// conventionally, scope is restricted within the degree of curly braces, which includes functions</span>
+    <span class="hljs-comment">// global scope is for variables available within scope of entire program</span>
+    <span class="hljs-comment">// local scope is for variables available within scope of current set of curly braces (could be for functions, loops, conditional checks etc.)</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">tryzap</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-variable">$val</span> = <span class="hljs-number">100</span>; <span class="hljs-comment">// this $val here is completely separate from the below val and is in local scope</span>
+}
+
+<span class="hljs-variable">$val</span> = <span class="hljs-number">10</span>; <span class="hljs-comment">// this $val here is a completely different variable from the above val and is in global scope</span>
+<span class="hljs-title function_ invoke__">tryzap</span>(); <span class="hljs-comment">// as such, nothing will change here since we are neither calling the variable by reference nor reassigning $val in the global scope to accept a copy</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$val</span>; <span class="hljs-comment">// this will print out integer value of 10</span>
+
+<span class="hljs-comment">// GLOBAL</span>
+    <span class="hljs-comment">// the global keyword converts a variable within the local scope into one in the global scope</span>
+    <span class="hljs-comment">// avoid using global as far as possible, prioritize functional programming practices</span>
+    <span class="hljs-comment">// &quot;this will affect the global scope&quot;</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">dozap</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">global</span> <span class="hljs-variable">$val2</span>; <span class="hljs-comment">// causes the local variable $val2 to become a global variable</span>
+    <span class="hljs-variable">$val2</span>= <span class="hljs-number">100</span>; <span class="hljs-comment">// assigns the global variable $val2 the value of 100 within local scope, this will affect the global scope</span>
+}
+
+<span class="hljs-variable">$val2</span> = <span class="hljs-number">10</span>; <span class="hljs-comment">// creates the global variable $val2 of value 10</span>
+<span class="hljs-title function_ invoke__">dozap</span>(); <span class="hljs-comment">// this will now change the global variable of $val2 since the function invocation converts the local variable $val2 into the global variable $val2</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$val2</span>; <span class="hljs-comment">// this will print out integer value of 100</span>
+
+<span class="hljs-comment">// CHECK IF FUNCTION EXISTS</span>
+    <span class="hljs-comment">// function_exists(&quot;function_name&quot;) returns TRUE or FALSE based on whether a function exists</span>
+
+<span class="hljs-keyword">if</span> (<span class="hljs-title function_ invoke__">function_exists</span>(<span class="hljs-string">&quot;array_combine&quot;</span>)) {
+    <span class="hljs-title function_ invoke__">array_combine</span>(<span class="hljs-variable">$some_array</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;walao eh&quot;</span>;
+    <span class="hljs-comment">// do something else</span>
+}
+
+<span class="hljs-comment">// ANONYMOUS FUNCTIONS</span>
+
+<span class="hljs-variable">$anon</span> = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"><span class="hljs-variable">$x</span></span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">$x</span> + <span class="hljs-number">1</span>;
+}
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$anon</span>(<span class="hljs-number">2</span>); <span class="hljs-comment">// prints 3</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ass</span>(<span class="hljs-params"><span class="hljs-variable">$x</span>, <span class="hljs-variable">$y</span>, <span class="hljs-variable">$z</span></span>) </span>{
+    <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;<span class="hljs-subst">$x</span> - <span class="hljs-subst">$y</span> - <span class="hljs-subst">$z</span>&quot;</span>;
+}
+
+<span class="hljs-comment">// NESTED FUNCTIONS</span>
+    <span class="hljs-comment">// functions can return functions</span>
+    <span class="hljs-comment">// use keyword brings outside variables into scope</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bar</span>(<span class="hljs-params"><span class="hljs-variable">$x</span>, <span class="hljs-variable">$y</span></span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"><span class="hljs-variable">$z</span></span>) <span class="hljs-keyword">use</span> (<span class="hljs-params"><span class="hljs-variable">$x</span>, <span class="hljs-variable">$y</span></span>) </span>{ <span class="hljs-comment">// use to bring in outside variables</span>
+        <span class="hljs-title function_ invoke__">ass</span>(<span class="hljs-variable">$x</span>, <span class="hljs-variable">$y</span>, <span class="hljs-variable">$z</span>);
+    }
+}
+<span class="hljs-variable">$bar</span> = <span class="hljs-title function_ invoke__">bar</span>(<span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-string">&#x27;B&#x27;</span>);
+<span class="hljs-variable">$bar</span>(<span class="hljs-string">&#x27;C&#x27;</span>); <span class="hljs-comment">// prints &quot;A - B - C&quot;</span>
+
+<span class="hljs-comment">// CALLING NAMED FUNCTIONS</span>
+    <span class="hljs-comment">// named functions can be called using a string of their name</span>
+
+<span class="hljs-variable">$func_name</span> = <span class="hljs-string">&#x27;add&#x27;</span>; <span class="hljs-comment">// we previously defined an add() function</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$func_name</span>(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>); <span class="hljs-comment">// prints 3, since this invokes the add() function</span>
+
+<span class="hljs-comment">// VARIABLE NUMBER OF ARGUMENTS</span>
+    <span class="hljs-comment">// ... operator takes in a variable number of arguments as an array that can be iterated over</span>
+    <span class="hljs-comment">// can be used since PHP 5.6</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">variable</span>(<span class="hljs-params"><span class="hljs-variable">$word</span>, ...<span class="hljs-variable">$list</span></span>) </span>{
+    <span class="hljs-keyword">echo</span> <span class="hljs-variable">$word</span> . <span class="hljs-string">&quot;||&quot;</span>;
+    <span class="hljs-keyword">foreach</span> (<span class="hljs-variable">$list</span> <span class="hljs-keyword">as</span> <span class="hljs-variable">$item</span>) {
+        <span class="hljs-keyword">echo</span> <span class="hljs-variable">$item</span> . <span class="hljs-string">&#x27;|&#x27;</span>;
+    }
+}
+
+<span class="hljs-title function_ invoke__">variable</span>(<span class="hljs-string">&quot;Separate&quot;</span>, <span class="hljs-string">&quot;Hello&quot;</span>, <span class="hljs-string">&quot;World&quot;</span>); <span class="hljs-comment">// prints Seperate || Hello ||| World</span>
+
+&gt;
+</code></pre>
+<h2>Error handling</h2>
+<pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-comment">// --------- ERROR HANDLING ---------</span>
+    <span class="hljs-comment">// try and catch operate as you&#x27;d expect in other languages</span>
+    <span class="hljs-comment">// Exception =&gt; specifies a special exception variable that can be stored and referenced</span>
+
+<span class="hljs-keyword">try</span> {
+    <span class="hljs-comment">// Do something</span>
+} <span class="hljs-keyword">catch</span> (<span class="hljs-built_in">Exception</span> <span class="hljs-variable">$e</span>){
+    <span class="hljs-comment">// Handle the exception $e</span>
+}
+
+&gt;
+</code></pre>
+<h2>Importing from other files</h2>
+<pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-comment">// ---------- IMPORTS -----------</span>
+    <span class="hljs-comment">// include =&gt; searches for the specified file, if absent returns a non-fatal error, the equivalent of import in Python, emits a warning if specified file absent</span>
+    <span class="hljs-comment">// include_once =&gt; searches the specified file, if alreayd imported then DOES NOT include it again to prevent circular importing, emits a warning if specified file absent</span>
+    <span class="hljs-comment">// require =&gt; functions the same way as include except a fatal error is created if specified file absent</span>
+    <span class="hljs-comment">// require_once =&gt; checks whether a file is already imported, if already imported then will NOT include it again to prevent circular importing, creates a fatal error if specified file absent</span>
+        <span class="hljs-comment">// generally preferred for greater safety offered</span>
+    <span class="hljs-comment">// spl_autoload_register() =&gt; built-in function that is called once at the beginning of the file, automatically loads predefined classes which are separated as their own php file, takes in a function name (string) or an anonymous function which receives a $class argument, where the function definition specifies the file path to find the predefined classes&#x27; .php files</span>
+        <span class="hljs-comment">// allows for a templated and tiered approach to creating different classes and objects</span>
+
+<span class="hljs-keyword">include</span> <span class="hljs-string">&#x27;my-file.php&#x27;</span>; 
+<span class="hljs-keyword">include_once</span> <span class="hljs-string">&#x27;my-file.php&#x27;</span>; 
+<span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;my-file.php&#x27;</span>; 
+<span class="hljs-keyword">require_once</span> <span class="hljs-string">&#x27;my-file.php&#x27;</span>;
+
+<span class="hljs-title function_ invoke__">spl_autoload_register</span>(
+    function(<span class="hljs-variable">$class</span>){
+        <span class="hljs-keyword">require_once</span> <span class="hljs-string">&quot;<span class="hljs-subst">$class</span>.php&quot;</span>; <span class="hljs-comment">// specified file path to find predefined classes is same directory</span>
+    }
+)
+
+<span class="hljs-comment">// spl_autoload_register should only be called once by right but called multiple times here for example&#x27;s sake</span>
+<span class="hljs-title function_ invoke__">spl_autoload_register</span>( 
+    function(<span class="hljs-variable">$class</span>){
+        <span class="hljs-keyword">require_once</span> <span class="hljs-string">&quot;model/<span class="hljs-subst">$class</span>.php&quot;</span>; <span class="hljs-comment">// specified file path to find predefined classes is within the model file directory</span>
+    }
+)
+
+&gt;
+</code></pre>
+<h2>OOP</h2>
+<pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-comment">// ---------- OBJECT ORIENTED PROGRAMMING ----------</span>
+
+<span class="hljs-comment">// ----- QUICK YAPPING ----- </span>
+
+<span class="hljs-comment">// GENERAL OOP principle </span>
+    <span class="hljs-comment">// AIM TO REDUCE COMPLEXITY</span>
+    <span class="hljs-comment">// information hiding --&gt; object properties accessed via defined methods like getters and setters</span>
+    <span class="hljs-comment">// callers need not know of an object&#x27;s inner workings like how exactly its methods are defined</span>
+
+<span class="hljs-comment">// DATA ACCESS OBJECTS (DAO)</span>
+    <span class="hljs-comment">// a class that provides access to data stored in a file or database, which could include other classes</span>
+        <span class="hljs-comment">// effectively allows for chaining of class object methods that return other class objects which then call their own methods to obtain values</span>
+    <span class="hljs-comment">// one DAO for each datatype (eg. personDAO, parklaneDAO, VehicleDAO)</span>
+    <span class="hljs-comment">// supports CRUD operations (create, read, update, delete) as defined methods by the programmer</span>
+    <span class="hljs-comment">// follows information hiding principles with complexity obscured by the DAO</span>
+
+<span class="hljs-variable">$roadUser</span>-&gt;<span class="hljs-title function_ invoke__">getVehicle</span>()-&gt;<span class="hljs-title function_ invoke__">getType</span>(); 
+
+<span class="hljs-comment">// code like above line is possible because of layered obscurity provided by the DAO</span>
+    <span class="hljs-comment">// 1. $roadUser is a local variable that stores an instance object of the RoadUser class</span>
+    <span class="hljs-comment">// 2. $roadUser -&gt; getVehicle() returns an instance object of the Vehicle class</span>
+    <span class="hljs-comment">// 3. getType() is a method called on the Vehicle class to return a value</span>
+
+<span class="hljs-comment">// ----- PHP DATA OBJECTS (PDO) -----</span>
+    <span class="hljs-comment">// perform CRUD operations on a connected database by interacting with DAOs using SQL queries</span>
+    <span class="hljs-comment">// AVOID writing PDO object code in multiple PHP pages</span>
+
+<span class="hljs-comment">// 1. Connect to Database by creating a PDO object </span>
+    <span class="hljs-comment">// PDO is a predefined class within PHP</span>
+    <span class="hljs-comment">// PDO object instantiated with DSN, username and password</span>
+        <span class="hljs-comment">// Data Source Name (DSN) consists of ...</span>
+            <span class="hljs-comment">// database type and host</span>
+            <span class="hljs-comment">// database name (dbname) =&gt; defined in the SQL creation script, note NO &#x27;&#x27; or &quot;&quot; used </span>
+            <span class="hljs-comment">// port</span>
+    <span class="hljs-comment">// setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT) =&gt; used to silence any errors and exceptions raised by SQL, useful for final display but should be avoided during development</span>
+
+<span class="hljs-variable">$dsn</span> = <span class="hljs-string">&quot;mysql:host=localhost;dbname=week11Test;port=3306&quot;</span>;
+<span class="hljs-variable">$user</span> = <span class="hljs-string">&quot;root&quot;</span>;
+<span class="hljs-variable">$password</span> = <span class="hljs-string">&quot;&quot;</span>; <span class="hljs-comment">// password is &quot;&quot; for Windows and &quot;root&quot; for Mac</span>
+<span class="hljs-variable">$pdo</span> = <span class="hljs-keyword">new</span> <span class="hljs-title function_ invoke__">PDO</span>(<span class="hljs-variable">$dsn</span>, <span class="hljs-variable">$user</span>, <span class="hljs-variable">$password</span>); <span class="hljs-comment">// all parameters defined for clarity here but they can be fed in as value literals for generic PDO object instantiation</span>
+<span class="hljs-variable">$pdo</span>-&gt;<span class="hljs-title function_ invoke__">setAttribute</span>(PDO::<span class="hljs-variable constant_">ATTR_ERRMODE</span>, PDO::<span class="hljs-variable constant_">ERRMODE_SILENT</span>);
+
+<span class="hljs-comment">// 2. Prepare an SQL statement called by PDO object using a method</span>
+    <span class="hljs-comment">// SQL statement HAS to be within single quotes to create a string literal </span>
+    <span class="hljs-comment">// prepare() =&gt; creates a template SQL query statement that can be executed multiple times with different parameter values</span>
+        <span class="hljs-comment">// each :XX value in the SQL query statement string is a parameter&#x27;s placeholder value, where : prepends the placeholder within the SQL statement</span>
+        <span class="hljs-comment">// takes in SQL query statement as an argument</span>
+    <span class="hljs-comment">// bindParam() =&gt; associates a prepared SQL query&#x27;s parameter with a PHP variable</span>
+        <span class="hljs-comment">// effectively interpolates the specified variable into the prepared SQL query statement, necessary before execution</span>
+        <span class="hljs-comment">// takes in parameter within SQL query statement, PHP variable to associate it with, and class constraints as arguments</span>
+            <span class="hljs-comment">// CLASS CONSTRAINTS</span>
+                <span class="hljs-comment">// 1. PDO::PARAM_STR =&gt; represents datatypes SQL CHAR, VARCHAR, other string types </span>
+                    <span class="hljs-comment">// !!! also use for SQL FLOAT, DOUBLE, DECIMAL and any datatypes not within other PDO class constraints</span>
+                <span class="hljs-comment">// 2. PDO::PARAM_INT =&gt; represents datatype SQL INT</span>
+                <span class="hljs-comment">// 3. PDO::PARAM_BOOL =&gt; represents datatype SQL BOOLEAN </span>
+        <span class="hljs-comment">// NOT ALWAYS NECESSARY to be used, used only when the SQL statement has parameters that are user-defined or variable to change</span>
+
+<span class="hljs-variable">$isbn</span> = <span class="hljs-string">&#x27;isbn1&#x27;</span>;
+<span class="hljs-variable">$sqlStatement</span> = <span class="hljs-string">&#x27;select * from book where isbn = :isbn&#x27;</span>; <span class="hljs-comment">// here :isbn is the placeholder value</span>
+<span class="hljs-variable">$preparedStatement</span> = <span class="hljs-variable">$pdo</span>-&gt;<span class="hljs-title function_ invoke__">prepare</span>(<span class="hljs-variable">$sqlStatement</span>);
+<span class="hljs-variable">$preparedStatement</span>-&gt;<span class="hljs-title function_ invoke__">bindParam</span>(<span class="hljs-string">&#x27;:isbn&#x27;</span>, <span class="hljs-variable">$isbn</span>, PDO::<span class="hljs-variable constant_">PARAM_STR</span>);
+
+    <span class="hljs-comment">// 3. Execute an SQL statement </span>
+        <span class="hljs-comment">// execute() =&gt; runs the specified prepared and binded SQL query statement</span>
+            <span class="hljs-comment">// takes no arguments</span>
+            <span class="hljs-comment">// returns a Boolean value (True / False) depending on whether the given action executed succesfully</span>
+                <span class="hljs-comment">// ! often stored within variables to check whether a given value inserted or deleted correctly etc</span>
+
+<span class="hljs-comment">// just executes the job if no validation is required</span>
+<span class="hljs-variable">$preparedStatement</span>-&gt;<span class="hljs-title function_ invoke__">execute</span>();
+
+<span class="hljs-comment">// alternatively...</span>
+<span class="hljs-variable">$validateInsertion</span> = <span class="hljs-variable">$preparedStatement</span>-&gt;<span class="hljs-title function_ invoke__">execute</span>();
+
+    <span class="hljs-comment">// 4. Retrieve results row-by-row from queried SQL data</span>
+        <span class="hljs-comment">// setFetchMode() =&gt; specifies how the rows retrieved from a SQL database query should be returned</span>
+            <span class="hljs-comment">// takes in fetch constraint as an argument</span>
+                <span class="hljs-comment">// FETCH CONSTRAINT</span>
+                    <span class="hljs-comment">// PDO::FETCH_ASSOC</span>
+                    <span class="hljs-comment">// PDO::FETCH_OBJ</span>
+                    <span class="hljs-comment">// PDO::FETCH_BOTH</span>
+        <span class="hljs-comment">// fetch() =&gt; iteratively retrieves the next row from the returned SQL result set in response to a database query</span>
+            <span class="hljs-comment">// takes no arguments by default</span>
+            <span class="hljs-comment">// note that while($row = $preparedStatement-&gt;fetch()) is not a comparison equality check but an ASSIGNMENT STATEMENT where the value of $preparedStatement-&gt;fetch() is assigned to $row</span>
+        <span class="hljs-comment">// fetchColumn() =&gt; retrieves the single column value from the returned SQL resulte to a database query</span>
+            <span class="hljs-comment">// takes no arguments by default</span>
+        <span class="hljs-comment">// each SQL database column is a KEY associated with its corresponding record&#x27;s stored as a VALUE in a KEY-VALUE pair relationship</span>
+
+<span class="hljs-variable">$preparedStatement</span>-&gt;<span class="hljs-title function_ invoke__">setFetchMode</span>(PDO::<span class="hljs-variable constant_">FETCH_ASSOC</span>);
+<span class="hljs-keyword">while</span>(<span class="hljs-variable">$row</span> = <span class="hljs-variable">$preparedStatement</span>-&gt;<span class="hljs-title function_ invoke__">fetch</span>()){
+    <span class="hljs-keyword">echo</span> <span class="hljs-variable">$row</span>[<span class="hljs-string">&#x27;isbn&#x27;</span>] . <span class="hljs-string">&quot;    &quot;</span> . <span class="hljs-variable">$row</span>[<span class="hljs-string">&#x27;title&#x27;</span>];
+}
+
+<span class="hljs-comment">// fetchColumn() makes things like this possible</span>
+
+<span class="hljs-variable">$sqlStatement</span> = <span class="hljs-string">&quot;SELECT COUNT(*) FROM book&quot;</span>;
+<span class="hljs-variable">$preparedStatement</span> = <span class="hljs-variable">$pdo</span>-&gt;<span class="hljs-title function_ invoke__">prepare</span>(<span class="hljs-variable">$sqlStatement</span>);
+<span class="hljs-variable">$preparedStatement</span>-&gt;<span class="hljs-title function_ invoke__">execute</span>();
+<span class="hljs-variable">$count</span> = <span class="hljs-variable">$preparedStatement</span>-&gt;<span class="hljs-title function_ invoke__">fetchColumn</span>();
+<span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;Here&#x27;s your final count <span class="hljs-subst">$count</span>&quot;</span>;
+
+    <span class="hljs-comment">// 5. Free up resources to close connection to Database and SQL statement</span>
+
+<span class="hljs-variable">$preparedStatement</span> = <span class="hljs-literal">null</span>;
+<span class="hljs-variable">$pdo</span> = <span class="hljs-literal">null</span>;
+
+<span class="hljs-comment">// ----- DAO and PDO interaction -----</span>
+    <span class="hljs-comment">// allows us to connect our DAO to the SQL database, useful because CRUD operations are normally called on DAO</span>
+    <span class="hljs-comment">// the value of incorporating DAO and PDO lies in allowing for all database connection logic to be encapsulated within a single method</span>
+    <span class="hljs-comment">// generally, individual object state (Book.php) is saved locally and collectively saved as a DAO (BookDAO.php), and the DAO is then written and read from the SQL database (since each record is the equivalent of an individual object and multiple records create a single table, which is the DAO)</span>
+        <span class="hljs-comment">// ! combine the 5 steps covered above and place them within a defined class method</span>
+
+<span class="hljs-comment">// &lt; BookDAO.php &gt;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BookDAO</span> </span>{
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getAllBooks</span>(<span class="hljs-params"></span>)</span>{
+        <span class="hljs-variable">$fin</span> = [];
+        <span class="hljs-variable">$dsn</span> = <span class="hljs-string">&quot;mysql:host=localhost;dbname=week11;port=3306&quot;</span>;
+        <span class="hljs-variable">$pdo</span> = <span class="hljs-keyword">new</span> <span class="hljs-title function_ invoke__">PDO</span>(<span class="hljs-variable">$dsn</span>, <span class="hljs-string">&quot;root&quot;</span>, <span class="hljs-string">&quot;&quot;</span>);
+        <span class="hljs-variable">$sql</span> = <span class="hljs-string">&#x27;SELECT * FROM book&#x27;</span>;
+        <span class="hljs-variable">$job</span> = <span class="hljs-variable">$pdo</span>-&gt;<span class="hljs-title function_ invoke__">prepare</span>(<span class="hljs-variable">$sql</span>);
+        <span class="hljs-variable">$job</span>-&gt;<span class="hljs-title function_ invoke__">execute</span>();
+        <span class="hljs-variable">$job</span>-&gt;<span class="hljs-title function_ invoke__">setFetchMode</span>(PDO::<span class="hljs-variable constant_">FETCH_ASSOC</span>);
+        <span class="hljs-keyword">while</span> (<span class="hljs-variable">$row</span> = <span class="hljs-variable">$job</span>-&gt;<span class="hljs-title function_ invoke__">fetch</span>()){
+            <span class="hljs-variable">$fin</span>[] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Book</span>(<span class="hljs-variable">$row</span>[<span class="hljs-string">&#x27;isbn&#x27;</span>]), <span class="hljs-variable">$row</span>[<span class="hljs-string">&#x27;title&#x27;</span>]);
+        }
+        <span class="hljs-variable">$job</span> = <span class="hljs-literal">null</span>;
+        <span class="hljs-variable">$pdo</span> = <span class="hljs-literal">null</span>;
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$fin</span>;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getSpecificBook</span>(<span class="hljs-params"></span>)</span>{
+        <span class="hljs-variable">$fin</span> = <span class="hljs-literal">null</span>;
+        <span class="hljs-variable">$dsn</span> = <span class="hljs-string">&quot;mysql:host=localhost;dbname=week11;port=3306&quot;</span>;
+        <span class="hljs-variable">$pdo</span> = <span class="hljs-keyword">new</span> <span class="hljs-title function_ invoke__">PDO</span>(<span class="hljs-variable">$dsn</span>, <span class="hljs-string">&quot;root&quot;</span>, <span class="hljs-string">&quot;&quot;</span>);
+        <span class="hljs-variable">$sql</span> = <span class="hljs-string">&#x27;SELECT * FROM book WHERE isbn = :isbn&#x27;</span>;
+        <span class="hljs-variable">$job</span> = <span class="hljs-variable">$pdo</span>-&gt;<span class="hljs-title function_ invoke__">prepare</span>(<span class="hljs-variable">$sql</span>);
+        <span class="hljs-variable">$job</span>-&gt;<span class="hljs-title function_ invoke__">bindParam</span>(<span class="hljs-string">&#x27;:isbn&#x27;</span>, <span class="hljs-variable">$isbn</span>, PDO::<span class="hljs-variable constant_">PARAM_STR</span>);
+        <span class="hljs-variable">$job</span>-&gt;<span class="hljs-title function_ invoke__">execute</span>();
+        <span class="hljs-variable">$job</span>-&gt;<span class="hljs-title function_ invoke__">setFetchMode</span>(PDO::<span class="hljs-variable constant_">FETCH_ASSOC</span>);
+        <span class="hljs-keyword">if</span>(<span class="hljs-variable">$row</span> = <span class="hljs-variable">$job</span>-&gt;<span class="hljs-title function_ invoke__">fetch</span>()){
+            <span class="hljs-variable">$fin</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Book</span>(<span class="hljs-variable">$row</span>[<span class="hljs-string">&#x27;isbn&#x27;</span>], <span class="hljs-variable">$row</span>[<span class="hljs-string">&#x27;title&#x27;</span>]);
+        }
+        <span class="hljs-variable">$job</span> = <span class="hljs-literal">null</span>;
+        <span class="hljs-variable">$pdo</span> = <span class="hljs-literal">null</span>;
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$fin</span>;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addSpecificBook</span>(<span class="hljs-params"><span class="hljs-variable">$book</span></span>)</span>{
+        <span class="hljs-variable">$dsn</span> = <span class="hljs-string">&quot;mysql:host=localhost;dbname=week11;port=3306&quot;</span>;
+        <span class="hljs-variable">$pdo</span> = <span class="hljs-keyword">new</span> <span class="hljs-title function_ invoke__">PDO</span>(<span class="hljs-variable">$dsn</span>, <span class="hljs-string">&quot;root&quot;</span>, <span class="hljs-string">&quot;&quot;</span>);
+        <span class="hljs-variable">$sql</span> = <span class="hljs-string">&#x27;INSERT INTO book (isbn, title) VALUES (:ibsn, :title)&#x27;</span>;
+        <span class="hljs-variable">$job</span> = <span class="hljs-variable">$pdo</span>-&gt;<span class="hljs-title function_ invoke__">prepare</span>(<span class="hljs-variable">$sql</span>);
+        <span class="hljs-variable">$currIsbn</span> = <span class="hljs-variable">$book</span>-&gt;<span class="hljs-title function_ invoke__">getIsbn</span>();
+        <span class="hljs-variable">$currTitle</span> = <span class="hljs-variable">$book</span>-&gt;<span class="hljs-title function_ invoke__">getTitle</span>();
+        <span class="hljs-variable">$job</span>-&gt;<span class="hljs-title function_ invoke__">bindParam</span>(<span class="hljs-string">&#x27;:isbn&#x27;</span>, <span class="hljs-variable">$currIsbn</span>, PDO::<span class="hljs-variable constant_">PARAM_STR</span>);
+        <span class="hljs-variable">$job</span>-&gt;<span class="hljs-title function_ invoke__">bindParam</span>(<span class="hljs-string">&#x27;:title&#x27;</span>, <span class="hljs-variable">$currTitle</span>, PDO::<span class="hljs-variable constant_">PARAM_STR</span>);
+        <span class="hljs-variable">$validateAdding</span> = <span class="hljs-variable">$job</span>-&gt;<span class="hljs-title function_ invoke__">execute</span>();
+        <span class="hljs-variable">$job</span> = <span class="hljs-literal">null</span>;
+        <span class="hljs-variable">$pdo</span> = <span class="hljs-literal">null</span>;
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$validateAdding</span>;
+    }
+
+}
+
+<span class="hljs-comment">// CONNECTIONMANAGER class</span>
+    <span class="hljs-comment">// the value of the ConnectionManager user-defined class is in preventing repeated code as seen above in DAO-PDO interaction</span>
+
+<span class="hljs-comment">// &lt; ConnectionManager.php &gt;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConnectionManager</span> </span>{ 
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getConnection</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-variable">$dsn</span> = <span class="hljs-string">&quot;mysql:host=localhost;dbname=week11;port=3306&quot;</span>;
+        <span class="hljs-variable">$pdo</span> = <span class="hljs-keyword">new</span> <span class="hljs-title function_ invoke__">PDO</span>(<span class="hljs-variable">$dsn</span>, <span class="hljs-string">&quot;root&quot;</span>, <span class="hljs-string">&quot;&quot;</span>);
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$pdo</span>;
+    }
+}
+
+<span class="hljs-comment">// &lt; BookDAO.php &gt;</span>
+    <span class="hljs-comment">// assume that these are public methods declared within the class BookDAO</span>
+    <span class="hljs-comment">// they all make use of the ConnectionManager class (remember to import it into your current PHP file!)</span>
+    <span class="hljs-comment">// my code above now becomes this below instead</span>
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BookDAO</span> </span>{
+
+    <span class="hljs-comment">// declared variables, constructor functions etc ...</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getBooks</span>(<span class="hljs-params"></span>) </span>{ 
+        <span class="hljs-variable">$connMgr</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConnectionManager</span>();      
+        <span class="hljs-variable">$pdo</span> = <span class="hljs-variable">$connMgr</span>-&gt;<span class="hljs-title function_ invoke__">getConnection</span>();  
+        <span class="hljs-variable">$sql</span> = <span class="hljs-string">&#x27;SELECT * FROM book&#x27;</span>;         
+        <span class="hljs-variable">$stmt</span> = <span class="hljs-variable">$pdo</span>-&gt;<span class="hljs-title function_ invoke__">prepare</span>(<span class="hljs-variable">$sql</span>);
+        <span class="hljs-variable">$stmt</span>-&gt;<span class="hljs-title function_ invoke__">execute</span>();
+        <span class="hljs-variable">$result</span> = [];
+        <span class="hljs-variable">$stmt</span>-&gt;<span class="hljs-title function_ invoke__">setFetchMode</span>(PDO::<span class="hljs-variable constant_">FETCH_ASSOC</span>);
+        <span class="hljs-keyword">while</span>(<span class="hljs-variable">$row</span> = <span class="hljs-variable">$stmt</span>-&gt;<span class="hljs-title function_ invoke__">fetch</span>()) {
+            <span class="hljs-variable">$result</span>[] = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Book</span>(<span class="hljs-variable">$row</span>[<span class="hljs-string">&#x27;isbn&#x27;</span>], <span class="hljs-variable">$row</span>[<span class="hljs-string">&#x27;title&#x27;</span>]);
+        }
+        <span class="hljs-variable">$stmt</span> = <span class="hljs-literal">null</span>;
+        <span class="hljs-variable">$pdo</span> = <span class="hljs-literal">null</span>;
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$result</span>;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getBook</span>(<span class="hljs-params"><span class="hljs-variable">$isbn</span></span>) </span>{
+        <span class="hljs-variable">$connMgr</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConnectionManager</span>();      
+        <span class="hljs-variable">$pdo</span> = <span class="hljs-variable">$connMgr</span>-&gt;<span class="hljs-title function_ invoke__">getConnection</span>();  
+        <span class="hljs-variable">$sql</span> = <span class="hljs-string">&#x27;select * from book where isbn=:isbn&#x27;</span>;         
+        <span class="hljs-variable">$stmt</span> = <span class="hljs-variable">$pdo</span>-&gt;<span class="hljs-title function_ invoke__">prepare</span>(<span class="hljs-variable">$sql</span>);
+        <span class="hljs-variable">$stmt</span>-&gt;<span class="hljs-title function_ invoke__">bindParam</span>(<span class="hljs-string">&#x27;:isbn&#x27;</span>, <span class="hljs-variable">$isbn</span>, PDO::<span class="hljs-variable constant_">PARAM_STR</span>);
+        <span class="hljs-variable">$stmt</span>-&gt;<span class="hljs-title function_ invoke__">execute</span>();
+        <span class="hljs-variable">$result</span> = <span class="hljs-literal">null</span>;
+        <span class="hljs-variable">$stmt</span>-&gt;<span class="hljs-title function_ invoke__">setFetchMode</span>(PDO::<span class="hljs-variable constant_">FETCH_ASSOC</span>);
+        <span class="hljs-keyword">if</span>(<span class="hljs-variable">$row</span> = <span class="hljs-variable">$stmt</span>-&gt;<span class="hljs-title function_ invoke__">fetch</span>()) {
+            <span class="hljs-variable">$result</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Book</span>(<span class="hljs-variable">$row</span>[<span class="hljs-string">&#x27;isbn&#x27;</span>],<span class="hljs-variable">$row</span>[<span class="hljs-string">&#x27;title&#x27;</span>]);
+        }
+        <span class="hljs-variable">$stmt</span> = <span class="hljs-literal">null</span>;
+        <span class="hljs-variable">$pdo</span> = <span class="hljs-literal">null</span>;
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$result</span>;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params"><span class="hljs-variable">$book</span></span>) </span>{
+        <span class="hljs-variable">$connMgr</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConnectionManager</span>();      
+        <span class="hljs-variable">$pdo</span> = <span class="hljs-variable">$connMgr</span>-&gt;<span class="hljs-title function_ invoke__">getConnection</span>(); 
+        <span class="hljs-variable">$sql</span> = <span class="hljs-string">&#x27;insert into book (isbn, title)
+                values (:isbn, :title)&#x27;</span>;
+        <span class="hljs-variable">$stmt</span> = <span class="hljs-variable">$pdo</span>-&gt;<span class="hljs-title function_ invoke__">prepare</span>(<span class="hljs-variable">$sql</span>); 
+        <span class="hljs-variable">$title</span> = <span class="hljs-variable">$book</span>-&gt;<span class="hljs-title function_ invoke__">getTitle</span>(); 
+        <span class="hljs-variable">$isbn</span> = <span class="hljs-variable">$book</span>-&gt;<span class="hljs-title function_ invoke__">getIsbn</span>(); 
+        <span class="hljs-variable">$stmt</span>-&gt;<span class="hljs-title function_ invoke__">bindParam</span>(<span class="hljs-string">&#x27;:title&#x27;</span>, <span class="hljs-variable">$title</span>, PDO::<span class="hljs-variable constant_">PARAM_STR</span>);
+        <span class="hljs-variable">$stmt</span>-&gt;<span class="hljs-title function_ invoke__">bindParam</span>(<span class="hljs-string">&#x27;:isbn&#x27;</span>, <span class="hljs-variable">$isbn</span>, PDO::<span class="hljs-variable constant_">PARAM_STR</span>);
+        <span class="hljs-variable">$isAddOK</span> = <span class="hljs-variable">$stmt</span>-&gt;<span class="hljs-title function_ invoke__">execute</span>();
+        <span class="hljs-variable">$stmt</span> = <span class="hljs-literal">null</span>;
+        <span class="hljs-variable">$pdo</span> = <span class="hljs-literal">null</span>;
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$isAddOK</span>;    
+    }
+
+}
+
+<span class="hljs-comment">// ----- ACCESS MODIFIERS -----</span>
+
+    <span class="hljs-comment">// public</span>
+        <span class="hljs-comment">// variable and methods VISIBLE from GLOBAL SCOPE</span>
+        <span class="hljs-comment">// GENERALLY, GOOD OOP PRACTICE to declare class methods as public to allow them to be called from the global scope</span>
+            <span class="hljs-comment">// methods are public by default if not specified</span>
+
+    <span class="hljs-comment">// private</span>
+        <span class="hljs-comment">// variable ACCESIBLE ONLY WITHIN CLASS only</span>
+        <span class="hljs-comment">// variables and their scope can be declared without variable intialization (assigning a value to a variable)</span>
+        <span class="hljs-comment">// GENERALLY, GOOD OOP PRACTICE TO declare class attributes as private to prevent unhandled mutation</span>
+            <span class="hljs-comment">// class attributes are accessed via GETTERS and SETTERS</span>
+
+    <span class="hljs-comment">// protected </span>
+        <span class="hljs-comment">// variable ACCESIBLE FROM CLASS AND SUBCLASSES</span>
+
+    <span class="hljs-comment">// static</span>
+        <span class="hljs-comment">// variable BELONGS TO CLASS and can ONLY BE CALLED FROM CLASS, not any of its objects</span>
+
+    <span class="hljs-comment">// final</span>
+        <span class="hljs-comment">// METHOD is unoverridable and unextendable</span>
+
+<span class="hljs-comment">// ----- OOP SYNTAX -----</span>
+
+    <span class="hljs-comment">// __construct()</span>
+        <span class="hljs-comment">// constructor method automatically called upon an object&#x27;s instantiation, similar to __init__ in Python</span>
+        <span class="hljs-comment">// constructor method takes arguments that can be assigned to the instance object upon instantiation</span>
+    <span class="hljs-comment">// new</span>
+        <span class="hljs-comment">// instantiates a new instance object of a class</span>
+    <span class="hljs-comment">// $this</span>
+        <span class="hljs-comment">// represents an instance object (similar to .self in Python), used when calling instance variables and methods which are per object</span>
+        <span class="hljs-comment">// always followed by -&gt; operator (similar to . in Python)</span>
+        <span class="hljs-comment">// remember NOT to include another $ after the -&gt; before the instance attribute since $ already placed as part of the $this</span>
+    <span class="hljs-comment">// self </span>
+        <span class="hljs-comment">// represents a class, used when calling class constants which are per class</span>
+        <span class="hljs-comment">// always followed by :: operator</span>
+    <span class="hljs-comment">// -&gt; </span>
+        <span class="hljs-comment">// equivalent of . dot notation in Python</span>
+        <span class="hljs-comment">// first called in constructor function to define the instance object&#x27;s attributes, then called subsquently whenever instance attributes referenced</span>
+    <span class="hljs-comment">// getter</span>
+        <span class="hljs-comment">// generic term for class method that returns a private class property</span>
+    <span class="hljs-comment">// setter</span>
+        <span class="hljs-comment">// generic term for class method that modifies a private class property</span>
+    <span class="hljs-comment">// class constant</span>
+        <span class="hljs-comment">// class constants are declared WITHOUT $</span>
+        <span class="hljs-comment">// constant attribute defined within a class that does not change during runtime, per class</span>
+        <span class="hljs-comment">// self =&gt; class constant referenced from within the class by self::constantName</span>
+        <span class="hljs-comment">// :: =&gt; class constant referenced from outside the class by className::constantName</span>
+    <span class="hljs-comment">// {}</span>
+        <span class="hljs-comment">// can be used to embed more complex statements (an object or class calling its method or attribute) within a string through string interpolation</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CaiFanShop</span> </span>{
+
+    <span class="hljs-keyword">const</span> <span class="hljs-variable constant_">carbohydrate</span> = <span class="hljs-string">&#x27;Rice&#x27;</span>; <span class="hljs-comment">// class constant</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-built_in">static</span> <span class="hljs-variable">$publicStaticVar</span> = <span class="hljs-string">&#x27;public static&#x27;</span>; <span class="hljs-comment">// public variable visible from global scope, static meaning it can only be accessed from within the class</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-built_in">static</span> <span class="hljs-variable">$privateStaticVar</span> = <span class="hljs-string">&#x27;private static&#x27;</span>; <span class="hljs-comment">// private variable accesible from within the class only</span>
+    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">static</span> <span class="hljs-variable">$protectedStaticVar</span> = <span class="hljs-string">&#x27;protected static&#x27;</span>; <span class="hljs-comment">// protected variable accessible from wihtin the class and its subclasses during inheritance</span>
+
+    <span class="hljs-comment">// properties must declare their visibility</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$property</span> = <span class="hljs-string">&#x27;public&#x27;</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$instanceProp</span>;
+    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$prot</span> = <span class="hljs-string">&#x27;protected&#x27;</span>;
+    <span class="hljs-keyword">private</span> <span class="hljs-variable">$priv</span> = <span class="hljs-string">&#x27;private&#x27;</span>;
+
+    <span class="hljs-comment">// CONSTRUCTOR FUNCTION </span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"><span class="hljs-variable">$instanceProp</span></span>) </span>{ 
+        <span class="hljs-variable language_">$this</span>-&gt;instanceProp = <span class="hljs-variable">$instanceProp</span>; <span class="hljs-comment">// access instance variables with $this</span>
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">shiok</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">print</span> <span class="hljs-string">&#x27;MyClass&#x27;</span>;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myMethod</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">print</span> <span class="hljs-string">&#x27;Look at {$this-&gt;shiok()}&#x27;</span>; <span class="hljs-comment">// made possible via string interpolation to embed complex statements in strings</span>
+    }
+
+    <span class="hljs-comment">// FINAL FUNCTIONS</span>
+        <span class="hljs-comment">// final functions are unoverridable</span>
+
+    <span class="hljs-keyword">final</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">youCannotOverrideMe</span>(<span class="hljs-params"></span>) </span>{
+    }
+
+    <span class="hljs-comment">// DESTRUCTOR FUNCTION</span>
+        <span class="hljs-comment">// called when object is no longer referenced, used to deconstruct the object</span>
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__destruct</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Destroying&quot;</span>;
+    }
+
+    <span class="hljs-comment">// STATIC</span>
+        <span class="hljs-comment">// declaring class properties or methods as static means they are accesible without needing an instantiation of the class</span>
+        <span class="hljs-comment">// a static property or attribute cannot be accessed with an instantiated class object</span>
+        <span class="hljs-comment">// a static method can be accessed with an instantiated class object</span>
+
+    <span class="hljs-built_in">static</span> <span class="hljs-variable">$sauce</span> = <span class="hljs-string">&#x27;Curry&#x27;</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myStaticMethod</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">print</span> <span class="hljs-string">&#x27;I am static&#x27;</span>;
+    }
+}
+
+<span class="hljs-keyword">echo</span> <span class="hljs-title class_">CaiFanShop</span>::<span class="hljs-variable constant_">carbohydrate</span>; <span class="hljs-comment">// prints &#x27;Rice&#x27;</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-title class_">CaiFanShop</span>::<span class="hljs-variable">$sauce</span>; <span class="hljs-comment">// prints &#x27;Curry&#x27;</span>
+<span class="hljs-title class_">CaiFanShop</span>::<span class="hljs-title function_ invoke__">myStaticMethod</span>(); <span class="hljs-comment">// prints &#x27;I am static&#x27;</span>
+
+<span class="hljs-comment">// Instantiate new instance object of name isle_eating_house of the class CaiFanShop</span>
+<span class="hljs-variable">$isle_eating_house</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">CaiFanShop</span>(<span class="hljs-string">&#x27;watermelon&#x27;</span>); <span class="hljs-comment">// the string &#x27;watermelon&#x27; is assigned to the instance property $this-&gt;instanceProp in the constructor function</span>
+
+<span class="hljs-comment">// Access class members</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$isle_eating_house</span>-&gt;property <span class="hljs-comment">// prints &#x27;public&#x27;</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$isle_eating_house</span>-&gt;instanceProp <span class="hljs-comment">// prints &#x27;watermelon&#x27;</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$isle_eating_house</span>-&gt;<span class="hljs-title function_ invoke__">myMethod</span>(); <span class="hljs-comment">// prints &#x27;MyClass&#x27;</span>
+
+<span class="hljs-comment">// NULLSAFE OPERATORS</span>
+    <span class="hljs-comment">// ? used when we&#x27;re unsure whether an object contains a certain property or method, assigns null by default</span>
+    <span class="hljs-comment">// can be used in conjunction with nullish coalescing operator to ensure proper default value</span>
+
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$isle_eating_house</span>-&gt;invalid_property <span class="hljs-comment">// error thrown since property invalid_property does not exist</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$isle_eating_house</span>?-&gt;invalid_property <span class="hljs-comment">// since the object property invalid_property does not exist, it is assigned the value of null</span>
+<span class="hljs-keyword">echo</span> <span class="hljs-variable">$isle_eating_house</span>?-&gt;invalid_property ?? <span class="hljs-string">&quot;public&quot;</span> <span class="hljs-comment">// since the object property invalid_property does not exist, it is assigned the value of null, and since its value is null, it is then assigned the value of string &quot;public&quot;</span>
+
+<span class="hljs-comment">// CLASS EXTENDS CLASSES</span>
+    <span class="hljs-comment">// inheritance of class methods and attributes</span>
+    <span class="hljs-comment">// method overriding is supported simply by redefining the method</span>
+    <span class="hljs-comment">// parent methods and attributes can be accessed using parent:: keyword if overridden by the child class</span>
+    <span class="hljs-comment">// inherited methods and attributes can be accessed as their own if not overridden by the child class</span>
+
+<span class="hljs-comment">// SimLimCaiFan is the child class, inheriting the attributes and methods of the CaiFanShop parent class</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SimLimCaiFan</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">CaiFanShop</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">printProtectedProperty</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">echo</span> <span class="hljs-variable language_">$this</span>-&gt;prot;
+    }
+
+    <span class="hljs-comment">// overrrides the originally defined myMethod() in the CaiFanShop class</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myMethod</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">parent</span>::<span class="hljs-title function_ invoke__">myMethod</span>(); <span class="hljs-comment">// since we&#x27;re overriding the child class&#x27; myMethod() method, the parent:: calls the parent CaiFanShop class&#x27; method myMethod() which prints &quot;MyClass&quot;</span>
+        <span class="hljs-keyword">print</span> <span class="hljs-string">&#x27; &gt; MyOtherClass&#x27;</span>; <span class="hljs-comment">// prints &quot;MyOtherClass&quot;</span>
+    }
+
+}
+
+<span class="hljs-variable">$sim_lim_cai_fan</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SimLimCaiFan</span>(<span class="hljs-string">&#x27;strawberry&#x27;</span>);
+<span class="hljs-variable">$sim_lim_cai_fan</span>-&gt;<span class="hljs-title function_ invoke__">printProtectedProperty</span>(); <span class="hljs-comment">// prints &quot;protected&quot; as defined in the parent class</span>
+<span class="hljs-variable">$sim_lim_cai_fan</span>-&gt;<span class="hljs-title function_ invoke__">myMethod</span>(); <span class="hljs-comment">// prints </span>
+
+<span class="hljs-comment">// FINAL CLASS</span>
+    <span class="hljs-comment">// final classes are unextendable</span>
+
+<span class="hljs-keyword">final</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">YouCannotExtendMe</span> </span>{
+
+}
+
+<span class="hljs-comment">// ABSTRACT or INTERFACES</span>
+    <span class="hljs-comment">// classes can be abstract or implement interfaces </span>
+    <span class="hljs-comment">// Abstract classes</span>
+        <span class="hljs-comment">// abstract classes can have both abstract methods (no implementation) and concrete methods (with implementation)</span>
+        <span class="hljs-comment">// abstract classes can have properties with or without values</span>
+        <span class="hljs-comment">// single-inheritance</span>
+        <span class="hljs-comment">// constructors can be declared</span>
+    <span class="hljs-comment">// Interfaces </span>
+        <span class="hljs-comment">// all methods declared in an interface must be abstract (without implementation) as the implementing class provides the actual implementation</span>
+        <span class="hljs-comment">// can only decalre constants, interfaces cannot assign properties with values</span>
+        <span class="hljs-comment">// multiple-interhitance</span>
+        <span class="hljs-comment">// no declaration of constructors</span>
+        <span class="hljs-comment">// complete abstraction, since only method signature is specified and implementation detail left up to implementing class</span>
+
+<span class="hljs-comment">// INTERFACES</span>
+    <span class="hljs-comment">// declared with the interface keyword</span>
+    <span class="hljs-comment">// interfaces can be extended</span>
+    <span class="hljs-comment">// classes can implement more than one interface, comma-separated</span>
+
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">InterfaceOne</span> </span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doSomething</span>(<span class="hljs-params"></span>)</span>;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">InterfaceTwo</span> </span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doSomethingElse</span>(<span class="hljs-params"></span>)</span>;
+}
+
+<span class="hljs-comment">// interfaces can be extended</span>
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">InterfaceThree</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">InterfaceTwo</span> </span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doAnotherContract</span>(<span class="hljs-params"></span>)</span>;
+}
+
+<span class="hljs-comment">// classes can implement more than one interface</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SomeOtherClass</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">InterfaceOne</span>, <span class="hljs-title">InterfaceTwo</span> </span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doSomething</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;doSomething&#x27;</span>;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doSomethingElse</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;doSomethingElse&#x27;</span>;
+    }
+}
+
+<span class="hljs-comment">// ABSTRACT CLASSES</span>
+
+<span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyAbstractClass</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">InterfaceOne</span> </span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-variable">$x</span> = <span class="hljs-string">&#x27;doSomething&#x27;</span>;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyConcreteClass</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">MyAbstractClass</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">InterfaceTwo</span> </span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doSomething</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">echo</span> <span class="hljs-variable">$x</span>;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doSomethingElse</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;doSomethingElse&#x27;</span>;
+    }
+}
+
+<span class="hljs-comment">// TRAITS</span>
+    <span class="hljs-comment">// introduced from PHP 5.4.0</span>
+    <span class="hljs-comment">// declared using trait</span>
+    <span class="hljs-comment">// classes implement a trait with use</span>
+    <span class="hljs-comment">// appear to be somewhat similar to an interface but methods can have their signature and implementation detail specified</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">trait</span> <span class="hljs-title">MyTrait</span> </span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myTraitMethod</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">print</span> <span class="hljs-string">&#x27;I have MyTrait&#x27;</span>;
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyTraitfulClass</span> </span>{
+    <span class="hljs-keyword">use</span> <span class="hljs-title">MyTrait</span>;
+}
+
+<span class="hljs-variable">$cls</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">MyTraitfulClass</span>();
+<span class="hljs-variable">$cls</span>-&gt;<span class="hljs-title function_ invoke__">myTraitMethod</span>(); <span class="hljs-comment">// this prints &quot;I have MyTrait&quot;</span>
+
+&gt;
+</code></pre>
+<h2>Useful magic constants</h2>
+<ul>
+<li><code>__DIR__</code> returns full path directory of a file</li>
+<li><code>__FILE__</code> returns full path of a file</li>
+<li><code>__FUNCTION__</code> returns current function name</li>
+<li><code>__LINE__</code> returns current line number</li>
+<li><code>__CLASS__</code> returns current class name, must be used inside a class declaration</li>
+<li><code>__METHOD__</code> returns current method name, only returns a value when called inside a trait or object declaration</li>
+<li><code>__TRAIT__</code> returns current trait name, only returns a value when called inside a trait or object declaration</li>
+<li><code>__NAMESPACE__</code> returns current namespace name</li>
+</ul>
+<h2>More on</h2>
+<ul>
+<li><code>_get</code></li>
+<li><code>_set</code></li>
+<li><code>nowdoc</code></li>
+<li><code>heredoc</code></li>
+<li><code>phpinfo()</code></li>
+<li>namespaces</li>
+<li>late static binding</li>
+<li><a href="https://www.w3schools.com/php/php_superglobals.asp">superglobals</a></li>
+</ul>
+<h1>Web Applications</h1>
+<pre><code class="language-php"><span class="hljs-comment">// ---------- WEB APPLICATION ----------</span>
+    <span class="hljs-comment">// everything on the web is built in HTML, CSS, PHP, SQL, JS, JQuery, JSON</span>
+    <span class="hljs-comment">// DEFINITION</span>
+        <span class="hljs-comment">// HTTP =&gt; connects the client-side browser to the web server and database server via the request response cycle</span>
+        <span class="hljs-comment">// client-side browser =&gt; rendered in HTMl, CSS, DOM, CSSOM, JS, JQuery, JSON</span>
+        <span class="hljs-comment">// web server =&gt; Apache, PHP</span>
+        <span class="hljs-comment">// database server =&gt; MySQL</span>
+        <span class="hljs-comment">// dns server =&gt; equivalent of a telephone book that stores every hostname and its corresponding ip address</span>
+    <span class="hljs-comment">// URL structure =&gt; {PROTOCOL}://{HOSTNAME}:{PORT}/{PATH}?{QUERY}</span>
+        <span class="hljs-comment">// protocol =&gt; service used to connect to hostname, such as http, https, ftp</span>
+        <span class="hljs-comment">// hostname =&gt; identifier of a web server</span>
+        <span class="hljs-comment">// port =&gt; port 80 used by default, port number that specifies which service of a web server we want to call, since web servers can host multiple servicesI</span>
+        <span class="hljs-comment">// path =&gt; points to a specific resource in the web server, separated by / similar to in the cli</span>
+        <span class="hljs-comment">// query =&gt; optional parameter that augments the url, often including key-value pairs that are ampersand &amp; operator delimited</span>
+    <span class="hljs-comment">// REQUEST RESPONSE CYCLE</span>
+        <span class="hljs-comment">// 1. client user makes a url request for a specific webpage</span>
+        <span class="hljs-comment">// 2. client browser takes the url, extracts the hostname, and feeds that hostname to the dns server, which returns the corresonding ip address of the web server</span>
+        <span class="hljs-comment">// 3. client browser makes a connection to the web server via that ip address and issues a http GET request to retrieve contents of the page at the specified url</span>
+        <span class="hljs-comment">// 4. web server can optionally interact with other processing engines using php and sql to access the database server, and other external resources on the web server&#x27;s side</span>
+        <span class="hljs-comment">// 5. web server returns a http response with html, css and js contents to the client browser</span>
+        <span class="hljs-comment">// 6. client browser parses html contents via dom renderer and css contents via cssom, then displays the webpage</span>
+</code></pre>
+<h1><code>HTML</code></h1>
+<pre><code class="language-html"><span class="hljs-comment">&lt;!-- quickstart --&gt;</span>
+
+<span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span> <span class="hljs-comment">&lt;!-- comes at the start of everything else --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>this is a title<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- BASIC TEXT --&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>this is a paragraph<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>this is a div, often used to further augment styled sections of webpages<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span> <span class="hljs-comment">&lt;!-- used to indicate a breakline in html --&gt;</span>
+
+<span class="hljs-comment">&lt;!-- LISTS --&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>this is an unordered list of fruits<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>apple<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>watermelon<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>orange<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>lemon<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>grape<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>this is an ordered list of fruits<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>john xina<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>ma zongtong<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>winnie the poo<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- ANCHOR TAGS --&gt;</span>
+    <span class="hljs-comment">&lt;!-- an anchor tag&#x27;s href can point to an external url, a relative or absolute local filepath, or a specific webpage element based on the id specified with # --&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>this is an <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;http://www.google.com&quot;</span>&gt;</span>anchor tag<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- IMAGES --&gt;</span>
+    <span class="hljs-comment">&lt;!-- src, width and height can be specified --&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;http://www.watermelonImages.com&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;170&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;227&quot;</span>/&gt;</span>
+
+<span class="hljs-comment">&lt;!-- FORM --&gt;</span>
+    <span class="hljs-comment">&lt;!-- action =&gt; specifies the filepath to send the request to --&gt;</span>
+    <span class="hljs-comment">&lt;!-- method =&gt; specifies the type of request being made and how the message should be formatted, default values are post and get --&gt;</span>
+        <span class="hljs-comment">&lt;!-- get =&gt; data sent with get is appended to the url and visible to the browser, so whatever information sent will be exposed --&gt;</span>
+    <span class="hljs-comment">&lt;!-- form tags are always accompanied by input tags --&gt;</span>
+
+<span class="hljs-comment">&lt;!-- INPUT --&gt;</span>
+    <span class="hljs-comment">&lt;!-- self-closing tag --&gt;</span>
+    <span class="hljs-comment">&lt;!-- type =&gt; specifies the type of input field --&gt;</span>
+        <span class="hljs-comment">&lt;!-- 1. text =&gt; creates a single-lined input text field --&gt;</span>
+            <span class="hljs-comment">&lt;!-- name =&gt; allows for specification of input tag name --&gt;</span>
+            <span class="hljs-comment">&lt;!-- value =&gt; specifies a default value that will be displayed in the text field when webpage first loads --&gt;</span>
+            <span class="hljs-comment">&lt;!-- size =&gt; specifies size of text field --&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;/yes.php&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;aName&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;defaultValue&quot;</span> <span class="hljs-attr">size</span>=<span class="hljs-string">&quot;20&quot;</span>/&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+
+        <span class="hljs-comment">&lt;!-- 2. submit =&gt; creates a submit button --&gt;</span>
+            <span class="hljs-comment">&lt;!-- value =&gt; allows for specification of text that will replace the default Submit text within the submit button --&gt;</span>
+            <span class="hljs-comment">&lt;!-- action =&gt; specifies the filepath to send the request too --&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;test.php&quot;</span>&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span>/&gt;</span> 
+        <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+
+        <span class="hljs-comment">&lt;!-- 3. password =&gt; creates a text field where characters are obscured --&gt;</span>
+            <span class="hljs-comment">&lt;!-- name =&gt; allows for specification of input tag name --&gt;</span>
+            <span class="hljs-comment">&lt;!-- size =&gt; specifies size of password text field --&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">form</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;pwd&quot;</span> <span class="hljs-attr">size</span>=<span class="hljs-string">&quot;20&quot;</span>/&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+
+        <span class="hljs-comment">&lt;!-- 4. radio =&gt; creates a radio button (which normally come in a set), of which selection is mutually exclusive so when one is selected, the others are automatically deselected --&gt;</span>
+            <span class="hljs-comment">&lt;!-- name =&gt; allows for specification of input tag name, wherein specifically for radio tags, many related radio tags are grouped under the same name --&gt;</span>
+            <span class="hljs-comment">&lt;!-- value =&gt; value needs to be distinct as it differentiates the radio tags from each other --&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">form</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span> =<span class="hljs-string">&quot;color&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;r&quot;</span> <span class="hljs-attr">checked</span>/&gt;</span>Red
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;color&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;g&quot;</span>/&gt;</span>Green
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;color&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;b&quot;</span>/&gt;</span>Blue
+        <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+
+        <span class="hljs-comment">&lt;!-- 5. checkbox =&gt; creates a checkbox (which normally comes in a set), of which more than one checkbox can be selected --&gt;</span>
+            <span class="hljs-comment">&lt;!-- name =&gt; allows for specification of input tag name, wherein specifically for checkbox tags, many related checkbox tags are grouped under the same name --&gt;</span>
+            <span class="hljs-comment">&lt;!-- value =&gt; value needs to be distinct as it differentiates the checkbox tags from each other --&gt;</span>
+            <span class="hljs-comment">&lt;!-- checked =&gt; an additional parameter that can be specified to initialize a checkbox as already being checked --&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">form</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;color[]&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;r&quot;</span> <span class="hljs-attr">checked</span>/&gt;</span>Red
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;color[]&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;g&quot;</span> <span class="hljs-attr">checked</span>/&gt;</span>Green <span class="hljs-comment">&lt;!-- note that the red and green checkboxes are checked by default here --&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;color[]&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;b&quot;</span>/&gt;</span>Blue
+        <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+
+        <span class="hljs-comment">&lt;!-- 6. hidden =&gt; creates a hidden section that obscures data from the webpage client user --&gt;</span>
+            <span class="hljs-comment">&lt;!-- TAKE NOTE OF THIS TO USE --&gt;</span>
+            <span class="hljs-comment">&lt;!-- name =&gt; the name attribute is the key in the key-value pair stored within the submission protocol method (GET/POST) superglobal associative array --&gt;</span> 
+            <span class="hljs-comment">&lt;!-- value =&gt; programmer can save state across form submissions by ASSIGNING the value in the value attribute within a hidden form field --&gt;</span>
+                <span class="hljs-comment">&lt;!-- hidden input names and values will be submitted alongside any other input fields under the same FORM TAG when the submit button is pressed --&gt;</span>
+            <span class="hljs-comment">&lt;!-- normally HIDDEN input tags are paired with the ACTION attribute within the FORM tag (which specifies the php file to be loaded when submission button is pressed) to preserve input values across multiple sessions--&gt;</span>
+        
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;key-pair&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;value-pair&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;hidden&quot;</span>&gt;</span>
+
+        <span class="hljs-comment">&lt;!-- eg. of preserving values using input.php --&gt;</span>
+
+            <span class="hljs-comment">&lt;!-- page1.php --&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;page2.php&quot;</span>&gt;</span> <span class="hljs-comment">&lt;!-- page2.php will be loaded when the submission button is pressed --&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Name: <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;name&quot;</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Next&quot;</span>/&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+
+            <span class="hljs-comment">&lt;!-- page2.php --&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;page3.php&quot;</span>&gt;</span> <span class="hljs-comment">&lt;!-- page3.php will be loaded when the submission button is pressed --&gt;</span>
+                        Age: <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;age&quot;</span>/&gt;</span>
+                        <span class="hljs-meta">&lt;?php
+                            $name = $_POST[&#x27;name&#x27;];
+                            echo &quot;&lt;input type=&#x27;hidden&#x27; name=&#x27;name&#x27; value=&#x27;$name&#x27;/&gt;&quot;; // assigning the value name to the hidden input field, which is submitted to page3.php so we can access the name key within the POST superglobal associative array later
+                        ?&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Next&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&#x27;check&#x27;</span>/&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+
+            <span class="hljs-comment">&lt;!-- page3.php --&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;summary.php&quot;</span>&gt;</span> <span class="hljs-comment">&lt;!-- summary.php will be loaded when the submission button is pressed --&gt;</span>
+                        Hobby: <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;hobby&quot;</span>/&gt;</span>
+                        <span class="hljs-meta">&lt;?php
+                            if (isset($_POST[&quot;check&quot;])){ // check if form is submitted, though unnecessary if next form display predicated on submission button already being clicked
+                                $name = $_POST[&quot;name&quot;];
+                                $age = $_POST[&quot;age&quot;];
+                                echo &quot;
+                                    &lt;input type=&#x27;hidden&#x27; name=&#x27;name&#x27; value=&#x27;$name&#x27;&gt;&lt;/input&gt;
+                                    &lt;input type=&#x27;hidden&#x27; name=&#x27;age&#x27; value=&#x27;$age&#x27;&gt;&lt;/input&gt;
+                                &quot;; // assigning the values name and age to the hidden input field, which is submitted to summary.php so we can access the name keys within the POST superglobal associative array later
+                            } else {} // form not submitted
+                        ?&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Next&quot;</span>/&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+
+        <span class="hljs-comment">&lt;!-- summary.php --&gt;</span>
+
+            <span class="hljs-meta">&lt;?php
+                // display all 3 values, which have been retained through the hidden input tag
+                $name =     $_POST[&quot;name&quot;];
+                $age = $_POST[&quot;age&quot;];
+                $hobby = $_POST[&quot;hobby&quot;];
+
+                echo &quot;Name: $name&lt;br&gt;&quot;; 
+                echo &quot;Age: $age&lt;br&gt;&quot;;
+                echo &quot;Hobby: $hobby&quot;;
+            ?&gt;</span>
+ 
+
+        <span class="hljs-comment">&lt;!-- 7. reset =&gt; resets all webpage components in the html form to their default values, does not send any form data to the web server --&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;value-you-want&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;reset&quot;</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- LABEL --&gt;</span>
+    <span class="hljs-comment">&lt;!-- label =&gt; creates label text that is associated with an input tag --&gt;</span>
+        <span class="hljs-comment">&lt;!-- for =&gt; links a label to a specified input tag via the input tag&#x27;s id --&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">form</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;color&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;g&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;color_g&quot;</span>/&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;color_g&quot;</span>&gt;</span>Green<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- TEXTAREA --&gt;</span>
+    <span class="hljs-comment">&lt;!-- textarea =&gt; creates a mutli-line text input area --&gt;</span>
+        <span class="hljs-comment">&lt;!-- rows =&gt; specifies number of rows within the text area --&gt;</span>
+        <span class="hljs-comment">&lt;!-- cols =&gt; specifies the number of columns within the text area --&gt;</span>
+        <span class="hljs-comment">&lt;!-- name =&gt; specifies a name for the text area for easier identification --&gt;</span>
+        <span class="hljs-comment">&lt;!-- default text =&gt; default filler text to be initialized with the text area upon webpage loading can be specified within the textarea opening and closing tags --&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">form</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;comment&quot;</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">&quot;2&quot;</span> <span class="hljs-attr">cols</span>=<span class="hljs-string">&quot;30&quot;</span>&gt;</span>No comments<span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- DROPDOWN LIST --&gt;</span>
+    <span class="hljs-comment">&lt;!-- remember the order is ALWAYS select THEN option where option values can then be augmented with selected --&gt;</span>
+    <span class="hljs-comment">&lt;!-- select =&gt; creates a dropdown list whose options can be selected from --&gt;</span>
+        <span class="hljs-comment">&lt;!-- name =&gt; specifies a name for the dropdown list for easier identification --&gt;</span>
+        <span class="hljs-comment">&lt;!-- size =&gt; specifies the number of options to be visible at a given point of time within the dropdown list viewport --&gt;</span>
+        <span class="hljs-comment">&lt;!-- multiple =&gt; used to allow for more than one option to be selected --&gt;</span>
+        <span class="hljs-comment">&lt;!-- option =&gt; creates options within the given dropdown field --&gt;</span>
+            <span class="hljs-comment">&lt;!-- value =&gt; assigned a unique value to distinguish different selection options from each other within a dropdown list --&gt;</span>
+            <span class="hljs-comment">&lt;!-- selected =&gt; used to specify a given option value is selected by default in a select option field --&gt;</span> 
+
+<span class="hljs-comment">&lt;!-- TABLE --&gt;</span>
+    <span class="hljs-comment">&lt;!-- table =&gt; creates a table, comes as a pair with its closing tag --&gt;</span>
+        <span class="hljs-comment">&lt;!-- border =&gt; takes an integer value, specifies the thickness of table borders --&gt;</span>
+        <span class="hljs-comment">&lt;!-- colspan =&gt; specifies how many additional columns a given cell should occupy --&gt;</span>
+        <span class="hljs-comment">&lt;!-- rowspan =&gt; specifies how many additional rows a given cell should occupy --&gt;</span>
+    <span class="hljs-comment">&lt;!-- th =&gt; defines tables headers --&gt;</span>
+    <span class="hljs-comment">&lt;!-- tr =&gt; defines table rows --&gt;</span>
+    <span class="hljs-comment">&lt;!-- td =&gt; specifies table data within cells --&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>department<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>number<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Fire/Ambulance<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>995<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Police<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>999<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Connect HTML to PHP --&gt;</span>
+    <span class="hljs-comment">&lt;!-- done in context of form handling as covered above --&gt;</span>
+    <span class="hljs-comment">&lt;!-- method =&gt; specifies the method for form data to be sent to the web server --&gt;</span>
+    <span class="hljs-comment">&lt;!-- !!! action =&gt; specifies the NEXT PHP FILE LOADED when the submission button is pressed, allowing us to handle form data and parse and interact as needed --&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;pangsai.php&quot;</span>&gt;</span> <span class="hljs-comment">&lt;!-- this will run pangsai.php when the submission button is pressed --&gt;</span>
+        Enter your name:
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;fullname&quot;</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;send&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;form2.php&quot;</span>&gt;</span> <span class="hljs-comment">&lt;!-- this will run form2.php when the submission button is pressed --&gt;</span>
+        Enter your placeholder:
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;identifier&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">input</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- HTTP SESSIONS --&gt;</span>
+    <span class="hljs-comment">&lt;!-- stores data shared between USER and the WEBSITE --&gt;</span>
+    <span class="hljs-comment">&lt;!-- stores data across MULTIPLE pages --&gt;</span>
+        <span class="hljs-comment">&lt;!-- !!! DATA AUTOMATICALLY RESET AFTER given period of time --&gt;</span>
+        <span class="hljs-comment">&lt;!-- alternative to hidden input tags or GET URLs --&gt;</span>
+    <span class="hljs-comment">&lt;!-- used to... --&gt;</span>
+        <span class="hljs-comment">&lt;!-- preserve data across MULTIPLE pages --&gt;</span>
+        <span class="hljs-comment">&lt;!-- identify users across MULTIPLE pages in a site --&gt;</span>
+    <span class="hljs-comment">&lt;!-- session_start() --&gt;</span>
+        <span class="hljs-comment">&lt;!-- initializes a session OR resumes existing session --&gt;</span>
+        <span class="hljs-comment">&lt;!-- must be called FIRST @ the START OF EVERY FILE before we can access the $_SESSION superglobal associative array and assign key-value pairs to it WITHIN THAT FILE --&gt;</span>
+    <span class="hljs-comment">&lt;!-- unset($_SESSION[example-key]) --&gt;</span>
+        <span class="hljs-comment">&lt;!-- allows for clearing of all stored variables within a specified key in the SESSION superglobal associative array --&gt;</span>
+        <span class="hljs-comment">&lt;!-- equivalent to assigning an empty array [] value to a given SESSION superglobal associative array key --&gt;</span>
+    <span class="hljs-comment">&lt;!-- session_unset() --&gt;</span>
+        <span class="hljs-comment">&lt;!-- clears a session on the client IMMEDIATELY by deleting session cookies and freeing all session variables currently registerd --&gt;</span>
+    <span class="hljs-comment">&lt;!-- session_destroy() --&gt;</span>
+        <span class="hljs-comment">&lt;!-- destroys a session on the server but client-side cookies will remain until BROWSER CLOSED--&gt;</span>
+
+<span class="hljs-comment">&lt;!-- eg. using SESSION to store data across multiple pages --&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- session1.php --&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&#x27;POST&#x27;</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&#x27;session2.php&#x27;</span>&gt;</span>
+                Name: <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&#x27;text&#x27;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&#x27;name&#x27;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">input</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&#x27;submit&#x27;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&#x27;next&#x27;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">input</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">htmL</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- session2.php --&gt;</span>
+
+    <span class="hljs-meta">&lt;?php
+        session_start(); // must call session_start() to resume the previous session and have access to superglobal associative array SESSION within the file session2.php
+    ?&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&#x27;POST&#x27;</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&#x27;summary.php&#x27;</span>&gt;</span>
+                Age: <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&#x27;text&#x27;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&#x27;age&#x27;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">input</span>&gt;</span>
+                <span class="hljs-meta">&lt;?php
+                    $_SESSION[&#x27;name&#x27;] = $_POST[&#x27;name&#x27;]; // assigns the key-value pair of name = {value stored in $_POST[&#x27;name&#x27;]} to the SESSION superglobal associative array, and values can be retrieved anytime
+                ?&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&#x27;submit&#x27;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&#x27;next&#x27;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">input</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">htmL</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- summary.php --&gt;</span>
+
+    <span class="hljs-meta">&lt;?php 
+        session_start(); // must call session_start() again to resume the session and have accesss to superglobal associative array SESSION within the file summary.php
+        $name = $_SESSION[&#x27;name&#x27;];
+        $age = $_SESSION[&#x27;age&#x27;];
+
+        echo &quot;Name: $name&lt;br&gt;&quot;;
+        echo &quot;Age: $age&quot;;
+    ?&gt;</span>
+
+<span class="hljs-comment">&lt;!-- eg. using SESSION to store mutating data across the same page --&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- counter.php --&gt;</span>
+
+    <span class="hljs-meta">&lt;?php
+
+    session_start(); // allows for access of the SESSION superglobal associative array
+    if (!isset($_SESSION[&#x27;count&#x27;])){
+        $_SESSION(&#x27;count&#x27;) = 0; // initializes the count key within the superglobal associative array $SESSION if it doesn&#x27;t exist
+    }
+    $_SESSION[&#x27;count&#x27;]++;
+    echo &quot;You have accessed this page &quot; . $_SESSION[&#x27;count&#x27;] . &quot; times&quot;;
+
+    ?&gt;</span>
+
+<span class="hljs-comment">&lt;!-- USER AUTHENTICATION --&gt;</span>
+    <span class="hljs-comment">&lt;!-- User&#x27;s account name AND passwords are stored in a database --&gt;</span>
+        <span class="hljs-comment">&lt;!-- Passwords MUST NOT BE STORED IN plaintext format for security reasons --&gt;</span>
+        <span class="hljs-comment">&lt;!-- HASHED string versions of the password CAN be stored in the database --&gt;</span>
+            <span class="hljs-comment">&lt;!-- password hashing =&gt; ONE-WAY transformation of a password into another string --&gt;</span>
+                <span class="hljs-comment">&lt;!-- one-way meaning the password can be transformed into a hashed string but not the other way around&gt;
+        &lt;!-- !!! UPON LOGIN... !!! --&gt;</span>
+            <span class="hljs-comment">&lt;!-- 0. User enters name and password in login.php --&gt;</span>
+            <span class="hljs-comment">&lt;!-- 1. Entered Username CHECKED AGAINST existing usernames in database in process_login.php--&gt;</span>
+            <span class="hljs-comment">&lt;!-- 2. Entered password is HASHED using password_hash($password, PASSWORD_BCRYPT) and compare the hashed password against the HASHED value in the database for CREDENTIAL VALIDATION in process_login.php --&gt;</span>
+            <span class="hljs-comment">&lt;!-- 3. If login succesful, user login entry recorded by storing login as a record in the SESSION superglobal associative array in process_login.php AND user redirected to welcome.php via header(&quot;Location:welcome.php&quot;) function --&gt;</span>
+            <span class="hljs-comment">&lt;!-- 4. Additional credential check that user has access to welcome.php because they logged in validly and didn&#x27;t just google the specific url file path to reach welcome.php by checking for past logins in SESSION superglobal associative array as done in step 3 in welcome.php --&gt;</span>
+            <span class="hljs-comment">&lt;!-- 5. If no valid login found as a record in SESSION superglobal associative array, user redirected to login.php again via header(&quot;Location:login.php&quot;) function --&gt;</span>
+            <span class="hljs-comment">&lt;!-- 6. If valid login found as a record in SESSION superglobal associative array, user has succesfully logged into welcome.php secure page --&gt;</span>
+
+<span class="hljs-comment">&lt;!-- eg. simulating login verification of username AND password --&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- login.php --&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Login<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&#x27;POST&#x27;</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&#x27;process_login.php&#x27;</span>&gt;</span> <span class="hljs-comment">&lt;!-- loads the process_login.php page when submission is pressed --&gt;</span>
+                Username: <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&#x27;text&#x27;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&#x27;username&#x27;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">input</span>&gt;</span>
+                Password: <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&#x27;text&#x27;</span>&gt;</span> name=&#x27;password&#x27;&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">input</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&#x27;submit&#x27;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&#x27;login&#x27;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">input</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- process_login.php --&gt;</span>
+
+    <span class="hljs-meta">&lt;?php
+
+    spl_autoload_register(
+        function($class){
+            require_once &quot;model/$class.php&quot;;
+        }
+    );
+
+    session_start(); // start the superglobal associative array SESSION so that we can store a login entry in it later
+    
+    $username = $_POST[&#x27;username&#x27;];
+    $password = $_POST[&#x27;password&#x27;];
+    $dao = new UserDAO();
+    $user = $dao-&gt;retrieve($username); // validates username
+    $success = false;
+    if ($user != null){
+        $hashed = $user-&gt;getHashedPassword();
+        $success = password_verify($password, $hashed); // validates password by hashing the input and comparing it against the already hashed password in the database
+        if ($success){ 
+
+            $_SESSION[&#x27;user&#x27;] = $username; // stores a successful login entry within the superglobal associative array SESSION
+            header(&#x27;Location:welcome.php&#x27;) // redirects user to the specified file or url at filepath welcome.php
+            echo &quot;Successful login&quot;;
+
+        }
+    }
+    if (!$success){
+        echo &quot;Failed login&quot;;
+    }
+
+    ?&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- welcome.php --&gt;</span>
+
+    <span class="hljs-meta">&lt;?php
+    
+    session_start(); // resume the superglobal associative array SESSION so that we can access all past recorded login entries
+
+    if (!isset($_SESSION[&#x27;user&#x27;])){
+        header(&#x27;Location:login.php&#x27;); // redirects user to login page if no valid login history has been found
+        exit; // stops all further code execution since browser redirected to login.php
+    } 
+
+    echo &quot;&lt;h1&gt;You have succesfuly logged in, welcome to secure system&lt;/h1&gt;&quot;;
+
+    ?&gt;</span>
+
+<span class="hljs-comment">&lt;!-- SUPERGLOBALS --&gt;</span>
+    <span class="hljs-comment">&lt;!-- superglobals are associative arrays that are ALWAYS accessible REGARDLESS OF SCOPE, and are often used to store important values returned from the html form or assigned by the programmer --&gt;</span>
+    <span class="hljs-comment">&lt;!-- $_POST =&gt; collects form data submitted using the specified http post request, where data IS NOT visible in the url (so often used for transmission of sensitive form data) --&gt;</span>
+        <span class="hljs-comment">&lt;!-- it is considered good convention to include a name for your submit button and check whether the submit button is clicked using isset() --&gt;</span>
+    <span class="hljs-comment">&lt;!-- $_GET =&gt; collects form data submitted using the specified http get method, where data IS visible in the url (so often used for transmission of neutral non-confidential form data) --&gt;</span>
+        <span class="hljs-comment">&lt;!-- it is considered good convention to include a name for your submit button and check whether the submit button is clicked using isset() --&gt;</span>
+    <span class="hljs-comment">&lt;!-- $_SESSION --&gt;</span>
+        <span class="hljs-comment">&lt;!-- $_SESSION[{key-name}] --&gt;</span>
+        <span class="hljs-comment">&lt;!-- session_start() --&gt;</span>
+        <span class="hljs-comment">&lt;!-- unset($_SESSION[session-key]) --&gt;</span>
+        <span class="hljs-comment">&lt;!-- session_destroy() --&gt;</span>
+        <span class="hljs-comment">&lt;!-- session_unset() --&gt;</span>
+        <span class="hljs-comment">&lt;!-- session_status() --&gt;</span>
+    <span class="hljs-comment">&lt;!-- other superglobals to check out --&gt;</span>
+        <span class="hljs-comment">&lt;!-- $GLOBALS --&gt;</span>
+        <span class="hljs-comment">&lt;!-- $_SERVER --&gt;</span>
+        <span class="hljs-comment">&lt;!-- $_FILES --&gt;</span>
+        <span class="hljs-comment">&lt;!-- $_ENV --&gt;</span>
+        <span class="hljs-comment">&lt;!-- $_COOKIE --&gt;</span>
+
+<span class="hljs-comment">&lt;!-- NUGGETS OF INFORMATION (for is113 finals mostly) --&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- empty() --&gt;</span>
+        <span class="hljs-comment">&lt;!-- checks whether a value EXISTS or if it is converted to BOOLEAN FALSE --&gt;</span>
+            <span class="hljs-comment">&lt;!-- 1. Uninitialised values do not exist, so empty() returns TRUE --&gt;</span>
+            <span class="hljs-comment">&lt;!-- 2. Boolean Conversion (values that also evaluate to False), so empty() returns TRUE --&gt;</span>
+                <span class="hljs-comment">&lt;!-- false --&gt;</span>
+                <span class="hljs-comment">&lt;!-- int 0 --&gt;</span>
+                <span class="hljs-comment">&lt;!-- float 0.0 --&gt;</span>
+                <span class="hljs-comment">&lt;!-- str &quot;&quot; and str &quot;0&quot; --&gt;</span>
+                <span class="hljs-comment">&lt;!-- array() or [] --&gt;</span>
+                <span class="hljs-comment">&lt;!-- null --&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- $_REQUEST --&gt;</span> 
+        <span class="hljs-comment">&lt;!-- collects form data from both $_GET, $_POST and $_COOKIE into a single superglobal array --&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- require_once --&gt;</span>
+        <span class="hljs-comment">&lt;!-- AUTOMATICALLY calls and RUNS ALL CODE within the required file --&gt;</span>
+        <span class="hljs-comment">&lt;!-- this includes session_start() and any other executable code (thus allowing protect.php to function the moment it is required at the top of a given file) --&gt;</span>
+        <span class="hljs-comment">&lt;!-- normally since code is modularised into function definition files and require_once is used in the context of adding functionality with helpers, we don&#x27;t realise this, but all code within the require_once file is automatically executed when the &quot;require_once filename.php&quot; line is hit --&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- {} --&gt;</span>
+        <span class="hljs-comment">&lt;!-- allows for more complex string interpolation to embed variables within strings --&gt;</span>
+        <span class="hljs-comment">&lt;!-- APPLICABLE to not only object method calls but also retrieval of values from associative arrays and superglobals --&gt;</span>
+        <span class="hljs-comment">&lt;!-- just remember to use them within &quot;&quot; double quoted strings --&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- &lt;?= ?&gt; --&gt;</span>
+        <span class="hljs-comment">&lt;!-- shorthand for &lt;?php echo ; ?&gt;, where a value can be echoed --&gt;</span>
+        <span class="hljs-comment">&lt;!-- particularly useful for embedding variables and values to be echoed within existing html code --&gt;</span>
+        <span class="hljs-comment">&lt;!-- often used alongside functions to pre-select previously selected fields within a html form --&gt;</span>
+    
+    enter your age: <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&#x27;text&#x27;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&#x27;age&#x27;</span> &lt;?<span class="hljs-attr">php</span> <span class="hljs-attr">echo</span> <span class="hljs-attr">printAge</span>(); ?&gt;</span> &gt;<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span> <span class="hljs-comment">&lt;!-- essentially this --&gt;</span>
+    enter your age: <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&#x27;text&#x27;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&#x27;age&#x27;</span> &lt;?=<span class="hljs-string">printAge()?</span>&gt;</span> &gt;<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span> <span class="hljs-comment">&lt;!-- can be shortened to this --&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- RELATIVE PATH and ABSOLUTE PATH --&gt;</span>
+        <span class="hljs-comment">&lt;!-- ROOT directory --&gt;</span>
+            <span class="hljs-comment">&lt;!-- represented by / --&gt;</span>
+            <span class="hljs-comment">&lt;!-- generally used within absolute paths --&gt;</span>
+        <span class="hljs-comment">&lt;!-- PARENT directory --&gt;</span>
+            <span class="hljs-comment">&lt;!-- represented by ../ or /.. --&gt;</span>
+        <span class="hljs-comment">&lt;!-- CURRENT directory --&gt;</span>
+            <span class="hljs-comment">&lt;!-- represented by ./ or /. or nothing (where the current directory is implicit) --&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- print_r() --&gt;</span>
+        <span class="hljs-comment">&lt;!-- odd function that acts as a var_dump equivalent in html --&gt;</span>
+        <span class="hljs-comment">&lt;!-- covered in the provided appendix --&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- GET superglobals will always prioritise information taken in from USER INPUT when the form is submitted over default values specified within the anchortag href hyperlink after the ? in the href --&gt;</span> 
+    <span class="hljs-comment">&lt;!-- unspecified method for a form section will assign GET as the request method by default, POST must be specified --&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- session_status() --&gt;</span>
+        <span class="hljs-comment">&lt;!-- function that returns the current session state --&gt;</span>
+        <span class="hljs-comment">&lt;!-- PHP_SESSION_NONE =&gt; specifies that there is NO current session running and one can be started with session_start() --&gt;</span>
+        <span class="hljs-comment">&lt;!-- technically isset($_SESSION) works but fails to cover edgecases so session_status() should be used as default check in production --&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- closeCursor() --&gt;</span>
+        <span class="hljs-comment">&lt;!-- called on the PDO job object, normally $job going by the naming convention above --&gt;</span>
+        <span class="hljs-comment">&lt;!-- closes the previous connection to the SQL server so that other SQL statements can be run, can be called alongside $job = null and $pdo = null --&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- OOP default constructors --&gt;</span>
+        <span class="hljs-comment">&lt;!-- classes without a constructor method explicitly defined in their method definition have a default constructor AUTOMATICALLY assigned --&gt;</span>
+        <span class="hljs-comment">&lt;!-- allows for classes like ConnectionManager to not explicitly define a constructor method --&gt;</span>
+
+        public function __construct(){} <span class="hljs-comment">&lt;!-- the following line is inserted by the transpiler --&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- NOW() --&gt;</span>
+        <span class="hljs-comment">&lt;!-- the NOW() function in SQL can be used within an SQL query in a PDO-DAO method to create a record with an attribute detailing the current datetime in the format of &#x27;YYYY-MM-DD HH:MM:SS&#x27; --&gt;</span>
+
+        <span class="hljs-comment">&lt;!-- blogPostDAO.php --&gt;</span>
+
+        $sql = &#x27;INSERT INTO post (create_timestamp, update_timestamp, subject, entry, mood) VALUES (NOW(), NOW(), :subject, :entry, :mood)&#x27;; 
+
+    <span class="hljs-comment">&lt;!-- ANCHOR TAGS --&gt;</span>
+        <span class="hljs-comment">&lt;!-- ANCHOR TAGS can also carry ANY extraneous information from one page to another by embedding GET request data directly into the the anchor tag&#x27;s HREF URL, specifying the KEY VALUE pairs to include in the GET superglobal associative array --&gt;</span>
+            <span class="hljs-comment">&lt;!-- these values are effectively &quot;submitted&quot; when the anchor tag is clicked and can be accessed similar to any other variable within the GET superglobal associative arrays --&gt;</span>
+            <span class="hljs-comment">&lt;!-- !!! Only works for forms with request method specified as GET since the user&#x27;s submission choices are visible in the URL --&gt;</span>
+        <span class="hljs-comment">&lt;!-- HREF follows the format of... --&gt;</span>
+            <span class="hljs-comment">&lt;!-- tagretFileExtension.php?exampleKey1=exampleValue1&amp;exampleKey2=exampleValue2 --&gt;</span>
+                <span class="hljs-comment">&lt;!-- ? =&gt; seperates the target file extension and the user choices for form field submission within that target file --&gt;</span>
+                <span class="hljs-comment">&lt;!-- &amp; =&gt; seperates each possible user entry for form fields --&gt;</span>
+                <span class="hljs-comment">&lt;!-- !!! NOTE that spaces and capitalisation ARE allowed within the key value pair specification in the anchor tag&#x27;s URL HREF value --&gt;</span>
+
+        <span class="hljs-comment">&lt;!-- eg. of anchor tags carrying selection info across pages --&gt;</span>
+
+            <span class="hljs-comment">&lt;!-- main.php --&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&#x27;searchByCategory.php?drinkCategory=alcaholic drink&#x27;</span>&gt;</span>$category<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&#x27;searchByCategory.php?drinkCategory=cereals&#x27;</span>&gt;</span>$category<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&#x27;searchByCategory.php?drinkCategory=drink&#x27;</span>&gt;</span>$category<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&#x27;searchByCategory.php?drinkCategory=fruit&#x27;</span>&gt;</span>$category<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&#x27;searchByCategory.php?drinkCategory=meat&#x27;</span>&gt;</span>$category<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&#x27;searchByCategory.php?drinkCategory=seafood&#x27;</span>&gt;</span>$category<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&#x27;searchByCategory.php?drinkCategory=chocolate and sweets&#x27;</span>&gt;</span>$category<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+
+        <span class="hljs-comment">&lt;!-- eg. of anchor tags dynamically having their href values assigned to carrying different GET info to different pages --&gt;</span>
+
+            <span class="hljs-comment">&lt;!-- main.php --&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span>
+                    <span class="hljs-meta">&lt;?php
+                        $warehouse = new Warehouse();
+                        foreach($warehouse-&gt;getCategories() as $category){
+                            echo &quot;
+                                &lt;li&gt;&lt;a href=&#x27;searchByCategory.php?drinkCategory=$category&#x27;&gt;$category&lt;/a&gt;&lt;/li&gt;
+                            &quot;;
+                        }
+                    ?&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+
+        <span class="hljs-comment">&lt;!-- eg. of anchor tags carrying info across pages to an image, where again, these are just key-value pairs sent to the GET superglobal associative array --&gt;</span>
+
+            <span class="hljs-comment">&lt;!-- main.php --&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&#x27;view_object.php?src=cat.png&amp;width=500&#x27;</span>&gt;</span>View Object<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+
+            <span class="hljs-comment">&lt;!-- view_object.php --&gt;</span>
+
+            <span class="hljs-meta">&lt;?php
+                echo &quot;
+                &lt;img src=&#x27;{$_GET[&quot;src&quot;]}&#x27; width=&#x27;{$_GET[&quot;width&quot;]}&#x27;/&gt; // here, view_object.php can retrieve src and width names from the GET superglobal associative array because they have technically been &quot;submitted&quot; in the URL of the anchor tag through the embedded GET request which exposes all user input and customisation within the URL
+                &quot; 
+            ?&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- header() --&gt;</span>
+        <span class="hljs-comment">&lt;!-- the header function sends HTTP headers from the server to the client browser --&gt;</span>
+        <span class="hljs-comment">&lt;!-- header(&quot;Location: locationUrl.php&quot;) --&gt;</span>
+            <span class="hljs-comment">&lt;!-- !!! Supplying &quot;Location: {location-url}&quot; within the header() function as an ARGUMENT will REDIRECT the browser DISPLAY to load the specified URL but the original PHP file will keep running unless exit() is called --&gt;</span>
+                <span class="hljs-comment">&lt;!-- so normally JUST CALL exit() after Header redirection --&gt;</span>
+                <span class="hljs-comment">&lt;!-- this works for both LOCAL file paths and generic web URLs --&gt;</span>
+                <span class="hljs-comment">&lt;!-- similar to how the ACTION attribute in the FORM tag specifies which url or filepath to load when the submission button is clicked, except header(&quot;Location: XXX&quot;) loads AUTOMATICALLY once the line of code is executed --&gt;</span>
+        <span class="hljs-comment">&lt;!-- exit() --&gt;</span>
+            <span class="hljs-comment">&lt;!-- equivalent of a BREAK statement --&gt;</span>
+            <span class="hljs-comment">&lt;!-- normally paired with header(&quot;Location: XXX&quot;) and called AFTER to PREVENT further code execution in the original file once the browser has been REDIRECTED to another page --&gt;</span>
+
+            <span class="hljs-comment">&lt;!-- example.php --&gt;</span>
+
+            header(&#x27;Location:webapp.php&#x27;); // this line of code will execute to load the local php page webapp.php
+            exit(); // stops all further code execution since browser redirected to another page
+
+            <span class="hljs-comment">&lt;!-- anotherExample.php --&gt;</span>
+
+            header(&#x27;Location:https://www.example.com&#x27;); // this line of code will execute to load the webpage https://www.example.com
+            exit(); // stops all further code execution since browser redirected to another page
+
+            <span class="hljs-comment">&lt;!-- alsoThisIsAcceptable.php --&gt;</span>
+            $url = &quot;watermelonSugar.php&quot;;
+            header(&quot;Location:$url&quot;); // just remember to use double quotation marks so string interpolation is succesful
+            exit();
+
+    <span class="hljs-comment">&lt;!-- password_hash() --&gt;</span>
+        <span class="hljs-comment">&lt;!-- eg. usage is password_hash($password, PASSWORD_BCRYPT) --&gt;</span>
+            <span class="hljs-comment">&lt;!-- @param =&gt; string password, hashing algorithm --&gt;</span>
+            <span class="hljs-comment">&lt;!-- @return =&gt; hashed password --&gt;</span>
+        <span class="hljs-comment">&lt;!-- the password_hash function hashes a given string (normally a password) based off a specified hash value and returns the hashed value --&gt;</span>
+        <span class="hljs-comment">&lt;!-- where $password is your password of the String datatype --&gt;</span>
+        <span class="hljs-comment">&lt;!-- where PASSWORD_BCRYPT is an available variant --&gt;</span>
+    <span class="hljs-comment">&lt;!-- ALL HASHING OPTIONS --&gt;</span>
+        <span class="hljs-comment">&lt;!-- normally BCRYPT, MD5 or SHA-256/SHA-512 are chosen as hashing variants --&gt;</span>
+            <span class="hljs-comment">&lt;!-- bcrypt --&gt;</span>
+                <span class="hljs-comment">&lt;!-- PASSWORD_BCRYPT --&gt;</span>
+            <span class="hljs-comment">&lt;!-- md5 --&gt;</span>
+                <span class="hljs-comment">&lt;!-- PASSWORD_MD5 --&gt;</span>
+            <span class="hljs-comment">&lt;!-- sha-1 --&gt;</span>
+                <span class="hljs-comment">&lt;!-- PASSWORD_SHA1 --&gt;</span>
+            <span class="hljs-comment">&lt;!-- sha-256 or sha-512 --&gt;</span>
+                <span class="hljs-comment">&lt;!-- PASSWORD_DEFAULT --&gt;</span>
+            <span class="hljs-comment">&lt;!-- argon5 --&gt;</span>
+                <span class="hljs-comment">&lt;!-- PASSWORD_ARGON2I --&gt;</span>
+            <span class="hljs-comment">&lt;!-- sodium --&gt;</span>
+                <span class="hljs-comment">&lt;!-- PASSWORD_AGRON2ID --&gt;</span>
+    
+    <span class="hljs-comment">&lt;!-- example of hashing a password by the bcrypt hash --&gt;</span>
+
+    $password = &#x27;your_password_here&#x27;;
+    $hash = password_hash($password, PASSWORD_BCRYPT);
+
+    <span class="hljs-comment">&lt;!-- password_verify() --&gt;</span>
+        <span class="hljs-comment">&lt;!-- eg. usage is password_verify($presentlyEnteredPassword, $storedDatabasePassword) --&gt;</span>
+            <span class="hljs-comment">&lt;!-- @param =&gt; password that has yet to be validated, hashed password stored in database from register --&gt;</span>
+            <span class="hljs-comment">&lt;!-- @return =&gt; boolean value based on validity of password --&gt;</span>
+        <span class="hljs-comment">&lt;!-- the password_verify() function validates a given string (password to be validated) against the hashed value stored within the database --&gt;</span>
+
+    $storedHashed = $user-&gt;getPasswordHash();
+    $status = password_verify($password, $storedHashed);
+
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li><a href="https://www.geeksforgeeks.org/html-cheat-sheet-a-basic-guide-to-html/">HTML cheatsheet</a></li>
+<li><a href="https://web.stanford.edu/group/csp/cs21/csscheatsheet.pdf">CSS cheatsheet</a></li>
+<li><a href="https://css-tricks.com/">CSS tricks</a></li>
+</ul>

@@ -1,0 +1,251 @@
+<h1><code>F#</code></h1>
+<h2>Quickstart</h2>
+<ul>
+<li>functional</li>
+<li>supports object-oriented patterns</li>
+<li>foss</li>
+<li>runs on linux, osx, windows</li>
+</ul>
+<h2>Comments</h2>
+<pre><code class="language-fs"><span class="hljs-comment">// single line comment</span>
+
+<span class="hljs-comment">(* multi
+line
+comment, 
+similar
+to 
+OCaml *)</span>
+</code></pre>
+<h2>Printing</h2>
+<pre><code class="language-fs"><span class="hljs-comment">// ---------- PRINT ----------</span>
+    <span class="hljs-comment">// printf and printfn can be used to directly print string literals</span>
+
+<span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;hello world\n&quot;</span> <span class="hljs-comment">// printf prints without the newline</span>
+<span class="hljs-built_in">printfn</span> <span class="hljs-string">&quot;hello world&quot;</span> <span class="hljs-comment">// printfn prints with a newline character</span>
+
+<span class="hljs-comment">// ---------- FORMATTED STRING ----------</span>
+    <span class="hljs-comment">// $ and {} used for string interpolation</span>
+    <span class="hljs-comment">// both printf and printfn can print formatted strings with format specifiers using the syntax of {PRINT FUNCTION} {STRING WITH FORMAT SPECIFIFERS} {VARIABLES}</span>
+        <span class="hljs-comment">// %s =&gt; string</span>
+        <span class="hljs-comment">// %d =&gt; decimal</span>
+        <span class="hljs-comment">// %i =&gt; integer</span>
+        <span class="hljs-comment">// %x =&gt; hexadecimal</span>
+        <span class="hljs-comment">// %f =&gt; floating point number</span>
+        <span class="hljs-comment">// %e =&gt; exponential</span>
+        <span class="hljs-comment">// %g =&gt; general format (automatically chooses between %f and %e)</span>
+        <span class="hljs-comment">// %b =&gt; boolean</span>
+        <span class="hljs-comment">// %c =&gt; character</span>
+        <span class="hljs-comment">// %A =&gt; prints values using F#&#x27;s default formatting</span>
+        <span class="hljs-comment">// %Ns =&gt; specifies a minimum field width of N characters for strings</span>
+        <span class="hljs-comment">// %Nd =&gt; specifies a minimum field width of N characters for decimals</span>
+        <span class="hljs-comment">// %Ni =&gt; specifies a minimum field width of N characters for integers</span>
+        <span class="hljs-comment">// %N.Mf =&gt; specifies a minimum field width of N characters and M decimal places for floating point numbers</span>
+
+<span class="hljs-keyword">let</span> dish <span class="hljs-operator">=</span> <span class="hljs-string">&quot;cereal chicken&quot;</span>
+<span class="hljs-keyword">let</span> cost <span class="hljs-operator">=</span> <span class="hljs-number">2.50</span>
+<span class="hljs-keyword">let</span> finSentence <span class="hljs-operator">=</span> <span class="hljs-string">$&quot;This <span class="hljs-subst">{dish}</span> costs <span class="hljs-subst">{cost}</span>&quot;</span>
+<span class="hljs-built_in">printfn</span> <span class="hljs-string">&quot;%s&quot;</span> finSentence <span class="hljs-comment">// printing of a string variable using string interpolation</span>
+
+</code></pre>
+<h2>Variables</h2>
+<pre><code class="language-fs"><span class="hljs-comment">// ---------- VARIABLE ----------</span>
+    <span class="hljs-comment">// let defines an immutable variables </span>
+    <span class="hljs-comment">// type declaration is not required</span>
+
+<span class="hljs-keyword">let</span> anInt <span class="hljs-operator">=</span> <span class="hljs-number">5</span>
+<span class="hljs-keyword">let</span> myFloat <span class="hljs-operator">=</span> <span class="hljs-number">3.14</span>
+<span class="hljs-keyword">let</span> myString <span class="hljs-operator">=</span> <span class="hljs-string">&quot;smacks&quot;</span>
+
+<span class="hljs-comment">// NOTE</span>
+
+<span class="hljs-operator">=</span> <span class="hljs-comment">// both the assignment operator AND equality check operator (for equality checks similar to == or === in other languages)</span>
+</code></pre>
+<h2>Types</h2>
+<pre><code class="language-fs"><span class="hljs-comment">// ---------- TYPE ----------</span>
+    <span class="hljs-comment">// expressions and values are immutable by default</span>
+    <span class="hljs-comment">// int =&gt; 32-bit signed int (42)</span>
+    <span class="hljs-comment">// int64 =&gt; 64-bit signed int (10000)</span>
+    <span class="hljs-comment">// float =&gt; 64-bit floating point number (3.42)</span>
+    <span class="hljs-comment">// char =&gt; single unicode character, single-quoted (&#x27;a&#x27;)</span>
+    <span class="hljs-comment">// string =&gt; sequence of characters, double-quoted (&quot;watermelon&quot;)</span>
+    <span class="hljs-comment">// bool =&gt; boolean value (true, false)</span>
+</code></pre>
+<h2>Data structures</h2>
+<pre><code class="language-fs"><span class="hljs-comment">// ---------- LIST ----------</span>
+    <span class="hljs-comment">// lists are immutable, so any functions or operators that are called on the list return a copy or must be reassigned</span>
+    <span class="hljs-comment">// ordered collections of elements of the same type</span>
+    <span class="hljs-comment">// lists are wrapped with [] square brackets, and ; semicolon delimited (instead of the usual commas)</span>
+
+<span class="hljs-keyword">let</span> aList <span class="hljs-operator">=</span> [<span class="hljs-number">2</span>; <span class="hljs-number">3</span>; <span class="hljs-number">4</span>; <span class="hljs-number">5</span>]
+
+<span class="hljs-comment">// LIST METHODS</span>
+    <span class="hljs-comment">// see below for other list functions</span>
+
+<span class="hljs-keyword">let</span> addedToList <span class="hljs-operator">=</span> <span class="hljs-number">1</span> <span class="hljs-operator">::</span> aList <span class="hljs-comment">// :: adds an element to the front of the list, so this evaluates to [1; 2; 3; 4; 5]</span>
+<span class="hljs-keyword">let</span> concatTwoLists <span class="hljs-operator">=</span> [<span class="hljs-number">0</span>; <span class="hljs-number">1</span>] <span class="hljs-operator">@</span> addedToList <span class="hljs-comment">// @ concatenates two lists together, so this evaluates to [0; 1; 1; 2; 3; 4; 5]</span>
+<span class="hljs-keyword">let</span> aListOfRange <span class="hljs-operator">=</span> [<span class="hljs-number">1.</span><span class="hljs-number">.10</span>] <span class="hljs-comment">// .. defines an inclusive range within the list, so this evaluates to [1; 2; 3; 4; 5; 6; 7; 8; 9; 10]</span>
+<span class="hljs-keyword">let</span> aListFromSeqExp <span class="hljs-operator">=</span> [<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span><span class="hljs-number">.10</span> <span class="hljs-operator">-&gt;</span> i <span class="hljs-operator">*</span> i] <span class="hljs-comment">// lists can be defined with sequence expressions as well, as seen here this creates a list of squares of integers 1 to 10, which evaluates to [1; 4; 9; 16; 25; 36; 49; 64; 81; 100]</span>
+<span class="hljs-keyword">let</span> aListFromListComprehension <span class="hljs-operator">=</span> [<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span><span class="hljs-number">.10</span> <span class="hljs-keyword">do</span> <span class="hljs-keyword">yield</span> i <span class="hljs-operator">*</span> i] <span class="hljs-comment">// basically the same as above but achieved via list comprehension</span>
+
+<span class="hljs-comment">// --------- ARRAY ----------</span>
+    <span class="hljs-comment">// arrays are mutable and considered more efficient</span>
+    <span class="hljs-comment">// ordered collection of elements of the same type</span>
+    <span class="hljs-comment">// arrays are wrapped with [||] square brackets with bars and ; semicolon delimited</span>
+
+<span class="hljs-keyword">let</span> anArray <span class="hljs-operator">=</span> [<span class="hljs-operator">|</span><span class="hljs-string">&quot;a&quot;</span>; <span class="hljs-string">&quot;b&quot;</span><span class="hljs-operator">|</span>]
+
+<span class="hljs-comment">// ---------- SEQUENCE ----------</span>
+    <span class="hljs-comment">// infinite sequence of elements</span>
+    <span class="hljs-comment">// basically an enumerator</span>
+    <span class="hljs-comment">// sequences are wrapped with {} curly braces and ; semicolon delimited and accompanied with seq</span>
+    <span class="hljs-comment">// yield is used to generate sequence values where required</span>
+
+<span class="hljs-keyword">let</span> aSequence <span class="hljs-operator">=</span> <span class="hljs-keyword">seq</span> {<span class="hljs-keyword">yield</span> <span class="hljs-string">&quot;a&quot;</span>; <span class="hljs-keyword">yield</span> <span class="hljs-string">&quot;b&quot;</span>}
+
+<span class="hljs-comment">// ---------- TUPLE ----------</span>
+    <span class="hljs-comment">// collecton of elements of any data type</span>
+    <span class="hljs-comment">// tuples are anonymous by default</span>
+    <span class="hljs-comment">// , comma delimited</span>
+    <span class="hljs-comment">// can be unpacked with pattern matching similar to Rust</span>
+
+<span class="hljs-keyword">let</span> aTuple <span class="hljs-operator">=</span> <span class="hljs-number">1</span>,<span class="hljs-number">2</span>
+<span class="hljs-keyword">let</span> anotherTuple <span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-number">2</span>, <span class="hljs-literal">true</span>
+
+<span class="hljs-keyword">let</span> x,y <span class="hljs-operator">=</span> aTuple <span class="hljs-comment">// this unpacks the tuple and sets the value of x = 1, y = 2</span>
+</code></pre>
+<h2>Functions</h2>
+<pre><code class="language-fs"><span class="hljs-comment">// ---------- FUNCTION ----------</span>
+    <span class="hljs-comment">// let defines a function, which is defined similar to a variable (since we&#x27;re in functional land where every statement is an expression that evaluates to a value including functions)</span>
+    <span class="hljs-comment">// no brackets and implicit return of last expression similar to Haskell</span>
+    <span class="hljs-comment">// functions are first class entitites and can be chained to create powerful constructs</span>
+    <span class="hljs-comment">// let {FUNCTION NAME} {FUNCTION PARAMETERS} = {FUNCTION PROCEDURES which are implicitly returned}</span>
+    <span class="hljs-comment">// multiline functions can be defined with indents</span>
+    <span class="hljs-comment">// () brackets can be used to define function precedence</span>
+    <span class="hljs-comment">// |&gt; pipe operator also available to pipe the output of one operation to another, this is very common in F#</span>
+    <span class="hljs-comment">// anonymous functions (lambdas) can be defined with the fun keyword</span>
+    <span class="hljs-comment">// modules group functions together (indentation necessary for each nested module)</span>
+
+<span class="hljs-keyword">let</span> square x <span class="hljs-operator">=</span> x <span class="hljs-operator">*</span> x <span class="hljs-comment">// note that parameter and return values are effectively non-distinguishable</span>
+square <span class="hljs-number">3</span> <span class="hljs-comment">// evaluates to the value of 9</span>
+
+<span class="hljs-keyword">let</span> add x y <span class="hljs-operator">=</span> x <span class="hljs-operator">+</span> y <span class="hljs-comment">// implicit return of the x + y calculated value</span>
+add <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-comment">// runs the function, evaluates to the value of 5</span>
+
+<span class="hljs-comment">// MULTILINE FUNCTION</span>
+    <span class="hljs-comment">// mainly used for greater readibility</span>
+
+<span class="hljs-keyword">let</span> evens list <span class="hljs-operator">=</span> 
+    <span class="hljs-keyword">let</span> isEven x <span class="hljs-operator">=</span> x <span class="hljs-operator">%</span> <span class="hljs-number">2</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span> <span class="hljs-comment">// defining the sub function isEven within the multiline function evens so that it can only be referenced within the evens function, also the first = is an assignment of an expression, the second = is an equality check </span>
+    List.filter isEven list <span class="hljs-comment">// built-in function List.filter then called on each value of the list parameter received by evens function based on the conditional check laid out in the defined sub function isEven</span>
+
+evens [<span class="hljs-number">1</span>; <span class="hljs-number">2</span>; <span class="hljs-number">3</span>; <span class="hljs-number">4</span>; <span class="hljs-number">5</span>] <span class="hljs-comment">// this runs the above function as expected</span>
+
+<span class="hljs-comment">// FUNCTION PRECEDENCE</span>
+    <span class="hljs-comment">// () define function precedence, and help readibility</span>
+
+<span class="hljs-keyword">let</span> sumOfSquaresTo100 <span class="hljs-operator">=</span> List.sum ( List.map square [<span class="hljs-number">1.</span><span class="hljs-number">.100</span>] ) <span class="hljs-comment">// here, the brackets specify the contents of List.map is to be called on the in t list defined for range 1-100, mapping the square function on each value, the returned value then being passed to List.sum </span>
+
+<span class="hljs-comment">// PIPING </span>
+    <span class="hljs-comment">// |&gt; lets you pipe</span>
+
+<span class="hljs-keyword">let</span> sumOfSquaresTo100WithPipes <span class="hljs-operator">=</span> [<span class="hljs-number">1.</span><span class="hljs-number">.100</span>] <span class="hljs-operator">|&gt;</span> List.map square <span class="hljs-operator">|&gt;</span> List.sum <span class="hljs-comment">// this does the same thing as above</span>
+
+<span class="hljs-comment">// ANONYMOUS FUNCTIONS</span>
+    <span class="hljs-comment">// fun defines a lambda function for a one-time use function</span>
+
+<span class="hljs-keyword">let</span> sumOfSquaresTo100ButLambda <span class="hljs-operator">=</span> [<span class="hljs-number">1.</span><span class="hljs-number">.100</span>] <span class="hljs-operator">|&gt;</span> List.map (<span class="hljs-keyword">fun</span> x <span class="hljs-operator">-&gt;</span> x <span class="hljs-operator">*</span> x) <span class="hljs-operator">|&gt;</span> List.sum <span class="hljs-comment">// this does the same as the above code except it defines its own anonymous function using the fun keyword</span>
+
+<span class="hljs-comment">// MODULES</span>
+    <span class="hljs-comment">// module and indentation groups functions together</span>
+    <span class="hljs-comment">// note there is no let when defining a module, just module</span>
+
+<span class="hljs-keyword">module</span> SimpleMathThingies <span class="hljs-operator">=</span> 
+
+    <span class="hljs-keyword">let</span> add x y <span class="hljs-operator">=</span> x <span class="hljs-operator">+</span> y
+
+    <span class="hljs-keyword">let</span> subtract x y <span class="hljs-operator">=</span> x <span class="hljs-operator">-</span> y
+
+    <span class="hljs-keyword">let</span> multiply x y <span class="hljs-operator">=</span> x <span class="hljs-operator">*</span> y
+
+    <span class="hljs-keyword">let</span> divide x y <span class="hljs-operator">=</span> x <span class="hljs-operator">/</span> y
+
+    <span class="hljs-keyword">let</span> modulo x y <span class="hljs-operator">=</span> x <span class="hljs-operator">%</span> y
+
+    <span class="hljs-keyword">let</span> square x <span class="hljs-operator">=</span> x <span class="hljs-operator">*</span> x
+</code></pre>
+<h2>Control structures</h2>
+<pre><code class="language-fs"><span class="hljs-comment">// ---------- PATTERN MATCHING ----------</span>
+    <span class="hljs-comment">// match with | -&gt; allows for supercharged case switch statement, just like Rust</span>
+    <span class="hljs-comment">// _ is the catch-all operator also similar to Rust</span>
+    <span class="hljs-comment">// everything is still an expression, so everything evaluates to a value and is defined with let, even pattern matches</span>
+    <span class="hljs-comment">// nested definition of expression!</span>
+    <span class="hljs-comment">// pattern matching works for lists and other data structures as well</span>
+
+<span class="hljs-keyword">let</span> simplePatternMatch <span class="hljs-operator">=</span> 
+    <span class="hljs-keyword">let</span> x <span class="hljs-operator">=</span> <span class="hljs-string">&quot;a&quot;</span>
+    <span class="hljs-keyword">match</span> x <span class="hljs-keyword">with</span> 
+        <span class="hljs-operator">|</span> <span class="hljs-string">&quot;a&quot;</span> <span class="hljs-operator">-&gt;</span> <span class="hljs-built_in">printfn</span> <span class="hljs-string">&quot;x is a&quot;</span>
+        <span class="hljs-operator">|</span> <span class="hljs-string">&quot;b&quot;</span> <span class="hljs-operator">-&gt;</span> <span class="hljs-built_in">printfn</span> <span class="hljs-string">&quot;x is b&quot;</span>
+        <span class="hljs-operator">|</span> _ <span class="hljs-operator">-&gt;</span> <span class="hljs-built_in">printfn</span> <span class="hljs-string">&quot;catch all operator hit&quot;</span> <span class="hljs-comment">// F# does not allow nulls by default, an Option type must be used for pattern matching, although None is a valid value</span>
+
+<span class="hljs-comment">// ---------- IF ELIF ELSE THEN ----------</span>
+    <span class="hljs-comment">// F# also has the standard conditional checks, which work as expected</span>
+    <span class="hljs-comment">// you can assign boolean expressions to variables and functions</span>
+
+<span class="hljs-keyword">let</span> test x y <span class="hljs-operator">=</span>
+    <span class="hljs-keyword">if</span> x <span class="hljs-operator">=</span> y <span class="hljs-keyword">then</span> <span class="hljs-string">&quot;they are equals&quot;</span>
+    <span class="hljs-keyword">elif</span> x <span class="hljs-operator">&lt;</span> y <span class="hljs-keyword">then</span> <span class="hljs-string">&quot;x is less than y&quot;</span>
+    <span class="hljs-keyword">else</span> <span class="hljs-string">&quot;x is greater than y&quot;</span>
+</code></pre>
+<h2>Loops</h2>
+<pre><code class="language-fs"><span class="hljs-comment">// ---------- LOOP ----------</span>
+    <span class="hljs-comment">// for in do allows you to iterate over a collection of elements</span>
+    <span class="hljs-comment">// indentation matters</span>
+    <span class="hljs-comment">// loops can be used to iterate over different patterns as well</span>
+
+<span class="hljs-keyword">let</span> list1 <span class="hljs-operator">=</span> [<span class="hljs-number">1</span>; <span class="hljs-number">5</span>; <span class="hljs-number">100</span>; <span class="hljs-number">450</span>; <span class="hljs-number">788</span>]
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> list1 <span class="hljs-keyword">do</span>
+    <span class="hljs-built_in">printfn</span> <span class="hljs-string">&quot;%d&quot;</span> i
+
+<span class="hljs-keyword">let</span> seq1 <span class="hljs-operator">=</span> <span class="hljs-keyword">seq</span> {<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">1.</span><span class="hljs-number">.10</span> <span class="hljs-operator">-&gt;</span> (i, i<span class="hljs-operator">*</span>i)}
+<span class="hljs-keyword">for</span> (a, asqr) <span class="hljs-keyword">in</span> seq1 <span class="hljs-keyword">do</span>
+    <span class="hljs-built_in">printfn</span> <span class="hljs-string">&quot;%d squared is %d&quot;</span> a asqr
+</code></pre>
+<h2>Helpful functions</h2>
+<pre><code class="language-fs"><span class="hljs-comment">// ----------- USEFUL ----------</span>
+    <span class="hljs-comment">// note that these work for arrays as well, simply replace the List with Array</span>
+    <span class="hljs-comment">// so Array.map, Array.filter and Array.iter are all valid</span>
+
+<span class="hljs-keyword">yield</span> <span class="hljs-comment">// yield allows for lazy evaluation of variables within loop expressions, often used in F# sequences to generate values only when they are required and called</span>
+<span class="hljs-keyword">yield!</span> <span class="hljs-comment">// yield! adds a whole subsequence to a sequence, allowing for concise expressions like yield! [5..10]</span>
+List.map <span class="hljs-comment">// applies a function to each element in the list and returns a copy of the new list</span>
+List.iter <span class="hljs-comment">// applies a function to each element in the list, and used for its side effects, like printing out each element of the list</span>
+List.filter <span class="hljs-comment">// filters elements of a list based on a specified predicate (conditional check)</span>
+List.fold <span class="hljs-comment">// applies a binary function to elements of the list from an initial defined accumalator value</span>
+List.reduce <span class="hljs-comment">// similar to .fold but without an explicit defined accumulator</span>
+List.length <span class="hljs-comment">// returns length of list</span>
+List.head <span class="hljs-comment">// returns first list element of index 0</span>
+List.tail <span class="hljs-comment">// returns last list element of index List.length-1</span>
+List.append <span class="hljs-comment">// concatenates two lists together</span>
+List.concat <span class="hljs-comment">// concatenates a list of lists into a single list, basically flattening it</span>
+List.rev <span class="hljs-comment">// reverses order of elements in the list</span>
+List.sort <span class="hljs-comment">// sorts the elements of the list by value</span>
+List.max <span class="hljs-comment">// returns the element of max value in the list</span>
+List.min <span class="hljs-comment">// returns the element of min value in the list</span>
+
+<span class="hljs-comment">// read F# documentation for many others</span>
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li>ref</li>
+<li>map</li>
+<li>set</li>
+<li>type</li>
+<li>union types</li>
+<li>active patterns (if, elif, else, then)</li>
+<li>rec</li>
+<li>async</li>
+<li>.NET compatibility</li>
+<li>OOP extensibility</li>
+<li><a href="https://try.fsharp.org/">try fsharp</a></li>
+</ul>

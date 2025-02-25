@@ -1,0 +1,212 @@
+<h1><code>Ada</code></h1>
+<p>Systems language for transportation, aerospace and defense.</p>
+<h2>Comments</h2>
+<pre><code class="language-ada"><span class="hljs-comment">-- ----- COMMENT -----</span>
+
+<span class="hljs-comment">-- this is a single line comment</span>
+
+/*
+this <span class="hljs-keyword">is</span> 
+a multiline 
+comment
+*/
+</code></pre>
+<h2>Printing</h2>
+<pre><code class="language-ada"><span class="hljs-comment">-- ----- PRINTING -----</span>
+    <span class="hljs-comment">-- Put_Line() =&gt; procedure that takes in an argument and prints it to the stdout with a newline included by default</span>
+    <span class="hljs-comment">-- Put() =&gt; procedure that takes in an argument and prints it to the stdout without a newline</span>
+    <span class="hljs-comment">-- New_Line =&gt; prints out a newline to the stdout, the equivalent of Put(&quot;\n&quot;)</span>
+
+Put_Line(<span class="hljs-string">&quot;this includes a newline&quot;</span>);
+Put(<span class="hljs-string">&quot;this does not include a newline\n&quot;</span>);
+New_Line; <span class="hljs-comment">-- also prints out a newline</span>
+</code></pre>
+<h2>Quickstart</h2>
+<pre><code class="language-ada"><span class="hljs-comment">-- ----- QUICKSTART -----</span>
+    <span class="hljs-comment">-- strongly, statically typed</span>
+    <span class="hljs-comment">-- semicolon language</span>
+    <span class="hljs-comment">-- similar to Lua (and unlike many conventional programming languages), Ada arrays are 1-indexed</span>
+    <span class="hljs-comment">-- declare =&gt; declares local variables within a nested block (eg. procedure, function) that are only visible within that local scope </span>
+    <span class="hljs-comment">-- : =&gt; specifies the datatype of a given variable via type annotations</span>
+    <span class="hljs-comment">-- := =&gt; simultaneous declaration and initialisation of a variable, similar to Go lang</span>
+    <span class="hljs-comment">-- &lt;variableDatatype&gt;&#x27;Image(&lt;variableValue&gt;) =&gt; converts values of various types to their corresponding string representations, often used for printing values to the stdout</span>
+
+<span class="hljs-keyword">declare</span>
+    A : <span class="hljs-type">Integer</span> := <span class="hljs-number">5</span>; <span class="hljs-comment">-- simultaneous declaration and initialisation of A as an Integer</span>
+    B : <span class="hljs-type">Integer</span>; <span class="hljs-comment">-- declaration of B&#x27;s type as an Integer</span>
+    C : <span class="hljs-type">Float</span> := <span class="hljs-number">3.14</span>; <span class="hljs-comment">-- simultaneous declaration and initialisation of C as a Float</span>
+<span class="hljs-keyword">begin</span>
+    B := A * <span class="hljs-number">2</span>; <span class="hljs-comment">-- assign the value of 2A to B after B&#x27;s variable declaration above</span>
+<span class="hljs-keyword">end</span>;
+</code></pre>
+<h2>Types</h2>
+<pre><code class="language-ada"><span class="hljs-comment">-- ----- TYPE -----</span>
+    <span class="hljs-comment">-- Integer =&gt; integer values</span>
+    <span class="hljs-comment">-- Float =&gt; floating point values</span>
+    <span class="hljs-comment">-- Boolean =&gt; true, false</span>
+    <span class="hljs-comment">-- Character =&gt; single character value, represented within &#x27;&#x27; single quotes</span>
+    <span class="hljs-comment">-- String(&lt;MinIndex&gt; .. &lt;MaxIndex&gt;) =&gt; handled as an array of characters, with the bounds of the string declared within the brackets</span>
+</code></pre>
+<h2>Operators</h2>
+<pre><code class="language-ada"><span class="hljs-comment">-- ----- OPERATOR -----</span>
+
+<span class="hljs-comment">-- --- ARITHMETIC OPERATOR ---</span>
+
++ <span class="hljs-comment">-- addition</span>
+- <span class="hljs-comment">-- subtraction</span>
+* <span class="hljs-comment">-- multiplication</span>
+/ <span class="hljs-comment">-- division</span>
+<span class="hljs-keyword">mod</span> <span class="hljs-comment">-- modulo</span>
+
+<span class="hljs-comment">-- --- COMPARISON OPERATOR ---</span>
+    <span class="hljs-comment">-- note there is no need for a complete equality operator as in other languages since Ada already performs strict type checking by default</span>
+
+= <span class="hljs-comment">-- partial equality of value only</span>
+/= <span class="hljs-comment">-- partial inequality of value only</span>
+&lt; <span class="hljs-comment">-- comparison operator</span>
+&gt; <span class="hljs-comment">-- comparison operator</span>
+&lt;= <span class="hljs-comment">-- comparison operator</span>
+&gt;= <span class="hljs-comment">-- comparison operator</span>
+
+<span class="hljs-comment">-- --- LOGICAL OPERATOR ---</span>
+
+<span class="hljs-keyword">and</span> 
+<span class="hljs-keyword">or</span>
+<span class="hljs-keyword">not</span>
+</code></pre>
+<h2>Control structures</h2>
+<pre><code class="language-ada"><span class="hljs-comment">-- ----- CONTROL STRUCTURE -----</span>
+
+<span class="hljs-comment">-- --- CONDITIONALS ---</span>
+
+<span class="hljs-comment">-- IF ELSIF ELSE</span>
+    <span class="hljs-comment">-- note that its elsif and note elseif or elif</span>
+
+<span class="hljs-keyword">declare</span>
+    A : <span class="hljs-type">Integer</span> := <span class="hljs-number">10</span>;
+<span class="hljs-keyword">begin</span>
+    <span class="hljs-keyword">if</span> A &gt; <span class="hljs-number">5</span> <span class="hljs-keyword">then</span>
+        Put_Line(<span class="hljs-string">&quot;A is greater than 5&quot;</span>);
+    <span class="hljs-keyword">elsif</span> A = <span class="hljs-number">5</span> <span class="hljs-keyword">then</span>
+        Put_Line(<span class="hljs-string">&quot;A is 5&quot;</span>);
+    <span class="hljs-keyword">else</span>
+        Put_Line(<span class="hljs-string">&quot;A is less than 5&quot;</span>);
+    <span class="hljs-keyword">end</span> <span class="hljs-keyword">if</span>;
+<span class="hljs-keyword">end</span>;
+
+<span class="hljs-comment">-- CASE WHEN OTHERS</span>
+    <span class="hljs-comment">-- the equivalent of switch case or match case statements in other programming languages, affording Ada a bare degree of basic pattern-matching</span>
+    <span class="hljs-comment">-- see that =&gt; specifies the relationship between each condition&#x27;s fulfilled predicate and the execution code for that scenario</span>
+    <span class="hljs-comment">-- | =&gt; allows for multiple value pattern matching</span>
+    <span class="hljs-comment">-- others =&gt; the default fall-through case for if every other predicate when check is not fulfilled, the equivalent of the catch-all operator _ in Rust</span>
+
+<span class="hljs-keyword">declare</span>
+    X : <span class="hljs-type">Integer</span> := <span class="hljs-number">2</span>;
+<span class="hljs-keyword">begin</span>
+    <span class="hljs-keyword">case</span> X <span class="hljs-keyword">is</span>
+        <span class="hljs-keyword">when</span> <span class="hljs-number">1</span> =&gt;
+            Put_Line(<span class="hljs-string">&quot;X is 1&quot;</span>);
+        <span class="hljs-keyword">when</span> <span class="hljs-number">2</span> =&gt;
+            Put_Line(<span class="hljs-string">&quot;X is 2&quot;</span>);
+        <span class="hljs-keyword">when</span> <span class="hljs-number">3</span> | <span class="hljs-number">4</span> =&gt; <span class="hljs-comment">-- here, this pattern will be matched as long as X is 3 or 4</span>
+            Put_Line(<span class="hljs-string">&quot;X is 3 or 4&quot;</span>);
+        <span class="hljs-keyword">when</span> <span class="hljs-keyword">others</span> =&gt;
+            Put_Line(<span class="hljs-string">&quot;X is something else&quot;</span>);
+    <span class="hljs-keyword">end</span> <span class="hljs-keyword">case</span>;
+<span class="hljs-keyword">end</span>;
+
+<span class="hljs-comment">-- --- LOOPS ---</span>
+    <span class="hljs-comment">-- exit when &lt;exitCondition&gt; =&gt; Ada does not have the keyword break, but affords the exit when construct which effectively serves the same purpose by allowing termination of the current iteration cycle at the programmer&#x27;s discretion</span>
+
+<span class="hljs-comment">-- FOR IN LOOPS</span>
+    <span class="hljs-comment">-- Ada does not have traditional C-style for loops, but the for in loop construct allows similar iteration over any iterable structure</span>
+    <span class="hljs-comment">-- .. =&gt; range operator allows for dynamic generation of a range literal that can be iterated over</span>
+    <span class="hljs-comment">-- reverse =&gt; iterates over the specified range in reverse</span>
+    <span class="hljs-comment">-- step =&gt; further augments the loop by specifying the increment in each iteration cycle</span>
+
+<span class="hljs-keyword">declare</span>
+    Sum : <span class="hljs-type">Integer</span> := <span class="hljs-number">0</span>;
+<span class="hljs-keyword">begin</span>
+    <span class="hljs-keyword">for</span> I <span class="hljs-keyword">in</span> <span class="hljs-number">1</span> .. <span class="hljs-number">10</span> <span class="hljs-keyword">loop</span>
+        Sum := Sum + I;
+    <span class="hljs-keyword">end</span> <span class="hljs-keyword">loop</span>;
+    Put_Line(<span class="hljs-string">&quot;Sum of 1 to 10: &quot;</span> &amp; Integer<span class="hljs-symbol">&#x27;Image</span>(Sum));
+<span class="hljs-keyword">end</span>;
+
+<span class="hljs-keyword">begin</span>
+    <span class="hljs-keyword">for</span> J <span class="hljs-keyword">in</span> <span class="hljs-keyword">reverse</span> <span class="hljs-number">1</span> .. <span class="hljs-number">5</span> <span class="hljs-keyword">loop</span> <span class="hljs-comment">-- reversing a range to iterate over</span>
+        Put_Line(<span class="hljs-string">&quot;Iteration: &quot;</span> &amp; Integer<span class="hljs-symbol">&#x27;Image</span>(J));
+    <span class="hljs-keyword">end</span> <span class="hljs-keyword">loop</span>;
+<span class="hljs-keyword">end</span>;
+
+<span class="hljs-keyword">begin</span>
+    <span class="hljs-keyword">for</span> K <span class="hljs-keyword">in</span> <span class="hljs-number">1</span> .. <span class="hljs-number">10</span> step <span class="hljs-number">2</span> <span class="hljs-keyword">loop</span> <span class="hljs-comment">-- specifies to step by 2 each iteration cycle of the loop</span>
+        Put_Line(<span class="hljs-string">&quot;Iteration: &quot;</span> &amp; Integer<span class="hljs-symbol">&#x27;Image</span>(K));
+    <span class="hljs-keyword">end</span> <span class="hljs-keyword">loop</span>;
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment">-- WHILE LOOPS</span>
+    <span class="hljs-comment">-- Ada while loops are more in line with the standard while loop formula we are used to in other programming languages</span>
+
+<span class="hljs-keyword">declare</span>
+    Counter : <span class="hljs-type">Integer</span> := <span class="hljs-number">0</span>;
+<span class="hljs-keyword">begin</span>
+    <span class="hljs-keyword">while</span> Counter &lt; <span class="hljs-number">10</span> <span class="hljs-keyword">loop</span>
+        Put_Line(<span class="hljs-string">&quot;Counter: &quot;</span> &amp; Integer<span class="hljs-symbol">&#x27;Image</span>(Counter));
+        Counter := Counter + <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">end</span> <span class="hljs-keyword">loop</span>;
+<span class="hljs-keyword">end</span>;
+</code></pre>
+<h2>Data structures</h2>
+<pre><code class="language-ada"><span class="hljs-comment">-- ----- DATA STRUCTURE -----</span>
+    <span class="hljs-comment">-- array =&gt; where the .. range operator can be used to dynamically generate values over a range to create an iterable data structure</span>
+    <span class="hljs-comment">-- record =&gt; equivalent of a struct in Go and programming languages, effectively allowing a type alias for user-defined types with specified fields that are semicolon-delimited</span>
+    <span class="hljs-comment">-- enum =&gt; specified by listing all the possible enumeration values within () brackets, comma-delimited</span>
+    
+<span class="hljs-keyword">type</span> <span class="hljs-type">IntArray </span><span class="hljs-keyword">is</span> <span class="hljs-keyword">array</span> (<span class="hljs-number">1</span> .. <span class="hljs-number">10</span>) <span class="hljs-keyword">of</span> Integer;
+Numbers : <span class="hljs-type">IntArray</span> := (<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">10</span>);
+
+<span class="hljs-keyword">type</span> <span class="hljs-type">Person </span><span class="hljs-keyword">is</span> <span class="hljs-keyword">record</span>
+    Name : <span class="hljs-type">String</span> (<span class="hljs-number">1</span> .. <span class="hljs-number">20</span>);
+    Age  : <span class="hljs-type">Integer</span>;
+<span class="hljs-keyword">end</span> <span class="hljs-keyword">record</span>;
+
+<span class="hljs-keyword">type</span> <span class="hljs-type">Coordinate </span><span class="hljs-keyword">is</span> <span class="hljs-keyword">record</span>
+    X: Integer;
+    Y: Integer;
+<span class="hljs-keyword">end</span> <span class="hljs-keyword">record</span>;
+
+<span class="hljs-keyword">type</span> <span class="hljs-type">Day </span><span class="hljs-keyword">is</span> (Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday);
+</code></pre>
+<h2>Procedures and Functions</h2>
+<pre><code class="language-ada"><span class="hljs-comment">-- ----- PROCEDURE -----</span>
+    <span class="hljs-comment">-- Ada procedures are effectively void functions, are are used to store reusable execution code that does not return a value </span>
+    <span class="hljs-comment">-- procedures can also be thought of as &#x27;OOP methods&#x27; in the sense that they perform specific operations while not returning any explicit value</span>
+
+<span class="hljs-keyword">procedure</span> <span class="hljs-title">Print_Message</span> <span class="hljs-keyword">is</span>
+<span class="hljs-keyword">begin</span>
+    Put_Line(<span class="hljs-string">&quot;Hello from a procedure!&quot;</span>);
+<span class="hljs-keyword">end</span> Print_Message;
+
+<span class="hljs-keyword">begin</span>
+    Print_Message;
+<span class="hljs-keyword">end</span>;
+
+<span class="hljs-comment">-- ----- FUNCTION -----</span>
+    <span class="hljs-comment">-- Ada functions operate similarly as in any other programming language, with the notable exception that they must return a value (void functions are written as procedures in Ada)</span>
+    <span class="hljs-comment">-- function &lt;functionName&gt; (&lt;parameter(s)&gt;:&lt;parameterType(s)&gt;) return &lt;returnType&gt; is =&gt; function declaration for a named function</span>
+
+<span class="hljs-keyword">function</span> <span class="hljs-title">Add</span> (A, B : <span class="hljs-type">Integer</span>) <span class="hljs-keyword">return</span> <span class="hljs-type">Integer</span> <span class="hljs-keyword">is</span>
+<span class="hljs-keyword">begin</span>
+    <span class="hljs-keyword">return</span> A + B;
+<span class="hljs-keyword">end</span> Add;
+
+<span class="hljs-keyword">begin</span>
+    Put_Line(<span class="hljs-string">&quot;Sum: &quot;</span> &amp; Integer<span class="hljs-symbol">&#x27;Image</span>(Add(<span class="hljs-number">5</span>, <span class="hljs-number">3</span>)));
+<span class="hljs-keyword">end</span>;
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li><a href="https://ada-lang.io/docs/arm">ada documentation</a></li>
+<li><a href="https://learnxinyminutes.com/docs/ada/">learn ada in y minutes</a></li>
+</ul>

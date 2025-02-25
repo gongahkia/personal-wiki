@@ -1,0 +1,349 @@
+<h1><code>Lisp</code></h1>
+<p>The programmable programming language.</p>
+<h2>Quickstart</h2>
+<pre><code class="language-lisp"><span class="hljs-comment">;;; ----------- QUICKSTART ----------</span>
+    <span class="hljs-comment">; everything in Common Lisp is comprised of atoms or s-expressions</span>
+    <span class="hljs-comment">; functional expression-based programming language, so all expressions evaluate to a value</span>
+    <span class="hljs-comment">; mutation and side-effects are avoided as far as possible, where possible, rely on function returns to return a copy of data instead of modifying existing data</span>
+
+<span class="hljs-comment">;; ATOM</span>
+    <span class="hljs-comment">; symbols or numbers</span>
+        <span class="hljs-comment">; symbol =&gt; general concept representing a name or identifier (variable names, function names, entity names)</span>
+        <span class="hljs-comment">; number =&gt; integer, floating-point</span>
+
+<span class="hljs-comment">;; S-EXPRESSION</span>
+    <span class="hljs-comment">; function or operator and its arguments enclosed in () parantheses</span>
+    <span class="hljs-comment">; arguments can be atoms or lists</span>
+        <span class="hljs-comment">; list =&gt; collection of s-expressions enclosed in () parentheses, that contain atoms or other lists</span>
+</code></pre>
+<h2>Comments</h2>
+<pre><code class="language-lisp"><span class="hljs-comment">;;; ----------- COMMENT ----------</span>
+
+<span class="hljs-comment">;; SINGLE-LINE COMMENTS</span>
+    <span class="hljs-comment">; 4 semicolons for file-level comments</span>
+    <span class="hljs-comment">; 3 semicolons for section-level descriptions</span>
+    <span class="hljs-comment">; 2 semicolons for definitions within code</span>
+    <span class="hljs-comment">; 1 semicolon for definitions outside code</span>
+
+<span class="hljs-comment">;; MULTI-LINE COMMENTS</span>
+    <span class="hljs-comment">;; delimited by #| and |#</span>
+</code></pre>
+<h2>Printing</h2>
+<pre><code class="language-lisp"><span class="hljs-comment">;;; ---------- PRINTING ----------</span>
+    <span class="hljs-comment">; format =&gt; prints formatted text to stdout, t is included for true</span>
+    <span class="hljs-comment">; print =&gt; prints text to stdout as a string literal with &quot;&quot; double quotation marks</span>
+    <span class="hljs-comment">; princ =&gt; prints text to stdout without double quotation marks</span>
+
+(<span class="hljs-name">format</span> <span class="hljs-literal">t</span> <span class="hljs-string">&quot;Hello, World!&quot;</span>) <span class="hljs-comment">; prints &quot;Hello, World!&quot; to the stdout</span>
+(<span class="hljs-name">print</span> <span class="hljs-string">&quot;Hello&quot;</span>) <span class="hljs-comment">; prints &quot;Hello&quot; to the stdout</span>
+(<span class="hljs-name">princ</span> <span class="hljs-string">&quot;Hello&quot;</span>) <span class="hljs-comment">; prints Hello to the stdout</span>
+</code></pre>
+<h2>Variables and Constants</h2>
+<pre><code class="language-lisp"><span class="hljs-comment">;;; ---------- VARIABLE ----------</span>
+    <span class="hljs-comment">; a variable is an instance of a symbol that is associated with a value stored in memory (value assignment for a variable)</span>
+    <span class="hljs-comment">; let =&gt; creates a local variable within the given () lexical scope, and returns the last value specified in the let scope</span>
+    <span class="hljs-comment">; defvar =&gt; creates a global variable whose value does not change upon re-evaluation, global variable names are ** (earmuff) asterisk delimited</span>
+    <span class="hljs-comment">; defparameter =&gt; creates a global variable whose value does change upon re-evaluation, global variable names are ** (earmuff) asterisk delimited</span>
+
+(<span class="hljs-name">let</span> ((<span class="hljs-name">me</span> <span class="hljs-string">&quot;dance with you&quot;</span>)) me) <span class="hljs-comment">; creates the local variable me and assigns the string value of &quot;dance with you&quot; to it, then evaluates to &quot;dance with you&quot;</span>
+
+(<span class="hljs-name">defparameter</span> *a_var* <span class="hljs-number">5</span>) <span class="hljs-comment">; assigns the global variable *a_var* the number value of 5</span>
+*a_var* <span class="hljs-comment">; evaluates to 5</span>
+
+<span class="hljs-comment">;;; ---------- CONSTANT ----------</span>
+    <span class="hljs-comment">; a constant stores a piece of immutable data</span>
+    <span class="hljs-comment">; defconstant =&gt; creates a constant</span>
+
+(<span class="hljs-name">defconstant</span> PI <span class="hljs-number">3.141592</span>) <span class="hljs-comment">; creates the constant PI which stores the number value of 3.141592, the value is immutable and cannot be changed</span>
+</code></pre>
+<h2>Types</h2>
+<pre><code class="language-lisp"><span class="hljs-comment">;;; ---------- TYPE -----------</span>
+
+<span class="hljs-comment">;; PRIMITIVE DATATYPE</span>
+    <span class="hljs-comment">; all these below values can be assigned to variables</span>
+    <span class="hljs-comment">; symbol =&gt; uppercased automatically upon evaluation</span>
+        <span class="hljs-comment">; intern =&gt; intern operator creates a symbol from a string</span>
+    <span class="hljs-comment">; number =&gt; integer, binary, octal, hexadecimal, single, double, ratio, complex numbers</span>
+        <span class="hljs-comment">; quote / &#x27; =&gt; quote operator creates literal data without evaluating it (it has the &#x27; shorthand)</span>
+    <span class="hljs-comment">; boolean =&gt; any non-nil value is t (true) including expressions, nil (false) and () empty list evaluates to nil</span>
+    <span class="hljs-comment">; char =&gt; char literals declared with #\</span>
+    <span class="hljs-comment">; string =&gt; fixed-length char array, declared with &quot;&quot; double quotation marks</span>
+
+&#x27;foo <span class="hljs-comment">; evaluates to FOO, symbol literal</span>
+(<span class="hljs-name">intern</span> <span class="hljs-string">&quot;abc&quot;</span>) <span class="hljs-comment">; create the symbol |abc| from a string</span>
+(<span class="hljs-name">intern</span> <span class="hljs-string">&quot;EFG&quot;</span>) <span class="hljs-comment">; create the symbol EFG from a string</span>
+
+<span class="hljs-number">9999</span> <span class="hljs-comment">; number integer</span>
+<span class="hljs-number">#b111</span> <span class="hljs-comment">; number binary</span>
+<span class="hljs-number">#o111</span> <span class="hljs-comment">; number octal</span>
+<span class="hljs-number">#x111</span> <span class="hljs-comment">; number hexadecimal</span>
+<span class="hljs-number">3.14159s0</span> <span class="hljs-comment">; number single</span>
+<span class="hljs-number">3.14159d0</span> <span class="hljs-comment">; number double</span>
+<span class="hljs-number">1/2</span> <span class="hljs-comment">; number ratio</span>
+<span class="hljs-number">#C(1 2)</span> <span class="hljs-comment">; complex number</span>
+
+(<span class="hljs-name">quote</span> (+ <span class="hljs-number">1</span> <span class="hljs-number">2</span>)) <span class="hljs-comment">; quote creates literal data, and does not evaluate this function (+ 1 2)</span>
+&#x27;(+ <span class="hljs-number">1</span> <span class="hljs-number">2</span>) <span class="hljs-comment">; &#x27; is the shorthand for quote, and it does the same thing, creating a literal data</span>
+
+<span class="hljs-literal">t</span> <span class="hljs-comment">; evaluates to t (true)</span>
+<span class="hljs-literal">nil</span> <span class="hljs-comment">; evaluates to nil (false)</span>
+() <span class="hljs-comment">; evaluates to nil (false)</span>
+
+#\A <span class="hljs-comment">; char literal </span>
+
+<span class="hljs-string">&quot;Hello, world!&quot;</span> <span class="hljs-comment">; string</span>
+</code></pre>
+<h2>Operators</h2>
+<pre><code class="language-lisp"><span class="hljs-comment">;;; ---------- OPERATOR -----------</span>
+
+<span class="hljs-comment">;; ARITHMETIC OPERATORS</span>
+    <span class="hljs-comment">; + =&gt; addition</span>
+    <span class="hljs-comment">; - =&gt; subtraction</span>
+    <span class="hljs-comment">; * =&gt; multiplication</span>
+    <span class="hljs-comment">; / =&gt; division</span>
+    <span class="hljs-comment">; expt =&gt; exponentiation</span>
+    <span class="hljs-comment">; mod =&gt; modulo</span>
+    <span class="hljs-comment">; #C =&gt; creates a complex number</span>
+
+(<span class="hljs-name">+</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span>) <span class="hljs-comment">; evaluates to 2</span>
+(<span class="hljs-name">-</span> <span class="hljs-number">8</span> <span class="hljs-number">1</span>) <span class="hljs-comment">; evaluates to 7</span>
+(<span class="hljs-name">*</span> <span class="hljs-number">10</span> <span class="hljs-number">2</span>) <span class="hljs-comment">; evaluates to 20</span>
+(<span class="hljs-name">expt</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>) <span class="hljs-comment">; evaluates to 8</span>
+(<span class="hljs-name">mod</span> <span class="hljs-number">5</span> <span class="hljs-number">2</span>) <span class="hljs-comment">; evaluates to 1</span>
+(<span class="hljs-name">/</span> <span class="hljs-number">35</span> <span class="hljs-number">5</span>) <span class="hljs-comment">; evaluates to 7</span>
+(<span class="hljs-name">/</span> <span class="hljs-number">1</span> <span class="hljs-number">3</span>) <span class="hljs-comment">; evaluates to 1/3</span>
+(<span class="hljs-name">+</span> <span class="hljs-number">#C(1 2)</span> <span class="hljs-number">#C(6 -4)</span>) <span class="hljs-comment">; evaluates to #C(7 -2)</span>
+
+<span class="hljs-comment">;; COMPARISON OPERATORS</span>
+    <span class="hljs-comment">; = =&gt; complete equality check for numbers</span>
+    <span class="hljs-comment">; /= =&gt; complete inequality check for numbers</span>
+    <span class="hljs-comment">; &lt; &gt; &lt;= &gt;= are also comparison operators for numbers</span>
+    <span class="hljs-comment">; equal =&gt; complete equality check for structure (value) for lists, strings, bit-vectors</span>
+    <span class="hljs-comment">; eql =&gt; stricter than equal, complete equality check for object identity (whether two arguments refer to the same object in memory)</span>
+
+(<span class="hljs-name">=</span> <span class="hljs-number">3</span> <span class="hljs-number">3.0</span>) <span class="hljs-comment">; evaluates to t</span>
+(<span class="hljs-name">=</span> <span class="hljs-number">2</span> <span class="hljs-number">1</span>) <span class="hljs-comment">; evaluates to nil</span>
+(<span class="hljs-name">/=</span> <span class="hljs-number">2</span> <span class="hljs-number">1</span>) <span class="hljs-comment">; evaluates to t</span>
+(<span class="hljs-name">&lt;</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span>) <span class="hljs-comment">; evalutes to t</span>
+(<span class="hljs-name">&gt;</span> <span class="hljs-number">3</span> <span class="hljs-number">1</span>) <span class="hljs-comment">; evaluates to t</span>
+(<span class="hljs-name">&lt;=</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span>) <span class="hljs-comment">; evaluates to t</span>
+(<span class="hljs-name">&gt;=</span> <span class="hljs-number">2</span> <span class="hljs-number">1</span>) <span class="hljs-comment">; evaluates to t</span>
+
+(<span class="hljs-name">equal</span> (<span class="hljs-name">list</span> <span class="hljs-number">3</span>) (<span class="hljs-name">list</span> <span class="hljs-number">3</span>)) <span class="hljs-comment">; this evaluates to t since equal checks for structural equality and compares the value of the contents of the lists instead of their place in memory</span>
+(<span class="hljs-name">equal</span> (<span class="hljs-name">list</span> &#x27;a &#x27;b) (<span class="hljs-name">list</span> &#x27;b &#x27;a)) <span class="hljs-comment">; evaluates to nil</span>
+
+(<span class="hljs-name">eql</span> <span class="hljs-number">3</span> <span class="hljs-number">3</span>) <span class="hljs-comment">; evaluates to t</span>
+(<span class="hljs-name">eql</span> <span class="hljs-number">3</span> <span class="hljs-number">3.0</span>) <span class="hljs-comment">; evaluates to nil</span>
+(<span class="hljs-name">eql</span> (<span class="hljs-name">list</span> <span class="hljs-number">3</span>) (<span class="hljs-name">list</span> <span class="hljs-number">3</span>)) <span class="hljs-comment">; this evaluates to nil since not same object in memory despite having structural equality</span>
+
+<span class="hljs-comment">;; LOGICAL OPERATORS</span>
+    <span class="hljs-comment">; and </span>
+    <span class="hljs-comment">; or</span>
+    <span class="hljs-comment">; not</span>
+
+(<span class="hljs-name">and</span> <span class="hljs-literal">t</span> <span class="hljs-literal">t</span>) <span class="hljs-comment">; evaluates to t</span>
+(<span class="hljs-name">and</span> <span class="hljs-literal">t</span> <span class="hljs-literal">nil</span>) <span class="hljs-comment">; evaluates to nil</span>
+(<span class="hljs-name">or</span> <span class="hljs-literal">t</span> <span class="hljs-literal">nil</span>) <span class="hljs-comment">; evaluates to t</span>
+(<span class="hljs-name">or</span> <span class="hljs-literal">nil</span> <span class="hljs-literal">nil</span>) <span class="hljs-comment">; evaluates to nil</span>
+(<span class="hljs-name">not</span> <span class="hljs-literal">t</span>) <span class="hljs-comment">; evaluates to nil</span>
+(<span class="hljs-name">not</span> <span class="hljs-literal">nil</span>) <span class="hljs-comment">; evaluates to t</span>
+</code></pre>
+<h2>Control structures</h2>
+<pre><code class="language-lisp"><span class="hljs-comment">;;; ---------- CONTROL STRUCTURE ----------</span>
+
+<span class="hljs-comment">;; CONDITIONALS</span>
+    <span class="hljs-comment">; as established previously, only nil is false (and () empty list which evaluates to nil), everything else is true (t)</span>
+    <span class="hljs-comment">; conditional syntax =&gt; (if {TEST EXPRESSION} {IF TEST EXPRESSION TRUE} {ELSE EXPRESSION})</span>
+    <span class="hljs-comment">; cond =&gt; chains a series of conditional checks to arrive at a final result</span>
+    <span class="hljs-comment">; typecase =&gt; switch case statement but for type of value</span>
+
+(<span class="hljs-name">if</span> <span class="hljs-literal">t</span> 
+    <span class="hljs-string">&quot;this is true&quot;</span> 
+    <span class="hljs-string">&quot;this is false&quot;</span>) <span class="hljs-comment">; evaluates to &quot;this is true&quot;</span>
+
+(<span class="hljs-name">member</span> &#x27;Groucho &#x27;(Harpo Groucho Zeppo)) <span class="hljs-comment">; evaluates to &#x27;(GROUCHO ZEPPO)</span>
+(<span class="hljs-name">if</span> (<span class="hljs-name">member</span> &#x27;Groucho &#x27;(Harpo Groucho Zeppo)) 
+    &#x27;yep 
+    &#x27;nope) <span class="hljs-comment">; evaluates to &#x27;YEP since all non-nil values including &#x27;(GROUCHO ZEPPO) are t</span>
+
+(<span class="hljs-name">cond</span> ((<span class="hljs-name">&gt;</span> <span class="hljs-number">2</span> <span class="hljs-number">2</span>) (<span class="hljs-name">error</span> <span class="hljs-string">&quot;wrong!&quot;</span>)) 
+      ((<span class="hljs-name">&lt;</span> <span class="hljs-number">2</span> <span class="hljs-number">2</span>) (<span class="hljs-name">error</span> <span class="hljs-string">&quot;wrong again!&quot;</span>)) 
+      (<span class="hljs-name">t</span> &#x27;ok)) <span class="hljs-comment">; evaluates to &#x27;OK symbol since the first 2 checks were incorrect</span>
+
+(<span class="hljs-name">typecase</span> <span class="hljs-number">1</span> 
+    (<span class="hljs-name">string</span> <span class="hljs-symbol">:string</span>) 
+    (<span class="hljs-name">integer</span> <span class="hljs-symbol">:int</span>)) <span class="hljs-comment">; evaluates to :int since 1 is of type integer</span>
+
+<span class="hljs-comment">;; LOOPS</span>
+    <span class="hljs-comment">; loop =&gt; creates a loop iteratively that can be augmented with different keywords (:for :from :to :then :finally :across :collect)</span>
+    <span class="hljs-comment">; there is no while loop implementation by default</span>
+
+<span class="hljs-comment">;; ITERATION</span>
+
+(<span class="hljs-name">defun</span> fact (<span class="hljs-name">n</span>)
+  (<span class="hljs-name">loop</span> <span class="hljs-symbol">:for</span> result = <span class="hljs-number">1</span> <span class="hljs-symbol">:then</span> (<span class="hljs-name">*</span> result i)
+     <span class="hljs-symbol">:for</span> i <span class="hljs-symbol">:from</span> <span class="hljs-number">2</span> <span class="hljs-symbol">:to</span> n
+     <span class="hljs-symbol">:finally</span> (<span class="hljs-name">return</span> result)))
+
+(<span class="hljs-name">fact</span> <span class="hljs-number">5</span>) <span class="hljs-comment">; evaluates to 120</span>
+
+(<span class="hljs-name">loop</span> <span class="hljs-symbol">:for</span> x <span class="hljs-symbol">:across</span> <span class="hljs-string">&quot;abcd&quot;</span> <span class="hljs-symbol">:collect</span> x) <span class="hljs-comment">; evaluates to (#\a #\b #\c #\d)</span>
+
+(<span class="hljs-name">dolist</span> (<span class="hljs-name">i</span> &#x27;(<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span>))
+  (<span class="hljs-name">format</span> <span class="hljs-literal">t</span> <span class="hljs-string">&quot;~A&quot;</span> i)) <span class="hljs-comment">; evaluates to 1234</span>
+
+<span class="hljs-comment">;; RECURSION</span>
+    <span class="hljs-comment">; recursion allows us to achieve the same effect as an iterative loop without actually using a loop</span>
+
+(<span class="hljs-name">defun</span> fact (<span class="hljs-name">n</span>)
+  (<span class="hljs-name">if</span> (<span class="hljs-name">&lt;</span> n <span class="hljs-number">2</span>)
+      <span class="hljs-number">1</span>
+    (<span class="hljs-name">*</span> n (<span class="hljs-name">fact</span>(<span class="hljs-name">-</span> n <span class="hljs-number">1</span>))))) <span class="hljs-comment">; function defintion for a recursive function</span>
+
+(<span class="hljs-name">fact</span> <span class="hljs-number">5</span>) <span class="hljs-comment">; similarly evaluates to 120</span>
+</code></pre>
+<h2>Data structures</h2>
+<pre><code class="language-lisp"><span class="hljs-comment">;;; ---------- DATA STRUCTURE -----------</span>
+
+<span class="hljs-comment">;; STRUCT</span>
+    <span class="hljs-comment">; defstruct =&gt; creates a struct</span>
+    <span class="hljs-comment">; defparameter =&gt; used to assign struct field values</span>
+
+(<span class="hljs-name">defstruct</span> dog name breed age) <span class="hljs-comment">; defining dog struct</span>
+(<span class="hljs-name">defparameter</span> *rover* 
+    (<span class="hljs-name">make-dog</span> : name <span class="hljs-string">&quot;rover&quot;</span>
+              : breed <span class="hljs-string">&quot;collie&quot;</span>
+              : age <span class="hljs-number">5</span>)) <span class="hljs-comment">; assigning struct field values</span>
+
+*rover* <span class="hljs-comment">; evaluates to #S(DOG :NAME &quot;rover&quot; :BREED &quot;collie&quot; :AGE 5)</span>
+(<span class="hljs-name">dog-name</span> *rover*) <span class="hljs-comment">; evaluates to &quot;rover&quot;</span>
+
+<span class="hljs-comment">;; PAIR</span>
+    <span class="hljs-comment">; cons =&gt; creates a pair</span>
+    <span class="hljs-comment">; car =&gt; returns the head of a pair</span>
+    <span class="hljs-comment">; cdr =&gt; returns the tail of a pair</span>
+
+(<span class="hljs-name">cons</span> &#x27;SUBJECT &#x27;VERB) <span class="hljs-comment">; evaluates to &#x27;(SUBJECT . VERB)</span>
+(<span class="hljs-name">car</span> (<span class="hljs-name">cons</span> &#x27;SUBJECT &#x27;VERB)) <span class="hljs-comment">; evaluates to SUBJECT</span>
+(<span class="hljs-name">cdr</span> (<span class="hljs-name">cons</span> &#x27;SUBJECT &#x27;VERB)) <span class="hljs-comment">; evaluates to VERB</span>
+
+<span class="hljs-comment">;; LIST</span>
+    <span class="hljs-comment">; every list is a linked-list comprised of cons pairs, the final element ending in a nil or &#x27;() to mark the end of the list</span>
+    <span class="hljs-comment">; list =&gt; convenient constructor to create a list </span>
+    <span class="hljs-comment">; append =&gt; join two lists</span>
+    <span class="hljs-comment">; concatenate =&gt; join two lists when used alongside &#x27;list</span>
+    <span class="hljs-comment">; mapcar =&gt; equivalent of .map</span>
+    <span class="hljs-comment">; remove-if-not =&gt; equivalent of .reduce</span>
+    <span class="hljs-comment">; every =&gt; checks if every list element fulfills a predicate</span>
+    <span class="hljs-comment">; some =&gt; checks if at least one list element fulfills a predicate</span>
+    <span class="hljs-comment">; butlast =&gt; returns a list but removes the last element</span>
+
+(<span class="hljs-name">cons</span> <span class="hljs-number">1</span> (<span class="hljs-name">cons</span> <span class="hljs-number">2</span> (<span class="hljs-name">cons</span> <span class="hljs-number">3</span> <span class="hljs-literal">nil</span>))) <span class="hljs-comment">; evaluates to &#x27;(1 2 3)</span>
+(<span class="hljs-name">list</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>) <span class="hljs-comment">; evaluates to &#x27;(1 2 3)</span>
+
+(<span class="hljs-name">cons</span> <span class="hljs-number">4</span> &#x27;(<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>)) <span class="hljs-comment">; this syntax therefore is the equivalent of inserting an element at the front of a list, and evaluates to &#x27;(4 1 2 3)</span>
+(<span class="hljs-name">append</span> &#x27;(<span class="hljs-number">1</span> <span class="hljs-number">2</span>) &#x27;(<span class="hljs-number">3</span> <span class="hljs-number">4</span>)) <span class="hljs-comment">; evaluates to &#x27;(1 2 3 4)</span>
+(<span class="hljs-name">concatenate</span> &#x27;list (<span class="hljs-number">1</span> <span class="hljs-number">2</span>) &#x27;(<span class="hljs-number">3</span> <span class="hljs-number">4</span>)) <span class="hljs-comment">; evaluates to &#x27;(1 2 3 4)</span>
+(<span class="hljs-name">mapcar</span> #&#x27;<span class="hljs-number">1</span>+ &#x27;(<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>)) <span class="hljs-comment">; evaluates to &#x27;(2 3 4)</span>
+(<span class="hljs-name">mapcar</span> #&#x27;+ &#x27;(<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>) &#x27;(<span class="hljs-number">10</span> <span class="hljs-number">20</span> <span class="hljs-number">30</span>)) <span class="hljs-comment">; evaluates to &#x27;(11 22 33)</span>
+(<span class="hljs-name">remove-if-not</span> #&#x27;evenp &#x27;(<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span>)) <span class="hljs-comment">; evaluates to &#x27;(2 4)</span>
+(<span class="hljs-name">every</span> #&#x27;evenp &#x27;(<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span>)) <span class="hljs-comment">; evaluates to () which is nil</span>
+(<span class="hljs-name">some</span> #&#x27;oddp &#x27;(<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span>)) <span class="hljs-comment">; evaluates to t</span>
+(<span class="hljs-name">butlast</span> &#x27;(subject verb object))<span class="hljs-comment">; evaluates to (SUBJECT VERB)</span>
+
+<span class="hljs-comment">;; VECTOR</span>
+    <span class="hljs-comment">; vector literals are fixed-length arrays</span>
+    <span class="hljs-comment">; #() =&gt; declares a vector literal</span>
+    <span class="hljs-comment">; concatenate =&gt; joins two vectors</span>
+
+#(<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>) <span class="hljs-comment">; evaluates to #(1 2 3)</span>
+(<span class="hljs-name">concatenate</span> &#x27;vector #(<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span>) #(<span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span>)) <span class="hljs-comment">; evaluates to #(1 2 3 4 5 6)</span>
+
+<span class="hljs-comment">;; SET</span>
+    <span class="hljs-comment">; sets are just lists that you call set functions on</span>
+    <span class="hljs-comment">; operates the same as you&#x27;d expect in other languages like Python</span>
+    <span class="hljs-comment">; set-difference =&gt; returns the difference between two lists</span>
+    <span class="hljs-comment">; intersection =&gt; returns the similar elements between two lists</span>
+    <span class="hljs-comment">; union =&gt; returns two lists and removes duplicates</span>
+    <span class="hljs-comment">; adjoin =&gt; adds a specified element to the front of the list if element not already present and returns that list</span>
+
+(<span class="hljs-name">set-difference</span> &#x27;(<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span>) &#x27;(<span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span>)) <span class="hljs-comment">; evaluates to (3 2 1)</span>
+(<span class="hljs-name">intersection</span> &#x27;(<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span>) &#x27;(<span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span>)) <span class="hljs-comment">; evaluates to 4</span>
+(<span class="hljs-name">union</span> &#x27;(<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span>) &#x27;(<span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span>)) <span class="hljs-comment">; evaluates to (3 2 1 4 5 6 7)</span>
+(<span class="hljs-name">adjoin</span> <span class="hljs-number">4</span> &#x27;(<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span>)) <span class="hljs-comment">; evaluates to (1 2 3 4)</span>
+
+<span class="hljs-comment">;; HASH TABLE</span>
+    <span class="hljs-comment">; equivalent of dictionary </span>
+    <span class="hljs-comment">; make-hash-table =&gt; creates a hash table, used alongside defparameter</span>
+    <span class="hljs-comment">; setf =&gt; sets a hash value</span>
+    <span class="hljs-comment">; gethash =&gt; retrieves a value at a specified hash and returns both the stored value and a boolean (t, nil) depending on whether a value can be found, used for assignment and simple retrieval</span>
+
+(<span class="hljs-name">defparameter</span> *m* (<span class="hljs-name">make-hash-table</span>)) <span class="hljs-comment">; creates a global hash table *m*</span>
+(<span class="hljs-name">setf</span> (<span class="hljs-name">gethash</span> &#x27;a *m*) <span class="hljs-number">1</span>) <span class="hljs-comment">; sets a number value of 1 to the hash &#x27;a</span>
+(<span class="hljs-name">gethash</span> &#x27;a *m*) <span class="hljs-comment">; retrieves the value stored at the hash &#x27;a in the global hash table *m*, evaluating to 1, T</span>
+</code></pre>
+<h2>Functions</h2>
+<pre><code class="language-lisp"><span class="hljs-comment">;;; ---------- FUNCTION -----------</span>
+    <span class="hljs-comment">; functions always return the evaluated value of the last expression</span>
+    <span class="hljs-comment">; function call syntax where f is function name and x y z are arguments is (f x y z)</span>
+    <span class="hljs-comment">; defun =&gt; creates a function, () is a list accepting arguments to the function</span>
+    <span class="hljs-comment">; &amp;optional =&gt; specifies optional arguments to a function</span>
+
+<span class="hljs-comment">;; FUNCTION CREATION</span>
+
+(<span class="hljs-name">defun</span> hello-world () <span class="hljs-string">&quot;Hello World&quot;</span>) <span class="hljs-comment">; creates the function hello-world that evaluates to the string &quot;Hello World&quot;</span>
+(<span class="hljs-name">hello-world</span>) <span class="hljs-comment">; evaluates to &quot;Hello World&quot;</span>
+
+(<span class="hljs-name">defun</span> hello (<span class="hljs-name">name</span>) (<span class="hljs-name">format</span> <span class="hljs-literal">nil</span> <span class="hljs-string">&quot;Hello, ~A&quot;</span> name)) <span class="hljs-comment">; creates the function hello that accepts the argument name</span>
+(<span class="hljs-name">hello</span> <span class="hljs-string">&quot;Steve&quot;</span>) <span class="hljs-comment">; evaluates to &quot;Hello, Steve&quot;</span>
+
+<span class="hljs-comment">;; OPTIONAL ARGUMENTS</span>
+
+(<span class="hljs-name">defun</span> hello (<span class="hljs-name">name</span> <span class="hljs-symbol">&amp;optional</span> from)
+  (<span class="hljs-name">if</span> from
+      (<span class="hljs-name">format</span> <span class="hljs-literal">t</span> <span class="hljs-string">&quot;Hello, ~A, from ~A&quot;</span> name from)
+      (<span class="hljs-name">format</span> <span class="hljs-literal">t</span> <span class="hljs-string">&quot;Hello, ~A&quot;</span> name))) <span class="hljs-comment">; optional function arguments (from) default to nil</span>
+(<span class="hljs-name">hello</span> <span class="hljs-string">&quot;Jim&quot;</span> <span class="hljs-string">&quot;Alpacas&quot;</span>) <span class="hljs-comment">; evaluates to &quot;Hello, Jim, from Alpacas&quot;</span>
+
+(<span class="hljs-name">defun</span> hello (<span class="hljs-name">name</span> <span class="hljs-symbol">&amp;optional</span> (<span class="hljs-name">from</span> <span class="hljs-string">&quot;The world&quot;</span>))
+   (<span class="hljs-name">format</span> <span class="hljs-literal">nil</span> <span class="hljs-string">&quot;Hello, ~A, from ~A&quot;</span> name from)) <span class="hljs-comment">; default values (from&#x27;s default value is the string &quot;The World&quot;) can also be specified </span>
+(<span class="hljs-name">hello</span> <span class="hljs-string">&quot;Steve&quot;</span>) <span class="hljs-comment">; default value invoked, evaluates to &quot;Hello, Steve, from The world&quot;</span>
+(<span class="hljs-name">hello</span> <span class="hljs-string">&quot;Steve&quot;</span> <span class="hljs-string">&quot;the alpacas&quot;</span>) <span class="hljs-comment">; default value not invoked, evaluates to &quot;Hello, Steve, from the alpacas&quot;</span>
+
+<span class="hljs-comment">;; ANONYMOUS FUNCTIONS</span>
+    <span class="hljs-comment">; lambda =&gt; creates an anonymous function</span>
+    <span class="hljs-comment">; funcall =&gt; calls an anonymous function with specified known arguments</span>
+    <span class="hljs-comment">; apply =&gt; calls an anonymous function when arguments are not known</span>
+
+(<span class="hljs-name">lambda</span> () <span class="hljs-string">&quot;Hello World&quot;</span>) <span class="hljs-comment">; creation of anonymous function evaluates to #&lt;FUNCTION (LAMBDA ()) {1004E7818B}&gt;</span>
+(<span class="hljs-name">funcall</span> (<span class="hljs-name">lambda</span> () <span class="hljs-string">&quot;Hello World&quot;</span>)) <span class="hljs-comment">; =&gt; evaluates to &quot;Hello World&quot;</span>
+(<span class="hljs-name">apply</span> (<span class="hljs-name">lambda</span> () <span class="hljs-string">&quot;Hello World&quot;</span>) <span class="hljs-literal">nil</span>) <span class="hljs-comment">; evaluates to &quot;Hello World&quot;</span>
+</code></pre>
+<h2>Macros</h2>
+<pre><code class="language-lisp"><span class="hljs-comment">;;; ---------- MACRO ----------</span>
+    <span class="hljs-comment">; macros let us extend the syntax of our language (imagine writing and calling your own functions, except that works for any other part of the language)</span>
+    <span class="hljs-comment">; macros are incredibly complex and a lot of detail has been omitted here</span>
+
+(<span class="hljs-name">defmacro</span> while (<span class="hljs-name">condition</span> <span class="hljs-symbol">&amp;body</span> body) <span class="hljs-comment">; this macro implements a while loop in common lisp</span>
+  `(loop while ,condition
+         do
+         (progn
+            ,@body)))
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li>format</li>
+<li>array</li>
+<li>adjustable vector</li>
+<li>values</li>
+<li>&amp;key</li>
+<li>classes and objects</li>
+<li>macros</li>
+<li><a href="https://lisp-lang.org/">lisp-lang.org</a></li>
+<li><a href="https://gigamonkeys.com/book/">practical common lisp</a></li>
+<li><a href="http://weitz.de/cl-recipes/">lisp recipes</a></li>
+<li><a href="https://github.com/CodyReichert/awesome-cl">awesome common lisp</a></li>
+<li><a href="https://learnxinyminutes.com/docs/common-lisp/">learn common lisp in y minutes</a></li>
+<li><a href="https://learnxinyminutes.com/docs/elisp/">learn emacs elisp in y minutes</a></li>
+<li><a href="https://learnxinyminutes.com/docs/lfe/">learn lisp flavoured erlang in y minutes</a></li>
+</ul>

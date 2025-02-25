@@ -1,0 +1,433 @@
+<h1><code>Rust</code></h1>
+<p>Stack Overflow's favourite programming language.</p>
+<h2>Comments</h2>
+<pre><code class="language-rs"><span class="hljs-comment">// ---------- COMMENT ----------</span>
+
+<span class="hljs-comment">// this is a single-line comment</span>
+
+<span class="hljs-comment">/*
+this is
+a multi-line
+comment
+*/</span>
+</code></pre>
+<h2>Printing</h2>
+<pre><code class="language-rs"><span class="hljs-comment">// ---------- PRINT ----------</span>
+    <span class="hljs-comment">// print! =&gt; prints a string to the stdout and does not include a newline</span>
+    <span class="hljs-comment">// println! =&gt; prints a string to the stdout and appends a newline to the output</span>
+    <span class="hljs-comment">// eprint! =&gt; prints a string to the stderr and does not include a newline</span>
+    <span class="hljs-comment">// eprintln! =&gt; prints a string to the stderr and appends a newline to the output</span>
+    <span class="hljs-comment">// {} =&gt; allow for string interpolation with values embedded in a formatted string</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">message</span>:&amp;<span class="hljs-type">str</span> = <span class="hljs-string">&quot;yes ok thank you&quot;</span>;
+<span class="hljs-built_in">print!</span>(<span class="hljs-string">&quot;watermelon and this does not include a newline by default and we must specify it explicitly\n&quot;</span>);
+<span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;this does include a newline automatically so there is no issue&quot;</span>);
+<span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{}&quot;</span>, message);
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">error_message</span>:&amp;<span class="hljs-type">str</span> = <span class="hljs-string">&quot;help me this is an error message&quot;</span>;
+eprint!(<span class="hljs-string">&quot;this is an error message which does not include a newline by default and we have to specify it explicitly\n&quot;</span>);
+<span class="hljs-built_in">eprintln!</span>(<span class="hljs-string">&quot;this error message does include a newline automatically so there is no issue&quot;</span>);
+<span class="hljs-built_in">eprintln!</span>(<span class="hljs-string">&quot;{}&quot;</span>, error_message);
+</code></pre>
+<h2>Quickstart</h2>
+<pre><code class="language-rs"><span class="hljs-comment">// ---------- QUICKSTART ----------</span>
+    <span class="hljs-comment">// statically-typed compiled language developed by Mozilla research used for systems programming and web development</span>
+    <span class="hljs-comment">// compile time vs runtime</span>
+        <span class="hljs-comment">// compile time =&gt; source file is currently compiling, syntax errors, type errors, compiler crashes can occur, binary executable created if compilation succesful</span>
+        <span class="hljs-comment">// runtime =&gt; executable binary and program logic is run, logical errors, memory errors, file path errors can occur, whatever the programmer intended for runs if no runtime errors</span>
+
+<span class="hljs-comment">// NAMESPACES</span>
+    <span class="hljs-comment">// :: =&gt; specifies the relationship between rust crates, modules and symbols within a given namespace</span>
+    <span class="hljs-comment">// use =&gt; bring names from other namespaces into local scope</span>
+    <span class="hljs-comment">// {} =&gt; a glob that allows us to import multiple names into a namespace easily</span>
+    <span class="hljs-comment">// * =&gt; wildcard operator that imports every name from a namespace</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">least</span>:<span class="hljs-type">i16</span> = std::cmp::<span class="hljs-title function_ invoke__">min</span>(<span class="hljs-number">3</span>,<span class="hljs-number">8</span>); <span class="hljs-comment">// std is a crate, cmp is a module, min is a function</span>
+
+<span class="hljs-keyword">use</span> std::cmp::min;
+<span class="hljs-keyword">let</span> <span class="hljs-variable">least</span> = <span class="hljs-title function_ invoke__">min</span>(<span class="hljs-number">7</span>,<span class="hljs-number">1</span>); <span class="hljs-comment">// this assigns i32 value of 1 to the variable least by bringing the function min into local scope</span>
+
+<span class="hljs-keyword">use</span> std::cmp::min;
+<span class="hljs-keyword">use</span> std::cmp::max;
+<span class="hljs-keyword">use</span> std::cmp::{min, max}; <span class="hljs-comment">// this is the equivalent of the two lines above</span>
+
+<span class="hljs-keyword">use</span> std::{cmp::min, cmp::max}; <span class="hljs-comment">// this is also valid rust code</span>
+
+<span class="hljs-keyword">use</span> std::cmp::*; <span class="hljs-comment">// this brings min, max and many other names from the std::cmp namespace into local scope</span>
+
+<span class="hljs-comment">// BLOCKS AND SCOPE</span>
+    <span class="hljs-comment">// all rust code is an expression that evaluates to a value indicated by the omission of a semicolon (expression tail), allowing for implicit return of values within functions</span>
+    <span class="hljs-comment">// expressions can have multiple declaration and assignment statements within them, enclosed by {} curly braces</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">x</span> = {
+    <span class="hljs-keyword">let</span> <span class="hljs-variable">y</span> = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">let</span> <span class="hljs-variable">z</span> = <span class="hljs-number">20</span>;
+    y + z <span class="hljs-comment">// y + z is the expression tail, which evaluates to the int32 integer value of 21, assigned to x</span>
+};
+</code></pre>
+<h2>Usage</h2>
+<pre><code class="language-sh"><span class="hljs-comment"># ---------- USAGE ----------</span>
+    <span class="hljs-comment"># rustc =&gt; compiles the individual source file and creates a binary executable under the same name</span>
+    <span class="hljs-comment"># cargo new =&gt; creates a new rust project under the specified name, source code to be written in src/main.rs </span>
+    <span class="hljs-comment"># cargo build =&gt; compiles the rust project, creating a binary executable under the same name in target/debug</span>
+    <span class="hljs-comment"># cargo run =&gt; compiles and runs the rust project immediately</span>
+    <span class="hljs-comment"># cargo check =&gt; checks whether rust can compile the source file without errors</span>
+
+$ rustc main.rs <span class="hljs-comment"># rust compiler compiles an executable file</span>
+$ ./main <span class="hljs-comment"># run the created executable</span>
+
+$ cargo new exampleProject <span class="hljs-comment"># creates a new rust project called exampleProject</span>
+$ cargo build <span class="hljs-comment"># compiles the project</span>
+
+$ <span class="hljs-built_in">cd</span> exampleProject/target/debug
+$ ./exampleProject <span class="hljs-comment"># runs the compiled executable</span>
+
+$ <span class="hljs-built_in">cd</span> ../../ 
+$ cargo run <span class="hljs-comment"># recompiles and runs the executable binary file</span>
+$ cargo check <span class="hljs-comment"># checks for any issues with the source file without compiling</span>
+</code></pre>
+<h2>Operators</h2>
+<pre><code class="language-rs"><span class="hljs-comment">// ---------- OPERATOR ----------</span>
+
+<span class="hljs-comment">// ARITHMETIC OPERATORS</span>
+    <span class="hljs-comment">// + =&gt; addition</span>
+    <span class="hljs-comment">// - =&gt; subtraction</span>
+    <span class="hljs-comment">// * =&gt; multiplication</span>
+    <span class="hljs-comment">// / =&gt; division</span>
+    <span class="hljs-comment">// % =&gt; modulo operator</span>
+
+<span class="hljs-comment">// LOGICAL OPERATORS</span>
+    <span class="hljs-comment">// &amp;&amp; =&gt; logical and</span>
+    <span class="hljs-comment">// || =&gt; logical or</span>
+    <span class="hljs-comment">// ! =&gt; logical not</span>
+
+<span class="hljs-comment">// COMPARISON OPERATORS</span>
+    <span class="hljs-comment">// == =&gt; partial equality check for value</span>
+    <span class="hljs-comment">// != =&gt; partial inequality check for value</span>
+    <span class="hljs-comment">// eq =&gt; complete equality check for value and type</span>
+    <span class="hljs-comment">// ne =&gt; complete inequality check for value and type</span>
+    <span class="hljs-comment">// &gt; &lt; &gt;= &lt;= are also comparison operators</span>
+</code></pre>
+<h2>Variables and Constants</h2>
+<pre><code class="language-rs"><span class="hljs-comment">// ---------- VARIABLE ----------</span>
+    <span class="hljs-comment">// variables in rust are immutable by default</span>
+    <span class="hljs-comment">// let =&gt; declares and initialies a variable whose value and type are immutable at runtime</span>
+    <span class="hljs-comment">// : =&gt; explicitly specify a variable&#x27;s type</span>
+    <span class="hljs-comment">// mut =&gt; specifies a variable can be mutable and that its value can be reassigned later at runtime</span>
+
+<span class="hljs-comment">// ---------- CONSTANT ----------</span>
+    <span class="hljs-comment">// const =&gt; declares and initializes a constant whose value and type are immutable at compile time</span>
+    <span class="hljs-comment">// constant names are capitalised by convention</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">x</span>; <span class="hljs-comment">// variable declaration and </span>
+x = <span class="hljs-number">100</span>; <span class="hljs-comment">// assignment can occur on two different lines</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">y</span>:<span class="hljs-type">i32</span> = <span class="hljs-number">10</span>; <span class="hljs-comment">// variables are immutable by default at runtime</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-keyword">mut </span><span class="hljs-variable">z</span>:<span class="hljs-type">i32</span> = <span class="hljs-number">45</span>; <span class="hljs-comment">// mut creates a mutable variable</span>
+z = <span class="hljs-number">100</span>; <span class="hljs-comment">// this mutable variable can then have its value reassigned</span>
+<span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;y is {}&quot;</span>, y);
+
+<span class="hljs-keyword">const</span> SECONDS_IN_MINUTES:<span class="hljs-type">u32</span> = <span class="hljs-number">60</span>; <span class="hljs-comment">// const creates a constant, whose value is immutable at compile time</span>
+<span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{}&quot;</span>, SECONDS_IN_MINUTES);
+</code></pre>
+<h2>Types</h2>
+<pre><code class="language-rs"><span class="hljs-comment">// ---------- TYPE ----------</span>
+    <span class="hljs-comment">// i8, i16, i32, i64, i128 =&gt; signed integer (positive and negative) with size of integer specified in number of bits</span>
+    <span class="hljs-comment">// u8, u16, u32, u64, u128 =&gt; unsigned integer (positive) with size of integer specified in number of bits</span>
+    <span class="hljs-comment">// f32, f64 =&gt; single-precision and double-precision floating point numbers</span>
+    <span class="hljs-comment">// bool =&gt; true, false</span>
+    <span class="hljs-comment">// char =&gt; character declared with &#x27;&#x27; single quotation marks</span>
+    <span class="hljs-comment">// &amp;str =&gt; immutable string literal, stored on the stack with &quot;&quot; double quotation marks</span>
+    <span class="hljs-comment">// String =&gt; mutable string vector, stored as a Vec&lt;u8&gt; on the heap with &quot;&quot; double quotation marks</span>
+</code></pre>
+<h2>Control structures</h2>
+<pre><code class="language-rs"><span class="hljs-comment">// ---------- CONTROL STRUCTURE ----------</span>
+
+<span class="hljs-comment">// ---------- CONDITIONALS ----------</span>
+
+<span class="hljs-comment">// IF ELSE IF ELSE</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">number</span>:<span class="hljs-type">i16</span> = <span class="hljs-number">42</span>;
+<span class="hljs-keyword">if</span> number &lt; <span class="hljs-number">0</span> {
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;number is negative&quot;</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> number == <span class="hljs-number">0</span> {
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;number is zero&quot;</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;number is positive&quot;</span>);
+}
+
+<span class="hljs-comment">// MATCH EXPRESSION</span>
+    <span class="hljs-comment">// rust&#x27;s powerful pattern-matching construct similar to switch case in other languages</span>
+    <span class="hljs-comment">// match and =&gt; define a match expression, where every match expression evaluates to a single value since matches are exhaustive and each match-arm (=&gt;) points to an expression</span>
+    <span class="hljs-comment">// _ =&gt; match-all pattern which acts as the default case for match expressions, required in every match expression to cover every possible match-arm since matches are exhaustive</span>
+
+<span class="hljs-keyword">fn</span> <span class="hljs-title function_">im_feeling_lucky</span>(feeling_lucky:<span class="hljs-type">bool</span>) <span class="hljs-punctuation">-&gt;</span> <span class="hljs-type">i32</span> {
+    <span class="hljs-keyword">match</span> feeling_lucky {
+        <span class="hljs-literal">true</span> =&gt; <span class="hljs-number">100</span>,
+        <span class="hljs-literal">false</span> =&gt; <span class="hljs-number">0</span>,
+    }
+} <span class="hljs-comment">// a match expression within a function</span>
+
+<span class="hljs-keyword">enum</span> <span class="hljs-title class_">Coin</span> {
+    Penny,
+    Nickel,
+    Dime,
+    Quarter,
+} <span class="hljs-comment">// create the enum Coin</span>
+
+<span class="hljs-keyword">fn</span> <span class="hljs-title function_">value_in_cents</span>(coin:Coin) {
+    <span class="hljs-keyword">match</span> coin {
+        Coin::Penny =&gt; {
+            <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;Lucky penny!&quot;</span>);
+            <span class="hljs-number">1</span>
+        },
+        Coin::Nickel =&gt; <span class="hljs-number">5</span>,
+        Coin::Dime =&gt; <span class="hljs-number">10</span>,
+        Coin::Quarter =&gt; <span class="hljs-number">25</span>,
+    }
+} <span class="hljs-comment">// match expressions can be used alongside enums to leverage on powerful pattern-matching capabilities</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">some_u8_value</span> = <span class="hljs-number">0u8</span>;
+<span class="hljs-keyword">match</span> some_u8_value {
+    <span class="hljs-number">1</span> =&gt; <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;one&quot;</span>),
+    <span class="hljs-number">2</span> =&gt; <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;two&quot;</span>),
+    <span class="hljs-number">3</span> =&gt; <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;three&quot;</span>),
+    _ =&gt; (),
+}
+
+<span class="hljs-comment">// UNDERSCORE</span>
+    <span class="hljs-comment">// _ =&gt; catch-all pattern that specifies a value to be discarded and can be used for destructuring, also a match-all pattern in match expressions</span>
+    <span class="hljs-comment">// prefixing a variable with _ will indicate to the compiler to ignore it even if its unused</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">_</span> = <span class="hljs-title function_ invoke__">get_thing</span>(); <span class="hljs-comment">// calls the function get_thing but throws away the returned value</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">_unused</span> = <span class="hljs-number">42</span>; <span class="hljs-comment">// the rust compiler will not warn about this variable even if its unused</span>
+<span class="hljs-keyword">let</span> (_, right) = slice.<span class="hljs-title function_ invoke__">split_at</span>(middle); <span class="hljs-comment">// throw away the left side of the destructured tuple and only return the right</span>
+
+<span class="hljs-comment">// ---------- LOOPS ----------</span>
+    <span class="hljs-comment">// continue =&gt; skips to the next iteration of the loop</span>
+    <span class="hljs-comment">// break =&gt; exits the loop </span>
+
+<span class="hljs-comment">// WHILE LOOPS</span>
+
+<span class="hljs-keyword">while</span> <span class="hljs-number">1</span> == <span class="hljs-number">1</span> {
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;this operates as you&#x27;d expect, but this is an infinite loop my guy&quot;</span>);
+}
+
+<span class="hljs-comment">// FOR IN LOOPS</span>
+    <span class="hljs-comment">// for in =&gt; allows for iteration over a specified iterable collection of data, including ranges</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">an_array</span>:[<span class="hljs-type">i32</span>;<span class="hljs-number">3</span>] = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>];
+<span class="hljs-keyword">for</span> <span class="hljs-title class_">i</span>:<span class="hljs-type">i32</span> <span class="hljs-keyword">in</span> an_array { 
+    <span class="hljs-built_in">print!</span>(<span class="hljs-string">&quot;{}&quot;</span>, i);
+} <span class="hljs-comment">// this prints 123 to the stdout</span>
+
+<span class="hljs-keyword">for</span> <span class="hljs-variable">i</span> <span class="hljs-keyword">in</span> <span class="hljs-number">0u32</span>..<span class="hljs-number">10</span> {
+    <span class="hljs-built_in">print!</span>(<span class="hljs-string">&quot;{}&quot;</span>, i); 
+} <span class="hljs-comment">// this prints 0123456789 to the stdout</span>
+
+<span class="hljs-comment">// LOOP</span>
+    <span class="hljs-comment">// loop =&gt; shorthand to create an infinite loop</span>
+
+<span class="hljs-keyword">loop</span> {
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;alahoo&quot;</span>); 
+}
+</code></pre>
+<h2>Data structures</h2>
+<pre><code class="language-rs"><span class="hljs-comment">// ---------- DATA STRUCTURE ----------</span>
+
+<span class="hljs-comment">// ARRAY</span>
+    <span class="hljs-comment">// fixed-length ordered sequence of elements of the same type</span>
+    <span class="hljs-comment">// declared with [] square brackets and size and data type specified</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">int_array</span>:[<span class="hljs-type">i32</span>; <span class="hljs-number">10</span>] = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">10</span>];
+<span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{}&quot;</span>, int_array[<span class="hljs-number">7</span>]); <span class="hljs-comment">// prints 8 to the stdout</span>
+
+<span class="hljs-comment">// VECTOR</span>
+    <span class="hljs-comment">// dynamic length ordered sequence of elements of the same type</span>
+    <span class="hljs-comment">// vec![] =&gt; declares and creates a vector with size and data type specified</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-keyword">mut </span><span class="hljs-variable">int_vector</span>:<span class="hljs-type">Vec</span>&lt;<span class="hljs-type">i32</span>&gt; = <span class="hljs-built_in">vec!</span>[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">59</span>,<span class="hljs-number">132</span>];
+vector.<span class="hljs-title function_ invoke__">push</span>(<span class="hljs-number">5</span>); <span class="hljs-comment">// appends the i32 integer of value 5 to the vector int_vector</span>
+
+<span class="hljs-comment">// TUPLE</span>
+    <span class="hljs-comment">// fixed-length ordered sequence of elements of different types</span>
+    <span class="hljs-comment">// declared with () brackets and size and data type of each element specified</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">mixed_tuple</span>:(<span class="hljs-type">i32</span>, <span class="hljs-type">bool</span>, <span class="hljs-type">char</span>) = (<span class="hljs-number">1</span>, <span class="hljs-literal">true</span>, <span class="hljs-string">&#x27;A&#x27;</span>);
+<span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{}&quot;</span>, mixed_tuple.<span class="hljs-number">1</span>); <span class="hljs-comment">// prints true to the stdout</span>
+
+<span class="hljs-comment">// STRUCT</span>
+    <span class="hljs-comment">// collections of data and functions in rust where each new struct is its own data type, similar to objects in javascript or tables in lua</span>
+    <span class="hljs-comment">// struct =&gt; declares and creates a new struct with struct data and functions within {} curly braces</span>
+    <span class="hljs-comment">// impl =&gt; implements methods, associated functions and traits on a specified struct</span>
+        <span class="hljs-comment">// &amp;self always fed as the first parameter to a struct method to reference the given instance of a struct, with methods called using . dot notation</span>
+    <span class="hljs-comment">// associated functions are functions that don&#x27;t take &amp;self as a parameter and thus don&#x27;t require an instance of a struct to be called, but are still associated with the struct</span>
+        <span class="hljs-comment">// associated functions called using the {STRUCT NAME}::{ASSOCIATED FUNCTION NAME}</span>
+
+<span class="hljs-keyword">struct</span> <span class="hljs-title class_">User</span> {
+    username: <span class="hljs-type">String</span>,
+    email: <span class="hljs-type">String</span>,
+    sign_in_count: <span class="hljs-type">u64</span>,
+    active: <span class="hljs-type">bool</span>,
+} <span class="hljs-comment">// declares and creates a struct</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">user1</span> = User {
+    email: <span class="hljs-type">String</span>::<span class="hljs-title function_ invoke__">from</span>(<span class="hljs-string">&quot;hotman@hotmail.com&quot;</span>),
+    username: <span class="hljs-type">String</span>::<span class="hljs-title function_ invoke__">from</span>(<span class="hljs-string">&quot;someusername123&quot;</span>),
+    active: <span class="hljs-literal">true</span>,
+    sign_in_count: <span class="hljs-number">1</span>,
+} <span class="hljs-comment">// initialization of a struct literal with its values assigned</span>
+
+<span class="hljs-keyword">struct</span> <span class="hljs-title class_">Vec2</span> { 
+    x:<span class="hljs-type">f64</span>,
+    y:<span class="hljs-type">f64</span>,
+} <span class="hljs-comment">// declares and creates another struct</span>
+
+<span class="hljs-keyword">impl</span> <span class="hljs-title class_">Vec2</span> { 
+    <span class="hljs-keyword">fn</span> <span class="hljs-title function_">is_strictly_positive</span>(&amp;<span class="hljs-keyword">self</span>) <span class="hljs-punctuation">-&gt;</span> <span class="hljs-type">bool</span> {
+        <span class="hljs-keyword">self</span>.x &gt; <span class="hljs-number">0</span>
+    }
+} <span class="hljs-comment">// implements the method is_strictly_positive on the struct Vec2</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">v1</span> = Vec2 { x:<span class="hljs-number">1.0</span>, y:<span class="hljs-number">3.0</span> }; <span class="hljs-comment">// initialization of a struct literal</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">v2</span> = Vec2 { y:<span class="hljs-number">2.0</span>, x:<span class="hljs-number">4.0</span> }; <span class="hljs-comment">// initialization of another struct literal</span>
+
+<span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{}&quot;</span>, v1.<span class="hljs-title function_ invoke__">is_strictly_positive</span>()); <span class="hljs-comment">// specified method is called using . dot notation on an instance of the struct, a struct literal</span>
+
+<span class="hljs-keyword">impl</span> <span class="hljs-title class_">Rectangle</span> {
+    <span class="hljs-keyword">fn</span> <span class="hljs-title function_">square</span>(size: <span class="hljs-type">u32</span>) <span class="hljs-punctuation">-&gt;</span> Rectangle { <span class="hljs-comment">// notice the return type is specified as the struct Rectangle, which is considered its own type</span>
+        Rectangle { width: size, height: size } <span class="hljs-comment">// omission of semicolon for implicit return</span>
+    }
+} <span class="hljs-comment">// here, the associated function acts as a constructor that returns the struct Rectangle</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">square1</span> = Rectangle::<span class="hljs-title function_ invoke__">square</span>(<span class="hljs-number">3</span>); <span class="hljs-comment">// calls the associated function</span>
+
+<span class="hljs-comment">// TRAITS</span>
+    <span class="hljs-comment">// specifies attributes and methods a type must have without defining them, similar to interfaces in Java</span>
+    <span class="hljs-comment">// trait =&gt; declares and creates a trait with a specified name to be implemented on a struct</span>
+    <span class="hljs-comment">// impl for =&gt; implement a specified trait on a struct</span>
+    <span class="hljs-comment">// rust&#x27;s orphan rules</span>
+        <span class="hljs-comment">// can implement one of your traits on foreign and primitive types</span>
+        <span class="hljs-comment">// can implement other rust-defined traits on one of our types</span>
+        <span class="hljs-comment">// cannot implement a foreign trait on a foreign type</span>
+
+<span class="hljs-keyword">struct</span> <span class="hljs-title class_">Number</span> { 
+    odd: <span class="hljs-type">bool</span>;
+    value: <span class="hljs-type">i32</span>;
+} <span class="hljs-comment">// declare and create a struct</span>
+
+<span class="hljs-keyword">trait</span> <span class="hljs-title class_">Signed</span> {
+    <span class="hljs-keyword">fn</span> <span class="hljs-title function_">isStrictlyNegative</span>(&amp;<span class="hljs-keyword">self</span>) <span class="hljs-punctuation">-&gt;</span> <span class="hljs-type">bool</span>; 
+} <span class="hljs-comment">// all this does is specify that the type must have a method called isStrictlyNegative that returns a boolean</span>
+
+<span class="hljs-keyword">impl</span> <span class="hljs-title class_">Signed</span> <span class="hljs-keyword">for</span> <span class="hljs-title class_">Number</span> { 
+    <span class="hljs-keyword">fn</span> <span class="hljs-title function_">isStrictlyNegative</span>(&amp;<span class="hljs-keyword">self</span>) <span class="hljs-punctuation">-&gt;</span> (<span class="hljs-type">bool</span>) {
+        <span class="hljs-keyword">self</span>.value &lt; <span class="hljs-number">0</span>
+    }
+} <span class="hljs-comment">// this implements the trait Signed on the struct Number and we see the implementation of the method within the struct defintiion</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">n</span> = Number { odd:<span class="hljs-literal">false</span>, value:-<span class="hljs-number">44</span> }; <span class="hljs-comment">// struct literal initialization</span>
+<span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{}&quot;</span>, n.<span class="hljs-title function_ invoke__">isStrictlyNegative</span>()); <span class="hljs-comment">// calling the method on the instance of the struct</span>
+
+<span class="hljs-comment">// ENUMS</span>
+    <span class="hljs-comment">// enums allow for powerful state-modelling in rust to make invalid states unrepresentable, especially powerful since enums are their own type in rust</span>
+    <span class="hljs-comment">// enum =&gt; declares and creates an enum and its many possible states</span>
+    <span class="hljs-comment">// :: =&gt; namespace operator specifies the relationship between an enum and an enum member</span>
+    <span class="hljs-comment">// instance of an enum is created using let {ENUM_INSTANCE_NAME} = {ENUM NAME}::{ENUM VARIANT NAME}</span>
+
+<span class="hljs-keyword">enum</span> <span class="hljs-title class_">IP_address_type</span> {
+    <span class="hljs-title function_ invoke__">V4</span>(<span class="hljs-type">u8</span>,<span class="hljs-type">u8</span>,<span class="hljs-type">u8</span>,<span class="hljs-type">u8</span>), <span class="hljs-comment">// V4 variant is able to store a value of (127,0,0,1)</span>
+    <span class="hljs-title function_ invoke__">V6</span>(<span class="hljs-type">String</span>), <span class="hljs-comment">// V6 variant is able to store a String of value &quot;::1&quot;</span>
+} <span class="hljs-comment">// declares and creates an enum IP_address_type and its respective variants, V4 and V6, where an ip address can only ever be V4 or V6</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">four</span> = IP_address_type::V4; <span class="hljs-comment">// creates an instance of an enum</span>
+<span class="hljs-keyword">let</span> <span class="hljs-variable">five</span> = IP_address_type::<span class="hljs-title function_ invoke__">V4</span>(<span class="hljs-number">127</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>); <span class="hljs-comment">// we can also specify the value of the enum member upon initialization</span>
+</code></pre>
+<h2>Functions</h2>
+<pre><code class="language-rs"><span class="hljs-comment">// ---------- FUNCTION ----------</span>
+    <span class="hljs-comment">// rust functions have implicit return of the value the last expression evaluates to, specified by omitting the ; semicolon</span>
+    <span class="hljs-comment">// fn =&gt; declares and creates a function with their parameter and return type specified</span>
+    <span class="hljs-comment">// -&gt; =&gt; specifies the relationship between the function name and return type and function body</span>
+    <span class="hljs-comment">// return =&gt; specifies the return expression but not madantory due to implicit return</span>
+
+<span class="hljs-keyword">fn</span> <span class="hljs-title function_">a_fair_dice_roll</span>() <span class="hljs-punctuation">-&gt;</span> <span class="hljs-type">i32</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-number">4</span>;
+}
+
+<span class="hljs-keyword">fn</span> <span class="hljs-title function_">unfair_dice_roll</span>() <span class="hljs-punctuation">-&gt;</span> <span class="hljs-type">i32</span> {
+    <span class="hljs-number">10</span> <span class="hljs-comment">// this is valid since 10 is implicitly returned</span>
+}
+</code></pre>
+<h2>Ownership</h2>
+<pre><code class="language-rs"><span class="hljs-comment">// ---------- OWNERSHIP ----------</span>
+    <span class="hljs-comment">// variables, constants and references have a fixed lifetime specified by the lexical scope of the {} curly braces they are enclosed within</span>
+    <span class="hljs-comment">// rust ownership hinges on the concept that it automatically returns memory once the variable that owns said value in memory goes out of scope</span>
+
+<span class="hljs-comment">// STACK VS HEAP</span>
+    <span class="hljs-comment">// both the stack and heap are part of computer memory for program usage at runtime</span>
+    <span class="hljs-comment">// stack</span>
+        <span class="hljs-comment">// blazingly fast, last-in first-out structure with operations like pushing and popping of data</span>
+        <span class="hljs-comment">// stack only ever has to refer to the top of the stack for storage and retrieval</span>
+        <span class="hljs-comment">// stack data is of a fixed-size at compile time</span>
+    <span class="hljs-comment">// heap</span>
+        <span class="hljs-comment">// less fast, values stored at different memory addresses in the heap allocated based on the amount of space required for each value</span>
+        <span class="hljs-comment">// values retrieved via a pointer that stores the memory address of a given value</span>
+        <span class="hljs-comment">// heap data is of an unknown size at compile time</span>
+
+<span class="hljs-comment">// OWNERSHIP RULES</span>
+    <span class="hljs-comment">// each value belongs to a variable (its owner)</span>
+    <span class="hljs-comment">// there can only be one owner at a time</span>
+    <span class="hljs-comment">// when the owner goes out of scope, the value will be dropped</span>
+
+<span class="hljs-comment">// here is an example of ownership rules in action</span>
+<span class="hljs-comment">// variable s is not valid here, it has not been declared yet</span>
+{
+    <span class="hljs-keyword">let</span> <span class="hljs-variable">s</span>:<span class="hljs-type">String</span> = <span class="hljs-string">&quot;hello&quot;</span>; <span class="hljs-comment">// variable s is valid from this point forward till the end of the local lexical scope (curly braces), s is a string vector and is heap-allocated</span>
+}
+<span class="hljs-comment">// the lexical scope is now over and the variable s is no longer valid, rust returns the space the variable s took up with its value in heap memory</span>
+
+<span class="hljs-comment">// REFERENCES</span>
+    <span class="hljs-comment">// references are immutable by default</span>
+    <span class="hljs-comment">// &amp; =&gt; specifies a given variable is a reference, allowing us to refer to a value without taking ownership of it</span>
+    <span class="hljs-comment">// having a reference as a function parameter is called borrowing</span>
+
+<span class="hljs-keyword">fn</span> <span class="hljs-title function_">main</span>() {
+    <span class="hljs-keyword">let</span> <span class="hljs-variable">s1</span> = <span class="hljs-type">String</span>::<span class="hljs-title function_ invoke__">from</span>(<span class="hljs-string">&quot;hello&quot;</span>); <span class="hljs-comment">// string vector of dynamic length, heap-allocated created</span>
+    <span class="hljs-keyword">let</span> <span class="hljs-variable">len</span> = <span class="hljs-title function_ invoke__">calculate_length</span>(&amp;s1); <span class="hljs-comment">// pass the heap-allocated string vector s1 by reference to the function calculate_length(), to prevent the string s1 from being moved after the function runs</span>
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;length of {} is {}&quot;</span>, s1, le);
+}
+
+<span class="hljs-keyword">fn</span> <span class="hljs-title function_">calculate_length</span>(s:&amp;<span class="hljs-type">String</span>) <span class="hljs-punctuation">-&gt;</span> <span class="hljs-type">usize</span> { <span class="hljs-comment">// this function recieves a parameter of type reference to a string vector type by borrowing it, x is also brought into local scope as a function parameter</span>
+    s.<span class="hljs-title function_ invoke__">len</span>() <span class="hljs-comment">// s is within lexical scope here</span>
+}
+<span class="hljs-comment">// s goes out of scope here, but since it does not have ownership of what it refers to, nothing happens</span>
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li>enum functions</li>
+<li>enum methods</li>
+<li>Option type</li>
+<li>copy</li>
+<li>clone</li>
+<li>mutable references</li>
+<li>slices as references</li>
+<li>smart pointers</li>
+<li>struct update syntax</li>
+<li>tuple structs</li>
+<li>lifetimes</li>
+<li>macros</li>
+<li>if let</li>
+<li>result</li>
+<li>option</li>
+<li>packages</li>
+<li>generics</li>
+<li>error handling</li>
+<li>concurrency</li>
+<li>modules</li>
+<li><a href="https://www.rust-lang.org/tools/install">install rust</a></li>
+<li><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2021">rust playground</a></li>
+<li><a href="https://learnxinyminutes.com/docs/rust/">learn rust in y minutes</a></li>
+<li><a href="https://fasterthanli.me/articles/a-half-hour-to-learn-rust">rust in 30 minutes</a></li>
+<li><a href="https://doc.rust-lang.org/stable/book/">rust lang book</a></li>
+<li><a href="https://doc.rust-lang.org/stable/rust-by-example/">rust by example</a></li>
+</ul>

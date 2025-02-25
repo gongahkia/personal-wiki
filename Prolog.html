@@ -1,0 +1,236 @@
+<h1><code>Prolog</code></h1>
+<p>Logic programming language from 1972 that has inspired many modern languages.</p>
+<h2>Comments</h2>
+<pre><code class="language-pl">% ----- COMMENT -----
+
+% this is a single-line comment
+
+/* 
+this is a 
+multi-line 
+comment
+*/
+</code></pre>
+<h2>Printing</h2>
+<pre><code class="language-pl">% ----- PRINTING -----
+    % <span class="hljs-keyword">write</span>() =&gt; receives a string argument which is then printed to the stdout <span class="hljs-keyword">and</span> does <span class="hljs-keyword">not</span> include a newline automatically
+    % writeln() =&gt; receives a string argument which is then printed to the stdout <span class="hljs-keyword">and</span> includes a newline by default
+
+?- <span class="hljs-keyword">write</span>(<span class="hljs-string">&#x27;this does not have a newline and we must explicitly specify its inclusion\n&#x27;</span>).
+?- writeln(<span class="hljs-string">&#x27;this does have a newline by default&#x27;</span>).
+</code></pre>
+<h2>Quickstart</h2>
+<pre><code class="language-pl">% ----- QUICKSTART -----
+    % declarative programming language
+    % Prolog programs are composed of sets of logical rules <span class="hljs-keyword">and</span> facts written as terms
+        % <span class="hljs-string">terms =&gt;</span> statements composed of atoms <span class="hljs-keyword">and</span> compound structures
+        % <span class="hljs-string">atoms =&gt;</span> constants, variables
+        % compound <span class="hljs-string">structures =&gt;</span> functors, arguments
+    % Prolog code is . period-delimited
+    % excellent at representing <span class="hljs-keyword">and</span> reasoning about logical relationships <span class="hljs-keyword">and</span> symbolic data
+    % most commonly used <span class="hljs-keyword">for</span> natural language processing in AI, expert systems, symbolic mathematics, theorem proving <span class="hljs-keyword">and</span> formal verification
+    % features backtracking, which enables Prolog to explore alternative solutions to a <span class="hljs-keyword">given</span> query in an execution-safe, controlled manner
+</code></pre>
+<h2>Types</h2>
+<pre><code class="language-pl">% ----- TYPE -----
+    % <span class="hljs-string">atom =&gt;</span> symbolic constants declared as unquoted lowercase words, special characters <span class="hljs-keyword">or</span> quoted strings, the equivalent of atoms in Lisp <span class="hljs-keyword">and</span> Erlang <span class="hljs-keyword">and</span> symbols in Ruby
+    % <span class="hljs-string">number =&gt;</span> covers both integer number <span class="hljs-keyword">values</span> <span class="hljs-keyword">and</span> floating-point number <span class="hljs-keyword">values</span>
+    % <span class="hljs-string">string =&gt;</span> stored as a list of character codes
+    % <span class="hljs-string">variable =&gt;</span> stores an unknown <span class="hljs-keyword">or</span> mutable value declared as beginning with an uppercase letter <span class="hljs-keyword">or</span> an _ underscore, the equivalent of variable declaration in most other programming languages
+        % note that _ underscore-prefixed variables create only a TEMPORARY variable binding
+    % compound <span class="hljs-string">term =&gt;</span> represents user-<span class="hljs-keyword">defined</span> structured data, consisting of both a functor <span class="hljs-keyword">and</span> an argument, called similarly to function calls in most other programming languages
+        % <span class="hljs-string">functor =&gt;</span> the equivalent of functions in most other programming languages
+        % <span class="hljs-string">argument =&gt;</span> arguments provided to a functor, the equivalent of function parameters <span class="hljs-keyword">or</span> arguments in most other programming languages
+
+atom_example :- 
+    A1 = atom, % simple lowercase atom
+    A2 = <span class="hljs-string">&#x27;Hello World&#x27;</span>, % atom with spaces, requiring quotes
+    A3 = +, % special character atom
+    writeln(A1),
+    writeln(A2),
+    writeln(A3).
+
+numbers_example :- 
+    N1 = <span class="hljs-number">42</span>, % an integer
+    N2 = -<span class="hljs-number">7</span>, % a negative integer
+    N3 = <span class="hljs-number">3.14</span>, % a floating-point number
+    writeln(N1),
+    writeln(N2),
+    writeln(N3).
+
+variables_example :- 
+    X = <span class="hljs-number">10</span>, % variable X bound to the number value <span class="hljs-number">10</span>
+    Result = X + <span class="hljs-number">5</span>, % variable result stores the value X + <span class="hljs-number">5</span>
+    _Temp = Result * <span class="hljs-number">2</span>, % temporary variable _Temp stores the value Result * <span class="hljs-number">2</span>
+    writeln(X),
+    writeln(Result),
+    writeln(_Temp).
+
+compound_terms_example :- 
+    Term1 = person(john, <span class="hljs-number">25</span>), % compound term with the functor <span class="hljs-string">`person`</span> <span class="hljs-keyword">and</span> provided arguments <span class="hljs-string">`john`</span> <span class="hljs-keyword">and</span> <span class="hljs-string">`25`</span>
+    Term2 = point(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>), % compound term with the functor <span class="hljs-string">`point`</span> <span class="hljs-keyword">and</span> provided arguments <span class="hljs-string">`3`</span> <span class="hljs-keyword">and</span> <span class="hljs-string">`4`</span>
+    Term3 = tree(node, left_subtree, right_subtree), % compound term representing a tree
+    writeln(Term1),
+    writeln(Term2),
+    writeln(Term3).
+
+strings_example :- 
+    S = <span class="hljs-string">&quot;Hello, Prolog!&quot;</span>, % example of a string
+    writeln(S).
+</code></pre>
+<h2>Operators</h2>
+<pre><code class="language-pl">% ----- OPERATOR -----
+
+% --- ARITHMETIC OPERATORS ---
+
++ % addition
+- % subtraction
+* % multiplication
+/ % division
+// % integer division
+mod % modulo
+** % exponentiation 
+
+arithmetic_operators_example :-
+    A is <span class="hljs-number">5</span> + <span class="hljs-number">3</span>, % an example of addition
+    B is <span class="hljs-number">10</span> - <span class="hljs-number">2</span>, % an example of subtraction
+    C is <span class="hljs-number">4</span> * <span class="hljs-number">7</span>, % an example of multiplication
+    D is <span class="hljs-number">8</span> / <span class="hljs-number">2</span>, % an example of division
+    E is <span class="hljs-number">8</span> // <span class="hljs-number">2</span>, % an example of integer division
+    F is <span class="hljs-number">5</span> mod <span class="hljs-number">2</span>, % an example of modulus
+    G is <span class="hljs-number">2</span> ** <span class="hljs-number">3</span>, % an example of exponentiation
+    writeln(A),
+    writeln(B),
+    writeln(C),
+    writeln(D),
+    writeln(E),
+    writeln(F),
+    writeln(G).
+
+% --- COMPARISON OPERATORS ---
+
+= % assignment operator, the equivalent of variable assignment in most other programming languages
+=:= % partial equality check <span class="hljs-keyword">for</span> value but <span class="hljs-keyword">not</span> type, but note that this is purely <span class="hljs-keyword">for</span> arithmetic comparison <span class="hljs-keyword">and</span> so only checks <span class="hljs-keyword">for</span> equality in value of evaluated numbers at both ends of the operator
+=\= % partial inequality check <span class="hljs-keyword">for</span> value but <span class="hljs-keyword">not</span> type, but note that this is purely <span class="hljs-keyword">for</span> arithmetic comparison <span class="hljs-keyword">and</span> so only checks <span class="hljs-keyword">for</span> inequality in value of evaluated numbers at both ends of the operator
+&lt; % comparison operator
+&gt; % comparison operator
+&lt;= % comparison operator
+&gt;= % comparison operator
+
+comparison_operators_example :-
+    X = <span class="hljs-number">5</span>, % variable assignment 
+    Y = <span class="hljs-number">10</span>, % variable assignment
+    (X =:= <span class="hljs-number">5</span> -&gt; writeln(<span class="hljs-string">&#x27;X is equal to 5&#x27;</span>); writeln(<span class="hljs-string">&#x27;X is not equal to 5&#x27;</span>)), % equality
+    (X =\= Y -&gt; writeln(<span class="hljs-string">&#x27;X is not equal to Y&#x27;</span>); writeln(<span class="hljs-string">&#x27;X is equal to Y&#x27;</span>)), % inequality
+    (X &lt; Y -&gt; writeln(<span class="hljs-string">&#x27;X is less than Y&#x27;</span>); writeln(<span class="hljs-string">&#x27;X is not less than Y&#x27;</span>)), % less than
+    (X =&lt; Y -&gt; writeln(<span class="hljs-string">&#x27;X is less than or equal to Y&#x27;</span>); writeln(<span class="hljs-string">&#x27;X is greater than Y&#x27;</span>)), % less than <span class="hljs-keyword">or</span> equal
+    (X &gt; Y -&gt; writeln(<span class="hljs-string">&#x27;X is greater than Y&#x27;</span>); writeln(<span class="hljs-string">&#x27;X is not greater than Y&#x27;</span>)), % greater than
+    (X &gt;= <span class="hljs-number">5</span> -&gt; writeln(<span class="hljs-string">&#x27;X is greater than or equal to 5&#x27;</span>); writeln(<span class="hljs-string">&#x27;X is less than 5&#x27;</span>)). % greater than <span class="hljs-keyword">or</span> equal
+
+% --- LOGICAL OPERATORS ---
+
+, % conjunction operator, the equivalent of the logical <span class="hljs-keyword">and</span> operator
+; % disjunction operator, the equivalent of the logical <span class="hljs-keyword">or</span> operator
+\+ % logical <span class="hljs-keyword">not</span> operator
+
+logical_operators_example :-
+    (true, writeln(<span class="hljs-string">&#x27;Logical AND (true and true)&#x27;</span>)),
+    (fail; writeln(<span class="hljs-string">&#x27;Logical OR (fail or true)&#x27;</span>)),
+    (\+ fail -&gt; writeln(<span class="hljs-string">&#x27;Logical NOT (not fail)&#x27;</span>)).
+</code></pre>
+<h2>Control structures</h2>
+<pre><code class="language-pl">% ----- CONTROL STRUCTURE -----
+
+% --- CONDITIONALS ---
+
+% IF ELSE IF ELSE
+    % Prolog does <span class="hljs-keyword">not</span> provide conventional <span class="hljs-keyword">if</span> <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> <span class="hljs-keyword">else</span> conditional constructs available in most other programming languages
+    % instead, the logical operators (specifically the , conjunction <span class="hljs-keyword">and</span> ; disjunction operators) <span class="hljs-keyword">and</span> pattern-matching can both be used to achieve the same effect of conditional constructs
+
+% CONJUNCTION DISJUNCTION OPERATORS
+
+member_of_family(john) :- writeln(<span class="hljs-string">&#x27;John is a family member.&#x27;</span>), !. % Cut (!) to prevent backtracking
+member_of_family(mary) :- writeln(<span class="hljs-string">&#x27;Mary is a family member.&#x27;</span>), !.
+member_of_family(_).
+
+% PATTERN-MATCHING
+    % Prolog<span class="hljs-string">&#x27;s powerful pattern-matching is powered by unification which helps evaluate logical queries blazingly fast
+    % unification =&gt; where the compiler finds substitutions for variables that make two terms identical during evaluation
+
+animal_sound(dog) :- writeln(&#x27;</span>Woof!<span class="hljs-string">&#x27;).
+animal_sound(cat) :- writeln(&#x27;</span>Meow!<span class="hljs-string">&#x27;).
+animal_sound(_) :- writeln(&#x27;</span>Unknown animal sound!<span class="hljs-string">&#x27;).
+
+% --- LOOPS ---
+    % as a declarative language, Prolog similarly does not provide conventional for, foreach, for in or while loop constructs as in most other programming languages
+    % instead, recursion is the default choice when explicit traversal or iteration over elements in an iterable data structure is required
+
+% RECURSION
+
+iterate_through_list([]). % iterating through a list with a recursive functor call
+iterate_through_list([Head | Tail]) :- % compound term definition
+    writeln(Head),
+    iterate_through_list(Tail).
+</span></code></pre>
+<h2>Data structures</h2>
+<pre><code class="language-pl">% ----- DATA STRUCTURE -----
+    % note that in Prolog, all data structures are represented by terms (comprised of functors <span class="hljs-keyword">and</span> arguments)
+    % this flexible syntax allows <span class="hljs-keyword">for</span> the user to implement both standard data structures that would be built-in in most other programming languages, as well as other user-<span class="hljs-keyword">defined</span> data structures
+    % below are some of the more common data structures implemented in Prolog
+        % <span class="hljs-string">list =&gt;</span> ordered collection of elements of multiple datatypes declared within [] square brackets
+        % <span class="hljs-string">dictionary =&gt;</span> unordered collection of key-value pairs of multiple datatypes declared within dict{} where <span class="hljs-keyword">keys</span> <span class="hljs-keyword">and</span> their corresponding <span class="hljs-keyword">values</span> are separated by a : colon
+            % note that SWI-Prolog provides <span class="hljs-keyword">for</span> a default implementation of the dictionary as a shipped data structure
+        % <span class="hljs-string">record =&gt;</span> user-<span class="hljs-keyword">defined</span> collection of named fields <span class="hljs-keyword">and</span> their corresponding interior <span class="hljs-keyword">values</span> allowing <span class="hljs-keyword">for</span> modelling of representative data, note that this implementation of records is equivalent to a struct LITERAL in Typescript <span class="hljs-keyword">and</span> Go <span class="hljs-keyword">and</span> <span class="hljs-keyword">not</span> a struct itself (there is only one instance of the struct in Prolog, which is as <span class="hljs-keyword">defined</span>, therefore a struct literal <span class="hljs-keyword">and</span> <span class="hljs-keyword">not</span> a conventional struct that you can template off)
+        % <span class="hljs-string">tree =&gt;</span> user-<span class="hljs-keyword">defined</span> recursive data structure that facilitates hierarchical representation of data
+        % <span class="hljs-string">graph =&gt;</span> user-<span class="hljs-keyword">defined</span> data structure composed of nodes which are connected by edges, facilitating representation of data involving relationships <span class="hljs-keyword">and</span> networks
+
+% LIST
+
+anExampleEmptyList = [].
+anExampleNumberList = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>].
+anExampleAtomList = [apple, banana, cherry].
+anExampleVariableList = [X, Y, Z].
+anExampleNestedList = [<span class="hljs-number">1</span>, [a, b, c], <span class="hljs-number">3.14</span>, [X, Y]].
+
+% DICTIONARY
+
+anExampleDictionary = dict{name: <span class="hljs-string">&quot;Alice&quot;</span>, age: <span class="hljs-number">30</span>}.
+
+% RECORD
+
+% Facts representing records
+employee(john_doe, <span class="hljs-number">50000</span>, <span class="hljs-string">&#x27;IT&#x27;</span>).
+employee(jane_smith, <span class="hljs-number">60000</span>, <span class="hljs-string">&#x27;HR&#x27;</span>).
+
+% TREE
+
+Tree = tree(tree(leaf, <span class="hljs-number">1</span>, leaf), <span class="hljs-number">2</span>, tree(leaf, <span class="hljs-number">3</span>, leaf)).
+
+% GRAPH
+    % below are facts representing <span class="hljs-keyword">each</span> node <span class="hljs-keyword">and</span> edge of the graph
+
+edge(a, b).
+edge(b, c).
+edge(c, a).
+node(a).
+node(b).
+node(c).
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li><a href="https://stackoverflow.com/questions/19115712/in-prolog-is-a-fact-the-same-as-a-functor">functors</a></li>
+<li><a href="https://www.swi-prolog.org/">swi-prolog.org</a></li>
+<li><a href="https://www.swi-prolog.org/pldoc/index.html">swi-prolog documentation</a></li>
+<li><a href="https://learnxinyminutes.com/docs/prolog/">learn prolog in y minutes</a></li>
+<li><a href="https://www.sfu.ca/~tjd/383summer2019/prolog_intro.html">introduction to prolog</a></li>
+<li><a href="https://stackoverflow.com/questions/129628/what-is-declarative-programming">what is declarative programming</a></li>
+<li><a href="https://learnxinyminutes.com/docs/logtalk/">learn logtalk in y minutes</a></li>
+<li><a href="https://learnxinyminutes.com/docs/clojure/">learn clojure in y minutes</a></li>
+<li><a href="https://learnxinyminutes.com/docs/erlang/">learn erlang in y minutes</a></li>
+<li><a href="https://learnxinyminutes.com/docs/mercury/">learn mercury in y minutes</a></li>
+<li><a href="https://learnxinyminutes.com/docs/haskell/">learn haskell in y minutes</a></li>
+<li><a href="https://learnxinyminutes.com/docs/common-lisp/">learn common lisp in y minutes</a></li>
+<li><a href="https://learnxinyminutes.com/docs/ruby/">learn ruby in y minutes</a></li>
+<li><a href="https://clojure.github.io/clojure-contrib/doc/datalog.html">datalog documentation</a></li>
+<li><a href="https://www-ps.informatik.uni-kiel.de/currywiki/">curry documentation</a></li>
+</ul>

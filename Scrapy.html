@@ -1,0 +1,68 @@
+<h1><code>Scrapy</code></h1>
+<p>Complete webscraping toolkit.</p>
+<h2>Introduction</h2>
+<ul>
+<li>open-source and collaborative web crawling framework specifically for Python</li>
+<li>powerful tool for data mining, automation, and building custom web crawlers</li>
+<li>capable of handling large-scale scraping tasks because base is built on Twisted <em>(asynchronous networking framework)</em></li>
+<li>extracts website data, processes it, then stores it to the following target outputs
+<ul>
+<li><code>.json</code> <em>(JSON)</em>: lightweight and widely-used data interchange format ideal for web applications and APIs</li>
+<li><code>.csv</code> <em>(CSV)</em>: comma-separated values is a simple format used to store tabular data, compatible with applications like Excel, Google Sheets, and most databases</li>
+<li><code>.xml</code> <em>(XML)</em>: extensible markup language is a structured format useful for data interchange paritcularly for legacy systems and services</li>
+<li><code>.sql</code> <em>(SQL)</em>: structured query language is a descriptive language used to interact with relational databases such as SQLite, MySQL and PostgreSQL</li>
+<li><code>.py</code> <em>(Python)</em>: scraped data can be stored in Python's data structures <em>(lists, dictionaries, custom objects)</em> for custom processing</li>
+<li>ElasticSearch: a powerful search engine ideal for handling large volumes of data and complex queries</li>
+<li>MongoDB: a NoSQL database well-suited for storing unstructured or semi-structured data</li>
+<li>Direct API calls: scraped data can be directly piped to a REST API or other service endpoints</li>
+</ul>
+</li>
+</ul>
+<h2>Installation</h2>
+<pre><code class="language-console"><span class="hljs-meta prompt_">$ </span><span class="language-bash">pip install scrapy</span>
+</code></pre>
+<h2>Quickstart</h2>
+<p>Create a new scrapy project with the below command.</p>
+<pre><code class="language-console"><span class="hljs-meta prompt_">$ </span><span class="language-bash">scrapy startproject myproject <span class="hljs-comment"># creates a new Scrapy project in the current directory</span></span>
+</code></pre>
+<p>A spider is a class that defines how to follow links through a website and extract data from its webpages.</p>
+<p>The below sample code creates a simple spider that scrapes quotes from the website <a href="http://quotes.toscrape.com/"><em>Quotes to Scrape</em></a>.</p>
+<pre><code class="language-py"><span class="hljs-keyword">import</span> scrapy
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">QuotesSpider</span>(scrapy.Spider):
+    name = <span class="hljs-string">&quot;quotes&quot;</span>
+    start_urls = [
+        <span class="hljs-string">&#x27;http://quotes.toscrape.com/&#x27;</span>,
+    ]
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">parse</span>(<span class="hljs-params">self, response</span>):
+        <span class="hljs-keyword">for</span> quote <span class="hljs-keyword">in</span> response.css(<span class="hljs-string">&#x27;div.quote&#x27;</span>):
+            <span class="hljs-keyword">yield</span> {
+                <span class="hljs-string">&#x27;text&#x27;</span>: quote.css(<span class="hljs-string">&#x27;span.text::text&#x27;</span>).get(),
+                <span class="hljs-string">&#x27;author&#x27;</span>: quote.css(<span class="hljs-string">&#x27;small.author::text&#x27;</span>).get(),
+                <span class="hljs-string">&#x27;tags&#x27;</span>: quote.css(<span class="hljs-string">&#x27;div.tags a.tag::text&#x27;</span>).getall(),
+            }
+
+        next_page = response.css(<span class="hljs-string">&#x27;li.next a::attr(href)&#x27;</span>).get()
+        <span class="hljs-keyword">if</span> next_page <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>:
+            <span class="hljs-keyword">yield</span> response.follow(next_page, <span class="hljs-variable language_">self</span>.parse)
+</code></pre>
+<p>You can then run your spider with the below command.</p>
+<pre><code class="language-console"><span class="hljs-meta prompt_">$ </span><span class="language-bash">scrapy crawl quotes -o quotes.json <span class="hljs-comment"># runs the spider and outputs the scraped data to a quotes.json file</span></span>
+</code></pre>
+<p>You can further customize your spider within the <code>settings.py</code> file.</p>
+<h2>More on</h2>
+<ul>
+<li><a href="https://scrapy.org/">scrapy.org</a></li>
+<li><a href="https://github.com/scrapy/scrapy">scrapy</a> Github repository</li>
+<li><a href="https://docs.scrapy.org/en/latest/">Scrapy documentation</a></li>
+<li><a href="https://docs.scrapy.org/en/latest/topics/spiders.html">Scrapy Spiders documentation</a></li>
+<li><a href="https://scrapy.org/download/">Download Scrapy</a></li>
+<li><a href="https://scrapy.org/resources/">Scrapy resources</a></li>
+<li><a href="https://youtu.be/mBoX_JCKZTE?si=0CbkuRH5xegUs0zw">Scrapy Course – Python Web Scraping for Beginners</a> by freeCodeCamp.org</li>
+<li><a href="https://www.reddit.com/r/webscraping/comments/wypsg4/what_are_your_thoughts_on_scrapy/">What are your thoughts on scrapy</a> by r/webscraping</li>
+<li><a href="https://docs.scrapy.org/en/latest/intro/overview.html">Scrapy at a glance</a></li>
+<li><a href="https://stackoverflow.com/questions/19687421/difference-between-beautifulsoup-and-scrapy-crawler">Difference between BeautifulSoup and Scrapy crawler?</a> by Stack Overflow</li>
+<li><a href="https://hexfox.com/p/scrapy-vs-beautifulsoup/">When should you use Scrapy over BeautifulSoup <em>(...and what's the difference anyway?)</em></a> by Hexfox</li>
+<li><a href="https://twisted.org/">twisted.org</a></li>
+</ul>

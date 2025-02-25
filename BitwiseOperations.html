@@ -1,0 +1,307 @@
+<h1><code>Bitwise operations</code></h1>
+<p>Bitwise operations involve manipulation of individual bits.</p>
+<h2>Decimal Binary two-way conversion</h2>
+<ul>
+<li>Decimal are BASE 10 numbers</li>
+<li>Binary are BASE 2 numbers</li>
+<li>need to know how to convert Decimal to Binary and vice-versa since Bitwise operations involve Binary numbers</li>
+<li>NOTE that a SIGNED binary to decimal conversion causes the Most Significant Bit to have a negative value while every other Bit retains its positive value</li>
+</ul>
+<h3>Converting binary to decimal</h3>
+<pre><code class="language-go"><span class="hljs-comment">// --- worked examples --- </span>
+
+<span class="hljs-comment">// q1</span>
+    <span class="hljs-comment">// 10110</span>
+    <span class="hljs-comment">// = (1 * math.Pow(2,4)) + (0 * math.Pow(2,3)) + (1 * math.Pow(2,2)) + (1 * math.Pow(2,1)) + (0 * math.Pow(2,0)) </span>
+    <span class="hljs-comment">// = 16 + 0 + 4 + 2 + 0</span>
+    <span class="hljs-comment">// = 22</span>
+
+<span class="hljs-comment">// q2</span>
+    <span class="hljs-comment">// 1011 </span>
+    <span class="hljs-comment">// = (1 * math.Pow(2,3)) + (0 * math.Pow(2,2)) + (1 * math.Pow(2,1)) + (1 * math.Pow(2,0))</span>
+    <span class="hljs-comment">// = 8 + 0 + 2 + 1</span>
+    <span class="hljs-comment">// = 11</span>
+
+<span class="hljs-comment">// q3</span>
+    <span class="hljs-comment">// 11011 </span>
+    <span class="hljs-comment">// = (1 * math.Pow(2,4)) + (1 * math.Pow(2,3)) + (0 * math.Pow(2,2)) + (1 * math.Pow(2,1)) + (1 * math.Pow(2,0))</span>
+    <span class="hljs-comment">// = 16 + 8 + 0 + 2 + 1</span>
+    <span class="hljs-comment">// = 27</span>
+
+<span class="hljs-comment">// --- go function implementation ---</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">binaryToDecimal</span><span class="hljs-params">(binaryStr <span class="hljs-type">string</span>)</span></span> (<span class="hljs-type">int</span>) {
+    decimal := <span class="hljs-number">0</span>
+    power := <span class="hljs-number">1</span> <span class="hljs-comment">// represents math.Pow(2,0) = 1</span>
+    <span class="hljs-keyword">for</span> i := <span class="hljs-built_in">len</span>(binaryStr) - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i-- {
+        char := binaryStr[i]
+        <span class="hljs-keyword">if</span> char == <span class="hljs-string">&#x27;1&#x27;</span> { <span class="hljs-comment">// if char == &#x27;1&#x27; then multiply it against correspondin g power of 2</span>
+            decimal += power
+        } <span class="hljs-keyword">else</span> {} <span class="hljs-comment">// if char == &#x27;0&#x27; then do nothing</span>
+        power *= <span class="hljs-number">2</span>  
+    }
+    <span class="hljs-keyword">return</span> decimal
+}
+</code></pre>
+<h3>Converting decimal to binary</h3>
+<pre><code class="language-go"><span class="hljs-comment">// --- worked examples --- </span>
+
+<span class="hljs-comment">// q1</span>
+    <span class="hljs-comment">// 26</span>
+    <span class="hljs-comment">// = (1 * 16) + (1 * 8) + (0 * 4) + (1 * 2) + (0 * 1)</span>
+    <span class="hljs-comment">// = 11010</span>
+
+
+<span class="hljs-comment">// q2</span>
+    <span class="hljs-comment">// 14</span>
+    <span class="hljs-comment">// = (1 * 8) + (1 * 4) + (1 * 2) + (0 * 1)</span>
+    <span class="hljs-comment">// = 1110</span>
+
+<span class="hljs-comment">// q3</span>
+    <span class="hljs-comment">// 35</span>
+    <span class="hljs-comment">// = (1 * 32) + (0 * 16) + (0 * 8) + (0 * 4) + (1 * 2) + (1 * 1)</span>
+    <span class="hljs-comment">// = 100011</span>
+
+<span class="hljs-comment">// --- go function implementation --- </span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">decimalToBinary</span><span class="hljs-params">(decimal <span class="hljs-type">int</span>)</span></span> <span class="hljs-type">string</span> {
+    <span class="hljs-keyword">if</span> decimal == <span class="hljs-number">0</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;0&quot;</span>
+    }
+    binaryStr := <span class="hljs-string">&quot;&quot;</span>
+    <span class="hljs-keyword">for</span> decimal &gt; <span class="hljs-number">0</span> {
+        remainder := decimal % <span class="hljs-number">2</span>
+        digit := <span class="hljs-string">&#x27;0&#x27;</span>
+        <span class="hljs-keyword">if</span> remainder == <span class="hljs-number">1</span> {
+            digit = <span class="hljs-string">&#x27;1&#x27;</span>
+        }
+        binaryStr = <span class="hljs-type">string</span>(digit) + binaryStr 
+        decimal /= <span class="hljs-number">2</span>
+    }
+    <span class="hljs-keyword">return</span> binaryStr
+}
+</code></pre>
+<h2>Hexadecimal Binary two-way conversion</h2>
+<ul>
+<li>Hexadecimal are BASE 16 numbers</li>
+<li>Binary are BASE 2 numbers</li>
+<li>need to know how to convert Hexadecimal to Binary and vice-versa since Bitwise operations involve Binary numbers</li>
+<li>NOTE that a SIGNED binary to hexadecimal conversion DOES NOT affect how it is calculated, since the number being SIGNED only causes the Most Significant Bit to have a negative value while every other Bit retains its positive value, which is within Decimal to Binary conversion</li>
+</ul>
+<h3>Converting binary to hexadecimal</h3>
+<pre><code class="language-go"><span class="hljs-comment">// --- worked examples --- </span>
+
+<span class="hljs-comment">// q1</span>
+    <span class="hljs-comment">// 0000 0001 </span>
+    <span class="hljs-comment">// = 0 1</span>
+    <span class="hljs-comment">// = 0X01</span>
+
+<span class="hljs-comment">// q2</span>
+    <span class="hljs-comment">// 1111 1100</span>
+    <span class="hljs-comment">// = 15 12 </span>
+    <span class="hljs-comment">// = 0XFC</span>
+
+<span class="hljs-comment">// q3</span>
+    <span class="hljs-comment">// 1111 1111</span>
+    <span class="hljs-comment">// = 15 15</span>
+    <span class="hljs-comment">// = 0XFF</span>
+
+<span class="hljs-comment">// --- go function implementation --- </span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">binaryToHex</span><span class="hljs-params">(binary <span class="hljs-type">string</span>)</span></span> <span class="hljs-type">string</span> {
+    <span class="hljs-keyword">for</span> <span class="hljs-built_in">len</span>(binary)%<span class="hljs-number">4</span> != <span class="hljs-number">0</span> {
+        binary = <span class="hljs-string">&quot;0&quot;</span> + binary
+    }
+    <span class="hljs-keyword">var</span> hex <span class="hljs-type">string</span>
+    binToHexMap := <span class="hljs-keyword">map</span>[<span class="hljs-type">string</span>]<span class="hljs-type">string</span>{
+        <span class="hljs-string">&quot;0000&quot;</span>: <span class="hljs-string">&quot;0&quot;</span>, <span class="hljs-string">&quot;0001&quot;</span>: <span class="hljs-string">&quot;1&quot;</span>, <span class="hljs-string">&quot;0010&quot;</span>: <span class="hljs-string">&quot;2&quot;</span>, <span class="hljs-string">&quot;0011&quot;</span>: <span class="hljs-string">&quot;3&quot;</span>,
+        <span class="hljs-string">&quot;0100&quot;</span>: <span class="hljs-string">&quot;4&quot;</span>, <span class="hljs-string">&quot;0101&quot;</span>: <span class="hljs-string">&quot;5&quot;</span>, <span class="hljs-string">&quot;0110&quot;</span>: <span class="hljs-string">&quot;6&quot;</span>, <span class="hljs-string">&quot;0111&quot;</span>: <span class="hljs-string">&quot;7&quot;</span>,
+        <span class="hljs-string">&quot;1000&quot;</span>: <span class="hljs-string">&quot;8&quot;</span>, <span class="hljs-string">&quot;1001&quot;</span>: <span class="hljs-string">&quot;9&quot;</span>, <span class="hljs-string">&quot;1010&quot;</span>: <span class="hljs-string">&quot;A&quot;</span>, <span class="hljs-string">&quot;1011&quot;</span>: <span class="hljs-string">&quot;B&quot;</span>,
+        <span class="hljs-string">&quot;1100&quot;</span>: <span class="hljs-string">&quot;C&quot;</span>, <span class="hljs-string">&quot;1101&quot;</span>: <span class="hljs-string">&quot;D&quot;</span>, <span class="hljs-string">&quot;1110&quot;</span>: <span class="hljs-string">&quot;E&quot;</span>, <span class="hljs-string">&quot;1111&quot;</span>: <span class="hljs-string">&quot;F&quot;</span>,
+    }
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">len</span>(binary); i += <span class="hljs-number">4</span> {
+        fourBits := binary[i : i+<span class="hljs-number">4</span>]
+        hex += binToHexMap[fourBits]
+    }
+    <span class="hljs-keyword">return</span> strings.ToUpper(hex)
+}
+</code></pre>
+<h3>Converting hexadecimal to binary</h3>
+<pre><code class="language-go"><span class="hljs-comment">// --- worked examples --- </span>
+
+<span class="hljs-comment">// q1</span>
+    <span class="hljs-comment">// 0X00</span>
+    <span class="hljs-comment">// = 0 0 </span>
+    <span class="hljs-comment">// = 0000 0000</span>
+
+<span class="hljs-comment">// q2</span>
+    <span class="hljs-comment">// 0XF3</span>
+    <span class="hljs-comment">// = 15 3</span>
+    <span class="hljs-comment">// = 1111 0011</span>
+
+<span class="hljs-comment">// q3</span>
+    <span class="hljs-comment">// 0XDE</span>
+    <span class="hljs-comment">// = 13 14</span>
+    <span class="hljs-comment">// = 1101 1110</span>
+
+<span class="hljs-comment">// --- go function implementation --- </span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">hexToBinary</span><span class="hljs-params">(hex <span class="hljs-type">string</span>)</span></span> <span class="hljs-type">string</span> {
+    hexDigits := <span class="hljs-string">&quot;0123456789ABCDEF&quot;</span>
+    binaryDigits := <span class="hljs-string">&quot;0000&quot;</span> + <span class="hljs-string">&quot;0001&quot;</span> + <span class="hljs-string">&quot;0010&quot;</span> + <span class="hljs-string">&quot;0011&quot;</span> +
+        <span class="hljs-string">&quot;0100&quot;</span> + <span class="hljs-string">&quot;0101&quot;</span> + <span class="hljs-string">&quot;0110&quot;</span> + <span class="hljs-string">&quot;0111&quot;</span> +
+        <span class="hljs-string">&quot;1000&quot;</span> + <span class="hljs-string">&quot;1001&quot;</span> + <span class="hljs-string">&quot;1010&quot;</span> + <span class="hljs-string">&quot;1011&quot;</span> +
+        <span class="hljs-string">&quot;1100&quot;</span> + <span class="hljs-string">&quot;1101&quot;</span> + <span class="hljs-string">&quot;1110&quot;</span> + <span class="hljs-string">&quot;1111&quot;</span>
+    <span class="hljs-keyword">var</span> binary <span class="hljs-type">string</span>
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">len</span>(hex); i++ {
+        hexDigit := hex[i]
+        <span class="hljs-keyword">for</span> j := <span class="hljs-number">0</span>; j &lt; <span class="hljs-built_in">len</span>(hexDigits); j++ {
+            <span class="hljs-keyword">if</span> hexDigits[j] == hexDigit {
+                binary += binaryDigits[j*<span class="hljs-number">4</span> : j*<span class="hljs-number">4</span>+<span class="hljs-number">4</span>]
+                <span class="hljs-keyword">break</span>
+            }
+        }
+    }
+    <span class="hljs-keyword">return</span> binary
+}
+</code></pre>
+<h2>Bits</h2>
+<ul>
+<li>Bits are the smallest units of data available to the programmer</li>
+<li>store single BINARY values of 0 or 1</li>
+<li>BYTE is 8 Bits</li>
+<li>common Bit multiples are 8, 16, 32, 64</li>
+</ul>
+<h2>ALU</h2>
+<ul>
+<li>arithmetic logic unit</li>
+<li>located within the Computer's CPU</li>
+<li>handles mathematical operations like addition, subtraction, multiplication, division at a BIT level using BITWISE operators</li>
+</ul>
+<h2>Bitwise operators</h2>
+<blockquote>
+<p>note that the Bitwise syntax might differ between languages <em>(C, C++, Go, Rust, JS etc)</em></p>
+</blockquote>
+<ul>
+<li>Bitwise operators perform actions on individual Bits by positionally matching single Bits within 2-BIT patterns of equal length</li>
+<li>recall that Bits store binary values of either 0 or 1</li>
+</ul>
+<h3>Logical operators</h3>
+<ul>
+<li>Bitwise AND (<code>&amp;</code>) returns a <strong>1</strong> if BOTH first AND second Bit are 1, else 0</li>
+<li>Bitwise OR (<code>|</code>) returns a <strong>1</strong> if at least first OR second Bit are 1, else 0</li>
+<li>Bitwise XOR aka EXCLUSIVE OR (<code>^</code>) returns a <strong>1</strong> if the first and second Bit are DIFFERENT, else 0</li>
+<li>Bitwise NOT aka Bitwise Complement or Bitwise Inversion (<code>~</code>) can be used to augment aforementioned operations by returning the inverse of the given Bit (flips 0 to 1 and 1 to 0)</li>
+</ul>
+<h3>Bit Shift operators</h3>
+<ul>
+<li>Most Significant Bit is the LEFTMOST bit of the LARGEST POWER regardless of whether its value is 0 or 1</li>
+<li>Left shift (<code>&lt;&lt;</code>) aligns Bits by SHIFTING left operand value LEFT by specified number of Bits in right operand and right is padded with 0, any numbers shifted out are truncated</li>
+<li>Signed Right shift (<code>&gt;&gt;</code>) aligns Bits by SHIFTING left operand value RIGHT by specified number of Bits in right operand and left is padded with the most significant bit or 0 depending on the type of SHIFT specified, any numbers shifted out are truncated
+<ul>
+<li>ARITHMETIC Right shift: left is padded with most significant Bit and any numbers shifted out are truncated (generally use this)</li>
+<li>LOGICAL Right shift: left is padded with 0 and any numbers shifted out are truncated</li>
+</ul>
+</li>
+<li>NOTE: Left shift and Right shift Bit Shift operators <strong>SHOULD NOT</strong> be used for negative numbers since doing so results in undefined behaviour
+<ul>
+<li>Some languages like Java and JS resolve this by providing the Unsigned Right shift (<code>&gt;&gt;&gt;</code>) that always fills left-vacated positions with 0 regardless of the sign of the number</li>
+<li>C, C++, Rust and Go do not have this added functionality</li>
+</ul>
+</li>
+</ul>
+<h2>Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Name</th>
+<th>Description</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&amp;</code></td>
+<td>Bitwise AND</td>
+<td>copies a Bit to the result if it exists in BOTH operands</td>
+<td>sets up a mask to check the values of specific Bits</td>
+</tr>
+<tr>
+<td><code>|</code></td>
+<td>Bitwise OR</td>
+<td>copies a Bit to the result if it exists in EITHER or BOTH operands</td>
+<td>adds two numbers if there is no carry involved</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td>Bitwise XOR (Exclusive OR)</td>
+<td>copies a Bit to the result if it exists in EITHER but NOT BOTH operands</td>
+<td>toggle Bits or swap two variables without using a third temporary variable, find specific types of numbers in a series of numbers, find nonrepeating elements, detect if two integers are of opposite signs</td>
+</tr>
+<tr>
+<td><code>~</code></td>
+<td>Bitwise NOT (Bitwise COMPLEMENT, Bitwise INVERSION)</td>
+<td>flips 0 into 1 and 1 into 0</td>
+<td>flip or invert Bits</td>
+</tr>
+<tr>
+<td><code>&lt;&lt;</code></td>
+<td>LEFT SHIFT</td>
+<td>left operand value is SHIFTED LEFT by the number of Bits specified by the right operand and right padded with 0, truncating any numbers shifted out</td>
+<td>aligns Bits</td>
+</tr>
+<tr>
+<td><code>&gt;&gt;</code></td>
+<td>Signed RIGHT SHIFT</td>
+<td>left operand value is SHIFTED RIGHT by the number of Bits specified by the right operand and left padded with the most significant Bit or 0 depending on the type of shift specified, truncating any numbers shifted out</td>
+<td>aligns Bits</td>
+</tr>
+</tbody>
+</table>
+<h2>Application</h2>
+<pre><code class="language-go"><span class="hljs-comment">// --- PRESETS ---</span>
+    <span class="hljs-comment">// below implementation is in go</span>
+
+<span class="hljs-keyword">var</span> x <span class="hljs-type">int</span> 
+<span class="hljs-keyword">var</span> y <span class="hljs-type">int</span> 
+<span class="hljs-keyword">var</span> z <span class="hljs-type">int</span> 
+
+x = <span class="hljs-number">6</span> <span class="hljs-comment">// decimal 6 in binary =&gt; 00000110</span>
+y = <span class="hljs-number">12</span> <span class="hljs-comment">// decimal 12 in binary =&gt; 00001100</span>
+
+<span class="hljs-comment">// --- BITWISE AND ---</span>
+
+z = x &amp; y <span class="hljs-comment">// Bitwise AND results in 00000100</span>
+z = <span class="hljs-number">4</span> <span class="hljs-comment">// binary 00000100 in decimal =&gt; 4</span>
+
+<span class="hljs-comment">// --- BITWISE OR ---</span>
+
+z = x | y <span class="hljs-comment">// Bitwise OR results in 00001110</span>
+z = <span class="hljs-number">14</span> <span class="hljs-comment">// binary 00001110 in decimal =&gt; 14</span>
+
+<span class="hljs-comment">// --- BITWISE XOR --- </span>
+
+z = x ^ y <span class="hljs-comment">// Bitwise XOR results in 00001010</span>
+z = <span class="hljs-number">10</span> <span class="hljs-comment">// binary 00001010 in decimal =&gt; 10</span>
+
+<span class="hljs-comment">// --- LEFT SHIFT ---</span>
+
+z = x &lt;&lt; <span class="hljs-number">1</span> <span class="hljs-comment">// Left shift results in 00001100</span>
+z = <span class="hljs-number">12</span> <span class="hljs-comment">// binary 00001100 in decimal =&gt; 12</span>
+
+<span class="hljs-comment">// --- RIGHT SHIFT ---</span>
+
+z = y &gt;&gt; <span class="hljs-number">2</span> <span class="hljs-comment">// Right shift results in 00000011 applying arithmetic right shift since most significant Bit is 0 in 00001100</span>
+z = <span class="hljs-number">3</span> <span class="hljs-comment">// binary 00000011 in decimal =&gt; 3</span>
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li><a href="https://youtu.be/GePdOJNnaQg?si=J5cjO6XaJ0-CkPnU">converting decimal to binary to hexadecimal</a></li>
+<li><a href="https://youtu.be/a2FpnU9Mm3E?si=7_bFrtMgsAATZi8y">converting binary to decimal</a></li>
+<li><a href="https://youtu.be/gGiEu7QTi68?si=7v3Jb6G9KorflO4P">converting decimal to binary</a></li>
+<li><a href="https://www.techtarget.com/whatis/definition/bitwise">basic bitwise</a></li>
+<li><a href="https://youtu.be/BGeOwlIGRGI?si=lbSyji_4bXDprrsD">bitwise operations applied</a></li>
+<li><a href="https://medium.com/@jeremythen16/master-bitwise-operations-once-and-for-all-f5283e3c9a11">bitwise operation exercises</a></li>
+<li><a href="https://youtu.be/79i1iu7iyAc?si=Es_JsfqwuX0PQhfe">cs50 bitwise operators</a></li>
+</ul>

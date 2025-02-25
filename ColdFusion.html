@@ -1,0 +1,161 @@
+<h1><code>ColdFusion</code></h1>
+<p>Adobe's server-side scripting language.</p>
+<h2>Comments</h2>
+<pre><code class="language-cfm">&lt;!--- ----- COMMENT ----- --&gt;
+
+&lt;!--- this is a single-line comment ---&gt;
+
+&lt;cfcomment&gt;
+this is a 
+multi-line
+comment
+&lt;/cfcomment&gt;
+</code></pre>
+<h2>Printing</h2>
+<pre><code class="language-cfm">&lt;!--- ----- PRINTING ----- --&gt;
+    &lt;!--- &lt;cfoutput&gt; =&gt; a string argument is provided within the cfoutput tags which is then displayed to the browser without a newline by default ---&gt;
+    &lt;!--- &lt;br&gt; =&gt; since ColdFusion displays to the browser, the equivalent of the newline character \n is the &lt;br&gt; HTML element ---&gt;
+
+&lt;cfoutput&gt;this does not display with a newline&lt;/cfoutput&gt;
+&lt;cfoutput&gt;this displays with a newline but only because we explicitly specify the break tag here&lt;br&gt;&lt;/cfoutput&gt;
+</code></pre>
+<h2>Quickstart</h2>
+<pre><code class="language-cfm">&lt;!--- ----- QUICKSTART ----- --&gt;
+    &lt;!--- CFML stands for ColdFusion Markup Language ---&gt;
+    &lt;!--- tag-based language inheriting much of its syntax from HTML ---&gt;
+    &lt;!--- supports easy integration with databases and productive web development with robust support for HTML, JavaScript etc. ---&gt;
+    &lt;!--- used for building dynamic websites, APIs, web services and Adobe enterprise-level applications ---&gt;
+    &lt;!--- for all the syntax covered in this rundown of ColdFusion, the closing tag should automatically be assumed unless the example displays otherwise given that ColdFusion inherits many of its tag-based conventions from HTML including matching pairs of opening and closing tags ---&gt;
+    &lt;!--- &lt;cfset&gt; =&gt; declares and assigns a mutable variable whose value can be modified and reassigned even after initial assignment ---&gt;
+    &lt;!--- ## =&gt; used to interpolate a value within a ColdFusion string to display it within the browser, generally paired with the &lt;cfoutput&gt; tag ---&gt;
+
+&lt;cfset myVar = &quot;ColdFusion&quot;&gt; &lt;!--- variable assignment ---&gt;
+&lt;cfoutput&gt;#myVar#&lt;/cfoutput&gt; &lt;!--- retrieving the previously declared variable ---&gt;
+</code></pre>
+<h2>Types</h2>
+<pre><code class="language-cfm">&lt;!--- ----- TYPE ----- --&gt;
+    &lt;!--- string =&gt; stores a string value declared within '' single quotation marks or &quot;&quot; double quotation marks, note that characters are handled as single-character long strings ---&gt;
+    &lt;!--- int =&gt; stores an integer number value ---&gt;
+    &lt;!--- double =&gt; stores a floating-point number value ---&gt;
+    &lt;!--- boolean =&gt; true, false ---&gt;
+    &lt;!--- date =&gt; stores a date value without time ---&gt;
+    &lt;!--- time =&gt; stores a time value without date ---&gt;
+    &lt;!--- timestamp =&gt; stores a date-time value ---&gt;
+    &lt;!--- binary =&gt; stores binary data like images and files ---&gt;
+    &lt;!--- object =&gt; stores a ColdFusion object, the equivalent of objects in other languages that support object-oriented programming ---&gt;
+    &lt;!--- component =&gt; stores a ColdFusion component, the equivalent of classes in other languages that support object-oriented programming ---&gt;
+</code></pre>
+<h2>Operators</h2>
+<pre><code class="language-cfm">&lt;!--- ----- OPERATOR ----- --&gt;
+
+&lt;!--- --- ARITHMETIC OPERATORS --- ---&gt;
+
++ &lt;!--- addition ---&gt;
+- &lt;!--- subtraction ---&gt;
+* &lt;!--- multiplication ---&gt;
+/ &lt;!--- divison ---&gt;
+% &lt;!--- modulo---&gt;
+
+&lt;!--- --- COMPARISON OPERATORS --- ---&gt;
+    &lt;!--- &lt;cfif&gt; =&gt; declares that a comparison operator is being called and accompanies any of the specifiers below ---&gt;
+
+EQ &lt;!--- complete equality check for both value and type --&gt;
+NEQ &lt;!--- complete inequality check for both value and type --&gt;
+GT &lt;!--- comparison operator ---&gt;
+LT &lt;!--- comparison operator ---&gt;
+GTE &lt;!--- comparison operator ---&gt;
+LTE &lt;!--- comparison operator ---&gt;
+
+&lt;!--- --- LOGICAL OPERATORS --- ---&gt;
+    &lt;!--- &lt;cfif&gt; =&gt; similarly declares that a logical operator is being called and accompanies any of the specifiers below ---&gt;
+
+AND &lt;!--- logical and ---&gt;
+OR &lt;!--- logical or ---&gt;
+NOT &lt;!--- logical not ---&gt;
+</code></pre>
+<h2>Control structures</h2>
+<pre><code class="language-cfm">&lt;!--- ----- CONTROL STRUCTURE ----- --&gt;
+
+&lt;!--- --- CONDITIONALS --- ---&gt;
+
+&lt;!--- IF ELSE IF ELSE ---&gt;
+    &lt;!--- operates the same as conditional constructs in most other programming languages ---&gt;
+
+&lt;cfset num = 75&gt;
+&lt;cfif num LT 50&gt;
+    &lt;cfoutput&gt;#num# is less than 50&lt;/cfoutput&gt;
+&lt;cfelseif num GTE 50 AND num LTE 100&gt;
+    &lt;cfoutput&gt;#num# is between 50 and 100&lt;/cfoutput&gt;
+&lt;cfelse&gt;
+    &lt;cfoutput&gt;#num# is greater than 100&lt;/cfoutput&gt;
+&lt;/cfif&gt;
+
+&lt;!--- --- LOOPS --- ---&gt;
+    &lt;!--- &lt;cfloop&gt; =&gt; specifies that a loop construct is about to be declared in ColdFusion ---&gt;
+
+&lt;!--- FROM TO INDEX ---&gt;
+    &lt;!--- the equivalent of a conventional C-style integer-based for loop with the startIndex;endIndex;step specifier ---&gt;
+    &lt;!--- index =&gt; automatically assigns itself to the iteration variable of the loop ---&gt;
+
+&lt;cfloop from=&quot;1&quot; to=&quot;5&quot; index=&quot;i&quot;&gt;
+    &lt;cfoutput&gt;#i#&lt;/cfoutput&gt;
+&lt;/cfloop&gt;
+
+&lt;!--- ARRAY INDEX ---&gt;
+    &lt;!--- provides iteration and traversal of elements over an iterable data structure ---&gt;
+    &lt;!--- the equivalent of a for in loop in Python and a foreach loop in PHP ---&gt;
+    &lt;!--- index =&gt; automatically assigns itself to the iteration variable of the loop ---&gt;
+
+&lt;cfloop array=&quot;#myArray#&quot; index=&quot;item&quot;&gt;
+    &lt;cfoutput&gt;#item#&lt;/cfoutput&gt;
+&lt;/cfloop&gt;
+
+&lt;!--- CONDITION ---&gt;
+    &lt;!--- condition =&gt; specifies the predicate break condition that when hit, will cause the exit and termination of the while loop ---&gt;
+    &lt;!--- the equivalent of a while loop in most other programming languages ---&gt;
+
+&lt;cfset i = 1&gt;
+&lt;cfloop condition=&quot;#i LTE 5#&quot;&gt;
+    &lt;cfoutput&gt;#i#&lt;/cfoutput&gt;
+    &lt;cfset i = i + 1&gt;
+&lt;/cfloop&gt;
+</code></pre>
+<h2>Data structures</h2>
+<pre><code class="language-cfm">&lt;!--- ----- DATA STRUCTURE ----- --&gt;
+    &lt;!--- array =&gt; mutable dynamically-sized ordered collection of elements of multiple datatypes ---&gt;
+    &lt;!--- struct =&gt; mutable dynamically-sized user-defined unordered collection of key-value pairs with unique keys and values of multiple datatypes ---&gt;
+    &lt;!--- query =&gt; immutable fixed-sized set of predefined rows and columns retrieved from a database, used to represent stored SQL data ---&gt;
+
+&lt;cfset anExampleArray = [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;]&gt;
+&lt;cfset anExampleStruct = {name=&quot;John&quot;, age=30}&gt;
+
+&lt;cfquery name=&quot;getUsers&quot; datasource=&quot;myDataSource&quot;&gt;
+    SELECT * FROM users
+&lt;/cfquery&gt; &lt;!--- an example query ---&gt;
+</code></pre>
+<h2>Functions</h2>
+<pre><code class="language-cfm">&lt;!--- ----- FUNCTION ----- --&gt;
+    &lt;!--- &lt;cffunction&gt; =&gt; definition and declaration of a named function ---&gt;
+        &lt;!--- name =&gt; specifies the function name ---&gt;
+        &lt;!--- returnType =&gt; specifies the datatype of the function return value or expression ---&gt;
+    &lt;!--- &lt;cfargument&gt; =&gt; specifies the function parameter ---&gt;
+        &lt;!--- name =&gt; specifies the function parameter name ---&gt;
+        &lt;!--- type =&gt; specifies the datatype of the function parameter ---&gt;
+        &lt;!--- required =&gt; specifies whether a given function parameter is optional or required ---&gt;
+    &lt;!--- &lt;cfreturn&gt; =&gt; specifies the function return value ---&gt;
+    &lt;!--- &lt;functionName&gt;(&lt;functionArguments&gt;) =&gt; specifies a function call, where functions are called similarly as in most other programming languages ---&gt;
+
+&lt;cffunction name=&quot;myFunction&quot; returnType=&quot;string&quot;&gt; 
+    &lt;cfargument name=&quot;arg1&quot; type=&quot;string&quot; required=&quot;true&quot;&gt;
+    &lt;cfreturn &quot;Hello, &quot; &amp; arguments.arg1&gt;
+&lt;/cffunction&gt; &lt;!--- function definition ---&gt;
+
+&lt;cfoutput&gt;#myFunction(&quot;World&quot;)#&lt;/cfoutput&gt; &lt;!--- call the previously declared function ---&gt;
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li><a href="https://www.adobe.com/sg/products/coldfusion-family.html">coldfusion-family.html</a></li>
+<li><a href="https://cfdocs.org/">coldfusion documentation</a></li>
+<li><a href="https://learnxinyminutes.com/docs/coldfusion/">learn coldfusion in y minutes</a></li>
+<li><a href="https://links-lang.org/">links-lang.org</a></li>
+</ul>

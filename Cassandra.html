@@ -1,0 +1,57 @@
+<h1><code>Cassandra</code></h1>
+<p>Highly scalable, distributed NoSQL database.</p>
+<h2>Launching Cassandra</h2>
+<pre><code class="language-bash"><span class="hljs-comment"># ---------- LAUNCHING CASSANDRA ----------</span>
+    <span class="hljs-comment"># type the following commands in the CLI</span>
+
+cassandra -f <span class="hljs-comment"># starts running a Cassandra instance in the foreground</span>
+cqlsh <span class="hljs-comment"># launches the cqlsh shell, in which all CQL is typed</span>
+</code></pre>
+<h2>Quickstart</h2>
+<pre><code class="language-sql"><span class="hljs-comment">-- ---------- QUICKSTART ----------</span>
+    <span class="hljs-comment">-- queries are written in Cassandra Query Language (CQL), which bears many syntactic similarities to SQL </span>
+    <span class="hljs-comment">-- the most direct way to interact with the Apache Cassandra database is to use the CQL shell, cqlsh</span>
+    <span class="hljs-comment">-- keyspace =&gt; namespaces that defines data replication on a node, similar to databases in SQL</span>
+    <span class="hljs-comment">-- tables =&gt; tables live within keyspaces, and function similarly to normal tables in SQL</span>
+    <span class="hljs-comment">-- CQL is a semicolon language </span>
+
+<span class="hljs-comment">-- ----- GENERAL -----</span>
+    <span class="hljs-comment">-- CREATE KEYSPACE &lt;keyspaceName&gt; =&gt; creates a keyspace under the given name, and assigns it the value augmenters specified in the assignment statement</span>
+    <span class="hljs-comment">-- USE &lt;keyspaceName&gt; =&gt; selects the specified keyspace for use presently</span>
+    <span class="hljs-comment">-- CREATE TABLE &lt;tableName&gt; (&lt;columnName&gt; &lt;columnDatatype&gt; &lt;augemnters(s)&gt;) =&gt; creates a table with any number of columns and their corresponding names and datatypes as specified</span>
+    <span class="hljs-comment">-- INSERT INTO &lt;tableName&gt; (&lt;columnNames&gt;) VALUES (&lt;columnValuesTobeInserted&gt;) =&gt; inserts the specified values into the given table</span>
+    <span class="hljs-comment">-- SELECT &lt;query&gt; FROM &lt;tableName&gt; WHERE &lt;predicate(s)&gt; =&gt; the foundation of CQL, allowing users to structure complex queries to retrieve their desired data from the given keyspace and table</span>
+    <span class="hljs-comment">-- UPDATE &lt;tableName&gt; SET &lt;updatedFieldAndValue&gt; WHERE &lt;predicate(s)&gt; =&gt; updates the given record where the record&#x27;s fields matches the specified predicate(s)</span>
+    <span class="hljs-comment">-- DELETE FROM &lt;tableName&gt; WHERE &lt;predicate(s)&gt; =&gt; deletes records from the specified table where the given record&#x27;s fields matches the specified predicate(s)</span>
+
+<span class="hljs-keyword">CREATE</span> KEYSPACE mykeyspace <span class="hljs-keyword">WITH</span> REPLICATION <span class="hljs-operator">=</span> { <span class="hljs-string">&#x27;class&#x27;</span> : <span class="hljs-string">&#x27;SimpleStrategy&#x27;</span>, <span class="hljs-string">&#x27;replication_factor&#x27;</span> : <span class="hljs-number">1</span> };
+USE mykeyspace;
+
+<span class="hljs-keyword">CREATE TABLE</span> users (
+    user_id UUID <span class="hljs-keyword">PRIMARY KEY</span>,
+    first_name TEXT,
+    last_name TEXT,
+    email TEXT
+);
+
+<span class="hljs-keyword">INSERT INTO</span> users (user_id, first_name, last_name, email) <span class="hljs-keyword">VALUES</span> (uuid(), <span class="hljs-string">&#x27;John&#x27;</span>, <span class="hljs-string">&#x27;Doe&#x27;</span>, <span class="hljs-string">&#x27;john.doe@example.com&#x27;</span>);
+
+<span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> users;
+
+<span class="hljs-keyword">UPDATE</span> users <span class="hljs-keyword">SET</span> email <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;john.newemail@example.com&#x27;</span> <span class="hljs-keyword">WHERE</span> user_id <span class="hljs-operator">=</span> <span class="hljs-operator">&lt;</span><span class="hljs-keyword">specific</span><span class="hljs-operator">-</span>uuid<span class="hljs-operator">&gt;</span>;
+
+<span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> users <span class="hljs-keyword">WHERE</span> user_id <span class="hljs-operator">=</span> <span class="hljs-operator">&lt;</span><span class="hljs-keyword">specific</span><span class="hljs-operator">-</span>uuid<span class="hljs-operator">&gt;</span>;
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li><a href="https://cassandra.apache.org/_/download.html">install cassandra</a></li>
+<li><a href="https://cassandra.apache.org/doc/latest/">cassandra documentation</a></li>
+<li><a href="https://docs.datastax.com/en/cql-oss/3.3/cql/cql_using/usePrimaryIndex.html">cassandra index</a></li>
+<li><a href="https://docs.datastax.com/en/cql-oss/3.3/cql/cql_using/useCollections.html">cassandra collections</a></li>
+<li><a href="https://docs.datastax.com/en/cql-oss/3.3/cql/cql_reference/cqlBatch.html">cassandra batch</a></li>
+<li><a href="https://docs.datastax.com/en/cql-oss/3.3/cql/cql_using/useCreateUDT.html">cassandra user-defined types</a></li>
+<li><a href="https://cassandra.apache.org/doc/stable/cassandra/cql/mvs.html">cassandra materialized views</a></li>
+<li><a href="https://docs.datastax.com/en/cassandra-oss/3.0/cassandra/architecture/archDataDistributeReplication.html">cassandra data replication</a></li>
+<li><a href="https://cassandra.apache.org/doc/stable/cassandra/operating/compaction/index.html">cassandra compaction</a></li>
+<li><a href="https://docs.datastax.com/en/cassandra-oss/3.x/cassandra/operations/opsSetCaching.html">cassandra caching</a></li>
+</ul>

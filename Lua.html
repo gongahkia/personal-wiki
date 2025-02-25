@@ -1,0 +1,334 @@
+<h1><code>Lua</code></h1>
+<h2>Comments</h2>
+<pre><code class="language-lua"><span class="hljs-comment">-- single-line comment</span>
+
+<span class="hljs-comment">--[[ 
+this is 
+a 
+multi-line
+comment
+]]</span><span class="hljs-comment">--</span>
+</code></pre>
+<h2>Printing</h2>
+<pre><code class="language-lua"><span class="hljs-comment">-- ---------- PRINTING ----------</span>
+    <span class="hljs-comment">-- print() appends a newline to the output by default</span>
+    <span class="hljs-comment">-- io.write() does not append a newline to the output</span>
+    <span class="hljs-comment">-- io.read() takes in user input from the stdin</span>
+    <span class="hljs-comment">-- .. for string concatenation</span>
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;this is just like python, it comes with a newline&quot;</span>)
+<span class="hljs-built_in">io</span>.<span class="hljs-built_in">write</span>(<span class="hljs-string">&quot;this also works, defaults to the standard out\n&quot;</span>)
+
+watermelon = <span class="hljs-built_in">io</span>.<span class="hljs-built_in">read</span>(<span class="hljs-string">&quot;Waiting for your input lah: &quot;</span>) <span class="hljs-comment">-- assigns user input to the string variable watermelon</span>
+
+stringOne = <span class="hljs-string">&quot;Hello &quot;</span>
+stringTwo = <span class="hljs-string">&quot;World!&quot;</span>
+
+<span class="hljs-built_in">print</span>(stringOne .. stringTwo) <span class="hljs-comment">-- this prints &quot;Hello World!&quot; to the console</span>
+</code></pre>
+<h2>Types</h2>
+<pre><code class="language-lua"><span class="hljs-comment">-- ---------- VARIABLE ----------</span>
+    <span class="hljs-comment">-- variables are global by default</span>
+    <span class="hljs-comment">-- local makes them local</span>
+
+iAmGlobal = <span class="hljs-string">&quot;Gojo Satoru&quot;</span>
+<span class="hljs-keyword">local</span> iAmLocal = <span class="hljs-string">&quot;Geto Suguru&quot;</span>
+
+<span class="hljs-comment">-- ---------- TYPE ----------</span>
+    <span class="hljs-comment">-- number (integers, floats, doubles)</span>
+    <span class="hljs-comment">-- string (single, double-quoted, [[]] square brackets; strings are immutable like python)</span>
+    <span class="hljs-comment">-- boolean (true, false; only nil and false evaluate to false, everything else evalautes to true including 0 and &#x27;&#x27;)</span>
+    <span class="hljs-comment">-- nil (no data; undefined variables evalaute to nil, no error is hit)</span>
+
+aNumber = <span class="hljs-number">42</span>
+anotherNumber = <span class="hljs-number">12.890</span>
+aString = <span class="hljs-string">&quot;watermelon&quot;</span>
+aMultilineString = <span class="hljs-string">[[ Double brackets for 
+                      multi-line
+                      string ]]</span>
+aBoolean = <span class="hljs-literal">true</span>
+aNil = <span class="hljs-literal">nil</span>
+foo = anUndefinedVariable <span class="hljs-comment">-- this evaluates to nil and the program continues running</span>
+
+<span class="hljs-comment">-- TYPE CONVERSION </span>
+
+<span class="hljs-built_in">tostring</span>() 
+<span class="hljs-built_in">tonumber</span>()
+.. <span class="hljs-comment">-- string concatenation have implicit type conversion from number to string, though for greater readability we try to avoid this as far as possible</span>
++ - * / <span class="hljs-comment">-- arithmetic operations have implicit type conversion from boolean to number, true =&gt; 1 and false =&gt; 0, though for greater readability we try to avoid implicit type conversions as far as possible</span>
+</code></pre>
+<h2>Operators</h2>
+<pre><code class="language-lua"><span class="hljs-comment">-- ---------- OPERATOR ----------</span>
+
+<span class="hljs-comment">-- ARITHMETIC OPERATOR</span>
+
++ <span class="hljs-comment">-- addition</span>
+- <span class="hljs-comment">-- subtraction</span>
+* <span class="hljs-comment">-- multiplication</span>
+/ <span class="hljs-comment">-- divison</span>
+% <span class="hljs-comment">-- modulo</span>
+^ <span class="hljs-comment">-- exponentiation (to the power of)</span>
+
+<span class="hljs-comment">-- RELATIONAL OPERATOR</span>
+
+== <span class="hljs-comment">-- complete equality check of type and value</span>
+~= <span class="hljs-comment">-- complete inequality check of type and value</span>
+&lt; <span class="hljs-comment">-- comparison operator</span>
+&gt; <span class="hljs-comment">-- comparison operator</span>
+&lt;= <span class="hljs-comment">-- comparison operator</span>
+&gt;= <span class="hljs-comment">-- comparison operator</span>
+
+<span class="hljs-comment">-- LOGICAL OPERATOR</span>
+
+<span class="hljs-keyword">and</span> <span class="hljs-comment">-- logical and</span>
+<span class="hljs-keyword">or</span> <span class="hljs-comment">-- logical or</span>
+<span class="hljs-keyword">not</span> <span class="hljs-comment">-- logical not</span>
+</code></pre>
+<h2>Control structures</h2>
+<pre><code class="language-lua"><span class="hljs-comment">-- ---------- BLOCK -----------</span>
+    <span class="hljs-comment">-- lua takes a page from bash&#x27;s syntax by seperating its code blocks with do/end and indentation </span>
+
+<span class="hljs-comment">-- ---------- IF ELSEIF ELSE THEN ----------</span>
+    <span class="hljs-comment">-- standard conditionals</span>
+    <span class="hljs-comment">-- there are no switch case statements in lua</span>
+
+<span class="hljs-keyword">if</span> num &gt; <span class="hljs-number">40</span> <span class="hljs-keyword">then</span> 
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Over 40&quot;</span>)
+<span class="hljs-keyword">elseif</span> num == <span class="hljs-number">20</span> <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;It&#x27;s 20&quot;</span>)
+<span class="hljs-keyword">else</span> 
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Lovely&quot;</span>)
+
+<span class="hljs-comment">-- ---------- LOOP ----------</span>
+
+<span class="hljs-comment">-- FOR LOOP</span>
+    <span class="hljs-comment">-- for {VARIABLE BEGINNING}, {VARIABLE END}, {STEP}</span>
+    <span class="hljs-comment">-- ranges are inclusive on both ends</span>
+
+<span class="hljs-keyword">for</span> i=<span class="hljs-number">10</span>, <span class="hljs-number">1</span>, <span class="hljs-number">-1</span>
+<span class="hljs-keyword">do</span> 
+    <span class="hljs-built_in">print</span>(i) <span class="hljs-comment">-- prints 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 to the console</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-keyword">for</span> q=<span class="hljs-number">1</span>,<span class="hljs-number">100</span> <span class="hljs-keyword">do</span> 
+    <span class="hljs-built_in">print</span>(q) <span class="hljs-comment">-- prints the numbers 1 to 100 to the console</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment">-- FOR IN LOOP</span>
+    <span class="hljs-comment">-- useful when looping over iterable data structures</span>
+
+<span class="hljs-keyword">for</span> key,value <span class="hljs-keyword">in</span> <span class="hljs-built_in">pairs</span>(aTable) 
+<span class="hljs-keyword">do</span>
+    aTable[key] = <span class="hljs-string">&quot;i am jujutsu kaisen&quot;</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment">-- WHILE LOOP</span>
+    <span class="hljs-comment">-- while do loop</span>
+
+<span class="hljs-keyword">while</span> num &lt; <span class="hljs-number">50</span> <span class="hljs-keyword">do</span> 
+    num = num + <span class="hljs-number">1</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment">-- REPEAT UNTIL LOOP</span>
+    <span class="hljs-comment">-- basically a do while loop</span>
+
+breakCase = <span class="hljs-number">10</span>
+<span class="hljs-keyword">repeat</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;watermelon&quot;</span>)
+    breakCase = breakCase - <span class="hljs-number">1</span>
+<span class="hljs-keyword">until</span> breakCase == <span class="hljs-number">0</span>
+</code></pre>
+<h2>Data structures</h2>
+<pre><code class="language-lua"><span class="hljs-comment">-- --------- WARNING ---------</span>
+    <span class="hljs-comment">-- indice count starts at 1 in lua, important for indexing</span>
+
+<span class="hljs-comment">-- ---------- TABLE ----------</span>
+    <span class="hljs-comment">-- lua&#x27;s only data structure is the table, similar to PHP&#x27;s associative arrays (both a dictionary and a list)</span>
+    <span class="hljs-comment">-- initialised using {} curly braces</span>
+    <span class="hljs-comment">-- table keys are string values by default so quotation marks are unnecessary</span>
+    <span class="hljs-comment">-- table keys can also be non-string values, and are declared via literal notation</span>
+    <span class="hljs-comment">-- table values can be accessed via . dot notation or [] square bracket notation</span>
+    <span class="hljs-comment">-- can assign functions to a table, wherein the function name is the key and the function body is the value (using both named function / anonymous function syntax are valid)</span>
+    <span class="hljs-comment">-- table functions are called using the same . dot notation as other table values</span>
+
+aTable = {key1 = <span class="hljs-string">&quot;value1&quot;</span>, key2 = <span class="hljs-literal">false</span>}
+<span class="hljs-built_in">print</span>(aTable.key1) <span class="hljs-comment">-- prints the value associated with the key key1 in aTable</span>
+aTable.key3 = <span class="hljs-number">200</span> <span class="hljs-comment">-- adds a new key value pair to aTable of key key3 and value 200</span>
+aTable.key2 = <span class="hljs-literal">nil</span> <span class="hljs-comment">-- removes key2 from the table</span>
+
+anotherTable = {[<span class="hljs-string">&quot;@!#&quot;</span>] = <span class="hljs-string">&#x27;qbert&#x27;</span>, [{}] = <span class="hljs-number">1729</span>, [<span class="hljs-number">6.29</span>] = <span class="hljs-string">&quot;tau&quot;</span>} <span class="hljs-comment">-- initialise a table with non-string non-nil keys</span>
+<span class="hljs-built_in">print</span>(anotherTable[<span class="hljs-number">6.29</span>]) <span class="hljs-comment">-- prints the string value &quot;tau&quot;</span>
+
+<span class="hljs-comment">-- ---------- TABLE FUNCTION ----------</span>
+    <span class="hljs-comment">-- note either of the below 2 syntax are valid and achieve the same result</span>
+
+<span class="hljs-comment">-- NAMED FUNCTION SYNTAX</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">anotherTable.aFunction</span><span class="hljs-params">()</span></span> 
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Hello from a function!&quot;</span>)
+<span class="hljs-keyword">end</span>
+
+anotherTable.aFunction() <span class="hljs-comment">-- calls the table function, printing &quot;Hello from a function!&quot;</span>
+
+<span class="hljs-comment">-- ANONYMOUS FUNCTION SYNTAX</span>
+
+anotherTable.anAnonFunction() = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span> 
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Hello from an anonymous function!&quot;</span>)
+<span class="hljs-keyword">end</span>
+
+anotherTable.anAnonFunction() <span class="hljs-comment">-- calls the table function similarly, printing &quot;Hello from an anonymous function!&quot;</span>
+
+<span class="hljs-comment">-- ---------- TABLE &#x27;LIST&#x27; ----------</span>
+    <span class="hljs-comment">-- &#x27;lists&#x27; are really just tables with implicit indice keys associated with each value upon initalisation</span>
+    <span class="hljs-comment">-- # for length of table (number of key value pairs)</span>
+
+aListButActuallyATable = {<span class="hljs-string">&quot;value1&quot;</span>, <span class="hljs-string">&#x27;value2&#x27;</span>, <span class="hljs-number">1.21</span>, <span class="hljs-literal">true</span>}
+<span class="hljs-built_in">print</span>(#aListButActuallyATable) <span class="hljs-comment">-- # returns the size of the table, this works on strings too</span>
+<span class="hljs-keyword">for</span> i = <span class="hljs-number">1</span>, #aListButActuallyATable <span class="hljs-keyword">do</span>  <span class="hljs-comment">-- recall that indices start at 1 in lua</span>
+    <span class="hljs-built_in">print</span>(v[i]) <span class="hljs-comment">-- this syntax works since we&#x27;re technically using tables with implicit indice keys </span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment">-- ---------- GLOBAL TABLE ----------</span>
+    <span class="hljs-comment">-- every lua program has a special _G global table that stores all global variables and functions (global functionality)</span>
+    <span class="hljs-comment">-- _G is the table name, and it has similar functionality as every other table</span>
+
+aNumber = <span class="hljs-number">42</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">aFunction</span><span class="hljs-params">()</span></span> 
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Hello my function!&quot;</span>)
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">_G</span>.aNumber) <span class="hljs-comment">-- prints 42</span>
+<span class="hljs-built_in">_G</span>.aFunction <span class="hljs-comment">-- calls the function, printing &quot;Hello my function!&quot;</span>
+<span class="hljs-built_in">_G</span>.aNewBoolean = <span class="hljs-literal">true</span> <span class="hljs-comment">-- assigns the key aNewBoolean with value true to the global table, though this is not recommended unless explicitly necessary for the sake of producing readable code</span>
+
+<span class="hljs-comment">-- ---------- METATABLE -----------</span>
+    <span class="hljs-comment">-- metatables are tables that define and customise table behaviour</span>
+    <span class="hljs-comment">-- setmetatable() sets a metamethod on a specified table, creating a metatable</span>
+
+<span class="hljs-comment">-- ---------- METAMETHOD ----------</span>
+    <span class="hljs-comment">-- functions that define specific operations on tables, lua has a set of predefined metamethods as below</span>
+    <span class="hljs-comment">-- __add =&gt; define behaviour when adding 2 tables</span>
+    <span class="hljs-comment">-- __sub =&gt; define behaviour when subtracting 2 tables</span>
+    <span class="hljs-comment">-- __mul =&gt; define behaviour when multiplying 2 tables</span>
+    <span class="hljs-comment">-- __div =&gt; define behaviour when dividing 2 tables</span>
+    <span class="hljs-comment">-- __mod =&gt; define behaviour when calling modulo operator on 2 tables</span>
+    <span class="hljs-comment">-- __pow =&gt; define behaviour when calling exponentiation operator on 2 tables</span>
+    <span class="hljs-comment">-- __len =&gt; define behaviour when calling the # length operator on a table or string</span>
+    <span class="hljs-comment">-- __unm =&gt; define behaviour when calling the unary minus operator in a table, used for negating a table</span>
+    <span class="hljs-comment">-- __concat =&gt; define behaviour when calling concatenation operator on 2 tables</span>
+    <span class="hljs-comment">-- __call =&gt; define behaviour when calling a table as a function</span>
+    <span class="hljs-comment">-- __index =&gt; define a fallback method when accessing a table key that no longer exists</span>
+    <span class="hljs-comment">-- __newindex =&gt; define behaviour when assigning a value to a table key that no longer exists</span>
+    <span class="hljs-comment">-- __eq, __lt, __le =&gt; define behaviour for == equality, &lt; less than and &lt;= less than or equal to operators</span>
+    <span class="hljs-comment">-- __tostring =&gt; define behaviour when converting a table to a string</span>
+
+<span class="hljs-comment">-- attempting to simulate behaviour of fractions via tables</span>
+numeratorTable = {a = <span class="hljs-number">1</span>, b = <span class="hljs-number">2</span>}
+denominatorTable = {a = <span class="hljs-number">2</span>, b = <span class="hljs-number">3</span>}
+
+metaFraction = {} <span class="hljs-comment">-- metaFraction is just another table for now</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">metaFraction.__add</span><span class="hljs-params">(numeratorTable, denominatorTable)</span></span> <span class="hljs-comment">-- __add is the metamethod called on the metaFraction table to define behaviour when adding 2 tables together</span>
+    sum = {}
+    sum.b = numeratorTable.b * denominatorTable.b
+    sum.a = numeratorTable.a * denominatorTable.b + denominatorTable.a * numeratorTable.b
+    <span class="hljs-keyword">return</span> sum
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-built_in">setmetatable</span>(numeratorTable, metaFraction) <span class="hljs-comment">-- by pairing the table on which the metamethod __add is called with the 2 other tables, we prescribe behaviour and thus crete metatables using the setmetatable() function</span>
+<span class="hljs-built_in">setmetatable</span>(denominatorTable, metaFraction)
+
+newSum = numeratorTable + denominatorTable <span class="hljs-comment">-- this now calls __add(numeratorTable, denominatorTable) on numeratorTable&#x27;s metatable</span>
+
+<span class="hljs-comment">-- ---------- CLASS-LIKE TABLE ----------</span>
+    <span class="hljs-comment">-- lua has no built-in classes, though OOP behaviour can be simulated with tables and metatables</span>
+    <span class="hljs-comment">-- function {TABLE NAME}:{FUNCTION NAME}() is the same as function {TABLE NAME}.{FUNCTION NAME}(self), the : just adds the self as the first argument </span>
+    <span class="hljs-comment">-- self works as you would expect it to in conventional OOP, so here aDog is an object and Dog is the class</span>
+
+Dog = {} <span class="hljs-comment">-- Dog might act like a class, but remember its just a table with a metatable and metamethods prescribed on it</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Dog.new</span><span class="hljs-params">(self)</span></span>
+    newObject = {sound = <span class="hljs-string">&quot;Woof&quot;</span>}
+    <span class="hljs-built_in">self</span>.<span class="hljs-built_in">__index</span> = <span class="hljs-built_in">self</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">setmetatable</span>(newObject, <span class="hljs-built_in">self</span>)
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Dog.makeSound</span><span class="hljs-params">()</span></span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;I say&quot;</span> .. <span class="hljs-built_in">self</span>.sound)
+<span class="hljs-keyword">end</span>
+
+aDog = Dog:new()
+aDog:makeSound() <span class="hljs-comment">-- &quot;I say Woof&quot;</span>
+
+<span class="hljs-comment">-- ---------- INHERITANCE ----------</span>
+    <span class="hljs-comment">-- inheritance can be simulated by creating a new table off the original table and assigning new methods to that table, which is then used as a template for further tables</span>
+    <span class="hljs-comment">-- since we&#x27;re effectively copying keys and values off the original table, the new table template &#x27;inherits&#x27; the keys values and methods off the old table which aren&#x27;t overriden</span>
+    <span class="hljs-comment">-- remember that everything here is a table</span>
+
+loudDog = Dog:new()
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loudDog.makesound</span><span class="hljs-params">()</span></span>
+    sound = <span class="hljs-built_in">self</span>.sound .. <span class="hljs-string">&quot; &quot;</span>
+    <span class="hljs-built_in">print</span>(sound .. sound .. sound)
+<span class="hljs-keyword">end</span>
+
+aSuperLoudDog = loudDog:new()
+aSuperLoudDog:makesound() <span class="hljs-comment">-- &quot;Woof Woof Woof &quot;</span>
+</code></pre>
+<h2>Functions</h2>
+<pre><code class="language-lua"><span class="hljs-comment">-- ---------- FUNCTIONS ----------</span>
+    <span class="hljs-comment">-- function/end declares a function block</span>
+    <span class="hljs-comment">-- return works as expected</span>
+    <span class="hljs-comment">-- closures and anonymous functions are allowed</span>
+    <span class="hljs-comment">-- functions are first-class and can be fed into other functions</span>
+    <span class="hljs-comment">-- fuction scope can be specified using the local/global keyword</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fib</span><span class="hljs-params">(n)</span></span>
+    <span class="hljs-keyword">if</span> n &lt; <span class="hljs-number">2</span> <span class="hljs-keyword">then</span> 
+        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span> 
+    <span class="hljs-keyword">end</span> 
+    <span class="hljs-keyword">return</span> fib(n<span class="hljs-number">-2</span>) + fib(n<span class="hljs-number">-1</span>)
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">adder</span><span class="hljs-params">(x)</span></span>
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(y)</span></span> <span class="hljs-keyword">return</span> x + y <span class="hljs-keyword">end</span> <span class="hljs-comment">-- returns an anonymous function which retains the value of x</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h2>Modules</h2>
+<pre><code class="language-lua"><span class="hljs-comment">-- ---------- MODULE ----------</span>
+    <span class="hljs-comment">-- require() allows for global functionality from the specified file to be brought into global scope of current file</span>
+        <span class="hljs-comment">-- require()&#x27;s return values are cached so a file is only run ONCE even if require() is run multiple times</span>
+    <span class="hljs-comment">-- dofile() is like require() but without caching, so a file is run EVERYTIME dofile() is run</span>
+    <span class="hljs-comment">-- loadfile() loads a lua file into the variable but does not run it, the variable is called again as a function to have it run</span>
+    <span class="hljs-comment">-- load() is loadfile() for strings, the variable is called again as a function to have it run</span>
+    <span class="hljs-comment">-- local functionality that is only ever within local scope and never brought into global scope from the specified file will be treated as invisible and unretrievable</span>
+    <span class="hljs-comment">-- functionality is called using . dot notation</span>
+
+<span class="hljs-comment">-- eg. the below code is in seperate.lua</span>
+
+<span class="hljs-keyword">local</span> M = {}
+
+<span class="hljs-keyword">local</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayMyName</span><span class="hljs-params">()</span></span> 
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;You&#x27;re Heisenberg&quot;</span>)  
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">M.sayHello</span><span class="hljs-params">()</span></span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Why hello there&quot;</span>)
+    sayMyName()
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-keyword">return</span> M
+
+<span class="hljs-comment">-- eg. the below code is in main.lua</span>
+
+<span class="hljs-keyword">local</span> <span class="hljs-built_in">mod</span> = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;seperate&quot;</span>) <span class="hljs-comment">-- require() brings in all globally scoped functionality from seperate.lua, accessed via the variable mod</span>
+<span class="hljs-built_in">mod</span>.sayHello() <span class="hljs-comment">-- prints &quot;Why hello thereYou&#x27;re Heisenberg&quot;, because sayHello() is in the global scope and it brings in sayMyName() despite that being only within local scope in seperate.lua</span>
+<span class="hljs-built_in">mod</span>.sayMyName() <span class="hljs-comment">-- this FAILS because sayMyName() is in the local scope only</span>
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li><a href="https://learnxinyminutes.com/docs/lua/">learn lua in y minutes</a></li>
+<li><a href="http://www.lua.org/pil/contents.html">lua book</a></li>
+<li><a href="https://devhints.io/lua">lua cheatsheet</a></li>
+</ul>

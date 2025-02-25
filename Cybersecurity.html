@@ -1,0 +1,428 @@
+<h1><code>Cybersecurity</code></h1>
+<h2>Definitions</h2>
+<ul>
+<li>Data lifecycle: stages that data goes through from creation to deletion or archiving <em>(generation, collection, processing, storage, management, analysis, visualization, interpretation)</em></li>
+<li>Data integrity: assurance that data is accurate, complete, consistent and uncorrupted throughout its lifecycle</li>
+<li>Data confidentiality: ensuring data is protected from unauthorized access and disclosure</li>
+<li>Encryption: Conversion of readable information to an unreadable format using an algorithm and key, used to ensure data confidentiality</li>
+<li>Hashing: One-way mathematical function that irreversibly transforms data to a fixed-size character string, used to ensure data integrity</li>
+<li>Red team: Group that acts as malicious actors, simulating real-world attacks that identify and exploit vulnerabilities in an organization's defenses</li>
+<li>Blue team: Group that acts as the targetted organisation, defending their systems and networks against the Red team's attacks</li>
+<li>Purple team: Group that acts as both the Red and Blue team, improving an organisation's security posture with offensive and defensive measures</li>
+<li>Pentesting: A.K.A penetration testing, a simulated cyber attack by ethical hackers to evaluate an organisation's system vulnerabilities and security posture</li>
+</ul>
+<h2>Cyber attacks</h2>
+<p>There are 7 main types of cyber attacks.</p>
+<ol>
+<li><a href="#phishing-">Phishing</a></li>
+<li><a href="#malware-">Malware</a></li>
+<li><a href="#denial-of-service-">DoS</a></li>
+<li><a href="#identity-based-attacks-">Identity-Based attacks</a></li>
+<li><a href="#code-injection-">Code injection</a></li>
+<li><a href="#man-in-the-middle-attacks-">MitM attacks</a></li>
+<li><a href="#supply-chain-attacks-">Supply chain attacks</a></li>
+</ol>
+<pre><code class="language-mermaid">flowchart TD;
+    A[Cyber Attacks] --&gt; B[Phishing Attacks 🎣]
+    A --&gt; C[Malware Attacks 💻]
+    A --&gt; D[Denial of Service Attacks ⛔]
+    A --&gt; E[Identity-Based Attacks 🧟]
+    A --&gt; F[Code Injection Attacks 💉]
+    A --&gt; G[Man-in-the-Middle Attacks 🖕]
+    A --&gt; H[Supply Chain Attacks 🚚]
+    B --&gt; J[Spear Phishing]
+    B --&gt; K[Whaling]
+    B --&gt; L[Vishing]
+    B --&gt; M[Smishing]
+    C --&gt; N[Viruses]
+    C --&gt; O[Worms]
+    C --&gt; P[Trojan Horses]
+    C --&gt; Q[Ransomware]
+    D --&gt; R[DoS]
+    D --&gt; S[DDoS]
+    D --&gt; T[Application Layer Attacks]
+    E --&gt; U[Credential Harvesting]
+    E --&gt; V[Business Email Compromise]
+    F --&gt; W[SQL Injection]
+    F --&gt; X[Cross-Site Scripting]
+    G --&gt; Y[Rogue Access Points]
+    G --&gt; Z[Eavesdropping]
+    H
+</code></pre>
+<h3>Phishing 🎣</h3>
+<p>Malicious actors trick individuals into revealing SENSITIVE information by impersonating as a trustworthy entity.</p>
+<p>Specific variants include</p>
+<ol>
+<li>SPEAR PHISHING: Targeted phishing aimed at specific individuals or organizations.</li>
+<li>WHALING: A type of spear phishing that targets high-profile individuals like executives.</li>
+<li>VISHING: Voice phishing conducted through phone calls.</li>
+<li>SMISHI: Phishing via SMS messages.</li>
+</ol>
+<h3>Malware 💻</h3>
+<p>Malicious software that harms devices or networks.</p>
+<p>Specific variants include</p>
+<ol>
+<li>VIRUSES: Self-replicating programs that spread to other systems.</li>
+<li>WORMS: Viruses that do not require human interaction to spread.</li>
+<li>TROJAN HORSES: Malicious software disguised as legitimate applications.</li>
+<li>RANSOMWARE: Encrypts data and demands payment for decryption.</li>
+</ol>
+<h3>Denial of Service ⛔</h3>
+<ul>
+<li>A.K.A DoS.</li>
+<li>Make a service unavailable by overwhelming it with traffic.</li>
+</ul>
+<p>Specific variants include</p>
+<ol>
+<li>DISTRIBUTED DENIAL OF SERVICE: A.K.A DDoS. Uses multiple compromised systems to launch an attack.</li>
+<li>APPLICATION LAYER ATTACKS: Targets specific applications to exploit vulnerabilities.</li>
+</ol>
+<h3>Identity-Based attacks 🧟</h3>
+<p>Stealing personal information to gain unauthorized access.</p>
+<ol>
+<li>CREDENTIAL HARVESTING: Malicious actors collect login credentials en masse.</li>
+<li>BUSINESS EMAIL COMPROMISE: A.K.A BEC. Involves impersonating a trusted source to deceive customers or employees into transferring funds or data.</li>
+</ol>
+<h3>Code Injection 💉</h3>
+<p>Feeding programs malicious code to manipulate data and execute unauthorized commands.</p>
+<ol>
+<li>SQL INJECTION: Inserting malicious SQL queries through input fields.</li>
+<li>CROSS-SITE SCRIPTING: A.K.A XSS. Injecting scripts into web pages viewed by users.</li>
+</ol>
+<h3>Man-in-the-Middle attacks 🖕</h3>
+<ul>
+<li>A.K.A MitM attacks.</li>
+<li>Malicious actors intercept and alter communication between two parties without their knowledge.</li>
+</ul>
+<p>Typically arises from</p>
+<ol>
+<li>ROGUE ACCESS POINTS mimicking legitimate networks, created by the malicious actors.</li>
+<li>EAVESDROPPING on existing unsecured connections.</li>
+</ol>
+<h3>Supply Chain attacks 🚚</h3>
+<ul>
+<li>Exploit supply chain vulnerabilities.</li>
+<li>Can target both SOFTWARE and HARDWARE components.</li>
+</ul>
+<h2>Securing data</h2>
+<p>The 2 main methods to secure data are <a href="#encryption">encryption</a> and <a href="#hashing">hashing</a>.</p>
+<h3>Overview</h3>
+<p><strong>Encryption</strong></p>
+<ul>
+<li>Susceptible to COMPROMISED KEYS due to poor management</li>
+<li>Susceptible to WEAK ENCRYPTION ALGORITHMS</li>
+<li>Commonly used for data confidentiality IN TRANSIT (during communication) and AT REST (storage)</li>
+</ul>
+<p><strong>Hashing</strong></p>
+<ul>
+<li>Susceptible to COLLISION ATTACKS where different data inputs produce the same hash value</li>
+<li>Susceptible to BRUTE-FORCE ATTACKS if weak hash functions are used</li>
+<li>Commonly used for data integrity checks</li>
+</ul>
+<h3>Encryption</h3>
+<blockquote>
+<p>[!TIP]<br>
+Remember to run <code>pip install pycryptodome</code> to run the worked examples below.</p>
+</blockquote>
+<h4>Symmetric Encryption</h4>
+<ul>
+<li>Relies on ONE key for encryption and decryption</li>
+<li>Sender and receiver must both have the key</li>
+<li>Typically fast</li>
+<li>More efficient for encrypting large volumes of data</li>
+<li>Requires secure key management</li>
+<li>Used to protect data from being read by unwanted actors</li>
+<li>REVERSIBLE since encryption is a TWO-WAY process</li>
+</ul>
+<pre><code class="language-mermaid">sequenceDiagram
+    participant Sender
+    participant Receiver
+    participant Key Generator
+
+    Sender-&gt;&gt;Key Generator: Generate shared secret key
+    Key Generator--&gt;&gt;Sender: Provide key
+    Key Generator--&gt;&gt;Receiver: Provide key
+    Sender-&gt;&gt;Sender: Encrypt data using key
+    Sender-&gt;&gt;Receiver: Send encrypted data
+    Receiver-&gt;&gt;Receiver: Decrypt data using key
+</code></pre>
+<p>&lt;table&gt;
+&lt;tr&gt;
+&lt;th&gt;Encryption method&lt;/th&gt;
+&lt;th&gt;Requirements&lt;/th&gt;
+&lt;th&gt;Characteristics&lt;/th&gt;
+&lt;th&gt;Python implementation&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AES&lt;/td&gt;
+&lt;td&gt;Shared secret key&lt;/td&gt;
+&lt;td&gt;Fast, secure, supports key sizes of 128, 192, or 256 bits&lt;/td&gt;
+&lt;td&gt;</p>
+<pre><code class="language-py"><span class="hljs-keyword">from</span> Crypto.Cipher <span class="hljs-keyword">import</span> AES
+<span class="hljs-keyword">from</span> Crypto.Util.Padding <span class="hljs-keyword">import</span> pad, unpad
+
+key = <span class="hljs-string">b&#x27;Sixteen byte key&#x27;</span>
+cipher = AES.new(key, AES.MODE_CBC)
+ct_bytes = cipher.encrypt(pad(data, AES.block_size))
+</code></pre>
+<p>&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DES&lt;/td&gt;
+&lt;td&gt;Shared secret key&lt;/td&gt;
+&lt;td&gt;56-bit key, considered weak due to vulnerabilities&lt;/td&gt;
+&lt;td&gt;</p>
+<pre><code class="language-py"><span class="hljs-keyword">from</span> Crypto.Cipher <span class="hljs-keyword">import</span> DES
+<span class="hljs-keyword">from</span> Crypto.Util.Padding <span class="hljs-keyword">import</span> pad, unpad
+
+key = <span class="hljs-string">b&#x27;8bytekey&#x27;</span>
+cipher = DES.new(key, DES.MODE_CBC)
+cipher.encrypt(pad(data, DES.block_size))
+</code></pre>
+<p>&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3DES&lt;/td&gt;
+&lt;td&gt;Shared secret key&lt;/td&gt;
+&lt;td&gt;Applies DES three times for enhanced security&lt;/td&gt;
+&lt;td&gt;</p>
+<pre><code class="language-py"><span class="hljs-keyword">from</span> Crypto.Cipher <span class="hljs-keyword">import</span> DES3
+<span class="hljs-keyword">from</span> Crypto.Util.Padding <span class="hljs-keyword">import</span> pad, unpad
+
+key = <span class="hljs-string">b&#x27;16bytekey12345&#x27;</span>
+cipher = DES3.new(key, DES3.MODE_CBC)
+ct_bytes = cipher.encrypt(pad(data, DES3.block_size))
+</code></pre>
+<p>&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RC4&lt;/td&gt;
+&lt;td&gt;Shared secret key&lt;/td&gt;
+&lt;td&gt;Stream cipher, fast but not recommended for secure use&lt;/td&gt;
+&lt;td&gt;</p>
+<pre><code class="language-py"><span class="hljs-keyword">from</span> Crypto.Cipher <span class="hljs-keyword">import</span> ARC4
+
+key = <span class="hljs-string">b&#x27;SecretKey&#x27;</span>
+cipher = ARC4.new(key)
+ct_bytes = cipher.encrypt(data)
+</code></pre>
+<p>&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</p>
+<h4>Asymmetric Encryption</h4>
+<ul>
+<li>Relies on TWO keys
+<ul>
+<li>PUBLIC key for encryption</li>
+<li>PRIVATE key for decryption</li>
+</ul>
+</li>
+<li>Sender has their own public and private key pair
+<ul>
+<li>encrypts messages with the RECEIVER's public key</li>
+<li>decryptes messages with their private key</li>
+</ul>
+</li>
+<li>Receiver has their own public and private key pair
+<ul>
+<li>decrypts messages with their private key</li>
+<li>encrypts messages with the SENDER's public key</li>
+</ul>
+</li>
+<li>Each party's PUBLIC keys are made known to the other, their PRIVATE keys are kept secret</li>
+<li>Typically slower than symmetric encryption</li>
+<li>More secure for encrypting small volumes of data</li>
+<li>Allows secure communication without sharing private key</li>
+<li>Used to protect data from being read by unwanted actors</li>
+<li>REVERSIBLE since encryption is a TWO-WAY process</li>
+</ul>
+<pre><code class="language-mermaid">sequenceDiagram
+    participant Sender
+    participant Receiver
+    participant Sender Key Generator
+    participant Receiver Key Generator
+
+    Sender-&gt;&gt;Sender Key Generator: Generate public and private key
+    Sender Key Generator--&gt;&gt;Sender: Provide keys
+    Receiver-&gt;&gt;Receiver Key Generator: Generate public and private key
+    Receiver Key Generator--&gt;&gt;Receiver: Provide keys
+    Receiver-&gt;&gt;Sender: Send public key
+    Sender-&gt;&gt;Receiver: Send public key
+    Sender-&gt;&gt;Sender: Encrypt data using recepient's public key
+    Sender-&gt;&gt;Receiver: Send encrypted data
+    Receiver-&gt;&gt;Receiver: Decrypt data using their own private key
+</code></pre>
+<p>&lt;table&gt;
+&lt;tr&gt;
+&lt;th&gt;Encryption method&lt;/th&gt;
+&lt;th&gt;Requirements&lt;/th&gt;
+&lt;th&gt;Characteristics&lt;/th&gt;
+&lt;th&gt;Python implementation&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RSA&lt;/td&gt;
+&lt;td&gt;Public and private key pair&lt;/td&gt;
+&lt;td&gt;Uses large prime numbers for security&lt;/td&gt;
+&lt;td&gt;</p>
+<pre><code class="language-py"><span class="hljs-keyword">from</span> Crypto.PublicKey <span class="hljs-keyword">import</span> RSA
+
+key = RSA.generate(<span class="hljs-number">2048</span>)
+private_key = key.export_key()
+public_key = key.publickey().export_key()
+</code></pre>
+<p>&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ECC&lt;/td&gt;
+&lt;td&gt;Public and private key pair&lt;/td&gt;
+&lt;td&gt;Shorter keys with strong security&lt;/td&gt;
+&lt;td&gt;</p>
+<pre><code class="language-py"><span class="hljs-keyword">from</span> Crypto.PublicKey <span class="hljs-keyword">import</span> ECC
+
+key = ECC.generate(curve=<span class="hljs-string">&#x27;P-256&#x27;</span>)
+private_key = key.export_key(<span class="hljs-built_in">format</span>=<span class="hljs-string">&#x27;PEM&#x27;</span>)
+public_key = key.public_key().export_key(<span class="hljs-built_in">format</span>=<span class="hljs-string">&#x27;PEM&#x27;</span>)
+</code></pre>
+<p>&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DSA&lt;/td&gt;
+&lt;td&gt;Public and private key pair&lt;/td&gt;
+&lt;td&gt;Used for digital signatures&lt;/td&gt;
+&lt;td&gt;</p>
+<pre><code class="language-py"><span class="hljs-keyword">from</span> Crypto.PublicKey <span class="hljs-keyword">import</span> DSA
+
+key = DSA.generate(<span class="hljs-number">2048</span>)
+private_key = key.export_key()
+public_key = key.publickey().export_key()
+</code></pre>
+<p>&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</p>
+<h3>Hashing</h3>
+<ul>
+<li>Relies on HASH functions to map input data to a fixed-size hash value (message digest)</li>
+<li>Sender and receiver must BOTH ensure data integrity by computing and comparing the hash values based off their data</li>
+<li>Data is intact if hash values MATCH</li>
+<li>Typically faster than both symmetric and asymmetric encryption</li>
+<li>Requires collision management since hash functions can produce the SAME hash value for different inputs</li>
+<li>Used to verify if data has been altered during transit</li>
+<li>IRREVERSIBLE since hashing is a ONE-WAY function</li>
+</ul>
+<pre><code class="language-mermaid">sequenceDiagram
+    participant Sender
+    participant Receiver
+    participant Hash Function
+
+    Sender-&gt;&gt;Hash Function: Input data
+    Hash Function--&gt;&gt;Sender: Generate hash value 
+    Sender-&gt;&gt;Receiver: Send input data and hash value
+    Receiver-&gt;&gt;Hash Function: Input data
+    Hash Function--&gt;&gt;Receiver: Generate hash value
+    Receiver-&gt;&gt;Receiver: Compare received hash with generated hash
+</code></pre>
+<p>&lt;table&gt;
+&lt;tr&gt;
+&lt;th&gt;Hashing method&lt;/th&gt;
+&lt;th&gt;Requirements&lt;/th&gt;
+&lt;th&gt;Characteristics&lt;/th&gt;
+&lt;th&gt;Python implementation&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MD5&lt;/td&gt;
+&lt;td&gt;No special requirements&lt;/td&gt;
+&lt;td&gt;Produces a 128-bit hash, fast but vulnerable to collisions&lt;/td&gt;
+&lt;td&gt;</p>
+<pre><code class="language-py"><span class="hljs-keyword">import</span> hashlib
+
+<span class="hljs-built_in">hash</span> = hashlib.md5(data.encode()).hexdigest()
+</code></pre>
+<p>&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SHA-1&lt;/td&gt;
+&lt;td&gt;No special requirements&lt;/td&gt;
+&lt;td&gt;Produces a 160-bit hash, faster than SHA-2 but less secure&lt;/td&gt;
+&lt;td&gt;</p>
+<pre><code class="language-py"><span class="hljs-keyword">import</span> hashlib
+
+<span class="hljs-built_in">hash</span> = hashlib.sha1(data.encode()).hexdigest()
+</code></pre>
+<p>&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SHA-256&lt;/td&gt;
+&lt;td&gt;No special requirements&lt;/td&gt;
+&lt;td&gt;Part of the SHA-2 family, produces a 256-bit hash, widely used for security&lt;/td&gt;
+&lt;td&gt;</p>
+<pre><code class="language-py"><span class="hljs-keyword">import</span> hashlib
+
+<span class="hljs-built_in">hash</span> = hashlib.sha256(data.encode()).hexdigest()
+</code></pre>
+<p>&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;BLAKE2&lt;/td&gt;
+&lt;td&gt;No special requirements&lt;/td&gt;
+&lt;td&gt;Faster than MD5 and SHA-2, customizable output size&lt;/td&gt;
+&lt;td&gt;</p>
+<pre><code class="language-py"><span class="hljs-keyword">import</span> hashlib
+
+<span class="hljs-built_in">hash</span> = hashlib.blake2b(data.encode()).hexdigest()
+</code></pre>
+<p>&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RIPEMD-160&lt;/td&gt;
+&lt;td&gt;No special requirements&lt;/td&gt;
+&lt;td&gt;Produces a 160-bit hash, designed for cryptographic security&lt;/td&gt;
+&lt;td&gt;</p>
+<pre><code class="language-py"><span class="hljs-keyword">import</span> hashlib
+
+<span class="hljs-built_in">hash</span> = hashlib.new(<span class="hljs-string">&#x27;ripemd160&#x27;</span>, data.encode()).hexdigest()
+</code></pre>
+<p>&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Scrypt&lt;/td&gt;
+&lt;td&gt;No special requirements&lt;/td&gt;
+&lt;td&gt;Password hashing function designed to be computationally intensive&lt;/td&gt;
+&lt;td&gt;</p>
+<pre><code class="language-py"><span class="hljs-keyword">from</span> passlib.<span class="hljs-built_in">hash</span> <span class="hljs-keyword">import</span> scrypt
+
+<span class="hljs-built_in">hash</span> = scrypt.using(salt=<span class="hljs-string">b&#x27;salt&#x27;</span>).<span class="hljs-built_in">hash</span>(data)
+</code></pre>
+<p>&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Bcrypt&lt;/td&gt;
+&lt;td&gt;No special requirements&lt;/td&gt;
+&lt;td&gt;Password hashing function with built-in salting and adjustable cost factor&lt;/td&gt;
+&lt;td&gt;</p>
+<pre><code class="language-py"><span class="hljs-keyword">from</span> passlib.<span class="hljs-built_in">hash</span> <span class="hljs-keyword">import</span> bcrypt
+
+<span class="hljs-built_in">hash</span> = bcrypt.<span class="hljs-built_in">hash</span>(data)
+</code></pre>
+<p>&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Argon2&lt;/td&gt;
+&lt;td&gt;No special requirements&lt;/td&gt;
+&lt;td&gt;Password hashing function that won the Password Hashing Competition (PHC)&lt;/td&gt;
+&lt;td&gt;</p>
+<pre><code class="language-py"><span class="hljs-keyword">from</span> argon2 <span class="hljs-keyword">import</span> PasswordHasher
+
+ph = PasswordHasher()
+<span class="hljs-built_in">hash</span> = ph.<span class="hljs-built_in">hash</span>(data)
+</code></pre>
+<p>&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</p>
+<h2>More on</h2>
+<ul>
+<li><a href="https://www.baeldung.com/cs/pigeonhole-principle"><em>The Pigeonhole Principle</em></a> by baeldung</li>
+<li><a href="https://www.codecademy.com/article/cryptographic-attacks"><em>Cryptographic Attacks</em></a> by Codecademy</li>
+<li><a href="https://www.fortinet.com/resources/cyberglossary/types-of-cyber-attacks"><em>Types Of Cyber Attacks</em></a> by Fortinet</li>
+<li><a href="https://youtu.be/uewhaNg1BhE?feature=shared"><em>Friendly Intro to Hardware Security Modules (HSMs)</em></a> by Studying With Alex</li>
+<li><a href="https://youtu.be/AXkRoFOP-ug?feature=shared"><em>Intro to Encryption, in Friendly Terms: Cryptography, AES, Man In The Middle, and HTTPS</em></a> by Studying With Alex</li>
+<li><a href="https://youtu.be/qgpsIBLvrGY?feature=shared"><em>Password Storage Tier List: encryption, hashing, salting, bcrypt, and beyond</em></a> by Studying With Alex</li>
+</ul>

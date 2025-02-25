@@ -1,0 +1,48 @@
+<h1><code>Jupyter notebooks</code></h1>
+<p>Learn and run Python anywhere.</p>
+<h2>Introduction</h2>
+<ul>
+<li>Jupyter notebooks end with the <code>.ipynb</code> file extension <em>(standing for interactive python notebook)</em></li>
+<li>open-source web app for creating and sharing documents that contain Python code</li>
+<li>widely used in data science, academic research, and machine learning for exploring and visualizing data</li>
+<li>notebooks can be exported to various target outputs <em>(<code>.html</code>, <code>.pdf</code>, <code>.py</code>, etc.)</em></li>
+<li>Jupyter also supports other programming languages through various kernels</li>
+</ul>
+<h2>Installation</h2>
+<pre><code class="language-console"><span class="hljs-meta prompt_">$ </span><span class="language-bash">pip install notebook <span class="hljs-comment"># installs Jupyter notebook</span></span> 
+<span class="hljs-meta prompt_">$ </span><span class="language-bash">jupyter notebook <span class="hljs-comment"># starts the notebook server locally</span></span>
+</code></pre>
+<h2>Quickstart</h2>
+<p>Jupyter notebooks can run simple Python code snippets</p>
+<pre><code class="language-py">x = <span class="hljs-number">10</span>
+y = <span class="hljs-number">20</span>
+example_equation = x + y
+example_name = <span class="hljs-string">&quot;keshi&quot;</span>
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;testing out my Jupyter notebook!&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;my name is <span class="hljs-subst">{example_name}</span> and i calculate the total sum of x and y to be <span class="hljs-subst">{example_equation}</span>&quot;</span>)
+</code></pre>
+<p>and more complex Python scripts for data science and visualisation.</p>
+<pre><code class="language-py"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+<span class="hljs-comment"># generate some data</span>
+x = np.linspace(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>, <span class="hljs-number">100</span>)
+y = np.sin(x)
+
+<span class="hljs-comment"># plot the data</span>
+plt.plot(x, y)
+plt.title(<span class="hljs-string">&quot;Sine Wave&quot;</span>)
+plt.xlabel(<span class="hljs-string">&quot;X-axis&quot;</span>)
+plt.ylabel(<span class="hljs-string">&quot;Y-axis&quot;</span>)
+plt.show()
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li><a href="https://jupyter.org/">jupyter.org</a></li>
+<li><a href="https://www.anaconda.com/">anaconda.com</a></li>
+<li><a href="https://code.visualstudio.com/docs/datascience/jupyter-notebooks">Jupyter Notebooks in VS Code </a></li>
+<li><a href="https://www.python.org/">python.org</a></li>
+<li><a href="https://learnxinyminutes.com/docs/python/">learn Python in y minutes</a></li>
+<li><a href="https://gist.github.com/chronitis/682c4e0d9f663e85e3d87e97cd7d1624">Updated Jupyter Kernels page</a></li>
+</ul>

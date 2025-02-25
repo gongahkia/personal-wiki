@@ -1,0 +1,182 @@
+<h1><code>LaTeX</code></h1>
+<p>\LaTeX allows for the typesetting of academic articles in the realm of math and science.</p>
+<h2>Comments</h2>
+<pre><code class="language-tex"><span class="hljs-comment">% single-line comment</span>
+<span class="hljs-comment">% there are no multi-line comments </span>
+</code></pre>
+<h2>Quickstart</h2>
+<pre><code class="language-tex"><span class="hljs-comment">% ---------- QUICKSTART -----------</span>
+    <span class="hljs-comment">% LaTeX files end with the file extension .tex</span>
+    <span class="hljs-comment">% \ =&gt; backslash prefixes every LaTex command </span>
+
+<span class="hljs-comment">% ---------- FORMAT ------------</span>
+    <span class="hljs-comment">% every LaTeX document comprises the following composite elements...</span>
+        <span class="hljs-comment">% 1. PREAMBLE</span>
+        <span class="hljs-comment">% 2. DOCUMENT BODY</span>
+
+<span class="hljs-comment">% ----- 1. PREAMBLE -----</span>
+  <span class="hljs-comment">% the preamble contains all document metadata that is relevant for compilation and typesetting of out LaTeX file</span>
+
+<span class="hljs-comment">% --- DOCUMENT DETAILS ---</span>
+  <span class="hljs-comment">% specify document type for later compilation</span>
+  <span class="hljs-comment">% specify fontsize for the document</span>
+
+<span class="hljs-comment">% \documentclass[fontSize]{documentType} </span>
+    <span class="hljs-comment">% fontSize =&gt; any integer ending with pt</span>
+    <span class="hljs-comment">% documentType =&gt; other classes can be found here https://ctan.org/topic/class</span>
+        <span class="hljs-comment">% article</span>
+        <span class="hljs-comment">% report</span>
+        <span class="hljs-comment">% book</span>
+        <span class="hljs-comment">% slides</span>
+        <span class="hljs-comment">% memoir</span>
+        <span class="hljs-comment">% letter</span>
+        <span class="hljs-comment">% beamer</span>
+        <span class="hljs-comment">% proc</span>
+        <span class="hljs-comment">% minimal</span>
+
+<span class="hljs-keyword">\documentclass</span>[12pt]{article}
+
+<span class="hljs-comment">% --- PACKAGES ---</span>
+  <span class="hljs-comment">% specifies any LaTeX packages the document requires for compilation</span>
+  <span class="hljs-comment">% other LaTeX packages can be found here https://ctan.org/</span>
+
+<span class="hljs-comment">% \usepackage{packageName} </span>
+
+<span class="hljs-keyword">\usepackage</span>{caption}
+<span class="hljs-keyword">\usepackage</span>{float}
+<span class="hljs-keyword">\usepackage</span>{hyperref}
+
+<span class="hljs-comment">% --- AUTHOR, DATE, TITLE ---</span>
+  <span class="hljs-comment">% specify the author(s)</span>
+  <span class="hljs-comment">% specify the date</span>
+    <span class="hljs-comment">% \today =&gt; returns the current date</span>
+  <span class="hljs-comment">% specify the document title</span>
+
+<span class="hljs-comment">% \author{authorNames}</span>
+<span class="hljs-comment">% \date{date}</span>
+<span class="hljs-comment">% \title{documentTitle}</span>
+
+<span class="hljs-keyword">\author</span>{Chaitanya Krishna Ande, Colton Kohnke}
+<span class="hljs-keyword">\date</span>{<span class="hljs-keyword">\today</span>}
+<span class="hljs-keyword">\title</span>{Learn <span class="hljs-keyword">\LaTeX</span>{} in Y Minutes!}
+
+<span class="hljs-comment">% ----- 2. DOCUMENT BODY -----</span>
+  <span class="hljs-comment">% any combination of LaTeX commands can be called here</span>
+
+<span class="hljs-comment">% --- GENERAL COMMANDS ---</span>
+  <span class="hljs-comment">% empty lines between text create seperations between paragraphs</span>
+  <span class="hljs-comment">% \begin{documentComponent} =&gt; signposts the start of the given document component</span>
+  <span class="hljs-comment">% \end{documentComponent} =&gt; singposts the end of the given document component</span>
+    <span class="hljs-comment">% document =&gt; REQUIRED for every LaTeX document at the beginning and end of the document body</span>
+    <span class="hljs-comment">% abstract =&gt; creates an abstract environment (must be called before the main section of the document body)</span>
+    <span class="hljs-comment">% enumerate =&gt; creates an enumeration environment within which \item list items can be called</span>
+      <span class="hljs-comment">% \item =&gt; indicates a single list item within an enumeration environment</span>
+    <span class="hljs-comment">% thebibliography =&gt; creates a bibliography environment for references within which \bibitem list items can be called</span>
+      <span class="hljs-comment">% \bibitem =&gt; indicates a single bibliography list item that can be cited directly within the document body</span>
+    <span class="hljs-comment">% equation =&gt; creates an equation environment within which mathematical equations can be defined with LaTeX commands</span>
+    <span class="hljs-comment">% figure =&gt; creates a figure environment within which a figure and its placement can be specified</span>
+  <span class="hljs-comment">% \section{sectionTitle} =&gt; creates a numbered secton with the given title</span>
+  <span class="hljs-comment">% \subsection{subsectionTitle} =&gt; creates a numbered subsection with the given title</span>
+  <span class="hljs-comment">% \makeTitle =&gt; creates a title page from details within the preamble</span>
+  <span class="hljs-comment">% \tableofcontents =&gt; creates a table of contents page</span>
+  <span class="hljs-comment">% \newpage =&gt; creates a new page, equivalent to \n in programming languages</span>
+  <span class="hljs-comment">% * =&gt; adding the asterisk after any LaTeX command supresses the inbuilt numbering system to create an unnumber area</span>
+  <span class="hljs-comment">% \label{componentType:componentTitle} =&gt; creates a label that allows for later referencing of a given component within the document body</span>
+
+<span class="hljs-keyword">\begin</span>{document}
+<span class="hljs-keyword">\maketitle</span> <span class="hljs-comment">% create a title page</span>
+
+<span class="hljs-keyword">\newpage</span>
+<span class="hljs-keyword">\tableofcontents</span> <span class="hljs-comment">% create a table of contents</span>
+<span class="hljs-keyword">\newpage</span>
+
+<span class="hljs-keyword">\begin</span>{abstract} <span class="hljs-comment">% create an abstract</span>
+ <span class="hljs-keyword">\LaTeX</span>{} documentation written as <span class="hljs-keyword">\LaTeX</span>! How novel and totally not my idea!
+<span class="hljs-keyword">\end</span>{abstract}
+
+<span class="hljs-keyword">\section</span>{Introduction} <span class="hljs-comment">% a section</span>
+Hello, my name is Colton and together we&#x27;re going to explore <span class="hljs-keyword">\LaTeX</span>!
+
+<span class="hljs-keyword">\subsection</span>{This is a subsection} <span class="hljs-comment">% a subsection</span>
+Steven Universe looking ass.
+
+<span class="hljs-keyword">\section</span>*{This is an unnumbered section} <span class="hljs-comment">% an unnumbered section</span>
+Yeah not all sections have to be numbered!
+
+<span class="hljs-keyword">\section</span>{Lists}
+Lists are one of the easiest things to create in <span class="hljs-keyword">\LaTeX</span>! I need to go shopping
+tomorrow, so let&#x27;s make a grocery list.
+<span class="hljs-keyword">\begin</span>{enumerate} <span class="hljs-comment">% creates a list environment</span>
+  <span class="hljs-keyword">\item</span> salad
+  <span class="hljs-keyword">\item</span> 27 watermelon
+  <span class="hljs-keyword">\item</span> a single jackrabbit
+<span class="hljs-keyword">\end</span>{enumerate} 
+
+<span class="hljs-comment">% ----- 2.5 MATHEMATICS -----</span>
+  <span class="hljs-comment">% one of the primary functions of LaTeX is creating stylised mathematical equations in the compiled document, below are some examples for different fields of mathematics</span>
+  <span class="hljs-comment">% more detailed math commands can be found here https://tug.ctan.org/info/undergradmath/undergradmath.pdf</span>
+
+<span class="hljs-comment">% --- MATHEMATICS COMMANDS ---</span>
+  <span class="hljs-comment">% greek letters =&gt; other greek letters can be found here https://www.overleaf.com/learn/latex/List_of_Greek_letters_and_math_symbols</span>
+    <span class="hljs-comment">% \xi</span>
+    <span class="hljs-comment">% \beta</span>
+    <span class="hljs-comment">% \gamma</span>
+    <span class="hljs-comment">% \sigma</span>
+    <span class="hljs-comment">% \theta</span>
+  <span class="hljs-comment">% $ =&gt; prefixes and suffixes any math section in LaTeX</span>
+  <span class="hljs-comment">% \[ and \] =&gt; an alternative that also prefixes and suffixes any math section in LaTeX</span>
+  <span class="hljs-comment">% \frac{numerator}{denominator} =&gt; creates a fraction with the given numerator and denominator</span>
+  <span class="hljs-comment">% sum_{} =&gt; draws the summation symbol</span>
+  <span class="hljs-comment">% int_{} =&gt; draws the integral symbol</span>
+
+<span class="hljs-comment">% MATHEMATICAL FUNCTIONS</span>
+(<span class="hljs-built_in">$</span><span class="hljs-keyword">\sin</span><span class="hljs-built_in">$</span>, <span class="hljs-built_in">$</span><span class="hljs-keyword">\cos</span><span class="hljs-built_in">$</span>, <span class="hljs-built_in">$</span><span class="hljs-keyword">\tan</span><span class="hljs-built_in">$</span>) <span class="hljs-comment">% trigonometric functions</span>
+(<span class="hljs-built_in">$</span><span class="hljs-keyword">\log</span><span class="hljs-built_in">$</span>, <span class="hljs-built_in">$</span><span class="hljs-keyword">\exp</span><span class="hljs-built_in">$</span>) <span class="hljs-comment">% logarithms and exponentials</span>
+(<span class="hljs-built_in">$</span><span class="hljs-keyword">\lim</span><span class="hljs-built_in">$</span>) <span class="hljs-comment">% limits</span>
+
+<span class="hljs-comment">% SET THEORY</span>
+<span class="hljs-built_in">$</span><span class="hljs-keyword">\forall</span> x <span class="hljs-keyword">\in</span> X<span class="hljs-built_in">$</span> <span class="hljs-comment">% all of X belong to X</span>
+
+<span class="hljs-comment">% EQUATION</span>
+<span class="hljs-built_in">$</span>a<span class="hljs-built_in">^</span>2 + b<span class="hljs-built_in">^</span>2 = c<span class="hljs-built_in">^</span>2<span class="hljs-built_in">$</span> <span class="hljs-comment">% pythogarous theorom</span>
+<span class="hljs-keyword">\[</span>a<span class="hljs-built_in">^</span>2 + b<span class="hljs-built_in">^</span>2 = c<span class="hljs-built_in">^</span>2 <span class="hljs-keyword">\]</span> <span class="hljs-comment">% pythogarous theorom, using the alternative syntax for signposting the start and end of a math section </span>
+
+<span class="hljs-comment">% --- FIGURES ---</span>
+  <span class="hljs-comment">% inkscape (https://inkscape.org/) is often used to draw diagrams that can be later embedded in the LaTeX document</span>
+  <span class="hljs-comment">% for more details on captioning figures, see here https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions </span>
+  <span class="hljs-comment">% \includegraphics{imageFilePath} =&gt; draws a specified figure at the given file path, can be further customised with augmenters within the []</span>
+  <span class="hljs-comment">% \caption{captionTitle} =&gt; draws a specified caption within the figure</span>
+
+<span class="hljs-keyword">\begin</span>{figure}[H] <span class="hljs-comment">% H here denotes the placement of the figure</span>
+    <span class="hljs-keyword">\includegraphics</span>[width=0.8<span class="hljs-keyword">\linewidth</span>]{right-triangle.png}
+    <span class="hljs-keyword">\caption</span>{Right triangle with sides <span class="hljs-built_in">$</span>a<span class="hljs-built_in">$</span>, <span class="hljs-built_in">$</span>b<span class="hljs-built_in">$</span>, <span class="hljs-built_in">$</span>c<span class="hljs-built_in">$</span>}
+    <span class="hljs-keyword">\label</span>{fig:right-triangle}
+<span class="hljs-keyword">\end</span>{figure}
+
+<span class="hljs-keyword">\begin</span>{thebibliography}{1} <span class="hljs-comment">% bibliography section</span>
+  <span class="hljs-keyword">\bibitem</span>{latexwiki} The amazing <span class="hljs-keyword">\LaTeX</span>{} wikibook: <span class="hljs-keyword">\emph</span>{https://en.wikibooks.org/wiki/LaTeX}
+  <span class="hljs-keyword">\bibitem</span>{latextutorial} An actual tutorial: <span class="hljs-keyword">\emph</span>{http://www.latex-tutorial.com}
+<span class="hljs-keyword">\end</span>{thebibliography}
+
+<span class="hljs-keyword">\end</span>{document}
+</code></pre>
+<h2>Tooling</h2>
+<ul>
+<li><a href="https://gist.github.com/rain1024/98dd5e2c6c8c28f9ea9d">pdflatex</a></li>
+<li><a href="https://miktex.org/">miktex</a></li>
+<li><a href="https://tug.org/texlive/">tex live</a></li>
+</ul>
+<h2>More on</h2>
+<ul>
+<li><a href="https://tug.ctan.org/info/undergradmath/undergradmath.pdf">LaTeX math cheatsheet for undergraduates</a></li>
+<li><a href="https://youtu.be/p5Yr0dkrKG8?si=rJmg6cck1Op1-ALm">LaTeX for beginners</a></li>
+<li><a href="https://youtu.be/lgiCpA4zzGU?si=RB3nN03LF328nROK">LaTeX for students</a></li>
+<li><a href="https://inkscape.org/learn/tutorials/latex/">Inkscape diagrams within LaTeX documents</a></li>
+<li><a href="https://www.tablesgenerator.com/">LaTeX table generator</a></li>
+<li><a href="https://latex.codecogs.com/eqneditor/editor.php">LaTeX equation editor</a></li>
+<li><a href="https://learnxinyminutes.com/docs/latex/">learn LaTeX in y minutes</a></li>
+<li><a href="https://www.latex-project.org/">LaTeX project</a></li>
+<li><a href="https://www.learnlatex.org/">learn LaTeX.org</a></li>
+<li><a href="https://en.wikibooks.org/wiki/LaTeX">comprehensive LaTeX wiki</a></li>
+<li><a href="https://castel.dev/post/lecture-notes-1/">mathematics in college with LaTeX and Vim</a></li>
+</ul>

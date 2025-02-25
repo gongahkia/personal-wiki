@@ -1,0 +1,200 @@
+<h1><code>Swift</code></h1>
+<p>Language for native IOS and OSX development.</p>
+<h2>Comments</h2>
+<pre><code class="language-swift"><span class="hljs-comment">// ----- COMMENT -----</span>
+
+<span class="hljs-comment">// this is a single-line comment</span>
+
+<span class="hljs-comment">/*
+this is a 
+multi-line 
+comment
+*/</span>
+</code></pre>
+<h2>Printing</h2>
+<pre><code class="language-swift"><span class="hljs-comment">// ----- PRINTING -----</span>
+    <span class="hljs-comment">// print() =&gt; takes string argument(s) that are printed to the stdout with a newline automatically appended</span>
+    <span class="hljs-comment">// terminator =&gt; argument to print() used to specify another terminator string, if unspecified will be a &quot;\n&quot; newline character by default</span>
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;this includes a newline by default&quot;</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;there isn&#x27;t a newline following this since we specify an empty string as the terminator&quot;</span>, terminator: <span class="hljs-string">&quot;&quot;</span>)
+</code></pre>
+<h2>Quickstart</h2>
+<pre><code class="language-swift"><span class="hljs-comment">// ----- QUICKSTART -----</span>
+    <span class="hljs-comment">// import =&gt; brings modules and frameworks into the local scope within the present file</span>
+    <span class="hljs-comment">// let =&gt; declares and initialises a constant, whose value cannot be reassigned after initialisation</span>
+    <span class="hljs-comment">// var =&gt; declares and initialises a variable, whose value can be reassigned and mutated even after intialisation</span>
+    <span class="hljs-comment">// : =&gt; allows for type annotations of a variable or constant, specified within variable or constant declaration</span>
+</code></pre>
+<h2>Types</h2>
+<pre><code class="language-swift"><span class="hljs-comment">// ----- TYPE -----</span>
+    <span class="hljs-comment">// Int =&gt; 32-bit integer value</span>
+    <span class="hljs-comment">// Int64 =&gt; 64-bit integer value</span>
+    <span class="hljs-comment">// Float =&gt; 32-bit single-precision floating point value </span>
+    <span class="hljs-comment">// Double =&gt; 64-bit double-precision floating point value</span>
+    <span class="hljs-comment">// Bool =&gt; true, false</span>
+    <span class="hljs-comment">// String =&gt; declared with &quot;&quot; double quotation marks, characters in Swift are treated as single-character Strings</span>
+    <span class="hljs-comment">// [&lt;arrayElementDatatype&gt;] =&gt; declares an array of the given datatype</span>
+    <span class="hljs-comment">// [&lt;keyDatatype&gt; : &lt;valueDatatype&gt;] =&gt; declares a dictionary (map) comprised of key-value pairs of the specified datatype</span>
+    <span class="hljs-comment">// (&lt;tupleElementDatatype(s)&gt;) =&gt; declares a tuple of the specified composite datatypes</span>
+    <span class="hljs-comment">// ? =&gt; declares a variable is an Optional, where the given variable could either be the specified datatype or the special value nil</span>
+    <span class="hljs-comment">// nil =&gt; special value nil to represent the absence of data</span>
+</code></pre>
+<h2>Operators</h2>
+<pre><code class="language-swift"><span class="hljs-comment">// ----- OPERATOR -----</span>
+
+<span class="hljs-comment">// --- ARITHMETIC OPERATOR ---</span>
+
+<span class="hljs-operator">+</span> <span class="hljs-comment">// addition</span>
+<span class="hljs-operator">-</span> <span class="hljs-comment">// subtraction</span>
+<span class="hljs-operator">*</span> <span class="hljs-comment">// multiplication</span>
+<span class="hljs-operator">/</span> <span class="hljs-comment">// division</span>
+
+<span class="hljs-comment">// --- COMPARISON OPERATOR ---</span>
+
+<span class="hljs-operator">==</span> <span class="hljs-comment">// complete equality, including type</span>
+<span class="hljs-operator">!=</span> <span class="hljs-comment">// complete inequality, including type</span>
+<span class="hljs-operator">&lt;</span> <span class="hljs-comment">// comparison operator</span>
+<span class="hljs-operator">&gt;</span> <span class="hljs-comment">// comparison operator</span>
+<span class="hljs-operator">&lt;=</span> <span class="hljs-comment">// comparison operator</span>
+<span class="hljs-operator">&gt;=</span> <span class="hljs-comment">// comparison operator</span>
+
+<span class="hljs-comment">// --- LOGICAL OPERATOR ---</span>
+
+<span class="hljs-operator">&amp;&amp;</span> <span class="hljs-comment">// and</span>
+<span class="hljs-operator">||</span> <span class="hljs-comment">// or</span>
+<span class="hljs-operator">!</span> <span class="hljs-comment">// not</span>
+
+<span class="hljs-comment">// --- NIL-COALESCING OPERATOR ---</span>
+
+<span class="hljs-operator">??</span> <span class="hljs-comment">// nil-coalescing operator that can be called on an Optional datatype, where a default user-designated value is assigned to an Optional variable if its value is nil</span>
+</code></pre>
+<h2>Control structures</h2>
+<pre><code class="language-swift"><span class="hljs-comment">// ----- CONTROL STRUCTURE -----</span>
+
+<span class="hljs-comment">// --- CONDITIONALS ---</span>
+
+<span class="hljs-comment">// IF ELSE IF ELSE </span>
+
+<span class="hljs-keyword">if</span> age <span class="hljs-operator">&gt;=</span> <span class="hljs-number">18</span> {
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Adult&quot;</span>)
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> age <span class="hljs-operator">&gt;=</span> <span class="hljs-number">13</span> {
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Teenager&quot;</span>)
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Child&quot;</span>)
+}
+
+<span class="hljs-comment">// SWITCH CASE DEFAULT</span>
+    <span class="hljs-comment">// provides some degree of basic pattern-matching as an alternative to if else if else constructs</span>
+    <span class="hljs-comment">// default =&gt; the fall-through default case if all other predicate case conditions are unmet</span>
+
+<span class="hljs-keyword">let</span> color <span class="hljs-operator">=</span> <span class="hljs-string">&quot;red&quot;</span>
+<span class="hljs-keyword">switch</span> color {
+<span class="hljs-keyword">case</span> <span class="hljs-string">&quot;red&quot;</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;The color is red&quot;</span>)
+<span class="hljs-keyword">case</span> <span class="hljs-string">&quot;blue&quot;</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;The color is blue&quot;</span>)
+<span class="hljs-keyword">default</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Unknown color&quot;</span>)
+}
+
+<span class="hljs-comment">// --- LOOPS ---</span>
+
+<span class="hljs-comment">// FOR IN LOOP</span>
+    <span class="hljs-comment">// Swift&#x27;s for in loops do allow for iteration over an iterable data structure</span>
+    <span class="hljs-comment">// Swift does not provide for conventional C-style for loops, but the C-style output to the stdout can be replicated using the range operator</span>
+    <span class="hljs-comment">// .. =&gt; range operator dynamically generates an iterable data structure from the given minimum to maximum range</span>
+
+<span class="hljs-keyword">var</span> numbers: [<span class="hljs-type">Int</span>] <span class="hljs-operator">=</span> [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
+<span class="hljs-keyword">for</span> number <span class="hljs-keyword">in</span> numbers {
+    <span class="hljs-built_in">print</span>(number)
+}
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">0</span><span class="hljs-operator">..&lt;</span><span class="hljs-number">10</span> {
+    <span class="hljs-built_in">print</span>(i)
+}
+
+<span class="hljs-comment">// WHILE LOOP</span>
+
+<span class="hljs-keyword">var</span> counter <span class="hljs-operator">=</span> <span class="hljs-number">0</span>
+<span class="hljs-keyword">while</span> counter <span class="hljs-operator">&lt;</span> <span class="hljs-number">5</span> {
+    <span class="hljs-built_in">print</span>(counter)
+    counter <span class="hljs-operator">+=</span> <span class="hljs-number">1</span>
+}
+
+<span class="hljs-comment">// REPEAT WHILE LOOP</span>
+    <span class="hljs-comment">// the equivalent of a do while loop in Swift</span>
+
+<span class="hljs-keyword">repeat</span> {
+    <span class="hljs-built_in">print</span>(counter)
+    counter <span class="hljs-operator">-=</span> <span class="hljs-number">1</span>
+} <span class="hljs-keyword">while</span> counter <span class="hljs-operator">&gt;</span> <span class="hljs-number">0</span>
+</code></pre>
+<h2>Data structures</h2>
+<pre><code class="language-swift"><span class="hljs-comment">// ----- DATA STRUCTURE -----</span>
+    <span class="hljs-comment">// array =&gt; dynamically-sized ordered collection of elements of the same datatype</span>
+    <span class="hljs-comment">// dictionary =&gt; dynamically-sized unordered collection of key-value pairs of multiple datatypes</span>
+    <span class="hljs-comment">// set =&gt; unordered collection of unique elements of the same datatype</span>
+    <span class="hljs-comment">// struct =&gt; user-defined datatype that groups specified fields together under a type alias, allowing for more expressive data-modelling</span>
+    <span class="hljs-comment">// enum =&gt; user-defined datatype that defines the possible enumerations of a given value, which can then be called using . dot syntax</span>
+
+<span class="hljs-keyword">var</span> anArray: [<span class="hljs-type">String</span>] <span class="hljs-operator">=</span> [<span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Cherry&quot;</span>]
+
+<span class="hljs-keyword">var</span> aUniqueSet: <span class="hljs-type">Set</span>&lt;<span class="hljs-type">Int</span>&gt; <span class="hljs-operator">=</span> [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">1</span>]
+
+<span class="hljs-keyword">var</span> aDictionary: [<span class="hljs-type">String</span>: <span class="hljs-type">String</span>] <span class="hljs-operator">=</span> [<span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Alice&quot;</span>, <span class="hljs-string">&quot;city&quot;</span>: <span class="hljs-string">&quot;Wonderland&quot;</span>]
+
+<span class="hljs-keyword">struct</span> <span class="hljs-title class_">anExampleStruct</span> {
+    <span class="hljs-keyword">var</span> name: <span class="hljs-type">String</span>
+    <span class="hljs-keyword">var</span> age: <span class="hljs-type">Int</span>
+}
+
+<span class="hljs-keyword">struct</span> <span class="hljs-title class_">Coordinate</span> {
+    <span class="hljs-keyword">var</span> <span class="hljs-type">X</span>: <span class="hljs-type">Int</span>
+    <span class="hljs-keyword">var</span> <span class="hljs-type">Y</span>: <span class="hljs-type">Int</span> 
+}
+
+<span class="hljs-keyword">enum</span> <span class="hljs-title class_">anExampleEnum</span> {
+    <span class="hljs-keyword">case</span> imagine
+    <span class="hljs-keyword">case</span> the
+    <span class="hljs-keyword">case</span> possibilities
+}
+
+<span class="hljs-keyword">enum</span> <span class="hljs-title class_">Direction</span> {
+    <span class="hljs-keyword">case</span> north
+    <span class="hljs-keyword">case</span> south
+    <span class="hljs-keyword">case</span> east
+    <span class="hljs-keyword">case</span> west
+}
+<span class="hljs-keyword">var</span> heading <span class="hljs-operator">=</span> <span class="hljs-type">Direction</span>.north
+</code></pre>
+<h2>Functions</h2>
+<pre><code class="language-swift"><span class="hljs-comment">// ----- FUNCTION -----</span>
+    <span class="hljs-comment">// func &lt;functionName&gt;(&lt;parameterName(s)&gt; : &lt;parameterDatatype(s)&gt;) -&gt; (&lt;returnDatatype(s)&gt;) =&gt; function declaration for a named function</span>
+    <span class="hljs-comment">// return =&gt; explicit return statement within the function definition</span>
+    <span class="hljs-comment">// functions can also receive default values for named parameters with the = assignment operator within the function definition</span>
+    
+<span class="hljs-keyword">func</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">a</span>: <span class="hljs-type">Int</span>, <span class="hljs-params">b</span>: <span class="hljs-type">Int</span>) -&gt; <span class="hljs-type">Int</span> {
+    <span class="hljs-keyword">return</span> a <span class="hljs-operator">+</span> b
+}
+
+<span class="hljs-keyword">func</span> <span class="hljs-title function_">getFullName</span>(<span class="hljs-params">firstName</span>: <span class="hljs-type">String</span>, <span class="hljs-params">lastName</span>: <span class="hljs-type">String</span>) -&gt; (<span class="hljs-type">String</span>, <span class="hljs-type">Int</span>) {
+    <span class="hljs-keyword">let</span> fullName <span class="hljs-operator">=</span> <span class="hljs-string">&quot;<span class="hljs-subst">\(firstName)</span> <span class="hljs-subst">\(lastName)</span>&quot;</span>
+    <span class="hljs-keyword">let</span> length <span class="hljs-operator">=</span> fullName.count
+    <span class="hljs-keyword">return</span> (fullName, length)
+}
+
+<span class="hljs-keyword">func</span> <span class="hljs-title function_">greet</span>(<span class="hljs-params">name</span>: <span class="hljs-type">String</span>, <span class="hljs-params">greeting</span>: <span class="hljs-type">String</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Hello&quot;</span>) { <span class="hljs-comment">// default parameters</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;<span class="hljs-subst">\(greeting)</span>, <span class="hljs-subst">\(name)</span>!&quot;</span>)
+}
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li><a href="https://www.programiz.com/swift-programming/classes-objects">oop in swift</a></li>
+<li><a href="https://docs.swift.org/swift-book/documentation/the-swift-programming-language/protocols/">protocols in swift</a></li>
+<li><a href="https://docs.swift.org/swift-book/documentation/the-swift-programming-language/closures/">closures in swift</a></li>
+<li><a href="https://docs.swift.org/swift-book/documentation/the-swift-programming-language/errorhandling/">error handling in swift</a></li>
+<li><a href="https://www.swift.org/documentation/">swift documentation</a></li>
+<li><a href="https://developer.apple.com/swift/">swift for ios development</a></li>
+<li><a href="https://learnxinyminutes.com/docs/swift/">learn swift in y minutes</a></li>
+</ul>

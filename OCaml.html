@@ -1,0 +1,330 @@
+<h1><code>OCaml</code></h1>
+<h2>Comments</h2>
+<pre><code class="language-ocaml"><span class="hljs-comment">(* This is a comment *)</span>
+</code></pre>
+<h2>Introduction</h2>
+<p>A strictly evaluated, functional language with imperative features.</p>
+<pre><code class="language-ocaml"><span class="hljs-comment">(*** FUNCTIONAL LAND ***)</span>
+
+<span class="hljs-comment">(* everything in OCaml is an expression *)</span>
+<span class="hljs-comment">(* every expression <span class="hljs-comment">(* variables, functions *)</span> evaluates to a value *)</span>
+<span class="hljs-comment">(* OCaml lacks &quot;procedures&quot; and every function must evaluate to a value, so functions that don&#x27;t do that and are called for their side effects <span class="hljs-comment">(* like print_endline *)</span> return a value of &quot;unit&quot; type *)</span>
+</code></pre>
+<h2>Expressions, Variables and Functions</h2>
+<ul>
+<li>double semicolon language <em>(to separate expressions, though not always necessary)</em></li>
+<li><code>let</code> for function and variable declaration</li>
+<li><a href="https://www.codingame.com/playgrounds/6196/explaining-currying-to-myself">currying</a> and <a href="https://stackoverflow.com/questions/6005176/ocaml-explicit-type-signatures">type signatures</a> like haskell</li>
+<li>optional type declaration <em>(OCaml compiler automatically infers types)</em></li>
+</ul>
+<pre><code class="language-ocaml"><span class="hljs-comment">(*** EXPRESSIONS ***)</span>
+
+<span class="hljs-comment">(* Expressions can be separated by a double semicolon, though in production source code often omits the double semicolon for stylistic purposes. *)</span>
+
+<span class="hljs-comment">(*** VARIABLES ***)</span>
+
+<span class="hljs-keyword">let</span> x = <span class="hljs-number">10</span>;;  <span class="hljs-comment">(* this is a variable *)</span>
+
+<span class="hljs-comment">(* definitons can be chained together with &quot;let ... in&quot; constructs *)</span>
+
+<span class="hljs-keyword">let</span> x = <span class="hljs-number">10</span> <span class="hljs-keyword">in</span> 
+<span class="hljs-keyword">let</span> y = <span class="hljs-number">20</span> <span class="hljs-keyword">in</span>
+x + y ;; <span class="hljs-comment">(* this expression evaluates to 30 *)</span>
+
+<span class="hljs-comment">(*** FUNCTIONS ***)</span>
+
+<span class="hljs-keyword">let</span> func_int(x:<span class="hljs-built_in">int</span>):<span class="hljs-built_in">int</span> = x + <span class="hljs-number">1</span>;; <span class="hljs-comment">(* this is a function *)</span>
+
+<span class="hljs-comment">(* invoking functions usually doesn&#x27;t require brackets UNLESS the function argument is an expression *)</span>
+
+<span class="hljs-keyword">let</span> func_int_10 = func_int <span class="hljs-number">10</span>;;
+<span class="hljs-keyword">let</span> func_inc_idk = func_int (<span class="hljs-number">11</span>-<span class="hljs-number">1</span>);;
+
+<span class="hljs-comment">(* every function must take at least one argument *)</span>
+
+<span class="hljs-keyword">let</span> print_hlo_wrld<span class="hljs-literal">()</span> = print_endline <span class="hljs-string">&quot;hello world&quot;</span>;; <span class="hljs-comment">(* when creating void functions, we need to specify the bracket to denote the empty function *)</span>
+print_hlo_wrld<span class="hljs-literal">()</span>;; <span class="hljs-comment">(* when calling void functions, we must specify the empty bracket *)</span>
+
+<span class="hljs-comment">(* calling a function with an insufficient number of arguments creates a new function *)</span>
+<span class="hljs-keyword">let</span> make_inc x y = x + y;; <span class="hljs-comment">(* the type signature for make_inc is int -&gt; int -&gt; int *)</span>
+<span class="hljs-keyword">let</span> inc_2 = make_inc <span class="hljs-number">2</span>;; <span class="hljs-comment">(* this creates a new function inc_2 of type signature int -&gt; int *)</span>
+inc_2 <span class="hljs-number">3</span>;; <span class="hljs-comment">(* this will evaluate to 5 *)</span>
+
+<span class="hljs-comment">(* when there are multiple expressions in the function body, the last expression becomes the return value and all other expressions are of &quot;unit&quot; type *)</span>
+
+<span class="hljs-keyword">let</span> print_and_return x = 
+    print_endline (string_of_int x);
+    x
+;;
+
+<span class="hljs-comment">(*** RECURSIVE FUNCTIONS ***)</span>
+
+<span class="hljs-comment">(* recursive functions must be marked with a rec*)</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-keyword">rec</span> factorial n = 
+    <span class="hljs-keyword">if</span> n = <span class="hljs-number">0</span> <span class="hljs-keyword">then</span> <span class="hljs-number">1</span>
+    <span class="hljs-keyword">else</span> n * factorial (n-<span class="hljs-number">1</span>)
+;;
+
+<span class="hljs-comment">(* note the above can also be written like this *)</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-keyword">rec</span> factorial n = <span class="hljs-keyword">if</span> n = <span class="hljs-number">0</span> <span class="hljs-keyword">then</span> <span class="hljs-number">1</span> <span class="hljs-keyword">else</span> n * factorial (n-<span class="hljs-number">1</span>);; <span class="hljs-comment">(* just that this shit is really virtually unreadable so the above is preferred *)</span>
+
+<span class="hljs-comment">(* the &quot;let ... and ... in&quot; construct is also available for mutually recursive functions *)</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-keyword">rec</span> 
+    is_even = <span class="hljs-keyword">function</span> 
+    | <span class="hljs-number">0</span> -&gt; <span class="hljs-literal">true</span>
+    | n -&gt; is_odd(n-<span class="hljs-number">1</span>)
+<span class="hljs-keyword">and</span> 
+    is_odd = <span class="hljs-keyword">function</span>
+    | <span class="hljs-number">0</span> -&gt; <span class="hljs-literal">false</span>
+    | n -&gt; is_even(n-<span class="hljs-number">1</span>)
+;;
+
+<span class="hljs-comment">(*** ANONYMOUS FUNCTIONS ***)</span>
+
+<span class="hljs-comment">(* anonymous functions are declared with the fun keyword *)</span>
+
+<span class="hljs-keyword">let</span> my_lambda = <span class="hljs-keyword">fun</span> x -&gt; x * x;;
+</code></pre>
+<h2>Operators</h2>
+<pre><code class="language-ocaml"><span class="hljs-comment">(*** OPERATORS ***)</span>
+
+<span class="hljs-comment">(* in functional programming land, every operator is a function and can be called as such *)</span>
+(+) <span class="hljs-number">3</span> <span class="hljs-number">4</span>;; <span class="hljs-comment">(* evaluates the same way as 3 + 4 *)</span>
+
+<span class="hljs-comment">(* OCaml DOESN&#x27;T ONLY refrain from implict type conversion between floats and integers, float arithmetic uses wholly different operators *)</span>
+
+<span class="hljs-number">12</span> + <span class="hljs-number">3</span>;; <span class="hljs-comment">(* integer arithmetic, evaluates to 15 *)</span>
+<span class="hljs-number">12</span> / <span class="hljs-number">3</span>;; <span class="hljs-comment">(* integer arithmetic, evalutes to 4 *)</span>
+
+<span class="hljs-number">12.0</span> +. <span class="hljs-number">3.0</span>;; <span class="hljs-comment">(* float arithmetic, evaluates to 15.0 *)</span>
+<span class="hljs-number">12.0</span> /. <span class="hljs-number">3.0</span>;; <span class="hljs-comment">(* float arithmetic, evaluates to 4.0 *)</span>
+
+<span class="hljs-number">5</span> <span class="hljs-keyword">mod</span> <span class="hljs-number">2</span>;; <span class="hljs-comment">(* modulo is universal across floats and integers *)</span>
+
+<span class="hljs-comment">(* Unary minus <span class="hljs-comment">(* the negation operator *)</span> is a marked exception to this rule as it is polymorphic, although type-specific versions of it do exist as well *)</span>
+
+<span class="hljs-comment">(* Unary operators are operators which are used to calculate the result on only one operand *)</span>
+<span class="hljs-comment">(* Binary operators are operatores which are used to calculate the result on two operands *)</span>
+
+<span class="hljs-comment">(* Polymorphic unary operator *)</span>
+
+-<span class="hljs-number">3</span>;; <span class="hljs-comment">(* evaluates to the integer value -3 *)</span>
+-<span class="hljs-number">4.5</span>;; <span class="hljs-comment">(* evaluates to the float value -4.5 *)</span>
+
+<span class="hljs-comment">(* Type specific unary operators *)</span>
+
+~- <span class="hljs-number">3</span>;; <span class="hljs-comment">(* applicable for integers only *)</span>
+~-. <span class="hljs-number">3.4</span>;; <span class="hljs-comment">(* applicable for floats only *)</span>
+~- <span class="hljs-number">3.4</span>;; <span class="hljs-comment">(* this results in a type error *)</span>
+
+<span class="hljs-comment">(* You can also be sneaky and redefine your own operators for fun *)</span>
+
+<span class="hljs-keyword">let</span> (~/) x = <span class="hljs-number">1.0</span> /. x;; <span class="hljs-comment">(* unary operators must start with ~ *)</span>
+~/ <span class="hljs-number">4.0</span>;; <span class="hljs-comment">(* this evaluates to the float value of 0.25 *)</span>
+</code></pre>
+<h2>Data structures</h2>
+<pre><code class="language-ocaml"><span class="hljs-comment">(*** DATA STRUCTURES ***)</span>
+
+<span class="hljs-comment">(* LIST *)</span>
+
+<span class="hljs-comment">(* square brackets, items are semi-colon separated *)</span>
+<span class="hljs-comment">(* dynamically allocated space, size can be casually changed *)</span>
+<span class="hljs-comment">(* dynamically allocated space, can store elements of different datat types *)</span>
+
+<span class="hljs-keyword">let</span> my_list = [<span class="hljs-number">1</span>;<span class="hljs-number">2</span>;<span class="hljs-number">3</span>];; <span class="hljs-comment">(* of type &quot;int list&quot; *)</span>
+
+<span class="hljs-comment">(* LIST METHODS *)</span>
+
+<span class="hljs-comment">(* LIST INDEXING *)</span>
+
+<span class="hljs-type">List</span>.nth my_list <span class="hljs-number">1</span>;; <span class="hljs-comment">(* evaluates to integer 2, the second element in the list of index 1 *)</span>
+
+<span class="hljs-comment">(* LIST MAP *)</span>
+
+<span class="hljs-comment">(* List.map() calls an anonymous function that is user-defined *)</span>
+
+<span class="hljs-comment">(* List.map() applies the given function to each iteration variablein the list *)</span>
+
+<span class="hljs-type">List</span>.map(<span class="hljs-keyword">fun</span> x -&gt; x * <span class="hljs-number">2</span>)  [<span class="hljs-number">1</span>;<span class="hljs-number">2</span>;<span class="hljs-number">3</span>];; <span class="hljs-comment">(* this should evaulate to [2;4;6] *)</span>
+
+<span class="hljs-comment">(* LIST FILTER *)</span>
+
+<span class="hljs-comment">(* List.filter() also calls an anonymous function that is user-defined *)</span>
+
+<span class="hljs-comment">(* List.filter() applies the specified conditonal check as a function to the list, and only those that pass said check are remaining in the list *)</span>
+
+<span class="hljs-type">List</span>.filter (<span class="hljs-keyword">fun</span> x -&gt; x <span class="hljs-keyword">mod</span> <span class="hljs-number">2</span> = <span class="hljs-number">0</span>) [<span class="hljs-number">1</span>;<span class="hljs-number">2</span>;<span class="hljs-number">3</span>;<span class="hljs-number">4</span>];; <span class="hljs-comment">(* this should evaulate to [2;4] *)</span>
+
+<span class="hljs-comment">(* ADDING ELEMENTS *)</span>
+
+<span class="hljs-comment">(* add an item to the FRONT of a list with the :: constructor which is often referred to as a &quot;cons&quot; *)</span>
+
+<span class="hljs-number">1</span> :: [<span class="hljs-number">2</span>;<span class="hljs-number">3</span>];; <span class="hljs-comment">(* evaluates to [1;2;3] *)</span>
+
+<span class="hljs-comment">(* TUPLES *)</span>
+
+<span class="hljs-comment">(* <span class="hljs-comment">(* optionally surrounded by *)</span> round brackets, items are comma separated *)</span>
+
+<span class="hljs-keyword">let</span> my_tuple = <span class="hljs-number">3</span>, <span class="hljs-number">4</span>;; <span class="hljs-comment">(* of type &quot;int * int&quot; *)</span>
+<span class="hljs-keyword">let</span> my_other_tuple = (<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>);; <span class="hljs-comment">(* this is a much clearer more approved syntax *)</span>
+
+<span class="hljs-comment">(* warning to not separate list items by commas, otherwise you&#x27;ll accidentally create a list with a tuple inside *)</span>
+
+<span class="hljs-keyword">let</span> bad_list = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>];; <span class="hljs-comment">(* this shit becomes [(1,2)] *)</span>
+
+<span class="hljs-comment">(* ARRAYS *)</span>
+
+<span class="hljs-comment">(* &quot;[| |]&quot; surrounded, items are semicolon seperated *)</span>
+<span class="hljs-comment">(* statically allocated space, size of array declared at initialization * )
+<span class="hljs-comment">(* statically allocated space, arrays can only contain same data type *)</span>
+
+let my_array = [| 1;2;3 |];;
+
+<span class="hljs-comment">(* ARRAY INDEXING *)</span>
+
+my_array.(0);; <span class="hljs-comment">(* this evaluates to the integer 1, the first element of the array with index 0 *)</span>
+</span></code></pre>
+<h2>Strings and Characters</h2>
+<pre><code class="language-ocaml"><span class="hljs-comment">(*** STRINGS and CHARACTERS ***)</span>
+
+<span class="hljs-comment">(* double quotes for string literals *)</span>
+<span class="hljs-comment">(* single quotes for character literals *)</span>
+<span class="hljs-comment">(* single and double quotes are not interchangeable, effects may vary depending on how you mix them up *)</span>
+
+<span class="hljs-keyword">let</span> my_str = <span class="hljs-string">&quot;Hello world&quot;</span>;; <span class="hljs-comment">(* string literal *)</span>
+<span class="hljs-keyword">let</span> my_char = <span class="hljs-string">&#x27;a&#x27;</span>;; <span class="hljs-comment">(* character literal *)</span>
+<span class="hljs-keyword">let</span> unintended_effect = <span class="hljs-string">&quot;w&quot;</span>;; <span class="hljs-comment">(* this creates a single character string, not a character *)</span>
+<span class="hljs-keyword">let</span> syntax_error = <span class="hljs-symbol">&#x27;syntax</span> error&#x27;;; <span class="hljs-comment">(* this results in a syntax error *)</span>
+
+<span class="hljs-comment">(* STRING CONCATENATION *)</span>
+
+<span class="hljs-comment">(* ^ operator *)</span>
+
+<span class="hljs-keyword">let</span> some_str = <span class="hljs-string">&quot;hello&quot;</span> ^ <span class="hljs-string">&quot;world&quot;</span>;; <span class="hljs-comment">(* evaluates to &quot;helloworld&quot; string *)</span>
+
+<span class="hljs-comment">(* CAVEAT *)</span>
+
+<span class="hljs-comment">(* strings are NOT arrays of characters, and the two data types cannot be mixed in expressions *)</span>
+<span class="hljs-comment">(* characters are converted to strings with String.make 1 my_char *)</span>
+
+<span class="hljs-keyword">let</span> ocaml = (<span class="hljs-type">String</span>.make <span class="hljs-number">1</span> <span class="hljs-string">&#x27;O&#x27;</span>) ^ <span class="hljs-string">&quot;Caml&quot;</span>;; <span class="hljs-comment">(* this evaluates to the string value &quot;OCaml&quot; by type converting a character to a string and concatenating that single-character string with the &quot;Caml&quot; string *)</span>
+
+<span class="hljs-comment">(* FORMATTED STRING *)</span>
+
+<span class="hljs-comment">(* C or Bash-like syntax *)</span>
+
+<span class="hljs-type">Printf</span>.printf <span class="hljs-string">&quot;%d %s&quot;</span> <span class="hljs-number">99</span> <span class="hljs-string">&quot;bottles of beer&quot;</span>;; <span class="hljs-comment">(* evauates to the string value of &quot;99 bottles of beer&quot; *)</span>
+
+<span class="hljs-comment">(* PRINT STATEMENTS *)</span>
+
+print_string <span class="hljs-string">&quot;hello world\n&quot;</span>;; <span class="hljs-comment">(* prints string values without the newline character *)</span>
+print_endline <span class="hljs-string">&quot;hello world&quot;</span>;; <span class="hljs-comment">(* prints string with a newline character *)</span>
+
+<span class="hljs-comment">(* READ STRINGS *)</span>
+
+<span class="hljs-keyword">let</span> line = read_line<span class="hljs-literal">()</span>;; <span class="hljs-comment">(* does what it says it does *)</span>
+</code></pre>
+<h2>User-defined data types</h2>
+<pre><code class="language-ocaml"><span class="hljs-comment">(*** USER-DEFINED DATA TYPES ***)</span>
+
+<span class="hljs-comment">(* defined using the type keyword *)</span>
+
+<span class="hljs-keyword">type</span> my_int = <span class="hljs-built_in">int</span>;; <span class="hljs-comment">(* this is an incredibly useless type alias, refrain from doing this *)</span>
+
+<span class="hljs-comment">(* there are also magic type constructors that must start with a capital letter, do google what these do for more detail *)</span>
+
+<span class="hljs-keyword">type</span> ml = <span class="hljs-type">Ocaml</span> | <span class="hljs-type">StandardML</span>;; 
+<span class="hljs-keyword">let</span> lang = <span class="hljs-type">OCaml</span>;; <span class="hljs-comment">(* has the type &quot;ml&quot; *)</span>
+
+<span class="hljs-comment">(* the below are also valid type constructors *)</span>
+
+<span class="hljs-keyword">type</span> my_number = <span class="hljs-type">PlusInfinity</span> | <span class="hljs-type">MinusInfinity</span> | <span class="hljs-type">Real</span> <span class="hljs-keyword">of</span> <span class="hljs-built_in">float</span>;;
+<span class="hljs-keyword">let</span> r0 = <span class="hljs-type">Real</span> (-<span class="hljs-number">3.4</span>);; <span class="hljs-comment">(* of type my_number *)</span>
+
+<span class="hljs-comment">(* type constructors can also be used to implement polymorphoc arithmetic *)</span>
+
+<span class="hljs-keyword">type</span> number = <span class="hljs-type">Int</span> <span class="hljs-keyword">of</span> <span class="hljs-built_in">int</span> | <span class="hljs-type">Float</span> <span class="hljs-keyword">of</span> <span class="hljs-built_in">float</span>;; 
+
+<span class="hljs-comment">(* an example is of a point on a 2d plane *)</span>
+
+<span class="hljs-keyword">type</span> point2d = <span class="hljs-type">Point</span> <span class="hljs-keyword">of</span> <span class="hljs-built_in">float</span> * <span class="hljs-built_in">float</span>;;
+<span class="hljs-keyword">let</span> my_point = <span class="hljs-type">Point</span> (<span class="hljs-number">2.0</span>, <span class="hljs-number">3.0</span>);;
+
+<span class="hljs-comment">(* types can also be parameterized, like in this type for &quot;list of lists of anything really&quot; where &#x27;a can be substituted with any type *)</span>
+
+<span class="hljs-keyword">type</span> <span class="hljs-symbol">&#x27;a</span> list_of_lists = <span class="hljs-symbol">&#x27;a</span> <span class="hljs-built_in">list</span> <span class="hljs-built_in">list</span>;;
+<span class="hljs-keyword">type</span> int_list_list = <span class="hljs-built_in">int</span> list_of_lists;;
+
+<span class="hljs-comment">(* types can also mysteriously be recursive, like this type analogous to a built-in list of integers *)</span>
+
+<span class="hljs-keyword">type</span> my_int_list = <span class="hljs-type">EmptyList</span> | <span class="hljs-type">IntList</span> <span class="hljs-keyword">of</span> <span class="hljs-built_in">int</span> * my_int_list;;
+<span class="hljs-keyword">let</span> l = <span class="hljs-type">IntList</span> (<span class="hljs-number">1</span>, <span class="hljs-type">EmptyList</span>);;
+</code></pre>
+<h2>Pattern matching</h2>
+<pre><code class="language-ocaml"><span class="hljs-comment">(*** PATTERN MATCHING ***)</span>
+
+<span class="hljs-comment">(* all hail the pattern matching statement *)</span>
+<span class="hljs-comment">(* matches an argument against an exact value, a predicate or a type constructor *)</span>
+<span class="hljs-comment">(* _ acts as the catch-all default statement similar to Rust *)</span>
+
+<span class="hljs-comment">(* MATCHING against exact values *)</span>
+
+<span class="hljs-keyword">let</span> is_zero x = 
+    <span class="hljs-keyword">match</span> x <span class="hljs-keyword">with</span> 
+    | <span class="hljs-number">0</span> -&gt; <span class="hljs-literal">true</span>
+    | _  -&gt; <span class="hljs-literal">false</span>
+;;
+
+<span class="hljs-keyword">let</span> is_one = <span class="hljs-keyword">function</span>  <span class="hljs-comment">(* the function keyword is interchangeable with the match with *)</span>
+    | <span class="hljs-number">1</span> -&gt; <span class="hljs-literal">true</span>
+    | _ -&gt; <span class="hljs-literal">false</span>
+;;
+
+<span class="hljs-comment">(* MATCHING predicates *)</span>
+
+<span class="hljs-comment">(* basically guarded pattern matching aka pattern matching with a conditional check *)</span>
+
+<span class="hljs-keyword">let</span> abs x = 
+    <span class="hljs-keyword">match</span> x <span class="hljs-keyword">with</span> 
+    | x <span class="hljs-keyword">when</span> x &lt; <span class="hljs-number">0</span> -&gt; -x
+    | _ -&gt; x
+;;
+
+abs <span class="hljs-number">5</span>;; <span class="hljs-comment">(* evaluates to 5 *)</span>
+abs (-<span class="hljs-number">5</span>);; <span class="hljs-comment">(* also evaluates to 5 *)</span>
+
+<span class="hljs-comment">(* MATCHING type constructors *)</span>
+
+<span class="hljs-keyword">type</span> animal = <span class="hljs-type">Dog</span> <span class="hljs-keyword">of</span> <span class="hljs-built_in">string</span> | <span class="hljs-type">Cat</span> <span class="hljs-keyword">of</span> <span class="hljs-built_in">string</span>;;
+
+<span class="hljs-keyword">let</span> say x = 
+    <span class="hljs-keyword">match</span> x <span class="hljs-keyword">with</span> 
+    | <span class="hljs-type">Dog</span> x -&gt; x ^ <span class="hljs-string">&quot; says woof&quot;</span> 
+    | <span class="hljs-type">Cat</span> x -&gt; x ^ <span class="hljs-string">&quot; says meow&quot;</span>
+;;
+
+say (<span class="hljs-type">Cat</span> <span class="hljs-string">&quot;Fluffy&quot;</span>);; <span class="hljs-comment">(* evaluates to the string &quot;Fluffy says meow&quot; *)</span>
+
+<span class="hljs-comment">(* TRAVERSING DATA STRUCTURES with pattern matching *)</span>
+
+<span class="hljs-comment">(* most commonly used for recursive types *)</span>
+<span class="hljs-comment">(* built-in constructor operator :: covered previously can be matched like any other since its a type constructor *)</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-keyword">rec</span> sum_list l = 
+    <span class="hljs-keyword">match</span> l <span class="hljs-keyword">with</span> 
+    | <span class="hljs-literal">[]</span> -&gt; <span class="hljs-number">0</span>
+    | head :: tail -&gt; head + (sum_list tail)
+;;
+
+sum_list [<span class="hljs-number">1</span>;<span class="hljs-number">2</span>;<span class="hljs-number">3</span>];; <span class="hljs-comment">(* evaluates to 6 *)</span>
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li><a href="https://ocaml.org/">ocaml documentation</a></li>
+<li><a href="https://github.com/ocsigen/eliom">eliom full stack</a></li>
+<li><a href="https://ocaml.org/play">web-based editor and interpreter</a></li>
+<li><a href="https://cs3110.github.io/textbook/cover.html">another tutorial</a></li>
+</ul>

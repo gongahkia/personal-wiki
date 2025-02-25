@@ -1,0 +1,172 @@
+<h1><code>Elm</code></h1>
+<p>Functional language that compiles to native JavaScript for web development.</p>
+<h2>Comments</h2>
+<pre><code class="language-elm"><span class="hljs-comment">-- ----- COMMENT -----</span>
+
+<span class="hljs-comment">-- this is a single-line comment</span>
+
+<span class="hljs-comment">{- this 
+is a multi-line
+comment -}</span>
+</code></pre>
+<h2>Printing</h2>
+<pre><code class="language-elm"><span class="hljs-comment">-- ----- PRINTING -----</span>
+    <span class="hljs-comment">-- Debug.log =&gt; prints the specified string arguments to the stdout without a newline included, generally used for debugging purposes</span>
+
+<span class="hljs-type">Debug</span>.log <span class="hljs-string">&quot;Message with newline&quot;</span> <span class="hljs-string">&quot;Hello, Elm!\n&quot;</span>
+</code></pre>
+<h2>Quickstart</h2>
+<pre><code class="language-bash"><span class="hljs-comment"># ----- QUICKSTART -----</span>
+
+<span class="hljs-built_in">sudo</span> apt install nodejs npm <span class="hljs-comment"># Elm is installed via node and requires nodejs and npm installed as dependancies</span>
+<span class="hljs-built_in">sudo</span> npm install -g elm <span class="hljs-comment"># installs Elm globally</span>
+elm make Main.elm <span class="hljs-comment"># compiles Elm code to JS and outputs main.js</span>
+</code></pre>
+<h2>Types</h2>
+<pre><code class="language-elm"><span class="hljs-comment">-- ----- TYPE -----</span>
+    <span class="hljs-comment">-- variable type annotations in Elm are specified by the : colon operator</span>
+    <span class="hljs-comment">-- Int =&gt; integer values</span>
+    <span class="hljs-comment">-- Float =&gt; floating point values that cover both single and double-precision</span>
+    <span class="hljs-comment">-- Bool =&gt; True, False</span>
+    <span class="hljs-comment">-- String =&gt; declared within &quot;&quot; double quotes, all characters are handled as one-character-long strings</span>
+    <span class="hljs-comment">-- List &lt;listElementType&gt; =&gt; specifies a list of the given element, where a list literal is declared within [] straight brackets</span>
+    <span class="hljs-comment">-- (&lt;tupleDataType(s)&gt;) =&gt; specifies a composite datatype of the unique combination of datatypes comprising the tuple, where a tuple literal is declared within () round brackets</span>
+    <span class="hljs-comment">-- type alias &lt;recordName&gt; =&gt; specifies a record under the given name, where a record&#x27;s fields are comma-delimited and specified within {} curly braces</span>
+</code></pre>
+<h2>Operators</h2>
+<pre><code class="language-elm"><span class="hljs-comment">-- ----- OPERATOR -----</span>
+
+<span class="hljs-comment">-- --- ARITHMETIC OPERATOR ---</span>
+
++ <span class="hljs-comment">-- addition</span>
+- <span class="hljs-comment">-- subtraction</span>
+* <span class="hljs-comment">-- multiplication</span>
+/ <span class="hljs-comment">-- division</span>
+% <span class="hljs-comment">-- modulo</span>
+
+<span class="hljs-comment">-- --- COMPARISON OPERATOR ---</span>
+
+== <span class="hljs-comment">-- complete equality check for type and value</span>
+/= <span class="hljs-comment">-- complete inequality check for type and value</span>
+&lt; <span class="hljs-comment">-- comparison operator</span>
+&gt; <span class="hljs-comment">-- comparison operator</span>
+&lt;= <span class="hljs-comment">-- comparison operator</span>
+&gt;= <span class="hljs-comment">-- comparison operator</span>
+
+<span class="hljs-comment">-- --- LOGICAL OPERATOR ---</span>
+
+&amp;&amp; <span class="hljs-comment">-- and</span>
+|| <span class="hljs-comment">-- or</span>
+<span class="hljs-title">not</span> <span class="hljs-comment">-- not</span>
+</code></pre>
+<h2>Control Structures</h2>
+<pre><code class="language-elm"><span class="hljs-comment">-- ----- CONTROL STRUCTURE -----</span>
+
+<span class="hljs-comment">-- --- CONDITIONALS ---</span>
+
+<span class="hljs-comment">-- IF ELSE IF ELSE </span>
+    <span class="hljs-comment">-- operates the same as in other programming languages</span>
+
+<span class="hljs-title">isAdult</span> : <span class="hljs-type">Int</span> -&gt; <span class="hljs-type">String</span>
+<span class="hljs-title">isAdult</span> age =
+    <span class="hljs-keyword">if</span> age &gt;= <span class="hljs-number">18</span> <span class="hljs-keyword">then</span>
+        <span class="hljs-string">&quot;Adult&quot;</span>
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> age &gt;= <span class="hljs-number">13</span> <span class="hljs-keyword">then</span>
+        <span class="hljs-string">&quot;Teenager&quot;</span>
+    <span class="hljs-keyword">else</span>
+        <span class="hljs-string">&quot;Child&quot;</span>
+
+<span class="hljs-comment">-- CASE OF _</span>
+    <span class="hljs-comment">-- equivalent of match case in other programming languages</span>
+    <span class="hljs-comment">-- provides strong pattern-matching constructs in Elm</span>
+    <span class="hljs-comment">-- _ =&gt; acts as the default catch-all operator should all other predicate checks fall through similar to Rust</span>
+
+<span class="hljs-title">getType</span> age =
+    <span class="hljs-keyword">case</span> age <span class="hljs-keyword">of</span>
+        <span class="hljs-number">0</span> -&gt; <span class="hljs-string">&quot;Baby&quot;</span>
+        <span class="hljs-number">1</span> -&gt; <span class="hljs-string">&quot;Toddler&quot;</span>
+        <span class="hljs-number">2</span> -&gt; <span class="hljs-string">&quot;Child&quot;</span>
+        _ -&gt; <span class="hljs-string">&quot;Unknown&quot;</span>
+
+<span class="hljs-title">startsWithA</span> word =
+    <span class="hljs-keyword">case</span> word <span class="hljs-keyword">of</span>
+        <span class="hljs-string">&#x27;A&#x27;</span> :: rest -&gt; <span class="hljs-type">True</span>
+        _ -&gt; <span class="hljs-type">False</span>
+
+<span class="hljs-comment">-- --- LOOPS ---</span>
+    <span class="hljs-comment">-- Elm adheres to functional programming paradigms, and so there are no conventional loop constructs</span>
+    <span class="hljs-comment">-- iterable data structures can still be parsed and traversed using higher-order functions</span>
+
+<span class="hljs-comment">-- --- HIGHER ORDER FUNCTIONS ----</span>
+    <span class="hljs-comment">-- these higher order functions operate as you&#x27;d expect in any functional programming language</span>
+        <span class="hljs-comment">-- List.map</span>
+        <span class="hljs-comment">-- List.filter</span>
+        <span class="hljs-comment">-- List.foldl</span>
+
+<span class="hljs-title">numbers</span> = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
+<span class="hljs-title">doubledNumbers</span> = <span class="hljs-type">List</span>.map (\x -&gt; x * <span class="hljs-number">2</span>) numbers <span class="hljs-comment">-- double each element in the list</span>
+
+<span class="hljs-title">numbers</span> = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
+<span class="hljs-title">evenNumbers</span> = <span class="hljs-type">List</span>.filter (\x -&gt; x % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>) numbers <span class="hljs-comment">-- filtering out even numbers within the list</span>
+
+<span class="hljs-title">numbers</span> = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
+<span class="hljs-title">sum</span> = <span class="hljs-type">List</span>.foldl (+) <span class="hljs-number">0</span> numbers <span class="hljs-comment">-- summing all the elements in the list</span>
+
+<span class="hljs-comment">-- --- RECURSION ---</span>
+    <span class="hljs-comment">-- Elm also further supports recursion for more complex solutions as required</span>
+
+<span class="hljs-title">sumList</span> : <span class="hljs-type">List</span> <span class="hljs-type">Int</span> -&gt; <span class="hljs-type">Int</span> <span class="hljs-comment">-- summing list elements by recursive function calls</span>
+<span class="hljs-title">sumList</span> list =
+    <span class="hljs-keyword">case</span> list <span class="hljs-keyword">of</span>
+        [] -&gt; <span class="hljs-number">0</span>
+        head :: tail -&gt; head + sumList tail
+
+<span class="hljs-title">numbers</span> = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
+<span class="hljs-title">sum</span> = sumList numbers
+</code></pre>
+<h2>Data structures</h2>
+<pre><code class="language-elm"><span class="hljs-comment">-- ----- DATA STRUCTURE -----</span>
+    <span class="hljs-comment">-- List =&gt; immutable ordered collection of elements of the same datatype, higher-order functions often called on lists for multiple purposes</span>
+    <span class="hljs-comment">-- Tuple =&gt; immutable ordered collection of elements of multiple datatypes</span>
+    <span class="hljs-comment">-- Record =&gt; equivalent of structs in Go and Rust and records in Ada, allowing type aliases for user-defined types where specified fields provide clear representation of structured data</span>
+
+<span class="hljs-title">aList</span> = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
+
+<span class="hljs-title">aTuple</span> = (<span class="hljs-string">&quot;Alice&quot;</span>, <span class="hljs-number">30</span>)
+
+<span class="hljs-keyword">type</span> <span class="hljs-keyword">alias</span> aRecord = {
+    firstName: <span class="hljs-type">String</span>,
+    lastName: <span class="hljs-type">String</span> 
+}
+
+<span class="hljs-keyword">type</span> <span class="hljs-keyword">alias</span> <span class="hljs-type">Coordinate</span> = {
+    x : <span class="hljs-type">Float</span>,
+    y : <span class="hljs-type">Float</span>
+}
+</code></pre>
+<h2>Functions</h2>
+<pre><code class="language-elm"><span class="hljs-comment">-- ----- FUNCTION -----</span>
+    <span class="hljs-comment">-- Elm&#x27;s function definition bears many similarities to Haskell&#x27;s function definition given both are functional programming languages</span>
+    <span class="hljs-comment">-- these include value immutability, implicit return of the last expression within the function, space-delimited function parameters and return values</span>
+    <span class="hljs-comment">-- Elm also further supports user-defined higher order functions for more complex function calls</span>
+
+<span class="hljs-comment">-- --- NAMED FUNCTION ---</span>
+    <span class="hljs-comment">-- &lt;functionName&gt; &lt;functionArguments&gt; = &lt;functionDefinition&gt; =&gt; function definition for a named function in Elm features implicit returns of the final expression, and function call is invoked without brackets</span>
+
+<span class="hljs-title">add</span> a b = a + b <span class="hljs-comment">-- declares the add named function</span>
+<span class="hljs-title">result</span> = add <span class="hljs-number">3</span> <span class="hljs-number">5</span> <span class="hljs-comment">-- calling the previously declared function</span>
+
+<span class="hljs-comment">-- --- ANONYMOUS FUNCTION ---</span>
+    <span class="hljs-comment">-- \ =&gt; declares the start of an anonymous function</span>
+    <span class="hljs-comment">-- \&lt;anonymousFunctionArguments&gt; -&gt; &lt;functionDefinition&gt; =&gt; function definition for an anonymous function, where the anonymous function is normally assigned to a named variable</span>
+
+<span class="hljs-title">addButAnonymous</span> = \a b -&gt; a + b <span class="hljs-comment">-- same as the named add function above, but as an anonymous function</span>
+<span class="hljs-title">square</span> = \x -&gt; x * x <span class="hljs-comment">-- anonymous function that squares the function parameters</span>
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li><a href="https://elm-lang.org/">elm-lang.org</a></li>
+<li><a href="https://elm-lang.org/docs">elm documentation</a></li>
+<li><a href="https://learnxinyminutes.com/docs/elm/">learn elm in y minutes</a></li>
+<li><a href="https://learnyouanelm.github.io/pages/06-higher-order-functions.html">higher order functions in elm</a></li>
+</ul>

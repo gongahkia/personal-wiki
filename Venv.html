@@ -1,0 +1,34 @@
+<h1><code>Venv</code></h1>
+<p>Virtual environments.</p>
+<p>This document discusses venvs specifically within the context of Python.</p>
+<h2>What is a venv?</h2>
+<p>Python-native module that installs a directory comprised of the following files to your project repository.</p>
+<ol>
+<li>Python interpreter</li>
+<li>Set of installed packages</li>
+<li>Scripts to activate and deactivate the environment</li>
+</ol>
+<h2>Why use a venv?</h2>
+<p>Create and reproduce isolated Python environments within the local project, allowing for fuss-free management of project-specific dependencies without interfering with system-wide Python installations.</p>
+<h2>How do I use a venv?</h2>
+<pre><code class="language-console"><span class="hljs-meta prompt_">$ </span><span class="language-bash">python3 -m venv venv</span>
+<span class="hljs-meta prompt_">$ </span><span class="language-bash">venv\Scripts\activate <span class="hljs-comment"># for windows systems</span></span>
+<span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">source</span> venv/bin/activate <span class="hljs-comment"># for unix/linux systems</span></span>
+<span class="hljs-meta prompt_">$ </span><span class="language-bash">pip install package_name <span class="hljs-comment"># install all your packages</span></span> 
+<span class="hljs-meta prompt_">$ </span><span class="language-bash">deactivate <span class="hljs-comment"># close the virtual environment</span></span>
+</code></pre>
+<p>You can also make your project reproducible with a <code>requirements.txt</code>.</p>
+<pre><code class="language-console"><span class="hljs-meta prompt_">$ </span><span class="language-bash">pip3 freeze &gt; requirements.txt</span>
+</code></pre>
+<h2>A common question</h2>
+<h3>Do I commit my venv to git?</h3>
+<p>No. Please specify <code>venv</code> within your <code>.gitignore</code>.</p>
+<h3>Should I use a venv if I'm not being forced to?</h3>
+<p>Yes. It is widely used in <a href="https://stackoverflow.com/questions/45151146/are-python-virtual-environments-needed-in-production">production</a>.</p>
+<h2>More on</h2>
+<ul>
+<li><a href="https://csguide.cs.princeton.edu/software/virtualenv"><em>Python and Virtual Environments</em></a> by Princeton Department of Computer Science</li>
+<li><a href="https://gist.github.com/loic-nazaries/c25ce9f7b01b107573796b026522a3ad"><em>Create a Virtual Environment with Python</em></a> by loic-nazaries on Github</li>
+<li><a href="https://docs.python.org/3/library/venv.html"><em>venv — Creation of virtual environments</em></a> Python official docs</li>
+<li><a href="https://stackoverflow.com/questions/54106071/how-can-i-set-up-a-virtual-environment-for-python-in-visual-studio-code/54107016"><em>How can I set up a virtual environment for Python in Visual Studio Code?</em></a> on Stack Overflow</li>
+</ul>

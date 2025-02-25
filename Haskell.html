@@ -1,0 +1,459 @@
+<h1><code>Haskell</code></h1>
+<p>Strict statically-typed functional language.</p>
+<h2>Comments</h2>
+<pre><code class="language-hs"><span class="hljs-comment">-- ---------- COMMENT ----------</span>
+
+<span class="hljs-comment">-- this is a single-line comment</span>
+
+<span class="hljs-comment">{-
+this 
+is a 
+multi-line
+comment
+-}</span>
+</code></pre>
+<h2>Printing</h2>
+<pre><code class="language-hs"><span class="hljs-comment">-- ---------- PRINT ----------</span>
+    <span class="hljs-comment">-- putStrLn =&gt; prints a string to the stdout and appends a newline to the output</span>
+    <span class="hljs-comment">-- putStr =&gt; prints a string to the stdout and does not include a newline</span>
+    <span class="hljs-comment">-- print =&gt; prints a value of the Show typeclass to the stdout and appends a newline to the output</span>
+
+<span class="hljs-title">main</span> :: <span class="hljs-type">IO</span> ()
+<span class="hljs-title">main</span> = <span class="hljs-keyword">do</span> 
+    putStrLn <span class="hljs-string">&quot;this watermelon statement includes a newline at the end automatically&quot;</span>
+    putStr <span class="hljs-string">&quot;this pineapple statement does not include a newline at the end and must be specified explicitly by us\n&quot;</span>
+</code></pre>
+<h2>Quickstart</h2>
+<pre><code class="language-hs"><span class="hljs-comment">-- ---------- QUICKSTART ----------</span>
+    <span class="hljs-comment">-- functional programming language with no side-effects, where everything is an expression that must evaluate to a value, including function definitions</span>
+    <span class="hljs-comment">-- lazy evaluation, where functions will only be evaluated when called </span>
+    <span class="hljs-comment">-- executable files require a main function to be called, which serves as the entry point for the program allowing for file IO (classified as a side-effect in pure functional languages)</span>
+
+<span class="hljs-title">main</span> :: <span class="hljs-type">IO</span> ()
+<span class="hljs-title">main</span> = putStr <span class="hljs-string">&quot;fear and hunger truly is a game&quot;</span>
+</code></pre>
+<h2>Functions and Definitions</h2>
+<pre><code class="language-hs"><span class="hljs-comment">-- ---------- FUNCTION ----------</span>
+    <span class="hljs-comment">-- as a functional language, Haskell revolves around functions, which are all expressions that evaluate to a value</span>
+    <span class="hljs-comment">-- function defined with the syntax =&gt; {FUNCTION NAME} {FUNCTION PARAMETERS SPACE DELIMITED} = {FUNCTION BODY}</span>
+    <span class="hljs-comment">-- functions called with the syntax =&gt; {FUNCTION NAME} {FUNCTION ARGUMENTS SPACE DELIMITED}</span>
+    <span class="hljs-comment">-- function parameter and return type type signatures are optionally declared before function defintion, but encouraged for clear code</span>
+
+<span class="hljs-title">max</span> <span class="hljs-number">100</span> <span class="hljs-number">101</span> <span class="hljs-comment">-- this evaluates to the Int value 101</span>
+
+<span class="hljs-title">doubleMe</span> :: <span class="hljs-type">Int</span> -&gt; <span class="hljs-type">Int</span>
+<span class="hljs-title">doubleMe</span> x = x + x
+
+<span class="hljs-title">doubleUs</span> :: <span class="hljs-type">Int</span> -&gt; <span class="hljs-type">Int</span> -&gt; <span class="hljs-type">Int</span>
+<span class="hljs-title">doubleUs</span> x y = x*<span class="hljs-number">2</span> + y*<span class="hljs-number">2</span>
+
+<span class="hljs-comment">-- ---------- DEFINITION ----------</span>
+    <span class="hljs-comment">-- as a functional language, Haskell has no concept of &#x27;variables&#x27; and every binding is immutable by default since modification of a value binding entails side-effects and instead, every value can be modified through a function expression which evaluates to a transformed return value</span>
+    <span class="hljs-comment">-- these are called definitions, the equivalent of constant bindings in other languages</span>
+    <span class="hljs-comment">-- where =&gt; adds a local definition to an existing definition</span>
+    <span class="hljs-comment">-- let ... in =&gt; creates a local binding for expressions within a specified lexical scope</span>
+        <span class="hljs-comment">-- both &#x27;where&#x27; and &#x27;let ... in&#x27; achieve the same purpose, just that their positional syntax is different when used</span>
+        <span class="hljs-comment">-- note that functions can also be locally defined </span>
+    <span class="hljs-comment">-- raw definition creates a global binding that can be accessed anywhere in the program</span>
+
+<span class="hljs-title">circleArea</span> :: <span class="hljs-type">Double</span> -&gt; <span class="hljs-type">Double</span> <span class="hljs-comment">-- a function&#x27;s type signature</span>
+
+<span class="hljs-comment">-- this is a function defined with &#x27;where&#x27; to create local bindings that can only be accessed within the function circleArea</span>
+<span class="hljs-title">circleArea</span> r = pi * rsquare
+    <span class="hljs-keyword">where</span> pi = <span class="hljs-number">3.1415926</span> <span class="hljs-comment">-- pi is a local binding </span>
+          rsquare = r * r <span class="hljs-comment">-- rsquare is also a local binding </span>
+
+<span class="hljs-comment">-- this is the same function if defined with &#x27;let ... in&#x27; that can only be accessed within the function circleArea</span>
+<span class="hljs-title">circleArea</span> r = <span class="hljs-keyword">let</span> pi = <span class="hljs-number">3.1415926</span> <span class="hljs-comment">-- pi is a local binding here as well</span>
+                   rsquare = r * r <span class="hljs-comment">-- rsquare here is also a local binding</span>
+               <span class="hljs-keyword">in</span> pi * rsquare
+
+<span class="hljs-comment">-- using &#x27;where&#x27; </span>
+<span class="hljs-title">circleArea</span> r = pi * square r
+    <span class="hljs-keyword">where</span> pi = <span class="hljs-number">3.1415926</span>
+          square x = x * x <span class="hljs-comment">-- square is a function locally defined within circleArea</span>
+
+<span class="hljs-comment">-- using &#x27;let .. in&#x27;</span>
+<span class="hljs-title">circleArea</span> r = <span class="hljs-keyword">let</span> pi = <span class="hljs-number">3.1415926</span>
+                   square x = x * x <span class="hljs-comment">-- square here is also a local function defined within circleArea</span>
+               <span class="hljs-keyword">in</span> pi * square r
+
+<span class="hljs-title">conanOBrien</span> = <span class="hljs-string">&quot;It&#x27;s a me, Conan O&#x27;Brien!&quot;</span> <span class="hljs-comment">-- this creates a global binding</span>
+</code></pre>
+<h2>Types</h2>
+<pre><code class="language-hs"><span class="hljs-comment">-- ---------- TYPE ----------</span>
+    <span class="hljs-comment">-- Int =&gt; bounded integer number with a minimum and maximum value</span>
+    <span class="hljs-comment">-- Integer =&gt; unbounded integer number with no minimum and maximum value</span>
+    <span class="hljs-comment">-- Float =&gt; single precision floating point number, 32 bits</span>
+    <span class="hljs-comment">-- Double =&gt; double precision floating point number, 64 bits</span>
+    <span class="hljs-comment">-- Bool =&gt; True, False</span>
+    <span class="hljs-comment">-- Char =&gt; single quotation marks</span>
+    <span class="hljs-comment">-- String =&gt; double quotation marks, a string list</span>
+    <span class="hljs-comment">-- Maybe &lt;a&gt; =&gt; specifies a special nullable datatype where the value stored within the variable can either be of the specified type declared after the Maybe specifier or Nothing</span>
+        <span class="hljs-comment">-- Nothing =&gt; special constant value representing the absence of a value</span>
+        <span class="hljs-comment">-- Just &lt;literal value of a&gt; =&gt; special value that takes a parameter, the literal value of the non-null value stored within the Maybe &lt;a&gt; datatype</span>
+    <span class="hljs-comment">-- Either &lt;a&gt; &lt;b&gt; =&gt; specifies a datatype that could one of two specified datatypes, referred to with Left and Right</span>
+        <span class="hljs-comment">-- Left &lt;literal value of a&gt; =&gt; special value that takes a parameter, the literal value of the left-defined datatype a</span>
+        <span class="hljs-comment">-- Right &lt;literal value of b&gt; =&gt; special value that takes a parameter, the literal value of the right-defined datatype b</span>
+
+<span class="hljs-comment">-- Here&#x27;s an example of Maybe in use</span>
+
+<span class="hljs-title">login</span> :: <span class="hljs-type">String</span> -&gt; <span class="hljs-type">Maybe</span> <span class="hljs-type">String</span> <span class="hljs-comment">-- type signature of a function that returns the username if login is succesful, and nothing if otherwise</span>
+<span class="hljs-title">login</span> <span class="hljs-string">&quot;f4bulous!&quot;</span> = <span class="hljs-type">Just</span> <span class="hljs-string">&quot;unicorn73&quot;</span> <span class="hljs-comment">-- function definition via pattern-matching</span>
+<span class="hljs-title">login</span> <span class="hljs-string">&quot;swordfish&quot;</span> = <span class="hljs-type">Just</span> <span class="hljs-string">&quot;megahacker&quot;</span>
+<span class="hljs-title">login</span> _ = <span class="hljs-type">Nothing</span>
+
+<span class="hljs-comment">-- Maybe can also be called on function paramters</span>
+
+<span class="hljs-title">perhapsMultiply</span> :: <span class="hljs-type">Int</span> -&gt; <span class="hljs-type">Maybe</span> <span class="hljs-type">Int</span> -&gt; <span class="hljs-type">Int</span> <span class="hljs-comment">-- type signature</span>
+<span class="hljs-title">perhapsMultiply</span> i <span class="hljs-type">Nothing</span> = i <span class="hljs-comment">-- if empty argument provided</span>
+<span class="hljs-title">perhapsMultiply</span> i (<span class="hljs-type">Just</span> j) = i*j   <span class="hljs-comment">-- where non-empty argument provided</span>
+
+<span class="hljs-comment">-- Here&#x27;s an example of Either in use</span>
+
+<span class="hljs-title">readInt</span> :: <span class="hljs-type">String</span> -&gt; <span class="hljs-type">Either</span> <span class="hljs-type">String</span> <span class="hljs-type">Int</span> <span class="hljs-comment">-- type signature</span>
+<span class="hljs-title">readInt</span> <span class="hljs-string">&quot;0&quot;</span> = <span class="hljs-type">Right</span> <span class="hljs-number">0</span>
+<span class="hljs-title">readInt</span> <span class="hljs-string">&quot;1&quot;</span> = <span class="hljs-type">Right</span> <span class="hljs-number">1</span>
+<span class="hljs-title">readInt</span> s = <span class="hljs-type">Left</span> (<span class="hljs-string">&quot;Unsupported string: &quot;</span> ++ s)
+
+<span class="hljs-comment">-- Either can also be called on function parameters</span>
+
+<span class="hljs-title">iWantAString</span> :: <span class="hljs-type">Either</span> <span class="hljs-type">Int</span> <span class="hljs-type">String</span> -&gt; <span class="hljs-type">String</span> <span class="hljs-comment">-- type signature</span>
+<span class="hljs-title">iWantAString</span> (<span class="hljs-type">Right</span> str) = str
+<span class="hljs-title">iWantAString</span> (<span class="hljs-type">Left</span> number) = show number
+
+<span class="hljs-comment">-- Either allows for flexible definitions of the given datatype within a list as well</span>
+
+<span class="hljs-title">lectureParticipants</span> :: [<span class="hljs-type">Either</span> <span class="hljs-type">String</span> <span class="hljs-type">Int</span>]
+<span class="hljs-title">lectureParticipants</span> = [<span class="hljs-type">Left</span> <span class="hljs-string">&quot;lecturer was sick&quot;</span>, <span class="hljs-type">Left</span> <span class="hljs-string">&quot;easter vacation&quot;</span>, <span class="hljs-type">Right</span> <span class="hljs-number">3</span>, <span class="hljs-type">Right</span> <span class="hljs-number">10</span>, <span class="hljs-type">Right</span> <span class="hljs-number">13</span>, <span class="hljs-type">Right</span> <span class="hljs-number">17</span>]
+
+<span class="hljs-comment">-- TYPE SIGNATURES</span>
+    <span class="hljs-comment">-- functions have their parameter and return type&#x27;s type signatures explicitly declared before the function definition</span>
+    <span class="hljs-comment">-- :: =&gt; means &quot;has the type of&quot;</span>
+    <span class="hljs-comment">-- -&gt; =&gt; seperates each parameter type and return type with a syntax very similar to Clojure</span>
+
+<span class="hljs-title">removeNonUppercase</span> :: [<span class="hljs-type">Char</span>] -&gt; [<span class="hljs-type">Char</span>] <span class="hljs-comment">-- this function removes all uppercase characters</span>
+<span class="hljs-title">removeNonUppercase</span> st = [ c | c &lt;- st, c `elem` [<span class="hljs-string">&#x27;A&#x27;</span>..<span class="hljs-string">&#x27;Z&#x27;</span>]]
+
+<span class="hljs-title">addThree</span> :: <span class="hljs-type">Int</span> -&gt; <span class="hljs-type">Int</span> -&gt; <span class="hljs-type">Int</span> -&gt; <span class="hljs-type">Int</span> <span class="hljs-comment">-- this function receives three arguments of type Int and returns a value of type Int</span>
+<span class="hljs-title">addThree</span> x y z = x + y + z
+
+<span class="hljs-comment">-- TYPE VARIABLES</span>
+    <span class="hljs-comment">-- used in type signatures for functions that don&#x27;t have type-specific behaviour and accept arguments of multiple types, Haskell&#x27;s equivalent of generics in other languages</span>
+    <span class="hljs-comment">-- these functions are called polymorphic functions</span>
+    <span class="hljs-comment">-- type variables are specified with single-character names like &#x27;a&#x27; as seen below by convention</span>
+
+<span class="hljs-title">head</span> :: [a] -&gt; a <span class="hljs-comment">-- the type signature of the head function employs a type variable since its behaviour could apply to tuples of Int, Char, Bool, Float or any other type</span>
+<span class="hljs-title">tail</span> :: [a] -&gt; [a] <span class="hljs-comment">-- the same logic applies for the type signatures of the tail function, which take in a list of any datatype and return a list of that same datatype</span>
+<span class="hljs-title">fst</span> :: (a,b) -&gt; a <span class="hljs-comment">-- similarly, the type signature of the fst function employs a type variables since its behaviour is not type-specific</span>
+
+<span class="hljs-comment">-- TYPECLASSES</span>
+    <span class="hljs-comment">-- specify behaviour for types by prescribing them within the typeclass, allowing for a degree of meta-programming similar to interfaces in other languages and metatables in Lua</span>
+    <span class="hljs-comment">-- behaviours specified through class constraints which are decalred in () brackets within the function&#x27;s type signature before the function&#x27;s parameter and return types</span>
+    <span class="hljs-comment">-- =&gt; =&gt; seperates class constraints from the function&#x27;s parameters and return types</span>
+
+(==) :: (<span class="hljs-type">Eq</span> a) =&gt; a -&gt; a -&gt; <span class="hljs-type">Bool</span> <span class="hljs-comment">-- the equality function&#x27;s type signature (a -&gt; a) specifies that it receives any two values that are the same type as arguments and returns a Boolean, while the typeclass specifies that the argument&#x27;s type must be a member of the Eq class (Eq a)</span>
+(&gt;) :: (<span class="hljs-type">Ord</span> a) =&gt; a -&gt; a -&gt; <span class="hljs-type">Bool</span> <span class="hljs-comment">-- the comparison function&#x27;s type signature (a -&gt; a) specifies that it receives any two values that are the same type as arguments and returns a Boolean, while the typeclass specifies that the argument&#x27;s type must be a member of the Ord class (Ord a)</span>
+
+<span class="hljs-comment">-- ADDITIONAL TERMINOLOGY</span>
+    <span class="hljs-comment">-- type parameter =&gt; refers to a within the type [a]</span>
+    <span class="hljs-comment">-- parameterized type =&gt; refers to data structure types like the list that require a type parameter</span>
+    <span class="hljs-comment">-- polymorphism =&gt; where a function can receive many different types of arguments</span>
+    <span class="hljs-comment">-- parametric polymorphism =&gt; refers to the use of type variables within functions</span>
+</code></pre>
+<h2>Operators</h2>
+<pre><code class="language-hs"><span class="hljs-comment">-- ---------- OPERATOR ----------</span>
+
+<span class="hljs-comment">-- ARITHMETIC OPERATORS</span>
+    <span class="hljs-comment">-- + =&gt; addition</span>
+    <span class="hljs-comment">-- - =&gt; subtraction</span>
+    <span class="hljs-comment">-- * =&gt; multiplication</span>
+    <span class="hljs-comment">-- / =&gt; division</span>
+    <span class="hljs-comment">-- div =&gt; floor divison</span>
+    <span class="hljs-comment">-- mod =&gt; modulo operator</span>
+
+<span class="hljs-comment">-- LOGICAL OPERATORS</span>
+    <span class="hljs-comment">-- &amp;&amp; =&gt; and</span>
+    <span class="hljs-comment">-- || =&gt; or</span>
+    <span class="hljs-comment">-- not =&gt; logical not</span>
+
+<span class="hljs-comment">-- COMPARISON OPERATORS</span>
+    <span class="hljs-comment">-- == =&gt; partial equality check for value but not type</span>
+    <span class="hljs-comment">-- /= =&gt; partial inequality check for value but not type</span>
+    <span class="hljs-comment">-- &gt; &lt; &lt;= &gt;= are also comparsion operators</span>
+</code></pre>
+<h2>Data structures</h2>
+<pre><code class="language-hs"><span class="hljs-comment">-- ---------- DATA STRUCTURE ----------</span>
+
+<span class="hljs-comment">-- LIST</span>
+    <span class="hljs-comment">-- ordered sequence of elements of the same type, declared with [] square brackets where elements are comma-delimited </span>
+    <span class="hljs-comment">-- therefore a String is a type alias for [Char], which means all list operations can also be run on Strings</span>
+    <span class="hljs-comment">-- observe that Haskell lists are implemented as singly-linked lists on the backend</span>
+    <span class="hljs-comment">-- .. =&gt; creates an inclusive integer range that is an iterable data structure beginning from the start index and ending at the specified end index</span>
+
+<span class="hljs-title">lostNumbers</span> :: [<span class="hljs-type">Int</span>] <span class="hljs-comment">-- type signature</span>
+<span class="hljs-title">anotherRange</span> :: [<span class="hljs-type">Int</span>] <span class="hljs-comment">-- also a type signature</span>
+<span class="hljs-title">lostNumbers</span> = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>] <span class="hljs-comment">-- an Int list literal in Haskell</span>
+<span class="hljs-title">anotherRange</span> = [<span class="hljs-number">1</span>..<span class="hljs-number">10</span>] <span class="hljs-comment">-- evaluates to [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span>
+
+<span class="hljs-comment">-- LIST OPERATIONS</span>
+    <span class="hljs-comment">-- Haskell is pure and all variables are immutable by default (including lists), so list operations return the value of the modified list and do NOT modify the list itself in memory</span>
+    <span class="hljs-comment">-- ++ =&gt; concatenates two lists together, though Haskell has to traverse the entire left list before processing the concatenation</span>
+    <span class="hljs-comment">-- : =&gt; inserts a value to the start of the list immediately, much faster than concatenation</span>
+    <span class="hljs-comment">-- !! =&gt; extracts a list element by index, the equivalent of [] square bracket indexing in Python</span>
+    <span class="hljs-comment">-- &lt; &gt; == =&gt; compares list elements in lexographical order</span>
+    <span class="hljs-comment">-- head =&gt; returns the first element of a list</span>
+    <span class="hljs-comment">-- tail =&gt; returns everything but the list&#x27;s head</span>
+    <span class="hljs-comment">-- last =&gt; returns the last element of a list</span>
+    <span class="hljs-comment">-- init =&gt; returns everything but the list&#x27;s last element</span>
+    <span class="hljs-comment">-- length =&gt; returns the length of the list</span>
+    <span class="hljs-comment">-- null =&gt; checks whether a list is empty and returns a Boolean</span>
+    <span class="hljs-comment">-- reverse =&gt; returns a reversed copy of a list</span>
+    <span class="hljs-comment">-- take =&gt; extracts a specified number of elements from the start of a list</span>
+    <span class="hljs-comment">-- drop =&gt; drops a specified number of elements from the start of a list and returns the remaining elements as a sublist</span>
+    <span class="hljs-comment">-- maximum =&gt; returns the element of maximum value in a list</span>
+    <span class="hljs-comment">-- minimum =&gt; returns the element of minimum value in a list</span>
+    <span class="hljs-comment">-- sum =&gt; returns the sum of all elements in a list</span>
+    <span class="hljs-comment">-- product =&gt; returns the product of all elements in a list</span>
+    <span class="hljs-comment">-- elem =&gt; checks whether a specified element is part of a list and returns a Boolean</span>
+    <span class="hljs-comment">-- further list operations can be found within the module Data.List</span>
+
+<span class="hljs-title">yesList</span> = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>] ++ [<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">10</span>] <span class="hljs-comment">-- evaluates to the list value [1,2,3,4,5,6,7,8,9,10]</span>
+<span class="hljs-title">yesGreeting</span> = <span class="hljs-string">&quot;hello&quot;</span> ++ <span class="hljs-string">&quot; &quot;</span> ++ <span class="hljs-string">&quot;uncle&quot;</span> <span class="hljs-comment">-- evaluates to the String (Char list) value &quot;hello uncle&quot;</span>
+<span class="hljs-title">observation</span> = <span class="hljs-string">&#x27;a&#x27;</span>:<span class="hljs-string">&quot; small cat&quot;</span> <span class="hljs-comment">-- evaluates to the String (Char list) value &quot;a small cat&quot;</span>
+<span class="hljs-title">theHero</span> = <span class="hljs-string">&quot;Steve Buscemi&quot;</span> !! <span class="hljs-number">6</span> <span class="hljs-comment">-- evaluates to the Char value &#x27;B&#x27;, which has an index of 6 in the String (Char list)</span>
+<span class="hljs-title">booleanYesOrNo</span> = [<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">2</span>] &gt; [<span class="hljs-number">3</span>,<span class="hljs-number">2</span>] <span class="hljs-comment">-- evaluates to Boolean True</span>
+<span class="hljs-title">theHead</span> = head [<span class="hljs-number">5</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>] <span class="hljs-comment">-- evaluates to the Int value 5</span>
+<span class="hljs-title">theTail</span> = tail [<span class="hljs-number">5</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>] <span class="hljs-comment">-- evaluates to the Int list of [4,3,2,1] </span>
+<span class="hljs-title">theLastElement</span> = last [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>] <span class="hljs-comment">-- evaluates to the Int value 5</span>
+<span class="hljs-title">theInit</span> = init [<span class="hljs-number">5</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>] <span class="hljs-comment">-- evaluates to the Int list of [5,4,3,2]</span>
+<span class="hljs-title">theLength</span> = length [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>] <span class="hljs-comment">-- evaluates to the Int value 5</span>
+<span class="hljs-title">theNullCheck</span> = null [] <span class="hljs-comment">-- evaluates to Boolean True</span>
+<span class="hljs-title">anotherNullCheck</span> = null [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>] <span class="hljs-comment">-- evaluates to Boolean False</span>
+<span class="hljs-title">theReversedList</span> = reverse [<span class="hljs-number">5</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>] <span class="hljs-comment">-- evaluates to the Int list of [1,2,3,4,5]</span>
+<span class="hljs-title">extractedList</span> = take <span class="hljs-number">3</span> [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>] <span class="hljs-comment">-- evaluates to the Int list of [1,2,3]</span>
+<span class="hljs-title">anotherExtractedList</span> = take <span class="hljs-number">0</span> [<span class="hljs-number">6</span>,<span class="hljs-number">6</span>,<span class="hljs-number">6</span>] <span class="hljs-comment">-- evaluates to the empty list of [] since 0 elements were extracted</span>
+<span class="hljs-title">yetAnotherExtractedList</span> = take <span class="hljs-number">5</span> [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>] <span class="hljs-comment">-- evaluates to the Int list of [1,2] since the entire list was extracted</span>
+<span class="hljs-title">droppedList</span> = drop <span class="hljs-number">3</span> [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>] <span class="hljs-comment">-- evaluates to the Int list of [4,5,6,7,8]</span>
+<span class="hljs-title">anotherDroppedList</span> = drop <span class="hljs-number">0</span> [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>] <span class="hljs-comment">-- evaluates to the Int list of [1,2,3,4] since no values were dropped</span>
+<span class="hljs-title">yetAnotherDroppedList</span> = drop <span class="hljs-number">100</span> [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>] <span class="hljs-comment">-- evaluates to the empty list of [] since all the values were dropped</span>
+<span class="hljs-title">maximumValue</span> = maximum [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">83</span>,<span class="hljs-number">10</span>] <span class="hljs-comment">-- evaluates to the Int value of 83</span>
+<span class="hljs-title">minimumValue</span> = minimum [<span class="hljs-number">0</span>,<span class="hljs-number">2</span>,<span class="hljs-number">200</span>,<span class="hljs-number">1</span>,<span class="hljs-number">7</span>] <span class="hljs-comment">-- evaluates to the Int value of 0</span>
+<span class="hljs-title">sumOfValues</span> = sum [<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>,<span class="hljs-number">129</span>] <span class="hljs-comment">-- evaluates to the Int value of 139</span>
+<span class="hljs-title">productOfValues</span> = product [<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">10</span>,<span class="hljs-number">4</span>] <span class="hljs-comment">-- evaluates to the Int value of 240</span>
+<span class="hljs-title">isItPartOfList</span> = <span class="hljs-number">4</span> `elem` [<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>] <span class="hljs-comment">-- evaluates to Boolean True</span>
+<span class="hljs-title">isItAlsoPartOfList</span> = <span class="hljs-number">10</span> `elem` [<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>] <span class="hljs-comment">-- evaluates to Boolean False</span>
+
+<span class="hljs-comment">-- we can also combine multiple list operations as seen below</span>
+
+<span class="hljs-title">f</span> :: [a] -&gt; [a]
+<span class="hljs-title">f</span> xs = take <span class="hljs-number">2</span> xs ++ drop <span class="hljs-number">4</span> xs <span class="hljs-comment">-- function that discards the 3rd and fourth element of a list</span>
+
+<span class="hljs-title">g</span> :: [a] -&gt; [a]
+<span class="hljs-title">g</span> xs = tail xs ++ [head xs] <span class="hljs-comment">-- function that rotates a list by taking the first element and moving it to the back of the list</span>
+
+<span class="hljs-comment">-- TUPLE</span>
+    <span class="hljs-comment">-- ordered sequence of elements of a fixed size that can store different types</span>
+    <span class="hljs-comment">-- declared with () brackets, elements are comma-delimited</span>
+
+<span class="hljs-title">someTuple</span> = (<span class="hljs-number">8</span>, <span class="hljs-number">11</span>) <span class="hljs-comment">-- an Int tuple in Haskell</span>
+
+<span class="hljs-comment">-- TUPLE OPERATIONS</span>
+    <span class="hljs-comment">-- fst =&gt; receives a pair (tuple with two elements) as an argument and returns the first element</span>
+    <span class="hljs-comment">-- snd =&gt; receives a pair (tuple with two elements) as an argument and returns the second element</span>
+    <span class="hljs-comment">-- zip =&gt; takes two lists and returns a list of pairs comprised of elements of corresponding positions in the input lists</span>
+
+<span class="hljs-title">firstElement</span> = fst (<span class="hljs-number">1</span>, <span class="hljs-number">2</span>) <span class="hljs-comment">-- this evaluates to the Int value 1</span>
+<span class="hljs-title">secondElement</span> = snd (<span class="hljs-number">1</span>, <span class="hljs-number">2</span>) <span class="hljs-comment">-- this evaluates to the Int value 2</span>
+<span class="hljs-title">list1</span> = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]
+<span class="hljs-title">list2</span> = [<span class="hljs-string">&quot;one&quot;</span>, <span class="hljs-string">&quot;two&quot;</span>, <span class="hljs-string">&quot;three&quot;</span>]
+<span class="hljs-title">zippedList</span> = zip list1 list2 <span class="hljs-comment">-- this evaluates to the Int tuple list value of [(1, &quot;one&quot;), (2, &quot;two&quot;), (3, &quot;three&quot;)]</span>
+</code></pre>
+<h2>Control structures</h2>
+<pre><code class="language-hs"><span class="hljs-comment">-- ---------- CONTROL STRUCTURE ----------</span>
+
+<span class="hljs-comment">-- CONDITIONALS</span>
+
+<span class="hljs-comment">-- IF THEN ELSE</span>
+    <span class="hljs-comment">-- else =&gt; required in every if statement since every expression (including conditional expressions) must evalaute to a value</span>
+
+<span class="hljs-title">doubleSmallNumber</span> :: (<span class="hljs-type">Int</span> a, <span class="hljs-type">Ord</span> a) =&gt; a -&gt; a
+<span class="hljs-title">doubleSmallNumber</span> x = <span class="hljs-keyword">if</span> x &gt; <span class="hljs-number">100</span>
+                      <span class="hljs-keyword">then</span> x 
+                      <span class="hljs-keyword">else</span> x*<span class="hljs-number">2</span> 
+
+<span class="hljs-comment">-- PATTERN-MATCHING WITHIN DEFINITION</span>
+    <span class="hljs-comment">-- pattern-matching is most commonly executed on functions within the function definition</span>
+    <span class="hljs-comment">-- a function definition can consist of multiple equations, where each equation is matched in order against the arguments until a suitable one is found</span>
+    <span class="hljs-comment">-- here _ serves the same role as the catch-all operator where it evaluates when all other predicate equations fail to be matched</span>
+
+<span class="hljs-title">greet</span> :: <span class="hljs-type">String</span> -&gt; <span class="hljs-type">String</span> -&gt; <span class="hljs-type">String</span> <span class="hljs-comment">-- type annotation</span>
+<span class="hljs-title">greet</span> <span class="hljs-string">&quot;Finland&quot;</span> name = <span class="hljs-string">&quot;Hei, &quot;</span> ++ name <span class="hljs-comment">-- case 1</span>
+<span class="hljs-title">greet</span> <span class="hljs-string">&quot;Italy&quot;</span>   name = <span class="hljs-string">&quot;Ciao, &quot;</span> ++ name <span class="hljs-comment">-- case 2</span>
+<span class="hljs-title">greet</span> <span class="hljs-string">&quot;England&quot;</span> name = <span class="hljs-string">&quot;How do you do, &quot;</span> ++ name <span class="hljs-comment">-- case 2</span>
+<span class="hljs-title">greet</span> _ name = <span class="hljs-string">&quot;Hello, &quot;</span> ++ name <span class="hljs-comment">-- default case</span>
+
+<span class="hljs-comment">-- the logical extension is that pattern-matching can occur on any number of arguments as seen below</span>
+
+<span class="hljs-title">login</span> :: <span class="hljs-type">String</span> -&gt; <span class="hljs-type">String</span> -&gt; <span class="hljs-type">String</span>
+<span class="hljs-title">login</span> <span class="hljs-string">&quot;unicorn73&quot;</span> <span class="hljs-string">&quot;f4bulous!&quot;</span> = <span class="hljs-string">&quot;unicorn73 logged in&quot;</span>
+<span class="hljs-title">login</span> <span class="hljs-string">&quot;unicorn73&quot;</span> _ = <span class="hljs-string">&quot;wrong password&quot;</span>
+<span class="hljs-title">login</span> _ _ = <span class="hljs-string">&quot;unknown user&quot;</span>
+
+<span class="hljs-comment">-- GUARDED DEFINITIONS</span>
+    <span class="hljs-comment">-- provided as an alternative to the cumbersome IF THEN ELSE conditional constructs especially when there are multiple predicate cases</span>
+    <span class="hljs-comment">-- instead, Haskell provides conditional definitions, AKA guarded definitions</span>
+    <span class="hljs-comment">-- these operate similarly to pattern-matching by providing multiple equations that run based on specified predicate case conditions, and are particularly useful in recursive function call definitions</span>
+    <span class="hljs-comment">-- | =&gt; pipe operator specifies the predicate case condition to be fulfilled </span>
+    <span class="hljs-comment">-- = =&gt; specifies the relationship between a defined case condition and the arbitrary equation to be run when that case condition is fulfilled</span>
+    <span class="hljs-comment">-- otherwise =&gt; acts as the default fall-through case, the equivalent of the _ catch-all operator in match-case constructs in most other programming languages</span>
+
+<span class="hljs-comment">-- a simple conditional definition</span>
+<span class="hljs-title">describe</span> :: <span class="hljs-type">Int</span> -&gt; <span class="hljs-type">String</span>
+<span class="hljs-title">describe</span> n
+    | n == <span class="hljs-number">2</span> = <span class="hljs-string">&quot;Two&quot;</span>
+    | even n = <span class="hljs-string">&quot;Even&quot;</span>
+    | n == <span class="hljs-number">3</span> = <span class="hljs-string">&quot;Three&quot;</span>
+    | n &gt; <span class="hljs-number">100</span> = <span class="hljs-string">&quot;Big!!&quot;</span>
+    | otherwise = <span class="hljs-string">&quot;The number &quot;</span> ++ show n <span class="hljs-comment">-- default fall-through case</span>
+
+<span class="hljs-comment">-- recursive function call with conditional definitions</span>
+<span class="hljs-title">factorial</span> :: <span class="hljs-type">Int</span> -&gt; <span class="hljs-type">Int</span>
+<span class="hljs-title">factorial</span> n
+    | n &lt; <span class="hljs-number">0</span> = -<span class="hljs-number">1</span>
+    | n == <span class="hljs-number">0</span> = <span class="hljs-number">1</span>
+    | otherwise = n * factorial (n-<span class="hljs-number">1</span>)
+
+<span class="hljs-comment">-- guards can even be COMBINED with existing pattern-matching constructs as below</span>
+<span class="hljs-title">guessAge</span> :: <span class="hljs-type">String</span> -&gt; <span class="hljs-type">Int</span> -&gt; <span class="hljs-type">String</span>
+<span class="hljs-title">guessAge</span> <span class="hljs-string">&quot;Griselda&quot;</span> age
+    | age &lt; <span class="hljs-number">47</span> = <span class="hljs-string">&quot;Too low!&quot;</span>
+    | age &gt; <span class="hljs-number">47</span> = <span class="hljs-string">&quot;Too high!&quot;</span>
+    | otherwise = <span class="hljs-string">&quot;Correct!&quot;</span>
+<span class="hljs-title">guessAge</span> <span class="hljs-string">&quot;Hansel&quot;</span> age
+    | age &lt; <span class="hljs-number">12</span> = <span class="hljs-string">&quot;Too low!&quot;</span>
+    | age &gt; <span class="hljs-number">12</span> = <span class="hljs-string">&quot;Too high!&quot;</span>
+    | otherwise = <span class="hljs-string">&quot;Correct!&quot;</span>
+<span class="hljs-title">guessAge</span> name age = <span class="hljs-string">&quot;Wrong name!&quot;</span>
+
+<span class="hljs-comment">-- CASE OF _</span>
+    <span class="hljs-comment">-- Haskell features extremely powerful pattern-matching construct similar to the match case statements in other languages</span>
+    <span class="hljs-comment">-- pattern cases are checked in order from top to bottom so arrangement matters</span>
+    <span class="hljs-comment">-- this effectively enables pattern-matching within expressions as opposed to merely within definitions, as well as pattern-matching against function outputs</span>
+    <span class="hljs-comment">-- _ =&gt; wildcard catch-all operator that acts as the equivalent of the default statement in other languages</span>
+
+<span class="hljs-title">numberAsString</span> :: <span class="hljs-type">Int</span> -&gt; <span class="hljs-type">String</span> <span class="hljs-comment">-- static type declaration of an expression prior to expression initialisation</span>
+<span class="hljs-title">numberAsString</span> num = <span class="hljs-keyword">case</span> num <span class="hljs-keyword">of</span>
+    <span class="hljs-number">1</span> -&gt; <span class="hljs-string">&quot;One&quot;</span>
+    <span class="hljs-number">2</span> -&gt; <span class="hljs-string">&quot;Two&quot;</span>
+    <span class="hljs-number">3</span> -&gt; <span class="hljs-string">&quot;Three&quot;</span>
+    _ -&gt; <span class="hljs-string">&quot;Unknown but also the catch-call wildcard operator&quot;</span>
+
+<span class="hljs-comment">-- LOOPS DON&#x27;T EXIST</span>
+    <span class="hljs-comment">-- higher-order functions, recursion and list comprehension are used in place of imperative loop constructs like for or while loops, which Haskell does not have</span>
+    <span class="hljs-comment">-- this is in line with most other functional programming paradigms that Haskell adheres to</span>
+
+<span class="hljs-comment">-- HIGHER-ORDER FUNCTIONS</span>
+    <span class="hljs-comment">-- map =&gt; applies a specified function on each element of an iterable structure and returns the transformed data structure</span>
+    <span class="hljs-comment">-- filter =&gt; applies a specified predicate to each element of an iterable structure and returns the data structure with elements that fulfil the predicate</span>
+    <span class="hljs-comment">-- foldl, foldr =&gt; reduces a list to a single value by repeatedly applying a specified binary function to each element of the list, the equivalent of reduce in Haskell</span>
+    <span class="hljs-comment">-- zipWith =&gt; combines two lists with a specified function</span>
+    <span class="hljs-comment">-- compose =&gt; declared with a . period, combines two functions into a new function</span>
+    <span class="hljs-comment">-- flip =&gt; receives a function, reverses its first two arguments and returns that new function</span>
+
+<span class="hljs-title">squareList</span> :: <span class="hljs-type">Int</span> a =&gt; [a] -&gt; [a]
+<span class="hljs-title">squareList</span> xs = map (\x -&gt; x * x) xs <span class="hljs-comment">-- calling map function</span>
+
+<span class="hljs-title">evenNumbers</span> :: <span class="hljs-type">Integral</span> a =&gt; [a] -&gt; [a]
+<span class="hljs-title">evenNumbers</span> xs = filter even xs <span class="hljs-comment">-- calling filter function</span>
+
+<span class="hljs-title">sumList</span> :: <span class="hljs-type">Int</span> a =&gt; [a] -&gt; a
+<span class="hljs-title">sumList</span> xs = foldl (+) <span class="hljs-number">0</span> xs <span class="hljs-comment">-- calling reduce function</span>
+
+<span class="hljs-title">addLists</span> :: <span class="hljs-type">Int</span> a =&gt; [a] -&gt; [a] -&gt; [a]
+<span class="hljs-title">addLists</span> xs ys = zipWith (+) xs ys <span class="hljs-comment">-- calling zipWith function</span>
+
+<span class="hljs-title">squareAndDouble</span> :: <span class="hljs-type">Int</span> a =&gt; a -&gt; a
+<span class="hljs-title">squareAndDouble</span> = (*<span class="hljs-number">2</span>) . (^<span class="hljs-number">2</span>) <span class="hljs-comment">-- calling compose function</span>
+
+<span class="hljs-title">subtractFrom</span> :: <span class="hljs-type">Int</span> a =&gt; a -&gt; a -&gt; a
+<span class="hljs-title">subtractFrom</span> = flip (-) <span class="hljs-comment">-- calling flip function</span>
+
+<span class="hljs-comment">-- RECURSION</span>
+    <span class="hljs-comment">-- Haskell function calls are very efficient, so performance is rarely a concern when it comes to recursion</span>
+    <span class="hljs-comment">-- in reality recursion is merely a natural application of Haskell&#x27;s powerful pattern-matching construct that occurs even in definitions</span>
+    <span class="hljs-comment">-- helper functions are also very useful to declutter and simplify the visible logic of a recursive call, wherein helper functions are named originalFunctionName&#x27; which is read as originalFunctionNamePrime by convention</span>
+    <span class="hljs-comment">-- a simple way to think about recursion is always </span>
+        <span class="hljs-comment">-- 1. FIRST define what the base case of a recursive function call that the call recurses to should be</span>
+        <span class="hljs-comment">-- 2. THEN write out the otherwise case that runs when the base case is not yet called</span>
+        <span class="hljs-comment">-- 3. WORK it out on paper if need be to visualise each iteration of the function call</span>
+
+<span class="hljs-comment">-- to find the factorial! of a given number, noting the definition of factorial is n! = n * (n-1) * … * 1</span>
+<span class="hljs-title">factorial</span> :: <span class="hljs-type">Int</span> -&gt; <span class="hljs-type">Int</span>
+<span class="hljs-title">factorial</span> <span class="hljs-number">1</span> = <span class="hljs-number">1</span> <span class="hljs-comment">-- base case</span>
+<span class="hljs-title">factorial</span> n = n * factorial (n-<span class="hljs-number">1</span>)
+
+<span class="hljs-comment">-- to find the sum of squares of all numbers from 1 to the given number, noting the definition of the squared sum is 1^2 + 2^2 + 3^2 + ... + n^2</span>
+<span class="hljs-title">squareSum</span> :: <span class="hljs-type">Int</span> -&gt; <span class="hljs-type">Int</span>
+<span class="hljs-title">squareSum</span> <span class="hljs-number">0</span> = <span class="hljs-number">0</span> <span class="hljs-comment">-- base case</span>
+<span class="hljs-title">squareSum</span> n = n^<span class="hljs-number">2</span> + squareSum (n-<span class="hljs-number">1</span>)
+
+<span class="hljs-comment">-- to sum the elements of a list</span>
+<span class="hljs-title">sumList</span> :: <span class="hljs-type">Int</span> a =&gt; [a] -&gt; a 
+<span class="hljs-title">sumList</span> [] = <span class="hljs-number">0</span> <span class="hljs-comment">-- base case</span>
+<span class="hljs-title">sumList</span> (x:xs) = x + sumList xs 
+
+<span class="hljs-comment">-- helper function </span>
+<span class="hljs-title">repeatHelper</span> :: <span class="hljs-type">Int</span> -&gt; <span class="hljs-type">String</span> -&gt; <span class="hljs-type">String</span> -&gt; <span class="hljs-type">String</span> <span class="hljs-comment">-- type signature</span>
+<span class="hljs-title">repeatHelper</span> n str result = <span class="hljs-keyword">if</span> (n==<span class="hljs-number">0</span>) 
+                            <span class="hljs-keyword">then</span> result
+                            <span class="hljs-keyword">else</span> repeatHelper (n-<span class="hljs-number">1</span>) str (result++str)
+
+<span class="hljs-comment">-- helper function that has the same type signature as above but now we use pattern-matching INSTEAD of the if else construct within the function definition</span>
+<span class="hljs-title">repeatHelper</span> <span class="hljs-number">0</span> _   result = result <span class="hljs-comment">-- as long as n == 0, then it does not matter what the string is, this first case will run</span>
+<span class="hljs-title">repeatHelper</span> n str result = repeatHelper (n-<span class="hljs-number">1</span>) str (result++str)
+
+<span class="hljs-comment">-- actual recursive function call</span>
+<span class="hljs-title">repeatString</span> :: <span class="hljs-type">Int</span> -&gt; <span class="hljs-type">String</span> -&gt; <span class="hljs-type">String</span> <span class="hljs-comment">-- type signature</span>
+<span class="hljs-title">repeatString</span> n str = repeatHelper n str <span class="hljs-string">&quot;&quot;</span>
+
+<span class="hljs-comment">-- LIST COMPREHENSION</span>
+    <span class="hljs-comment">-- given Haskell&#x27;s mathematical roots, concepts like list comprehension originate from set theory</span>
+    <span class="hljs-comment">-- list comprehension syntax =&gt; [{OUTPUT FUNCTION} | {VARIABLE AND INPUT SET}, {PREDICATE}]</span>
+        <span class="hljs-comment">-- output function =&gt; function applied on each element</span>
+        <span class="hljs-comment">-- variable =&gt; element iterated over within the input set, commas can be used to delimit multiple variables</span>
+        <span class="hljs-comment">-- input set =&gt; iterable collection over which the variable iterates over, can be expressed as a range in Haskell, commas can be used to delimit multiple input sets</span>
+        <span class="hljs-comment">-- predicate =&gt; specifies conditional check on the variable that limits what values from the input set can have the output function applied to them, the equivalent of a filter in other programming languages, commas can be used to delimit multiple predicates</span>
+    <span class="hljs-comment">-- &lt;- =&gt; specifies the relationship between the variable and input set</span>
+    <span class="hljs-comment">-- _ =&gt; catch-all operator also acts as a throwaway variable that is not needed later</span>
+
+<span class="hljs-title">multiplyByTwo</span> = [x*<span class="hljs-number">2</span> | x &lt;- [<span class="hljs-number">1</span>..<span class="hljs-number">10</span>]] <span class="hljs-comment">-- this evaluates to the Int list of [2,4,6,8,10,12,14,16,18,20] using list comprehension</span>
+<span class="hljs-title">multiplyByTwoWithPredicate</span> = [x*<span class="hljs-number">2</span> | x &lt;- [<span class="hljs-number">1</span>..<span class="hljs-number">10</span>], x*<span class="hljs-number">2</span> &gt;= <span class="hljs-number">12</span>] <span class="hljs-comment">-- this evaluates to the Int list of [12,14,16,18,20] using list comprehension when x fulfills the predicate of 2 * x is bigger or equals to 12</span>
+<span class="hljs-title">applyAnotherPredicate</span> = [x | x &lt;- [<span class="hljs-number">50</span>..<span class="hljs-number">100</span>], x `mod` <span class="hljs-number">7</span> == <span class="hljs-number">3</span>]  <span class="hljs-comment">-- this evaluates to the Int list of [52,59,66,73,80,87,94] using list comprehension where x fulfills the predicate of x mod 7 == 3</span>
+<span class="hljs-title">applyMultiplePredicates</span> = [x | x &lt;- [<span class="hljs-number">10</span>..<span class="hljs-number">20</span>], x /= <span class="hljs-number">13</span>, x /= <span class="hljs-number">15</span>, x /= <span class="hljs-number">19</span>] <span class="hljs-comment">-- commas are used to delimit multiple predicates that specify x cannot be equals to 13, 15, 19</span>
+<span class="hljs-title">applyMultipleVariableAndInputSets</span> = [x*y | x &lt;- [<span class="hljs-number">2</span>,<span class="hljs-number">5</span>,<span class="hljs-number">10</span>] , y &lt;- [<span class="hljs-number">8</span>,<span class="hljs-number">10</span>,<span class="hljs-number">11</span>], x*y &gt; <span class="hljs-number">50</span>] <span class="hljs-comment">-- commas are used to delimit multiple variable and inpiut sets to evaluate to a list of all the possible products from a list that are more than 50, which is [55,80,100,110]</span>
+<span class="hljs-title">removeNonUppercase</span> inputString = [ c | c &lt;- inputString, c `elem` [<span class="hljs-string">&#x27;A&#x27;</span>..<span class="hljs-string">&#x27;Z&#x27;</span>]] <span class="hljs-comment">-- Strings are just Char lists so we can use list comprehension to removes all non-uppercase letters from a string</span>
+<span class="hljs-title">length</span>` xs = sum [<span class="hljs-number">1</span> | _ &lt;- xs] <span class="hljs-comment">-- _ catch-all wildcard operator used to signify throwing away that variable, so this function evaluates to the length of the list where every element of the list is replaced with 1 and the value of the Int list is summed up</span>
+<span class="hljs-title">squareList</span> :: <span class="hljs-type">Int</span> a =&gt; [a] -&gt; [a] <span class="hljs-comment">-- note this employs typeclasses for a generic function that does not have type-specific behaviour</span>
+<span class="hljs-title">squareList</span> xs = [x * x | x &lt;- xs] <span class="hljs-comment">-- list comprehension can also be used with functions to generate an Int list where each value is its value squared</span>
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li>shadowing</li>
+<li>tail recursion</li>
+<li>Data.List</li>
+<li>show</li>
+<li>enumeration</li>
+<li><a href="https://haskell.mooc.fi/">haskell mooc</a></li>
+<li><a href="https://learnyouahaskell.com/chapters">learn you a haskell for great good</a></li>
+<li><a href="https://www.haskell.org/tutorial/">a gentle introduction to haskell version 98</a></li>
+<li><a href="https://www.haskell.org/downloads/">install haskell</a></li>
+<li><a href="https://www.haskell.org/">haskell.org</a></li>
+<li><a href="https://www.haskell.org/documentation/">haskell documentation</a></li>
+<li><a href="https://learnxinyminutes.com/docs/haskell/">learn haskell in y minutes</a></li>
+<li><a href="https://haskellbook.com/">haskell programming from first principles</a></li>
+<li><a href="https://www.cs.yale.edu/homes/hudak/SOE/index.htm">the haskell school of expression</a></li>
+<li><a href="https://wiki.haskell.org/Functional_programming">haskell wiki on functional programming</a></li>
+<li><a href="https://www.slideshare.net/slideshow/the-fuss/44059475">the fuss about || haskell || scala || f#</a></li>
+<li><a href="https://www.mathstat.dal.ca/~selinger/quipper/">the quipper language</a></li>
+</ul>

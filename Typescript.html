@@ -1,0 +1,281 @@
+<h1><code>TypeScript</code></h1>
+<p>JavaScript with type safety.</p>
+<h2>Installation and Usage</h2>
+<pre><code class="language-sh"><span class="hljs-comment"># ---------- INSTALLATION ----------</span>
+    <span class="hljs-comment"># always install typescript as a local dependancy</span>
+
+npm install typescript --save-dev <span class="hljs-comment"># installs typescript as a local dependancy within your project directory</span>
+npx tsc --init <span class="hljs-comment"># initializes the tsconfig.json file</span>
+
+<span class="hljs-comment"># ---------- USAGE ----------</span>
+
+npx tsc <span class="hljs-comment"># transpiles a typescript file to javascript</span>
+npx tsc -w <span class="hljs-comment"># puts typescript compiler in watchmode and it will recompile the typescript project whenever a change is detected</span>
+node helloWorld.js <span class="hljs-comment"># node runs the compiled javascript file</span>
+</code></pre>
+<h2>Comments</h2>
+<pre><code class="language-ts"><span class="hljs-comment">// ---------- COMMENT ----------</span>
+
+<span class="hljs-comment">// this is a single-line comment</span>
+
+<span class="hljs-comment">/* 
+this is 
+a multi-line
+comment
+*/</span>
+</code></pre>
+<h2>Printing</h2>
+<pre><code class="language-ts"><span class="hljs-comment">// ---------- PRINT ----------</span>
+    <span class="hljs-comment">// console.log =&gt; prints a string to the stdout and appends a newline to the output</span>
+    <span class="hljs-comment">// process.stdout.write() =&gt; prints a string to the stdout and does not include a newline</span>
+
+process.<span class="hljs-property">stdout</span>.<span class="hljs-title function_">write</span>(<span class="hljs-string">&quot;this does not include a newline by default and we must explicitly specify it\n&quot;</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;this prints to the stdout and automatically includes a newline&quot;</span>);
+</code></pre>
+<h2>Quickstart</h2>
+<pre><code class="language-ts"><span class="hljs-comment">// ---------- QUICKSTART ----------</span>
+    <span class="hljs-comment">// let =&gt; declares and creates a variable with a mutable value, whose value can be reassigned after initial assignment</span>
+    <span class="hljs-comment">// const =&gt; declares and creates a constant with an immutable value, whose value cannot be reassigned after initial assignment</span>
+    <span class="hljs-comment">// : =&gt; used to specify the type of a variable or constant upon declaration</span>
+
+<span class="hljs-comment">// ---------- CALLING API ----------</span>
+    <span class="hljs-comment">// await fetch() =&gt; fetches a specified url and waits for the values stored at said url to be determined prior to advancing with the code</span>
+    <span class="hljs-comment">// await response.json() =&gt; parses the retrieved data as a typescript object, similarly waits for values to be read in as an object before proceeding</span>
+
+<span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">getData</span> (<span class="hljs-params"><span class="hljs-attr">targetUrl</span>:<span class="hljs-built_in">string</span></span>) {
+    <span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(targetUrl);
+    <span class="hljs-keyword">const</span> data = <span class="hljs-keyword">await</span> response.<span class="hljs-title function_">json</span>();
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(data);
+}
+</code></pre>
+<h2>Types</h2>
+<pre><code class="language-ts"><span class="hljs-comment">// ---------- TYPE ----------</span>
+    <span class="hljs-comment">// typescript can infer datatypes, but it is good practice to declare them for readibility</span>
+    <span class="hljs-comment">// typeof =&gt; returns the datatype of the specified value</span>
+    <span class="hljs-comment">// string =&gt; declared with &quot;&quot; double quotation marks</span>
+    <span class="hljs-comment">// number =&gt; covers int, float and double </span>
+    <span class="hljs-comment">// boolean =&gt; true, false</span>
+    <span class="hljs-comment">// any =&gt; flexible datatype that ignores type checking for the specified value</span>
+    <span class="hljs-comment">// null, undefined =&gt; special value representing absence of a value</span>
+    <span class="hljs-comment">// | =&gt; declares and creates a union datatype with the | pipe separating each possible type, a variable with multiple possible datatypes with different behaviours for each</span>
+        <span class="hljs-comment">// never =&gt; when all possible options in a union are eliminated</span>
+
+<span class="hljs-keyword">const</span> <span class="hljs-attr">numOfDoors</span>: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">string</span>[]; <span class="hljs-comment">// declares a union datatype, where numOfDoors can either hold a string or an array of strings</span>
+
+<span class="hljs-title function_">onReceiveData</span>(<span class="hljs-params"><span class="hljs-attr">data</span>: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span></span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-keyword">typeof</span> data);
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> data === <span class="hljs-string">&quot;number&quot;</span>) {
+        <span class="hljs-keyword">return</span> data + <span class="hljs-number">12</span>;
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> data === <span class="hljs-string">&quot;string&quot;</span>) {
+        <span class="hljs-keyword">return</span> data.<span class="hljs-title function_">toUpperCase</span>();
+    }
+} <span class="hljs-comment">// union datatypes can also be applied to function parameters within the function definition</span>
+</code></pre>
+<h2>Operators</h2>
+<pre><code class="language-ts"><span class="hljs-comment">// ---------- OPERATOR ----------</span>
+
+<span class="hljs-comment">// ARITHMETIC OPERATORS</span>
+    <span class="hljs-comment">// + =&gt; addition</span>
+    <span class="hljs-comment">// - =&gt; subtraction</span>
+    <span class="hljs-comment">// * =&gt; multiplication</span>
+    <span class="hljs-comment">// / =&gt; division</span>
+    <span class="hljs-comment">// % =&gt; modulo operator</span>
+
+<span class="hljs-comment">// LOGICAL OPERATORS</span>
+    <span class="hljs-comment">// &amp;&amp; =&gt; logical and</span>
+    <span class="hljs-comment">// || =&gt; logical or</span>
+    <span class="hljs-comment">// ! =&gt; logical not</span>
+    
+<span class="hljs-comment">// COMPARISON OPERATORS</span>
+    <span class="hljs-comment">// == =&gt; partial equality check for value</span>
+    <span class="hljs-comment">// != =&gt; partial inequality check for value</span>
+    <span class="hljs-comment">// === =&gt; complete equality check for value and type</span>
+    <span class="hljs-comment">// !== =&gt; complete inequality check for value and type</span>
+    <span class="hljs-comment">// &gt; &lt; &gt;= &lt;= are also comparison operators</span>
+</code></pre>
+<h2>Control structures</h2>
+<pre><code class="language-ts"><span class="hljs-comment">// ---------- CONTROL STRUCTURE ----------</span>
+
+<span class="hljs-comment">// CONDITIONALS</span>
+    <span class="hljs-comment">// break and continue operate as you&#x27;d expect in other programming languages</span>
+
+<span class="hljs-comment">// IF ELSE IF ELSE</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-attr">x</span>:<span class="hljs-built_in">number</span> = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">if</span> (x &gt; <span class="hljs-number">5</span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;x is greater than 5&quot;</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (x &lt; <span class="hljs-number">5</span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;x is smaller than 5&quot;</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;x is equals to 5&quot;</span>);
+}
+
+<span class="hljs-comment">// SWITCH CASE DEFAULT BREAK </span>
+    <span class="hljs-comment">// remember to include break below each case statement, otherwise logic will fall through to the next condition</span>
+    <span class="hljs-comment">// default =&gt; specifies the default case if all other cases fall through</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-attr">day</span>:<span class="hljs-built_in">string</span> = <span class="hljs-string">&quot;Monday&quot;</span>;
+<span class="hljs-keyword">switch</span> (day) {
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;Monday&quot;</span>:
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Monday&quot;</span>);
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;Tuesday&quot;</span>:
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Tuesday&quot;</span>);
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-attr">default</span>:
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;not Monday or Tuesday&quot;</span>);
+}
+
+<span class="hljs-comment">// LOOPS</span>
+
+<span class="hljs-comment">// FOR LOOP</span>
+    <span class="hljs-comment">// rudimentary for loop implementation as in other languages</span>
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> <span class="hljs-attr">i</span>:<span class="hljs-built_in">number</span> = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(i);
+}
+
+<span class="hljs-comment">// FOR OF LOOP</span>
+    <span class="hljs-comment">// used to iterate over elements within an iterable data structure</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-attr">numbers</span>:<span class="hljs-built_in">number</span>[] = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> num <span class="hljs-keyword">of</span> numbers) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(num);
+}
+
+<span class="hljs-comment">// FOREACH LOOP</span>
+    <span class="hljs-comment">// also used to iterate over elements within an iterable data structure</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-attr">numbers</span>:<span class="hljs-built_in">number</span>[] = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];
+numbers.<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">num</span>) =&gt;</span> {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(num);
+});
+
+<span class="hljs-comment">// WHILE LOOP</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-attr">counter</span>:<span class="hljs-built_in">number</span> = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">while</span> (counter &lt; <span class="hljs-number">5</span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(counter);
+    counter++;
+}
+
+<span class="hljs-comment">// DO WHILE LOOP</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-attr">num</span>:<span class="hljs-built_in">number</span> = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">do</span> {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(num);
+    num++;
+} <span class="hljs-keyword">while</span> (num &lt; <span class="hljs-number">5</span>);
+</code></pre>
+<h2>Data structures</h2>
+<pre><code class="language-ts"><span class="hljs-comment">// ---------- DATA STRUCTURE ----------</span>
+
+<span class="hljs-comment">// ARRAY</span>
+    <span class="hljs-comment">// [] =&gt; declares and creates an array of a specified data type, a dynamically-sized ordered sequence of elements of multiple types</span>
+    <span class="hljs-comment">// Array&lt;{ELEMENT TYPE}&gt; =&gt; this is an alternative syntax to initialize an array</span>
+    <span class="hljs-comment">// Any =&gt; used to specify an array that stores elements of multiple datatypes</span>
+
+<span class="hljs-keyword">const</span> <span class="hljs-attr">myArray</span>:<span class="hljs-built_in">number</span>[] = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>];
+<span class="hljs-keyword">const</span> <span class="hljs-attr">myArray2</span>:<span class="hljs-title class_">Array</span>&lt;<span class="hljs-built_in">number</span>&gt; = [<span class="hljs-number">2.13</span>,<span class="hljs-number">4.50</span>,<span class="hljs-number">1</span>];
+<span class="hljs-keyword">const</span> <span class="hljs-attr">anyArray</span>: <span class="hljs-title class_">Array</span>&lt;<span class="hljs-built_in">any</span>&gt; = [<span class="hljs-number">12</span>,<span class="hljs-string">&quot;thirteen&quot;</span>,<span class="hljs-literal">false</span>]; <span class="hljs-comment">// initializes an array with multiple data types</span>
+
+<span class="hljs-comment">// TUPLE</span>
+    <span class="hljs-comment">// [] =&gt; declares and creates a tuple of specified data types, a fixed-size ordered sequence of elements of multiple types</span>
+    <span class="hljs-comment">// tuple elements can be reassigned, as long as there are no type errors caused by reassignment and values cannot be added or removed from a tuple after intialization</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-attr">myTuple</span>:[<span class="hljs-built_in">number</span>, <span class="hljs-built_in">string</span>] = [<span class="hljs-number">2000</span>,<span class="hljs-string">&quot;ok bet&quot;</span>]; <span class="hljs-comment">// notice each element of the tuple has their type specified</span>
+myTuple[<span class="hljs-number">0</span>] = <span class="hljs-number">14</span>;
+myTuple[<span class="hljs-number">1</span>] = <span class="hljs-string">&quot;steve&quot;</span>; <span class="hljs-comment">// value reassignment is allowed in tuples as long as no conflict in datatype is caused by the reassignment</span>
+
+<span class="hljs-comment">// ENUM</span>
+    <span class="hljs-comment">// enum =&gt; declares and creates an enum data structure within {} curly braces, operates similarly to an implict associative array like in PHP or a table in Lua, where an integer value is then assigned to each enum member</span>
+
+<span class="hljs-keyword">enum</span> foods {<span class="hljs-string">&quot;bacon&quot;</span>,<span class="hljs-string">&quot;tomato&quot;</span>,<span class="hljs-string">&quot;lettuce&quot;</span>};
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(foods[<span class="hljs-number">1</span>]); <span class="hljs-comment">// this prints out &quot;tomato&quot; to the console</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(foods.<span class="hljs-property">lettuce</span>); <span class="hljs-comment">// this prints out 2 to the console</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(foods[<span class="hljs-string">&quot;bacon&quot;</span>]); <span class="hljs-comment">// this prints out 0 to the console</span>
+
+<span class="hljs-comment">// TYPE</span>
+    <span class="hljs-comment">// type =&gt; creates a custom datatype that can later be specified as a type of a variable or constant, often used similarly to structs in other languages</span>
+    <span class="hljs-comment">// types can specify fields of a given type and methods and their parameter and return types</span>
+    <span class="hljs-comment">// types cannot be redeclared to add more properties and methods after initial declaration</span>
+
+<span class="hljs-keyword">type</span> calculator = {
+    <span class="hljs-attr">names</span>: <span class="hljs-built_in">string</span>[],
+    <span class="hljs-attr">hobbies</span>: <span class="hljs-built_in">string</span>[],
+    <span class="hljs-attr">output</span>: <span class="hljs-function">(<span class="hljs-params"><span class="hljs-attr">test</span>:booelan</span>) =&gt;</span> <span class="hljs-built_in">string</span>[]; <span class="hljs-comment">// methods can be included in a created type, wherein the method parameter and return type are specified</span>
+}
+
+<span class="hljs-keyword">let</span> <span class="hljs-attr">instrument</span>:calculator = {
+    <span class="hljs-attr">names</span>: [<span class="hljs-string">&quot;ah&quot;</span>,<span class="hljs-string">&quot;shit&quot;</span>,<span class="hljs-string">&quot;here&quot;</span>,<span class="hljs-string">&quot;we&quot;</span>,<span class="hljs-string">&quot;go&quot;</span>],
+    <span class="hljs-attr">hobbies</span>: [<span class="hljs-string">&quot;having fun&quot;</span>,<span class="hljs-string">&quot;talk cock sing song&quot;</span>],
+    <span class="hljs-attr">output</span>: <span class="hljs-function">(<span class="hljs-params">test</span>) =&gt;</span> {
+        <span class="hljs-keyword">return</span> test + <span class="hljs-variable language_">this</span>.<span class="hljs-property">hobbies</span>;
+    }
+} <span class="hljs-comment">// this creates a new variable off the previously declared type</span>
+
+<span class="hljs-comment">// INTERFACE</span>
+    <span class="hljs-comment">// interface =&gt; creates a custom datatype as a template that can then be extended, including interface attributes and methods</span>
+    <span class="hljs-comment">// extend =&gt; copies attributes and methods from one interface to another interface</span>
+    <span class="hljs-comment">// implements =&gt; implements a specified interface&#x27;s attributes and methods on a class</span>
+    <span class="hljs-comment">// ? =&gt; specifies an optional paramater within an interface</span>
+    <span class="hljs-comment">// interfaces can be extended to allow for further inclusion of properties and methods after initial declaration</span>
+
+<span class="hljs-keyword">interface</span> exampleInterface {
+    <span class="hljs-attr">x</span>: <span class="hljs-built_in">number</span>,
+    <span class="hljs-attr">y</span>: <span class="hljs-built_in">number</span>,
+    <span class="hljs-attr">z</span>?: <span class="hljs-built_in">string</span>,
+    <span class="hljs-attr">output</span>: <span class="hljs-function">(<span class="hljs-params"><span class="hljs-attr">test</span>:<span class="hljs-built_in">boolean</span></span>) =&gt;</span> <span class="hljs-built_in">string</span>[];
+}
+
+<span class="hljs-keyword">const</span> <span class="hljs-attr">obj1</span>: exampleInterface {
+    <span class="hljs-attr">x</span>: <span class="hljs-number">123</span>;
+    <span class="hljs-attr">y</span>: <span class="hljs-number">456</span>;
+    <span class="hljs-attr">output</span>: <span class="hljs-function">(<span class="hljs-params">test</span>) =&gt;</span> {
+        <span class="hljs-keyword">if</span> (test) {
+            <span class="hljs-keyword">return</span> [<span class="hljs-string">&quot;ok&quot;</span>, <span class="hljs-string">&quot;ok&quot;</span>, <span class="hljs-string">&quot;okok&quot;</span>, <span class="hljs-string">&quot;kanye&quot;</span>];
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">return</span> [<span class="hljs-string">&quot;aight&quot;</span>, <span class="hljs-string">&quot;poopy pants&quot;</span>];
+        }
+    }
+}
+
+<span class="hljs-keyword">const</span> obj2; exampleInterface {
+    <span class="hljs-attr">x</span>: <span class="hljs-number">789</span>;
+    <span class="hljs-attr">y</span>: <span class="hljs-number">101112</span>;
+    <span class="hljs-attr">z</span>: <span class="hljs-string">&quot;ah shit&quot;</span>;
+    <span class="hljs-attr">output</span>: <span class="hljs-function">(<span class="hljs-params">test</span>) =&gt;</span> {
+        <span class="hljs-keyword">return</span> [test.<span class="hljs-title function_">toString</span>() + <span class="hljs-string">&quot;okie&quot;</span>, <span class="hljs-string">&quot;ok&quot;</span>];
+    }
+}
+</code></pre>
+<h2>Functions</h2>
+<pre><code class="language-ts"><span class="hljs-comment">// ---------- FUNCTION ----------</span>
+    <span class="hljs-comment">// function =&gt; declares and creates a named function with its parameter and return types specified within the function definition</span>
+    <span class="hljs-comment">// =&gt; =&gt; declares and creates a lambda anonymous function (arrow function) with its parameter types specified within the function definition</span>
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">subtract</span>(<span class="hljs-params"><span class="hljs-attr">x</span>: <span class="hljs-built_in">number</span>, <span class="hljs-attr">y</span>: <span class="hljs-built_in">number</span></span>): <span class="hljs-built_in">number</span> {
+    <span class="hljs-keyword">return</span> x - y;
+} <span class="hljs-comment">// creating a named function subtract with its parameter and return types specified</span>
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">voidLog</span>(<span class="hljs-params"></span>): <span class="hljs-built_in">void</span> {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;shit&quot;</span>);
+} <span class="hljs-comment">// a named function with void as its return type</span>
+
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">add</span> = (<span class="hljs-params"><span class="hljs-attr">x</span>: <span class="hljs-built_in">number</span>, <span class="hljs-attr">y</span>: <span class="hljs-built_in">number</span></span>) =&gt; x + y; <span class="hljs-comment">// creating an anonymous function where the return type is inferred</span>
+
+<span class="hljs-title function_">subtract</span>(<span class="hljs-number">100</span>, <span class="hljs-number">10</span>);
+<span class="hljs-title function_">voidLog</span>(); 
+<span class="hljs-title function_">add</span>(<span class="hljs-number">1000</span>, <span class="hljs-number">2.1238</span>); <span class="hljs-comment">// function calls operate as you&#x27;d expect</span>
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li>overloaded functions</li>
+<li>generics</li>
+<li>destructuring</li>
+<li>intersection types</li>
+<li>OOP</li>
+<li>typecasting</li>
+<li><a href="https://learnxinyminutes.com/docs/typescript/">learn typescript in y minutes</a></li>
+<li><a href="https://www.typescriptlang.org/cheatsheets">typescript cheatsheet</a></li>
+</ul>

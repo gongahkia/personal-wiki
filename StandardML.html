@@ -1,0 +1,151 @@
+<h1><code>Standard ML</code></h1>
+<p>Functional language for research and programming language design.</p>
+<h2>Comments</h2>
+<pre><code class="language-sml"><span class="hljs-comment">(* ----- COMMENT ----- *)</span>
+
+<span class="hljs-comment">(* this is a single-line comment *)</span>
+
+<span class="hljs-comment">(* 
+there is no separate implementation 
+for multi-line comment syntax but 
+this is accepted
+*)</span>
+</code></pre>
+<h2>Printing</h2>
+<pre><code class="language-sml"><span class="hljs-comment">(* ----- PRINTING ----- *)</span>
+    <span class="hljs-comment">(* print =&gt; receives a string argument to be printed to the stdout, without including a newline by default *)</span>
+
+print <span class="hljs-string">&quot;this does not have a newline&quot;</span>;
+print <span class="hljs-string">&quot;this has a newline but we need to explicitly define it\n&quot;</span>;
+</code></pre>
+<h2>Quickstart</h2>
+<pre><code class="language-sml"><span class="hljs-comment">(* ----- QUICKSTART ----- *)</span>
+    <span class="hljs-comment">(* semicolon language *)</span>
+    <span class="hljs-comment">(* strong type system but does not enforce static typing *)</span>
+    <span class="hljs-comment">(* since Standard ML is a pure functional language, every expression evaluates to a value, and most things are expressions excluding imperative constructs, exception handling and module definitions *)</span>
+    <span class="hljs-comment">(* shares many of the hallmarks of functional programming including variable immutability and pure functions that take in and return a value *)</span>
+    <span class="hljs-comment">(* open =&gt; imports a standard or user-defined library and brings it within the local scope of the present file *)</span>
+</code></pre>
+<h2>Types</h2>
+<pre><code class="language-sml"><span class="hljs-comment">(* ----- TYPE ----- *)</span>
+    <span class="hljs-comment">(* int =&gt; integer value *)</span>
+    <span class="hljs-comment">(* real =&gt; floating point value *)</span>
+    <span class="hljs-comment">(* string =&gt; declared with &quot;&quot; double quotation marks *)</span>
+    <span class="hljs-comment">(* char =&gt; declared with #&quot;&quot; hashtag and double quotation marks *)</span>
+    <span class="hljs-comment">(* bool =&gt; true, false *)</span>
+    <span class="hljs-comment">(* unit =&gt; declares the absence of a value as (), the equivalent of void in other programming languages *)</span>
+</code></pre>
+<h2>Operators</h2>
+<pre><code class="language-sml"><span class="hljs-comment">(* ----- OPERATOR ----- *)</span>
+
+<span class="hljs-comment">(* --- ARITHMETIC OPERATORS --- *)</span>
+
++ <span class="hljs-comment">(* addition *)</span>
+- <span class="hljs-comment">(* subtraction *)</span>
+* <span class="hljs-comment">(* multiplication *)</span>
+div <span class="hljs-comment">(* division *)</span>
+mod <span class="hljs-comment">(* modulo *)</span>
+
+<span class="hljs-comment">(* --- COMPARISON OPERATORS --- *)</span>
+
+= <span class="hljs-comment">(* complete equality check for both type and value *)</span>
+&lt;&gt; <span class="hljs-comment">(* complete inequality check for both type and value *)</span>
+&gt; <span class="hljs-comment">(* comparison operator *)</span>
+&lt; <span class="hljs-comment">(* comparison operator *)</span>
+&gt;= <span class="hljs-comment">(* comparison operator *)</span>
+&lt;= <span class="hljs-comment">(* comparison operator *)</span>
+
+<span class="hljs-comment">(* --- LOGICAL OPERATORS --- *)</span>
+
+<span class="hljs-keyword">andalso</span> <span class="hljs-comment">(* and *)</span>
+<span class="hljs-keyword">orelse</span> <span class="hljs-comment">(* or *)</span>
+not <span class="hljs-comment">(* not *)</span>
+</code></pre>
+<h2>Control structures</h2>
+<pre><code class="language-sml"><span class="hljs-comment">(* ----- CONTROL STRUCTURE ----- *)</span>
+
+<span class="hljs-comment">(* --- CONDITIONALS --- *)</span>
+
+<span class="hljs-comment">(* IF ELSE IF ELSE *)</span>
+
+<span class="hljs-keyword">val</span> x = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">val</span> result =
+    <span class="hljs-keyword">if</span> x &gt; <span class="hljs-number">10</span> <span class="hljs-keyword">then</span>
+        <span class="hljs-string">&quot;greater than 10&quot;</span>
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> x = <span class="hljs-number">10</span> <span class="hljs-keyword">then</span>
+        <span class="hljs-string">&quot;equal to 10&quot;</span>
+    <span class="hljs-keyword">else</span>
+        <span class="hljs-string">&quot;less than 10&quot;</span>;
+
+<span class="hljs-comment">(* CASE OF _ *)</span>
+    <span class="hljs-comment">(* provides advanced pattern matching capabilities similar to Rust *)</span>
+    <span class="hljs-comment">(* note that | separates each case condition *)</span>
+    <span class="hljs-comment">(* _ =&gt; acting as the default catch-all operator for when all other case predicate conditions fall through *)</span>
+
+<span class="hljs-keyword">fun</span> describeNumber n = 
+  <span class="hljs-keyword">case</span> n <span class="hljs-keyword">of</span>
+    <span class="hljs-number">1</span> =&gt; <span class="hljs-string">&quot;one&quot;</span>
+  | <span class="hljs-number">2</span> =&gt; <span class="hljs-string">&quot;two&quot;</span>
+  | _ =&gt; <span class="hljs-string">&quot;many&quot;</span>;
+
+<span class="hljs-comment">(* --- LOOPS --- *)</span>
+    <span class="hljs-comment">(* since Standard ML is a functional language, conventional imperative for and while loop constructs are not provided *)</span>
+    <span class="hljs-comment">(* instead, higher order functions are used for traversal and interacting with iterable data structures *)</span>
+    <span class="hljs-comment">(* some degree of looping can also be achieved with recursion *)</span>
+
+<span class="hljs-comment">(* HIGHER ORDER FUNCTIONS *)</span>
+    <span class="hljs-comment">(* map =&gt; applies a specified function to each element of a list *)</span>
+    <span class="hljs-comment">(* foldl =&gt; left fold that reduces a list from the left using a specified binary function and a specified initial accumulator *)</span>
+    <span class="hljs-comment">(* foldr =&gt; right fold that reduces a list from the right using a specified binary function and a specified initial accumulator *)</span>
+    <span class="hljs-comment">(* filter =&gt; selects elements from a list that satisfy a specified predicate *)</span>
+
+<span class="hljs-keyword">val</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>];
+
+<span class="hljs-keyword">val</span> squares = <span class="hljs-type">List</span>.map (<span class="hljs-keyword">fn</span> x =&gt; x * x) numbers; <span class="hljs-comment">(* [1, 4, 9, 16, 25, 36] *)</span>
+
+<span class="hljs-keyword">val</span> sum = <span class="hljs-type">List</span>.foldl (<span class="hljs-keyword">op</span> +) <span class="hljs-number">0</span> numbers; <span class="hljs-comment">(* 15 *)</span>
+
+<span class="hljs-keyword">val</span> evens = <span class="hljs-type">List</span>.filter (<span class="hljs-keyword">fn</span> x =&gt; x mod <span class="hljs-number">2</span> = <span class="hljs-number">0</span>) numbers; <span class="hljs-comment">(* [2, 4, 6] *)</span>
+
+<span class="hljs-keyword">val</span> strings = [<span class="hljs-string">&quot;Hello&quot;</span>, <span class="hljs-string">&quot; &quot;</span>, <span class="hljs-string">&quot;World&quot;</span>, <span class="hljs-string">&quot;!&quot;</span>];
+<span class="hljs-keyword">val</span> concatenated = <span class="hljs-type">List</span>.foldr (<span class="hljs-keyword">op</span> ^) <span class="hljs-string">&quot;&quot;</span> strings; <span class="hljs-comment">(* &quot;Hello World!&quot; *)</span>
+
+<span class="hljs-comment">(* RECURSION *)</span>
+
+<span class="hljs-keyword">fun</span> factorial <span class="hljs-number">0</span> = <span class="hljs-number">1</span>
+  | factorial n = n * factorial (n - <span class="hljs-number">1</span>); 
+</code></pre>
+<h2>Data structures</h2>
+<pre><code class="language-sml"><span class="hljs-comment">(* ----- DATA STRUCTURE ----- *)</span>
+    <span class="hljs-comment">(* list =&gt; dynamically sized ordered collection of elements of the same datatype, declared with [] square brackets *)</span>
+    <span class="hljs-comment">(* tuple =&gt; fixed-size collection of elements of multiple datatypes, declared with () round brackets *)</span>
+    <span class="hljs-comment">(* record =&gt; collection of comma-delimited named fields and their respective datatypes serving as the equivalent of Typescript and Go structs in Standard ML via type aliases, declared with {} curly braces *)</span>
+    <span class="hljs-comment">(* option =&gt; unique type specifying a given variable could possibly store a value of the specified type or no value, equivalent of nullable values in other languages *)</span>
+        <span class="hljs-comment">(* SOME =&gt; declares the presence of a value where a given variable can store a value *)</span>
+        <span class="hljs-comment">(* NONE =&gt; delares the absence of a value where a given variable does not store a value *)</span>
+
+<span class="hljs-keyword">val</span> anExampleList = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>];
+<span class="hljs-keyword">val</span> anExampleTuple = (<span class="hljs-string">&quot;Alice&quot;</span>, <span class="hljs-number">30</span>);
+<span class="hljs-keyword">type</span> anExampleRecord = {name: <span class="hljs-built_in">string</span>, age: <span class="hljs-built_in">int</span>};
+<span class="hljs-keyword">type</span> coordinate = {<span class="hljs-type">X</span>: <span class="hljs-built_in">int</span>, <span class="hljs-type">Y</span>: <span class="hljs-built_in">int</span>};
+<span class="hljs-keyword">val</span> anExampleOptionVariable = <span class="hljs-type">SOME</span> <span class="hljs-number">42</span>;
+<span class="hljs-keyword">val</span> anotherExampleOptionVariable = <span class="hljs-type">NONE</span>;
+</code></pre>
+<h2>Functions</h2>
+<pre><code class="language-sml"><span class="hljs-comment">(* ----- FUNCTION ----- *)</span>
+    <span class="hljs-comment">(* fun &lt;functionName&gt; (&lt;parameterName&gt; : &lt;parameterDatatype&gt;) : &lt;returnDatatype&gt; = &lt;functionDefinition&gt; =&gt; function definition for a named function *)</span>
+    <span class="hljs-comment">(* fn &lt;parameterName&gt; =&gt; &lt;functionDefinition&gt; =&gt; function definition for an anonymous function, which is then normally assigned to a named variable *)</span>
+    <span class="hljs-comment">(* Standard ML functions also have implicit return of the final expression within the function definition, another hallmark of functional programming languages *)</span>
+    <span class="hljs-comment">(* Standard ML also provides for user-defined higher-order functions and anonymous functions *)</span>
+
+<span class="hljs-keyword">fun</span> square (x : <span class="hljs-built_in">int</span>) : <span class="hljs-built_in">int</span> = x * x; <span class="hljs-comment">(* named function definition *)</span>
+<span class="hljs-keyword">val</span> double = <span class="hljs-keyword">fn</span> x =&gt; x * <span class="hljs-number">2</span>; <span class="hljs-comment">(* anonymous function definition *)</span>
+<span class="hljs-keyword">fun</span> applyTwice (f, x) = f (f x); <span class="hljs-comment">(* higher order function *)</span>
+<span class="hljs-keyword">val</span> result = applyTwice (double, <span class="hljs-number">3</span>);
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li><a href="https://smlhelp.github.io/book/">standard ml documentation</a></li>
+<li><a href="https://learnxinyminutes.com/docs/standard-ml/">learn standard ml in y minutes</a></li>
+<li><a href="https://www.reddit.com/r/functionalprogramming/comments/pu7tam/is_it_worth_to_learn_standard_ml/">rationale for learning standard ml</a></li>
+</ul>

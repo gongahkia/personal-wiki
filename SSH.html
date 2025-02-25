@@ -1,0 +1,74 @@
+<h1><code>SSH</code></h1>
+<p>Secure Shell (SSH) is a standard UNIX tool that allows for secure connection to remote servers.</p>
+<h2>Installation</h2>
+<pre><code class="language-bash">$ <span class="hljs-built_in">sudo</span> apt-get install openssh-client
+</code></pre>
+<h2>Quickstart</h2>
+<pre><code class="language-bash"><span class="hljs-comment"># ---------- QUICKSTART ----------</span>
+    <span class="hljs-comment"># SSH enables encrypted communication sessions, ensuring confidentiality and data integrity</span>
+    <span class="hljs-comment"># Mostly used for remote logins, command execution on remote servers and file transfer</span>
+
+<span class="hljs-comment"># ----- COMMANDS -----</span>
+    <span class="hljs-comment"># ssh =&gt; connects to the remote server under the specified username and hostname (or IP address), seperated by @ ampersand character</span>
+        <span class="hljs-comment"># ssh commands can be further augmented with flags</span>
+    <span class="hljs-comment"># &#x27;&#x27; =&gt; runs the specified command between the &#x27;&#x27; single quotes on the remote server</span>
+    <span class="hljs-comment"># ssh-keygen =&gt; generates, manages and converts ssh keys</span>
+    <span class="hljs-comment"># ssh-copy-id =&gt; copies ssh public key to the remote server&#x27;s authorized_keys file, enabling future passwordless ssh logins to that remote server</span>
+    <span class="hljs-comment"># ssh-add =&gt; adds a key to the ssh agent</span>
+    <span class="hljs-comment"># ssh-agent =&gt; store private keys used for public key authentication</span>
+    <span class="hljs-comment"># scp =&gt; securely copies files between local machine and remote system</span>
+    <span class="hljs-comment"># sftp =&gt; securely transfers files over an encrypted ssh session</span>
+
+ssh username@hostname
+ssh gongahkia@192.168.1.2
+
+ssh username@hostname <span class="hljs-string">&#x27;ls -l&#x27;</span>
+ssh username@hostname <span class="hljs-string">&#x27;mdkir watermelon &amp;&amp; touch watermelon.yaml &amp;&amp; mv watermelon.yaml watermelon&#x27;</span>
+ssh-add /path/to/private_key
+
+scp /path/to/local_file username@hostname:/path/to/remote_directory
+sftp username@hostname
+
+<span class="hljs-comment"># ----- FLAGS -----</span>
+    <span class="hljs-comment"># -p =&gt; specifies a non-default SSH port that the user wants to connect to</span>
+    <span class="hljs-comment"># -i =&gt; designates a specific identity file and its corresponding private key for authentication</span>
+    <span class="hljs-comment"># -t =&gt; specifies the type of key to be created during key generation</span>
+    <span class="hljs-comment"># -b =&gt; specifies number of bits in the key</span>
+    <span class="hljs-comment"># -l =&gt; lists all keys loaded within the ssh agent</span>
+    <span class="hljs-comment"># -C =&gt; adds a comment to the key used to identify the key and its owner (often an email address is used as identification)</span>
+    <span class="hljs-comment"># -L local_port:remote_host:remote_port =&gt; forwards a local port to a remote server</span>
+    <span class="hljs-comment"># -R remote_port:local_host:local_port =&gt; forwards a remote port to a local machine</span>
+
+ssh -p 2222 username@hostname
+ssh -i /path/to/private_key username@hostname
+
+ssh-keygen -t rsa -b 2048 -C <span class="hljs-string">&quot;your_email@example.com&quot;</span>
+ssh-copy-id username@hostname
+
+ssh -L local_port:remote_host:remote_port username@hostname
+ssh -R remote_port:local_host:local_port username@hostname
+
+ssh-add -l
+</code></pre>
+<h3>SSH config file</h3>
+<p>SSH settings are found in the <code>~/.ssh/config</code> filepath.</p>
+<pre><code class="language-txt">---------- SSH CONFIG FILE ----------
+  -- hosts can be added to the SSH config file to allow for more convenient connection
+
+Host example
+    HostName example.com
+    User username
+    Port 2222
+    IdentityFile ~/.ssh/id_rsa
+</code></pre>
+<p>To connect to the remote server <code>example.com</code>, we enter</p>
+<pre><code class="language-bash">ssh example
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li><a href="https://www.openssh.com/manual.html">openSSH documentation</a></li>
+<li><a href="https://schh.medium.com/ssh-for-dummies-ea168e6ff547">SSH for dummies</a></li>
+<li><a href="https://grahamhelton.com/blog/ssh-cheatsheet/">excruciatingly detailed but useful SSH cheatsheet</a></li>
+<li><a href="https://quickref.me/ssh.html">condensed SSH cheatsheet</a></li>
+<li><a href="https://youtu.be/v45p_kJV9i4?si=mu113TK-LQ1bKT_u">learn SSH in 6 minutes</a></li>
+</ul>

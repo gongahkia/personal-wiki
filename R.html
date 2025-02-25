@@ -1,0 +1,215 @@
+<h1><code>R</code></h1>
+<p>Domain-specific language for statistical computing, data analysis and visualization.</p>
+<h2>Comments</h2>
+<pre><code class="language-r"><span class="hljs-comment"># ----- COMMENT -----</span>
+
+<span class="hljs-comment"># this is a single-line comment</span>
+
+<span class="hljs-comment"># there is no default </span>
+<span class="hljs-comment"># implementation for multi-line comments</span>
+<span class="hljs-comment"># but the following syntax will achieve </span>
+<span class="hljs-comment"># the same effect</span>
+</code></pre>
+<h2>Printing</h2>
+<pre><code class="language-r"><span class="hljs-comment"># ----- PRINTING -----</span>
+    <span class="hljs-comment"># print() =&gt; receives a string argument that is then printed to the stdout, with a newline automatically included at the end of the output</span>
+    <span class="hljs-comment"># cat() =&gt; receives a string argument to be printed to the stdout and does not include a newline by default</span>
+
+print<span class="hljs-punctuation">(</span><span class="hljs-string">&quot;this has a newline automatically included&quot;</span><span class="hljs-punctuation">)</span>
+cat<span class="hljs-punctuation">(</span><span class="hljs-string">&quot;this does not have a newline included and it must be explicitly specified as such\n&quot;</span><span class="hljs-punctuation">)</span>
+</code></pre>
+<h2>Quickstart</h2>
+<pre><code class="language-r"><span class="hljs-comment"># ----- QUICKSTART -----</span>
+    <span class="hljs-comment"># dynamically-typed interpreted language</span>
+    <span class="hljs-comment"># weak type system with implicit type conversion</span>
+    <span class="hljs-comment"># optimized for operations on vectors and matrices </span>
+    <span class="hljs-comment"># supports functional programming paradigms</span>
+    <span class="hljs-comment"># &lt;- =&gt; R uniquely uses &lt;- as the default preferred assignment operator assigning a variable to a value or named function, although it is noteworthy that = is a valid alternative syntax</span>
+    
+x <span class="hljs-operator">&lt;-</span> 10
+
+square <span class="hljs-operator">&lt;-</span> <span class="hljs-keyword">function</span><span class="hljs-punctuation">(</span>a<span class="hljs-punctuation">)</span> <span class="hljs-punctuation">{</span>
+    result <span class="hljs-operator">&lt;-</span> a <span class="hljs-operator">*</span> a
+    <span class="hljs-built_in">return</span><span class="hljs-punctuation">(</span>result<span class="hljs-punctuation">)</span>
+<span class="hljs-punctuation">}</span>
+print<span class="hljs-punctuation">(</span>square<span class="hljs-punctuation">(</span>x<span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span> <span class="hljs-comment"># this displays 100 to the stdout</span>
+</code></pre>
+<h2>Types</h2>
+<pre><code class="language-r"><span class="hljs-comment"># ----- TYPE -----</span>
+    <span class="hljs-comment"># numeric =&gt; stores numbers with and without decimal points, covering both integers and floating point value numbers</span>
+    <span class="hljs-comment"># integer =&gt; stores an integer number value</span>
+    <span class="hljs-comment"># complex =&gt; stores a complex number value with real and imaginary parts</span>
+    <span class="hljs-comment"># character =&gt; stores single character and string data, declared within &quot;&quot; double quotation marks</span>
+    <span class="hljs-comment"># raw =&gt; stores char values as raw bytes</span>
+    <span class="hljs-comment"># logical =&gt; stores boolean TRUE and FALSE values</span>
+    <span class="hljs-comment"># Date =&gt; stores a date value in the format YYYY-MM-DD</span>
+    <span class="hljs-comment"># POSIXct =&gt; stores a datetime timestamp value in the format YYYY-MM-DD HH:MM:SS</span>
+</code></pre>
+<h2>Operators</h2>
+<pre><code class="language-r"><span class="hljs-comment"># ----- OPERATOR ----- </span>
+
+<span class="hljs-comment"># --- ARITHMETIC OPERATOR ---</span>
+
+<span class="hljs-operator">+</span> <span class="hljs-comment"># addition</span>
+<span class="hljs-operator">-</span> <span class="hljs-comment"># subtraction</span>
+<span class="hljs-operator">*</span> <span class="hljs-comment"># multiplication</span>
+<span class="hljs-operator">/</span> <span class="hljs-comment"># division</span>
+<span class="hljs-operator">%%</span> <span class="hljs-comment"># modulo</span>
+<span class="hljs-operator">^</span> <span class="hljs-comment"># exponentiation</span>
+
+<span class="hljs-comment"># --- COMPARISON OPERATOR ---</span>
+
+<span class="hljs-operator">==</span> <span class="hljs-comment"># partial equality check for value but not type</span>
+<span class="hljs-operator">!=</span> <span class="hljs-comment"># partial inequality check for value but not type</span>
+<span class="hljs-operator">&gt;</span> <span class="hljs-comment"># comparison operator</span>
+<span class="hljs-operator">&lt;</span> <span class="hljs-comment"># comparison operator</span>
+<span class="hljs-operator">&gt;=</span> <span class="hljs-comment"># comparison operator</span>
+<span class="hljs-operator">&lt;=</span> <span class="hljs-comment"># comparison operator</span>
+
+<span class="hljs-comment"># --- LOGICAL OPERATOR ---</span>
+
+<span class="hljs-operator">&amp;</span> <span class="hljs-comment"># logical and</span>
+<span class="hljs-operator">|</span> <span class="hljs-comment"># logical or</span>
+<span class="hljs-operator">!</span> <span class="hljs-comment"># logical not</span>
+</code></pre>
+<h2>Control structures</h2>
+<pre><code class="language-r"><span class="hljs-comment"># ----- CONTROL STRUCTURE -----</span>
+
+<span class="hljs-comment"># --- CONDITIONALS ---</span>
+
+<span class="hljs-comment"># IF ELSE IF ELSE </span>
+
+x <span class="hljs-operator">&lt;-</span> 5
+<span class="hljs-keyword">if</span> <span class="hljs-punctuation">(</span>x <span class="hljs-operator">&gt;</span> <span class="hljs-number">0</span><span class="hljs-punctuation">)</span> <span class="hljs-punctuation">{</span>
+    print<span class="hljs-punctuation">(</span><span class="hljs-string">&quot;x is positive number&quot;</span><span class="hljs-punctuation">)</span>
+<span class="hljs-punctuation">}</span> <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> <span class="hljs-punctuation">(</span>x <span class="hljs-operator">&lt;</span> <span class="hljs-number">0</span><span class="hljs-punctuation">)</span> <span class="hljs-punctuation">{</span>
+    print<span class="hljs-punctuation">(</span><span class="hljs-string">&quot;x is non-positive number&quot;</span><span class="hljs-punctuation">)</span>
+<span class="hljs-punctuation">}</span> <span class="hljs-keyword">else</span> <span class="hljs-punctuation">{</span>
+    print<span class="hljs-punctuation">(</span><span class="hljs-string">&quot;this is just for edge-guarding but should logically never run&quot;</span><span class="hljs-punctuation">)</span>
+<span class="hljs-punctuation">}</span>
+
+<span class="hljs-comment"># SWITCH()</span>
+    <span class="hljs-comment"># the switch() construct allows for a degree of pattern-matching in R, the equivalent of switch case and match case statements in other programming languages</span>
+    <span class="hljs-comment"># each comma-delimited predicate case condition listed within the switch() construct has its relationship specified with =</span>
+    <span class="hljs-comment"># first argument in switch() is the value to be checked</span>
+    <span class="hljs-comment"># final argument in switch() is the default fall-through value returned if all other specified predicate case conditions are unmet</span>
+    <span class="hljs-comment"># the result of switch() constructs can be directly assigned to a variable, reminiscent of other functional languages</span>
+
+x <span class="hljs-operator">&lt;-</span> 3
+result <span class="hljs-operator">&lt;-</span> <span class="hljs-built_in">switch</span><span class="hljs-punctuation">(</span>x<span class="hljs-punctuation">,</span>
+                <span class="hljs-string">&quot;1&quot;</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;one&quot;</span><span class="hljs-punctuation">,</span>
+                <span class="hljs-string">&quot;2&quot;</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;two&quot;</span><span class="hljs-punctuation">,</span>
+                <span class="hljs-string">&quot;3&quot;</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;three&quot;</span><span class="hljs-punctuation">,</span>
+                <span class="hljs-string">&quot;4&quot;</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;four&quot;</span><span class="hljs-punctuation">,</span>
+                <span class="hljs-string">&quot;invalid number&quot;</span><span class="hljs-punctuation">)</span>
+
+<span class="hljs-comment"># --- LOOPS ---</span>
+
+<span class="hljs-comment"># FOR IN </span>
+    <span class="hljs-comment"># equivalent of foreach loops in PHP and similar to loops in Python, allowing iteration over each element within an iterable structure</span>
+    <span class="hljs-comment"># &lt;startingRangeValueInclusive&gt; : &lt;endRangeValueInclusive&gt; =&gt; dynamic creation of an iterable range structure that includes the inclusive start and end value</span>
+
+<span class="hljs-keyword">for</span> <span class="hljs-punctuation">(</span>i <span class="hljs-keyword">in</span> <span class="hljs-number">1</span><span class="hljs-operator">:</span><span class="hljs-number">5</span><span class="hljs-punctuation">)</span> <span class="hljs-punctuation">{</span>
+    print<span class="hljs-punctuation">(</span>i<span class="hljs-punctuation">)</span>
+<span class="hljs-punctuation">}</span>
+
+<span class="hljs-comment"># WHILE </span>
+    <span class="hljs-comment"># operates exactly the same as in other programming languages</span>
+
+count <span class="hljs-operator">&lt;-</span> 1
+<span class="hljs-keyword">while</span> <span class="hljs-punctuation">(</span>count <span class="hljs-operator">&lt;=</span> <span class="hljs-number">5</span><span class="hljs-punctuation">)</span> <span class="hljs-punctuation">{</span>
+    print<span class="hljs-punctuation">(</span>count<span class="hljs-punctuation">)</span>
+    count <span class="hljs-operator">&lt;-</span> count <span class="hljs-operator">+</span> <span class="hljs-number">1</span>
+<span class="hljs-punctuation">}</span>
+
+<span class="hljs-comment"># REPEAT</span>
+    <span class="hljs-comment"># creates an infinite loop construct, similar to the loop keyword in Rust</span>
+    <span class="hljs-comment"># remember to include a break condition within a conditional predicate check as below to prevent unintentional infinite loops in your R program</span>
+
+count <span class="hljs-operator">&lt;-</span> 1
+<span class="hljs-keyword">repeat</span> <span class="hljs-punctuation">{</span>
+    print<span class="hljs-punctuation">(</span>count<span class="hljs-punctuation">)</span>
+    count <span class="hljs-operator">&lt;-</span> count <span class="hljs-operator">+</span> <span class="hljs-number">1</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-punctuation">(</span>count <span class="hljs-operator">&gt;</span> <span class="hljs-number">5</span><span class="hljs-punctuation">)</span> <span class="hljs-punctuation">{</span>
+        <span class="hljs-keyword">break</span>
+    <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span>
+</code></pre>
+<h2>Data structures</h2>
+<pre><code class="language-r"><span class="hljs-comment"># ----- DATA STRUCTURE -----</span>
+    <span class="hljs-comment"># vector =&gt; one-dimensional ordered collection of elements of the same datatype</span>
+    <span class="hljs-comment"># matrix =&gt; two-dimensional ordered collection of elements of the same datetype</span>
+    <span class="hljs-comment"># array =&gt; multi-dimensional ordered collection of elements of the same datatype</span>
+    <span class="hljs-comment"># list =&gt; ordered mapped collection of elements of multiple datatypes and their corresponding named fields, where elements can be accessed by their names or indices, effectively a hybrid between a hashmap and an arraya and the equivalent of an indexmap in rust</span>
+    <span class="hljs-comment"># data frame =&gt; two-dimensional literal table-like structure where named columns can be of multiple datatypes</span>
+    <span class="hljs-comment"># factor =&gt; stores categorical data which is stored within level, R&#x27;s rough equivalent of enums in Rust that allows for more expressive statistical modelling</span>
+
+anExampleVector <span class="hljs-operator">&lt;-</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-number">1</span><span class="hljs-punctuation">,</span> <span class="hljs-number">2</span><span class="hljs-punctuation">,</span> <span class="hljs-number">3</span><span class="hljs-punctuation">,</span> <span class="hljs-number">4</span><span class="hljs-punctuation">,</span> <span class="hljs-number">5</span><span class="hljs-punctuation">)</span>
+anExampleMatrix <span class="hljs-operator">&lt;-</span> matrix<span class="hljs-punctuation">(</span><span class="hljs-number">1</span><span class="hljs-operator">:</span><span class="hljs-number">9</span><span class="hljs-punctuation">,</span> nrow <span class="hljs-operator">=</span> <span class="hljs-number">3</span><span class="hljs-punctuation">)</span>
+anExampleArray <span class="hljs-operator">&lt;-</span> array<span class="hljs-punctuation">(</span><span class="hljs-number">1</span><span class="hljs-operator">:</span><span class="hljs-number">12</span><span class="hljs-punctuation">,</span> <span class="hljs-built_in">dim</span> <span class="hljs-operator">=</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-number">3</span><span class="hljs-punctuation">,</span> <span class="hljs-number">2</span><span class="hljs-punctuation">,</span> <span class="hljs-number">2</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span>
+anExampleList <span class="hljs-operator">&lt;-</span> <span class="hljs-built_in">list</span><span class="hljs-punctuation">(</span>name <span class="hljs-operator">=</span> <span class="hljs-string">&quot;John&quot;</span><span class="hljs-punctuation">,</span> age <span class="hljs-operator">=</span> <span class="hljs-number">30</span><span class="hljs-punctuation">,</span> married <span class="hljs-operator">=</span> <span class="hljs-literal">TRUE</span><span class="hljs-punctuation">)</span>
+anExampleDataFrame <span class="hljs-operator">&lt;-</span> data.frame<span class="hljs-punctuation">(</span>name <span class="hljs-operator">=</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;Alice&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;Bob&quot;</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">,</span> age <span class="hljs-operator">=</span> <span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-number">25</span><span class="hljs-punctuation">,</span> <span class="hljs-number">30</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span>
+anExampleFactorWithLevels <span class="hljs-operator">&lt;-</span> factor<span class="hljs-punctuation">(</span><span class="hljs-built_in">c</span><span class="hljs-punctuation">(</span><span class="hljs-string">&quot;low&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;medium&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-string">&quot;high&quot;</span><span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span>
+</code></pre>
+<h2>Functions</h2>
+<pre><code class="language-r"><span class="hljs-comment"># ----- FUNCTION -----</span>
+    <span class="hljs-comment"># &lt;functionName&gt; &lt;- function(&lt;functionParameters(s)&gt;) { &lt;functionBodyDefinition&gt; } =&gt; function declaration and definition of a named function, despite the slightly odd syntax that appears to suggest an anonymous function</span>
+    <span class="hljs-comment"># return =&gt; note that R features explicit returns using the return keyword</span>
+
+add <span class="hljs-operator">&lt;-</span> <span class="hljs-keyword">function</span><span class="hljs-punctuation">(</span>x<span class="hljs-punctuation">,</span> y<span class="hljs-punctuation">)</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-built_in">return</span><span class="hljs-punctuation">(</span>x <span class="hljs-operator">+</span> y<span class="hljs-punctuation">)</span>
+<span class="hljs-punctuation">}</span>
+result <span class="hljs-operator">&lt;-</span> add<span class="hljs-punctuation">(</span><span class="hljs-number">5</span><span class="hljs-punctuation">,</span> <span class="hljs-number">3</span><span class="hljs-punctuation">)</span> <span class="hljs-comment"># the value stored in result is 8</span>
+</code></pre>
+<h2>Data visualisation</h2>
+<pre><code class="language-r"><span class="hljs-comment"># ----- DATA VISUALISATION -----</span>
+    <span class="hljs-comment"># library() =&gt; loads in the specified libraries required for data visualisation, bringing them into local scope within the present R file</span>
+    <span class="hljs-comment"># set.seed() =&gt; assigns an integer number value as a seed that can later be called for reproducability of the same result set</span>
+    <span class="hljs-comment"># ggplot() =&gt; generic function to call the visualisation library, within which various augmenters can be specified to determine the type of visualisation, as well as further aesthetic specifications</span>
+    <span class="hljs-comment"># geom_point =&gt; plots a scatter plot to visualise the initialised dataframe data</span>
+    <span class="hljs-comment"># geom_bar =&gt; plots a bar plot to visualise the initialised dataframe data</span>
+    <span class="hljs-comment"># geom_line =&gt; plots a line plot to visualise the initialised dataframe data</span>
+    <span class="hljs-comment"># geom_boxplot =&gt; plots a box plot to visualise the initialised dataframe data</span>
+    <span class="hljs-comment"># geom_histogram =&gt; plots a histogram to visualise the initialised dataframe data</span>
+
+library<span class="hljs-punctuation">(</span>ggplot2<span class="hljs-punctuation">)</span> <span class="hljs-comment"># loads in the ggplot2 library for plotting data</span>
+
+<span class="hljs-comment"># creation of a given dataframe with designated values</span>
+data <span class="hljs-operator">&lt;-</span> data.frame<span class="hljs-punctuation">(</span>
+    x <span class="hljs-operator">=</span> <span class="hljs-number">1</span><span class="hljs-operator">:</span><span class="hljs-number">10</span><span class="hljs-punctuation">,</span>
+    y <span class="hljs-operator">=</span> rnorm<span class="hljs-punctuation">(</span><span class="hljs-number">10</span><span class="hljs-punctuation">,</span> mean <span class="hljs-operator">=</span> <span class="hljs-number">0</span><span class="hljs-punctuation">,</span> sd <span class="hljs-operator">=</span> <span class="hljs-number">1</span><span class="hljs-punctuation">)</span>
+<span class="hljs-punctuation">)</span> 
+
+<span class="hljs-comment"># plots a scatter plot</span>
+ggplot<span class="hljs-punctuation">(</span>data<span class="hljs-punctuation">,</span> aes<span class="hljs-punctuation">(</span>x <span class="hljs-operator">=</span> x<span class="hljs-punctuation">,</span> y <span class="hljs-operator">=</span> y<span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span>
+    geom_point<span class="hljs-punctuation">(</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span>
+    labs<span class="hljs-punctuation">(</span>title <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Scatter Plot&quot;</span><span class="hljs-punctuation">,</span> x <span class="hljs-operator">=</span> <span class="hljs-string">&quot;X Axis&quot;</span><span class="hljs-punctuation">,</span> y <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Y Axis&quot;</span><span class="hljs-punctuation">)</span>
+
+<span class="hljs-comment"># plots a bar plot</span>
+ggplot<span class="hljs-punctuation">(</span>data<span class="hljs-punctuation">,</span> aes<span class="hljs-punctuation">(</span>x <span class="hljs-operator">=</span> x<span class="hljs-punctuation">,</span> y <span class="hljs-operator">=</span> y<span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span>
+    geom_bar<span class="hljs-punctuation">(</span>stat <span class="hljs-operator">=</span> <span class="hljs-string">&quot;identity&quot;</span><span class="hljs-punctuation">,</span> fill <span class="hljs-operator">=</span> <span class="hljs-string">&quot;skyblue&quot;</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span>
+    labs<span class="hljs-punctuation">(</span>title <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Bar Plot&quot;</span><span class="hljs-punctuation">,</span> x <span class="hljs-operator">=</span> <span class="hljs-string">&quot;X Axis&quot;</span><span class="hljs-punctuation">,</span> y <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Y Axis&quot;</span><span class="hljs-punctuation">)</span>
+
+<span class="hljs-comment"># plots a line plot</span>
+ggplot<span class="hljs-punctuation">(</span>data<span class="hljs-punctuation">,</span> aes<span class="hljs-punctuation">(</span>x <span class="hljs-operator">=</span> x<span class="hljs-punctuation">,</span> y <span class="hljs-operator">=</span> y<span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span>
+    geom_line<span class="hljs-punctuation">(</span>color <span class="hljs-operator">=</span> <span class="hljs-string">&quot;red&quot;</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span>
+    labs<span class="hljs-punctuation">(</span>title <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Line Plot&quot;</span><span class="hljs-punctuation">,</span> x <span class="hljs-operator">=</span> <span class="hljs-string">&quot;X Axis&quot;</span><span class="hljs-punctuation">,</span> y <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Y Axis&quot;</span><span class="hljs-punctuation">)</span>
+
+<span class="hljs-comment"># plots a box plot</span>
+ggplot<span class="hljs-punctuation">(</span>data<span class="hljs-punctuation">,</span> aes<span class="hljs-punctuation">(</span>y <span class="hljs-operator">=</span> y<span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span>
+    geom_boxplot<span class="hljs-punctuation">(</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span>
+    labs<span class="hljs-punctuation">(</span>title <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Box Plot&quot;</span><span class="hljs-punctuation">,</span> y <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Y Axis&quot;</span><span class="hljs-punctuation">)</span>
+
+<span class="hljs-comment"># plots a histogram</span>
+ggplot<span class="hljs-punctuation">(</span>data<span class="hljs-punctuation">,</span> aes<span class="hljs-punctuation">(</span>x <span class="hljs-operator">=</span> y<span class="hljs-punctuation">)</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span>
+    geom_histogram<span class="hljs-punctuation">(</span>fill <span class="hljs-operator">=</span> <span class="hljs-string">&quot;lightgreen&quot;</span><span class="hljs-punctuation">,</span> color <span class="hljs-operator">=</span> <span class="hljs-string">&quot;black&quot;</span><span class="hljs-punctuation">,</span> bins <span class="hljs-operator">=</span> <span class="hljs-number">10</span><span class="hljs-punctuation">)</span> <span class="hljs-operator">+</span>
+    labs<span class="hljs-punctuation">(</span>title <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Histogram&quot;</span><span class="hljs-punctuation">,</span> x <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Y Axis&quot;</span><span class="hljs-punctuation">,</span> y <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Frequency&quot;</span><span class="hljs-punctuation">)</span>
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li><a href="https://cran.r-project.org/bin/windows/base/">install r gui</a></li>
+<li><a href="https://adv-r.hadley.nz/vectors-chap.html">vector attributes in r</a></li>
+<li><a href="https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html">data.tables in r</a></li>
+<li><a href="https://www.r-project.org/other-docs.html">r documentation</a></li>
+<li><a href="https://learnxinyminutes.com/docs/r/">learn r in y minutes</a></li>
+</ul>

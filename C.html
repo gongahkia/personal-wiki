@@ -1,0 +1,339 @@
+<h1><code>C</code></h1>
+<h2>Comments</h2>
+<pre><code class="language-c"><span class="hljs-comment">// single-line comments</span>
+<span class="hljs-comment">/* multi-line
+comments
+look
+like 
+this */</span>
+</code></pre>
+<h2>Importing headers</h2>
+<pre><code class="language-c"><span class="hljs-comment">// ---------- HEADER ----------</span>
+    <span class="hljs-comment">// headers are the equivalent of Python&#x27;s modules</span>
+    <span class="hljs-comment">// their contents are syntatically similar to C source files but the file format ends in .h</span>
+
+<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdlib.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;string.h&gt;</span></span>
+</code></pre>
+<h2>Printing</h2>
+<pre><code class="language-c"><span class="hljs-comment">// ---------- PRINT ----------</span>
+    <span class="hljs-comment">// printf is print formatted, it does not print a newline by default</span>
+        <span class="hljs-comment">// %c for char</span>
+        <span class="hljs-comment">// %s for strings (char[])</span>
+        <span class="hljs-comment">// %d or %I for short signed</span>
+        <span class="hljs-comment">// %u for short unsigned</span>
+        <span class="hljs-comment">// %ld for long signed</span>
+        <span class="hljs-comment">// %lu for long unsigned</span>
+        <span class="hljs-comment">// %x for unsigned hexadecimal</span>
+        <span class="hljs-comment">// %o for unsigned octal</span>
+        <span class="hljs-comment">// %f for float</span>
+        <span class="hljs-comment">// %lf for double</span>
+        <span class="hljs-comment">// %p for pointer</span>
+        <span class="hljs-comment">// %% to print out %</span>
+
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;watermelon\n&quot;</span>);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, <span class="hljs-number">0</span>); <span class="hljs-comment">// prints 0</span>
+
+<span class="hljs-comment">// ---------- RECEIVE INPUT ----------</span>
+    <span class="hljs-comment">// scanf takes in an input</span>
+    <span class="hljs-comment">// &amp;input specifies the memory address where we store the input value of type int</span>
+
+<span class="hljs-type">int</span> input;
+<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;input);
+
+<span class="hljs-comment">// ---------- SPECIAL CHARACTERS ----------</span>
+
+<span class="hljs-string">&#x27;\n&#x27;</span>; <span class="hljs-comment">// newline character</span>
+<span class="hljs-string">&#x27;\t&#x27;</span>; <span class="hljs-comment">// tab character (left justifies text)</span>
+<span class="hljs-string">&#x27;\v&#x27;</span>; <span class="hljs-comment">// vertical tab</span>
+<span class="hljs-string">&#x27;\a&#x27;</span>; <span class="hljs-comment">// alert (bell) character</span>
+<span class="hljs-string">&#x27;\f&#x27;</span>; <span class="hljs-comment">// new page (form feed)</span>
+<span class="hljs-string">&#x27;\r&#x27;</span>; <span class="hljs-comment">// carriage return</span>
+<span class="hljs-string">&#x27;\b&#x27;</span>; <span class="hljs-comment">// backspace character</span>
+<span class="hljs-string">&#x27;\0&#x27;</span>; <span class="hljs-comment">// NULL character. Usually put at end of strings in C.</span>
+<span class="hljs-string">&#x27;\\&#x27;</span>; <span class="hljs-comment">// backslash</span>
+<span class="hljs-string">&#x27;\?&#x27;</span>; <span class="hljs-comment">// question mark</span>
+<span class="hljs-string">&#x27;\&#x27;&#x27;</span>; <span class="hljs-comment">// single quote</span>
+<span class="hljs-string">&#x27;\&quot;&#x27;</span>; <span class="hljs-comment">// double quote</span>
+<span class="hljs-string">&#x27;\xhh&#x27;</span>; <span class="hljs-comment">// hexadecimal number. Example: &#x27;\xb&#x27; = vertical tab character</span>
+<span class="hljs-string">&#x27;\0oo&#x27;</span>; <span class="hljs-comment">// octal number. Example: &#x27;\013&#x27; = vertical tab character</span>
+</code></pre>
+<h2>Types</h2>
+<pre><code class="language-c"><span class="hljs-comment">// ---------- TYPE ----------</span>
+    <span class="hljs-comment">// sizeof() operator returns the size of a given data type</span>
+    <span class="hljs-comment">// char =&gt; 1 byte, but can be larger, single quotation marks, also known as a character literal</span>
+    <span class="hljs-comment">// char[] =&gt; C&#x27;s version of strings, take 1 byte * length of array, double quotation marks</span>
+    <span class="hljs-comment">// int =&gt; 4 bytes, integer types may be signed or unsigned like in Rust</span>
+        <span class="hljs-comment">// short =&gt; 2 bytes</span>
+        <span class="hljs-comment">// long =&gt; 4 - 8 bytes</span>
+        <span class="hljs-comment">// long long =&gt; 8 bytes or more</span>
+    <span class="hljs-comment">// float =&gt; 32-bit </span>
+        <span class="hljs-comment">// double =&gt; larger float, 64-bit</span>
+    <span class="hljs-comment">// 1 or 0 =&gt; C&#x27;s version of booleans, 0 being false, 1 being true (though technically any non-0 value is true)</span>
+
+<span class="hljs-type">char</span> x_char = <span class="hljs-string">&#x27;y&#x27;</span>; <span class="hljs-comment">// char literals are single quoted</span>
+<span class="hljs-type">char</span> x_str[<span class="hljs-number">20</span>] = <span class="hljs-string">&quot;This is a string&quot;</span>; <span class="hljs-comment">// strings are double quoted</span>
+<span class="hljs-type">int</span> x_int = <span class="hljs-number">0</span>;
+<span class="hljs-type">short</span> x_short = <span class="hljs-number">0</span>;
+<span class="hljs-type">long</span> x_long = <span class="hljs-number">0</span>;
+<span class="hljs-type">long</span> <span class="hljs-type">long</span> x_long_long = <span class="hljs-number">0</span>;
+<span class="hljs-type">unsigned</span> <span class="hljs-type">int</span> y_int = <span class="hljs-number">10</span>;
+<span class="hljs-type">signed</span> <span class="hljs-type">short</span> z_int = <span class="hljs-number">-5</span>;
+<span class="hljs-type">signed</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> a_int = <span class="hljs-number">-1009</span>;
+<span class="hljs-type">float</span> x_float = <span class="hljs-number">0.01</span>;
+<span class="hljs-type">double</span> x_double = <span class="hljs-number">0.0</span>;
+
+<span class="hljs-comment">// VARIABLES</span>
+    <span class="hljs-comment">// declared once, value can be reassigned later</span>
+
+<span class="hljs-comment">// CONST</span>
+    <span class="hljs-comment">// declared once, value can only be assigned once</span>
+    <span class="hljs-comment">// const stated before type of constant value</span>
+
+<span class="hljs-type">const</span> <span class="hljs-type">float</span> eg_float = <span class="hljs-number">5.8</span>;
+<span class="hljs-type">const</span> <span class="hljs-type">char</span> eg_char = <span class="hljs-string">&#x27;a&#x27;</span>;
+<span class="hljs-type">const</span> <span class="hljs-type">char</span> *str_literal = <span class="hljs-string">&quot;this is good practice&quot;</span>; <span class="hljs-comment">// for string literals you don&#x27;t intend to change, it is good practice to declare them as a constant and a pointer to a char (first element of the char array), which represents a char array</span>
+</code></pre>
+<h2>Data structures</h2>
+<pre><code class="language-c"><span class="hljs-comment">// ---------- ARRAY ----------</span>
+    <span class="hljs-comment">// ordered list of elements of the same data type</span>
+    <span class="hljs-comment">// initialized with a fixed size and type, though array elements are mutable</span>
+    <span class="hljs-comment">// character array is a string (C has no built-in string type)</span>
+    <span class="hljs-comment">// arrays are curly-braced in C</span>
+
+<span class="hljs-type">char</span> my_char_array[<span class="hljs-number">20</span>]; <span class="hljs-comment">// allocates 1 * 20 = 20 bytes of space for the char array in memory</span>
+<span class="hljs-type">char</span> my_int_array[<span class="hljs-number">20</span>]; <span class="hljs-comment">// allocates 4 * 20 = 80 bytes of space for the int array in memory</span>
+<span class="hljs-type">int</span> an_eg_int_array[<span class="hljs-number">10</span>] = {<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">10</span>}; <span class="hljs-comment">// note the curly braces</span>
+<span class="hljs-type">char</span> an_eg_char_array[<span class="hljs-number">5</span>] = {<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;b&#x27;</span>,<span class="hljs-string">&#x27;c&#x27;</span>,<span class="hljs-string">&#x27;d&#x27;</span>,<span class="hljs-string">&#x27;e&#x27;</span>}; <span class="hljs-comment">// another valid char array, although this also evaluates to &quot;abcde&quot;</span>
+
+<span class="hljs-comment">// ARRAY INITIALIZER</span>
+    <span class="hljs-comment">// {} initializes an array with default value of 0 past the specified values</span>
+
+<span class="hljs-type">int</span> my_array[<span class="hljs-number">20</span>] = {<span class="hljs-number">0</span>}; <span class="hljs-comment">// this initializes an int array of 80 bytes with each int being 0</span>
+<span class="hljs-type">int</span> another_array[<span class="hljs-number">10</span>] = {<span class="hljs-number">1</span>,<span class="hljs-number">2</span>}; <span class="hljs-comment">// this initializes an int array [1,2,0,0,0,0,0,0,0,0], the remaining 8 unspecified values being 0</span>
+<span class="hljs-type">int</span> yet_another_array[] = {<span class="hljs-number">0</span>}; <span class="hljs-comment">// note that not specifying the size of the array will result in an array of [0] with length 1</span>
+
+<span class="hljs-comment">// ARRAY INDEXING </span>
+
+my_array[<span class="hljs-number">0</span>]; <span class="hljs-comment">// returns 0, the element at index 0 is 0</span>
+my_array[<span class="hljs-number">10</span>] = <span class="hljs-number">2</span>; <span class="hljs-comment">// reassigns the element at index 10 to be 2</span>
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, my_array[<span class="hljs-number">10</span>]); <span class="hljs-comment">// returns 2</span>
+<span class="hljs-type">char</span> a_string[<span class="hljs-number">20</span>] = <span class="hljs-string">&quot;This is a string&quot;</span>;
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, a_string[<span class="hljs-number">16</span>]); <span class="hljs-comment">// returns 0 (as will byte 17-19) since the string only has chars initialized up to index 15</span>
+
+<span class="hljs-comment">// MULTI-DIMENSIONAL ARRAYS</span>
+
+<span class="hljs-type">int</span> multi_array[<span class="hljs-number">2</span>][<span class="hljs-number">5</span>] = {
+    {<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>},
+    {<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">10</span>}
+};
+multi_array[<span class="hljs-number">0</span>][<span class="hljs-number">2</span>]; <span class="hljs-comment">// returns 3</span>
+
+<span class="hljs-comment">// ---------- TYPE DEF ----------</span>
+    <span class="hljs-comment">// typedef creates a type alias</span>
+
+<span class="hljs-keyword">typedef</span> <span class="hljs-type">int</span> my_type; <span class="hljs-comment">// creates a type alias for int called my_type </span>
+my_type wow_everyone_so_creative = <span class="hljs-number">10</span>; <span class="hljs-comment">// declare and assigns an int value to a my_type variable</span>
+
+<span class="hljs-comment">// ---------- STRUCT ----------</span>
+    <span class="hljs-comment">// struct creates what is basically a javascript object</span>
+    <span class="hljs-comment">// stores key-value pairs</span>
+    <span class="hljs-comment">// note struct fields (attributes) are separated by semicolons, not commas</span>
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">rectangle</span> {</span>
+    <span class="hljs-type">int</span> width;
+    <span class="hljs-type">int</span> height;
+};
+
+<span class="hljs-comment">// INITALIZING STRUCT FIELDS</span>
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">rectangle</span> <span class="hljs-title">my_rect</span> =</span> {<span class="hljs-number">1</span>,<span class="hljs-number">2</span>}; <span class="hljs-comment">// struct fields can be intialized immediately</span>
+
+<span class="hljs-comment">// ACCESS STRUCT FIELDS</span>
+    <span class="hljs-comment">// dot notation</span>
+
+my_rect.width; <span class="hljs-comment">// returns 1</span>
+my_rect.height; <span class="hljs-comment">// returns 20</span>
+
+<span class="hljs-comment">// typedefs can be assigned to structs for convenience (and also can be done during struct definition)</span>
+
+<span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">rectangle</span> <span class="hljs-title">rect</span>;</span> <span class="hljs-comment">// this is valid</span>
+
+<span class="hljs-type">int</span> <span class="hljs-title function_">area</span><span class="hljs-params">(rect r)</span> {
+    <span class="hljs-keyword">return</span> r.width * r.height;
+}
+
+<span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> {</span>
+    <span class="hljs-type">int</span> width;
+    <span class="hljs-type">int</span> height;
+} rect; <span class="hljs-comment">// this is also valid</span>
+</code></pre>
+<h2>Operators</h2>
+<pre><code class="language-c"><span class="hljs-comment">// ---------- OPERATOR ----------</span>
+
+<span class="hljs-comment">// ARITHMETIC</span>
+
+<span class="hljs-type">int</span> i1 = <span class="hljs-number">1</span>, i2 = <span class="hljs-number">2</span>; <span class="hljs-comment">// valid shorthand for multiple declaration</span>
+<span class="hljs-type">float</span> f1 = <span class="hljs-number">1.0</span>, f2 = <span class="hljs-number">2.0</span>; <span class="hljs-comment">// same here as well</span>
+
+i1 + i2; <span class="hljs-comment">// addition</span>
+i1 - i2; <span class="hljs-comment">// subtraction</span>
+i1 * i2; <span class="hljs-comment">// multiplication</span>
+i1 / i2; <span class="hljs-comment">// division, though in this case evaluates to 0.5 is truncated towards 0</span>
+<span class="hljs-number">11</span> % <span class="hljs-number">3</span>; <span class="hljs-comment">// modulo, be careful when arguments are negative though</span>
+
+<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>;
+<span class="hljs-type">int</span> s = j++; <span class="hljs-comment">// increment by 1 operator, returns j then increments it</span>
+<span class="hljs-type">int</span> z = ++j; <span class="hljs-comment">// increment by 1 operator, increments j then returns it</span>
+<span class="hljs-type">int</span> e = j--; <span class="hljs-comment">// decrement by 1 operator, decrements j then returns it</span>
+<span class="hljs-type">int</span> f = --j; <span class="hljs-comment">// decrement by 1 operator, decrements j then returns it</span>
+
+(<span class="hljs-type">float</span>)i1/i2; <span class="hljs-comment">// evaluates to 0.5f since we need to cast at least one integer to a float to get a floating-point result</span>
+i1/(<span class="hljs-type">double</span>)i2; <span class="hljs-comment">// does the same for doubles</span>
+f1 / f2; <span class="hljs-comment">// evaluates to 0.5 since both are floats here so fulfills the above requirement of at least one operand being a float</span>
+
+<span class="hljs-comment">// COMPARISON </span>
+
+<span class="hljs-number">3</span> == <span class="hljs-number">2</span>; <span class="hljs-comment">// complete equality in value and type, returns 0</span>
+<span class="hljs-number">3</span> != <span class="hljs-number">2</span>; <span class="hljs-comment">// complete inequality in value and type, returns 1</span>
+<span class="hljs-number">3</span> &gt; <span class="hljs-number">2</span>; <span class="hljs-comment">// comparison operator, returns 1 </span>
+<span class="hljs-number">3</span> &lt; <span class="hljs-number">2</span>; <span class="hljs-comment">// comparison operator, returns 0</span>
+<span class="hljs-number">2</span> &lt;= <span class="hljs-number">2</span>; <span class="hljs-comment">// comparison operator, returns 1</span>
+<span class="hljs-number">2</span> &gt;= <span class="hljs-number">2</span>; <span class="hljs-comment">// comparison operator, returns 1</span>
+
+<span class="hljs-comment">// LOGICAL</span>
+
+!<span class="hljs-number">3</span>; <span class="hljs-comment">// logical not, returns 0</span>
+<span class="hljs-number">0</span> &amp;&amp; <span class="hljs-number">1</span>; <span class="hljs-comment">// logical and, returns 0</span>
+<span class="hljs-number">0</span> || <span class="hljs-number">1</span>; <span class="hljs-comment">// logical or, returns 1</span>
+</code></pre>
+<h2>Control structures</h2>
+<pre><code class="language-c"><span class="hljs-comment">// ---------- CONTROL STRUCTURE ----------</span>
+
+<span class="hljs-comment">// IF ELSE IF ELSE</span>
+
+<span class="hljs-type">int</span> x = <span class="hljs-number">5</span>;
+<span class="hljs-keyword">if</span> (x &gt; <span class="hljs-number">5</span>) {
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;x is bigger than 5\n&quot;</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (x &lt; <span class="hljs-number">5</span>) {
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;x is smaller than 5\n&quot;</span>)
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;x is 5\n&quot;</span>);
+}
+
+<span class="hljs-comment">// LOOPS</span>
+
+<span class="hljs-comment">// WHILE DO WHILE</span>
+
+<span class="hljs-type">int</span> ii = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">while</span> (ii &lt; <span class="hljs-number">10</span>) {
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d, &quot;</span>, ii++); <span class="hljs-comment">// recall that ii++ will increment ii after it retruns it, so this prints the string &quot;0, 1, 2, 3, 4, 5, 6, 7, 8, 9, &quot;</span>
+}
+
+<span class="hljs-type">int</span> kk = <span class="hljs-number">0</span>; <span class="hljs-comment">// do while loops exist too</span>
+<span class="hljs-keyword">do</span> {
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d, &quot;</span>, kk);
+} <span class="hljs-keyword">while</span> (++k &lt; <span class="hljs-number">10</span>);
+
+<span class="hljs-comment">// FOR</span>
+
+<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> jj = <span class="hljs-number">0</span>; jj &lt; <span class="hljs-number">10</span>; jj++) {
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d, &quot;</span>, jj);
+} <span class="hljs-comment">// prints the string &quot;0, 1, 2, 3, 4, 5, 6, 7, 8, 9, &quot;</span>
+
+<span class="hljs-comment">// SWITCH CASE </span>
+    <span class="hljs-comment">// remember to include break after each case, otherwise the logic falls through</span>
+    <span class="hljs-comment">// default case exists</span>
+
+<span class="hljs-keyword">switch</span> (a) {
+    <span class="hljs-keyword">case</span> <span class="hljs-number">0</span>:
+        <span class="hljs-comment">// do something</span>
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
+        <span class="hljs-comment">// do something else:</span>
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:
+        <span class="hljs-comment">// do another thing</span>
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">default</span>:
+        <span class="hljs-comment">// accounts for the default case like the catch-all operator _ in Rust</span>
+        <span class="hljs-keyword">break</span>;
+}
+</code></pre>
+<h2>Functions</h2>
+<pre><code class="language-c"><span class="hljs-comment">// ---------- CALL BY VALUE vs CALL BY REFERENCE ----------</span>
+    <span class="hljs-comment">// CALL BY VALUE</span>
+        <span class="hljs-comment">// a copy of the actual variable&#x27;s value is called, so we are calling by value (how conventional functions with return values work)</span>
+    <span class="hljs-comment">// CALL BY REFERENCE</span>
+        <span class="hljs-comment">// the actual memory address of the variable is called and any changes are made to the variable itself, so we are calling by reference (how conventional object methods work)</span>
+
+<span class="hljs-comment">// ---------- FUNCTION ----------</span>
+    <span class="hljs-comment">// main function</span>
+    <span class="hljs-comment">// function RETURN type specified at the front, followed by the function name and its arguments with their return types</span>
+    <span class="hljs-comment">// functions are call by value by default, and a copy of the actual arguments are passed to a function (ie. the original argument values are not changed when the function is called) and a value has to be returned</span>
+    <span class="hljs-comment">// pointers should be used if you want to edit the actual argument value</span>
+        <span class="hljs-comment">// arrays are passed in as pointers by default</span>
+    <span class="hljs-comment">// RETURN_TYPE FUNCTION_NAME(FUNCTION_ARGUMENTS_AND_TYPE);</span>
+
+<span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span> {
+    <span class="hljs-comment">// this is every C program&#x27;s entry point, all C code must run within the main function</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-type">void</span> <span class="hljs-title function_">function_1</span><span class="hljs-params">()</span>; <span class="hljs-comment">// you can declare a function ahead of time like this</span>
+<span class="hljs-type">int</span> <span class="hljs-title function_">function_2</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span>; <span class="hljs-comment">// or like this</span>
+<span class="hljs-type">int</span> <span class="hljs-title function_">add_two_ints</span><span class="hljs-params">(<span class="hljs-type">int</span> x1, <span class="hljs-type">int</span> x2)</span>; <span class="hljs-comment">// this is also valid function declaration</span>
+</code></pre>
+<h2>Pointers</h2>
+<pre><code class="language-c"><span class="hljs-comment">// --------- POINTER ----------</span>
+    <span class="hljs-comment">// pointer is a variable declared that stores a memory address</span>
+        <span class="hljs-comment">// pointers variables are declared with * (once)</span>
+        <span class="hljs-comment">// pointer declaration will also specify the type of the variable it points to</span>
+        <span class="hljs-comment">// by convention, pointer variables are named p{variable name}</span>
+    <span class="hljs-comment">// memory addressed of variables can be accessed and played with</span>
+        <span class="hljs-comment">// memory addresses are accessed with &amp;</span>
+
+<span class="hljs-type">int</span> x = <span class="hljs-number">0</span>;
+<span class="hljs-type">int</span> *px = &amp;x; <span class="hljs-comment">// stores the memory address of int variable x in pointer variable px (subsequent reference to pointer variable px can be done without the *, that&#x27;s used once on declaration only)</span>
+
+<span class="hljs-comment">// DEREFERENCE A POINTER</span>
+    <span class="hljs-comment">// to access the actual value at the memory address a pointer variable is pointing to, use the derefernce operator *</span>
+    <span class="hljs-comment">// it is slightly confusing and odd that the dereference and declaration operator are the same, but just go with it</span>
+
+<span class="hljs-type">int</span> value_at_px = *px; <span class="hljs-comment">// evaluates to 0, the int value of variable x previously declared, and note how the * is not seen since that was only declared once on declaration</span>
+(*px)++; <span class="hljs-comment">// changes the actual value of the variable stored at memory address stored in pointer variable px</span>
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, *px); <span class="hljs-comment">// prints 1, accessing the value stored at the memory address in the pointer variable px via the derefencing operator *</span>
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, x); <span class="hljs-comment">// this will also print 1</span>
+
+<span class="hljs-comment">// ARRAYS AND POINTERS</span>
+    <span class="hljs-comment">// in memory, an array is just a special chunk of memory that is reserved upon declaration with a fixed size</span>
+    <span class="hljs-comment">// when pointing to an array, pointer variable points to the memory address of the first element of the array even without the &amp; memory address accessing operator</span>
+    <span class="hljs-comment">// this is as arrays are implictly type converted into a pointer (stores a memory address of the first element of the array) when they are assigned to functions or to a pointer variable</span>
+
+<span class="hljs-type">int</span> x_array[<span class="hljs-number">3</span>] = {<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>}; <span class="hljs-comment">// declares and initializes an int array [1,2,3] of 12 bytes</span>
+<span class="hljs-type">int</span>* px_array = x_array; <span class="hljs-comment">// notice we don&#x27;t need to use the &amp; mem address accesing operator due to implicit type conversion of the array into its pointer (also known as decay)</span>
+
+<span class="hljs-comment">// STRINGS AND POINTERS</span>
+    <span class="hljs-comment">// strings are char arrays, but they can also be represented as a pointer to a char (pointer to the first element of the char array as established above)</span>
+    <span class="hljs-comment">// this is done by convention, and should be practised as far as possible when creating const string literals </span>
+
+<span class="hljs-type">const</span> <span class="hljs-type">char</span> *my_str = <span class="hljs-string">&quot;This is my very own string literal&quot;</span>; <span class="hljs-comment">// creates a string literal which should not be modified</span>
+
+<span class="hljs-type">char</span> foo[] = <span class="hljs-string">&quot;foo&quot;</span>; <span class="hljs-comment">// this is valid if the length of the string or its contents are meant to be changed later on in writable memory</span>
+foo[<span class="hljs-number">0</span>] = <span class="hljs-string">&#x27;a&#x27;</span>; <span class="hljs-comment">// this is legal C code, char array foo variable now stores the char array &quot;aoo&quot; which is also represnted as {&#x27;a&#x27;,&#x27;o&#x27;,&#x27;o&#x27;}</span>
+
+<span class="hljs-comment">// there are some exceptions to these rules, but in general they are as defined above</span>
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li>malloc</li>
+<li>calloc</li>
+<li>free</li>
+<li>enums</li>
+<li>macros</li>
+<li>function prototypes</li>
+<li><a href="https://devdocs.io/c/">c documentation</a></li>
+<li><a href="https://learnxinyminutes.com/docs/c/">learn c in y minutes</a></li>
+<li><a href="https://learncodethehardway.org/c/">learn c the hard way</a></li>
+</ul>

@@ -1,0 +1,74 @@
+<h1><code>Redis</code></h1>
+<p>RAM in-memory data storage.</p>
+<h2>Data types</h2>
+<pre><code class="language-py"><span class="hljs-comment"># ----- DATA TYPES -----</span>
+    <span class="hljs-comment"># String =&gt; foundational datatype composing the key-value pairs that redis is premised upon (used to store text, numbers etc), stored as sequences of BYTES</span>
+    <span class="hljs-comment"># Hash =&gt; collection of key-value pairs</span>
+    <span class="hljs-comment"># List =&gt; ordered collection of elements, supporting insertion and removal of elements</span>
+    <span class="hljs-comment"># Set =&gt; unordered collection of unique elements, supporting membership checks and other useful set operations</span>
+    <span class="hljs-comment"># Sorted Set =&gt; ordered collection of unique elements with each element posessing a unique score, supporting efficient range queries and other ordered operations</span>
+    <span class="hljs-comment"># Stream =&gt; data structure for real-time data feeds, supporting insertion and removal of elements as well as range checks</span>
+    <span class="hljs-comment"># HyperLogLog =&gt; data structures for approximating cardinality (number of unique elements) in large sets</span>
+    <span class="hljs-comment"># Geospatial index =&gt; data stucture for effiicent storage and retrieval of geospatial data</span>
+</code></pre>
+<h2>Quickstart</h2>
+<pre><code class="language-py"><span class="hljs-comment"># ---------- QUICKSTART ----------</span>
+    <span class="hljs-comment"># redis leverages on in-memory data storage (computer&#x27;s RAM) that is not persistent across machine system reboots by design, but redis data can be made persistent using the following</span>
+        <span class="hljs-comment"># rdb snapshots </span>
+        <span class="hljs-comment"># append only files</span>
+    <span class="hljs-comment"># redis is mainly used for caching, session management, leaderboards, messaging, rate limiting, counting, and dealing with both sorted and unsorted sets</span>
+    <span class="hljs-comment"># redis can be interacted with similar commands in the CLI and using a GUI client called RedisInsight</span>
+    <span class="hljs-comment"># however, redis is most often used via import as a library in Python</span>
+
+<span class="hljs-keyword">import</span> redis
+
+<span class="hljs-comment"># ----- GENERAL -----</span>
+    <span class="hljs-comment"># redis.Redis(host=&#x27;&lt;hostname&gt;&#x27;, port=&lt;portNumber&gt;) =&gt; connects to the specified redis server</span>
+    <span class="hljs-comment"># .set(&lt;valueName&gt;, &lt;value&gt;) =&gt; assigns a value to the specified value name in memory</span>
+    <span class="hljs-comment"># .get(&lt;valueName&gt;) =&gt; retrieves a value from memory based on the specified value name</span>
+    <span class="hljs-comment"># .decode() =&gt; used to decode the bytes to a readable string</span>
+    <span class="hljs-comment"># .hset(&lt;hashName&gt;, mapping=&lt;hashValue&gt;) =&gt; creates a new hash under the specified hash name, where the value is the hash</span>
+    <span class="hljs-comment"># .hget(&lt;hashName&gt;, &lt;key&gt;) =&gt; retrieves a value from the specified hash using the given key</span>
+    <span class="hljs-comment"># .rpsuh(&lt;listName&gt;, &lt;comma-delimited value(s) to be appended&gt;) =&gt; appends any number of comma-delimited values to the specified list</span>
+    <span class="hljs-comment"># .lindex(&lt;index&gt;, &lt;listName&gt;) =&gt; retrives a value from the specified list based on the given index</span>
+    <span class="hljs-comment"># .sadd(&lt;setName&gt;, *&lt;setValue&gt;) =&gt; adds/assigns elements to the specified set name</span>
+    <span class="hljs-comment"># * =&gt; aestricks operator unpacks the List into multiple individual arguments as required by the .sadd() method</span>
+    <span class="hljs-comment"># .sismember(&lt;setName&gt;, &lt;queriedMember&gt;) =&gt; returns a boolean value based on whether the queried element is a member of the specified set</span>
+    <span class="hljs-comment"># .zadd(&lt;orderedSetName&gt;, &lt;orderedSetValue&gt;) =&gt; adds/assigns elements to the specified ordered set name</span>
+    <span class="hljs-comment"># .zrangebyscore(&lt;orderedSetName&gt;, min=&lt;minimumValue&gt;, max=&lt;maximumValue&gt;) =&gt; retrieves elements within the specified score ranges from the specified ordered set</span>
+
+r = redis.Redis(host=<span class="hljs-string">&#x27;localhost&#x27;</span>, port=<span class="hljs-number">6379</span>)
+
+r.<span class="hljs-built_in">set</span>(<span class="hljs-string">&#x27;name&#x27;</span>, <span class="hljs-string">&#x27;Alice&#x27;</span>)
+name = r.get(<span class="hljs-string">&#x27;name&#x27;</span>)
+<span class="hljs-built_in">print</span>(name.decode()) <span class="hljs-comment"># redis Strings are stored as sequences of bytes and have to be decoded</span>
+
+user_data = {<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;Bob&#x27;</span>, <span class="hljs-string">&#x27;age&#x27;</span>: <span class="hljs-number">30</span>, <span class="hljs-string">&#x27;city&#x27;</span>: <span class="hljs-string">&#x27;New York&#x27;</span>}
+r.hset(<span class="hljs-string">&#x27;user:1&#x27;</span>, mapping=user_data)
+age = r.hget(<span class="hljs-string">&#x27;user:1&#x27;</span>, <span class="hljs-string">&#x27;age&#x27;</span>)
+<span class="hljs-built_in">print</span>(age.decode())
+
+r.rpush(<span class="hljs-string">&#x27;shopping_list&#x27;</span>, <span class="hljs-string">&#x27;apples&#x27;</span>, <span class="hljs-string">&#x27;bread&#x27;</span>, <span class="hljs-string">&#x27;milk&#x27;</span>)
+first_item = r.lindex(<span class="hljs-number">0</span>, <span class="hljs-string">&#x27;shopping_list&#x27;</span>)
+<span class="hljs-built_in">print</span>(first_item.decode())
+
+fruits = {<span class="hljs-string">&#x27;apple&#x27;</span>, <span class="hljs-string">&#x27;banana&#x27;</span>, <span class="hljs-string">&#x27;orange&#x27;</span>}
+r.sadd(<span class="hljs-string">&#x27;fruits&#x27;</span>, *fruits)
+is_member = r.sismember(<span class="hljs-string">&#x27;fruits&#x27;</span>, <span class="hljs-string">&#x27;mango&#x27;</span>)
+<span class="hljs-built_in">print</span>(is_member)
+
+leaderboard = {(<span class="hljs-string">&#x27;Alice&#x27;</span>, <span class="hljs-number">100</span>), (<span class="hljs-string">&#x27;Bob&#x27;</span>, <span class="hljs-number">80</span>), (<span class="hljs-string">&#x27;Charlie&#x27;</span>, <span class="hljs-number">90</span>)}
+r.zadd(<span class="hljs-string">&#x27;scores&#x27;</span>, leaderboard)
+top_3 = r.zrangebyscore(<span class="hljs-string">&#x27;scores&#x27;</span>, <span class="hljs-built_in">min</span>=<span class="hljs-number">85</span>, <span class="hljs-built_in">max</span>=<span class="hljs-number">100</span>)
+<span class="hljs-built_in">print</span>(top_3)
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li><a href="https://redis.io/docs/latest/">redis documentation</a></li>
+<li><a href="https://redis.io/docs/latest/develop/connect/cli/">redis cli</a></li>
+<li><a href="https://redis.io/insight/">redisinsight</a></li>
+<li><a href="https://redis.io/redis-enterprise/technology/durable-redis/">persisting data in redis</a></li>
+<li><a href="https://www.openmymind.net/2011/11/8/Redis-Zero-To-Master-In-30-Minutes-Part-1/">zero to master in redis part 1</a></li>
+<li><a href="https://www.openmymind.net/2011/11/8/Redis-Zero-To-Master-In-30-Minutes-Part-2/">zero to master in redis part 2</a></li>
+<li><a href="https://medium.com/@aman.parmar17/getting-started-with-redis-73f016315317">getting started with redis</a></li>
+</ul>

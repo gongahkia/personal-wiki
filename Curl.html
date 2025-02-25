@@ -1,0 +1,65 @@
+<h1><code>Curl</code></h1>
+<p>Standard command line tool for transferring data with URLs.</p>
+<h2>Installation</h2>
+<pre><code class="language-bash">$ <span class="hljs-built_in">sudo</span> apt-get install curl 
+</code></pre>
+<h2>Quickstart</h2>
+<pre><code class="language-bash"><span class="hljs-comment"># ---------- QUICKSTART ----------</span>
+    <span class="hljs-comment"># curl supports the following protocols for interacting with web services, downloading files and handling network requests from the command line</span>
+        <span class="hljs-comment"># HTTP, HTTPS</span>
+        <span class="hljs-comment"># FTP, FTPS</span>
+        <span class="hljs-comment"># SFTP</span>
+        <span class="hljs-comment"># TFTP</span>
+        <span class="hljs-comment"># SCP</span>
+        <span class="hljs-comment"># LDAP, LDAPS</span>
+        <span class="hljs-comment"># DICT</span>
+        <span class="hljs-comment"># TELNET</span>
+        <span class="hljs-comment"># IMAP, IMAPS</span>
+        <span class="hljs-comment"># POP, POP3S</span>
+        <span class="hljs-comment"># SMTP, SMTPS</span>
+        <span class="hljs-comment"># RTSP, RTMP, RTMPS, RTMPT, RTMPTE</span>
+        <span class="hljs-comment"># GOPHER</span>
+        <span class="hljs-comment"># SMB, SMBS</span>
+        <span class="hljs-comment"># MQTT</span>
+
+<span class="hljs-comment"># ----- COMMANDS -----</span>
+    <span class="hljs-comment"># curl =&gt; fetches the contents of the specified URL and displays it to the stdout</span>
+        <span class="hljs-comment"># if unspecified, curl issues a HTTP GET request by default</span>
+        <span class="hljs-comment"># curl commands can be further augmented with flags </span>
+
+curl http://example.com
+
+<span class="hljs-comment"># ----- FLAGS -----</span>
+    <span class="hljs-comment"># -o =&gt; saves the requested output from the specified url to a file</span>
+    <span class="hljs-comment"># -L =&gt; specifies the curl request to follow any redirects</span>
+    <span class="hljs-comment"># -X =&gt; specifies the request method as a provided argument (GET, POST, PUT, DELETE, etc.)</span>
+        <span class="hljs-comment"># GET =&gt; get is selected by default</span>
+        <span class="hljs-comment"># POST =&gt; post requests can be explicitly selected</span>
+    <span class="hljs-comment"># -H =&gt; selects a request header to specify the curl request&#x27;s metadata (content type, authorization status, or other custom data etc.)</span>
+        <span class="hljs-comment"># JSON =&gt; accompanies a request header to specify the content type being posted as JSON</span>
+    <span class="hljs-comment"># -d =&gt; accompanies a POST request to send data within the request body</span>
+    <span class="hljs-comment"># -O =&gt; save the file under the original name</span>
+    <span class="hljs-comment"># -b =&gt; reads cookies from a file</span>
+    <span class="hljs-comment"># -c =&gt; saves cookies to a file</span>
+    <span class="hljs-comment"># -v =&gt; makes curl requests verbose, providing detailed information about the given request and its response</span>
+    <span class="hljs-comment"># -I =&gt; fetches only the response headers</span>
+    <span class="hljs-comment"># -u =&gt; allows for specification of a user and password for server authentication</span>
+    <span class="hljs-comment"># -T =&gt; uploads a file to the server</span>
+    <span class="hljs-comment"># --limit-rate =&gt; limits the transfer rate of a given curl request</span>
+
+curl -o output.html http://example.com
+curl -L http://example.com
+curl -X POST -d <span class="hljs-string">&quot;param1=value1&amp;param2=value2&quot;</span> http://example.com
+curl -X POST -H <span class="hljs-string">&quot;Content-Type: application/json&quot;</span> -d <span class="hljs-string">&#x27;{&quot;key1&quot;:&quot;value1&quot;,&quot;key2&quot;:&quot;value2&quot;}&#x27;</span> http://example.com
+curl -H <span class="hljs-string">&quot;Authorization: Bearer your_token&quot;</span> http://example.com
+curl -O http://example.com/file.zip
+curl -b cookies.txt -c new_cookies.txt http://example.com
+curl -v http://example.com
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li><a href="https://curl.se/docs/tutorial.html">curl documentation</a></li>
+<li><a href="https://github.com/eooploo/curl-cheat-sheet">curl cheatsheet</a></li>
+<li><a href="https://learnxinyminutes.com/docs/httpie/">learn httpie in y minutes</a></li>
+<li><a href="https://www.gnu.org/software/wget/manual/wget.html">wget documentation</a></li>
+</ul>

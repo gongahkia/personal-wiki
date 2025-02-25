@@ -1,0 +1,34 @@
+<h1><code>Make</code></h1>
+<p>Universal build tool.</p>
+<h2>Quickstart and Usage</h2>
+<pre><code class="language-Makefile"><span class="hljs-comment"># ---------- QUICKSTART ----------</span>
+    <span class="hljs-comment"># filename must be &quot;Makefile&quot;</span>
+    <span class="hljs-comment"># Makefile rules follow the format =&gt; {COMMAND}: {FILE DEPENDANCY} {ACTUAL COMMAND TO RUN WHEN RULE CALLED}</span>
+
+<span class="hljs-comment"># ---------- USAGE ----------</span>
+    <span class="hljs-comment"># make {SPECIFIED COMMAND NAME} =&gt; calls the make command within your Makefile</span>
+    <span class="hljs-comment"># = =&gt; assignment operator allows for variables to be declared and reused later</span>
+    <span class="hljs-comment"># $() =&gt; retrieves a value stored at the specified variable, similar to PHP</span>
+    <span class="hljs-comment"># all =&gt; augmenter that specifies that command will be run universally when &quot;make&quot; is inputted into the stdin</span>
+    <span class="hljs-comment"># by convention, always add a &quot;clean&quot; rule to automate restoring a clean build of your project within your Makefile, although logic may vary</span>
+
+CC=clang
+
+<span class="hljs-section">all: hello</span>
+
+<span class="hljs-section">hello: hello.c test.o</span>
+    <span class="hljs-variable">$(CC)</span> -o hello hello.c
+
+<span class="hljs-section">test.o: test.c</span>
+    <span class="hljs-variable">$(CC)</span> -c test.c -o test.o
+
+<span class="hljs-section">clean:</span>
+    rm hello test.o
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li>Rake</li>
+<li>Ant</li>
+<li>Maven</li>
+<li><a href="https://makefiletutorial.com/">Makefile by example</a></li>
+</ul>

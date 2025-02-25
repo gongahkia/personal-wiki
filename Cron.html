@@ -1,0 +1,51 @@
+<h1><code>Cron</code></h1>
+<p>Standard UNIX tool for scheduling jobs at periodic intervals.</p>
+<h2>Installation</h2>
+<pre><code class="language-bash"><span class="hljs-comment"># ----- INSTALLATION -----</span>
+    <span class="hljs-comment"># cron should come installed by default on most unix and linux systems</span>
+
+$ <span class="hljs-built_in">sudo</span> apt-get install cron
+</code></pre>
+<h2>Usage</h2>
+<pre><code class="language-bash"><span class="hljs-comment"># ----- QUICKSTART -----</span>
+    <span class="hljs-comment"># cron job =&gt; comprised of cron commands, and cron jobs are written in a file similar to a Makefile</span>
+    <span class="hljs-comment"># cron tab =&gt; list of cron jobs, stored on the local system</span>
+    <span class="hljs-comment"># each system user has their own cron tab</span>
+
+$ crontab -l <span class="hljs-comment"># list all available cron jobs</span>
+$ crontab -e <span class="hljs-comment"># edit a cron tab under your current user</span>
+$ <span class="hljs-built_in">sudo</span> crontab -u root -e <span class="hljs-comment"># -u flag specifies the current user to edit cron tabs under, here we default to sudo since editing other user&#x27;s cron tabs requires sudo priviledges</span>
+</code></pre>
+<h2>Syntax</h2>
+<pre><code class="language-bash"><span class="hljs-comment"># ----- SYNTAX -----</span>
+    <span class="hljs-comment"># schedules in cron jobs act as parameters and conditional checks which specify when and how often a given job should repeat </span>
+    <span class="hljs-comment"># {Minute} {Hour} {Date of Month} {Month} {Day of Week} {Command}</span>
+        <span class="hljs-comment"># Minute =&gt; any valid integer from 1 to 59</span>
+        <span class="hljs-comment"># Hour =&gt; any valid integer from 0 to 23 since Cron runs on military 24hr time</span>
+        <span class="hljs-comment"># Date of Month =&gt; any valid integer from 1 to 31</span>
+        <span class="hljs-comment"># Month =&gt; any valid integer from 1 to 12</span>
+        <span class="hljs-comment"># Day of Week =&gt; any valid integer from 0 to 7 (sunday is 0 and 7)</span>
+        <span class="hljs-comment"># , =&gt; multiple cron job time specifiers are comma-delimited</span>
+        <span class="hljs-comment"># * =&gt; means all of the possible enumerations of a given parameter</span>
+        <span class="hljs-comment"># Command =&gt; any valid linux command will do </span>
+        <span class="hljs-comment"># note that ANY unfilled time field is to be represented with an *</span>
+
+5 * * * * <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;hello world&quot;</span> <span class="hljs-comment"># runs the echo &quot;hello world&quot; command every single hour of every day of every month any day of the week when the minute field of the time is 5, so 1:05pm, 2.05pm etc</span>
+5 9 * * * <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;smex&quot;</span> <span class="hljs-comment"># runs the echo &quot;smex&quot; command every day at 9.05am</span>
+0 4,16 * * * <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;nice&quot;</span> <span class="hljs-comment"># runs the echo &quot;nice&quot; command every day at 4am and 4pm</span>
+0 9 15 8 * <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;happy 15th august 9.15am&quot;</span> <span class="hljs-comment"># runs once yearly, echoing happy 15th august 9.15am&quot;</span>
+* 11 * * 4 <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;thursday 11am&quot;</span> <span class="hljs-comment"># echoes &quot;thursday 11am&quot; every week on thursday 11am</span>
+
+<span class="hljs-comment"># ----- SPECIAL COMMANDS -----</span>
+    <span class="hljs-comment"># @hourly =&gt; runs the specified command on an hourly basis</span>
+    <span class="hljs-comment"># @daily =&gt; runs the specified command on a daily basis</span>
+    <span class="hljs-comment"># @weekly =&gt; runs the specified command on a weekly basis</span>
+    <span class="hljs-comment"># @reboot =&gt; runs the specified cron job EVERYTIME the server reboots</span>
+
+@reboot <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;welcome back&quot;</span> <span class="hljs-comment"># runs whenever the server reboots</span>
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li><a href="https://medium.com/@tushar0618/cron-expression-tutorial-721d85e4c2a7">cron expressions</a></li>
+<li><a href="https://youtu.be/-gs2cBUToOw?si=MG0psLklXl2K6ub-">cron jobs in 5  minutes</a></li>
+</ul>

@@ -1,0 +1,252 @@
+<h1><code>Elixir</code></h1>
+<p>Modern functional language to build high-traffic websites, systems and web apps.</p>
+<h2>Comments</h2>
+<pre><code class="language-ex"><span class="hljs-comment"># ---------- COMMENT ----------</span>
+
+<span class="hljs-comment"># this is a single-line comment</span>
+
+<span class="hljs-comment"># there is no built-in</span>
+<span class="hljs-comment"># implementation for </span>
+<span class="hljs-comment"># multi-line comments</span>
+</code></pre>
+<h2>Printing</h2>
+<pre><code class="language-ex"><span class="hljs-comment"># ---------- PRINT ----------</span>
+    <span class="hljs-comment"># printing to the stdout is handled with the IO module</span>
+    <span class="hljs-comment"># IO.write =&gt; prints a string to the stdout and does not include a newline</span>
+    <span class="hljs-comment"># IO.puts =&gt; prints a string to the stdout and appends a newline to the output</span>
+
+<span class="hljs-title class_">IO</span>.write(<span class="hljs-string">&quot;this does not include a newline by default and we must explicitly specify it\n&quot;</span>)
+<span class="hljs-title class_">IO</span>.puts(<span class="hljs-string">&quot;this comes with a newline by default&quot;</span>)
+</code></pre>
+<h2>Quickstart</h2>
+<pre><code class="language-ex"><span class="hljs-comment"># ---------- QUICKSTART ----------</span>
+    <span class="hljs-comment"># elixir compiles to beam bytecode to run on the erlang virtual machine</span>
+    <span class="hljs-comment"># functional language, so every expression must evaluate to a single value</span>
+    <span class="hljs-comment"># = =&gt; not the assignment operator but the pattern-matching operator, allowing for powerful matching constructs like in other functional languages where the LHS pattern is matched against the RHS </span>
+
+[head | tail] = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>] <span class="hljs-comment"># here, the = is not an assignment operator but applies the pattern-matching construct</span>
+head <span class="hljs-comment"># this evaluates to the integer value 1</span>
+tail <span class="hljs-comment"># this evaluates to the remaining integer list values [2,3]</span>
+</code></pre>
+<h2>Types</h2>
+<pre><code class="language-ex"><span class="hljs-comment"># ---------- TYPE ----------</span>
+    <span class="hljs-comment"># integer =&gt; signed and unsigned integer number</span>
+    <span class="hljs-comment"># float =&gt; signed and unsigned floating-point number</span>
+    <span class="hljs-comment"># boolean =&gt; true, false</span>
+    <span class="hljs-comment"># atom =&gt; constants whose value is their own name, declared with a : colon</span>
+    <span class="hljs-comment"># string =&gt; declared with &quot;&quot; double quotation marks, covers chars also</span>
+</code></pre>
+<h2>Operators</h2>
+<pre><code class="language-ex"><span class="hljs-comment"># ---------- OPERATOR ----------</span>
+
+<span class="hljs-comment"># ARITHMETIC OPERATORS</span>
+    <span class="hljs-comment"># + =&gt; addition</span>
+    <span class="hljs-comment"># - =&gt; subtraction</span>
+    <span class="hljs-comment"># * =&gt; multiplication</span>
+    <span class="hljs-comment"># / =&gt; floor division</span>
+    <span class="hljs-comment"># div =&gt; integer division</span>
+    <span class="hljs-comment"># rem =&gt; equivalent of the modulo operator</span>
+
+<span class="hljs-comment"># LOGICAL OPERATORS</span>
+    <span class="hljs-comment"># and =&gt; logical and</span>
+    <span class="hljs-comment"># or =&gt; logical or</span>
+    <span class="hljs-comment"># not =&gt; logical not</span>
+
+<span class="hljs-comment"># COMPARISON OPERATORS</span>
+    <span class="hljs-comment"># == =&gt; partial equality check for value</span>
+    <span class="hljs-comment"># != or /= =&gt; partial inequality check for value</span>
+    <span class="hljs-comment"># === =&gt; complete equality check for value and type</span>
+    <span class="hljs-comment"># !== =&gt; complete inequality check for value and type</span>
+    <span class="hljs-comment"># &lt; &gt; &lt;= &gt;= are also comparison operators</span>
+</code></pre>
+<h2>Control structures</h2>
+<pre><code class="language-ex"><span class="hljs-comment"># ---------- CONTROL STRUCTURE ----------</span>
+
+<span class="hljs-comment"># CONDITIONALS</span>
+
+<span class="hljs-comment"># IF ELSE</span>
+    <span class="hljs-comment"># elixir has no built-in implementation of elseif statements</span>
+    <span class="hljs-comment"># do end =&gt; used to mark the start and end of the if else block</span>
+
+<span class="hljs-keyword">if</span> <span class="hljs-literal">false</span> <span class="hljs-keyword">do</span>
+    <span class="hljs-string">&quot;watermelon&quot;</span>
+<span class="hljs-keyword">else</span>
+    <span class="hljs-string">&quot;shit ass&quot;</span>
+<span class="hljs-keyword">end</span> <span class="hljs-comment"># this evaluates to &quot;shit ass&quot;</span>
+
+<span class="hljs-comment"># UNLESS ELSE</span>
+    <span class="hljs-comment"># unless =&gt; provides for the negation of a specified condition</span>
+    <span class="hljs-comment"># do end =&gt; used to mark the start and end of the unless else block</span>
+
+<span class="hljs-keyword">unless</span> <span class="hljs-literal">true</span> <span class="hljs-keyword">do</span>
+  <span class="hljs-string">&quot;this will never be seen&quot;</span>
+<span class="hljs-keyword">else</span>
+  <span class="hljs-string">&quot;this will shit&quot;</span>
+<span class="hljs-keyword">end</span> <span class="hljs-comment"># this evaluates to &quot;this will shit&quot;</span>
+
+<span class="hljs-comment"># PATTERN MATCHING</span>
+    <span class="hljs-comment"># elixir&#x27;s powerful pattern-matching construct rivals Rust in its conciseness and completeness</span>
+    <span class="hljs-comment"># case =&gt; declares and creates a case statement, similar to switch case statements in other languages</span>
+    <span class="hljs-comment"># do end =&gt; used to mark the start and end of a given case statement&#x27;s cases, within which -&gt; speciifes the relationship between a given case condition and the internal logic to run if said condition is satisfied</span>
+    <span class="hljs-comment"># _ =&gt; catch-all operator used as the equivalent of a default statement in other languages</span>
+
+<span class="hljs-keyword">case</span> {<span class="hljs-symbol">:one</span>, <span class="hljs-symbol">:two</span>} <span class="hljs-keyword">do</span>
+    {<span class="hljs-symbol">:four</span>, <span class="hljs-symbol">:five</span>} -&gt;
+        <span class="hljs-string">&quot;this won&#x27;t match&quot;</span>
+    {<span class="hljs-symbol">:one</span>, x} -&gt;
+        <span class="hljs-string">&quot;this will match and bind `x` to `:two` in this clause&quot;</span>
+    _ -&gt;
+        <span class="hljs-string">&quot;this will match any value&quot;</span>
+<span class="hljs-keyword">end</span> <span class="hljs-comment"># notice that pattern-matching can occur for tuples and other data structures</span>
+
+[head | _] = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>] <span class="hljs-comment"># note the catch-all operator _ can be used to throw away any unwanted value, as seen here where only the head value is matched and assigned and the tail is thrown away</span>
+head <span class="hljs-comment"># this evaluates to the integer value 1</span>
+
+<span class="hljs-comment"># COND</span>
+    <span class="hljs-comment"># cond =&gt; declares and creates a cond block, which runs mutliple conditional checks at the same time, equivalent to switch case statements in other languages and often used within elixir as a concise alternative to nesting mutliple if statements, with -&gt; specifying the relationship between a condition and the internal logic to run if a given condition evaluates to true</span>
+    <span class="hljs-comment"># do end =&gt; used to mark the start and end of the cond block </span>
+    <span class="hljs-comment"># true =&gt; it is convention to set the last condition as true to act as a default statement within a cond block</span>
+
+<span class="hljs-keyword">cond</span> <span class="hljs-keyword">do</span>
+  <span class="hljs-number">1</span> + <span class="hljs-number">1</span> == <span class="hljs-number">3</span> -&gt;
+    <span class="hljs-string">&quot;I will never be seen&quot;</span>
+  <span class="hljs-number">2</span> * <span class="hljs-number">5</span> == <span class="hljs-number">12</span> -&gt;
+    <span class="hljs-string">&quot;me neither&quot;</span>
+  <span class="hljs-number">1</span> + <span class="hljs-number">2</span> == <span class="hljs-number">3</span> -&gt;
+    <span class="hljs-string">&quot;but I will&quot;</span>
+<span class="hljs-keyword">end</span> <span class="hljs-comment"># this evaluates to &quot;but I will&quot;</span>
+
+<span class="hljs-keyword">cond</span> <span class="hljs-keyword">do</span>
+  <span class="hljs-number">1</span> + <span class="hljs-number">1</span> == <span class="hljs-number">3</span> -&gt;
+    <span class="hljs-string">&quot;I will never be seen&quot;</span>
+  <span class="hljs-number">2</span> * <span class="hljs-number">5</span> == <span class="hljs-number">12</span> -&gt;
+    <span class="hljs-string">&quot;me neither&quot;</span>
+  <span class="hljs-literal">true</span> -&gt;
+    <span class="hljs-string">&quot;but I will&quot;</span>
+<span class="hljs-keyword">end</span> <span class="hljs-comment"># this evaluates to &quot;but I will&quot; as well due to the presence of the true condition which acts as a default statement</span>
+
+<span class="hljs-comment"># TRY CATCH AFTER</span>
+    <span class="hljs-comment"># try catch =&gt; declares a try catch block, similar to try except in other languages</span>
+    <span class="hljs-comment"># after =&gt; specifies code that should execute regardless of whether a value is caught by the try catch block</span>
+    <span class="hljs-comment"># rescue =&gt; used to handle specified errors</span>
+    <span class="hljs-comment"># do end =&gt; used to mark the start and end of a try catch after block</span>
+
+<span class="hljs-keyword">try</span> <span class="hljs-keyword">do</span>
+  throw(<span class="hljs-symbol">:hello</span>)
+<span class="hljs-keyword">catch</span>
+  message -&gt; <span class="hljs-string">&quot;got <span class="hljs-subst">#{message}</span>.&quot;</span>
+<span class="hljs-keyword">after</span>
+  <span class="hljs-title class_">IO</span>.puts(<span class="hljs-string">&quot;I&#x27;m the after clause.&quot;</span>)
+<span class="hljs-keyword">end</span> <span class="hljs-comment"># this prints &quot;I&#x27;m the after clause&quot; to the stdout</span>
+
+<span class="hljs-comment"># RANGES</span>
+    <span class="hljs-comment"># .. =&gt; creates an inclusive range on both ends</span>
+
+<span class="hljs-number">1</span>..<span class="hljs-number">10</span> <span class="hljs-comment"># this evaluates to a range that stores integers from 1 to 10</span>
+
+<span class="hljs-comment"># LOOPS</span>
+    <span class="hljs-comment"># as a functional language, elixir does not have conventional imperative loops implemented, but offers higher-order functions, recursion and list comprehension that allow for the same effect in a concise manner</span>
+    <span class="hljs-comment"># Enum module =&gt; provides Enum.each, Enum.map, Enum.reduce and other higher-order functions</span>
+
+<span class="hljs-comment"># LIST COMPREHENSION</span>
+    <span class="hljs-comment"># uses the syntax =&gt; for {PATTERN} &lt;- {ITERABLE STRUCTURE}, {FILTER CONDITIONS}, do: {EXPRESSION}</span>
+        <span class="hljs-comment"># pattern =&gt; applies a specified pattern-matching construct against elements from the iterable structure</span>
+        <span class="hljs-comment"># iterable structure =&gt; data structure like a range, list etc</span>
+        <span class="hljs-comment"># filter conditions =&gt; optional conditions to further filter elements</span>
+        <span class="hljs-comment"># expression =&gt; does something to the given element and includes it in the resulting new list</span>
+
+numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
+doubled_numbers = <span class="hljs-keyword">for</span> n &lt;- numbers, <span class="hljs-symbol">do:</span> n * <span class="hljs-number">2</span> <span class="hljs-comment"># this iterates over the list numbers, taking each value and multiplying it by 2, then reassigning it to a new list doubled_numbers</span>
+doubled_numbers <span class="hljs-comment"># this evaluates to the integer list of value [2, 4, 6, 8, 10]</span>
+</code></pre>
+<h2>Data structures</h2>
+<pre><code class="language-ex"><span class="hljs-comment"># ---------- DATA STRUCTURE ----------</span>
+
+<span class="hljs-comment"># LIST</span>
+    <span class="hljs-comment"># every list is essentially a linked list, where the head consists of the first element of the list and the tail comprises every other element behind the head, causing head operations to be fast but tail operations to be slow</span>
+    <span class="hljs-comment"># [] =&gt; declares and creates a dynamically-sized ordered sequence of elements of the same type</span>
+    <span class="hljs-comment"># [ | ] =&gt; specifies pattern-matching constrct that matches the head and a tail of a list</span>
+
+an_int_list = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]
+[a_head | a_tail] = an_int_list
+a_head <span class="hljs-comment"># this evaluates to the integer value 1</span>
+a_tail <span class="hljs-comment"># this evaluates to the integer list value [2, 3, 4, 5, 6]</span>
+
+<span class="hljs-comment"># TUPLE</span>
+    <span class="hljs-comment"># tuples allow for faster access to elements by index but are slower for frequent modification</span>
+    <span class="hljs-comment"># {} =&gt; declares and creates a fixed size ordered sequence of elements of different types</span>
+    <span class="hljs-comment"># elem =&gt; retrieves a specified element from a given tuple by its index</span>
+
+a_mixed_tuple = {<span class="hljs-symbol">:ok</span>, <span class="hljs-string">&quot;Success&quot;</span>, <span class="hljs-number">42</span>}
+first_el = elem(a_mixed_tuple, <span class="hljs-number">0</span>)
+second_el = elem(a_mixed_tuple, <span class="hljs-number">1</span>)
+third_el = elem(a_mixed_tuple, <span class="hljs-number">2</span>)
+
+first_el <span class="hljs-comment"># this evaluates to the atom value of :ok</span>
+second_el <span class="hljs-comment"># this evaluates to the string value of &quot;Success&quot;</span>
+third_el <span class="hljs-comment"># this evaluates to the integer value of 42</span>
+
+<span class="hljs-comment"># MAPS</span>
+    <span class="hljs-comment"># %{} =&gt; declares and creates a map which stores an unordered collection of key-value pairs, their relationship denoted by =&gt;</span>
+    <span class="hljs-comment"># [] =&gt; key-value pairs are created and retrieved by their keys using [] square bracket notation</span>
+
+genders = %{<span class="hljs-string">&quot;david&quot;</span> =&gt; <span class="hljs-string">&quot;male&quot;</span>, <span class="hljs-string">&quot;gillian&quot;</span> =&gt; <span class="hljs-string">&quot;female&quot;</span>} // this declares <span class="hljs-keyword">and</span> creates a new map genders which stores string key <span class="hljs-keyword">and</span> string value pairs
+genders[<span class="hljs-string">&quot;david&quot;</span>] <span class="hljs-comment"># this evaluates to the string value &quot;male&quot;</span>
+</code></pre>
+<h2>Functions</h2>
+<pre><code class="language-ex"><span class="hljs-comment"># ---------- FUNCTION ----------</span>
+
+<span class="hljs-comment"># ANONYMOUS FUNCTIONS</span>
+    <span class="hljs-comment"># fn =&gt; creates an anonymous lambda function with named parameters specified in () brackets </span>
+    <span class="hljs-comment"># -&gt; =&gt; specifies the function body within the function definition</span>
+    <span class="hljs-comment"># when =&gt; specifies a predicate that acts as a function guard for function parameters</span>
+    <span class="hljs-comment"># end =&gt; marks the end of a function definition</span>
+    <span class="hljs-comment"># invocation of anonymous functons requires . dot notation</span>
+
+square = <span class="hljs-keyword">fn</span>(x) -&gt; x * x <span class="hljs-keyword">end</span> <span class="hljs-comment"># declares and creates an anonymous function and assigns it to the variable square</span>
+square.(<span class="hljs-number">5</span>) <span class="hljs-comment"># invocation of the anonymous function</span>
+
+f = <span class="hljs-keyword">fn</span>
+    x, y <span class="hljs-keyword">when</span> x &gt; <span class="hljs-number">0</span> -&gt; x + y <span class="hljs-comment"># specifies the pattern-matching construct that the anonymous function assigned to the variable x can receive before the actual function body</span>
+    x, y -&gt; x * y
+<span class="hljs-keyword">end</span>
+
+f.(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>) <span class="hljs-comment"># this evaluates to the integer value of 4</span>
+
+<span class="hljs-comment"># MODULE AND NAMED FUNCTIONS</span>
+    <span class="hljs-comment"># functions that serve the same purpose are grouped together under modules</span>
+    <span class="hljs-comment"># defmodule =&gt; declares and creates a module block</span>
+    <span class="hljs-comment"># def =&gt; declares and creates a public function within the module block that can be called from other modules</span>
+    <span class="hljs-comment"># defp =&gt; declares and creates a private function within the module that can only be called within the module</span>
+    <span class="hljs-comment"># do end =&gt; marks the start and end of a function definition and module block</span>
+
+<span class="hljs-class"><span class="hljs-keyword">defmodule</span> <span class="hljs-title">PrivateMath</span></span> <span class="hljs-keyword">do</span> <span class="hljs-comment"># declares a module called PrivateMath</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sum</span></span>(a, b) <span class="hljs-keyword">do</span>
+        do_sum(a, b)
+    <span class="hljs-keyword">end</span> <span class="hljs-comment"># declares a public function called sum that can be called from another module</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">defp</span> <span class="hljs-title">do_sum</span></span>(a, b) <span class="hljs-keyword">do</span>
+        a + b
+    <span class="hljs-keyword">end</span> <span class="hljs-comment"># declares a private function called do_sum that can only be called from within the module</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li>struct</li>
+<li>exceptions</li>
+<li>keyword list</li>
+<li>mapset</li>
+<li>hashset</li>
+<li>binary</li>
+<li>module visibility</li>
+<li>attribute</li>
+<li>|&gt;</li>
+<li>concurrency</li>
+<li>agent</li>
+<li>Stream module</li>
+<li><a href="https://learnxinyminutes.com/docs/elixir/">learn elixir in y minutes</a></li>
+<li><a href="https://elixir-lang.org/docs.html">elixir documentation</a></li>
+<li><a href="https://media.pragprog.com/titles/elixir/ElixirCheat.pdf">elixir cheatsheet</a></li>
+<li><a href="https://medium.com/@clairedigitalogy/a-beginners-guide-to-elixir-906603251f06">build something in elixir</a></li>
+<li><a href="https://learnyousomeerlang.com/">learn you some erlang for great good</a></li>
+</ul>

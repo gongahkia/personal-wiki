@@ -1,0 +1,342 @@
+<h1><code>C#</code></h1>
+<h2>Comments</h2>
+<pre><code class="language-c#"><span class="hljs-comment">// single-line comments</span>
+<span class="hljs-comment">/* multi-line
+comments
+look
+like
+this */</span>
+</code></pre>
+<h2>Namespaces</h2>
+<pre><code class="language-cs"><span class="hljs-comment">// ---------- NAMESPACE ----------</span>
+    <span class="hljs-comment">// operates similarly to importing Python modules</span>
+    <span class="hljs-comment">// these are all part of C#&#x27;s standard .NET Framework Class Library</span>
+    <span class="hljs-comment">// using brings in relevant namespaces referenced in source code </span>
+
+<span class="hljs-keyword">using</span> System;
+<span class="hljs-keyword">using</span> System.Collections.Generic;
+<span class="hljs-keyword">using</span> System.Dynamic;
+<span class="hljs-keyword">using</span> System.Linq;
+<span class="hljs-keyword">using</span> System.Net;
+<span class="hljs-keyword">using</span> System.Threading.Tasks;
+<span class="hljs-keyword">using</span> System.IO;
+</code></pre>
+<h2>Main method</h2>
+<pre><code class="language-cs"><span class="hljs-comment">// ---------- MAIN METHOD ----------</span>
+    <span class="hljs-comment">// since CS is heavily-OOP, each CS file should contain at least 1 class with the same name as the file, below we assume the file name is CS.cs</span>
+    <span class="hljs-comment">// within said class, there must be a main method, from which all console applications run when the program is executed on the CLI</span>
+    <span class="hljs-comment">// web applications and games might have a different entry point</span>
+    <span class="hljs-comment">// similar to Java</span>
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">CS</span> {
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>()</span> {
+        Console.Write(<span class="hljs-string">&quot;ass&quot;</span>); <span class="hljs-comment">// this will print when the CS file is run</span>
+    }
+
+}
+</code></pre>
+<h2>Printing</h2>
+<pre><code class="language-cs">Console.WriteLine(<span class="hljs-string">&quot;Hello world&quot;</span>); <span class="hljs-comment">// prints to the console with a newline</span>
+Console.Write(<span class="hljs-string">&quot;Hello &quot;</span>); <span class="hljs-comment">// prints without a newline</span>
+Console.Write(<span class="hljs-string">&quot;World&quot;</span>); <span class="hljs-comment">// prints without a newline</span>
+</code></pre>
+<h2>Types, Variables and Constants</h2>
+<pre><code class="language-cs"><span class="hljs-comment">// ---------- TYPES and VARIABLES ----------</span>
+    <span class="hljs-comment">// INTEGER</span>
+        <span class="hljs-comment">// sbyte =&gt; signed 8-bit integer, -128..127</span>
+        <span class="hljs-comment">// byte =&gt; unsigned 8-bit integer, 0..255</span>
+        <span class="hljs-comment">// short =&gt; signed 16-bit integer, -32,768..32,767</span>
+        <span class="hljs-comment">// ushort =&gt; unsigned 16-bit integer, 0..65,535</span>
+        <span class="hljs-comment">// int =&gt; signed 32-bit integer, -2,147,483,648..2,147,483,647</span>
+        <span class="hljs-comment">// uint =&gt; unsigned 32-bit integer, 0..4,294,967,295</span>
+        <span class="hljs-comment">// long =&gt; signed 64-bit integer, -9,223,372,036,854,775,808..9,223,372,036,854,775,807</span>
+        <span class="hljs-comment">// ulong =&gt; unsigned 64-bit integer, 0..18,446,744,073,709,551,615</span>
+    <span class="hljs-comment">// FLOAT</span>
+        <span class="hljs-comment">// double =&gt; double-precision 64-bit floating point number, 15-16 digit precision</span>
+        <span class="hljs-comment">// float =&gt; single-precision 32-bit floating point number, 7 digit precision</span>
+        <span class="hljs-comment">// decimal =&gt; greatest-precision 128-bit floating point number, used for financial and monetary calculations</span>
+    <span class="hljs-comment">// BOOLEAN =&gt; true, false</span>
+    <span class="hljs-comment">// CHAR =&gt; single quotation marks, 16-bit unicode character</span>
+    <span class="hljs-comment">// STRING =&gt; double quotation marks, immutable, reference type (can be set to null) unlike all previous types which are value types</span>
+
+<span class="hljs-built_in">sbyte</span> fooSbyte = <span class="hljs-number">100</span>;
+<span class="hljs-built_in">byte</span> fooByte = <span class="hljs-number">100</span>;
+<span class="hljs-built_in">short</span> fooShort = <span class="hljs-number">10000</span>;
+<span class="hljs-built_in">ushort</span> fooUshort = <span class="hljs-number">10000</span>;
+<span class="hljs-built_in">int</span> fooInt = <span class="hljs-number">1</span>;
+<span class="hljs-built_in">uint</span> fooUint = <span class="hljs-number">1</span>;
+<span class="hljs-built_in">long</span> fooLong = <span class="hljs-number">100000L</span>; <span class="hljs-comment">// L is used to denote the variable value is of type long or ulong</span>
+<span class="hljs-built_in">ulong</span> fooUlong = <span class="hljs-number">100000L</span>;
+
+<span class="hljs-built_in">double</span> fooDouble = <span class="hljs-number">123.4</span>;
+<span class="hljs-built_in">float</span> fooFloat = <span class="hljs-number">234.5f</span>;
+<span class="hljs-built_in">decimal</span> fooDecimal = <span class="hljs-number">150.3</span>m;
+
+boolean fooBoolean = <span class="hljs-literal">true</span>; <span class="hljs-comment">// or false</span>
+
+<span class="hljs-built_in">char</span> fooChar = <span class="hljs-string">&#x27;A&#x27;</span>;
+<span class="hljs-built_in">string</span> fooString = <span class="hljs-string">&quot;awesome possum&quot;</span>; <span class="hljs-comment">// a reference type, so it can be set to null</span>
+
+<span class="hljs-comment">// ---------- STRING METHODS ----------</span>
+
+<span class="hljs-comment">// INDEXING</span>
+    <span class="hljs-comment">// can access characters from a string via index, similar to Python</span>
+    <span class="hljs-comment">// strings are immutable upon instantiation, so stuff like fooString[1] = &#x27;X&#x27; is not possible</span>
+
+<span class="hljs-built_in">char</span> charFromString = fooString[<span class="hljs-number">1</span>]; <span class="hljs-comment">// evaluates to the character of index 1, &#x27;w&#x27;</span>
+
+<span class="hljs-comment">// ---------- CONSTANT ----------</span>
+    <span class="hljs-comment">// const makes a variable immutable </span>
+    <span class="hljs-comment">// so does read-only</span>
+    <span class="hljs-comment">// const values that require calacultion are evaluated at compile time</span>
+
+<span class="hljs-keyword">const</span> <span class="hljs-built_in">int</span> HoursPerWeek = <span class="hljs-number">9001</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-built_in">int</span> CalculatedHoursPerWeek = <span class="hljs-number">60</span> * <span class="hljs-number">60</span> * <span class="hljs-number">24</span> * <span class="hljs-number">7</span>;
+</code></pre>
+<h2>Data structures</h2>
+<pre><code class="language-cs"><span class="hljs-comment">// ---------- ARRAY ----------</span>
+    <span class="hljs-comment">// zero-indexed</span>
+    <span class="hljs-comment">// array size must be statically declared at declaration</span>
+    <span class="hljs-comment">// arrays are mutable, their values can be altered even after initial declaration and assignment</span>
+    <span class="hljs-comment">// can store elements of multiple types</span>
+    <span class="hljs-comment">// can be assigned as null</span>
+
+<span class="hljs-built_in">int</span>[] intArray = <span class="hljs-keyword">new</span> <span class="hljs-built_in">int</span>[<span class="hljs-number">10</span>]; <span class="hljs-comment">// instantiates an int array that can store 10 integers</span>
+<span class="hljs-built_in">int</span>[] y = {<span class="hljs-number">9000</span>, <span class="hljs-number">1000</span>, <span class="hljs-number">1337</span>}; <span class="hljs-comment">// can also declare an array literal like this</span>
+
+<span class="hljs-comment">// ---------- ARRAY METHODS ----------</span>
+
+<span class="hljs-comment">// INDEXING</span>
+    <span class="hljs-comment">// can access array elements via index, similar to Python</span>
+
+intArray[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>; <span class="hljs-comment">// reassigning the second element of the int array of index 1 to the int value 1</span>
+
+<span class="hljs-comment">// ----------- LIST ----------</span>
+    <span class="hljs-comment">// zero-indexed</span>
+    <span class="hljs-comment">// list size is dynamic, so it does not need to be declared at declaration, similar to Vector in Rust</span>
+    <span class="hljs-comment">// usually instantiated with a single type, like conventional C arrays</span>
+    <span class="hljs-comment">// used more commonly than arrays as lists are more flexible</span>
+    <span class="hljs-comment">// can never be assigned as null</span>
+    <span class="hljs-comment">// &lt;&gt; are generics, elaborated on below</span>
+
+List&lt;Int&gt; intList = <span class="hljs-keyword">new</span> List&lt;<span class="hljs-built_in">int</span>&gt;(); <span class="hljs-comment">// instantiates an int list that can store a dynamic number of ints</span>
+List&lt;<span class="hljs-built_in">string</span>&gt; stringList = <span class="hljs-keyword">new</span> List&lt;<span class="hljs-built_in">string</span>&gt;();
+List&lt;<span class="hljs-built_in">int</span>&gt; z = <span class="hljs-keyword">new</span> List&lt;<span class="hljs-built_in">int</span>&gt; {<span class="hljs-number">9000</span>, <span class="hljs-number">1000</span>, <span class="hljs-number">1337</span>}; <span class="hljs-comment">// a List literal, though since its dynamically sized this basically doesn&#x27;t matter</span>
+
+<span class="hljs-comment">// ---------- LIST METHODS ----------</span>
+
+intList.Add(<span class="hljs-number">1</span>); <span class="hljs-comment">// same as .append() in Python</span>
+
+<span class="hljs-comment">// ---------- OTHER DATA STRUCTURES ----------</span>
+    <span class="hljs-comment">// Dictionary (hash-map implementation in C#)</span>
+    <span class="hljs-comment">// Stack, Queue</span>
+    <span class="hljs-comment">// HashSet</span>
+    <span class="hljs-comment">// Read-only Collections</span>
+    <span class="hljs-comment">// Tuple (from .NET 4+)</span>
+</code></pre>
+<h2>Operators</h2>
+<pre><code class="language-cs"><span class="hljs-comment">// ---------- ARITHMETIC OPERATOR ----------</span>
+
+<span class="hljs-built_in">int</span> i1 = <span class="hljs-number">1</span>, i2 = <span class="hljs-number">2</span> <span class="hljs-comment">// shorthand for multiple declaration and assignment</span>
+i1 + i2; <span class="hljs-comment">// addition</span>
+i1 - i2; <span class="hljs-comment">// subtraction</span>
+i1 * i2; <span class="hljs-comment">// multiplication</span>
+i1 / i2; <span class="hljs-comment">// division</span>
+i1 % i2; <span class="hljs-comment">// modulo</span>
+i1++; <span class="hljs-comment">// post-increment, increment by one after returning value</span>
+++i1; <span class="hljs-comment">// pre-increment, increment by one before returning value</span>
+i1--; <span class="hljs-comment">// post-decrement, decrement by one after returning value</span>
+--i1; <span class="hljs-comment">// pre-decrement, decrement by one before returning value</span>
+
+<span class="hljs-comment">// ---------- COMPARISON OPERATOR ----------</span>
+
+i1 == i2; <span class="hljs-comment">// complete equality operator</span>
+i1 != i2; <span class="hljs-comment">// complete inequality operator</span>
+i1 &gt; i2; <span class="hljs-comment">// comparison operator</span>
+i1 &lt; i2; <span class="hljs-comment">// comparison operator</span>
+i1 &gt;= i2; <span class="hljs-comment">// comparison operator</span>
+i1 &lt;= i2; <span class="hljs-comment">// comparison operator</span>
+
+<span class="hljs-comment">// ---------- LOGICAL OPERATOR ----------</span>
+boolean a = <span class="hljs-literal">true</span>;
+boolean b = <span class="hljs-literal">false</span>;
+a &amp;&amp; b; <span class="hljs-comment">// logical AND operator</span>
+a || b; <span class="hljs-comment">// logical OR operator</span>
+</code></pre>
+<h2>Control structures</h2>
+<pre><code class="language-cs"><span class="hljs-comment">// ---------- IF ELSE IF ELSE ----------</span>
+
+<span class="hljs-built_in">int</span> j = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">if</span> (j == <span class="hljs-number">10</span>) {
+    Console.WriteLine(<span class="hljs-string">&quot;I am invincible&quot;</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (j &gt; <span class="hljs-number">10</span>) {
+    Console.WriteLine(<span class="hljs-string">&quot;Neato&quot;</span>);
+} <span class="hljs-keyword">else</span> {
+    Console.WriteLine(<span class="hljs-string">&quot;Pronto&quot;</span>);
+}
+
+<span class="hljs-comment">// ---------- TERNARY OPERATOR ----------</span>
+    <span class="hljs-comment">// &lt;condition&gt; ? &lt;run if true&gt; : &lt;run if false&gt;</span>
+
+<span class="hljs-built_in">int</span> toCompare = <span class="hljs-number">17</span>;
+<span class="hljs-built_in">string</span> isTrue = toCompare == <span class="hljs-number">17</span> ? <span class="hljs-string">&quot;yes it is 17&quot;</span> : <span class="hljs-string">&quot;no it is not 17&quot;</span>;
+
+<span class="hljs-comment">// ---------- WHILE LOOP ----------</span>
+    <span class="hljs-comment">// while and do while loops are both available</span>
+    <span class="hljs-comment">// continue skips the current iteration</span>
+    <span class="hljs-comment">// break breaks from the current loop completely</span>
+
+<span class="hljs-built_in">int</span> fooWhile = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">while</span> (fooWhile &lt; <span class="hljs-number">100</span>) {
+    fooWhile++;
+}
+
+<span class="hljs-built_in">int</span> fooDoWhile = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">do</span> {
+    fooDoWhile++;
+} <span class="hljs-keyword">while</span> (fooDoWhile &lt; <span class="hljs-number">100</span>);
+
+<span class="hljs-comment">// ----------- FOR LOOP ----------</span>
+    <span class="hljs-comment">// conventional C-style for loops exist</span>
+    <span class="hljs-comment">// foreach loops also exist</span>
+
+<span class="hljs-keyword">for</span> (<span class="hljs-built_in">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) {
+    Console.Write(i);
+}
+
+<span class="hljs-keyword">foreach</span> (<span class="hljs-built_in">char</span> character <span class="hljs-keyword">in</span> <span class="hljs-string">&quot;Hello World!&quot;</span>.ToCharArray()) {
+    <span class="hljs-comment">// iterates over every element of the char array created from the string &quot;Hello World!&quot;</span>
+    Console.Write(character);
+}
+
+<span class="hljs-comment">// ---------- SWITCH CASE GOTO DEFAULT ----------</span>
+    <span class="hljs-comment">// remember to include the break statement to prevent logic from falling through</span>
+    <span class="hljs-comment">// goto can transfer logic flow from one case statement to another, and any code below it in the same case will be skipped similar to a break statement</span>
+    <span class="hljs-comment">// default cas can be included as well</span>
+
+<span class="hljs-built_in">int</span> month = <span class="hljs-number">3</span>;
+<span class="hljs-built_in">string</span> monthString; <span class="hljs-comment">// you can declare a variable first and assign it later</span>
+<span class="hljs-keyword">switch</span> (month) {
+    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
+        monthString = <span class="hljs-string">&quot;January&quot;</span>;
+        <span class="hljs-keyword">goto</span> <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>; <span class="hljs-comment">// continues logic flow in case 3</span>
+    <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:
+        monthString = <span class="hljs-string">&quot;February&quot;</span>;
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>:
+        monthString = <span class="hljs-string">&quot;March&quot;</span>;
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-literal">default</span>:
+        monthString = <span class="hljs-string">&quot;Some other month&quot;</span>;
+        <span class="hljs-keyword">break</span>;
+}
+</code></pre>
+<h2>Classes</h2>
+<pre><code class="language-cs"><span class="hljs-comment">// ---------- DEFINITION ----------</span>
+    <span class="hljs-comment">// ACCESS MODIFIERS </span>
+        <span class="hljs-comment">// public =&gt; members are globally accessible from any part of the program</span>
+        <span class="hljs-comment">// private =&gt; members are only accessible from within the class or struct they are declared in</span>
+        <span class="hljs-comment">// protected =&gt; members are only accesible from within the class or from derived subclasses, unaccessible from outside the class hierachy</span>
+    <span class="hljs-comment">// static =&gt; class members that belong to the class instead of instances of the class</span>
+    <span class="hljs-comment">// get =&gt; a method to retrieve a value</span>
+    <span class="hljs-comment">// set =&gt; a method to set a value</span>
+
+<span class="hljs-comment">// ---------- CLASS ----------</span>
+    <span class="hljs-comment">// a class can inherit from only one parent class</span>
+    <span class="hljs-comment">// a class can inherit from any number of interfaces</span>
+    <span class="hljs-comment">// a parent class is listed first before interfaces if applicable</span>
+    <span class="hljs-comment">// methods can share the same name as long as at least the parameter type signature is unique to differentiate the two methods</span>
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Bicycle</span> {
+    <span class="hljs-keyword">public</span> <span class="hljs-built_in">int</span> Cadence {
+        <span class="hljs-keyword">get</span> {
+            <span class="hljs-keyword">return</span> _cadence;
+        }
+        <span class="hljs-keyword">set</span> {
+            _cadence = <span class="hljs-keyword">value</span>;
+        }
+    }
+    <span class="hljs-keyword">private</span> <span class="hljs-built_in">int</span> _cadence;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">SpeedUp</span>(<span class="hljs-params"><span class="hljs-built_in">int</span> increment = <span class="hljs-number">1</span></span>)</span> {
+        _speed += increment;
+    }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">SlowDown</span>(<span class="hljs-params"><span class="hljs-built_in">int</span> decrement = <span class="hljs-number">1</span></span>)</span> {
+        _speed -= decrement;
+    }
+}
+
+<span class="hljs-comment">// ---------- INHERITANCE ----------</span>
+
+<span class="hljs-comment">// the subclass MountainBike inherits from the parent class Bicycle and the type signatures of members from interfaces IJumpable and IBreakable</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title">MountainBike</span>: <span class="hljs-title">Bicycle</span>, <span class="hljs-title">IJumpable</span>, <span class="hljs-title">IBreakable</span> {
+    <span class="hljs-built_in">int</span> damage = <span class="hljs-number">0</span>;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Jump</span>(<span class="hljs-params"><span class="hljs-built_in">int</span> meters</span>)</span> {
+        damage += meters;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-built_in">bool</span> Broken {
+        <span class="hljs-keyword">get</span> {
+            <span class="hljs-keyword">return</span> damage &gt; <span class="hljs-number">100</span>;
+        }
+    }
+}
+</code></pre>
+<h2>Subclasses</h2>
+<pre><code class="language-cs"><span class="hljs-comment">// ---------- SUBCLASS ----------</span>
+    <span class="hljs-comment">// : allows for subclasses to inherit from their parent classes</span>
+    <span class="hljs-comment">// override can be used to override certain members (generally methods) of the parent class as desired</span>
+
+<span class="hljs-keyword">class</span> <span class="hljs-title">PennyFarthing</span>: <span class="hljs-title">Bicycle</span> {
+    <span class="hljs-comment">// the PennyFarthing class now inherits all the members of the parent Bicycle class besides those overriden</span>
+}
+</code></pre>
+<h2>Interfaces</h2>
+<pre><code class="language-cs"><span class="hljs-comment">// ---------- INTERFACE ----------</span>
+    <span class="hljs-comment">// : allows for classes to inherit any number of interfaces</span>
+    <span class="hljs-comment">// interface declares an interface</span>
+    <span class="hljs-comment">// interfaces contain the type signatures of class members and drop the implementation</span>
+    <span class="hljs-comment">// interface members are implictly public</span>
+
+<span class="hljs-keyword">interface</span> <span class="hljs-title">IJumpable</span> {
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Jump</span>(<span class="hljs-params"><span class="hljs-built_in">int</span> meters</span>)</span>;
+}
+
+<span class="hljs-keyword">interface</span> <span class="hljs-title">IBreakable</span> {
+    <span class="hljs-built_in">bool</span> Broken {
+        <span class="hljs-keyword">get</span>;
+    }
+}
+</code></pre>
+<h2>Objects</h2>
+<pre><code class="language-cs"><span class="hljs-comment">// ---------- OBJECT -----------</span>
+    <span class="hljs-comment">// new instantiates a new object off a class</span>
+    <span class="hljs-comment">// object methods can be called with . dot notation</span>
+    <span class="hljs-comment">// it is good convention to use getter and setter methods</span>
+
+Bicycle trek = <span class="hljs-keyword">new</span> Bicycle();
+trek.SpeedUp(<span class="hljs-number">3</span>);
+trek.Cadence = <span class="hljs-number">100</span>; 
+
+PennyFarthing funbike = <span class="hljs-keyword">new</span> PennyFarthing(<span class="hljs-number">1</span>,<span class="hljs-number">10</span>);
+</code></pre>
+<h2>More on</h2>
+<ul>
+<li>generics</li>
+<li>optional parameters for methods</li>
+<li>yield</li>
+<li>ref for references</li>
+<li>default and specific constructors</li>
+<li>enum</li>
+<li>exception handling</li>
+<li>internal</li>
+<li>protected internal</li>
+<li>virtual</li>
+<li>partial</li>
+<li>delegate</li>
+<li>parallel framework</li>
+<li>asynchronous programming</li>
+<li>web dev with ASP .NET core</li>
+<li><a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/">microsoft C# documentation</a></li>
+<li><a href="https://dotnet.microsoft.com/en-us/learn">web dev with .NET</a></li>
+</ul>
