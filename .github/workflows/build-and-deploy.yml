@@ -1,0 +1,44 @@
+name: Build and Deploy Static Site
+
+on:
+  push:
+    branches:
+      - main  
+    paths:
+    - '**.md'  
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: |
+          npm install -g markdown-it
+          npm install -g markdown-it-katex
+          npm install -g markdown-it-highlightjs
+
+      - name: Create output directory
+        run: mkdir -p output
+
+      - name: Convert Markdown to HTML
+        run: |
+          for file in src/*.md; do
+            filename=$(basename "$file" .md)
+            if [ "$filename" != "README.md" ]; then
+              markdown-it "$file" -o "output/${filename%.md}.html" --highlight
+            fi
+          done
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output
