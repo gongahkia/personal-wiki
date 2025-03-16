@@ -16,6 +16,8 @@ These are a collection of things I would ask my people to read if I were to ever
 * [*Ikigai: The Japanese Secret to a Joyful Life*](https://www.japan.go.jp/kizuna/2022/03/ikigai_japanese_secret_to_a_joyful_life.html) by japan.go.jp
 * [*The XY Problem*](https://xyproblem.info/) by xyproblem.info
 * [*Grant Sanderson: Math, Manim, Neural Networks & Teaching with 3Blue1Brown | Lex Fridman Podcast #118*](https://youtu.be/U_6AYX42gkU?feature=shared) by Lex Fridman
+* [*What Makes People Engage With Math | Grant Sanderson | TEDxBerkeley*](https://youtu.be/s_L-fp8gDzY?feature=shared) by TEDx Talks
+* [*Steve Jobs' 2005 Stanford Commencement Address*](https://youtu.be/UF8uR6Z6KLc?feature=shared) by Stanford
 
 ## Admin
 
