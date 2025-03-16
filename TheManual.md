@@ -1,10 +1,9 @@
 # `The manual`
 
-I believe reading is an [irreplacable](https://humanspsychology.quora.com/What-s-the-moment-that-you-realized-reading-is-irreplaceable) skill.
+Reading and listening are [irreplacable](https://humanspsychology.quora.com/What-s-the-moment-that-you-realized-reading-is-irreplaceable) skills.
 
-These are a collection of things I would ask my people to read if I were to ever start a company.
+Here are a collection of things I would ask my people to read if I were to ever start a company.
 
-![](https://i.pinimg.com/originals/cf/67/72/cf67722c3556cb12975efb0e50474a2d.gif)
 ## Management
 
 * [*What silicon valley gets right on software engineers*](https://blog.pragmaticengineer.com/what-silicon-valley-gets-right-on-software-engineers/) by Gergely Orosz
@@ -16,6 +15,7 @@ These are a collection of things I would ask my people to read if I were to ever
 * [*Ikigai: The Japanese Secret to a Joyful Life*](https://www.japan.go.jp/kizuna/2022/03/ikigai_japanese_secret_to_a_joyful_life.html) by japan.go.jp
 * [*The XY Problem*](https://xyproblem.info/) by xyproblem.info
 * [*Grant Sanderson: Math, Manim, Neural Networks & Teaching with 3Blue1Brown | Lex Fridman Podcast #118*](https://youtu.be/U_6AYX42gkU?feature=shared) by Lex Fridman
+* [*What "Follow Your Dreams" Misses | Harvey Mudd Commencement Speech 2024*](https://youtu.be/W3I3kAg2J7w?feature=shared) by 3Blue1Brown
 * [*What Makes People Engage With Math | Grant Sanderson | TEDxBerkeley*](https://youtu.be/s_L-fp8gDzY?feature=shared) by TEDx Talks
 * [*Steve Jobs' 2005 Stanford Commencement Address*](https://youtu.be/UF8uR6Z6KLc?feature=shared) by Stanford
 
@@ -34,3 +34,5 @@ These are a collection of things I would ask my people to read if I were to ever
 ## Books
 
 * [*What I Talk About When I Talk About Running*](https://en.wikipedia.org/wiki/What_I_Talk_About_When_I_Talk_About_Running) by Haruki Murakami
+
+![](https://i.pinimg.com/originals/cf/67/72/cf67722c3556cb12975efb0e50474a2d.gif)
