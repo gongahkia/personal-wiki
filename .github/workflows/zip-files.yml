@@ -17,7 +17,7 @@ jobs:
           zip notes.zip $(cat markdown_files.txt)
           
       - name: Upload zip as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: markdown-files
           path: markdown-collection.zip
