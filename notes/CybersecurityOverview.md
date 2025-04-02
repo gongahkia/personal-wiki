@@ -484,3 +484,4 @@ hash = ph.hash(data)
 * [*Friendly Intro to Hardware Security Modules (HSMs)*](https://youtu.be/uewhaNg1BhE?feature=shared) by Studying With Alex
 * [*Intro to Encryption, in Friendly Terms: Cryptography, AES, Man In The Middle, and HTTPS*](https://youtu.be/AXkRoFOP-ug?feature=shared) by Studying With Alex
 * [*Password Storage Tier List: encryption, hashing, salting, bcrypt, and beyond*](https://youtu.be/qgpsIBLvrGY?feature=shared) by Studying With Alex
+* [Get Started in Cybersecurity 2025 (A Guide)](https://youtu.be/UoHSVHF-GUE?feature=shared) by Grant Collins
