@@ -4,7 +4,7 @@ on:
   push:
     branches: [ main ]
     paths:
-      - '**.md'
+      - 'notes/**.md'
   workflow_dispatch:
 
 jobs:
@@ -37,7 +37,7 @@ jobs:
       - name: Update README with release link
         run: |
           RELEASE_URL="${{ steps.create_release.outputs.html_url }}"
-          sed -i 's|\[Download\](.*) my notes as a ZIP file.|\[Download\]('"$RELEASE_URL"') my notes as a ZIP file.|' README.md
+          sed -i 's|\[**Download**\](.*) my notes as a ZIP file.|\[Download\]('"$RELEASE_URL"') my notes as a ZIP file.|' README.md
           
       - name: Commit and push changes
         run: |
