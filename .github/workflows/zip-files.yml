@@ -22,6 +22,22 @@ jobs:
           name: markdown-files
           path: notes.zip
 
+      - name: Update README with artifact link
+        run: |
+          RUN_ID=${{ github.run_id }}
+          REPO="${{ github.repository }}"
+          ARTIFACT_URL="https://github.com/$REPO/actions/runs/$RUN_ID/artifacts"
+          sed -i 's|\[Download\](.*) my notes as a ZIP file.|\[Download\]('"$ARTIFACT_URL"') my notes as a ZIP file.|' README.md
+          cat README.md
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add README.md
+          git diff --quiet && git diff --staged --quiet || git commit -m "Update artifact download link in README [skip ci]"
+          git push
+
       - name: Upload to release (optional)
         if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
         uses: svenstaro/upload-release-action@v2
