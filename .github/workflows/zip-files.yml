@@ -13,8 +13,8 @@ jobs:
 
       - name: Find and zip markdown files
         run: |
-          find . -name "*.md" -type f -not -path "./.git/*" -not -path "./.github/*" > markdown_files.txt
-          zip notes.zip $(cat markdown_files.txt)
+          find . -name "*.md" -type f -not -path "./.git/*" -not -path "./.github/*" > notes.txt
+          zip notes.zip $(cat notes.txt)
 
       - name: Upload zip as artifact
         uses: actions/upload-artifact@v4
