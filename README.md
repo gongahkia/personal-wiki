@@ -2,6 +2,6 @@
   
 # `personal wiki`  
   
-[Download]() my notes as a ZIP file.  
+[Download](https://github.com/gongahkia/personal-wiki/actions/runs/14211534319/artifacts) my notes as a ZIP file.  
   
 [Sponsor](https://github.com/sponsors/gongahkia) this repository.  
