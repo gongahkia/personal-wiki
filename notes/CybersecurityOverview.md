@@ -485,3 +485,4 @@ hash = ph.hash(data)
 * [*Intro to Encryption, in Friendly Terms: Cryptography, AES, Man In The Middle, and HTTPS*](https://youtu.be/AXkRoFOP-ug?feature=shared) by Studying With Alex
 * [*Password Storage Tier List: encryption, hashing, salting, bcrypt, and beyond*](https://youtu.be/qgpsIBLvrGY?feature=shared) by Studying With Alex
 * [*Get Started in Cybersecurity 2025 (A Guide)*](https://youtu.be/UoHSVHF-GUE?feature=shared) by Grant Collins
+* [*Guide to becoming a Cyber Security Expert*](https://roadmap.sh/cyber-security) by roadmap.sh
