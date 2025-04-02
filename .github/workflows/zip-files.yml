@@ -9,26 +9,25 @@ jobs:
   zip-markdown:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        
+      - uses: actions/checkout@v4
+
       - name: Find and zip markdown files
         run: |
           find . -name "*.md" -type f -not -path "./.git/*" -not -path "./.github/*" > markdown_files.txt
           zip notes.zip $(cat markdown_files.txt)
-          
+
       - name: Upload zip as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: markdown-files
-          path: markdown-collection.zip
-          
+          path: notes.zip
+
       - name: Upload to release (optional)
         if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: markdown-collection.zip
+          file: notes.zip
           asset_name: markdown-collection.zip
           tag: ${{ github.ref }}
           overwrite: true
-
