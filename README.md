@@ -2,6 +2,6 @@
   
 # `personal wiki`  
   
-<a href=""><b>Download</b></a> my notes as a ZIP file.  
+<a href="https://github.com/gongahkia/personal-wiki/releases/tag/notes-2025-04-02"><b>Download</b></a>my notes as a ZIP file.</a>  
   
 [**Sponsor**](https://github.com/sponsors/gongahkia) this repository.  
