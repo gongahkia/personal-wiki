@@ -27,7 +27,7 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           tag: notes-${{ steps.date.outputs.date }}
-          name: "Markdown Notes ${{ steps.date.outputs.date }}"
+          name: "Personal Wiki Notes ${{ steps.date.outputs.date }}"
           body: "Automatically generated release containing all Markdown notes as of ${{ steps.date.outputs.date }}"
           artifacts: "notes.zip"
           allowUpdates: true
