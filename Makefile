@@ -61,19 +61,6 @@ new:
 	echo "" >> "$$title".md; \
 	echo "Markdown file created: $$title.md"
 
-read:
-	@if [ -f "notes.zip" ]; then \
-		echo "Found notes.zip, unzipping..."; \
-		unzip -o notes.zip; \
-			echo "Unzipped markdown files successfully."; \
-	elif [ -f "notes.zip" ]; then \
-		echo "Found notes.zip, unzipping..."; \
-		unzip -o notes.zip; \
-		echo "Unzipped notes successfully."; \
-	else \
-		echo "No zip file found."; \
-	fi
-
 up:
 	@git pull
 	@git status
