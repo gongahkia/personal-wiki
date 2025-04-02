@@ -19,7 +19,7 @@ jobs:
 
       - name: Find and zip markdown files
         run: |
-          find . -name "*.md" -type f -not -path "./.git/*" -not -path "./.github/*" > notes.txt
+          find ./notes -name "*.md" -type f > notes.txt
           zip notes.zip $(cat notes.txt)
 
       - name: Create/Update Release
@@ -37,12 +37,11 @@ jobs:
       - name: Update README with release link
         run: |
           RELEASE_URL="${{ steps.create_release.outputs.html_url }}"
-          sed -i 's|\[**Download**\](.*) my notes as a ZIP file.|\[Download\]('"$RELEASE_URL"') my notes as a ZIP file.|' README.md
+          sed -i 's|\[**Download**](.*) my notes as a ZIP file.|\[**Download**]('"$RELEASE_URL"') my notes as a ZIP file.|' README.md
           
       - name: Commit and push changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add README.md
-          git diff --quiet && git diff --staged --quiet || git commit -m "Update release download link in README [skip ci]"
-          git push
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update release download link in README [skip ci]" && git push)
