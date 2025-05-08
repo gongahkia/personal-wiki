@@ -1,8 +1,6 @@
 # `Work better`
 
-Mindset is everything.  
-  
-Learn from the best.  
+Mindset is everything. Learn from the best.
 
 ## Jean-Michel Basquiat
 
@@ -27,7 +25,7 @@ Learn from the best.
 
 ## Miyamoto Musashi
 
-![](https://i.redd.it/k2xnp9yctuw91.jpg)
+![](https://c4.wallpaperflare.com/wallpaper/229/581/150/manga-anime-musashi-miyamoto-musashi-hd-wallpaper-preview.jpg)
 
 1. Accept everything just the way it is.
 2. Do not regret what you have done.
@@ -64,27 +62,34 @@ Learn from the best.
   
 ## Shūzō Matsuoka
 
-![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaM4k1AXn7mIgdkPocUweM6lJEJ6pFTNYDBg&s)
+![](https://static.wikia.nocookie.net/joke-battles/images/8/85/Matsuoka_2.jpg/revision/latest/scale-to-width-down/1200?cb=20160613022400)
 
 1. Are you just living day to day? Are you lost and confused? You can't think about the past. It'll just turn to anger. You also can't think about the future. It just turns to worry. In that case, hold on for dear life. Stake your entire life in the here and now. If you live in the here and now, you will be ALIVE!
 2. Be more passionate. Burn the passionate blood. When people become passionate, they find their true selves. Be more passionate!
 
+## Beau Miles
+
+![](https://awschool.com.au/content/uploads/Beau-Miles.jpg)
+
+1. Adventure isn’t about where you go, but how you see the world.
+2. Life’s best lessons are often found off the beaten path.
+3. I’ve come to realise that everything is a waste of time unless you think of it otherwise.
+4. When something familiar to you feels exotic, you're winning.
+
 ## My work ethic
 
-![](https://i.kym-cdn.com/photos/images/newsfeed/001/919/939/366.jpg)
-
-I am still learning. Here are some things I practise.  
+Here are some things I practise. I am still learning.
   
 1. Make useless distraction impossible  
 2. Read more  
-3. Write more  
+3. Write more thoughtfully
 4. Create and produce fast, like you're being chased  
 5. Never be afraid to be seen trying
 6. Be picky with your tastes  
 7. Know your audience  
-8. Know who you are and be proud of yourself
-9. Express your ideas clearly in your own way
-10. Exploit the exponential function
+8. Know who you are 
+9. Express yourself clearly in your own way
+10. Be content and find the fun where you are 
 
 ## More on  
 
@@ -99,6 +104,7 @@ I am still learning. Here are some things I practise.
 * [Grant Sanderson: Math, Manim, Neural Networks & Teaching with 3Blue1Brown | Lex Fridman Podcast #118](https://youtu.be/U_6AYX42gkU?feature=shared) by Lex Fridman 
 * [What "Follow Your Dreams" Misses | Harvey Mudd Commencement Speech 2024](https://youtu.be/W3I3kAg2J7w?feature=shared) by 3Blue1Brown
 * [POV: You're mastering your mindset](https://youtu.be/Rl1ImG2b1k8?feature=shared) by HM Fly
+* [A weekend away after the hardest year of my life](https://youtu.be/-dKZuyQsXWg?feature=shared) by Beau Miles  
   
 ### Additonal reading  
   
@@ -114,3 +120,4 @@ I am still learning. Here are some things I practise.
 * [Absurdism: The Philosophy That Changed My Mindset](https://youtu.be/A6F2Am9WI5U?si=f8MMTL_UaVGPt-6b) by Whispering ideas  
 * [Creatives I'm inspired by and the Lessons I've learned from them](https://youtu.be/b24ep5-RYQM?si=Chfzas7Im__U-M_o) by author and moon  
 * [Flying to Peru with absolutely no plan | A Testament to Spontaneity](https://youtu.be/Tx95iN4ElpA?si=iT1gIuW5texs8QtT) by Alex Rogers  
+* [The Backyard Adventurer](https://beaumiles.com/the-backyard-adventurer/) by Beau Miles
