@@ -1,56 +1,58 @@
 # `Carpentry`
 
+Specifically covering [woodworking](https://en.wikipedia.org/wiki/Woodworking).
+
 ## Definitions
 
 Common carpentry terminology.
 
-* Stud: Vertical framing member in walls, usually 2x4 or 2x6.
-* Joist: Horizontal framing member, typically in floors or ceilings.
-* Bearing Wall: Wall that supports weight from above (load-bearing).
-* Butt Joint: Simple joint where two pieces are butted together.
-* Dovetail: Interlocking joint often used in drawers for strength.
-* Plumb: Perfectly vertical alignment.
-* Level: Perfectly horizontal alignment.
-* Miter: An angled cut, typically 45°, for corners and frames.
-* Header: Beam above a door or window opening.
-* Face: The visible side of a board once installed.
-* Grain: Direction of wood fibers, important for cutting and finishing.
-* On Center (OC): Measurement from the center of one framing member to the next.
-* Kickback: When a tool forcefully ejects material, a safety hazard.
-* Tear-Out: Splintering or chipping of wood during cutting.
+* Face: Visible side of an installed board 
+* Stud: Vertical framing member for walls *(2x4, 2x6)*
+* Joist: Horizontal framing member for floors or ceilings
+* Bearing Wall: Load-bearing wall that supports weight from above 
+* Butt Joint: Joint comprising two pieces of wood butt together
+* Dovetail: Strong interlocking joint 
+* Level: Perfectly horizontal alignment
+* Plumb: Perfectly vertical alignment
+* Miter: Angled cut for corners and frames *(45°)*
+* Header: Beam above doors/window openings
+* Grain: Direction of wood fibers
+* On Center: Measurement from the center of one framing member to the next
+* Kickback: Safety hazard when a tool forcefully ejects material
+* Tear-Out: Splintering/chipping of wood during cutting
 
 ## Tools
 
 ### Hand Tools
 
-* Claw Hammer: Drives and removes nails; a core tool for any carpenter.
-* Tape Measure: For accurate measurements and layout.
-* Carpenter’s Pencil: For marking cut lines and measurements.
-* Utility Knife: For trimming, scoring, and general cutting tasks.
-* Speed Square & Framing Square: For marking and checking right angles and layout work.
-* Chalk Line: Snaps straight lines on large surfaces.
-* Level: Ensures surfaces are horizontal (level) or vertical (plumb).
-* Wood Chisels: For shaping and cleaning out joints.
-* Screwdriver Set: Both flathead and Phillips for driving screws.
-* Nail Puller: For removing embedded nails.
-* Clamps: Hold pieces together during assembly or gluing.
-* Hand Planes: For smoothing and shaping wood surfaces.
+* Claw Hammer: Drive and remove nails
+* Tape Measure: Measurement 
+* Carpenter’s Pencil: Mark cut lines 
+* Utility Knife: Trim and score surfaces 
+* Speed Square, Framing Square: Mark and check right angles
+* Chalk Line: Snaps straight lines on large surfaces
+* Level: Ensure level and plumb surfaces 
+* Wood Chisels: Shape and clean out joints
+* Screwdriver: Drive screws
+* Nail Puller: Remove embedded nails
+* Clamps: Hold pieces together during assembly and gluing
+* Hand Planes: Smooth and shape wood surfaces
 
 ### Power Tools
 
-* Circular Saw: For straight cuts in wood and sheet goods.
-* Power Drill: For drilling holes and driving screws.
-* Reciprocating Saw: For demolition and rough cutting.
-* Miter Saw: For precise crosscuts and angled cuts.
-* Table Saw: For ripping boards and making precise cuts.
-* Jigsaw: For curved and intricate cuts.
+* Circular Saw: Straight cuts 
+* Power Drill: Drill holes and drive screws
+* Reciprocating Saw: Demolition and rough cutting work
+* Miter Saw: Precise crosscuts and angled cuts
+* Table Saw: Ripping boards and precise cuts
+* Jigsaw: Curved and intricate cuts
 
 ### Uncategorised
 
-* Combination Square: For marking and checking angles.
-* Tin Snips: For cutting thin metal or plastic.
-* Awl: For marking and starting holes.
-* Tool Belt: To keep tools handy while working.
+* Combination Square: Mark and check angles
+* Tin Snips: Cut thin metal or plastic
+* Awl: Mark and start holes
+* Tool Belt: Tool storage
 
 ## Techniques
 
