@@ -58,61 +58,57 @@ Common carpentry terminology.
 
 | Joint type | Details | Notes |
 | :--- | :--- | :--- |
-| [Butt joint](#butt-joint) | Ends of two boards butted together, simple and quick | Weakest *(often reinforced with nails or screws)* |
-| [Dado joint](#dado-joint) | Groove cut across one piece, other fits into it | Stronger than butt joints *(often used in shelving)* |
-| [Rebate joint](#rebate-joint) | Notch cut on edge of one piece, joined at right angle | Moderate strength *(often used in cabinets and frames)* |
-| [Mortise and Tenon joint](#mortise-and-tenon-joint) | Tenon fits into a matching Mortise hole | Very strong *(often used for frames and furniture)* |
-| [Dowel joint](#dowel-joint) | Wooden dowels align and join two pieces | Good strength *(requires precise drilling)* |
-| [Biscuit joint](#biscuit-joint) | Oval biscuit in slots for edge-to-edge joining | Moderate strength *(often used in panels)* |
-| [Dovetail joint](#dovetail-joint) | Interlocking wedge shapes for drawers and boxes | Excellent strength *(resists pulling apart)* |
-| [Box and Finger joint](#box-and-finger-joint) | Interlocking square fingers for boxes | Good strength *(less decorative than Dovetail joint)* |
-
-### Butt joint
+| Butt joint | Ends of two boards butted together, simple and quick | Weakest *(often reinforced with nails or screws)* |
+| Dado joint | Groove cut across one piece, other fits into it | Stronger than butt joints *(often used in shelving)* |
+| Rebate joint | Notch cut on edge of one piece, joined at right angle | Moderate strength *(often used in cabinets and frames)* |
+| Mortise and Tenon joint | Tenon fits into a matching Mortise hole | Very strong *(often used for frames and furniture)* |
+| Dowel joint | Wooden dowels align and join two pieces | Good strength *(requires precise drilling)* |
+| Biscuit joint | Oval biscuit in slots for edge-to-edge joining | Moderate strength *(often used in panels)* |
+| Dovetail joint | Interlocking wedge shapes for drawers and boxes | Excellent strength *(resists pulling apart)* |
+| Box and Finger joint | Interlocking square fingers for boxes | Good strength *(less decorative than Dovetail joint)* |
 
 <div style="display: flex; justify-content: space-between;">
-    <img src="https://mtcopeland.com/wp-content/uploads/2022/01/unnamed-min.png" width="49%">
+    <div>
+        <h3>Butt joint</h3>
+        <img src="https://mtcopeland.com/wp-content/uploads/2022/01/unnamed-min.png" width="95%">
+    </div>
+    <div>
+        <h3>Dado joint</h3>
+        <img src="https://images.squarespace-cdn.com/content/v1/5f1383605e8fb4756df3a2be/1596414521156-VBQ8ZD62RZDE5M5XFXES/Joinatree_Illustration_Marcus_Lee-44.jpg" width="95%">
+    </div>
 </div>
 
-### Dado joint
-
 <div style="display: flex; justify-content: space-between;">
-    <img src="https://mtcopeland.com/wp-content/uploads/2021/04/CRWN_SEO_TypesOfWoodJoints_DadoJoint-2-scaled.jpg" width="49%">
+    <div>
+        <h3>Rebate joint</h3>
+        <img src="https://www.familyhandyman.com/wp-content/uploads/2022/10/GettyImages-844389912-rabbet-joint-FHM.jpg" width=95%">
+    </div>
+    <div>
+        <h3>Mortise and Tenon joint</h3>
+        <img src="https://images.squarespace-cdn.com/content/v1/54ac9e94e4b0c9d38e248bf6/1505702234333-JNHD2RS10SV64TMS8W10/mortise-tenon-joint" width="95%">
+    </div>
 </div>
 
-### Rebate joint
-
 <div style="display: flex; justify-content: space-between;">
-    <img src="https://www.familyhandyman.com/wp-content/uploads/2022/10/GettyImages-844389912-rabbet-joint-FHM.jpg" width=49%">
+    <div>
+        <h3>Dowel joint</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Dowel_joint.png" width="95%">
+    </div>
+    <div>
+        <h3>Biscuit joint</h3>
+        <img src="https://cdn.shopify.com/s/files/1/0616/1711/1178/files/BiscuitJoining21e.jpg?v=1738768950" width="95%">
+    </div>
 </div>
 
-### Mortise and Tenon joint
-
 <div style="display: flex; justify-content: space-between;">
-    <img src="https://images.squarespace-cdn.com/content/v1/54ac9e94e4b0c9d38e248bf6/1505702234333-JNHD2RS10SV64TMS8W10/mortise-tenon-joint" width="49%">
-</div>
-
-### Dowel joint
-
-<div style="display: flex; justify-content: space-between;">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBwtHEieoJtnC-lEBGSNBh54SSEA8R5ANfEg&s" width="49%">
-</div>
-
-### Biscuit joint
-
-<div style="display: flex; justify-content: space-between;">
-    <img src="https://cdn.shopify.com/s/files/1/0616/1711/1178/files/BiscuitJoining21e.jpg?v=1738768950" width="49%">
-</div>
-
-### Dovetail joint
-
-<div style="display: flex; justify-content: space-between;">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1aDmH-TrNqaa3rTb91Q-h9p4TdSeetpiYCA&s" width="49%">
-</div>
-
-### Box and Finger joint
-
-<div style="display: flex; justify-content: space-between;">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5p7NseokQsHWXVIzMD7frAOYRp-A_IInJGg&s" width="49%">
+    <div>
+        <h3>Dovetail joint</h3>
+        <img src="https://technologystudent.com/joints_flsh/mortjoin27.png" width="95%">
+    </div>
+    <div>
+        <h3>Box and Finger joint</h3>
+        <img src="https://technologystudent.com/joints_flsh/mortjoin26.png" width="95%">
+    </div>
 </div>
 
 ## More on
