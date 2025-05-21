@@ -48,3 +48,4 @@ Yes. It is widely used in [production](https://stackoverflow.com/questions/45151
 * [*Create a Virtual Environment with Python*](https://gist.github.com/loic-nazaries/c25ce9f7b01b107573796b026522a3ad) by loic-nazaries on Github
 * [*venv — Creation of virtual environments*](https://docs.python.org/3/library/venv.html) Python official docs
 * [*How can I set up a virtual environment for Python in Visual Studio Code?*](https://stackoverflow.com/questions/54106071/how-can-i-set-up-a-virtual-environment-for-python-in-visual-studio-code/54107016) on Stack Overflow
+* [*direnv*](https://github.com/direnv/direnv) Github Repository
