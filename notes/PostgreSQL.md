@@ -70,3 +70,4 @@ SELECT name, age FROM users WHERE age > 25;
 * [postgresql documentation](https://www.postgresql.org/docs/)
 * [python and postgresql](https://www.postgresqltutorial.com/postgresql-python/)
 * [8 postgres orms](https://youtu.be/4QN1BzxF8wM?si=usqdY2lKvbkV5kK2)
+* [Directus Documentation](https://directus.io/docs/)

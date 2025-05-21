@@ -34,3 +34,4 @@ Then pick a frontend framework from below and get started.
 * [learn TypeScript in y minutes](https://learnxinyminutes.com/docs/typescript/)
 * [learn Ruby in y minutes](https://learnxinyminutes.com/docs/ruby/)
 * [What's the best frontend framework for solo devs?](https://www.reddit.com/r/Frontend/comments/16u86rv/whats_the_best_frontend_framework_for_solo_devs/)
+* [Quasar Documentation](https://quasar.dev/docs)

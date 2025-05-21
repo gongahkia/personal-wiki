@@ -42,5 +42,6 @@ example-cordova-app/
 
 * [Apache Cordova Core Documentation](https://cordova.apache.org/docs/en/latest/)
 * [vue3cordova](https://github.com/waliente/vue3cordova)
+* [Iaptic Cordova Documentation](https://www.iaptic.com/documentation/cordova)
 * [WebView API Reference](https://developer.android.com/reference/android/webkit/WebView)
 * [WKWebView Apple Developer Documentation](https://developer.apple.com/documentation/webkit/wkwebview)
