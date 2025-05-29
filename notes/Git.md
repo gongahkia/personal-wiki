@@ -95,3 +95,4 @@ git add -i # enables interactive adding of files to the index
 * [learn git in y minutes](https://learnxinyminutes.com/docs/git/)
 * [git branching](https://learngitbranching.js.org/)
 * [git immersion](https://gitimmersion.com/)
+* [github CLI](https://cli.github.com/manual/gh)
