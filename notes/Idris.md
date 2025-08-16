@@ -4,7 +4,7 @@ Dependently typed functional programming language with theorem proving capabilit
 
 ## Comments
 
-```
+```idris
 -- ---------- COMMENT ----------
 
 -- this is a single-line comment
@@ -16,7 +16,7 @@ Dependently typed functional programming language with theorem proving capabilit
 
 ## Printing
 
-```
+```idris
 -- ---------- PRINT ----------
     -- putStrLn => prints a string to stdout with newline
     -- putStr => prints a string to stdout without newline
@@ -31,7 +31,7 @@ printLn[1][2][3]
 
 ## Quickstart
 
-```
+```idris
 -- ---------- QUICKSTART ----------
     -- Idris is a purely functional language with dependent types
     -- types can depend on values, enabling very precise specifications
@@ -56,7 +56,7 @@ main = putStrLn "Hello, World!"
 
 ## Types
 
-```
+```idris
 -- ---------- TYPE ----------
     -- Int => fixed-precision integers
     -- Integer => arbitrary-precision integers  
@@ -93,7 +93,7 @@ numbers =[2][3][1]
 
 ## Operators
 
-```
+```idris
 -- ---------- OPERATOR ----------
 
 -- ARITHMETIC OPERATORS
@@ -121,7 +121,7 @@ numbers =[2][3][1]
 
 ## Control structures
 
-```
+```idris
 -- ---------- CONTROL STRUCTURE ----------
 
 -- CONDITIONALS
@@ -172,7 +172,7 @@ sum = foldl (+) 0
 
 ## Data structures
 
-```
+```idris
 -- ---------- DATA STRUCTURE ----------
 
 -- LISTS
@@ -235,7 +235,7 @@ exampleTree = Node (Leaf 1) (Leaf 2)
 
 ## Functions
 
-```
+```idris
 -- ---------- FUNCTION ----------
     -- function_name : Type -> Type -> ... -> ReturnType
     -- function_name arg1 arg2 ... = expression
