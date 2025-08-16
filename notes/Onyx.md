@@ -4,7 +4,7 @@ Modern systems programming language focused on simplicity and performance.
 
 ## Comments
 
-```
+```onyx
 // ---------- COMMENT ----------
 
 // this is a single-line comment
@@ -18,7 +18,7 @@ comment
 
 ## Printing
 
-```
+```onyx
 // ---------- PRINT ----------
     // print() => prints values to stdout without newline
     // println() => prints values to stdout with newline
@@ -31,7 +31,7 @@ printf("Formatted: %d\n", 42)
 
 ## Quickstart
 
-```
+```onyx
 // ---------- QUICKSTART ----------
     // Onyx is a systems language with modern syntax
     // statically typed with type inference
@@ -49,7 +49,7 @@ main :: () {
 
 ## Types
 
-```
+```onyx
 // ---------- TYPE ----------
     // i8, i16, i32, i64 => signed integers
     // u8, u16, u32, u64 => unsigned integers
@@ -70,7 +70,7 @@ owned_name: string = "Bob"
 
 ## Operators
 
-```
+```onyx
 // ---------- OPERATOR ----------
 
 // ARITHMETIC OPERATORS
@@ -100,7 +100,7 @@ owned_name: string = "Bob"
 
 ## Control structures
 
-```
+```onyx
 // ---------- CONTROL STRUCTURE ----------
 
 // CONDITIONALS
@@ -207,7 +207,7 @@ dereferenced: i32 = *ptr
 
 ## Functions
 
-```
+```onyx
 // ---------- FUNCTION ----------
     // function_name :: (parameters) -> return_type { body }
     // :: => function declaration operator
