@@ -4,7 +4,7 @@ High-performance programming language for AI development with Python compatibili
 
 ## Comments
 
-```
+```mojo
 # ---------- COMMENT ----------
 
 # this is a single-line comment
@@ -18,7 +18,7 @@ comment using docstrings
 
 ## Printing
 
-```
+```mojo
 # ---------- PRINT ----------
     # print() => prints values to stdout with newline by default
     # print() supports multiple arguments and formatting
@@ -31,7 +31,7 @@ print("No newline", end="")
 
 ## Quickstart
 
-```
+```mojo
 # ---------- QUICKSTART ----------
     # Mojo combines Python's usability with systems programming performance
     # fully compatible with Python ecosystem
@@ -56,7 +56,7 @@ fn mojo_function() -> String:
 
 ## Types
 
-```
+```mojo
 # ---------- TYPE ----------
     # Int => integer numbers
     # Float32, Float64 => floating-point numbers
@@ -80,7 +80,7 @@ var ptr: Pointer[Int] = Pointer[Int].alloc(10)
 
 ## Operators
 
-```
+```mojo
 # ---------- OPERATOR ----------
 
 # ARITHMETIC OPERATORS
@@ -112,7 +112,7 @@ var ptr: Pointer[Int] = Pointer[Int].alloc(10)
 
 ## Control structures
 
-```
+```mojo
 # ---------- CONTROL STRUCTURE ----------
 
 # CONDITIONALS
@@ -158,7 +158,7 @@ fn parallel_work():
 
 ## Data structures
 
-```
+```mojo
 # ---------- DATA STRUCTURE ----------
 
 # LISTS
@@ -207,7 +207,7 @@ var buffer = Buffer[DType.float32](1000)
 
 ## Functions
 
-```
+```mojo
 # ---------- FUNCTION ----------
     # def => Python-compatible functions (dynamic)
     # fn => Mojo native functions (static, optimized)
