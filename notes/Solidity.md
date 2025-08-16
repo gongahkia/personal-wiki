@@ -4,7 +4,7 @@ High-level programming language for writing smart contracts on the Ethereum bloc
 
 ## Comments
 
-```
+```sol
 // ---------- COMMENT ----------
 
 // this is a single-line comment
@@ -18,7 +18,7 @@ comment
 
 ## Printing
 
-```
+```sol
 // ---------- PRINT ----------
     // console.log() => prints a string to the console, requires importing console from hardhat
     // emit => emits events that can be logged by external applications
@@ -35,7 +35,7 @@ emit LogMessage("Transaction completed", 100);
 
 ## Quickstart
 
-```
+```sol
 // ---------- QUICKSTART ----------
     // Solidity is a curly-bracket language similar to JavaScript and C++
     // all smart contracts must specify SPDX license and pragma version
@@ -59,7 +59,7 @@ contract SimpleContract {
 
 ## Types
 
-```
+```sol
 // ---------- TYPE ----------
     // bool => true, false
     // uint => unsigned integer, uint8 to uint256 (in steps of 8)
@@ -83,7 +83,7 @@ Status public currentStatus = Status.Pending;
 
 ## Operators
 
-```
+```sol
 // ---------- OPERATOR ----------
 
 // ARITHMETIC OPERATORS
@@ -114,7 +114,7 @@ Status public currentStatus = Status.Pending;
 
 ## Control structures
 
-```
+```sol
 // ---------- CONTROL STRUCTURE ----------
 
 // CONDITIONALS
@@ -142,7 +142,7 @@ for (uint256 i = 0; i  0);
 
 ## Data structures
 
-```
+```sol
 // ---------- DATA STRUCTURE ----------
 
 // ARRAYS
@@ -181,7 +181,7 @@ OrderStatus public status = OrderStatus.Created;
 
 ## Functions
 
-```
+```sol
 // ---------- FUNCTION ----------
     // function => declares a function
     // public/private/internal/external => visibility modifiers
