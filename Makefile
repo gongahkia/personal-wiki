@@ -1,65 +1,78 @@
-.PHONY: new
+.PHONY: new build clean up history
 
-all: new
+all: build
 
+# Build all HTML pages from markdown files
+build:
+	@echo "Building wiki pages..."
+	@python3 build.py
+
+# Create a new markdown note
 new:
 	@read -p "subject: " title; \
 	read -p "language extension: " language; \
-	echo "# \`$$title\`" > "$$title".md; \
-	echo "" >> "$$title".md; \
-	echo "## Comments" >> "$$title".md; \
-	echo "" >> "$$title".md; \
-	echo "\`\`\`$$language" >> "$$title".md; \
-	echo "" >> "$$title".md; \
-	echo "\`\`\`" >> "$$title".md; \
-	echo "" >> "$$title".md; \
-	echo "## Printing" >> "$$title".md; \
-	echo "" >> "$$title".md; \
-	echo "\`\`\`$$language" >> "$$title".md; \
-	echo "" >> "$$title".md; \
-	echo "\`\`\`" >> "$$title".md; \
-	echo "" >> "$$title".md; \
-	echo "## Quickstart" >> "$$title".md; \
-	echo "" >> "$$title".md; \
-	echo "\`\`\`$$language" >> "$$title".md; \
-	echo "" >> "$$title".md; \
-	echo "\`\`\`" >> "$$title".md; \
-	echo "" >> "$$title".md; \
-	echo "## Types" >> "$$title".md; \
-	echo "" >> "$$title".md; \
-	echo "\`\`\`$$language" >> "$$title".md; \
-	echo "" >> "$$title".md; \
-	echo "\`\`\`" >> "$$title".md; \
-	echo "" >> "$$title".md; \
-	echo "## Operators" >> "$$title".md; \
-	echo "" >> "$$title".md; \
-	echo "\`\`\`$$language" >> "$$title".md; \
-	echo "" >> "$$title".md; \
-	echo "\`\`\`" >> "$$title".md; \
-	echo "" >> "$$title".md; \
-	echo "## Control structures" >> "$$title".md; \
-	echo "" >> "$$title".md; \
-	echo "\`\`\`$$language" >> "$$title".md; \
-	echo "" >> "$$title".md; \
-	echo "\`\`\`" >> "$$title".md; \
-	echo "" >> "$$title".md; \
-	echo "## Data structures" >> "$$title".md; \
-	echo "" >> "$$title".md; \
-	echo "\`\`\`$$language" >> "$$title".md; \
-	echo "" >> "$$title".md; \
-	echo "\`\`\`" >> "$$title".md; \
-	echo "" >> "$$title".md; \
-	echo "## Functions" >> "$$title".md; \
-	echo "" >> "$$title".md; \
-	echo "\`\`\`$$language" >> "$$title".md; \
-	echo "" >> "$$title".md; \
-	echo "\`\`\`" >> "$$title".md; \
-	echo "" >> "$$title".md; \
-	echo "## More on" >> "$$title".md; \
-	echo "" >> "$$title".md; \
-	echo "*" >> "$$title".md; \
-	echo "" >> "$$title".md; \
-	echo "Markdown file created: $$title.md"
+	echo "# \`$$title\`" > notes/"$$title".md; \
+	echo "" >> notes/"$$title".md; \
+	echo "## Comments" >> notes/"$$title".md; \
+	echo "" >> notes/"$$title".md; \
+	echo "\`\`\`$$language" >> notes/"$$title".md; \
+	echo "" >> notes/"$$title".md; \
+	echo "\`\`\`" >> notes/"$$title".md; \
+	echo "" >> notes/"$$title".md; \
+	echo "## Printing" >> notes/"$$title".md; \
+	echo "" >> notes/"$$title".md; \
+	echo "\`\`\`$$language" >> notes/"$$title".md; \
+	echo "" >> notes/"$$title".md; \
+	echo "\`\`\`" >> notes/"$$title".md; \
+	echo "" >> notes/"$$title".md; \
+	echo "## Quickstart" >> notes/"$$title".md; \
+	echo "" >> notes/"$$title".md; \
+	echo "\`\`\`$$language" >> notes/"$$title".md; \
+	echo "" >> notes/"$$title".md; \
+	echo "\`\`\`" >> notes/"$$title".md; \
+	echo "" >> notes/"$$title".md; \
+	echo "## Types" >> notes/"$$title".md; \
+	echo "" >> notes/"$$title".md; \
+	echo "\`\`\`$$language" >> notes/"$$title".md; \
+	echo "" >> notes/"$$title".md; \
+	echo "\`\`\`" >> notes/"$$title".md; \
+	echo "" >> notes/"$$title".md; \
+	echo "## Operators" >> notes/"$$title".md; \
+	echo "" >> notes/"$$title".md; \
+	echo "\`\`\`$$language" >> notes/"$$title".md; \
+	echo "" >> notes/"$$title".md; \
+	echo "\`\`\`" >> notes/"$$title".md; \
+	echo "" >> notes/"$$title".md; \
+	echo "## Control structures" >> notes/"$$title".md; \
+	echo "" >> notes/"$$title".md; \
+	echo "\`\`\`$$language" >> notes/"$$title".md; \
+	echo "" >> notes/"$$title".md; \
+	echo "\`\`\`" >> notes/"$$title".md; \
+	echo "" >> notes/"$$title".md; \
+	echo "## Data structures" >> notes/"$$title".md; \
+	echo "" >> notes/"$$title".md; \
+	echo "\`\`\`$$language" >> notes/"$$title".md; \
+	echo "" >> notes/"$$title".md; \
+	echo "\`\`\`" >> notes/"$$title".md; \
+	echo "" >> notes/"$$title".md; \
+	echo "## Functions" >> notes/"$$title".md; \
+	echo "" >> notes/"$$title".md; \
+	echo "\`\`\`$$language" >> notes/"$$title".md; \
+	echo "" >> notes/"$$title".md; \
+	echo "\`\`\`" >> notes/"$$title".md; \
+	echo "" >> notes/"$$title".md; \
+	echo "## More on" >> notes/"$$title".md; \
+	echo "" >> notes/"$$title".md; \
+	echo "*" >> notes/"$$title".md; \
+	echo "" >> notes/"$$title".md; \
+	echo "Markdown file created: notes/$$title.md"
+
+# Clean generated HTML files
+clean:
+	@echo "Cleaning generated files..."
+	@rm -rf pages/
+	@rm -f index.html
+	@echo "Clean complete!"
 
 up:
 	@git pull

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Wiki Note: Category theory - Gabriel Ong">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntl-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntlMono-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
+  <style>
+    .thin-space:after{content:"\2006"}
+    pre {
+      overflow-x: auto;
+      max-width: 100%;
+    }
+  </style>
+  <script src="../script.js" defer></script>
+  <title>GABRIEL ONG</title>
+  <link rel="shortcut icon" href="../asset/blob.ico" type="image/x-icon">
+</head>
+<body>
+  <div id="click-container"></div>
+  <input type="button" id="dark-mode">
+  <label for="dark-mode">
+    <img id="infinityButton" src="../asset/roller.png" height="24" width="24"/>
+  </label>
+
+  <main>
+    <article class="overallArticleTags">
+
+      <section class="note-header">
+        <h2>Category theory</h2>
+
+        <dl>
+          <dt>File size</dt>
+          <dd>10.2KB</dd>
+
+          <dt>Lines of code</dt>
+          <dd>197</dd>
+        </dl>
+      </section>
+
+      <section class="note-content">
+        <h1><code>Category theory</code></h1>
+<p>The branch of mathematics dealing with <strong>abstract structures</strong> and the <strong>relationships between them</strong>.</p>
+<p>Covers...</p>
+<ul>
+<li>Categories, Functors, and Natural Transformations</li>
+<li>Monoids, Product and Sum Types</li>
+<li>Limits and Colimits</li>
+<li>Functor Categories and Adjunctions</li>
+<li>Monads </li>
+<li>Initial and Terminal Objects</li>
+<li>Equivalence of Categories</li>
+<li>Yoneda Lemma</li>
+<li>Representable Functors</li>
+</ul>
+<h2>Definitions</h2>
+<ol>
+<li>
+<p><strong>Category</strong></p>
+<ul>
+<li>A category $\mathcal{C}$ consists of:<ul>
+<li><strong>Objects</strong>: Denoted by symbols such as $A, B, C, \ldots$</li>
+<li><strong>Morphisms</strong> (or <strong>Arrows</strong>): Denoted by $f: A \to B$, representing a relationship from object $A$ to object $B$</li>
+<li><strong>Composition</strong>: For morphisms $f: A \to B$ and $g: B \to C$, the composition $g \circ f: A \to C$</li>
+<li><strong>Identity Morphisms</strong>: For each object $A$, there is an identity morphism $id_A: A \to A$ such that $id_A \circ f = f$ and $g \circ id_A = g$ for all $f$ and $g$ involving $A$</li>
+<li><strong>Associativity</strong>: Composition of morphisms is associative: $(h \circ g) \circ f = h \circ (g \circ f)$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Functor</strong></p>
+<ul>
+<li>A functor $F: \mathcal{C} \to \mathcal{D}$ between categories $\mathcal{C}$ and $\mathcal{D}$ consists of:<ul>
+<li>A mapping of objects: For each object $A \in \mathcal{C}$, there is an object $F(A) \in \mathcal{D}$</li>
+<li>A mapping of morphisms: For each morphism $f: A \to B$ in $\mathcal{C}$, there is a morphism $F(f): F(A) \to F(B)$ in $\mathcal{D}$</li>
+<li>Preservation of composition and identity: $F(g \circ f) = F(g) \circ F(f)$ and $F(id_A) = id_{F(A)}$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Natural Transformation</strong></p>
+<ul>
+<li>A natural transformation $\eta$ between functors $F, G: \mathcal{C} \to \mathcal{D}$ consists of:<ul>
+<li>A collection of morphisms $\eta_A: F(A) \to G(A)$ for each object $A \in \mathcal{C}$</li>
+<li>Such that for any morphism $f: A \to B$ in $\mathcal{C}$, the diagram <img alt="Diagram" src="https://latex.codecogs.com/png.latex?%5Cbegin%7Barray%7D%7Bccc%7D%0AF%28A%29%20%26%20%5Cxrightarrow%7B%5Ceta_A%7D%20%26%20G%28A%29%20%5C%5C%0A%5Cdownarrow%7BF%28f%29%7D%20%26%20%26%20%5Cdownarrow%7BG%28f%29%7D%20%5C%5C%0AF%28B%29%20%26%20%5Cxrightarrow%7B%5Ceta_B%7D%20%26%20G%28B%29%0A%5Cend%7Barray%7D" /> commutes</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Monoid</strong></p>
+<ul>
+<li>A monoid $(M, \cdot, e)$ is a set $M$ equipped with a binary operation $\cdot: M \times M \to M$ and an identity element $e \in M$ such that:<ul>
+<li><strong>Associativity</strong>: $(a \cdot b) \cdot c = a \cdot (b \cdot c)$ for all $a, b, c \in M$</li>
+<li><strong>Identity</strong>: $a \cdot e = a$ and $e \cdot a = a$ for all $a \in M$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Product and Sum Types</strong></p>
+<ul>
+<li><strong>Product Types</strong>: Denoted by $A \times B$, represent pairs of elements from sets $A$ and $B$.</li>
+<li><strong>Sum Types</strong>: Denoted by $A + B$, represent elements that belong to either set $A$ or set $B$.</li>
+</ul>
+</li>
+<li>
+<p><strong>Limits and Colimits</strong></p>
+<ul>
+<li><strong>Limit</strong>: The limit of a diagram (a functor from an index category to $\mathcal{C}$) is an object that captures the idea of the “best approximation” to the diagram.</li>
+<li><strong>Colimit</strong>: Dual to limits, capturing the “coarsest” structure that can be mapped to from the diagram.</li>
+</ul>
+</li>
+<li>
+<p><strong>Functor Categories</strong></p>
+<ul>
+<li>The category <strong>Fun</strong>$(\mathcal{C}, \mathcal{D})$ consists of all functors from $\mathcal{C}$ to $\mathcal{D}$ and natural transformations between them.</li>
+</ul>
+</li>
+<li>
+<p><strong>Adjunctions</strong></p>
+<ul>
+<li>An adjunction between categories $\mathcal{C}$ and $\mathcal{D}$ consists of a pair of functors $F: \mathcal{C} \to \mathcal{D}$ and $G: \mathcal{D} \to \mathcal{C}$ such that:<ul>
+<li>For each pair of objects $A \in \mathcal{C}$ and $B \in \mathcal{D}$, there is a natural isomorphism between <img alt="\text{Hom}_{\mathcal{D}}(F(A), B)" src="https://latex.codecogs.com/png.latex?%5Ctext%7BHom%7D_%7B%5Cmathcal%7BD%7D%7D%28F%28A%29%2C%20B%29" /> and <img alt="\text{Hom}_{\mathcal{C}}(A, G(B))" src="https://latex.codecogs.com/png.latex?%5Ctext%7BHom%7D_%7B%5Cmathcal%7BC%7D%7D%28A%2C%20G%28B%29%29" />.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Monads</strong></p>
+<ul>
+<li>A monad on a category $\mathcal{C}$ consists of:<ul>
+<li>A functor $T: \mathcal{C} \to \mathcal{C}$</li>
+<li>Two natural transformations: $\eta: 1_{\mathcal{C}} \to T$ (unit) and $\mu: T^2 \to T$ (multiplication) satisfying certain coherence conditions.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Initial and Terminal Objects</strong></p>
+<ul>
+<li><strong>Initial Object</strong>: An object $I$ in a category $\mathcal{C}$ such that for every object $A \in \mathcal{C}$, there exists a unique morphism from $I$ to $A$.</li>
+<li><strong>Terminal Object</strong>: An object $T$ in a category $\mathcal{C}$ such that for every object $A \in \mathcal{C}$, there exists a unique morphism from $A$ to $T$.</li>
+</ul>
+</li>
+<li>
+<p><strong>Equivalence of Categories</strong></p>
+<ul>
+<li>Two categories $\mathcal{C}$ and $\mathcal{D}$ are said to be <strong>equivalent</strong> if there exist functors $F: \mathcal{C} \to \mathcal{D}$ and $G: \mathcal{D} \to \mathcal{C}$ such that $G \circ F$ is naturally isomorphic to the identity functor on $\mathcal{C}$, and $F \circ G$ is naturally isomorphic to the identity functor on $\mathcal{D}$.</li>
+</ul>
+</li>
+<li>
+<p><strong>Yoneda Lemma</strong></p>
+<ul>
+<li>The Yoneda Lemma states that for any category $\mathcal{C}$, object $A \in \mathcal{C}$, and functor $F: \mathcal{C} \to \textbf{Set}$, there is a natural isomorphism <img alt="\text{Nat}(\text{Hom}_{\mathcal{C}}(-, A), F) \cong F(A)" src="https://latex.codecogs.com/png.latex?%5Ctext%7BNat%7D%28%5Ctext%7BHom%7D_%7B%5Cmathcal%7BC%7D%7D%28-%2C%20A%29%2C%20F%29%20%5Ccong%20F%28A%29" /> where: <ul>
+<li><img alt="\text{Hom}_{\mathcal{C}}(-, A)" src="https://latex.codecogs.com/png.latex?%5Ctext%7BHom%7D_%7B%5Cmathcal%7BC%7D%7D%28-%2C%20A%29" /> is the functor that maps an object <img alt="X" src="https://latex.codecogs.com/png.latex?X" /> to the set of morphisms <img alt="\text{Hom}_{\mathcal{C}}(X, A)" src="https://latex.codecogs.com/png.latex?%5Ctext%7BHom%7D_%7B%5Cmathcal%7BC%7D%7D%28X%2C%20A%29" />.</li>
+<li><img alt="\text{Nat}(\text{Hom}_{\mathcal{C}}(-, A), F)" src="https://latex.codecogs.com/png.latex?%5Ctext%7BNat%7D%28%5Ctext%7BHom%7D_%7B%5Cmathcal%7BC%7D%7D%28-%2C%20A%29%2C%20F%29" /> denotes the set of natural transformations from <img alt="\text{Hom}_{\mathcal{C}}(-, A)" src="https://latex.codecogs.com/png.latex?%5Ctext%7BHom%7D_%7B%5Cmathcal%7BC%7D%7D%28-%2C%20A%29" /> to <img alt="F" src="https://latex.codecogs.com/png.latex?F" />.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Representable Functors</strong></p>
+<ul>
+<li>A functor $F: \mathcal{C} \to \textbf{Set}$ is called <strong>representable</strong> if it is naturally isomorphic to the hom-functor $\text{Hom}_{\mathcal{C}}(C, -)$ for some object $C \in \mathcal{C}$.</li>
+</ul>
+</li>
+</ol>
+<h2>More on</h2>
+<ul>
+<li><a href="https://unglueit-files.s3.amazonaws.com/ebf/e90890f0a6ea420c9825657d6f3a851d.pdf">Category theory for Programmers</a> by Bartosz Milewski</li>
+<li><a href="https://www.slideshare.net/slideshow/abstract-algebra-in-3-hours/70763563">Abstract Algebra in 3 Hours</a> by Ashwin Rao</li>
+<li><a href="https://www.slideshare.net/slideshow/category-theory-made-easy-with-ugly-pictures-73745930/73745930">Category theory made easy with (ugly) pictures</a> by Ashwin Rao</li>
+<li><a href="https://maartenfokkinga.github.io/utwente/mmf92b.pdf">A Gentle Introduction to Category theory (the calculational approach)</a> by Maarten M Fokkinga</li>
+<li><a href="https://www.math3ma.com/blog/what-is-category-theory-anyway">What is Category theory Anyway?</a> by math3m</li>
+<li><a href="https://arxiv.org/pdf/1612.09375">Basic Category theory</a> by Tom Leinster</li>
+<li><a href="https://homepages.inf.ed.ac.uk/jcheney/presentations/ct4d1.pdf">Category theory for Dummies</a> by James Cheney</li>
+<li><a href="https://www.reddit.com/r/math/comments/r4yoc0/good_introduction_to_category_theory/">Good Introduction to Category theory?</a> by r/math</li>
+<li><a href="http://www.ms.lt/derlius/StevenRoman-AnIntroductionToTheLanguageOfCategoryTheory.pdf">An Introduction to the Language of Category theory</a> by Steven Roman</li>
+<li><a href="https://www2.mathematik.tu-darmstadt.de/~streicher/CTCL.pdf">Introduction to Category theory and Categorical logic</a> by Thomas Streicher</li>
+</ul>
+      </section>
+
+    </article>
+
+    <footer>
+      <p>© 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <div class="wrapper"></div>
+</body>
+</html>

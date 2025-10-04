@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Wiki Note: Lambda calculus - Gabriel Ong">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntl-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntlMono-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
+  <style>
+    .thin-space:after{content:"\2006"}
+    pre {
+      overflow-x: auto;
+      max-width: 100%;
+    }
+  </style>
+  <script src="../script.js" defer></script>
+  <title>GABRIEL ONG</title>
+  <link rel="shortcut icon" href="../asset/blob.ico" type="image/x-icon">
+</head>
+<body>
+  <div id="click-container"></div>
+  <input type="button" id="dark-mode">
+  <label for="dark-mode">
+    <img id="infinityButton" src="../asset/roller.png" height="24" width="24"/>
+  </label>
+
+  <main>
+    <article class="overallArticleTags">
+
+      <section class="note-header">
+        <h2>Lambda calculus</h2>
+
+        <dl>
+          <dt>File size</dt>
+          <dd>5.8KB</dd>
+
+          <dt>Lines of code</dt>
+          <dd>149</dd>
+        </dl>
+      </section>
+
+      <section class="note-content">
+        <h1><code>Lambda calculus</code></h1>
+<p>Abstract notation to describe functions and application, providing the basis for functional programming.</p>
+<h2>Introduction</h2>
+<ul>
+<li>written as $\lambda$-calculus</li>
+<li>created by <a href="https://www.britannica.com/biography/Alonzo-Church">Alonzo Church</a></li>
+<li>can represent any <a href="https://brilliant.org/wiki/turing-machines/">turing machine</a></li>
+<li>by definition <a href="https://users.cs.utah.edu/~mflatt/past-courses/cs7520/public_html/s06/notes.pdf">the world's smallest programming language</a></li>
+</ul>
+<h2>Quickstart</h2>
+<h3>Datatypes</h3>
+<p>$\lambda$-calculus has 3 foundational datatypes.<br />
+1. Variable<br />
+    * <code>&lt;name&gt;</code><br />
+2. Function<br />
+    * $\lambda$ <code>&lt;parameter&gt;</code>.<code>&lt;body&gt;</code><br />
+    * function parameter and body are . period-delimited<br />
+    * functions are single parameter<br />
+3. Application<br />
+    * <code>&lt;function&gt;&lt;variable OR function&gt;</code></p>
+<p>In practice, it looks like this.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Example</th>
+<th style="text-align: center;">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">$x$</td>
+<td style="text-align: center;">$x$ is a variable</td>
+</tr>
+<tr>
+<td style="text-align: center;">$\lambda x . x$</td>
+<td style="text-align: center;">function definition for a function with parameter $x$ and body $x$</td>
+</tr>
+<tr>
+<td style="text-align: center;">$(\lambda x . x)a$</td>
+<td style="text-align: center;">function call for the previously declared function $\lambda x . x$ with the argument $a$</td>
+</tr>
+</tbody>
+</table>
+<h3>Free and Bound variables</h3>
+<ul>
+<li><strong>Free</strong> variable: variable that is <em>never</em> declared prior to its specification in a function body</li>
+<li><strong>Bound</strong> variable: variable that is declared within <em>both</em> the function parameter and body</li>
+</ul>
+<p>In practice, they look like this.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Example</th>
+<th style="text-align: center;">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">$\lambda x . x$</td>
+<td style="text-align: center;">$x$ is a bound variable</td>
+</tr>
+<tr>
+<td style="text-align: center;">$\lambda x . y$</td>
+<td style="text-align: center;">$y$ is a free variable</td>
+</tr>
+</tbody>
+</table>
+<h3>Evaluation</h3>
+<ul>
+<li>application evaluation is performed via $\beta$-reduction</li>
+<li>$\beta$-reduction: lexically-scoped substitution, a concept most of us are familiar with from foundational mathematical functions</li>
+<li>allows for higher-order functions, where functions themselves are provided as arguments to another function</li>
+</ul>
+<p>In practice, it looks like this.</p>
+<p><em>example 1</em><br />
+* $(\lambda x . x)a$ evaluates to $a$</p>
+<p><em>example 2</em><br />
+* $(\lambda x . y)a$ evaluates to $y$</p>
+<p><em>example 3</em><br />
+* $(\lambda x . (\lambda y . x ))a$ evaluates to $\lambda y . a$<br />
+* this is an example of a higher-order function evaluated using $\beta$-reduction</p>
+<h2>More on</h2>
+<ul>
+<li><a href="https://math.stackexchange.com/questions/1972022/lambda-calculus-identity-function">identity function</a></li>
+<li><a href="https://www.matthiaspreu.com/posts/lambda-calculus-fundamentals/#currying---application-of-multiple-arguments">currying</a></li>
+<li><a href="https://www.cs.rice.edu/~javaplt/311/Readings/supplemental.pdf">church numerals</a></li>
+<li><a href="https://www.cs.columbia.edu/~sedwards/classes/2012/w4115-fall/lambda.pdf">boolean logic in lambda calculus</a></li>
+<li><a href="https://crypto.stanford.edu/~blynn/lambda/cl.html">combinators</a></li>
+<li><a href="https://plato.stanford.edu/entries/lambda-calculus/">standard encyclopedia of philosophy on lambda calculus</a></li>
+<li><a href="https://learnxinyminutes.com/docs/lambda-calculus/">learn lambda calculus in y minutes</a></li>
+<li><a href="http://www.inf.fu-berlin.de/lehre/WS03/alpi/lambda.pdf">a tutorial introduction to lambda calculus</a></li>
+<li><a href="http://www.cs.cornell.edu/courses/cs3110/2008fa/recitations/rec26.html">cornell CS312 on lambda calculus</a></li>
+<li><a href="https://codewords.recurse.com/issues/one/an-introduction-to-functional-programming">an introduction to functional programming</a></li>
+</ul>
+      </section>
+
+    </article>
+
+    <footer>
+      <p>© 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <div class="wrapper"></div>
+</body>
+</html>
