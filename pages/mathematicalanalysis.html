@@ -33,7 +33,7 @@
 
         <dl>
           <dt>File size</dt>
-          <dd>40.7KB</dd>
+          <dd>39.8KB</dd>
 
           <dt>Lines of code</dt>
           <dd>338</dd>
@@ -48,9 +48,9 @@
 <li>Describes the value a function approaches as its input approaches a specified value</li>
 <li>Useful for understanding continuity and differentiability</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">math</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">limit</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">x_val</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">limit</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">x_val</span><span class="p">):</span>
     <span class="n">delta</span> <span class="o">=</span> <span class="mf">0.001</span>
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
         <span class="n">x_low</span> <span class="o">=</span> <span class="n">x_val</span> <span class="o">-</span> <span class="n">delta</span>
@@ -71,7 +71,7 @@
 <li>Functions are continuous if there are no breaks or holes in the function range</li>
 <li>Useful for differentiation</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">is_continuous</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">x_val</span><span class="p">,</span> <span class="n">delta</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">is_continuous</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">x_val</span><span class="p">,</span> <span class="n">delta</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">):</span>
     <span class="n">x_low</span> <span class="o">=</span> <span class="n">x_val</span> <span class="o">-</span> <span class="n">delta</span>
     <span class="n">x_high</span> <span class="o">=</span> <span class="n">x_val</span> <span class="o">+</span> <span class="n">delta</span>
     <span class="n">limit_exists</span> <span class="o">=</span> <span class="kc">True</span>
@@ -92,7 +92,7 @@
 <li>Measures a function's rate of change</li>
 <li>Useful for optimization, physics and other areas of applied mathematics</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">derivative</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">derivative</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="n">h</span>
 
 <span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span>
@@ -104,9 +104,9 @@
 <ul>
 <li>Applying the <a href="https://youtu.be/9Yz-RCdS2Tg?si=AXuFQ7r5kNW6cQzQ">power rule</a></li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">factorial</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">factorial</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">poly_deriv</span><span class="p">(</span><span class="n">coeffs</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">poly_deriv</span><span class="p">(</span><span class="n">coeffs</span><span class="p">):</span>
     <span class="n">derived_coeffs</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">coeffs</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
         <span class="n">derived_coeffs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">coeffs</span><span class="p">)</span> <span class="o">-</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
@@ -122,9 +122,9 @@
 <li>Inverse of <a href="#differentiation">differentiation</a></li>
 <li>Measures the accumulated change of a function over a specified interval</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">riemann_sum</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">riemann_sum</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">dx</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span>
     <span class="n">area</span> <span class="o">=</span> <span class="mi">0</span>
@@ -157,7 +157,7 @@
 <li>Ordered list of elements of finite or infinite length</li>
 <li>Sequence limits are useful for mathematical analysis</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">seq_limit</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">seq_limit</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">seq</span><span class="p">):</span>
         <span class="k">return</span> <span class="kc">None</span>
 
@@ -179,13 +179,13 @@
 <li>Sums the terms of an infinite sequence</li>
 <li>Convergence is determined by the limits of a sequence of partial sums</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">sum_series</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">sum_series</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
     <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
         <span class="n">total</span> <span class="o">+=</span> <span class="n">seq</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">total</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">series_conv</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">abs_tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">max_terms</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">series_conv</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">abs_tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">max_terms</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
     <span class="n">prev_sum</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_terms</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
         <span class="n">curr_sum</span> <span class="o">=</span> <span class="n">sum_series</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
@@ -202,9 +202,9 @@
 <ul>
 <li>Series representation of a function as an infinite sum of terms calculated from the derivatives at a single point</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">factorial</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">factorial</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">power_series</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">power_series</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
     <span class="n">coeffs</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
         <span class="n">coeffs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">derivative</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span><span class="o">/</span><span class="n">factorial</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
@@ -219,15 +219,15 @@
 <ul>
 <li>Representation of a function as an infinite sum of terms calculated from its derivatives at a single point</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">factorial</span><span class="p">,</span> <span class="n">exp</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">factorial</span><span class="p">,</span> <span class="n">exp</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">1</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">exp_taylor</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">exp_taylor</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
     <span class="n">approx</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
         <span class="n">approx</span> <span class="o">+=</span> <span class="n">x</span><span class="o">**</span><span class="n">i</span> <span class="o">/</span> <span class="n">factorial</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
@@ -243,10 +243,10 @@
 <li>Taylor Polynomial approximates a function by truncating its Taylor Series</li>
 <li>Approximation error depends on the value of n and the function's smoothness</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">taylor_error</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">interval</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">taylor_error</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">interval</span><span class="p">):</span>
     <span class="n">f_symb</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">f</span><span class="p">,</span> <span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
     <span class="n">exact_vals</span> <span class="o">=</span> <span class="n">f_symb</span><span class="p">(</span><span class="n">interval</span><span class="p">)</span>
     <span class="n">taylor_vals</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sp</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">removeO</span><span class="p">(),</span> <span class="s1">&#39;numpy&#39;</span><span class="p">)(</span><span class="n">interval</span><span class="p">)</span>
@@ -270,21 +270,21 @@
 <li>Represents a periodic function as an infinite sum of sines and cosines</li>
 <li>Useful for analysing functions as superpositions of simple waves</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">integrate</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">integrate</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">fourier_series</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">fourier_series</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
     <span class="n">coeffs</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">coeffs</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">L</span> <span class="o">*</span> <span class="n">scipy</span><span class="o">.</span><span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">L</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">def</span><span class="w"> </span><span class="nf">int_func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+            <span class="k">def</span> <span class="nf">int_func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
                 <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span>
             <span class="n">coeffs</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="n">L</span> <span class="o">*</span> <span class="n">scipy</span><span class="o">.</span><span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="n">int_func</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">L</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">coeffs</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">square_wave</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">square_wave</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>
 
 <span class="n">L</span> <span class="o">=</span> <span class="mi">1</span>
@@ -298,9 +298,9 @@
 <li>Converges pointwise to the periodic function for well-behaved functions</li>
 <li>Fourier Series might still diverge at certain points of discontinuity</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">plot_fourier_approx</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">coeffs</span><span class="p">,</span> <span class="n">x_vals</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">plot_fourier_approx</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">coeffs</span><span class="p">,</span> <span class="n">x_vals</span><span class="p">):</span>
     <span class="n">approx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x_vals</span><span class="p">))</span>
     <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">ak</span> <span class="ow">in</span> <span class="n">coeffs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
         <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>

@@ -33,7 +33,7 @@
 
         <dl>
           <dt>File size</dt>
-          <dd>22.3KB</dd>
+          <dd>22.2KB</dd>
 
           <dt>Lines of code</dt>
           <dd>297</dd>
@@ -232,7 +232,7 @@
     <span class="c1"># def =&gt; declares a function</span>
     <span class="c1"># return =&gt; specifies the return value of the function</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">):</span> <span class="c1"># named function definition</span>
+<span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">):</span> <span class="c1"># named function definition</span>
     <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">greet</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">))</span> <span class="c1"># prints &quot;Hello, Alice!&quot;</span>
@@ -240,7 +240,7 @@
 <span class="c1"># DEFAULT PARAMETERS</span>
     <span class="c1"># default values can be specified in function arguments the same way as any other variable with the = assignment operator</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Stranger&quot;</span><span class="p">):</span> <span class="c1"># named function definition with default parameters</span>
+<span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Stranger&quot;</span><span class="p">):</span> <span class="c1"># named function definition with default parameters</span>
     <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">greet</span><span class="p">())</span> <span class="c1"># prints &quot;Hello, Stranger!&quot;</span>
@@ -249,11 +249,11 @@
     <span class="c1"># *args =&gt; allows passing a variable number of positional arguments</span>
     <span class="c1"># **kwargs =&gt; allows passing a variable number of keyword arguments</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">print_args</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span> <span class="c1"># named function definition with variable length positional arguments</span>
+<span class="k">def</span> <span class="nf">print_args</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span> <span class="c1"># named function definition with variable length positional arguments</span>
     <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">print_kwargs</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span> <span class="c1"># named function definition with variable length keyword arguments</span>
+<span class="k">def</span> <span class="nf">print_kwargs</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span> <span class="c1"># named function definition with variable length keyword arguments</span>
     <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 

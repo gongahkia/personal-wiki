@@ -33,7 +33,7 @@
 
         <dl>
           <dt>File size</dt>
-          <dd>8.7KB</dd>
+          <dd>8.6KB</dd>
 
           <dt>Lines of code</dt>
           <dd>126</dd>
@@ -71,15 +71,15 @@
 
 <p>A spider is a class that defines how to follow links through a website and extract data from its webpages. </p>
 <p>The below sample code creates a simple spider that scrapes quotes from the website <a href="http://quotes.toscrape.com/"><em>Quotes to Scrape</em></a>.</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">scrapy</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">scrapy</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">QuotesSpider</span><span class="p">(</span><span class="n">scrapy</span><span class="o">.</span><span class="n">Spider</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">QuotesSpider</span><span class="p">(</span><span class="n">scrapy</span><span class="o">.</span><span class="n">Spider</span><span class="p">):</span>
     <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;quotes&quot;</span>
     <span class="n">start_urls</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s1">&#39;http://quotes.toscrape.com/&#39;</span><span class="p">,</span>
     <span class="p">]</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">quote</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;div.quote&#39;</span><span class="p">):</span>
             <span class="k">yield</span> <span class="p">{</span>
                 <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="n">quote</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;span.text::text&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span>

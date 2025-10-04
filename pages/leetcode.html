@@ -33,7 +33,7 @@
 
         <dl>
           <dt>File size</dt>
-          <dd>45.0KB</dd>
+          <dd>44.4KB</dd>
 
           <dt>Lines of code</dt>
           <dd>574</dd>
@@ -52,7 +52,7 @@
 <p>Query sum of elements in a subarray</p>
 </li>
 </ol>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">create_prefix_sum</span><span class="p">(</span><span class="n">inp_array</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">create_prefix_sum</span><span class="p">(</span><span class="n">inp_array</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">inp_array</span><span class="p">)):</span>
         <span class="n">inp_array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">inp_array</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">inp_array</span>
@@ -75,7 +75,7 @@
 </li>
 <li>Move them towards or away from each other when a certain predicate is fulfilled</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">is_palindrome</span><span class="p">(</span><span class="n">inp_string</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">is_palindrome</span><span class="p">(</span><span class="n">inp_string</span><span class="p">):</span>
     <span class="n">start</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># pointer 1</span>
     <span class="n">end</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">inp_string</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="c1"># pointer 2</span>
     <span class="k">while</span> <span class="n">start</span> <span class="o">&lt;</span> <span class="n">end</span><span class="p">:</span>
@@ -103,7 +103,7 @@
 <p>Find subarrays and substrings of a specified size</p>
 </li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">max_subarray_sum_sliding_window</span><span class="p">(</span><span class="n">inp_array</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">max_subarray_sum_sliding_window</span><span class="p">(</span><span class="n">inp_array</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
     <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">inp_array</span><span class="p">)</span>
     <span class="n">window_sum</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">inp_array</span><span class="p">[:</span><span class="n">k</span><span class="p">])</span>
     <span class="n">max_sum</span> <span class="o">=</span> <span class="n">window_sum</span>
@@ -134,7 +134,7 @@
 <li>Find a looping <em>(cycling)</em> node </li>
 <li>Move two pointers at different speeds</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">find_cycling_node</span><span class="p">(</span><span class="n">head_node</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">find_cycling_node</span><span class="p">(</span><span class="n">head_node</span><span class="p">):</span>
     <span class="n">slow</span> <span class="o">=</span> <span class="n">head_node</span> <span class="c1"># slow pointer</span>
     <span class="n">fast</span> <span class="o">=</span> <span class="n">head_node</span> <span class="c1"># fast pointer</span>
     <span class="k">while</span> <span class="n">fast</span> <span class="ow">and</span> <span class="n">fast</span><span class="o">.</span><span class="n">next</span><span class="p">:</span>
@@ -162,7 +162,7 @@
 </li>
 <li>Space complexity of $O(1)$</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">reverse_linked_list</span><span class="p">(</span><span class="n">head_node</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">reverse_linked_list</span><span class="p">(</span><span class="n">head_node</span><span class="p">):</span>
     <span class="n">prev</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">current</span> <span class="o">=</span> <span class="n">head_node</span>
     <span class="k">while</span> <span class="n">current</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -191,7 +191,7 @@
 <li>Uses a stack </li>
 <li>Execute stack operations when a specified predicate is fulfilled</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">next_greater_element</span><span class="p">(</span><span class="n">inp_array</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">next_greater_element</span><span class="p">(</span><span class="n">inp_array</span><span class="p">):</span>
     <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">inp_array</span><span class="p">)</span>
     <span class="n">stack</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">n</span>
@@ -219,11 +219,11 @@
 </li>
 <li>Uses a heap <em>(min-heap or max-heap)</em></li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">build_min_heap</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">build_min_heap</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="o">//</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
         <span class="n">heapify</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">heapify</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">heapify</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
     <span class="n">smallest</span> <span class="o">=</span> <span class="n">i</span>
     <span class="n">left</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
     <span class="n">right</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span>
@@ -235,7 +235,7 @@
         <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">smallest</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">smallest</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
         <span class="n">heapify</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">smallest</span><span class="p">)</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">find_Kth_Largest</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">find_Kth_Largest</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
     <span class="n">heap</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[:</span><span class="n">k</span><span class="p">]</span>
     <span class="n">build_min_heap</span><span class="p">(</span><span class="n">heap</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)):</span>
@@ -261,7 +261,7 @@
 <p>Used for overlapping intervals or ranges</p>
 </li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">merge</span><span class="p">(</span><span class="n">intervals</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="n">intervals</span><span class="p">):</span>
     <span class="n">intervals</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
     <span class="n">merged</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">interval</span> <span class="ow">in</span> <span class="n">intervals</span><span class="p">:</span>
@@ -289,7 +289,7 @@
 </li>
 <li>Applied to arrays that are nearly sorted, rotated sorted, of unknown length etc.</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">modified_binary_search</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">modified_binary_search</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
     <span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
     <span class="k">while</span> <span class="n">left</span> <span class="o">&lt;=</span> <span class="n">right</span><span class="p">:</span>
         <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">left</span> <span class="o">+</span> <span class="n">right</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
@@ -328,25 +328,25 @@
 <li>Post-order: recursive, iterative <em>(stack)</em></li>
 <li>Level-order: recursive, iterative <em>(queue)</em></li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">preorder_traversal</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">preorder_traversal</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">root</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
         <span class="n">preorder_traversal</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
         <span class="n">preorder_traversal</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">inorder_traversal</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">inorder_traversal</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">root</span><span class="p">:</span>
         <span class="n">inorder_traversal</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
         <span class="n">inorder_traversal</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">postorder_traversal</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">postorder_traversal</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">root</span><span class="p">:</span>
         <span class="n">postorder_traversal</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
         <span class="n">postorder_traversal</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">level_order_traversal</span><span class="p">(</span><span class="n">root</span><span class="p">):</span> 
+<span class="k">def</span> <span class="nf">level_order_traversal</span><span class="p">(</span><span class="n">root</span><span class="p">):</span> 
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    note the iterative approach is more </span>
 <span class="sd">    common for level order traversal of </span>
@@ -355,14 +355,14 @@
 <span class="sd">    this recursive approach is less </span>
 <span class="sd">    commonly seen</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">traverse_level</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">traverse_level</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">node</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">level</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
                 <span class="nb">print</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
             <span class="k">elif</span> <span class="n">level</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
                 <span class="n">traverse_level</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">level</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
                 <span class="n">traverse_level</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">level</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">height</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">height</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">node</span><span class="p">:</span>
             <span class="k">return</span> <span class="mi">0</span>
         <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="nb">max</span><span class="p">(</span><span class="n">height</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">),</span> <span class="n">height</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">))</span>
@@ -389,7 +389,7 @@
 </li>
 <li>Recursive, iterative <em>(stack)</em></li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">dfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">visited</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">visited</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">visited</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
     <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
@@ -416,7 +416,7 @@
 </li>
 <li>Recursive, iterative <em>(queue)</em></li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">bfs_recursive</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">queue</span><span class="p">,</span> <span class="n">visited</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">bfs_recursive</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">queue</span><span class="p">,</span> <span class="n">visited</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    note the iterative approach is more </span>
 <span class="sd">    common for bfs of a binary tree using</span>
@@ -435,7 +435,7 @@
             <span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>
     <span class="n">bfs_recursive</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">queue</span><span class="p">,</span> <span class="n">visited</span><span class="p">)</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">start_bfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start_node</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">start_bfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start_node</span><span class="p">):</span>
     <span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">start_node</span><span class="p">])</span>
     <span class="n">queue</span> <span class="o">=</span> <span class="p">[</span><span class="n">start_node</span><span class="p">]</span>
     <span class="n">bfs_recursive</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">queue</span><span class="p">,</span> <span class="n">visited</span><span class="p">)</span>
@@ -458,11 +458,11 @@
 </li>
 <li>Allows us to apply graph algorithms <em>(DFS, BFS)</em> as we please</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">floodFill</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">sr</span><span class="p">,</span> <span class="n">sc</span><span class="p">,</span> <span class="n">newColor</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">floodFill</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">sr</span><span class="p">,</span> <span class="n">sc</span><span class="p">,</span> <span class="n">newColor</span><span class="p">):</span>
     <span class="n">originalColor</span> <span class="o">=</span> <span class="n">image</span><span class="p">[</span><span class="n">sr</span><span class="p">][</span><span class="n">sc</span><span class="p">]</span>
     <span class="k">if</span> <span class="n">originalColor</span> <span class="o">==</span> <span class="n">newColor</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">image</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">fill</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">fill</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">image</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="o">==</span> <span class="n">originalColor</span><span class="p">:</span>
             <span class="n">image</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">newColor</span>
             <span class="k">if</span> <span class="n">r</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -493,9 +493,9 @@
 <p>Used for exploring all potential solution paths and backtracking paths that don't lead to a valid solution</p>
 </li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">permute</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">permute</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">backtrack</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">backtrack</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
             <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
             <span class="k">return</span>

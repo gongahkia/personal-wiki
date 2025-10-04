@@ -33,7 +33,7 @@
 
         <dl>
           <dt>File size</dt>
-          <dd>30.6KB</dd>
+          <dd>30.5KB</dd>
 
           <dt>Lines of code</dt>
           <dd>279</dd>
@@ -73,9 +73,9 @@
 
 <span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">10</span>
 
-<span class="n">square</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="n">square</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">a</span>
-<span class="w">    </span><span class="kr">return</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="w">    </span><span class="nf">return</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 <span class="p">}</span>
 <span class="nf">print</span><span class="p">(</span><span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="w"> </span><span class="c1"># this displays 100 to the stdout</span>
 </code></pre></div>
@@ -128,11 +128,11 @@
 <span class="c1"># IF ELSE IF ELSE </span>
 
 <span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">5</span>
-<span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="nf">if </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;x is positive number&quot;</span><span class="p">)</span>
-<span class="p">}</span><span class="w"> </span><span class="kr">else</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="nf">if </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;x is non-positive number&quot;</span><span class="p">)</span>
-<span class="p">}</span><span class="w"> </span><span class="kr">else</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;this is just for edge-guarding but should logically never run&quot;</span><span class="p">)</span>
 <span class="p">}</span>
 
@@ -144,7 +144,7 @@
 <span class="w">    </span><span class="c1"># the result of switch() constructs can be directly assigned to a variable, reminiscent of other functional languages</span>
 
 <span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">3</span>
-<span class="n">result</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kr">switch</span><span class="p">(</span><span class="n">x</span><span class="p">,</span>
+<span class="n">result</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">switch</span><span class="p">(</span><span class="n">x</span><span class="p">,</span>
 <span class="w">                </span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;one&quot;</span><span class="p">,</span>
 <span class="w">                </span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;two&quot;</span><span class="p">,</span>
 <span class="w">                </span><span class="s">&quot;3&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;three&quot;</span><span class="p">,</span>
@@ -157,7 +157,7 @@
 <span class="w">    </span><span class="c1"># equivalent of foreach loops in PHP and similar to loops in Python, allowing iteration over each element within an iterable structure</span>
 <span class="w">    </span><span class="c1"># &lt;startingRangeValueInclusive&gt; : &lt;endRangeValueInclusive&gt; =&gt; dynamic creation of an iterable range structure that includes the inclusive start and end value</span>
 
-<span class="kr">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 <span class="p">}</span>
 
@@ -165,7 +165,7 @@
 <span class="w">    </span><span class="c1"># operates exactly the same as in other programming languages</span>
 
 <span class="n">count</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span>
-<span class="kr">while</span><span class="w"> </span><span class="p">(</span><span class="n">count</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="nf">while </span><span class="p">(</span><span class="n">count</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
 <span class="w">    </span><span class="n">count</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span>
 <span class="p">}</span>
@@ -175,11 +175,11 @@
 <span class="w">    </span><span class="c1"># remember to include a break condition within a conditional predicate check as below to prevent unintentional infinite loops in your R program</span>
 
 <span class="n">count</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span>
-<span class="kr">repeat</span><span class="w"> </span><span class="p">{</span>
+<span class="n">repeat</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
 <span class="w">    </span><span class="n">count</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span>
-<span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="n">count</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kr">break</span>
+<span class="w">    </span><span class="nf">if </span><span class="p">(</span><span class="n">count</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">break</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -206,8 +206,8 @@
 <span class="w">    </span><span class="c1"># &lt;functionName&gt; &lt;- function(&lt;functionParameters(s)&gt;) { &lt;functionBodyDefinition&gt; } =&gt; function declaration and definition of a named function, despite the slightly odd syntax that appears to suggest an anonymous function</span>
 <span class="w">    </span><span class="c1"># return =&gt; note that R features explicit returns using the return keyword</span>
 
-<span class="n">add</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kr">return</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="p">)</span>
+<span class="n">add</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">return</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="p">)</span>
 <span class="p">}</span>
 <span class="n">result</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">)</span><span class="w"> </span><span class="c1"># the value stored in result is 8</span>
 </code></pre></div>
