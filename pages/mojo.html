@@ -33,7 +33,7 @@
 
         <dl>
           <dt>File size</dt>
-          <dd>29.1KB</dd>
+          <dd>8.0KB</dd>
 
           <dt>Lines of code</dt>
           <dd>304</dd>
@@ -44,238 +44,238 @@
         <h1><code>Mojo</code></h1>
 <p>High-performance programming language for AI development with Python compatibility.</p>
 <h2>Comments</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- COMMENT ----------</span>
+<pre class="codehilite"><code class="language-mojo"># ---------- COMMENT ----------
 
-<span class="c1"># this is a single-line comment</span>
+# this is a single-line comment
 
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">this is a</span>
-<span class="sd">multi-line</span>
-<span class="sd">comment using docstrings</span>
-<span class="sd">&quot;&quot;&quot;</span>
-</code></pre></div>
+&quot;&quot;&quot;
+this is a
+multi-line
+comment using docstrings
+&quot;&quot;&quot;
+</code></pre>
 
 <h2>Printing</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- PRINT ----------</span>
-<span class="w">    </span><span class="c1"># print() =&gt; prints values to stdout with newline by default</span>
-<span class="w">    </span><span class="c1"># print() supports multiple arguments and formatting</span>
+<pre class="codehilite"><code class="language-mojo"># ---------- PRINT ----------
+    # print() =&gt; prints values to stdout with newline by default
+    # print() supports multiple arguments and formatting
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, Mojo!&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Value:&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Multiple&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;values&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;at&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;once&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No newline&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-</code></pre></div>
+print(&quot;Hello, Mojo!&quot;)
+print(&quot;Value:&quot;, 42)
+print(&quot;Multiple&quot;, &quot;values&quot;, &quot;at&quot;, &quot;once&quot;)
+print(&quot;No newline&quot;, end=&quot;&quot;)
+</code></pre>
 
 <h2>Quickstart</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- QUICKSTART ----------</span>
-<span class="w">    </span><span class="c1"># Mojo combines Python&#39;s usability with systems programming performance</span>
-<span class="w">    </span><span class="c1"># fully compatible with Python ecosystem</span>
-<span class="w">    </span><span class="c1"># def =&gt; defines Python-compatible functions</span>
-<span class="w">    </span><span class="c1"># fn =&gt; defines Mojo functions with performance optimizations</span>
-<span class="w">    </span><span class="c1"># var =&gt; declares mutable variables with type inference</span>
-<span class="w">    </span><span class="c1"># let =&gt; declares immutable variables</span>
-<span class="w">    </span><span class="c1"># struct =&gt; defines high-performance data structures</span>
+<pre class="codehilite"><code class="language-mojo"># ---------- QUICKSTART ----------
+    # Mojo combines Python's usability with systems programming performance
+    # fully compatible with Python ecosystem
+    # def =&gt; defines Python-compatible functions
+    # fn =&gt; defines Mojo functions with performance optimizations
+    # var =&gt; declares mutable variables with type inference
+    # let =&gt; declares immutable variables
+    # struct =&gt; defines high-performance data structures
 
-<span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
-<span class="w">    </span><span class="n">let</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello, Mojo!&quot;</span>
-<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+fn main():
+    let message = &quot;Hello, Mojo!&quot;
+    print(message)
 
-<span class="k">def</span><span class="w"> </span><span class="nf">python_function</span><span class="p">():</span>
-<span class="w">    </span><span class="c1"># Python-compatible function</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;Python compatibility&quot;</span>
+def python_function():
+    # Python-compatible function
+    return &quot;Python compatibility&quot;
 
-<span class="k">fn</span><span class="w"> </span><span class="nf">mojo_function</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb">String</span><span class="p">:</span>
-<span class="w">    </span><span class="c1"># High-performance Mojo function</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;Mojo performance&quot;</span>
-</code></pre></div>
+fn mojo_function() -&gt; String:
+    # High-performance Mojo function
+    return &quot;Mojo performance&quot;
+</code></pre>
 
 <h2>Types</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- TYPE ----------</span>
-<span class="w">    </span><span class="c1"># Int =&gt; integer numbers</span>
-<span class="w">    </span><span class="c1"># Float32, Float64 =&gt; floating-point numbers</span>
-<span class="w">    </span><span class="c1"># Bool =&gt; True, False</span>
-<span class="w">    </span><span class="c1"># String =&gt; text strings</span>
-<span class="w">    </span><span class="c1"># SIMD[type, width] =&gt; SIMD vector types for performance</span>
-<span class="w">    </span><span class="c1"># Pointer[type] =&gt; raw pointers</span>
-<span class="w">    </span><span class="c1"># DTypePointer[type] =&gt; typed pointers</span>
+<pre class="codehilite"><code class="language-mojo"># ---------- TYPE ----------
+    # Int =&gt; integer numbers
+    # Float32, Float64 =&gt; floating-point numbers
+    # Bool =&gt; True, False
+    # String =&gt; text strings
+    # SIMD[type, width] =&gt; SIMD vector types for performance
+    # Pointer[type] =&gt; raw pointers
+    # DTypePointer[type] =&gt; typed pointers
 
-<span class="k">var</span><span class="w"> </span><span class="nv">age</span><span class="p">:</span><span class="w"> </span><span class="nb">Int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">25</span>
-<span class="k">var</span><span class="w"> </span><span class="nv">height</span><span class="p">:</span><span class="w"> </span><span class="nb">Float64</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5.9</span>
-<span class="k">var</span><span class="w"> </span><span class="nv">is_active</span><span class="p">:</span><span class="w"> </span><span class="n">Bool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">True</span>
-<span class="k">var</span><span class="w"> </span><span class="nv">name</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span>
+var age: Int = 25
+var height: Float64 = 5.9
+var is_active: Bool = True
+var name: String = &quot;Alice&quot;
 
-<span class="c1"># SIMD types for vectorization</span>
-<span class="k">var</span><span class="w"> </span><span class="nv">vector</span><span class="p">:</span><span class="w"> </span><span class="nb">SIMD</span><span class="p">[</span><span class="nb">DType</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">SIMD</span><span class="p">[</span><span class="nb">DType</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">](</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p">,</span><span class="w"> </span><span class="mf">4.0</span><span class="p">)</span>
+# SIMD types for vectorization
+var vector: SIMD[DType.float32, 4] = SIMD[DType.float32, 4](1.0, 2.0, 3.0, 4.0)
 
-<span class="c1"># Memory management</span>
-<span class="k">var</span><span class="w"> </span><span class="nv">ptr</span><span class="p">:</span><span class="w"> </span><span class="n">Pointer</span><span class="p">[</span><span class="nb">Int</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Pointer</span><span class="p">[</span><span class="nb">Int</span><span class="p">]</span><span class="o">.</span><span class="n">alloc</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-</code></pre></div>
+# Memory management
+var ptr: Pointer[Int] = Pointer[Int].alloc(10)
+</code></pre>
 
 <h2>Operators</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- OPERATOR ----------</span>
+<pre class="codehilite"><code class="language-mojo"># ---------- OPERATOR ----------
 
-<span class="c1"># ARITHMETIC OPERATORS</span>
-<span class="w">    </span><span class="c1"># + =&gt; addition</span>
-<span class="w">    </span><span class="c1"># - =&gt; subtraction</span>
-<span class="w">    </span><span class="c1"># * =&gt; multiplication</span>
-<span class="w">    </span><span class="c1"># / =&gt; division</span>
-<span class="w">    </span><span class="c1"># // =&gt; floor division</span>
-<span class="w">    </span><span class="c1"># % =&gt; modulo</span>
-<span class="w">    </span><span class="c1"># ** =&gt; exponentiation</span>
+# ARITHMETIC OPERATORS
+    # + =&gt; addition
+    # - =&gt; subtraction
+    # * =&gt; multiplication
+    # / =&gt; division
+    # // =&gt; floor division
+    # % =&gt; modulo
+    # ** =&gt; exponentiation
 
-<span class="c1"># COMPARISON OPERATORS</span>
-<span class="w">    </span><span class="c1"># == =&gt; equality</span>
-<span class="w">    </span><span class="c1"># != =&gt; inequality</span>
-<span class="w">    </span><span class="c1">#  = =&gt; comparison operators</span>
+# COMPARISON OPERATORS
+    # == =&gt; equality
+    # != =&gt; inequality
+    #  = =&gt; comparison operators
 
-<span class="c1"># LOGICAL OPERATORS</span>
-<span class="w">    </span><span class="c1"># and =&gt; logical and</span>
-<span class="w">    </span><span class="c1"># or =&gt; logical or</span>
-<span class="w">    </span><span class="c1"># not =&gt; logical not</span>
+# LOGICAL OPERATORS
+    # and =&gt; logical and
+    # or =&gt; logical or
+    # not =&gt; logical not
 
-<span class="c1"># BITWISE OPERATORS</span>
-<span class="w">    </span><span class="c1"># &amp; =&gt; bitwise and</span>
-<span class="w">    </span><span class="c1"># | =&gt; bitwise or</span>
-<span class="w">    </span><span class="c1"># ^ =&gt; bitwise xor</span>
-<span class="w">    </span><span class="c1"># ~ =&gt; bitwise not</span>
-<span class="w">    </span><span class="c1"># &gt; =&gt; left and right shift</span>
-</code></pre></div>
+# BITWISE OPERATORS
+    # &amp; =&gt; bitwise and
+    # | =&gt; bitwise or
+    # ^ =&gt; bitwise xor
+    # ~ =&gt; bitwise not
+    # &gt; =&gt; left and right shift
+</code></pre>
 
 <h2>Control structures</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- CONTROL STRUCTURE ----------</span>
+<pre class="codehilite"><code class="language-mojo"># ---------- CONTROL STRUCTURE ----------
 
-<span class="c1"># CONDITIONALS</span>
+# CONDITIONALS
 
-<span class="c1"># IF ELIF ELSE</span>
-<span class="k">var</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span>
-<span class="k">if</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">10</span><span class="p">:</span>
-<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;greater than 10&quot;</span><span class="p">)</span>
-<span class="k">elif</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">10</span><span class="p">:</span>
-<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;equals 10&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;less than 10&quot;</span><span class="p">)</span>
+# IF ELIF ELSE
+var x = 10
+if x &gt; 10:
+    print(&quot;greater than 10&quot;)
+elif x == 10:
+    print(&quot;equals 10&quot;)
+else:
+    print(&quot;less than 10&quot;)
 
-<span class="c1"># LOOPS</span>
+# LOOPS
 
-<span class="c1"># FOR LOOPS</span>
-<span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+# FOR LOOPS
+for i in range(5):
+    print(i)
 
-<span class="k">for</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="p">:[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">][</span><span class="mi">4</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
-<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+for item in :[2][3][4][1]
+    print(item)
 
-<span class="c1"># WHILE LOOPS</span>
-<span class="k">var</span><span class="w"> </span><span class="nv">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
-<span class="k">while</span><span class="w"> </span><span class="n">counter</span><span class="w">  </span><span class="nb">compile</span><span class="o">-</span><span class="n">time</span><span class="w"> </span><span class="n">parameters</span>
-<span class="w">    </span><span class="c1"># @unroll =&gt; loop unrolling for performance</span>
+# WHILE LOOPS
+var counter = 0
+while counter  compile-time parameters
+    # @unroll =&gt; loop unrolling for performance
 
-<span class="nd">@parameter</span>
-<span class="k">fn</span><span class="w"> </span><span class="nf">vectorized_add</span><span class="p">[</span><span class="n">size</span><span class="p">:</span><span class="w"> </span><span class="nb">Int</span><span class="p">](</span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="nb">SIMD</span><span class="p">[</span><span class="nb">DType</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">],</span><span class="w"> </span><span class="n">b</span><span class="p">:</span><span class="w"> </span><span class="nb">SIMD</span><span class="p">[</span><span class="nb">DType</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">])</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb">SIMD</span><span class="p">[</span><span class="nb">DType</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">]:</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span>
+@parameter
+fn vectorized_add[size: Int](a: SIMD[DType.float32, size], b: SIMD[DType.float32, size]) -&gt; SIMD[DType.float32, size]:
+    return a + b
 
-<span class="c1"># PARALLELIZATION</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">algorithm</span><span class="w"> </span><span class="kn">import</span><span class="w"> </span><span class="n">parallelize</span>
+# PARALLELIZATION
+from algorithm import parallelize
 
-<span class="k">fn</span><span class="w"> </span><span class="nf">parallel_work</span><span class="p">():</span>
-<span class="w">    </span><span class="nd">@parameter</span>
-<span class="w">    </span><span class="k">fn</span><span class="w"> </span><span class="nf">compute_chunk</span><span class="p">(</span><span class="n">i</span><span class="p">:</span><span class="w"> </span><span class="nb">Int</span><span class="p">):</span>
-<span class="w">        </span><span class="c1"># Parallel computation</span>
-<span class="w">        </span><span class="k">pass</span>
+fn parallel_work():
+    @parameter
+    fn compute_chunk(i: Int):
+        # Parallel computation
+        pass
 
-<span class="w">    </span><span class="n">parallelize</span><span class="p">[</span><span class="n">compute_chunk</span><span class="p">](</span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span><span class="w">  </span><span class="c1"># 1000 tasks, 8 workers</span>
-</code></pre></div>
+    parallelize[compute_chunk](1000, 8)  # 1000 tasks, 8 workers
+</code></pre>
 
 <h2>Data structures</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- DATA STRUCTURE ----------</span>
+<pre class="codehilite"><code class="language-mojo"># ---------- DATA STRUCTURE ----------
 
-<span class="c1"># LISTS</span>
-<span class="w">    </span><span class="c1"># List[T] =&gt; dynamic arrays similar to Python lists</span>
+# LISTS
+    # List[T] =&gt; dynamic arrays similar to Python lists
 
-<span class="k">var</span><span class="w"> </span><span class="nv">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">List</span><span class="p">[</span><span class="nb">Int</span><span class="p">]()</span>
-<span class="n">numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+var numbers = List[Int]()
+numbers.append(1)
+numbers.append(2)
+numbers.append(3)
 
-<span class="c1"># DICTIONARIES</span>
-<span class="w">    </span><span class="c1"># Dict[K, V] =&gt; hash maps similar to Python dicts</span>
+# DICTIONARIES
+    # Dict[K, V] =&gt; hash maps similar to Python dicts
 
-<span class="k">var</span><span class="w"> </span><span class="nv">scores</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Dict</span><span class="p">[</span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="nb">Int</span><span class="p">]()</span>
-<span class="n">scores</span><span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">95</span>
-<span class="n">scores</span><span class="p">[</span><span class="s2">&quot;Bob&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">87</span>
+var scores = Dict[String, Int]()
+scores[&quot;Alice&quot;] = 95
+scores[&quot;Bob&quot;] = 87
 
-<span class="c1"># STRUCTS</span>
-<span class="w">    </span><span class="c1"># struct =&gt; high-performance data structures</span>
-<span class="w">    </span><span class="c1"># @value =&gt; makes struct copyable and movable</span>
+# STRUCTS
+    # struct =&gt; high-performance data structures
+    # @value =&gt; makes struct copyable and movable
 
-<span class="nd">@value</span>
-<span class="k">struct</span><span class="w"> </span><span class="n n-Struct">Point</span><span class="p">:</span>
-<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">x</span><span class="p">:</span><span class="w"> </span><span class="nb">Float64</span>
-<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="nv">y</span><span class="p">:</span><span class="w"> </span><span class="nb">Float64</span>
+@value
+struct Point:
+    var x: Float64
+    var y: Float64
 
-<span class="w">    </span><span class="k">fn</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="n">inout</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="nb">Float64</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="nb">Float64</span><span class="p">):</span>
-<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span>
-<span class="w">        </span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span>
+    fn __init__(inout self, x: Float64, y: Float64):
+        self.x = x
+        self.y = y
 
-<span class="w">    </span><span class="k">fn</span><span class="w"> </span><span class="nf">distance_from_origin</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb">Float64</span><span class="p">:</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mf">0.5</span>
+    fn distance_from_origin(self) -&gt; Float64:
+        return (self.x ** 2 + self.y ** 2) ** 0.5
 
-<span class="k">var</span><span class="w"> </span><span class="nv">point</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span><span class="w"> </span><span class="mf">4.0</span><span class="p">)</span>
+var point = Point(3.0, 4.0)
 
-<span class="c1"># TUPLES</span>
-<span class="k">var</span><span class="w"> </span><span class="nv">coordinates</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">)</span>
-<span class="k">var</span><span class="w"> </span><span class="nv">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="kc">True</span><span class="p">)</span>
+# TUPLES
+var coordinates = (10, 20)
+var person = (&quot;Alice&quot;, 25, True)
 
-<span class="c1"># BUFFERS</span>
-<span class="w">    </span><span class="c1"># Buffer[type] =&gt; contiguous memory buffers</span>
-<span class="w">    </span><span class="c1"># DTypePointer =&gt; typed memory pointers</span>
+# BUFFERS
+    # Buffer[type] =&gt; contiguous memory buffers
+    # DTypePointer =&gt; typed memory pointers
 
-<span class="k">var</span><span class="w"> </span><span class="nv">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Buffer</span><span class="p">[</span><span class="nb">DType</span><span class="o">.</span><span class="n">float32</span><span class="p">](</span><span class="mi">1000</span><span class="p">)</span>
-</code></pre></div>
+var buffer = Buffer[DType.float32](1000)
+</code></pre>
 
 <h2>Functions</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- FUNCTION ----------</span>
-<span class="w">    </span><span class="c1"># def =&gt; Python-compatible functions (dynamic)</span>
-<span class="w">    </span><span class="c1"># fn =&gt; Mojo native functions (static, optimized)</span>
-<span class="w">    </span><span class="c1"># inout =&gt; parameters that can be modified</span>
-<span class="w">    </span><span class="c1"># owned =&gt; transfer ownership of arguments</span>
-<span class="w">    </span><span class="c1"># borrowed =&gt; immutable reference (default)</span>
+<pre class="codehilite"><code class="language-mojo"># ---------- FUNCTION ----------
+    # def =&gt; Python-compatible functions (dynamic)
+    # fn =&gt; Mojo native functions (static, optimized)
+    # inout =&gt; parameters that can be modified
+    # owned =&gt; transfer ownership of arguments
+    # borrowed =&gt; immutable reference (default)
 
-<span class="c1"># PYTHON-COMPATIBLE FUNCTIONS</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">py_function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">):</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span>
+# PYTHON-COMPATIBLE FUNCTIONS
+def py_function(x, y):
+    return x + y
 
-<span class="c1"># MOJO NATIVE FUNCTIONS</span>
-<span class="k">fn</span><span class="w"> </span><span class="nf">add_ints</span><span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="nb">Int</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">:</span><span class="w"> </span><span class="nb">Int</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb">Int</span><span class="p">:</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span>
+# MOJO NATIVE FUNCTIONS
+fn add_ints(a: Int, b: Int) -&gt; Int:
+    return a + b
 
-<span class="c1"># PARAMETER PASSING</span>
-<span class="k">fn</span><span class="w"> </span><span class="nf">modify_value</span><span class="p">(</span><span class="n">inout</span><span class="w"> </span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="nb">Int</span><span class="p">):</span>
-<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="w">  </span><span class="c1"># modifies original value</span>
+# PARAMETER PASSING
+fn modify_value(inout x: Int):
+    x += 1  # modifies original value
 
-<span class="k">fn</span><span class="w"> </span><span class="nf">take_ownership</span><span class="p">(</span><span class="n">owned</span><span class="w"> </span><span class="n">s</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb">String</span><span class="p">:</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; (owned)&quot;</span>
+fn take_ownership(owned s: String) -&gt; String:
+    return s + &quot; (owned)&quot;
 
-<span class="k">fn</span><span class="w"> </span><span class="nf">read_only</span><span class="p">(</span><span class="k">borrowed</span><span class="w"> </span><span class="n">s</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb">Int</span><span class="p">:</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+fn read_only(borrowed s: String) -&gt; Int:
+    return len(s)
 
-<span class="c1"># GENERIC FUNCTIONS</span>
-<span class="k">fn</span><span class="w"> </span><span class="nf">generic_add</span><span class="p">[</span><span class="n">T</span><span class="p">:</span><span class="w"> </span><span class="nb">AnyType</span><span class="p">](</span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">:</span><span class="w"> </span><span class="n">T</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">T</span><span class="p">:</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span>
+# GENERIC FUNCTIONS
+fn generic_add[T: AnyType](a: T, b: T) -&gt; T:
+    return a + b
 
-<span class="c1"># COMPILE-TIME PARAMETERS</span>
-<span class="nd">@parameter</span>
-<span class="k">fn</span><span class="w"> </span><span class="nf">compile_time_square</span><span class="p">[</span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="nb">Int</span><span class="p">]()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb">Int</span><span class="p">:</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">value</span>
+# COMPILE-TIME PARAMETERS
+@parameter
+fn compile_time_square[value: Int]() -&gt; Int:
+    return value * value
 
-<span class="c1"># SIMD FUNCTIONS</span>
-<span class="k">fn</span><span class="w"> </span><span class="nf">vectorized_multiply</span><span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="nb">SIMD</span><span class="p">[</span><span class="nb">DType</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">],</span><span class="w"> </span><span class="n">b</span><span class="p">:</span><span class="w"> </span><span class="nb">SIMD</span><span class="p">[</span><span class="nb">DType</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">])</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb">SIMD</span><span class="p">[</span><span class="nb">DType</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">]:</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span>
+# SIMD FUNCTIONS
+fn vectorized_multiply(a: SIMD[DType.float32, 8], b: SIMD[DType.float32, 8]) -&gt; SIMD[DType.float32, 8]:
+    return a * b
 
-<span class="c1"># ASYNC FUNCTIONS</span>
-<span class="k">async</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">async_computation</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb">Int</span><span class="p">:</span>
-<span class="w">    </span><span class="c1"># Asynchronous computation</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">42</span>
-</code></pre></div>
+# ASYNC FUNCTIONS
+async fn async_computation() -&gt; Int:
+    # Asynchronous computation
+    return 42
+</code></pre>
 
 <h2>More on</h2>
 <ul>

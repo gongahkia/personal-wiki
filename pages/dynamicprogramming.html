@@ -33,7 +33,7 @@
 
         <dl>
           <dt>File size</dt>
-          <dd>7.6KB</dd>
+          <dd>4.4KB</dd>
 
           <dt>Lines of code</dt>
           <dd>124</dd>
@@ -80,26 +80,26 @@ Code snippets below are written in <a href="Rust.md">Rust</a>.</p>
 <li>For all $j$ such that $j \lt i$ and $aj \lt ai$, find the Largest LSj and add it to LSi. </li>
 <li>This algorithm has a time complexity $O(n^2)$.</li>
 </ol>
-<div class="codehilite"><pre><span></span><code><span class="k">fn</span><span class="w"> </span><span class="nf">longest_increasing_subsequence</span><span class="p">(</span><span class="n">nums</span><span class="p">:</span><span class="w"> </span><span class="nb">Vec</span><span class="o">&lt;</span><span class="kt">i32</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="kt">usize</span><span class="w"> </span><span class="p">{</span>
+<pre class="codehilite"><code class="language-rs">fn longest_increasing_subsequence(nums: Vec&lt;i32&gt;) -&gt; usize {
 
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">nums</span><span class="p">.</span><span class="n">is_empty</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
+    if nums.is_empty() {
+        return 0;
+    }
 
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nums</span><span class="p">.</span><span class="n">len</span><span class="p">();</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">lis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">vec!</span><span class="p">[</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">n</span><span class="p">];</span>
+    let n = nums.len();
+    let mut lis = vec![1; n];
 
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">1</span><span class="o">..</span><span class="n">n</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">0</span><span class="o">..</span><span class="n">i</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="n">lis</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lis</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">max</span><span class="p">(</span><span class="n">lis</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
+    for i in 1..n {
+        for j in 0..i {
+            if nums[j] &lt; nums[i] {
+                lis[i] = lis[i].max(lis[j] + 1);
+            }
+        }
+    }
 
-<span class="w">    </span><span class="o">*</span><span class="n">lis</span><span class="p">.</span><span class="n">iter</span><span class="p">().</span><span class="n">max</span><span class="p">().</span><span class="n">unwrap</span><span class="p">()</span>
-<span class="p">}</span>
-</code></pre></div>
+    *lis.iter().max().unwrap()
+}
+</code></pre>
 
 <h2>More on</h2>
 <ul>

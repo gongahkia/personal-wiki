@@ -33,7 +33,7 @@
 
         <dl>
           <dt>File size</dt>
-          <dd>14.4KB</dd>
+          <dd>7.4KB</dd>
 
           <dt>Lines of code</dt>
           <dd>140</dd>
@@ -93,30 +93,30 @@
 <li><code>(?&lt;!</code>: asserts that a group of characters cannot be matched to the left of the current position <em>(negative lookbehind)</em></li>
 </ul>
 <h2>Worked example</h2>
-<div class="codehilite"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="o">-----</span><span class="w"> </span><span class="n">WORKED</span><span class="w"> </span><span class="n">EXAMPLE</span><span class="w"> </span><span class="o">-----</span>
+<pre class="codehilite"><code class="language-regex"># ----- WORKED EXAMPLE -----
 
-<span class="n">hello</span><span class="w">         </span><span class="err">#</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">exact</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="ss">&quot;hello&quot;</span>
+hello         # this matches the exact string &quot;hello&quot;
 
-<span class="n">h</span><span class="p">.</span><span class="n">llo</span><span class="w">         </span><span class="err">#</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="ss">&quot;hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;hallo&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;hxllo&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">etc</span><span class="p">.</span>
+h.llo         # this matches &quot;hello&quot;, &quot;hallo&quot;, &quot;hxllo&quot;, etc.
 
-<span class="o">^</span><span class="n">hello</span><span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="ss">&quot;hello&quot;</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">it</span><span class="s1">&#39;s at the start of a line</span>
-<span class="s1">world$        # this matches &quot;world&quot; only if it&#39;</span><span class="n">s</span><span class="w"> </span><span class="k">at</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">line</span>
+^hello        # this matches &quot;hello&quot; only if it's at the start of a line
+world$        # this matches &quot;world&quot; only if it's at the end of a line
 
-<span class="n">a</span><span class="o">*</span><span class="w">            </span><span class="err">#</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="ss">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;aa&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;aaa&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">etc</span><span class="p">.,</span><span class="w"> </span><span class="n">including</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">empty</span><span class="w"> </span><span class="n">string</span>
-<span class="n">a</span><span class="o">+</span><span class="w">            </span><span class="err">#</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="ss">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;aa&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;aaa&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">etc</span><span class="p">.,</span><span class="w"> </span><span class="n">but</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">empty</span><span class="w"> </span><span class="n">string</span>
-<span class="n">a</span><span class="vm">?</span><span class="w">            </span><span class="err">#</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="ss">&quot;a&quot;</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">empty</span><span class="w"> </span><span class="n">string</span>
-<span class="n">a</span><span class="err">{</span><span class="mi">3</span><span class="err">}</span><span class="w">          </span><span class="err">#</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="n">exactly</span><span class="w"> </span><span class="ss">&quot;aaa&quot;</span>
-<span class="n">a</span><span class="err">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="err">}</span><span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="ss">&quot;aa&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;aaa&quot;</span><span class="p">,</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="ss">&quot;aaaa&quot;</span>
+a*            # this matches &quot;a&quot;, &quot;aa&quot;, &quot;aaa&quot;, etc., including an empty string
+a+            # this matches &quot;a&quot;, &quot;aa&quot;, &quot;aaa&quot;, etc., but not an empty string
+a?            # this matches &quot;a&quot; or an empty string
+a{3}          # this matches exactly &quot;aaa&quot;
+a{2,4}        # this matches &quot;aa&quot;, &quot;aaa&quot;, or &quot;aaaa&quot;
 
-<span class="o">[</span><span class="n">abc</span><span class="o">]</span><span class="w">         </span><span class="err">#</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="ss">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="ss">&quot;c&quot;</span>
-<span class="o">[</span><span class="n">^abc</span><span class="o">]</span><span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="ow">any</span><span class="w"> </span><span class="k">character</span><span class="w"> </span><span class="ow">except</span><span class="w"> </span><span class="ss">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="ss">&quot;c&quot;</span>
-<span class="o">[</span><span class="n">a-z</span><span class="o">]</span><span class="w">         </span><span class="err">#</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="ow">any</span><span class="w"> </span><span class="n">lowercase</span><span class="w"> </span><span class="n">letter</span>
-<span class="o">[</span><span class="n">A-Z</span><span class="o">]</span><span class="w">         </span><span class="err">#</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="ow">any</span><span class="w"> </span><span class="n">uppercase</span><span class="w"> </span><span class="n">letter</span>
-<span class="o">[</span><span class="n">0-9</span><span class="o">]</span><span class="w">         </span><span class="err">#</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="ow">any</span><span class="w"> </span><span class="n">digit</span>
+[abc]         # this matches &quot;a&quot;, &quot;b&quot;, or &quot;c&quot;
+[^abc]        # this matches any character except &quot;a&quot;, &quot;b&quot;, or &quot;c&quot;
+[a-z]         # this matches any lowercase letter
+[A-Z]         # this matches any uppercase letter
+[0-9]         # this matches any digit
 
-<span class="p">(</span><span class="n">ab</span><span class="o">|</span><span class="n">cd</span><span class="p">)</span><span class="w">       </span><span class="err">#</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="ss">&quot;ab&quot;</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="ss">&quot;cd&quot;</span>
-<span class="p">(</span><span class="n">grape</span><span class="o">|</span><span class="n">apple</span><span class="p">)</span><span class="n">s</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="ss">&quot;grapes&quot;</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="ss">&quot;apples&quot;</span>
-</code></pre></div>
+(ab|cd)       # this matches &quot;ab&quot; or &quot;cd&quot;
+(grape|apple)s # this matches &quot;grapes&quot; or &quot;apples&quot;
+</code></pre>
 
 <h2>More on</h2>
 <ul>

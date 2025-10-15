@@ -33,7 +33,7 @@
 
         <dl>
           <dt>File size</dt>
-          <dd>34.3KB</dd>
+          <dd>7.9KB</dd>
 
           <dt>Lines of code</dt>
           <dd>213</dd>
@@ -44,151 +44,151 @@
         <h1><code>Dafny</code></h1>
 <p>Language designed specifically for formal verification, widely used in academic and industrial settings for writing reliable software.</p>
 <h2>Comments</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// ----- COMMENT -----</span>
+<pre class="codehilite"><code class="language-dfy">// ----- COMMENT -----
 
-<span class="c1">// this is a single-line comment</span>
+// this is a single-line comment
 
-<span class="o">/*</span>
-<span class="n">this</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">a</span>
-<span class="n">multi</span><span class="o">-</span><span class="n">line</span>
-<span class="n">comment</span>
-<span class="o">*/</span>
-</code></pre></div>
+/*
+this is a
+multi-line
+comment
+*/
+</code></pre>
 
 <h2>Printing</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// ----- PRINTING -----</span>
-<span class="w">    </span><span class="c1">// print =&gt; receives a string argument that is then printed to the stdout without including a newline by default</span>
-<span class="w">    </span><span class="c1">// note that Dafny has no standard implementation for printing to the stdout with a newline included automatically</span>
+<pre class="codehilite"><code class="language-dfy">// ----- PRINTING -----
+    // print =&gt; receives a string argument that is then printed to the stdout without including a newline by default
+    // note that Dafny has no standard implementation for printing to the stdout with a newline included automatically
 
-<span class="nx">print</span><span class="w"> </span><span class="s">&quot;this does not have a newline&quot;</span><span class="p">;</span>
-<span class="nx">print</span><span class="w"> </span><span class="s">&quot;this has a newline but only because we explicitly specify its inclusion\n&quot;</span><span class="p">;</span>
-</code></pre></div>
+print &quot;this does not have a newline&quot;;
+print &quot;this has a newline but only because we explicitly specify its inclusion\n&quot;;
+</code></pre>
 
 <h2>Quickstart</h2>
-<div class="codehilite"><pre><span></span><code><span class="o">//</span><span class="w"> </span><span class="o">-----</span><span class="w"> </span><span class="n">QUICKSTART</span><span class="w"> </span><span class="o">-----</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">strongly</span><span class="w"> </span><span class="n">statically</span><span class="o">-</span><span class="n">typed</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">ensures</span><span class="w"> </span><span class="n">program</span><span class="w"> </span><span class="n">safety</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">correctness</span><span class="w"> </span><span class="n">through</span><span class="w"> </span><span class="n">rigorous</span><span class="w"> </span><span class="n">specification</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">control</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">program</span><span class="w"> </span><span class="n">behaviour</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">method</span><span class="w"> </span><span class="n">Main</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">specifies</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">entry</span><span class="w"> </span><span class="n">point</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">Dafny</span><span class="w"> </span><span class="n">program</span><span class="w"> </span><span class="n">wherein</span><span class="w"> </span><span class="n">all</span><span class="w"> </span><span class="n">execution</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">written</span><span class="p">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">equivalent</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="n">function</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">langauges</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">C</span><span class="w"> </span><span class="n">family</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w">  </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">assignment</span><span class="w"> </span><span class="n">operator</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">Dafny</span><span class="p">,</span><span class="w"> </span><span class="n">used</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">assign</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">given</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">named</span><span class="w"> </span><span class="n">field</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">specifies</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">datatype</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">given</span><span class="w"> </span><span class="n">variable</span><span class="p">,</span><span class="w"> </span><span class="n">providing</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="n">declaration</span><span class="w"> </span><span class="n">within</span><span class="w"> </span><span class="n">Dafny</span>
+<pre class="codehilite"><code class="language-dfy">// ----- QUICKSTART -----
+    // strongly statically-typed
+    // ensures program safety and correctness through rigorous specification and control of program behaviour
+    // method Main() =&gt; specifies the entry point of a Dafny program wherein all execution code is written, the equivalent of the main function in langauges from the C family
+    // :=  =&gt; assignment operator in Dafny, used to assign a value to a given variable or named field
+    // : =&gt; specifies the datatype of a given variable, providing type declaration within Dafny
 
-<span class="n">method</span><span class="w"> </span><span class="n">Main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
-<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
-<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
-<span class="w">    </span><span class="nb">print</span><span class="w"> </span><span class="n">sum</span><span class="p">;</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="nb">prints</span><span class="w"> </span><span class="n">without</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">newline</span>
-<span class="p">}</span>
-</code></pre></div>
+method Main() {
+    var x := 5;
+    var y := 10;
+    var sum := x + y;
+    print sum; % this prints without a newline
+}
+</code></pre>
 
 <h2>Types</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// ----- TYPE -----</span>
-<span class="w">    </span><span class="c1">// int =&gt; stores an integer whole number value</span>
-<span class="w">    </span><span class="c1">// real =&gt; stores a real number value, which covers floating-point number values</span>
-<span class="w">    </span><span class="c1">// char =&gt; stores a single character long value declared within &#39;&#39; single quotation marks</span>
-<span class="w">    </span><span class="c1">// string =&gt; stores a string value declared within &quot;&quot; double quotation marks</span>
-<span class="w">    </span><span class="c1">// bool =&gt; true, false</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-dfy">// ----- TYPE -----
+    // int =&gt; stores an integer whole number value
+    // real =&gt; stores a real number value, which covers floating-point number values
+    // char =&gt; stores a single character long value declared within '' single quotation marks
+    // string =&gt; stores a string value declared within &quot;&quot; double quotation marks
+    // bool =&gt; true, false
+</code></pre>
 
 <h2>Operators</h2>
-<div class="codehilite"><pre><span></span><code><span class="o">//</span><span class="w"> </span><span class="o">-----</span><span class="w"> </span><span class="n">OPERATORS</span><span class="w"> </span><span class="o">-----</span>
+<pre class="codehilite"><code class="language-dfy">// ----- OPERATORS -----
 
-<span class="o">//</span><span class="w"> </span><span class="o">---</span><span class="w"> </span><span class="n">ARITHMETIC</span><span class="w"> </span><span class="n">OPERATORS</span><span class="w"> </span><span class="o">---</span>
+// --- ARITHMETIC OPERATORS ---
 
-<span class="o">+</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">addition</span>
-<span class="o">-</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">subtraction</span>
-<span class="o">*</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">multiplication</span>
-<span class="o">/</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">divison</span>
-<span class="c">% // modulo</span>
++ // addition
+- // subtraction
+* // multiplication
+/ // divison
+% // modulo
 
-<span class="o">//</span><span class="w"> </span><span class="o">---</span><span class="w"> </span><span class="n">COMPARISON</span><span class="w"> </span><span class="n">OPERATORS</span><span class="w"> </span><span class="o">---</span>
+// --- COMPARISON OPERATORS ---
 
-<span class="o">==</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">complete</span><span class="w"> </span><span class="n">equality</span><span class="w"> </span><span class="n">check</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">both</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">primitive</span><span class="w"> </span><span class="n">datatypes</span><span class="p">,</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">checks</span><span class="w"> </span><span class="n">whether</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">same</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nb">memory</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">reference</span><span class="w"> </span><span class="n">types</span>
-<span class="sx">!= // complete inequality check for both value and type for primitive datatypes, and checks whether it is not the same object in memory for reference types</span>
-<span class="o">&gt;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">comparison</span><span class="w"> </span><span class="n">operators</span>
-<span class="o">&lt;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">comparison</span><span class="w"> </span><span class="n">operators</span>
-<span class="o">&gt;=</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">comparison</span><span class="w"> </span><span class="n">operators</span>
-<span class="o">&lt;=</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">comparison</span><span class="w"> </span><span class="n">operators</span>
+== // complete equality check for both value and type for primitive datatypes, and checks whether it is the same object in memory for reference types
+!= // complete inequality check for both value and type for primitive datatypes, and checks whether it is not the same object in memory for reference types
+&gt; // comparison operators
+&lt; // comparison operators
+&gt;= // comparison operators
+&lt;= // comparison operators
 
-<span class="o">//</span><span class="w"> </span><span class="o">---</span><span class="w"> </span><span class="n">LOGICAL</span><span class="w"> </span><span class="n">OPERATORS</span><span class="w"> </span><span class="o">---</span>
+// --- LOGICAL OPERATORS ---
 
-<span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">logical</span><span class="w"> </span><span class="n">and</span><span class="w"> </span>
-<span class="o">||</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">logical</span><span class="w"> </span><span class="n">or</span>
-<span class="sx">! // logical not</span>
-</code></pre></div>
+&amp;&amp; // logical and 
+|| // logical or
+! // logical not
+</code></pre>
 
 <h2>Control structures</h2>
-<div class="codehilite"><pre><span></span><code><span class="o">//</span><span class="w"> </span><span class="o">-----</span><span class="w"> </span><span class="n">CONTROL</span><span class="w"> </span><span class="n">STRUCTURES</span><span class="w"> </span><span class="o">-----</span>
+<pre class="codehilite"><code class="language-dfy">// ----- CONTROL STRUCTURES -----
 
-<span class="o">//</span><span class="w"> </span><span class="o">---</span><span class="w"> </span><span class="n">CONDITIONALS</span><span class="w"> </span><span class="o">---</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">Dafny</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="n">no</span><span class="w"> </span><span class="n">conventional</span><span class="w"> </span><span class="n">switch</span><span class="w"> </span><span class="n">case</span><span class="w"> </span><span class="n">constructs</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">other</span><span class="w"> </span><span class="n">programming</span><span class="w"> </span><span class="n">languages</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">instead</span><span class="p">,</span><span class="w"> </span><span class="n">basic</span><span class="w"> </span><span class="n">pattern</span><span class="o">-</span><span class="n">matching</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">still</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">achieved</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="n">conditional</span><span class="w"> </span><span class="n">constructs</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">below</span>
+// --- CONDITIONALS ---
+    // Dafny has no conventional switch case constructs as in other programming languages
+    // instead, basic pattern-matching can still be achieved with if else if else conditional constructs as below
 
-<span class="o">//</span><span class="w"> </span><span class="n">IF</span><span class="w"> </span><span class="n">ELSE</span><span class="w"> </span><span class="n">IF</span><span class="w"> </span><span class="n">ELSE</span>
+// IF ELSE IF ELSE
 
-<span class="n">method</span><span class="w"> </span><span class="n">Main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="mi">18</span><span class="p">;</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">18</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nb">print</span><span class="w"> </span><span class="s2">&quot;Adult</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">13</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nb">print</span><span class="w"> </span><span class="s2">&quot;Teenager</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nb">print</span><span class="w"> </span><span class="s2">&quot;Child</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
+method Main() {
+    var age := 18;
+    if age &gt;= 18 {
+        print &quot;Adult\n&quot;;
+    } else if age &gt;= 13 {
+        print &quot;Teenager\n&quot;;
+    } else {
+        print &quot;Child\n&quot;;
+    }
+}
 
-<span class="o">//</span><span class="w"> </span><span class="o">---</span><span class="w"> </span><span class="n">LOOPS</span><span class="w"> </span><span class="o">---</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">Dafny</span><span class="w"> </span><span class="n">does</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="n">conventional</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">loop</span><span class="w"> </span><span class="n">constructs</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">other</span><span class="w"> </span><span class="n">programming</span><span class="w"> </span><span class="n">languages</span><span class="p">,</span><span class="w"> </span><span class="n">but</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="n">loops</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">still</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">used</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">achieve</span><span class="w"> </span><span class="n">some</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">effects</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">loop</span><span class="w"> </span><span class="nb">range</span><span class="o">-</span><span class="n">based</span><span class="w"> </span><span class="n">iteration</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">Dafny</span><span class="s1">&#39;s emphasis on loop invariants and termination proofs to ensure verification correctness</span>
+// --- LOOPS ---
+    // Dafny does not have conventional for loop constructs as in other programming languages, but while loops can still be used to achieve some of the effects of for loop range-based iteration
+    // this is in line with Dafny's emphasis on loop invariants and termination proofs to ensure verification correctness
 
-<span class="o">//</span><span class="w"> </span><span class="n">WHILE</span>
+// WHILE
 
-<span class="n">method</span><span class="w"> </span><span class="n">Main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nb">print</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
-<span class="w">        </span><span class="nb">print</span><span class="w"> </span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-<span class="w">        </span><span class="n">i</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+method Main() {
+    var i := 0;
+    while i &lt; 5 {
+        print i;
+        print &quot;\n&quot;;
+        i := i + 1;
+    }
+}
+</code></pre>
 
 <h2>Data structures</h2>
-<div class="codehilite"><pre><span></span><code><span class="o">//</span><span class="w"> </span><span class="o">-----</span><span class="w"> </span><span class="n">DATA</span><span class="w"> </span><span class="n">STRUCTURES</span><span class="w"> </span><span class="o">-----</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">array</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">fixed</span><span class="o">-</span><span class="n">size</span><span class="w"> </span><span class="n">mutable</span><span class="w"> </span><span class="n">ordered</span><span class="w"> </span><span class="n">collection</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">elements</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">same</span><span class="w"> </span><span class="n">datatype</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">sequence</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">dynamically</span><span class="o">-</span><span class="n">sized</span><span class="w"> </span><span class="n">mutable</span><span class="w"> </span><span class="n">ordered</span><span class="w"> </span><span class="n">collection</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">elements</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">same</span><span class="w"> </span><span class="n">datatype</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">mutable</span><span class="w"> </span><span class="n">unordered</span><span class="w"> </span><span class="n">collection</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">unique</span><span class="w"> </span><span class="n">elements</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">same</span><span class="w"> </span><span class="n">datatype</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">map</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">mutable</span><span class="w"> </span><span class="n">unordered</span><span class="w"> </span><span class="n">collection</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">key</span><span class="o">-</span><span class="n">value</span><span class="w"> </span><span class="n">pairs</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">multiple</span><span class="w"> </span><span class="n">datatypes</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">unique</span><span class="w"> </span><span class="n">keys</span><span class="p">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">equivalent</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">dictionaries</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">Python</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">tuple</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">immutable</span><span class="w"> </span><span class="n">fixed</span><span class="o">-</span><span class="n">size</span><span class="w"> </span><span class="n">ordered</span><span class="w"> </span><span class="n">collection</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">elements</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">multiple</span><span class="w"> </span><span class="n">datatypes</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">datatype</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">immutable</span><span class="w"> </span><span class="n">user</span><span class="o">-</span><span class="n">defined</span><span class="w"> </span><span class="n">variant</span><span class="w"> </span><span class="n">enumeration</span><span class="w"> </span><span class="n">datatype</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">optional</span><span class="w"> </span><span class="n">specified</span><span class="w"> </span><span class="n">named</span><span class="w"> </span><span class="n">fields</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">their</span><span class="w"> </span><span class="n">datatypes</span><span class="p">,</span><span class="w"> </span><span class="n">allowing</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">modelling</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">variants</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">representative</span><span class="w"> </span><span class="n">structured</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">equivalent</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">hybrid</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">enums</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">structs</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">other</span><span class="w"> </span><span class="n">languages</span>
+<pre class="codehilite"><code class="language-dfy">// ----- DATA STRUCTURES -----
+    // array =&gt; fixed-size mutable ordered collection of elements of the same datatype
+    // sequence =&gt; dynamically-sized mutable ordered collection of elements of the same datatype
+    // set =&gt; mutable unordered collection of unique elements of the same datatype
+    // map =&gt; mutable unordered collection of key-value pairs of multiple datatypes with unique keys, the equivalent of dictionaries in Python
+    // tuple =&gt; immutable fixed-size ordered collection of elements of multiple datatypes
+    // datatype =&gt; immutable user-defined variant enumeration datatype with optional specified named fields and their datatypes, allowing the modelling of the variants of representative structured data, the equivalent of a hybrid of enums and structs in other languages
 
-<span class="k">var</span><span class="w"> </span><span class="n">anExampleArray</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="nb nb-Type">int</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>
-<span class="n">anExampleArray</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
-<span class="n">anExampleArray</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
-<span class="n">anExampleArray</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span>
-<span class="n">anExampleArray</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="mi">40</span><span class="p">;</span>
-<span class="n">anExampleArray</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="mi">50</span><span class="p">;</span>
+var anExampleArray := new int[5];
+anExampleArray[0] := 10;
+anExampleArray[1] := 20;
+anExampleArray[2] := 30;
+anExampleArray[3] := 40;
+anExampleArray[4] := 50;
 
-<span class="k">var</span><span class="w"> </span><span class="n">anExampleSequence</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">];</span>
+var anExampleSequence := [1, 2, 3, 4, 5];
 
-<span class="k">var</span><span class="w"> </span><span class="n">anExampleSet</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+var anExampleSet := set {1, 2, 3};
 
-<span class="k">var</span><span class="w"> </span><span class="n">anExampleMap</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="n">map</span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;one&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;two&quot;</span><span class="p">];</span>
+var anExampleMap := map[1 := &quot;one&quot;, 2 := &quot;two&quot;];
 
-<span class="k">var</span><span class="w"> </span><span class="n">anExampleTuple</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;two&quot;</span><span class="p">);</span>
+var anExampleTuple := (1, &quot;two&quot;);
 
-<span class="n">datatype</span><span class="w"> </span><span class="n">anExampleDatatype</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="n">John</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Elaine</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Roger</span>
-<span class="n">datatype</span><span class="w"> </span><span class="nb nb-Type">Color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Red</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Green</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Blue</span>
-</code></pre></div>
+datatype anExampleDatatype := John | Elaine | Roger
+datatype Color = Red | Green | Blue
+</code></pre>
 
 <h2>Functions and Methods</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// ----- FUNCTION -----</span>
-<span class="w">    </span><span class="c1">// Dafny inherits some characteristics from the functional paradigm, including implicit return of the last expression within the function body</span>
-<span class="w">    </span><span class="c1">// function &lt;functionName&gt; ( &lt;functionParameterName(s)&gt; : &lt;functionParameterDatatype(s)&gt; ) : &lt;functionReturnDatatype&gt; { &lt;functionBody&gt; } =&gt; function declaration and definition of a named function</span>
+<pre class="codehilite"><code class="language-dfy">// ----- FUNCTION -----
+    // Dafny inherits some characteristics from the functional paradigm, including implicit return of the last expression within the function body
+    // function &lt;functionName&gt; ( &lt;functionParameterName(s)&gt; : &lt;functionParameterDatatype(s)&gt; ) : &lt;functionReturnDatatype&gt; { &lt;functionBody&gt; } =&gt; function declaration and definition of a named function
 
-<span class="nx">function</span><span class="w"> </span><span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">:</span><span class="w"> </span><span class="nx">int</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">:</span><span class="w"> </span><span class="nx">int</span><span class="p">):</span><span class="w"> </span><span class="nx">int</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span>
-<span class="p">}</span>
-</code></pre></div>
+function add(a: int, b: int): int {
+    a + b
+}
+</code></pre>
 
 <h2>More on</h2>
 <ul>

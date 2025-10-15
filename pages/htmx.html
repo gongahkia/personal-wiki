@@ -33,7 +33,7 @@
 
         <dl>
           <dt>File size</dt>
-          <dd>7.5KB</dd>
+          <dd>4.9KB</dd>
 
           <dt>Lines of code</dt>
           <dd>110</dd>
@@ -50,41 +50,41 @@
 <li>behaviour is defined with HTML attributes</li>
 </ul>
 <h2>Quickstart</h2>
-<div class="codehilite"><pre><span></span><code><span class="cm">&lt;!-- ----- QUICKSTART ----- --&gt;</span>
-    <span class="cm">&lt;!-- htmx interacts with  --&gt;</span>
-        <span class="cm">&lt;!-- server-side data structures (JavaScript objects like JSON) --&gt;</span> 
-        <span class="cm">&lt;!-- client-side DOM structure (standard HTML elements) --&gt;</span>
-        <span class="cm">&lt;!-- eg. use JSON data returned from the server to update DOM elements --&gt;</span>
-    <span class="cm">&lt;!-- below is an annotated example of html incorporating htmx behaviours --&gt;</span>
+<pre class="codehilite"><code class="language-html">&lt;!-- ----- QUICKSTART ----- --&gt;
+    &lt;!-- htmx interacts with  --&gt;
+        &lt;!-- server-side data structures (JavaScript objects like JSON) --&gt; 
+        &lt;!-- client-side DOM structure (standard HTML elements) --&gt;
+        &lt;!-- eg. use JSON data returned from the server to update DOM elements --&gt;
+    &lt;!-- below is an annotated example of html incorporating htmx behaviours --&gt;
 
-<span class="cm">&lt;!-- --- HTMX SYNTAX OVERVIEW --- --&gt;</span>
+&lt;!-- --- HTMX SYNTAX OVERVIEW --- --&gt;
 
-<span class="cm">&lt;!-- - CORE ATTRIBUTES - --&gt;</span>
-    <span class="cm">&lt;!-- htmx is included within the &lt;script&gt; tags of your HTML file under the specified src attribute --&gt;</span>
-    <span class="cm">&lt;!-- hx-get =&gt; issues a GET request to the specified URL --&gt;</span>
-    <span class="cm">&lt;!-- hx-post =&gt; issues a POST request to the specified URL --&gt;</span>
-    <span class="cm">&lt;!-- hx-put =&gt; issues a PUT request --&gt;</span>
-    <span class="cm">&lt;!-- hx-delete =&gt; issues a DELETE request --&gt;</span>
-    <span class="cm">&lt;!-- hx-swap =&gt; specifies how a given response should be swapped into the DOM to replace an existing DOM element --&gt;</span>
-    <span class="cm">&lt;!-- hx-trigger =&gt; specifies an event that triggers the given request --&gt;</span>
-    <span class="cm">&lt;!-- hx-target =&gt; specifies the target HTML element where a given response should be assigned --&gt;</span>
+&lt;!-- - CORE ATTRIBUTES - --&gt;
+    &lt;!-- htmx is included within the &lt;script&gt; tags of your HTML file under the specified src attribute --&gt;
+    &lt;!-- hx-get =&gt; issues a GET request to the specified URL --&gt;
+    &lt;!-- hx-post =&gt; issues a POST request to the specified URL --&gt;
+    &lt;!-- hx-put =&gt; issues a PUT request --&gt;
+    &lt;!-- hx-delete =&gt; issues a DELETE request --&gt;
+    &lt;!-- hx-swap =&gt; specifies how a given response should be swapped into the DOM to replace an existing DOM element --&gt;
+    &lt;!-- hx-trigger =&gt; specifies an event that triggers the given request --&gt;
+    &lt;!-- hx-target =&gt; specifies the target HTML element where a given response should be assigned --&gt;
 
-<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://unpkg.com/htmx.org&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+&lt;script src=&quot;https://unpkg.com/htmx.org&quot;&gt;&lt;/script&gt;
 
-<span class="p">&lt;</span><span class="nt">button</span> <span class="na">hx-get</span><span class="o">=</span><span class="s">&quot;/example&quot;</span> <span class="na">hx-trigger</span><span class="o">=</span><span class="s">&quot;click&quot;</span><span class="p">&gt;</span>Click me<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span> <span class="cm">&lt;!-- this button sends a GET request when clicked --&gt;</span>
+&lt;button hx-get=&quot;/example&quot; hx-trigger=&quot;click&quot;&gt;Click me&lt;/button&gt; &lt;!-- this button sends a GET request when clicked --&gt;
 
-<span class="p">&lt;</span><span class="nt">form</span> <span class="na">hx-post</span><span class="o">=</span><span class="s">&quot;/submit&quot;</span> <span class="na">hx-trigger</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">hx-target</span><span class="o">=</span><span class="s">&quot;#response&quot;</span><span class="p">&gt;</span> <span class="cm">&lt;!-- the hx-target attribute specifies the response will be placed in the HTML element with id=&quot;response&quot; --&gt;</span>
-    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;data&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Enter some data&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>Submit<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span> <span class="cm">&lt;!-- this form sends a POST request when submitted --&gt;</span>
-<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+&lt;form hx-post=&quot;/submit&quot; hx-trigger=&quot;submit&quot; hx-target=&quot;#response&quot;&gt; &lt;!-- the hx-target attribute specifies the response will be placed in the HTML element with id=&quot;response&quot; --&gt;
+    &lt;input type=&quot;text&quot; name=&quot;data&quot; placeholder=&quot;Enter some data&quot;&gt;
+    &lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt; &lt;!-- this form sends a POST request when submitted --&gt;
+&lt;/form&gt;
 
-<span class="p">&lt;</span><span class="nt">div</span> <span class="na">hx-get</span><span class="o">=</span><span class="s">&quot;/content&quot;</span> <span class="na">hx-swap</span><span class="o">=</span><span class="s">&quot;innerHTML&quot;</span> <span class="na">hx-trigger</span><span class="o">=</span><span class="s">&quot;load&quot;</span><span class="p">&gt;</span> <span class="cm">&lt;!-- this div swaps its content with the response from a GET request --&gt;</span>
+&lt;div hx-get=&quot;/content&quot; hx-swap=&quot;innerHTML&quot; hx-trigger=&quot;load&quot;&gt; &lt;!-- this div swaps its content with the response from a GET request --&gt;
     Loading content...
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+&lt;/div&gt;
 
-<span class="p">&lt;</span><span class="nt">button</span> <span class="na">hx-get</span><span class="o">=</span><span class="s">&quot;/data&quot;</span> <span class="na">hx-trigger</span><span class="o">=</span><span class="s">&quot;click&quot;</span> <span class="na">hx-target</span><span class="o">=</span><span class="s">&quot;#data-container&quot;</span><span class="p">&gt;</span>Load Data<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;data-container&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span> <span class="cm">&lt;!-- this updates the DOM element with id=&quot;data-container&quot; using JSON data from the server --&gt;</span>
-</code></pre></div>
+&lt;button hx-get=&quot;/data&quot; hx-trigger=&quot;click&quot; hx-target=&quot;#data-container&quot;&gt;Load Data&lt;/button&gt;
+&lt;div id=&quot;data-container&quot;&gt;&lt;/div&gt; &lt;!-- this updates the DOM element with id=&quot;data-container&quot; using JSON data from the server --&gt;
+</code></pre>
 
 <h2>More on</h2>
 <ul>

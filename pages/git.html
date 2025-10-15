@@ -33,7 +33,7 @@
 
         <dl>
           <dt>File size</dt>
-          <dd>10.6KB</dd>
+          <dd>6.7KB</dd>
 
           <dt>Lines of code</dt>
           <dd>148</dd>
@@ -44,81 +44,81 @@
         <h1><code>Git</code></h1>
 <p>Universal version management system authored by the creator of Linux.</p>
 <h2>Bare minimum</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ----- DEFINITIONS -----</span>
-<span class="w">    </span><span class="c1"># working directory =&gt; current file directory (folder) that stores actual project files</span>
-<span class="w">    </span><span class="c1"># index =&gt; staging area within which you add, commit and push changes made to local files</span>
-<span class="w">    </span><span class="c1"># head =&gt; pointer pointing to the last commit made on a given branch</span>
+<pre class="codehilite"><code class="language-sh"># ----- DEFINITIONS -----
+    # working directory =&gt; current file directory (folder) that stores actual project files
+    # index =&gt; staging area within which you add, commit and push changes made to local files
+    # head =&gt; pointer pointing to the last commit made on a given branch
 
-<span class="c1"># ----- CREATE &amp; CHECKOUT REPOSITORIES -----</span>
+# ----- CREATE &amp; CHECKOUT REPOSITORIES -----
 
-git<span class="w"> </span>init<span class="w"> </span><span class="c1"># makes the current file directory (folder) a git repository</span>
-git<span class="w"> </span>clone<span class="w"> </span>https://pathToRepository.com<span class="w"> </span><span class="c1"># makes a working copy of an existing remote repository to your local client machine</span>
-git<span class="w"> </span>status<span class="w"> </span><span class="c1"># shows any files or folders which have been changed in your local working copy, and whether they are out of sync with the remote repository</span>
+git init # makes the current file directory (folder) a git repository
+git clone https://pathToRepository.com # makes a working copy of an existing remote repository to your local client machine
+git status # shows any files or folders which have been changed in your local working copy, and whether they are out of sync with the remote repository
 
-<span class="c1"># ----- ADD, COMMIT, PUSH CHANGES -----</span>
-<span class="w">    </span><span class="c1"># syncing changes made in your local working copy with the remote repository requires the following three steps</span>
-<span class="w">        </span><span class="c1"># 1. adds modified files or folders to the index</span>
-<span class="w">            </span><span class="c1"># * can be used to add EVERYTHING within the current file directory to the index (git automatically adds only modified files to the staging area)</span>
-<span class="w">        </span><span class="c1"># 2. commits modified files to the head, often with a commit message</span>
-<span class="w">        </span><span class="c1"># 3. pushes the changes to the specified branch of the remote repository</span>
-<span class="w">            </span><span class="c1"># git push =&gt; NOT specifying the branch to push the committed changes to will cause git to default to the currently checked-out branch or the default branch specified in git configuration, which is generally the master branch</span>
+# ----- ADD, COMMIT, PUSH CHANGES -----
+    # syncing changes made in your local working copy with the remote repository requires the following three steps
+        # 1. adds modified files or folders to the index
+            # * can be used to add EVERYTHING within the current file directory to the index (git automatically adds only modified files to the staging area)
+        # 2. commits modified files to the head, often with a commit message
+        # 3. pushes the changes to the specified branch of the remote repository
+            # git push =&gt; NOT specifying the branch to push the committed changes to will cause git to default to the currently checked-out branch or the default branch specified in git configuration, which is generally the master branch
 
-git<span class="w"> </span>add<span class="w"> </span>fileName1<span class="w"> </span>fileName2<span class="w"> </span>folderName1<span class="w"> </span>
-git<span class="w"> </span>add<span class="w"> </span>*<span class="w"> </span><span class="c1"># this is also valid to just add everything</span>
+git add fileName1 fileName2 folderName1 
+git add * # this is also valid to just add everything
 
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Your Message Goes Here&quot;</span><span class="w"> </span>
+git commit -m &quot;Your Message Goes Here&quot; 
 
-git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>master<span class="w"> </span><span class="c1"># specifies the branch to push changes to as the master branch</span>
-git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>branchOne<span class="w"> </span><span class="c1"># push changes to branchOne</span>
-git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>branchTwo<span class="w"> </span><span class="c1"># push changes to branchTwo</span>
-git<span class="w"> </span>push<span class="w"> </span><span class="c1"># this is also valid if you are being lazy, git will default to the currently checked-out branch</span>
+git push origin master # specifies the branch to push changes to as the master branch
+git push origin branchOne # push changes to branchOne
+git push origin branchTwo # push changes to branchTwo
+git push # this is also valid if you are being lazy, git will default to the currently checked-out branch
 
-<span class="c1"># ----- BRANCHING -----</span>
-<span class="w">    </span><span class="c1"># branches are used to isolate development of project features from the master branch until they are ready to be merged</span>
-<span class="w">    </span><span class="c1"># DEFAULT branch is master branch (when you first create your repository) </span>
-<span class="w">    </span><span class="c1"># OTHER branches can be created and used for seperate feature development and later merged with the master branch</span>
+# ----- BRANCHING -----
+    # branches are used to isolate development of project features from the master branch until they are ready to be merged
+    # DEFAULT branch is master branch (when you first create your repository) 
+    # OTHER branches can be created and used for seperate feature development and later merged with the master branch
 
-git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>branchWatermelon<span class="w"> </span><span class="c1"># CREATES a NEW branch named branchWatermelon and switches to it </span>
-git<span class="w"> </span>checkout<span class="w"> </span>master<span class="w"> </span><span class="c1"># switches back to master branch</span>
-git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>branchWatermelon<span class="w"> </span><span class="c1"># DELETES the EXISTING branch named branchWatermelon </span>
+git checkout -b branchWatermelon # CREATES a NEW branch named branchWatermelon and switches to it 
+git checkout master # switches back to master branch
+git branch -d branchWatermelon # DELETES the EXISTING branch named branchWatermelon 
 
-git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>branchPineapple<span class="w"> </span><span class="c1"># CREATES a NEW branch named branchPineapple and switches to it </span>
-git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>branchPineapple<span class="w"> </span><span class="c1"># local branches ARE NOT AVAILABLE to others unless that branch is pushed to the remote repository</span>
+git checkout -b branchPineapple # CREATES a NEW branch named branchPineapple and switches to it 
+git push origin branchPineapple # local branches ARE NOT AVAILABLE to others unless that branch is pushed to the remote repository
 
-<span class="c1"># ----- UPDATE &amp; MERGE  -----</span>
+# ----- UPDATE &amp; MERGE  -----
 
-git<span class="w"> </span>pull<span class="w"> </span><span class="c1"># FETCHES and MERGES remote changes from the remote repository to your local working copy</span>
-git<span class="w"> </span>merge<span class="w"> </span>branchName<span class="w"> </span><span class="c1"># MERGES another branch&#39;s changes into your active branch </span>
-git<span class="w"> </span>diff<span class="w"> </span>sourceBranchName<span class="w"> </span>targetBranchName<span class="w"> </span><span class="c1"># PREVIEWS CHANGES between the branches that are to be merged, sourceBranchName and targetBranchName, to avoid merge conflicts</span>
-</code></pre></div>
+git pull # FETCHES and MERGES remote changes from the remote repository to your local working copy
+git merge branchName # MERGES another branch's changes into your active branch 
+git diff sourceBranchName targetBranchName # PREVIEWS CHANGES between the branches that are to be merged, sourceBranchName and targetBranchName, to avoid merge conflicts
+</code></pre>
 
 <h2>More than the bare minimum</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ----- TAGGING -----</span>
+<pre class="codehilite"><code class="language-sh"># ----- TAGGING -----
 
-git<span class="w"> </span>tag<span class="w"> </span><span class="m">1</span>.0.0<span class="w"> </span>1b2e1d63ff<span class="w"> </span><span class="c1"># creates a new tag to accompany a given software release named 1.0.0, where the 1b2e1d63ff is the first 10 characters of the commit id as found with git log</span>
+git tag 1.0.0 1b2e1d63ff # creates a new tag to accompany a given software release named 1.0.0, where the 1b2e1d63ff is the first 10 characters of the commit id as found with git log
 
-<span class="c1"># ----- GIT LOG -----</span>
+# ----- GIT LOG -----
 
-git<span class="w"> </span>log<span class="w"> </span><span class="c1"># displays repository history</span>
-git<span class="w"> </span>log<span class="w"> </span>--author<span class="o">=</span>bob<span class="w"> </span><span class="c1"># only see commits of a certain author</span>
-git<span class="w"> </span>log<span class="w"> </span>--pretty<span class="o">=</span>oneline<span class="w"> </span><span class="c1"># display a compressed log where each commit is one line</span>
-git<span class="w"> </span>log<span class="w"> </span>--graph<span class="w"> </span>--oneline<span class="w"> </span>--decorate<span class="w"> </span>--all<span class="w"> </span><span class="c1"># displays ASCII tree of all git branches with relevant tags</span>
-git<span class="w"> </span>log<span class="w"> </span>--name-status<span class="w"> </span><span class="c1"># shows only changed files</span>
-git<span class="w"> </span>log<span class="w"> </span>--help<span class="w"> </span><span class="c1"># see more parameters that augment viewing of git log</span>
+git log # displays repository history
+git log --author=bob # only see commits of a certain author
+git log --pretty=oneline # display a compressed log where each commit is one line
+git log --graph --oneline --decorate --all # displays ASCII tree of all git branches with relevant tags
+git log --name-status # shows only changed files
+git log --help # see more parameters that augment viewing of git log
 
-<span class="c1"># ----- REPLACE LOCAL CHANGES -----</span>
+# ----- REPLACE LOCAL CHANGES -----
 
-git<span class="w"> </span>checkout<span class="w"> </span>fileName3<span class="w"> </span><span class="c1"># REPLACES LOCAL CHANGES in your working copy of the specified file with the last commited content in the HEAD (by default the master branch), whilst keeping changes already added to the index </span>
-git<span class="w"> </span>fetch<span class="w"> </span>origin<span class="w"> </span><span class="c1"># DROPS ALL LOCAL CHANGES and COMMITS, fetches the latest content from the remote repository and POINTS local master branch at it</span>
-git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>origin/master
+git checkout fileName3 # REPLACES LOCAL CHANGES in your working copy of the specified file with the last commited content in the HEAD (by default the master branch), whilst keeping changes already added to the index 
+git fetch origin # DROPS ALL LOCAL CHANGES and COMMITS, fetches the latest content from the remote repository and POINTS local master branch at it
+git reset --hard origin/master
 
-<span class="c1"># ----- EXTRAS -----</span>
+# ----- EXTRAS -----
 
-gitk<span class="w"> </span><span class="c1"># calls the built-in git GUI</span>
-git<span class="w"> </span>config<span class="w"> </span>color.ui<span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="c1"># makes git output colorful</span>
-git<span class="w"> </span>config<span class="w"> </span>format.pretty<span class="w"> </span>oneline<span class="w"> </span><span class="c1"># displays the git log as just one line per commit</span>
-git<span class="w"> </span>add<span class="w"> </span>-i<span class="w"> </span><span class="c1"># enables interactive adding of files to the index</span>
-</code></pre></div>
+gitk # calls the built-in git GUI
+git config color.ui true # makes git output colorful
+git config format.pretty oneline # displays the git log as just one line per commit
+git add -i # enables interactive adding of files to the index
+</code></pre>
 
 <h2>Git clients</h2>
 <ul>

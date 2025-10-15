@@ -33,7 +33,7 @@
 
         <dl>
           <dt>File size</dt>
-          <dd>14.6KB</dd>
+          <dd>11.5KB</dd>
 
           <dt>Lines of code</dt>
           <dd>254</dd>
@@ -155,15 +155,15 @@
 </ul>
 <h2>Overview</h2>
 <p>Full-stack architecture diagram.</p>
-<div class="codehilite"><pre><span></span><code><span class="o">+----------------------+</span><span class="w">                 </span><span class="o">+---------------------+</span><span class="w">                          </span><span class="o">+----------------------+</span>
-<span class="o">|</span><span class="w">                      </span><span class="o">|</span><span class="w">                 </span><span class="o">|</span><span class="w">                     </span><span class="o">|</span><span class="w">                          </span><span class="o">|</span><span class="w">                      </span><span class="o">|</span>
-<span class="o">|</span><span class="w">      </span><span class="o">[</span><span class="n">Frontend</span><span class="o">]</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="n">API</span><span class="w"> </span><span class="k">call</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="o">[</span><span class="n">Backend</span><span class="o">]</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="o">---</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="n">query</span><span class="w"> </span><span class="o">---&gt;</span><span class="w">  </span><span class="o">|</span><span class="w">      </span><span class="o">[</span><span class="n">Database</span><span class="o">]</span><span class="w">      </span><span class="o">|</span>
-<span class="o">|</span><span class="w">                      </span><span class="o">|</span><span class="w">                 </span><span class="o">|</span><span class="w">                     </span><span class="o">|</span><span class="w">                          </span><span class="o">|</span><span class="w">                      </span><span class="o">|</span>
-<span class="o">|</span><span class="w">      </span><span class="n">UI</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">UX</span><span class="w">       </span><span class="o">|</span><span class="w">                 </span><span class="o">|</span><span class="w">   </span><span class="k">Execute</span><span class="w"> </span><span class="n">business</span><span class="w">  </span><span class="o">|</span><span class="w">                          </span><span class="o">|</span><span class="w">    </span><span class="k">Database</span><span class="w"> </span><span class="n">CRUD</span><span class="w">     </span><span class="o">|</span>
-<span class="o">|</span><span class="w">       </span><span class="n">display</span><span class="w">        </span><span class="o">|</span><span class="w"> </span><span class="o">&lt;--</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="o">|</span><span class="w">        </span><span class="n">logic</span><span class="w">        </span><span class="o">|</span><span class="w"> </span><span class="o">&lt;---</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="o">---</span><span class="w"> </span><span class="o">|</span><span class="w">      </span><span class="n">operations</span><span class="w">      </span><span class="o">|</span>
-<span class="o">|</span><span class="w">                      </span><span class="o">|</span><span class="w">                 </span><span class="o">|</span><span class="w">                     </span><span class="o">|</span><span class="w">                          </span><span class="o">|</span><span class="w">                      </span><span class="o">|</span>
-<span class="o">+</span><span class="c1">----------------------+                 +---------------------+                          +----------------------+</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-txt">+----------------------+                 +---------------------+                          +----------------------+
+|                      |                 |                     |                          |                      |
+|      [Frontend]      | -- API call --&gt; |      [Backend]      | --- database query ---&gt;  |      [Database]      |
+|                      |                 |                     |                          |                      |
+|      UI and UX       |                 |   Execute business  |                          |    Database CRUD     |
+|       display        | &lt;-- response -- |        logic        | &lt;--- database return --- |      operations      |
+|                      |                 |                     |                          |                      |
++----------------------+                 +---------------------+                          +----------------------+
+</code></pre>
 
 <h2>More on</h2>
 <ul>

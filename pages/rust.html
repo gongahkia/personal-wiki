@@ -33,7 +33,7 @@
 
         <dl>
           <dt>File size</dt>
-          <dd>56.0KB</dd>
+          <dd>20.6KB</dd>
 
           <dt>Lines of code</dt>
           <dd>499</dd>
@@ -44,417 +44,417 @@
         <h1><code>Rust</code></h1>
 <p>Stack Overflow's favourite programming language.</p>
 <h2>Comments</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- COMMENT ----------</span>
+<pre class="codehilite"><code class="language-rs">// ---------- COMMENT ----------
 
-<span class="c1">// this is a single-line comment</span>
+// this is a single-line comment
 
-<span class="cm">/*</span>
-<span class="cm">this is</span>
-<span class="cm">a multi-line</span>
-<span class="cm">comment</span>
-<span class="cm">*/</span>
-</code></pre></div>
+/*
+this is
+a multi-line
+comment
+*/
+</code></pre>
 
 <h2>Printing</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- PRINT ----------</span>
-<span class="w">    </span><span class="c1">// print! =&gt; prints a string to the stdout and does not include a newline</span>
-<span class="w">    </span><span class="c1">// println! =&gt; prints a string to the stdout and appends a newline to the output</span>
-<span class="w">    </span><span class="c1">// eprint! =&gt; prints a string to the stderr and does not include a newline</span>
-<span class="w">    </span><span class="c1">// eprintln! =&gt; prints a string to the stderr and appends a newline to the output</span>
-<span class="w">    </span><span class="c1">// {} =&gt; allow for string interpolation with values embedded in a formatted string</span>
+<pre class="codehilite"><code class="language-rs">// ---------- PRINT ----------
+    // print! =&gt; prints a string to the stdout and does not include a newline
+    // println! =&gt; prints a string to the stdout and appends a newline to the output
+    // eprint! =&gt; prints a string to the stderr and does not include a newline
+    // eprintln! =&gt; prints a string to the stderr and appends a newline to the output
+    // {} =&gt; allow for string interpolation with values embedded in a formatted string
 
-<span class="kd">let</span><span class="w"> </span><span class="n">message</span><span class="p">:</span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;yes ok thank you&quot;</span><span class="p">;</span>
-<span class="fm">print!</span><span class="p">(</span><span class="s">&quot;watermelon and this does not include a newline by default and we must specify it explicitly</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-<span class="fm">println!</span><span class="p">(</span><span class="s">&quot;this does include a newline automatically so there is no issue&quot;</span><span class="p">);</span>
-<span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">);</span>
+let message:&amp;str = &quot;yes ok thank you&quot;;
+print!(&quot;watermelon and this does not include a newline by default and we must specify it explicitly\n&quot;);
+println!(&quot;this does include a newline automatically so there is no issue&quot;);
+println!(&quot;{}&quot;, message);
 
-<span class="kd">let</span><span class="w"> </span><span class="n">error_message</span><span class="p">:</span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;help me this is an error message&quot;</span><span class="p">;</span>
-<span class="fm">eprint!</span><span class="p">(</span><span class="s">&quot;this is an error message which does not include a newline by default and we have to specify it explicitly</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-<span class="fm">eprintln!</span><span class="p">(</span><span class="s">&quot;this error message does include a newline automatically so there is no issue&quot;</span><span class="p">);</span>
-<span class="fm">eprintln!</span><span class="p">(</span><span class="s">&quot;{}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">error_message</span><span class="p">);</span>
-</code></pre></div>
+let error_message:&amp;str = &quot;help me this is an error message&quot;;
+eprint!(&quot;this is an error message which does not include a newline by default and we have to specify it explicitly\n&quot;);
+eprintln!(&quot;this error message does include a newline automatically so there is no issue&quot;);
+eprintln!(&quot;{}&quot;, error_message);
+</code></pre>
 
 <h2>Quickstart</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- QUICKSTART ----------</span>
-<span class="w">    </span><span class="c1">// statically-typed compiled language developed by Mozilla research used for systems programming and web development</span>
-<span class="w">    </span><span class="c1">// compile time vs runtime</span>
-<span class="w">        </span><span class="c1">// compile time =&gt; source file is currently compiling, syntax errors, type errors, compiler crashes can occur, binary executable created if compilation succesful</span>
-<span class="w">        </span><span class="c1">// runtime =&gt; executable binary and program logic is run, logical errors, memory errors, file path errors can occur, whatever the programmer intended for runs if no runtime errors</span>
+<pre class="codehilite"><code class="language-rs">// ---------- QUICKSTART ----------
+    // statically-typed compiled language developed by Mozilla research used for systems programming and web development
+    // compile time vs runtime
+        // compile time =&gt; source file is currently compiling, syntax errors, type errors, compiler crashes can occur, binary executable created if compilation succesful
+        // runtime =&gt; executable binary and program logic is run, logical errors, memory errors, file path errors can occur, whatever the programmer intended for runs if no runtime errors
 
-<span class="c1">// NAMESPACES</span>
-<span class="w">    </span><span class="c1">// :: =&gt; specifies the relationship between rust crates, modules and symbols within a given namespace</span>
-<span class="w">    </span><span class="c1">// use =&gt; bring names from other namespaces into local scope</span>
-<span class="w">    </span><span class="c1">// {} =&gt; a glob that allows us to import multiple names into a namespace easily</span>
-<span class="w">    </span><span class="c1">// * =&gt; wildcard operator that imports every name from a namespace</span>
+// NAMESPACES
+    // :: =&gt; specifies the relationship between rust crates, modules and symbols within a given namespace
+    // use =&gt; bring names from other namespaces into local scope
+    // {} =&gt; a glob that allows us to import multiple names into a namespace easily
+    // * =&gt; wildcard operator that imports every name from a namespace
 
-<span class="kd">let</span><span class="w"> </span><span class="n">least</span><span class="p">:</span><span class="kt">i16</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="n">cmp</span><span class="p">::</span><span class="n">min</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">8</span><span class="p">);</span><span class="w"> </span><span class="c1">// std is a crate, cmp is a module, min is a function</span>
+let least:i16 = std::cmp::min(3,8); // std is a crate, cmp is a module, min is a function
 
-<span class="k">use</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="n">cmp</span><span class="p">::</span><span class="n">min</span><span class="p">;</span>
-<span class="kd">let</span><span class="w"> </span><span class="n">least</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">min</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// this assigns i32 value of 1 to the variable least by bringing the function min into local scope</span>
+use std::cmp::min;
+let least = min(7,1); // this assigns i32 value of 1 to the variable least by bringing the function min into local scope
 
-<span class="k">use</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="n">cmp</span><span class="p">::</span><span class="n">min</span><span class="p">;</span>
-<span class="k">use</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="n">cmp</span><span class="p">::</span><span class="n">max</span><span class="p">;</span>
-<span class="k">use</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="n">cmp</span><span class="p">::{</span><span class="n">min</span><span class="p">,</span><span class="w"> </span><span class="n">max</span><span class="p">};</span><span class="w"> </span><span class="c1">// this is the equivalent of the two lines above</span>
+use std::cmp::min;
+use std::cmp::max;
+use std::cmp::{min, max}; // this is the equivalent of the two lines above
 
-<span class="k">use</span><span class="w"> </span><span class="n">std</span><span class="p">::{</span><span class="n">cmp</span><span class="p">::</span><span class="n">min</span><span class="p">,</span><span class="w"> </span><span class="n">cmp</span><span class="p">::</span><span class="n">max</span><span class="p">};</span><span class="w"> </span><span class="c1">// this is also valid rust code</span>
+use std::{cmp::min, cmp::max}; // this is also valid rust code
 
-<span class="k">use</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="n">cmp</span><span class="p">::</span><span class="o">*</span><span class="p">;</span><span class="w"> </span><span class="c1">// this brings min, max and many other names from the std::cmp namespace into local scope</span>
+use std::cmp::*; // this brings min, max and many other names from the std::cmp namespace into local scope
 
-<span class="c1">// BLOCKS AND SCOPE</span>
-<span class="w">    </span><span class="c1">// all rust code is an expression that evaluates to a value indicated by the omission of a semicolon (expression tail), allowing for implicit return of values within functions</span>
-<span class="w">    </span><span class="c1">// expressions can have multiple declaration and assignment statements within them, enclosed by {} curly braces</span>
+// BLOCKS AND SCOPE
+    // all rust code is an expression that evaluates to a value indicated by the omission of a semicolon (expression tail), allowing for implicit return of values within functions
+    // expressions can have multiple declaration and assignment statements within them, enclosed by {} curly braces
 
-<span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
-<span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="c1">// y + z is the expression tail, which evaluates to the int32 integer value of 21, assigned to x</span>
-<span class="p">};</span>
-</code></pre></div>
+let x = {
+    let y = 1;
+    let z = 20;
+    y + z // y + z is the expression tail, which evaluates to the int32 integer value of 21, assigned to x
+};
+</code></pre>
 
 <h2>Usage</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- USAGE ----------</span>
-<span class="w">    </span><span class="c1"># rustc =&gt; compiles the individual source file and creates a binary executable under the same name</span>
-<span class="w">    </span><span class="c1"># cargo new =&gt; creates a new rust project under the specified name, source code to be written in src/main.rs </span>
-<span class="w">    </span><span class="c1"># cargo build =&gt; compiles the rust project, creating a binary executable under the same name in target/debug</span>
-<span class="w">    </span><span class="c1"># cargo run =&gt; compiles and runs the rust project immediately</span>
-<span class="w">    </span><span class="c1"># cargo check =&gt; checks whether rust can compile the source file without errors</span>
+<pre class="codehilite"><code class="language-sh"># ---------- USAGE ----------
+    # rustc =&gt; compiles the individual source file and creates a binary executable under the same name
+    # cargo new =&gt; creates a new rust project under the specified name, source code to be written in src/main.rs 
+    # cargo build =&gt; compiles the rust project, creating a binary executable under the same name in target/debug
+    # cargo run =&gt; compiles and runs the rust project immediately
+    # cargo check =&gt; checks whether rust can compile the source file without errors
 
-$<span class="w"> </span>rustc<span class="w"> </span>main.rs<span class="w"> </span><span class="c1"># rust compiler compiles an executable file</span>
-$<span class="w"> </span>./main<span class="w"> </span><span class="c1"># run the created executable</span>
+$ rustc main.rs # rust compiler compiles an executable file
+$ ./main # run the created executable
 
-$<span class="w"> </span>cargo<span class="w"> </span>new<span class="w"> </span>exampleProject<span class="w"> </span><span class="c1"># creates a new rust project called exampleProject</span>
-$<span class="w"> </span>cargo<span class="w"> </span>build<span class="w"> </span><span class="c1"># compiles the project</span>
+$ cargo new exampleProject # creates a new rust project called exampleProject
+$ cargo build # compiles the project
 
-$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>exampleProject/target/debug
-$<span class="w"> </span>./exampleProject<span class="w"> </span><span class="c1"># runs the compiled executable</span>
+$ cd exampleProject/target/debug
+$ ./exampleProject # runs the compiled executable
 
-$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>../../<span class="w"> </span>
-$<span class="w"> </span>cargo<span class="w"> </span>run<span class="w"> </span><span class="c1"># recompiles and runs the executable binary file</span>
-$<span class="w"> </span>cargo<span class="w"> </span>check<span class="w"> </span><span class="c1"># checks for any issues with the source file without compiling</span>
-</code></pre></div>
+$ cd ../../ 
+$ cargo run # recompiles and runs the executable binary file
+$ cargo check # checks for any issues with the source file without compiling
+</code></pre>
 
 <h2>Operators</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- OPERATOR ----------</span>
+<pre class="codehilite"><code class="language-rs">// ---------- OPERATOR ----------
 
-<span class="c1">// ARITHMETIC OPERATORS</span>
-<span class="w">    </span><span class="c1">// + =&gt; addition</span>
-<span class="w">    </span><span class="c1">// - =&gt; subtraction</span>
-<span class="w">    </span><span class="c1">// * =&gt; multiplication</span>
-<span class="w">    </span><span class="c1">// / =&gt; division</span>
-<span class="w">    </span><span class="c1">// % =&gt; modulo operator</span>
+// ARITHMETIC OPERATORS
+    // + =&gt; addition
+    // - =&gt; subtraction
+    // * =&gt; multiplication
+    // / =&gt; division
+    // % =&gt; modulo operator
 
-<span class="c1">// LOGICAL OPERATORS</span>
-<span class="w">    </span><span class="c1">// &amp;&amp; =&gt; logical and</span>
-<span class="w">    </span><span class="c1">// || =&gt; logical or</span>
-<span class="w">    </span><span class="c1">// ! =&gt; logical not</span>
+// LOGICAL OPERATORS
+    // &amp;&amp; =&gt; logical and
+    // || =&gt; logical or
+    // ! =&gt; logical not
 
-<span class="c1">// COMPARISON OPERATORS</span>
-<span class="w">    </span><span class="c1">// == =&gt; partial equality check for value</span>
-<span class="w">    </span><span class="c1">// != =&gt; partial inequality check for value</span>
-<span class="w">    </span><span class="c1">// eq =&gt; complete equality check for value and type</span>
-<span class="w">    </span><span class="c1">// ne =&gt; complete inequality check for value and type</span>
-<span class="w">    </span><span class="c1">// &gt; &lt; &gt;= &lt;= are also comparison operators</span>
-</code></pre></div>
+// COMPARISON OPERATORS
+    // == =&gt; partial equality check for value
+    // != =&gt; partial inequality check for value
+    // eq =&gt; complete equality check for value and type
+    // ne =&gt; complete inequality check for value and type
+    // &gt; &lt; &gt;= &lt;= are also comparison operators
+</code></pre>
 
 <h2>Variables and Constants</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- VARIABLE ----------</span>
-<span class="w">    </span><span class="c1">// variables in rust are immutable by default</span>
-<span class="w">    </span><span class="c1">// let =&gt; declares and initialies a variable whose value and type are immutable at runtime</span>
-<span class="w">    </span><span class="c1">// : =&gt; explicitly specify a variable&#39;s type</span>
-<span class="w">    </span><span class="c1">// mut =&gt; specifies a variable can be mutable and that its value can be reassigned later at runtime</span>
+<pre class="codehilite"><code class="language-rs">// ---------- VARIABLE ----------
+    // variables in rust are immutable by default
+    // let =&gt; declares and initialies a variable whose value and type are immutable at runtime
+    // : =&gt; explicitly specify a variable's type
+    // mut =&gt; specifies a variable can be mutable and that its value can be reassigned later at runtime
 
-<span class="c1">// ---------- CONSTANT ----------</span>
-<span class="w">    </span><span class="c1">// const =&gt; declares and initializes a constant whose value and type are immutable at compile time</span>
-<span class="w">    </span><span class="c1">// constant names are capitalised by convention</span>
+// ---------- CONSTANT ----------
+    // const =&gt; declares and initializes a constant whose value and type are immutable at compile time
+    // constant names are capitalised by convention
 
-<span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"> </span><span class="c1">// variable declaration and </span>
-<span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"> </span><span class="c1">// assignment can occur on two different lines</span>
-<span class="kd">let</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="kt">i32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="c1">// variables are immutable by default at runtime</span>
+let x; // variable declaration and 
+x = 100; // assignment can occur on two different lines
+let y:i32 = 10; // variables are immutable by default at runtime
 
-<span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">z</span><span class="p">:</span><span class="kt">i32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">45</span><span class="p">;</span><span class="w"> </span><span class="c1">// mut creates a mutable variable</span>
-<span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"> </span><span class="c1">// this mutable variable can then have its value reassigned</span>
-<span class="fm">println!</span><span class="p">(</span><span class="s">&quot;y is {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+let mut z:i32 = 45; // mut creates a mutable variable
+z = 100; // this mutable variable can then have its value reassigned
+println!(&quot;y is {}&quot;, y);
 
-<span class="k">const</span><span class="w"> </span><span class="n">SECONDS_IN_MINUTES</span><span class="p">:</span><span class="kt">u32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">60</span><span class="p">;</span><span class="w"> </span><span class="c1">// const creates a constant, whose value is immutable at compile time</span>
-<span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">SECONDS_IN_MINUTES</span><span class="p">);</span>
-</code></pre></div>
+const SECONDS_IN_MINUTES:u32 = 60; // const creates a constant, whose value is immutable at compile time
+println!(&quot;{}&quot;, SECONDS_IN_MINUTES);
+</code></pre>
 
 <h2>Types</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- TYPE ----------</span>
-<span class="w">    </span><span class="c1">// i8, i16, i32, i64, i128 =&gt; signed integer (positive and negative) with size of integer specified in number of bits</span>
-<span class="w">    </span><span class="c1">// u8, u16, u32, u64, u128 =&gt; unsigned integer (positive) with size of integer specified in number of bits</span>
-<span class="w">    </span><span class="c1">// f32, f64 =&gt; single-precision and double-precision floating point numbers</span>
-<span class="w">    </span><span class="c1">// bool =&gt; true, false</span>
-<span class="w">    </span><span class="c1">// char =&gt; character declared with &#39;&#39; single quotation marks</span>
-<span class="w">    </span><span class="c1">// &amp;str =&gt; immutable string literal, stored on the stack with &quot;&quot; double quotation marks</span>
-<span class="w">    </span><span class="c1">// String =&gt; mutable string vector, stored as a Vec&lt;u8&gt; on the heap with &quot;&quot; double quotation marks</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-rs">// ---------- TYPE ----------
+    // i8, i16, i32, i64, i128 =&gt; signed integer (positive and negative) with size of integer specified in number of bits
+    // u8, u16, u32, u64, u128 =&gt; unsigned integer (positive) with size of integer specified in number of bits
+    // f32, f64 =&gt; single-precision and double-precision floating point numbers
+    // bool =&gt; true, false
+    // char =&gt; character declared with '' single quotation marks
+    // &amp;str =&gt; immutable string literal, stored on the stack with &quot;&quot; double quotation marks
+    // String =&gt; mutable string vector, stored as a Vec&lt;u8&gt; on the heap with &quot;&quot; double quotation marks
+</code></pre>
 
 <h2>Control structures</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- CONTROL STRUCTURE ----------</span>
+<pre class="codehilite"><code class="language-rs">// ---------- CONTROL STRUCTURE ----------
 
-<span class="c1">// ---------- CONDITIONALS ----------</span>
+// ---------- CONDITIONALS ----------
 
-<span class="c1">// IF ELSE IF ELSE</span>
+// IF ELSE IF ELSE
 
-<span class="kd">let</span><span class="w"> </span><span class="n">number</span><span class="p">:</span><span class="kt">i16</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span>
-<span class="k">if</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;number is negative&quot;</span><span class="p">);</span>
-<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;number is zero&quot;</span><span class="p">);</span>
-<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;number is positive&quot;</span><span class="p">);</span>
-<span class="p">}</span>
+let number:i16 = 42;
+if number &lt; 0 {
+    println!(&quot;number is negative&quot;);
+} else if number == 0 {
+    println!(&quot;number is zero&quot;);
+} else {
+    println!(&quot;number is positive&quot;);
+}
 
-<span class="c1">// MATCH EXPRESSION</span>
-<span class="w">    </span><span class="c1">// rust&#39;s powerful pattern-matching construct similar to switch case in other languages</span>
-<span class="w">    </span><span class="c1">// match and =&gt; define a match expression, where every match expression evaluates to a single value since matches are exhaustive and each match-arm (=&gt;) points to an expression</span>
-<span class="w">    </span><span class="c1">// _ =&gt; match-all pattern which acts as the default case for match expressions, required in every match expression to cover every possible match-arm since matches are exhaustive</span>
+// MATCH EXPRESSION
+    // rust's powerful pattern-matching construct similar to switch case in other languages
+    // match and =&gt; define a match expression, where every match expression evaluates to a single value since matches are exhaustive and each match-arm (=&gt;) points to an expression
+    // _ =&gt; match-all pattern which acts as the default case for match expressions, required in every match expression to cover every possible match-arm since matches are exhaustive
 
-<span class="k">fn</span><span class="w"> </span><span class="nf">im_feeling_lucky</span><span class="p">(</span><span class="n">feeling_lucky</span><span class="p">:</span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="kt">i32</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="n">feeling_lucky</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kc">true</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
-<span class="w">        </span><span class="kc">false</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span><span class="w"> </span><span class="c1">// a match expression within a function</span>
+fn im_feeling_lucky(feeling_lucky:bool) -&gt; i32 {
+    match feeling_lucky {
+        true =&gt; 100,
+        false =&gt; 0,
+    }
+} // a match expression within a function
 
-<span class="k">enum</span><span class="w"> </span><span class="nc">Coin</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">Penny</span><span class="p">,</span>
-<span class="w">    </span><span class="n">Nickel</span><span class="p">,</span>
-<span class="w">    </span><span class="n">Dime</span><span class="p">,</span>
-<span class="w">    </span><span class="n">Quarter</span><span class="p">,</span>
-<span class="p">}</span><span class="w"> </span><span class="c1">// create the enum Coin</span>
+enum Coin {
+    Penny,
+    Nickel,
+    Dime,
+    Quarter,
+} // create the enum Coin
 
-<span class="k">fn</span><span class="w"> </span><span class="nf">value_in_cents</span><span class="p">(</span><span class="n">coin</span><span class="p">:</span><span class="nc">Coin</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="n">coin</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">Coin</span><span class="p">::</span><span class="n">Penny</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Lucky penny!&quot;</span><span class="p">);</span>
-<span class="w">            </span><span class="mi">1</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="n">Coin</span><span class="p">::</span><span class="n">Nickel</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
-<span class="w">        </span><span class="n">Coin</span><span class="p">::</span><span class="n">Dime</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
-<span class="w">        </span><span class="n">Coin</span><span class="p">::</span><span class="n">Quarter</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span><span class="w"> </span><span class="c1">// match expressions can be used alongside enums to leverage on powerful pattern-matching capabilities</span>
+fn value_in_cents(coin:Coin) {
+    match coin {
+        Coin::Penny =&gt; {
+            println!(&quot;Lucky penny!&quot;);
+            1
+        },
+        Coin::Nickel =&gt; 5,
+        Coin::Dime =&gt; 10,
+        Coin::Quarter =&gt; 25,
+    }
+} // match expressions can be used alongside enums to leverage on powerful pattern-matching capabilities
 
-<span class="kd">let</span><span class="w"> </span><span class="n">some_u8_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="k">u8</span><span class="p">;</span>
-<span class="k">match</span><span class="w"> </span><span class="n">some_u8_value</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="mi">1</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;one&quot;</span><span class="p">),</span>
-<span class="w">    </span><span class="mi">2</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;two&quot;</span><span class="p">),</span>
-<span class="w">    </span><span class="mi">3</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;three&quot;</span><span class="p">),</span>
-<span class="w">    </span><span class="n">_</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">(),</span>
-<span class="p">}</span>
+let some_u8_value = 0u8;
+match some_u8_value {
+    1 =&gt; println!(&quot;one&quot;),
+    2 =&gt; println!(&quot;two&quot;),
+    3 =&gt; println!(&quot;three&quot;),
+    _ =&gt; (),
+}
 
-<span class="c1">// UNDERSCORE</span>
-<span class="w">    </span><span class="c1">// _ =&gt; catch-all pattern that specifies a value to be discarded and can be used for destructuring, also a match-all pattern in match expressions</span>
-<span class="w">    </span><span class="c1">// prefixing a variable with _ will indicate to the compiler to ignore it even if its unused</span>
+// UNDERSCORE
+    // _ =&gt; catch-all pattern that specifies a value to be discarded and can be used for destructuring, also a match-all pattern in match expressions
+    // prefixing a variable with _ will indicate to the compiler to ignore it even if its unused
 
-<span class="kd">let</span><span class="w"> </span><span class="n">_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_thing</span><span class="p">();</span><span class="w"> </span><span class="c1">// calls the function get_thing but throws away the returned value</span>
-<span class="kd">let</span><span class="w"> </span><span class="n">_unused</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span><span class="w"> </span><span class="c1">// the rust compiler will not warn about this variable even if its unused</span>
-<span class="kd">let</span><span class="w"> </span><span class="p">(</span><span class="n">_</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">slice</span><span class="p">.</span><span class="n">split_at</span><span class="p">(</span><span class="n">middle</span><span class="p">);</span><span class="w"> </span><span class="c1">// throw away the left side of the destructured tuple and only return the right</span>
+let _ = get_thing(); // calls the function get_thing but throws away the returned value
+let _unused = 42; // the rust compiler will not warn about this variable even if its unused
+let (_, right) = slice.split_at(middle); // throw away the left side of the destructured tuple and only return the right
 
-<span class="c1">// ---------- LOOPS ----------</span>
-<span class="w">    </span><span class="c1">// continue =&gt; skips to the next iteration of the loop</span>
-<span class="w">    </span><span class="c1">// break =&gt; exits the loop </span>
+// ---------- LOOPS ----------
+    // continue =&gt; skips to the next iteration of the loop
+    // break =&gt; exits the loop 
 
-<span class="c1">// WHILE LOOPS</span>
+// WHILE LOOPS
 
-<span class="k">while</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;this operates as you&#39;d expect, but this is an infinite loop my guy&quot;</span><span class="p">);</span>
-<span class="p">}</span>
+while 1 == 1 {
+    println!(&quot;this operates as you'd expect, but this is an infinite loop my guy&quot;);
+}
 
-<span class="c1">// FOR IN LOOPS</span>
-<span class="w">    </span><span class="c1">// for in =&gt; allows for iteration over a specified iterable collection of data, including ranges</span>
+// FOR IN LOOPS
+    // for in =&gt; allows for iteration over a specified iterable collection of data, including ranges
 
-<span class="kd">let</span><span class="w"> </span><span class="n">an_array</span><span class="p">:[</span><span class="kt">i32</span><span class="p">;</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">];</span>
-<span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="p">:</span><span class="kt">i32</span><span class="w"> </span><span class="nc">in</span><span class="w"> </span><span class="n">an_array</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
-<span class="w">    </span><span class="fm">print!</span><span class="p">(</span><span class="s">&quot;{}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
-<span class="p">}</span><span class="w"> </span><span class="c1">// this prints 123 to the stdout</span>
+let an_array:[i32;3] = [1,2,3];
+for i:i32 in an_array { 
+    print!(&quot;{}&quot;, i);
+} // this prints 123 to the stdout
 
-<span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">0</span><span class="k">u32</span><span class="o">..</span><span class="mi">10</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="fm">print!</span><span class="p">(</span><span class="s">&quot;{}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span><span class="w"> </span>
-<span class="p">}</span><span class="w"> </span><span class="c1">// this prints 0123456789 to the stdout</span>
+for i in 0u32..10 {
+    print!(&quot;{}&quot;, i); 
+} // this prints 0123456789 to the stdout
 
-<span class="c1">// LOOP</span>
-<span class="w">    </span><span class="c1">// loop =&gt; shorthand to create an infinite loop</span>
+// LOOP
+    // loop =&gt; shorthand to create an infinite loop
 
-<span class="k">loop</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;alahoo&quot;</span><span class="p">);</span><span class="w"> </span>
-<span class="p">}</span>
-</code></pre></div>
+loop {
+    println!(&quot;alahoo&quot;); 
+}
+</code></pre>
 
 <h2>Data structures</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- DATA STRUCTURE ----------</span>
+<pre class="codehilite"><code class="language-rs">// ---------- DATA STRUCTURE ----------
 
-<span class="c1">// ARRAY</span>
-<span class="w">    </span><span class="c1">// fixed-length ordered sequence of elements of the same type</span>
-<span class="w">    </span><span class="c1">// declared with [] square brackets and size and data type specified</span>
+// ARRAY
+    // fixed-length ordered sequence of elements of the same type
+    // declared with [] square brackets and size and data type specified
 
-<span class="kd">let</span><span class="w"> </span><span class="n">int_array</span><span class="p">:[</span><span class="kt">i32</span><span class="p">;</span><span class="w"> </span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">];</span>
-<span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">int_array</span><span class="p">[</span><span class="mi">7</span><span class="p">]);</span><span class="w"> </span><span class="c1">// prints 8 to the stdout</span>
+let int_array:[i32; 10] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+println!(&quot;{}&quot;, int_array[7]); // prints 8 to the stdout
 
-<span class="c1">// VECTOR</span>
-<span class="w">    </span><span class="c1">// dynamic length ordered sequence of elements of the same type</span>
-<span class="w">    </span><span class="c1">// vec![] =&gt; declares and creates a vector with size and data type specified</span>
+// VECTOR
+    // dynamic length ordered sequence of elements of the same type
+    // vec![] =&gt; declares and creates a vector with size and data type specified
 
-<span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">int_vector</span><span class="p">:</span><span class="nb">Vec</span><span class="o">&lt;</span><span class="kt">i32</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">vec!</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">59</span><span class="p">,</span><span class="mi">132</span><span class="p">];</span>
-<span class="n">vector</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w"> </span><span class="c1">// appends the i32 integer of value 5 to the vector int_vector</span>
+let mut int_vector:Vec&lt;i32&gt; = vec![1,2,3,4,5,59,132];
+vector.push(5); // appends the i32 integer of value 5 to the vector int_vector
 
-<span class="c1">// TUPLE</span>
-<span class="w">    </span><span class="c1">// fixed-length ordered sequence of elements of different types</span>
-<span class="w">    </span><span class="c1">// declared with () brackets and size and data type of each element specified</span>
+// TUPLE
+    // fixed-length ordered sequence of elements of different types
+    // declared with () brackets and size and data type of each element specified
 
-<span class="kd">let</span><span class="w"> </span><span class="n">mixed_tuple</span><span class="p">:(</span><span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">);</span>
-<span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">mixed_tuple</span><span class="p">.</span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// prints true to the stdout</span>
+let mixed_tuple:(i32, bool, char) = (1, true, 'A');
+println!(&quot;{}&quot;, mixed_tuple.1); // prints true to the stdout
 
-<span class="c1">// STRUCT</span>
-<span class="w">    </span><span class="c1">// collections of data and functions in rust where each new struct is its own data type, similar to objects in javascript or tables in lua</span>
-<span class="w">    </span><span class="c1">// struct =&gt; declares and creates a new struct with struct data and functions within {} curly braces</span>
-<span class="w">    </span><span class="c1">// impl =&gt; implements methods, associated functions and traits on a specified struct</span>
-<span class="w">        </span><span class="c1">// &amp;self always fed as the first parameter to a struct method to reference the given instance of a struct, with methods called using . dot notation</span>
-<span class="w">    </span><span class="c1">// associated functions are functions that don&#39;t take &amp;self as a parameter and thus don&#39;t require an instance of a struct to be called, but are still associated with the struct</span>
-<span class="w">        </span><span class="c1">// associated functions called using the {STRUCT NAME}::{ASSOCIATED FUNCTION NAME}</span>
+// STRUCT
+    // collections of data and functions in rust where each new struct is its own data type, similar to objects in javascript or tables in lua
+    // struct =&gt; declares and creates a new struct with struct data and functions within {} curly braces
+    // impl =&gt; implements methods, associated functions and traits on a specified struct
+        // &amp;self always fed as the first parameter to a struct method to reference the given instance of a struct, with methods called using . dot notation
+    // associated functions are functions that don't take &amp;self as a parameter and thus don't require an instance of a struct to be called, but are still associated with the struct
+        // associated functions called using the {STRUCT NAME}::{ASSOCIATED FUNCTION NAME}
 
-<span class="k">struct</span><span class="w"> </span><span class="nc">User</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">username</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
-<span class="w">    </span><span class="n">email</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
-<span class="w">    </span><span class="n">sign_in_count</span><span class="p">:</span><span class="w"> </span><span class="kt">u64</span><span class="p">,</span>
-<span class="w">    </span><span class="n">active</span><span class="p">:</span><span class="w"> </span><span class="kt">bool</span><span class="p">,</span>
-<span class="p">}</span><span class="w"> </span><span class="c1">// declares and creates a struct</span>
+struct User {
+    username: String,
+    email: String,
+    sign_in_count: u64,
+    active: bool,
+} // declares and creates a struct
 
-<span class="kd">let</span><span class="w"> </span><span class="n">user1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">User</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">email</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">::</span><span class="n">from</span><span class="p">(</span><span class="s">&quot;hotman@hotmail.com&quot;</span><span class="p">),</span>
-<span class="w">    </span><span class="n">username</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">::</span><span class="n">from</span><span class="p">(</span><span class="s">&quot;someusername123&quot;</span><span class="p">),</span>
-<span class="w">    </span><span class="n">active</span><span class="p">:</span><span class="w"> </span><span class="nc">true</span><span class="p">,</span>
-<span class="w">    </span><span class="n">sign_in_count</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="p">}</span><span class="w"> </span><span class="c1">// initialization of a struct literal with its values assigned</span>
+let user1 = User {
+    email: String::from(&quot;hotman@hotmail.com&quot;),
+    username: String::from(&quot;someusername123&quot;),
+    active: true,
+    sign_in_count: 1,
+} // initialization of a struct literal with its values assigned
 
-<span class="k">struct</span><span class="w"> </span><span class="nc">Vec2</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
-<span class="w">    </span><span class="n">x</span><span class="p">:</span><span class="kt">f64</span><span class="p">,</span>
-<span class="w">    </span><span class="n">y</span><span class="p">:</span><span class="kt">f64</span><span class="p">,</span>
-<span class="p">}</span><span class="w"> </span><span class="c1">// declares and creates another struct</span>
+struct Vec2 { 
+    x:f64,
+    y:f64,
+} // declares and creates another struct
 
-<span class="k">impl</span><span class="w"> </span><span class="n">Vec2</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
-<span class="w">    </span><span class="k">fn</span><span class="w"> </span><span class="nf">is_strictly_positive</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="bp">self</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span><span class="w"> </span><span class="c1">// implements the method is_strictly_positive on the struct Vec2</span>
+impl Vec2 { 
+    fn is_strictly_positive(&amp;self) -&gt; bool {
+        self.x &gt; 0
+    }
+} // implements the method is_strictly_positive on the struct Vec2
 
-<span class="kd">let</span><span class="w"> </span><span class="n">v1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Vec2</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span><span class="p">:</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="mf">3.0</span><span class="w"> </span><span class="p">};</span><span class="w"> </span><span class="c1">// initialization of a struct literal</span>
-<span class="kd">let</span><span class="w"> </span><span class="n">v2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Vec2</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">:</span><span class="mf">4.0</span><span class="w"> </span><span class="p">};</span><span class="w"> </span><span class="c1">// initialization of another struct literal</span>
+let v1 = Vec2 { x:1.0, y:3.0 }; // initialization of a struct literal
+let v2 = Vec2 { y:2.0, x:4.0 }; // initialization of another struct literal
 
-<span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">v1</span><span class="p">.</span><span class="n">is_strictly_positive</span><span class="p">());</span><span class="w"> </span><span class="c1">// specified method is called using . dot notation on an instance of the struct, a struct literal</span>
+println!(&quot;{}&quot;, v1.is_strictly_positive()); // specified method is called using . dot notation on an instance of the struct, a struct literal
 
-<span class="k">impl</span><span class="w"> </span><span class="n">Rectangle</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">fn</span><span class="w"> </span><span class="nf">square</span><span class="p">(</span><span class="n">size</span><span class="p">:</span><span class="w"> </span><span class="kt">u32</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">Rectangle</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// notice the return type is specified as the struct Rectangle, which is considered its own type</span>
-<span class="w">        </span><span class="n">Rectangle</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">width</span><span class="p">:</span><span class="w"> </span><span class="nc">size</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="p">:</span><span class="w"> </span><span class="nc">size</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// omission of semicolon for implicit return</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span><span class="w"> </span><span class="c1">// here, the associated function acts as a constructor that returns the struct Rectangle</span>
+impl Rectangle {
+    fn square(size: u32) -&gt; Rectangle { // notice the return type is specified as the struct Rectangle, which is considered its own type
+        Rectangle { width: size, height: size } // omission of semicolon for implicit return
+    }
+} // here, the associated function acts as a constructor that returns the struct Rectangle
 
-<span class="kd">let</span><span class="w"> </span><span class="n">square1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Rectangle</span><span class="p">::</span><span class="n">square</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span><span class="w"> </span><span class="c1">// calls the associated function</span>
+let square1 = Rectangle::square(3); // calls the associated function
 
-<span class="c1">// TRAITS</span>
-<span class="w">    </span><span class="c1">// specifies attributes and methods a type must have without defining them, similar to interfaces in Java</span>
-<span class="w">    </span><span class="c1">// trait =&gt; declares and creates a trait with a specified name to be implemented on a struct</span>
-<span class="w">    </span><span class="c1">// impl for =&gt; implement a specified trait on a struct</span>
-<span class="w">    </span><span class="c1">// rust&#39;s orphan rules</span>
-<span class="w">        </span><span class="c1">// can implement one of your traits on foreign and primitive types</span>
-<span class="w">        </span><span class="c1">// can implement other rust-defined traits on one of our types</span>
-<span class="w">        </span><span class="c1">// cannot implement a foreign trait on a foreign type</span>
+// TRAITS
+    // specifies attributes and methods a type must have without defining them, similar to interfaces in Java
+    // trait =&gt; declares and creates a trait with a specified name to be implemented on a struct
+    // impl for =&gt; implement a specified trait on a struct
+    // rust's orphan rules
+        // can implement one of your traits on foreign and primitive types
+        // can implement other rust-defined traits on one of our types
+        // cannot implement a foreign trait on a foreign type
 
-<span class="k">struct</span><span class="w"> </span><span class="nc">Number</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
-<span class="w">    </span><span class="n">odd</span><span class="p">:</span><span class="w"> </span><span class="kt">bool</span><span class="p">;</span>
-<span class="w">    </span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="kt">i32</span><span class="p">;</span>
-<span class="p">}</span><span class="w"> </span><span class="c1">// declare and create a struct</span>
+struct Number { 
+    odd: bool;
+    value: i32;
+} // declare and create a struct
 
-<span class="k">trait</span><span class="w"> </span><span class="n">Signed</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">fn</span><span class="w"> </span><span class="nf">isStrictlyNegative</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="kt">bool</span><span class="p">;</span><span class="w"> </span>
-<span class="p">}</span><span class="w"> </span><span class="c1">// all this does is specify that the type must have a method called isStrictlyNegative that returns a boolean</span>
+trait Signed {
+    fn isStrictlyNegative(&amp;self) -&gt; bool; 
+} // all this does is specify that the type must have a method called isStrictlyNegative that returns a boolean
 
-<span class="k">impl</span><span class="w"> </span><span class="n">Signed</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">Number</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
-<span class="w">    </span><span class="k">fn</span><span class="w"> </span><span class="nf">isStrictlyNegative</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="bp">self</span><span class="p">.</span><span class="n">value</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span><span class="w"> </span><span class="c1">// this implements the trait Signed on the struct Number and we see the implementation of the method within the struct defintiion</span>
+impl Signed for Number { 
+    fn isStrictlyNegative(&amp;self) -&gt; (bool) {
+        self.value &lt; 0
+    }
+} // this implements the trait Signed on the struct Number and we see the implementation of the method within the struct defintiion
 
-<span class="kd">let</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Number</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">odd</span><span class="p">:</span><span class="nc">false</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">:</span><span class="o">-</span><span class="mi">44</span><span class="w"> </span><span class="p">};</span><span class="w"> </span><span class="c1">// struct literal initialization</span>
-<span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">.</span><span class="n">isStrictlyNegative</span><span class="p">());</span><span class="w"> </span><span class="c1">// calling the method on the instance of the struct</span>
+let n = Number { odd:false, value:-44 }; // struct literal initialization
+println!(&quot;{}&quot;, n.isStrictlyNegative()); // calling the method on the instance of the struct
 
-<span class="c1">// ENUMS</span>
-<span class="w">    </span><span class="c1">// enums allow for powerful state-modelling in rust to make invalid states unrepresentable, especially powerful since enums are their own type in rust</span>
-<span class="w">    </span><span class="c1">// enum =&gt; declares and creates an enum and its many possible states</span>
-<span class="w">    </span><span class="c1">// :: =&gt; namespace operator specifies the relationship between an enum and an enum member</span>
-<span class="w">    </span><span class="c1">// instance of an enum is created using let {ENUM_INSTANCE_NAME} = {ENUM NAME}::{ENUM VARIANT NAME}</span>
+// ENUMS
+    // enums allow for powerful state-modelling in rust to make invalid states unrepresentable, especially powerful since enums are their own type in rust
+    // enum =&gt; declares and creates an enum and its many possible states
+    // :: =&gt; namespace operator specifies the relationship between an enum and an enum member
+    // instance of an enum is created using let {ENUM_INSTANCE_NAME} = {ENUM NAME}::{ENUM VARIANT NAME}
 
-<span class="k">enum</span><span class="w"> </span><span class="nc">IP_address_type</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">V4</span><span class="p">(</span><span class="kt">u8</span><span class="p">,</span><span class="kt">u8</span><span class="p">,</span><span class="kt">u8</span><span class="p">,</span><span class="kt">u8</span><span class="p">),</span><span class="w"> </span><span class="c1">// V4 variant is able to store a value of (127,0,0,1)</span>
-<span class="w">    </span><span class="n">V6</span><span class="p">(</span><span class="nb">String</span><span class="p">),</span><span class="w"> </span><span class="c1">// V6 variant is able to store a String of value &quot;::1&quot;</span>
-<span class="p">}</span><span class="w"> </span><span class="c1">// declares and creates an enum IP_address_type and its respective variants, V4 and V6, where an ip address can only ever be V4 or V6</span>
+enum IP_address_type {
+    V4(u8,u8,u8,u8), // V4 variant is able to store a value of (127,0,0,1)
+    V6(String), // V6 variant is able to store a String of value &quot;::1&quot;
+} // declares and creates an enum IP_address_type and its respective variants, V4 and V6, where an ip address can only ever be V4 or V6
 
-<span class="kd">let</span><span class="w"> </span><span class="n">four</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IP_address_type</span><span class="p">::</span><span class="n">V4</span><span class="p">;</span><span class="w"> </span><span class="c1">// creates an instance of an enum</span>
-<span class="kd">let</span><span class="w"> </span><span class="n">five</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IP_address_type</span><span class="p">::</span><span class="n">V4</span><span class="p">(</span><span class="mi">127</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// we can also specify the value of the enum member upon initialization</span>
-</code></pre></div>
+let four = IP_address_type::V4; // creates an instance of an enum
+let five = IP_address_type::V4(127,0,0,1); // we can also specify the value of the enum member upon initialization
+</code></pre>
 
 <h2>Functions</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- FUNCTION ----------</span>
-<span class="w">    </span><span class="c1">// rust functions have implicit return of the value the last expression evaluates to, specified by omitting the ; semicolon</span>
-<span class="w">    </span><span class="c1">// fn =&gt; declares and creates a function with their parameter and return type specified</span>
-<span class="w">    </span><span class="c1">// -&gt; =&gt; specifies the relationship between the function name and return type and function body</span>
-<span class="w">    </span><span class="c1">// return =&gt; specifies the return expression but not madantory due to implicit return</span>
+<pre class="codehilite"><code class="language-rs">// ---------- FUNCTION ----------
+    // rust functions have implicit return of the value the last expression evaluates to, specified by omitting the ; semicolon
+    // fn =&gt; declares and creates a function with their parameter and return type specified
+    // -&gt; =&gt; specifies the relationship between the function name and return type and function body
+    // return =&gt; specifies the return expression but not madantory due to implicit return
 
-<span class="k">fn</span><span class="w"> </span><span class="nf">a_fair_dice_roll</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="kt">i32</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
-<span class="p">}</span>
+fn a_fair_dice_roll() -&gt; i32 {
+    return 4;
+}
 
-<span class="k">fn</span><span class="w"> </span><span class="nf">unfair_dice_roll</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="kt">i32</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="mi">10</span><span class="w"> </span><span class="c1">// this is valid since 10 is implicitly returned</span>
-<span class="p">}</span>
-</code></pre></div>
+fn unfair_dice_roll() -&gt; i32 {
+    10 // this is valid since 10 is implicitly returned
+}
+</code></pre>
 
 <h2>Ownership</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- OWNERSHIP ----------</span>
-<span class="w">    </span><span class="c1">// variables, constants and references have a fixed lifetime specified by the lexical scope of the {} curly braces they are enclosed within</span>
-<span class="w">    </span><span class="c1">// rust ownership hinges on the concept that it automatically returns memory once the variable that owns said value in memory goes out of scope</span>
+<pre class="codehilite"><code class="language-rs">// ---------- OWNERSHIP ----------
+    // variables, constants and references have a fixed lifetime specified by the lexical scope of the {} curly braces they are enclosed within
+    // rust ownership hinges on the concept that it automatically returns memory once the variable that owns said value in memory goes out of scope
 
-<span class="c1">// STACK VS HEAP</span>
-<span class="w">    </span><span class="c1">// both the stack and heap are part of computer memory for program usage at runtime</span>
-<span class="w">    </span><span class="c1">// stack</span>
-<span class="w">        </span><span class="c1">// blazingly fast, last-in first-out structure with operations like pushing and popping of data</span>
-<span class="w">        </span><span class="c1">// stack only ever has to refer to the top of the stack for storage and retrieval</span>
-<span class="w">        </span><span class="c1">// stack data is of a fixed-size at compile time</span>
-<span class="w">    </span><span class="c1">// heap</span>
-<span class="w">        </span><span class="c1">// less fast, values stored at different memory addresses in the heap allocated based on the amount of space required for each value</span>
-<span class="w">        </span><span class="c1">// values retrieved via a pointer that stores the memory address of a given value</span>
-<span class="w">        </span><span class="c1">// heap data is of an unknown size at compile time</span>
+// STACK VS HEAP
+    // both the stack and heap are part of computer memory for program usage at runtime
+    // stack
+        // blazingly fast, last-in first-out structure with operations like pushing and popping of data
+        // stack only ever has to refer to the top of the stack for storage and retrieval
+        // stack data is of a fixed-size at compile time
+    // heap
+        // less fast, values stored at different memory addresses in the heap allocated based on the amount of space required for each value
+        // values retrieved via a pointer that stores the memory address of a given value
+        // heap data is of an unknown size at compile time
 
-<span class="c1">// OWNERSHIP RULES</span>
-<span class="w">    </span><span class="c1">// each value belongs to a variable (its owner)</span>
-<span class="w">    </span><span class="c1">// there can only be one owner at a time</span>
-<span class="w">    </span><span class="c1">// when the owner goes out of scope, the value will be dropped</span>
+// OWNERSHIP RULES
+    // each value belongs to a variable (its owner)
+    // there can only be one owner at a time
+    // when the owner goes out of scope, the value will be dropped
 
-<span class="c1">// here is an example of ownership rules in action</span>
-<span class="c1">// variable s is not valid here, it has not been declared yet</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">s</span><span class="p">:</span><span class="nb">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hello&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// variable s is valid from this point forward till the end of the local lexical scope (curly braces), s is a string vector and is heap-allocated</span>
-<span class="p">}</span>
-<span class="c1">// the lexical scope is now over and the variable s is no longer valid, rust returns the space the variable s took up with its value in heap memory</span>
+// here is an example of ownership rules in action
+// variable s is not valid here, it has not been declared yet
+{
+    let s:String = &quot;hello&quot;; // variable s is valid from this point forward till the end of the local lexical scope (curly braces), s is a string vector and is heap-allocated
+}
+// the lexical scope is now over and the variable s is no longer valid, rust returns the space the variable s took up with its value in heap memory
 
-<span class="c1">// REFERENCES</span>
-<span class="w">    </span><span class="c1">// references are immutable by default</span>
-<span class="w">    </span><span class="c1">// &amp; =&gt; specifies a given variable is a reference, allowing us to refer to a value without taking ownership of it</span>
-<span class="w">    </span><span class="c1">// having a reference as a function parameter is called borrowing</span>
+// REFERENCES
+    // references are immutable by default
+    // &amp; =&gt; specifies a given variable is a reference, allowing us to refer to a value without taking ownership of it
+    // having a reference as a function parameter is called borrowing
 
-<span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span><span class="p">::</span><span class="n">from</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// string vector of dynamic length, heap-allocated created</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">calculate_length</span><span class="p">(</span><span class="o">&amp;</span><span class="n">s1</span><span class="p">);</span><span class="w"> </span><span class="c1">// pass the heap-allocated string vector s1 by reference to the function calculate_length(), to prevent the string s1 from being moved after the function runs</span>
-<span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;length of {} is {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="n">le</span><span class="p">);</span>
-<span class="p">}</span>
+fn main() {
+    let s1 = String::from(&quot;hello&quot;); // string vector of dynamic length, heap-allocated created
+    let len = calculate_length(&amp;s1); // pass the heap-allocated string vector s1 by reference to the function calculate_length(), to prevent the string s1 from being moved after the function runs
+    println!(&quot;length of {} is {}&quot;, s1, le);
+}
 
-<span class="k">fn</span><span class="w"> </span><span class="nf">calculate_length</span><span class="p">(</span><span class="n">s</span><span class="p">:</span><span class="kp">&amp;</span><span class="nb">String</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="kt">usize</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// this function recieves a parameter of type reference to a string vector type by borrowing it, x is also brought into local scope as a function parameter</span>
-<span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">len</span><span class="p">()</span><span class="w"> </span><span class="c1">// s is within lexical scope here</span>
-<span class="p">}</span>
-<span class="c1">// s goes out of scope here, but since it does not have ownership of what it refers to, nothing happens</span>
-</code></pre></div>
+fn calculate_length(s:&amp;String) -&gt; usize { // this function recieves a parameter of type reference to a string vector type by borrowing it, x is also brought into local scope as a function parameter
+    s.len() // s is within lexical scope here
+}
+// s goes out of scope here, but since it does not have ownership of what it refers to, nothing happens
+</code></pre>
 
 <h2>More on</h2>
 <ul>

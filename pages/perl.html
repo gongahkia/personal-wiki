@@ -33,7 +33,7 @@
 
         <dl>
           <dt>File size</dt>
-          <dd>25.6KB</dd>
+          <dd>9.9KB</dd>
 
           <dt>Lines of code</dt>
           <dd>280</dd>
@@ -44,216 +44,216 @@
         <h1><code>Perl</code></h1>
 <p>The language for powerful string parsing.</p>
 <h2>Comments</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- COMMENT ----------</span>
+<pre class="codehilite"><code class="language-pl"># ---------- COMMENT ----------
 
-<span class="c1"># this is a single-line comment</span>
+# this is a single-line comment
 
-<span class="c1"># there is no built-in </span>
-<span class="c1"># syntax for multi-line </span>
-<span class="c1"># comments</span>
-</code></pre></div>
+# there is no built-in 
+# syntax for multi-line 
+# comments
+</code></pre>
 
 <h2>Printing</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- PRINT ----------</span>
-<span class="w">    </span><span class="c1"># print =&gt; prints a string to the stdout and appends a newline to the output</span>
-<span class="w">    </span><span class="c1"># printf =&gt; prints formatted strings to the stdout and does not append a newline to the output</span>
+<pre class="codehilite"><code class="language-pl"># ---------- PRINT ----------
+    # print =&gt; prints a string to the stdout and appends a newline to the output
+    # printf =&gt; prints formatted strings to the stdout and does not append a newline to the output
 
-<span class="k">print</span><span class="w"> </span><span class="s">&quot;this will include a newline automatically&quot;</span><span class="p">;</span>
-<span class="nb">printf</span><span class="w"> </span><span class="s">&quot;this will not include a newline and we need to specify its inclusion\n&quot;</span><span class="p">;</span>
-</code></pre></div>
+print &quot;this will include a newline automatically&quot;;
+printf &quot;this will not include a newline and we need to specify its inclusion\n&quot;;
+</code></pre>
 
 <h2>Quickstart</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- QUICKSTART ----------</span>
-<span class="w">    </span><span class="c1"># all Perl scripts include these lines at the start</span>
-<span class="w">    </span><span class="c1"># strict =&gt; module that causes compilation to fail when variable names are misspelt </span>
-<span class="w">    </span><span class="c1"># warnings =&gt; module that prints pre-emptive warning messages to the stdout for common pitfalls</span>
+<pre class="codehilite"><code class="language-pl"># ---------- QUICKSTART ----------
+    # all Perl scripts include these lines at the start
+    # strict =&gt; module that causes compilation to fail when variable names are misspelt 
+    # warnings =&gt; module that prints pre-emptive warning messages to the stdout for common pitfalls
 
-<span class="k">use</span><span class="w"> </span><span class="nn">strict</span><span class="p">;</span>
-<span class="k">use</span><span class="w"> </span><span class="nn">warnings</span><span class="p">;</span>
-</code></pre></div>
+use strict;
+use warnings;
+</code></pre>
 
 <h2>Types</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- TYPE ----------</span>
-<span class="w">    </span><span class="c1"># scalar =&gt; Integer, Float, String, Reference, declared with $</span>
-<span class="w">    </span><span class="c1"># array =&gt; ordered sequence of scalar values, declared with @</span>
-<span class="w">    </span><span class="c1"># hash =&gt; unordered sequence of key-value pairs, declared with %</span>
-<span class="w">    </span><span class="c1"># scalar reference =&gt; declared with \$</span>
-<span class="w">    </span><span class="c1"># array reference =&gt; declared with \@</span>
-<span class="w">    </span><span class="c1"># hash reference =&gt; declared with \%</span>
-<span class="w">    </span><span class="c1"># code reference =&gt; declared with \&amp;</span>
-<span class="w">    </span><span class="c1"># glob =&gt; represents an entire symbol table entry like scalars, arrays and hashes, declared with *</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-pl"># ---------- TYPE ----------
+    # scalar =&gt; Integer, Float, String, Reference, declared with $
+    # array =&gt; ordered sequence of scalar values, declared with @
+    # hash =&gt; unordered sequence of key-value pairs, declared with %
+    # scalar reference =&gt; declared with \$
+    # array reference =&gt; declared with \@
+    # hash reference =&gt; declared with \%
+    # code reference =&gt; declared with \&amp;
+    # glob =&gt; represents an entire symbol table entry like scalars, arrays and hashes, declared with *
+</code></pre>
 
 <h2>Variables</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- VARIABLE ----------</span>
-<span class="w">    </span><span class="c1"># variable names start with a sigil specifying their variable type</span>
-<span class="w">        </span><span class="c1"># $ =&gt; specifies a scalar variable containing a single value, can be an Integer, Float, String, Reference</span>
-<span class="w">        </span><span class="c1"># @ =&gt; specifies an array variable containing an ordered sequence of values of different types, similar to lists in other languages</span>
-<span class="w">        </span><span class="c1"># % =&gt; specifies a hash variable containing an unordered sequence of comma-delimited key-value pairs, similar to hashmaps in other languages</span>
-<span class="w">        </span><span class="c1"># \ =&gt; placed in front of another data type to create a reference to it, allowing creation of nested arrays and hashes, note that a Reference is of the scalar data type</span>
+<pre class="codehilite"><code class="language-pl"># ---------- VARIABLE ----------
+    # variable names start with a sigil specifying their variable type
+        # $ =&gt; specifies a scalar variable containing a single value, can be an Integer, Float, String, Reference
+        # @ =&gt; specifies an array variable containing an ordered sequence of values of different types, similar to lists in other languages
+        # % =&gt; specifies a hash variable containing an unordered sequence of comma-delimited key-value pairs, similar to hashmaps in other languages
+        # \ =&gt; placed in front of another data type to create a reference to it, allowing creation of nested arrays and hashes, note that a Reference is of the scalar data type
 
-<span class="c1"># SCALAR</span>
+# SCALAR
 
-<span class="k">my</span><span class="w"> </span><span class="nv">$a_string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;camel&quot;</span><span class="p">;</span>
-<span class="k">my</span><span class="w"> </span><span class="nv">$an_integer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span>
-<span class="k">my</span><span class="w"> </span><span class="nv">$a_floating_point</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.312</span><span class="p">;</span>
-<span class="k">my</span><span class="w"> </span><span class="nv">$a_reference_to_a_hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">\</span><span class="nv">%imagine_a_hash</span><span class="p">;</span>
+my $a_string = &quot;camel&quot;;
+my $an_integer = 42;
+my $a_floating_point = 2.312;
+my $a_reference_to_a_hash = \%imagine_a_hash;
 
-<span class="c1"># ARRAY</span>
+# ARRAY
 
-<span class="k">my</span><span class="w"> </span><span class="nv">@a_string_array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;camel&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;llama&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;owl&quot;</span><span class="p">);</span>
-<span class="k">my</span><span class="w"> </span><span class="nv">@an_integer_array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w"> </span><span class="mi">321</span><span class="p">);</span>
-<span class="k">my</span><span class="w"> </span><span class="nv">@a_mixed_array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;camel&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w"> </span><span class="mf">1.2378</span><span class="p">);</span>
+my @a_string_array = (&quot;camel&quot;, &quot;llama&quot;, &quot;owl&quot;);
+my @an_integer_array = (1, 21, 321);
+my @a_mixed_array = (&quot;camel&quot;, 42, 1.2378);
 
-<span class="c1"># HASH</span>
-<span class="w">    </span><span class="c1"># =&gt; =&gt; specifies the relationship between a key and value in a key-value pair</span>
+# HASH
+    # =&gt; =&gt; specifies the relationship between a key and value in a key-value pair
 
-<span class="k">my</span><span class="w"> </span><span class="nv">@a_fruity_hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">apple</span><span class="w">  </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&quot;red&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="n">banana</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&quot;yellow&quot;</span><span class="p">,</span><span class="w"> </span>
-<span class="p">};</span>
+my @a_fruity_hash = {
+    apple  =&gt; &quot;red&quot;,
+    banana =&gt; &quot;yellow&quot;, 
+};
 
-<span class="c1"># REFERENCES</span>
-<span class="w">    </span><span class="c1"># $, @, % =&gt; dereference a given reference by prefixing it with the appropriate sigil</span>
-<span class="w">    </span><span class="c1"># -&gt; =&gt; dereferences and access a single value</span>
+# REFERENCES
+    # $, @, % =&gt; dereference a given reference by prefixing it with the appropriate sigil
+    # -&gt; =&gt; dereferences and access a single value
 
-<span class="k">my</span><span class="w"> </span><span class="nv">$scalar_ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">\</span><span class="nv">$a_string</span><span class="p">;</span><span class="w"> </span><span class="c1"># creates a reference to a scalar variable</span>
-<span class="k">my</span><span class="w"> </span><span class="nv">$array_ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">\</span><span class="nv">@a_string_list</span><span class="p">;</span><span class="w"> </span><span class="c1"># creates a reference to an array variable</span>
-<span class="k">my</span><span class="w"> </span><span class="nv">$hash_ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">\</span><span class="nv">%a_fruity_hash</span><span class="p">;</span><span class="w"> </span><span class="c1"># creates a reference to a hash variable</span>
+my $scalar_ref = \$a_string; # creates a reference to a scalar variable
+my $array_ref = \@a_string_list; # creates a reference to an array variable
+my $hash_ref = \%a_fruity_hash; # creates a reference to a hash variable
 
-<span class="k">my</span><span class="w"> </span><span class="nv">@string_array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">@$array_ref</span><span class="p">;</span><span class="w"> </span><span class="c1"># dereference a reference to an array</span>
-<span class="k">my</span><span class="w"> </span><span class="nv">%fruity_hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">%$hash_ref</span><span class="p">;</span><span class="w"> </span><span class="c1"># dereference a reference to a hash</span>
+my @string_array = @$array_ref; # dereference a reference to an array
+my %fruity_hash = %$hash_ref; # dereference a reference to a hash
 
-<span class="k">my</span><span class="w"> </span><span class="nv">$first_value_string_array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$array_ref</span><span class="o">-&gt;</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span><span class="w"> </span><span class="c1"># access array element by index</span>
-<span class="k">my</span><span class="w"> </span><span class="nv">$banana_value_fruity_hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$hash_ref</span><span class="o">-&gt;</span><span class="p">{</span><span class="n">banana</span><span class="p">}</span><span class="w"> </span><span class="c1"># access hash value by its corresponding key</span>
-</code></pre></div>
+my $first_value_string_array = $array_ref-&gt;[0]; # access array element by index
+my $banana_value_fruity_hash = $hash_ref-&gt;{banana} # access hash value by its corresponding key
+</code></pre>
 
 <h2>Operators</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- OPERATOR ----------</span>
+<pre class="codehilite"><code class="language-pl"># ---------- OPERATOR ----------
 
-<span class="c1"># ARITHMETIC OPERATORS</span>
-<span class="w">    </span><span class="c1"># + =&gt; addition</span>
-<span class="w">    </span><span class="c1"># - =&gt; subtraction</span>
-<span class="w">    </span><span class="c1"># * =&gt; multiplication</span>
-<span class="w">    </span><span class="c1"># / =&gt; divison</span>
-<span class="w">    </span><span class="c1"># % =&gt; modulo operator</span>
-<span class="w">    </span><span class="c1"># ** =&gt; exponentiation operator</span>
-<span class="w">    </span><span class="c1"># += =&gt; increment by specified value and reassign</span>
-<span class="w">    </span><span class="c1"># -= =&gt; decrement by specified value and reassign</span>
+# ARITHMETIC OPERATORS
+    # + =&gt; addition
+    # - =&gt; subtraction
+    # * =&gt; multiplication
+    # / =&gt; divison
+    # % =&gt; modulo operator
+    # ** =&gt; exponentiation operator
+    # += =&gt; increment by specified value and reassign
+    # -= =&gt; decrement by specified value and reassign
 
-<span class="c1"># LOGICAL OPERATORS</span>
-<span class="w">    </span><span class="c1"># &amp;&amp; =&gt; logical and</span>
-<span class="w">    </span><span class="c1"># || =&gt; logical or</span>
-<span class="w">    </span><span class="c1"># ! =&gt; logical not</span>
+# LOGICAL OPERATORS
+    # &amp;&amp; =&gt; logical and
+    # || =&gt; logical or
+    # ! =&gt; logical not
 
-<span class="c1"># COMPARSION OPERATORS</span>
-<span class="w">    </span><span class="c1"># eq =&gt; complete equality check for value and type</span>
-<span class="w">    </span><span class="c1"># ne =&gt; complete inequality check for value and type</span>
-<span class="w">    </span><span class="c1"># == =&gt; partial equality check for value</span>
-<span class="w">    </span><span class="c1"># != =&gt; partial inequality check for value</span>
-<span class="w">    </span><span class="c1"># &gt;, &lt;, &gt;=, &lt;= are also comparison operators</span>
-</code></pre></div>
+# COMPARSION OPERATORS
+    # eq =&gt; complete equality check for value and type
+    # ne =&gt; complete inequality check for value and type
+    # == =&gt; partial equality check for value
+    # != =&gt; partial inequality check for value
+    # &gt;, &lt;, &gt;=, &lt;= are also comparison operators
+</code></pre>
 
 <h2>Control structures</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- CONTROL STRUCTURE ----------</span>
+<pre class="codehilite"><code class="language-pl"># ---------- CONTROL STRUCTURE ----------
 
-<span class="c1"># CONDITIONALS</span>
+# CONDITIONALS
 
-<span class="c1"># IF ELSIF ELSE</span>
+# IF ELSIF ELSE
 
-<span class="k">my</span><span class="w"> </span><span class="nv">$x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nv">$x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="s">&quot;x is bigger than 10&quot;</span><span class="p">;</span>
-<span class="p">}</span><span class="w"> </span><span class="k">elsif</span><span class="w"> </span><span class="p">(</span><span class="nv">$x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="s">&quot;x is smaller than 10&quot;</span><span class="p">;</span>
-<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="s">&quot;x is equals to 10&quot;</span><span class="p">;</span>
-<span class="p">}</span>
+my $x = 10;
+if ($x &gt; 10) {
+    print &quot;x is bigger than 10&quot;;
+} elsif ($x &lt; 10) {
+    print &quot;x is smaller than 10&quot;;
+} else {
+    print &quot;x is equals to 10&quot;;
+}
 
-<span class="c1"># UNLESS</span>
-<span class="w">    </span><span class="c1"># equivalent of if (!predicate)</span>
+# UNLESS
+    # equivalent of if (!predicate)
 
-<span class="k">unless</span><span class="w"> </span><span class="p">(</span><span class="nv">$x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="s">&quot;x is not equals to 10&quot;</span><span class="p">;</span>
-<span class="p">}</span>
+unless ($x == 10) {
+    print &quot;x is not equals to 10&quot;;
+}
 
-<span class="c1"># LOOPS</span>
-<span class="w">    </span><span class="c1"># imperative-style loops are available, however Perl also provides higher-order functions like map, grep (similar to filter in other languages), reduce</span>
+# LOOPS
+    # imperative-style loops are available, however Perl also provides higher-order functions like map, grep (similar to filter in other languages), reduce
 
-<span class="c1"># FOR LOOPS AND FOREACH LOOPS</span>
-<span class="w">    </span><span class="c1"># for, foreach =&gt; allows for iteration over a specified iterable collection of data</span>
-<span class="w">    </span><span class="c1"># for and foreach are equivalent in Perl</span>
+# FOR LOOPS AND FOREACH LOOPS
+    # for, foreach =&gt; allows for iteration over a specified iterable collection of data
+    # for and foreach are equivalent in Perl
 
-<span class="k">my</span><span class="w"> </span><span class="nv">$max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
-<span class="k">for</span><span class="w"> </span><span class="k">my</span><span class="w"> </span><span class="nv">$i</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">$max</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1"># iterates over elements within a specified range</span>
-<span class="w">  </span><span class="k">print</span><span class="w"> </span><span class="s">&quot;index is $i&quot;</span><span class="p">;</span>
-<span class="p">}</span>
+my $max = 5;
+for my $i (0 .. $max) { # iterates over elements within a specified range
+  print &quot;index is $i&quot;;
+}
 
-<span class="k">for</span><span class="w"> </span><span class="k">my</span><span class="w"> </span><span class="nv">$element</span><span class="w"> </span><span class="p">(</span><span class="nv">@elements</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1"># iterates over elements within an existing array</span>
-<span class="w">  </span><span class="k">print</span><span class="w"> </span><span class="nv">$element</span><span class="p">;</span>
-<span class="p">}</span>
+for my $element (@elements) { # iterates over elements within an existing array
+  print $element;
+}
 
-<span class="c1"># WHILE LOOPS</span>
+# WHILE LOOPS
 
-<span class="k">my</span><span class="w"> </span><span class="nv">$y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
-<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nv">$y</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="s">&quot;y is not 1&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="nv">$y</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+my $y = 5;
+while ($y &gt; 1) {
+    print &quot;y is not 1&quot;;
+    $y -= 1;
+}
+</code></pre>
 
 <h2>Data structures</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- DATA STRUCTURE ----------</span>
+<pre class="codehilite"><code class="language-pl"># ---------- DATA STRUCTURE ----------
 
-<span class="c1"># ARRAY</span>
-<span class="w">    </span><span class="c1"># @ =&gt; declares an array variable that can store an array value within () brackets</span>
-<span class="w">    </span><span class="c1"># array elements accessed by index using [] square bracket notation</span>
-<span class="w">    </span><span class="c1"># array size accessed by assigning the array to a scalar variable</span>
-<span class="w">    </span><span class="c1"># scalar() =&gt; returns the size of an array</span>
+# ARRAY
+    # @ =&gt; declares an array variable that can store an array value within () brackets
+    # array elements accessed by index using [] square bracket notation
+    # array size accessed by assigning the array to a scalar variable
+    # scalar() =&gt; returns the size of an array
 
-<span class="k">my</span><span class="w"> </span><span class="nv">@numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">23</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w"> </span><span class="mi">69</span><span class="p">);</span><span class="w"> </span><span class="c1"># creates an array numbers</span>
-<span class="k">my</span><span class="w"> </span><span class="nv">$second</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$animals</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span><span class="w"> </span><span class="c1"># this evaluates to 42</span>
-<span class="k">my</span><span class="w"> </span><span class="nv">$num_numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">@numbers</span><span class="p">;</span><span class="w"> </span><span class="c1"># this returns 3, the size of the array</span>
-<span class="k">my</span><span class="w"> </span><span class="nv">$also_num_numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">scalar</span><span class="p">(</span><span class="nv">@numbers</span><span class="p">);</span><span class="w"> </span><span class="c1"># this also returns 3 for the size of the array</span>
+my @numbers = (23, 42, 69); # creates an array numbers
+my $second = $animals[1]; # this evaluates to 42
+my $num_numbers = @numbers; # this returns 3, the size of the array
+my $also_num_numbers = scalar(@numbers); # this also returns 3 for the size of the array
 
-<span class="c1"># HASH</span>
-<span class="w">    </span><span class="c1"># % =&gt; declares a hash variable that can store a hash value within () brackets</span>
-<span class="w">    </span><span class="c1"># hash elements accessed by key using {} curly brace notation</span>
-<span class="w">    </span><span class="c1"># keys =&gt; returns all the keys of an array</span>
-<span class="w">    </span><span class="c1"># values =&gt; returns all the values of an array</span>
+# HASH
+    # % =&gt; declares a hash variable that can store a hash value within () brackets
+    # hash elements accessed by key using {} curly brace notation
+    # keys =&gt; returns all the keys of an array
+    # values =&gt; returns all the values of an array
 
-<span class="k">my</span><span class="w"> </span><span class="nv">%parklane_dishes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="n">fish</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mf">2.50</span><span class="p">,</span>
-<span class="w">    </span><span class="n">chicken</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mf">2.00</span><span class="p">,</span>
-<span class="w">    </span><span class="n">vegetable</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mf">1.00</span><span class="p">,</span>
-<span class="w">    </span><span class="n">egg</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mf">0.50</span><span class="p">,</span>
-<span class="p">);</span>
-<span class="k">my</span><span class="w"> </span><span class="nv">$parklane_fish</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$parklane_dishes</span><span class="p">{</span><span class="n">fish</span><span class="p">};</span><span class="w"> </span><span class="c1"># access the value stored at the fish key within the parklane_dishes hash</span>
-<span class="k">my</span><span class="w"> </span><span class="nv">$all_dishes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">keys</span><span class="w"> </span><span class="nv">%parklane_dishes</span><span class="p">;</span><span class="w"> </span><span class="c1"># returns all the keys stored within the parklane_dishes hash</span>
-<span class="k">my</span><span class="w"> </span><span class="nv">$all_costs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">values</span><span class="w"> </span><span class="nv">%parklane_dishes</span><span class="p">;</span><span class="w"> </span><span class="c1"># returns all the values stored within the parklane_dishes hash</span>
-</code></pre></div>
+my %parklane_dishes = (
+    fish =&gt; 2.50,
+    chicken =&gt; 2.00,
+    vegetable =&gt; 1.00,
+    egg =&gt; 0.50,
+);
+my $parklane_fish = $parklane_dishes{fish}; # access the value stored at the fish key within the parklane_dishes hash
+my $all_dishes = keys %parklane_dishes; # returns all the keys stored within the parklane_dishes hash
+my $all_costs = values %parklane_dishes; # returns all the values stored within the parklane_dishes hash
+</code></pre>
 
 <h2>Functions</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- FUNCTION ----------</span>
-<span class="w">    </span><span class="c1"># sub =&gt; declares and creates a function</span>
-<span class="w">    </span><span class="c1"># return =&gt; specifies the return expression, similar to return in other languages</span>
-<span class="w">    </span><span class="c1"># shift =&gt; procedurally retrieves the arguments passed to the function</span>
-<span class="w">    </span><span class="c1"># @_ =&gt; assigns function arguments to an array which then allows their retrieval via index or implicit deconstruction</span>
-<span class="w">    </span><span class="c1"># function parameters are not explicitly declared and must be assigned within the function</span>
+<pre class="codehilite"><code class="language-pl"># ---------- FUNCTION ----------
+    # sub =&gt; declares and creates a function
+    # return =&gt; specifies the return expression, similar to return in other languages
+    # shift =&gt; procedurally retrieves the arguments passed to the function
+    # @_ =&gt; assigns function arguments to an array which then allows their retrieval via index or implicit deconstruction
+    # function parameters are not explicitly declared and must be assigned within the function
 
-<span class="k">sub</span><span class="w"> </span><span class="nf">greet</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">my</span><span class="w"> </span><span class="nv">$name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">shift</span><span class="p">;</span><span class="w">  </span><span class="c1"># retrieves the first argument passed to the function and assigns it to the scalar variable name</span>
-<span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="s">&quot;Hello, $name!&quot;</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="n">greet</span><span class="p">(</span><span class="s">&quot;Alice&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1"># this prints &quot;Hello, Alice!&quot; to the stdout</span>
+sub greet {
+    my $name = shift;  # retrieves the first argument passed to the function and assigns it to the scalar variable name
+    print &quot;Hello, $name!&quot;;
+}
+greet(&quot;Alice&quot;); # this prints &quot;Hello, Alice!&quot; to the stdout
 
-<span class="k">sub</span><span class="w"> </span><span class="nf">multiply</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">my</span><span class="w"> </span><span class="p">(</span><span class="nv">$num1</span><span class="p">,</span><span class="w"> </span><span class="nv">$num2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">@_</span><span class="p">;</span><span class="w"> </span><span class="c1"># deconstructs and assigns the arguments passed to the function to the scalar variables num1 and num2</span>
-<span class="w">    </span><span class="k">my</span><span class="w"> </span><span class="nv">$result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$num1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nv">$num2</span><span class="p">;</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nv">$result</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="k">my</span><span class="w"> </span><span class="nv">$product</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">multiply</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"> </span><span class="c1"># this evaluates to the scalar value 12</span>
-</code></pre></div>
+sub multiply {
+    my ($num1, $num2) = @_; # deconstructs and assigns the arguments passed to the function to the scalar variables num1 and num2
+    my $result = $num1 * $num2;
+    return $result;
+}
+my $product = multiply(3, 4); # this evaluates to the scalar value 12
+</code></pre>
 
 <h2>More on</h2>
 <ul>

@@ -33,7 +33,7 @@
 
         <dl>
           <dt>File size</dt>
-          <dd>3.7KB</dd>
+          <dd>2.7KB</dd>
 
           <dt>Lines of code</dt>
           <dd>90</dd>
@@ -44,30 +44,30 @@
         <h1><code>Make</code></h1>
 <p>Universal build tool.</p>
 <h2>Quickstart and Usage</h2>
-<div class="codehilite"><pre><span></span><code><span class="c"># ---------- QUICKSTART ----------</span>
-<span class="c">    # filename must be &quot;Makefile&quot;</span>
-<span class="c">    # Makefile rules follow the format =&gt; {COMMAND}: {FILE DEPENDANCY} {ACTUAL COMMAND TO RUN WHEN RULE CALLED}</span>
+<pre class="codehilite"><code class="language-Makefile"># ---------- QUICKSTART ----------
+    # filename must be &quot;Makefile&quot;
+    # Makefile rules follow the format =&gt; {COMMAND}: {FILE DEPENDANCY} {ACTUAL COMMAND TO RUN WHEN RULE CALLED}
 
-<span class="c"># ---------- USAGE ----------</span>
-<span class="c">    # make {SPECIFIED COMMAND NAME} =&gt; calls the make command within your Makefile</span>
-<span class="c">    # = =&gt; assignment operator allows for variables to be declared and reused later</span>
-<span class="c">    # $() =&gt; retrieves a value stored at the specified variable, similar to PHP</span>
-<span class="c">    # all =&gt; augmenter that specifies that command will be run universally when &quot;make&quot; is inputted into the stdin</span>
-<span class="c">    # by convention, always add a &quot;clean&quot; rule to automate restoring a clean build of your project within your Makefile, although logic may vary</span>
+# ---------- USAGE ----------
+    # make {SPECIFIED COMMAND NAME} =&gt; calls the make command within your Makefile
+    # = =&gt; assignment operator allows for variables to be declared and reused later
+    # $() =&gt; retrieves a value stored at the specified variable, similar to PHP
+    # all =&gt; augmenter that specifies that command will be run universally when &quot;make&quot; is inputted into the stdin
+    # by convention, always add a &quot;clean&quot; rule to automate restoring a clean build of your project within your Makefile, although logic may vary
 
-<span class="nv">CC</span><span class="o">=</span>clang
+CC=clang
 
-<span class="nf">all</span><span class="o">:</span><span class="w"> </span><span class="n">hello</span>
+all: hello
 
-<span class="nf">hello</span><span class="o">:</span><span class="w"> </span><span class="n">hello</span>.<span class="n">c</span> <span class="n">test</span>.<span class="n">o</span>
-<span class="w">    </span><span class="k">$(</span>CC<span class="k">)</span><span class="w"> </span>-o<span class="w"> </span>hello<span class="w"> </span>hello.c
+hello: hello.c test.o
+    $(CC) -o hello hello.c
 
-<span class="nf">test.o</span><span class="o">:</span><span class="w"> </span><span class="n">test</span>.<span class="n">c</span>
-<span class="w">    </span><span class="k">$(</span>CC<span class="k">)</span><span class="w"> </span>-c<span class="w"> </span>test.c<span class="w"> </span>-o<span class="w"> </span>test.o
+test.o: test.c
+    $(CC) -c test.c -o test.o
 
-<span class="nf">clean</span><span class="o">:</span>
-<span class="w">    </span>rm<span class="w"> </span>hello<span class="w"> </span>test.o
-</code></pre></div>
+clean:
+    rm hello test.o
+</code></pre>
 
 <h2>More on</h2>
 <ul>

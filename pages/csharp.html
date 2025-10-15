@@ -33,7 +33,7 @@
 
         <dl>
           <dt>File size</dt>
-          <dd>41.5KB</dd>
+          <dd>13.5KB</dd>
 
           <dt>Lines of code</dt>
           <dd>409</dd>
@@ -43,337 +43,337 @@
       <section class="note-content">
         <h1><code>C#</code></h1>
 <h2>Comments</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// single-line comments</span>
-<span class="cm">/* multi-line</span>
-<span class="cm">comments</span>
-<span class="cm">look</span>
-<span class="cm">like</span>
-<span class="cm">this */</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-c#">// single-line comments
+/* multi-line
+comments
+look
+like
+this */
+</code></pre>
 
 <h2>Namespaces</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- NAMESPACE ----------</span>
-<span class="w">    </span><span class="c1">// operates similarly to importing Python modules</span>
-<span class="w">    </span><span class="c1">// these are all part of C#&#39;s standard .NET Framework Class Library</span>
-<span class="w">    </span><span class="c1">// using brings in relevant namespaces referenced in source code </span>
+<pre class="codehilite"><code class="language-cs">// ---------- NAMESPACE ----------
+    // operates similarly to importing Python modules
+    // these are all part of C#'s standard .NET Framework Class Library
+    // using brings in relevant namespaces referenced in source code 
 
-<span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
-<span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
-<span class="k">using</span><span class="w"> </span><span class="nn">System.Dynamic</span><span class="p">;</span>
-<span class="k">using</span><span class="w"> </span><span class="nn">System.Linq</span><span class="p">;</span>
-<span class="k">using</span><span class="w"> </span><span class="nn">System.Net</span><span class="p">;</span>
-<span class="k">using</span><span class="w"> </span><span class="nn">System.Threading.Tasks</span><span class="p">;</span>
-<span class="k">using</span><span class="w"> </span><span class="nn">System.IO</span><span class="p">;</span>
-</code></pre></div>
+using System;
+using System.Collections.Generic;
+using System.Dynamic;
+using System.Linq;
+using System.Net;
+using System.Threading.Tasks;
+using System.IO;
+</code></pre>
 
 <h2>Main method</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- MAIN METHOD ----------</span>
-<span class="w">    </span><span class="c1">// since CS is heavily-OOP, each CS file should contain at least 1 class with the same name as the file, below we assume the file name is CS.cs</span>
-<span class="w">    </span><span class="c1">// within said class, there must be a main method, from which all console applications run when the program is executed on the CLI</span>
-<span class="w">    </span><span class="c1">// web applications and games might have a different entry point</span>
-<span class="w">    </span><span class="c1">// similar to Java</span>
+<pre class="codehilite"><code class="language-cs">// ---------- MAIN METHOD ----------
+    // since CS is heavily-OOP, each CS file should contain at least 1 class with the same name as the file, below we assume the file name is CS.cs
+    // within said class, there must be a main method, from which all console applications run when the program is executed on the CLI
+    // web applications and games might have a different entry point
+    // similar to Java
 
-<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CS</span><span class="w"> </span><span class="p">{</span>
+public class CS {
 
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="s">&quot;ass&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// this will print when the CS file is run</span>
-<span class="w">    </span><span class="p">}</span>
+    public static void Main() {
+        Console.Write(&quot;ass&quot;); // this will print when the CS file is run
+    }
 
-<span class="p">}</span>
-</code></pre></div>
+}
+</code></pre>
 
 <h2>Printing</h2>
-<div class="codehilite"><pre><span></span><code><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Hello world&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// prints to the console with a newline</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="s">&quot;Hello &quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// prints without a newline</span>
-<span class="n">Console</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="s">&quot;World&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// prints without a newline</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-cs">Console.WriteLine(&quot;Hello world&quot;); // prints to the console with a newline
+Console.Write(&quot;Hello &quot;); // prints without a newline
+Console.Write(&quot;World&quot;); // prints without a newline
+</code></pre>
 
 <h2>Types, Variables and Constants</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- TYPES and VARIABLES ----------</span>
-<span class="w">    </span><span class="c1">// INTEGER</span>
-<span class="w">        </span><span class="c1">// sbyte =&gt; signed 8-bit integer, -128..127</span>
-<span class="w">        </span><span class="c1">// byte =&gt; unsigned 8-bit integer, 0..255</span>
-<span class="w">        </span><span class="c1">// short =&gt; signed 16-bit integer, -32,768..32,767</span>
-<span class="w">        </span><span class="c1">// ushort =&gt; unsigned 16-bit integer, 0..65,535</span>
-<span class="w">        </span><span class="c1">// int =&gt; signed 32-bit integer, -2,147,483,648..2,147,483,647</span>
-<span class="w">        </span><span class="c1">// uint =&gt; unsigned 32-bit integer, 0..4,294,967,295</span>
-<span class="w">        </span><span class="c1">// long =&gt; signed 64-bit integer, -9,223,372,036,854,775,808..9,223,372,036,854,775,807</span>
-<span class="w">        </span><span class="c1">// ulong =&gt; unsigned 64-bit integer, 0..18,446,744,073,709,551,615</span>
-<span class="w">    </span><span class="c1">// FLOAT</span>
-<span class="w">        </span><span class="c1">// double =&gt; double-precision 64-bit floating point number, 15-16 digit precision</span>
-<span class="w">        </span><span class="c1">// float =&gt; single-precision 32-bit floating point number, 7 digit precision</span>
-<span class="w">        </span><span class="c1">// decimal =&gt; greatest-precision 128-bit floating point number, used for financial and monetary calculations</span>
-<span class="w">    </span><span class="c1">// BOOLEAN =&gt; true, false</span>
-<span class="w">    </span><span class="c1">// CHAR =&gt; single quotation marks, 16-bit unicode character</span>
-<span class="w">    </span><span class="c1">// STRING =&gt; double quotation marks, immutable, reference type (can be set to null) unlike all previous types which are value types</span>
+<pre class="codehilite"><code class="language-cs">// ---------- TYPES and VARIABLES ----------
+    // INTEGER
+        // sbyte =&gt; signed 8-bit integer, -128..127
+        // byte =&gt; unsigned 8-bit integer, 0..255
+        // short =&gt; signed 16-bit integer, -32,768..32,767
+        // ushort =&gt; unsigned 16-bit integer, 0..65,535
+        // int =&gt; signed 32-bit integer, -2,147,483,648..2,147,483,647
+        // uint =&gt; unsigned 32-bit integer, 0..4,294,967,295
+        // long =&gt; signed 64-bit integer, -9,223,372,036,854,775,808..9,223,372,036,854,775,807
+        // ulong =&gt; unsigned 64-bit integer, 0..18,446,744,073,709,551,615
+    // FLOAT
+        // double =&gt; double-precision 64-bit floating point number, 15-16 digit precision
+        // float =&gt; single-precision 32-bit floating point number, 7 digit precision
+        // decimal =&gt; greatest-precision 128-bit floating point number, used for financial and monetary calculations
+    // BOOLEAN =&gt; true, false
+    // CHAR =&gt; single quotation marks, 16-bit unicode character
+    // STRING =&gt; double quotation marks, immutable, reference type (can be set to null) unlike all previous types which are value types
 
-<span class="kt">sbyte</span><span class="w"> </span><span class="n">fooSbyte</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100</span><span class="p">;</span>
-<span class="kt">byte</span><span class="w"> </span><span class="n">fooByte</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100</span><span class="p">;</span>
-<span class="kt">short</span><span class="w"> </span><span class="n">fooShort</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10000</span><span class="p">;</span>
-<span class="kt">ushort</span><span class="w"> </span><span class="n">fooUshort</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10000</span><span class="p">;</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">fooInt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">;</span>
-<span class="kt">uint</span><span class="w"> </span><span class="n">fooUint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">;</span>
-<span class="kt">long</span><span class="w"> </span><span class="n">fooLong</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100000L</span><span class="p">;</span><span class="w"> </span><span class="c1">// L is used to denote the variable value is of type long or ulong</span>
-<span class="kt">ulong</span><span class="w"> </span><span class="n">fooUlong</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100000L</span><span class="p">;</span>
+sbyte fooSbyte = 100;
+byte fooByte = 100;
+short fooShort = 10000;
+ushort fooUshort = 10000;
+int fooInt = 1;
+uint fooUint = 1;
+long fooLong = 100000L; // L is used to denote the variable value is of type long or ulong
+ulong fooUlong = 100000L;
 
-<span class="kt">double</span><span class="w"> </span><span class="n">fooDouble</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">123.4</span><span class="p">;</span>
-<span class="kt">float</span><span class="w"> </span><span class="n">fooFloat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">234.5f</span><span class="p">;</span>
-<span class="kt">decimal</span><span class="w"> </span><span class="n">fooDecimal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">150.3</span><span class="n">m</span><span class="p">;</span>
+double fooDouble = 123.4;
+float fooFloat = 234.5f;
+decimal fooDecimal = 150.3m;
 
-<span class="n">boolean</span><span class="w"> </span><span class="n">fooBoolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span><span class="w"> </span><span class="c1">// or false</span>
+boolean fooBoolean = true; // or false
 
-<span class="kt">char</span><span class="w"> </span><span class="n">fooChar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">;</span>
-<span class="kt">string</span><span class="w"> </span><span class="n">fooString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;awesome possum&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// a reference type, so it can be set to null</span>
+char fooChar = 'A';
+string fooString = &quot;awesome possum&quot;; // a reference type, so it can be set to null
 
-<span class="c1">// ---------- STRING METHODS ----------</span>
+// ---------- STRING METHODS ----------
 
-<span class="c1">// INDEXING</span>
-<span class="w">    </span><span class="c1">// can access characters from a string via index, similar to Python</span>
-<span class="w">    </span><span class="c1">// strings are immutable upon instantiation, so stuff like fooString[1] = &#39;X&#39; is not possible</span>
+// INDEXING
+    // can access characters from a string via index, similar to Python
+    // strings are immutable upon instantiation, so stuff like fooString[1] = 'X' is not possible
 
-<span class="kt">char</span><span class="w"> </span><span class="n">charFromString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fooString</span><span class="p">[</span><span class="m">1</span><span class="p">];</span><span class="w"> </span><span class="c1">// evaluates to the character of index 1, &#39;w&#39;</span>
+char charFromString = fooString[1]; // evaluates to the character of index 1, 'w'
 
-<span class="c1">// ---------- CONSTANT ----------</span>
-<span class="w">    </span><span class="c1">// const makes a variable immutable </span>
-<span class="w">    </span><span class="c1">// so does read-only</span>
-<span class="w">    </span><span class="c1">// const values that require calacultion are evaluated at compile time</span>
+// ---------- CONSTANT ----------
+    // const makes a variable immutable 
+    // so does read-only
+    // const values that require calacultion are evaluated at compile time
 
-<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">HoursPerWeek</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9001</span><span class="p">;</span>
-<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CalculatedHoursPerWeek</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">7</span><span class="p">;</span>
-</code></pre></div>
+const int HoursPerWeek = 9001;
+const int CalculatedHoursPerWeek = 60 * 60 * 24 * 7;
+</code></pre>
 
 <h2>Data structures</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- ARRAY ----------</span>
-<span class="w">    </span><span class="c1">// zero-indexed</span>
-<span class="w">    </span><span class="c1">// array size must be statically declared at declaration</span>
-<span class="w">    </span><span class="c1">// arrays are mutable, their values can be altered even after initial declaration and assignment</span>
-<span class="w">    </span><span class="c1">// can store elements of multiple types</span>
-<span class="w">    </span><span class="c1">// can be assigned as null</span>
+<pre class="codehilite"><code class="language-cs">// ---------- ARRAY ----------
+    // zero-indexed
+    // array size must be statically declared at declaration
+    // arrays are mutable, their values can be altered even after initial declaration and assignment
+    // can store elements of multiple types
+    // can be assigned as null
 
-<span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">intArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="m">10</span><span class="p">];</span><span class="w"> </span><span class="c1">// instantiates an int array that can store 10 integers</span>
-<span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="m">9000</span><span class="p">,</span><span class="w"> </span><span class="m">1000</span><span class="p">,</span><span class="w"> </span><span class="m">1337</span><span class="p">};</span><span class="w"> </span><span class="c1">// can also declare an array literal like this</span>
+int[] intArray = new int[10]; // instantiates an int array that can store 10 integers
+int[] y = {9000, 1000, 1337}; // can also declare an array literal like this
 
-<span class="c1">// ---------- ARRAY METHODS ----------</span>
+// ---------- ARRAY METHODS ----------
 
-<span class="c1">// INDEXING</span>
-<span class="w">    </span><span class="c1">// can access array elements via index, similar to Python</span>
+// INDEXING
+    // can access array elements via index, similar to Python
 
-<span class="n">intArray</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// reassigning the second element of the int array of index 1 to the int value 1</span>
+intArray[1] = 1; // reassigning the second element of the int array of index 1 to the int value 1
 
-<span class="c1">// ----------- LIST ----------</span>
-<span class="w">    </span><span class="c1">// zero-indexed</span>
-<span class="w">    </span><span class="c1">// list size is dynamic, so it does not need to be declared at declaration, similar to Vector in Rust</span>
-<span class="w">    </span><span class="c1">// usually instantiated with a single type, like conventional C arrays</span>
-<span class="w">    </span><span class="c1">// used more commonly than arrays as lists are more flexible</span>
-<span class="w">    </span><span class="c1">// can never be assigned as null</span>
-<span class="w">    </span><span class="c1">// &lt;&gt; are generics, elaborated on below</span>
+// ----------- LIST ----------
+    // zero-indexed
+    // list size is dynamic, so it does not need to be declared at declaration, similar to Vector in Rust
+    // usually instantiated with a single type, like conventional C arrays
+    // used more commonly than arrays as lists are more flexible
+    // can never be assigned as null
+    // &lt;&gt; are generics, elaborated on below
 
-<span class="n">List</span><span class="o">&lt;</span><span class="n">Int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">();</span><span class="w"> </span><span class="c1">// instantiates an int list that can store a dynamic number of ints</span>
-<span class="n">List</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="m">9000</span><span class="p">,</span><span class="w"> </span><span class="m">1000</span><span class="p">,</span><span class="w"> </span><span class="m">1337</span><span class="p">};</span><span class="w"> </span><span class="c1">// a List literal, though since its dynamically sized this basically doesn&#39;t matter</span>
+List&lt;Int&gt; intList = new List&lt;int&gt;(); // instantiates an int list that can store a dynamic number of ints
+List&lt;string&gt; stringList = new List&lt;string&gt;();
+List&lt;int&gt; z = new List&lt;int&gt; {9000, 1000, 1337}; // a List literal, though since its dynamically sized this basically doesn't matter
 
-<span class="c1">// ---------- LIST METHODS ----------</span>
+// ---------- LIST METHODS ----------
 
-<span class="n">intList</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="m">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// same as .append() in Python</span>
+intList.Add(1); // same as .append() in Python
 
-<span class="c1">// ---------- OTHER DATA STRUCTURES ----------</span>
-<span class="w">    </span><span class="c1">// Dictionary (hash-map implementation in C#)</span>
-<span class="w">    </span><span class="c1">// Stack, Queue</span>
-<span class="w">    </span><span class="c1">// HashSet</span>
-<span class="w">    </span><span class="c1">// Read-only Collections</span>
-<span class="w">    </span><span class="c1">// Tuple (from .NET 4+)</span>
-</code></pre></div>
+// ---------- OTHER DATA STRUCTURES ----------
+    // Dictionary (hash-map implementation in C#)
+    // Stack, Queue
+    // HashSet
+    // Read-only Collections
+    // Tuple (from .NET 4+)
+</code></pre>
 
 <h2>Operators</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- ARITHMETIC OPERATOR ----------</span>
+<pre class="codehilite"><code class="language-cs">// ---------- ARITHMETIC OPERATOR ----------
 
-<span class="kt">int</span><span class="w"> </span><span class="n">i1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">i2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="c1">// shorthand for multiple declaration and assignment</span>
-<span class="n">i1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i2</span><span class="p">;</span><span class="w"> </span><span class="c1">// addition</span>
-<span class="n">i1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">i2</span><span class="p">;</span><span class="w"> </span><span class="c1">// subtraction</span>
-<span class="n">i1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">i2</span><span class="p">;</span><span class="w"> </span><span class="c1">// multiplication</span>
-<span class="n">i1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">i2</span><span class="p">;</span><span class="w"> </span><span class="c1">// division</span>
-<span class="n">i1</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">i2</span><span class="p">;</span><span class="w"> </span><span class="c1">// modulo</span>
-<span class="n">i1</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="c1">// post-increment, increment by one after returning value</span>
-<span class="o">++</span><span class="n">i1</span><span class="p">;</span><span class="w"> </span><span class="c1">// pre-increment, increment by one before returning value</span>
-<span class="n">i1</span><span class="o">--</span><span class="p">;</span><span class="w"> </span><span class="c1">// post-decrement, decrement by one after returning value</span>
-<span class="o">--</span><span class="n">i1</span><span class="p">;</span><span class="w"> </span><span class="c1">// pre-decrement, decrement by one before returning value</span>
+int i1 = 1, i2 = 2 // shorthand for multiple declaration and assignment
+i1 + i2; // addition
+i1 - i2; // subtraction
+i1 * i2; // multiplication
+i1 / i2; // division
+i1 % i2; // modulo
+i1++; // post-increment, increment by one after returning value
+++i1; // pre-increment, increment by one before returning value
+i1--; // post-decrement, decrement by one after returning value
+--i1; // pre-decrement, decrement by one before returning value
 
-<span class="c1">// ---------- COMPARISON OPERATOR ----------</span>
+// ---------- COMPARISON OPERATOR ----------
 
-<span class="n">i1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">i2</span><span class="p">;</span><span class="w"> </span><span class="c1">// complete equality operator</span>
-<span class="n">i1</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">i2</span><span class="p">;</span><span class="w"> </span><span class="c1">// complete inequality operator</span>
-<span class="n">i1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">i2</span><span class="p">;</span><span class="w"> </span><span class="c1">// comparison operator</span>
-<span class="n">i1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">i2</span><span class="p">;</span><span class="w"> </span><span class="c1">// comparison operator</span>
-<span class="n">i1</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">i2</span><span class="p">;</span><span class="w"> </span><span class="c1">// comparison operator</span>
-<span class="n">i1</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">i2</span><span class="p">;</span><span class="w"> </span><span class="c1">// comparison operator</span>
+i1 == i2; // complete equality operator
+i1 != i2; // complete inequality operator
+i1 &gt; i2; // comparison operator
+i1 &lt; i2; // comparison operator
+i1 &gt;= i2; // comparison operator
+i1 &lt;= i2; // comparison operator
 
-<span class="c1">// ---------- LOGICAL OPERATOR ----------</span>
-<span class="n">boolean</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
-<span class="n">boolean</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
-<span class="n">a</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"> </span><span class="c1">// logical AND operator</span>
-<span class="n">a</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"> </span><span class="c1">// logical OR operator</span>
-</code></pre></div>
+// ---------- LOGICAL OPERATOR ----------
+boolean a = true;
+boolean b = false;
+a &amp;&amp; b; // logical AND operator
+a || b; // logical OR operator
+</code></pre>
 
 <h2>Control structures</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- IF ELSE IF ELSE ----------</span>
+<pre class="codehilite"><code class="language-cs">// ---------- IF ELSE IF ELSE ----------
 
-<span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">;</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;I am invincible&quot;</span><span class="p">);</span>
-<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Neato&quot;</span><span class="p">);</span>
-<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Pronto&quot;</span><span class="p">);</span>
-<span class="p">}</span>
+int j = 10;
+if (j == 10) {
+    Console.WriteLine(&quot;I am invincible&quot;);
+} else if (j &gt; 10) {
+    Console.WriteLine(&quot;Neato&quot;);
+} else {
+    Console.WriteLine(&quot;Pronto&quot;);
+}
 
-<span class="c1">// ---------- TERNARY OPERATOR ----------</span>
-<span class="w">    </span><span class="c1">// &lt;condition&gt; ? &lt;run if true&gt; : &lt;run if false&gt;</span>
+// ---------- TERNARY OPERATOR ----------
+    // &lt;condition&gt; ? &lt;run if true&gt; : &lt;run if false&gt;
 
-<span class="kt">int</span><span class="w"> </span><span class="n">toCompare</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">17</span><span class="p">;</span>
-<span class="kt">string</span><span class="w"> </span><span class="n">isTrue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">toCompare</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;yes it is 17&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;no it is not 17&quot;</span><span class="p">;</span>
+int toCompare = 17;
+string isTrue = toCompare == 17 ? &quot;yes it is 17&quot; : &quot;no it is not 17&quot;;
 
-<span class="c1">// ---------- WHILE LOOP ----------</span>
-<span class="w">    </span><span class="c1">// while and do while loops are both available</span>
-<span class="w">    </span><span class="c1">// continue skips the current iteration</span>
-<span class="w">    </span><span class="c1">// break breaks from the current loop completely</span>
+// ---------- WHILE LOOP ----------
+    // while and do while loops are both available
+    // continue skips the current iteration
+    // break breaks from the current loop completely
 
-<span class="kt">int</span><span class="w"> </span><span class="n">fooWhile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
-<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">fooWhile</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">100</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">fooWhile</span><span class="o">++</span><span class="p">;</span>
-<span class="p">}</span>
+int fooWhile = 0;
+while (fooWhile &lt; 100) {
+    fooWhile++;
+}
 
-<span class="kt">int</span><span class="w"> </span><span class="n">fooDoWhile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
-<span class="k">do</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">fooDoWhile</span><span class="o">++</span><span class="p">;</span>
-<span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">fooDoWhile</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">100</span><span class="p">);</span>
+int fooDoWhile = 0;
+do {
+    fooDoWhile++;
+} while (fooDoWhile &lt; 100);
 
-<span class="c1">// ----------- FOR LOOP ----------</span>
-<span class="w">    </span><span class="c1">// conventional C-style for loops exist</span>
-<span class="w">    </span><span class="c1">// foreach loops also exist</span>
+// ----------- FOR LOOP ----------
+    // conventional C-style for loops exist
+    // foreach loops also exist
 
-<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">10</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-<span class="p">}</span>
+for (int i = 0; i &lt; 10; i++) {
+    Console.Write(i);
+}
 
-<span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="n">character</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s">&quot;Hello World!&quot;</span><span class="p">.</span><span class="n">ToCharArray</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// iterates over every element of the char array created from the string &quot;Hello World!&quot;</span>
-<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="n">character</span><span class="p">);</span>
-<span class="p">}</span>
+foreach (char character in &quot;Hello World!&quot;.ToCharArray()) {
+    // iterates over every element of the char array created from the string &quot;Hello World!&quot;
+    Console.Write(character);
+}
 
-<span class="c1">// ---------- SWITCH CASE GOTO DEFAULT ----------</span>
-<span class="w">    </span><span class="c1">// remember to include the break statement to prevent logic from falling through</span>
-<span class="w">    </span><span class="c1">// goto can transfer logic flow from one case statement to another, and any code below it in the same case will be skipped similar to a break statement</span>
-<span class="w">    </span><span class="c1">// default cas can be included as well</span>
+// ---------- SWITCH CASE GOTO DEFAULT ----------
+    // remember to include the break statement to prevent logic from falling through
+    // goto can transfer logic flow from one case statement to another, and any code below it in the same case will be skipped similar to a break statement
+    // default cas can be included as well
 
-<span class="kt">int</span><span class="w"> </span><span class="n">month</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">;</span>
-<span class="kt">string</span><span class="w"> </span><span class="n">monthString</span><span class="p">;</span><span class="w"> </span><span class="c1">// you can declare a variable first and assign it later</span>
-<span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">month</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="m">1</span><span class="p">:</span>
-<span class="w">        </span><span class="n">monthString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;January&quot;</span><span class="p">;</span>
-<span class="w">        </span><span class="k">goto</span><span class="w"> </span><span class="k">case</span><span class="w"> </span><span class="m">3</span><span class="p">;</span><span class="w"> </span><span class="c1">// continues logic flow in case 3</span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="m">2</span><span class="p">:</span>
-<span class="w">        </span><span class="n">monthString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;February&quot;</span><span class="p">;</span>
-<span class="w">        </span><span class="k">break</span><span class="p">;</span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="m">3</span><span class="p">:</span>
-<span class="w">        </span><span class="n">monthString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;March&quot;</span><span class="p">;</span>
-<span class="w">        </span><span class="k">break</span><span class="p">;</span>
-<span class="w">    </span><span class="k">default</span><span class="p">:</span>
-<span class="w">        </span><span class="n">monthString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Some other month&quot;</span><span class="p">;</span>
-<span class="w">        </span><span class="k">break</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+int month = 3;
+string monthString; // you can declare a variable first and assign it later
+switch (month) {
+    case 1:
+        monthString = &quot;January&quot;;
+        goto case 3; // continues logic flow in case 3
+    case 2:
+        monthString = &quot;February&quot;;
+        break;
+    case 3:
+        monthString = &quot;March&quot;;
+        break;
+    default:
+        monthString = &quot;Some other month&quot;;
+        break;
+}
+</code></pre>
 
 <h2>Classes</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- DEFINITION ----------</span>
-<span class="w">    </span><span class="c1">// ACCESS MODIFIERS </span>
-<span class="w">        </span><span class="c1">// public =&gt; members are globally accessible from any part of the program</span>
-<span class="w">        </span><span class="c1">// private =&gt; members are only accessible from within the class or struct they are declared in</span>
-<span class="w">        </span><span class="c1">// protected =&gt; members are only accesible from within the class or from derived subclasses, unaccessible from outside the class hierachy</span>
-<span class="w">    </span><span class="c1">// static =&gt; class members that belong to the class instead of instances of the class</span>
-<span class="w">    </span><span class="c1">// get =&gt; a method to retrieve a value</span>
-<span class="w">    </span><span class="c1">// set =&gt; a method to set a value</span>
+<pre class="codehilite"><code class="language-cs">// ---------- DEFINITION ----------
+    // ACCESS MODIFIERS 
+        // public =&gt; members are globally accessible from any part of the program
+        // private =&gt; members are only accessible from within the class or struct they are declared in
+        // protected =&gt; members are only accesible from within the class or from derived subclasses, unaccessible from outside the class hierachy
+    // static =&gt; class members that belong to the class instead of instances of the class
+    // get =&gt; a method to retrieve a value
+    // set =&gt; a method to set a value
 
-<span class="c1">// ---------- CLASS ----------</span>
-<span class="w">    </span><span class="c1">// a class can inherit from only one parent class</span>
-<span class="w">    </span><span class="c1">// a class can inherit from any number of interfaces</span>
-<span class="w">    </span><span class="c1">// a parent class is listed first before interfaces if applicable</span>
-<span class="w">    </span><span class="c1">// methods can share the same name as long as at least the parameter type signature is unique to differentiate the two methods</span>
+// ---------- CLASS ----------
+    // a class can inherit from only one parent class
+    // a class can inherit from any number of interfaces
+    // a parent class is listed first before interfaces if applicable
+    // methods can share the same name as long as at least the parameter type signature is unique to differentiate the two methods
 
-<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Bicycle</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Cadence</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">get</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">_cadence</span><span class="p">;</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">        </span><span class="k">set</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="n">_cadence</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">value</span><span class="p">;</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">_cadence</span><span class="p">;</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">SpeedUp</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">increment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">_speed</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">increment</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">SlowDown</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">decrement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">_speed</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">decrement</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
+public class Bicycle {
+    public int Cadence {
+        get {
+            return _cadence;
+        }
+        set {
+            _cadence = value;
+        }
+    }
+    private int _cadence;
+    public void SpeedUp(int increment = 1) {
+        _speed += increment;
+    }
+    public void SlowDown(int decrement = 1) {
+        _speed -= decrement;
+    }
+}
 
-<span class="c1">// ---------- INHERITANCE ----------</span>
+// ---------- INHERITANCE ----------
 
-<span class="c1">// the subclass MountainBike inherits from the parent class Bicycle and the type signatures of members from interfaces IJumpable and IBreakable</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">MountainBike</span><span class="p">:</span><span class="w"> </span><span class="n">Bicycle</span><span class="p">,</span><span class="w"> </span><span class="n">IJumpable</span><span class="p">,</span><span class="w"> </span><span class="n">IBreakable</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">damage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Jump</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">meters</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">damage</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">meters</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
+// the subclass MountainBike inherits from the parent class Bicycle and the type signatures of members from interfaces IJumpable and IBreakable
+class MountainBike: Bicycle, IJumpable, IBreakable {
+    int damage = 0;
+    public void Jump(int meters) {
+        damage += meters;
+    }
 
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">Broken</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">get</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">damage</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">100</span><span class="p">;</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+    public bool Broken {
+        get {
+            return damage &gt; 100;
+        }
+    }
+}
+</code></pre>
 
 <h2>Subclasses</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- SUBCLASS ----------</span>
-<span class="w">    </span><span class="c1">// : allows for subclasses to inherit from their parent classes</span>
-<span class="w">    </span><span class="c1">// override can be used to override certain members (generally methods) of the parent class as desired</span>
+<pre class="codehilite"><code class="language-cs">// ---------- SUBCLASS ----------
+    // : allows for subclasses to inherit from their parent classes
+    // override can be used to override certain members (generally methods) of the parent class as desired
 
-<span class="k">class</span><span class="w"> </span><span class="nc">PennyFarthing</span><span class="p">:</span><span class="w"> </span><span class="n">Bicycle</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// the PennyFarthing class now inherits all the members of the parent Bicycle class besides those overriden</span>
-<span class="p">}</span>
-</code></pre></div>
+class PennyFarthing: Bicycle {
+    // the PennyFarthing class now inherits all the members of the parent Bicycle class besides those overriden
+}
+</code></pre>
 
 <h2>Interfaces</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- INTERFACE ----------</span>
-<span class="w">    </span><span class="c1">// : allows for classes to inherit any number of interfaces</span>
-<span class="w">    </span><span class="c1">// interface declares an interface</span>
-<span class="w">    </span><span class="c1">// interfaces contain the type signatures of class members and drop the implementation</span>
-<span class="w">    </span><span class="c1">// interface members are implictly public</span>
+<pre class="codehilite"><code class="language-cs">// ---------- INTERFACE ----------
+    // : allows for classes to inherit any number of interfaces
+    // interface declares an interface
+    // interfaces contain the type signatures of class members and drop the implementation
+    // interface members are implictly public
 
-<span class="k">interface</span><span class="w"> </span><span class="n">IJumpable</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">void</span><span class="w"> </span><span class="nf">Jump</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">meters</span><span class="p">);</span>
-<span class="p">}</span>
+interface IJumpable {
+    void Jump(int meters);
+}
 
-<span class="k">interface</span><span class="w"> </span><span class="n">IBreakable</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">Broken</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">get</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+interface IBreakable {
+    bool Broken {
+        get;
+    }
+}
+</code></pre>
 
 <h2>Objects</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- OBJECT -----------</span>
-<span class="w">    </span><span class="c1">// new instantiates a new object off a class</span>
-<span class="w">    </span><span class="c1">// object methods can be called with . dot notation</span>
-<span class="w">    </span><span class="c1">// it is good convention to use getter and setter methods</span>
+<pre class="codehilite"><code class="language-cs">// ---------- OBJECT -----------
+    // new instantiates a new object off a class
+    // object methods can be called with . dot notation
+    // it is good convention to use getter and setter methods
 
-<span class="n">Bicycle</span><span class="w"> </span><span class="n">trek</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Bicycle</span><span class="p">();</span>
-<span class="n">trek</span><span class="p">.</span><span class="n">SpeedUp</span><span class="p">(</span><span class="m">3</span><span class="p">);</span>
-<span class="n">trek</span><span class="p">.</span><span class="n">Cadence</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">100</span><span class="p">;</span><span class="w"> </span>
+Bicycle trek = new Bicycle();
+trek.SpeedUp(3);
+trek.Cadence = 100; 
 
-<span class="n">PennyFarthing</span><span class="w"> </span><span class="n">funbike</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PennyFarthing</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">10</span><span class="p">);</span>
-</code></pre></div>
+PennyFarthing funbike = new PennyFarthing(1,10);
+</code></pre>
 
 <h2>More on</h2>
 <ul>

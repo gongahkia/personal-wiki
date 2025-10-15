@@ -33,7 +33,7 @@
 
         <dl>
           <dt>File size</dt>
-          <dd>29.9KB</dd>
+          <dd>13.0KB</dd>
 
           <dt>Lines of code</dt>
           <dd>315</dd>
@@ -44,242 +44,242 @@
         <h1><code>Elixir</code></h1>
 <p>Modern functional language to build high-traffic websites, systems and web apps.</p>
 <h2>Comments</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- COMMENT ----------</span>
+<pre class="codehilite"><code class="language-ex"># ---------- COMMENT ----------
 
-<span class="c1"># this is a single-line comment</span>
+# this is a single-line comment
 
-<span class="c1"># there is no built-in</span>
-<span class="c1"># implementation for </span>
-<span class="c1"># multi-line comments</span>
-</code></pre></div>
+# there is no built-in
+# implementation for 
+# multi-line comments
+</code></pre>
 
 <h2>Printing</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- PRINT ----------</span>
-<span class="w">    </span><span class="c1"># printing to the stdout is handled with the IO module</span>
-<span class="w">    </span><span class="c1"># IO.write =&gt; prints a string to the stdout and does not include a newline</span>
-<span class="w">    </span><span class="c1"># IO.puts =&gt; prints a string to the stdout and appends a newline to the output</span>
+<pre class="codehilite"><code class="language-ex"># ---------- PRINT ----------
+    # printing to the stdout is handled with the IO module
+    # IO.write =&gt; prints a string to the stdout and does not include a newline
+    # IO.puts =&gt; prints a string to the stdout and appends a newline to the output
 
-<span class="nc">IO</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;this does not include a newline by default and we must explicitly specify it</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nc">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">&quot;this comes with a newline by default&quot;</span><span class="p">)</span>
-</code></pre></div>
+IO.write(&quot;this does not include a newline by default and we must explicitly specify it\n&quot;)
+IO.puts(&quot;this comes with a newline by default&quot;)
+</code></pre>
 
 <h2>Quickstart</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- QUICKSTART ----------</span>
-<span class="w">    </span><span class="c1"># elixir compiles to beam bytecode to run on the erlang virtual machine</span>
-<span class="w">    </span><span class="c1"># functional language, so every expression must evaluate to a single value</span>
-<span class="w">    </span><span class="c1"># = =&gt; not the assignment operator but the pattern-matching operator, allowing for powerful matching constructs like in other functional languages where the LHS pattern is matched against the RHS </span>
+<pre class="codehilite"><code class="language-ex"># ---------- QUICKSTART ----------
+    # elixir compiles to beam bytecode to run on the erlang virtual machine
+    # functional language, so every expression must evaluate to a single value
+    # = =&gt; not the assignment operator but the pattern-matching operator, allowing for powerful matching constructs like in other functional languages where the LHS pattern is matched against the RHS 
 
-<span class="p">[</span><span class="n">head</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">tail</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="c1"># here, the = is not an assignment operator but applies the pattern-matching construct</span>
-<span class="n">head</span><span class="w"> </span><span class="c1"># this evaluates to the integer value 1</span>
-<span class="n">tail</span><span class="w"> </span><span class="c1"># this evaluates to the remaining integer list values [2,3]</span>
-</code></pre></div>
+[head | tail] = [1,2,3] # here, the = is not an assignment operator but applies the pattern-matching construct
+head # this evaluates to the integer value 1
+tail # this evaluates to the remaining integer list values [2,3]
+</code></pre>
 
 <h2>Types</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- TYPE ----------</span>
-<span class="w">    </span><span class="c1"># integer =&gt; signed and unsigned integer number</span>
-<span class="w">    </span><span class="c1"># float =&gt; signed and unsigned floating-point number</span>
-<span class="w">    </span><span class="c1"># boolean =&gt; true, false</span>
-<span class="w">    </span><span class="c1"># atom =&gt; constants whose value is their own name, declared with a : colon</span>
-<span class="w">    </span><span class="c1"># string =&gt; declared with &quot;&quot; double quotation marks, covers chars also</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-ex"># ---------- TYPE ----------
+    # integer =&gt; signed and unsigned integer number
+    # float =&gt; signed and unsigned floating-point number
+    # boolean =&gt; true, false
+    # atom =&gt; constants whose value is their own name, declared with a : colon
+    # string =&gt; declared with &quot;&quot; double quotation marks, covers chars also
+</code></pre>
 
 <h2>Operators</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- OPERATOR ----------</span>
+<pre class="codehilite"><code class="language-ex"># ---------- OPERATOR ----------
 
-<span class="c1"># ARITHMETIC OPERATORS</span>
-<span class="w">    </span><span class="c1"># + =&gt; addition</span>
-<span class="w">    </span><span class="c1"># - =&gt; subtraction</span>
-<span class="w">    </span><span class="c1"># * =&gt; multiplication</span>
-<span class="w">    </span><span class="c1"># / =&gt; floor division</span>
-<span class="w">    </span><span class="c1"># div =&gt; integer division</span>
-<span class="w">    </span><span class="c1"># rem =&gt; equivalent of the modulo operator</span>
+# ARITHMETIC OPERATORS
+    # + =&gt; addition
+    # - =&gt; subtraction
+    # * =&gt; multiplication
+    # / =&gt; floor division
+    # div =&gt; integer division
+    # rem =&gt; equivalent of the modulo operator
 
-<span class="c1"># LOGICAL OPERATORS</span>
-<span class="w">    </span><span class="c1"># and =&gt; logical and</span>
-<span class="w">    </span><span class="c1"># or =&gt; logical or</span>
-<span class="w">    </span><span class="c1"># not =&gt; logical not</span>
+# LOGICAL OPERATORS
+    # and =&gt; logical and
+    # or =&gt; logical or
+    # not =&gt; logical not
 
-<span class="c1"># COMPARISON OPERATORS</span>
-<span class="w">    </span><span class="c1"># == =&gt; partial equality check for value</span>
-<span class="w">    </span><span class="c1"># != or /= =&gt; partial inequality check for value</span>
-<span class="w">    </span><span class="c1"># === =&gt; complete equality check for value and type</span>
-<span class="w">    </span><span class="c1"># !== =&gt; complete inequality check for value and type</span>
-<span class="w">    </span><span class="c1"># &lt; &gt; &lt;= &gt;= are also comparison operators</span>
-</code></pre></div>
+# COMPARISON OPERATORS
+    # == =&gt; partial equality check for value
+    # != or /= =&gt; partial inequality check for value
+    # === =&gt; complete equality check for value and type
+    # !== =&gt; complete inequality check for value and type
+    # &lt; &gt; &lt;= &gt;= are also comparison operators
+</code></pre>
 
 <h2>Control structures</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- CONTROL STRUCTURE ----------</span>
+<pre class="codehilite"><code class="language-ex"># ---------- CONTROL STRUCTURE ----------
 
-<span class="c1"># CONDITIONALS</span>
+# CONDITIONALS
 
-<span class="c1"># IF ELSE</span>
-<span class="w">    </span><span class="c1"># elixir has no built-in implementation of elseif statements</span>
-<span class="w">    </span><span class="c1"># do end =&gt; used to mark the start and end of the if else block</span>
+# IF ELSE
+    # elixir has no built-in implementation of elseif statements
+    # do end =&gt; used to mark the start and end of the if else block
 
-<span class="k">if</span><span class="w"> </span><span class="no">false</span><span class="w"> </span><span class="k">do</span>
-<span class="w">    </span><span class="s2">&quot;watermelon&quot;</span>
-<span class="k">else</span>
-<span class="w">    </span><span class="s2">&quot;shit ass&quot;</span>
-<span class="k">end</span><span class="w"> </span><span class="c1"># this evaluates to &quot;shit ass&quot;</span>
+if false do
+    &quot;watermelon&quot;
+else
+    &quot;shit ass&quot;
+end # this evaluates to &quot;shit ass&quot;
 
-<span class="c1"># UNLESS ELSE</span>
-<span class="w">    </span><span class="c1"># unless =&gt; provides for the negation of a specified condition</span>
-<span class="w">    </span><span class="c1"># do end =&gt; used to mark the start and end of the unless else block</span>
+# UNLESS ELSE
+    # unless =&gt; provides for the negation of a specified condition
+    # do end =&gt; used to mark the start and end of the unless else block
 
-<span class="k">unless</span><span class="w"> </span><span class="no">true</span><span class="w"> </span><span class="k">do</span>
-<span class="w">  </span><span class="s2">&quot;this will never be seen&quot;</span>
-<span class="k">else</span>
-<span class="w">  </span><span class="s2">&quot;this will shit&quot;</span>
-<span class="k">end</span><span class="w"> </span><span class="c1"># this evaluates to &quot;this will shit&quot;</span>
+unless true do
+  &quot;this will never be seen&quot;
+else
+  &quot;this will shit&quot;
+end # this evaluates to &quot;this will shit&quot;
 
-<span class="c1"># PATTERN MATCHING</span>
-<span class="w">    </span><span class="c1"># elixir&#39;s powerful pattern-matching construct rivals Rust in its conciseness and completeness</span>
-<span class="w">    </span><span class="c1"># case =&gt; declares and creates a case statement, similar to switch case statements in other languages</span>
-<span class="w">    </span><span class="c1"># do end =&gt; used to mark the start and end of a given case statement&#39;s cases, within which -&gt; speciifes the relationship between a given case condition and the internal logic to run if said condition is satisfied</span>
-<span class="w">    </span><span class="c1"># _ =&gt; catch-all operator used as the equivalent of a default statement in other languages</span>
+# PATTERN MATCHING
+    # elixir's powerful pattern-matching construct rivals Rust in its conciseness and completeness
+    # case =&gt; declares and creates a case statement, similar to switch case statements in other languages
+    # do end =&gt; used to mark the start and end of a given case statement's cases, within which -&gt; speciifes the relationship between a given case condition and the internal logic to run if said condition is satisfied
+    # _ =&gt; catch-all operator used as the equivalent of a default statement in other languages
 
-<span class="k">case</span><span class="w"> </span><span class="p">{</span><span class="ss">:one</span><span class="p">,</span><span class="w"> </span><span class="ss">:two</span><span class="p">}</span><span class="w"> </span><span class="k">do</span>
-<span class="w">    </span><span class="p">{</span><span class="ss">:four</span><span class="p">,</span><span class="w"> </span><span class="ss">:five</span><span class="p">}</span><span class="w"> </span><span class="o">-&gt;</span>
-<span class="w">        </span><span class="s2">&quot;this won&#39;t match&quot;</span>
-<span class="w">    </span><span class="p">{</span><span class="ss">:one</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">}</span><span class="w"> </span><span class="o">-&gt;</span>
-<span class="w">        </span><span class="s2">&quot;this will match and bind `x` to `:two` in this clause&quot;</span>
-<span class="w">    </span><span class="bp">_</span><span class="w"> </span><span class="o">-&gt;</span>
-<span class="w">        </span><span class="s2">&quot;this will match any value&quot;</span>
-<span class="k">end</span><span class="w"> </span><span class="c1"># notice that pattern-matching can occur for tuples and other data structures</span>
+case {:one, :two} do
+    {:four, :five} -&gt;
+        &quot;this won't match&quot;
+    {:one, x} -&gt;
+        &quot;this will match and bind `x` to `:two` in this clause&quot;
+    _ -&gt;
+        &quot;this will match any value&quot;
+end # notice that pattern-matching can occur for tuples and other data structures
 
-<span class="p">[</span><span class="n">head</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="bp">_</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="c1"># note the catch-all operator _ can be used to throw away any unwanted value, as seen here where only the head value is matched and assigned and the tail is thrown away</span>
-<span class="n">head</span><span class="w"> </span><span class="c1"># this evaluates to the integer value 1</span>
+[head | _] = [1,2,3] # note the catch-all operator _ can be used to throw away any unwanted value, as seen here where only the head value is matched and assigned and the tail is thrown away
+head # this evaluates to the integer value 1
 
-<span class="c1"># COND</span>
-<span class="w">    </span><span class="c1"># cond =&gt; declares and creates a cond block, which runs mutliple conditional checks at the same time, equivalent to switch case statements in other languages and often used within elixir as a concise alternative to nesting mutliple if statements, with -&gt; specifying the relationship between a condition and the internal logic to run if a given condition evaluates to true</span>
-<span class="w">    </span><span class="c1"># do end =&gt; used to mark the start and end of the cond block </span>
-<span class="w">    </span><span class="c1"># true =&gt; it is convention to set the last condition as true to act as a default statement within a cond block</span>
+# COND
+    # cond =&gt; declares and creates a cond block, which runs mutliple conditional checks at the same time, equivalent to switch case statements in other languages and often used within elixir as a concise alternative to nesting mutliple if statements, with -&gt; specifying the relationship between a condition and the internal logic to run if a given condition evaluates to true
+    # do end =&gt; used to mark the start and end of the cond block 
+    # true =&gt; it is convention to set the last condition as true to act as a default statement within a cond block
 
-<span class="k">cond</span><span class="w"> </span><span class="k">do</span>
-<span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">-&gt;</span>
-<span class="w">    </span><span class="s2">&quot;I will never be seen&quot;</span>
-<span class="w">  </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="o">-&gt;</span>
-<span class="w">    </span><span class="s2">&quot;me neither&quot;</span>
-<span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">-&gt;</span>
-<span class="w">    </span><span class="s2">&quot;but I will&quot;</span>
-<span class="k">end</span><span class="w"> </span><span class="c1"># this evaluates to &quot;but I will&quot;</span>
+cond do
+  1 + 1 == 3 -&gt;
+    &quot;I will never be seen&quot;
+  2 * 5 == 12 -&gt;
+    &quot;me neither&quot;
+  1 + 2 == 3 -&gt;
+    &quot;but I will&quot;
+end # this evaluates to &quot;but I will&quot;
 
-<span class="k">cond</span><span class="w"> </span><span class="k">do</span>
-<span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">-&gt;</span>
-<span class="w">    </span><span class="s2">&quot;I will never be seen&quot;</span>
-<span class="w">  </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="o">-&gt;</span>
-<span class="w">    </span><span class="s2">&quot;me neither&quot;</span>
-<span class="w">  </span><span class="no">true</span><span class="w"> </span><span class="o">-&gt;</span>
-<span class="w">    </span><span class="s2">&quot;but I will&quot;</span>
-<span class="k">end</span><span class="w"> </span><span class="c1"># this evaluates to &quot;but I will&quot; as well due to the presence of the true condition which acts as a default statement</span>
+cond do
+  1 + 1 == 3 -&gt;
+    &quot;I will never be seen&quot;
+  2 * 5 == 12 -&gt;
+    &quot;me neither&quot;
+  true -&gt;
+    &quot;but I will&quot;
+end # this evaluates to &quot;but I will&quot; as well due to the presence of the true condition which acts as a default statement
 
-<span class="c1"># TRY CATCH AFTER</span>
-<span class="w">    </span><span class="c1"># try catch =&gt; declares a try catch block, similar to try except in other languages</span>
-<span class="w">    </span><span class="c1"># after =&gt; specifies code that should execute regardless of whether a value is caught by the try catch block</span>
-<span class="w">    </span><span class="c1"># rescue =&gt; used to handle specified errors</span>
-<span class="w">    </span><span class="c1"># do end =&gt; used to mark the start and end of a try catch after block</span>
+# TRY CATCH AFTER
+    # try catch =&gt; declares a try catch block, similar to try except in other languages
+    # after =&gt; specifies code that should execute regardless of whether a value is caught by the try catch block
+    # rescue =&gt; used to handle specified errors
+    # do end =&gt; used to mark the start and end of a try catch after block
 
-<span class="k">try</span><span class="w"> </span><span class="k">do</span>
-<span class="w">  </span><span class="k">throw</span><span class="p">(</span><span class="ss">:hello</span><span class="p">)</span>
-<span class="k">catch</span>
-<span class="w">  </span><span class="n">message</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s2">&quot;got </span><span class="si">#{</span><span class="n">message</span><span class="si">}</span><span class="s2">.&quot;</span>
-<span class="k">after</span>
-<span class="w">  </span><span class="nc">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="s2">&quot;I&#39;m the after clause.&quot;</span><span class="p">)</span>
-<span class="k">end</span><span class="w"> </span><span class="c1"># this prints &quot;I&#39;m the after clause&quot; to the stdout</span>
+try do
+  throw(:hello)
+catch
+  message -&gt; &quot;got #{message}.&quot;
+after
+  IO.puts(&quot;I'm the after clause.&quot;)
+end # this prints &quot;I'm the after clause&quot; to the stdout
 
-<span class="c1"># RANGES</span>
-<span class="w">    </span><span class="c1"># .. =&gt; creates an inclusive range on both ends</span>
+# RANGES
+    # .. =&gt; creates an inclusive range on both ends
 
-<span class="mi">1</span><span class="o">..</span><span class="mi">10</span><span class="w"> </span><span class="c1"># this evaluates to a range that stores integers from 1 to 10</span>
+1..10 # this evaluates to a range that stores integers from 1 to 10
 
-<span class="c1"># LOOPS</span>
-<span class="w">    </span><span class="c1"># as a functional language, elixir does not have conventional imperative loops implemented, but offers higher-order functions, recursion and list comprehension that allow for the same effect in a concise manner</span>
-<span class="w">    </span><span class="c1"># Enum module =&gt; provides Enum.each, Enum.map, Enum.reduce and other higher-order functions</span>
+# LOOPS
+    # as a functional language, elixir does not have conventional imperative loops implemented, but offers higher-order functions, recursion and list comprehension that allow for the same effect in a concise manner
+    # Enum module =&gt; provides Enum.each, Enum.map, Enum.reduce and other higher-order functions
 
-<span class="c1"># LIST COMPREHENSION</span>
-<span class="w">    </span><span class="c1"># uses the syntax =&gt; for {PATTERN} &lt;- {ITERABLE STRUCTURE}, {FILTER CONDITIONS}, do: {EXPRESSION}</span>
-<span class="w">        </span><span class="c1"># pattern =&gt; applies a specified pattern-matching construct against elements from the iterable structure</span>
-<span class="w">        </span><span class="c1"># iterable structure =&gt; data structure like a range, list etc</span>
-<span class="w">        </span><span class="c1"># filter conditions =&gt; optional conditions to further filter elements</span>
-<span class="w">        </span><span class="c1"># expression =&gt; does something to the given element and includes it in the resulting new list</span>
+# LIST COMPREHENSION
+    # uses the syntax =&gt; for {PATTERN} &lt;- {ITERABLE STRUCTURE}, {FILTER CONDITIONS}, do: {EXPRESSION}
+        # pattern =&gt; applies a specified pattern-matching construct against elements from the iterable structure
+        # iterable structure =&gt; data structure like a range, list etc
+        # filter conditions =&gt; optional conditions to further filter elements
+        # expression =&gt; does something to the given element and includes it in the resulting new list
 
-<span class="n">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span>
-<span class="n">doubled_numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">numbers</span><span class="p">,</span><span class="w"> </span><span class="ss">do</span><span class="p">:</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="c1"># this iterates over the list numbers, taking each value and multiplying it by 2, then reassigning it to a new list doubled_numbers</span>
-<span class="n">doubled_numbers</span><span class="w"> </span><span class="c1"># this evaluates to the integer list of value [2, 4, 6, 8, 10]</span>
-</code></pre></div>
+numbers = [1, 2, 3, 4, 5]
+doubled_numbers = for n &lt;- numbers, do: n * 2 # this iterates over the list numbers, taking each value and multiplying it by 2, then reassigning it to a new list doubled_numbers
+doubled_numbers # this evaluates to the integer list of value [2, 4, 6, 8, 10]
+</code></pre>
 
 <h2>Data structures</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- DATA STRUCTURE ----------</span>
+<pre class="codehilite"><code class="language-ex"># ---------- DATA STRUCTURE ----------
 
-<span class="c1"># LIST</span>
-<span class="w">    </span><span class="c1"># every list is essentially a linked list, where the head consists of the first element of the list and the tail comprises every other element behind the head, causing head operations to be fast but tail operations to be slow</span>
-<span class="w">    </span><span class="c1"># [] =&gt; declares and creates a dynamically-sized ordered sequence of elements of the same type</span>
-<span class="w">    </span><span class="c1"># [ | ] =&gt; specifies pattern-matching constrct that matches the head and a tail of a list</span>
+# LIST
+    # every list is essentially a linked list, where the head consists of the first element of the list and the tail comprises every other element behind the head, causing head operations to be fast but tail operations to be slow
+    # [] =&gt; declares and creates a dynamically-sized ordered sequence of elements of the same type
+    # [ | ] =&gt; specifies pattern-matching constrct that matches the head and a tail of a list
 
-<span class="n">an_int_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">]</span>
-<span class="p">[</span><span class="n">a_head</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">a_tail</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">an_int_list</span>
-<span class="n">a_head</span><span class="w"> </span><span class="c1"># this evaluates to the integer value 1</span>
-<span class="n">a_tail</span><span class="w"> </span><span class="c1"># this evaluates to the integer list value [2, 3, 4, 5, 6]</span>
+an_int_list = [1, 2, 3, 4, 5, 6]
+[a_head | a_tail] = an_int_list
+a_head # this evaluates to the integer value 1
+a_tail # this evaluates to the integer list value [2, 3, 4, 5, 6]
 
-<span class="c1"># TUPLE</span>
-<span class="w">    </span><span class="c1"># tuples allow for faster access to elements by index but are slower for frequent modification</span>
-<span class="w">    </span><span class="c1"># {} =&gt; declares and creates a fixed size ordered sequence of elements of different types</span>
-<span class="w">    </span><span class="c1"># elem =&gt; retrieves a specified element from a given tuple by its index</span>
+# TUPLE
+    # tuples allow for faster access to elements by index but are slower for frequent modification
+    # {} =&gt; declares and creates a fixed size ordered sequence of elements of different types
+    # elem =&gt; retrieves a specified element from a given tuple by its index
 
-<span class="n">a_mixed_tuple</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Success&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">}</span>
-<span class="n">first_el</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">elem</span><span class="p">(</span><span class="n">a_mixed_tuple</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
-<span class="n">second_el</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">elem</span><span class="p">(</span><span class="n">a_mixed_tuple</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
-<span class="n">third_el</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">elem</span><span class="p">(</span><span class="n">a_mixed_tuple</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+a_mixed_tuple = {:ok, &quot;Success&quot;, 42}
+first_el = elem(a_mixed_tuple, 0)
+second_el = elem(a_mixed_tuple, 1)
+third_el = elem(a_mixed_tuple, 2)
 
-<span class="n">first_el</span><span class="w"> </span><span class="c1"># this evaluates to the atom value of :ok</span>
-<span class="n">second_el</span><span class="w"> </span><span class="c1"># this evaluates to the string value of &quot;Success&quot;</span>
-<span class="n">third_el</span><span class="w"> </span><span class="c1"># this evaluates to the integer value of 42</span>
+first_el # this evaluates to the atom value of :ok
+second_el # this evaluates to the string value of &quot;Success&quot;
+third_el # this evaluates to the integer value of 42
 
-<span class="c1"># MAPS</span>
-<span class="w">    </span><span class="c1"># %{} =&gt; declares and creates a map which stores an unordered collection of key-value pairs, their relationship denoted by =&gt;</span>
-<span class="w">    </span><span class="c1"># [] =&gt; key-value pairs are created and retrieved by their keys using [] square bracket notation</span>
+# MAPS
+    # %{} =&gt; declares and creates a map which stores an unordered collection of key-value pairs, their relationship denoted by =&gt;
+    # [] =&gt; key-value pairs are created and retrieved by their keys using [] square bracket notation
 
-<span class="n">genders</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">%{</span><span class="s2">&quot;david&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s2">&quot;male&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;gillian&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s2">&quot;female&quot;</span><span class="p">}</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">declares</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">creates</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">map</span><span class="w"> </span><span class="n">genders</span><span class="w"> </span><span class="n">which</span><span class="w"> </span><span class="n">stores</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="n">pairs</span>
-<span class="n">genders</span><span class="p">[</span><span class="s2">&quot;david&quot;</span><span class="p">]</span><span class="w"> </span><span class="c1"># this evaluates to the string value &quot;male&quot;</span>
-</code></pre></div>
+genders = %{&quot;david&quot; =&gt; &quot;male&quot;, &quot;gillian&quot; =&gt; &quot;female&quot;} // this declares and creates a new map genders which stores string key and string value pairs
+genders[&quot;david&quot;] # this evaluates to the string value &quot;male&quot;
+</code></pre>
 
 <h2>Functions</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- FUNCTION ----------</span>
+<pre class="codehilite"><code class="language-ex"># ---------- FUNCTION ----------
 
-<span class="c1"># ANONYMOUS FUNCTIONS</span>
-<span class="w">    </span><span class="c1"># fn =&gt; creates an anonymous lambda function with named parameters specified in () brackets </span>
-<span class="w">    </span><span class="c1"># -&gt; =&gt; specifies the function body within the function definition</span>
-<span class="w">    </span><span class="c1"># when =&gt; specifies a predicate that acts as a function guard for function parameters</span>
-<span class="w">    </span><span class="c1"># end =&gt; marks the end of a function definition</span>
-<span class="w">    </span><span class="c1"># invocation of anonymous functons requires . dot notation</span>
+# ANONYMOUS FUNCTIONS
+    # fn =&gt; creates an anonymous lambda function with named parameters specified in () brackets 
+    # -&gt; =&gt; specifies the function body within the function definition
+    # when =&gt; specifies a predicate that acts as a function guard for function parameters
+    # end =&gt; marks the end of a function definition
+    # invocation of anonymous functons requires . dot notation
 
-<span class="n">square</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">fn</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="c1"># declares and creates an anonymous function and assigns it to the variable square</span>
-<span class="n">square</span><span class="o">.</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="c1"># invocation of the anonymous function</span>
+square = fn(x) -&gt; x * x end # declares and creates an anonymous function and assigns it to the variable square
+square.(5) # invocation of the anonymous function
 
-<span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">fn</span>
-<span class="w">    </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="ow">when</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="c1"># specifies the pattern-matching construct that the anonymous function assigned to the variable x can receive before the actual function body</span>
-<span class="w">    </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y</span>
-<span class="k">end</span>
+f = fn
+    x, y when x &gt; 0 -&gt; x + y # specifies the pattern-matching construct that the anonymous function assigned to the variable x can receive before the actual function body
+    x, y -&gt; x * y
+end
 
-<span class="n">f</span><span class="o">.</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="c1"># this evaluates to the integer value of 4</span>
+f.(1, 3) # this evaluates to the integer value of 4
 
-<span class="c1"># MODULE AND NAMED FUNCTIONS</span>
-<span class="w">    </span><span class="c1"># functions that serve the same purpose are grouped together under modules</span>
-<span class="w">    </span><span class="c1"># defmodule =&gt; declares and creates a module block</span>
-<span class="w">    </span><span class="c1"># def =&gt; declares and creates a public function within the module block that can be called from other modules</span>
-<span class="w">    </span><span class="c1"># defp =&gt; declares and creates a private function within the module that can only be called within the module</span>
-<span class="w">    </span><span class="c1"># do end =&gt; marks the start and end of a function definition and module block</span>
+# MODULE AND NAMED FUNCTIONS
+    # functions that serve the same purpose are grouped together under modules
+    # defmodule =&gt; declares and creates a module block
+    # def =&gt; declares and creates a public function within the module block that can be called from other modules
+    # defp =&gt; declares and creates a private function within the module that can only be called within the module
+    # do end =&gt; marks the start and end of a function definition and module block
 
-<span class="kd">defmodule</span><span class="w"> </span><span class="nc">PrivateMath</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="c1"># declares a module called PrivateMath</span>
-<span class="w">    </span><span class="kd">def</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="k">do</span>
-<span class="w">        </span><span class="n">do_sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
-<span class="w">    </span><span class="k">end</span><span class="w"> </span><span class="c1"># declares a public function called sum that can be called from another module</span>
+defmodule PrivateMath do # declares a module called PrivateMath
+    def sum(a, b) do
+        do_sum(a, b)
+    end # declares a public function called sum that can be called from another module
 
-<span class="w">    </span><span class="kd">defp</span><span class="w"> </span><span class="n">do_sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="k">do</span>
-<span class="w">        </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span>
-<span class="w">    </span><span class="k">end</span><span class="w"> </span><span class="c1"># declares a private function called do_sum that can only be called from within the module</span>
-<span class="k">end</span>
-</code></pre></div>
+    defp do_sum(a, b) do
+        a + b
+    end # declares a private function called do_sum that can only be called from within the module
+end
+</code></pre>
 
 <h2>More on</h2>
 <ul>

@@ -33,7 +33,7 @@
 
         <dl>
           <dt>File size</dt>
-          <dd>5.9KB</dd>
+          <dd>3.6KB</dd>
 
           <dt>Lines of code</dt>
           <dd>106</dd>
@@ -52,36 +52,36 @@
 <li>Jupyter also supports other programming languages through various kernels</li>
 </ul>
 <h2>Installation</h2>
-<div class="codehilite"><pre><span></span><code><span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>notebook<span class="w"> </span><span class="c1"># installs Jupyter notebook </span>
-<span class="gp">$ </span>jupyter<span class="w"> </span>notebook<span class="w"> </span><span class="c1"># starts the notebook server locally</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-console">$ pip install notebook # installs Jupyter notebook 
+$ jupyter notebook # starts the notebook server locally
+</code></pre>
 
 <h2>Quickstart</h2>
 <p>Jupyter notebooks can run simple Python code snippets</p>
-<div class="codehilite"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="n">example_equation</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
-<span class="n">example_name</span> <span class="o">=</span> <span class="s2">&quot;keshi&quot;</span>
+<pre class="codehilite"><code class="language-py">x = 10
+y = 20
+example_equation = x + y
+example_name = &quot;keshi&quot;
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;testing out my Jupyter notebook!&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;my name is </span><span class="si">{</span><span class="n">example_name</span><span class="si">}</span><span class="s2"> and i calculate the total sum of x and y to be </span><span class="si">{</span><span class="n">example_equation</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</code></pre></div>
+print(&quot;testing out my Jupyter notebook!&quot;)
+print(f&quot;my name is {example_name} and i calculate the total sum of x and y to be {example_equation}&quot;)
+</code></pre>
 
 <p>and more complex Python scripts for data science and visualisation.</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<pre class="codehilite"><code class="language-py">import matplotlib.pyplot as plt
+import numpy as np
 
-<span class="c1"># generate some data</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+# generate some data
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
 
-<span class="c1"># plot the data</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Sine Wave&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;X-axis&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Y-axis&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div>
+# plot the data
+plt.plot(x, y)
+plt.title(&quot;Sine Wave&quot;)
+plt.xlabel(&quot;X-axis&quot;)
+plt.ylabel(&quot;Y-axis&quot;)
+plt.show()
+</code></pre>
 
 <h2>More on</h2>
 <ul>

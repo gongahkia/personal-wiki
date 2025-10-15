@@ -33,7 +33,7 @@
 
         <dl>
           <dt>File size</dt>
-          <dd>9.5KB</dd>
+          <dd>5.3KB</dd>
 
           <dt>Lines of code</dt>
           <dd>114</dd>
@@ -44,48 +44,48 @@
         <h1><code>Cassandra</code></h1>
 <p>Highly scalable, distributed NoSQL database.</p>
 <h2>Launching Cassandra</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- LAUNCHING CASSANDRA ----------</span>
-<span class="w">    </span><span class="c1"># type the following commands in the CLI</span>
+<pre class="codehilite"><code class="language-bash"># ---------- LAUNCHING CASSANDRA ----------
+    # type the following commands in the CLI
 
-cassandra<span class="w"> </span>-f<span class="w"> </span><span class="c1"># starts running a Cassandra instance in the foreground</span>
-cqlsh<span class="w"> </span><span class="c1"># launches the cqlsh shell, in which all CQL is typed</span>
-</code></pre></div>
+cassandra -f # starts running a Cassandra instance in the foreground
+cqlsh # launches the cqlsh shell, in which all CQL is typed
+</code></pre>
 
 <h2>Quickstart</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">-- ---------- QUICKSTART ----------</span>
-<span class="w">    </span><span class="c1">-- queries are written in Cassandra Query Language (CQL), which bears many syntactic similarities to SQL </span>
-<span class="w">    </span><span class="c1">-- the most direct way to interact with the Apache Cassandra database is to use the CQL shell, cqlsh</span>
-<span class="w">    </span><span class="c1">-- keyspace =&gt; namespaces that defines data replication on a node, similar to databases in SQL</span>
-<span class="w">    </span><span class="c1">-- tables =&gt; tables live within keyspaces, and function similarly to normal tables in SQL</span>
-<span class="w">    </span><span class="c1">-- CQL is a semicolon language </span>
+<pre class="codehilite"><code class="language-sql">-- ---------- QUICKSTART ----------
+    -- queries are written in Cassandra Query Language (CQL), which bears many syntactic similarities to SQL 
+    -- the most direct way to interact with the Apache Cassandra database is to use the CQL shell, cqlsh
+    -- keyspace =&gt; namespaces that defines data replication on a node, similar to databases in SQL
+    -- tables =&gt; tables live within keyspaces, and function similarly to normal tables in SQL
+    -- CQL is a semicolon language 
 
-<span class="c1">-- ----- GENERAL -----</span>
-<span class="w">    </span><span class="c1">-- CREATE KEYSPACE &lt;keyspaceName&gt; =&gt; creates a keyspace under the given name, and assigns it the value augmenters specified in the assignment statement</span>
-<span class="w">    </span><span class="c1">-- USE &lt;keyspaceName&gt; =&gt; selects the specified keyspace for use presently</span>
-<span class="w">    </span><span class="c1">-- CREATE TABLE &lt;tableName&gt; (&lt;columnName&gt; &lt;columnDatatype&gt; &lt;augemnters(s)&gt;) =&gt; creates a table with any number of columns and their corresponding names and datatypes as specified</span>
-<span class="w">    </span><span class="c1">-- INSERT INTO &lt;tableName&gt; (&lt;columnNames&gt;) VALUES (&lt;columnValuesTobeInserted&gt;) =&gt; inserts the specified values into the given table</span>
-<span class="w">    </span><span class="c1">-- SELECT &lt;query&gt; FROM &lt;tableName&gt; WHERE &lt;predicate(s)&gt; =&gt; the foundation of CQL, allowing users to structure complex queries to retrieve their desired data from the given keyspace and table</span>
-<span class="w">    </span><span class="c1">-- UPDATE &lt;tableName&gt; SET &lt;updatedFieldAndValue&gt; WHERE &lt;predicate(s)&gt; =&gt; updates the given record where the record&#39;s fields matches the specified predicate(s)</span>
-<span class="w">    </span><span class="c1">-- DELETE FROM &lt;tableName&gt; WHERE &lt;predicate(s)&gt; =&gt; deletes records from the specified table where the given record&#39;s fields matches the specified predicate(s)</span>
+-- ----- GENERAL -----
+    -- CREATE KEYSPACE &lt;keyspaceName&gt; =&gt; creates a keyspace under the given name, and assigns it the value augmenters specified in the assignment statement
+    -- USE &lt;keyspaceName&gt; =&gt; selects the specified keyspace for use presently
+    -- CREATE TABLE &lt;tableName&gt; (&lt;columnName&gt; &lt;columnDatatype&gt; &lt;augemnters(s)&gt;) =&gt; creates a table with any number of columns and their corresponding names and datatypes as specified
+    -- INSERT INTO &lt;tableName&gt; (&lt;columnNames&gt;) VALUES (&lt;columnValuesTobeInserted&gt;) =&gt; inserts the specified values into the given table
+    -- SELECT &lt;query&gt; FROM &lt;tableName&gt; WHERE &lt;predicate(s)&gt; =&gt; the foundation of CQL, allowing users to structure complex queries to retrieve their desired data from the given keyspace and table
+    -- UPDATE &lt;tableName&gt; SET &lt;updatedFieldAndValue&gt; WHERE &lt;predicate(s)&gt; =&gt; updates the given record where the record's fields matches the specified predicate(s)
+    -- DELETE FROM &lt;tableName&gt; WHERE &lt;predicate(s)&gt; =&gt; deletes records from the specified table where the given record's fields matches the specified predicate(s)
 
-<span class="k">CREATE</span><span class="w"> </span><span class="n">KEYSPACE</span><span class="w"> </span><span class="n">mykeyspace</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">REPLICATION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="w"> </span><span class="s1">&#39;class&#39;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;SimpleStrategy&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;replication_factor&#39;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="err">}</span><span class="p">;</span>
-<span class="n">USE</span><span class="w"> </span><span class="n">mykeyspace</span><span class="p">;</span>
+CREATE KEYSPACE mykeyspace WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };
+USE mykeyspace;
 
-<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="n">user_id</span><span class="w"> </span><span class="n">UUID</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
-<span class="w">    </span><span class="n">first_name</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
-<span class="w">    </span><span class="n">last_name</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
-<span class="w">    </span><span class="n">email</span><span class="w"> </span><span class="nb">TEXT</span>
-<span class="p">);</span>
+CREATE TABLE users (
+    user_id UUID PRIMARY KEY,
+    first_name TEXT,
+    last_name TEXT,
+    email TEXT
+);
 
-<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span><span class="w"> </span><span class="n">first_name</span><span class="p">,</span><span class="w"> </span><span class="n">last_name</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="n">uuid</span><span class="p">(),</span><span class="w"> </span><span class="s1">&#39;John&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Doe&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;john.doe@example.com&#39;</span><span class="p">);</span>
+INSERT INTO users (user_id, first_name, last_name, email) VALUES (uuid(), 'John', 'Doe', 'john.doe@example.com');
 
-<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="p">;</span>
+SELECT * FROM users;
 
-<span class="k">UPDATE</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;john.newemail@example.com&#39;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">user_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="k">specific</span><span class="o">-</span><span class="n">uuid</span><span class="o">&gt;</span><span class="p">;</span>
+UPDATE users SET email = 'john.newemail@example.com' WHERE user_id = &lt;specific-uuid&gt;;
 
-<span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">user_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="k">specific</span><span class="o">-</span><span class="n">uuid</span><span class="o">&gt;</span><span class="p">;</span>
-</code></pre></div>
+DELETE FROM users WHERE user_id = &lt;specific-uuid&gt;;
+</code></pre>
 
 <h2>More on</h2>
 <ul>

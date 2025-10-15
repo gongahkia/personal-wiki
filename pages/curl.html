@@ -33,7 +33,7 @@
 
         <dl>
           <dt>File size</dt>
-          <dd>7.1KB</dd>
+          <dd>4.5KB</dd>
 
           <dt>Lines of code</dt>
           <dd>122</dd>
@@ -44,62 +44,62 @@
         <h1><code>Curl</code></h1>
 <p>Standard command line tool for transferring data with URLs. </p>
 <h2>Installation</h2>
-<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>curl<span class="w"> </span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-bash">$ sudo apt-get install curl 
+</code></pre>
 
 <h2>Quickstart</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- QUICKSTART ----------</span>
-<span class="w">    </span><span class="c1"># curl supports the following protocols for interacting with web services, downloading files and handling network requests from the command line</span>
-<span class="w">        </span><span class="c1"># HTTP, HTTPS</span>
-<span class="w">        </span><span class="c1"># FTP, FTPS</span>
-<span class="w">        </span><span class="c1"># SFTP</span>
-<span class="w">        </span><span class="c1"># TFTP</span>
-<span class="w">        </span><span class="c1"># SCP</span>
-<span class="w">        </span><span class="c1"># LDAP, LDAPS</span>
-<span class="w">        </span><span class="c1"># DICT</span>
-<span class="w">        </span><span class="c1"># TELNET</span>
-<span class="w">        </span><span class="c1"># IMAP, IMAPS</span>
-<span class="w">        </span><span class="c1"># POP, POP3S</span>
-<span class="w">        </span><span class="c1"># SMTP, SMTPS</span>
-<span class="w">        </span><span class="c1"># RTSP, RTMP, RTMPS, RTMPT, RTMPTE</span>
-<span class="w">        </span><span class="c1"># GOPHER</span>
-<span class="w">        </span><span class="c1"># SMB, SMBS</span>
-<span class="w">        </span><span class="c1"># MQTT</span>
+<pre class="codehilite"><code class="language-bash"># ---------- QUICKSTART ----------
+    # curl supports the following protocols for interacting with web services, downloading files and handling network requests from the command line
+        # HTTP, HTTPS
+        # FTP, FTPS
+        # SFTP
+        # TFTP
+        # SCP
+        # LDAP, LDAPS
+        # DICT
+        # TELNET
+        # IMAP, IMAPS
+        # POP, POP3S
+        # SMTP, SMTPS
+        # RTSP, RTMP, RTMPS, RTMPT, RTMPTE
+        # GOPHER
+        # SMB, SMBS
+        # MQTT
 
-<span class="c1"># ----- COMMANDS -----</span>
-<span class="w">    </span><span class="c1"># curl =&gt; fetches the contents of the specified URL and displays it to the stdout</span>
-<span class="w">        </span><span class="c1"># if unspecified, curl issues a HTTP GET request by default</span>
-<span class="w">        </span><span class="c1"># curl commands can be further augmented with flags </span>
+# ----- COMMANDS -----
+    # curl =&gt; fetches the contents of the specified URL and displays it to the stdout
+        # if unspecified, curl issues a HTTP GET request by default
+        # curl commands can be further augmented with flags 
 
-curl<span class="w"> </span>http://example.com
+curl http://example.com
 
-<span class="c1"># ----- FLAGS -----</span>
-<span class="w">    </span><span class="c1"># -o =&gt; saves the requested output from the specified url to a file</span>
-<span class="w">    </span><span class="c1"># -L =&gt; specifies the curl request to follow any redirects</span>
-<span class="w">    </span><span class="c1"># -X =&gt; specifies the request method as a provided argument (GET, POST, PUT, DELETE, etc.)</span>
-<span class="w">        </span><span class="c1"># GET =&gt; get is selected by default</span>
-<span class="w">        </span><span class="c1"># POST =&gt; post requests can be explicitly selected</span>
-<span class="w">    </span><span class="c1"># -H =&gt; selects a request header to specify the curl request&#39;s metadata (content type, authorization status, or other custom data etc.)</span>
-<span class="w">        </span><span class="c1"># JSON =&gt; accompanies a request header to specify the content type being posted as JSON</span>
-<span class="w">    </span><span class="c1"># -d =&gt; accompanies a POST request to send data within the request body</span>
-<span class="w">    </span><span class="c1"># -O =&gt; save the file under the original name</span>
-<span class="w">    </span><span class="c1"># -b =&gt; reads cookies from a file</span>
-<span class="w">    </span><span class="c1"># -c =&gt; saves cookies to a file</span>
-<span class="w">    </span><span class="c1"># -v =&gt; makes curl requests verbose, providing detailed information about the given request and its response</span>
-<span class="w">    </span><span class="c1"># -I =&gt; fetches only the response headers</span>
-<span class="w">    </span><span class="c1"># -u =&gt; allows for specification of a user and password for server authentication</span>
-<span class="w">    </span><span class="c1"># -T =&gt; uploads a file to the server</span>
-<span class="w">    </span><span class="c1"># --limit-rate =&gt; limits the transfer rate of a given curl request</span>
+# ----- FLAGS -----
+    # -o =&gt; saves the requested output from the specified url to a file
+    # -L =&gt; specifies the curl request to follow any redirects
+    # -X =&gt; specifies the request method as a provided argument (GET, POST, PUT, DELETE, etc.)
+        # GET =&gt; get is selected by default
+        # POST =&gt; post requests can be explicitly selected
+    # -H =&gt; selects a request header to specify the curl request's metadata (content type, authorization status, or other custom data etc.)
+        # JSON =&gt; accompanies a request header to specify the content type being posted as JSON
+    # -d =&gt; accompanies a POST request to send data within the request body
+    # -O =&gt; save the file under the original name
+    # -b =&gt; reads cookies from a file
+    # -c =&gt; saves cookies to a file
+    # -v =&gt; makes curl requests verbose, providing detailed information about the given request and its response
+    # -I =&gt; fetches only the response headers
+    # -u =&gt; allows for specification of a user and password for server authentication
+    # -T =&gt; uploads a file to the server
+    # --limit-rate =&gt; limits the transfer rate of a given curl request
 
-curl<span class="w"> </span>-o<span class="w"> </span>output.html<span class="w"> </span>http://example.com
-curl<span class="w"> </span>-L<span class="w"> </span>http://example.com
-curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;param1=value1&amp;param2=value2&quot;</span><span class="w"> </span>http://example.com
-curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;key1&quot;:&quot;value1&quot;,&quot;key2&quot;:&quot;value2&quot;}&#39;</span><span class="w"> </span>http://example.com
-curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer your_token&quot;</span><span class="w"> </span>http://example.com
-curl<span class="w"> </span>-O<span class="w"> </span>http://example.com/file.zip
-curl<span class="w"> </span>-b<span class="w"> </span>cookies.txt<span class="w"> </span>-c<span class="w"> </span>new_cookies.txt<span class="w"> </span>http://example.com
-curl<span class="w"> </span>-v<span class="w"> </span>http://example.com
-</code></pre></div>
+curl -o output.html http://example.com
+curl -L http://example.com
+curl -X POST -d &quot;param1=value1&amp;param2=value2&quot; http://example.com
+curl -X POST -H &quot;Content-Type: application/json&quot; -d '{&quot;key1&quot;:&quot;value1&quot;,&quot;key2&quot;:&quot;value2&quot;}' http://example.com
+curl -H &quot;Authorization: Bearer your_token&quot; http://example.com
+curl -O http://example.com/file.zip
+curl -b cookies.txt -c new_cookies.txt http://example.com
+curl -v http://example.com
+</code></pre>
 
 <h2>More on</h2>
 <ul>

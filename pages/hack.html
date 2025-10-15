@@ -33,7 +33,7 @@
 
         <dl>
           <dt>File size</dt>
-          <dd>43.7KB</dd>
+          <dd>8.7KB</dd>
 
           <dt>Lines of code</dt>
           <dd>282</dd>
@@ -44,222 +44,222 @@
         <h1><code>Hack</code></h1>
 <p>PHP dialect developed by Facebook <em>(now <a href="https://about.meta.com/">Meta</a> in 2024)</em>.</p>
 <h2>Comments</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// ----- COMMENT -----</span>
+<pre class="codehilite"><code class="language-hack">// ----- COMMENT -----
 
-<span class="c1">// this is a single-line comment</span>
+// this is a single-line comment
 
-<span class="o">/*</span>
-<span class="n">this</span><span class="w"> </span><span class="n">is</span><span class="w"> </span>
-<span class="n">a</span><span class="w"> </span><span class="n">multi</span><span class="o">-</span><span class="n">line</span><span class="w"> </span>
-<span class="n">comment</span>
-<span class="o">*/</span>
-</code></pre></div>
+/*
+this is 
+a multi-line 
+comment
+*/
+</code></pre>
 
 <h2>Printing</h2>
-<div class="codehilite"><pre><span></span><code><span class="o">//</span><span class="w"> </span><span class="o">-----</span><span class="w"> </span><span class="n">PRINTING</span><span class="w"> </span><span class="o">-----</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">language</span><span class="w"> </span><span class="n">construct</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">receives</span><span class="w"> </span><span class="n">one</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">more</span><span class="w"> </span><span class="n">comma</span><span class="o">-</span><span class="n">delimited</span><span class="w"> </span><span class="n">parameters</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">display</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">stdout</span><span class="p">,</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">does</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">include</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">newline</span><span class="w"> </span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="nb">print</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">function</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">receives</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">single</span><span class="w"> </span><span class="n">argument</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="nb">print</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">stdout</span><span class="p">,</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">does</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">include</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">newline</span>
+<pre class="codehilite"><code class="language-hack">// ----- PRINTING -----
+    // echo =&gt; language construct that receives one or more comma-delimited parameters to display to the stdout, and does not include a newline 
+    // print =&gt; function that receives a single argument to print to the stdout, and does not include a newline
 
-<span class="n">echo</span><span class="w"> </span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;world!&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span><span class="w">  </span>
-<span class="nb">print</span><span class="w"> </span><span class="s2">&quot;hello hack!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span><span class="w">  </span>
-</code></pre></div>
+echo &quot;hello&quot;, &quot;world!&quot;, &quot;\n&quot;;  
+print &quot;hello hack!\n&quot;;  
+</code></pre>
 
 <h2>Quickstart</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ----- QUICKSTART -----</span>
-<span class="w">    </span><span class="c1"># semicolon language that provide strong interoperability with existing PHP code</span>
-<span class="w">    </span><span class="c1"># statically, strongly typed  </span>
-<span class="w">    </span><span class="c1"># variables are prefixed with the $ dollarsign character similar to PHP</span>
+<pre class="codehilite"><code class="language-shell"># ----- QUICKSTART -----
+    # semicolon language that provide strong interoperability with existing PHP code
+    # statically, strongly typed  
+    # variables are prefixed with the $ dollarsign character similar to PHP
 
-sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>hhvm<span class="w"> </span><span class="c1"># installs the HipHop Virtual Machine (HHVM)</span>
-hhvm<span class="w"> </span>main.hack<span class="w"> </span><span class="c1"># interprets and executes Hack code</span>
-</code></pre></div>
+sudo apt install hhvm # installs the HipHop Virtual Machine (HHVM)
+hhvm main.hack # interprets and executes Hack code
+</code></pre>
 
 <h2>Types</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// ----- TYPE -----</span>
-<span class="w">    </span><span class="c1">// int =&gt; integer value</span>
-<span class="w">    </span><span class="c1">// float =&gt; floating point value</span>
-<span class="w">    </span><span class="c1">// bool =&gt; boolean value (true, false)</span>
-<span class="w">    </span><span class="c1">// string =&gt; string value specified within &quot;&quot; double quotes, characters are also strings</span>
-<span class="w">    </span><span class="c1">// null =&gt; type for the special null value (indicates an absence in value)</span>
-<span class="w">    </span><span class="c1">// void =&gt; specifies a function that returns no value, similar to other C-style languages</span>
-<span class="w">    </span><span class="c1">// mixed =&gt; any type, the hack interpreter will infer the type</span>
-<span class="w">    </span><span class="c1">// num =&gt; union type that represents both an integer or float</span>
-<span class="w">    </span><span class="c1">// ? =&gt; nullabe type indicates that a given value might be null or the specified datatype</span>
+<pre class="codehilite"><code class="language-hack">// ----- TYPE -----
+    // int =&gt; integer value
+    // float =&gt; floating point value
+    // bool =&gt; boolean value (true, false)
+    // string =&gt; string value specified within &quot;&quot; double quotes, characters are also strings
+    // null =&gt; type for the special null value (indicates an absence in value)
+    // void =&gt; specifies a function that returns no value, similar to other C-style languages
+    // mixed =&gt; any type, the hack interpreter will infer the type
+    // num =&gt; union type that represents both an integer or float
+    // ? =&gt; nullabe type indicates that a given value might be null or the specified datatype
 
-<span class="err">$</span><span class="nx">anInt</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">25</span><span class="p">;</span>
-<span class="err">$</span><span class="nx">aFloat</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="m m-Double">19.99</span><span class="p">;</span>
-<span class="err">$</span><span class="nx">aBool</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
-<span class="err">$</span><span class="nx">aString</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;watermelon&quot;</span><span class="p">;</span>
-<span class="err">$</span><span class="nx">aNull</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">null</span><span class="p">;</span>
+$anInt = 25;
+$aFloat = 19.99;
+$aBool = true;
+$aString = &quot;watermelon&quot;;
+$aNull = null;
 
-<span class="nx">function</span><span class="w"> </span><span class="nx">aMixedFunction</span><span class="p">(</span><span class="nx">mixed</span><span class="w"> </span><span class="err">$</span><span class="nx">value</span><span class="p">):</span><span class="w"> </span><span class="nx">void</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// code that does something with mixed type</span>
-<span class="p">}</span>
+function aMixedFunction(mixed $value): void {
+    // code that does something with mixed type
+}
 
-<span class="nx">function</span><span class="w"> </span><span class="nx">aNumFunction</span><span class="p">(</span><span class="nx">num</span><span class="w"> </span><span class="err">$</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="err">$</span><span class="nx">b</span><span class="p">):</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="err">$</span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">$</span><span class="nx">b</span><span class="p">;</span>
-<span class="p">}</span>
+function aNumFunction(num $a, num $b): num {
+    return $a + $b;
+}
 
-<span class="nx">function</span><span class="w"> </span><span class="nx">aNullableFunction</span><span class="p">(</span><span class="nx">int</span><span class="w"> </span><span class="err">$</span><span class="nx">id</span><span class="p">):</span><span class="w"> </span><span class="p">?</span><span class="kt">string</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="err">$</span><span class="nx">id</span><span class="w"> </span><span class="o">==</span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Alice&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">null</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+function aNullableFunction(int $id): ?string {
+    if ($id === 1) {
+        return &quot;Alice&quot;;
+    }
+    return null;
+}
+</code></pre>
 
 <h2>Operators</h2>
-<div class="codehilite"><pre><span></span><code><span class="o">//</span><span class="w"> </span><span class="o">-----</span><span class="w"> </span><span class="n">OPERATOR</span><span class="w"> </span><span class="o">-----</span>
+<pre class="codehilite"><code class="language-hack">// ----- OPERATOR -----
 
-<span class="o">//</span><span class="w"> </span><span class="o">---</span><span class="w"> </span><span class="n">ARITHMETIC</span><span class="w"> </span><span class="n">OPERATOR</span><span class="w"> </span><span class="o">---</span>
+// --- ARITHMETIC OPERATOR ---
 
-<span class="o">+</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">addition</span>
-<span class="o">-</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">subtraction</span>
-<span class="o">*</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">multiplication</span>
-<span class="o">/</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">divison</span>
-<span class="c">% // modulo</span>
++ // addition
+- // subtraction
+* // multiplication
+/ // divison
+% // modulo
 
-<span class="o">//</span><span class="w"> </span><span class="o">---</span><span class="w"> </span><span class="n">COMPARISON</span><span class="w"> </span><span class="n">OPERATOR</span><span class="w"> </span><span class="o">---</span>
+// --- COMPARISON OPERATOR ---
 
-<span class="o">==</span><span class="p">=</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">complete</span><span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="n">equality</span><span class="p">,</span><span class="w"> </span><span class="n">including</span><span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">place</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nb">memory</span>
-<span class="sx">!== // complete true inequality, including type and place in memory</span>
-<span class="o">==</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">complete</span><span class="w"> </span><span class="n">equality</span><span class="p">,</span><span class="w"> </span><span class="n">including</span><span class="w"> </span><span class="nb">type</span>
-<span class="sx">!= // complete inequality, including type</span>
-<span class="o">&lt;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">comparison</span><span class="w"> </span><span class="n">operator</span>
-<span class="o">&gt;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">comparison</span><span class="w"> </span><span class="n">operator</span>
-<span class="o">&lt;=</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">comparison</span><span class="w"> </span><span class="n">operator</span>
-<span class="o">&gt;=</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">comparison</span><span class="w"> </span><span class="n">operator</span>
+=== // complete true equality, including type and place in memory
+!== // complete true inequality, including type and place in memory
+== // complete equality, including type
+!= // complete inequality, including type
+&lt; // comparison operator
+&gt; // comparison operator
+&lt;= // comparison operator
+&gt;= // comparison operator
 
-<span class="o">//</span><span class="w"> </span><span class="o">---</span><span class="w"> </span><span class="n">LOGICAL</span><span class="w"> </span><span class="n">OPERATOR</span><span class="w"> </span><span class="o">---</span>
+// --- LOGICAL OPERATOR ---
 
-<span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">and</span>
-<span class="o">||</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">or</span>
-<span class="sx">! // not</span>
-</code></pre></div>
+&amp;&amp; // and
+|| // or
+! // not
+</code></pre>
 
 <h2>Control structures</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// ----- CONTROL STRUCTURE -----</span>
+<pre class="codehilite"><code class="language-hack">// ----- CONTROL STRUCTURE -----
 
-<span class="c1">// --- CONDITIONALS ---</span>
+// --- CONDITIONALS ---
 
-<span class="c1">// IF ELSEIF ELSE </span>
+// IF ELSEIF ELSE 
 
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="no">$</span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="no">$</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">echo</span><span class="w"> </span><span class="s">&quot;a is greater than b&quot;</span><span class="p">;</span>
-<span class="p">}</span><span class="w"> </span><span class="k">elseif</span><span class="w"> </span><span class="p">(</span><span class="no">$</span><span class="n">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">$</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">echo</span><span class="w"> </span><span class="s">&quot;b is greater than b&quot;</span><span class="p">;</span>
-<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">echo</span><span class="w"> </span><span class="s">&quot;a equals to b&quot;</span><span class="p">;</span>
-<span class="p">}</span>
+if ($a &gt; $b) {
+    echo &quot;a is greater than b&quot;;
+} elseif ($a &lt; $b) {
+    echo &quot;b is greater than b&quot;;
+} else {
+    echo &quot;a equals to b&quot;;
+}
 
-<span class="c1">// SWITCH CASE DEFAULT </span>
-<span class="w">    </span><span class="c1">// equivalent of case when and match case in other languages</span>
-<span class="w">    </span><span class="c1">// allows for some degree of pattern-matching</span>
-<span class="w">    </span><span class="c1">// note the break statement at the end of each case</span>
+// SWITCH CASE DEFAULT 
+    // equivalent of case when and match case in other languages
+    // allows for some degree of pattern-matching
+    // note the break statement at the end of each case
 
-<span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="no">$</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mi">10</span><span class="p">:</span>
-<span class="w">        </span><span class="n">echo</span><span class="w"> </span><span class="s">&quot;a is 10&quot;</span><span class="p">;</span>
-<span class="w">        </span><span class="k">break</span><span class="p">;</span>
-<span class="w">    </span><span class="n">default</span><span class="p">:</span>
-<span class="w">        </span><span class="n">echo</span><span class="w"> </span><span class="s">&quot;a is not 10&quot;</span><span class="p">;</span>
-<span class="p">}</span>
+switch ($a) {
+    case 10:
+        echo &quot;a is 10&quot;;
+        break;
+    default:
+        echo &quot;a is not 10&quot;;
+}
 
-<span class="c1">// --- LOOPS ---</span>
+// --- LOOPS ---
 
-<span class="c1">// WHILE LOOP</span>
-<span class="w">    </span><span class="c1">// conventional C-style while loop with explicit break condition</span>
+// WHILE LOOP
+    // conventional C-style while loop with explicit break condition
 
-<span class="no">$</span><span class="n">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="no">$</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">echo</span><span class="w"> </span><span class="no">$</span><span class="n">i</span><span class="p">;</span>
-<span class="w">    </span><span class="no">$</span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
-<span class="p">}</span>
+$i = 0;
+while ($i &lt; 5) {
+    echo $i;
+    $i++;
+}
 
-<span class="c1">// FOR LOOP</span>
-<span class="w">    </span><span class="c1">// conventional C-style for loop</span>
+// FOR LOOP
+    // conventional C-style for loop
 
-<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="no">$</span><span class="n">j</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="no">$</span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="no">$</span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">echo</span><span class="w"> </span><span class="no">$</span><span class="n">j</span><span class="p">;</span>
-<span class="p">}</span>
+for ($j = 0; $j &lt; 5; $j++) {
+    echo $j;
+}
 
-<span class="c1">// FOREACH AS LOOP</span>
-<span class="w">    </span><span class="c1">// similar to PHP</span>
+// FOREACH AS LOOP
+    // similar to PHP
 
-<span class="no">$</span><span class="n">anArr</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">vec</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">];</span>
-<span class="n">foreach</span><span class="w"> </span><span class="p">(</span><span class="no">$</span><span class="n">anArr</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="no">$</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">echo</span><span class="w"> </span><span class="no">$</span><span class="n">value</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+$anArr = vec[1, 2, 3];
+foreach ($anArr as $value) {
+    echo $value;
+}
+</code></pre>
 
 <h2>Data structures</h2>
-<div class="codehilite"><pre><span></span><code><span class="o">//</span><span class="w"> </span><span class="o">-----</span><span class="w"> </span><span class="n">DATA</span><span class="w"> </span><span class="n">STRUCTURE</span><span class="w"> </span><span class="o">-----</span>
+<pre class="codehilite"><code class="language-hack">// ----- DATA STRUCTURE -----
 
-<span class="o">//</span><span class="w"> </span><span class="o">---</span><span class="w"> </span><span class="n">COMPOSITE</span><span class="w"> </span><span class="n">TYPES</span><span class="w"> </span><span class="o">---</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">array</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">collection</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">integer</span><span class="o">-</span><span class="n">indexed</span><span class="w"> </span><span class="n">values</span><span class="p">,</span><span class="w"> </span><span class="n">rarely</span><span class="w"> </span><span class="n">used</span>
-<span class="w">        </span><span class="o">//</span><span class="w"> </span><span class="n">array</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">declares</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">array</span><span class="w"> </span><span class="n">literal</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">vec</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">ordered</span><span class="w"> </span><span class="n">collection</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">values</span><span class="p">,</span><span class="w"> </span><span class="n">similar</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">arrays</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">PHP</span>
-<span class="w">        </span><span class="o">//</span><span class="w"> </span><span class="n">vec</span><span class="p">[]</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">declares</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">vector</span><span class="w"> </span><span class="n">literal</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">dict</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">unordered</span><span class="w"> </span><span class="n">collection</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">key</span><span class="o">-</span><span class="n">value</span><span class="w"> </span><span class="n">pairs</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">integer</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">keys</span><span class="p">,</span><span class="w"> </span><span class="n">where</span><span class="w"> </span><span class="n">relationship</span><span class="w"> </span><span class="n">between</span><span class="w"> </span><span class="n">keys</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">values</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">specified</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">similar</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">PHP</span>
-<span class="w">        </span><span class="o">//</span><span class="w"> </span><span class="n">dict</span><span class="p">[]</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">declares</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">dictionary</span><span class="w"> </span><span class="n">literal</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">keyset</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">unordered</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="n">collection</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">unique</span><span class="w"> </span><span class="n">values</span><span class="p">,</span><span class="w"> </span><span class="n">equivalent</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">sets</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">Python</span>
-<span class="w">        </span><span class="o">//</span><span class="w"> </span><span class="n">keyset</span><span class="p">[]</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">declares</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">keyset</span><span class="w"> </span><span class="n">literal</span>
+// --- COMPOSITE TYPES ---
+    // array =&gt; collection of integer-indexed values, rarely used
+        // array() =&gt; declares a new array literal
+    // vec =&gt; ordered collection of values, similar to arrays in PHP
+        // vec[] =&gt; declares a new vector literal
+    // dict =&gt; unordered collection of key-value pairs with integer or string keys, where relationship between keys and values are specified with =&gt; similar to PHP
+        // dict[] =&gt; declares a new dictionary literal
+    // keyset =&gt; unordered set collection of unique values, equivalent to sets in Python
+        // keyset[] =&gt; declares a new keyset literal
 
-<span class="o">$</span><span class="n">anArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">array</span><span class="p">(</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;banana&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;cherry&quot;</span><span class="p">);</span>
-<span class="o">$</span><span class="n">aVec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">];</span>
-<span class="o">$</span><span class="n">aDict</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dict</span><span class="p">[</span>
-<span class="w">    </span><span class="s2">&quot;name&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;age&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">30</span>
-<span class="p">];</span>
-<span class="o">$</span><span class="n">aKeyset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">keyset</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">];</span>
+$anArray = array(&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;);
+$aVec = vec[1, 2, 3];
+$aDict = dict[
+    &quot;name&quot; =&gt; &quot;Alice&quot;,
+    &quot;age&quot; =&gt; 30
+];
+$aKeyset = keyset[1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-<span class="o">//</span><span class="w"> </span><span class="o">---</span><span class="w"> </span><span class="n">COLLECTION</span><span class="w"> </span><span class="n">TYPES</span><span class="w"> </span><span class="o">---</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">vector</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">mutable</span><span class="w"> </span><span class="n">ordered</span><span class="w"> </span><span class="n">collection</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">values</span>
-<span class="w">        </span><span class="o">//</span><span class="w"> </span><span class="n">Vector</span><span class="p">{}</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">declares</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">vector</span><span class="w"> </span><span class="n">literal</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">map</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">mutable</span><span class="w"> </span><span class="n">unordered</span><span class="w"> </span><span class="n">key</span><span class="o">-</span><span class="n">value</span><span class="w"> </span><span class="n">collection</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">values</span><span class="w"> </span><span class="n">where</span><span class="w"> </span><span class="n">keys</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">ANY</span><span class="w"> </span><span class="n">datatype</span><span class="p">,</span><span class="w"> </span><span class="n">where</span><span class="w"> </span><span class="n">relationship</span><span class="w"> </span><span class="n">between</span><span class="w"> </span><span class="n">keys</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">values</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">specified</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">similar</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">PHP</span>
-<span class="w">        </span><span class="o">//</span><span class="w"> </span><span class="n">Map</span><span class="p">{}</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">declares</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">map</span><span class="w"> </span><span class="n">literal</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">mutable</span><span class="w"> </span><span class="n">collection</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">unique</span><span class="w"> </span><span class="n">values</span><span class="p">,</span><span class="w"> </span><span class="n">equivalent</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">sets</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">Python</span>
-<span class="w">        </span><span class="o">//</span><span class="w"> </span><span class="n">Set</span><span class="p">{}</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">declares</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="n">literal</span>
+// --- COLLECTION TYPES ---
+    // vector =&gt; mutable ordered collection of values
+        // Vector{} =&gt; declares a vector literal
+    // map =&gt; mutable unordered key-value collection of values where keys can be of ANY datatype, where relationship between keys and values are specified with =&gt; similar to PHP
+        // Map{} =&gt; declares a map literal
+    // set =&gt; mutable collection of unique values, equivalent to sets in Python
+        // Set{} =&gt; declares a set literal
 
-<span class="o">$</span><span class="n">aVector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Vector</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span><span class="w">  </span>
-<span class="o">$</span><span class="n">aMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Map</span><span class="w"> </span><span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;age&#39;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">30</span><span class="p">};</span><span class="w">  </span>
-<span class="o">$</span><span class="n">aSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Set</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span><span class="w">  </span>
+$aVector = Vector {1, 2, 3};  
+$aMap = Map {'name' =&gt; 'Alice', 'age' =&gt; 30};  
+$aSet = Set {1, 2, 3};  
 
-<span class="o">//</span><span class="w"> </span><span class="o">---</span><span class="w"> </span><span class="n">COMPLEX</span><span class="w"> </span><span class="n">TYPES</span><span class="w"> </span><span class="o">---</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">declares</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">user</span><span class="o">-</span><span class="n">defined</span><span class="w"> </span><span class="n">datatype</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">fixed</span><span class="w"> </span><span class="n">collection</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">fields</span><span class="p">,</span><span class="w"> </span><span class="n">equivalent</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">structs</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">Rust</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">Go</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="n">aliases</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">Typescript</span><span class="p">,</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">datatype</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="n">field</span><span class="w"> </span><span class="n">specified</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">being</span><span class="w"> </span><span class="n">comma</span><span class="o">-</span><span class="n">delimited</span>
-<span class="w">        </span><span class="o">//</span><span class="w"> </span><span class="n">shape</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">declares</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">struct</span><span class="w"> </span><span class="n">literal</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">declares</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">enumeration</span><span class="w"> </span><span class="n">datatype</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">fixed</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">possible</span><span class="w"> </span><span class="n">values</span><span class="p">,</span><span class="w"> </span><span class="n">where</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="n">enumerated</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">UPPERCASE</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">convention</span>
-<span class="w">        </span><span class="o">//</span><span class="w"> </span><span class="k">enum</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">declares</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="n">literal</span>
+// --- COMPLEX TYPES ---
+    // shape =&gt; declares a user-defined datatype with a fixed collection of fields, equivalent to structs in Rust and Go and type aliases in Typescript, with the datatype of each field specified with a =&gt; and being comma-delimited
+        // shape() =&gt; declares a struct literal
+    // enum =&gt; declares an enumeration datatype with a fixed set of possible values, where each enumerated value is UPPERCASE by convention
+        // enum() =&gt; declares an enum literal
 
-<span class="n">type</span><span class="w"> </span><span class="n">Coordinate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shape</span><span class="p">(</span>
-<span class="w">    </span><span class="s2">&quot;x&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="nb nb-Type">int</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;y&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="nb nb-Type">int</span><span class="p">,</span>
-<span class="p">);</span>
+type Coordinate = shape(
+    &quot;x&quot; =&gt; int,
+    &quot;y&quot; =&gt; int,
+);
 
-<span class="k">enum</span><span class="w"> </span><span class="n">Day</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">int</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">MONDAY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="w">    </span><span class="n">TUESDAY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-<span class="w">    </span><span class="n">WEDNESDAY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
-<span class="w">    </span><span class="n">THURSDAY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
-<span class="w">    </span><span class="n">FRIDAY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
-<span class="w">    </span><span class="n">SATURDAY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span>
-<span class="w">    </span><span class="n">SUNDAY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+enum Day: int {
+    MONDAY = 1;
+    TUESDAY = 2;
+    WEDNESDAY = 3;
+    THURSDAY = 4;
+    FRIDAY = 5;
+    SATURDAY = 6;
+    SUNDAY = 7;
+}
+</code></pre>
 
 <h2>Functions</h2>
-<div class="codehilite"><pre><span></span><code><span class="o">//</span><span class="w"> </span><span class="o">-----</span><span class="w"> </span><span class="n">FUNCTION</span><span class="w"> </span><span class="o">-----</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">function</span><span class="w"> </span><span class="o">&lt;</span><span class="n">functionName</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&lt;</span><span class="n">parameterType</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="n">parameterName</span><span class="o">&gt;</span><span class="p">):</span><span class="w"> </span><span class="o">&lt;</span><span class="n">returnType</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">declares</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">function</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">function</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">parameters</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">their</span><span class="w"> </span><span class="n">datatypes</span><span class="p">,</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">function</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">datatype</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">function</span><span class="p">(</span><span class="o">&lt;</span><span class="n">parameterType</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="n">parameterName</span><span class="o">&gt;</span><span class="p">):</span><span class="w"> </span><span class="o">&lt;</span><span class="n">returnType</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">declares</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">anonymous</span><span class="w"> </span><span class="n">function</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">assiged</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">variable</span>
+<pre class="codehilite"><code class="language-hack">// ----- FUNCTION -----
+    // function &lt;functionName&gt;(&lt;parameterType&gt; &lt;parameterName&gt;): &lt;returnType&gt; =&gt; declares a function with the function name, parameters and their datatypes, and function return datatype
+    // function(&lt;parameterType&gt; &lt;parameterName&gt;): &lt;returnType&gt; =&gt; declares an anonymous function that can be assiged to a variable
 
-<span class="n">function</span><span class="w"> </span><span class="n">multiply</span><span class="p">(</span><span class="nb nb-Type">int</span><span class="w"> </span><span class="o">$</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="nb nb-Type">int</span><span class="w"> </span><span class="o">$</span><span class="n">y</span><span class="p">):</span><span class="w"> </span><span class="nb nb-Type">int</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">$</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">$</span><span class="n">y</span><span class="p">;</span>
-<span class="p">}</span>
+function multiply(int $x, int $y): int {
+    return $x * $y;
+}
 
-<span class="o">$</span><span class="n">anAnonymousFunction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">function</span><span class="p">(</span><span class="nb nb-Type">int</span><span class="w"> </span><span class="o">$</span><span class="n">z</span><span class="p">):</span><span class="w"> </span><span class="nb nb-Type">int</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">$</span><span class="n">z</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">$</span><span class="n">z</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div>
+$anAnonymousFunction = function(int $z): int {
+    return $z * $z;
+};
+</code></pre>
 
 <h2>More on</h2>
 <ul>

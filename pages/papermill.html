@@ -33,7 +33,7 @@
 
         <dl>
           <dt>File size</dt>
-          <dd>14.1KB</dd>
+          <dd>7.3KB</dd>
 
           <dt>Lines of code</dt>
           <dd>179</dd>
@@ -61,96 +61,96 @@
 </ul>
 <h2>Quickstart</h2>
 <p>A sample Python file that uses Papermill will look like this.</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">papermill</span> <span class="k">as</span> <span class="nn">pm</span>
+<pre class="codehilite"><code class="language-py">import papermill as pm
 
-<span class="c1"># define input and output Jupyter notebook paths</span>
-<span class="n">input_notebook</span> <span class="o">=</span> <span class="s1">&#39;input_notebook.ipynb&#39;</span>
-<span class="n">output_notebook</span> <span class="o">=</span> <span class="s1">&#39;output_notebook.ipynb&#39;</span>
+# define input and output Jupyter notebook paths
+input_notebook = 'input_notebook.ipynb'
+output_notebook = 'output_notebook.ipynb'
 
-<span class="c1"># define parameters to inject into the Jupyter notebook</span>
-<span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;param1&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-    <span class="s1">&#39;param2&#39;</span><span class="p">:</span> <span class="s1">&#39;some_value&#39;</span>
-<span class="p">}</span>
+# define parameters to inject into the Jupyter notebook
+parameters = {
+    'param1': 10,
+    'param2': 'some_value'
+}
 
-<span class="c1"># execute the Jupyter notebook with the provided parameters</span>
-<span class="n">pm</span><span class="o">.</span><span class="n">execute_notebook</span><span class="p">(</span>
-    <span class="n">input_path</span><span class="o">=</span><span class="n">input_notebook</span><span class="p">,</span>
-    <span class="n">output_path</span><span class="o">=</span><span class="n">output_notebook</span><span class="p">,</span>
-    <span class="n">parameters</span><span class="o">=</span><span class="n">parameters</span>
-<span class="p">)</span>
-</code></pre></div>
+# execute the Jupyter notebook with the provided parameters
+pm.execute_notebook(
+    input_path=input_notebook,
+    output_path=output_notebook,
+    parameters=parameters
+)
+</code></pre>
 
 <p>Then the sample Jupyter notebook which will be executed via Papermill will look like this.</p>
-<div class="codehilite"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;cells&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;cell_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;code&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;execution_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a1b2c3d4&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
-<span class="w">            </span><span class="nt">&quot;outputs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
-<span class="w">            </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                </span><span class="s2">&quot;import papermill as pm\n&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="s2">&quot;import matplotlib.pyplot as plt\n&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="s2">&quot;import numpy as np\n&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="s2">&quot;\n&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="s2">&quot;# Define parameters\n&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="s2">&quot;param1 = 10\n&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="s2">&quot;param2 = &#39;some_value&#39;\n&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="s2">&quot;\n&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="s2">&quot;# Display the parameters\n&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="s2">&quot;print(f&#39;Parameter 1: {param1}&#39;)\n&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="s2">&quot;print(f&#39;Parameter 2: {param2}&#39;)\n&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="s2">&quot;\n&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="s2">&quot;# Generate some data\n&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="s2">&quot;x = np.linspace(0, 10, 100)\n&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="s2">&quot;y = param1 * np.sin(x)\n&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="s2">&quot;\n&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="s2">&quot;# Create a plot\n&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="s2">&quot;plt.figure(figsize=(10, 6))\n&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="s2">&quot;plt.plot(x, y, label=f&#39;Sin curve with param1={param1}&#39;)\n&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="s2">&quot;plt.xlabel(&#39;x&#39;)\n&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="s2">&quot;plt.ylabel(&#39;y&#39;)\n&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="s2">&quot;plt.title(&#39;Plot of y = param1 * sin(x)&#39;)\n&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="s2">&quot;plt.legend()\n&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="s2">&quot;plt.grid(True)\n&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="s2">&quot;plt.show()&quot;</span>
-<span class="w">            </span><span class="p">]</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;cell_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;markdown&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
-<span class="w">            </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                </span><span class="s2">&quot;# Analysis\n&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="s2">&quot;\n&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="s2">&quot;This notebook demonstrates the use of Papermill to parameterize and execute a Jupyter notebook. The parameters `param1` and `param2` are injected into the notebook, affecting the output. The plot above shows the effect of `param1` on the sine curve.&quot;</span>
-<span class="w">            </span><span class="p">]</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;kernelspec&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;display_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Python 3&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;language&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;python&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;python3&quot;</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="nt">&quot;language_info&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;codemirror_mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ipython&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span>
-<span class="w">            </span><span class="p">},</span>
-<span class="w">            </span><span class="nt">&quot;file_extension&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;.py&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;mimetype&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text/x-python&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;python&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;nbconvert_exporter&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;python&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;pygments_lexer&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ipython3&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3.8.5&quot;</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;nbformat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;nbformat_minor&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
-<span class="p">}</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-json">{
+    &quot;cells&quot;: [
+        {
+            &quot;cell_type&quot;: &quot;code&quot;,
+            &quot;execution_count&quot;: null,
+            &quot;id&quot;: &quot;a1b2c3d4&quot;,
+            &quot;metadata&quot;: {},
+            &quot;outputs&quot;: [],
+            &quot;source&quot;: [
+                &quot;import papermill as pm\n&quot;,
+                &quot;import matplotlib.pyplot as plt\n&quot;,
+                &quot;import numpy as np\n&quot;,
+                &quot;\n&quot;,
+                &quot;# Define parameters\n&quot;,
+                &quot;param1 = 10\n&quot;,
+                &quot;param2 = 'some_value'\n&quot;,
+                &quot;\n&quot;,
+                &quot;# Display the parameters\n&quot;,
+                &quot;print(f'Parameter 1: {param1}')\n&quot;,
+                &quot;print(f'Parameter 2: {param2}')\n&quot;,
+                &quot;\n&quot;,
+                &quot;# Generate some data\n&quot;,
+                &quot;x = np.linspace(0, 10, 100)\n&quot;,
+                &quot;y = param1 * np.sin(x)\n&quot;,
+                &quot;\n&quot;,
+                &quot;# Create a plot\n&quot;,
+                &quot;plt.figure(figsize=(10, 6))\n&quot;,
+                &quot;plt.plot(x, y, label=f'Sin curve with param1={param1}')\n&quot;,
+                &quot;plt.xlabel('x')\n&quot;,
+                &quot;plt.ylabel('y')\n&quot;,
+                &quot;plt.title('Plot of y = param1 * sin(x)')\n&quot;,
+                &quot;plt.legend()\n&quot;,
+                &quot;plt.grid(True)\n&quot;,
+                &quot;plt.show()&quot;
+            ]
+        },
+        {
+            &quot;cell_type&quot;: &quot;markdown&quot;,
+            &quot;metadata&quot;: {},
+            &quot;source&quot;: [
+                &quot;# Analysis\n&quot;,
+                &quot;\n&quot;,
+                &quot;This notebook demonstrates the use of Papermill to parameterize and execute a Jupyter notebook. The parameters `param1` and `param2` are injected into the notebook, affecting the output. The plot above shows the effect of `param1` on the sine curve.&quot;
+            ]
+        }
+    ],
+    &quot;metadata&quot;: {
+        &quot;kernelspec&quot;: {
+            &quot;display_name&quot;: &quot;Python 3&quot;,
+            &quot;language&quot;: &quot;python&quot;,
+            &quot;name&quot;: &quot;python3&quot;
+        },
+        &quot;language_info&quot;: {
+            &quot;codemirror_mode&quot;: {
+                &quot;name&quot;: &quot;ipython&quot;,
+                &quot;version&quot;: 3
+            },
+            &quot;file_extension&quot;: &quot;.py&quot;,
+            &quot;mimetype&quot;: &quot;text/x-python&quot;,
+            &quot;name&quot;: &quot;python&quot;,
+            &quot;nbconvert_exporter&quot;: &quot;python&quot;,
+            &quot;pygments_lexer&quot;: &quot;ipython3&quot;,
+            &quot;version&quot;: &quot;3.8.5&quot;
+        }
+    },
+    &quot;nbformat&quot;: 4,
+    &quot;nbformat_minor&quot;: 4
+}
+</code></pre>
 
 <h2>More on</h2>
 <ul>

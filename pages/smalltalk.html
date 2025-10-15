@@ -33,7 +33,7 @@
 
         <dl>
           <dt>File size</dt>
-          <dd>7.4KB</dd>
+          <dd>5.5KB</dd>
 
           <dt>Lines of code</dt>
           <dd>154</dd>
@@ -99,40 +99,40 @@
 </ol>
 </li>
 </ol>
-<div class="codehilite"><pre><span></span><code><span class="c">&quot; ----- QUICKSTART ----- &quot;</span>
-    <span class="c">&quot; below is some annotated Smalltalk code &quot;</span>
-    <span class="c">&quot; honestly if you&#39;re struggling to understand, don&#39;t worry because I am too &quot;</span>
+<pre class="codehilite"><code class="language-st">&quot; ----- QUICKSTART ----- &quot;
+    &quot; below is some annotated Smalltalk code &quot;
+    &quot; honestly if you're struggling to understand, don't worry because I am too &quot;
 
-<span class="c">&quot; --- CLASS DEFINITION --- &quot;</span>
+&quot; --- CLASS DEFINITION --- &quot;
 
-<span class="nc">Object</span> <span class="nf">subclass:</span> <span class="nc">Person</span> [ <span class="c">&quot; define a new class Person which is a subclass of Object &quot;</span>
+Object subclass: Person [ &quot; define a new class Person which is a subclass of Object &quot;
 
-    <span class="o">|</span><span class="nv"> name age </span><span class="o">|</span> <span class="c">&quot; define instance variables for the class &quot;</span>
+    | name age | &quot; define instance variables for the class &quot;
 
-    <span class="nc">Person</span> <span class="nf">class</span> <span class="nf">&gt;&gt;</span> <span class="nf">newName:</span> <span class="nv">aName</span> <span class="nf">age:</span> <span class="nv">anAge</span> [ <span class="c">&quot; class method to create a new Person instance with a name and age and return it &quot;</span>
-        <span class="o">^</span> <span class="bp">self</span> <span class="nb">new</span> <span class="nf">setName:</span> <span class="nv">aName</span><span class="p">;</span> <span class="nf">setAge:</span> <span class="nv">anAge</span><span class="p">;</span> <span class="nf">yourself</span><span class="p">.</span>
+    Person class &gt;&gt; newName: aName age: anAge [ &quot; class method to create a new Person instance with a name and age and return it &quot;
+        ^ self new setName: aName; setAge: anAge; yourself.
     ]
 
-    <span class="nf">setName:</span> <span class="nv">aName</span> [ <span class="c">&quot; method to set the name of the person &quot;</span>
-        <span class="nv">name</span> <span class="o">:=</span> <span class="nv">aName</span><span class="p">.</span>
+    setName: aName [ &quot; method to set the name of the person &quot;
+        name := aName.
     ]
-    <span class="nf">setAge:</span> <span class="nv">anAge</span> [ <span class="c">&quot; method to set the age of the person &quot;</span>
-        <span class="nv">age</span> <span class="o">:=</span> <span class="nv">anAge</span><span class="p">.</span>
+    setAge: anAge [ &quot; method to set the age of the person &quot;
+        age := anAge.
     ]
 
-    <span class="nf">printPerson</span> [ <span class="c">&quot; method to print the details of the person &quot;</span>
-        <span class="nc">Transcript</span> <span class="nf">show:</span> <span class="s">&#39;Name: &#39;</span><span class="nf">,</span> <span class="nv">name</span><span class="p">;</span> <span class="nf">cr</span><span class="p">.</span>
-        <span class="nc">Transcript</span> <span class="nf">show:</span> <span class="s">&#39;Age: &#39;</span><span class="nf">,</span> <span class="nv">age</span> <span class="nf">printString</span><span class="p">;</span> <span class="nf">cr</span><span class="p">.</span>
+    printPerson [ &quot; method to print the details of the person &quot;
+        Transcript show: 'Name: ', name; cr.
+        Transcript show: 'Age: ', age printString; cr.
     ]
 
 ]
 
-<span class="c">&quot; --- EXECUTION CODE --- &quot;</span> 
+&quot; --- EXECUTION CODE --- &quot; 
 
-<span class="nf">|</span> <span class="nv">person</span> <span class="nf">|</span>
-<span class="nv">person</span> <span class="o">:=</span> <span class="nc">Person</span> <span class="nf">newName:</span> <span class="s">&#39;Alice&#39;</span> <span class="nf">age:</span> <span class="m">30</span><span class="p">.</span> <span class="c">&quot; create an instance of the Person class with the name &#39;Alice&#39; and age 30 &quot;</span>
-<span class="nv">person</span> <span class="nf">printPerson</span><span class="p">.</span> <span class="c">&quot; print the details of the person instance by calling the printPerson method &quot;</span>
-</code></pre></div>
+| person |
+person := Person newName: 'Alice' age: 30. &quot; create an instance of the Person class with the name 'Alice' and age 30 &quot;
+person printPerson. &quot; print the details of the person instance by calling the printPerson method &quot;
+</code></pre>
 
 <h2>More on</h2>
 <ul>

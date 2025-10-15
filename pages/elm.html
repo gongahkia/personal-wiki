@@ -33,7 +33,7 @@
 
         <dl>
           <dt>File size</dt>
-          <dd>21.7KB</dd>
+          <dd>8.2KB</dd>
 
           <dt>Lines of code</dt>
           <dd>235</dd>
@@ -44,175 +44,175 @@
         <h1><code>Elm</code></h1>
 <p>Functional language that compiles to native JavaScript for web development.</p>
 <h2>Comments</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">-- ----- COMMENT -----</span>
+<pre class="codehilite"><code class="language-elm">-- ----- COMMENT -----
 
-<span class="c1">-- this is a single-line comment</span>
+-- this is a single-line comment
 
-<span class="cm">{- this </span>
-<span class="cm">is a multi-line</span>
-<span class="cm">comment -}</span>
-</code></pre></div>
+{- this 
+is a multi-line
+comment -}
+</code></pre>
 
 <h2>Printing</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">-- ----- PRINTING -----</span>
-<span class="w">    </span><span class="c1">-- Debug.log =&gt; prints the specified string arguments to the stdout without a newline included, generally used for debugging purposes</span>
+<pre class="codehilite"><code class="language-elm">-- ----- PRINTING -----
+    -- Debug.log =&gt; prints the specified string arguments to the stdout without a newline included, generally used for debugging purposes
 
-<span class="kt">Debug</span><span class="nf">.</span><span class="nv">log</span><span class="w"> </span><span class="s">&quot;Message with newline&quot;</span><span class="w"> </span><span class="s">&quot;Hello, Elm!</span><span class="se">\n</span><span class="s">&quot;</span>
-</code></pre></div>
+Debug.log &quot;Message with newline&quot; &quot;Hello, Elm!\n&quot;
+</code></pre>
 
 <h2>Quickstart</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ----- QUICKSTART -----</span>
+<pre class="codehilite"><code class="language-bash"># ----- QUICKSTART -----
 
-sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>nodejs<span class="w"> </span>npm<span class="w"> </span><span class="c1"># Elm is installed via node and requires nodejs and npm installed as dependancies</span>
-sudo<span class="w"> </span>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>elm<span class="w"> </span><span class="c1"># installs Elm globally</span>
-elm<span class="w"> </span>make<span class="w"> </span>Main.elm<span class="w"> </span><span class="c1"># compiles Elm code to JS and outputs main.js</span>
-</code></pre></div>
+sudo apt install nodejs npm # Elm is installed via node and requires nodejs and npm installed as dependancies
+sudo npm install -g elm # installs Elm globally
+elm make Main.elm # compiles Elm code to JS and outputs main.js
+</code></pre>
 
 <h2>Types</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">-- ----- TYPE -----</span>
-<span class="w">    </span><span class="c1">-- variable type annotations in Elm are specified by the : colon operator</span>
-<span class="w">    </span><span class="c1">-- Int =&gt; integer values</span>
-<span class="w">    </span><span class="c1">-- Float =&gt; floating point values that cover both single and double-precision</span>
-<span class="w">    </span><span class="c1">-- Bool =&gt; True, False</span>
-<span class="w">    </span><span class="c1">-- String =&gt; declared within &quot;&quot; double quotes, all characters are handled as one-character-long strings</span>
-<span class="w">    </span><span class="c1">-- List &lt;listElementType&gt; =&gt; specifies a list of the given element, where a list literal is declared within [] straight brackets</span>
-<span class="w">    </span><span class="c1">-- (&lt;tupleDataType(s)&gt;) =&gt; specifies a composite datatype of the unique combination of datatypes comprising the tuple, where a tuple literal is declared within () round brackets</span>
-<span class="w">    </span><span class="c1">-- type alias &lt;recordName&gt; =&gt; specifies a record under the given name, where a record&#39;s fields are comma-delimited and specified within {} curly braces</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-elm">-- ----- TYPE -----
+    -- variable type annotations in Elm are specified by the : colon operator
+    -- Int =&gt; integer values
+    -- Float =&gt; floating point values that cover both single and double-precision
+    -- Bool =&gt; True, False
+    -- String =&gt; declared within &quot;&quot; double quotes, all characters are handled as one-character-long strings
+    -- List &lt;listElementType&gt; =&gt; specifies a list of the given element, where a list literal is declared within [] straight brackets
+    -- (&lt;tupleDataType(s)&gt;) =&gt; specifies a composite datatype of the unique combination of datatypes comprising the tuple, where a tuple literal is declared within () round brackets
+    -- type alias &lt;recordName&gt; =&gt; specifies a record under the given name, where a record's fields are comma-delimited and specified within {} curly braces
+</code></pre>
 
 <h2>Operators</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">-- ----- OPERATOR -----</span>
+<pre class="codehilite"><code class="language-elm">-- ----- OPERATOR -----
 
-<span class="c1">-- --- ARITHMETIC OPERATOR ---</span>
+-- --- ARITHMETIC OPERATOR ---
 
-<span class="nf">+</span><span class="w"> </span><span class="c1">-- addition</span>
-<span class="nf">-</span><span class="w"> </span><span class="c1">-- subtraction</span>
-<span class="nf">*</span><span class="w"> </span><span class="c1">-- multiplication</span>
-<span class="nf">/</span><span class="w"> </span><span class="c1">-- division</span>
-<span class="nf">%</span><span class="w"> </span><span class="c1">-- modulo</span>
++ -- addition
+- -- subtraction
+* -- multiplication
+/ -- division
+% -- modulo
 
-<span class="c1">-- --- COMPARISON OPERATOR ---</span>
+-- --- COMPARISON OPERATOR ---
 
-<span class="nf">==</span><span class="w"> </span><span class="c1">-- complete equality check for type and value</span>
-<span class="nf">/=</span><span class="w"> </span><span class="c1">-- complete inequality check for type and value</span>
-<span class="nf">&lt;</span><span class="w"> </span><span class="c1">-- comparison operator</span>
-<span class="nf">&gt;</span><span class="w"> </span><span class="c1">-- comparison operator</span>
-<span class="nf">&lt;=</span><span class="w"> </span><span class="c1">-- comparison operator</span>
-<span class="nf">&gt;=</span><span class="w"> </span><span class="c1">-- comparison operator</span>
+== -- complete equality check for type and value
+/= -- complete inequality check for type and value
+&lt; -- comparison operator
+&gt; -- comparison operator
+&lt;= -- comparison operator
+&gt;= -- comparison operator
 
-<span class="c1">-- --- LOGICAL OPERATOR ---</span>
+-- --- LOGICAL OPERATOR ---
 
-<span class="nf">&amp;&amp;</span><span class="w"> </span><span class="c1">-- and</span>
-<span class="nf">||</span><span class="w"> </span><span class="c1">-- or</span>
-<span class="nv">not</span><span class="w"> </span><span class="c1">-- not</span>
-</code></pre></div>
+&amp;&amp; -- and
+|| -- or
+not -- not
+</code></pre>
 
 <h2>Control Structures</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">-- ----- CONTROL STRUCTURE -----</span>
+<pre class="codehilite"><code class="language-elm">-- ----- CONTROL STRUCTURE -----
 
-<span class="c1">-- --- CONDITIONALS ---</span>
+-- --- CONDITIONALS ---
 
-<span class="c1">-- IF ELSE IF ELSE </span>
-<span class="w">    </span><span class="c1">-- operates the same as in other programming languages</span>
+-- IF ELSE IF ELSE 
+    -- operates the same as in other programming languages
 
-<span class="nv">isAdult</span><span class="w"> </span><span class="nf">:</span><span class="w"> </span><span class="kt">Int</span><span class="w"> </span><span class="nf">-&gt;</span><span class="w"> </span><span class="kt">String</span>
-<span class="nv">isAdult</span><span class="w"> </span><span class="nv">age</span><span class="w"> </span><span class="nf">=</span>
-<span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">age</span><span class="w"> </span><span class="nf">&gt;=</span><span class="w"> </span><span class="mi">18</span><span class="w"> </span><span class="kr">then</span>
-<span class="w">        </span><span class="s">&quot;Adult&quot;</span>
-<span class="w">    </span><span class="kr">else</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">age</span><span class="w"> </span><span class="nf">&gt;=</span><span class="w"> </span><span class="mi">13</span><span class="w"> </span><span class="kr">then</span>
-<span class="w">        </span><span class="s">&quot;Teenager&quot;</span>
-<span class="w">    </span><span class="kr">else</span>
-<span class="w">        </span><span class="s">&quot;Child&quot;</span>
+isAdult : Int -&gt; String
+isAdult age =
+    if age &gt;= 18 then
+        &quot;Adult&quot;
+    else if age &gt;= 13 then
+        &quot;Teenager&quot;
+    else
+        &quot;Child&quot;
 
-<span class="c1">-- CASE OF _</span>
-<span class="w">    </span><span class="c1">-- equivalent of match case in other programming languages</span>
-<span class="w">    </span><span class="c1">-- provides strong pattern-matching constructs in Elm</span>
-<span class="w">    </span><span class="c1">-- _ =&gt; acts as the default catch-all operator should all other predicate checks fall through similar to Rust</span>
+-- CASE OF _
+    -- equivalent of match case in other programming languages
+    -- provides strong pattern-matching constructs in Elm
+    -- _ =&gt; acts as the default catch-all operator should all other predicate checks fall through similar to Rust
 
-<span class="nv">getType</span><span class="w"> </span><span class="nv">age</span><span class="w"> </span><span class="nf">=</span>
-<span class="w">    </span><span class="kr">case</span><span class="w"> </span><span class="nv">age</span><span class="w"> </span><span class="kr">of</span>
-<span class="w">        </span><span class="mi">0</span><span class="w"> </span><span class="nf">-&gt;</span><span class="w"> </span><span class="s">&quot;Baby&quot;</span>
-<span class="w">        </span><span class="mi">1</span><span class="w"> </span><span class="nf">-&gt;</span><span class="w"> </span><span class="s">&quot;Toddler&quot;</span>
-<span class="w">        </span><span class="mi">2</span><span class="w"> </span><span class="nf">-&gt;</span><span class="w"> </span><span class="s">&quot;Child&quot;</span>
-<span class="w">        </span><span class="nv">_</span><span class="w"> </span><span class="nf">-&gt;</span><span class="w"> </span><span class="s">&quot;Unknown&quot;</span>
+getType age =
+    case age of
+        0 -&gt; &quot;Baby&quot;
+        1 -&gt; &quot;Toddler&quot;
+        2 -&gt; &quot;Child&quot;
+        _ -&gt; &quot;Unknown&quot;
 
-<span class="nv">startsWithA</span><span class="w"> </span><span class="nv">word</span><span class="w"> </span><span class="nf">=</span>
-<span class="w">    </span><span class="kr">case</span><span class="w"> </span><span class="nv">word</span><span class="w"> </span><span class="kr">of</span>
-<span class="w">        </span><span class="nf">&#39;</span><span class="kt">A</span><span class="nf">&#39;</span><span class="w"> </span><span class="nf">::</span><span class="w"> </span><span class="nv">rest</span><span class="w"> </span><span class="nf">-&gt;</span><span class="w"> </span><span class="kt">True</span>
-<span class="w">        </span><span class="nv">_</span><span class="w"> </span><span class="nf">-&gt;</span><span class="w"> </span><span class="kt">False</span>
+startsWithA word =
+    case word of
+        'A' :: rest -&gt; True
+        _ -&gt; False
 
-<span class="c1">-- --- LOOPS ---</span>
-<span class="w">    </span><span class="c1">-- Elm adheres to functional programming paradigms, and so there are no conventional loop constructs</span>
-<span class="w">    </span><span class="c1">-- iterable data structures can still be parsed and traversed using higher-order functions</span>
+-- --- LOOPS ---
+    -- Elm adheres to functional programming paradigms, and so there are no conventional loop constructs
+    -- iterable data structures can still be parsed and traversed using higher-order functions
 
-<span class="c1">-- --- HIGHER ORDER FUNCTIONS ----</span>
-<span class="w">    </span><span class="c1">-- these higher order functions operate as you&#39;d expect in any functional programming language</span>
-<span class="w">        </span><span class="c1">-- List.map</span>
-<span class="w">        </span><span class="c1">-- List.filter</span>
-<span class="w">        </span><span class="c1">-- List.foldl</span>
+-- --- HIGHER ORDER FUNCTIONS ----
+    -- these higher order functions operate as you'd expect in any functional programming language
+        -- List.map
+        -- List.filter
+        -- List.foldl
 
-<span class="nv">numbers</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span>
-<span class="nv">doubledNumbers</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="kt">List</span><span class="nf">.</span><span class="nv">map</span><span class="w"> </span><span class="p">(</span><span class="nf">\</span><span class="nv">x</span><span class="w"> </span><span class="nf">-&gt;</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="nf">*</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="nv">numbers</span><span class="w"> </span><span class="c1">-- double each element in the list</span>
+numbers = [1, 2, 3, 4, 5]
+doubledNumbers = List.map (\x -&gt; x * 2) numbers -- double each element in the list
 
-<span class="nv">numbers</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span>
-<span class="nv">evenNumbers</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="kt">List</span><span class="nf">.</span><span class="nv">filter</span><span class="w"> </span><span class="p">(</span><span class="nf">\</span><span class="nv">x</span><span class="w"> </span><span class="nf">-&gt;</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="nf">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="nf">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="nv">numbers</span><span class="w"> </span><span class="c1">-- filtering out even numbers within the list</span>
+numbers = [1, 2, 3, 4, 5]
+evenNumbers = List.filter (\x -&gt; x % 2 == 0) numbers -- filtering out even numbers within the list
 
-<span class="nv">numbers</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span>
-<span class="nv">sum</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="kt">List</span><span class="nf">.</span><span class="nv">foldl</span><span class="w"> </span><span class="nf">(+)</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="nv">numbers</span><span class="w"> </span><span class="c1">-- summing all the elements in the list</span>
+numbers = [1, 2, 3, 4, 5]
+sum = List.foldl (+) 0 numbers -- summing all the elements in the list
 
-<span class="c1">-- --- RECURSION ---</span>
-<span class="w">    </span><span class="c1">-- Elm also further supports recursion for more complex solutions as required</span>
+-- --- RECURSION ---
+    -- Elm also further supports recursion for more complex solutions as required
 
-<span class="nv">sumList</span><span class="w"> </span><span class="nf">:</span><span class="w"> </span><span class="kt">List</span><span class="w"> </span><span class="kt">Int</span><span class="w"> </span><span class="nf">-&gt;</span><span class="w"> </span><span class="kt">Int</span><span class="w"> </span><span class="c1">-- summing list elements by recursive function calls</span>
-<span class="nv">sumList</span><span class="w"> </span><span class="nv">list</span><span class="w"> </span><span class="nf">=</span>
-<span class="w">    </span><span class="kr">case</span><span class="w"> </span><span class="nv">list</span><span class="w"> </span><span class="kr">of</span>
-<span class="w">        </span><span class="p">[]</span><span class="w"> </span><span class="nf">-&gt;</span><span class="w"> </span><span class="mi">0</span>
-<span class="w">        </span><span class="nv">head</span><span class="w"> </span><span class="nf">::</span><span class="w"> </span><span class="nv">tail</span><span class="w"> </span><span class="nf">-&gt;</span><span class="w"> </span><span class="nv">head</span><span class="w"> </span><span class="nf">+</span><span class="w"> </span><span class="nv">sumList</span><span class="w"> </span><span class="nv">tail</span>
+sumList : List Int -&gt; Int -- summing list elements by recursive function calls
+sumList list =
+    case list of
+        [] -&gt; 0
+        head :: tail -&gt; head + sumList tail
 
-<span class="nv">numbers</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span>
-<span class="nv">sum</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="nv">sumList</span><span class="w"> </span><span class="nv">numbers</span>
-</code></pre></div>
+numbers = [1, 2, 3, 4, 5]
+sum = sumList numbers
+</code></pre>
 
 <h2>Data structures</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">-- ----- DATA STRUCTURE -----</span>
-<span class="w">    </span><span class="c1">-- List =&gt; immutable ordered collection of elements of the same datatype, higher-order functions often called on lists for multiple purposes</span>
-<span class="w">    </span><span class="c1">-- Tuple =&gt; immutable ordered collection of elements of multiple datatypes</span>
-<span class="w">    </span><span class="c1">-- Record =&gt; equivalent of structs in Go and Rust and records in Ada, allowing type aliases for user-defined types where specified fields provide clear representation of structured data</span>
+<pre class="codehilite"><code class="language-elm">-- ----- DATA STRUCTURE -----
+    -- List =&gt; immutable ordered collection of elements of the same datatype, higher-order functions often called on lists for multiple purposes
+    -- Tuple =&gt; immutable ordered collection of elements of multiple datatypes
+    -- Record =&gt; equivalent of structs in Go and Rust and records in Ada, allowing type aliases for user-defined types where specified fields provide clear representation of structured data
 
-<span class="nv">aList</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span>
+aList = [1, 2, 3, 4, 5]
 
-<span class="nv">aTuple</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">)</span>
+aTuple = (&quot;Alice&quot;, 30)
 
-<span class="kr">type</span><span class="w"> </span><span class="kr">alias</span><span class="w"> </span><span class="nv">aRecord</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nv">firstName</span><span class="nf">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span>
-<span class="w">    </span><span class="nv">lastName</span><span class="nf">:</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span>
-<span class="p">}</span>
+type alias aRecord = {
+    firstName: String,
+    lastName: String 
+}
 
-<span class="kr">type</span><span class="w"> </span><span class="kr">alias</span><span class="w"> </span><span class="kt">Coordinate</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nv">x</span><span class="w"> </span><span class="nf">:</span><span class="w"> </span><span class="kt">Float</span><span class="p">,</span>
-<span class="w">    </span><span class="nv">y</span><span class="w"> </span><span class="nf">:</span><span class="w"> </span><span class="kt">Float</span>
-<span class="p">}</span>
-</code></pre></div>
+type alias Coordinate = {
+    x : Float,
+    y : Float
+}
+</code></pre>
 
 <h2>Functions</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">-- ----- FUNCTION -----</span>
-<span class="w">    </span><span class="c1">-- Elm&#39;s function definition bears many similarities to Haskell&#39;s function definition given both are functional programming languages</span>
-<span class="w">    </span><span class="c1">-- these include value immutability, implicit return of the last expression within the function, space-delimited function parameters and return values</span>
-<span class="w">    </span><span class="c1">-- Elm also further supports user-defined higher order functions for more complex function calls</span>
+<pre class="codehilite"><code class="language-elm">-- ----- FUNCTION -----
+    -- Elm's function definition bears many similarities to Haskell's function definition given both are functional programming languages
+    -- these include value immutability, implicit return of the last expression within the function, space-delimited function parameters and return values
+    -- Elm also further supports user-defined higher order functions for more complex function calls
 
-<span class="c1">-- --- NAMED FUNCTION ---</span>
-<span class="w">    </span><span class="c1">-- &lt;functionName&gt; &lt;functionArguments&gt; = &lt;functionDefinition&gt; =&gt; function definition for a named function in Elm features implicit returns of the final expression, and function call is invoked without brackets</span>
+-- --- NAMED FUNCTION ---
+    -- &lt;functionName&gt; &lt;functionArguments&gt; = &lt;functionDefinition&gt; =&gt; function definition for a named function in Elm features implicit returns of the final expression, and function call is invoked without brackets
 
-<span class="nv">add</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nf">+</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="c1">-- declares the add named function</span>
-<span class="nv">result</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="nv">add</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="c1">-- calling the previously declared function</span>
+add a b = a + b -- declares the add named function
+result = add 3 5 -- calling the previously declared function
 
-<span class="c1">-- --- ANONYMOUS FUNCTION ---</span>
-<span class="w">    </span><span class="c1">-- \ =&gt; declares the start of an anonymous function</span>
-<span class="w">    </span><span class="c1">-- \&lt;anonymousFunctionArguments&gt; -&gt; &lt;functionDefinition&gt; =&gt; function definition for an anonymous function, where the anonymous function is normally assigned to a named variable</span>
+-- --- ANONYMOUS FUNCTION ---
+    -- \ =&gt; declares the start of an anonymous function
+    -- \&lt;anonymousFunctionArguments&gt; -&gt; &lt;functionDefinition&gt; =&gt; function definition for an anonymous function, where the anonymous function is normally assigned to a named variable
 
-<span class="nv">addButAnonymous</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="nf">\</span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="nf">-&gt;</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nf">+</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="c1">-- same as the named add function above, but as an anonymous function</span>
-<span class="nv">square</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="nf">\</span><span class="nv">x</span><span class="w"> </span><span class="nf">-&gt;</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="nf">*</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="c1">-- anonymous function that squares the function parameters</span>
-</code></pre></div>
+addButAnonymous = \a b -&gt; a + b -- same as the named add function above, but as an anonymous function
+square = \x -&gt; x * x -- anonymous function that squares the function parameters
+</code></pre>
 
 <h2>More on</h2>
 <ul>

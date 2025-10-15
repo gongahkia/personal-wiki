@@ -33,7 +33,7 @@
 
         <dl>
           <dt>File size</dt>
-          <dd>35.8KB</dd>
+          <dd>12.4KB</dd>
 
           <dt>Lines of code</dt>
           <dd>361</dd>
@@ -43,296 +43,296 @@
       <section class="note-content">
         <h1><code>GDScript</code></h1>
 <h2>Comments</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- COMMENT ----------</span>
+<pre class="codehilite"><code class="language-gd"># ---------- COMMENT ----------
 
-<span class="c1"># single-line comments</span>
+# single-line comments
 
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">multi-line comments</span>
-<span class="sd">are written using</span>
-<span class="sd">docstrings like </span>
-<span class="sd">this</span>
-<span class="sd">&quot;&quot;&quot;</span>
-</code></pre></div>
+&quot;&quot;&quot;
+multi-line comments
+are written using
+docstrings like 
+this
+&quot;&quot;&quot;
+</code></pre>
 
 <h2>Quickstart</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- QUICKSTART ----------</span>
-<span class="w">    </span><span class="c1"># GDScript shares a lot of similarities syntax-wise with Python</span>
-<span class="w">    </span><span class="c1"># file structure</span>
-<span class="w">    </span><span class="c1"># inheritance</span>
-<span class="w">    </span><span class="c1"># export</span>
+<pre class="codehilite"><code class="language-gd"># ---------- QUICKSTART ----------
+    # GDScript shares a lot of similarities syntax-wise with Python
+    # file structure
+    # inheritance
+    # export
 
-<span class="c1"># every GDScript file is a class in itself</span>
-<span class="w">    </span><span class="c1"># class_name defines a class for it explicitly</span>
+# every GDScript file is a class in itself
+    # class_name defines a class for it explicitly
 
-<span class="k">class_name</span><span class="w"> </span><span class="n">MyClass</span>
+class_name MyClass
 
-<span class="c1"># extends specifies which node the GDScript file inherits behaviour from</span>
+# extends specifies which node the GDScript file inherits behaviour from
 
-<span class="k">extends</span><span class="w"> </span><span class="n">Node2D</span>
+extends Node2D
 
-<span class="c1"># export makes specified variables visible in the godot inspector</span>
-<span class="w">    </span><span class="c1"># export variable data types are specified by convention</span>
-<span class="w">    </span><span class="c1"># type hints are not required if a default value is set upon exporting</span>
+# export makes specified variables visible in the godot inspector
+    # export variable data types are specified by convention
+    # type hints are not required if a default value is set upon exporting
 
-<span class="k">export</span><span class="p">(</span><span class="nb nb-Type">int</span><span class="p">)</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="c1"># type hints are required</span>
-<span class="k">export</span><span class="p">(</span><span class="nb nb-Type">float</span><span class="p">)</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">height</span>
-<span class="k">export</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">person_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Bob&quot;</span><span class="w"> </span><span class="c1"># type specified since default value of &quot;Bob&quot; can be inferred to be a string upon exporting</span>
-</code></pre></div>
+export(int) var age # type hints are required
+export(float) var height
+export var person_name = &quot;Bob&quot; # type specified since default value of &quot;Bob&quot; can be inferred to be a string upon exporting
+</code></pre>
 
 <h2>Printing</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- PRINT STATEMENT ----------</span>
-<span class="w">    </span><span class="c1"># print() works by default as in Python, does not separate elements by anything</span>
-<span class="w">    </span><span class="c1"># printraw() prints the specified message to stdout with no fancy reformatting</span>
-<span class="w">    </span><span class="c1"># prints() prints elements and separates them by spaces</span>
-<span class="w">    </span><span class="c1"># printt() prints elements and separates them by tabs</span>
+<pre class="codehilite"><code class="language-gd"># ---------- PRINT STATEMENT ----------
+    # print() works by default as in Python, does not separate elements by anything
+    # printraw() prints the specified message to stdout with no fancy reformatting
+    # prints() prints elements and separates them by spaces
+    # printt() prints elements and separates them by tabs
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This works as &quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;you&#39;d expect in Python&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1"># &quot;This works as you&#39;d expect in Python&quot;</span>
-<span class="nb">printraw</span><span class="p">(</span><span class="s2">&quot;This also works&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1"># &quot;This also works&quot;</span>
-<span class="nb">prints</span><span class="p">(</span><span class="s2">&quot;This&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;adds&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;spaces&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;between&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;elements&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1"># &quot;This adds spaces between elements&quot;</span>
-<span class="nb">printt</span><span class="p">(</span><span class="s2">&quot;This&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;adds&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;tabs&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;between&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;elements&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1"># &quot;This adds tabs between elements&quot;</span>
-</code></pre></div>
+print(&quot;This works as &quot;, &quot;you'd expect in Python&quot;) # &quot;This works as you'd expect in Python&quot;
+printraw(&quot;This also works&quot;) # &quot;This also works&quot;
+prints(&quot;This&quot;, &quot;adds&quot;, &quot;spaces&quot;, &quot;between&quot;, &quot;elements&quot;) # &quot;This adds spaces between elements&quot;
+printt(&quot;This&quot;, &quot;adds&quot;, &quot;tabs&quot;, &quot;between&quot;, &quot;elements&quot;) # &quot;This adds tabs between elements&quot;
+</code></pre>
 
 <h2>Variables and Constants</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- VARIABLE and CONSTANT ----------</span>
-<span class="w">    </span><span class="c1"># var declares a variable</span>
-<span class="w">        </span><span class="c1"># a variable&#39;s value can be changed after assignment</span>
-<span class="w">        </span><span class="c1"># snake_case names by convention</span>
-<span class="w">    </span><span class="c1"># const declares a constant</span>
-<span class="w">        </span><span class="c1"># a constant&#39;s value cannot be changed after assignment</span>
-<span class="w">        </span><span class="c1"># FULLY CAPITALISED names by convention</span>
+<pre class="codehilite"><code class="language-gd"># ---------- VARIABLE and CONSTANT ----------
+    # var declares a variable
+        # a variable's value can be changed after assignment
+        # snake_case names by convention
+    # const declares a constant
+        # a constant's value cannot be changed after assignment
+        # FULLY CAPITALISED names by convention
 
-<span class="k">var</span><span class="w"> </span><span class="n">a_variable</span><span class="p">:</span><span class="nb nb-Type">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;i am a variable&quot;</span>
-<span class="k">const</span><span class="w"> </span><span class="n">BREAKFAST</span><span class="p">:</span><span class="nb nb-Type">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;eggs and ham!&quot;</span>
-</code></pre></div>
+var a_variable:String = &quot;i am a variable&quot;
+const BREAKFAST:String = &quot;eggs and ham!&quot;
+</code></pre>
 
 <h2>Types</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- TYPE ----------</span>
-<span class="w">    </span><span class="c1"># static typing is optional but encouraged, can be achieved with :</span>
-<span class="w">    </span><span class="c1"># := allows for type inference based on value provided at assignment</span>
-<span class="w">    </span><span class="c1"># int</span>
-<span class="w">    </span><span class="c1"># float</span>
-<span class="w">    </span><span class="c1"># bool (0 is false, every other non-0 integer is true)</span>
-<span class="w">    </span><span class="c1"># String (chars are also strings)</span>
-<span class="w">    </span><span class="c1"># NodePath (NodePath() or @ specifies the nodepath literal to another node)</span>
-<span class="w">        </span><span class="c1"># specified nodepath is a relative path unless otherwise stated</span>
-<span class="w">        </span><span class="c1"># @&quot;/root&quot; specifies an absolute path from the project&#39;s root folder</span>
-<span class="w">        </span><span class="c1"># : allows us to access a variable&#39;s properties and subproperties via nodepath</span>
-<span class="w">    </span><span class="c1"># null (absence of a value)</span>
-<span class="w">        </span><span class="c1"># it has no data type specified for it since it represents the absence of a value, and is a special unique value</span>
+<pre class="codehilite"><code class="language-gd"># ---------- TYPE ----------
+    # static typing is optional but encouraged, can be achieved with :
+    # := allows for type inference based on value provided at assignment
+    # int
+    # float
+    # bool (0 is false, every other non-0 integer is true)
+    # String (chars are also strings)
+    # NodePath (NodePath() or @ specifies the nodepath literal to another node)
+        # specified nodepath is a relative path unless otherwise stated
+        # @&quot;/root&quot; specifies an absolute path from the project's root folder
+        # : allows us to access a variable's properties and subproperties via nodepath
+    # null (absence of a value)
+        # it has no data type specified for it since it represents the absence of a value, and is a special unique value
 
-<span class="k">var</span><span class="w"> </span><span class="n">x</span><span class="p">:</span><span class="nb nb-Type">int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span>
-<span class="k">var</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="nb nb-Type">float</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.2</span>
-<span class="k">var</span><span class="w"> </span><span class="n">b</span><span class="p">:</span><span class="nb nb-Type">bool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">true</span><span class="w"> </span><span class="c1"># can also be false</span>
-<span class="k">var</span><span class="w"> </span><span class="n">s</span><span class="p">:</span><span class="nb nb-Type">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hello world!&quot;</span>
-<span class="k">var</span><span class="w"> </span><span class="n">c</span><span class="p">:</span><span class="nb nb-Type">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;a&quot;</span><span class="w"> </span><span class="c1"># this is also a string</span>
-<span class="k">var</span><span class="w"> </span><span class="n">relative_nodepath</span><span class="p">:</span><span class="nb nb-Type">NodePath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">@</span><span class="s2">&quot;this is a nodepath literal&quot;</span><span class="w"> </span><span class="c1"># note that this denotes the relative path</span>
-<span class="k">var</span><span class="w"> </span><span class="n">absolute_nodepath</span><span class="p">:</span><span class="nb nb-Type">NodePath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">@</span><span class="s2">&quot;/root/Main/Player/Sprite&quot;</span><span class="w"> </span><span class="c1"># absolute path to the player&#39;s sprite</span>
-<span class="k">var</span><span class="w"> </span><span class="n">firerate_properties</span><span class="p">:</span><span class="nb nb-Type">NodePath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">@</span><span class="s2">&quot;Timers/Firerate:wait_time&quot;</span><span class="w"> </span><span class="c1"># accessing properties</span>
-<span class="k">var</span><span class="w"> </span><span class="n">player_position_subproperties</span><span class="p">:</span><span class="nb nb-Type">NodePath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">@</span><span class="s2">&quot;Player:position:x&quot;</span><span class="w"> </span><span class="c1"># accessing subproperties</span>
-<span class="k">var</span><span class="w"> </span><span class="n">i_am_null</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb nb-Type">null</span><span class="w"> </span><span class="c1"># note there is no static typing since null is a special value by itself with no inherent data type</span>
+var x:int = 8
+var y:float = 1.2
+var b:bool = true # can also be false
+var s:String = &quot;hello world!&quot;
+var c:String = &quot;a&quot; # this is also a string
+var relative_nodepath:NodePath = @&quot;this is a nodepath literal&quot; # note that this denotes the relative path
+var absolute_nodepath:NodePath = @&quot;/root/Main/Player/Sprite&quot; # absolute path to the player's sprite
+var firerate_properties:NodePath = @&quot;Timers/Firerate:wait_time&quot; # accessing properties
+var player_position_subproperties:NodePath = @&quot;Player:position:x&quot; # accessing subproperties
+var i_am_null = null # note there is no static typing since null is a special value by itself with no inherent data type
 
-<span class="c1"># TYPE CASTING</span>
-<span class="w">    </span><span class="c1"># type casting refers to explicit type conversion</span>
-<span class="w">    </span><span class="c1"># variables constructor (similar to Python)</span>
+# TYPE CASTING
+    # type casting refers to explicit type conversion
+    # variables constructor (similar to Python)
 
-<span class="k">var</span><span class="w"> </span><span class="n">an_int_to_a_float</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span><span class="w"> </span><span class="c1"># 200 type casted to 200.0 through variable constructor syntax</span>
-<span class="k">var</span><span class="w"> </span><span class="n">an_int_to_a_bool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb nb-Type">bool</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span><span class="w"> </span><span class="c1"># 42 type casted to a true through variable constructor syntax</span>
-</code></pre></div>
+var an_int_to_a_float = float(200) # 200 type casted to 200.0 through variable constructor syntax
+var an_int_to_a_bool = bool(42) # 42 type casted to a true through variable constructor syntax
+</code></pre>
 
 <h2>Data structures</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- DATA STRUCTURE ----------</span>
-<span class="w">    </span><span class="c1"># array (dynamic list that can store variables of multiple types, similar to Python lists)</span>
-<span class="w">    </span><span class="c1"># pool array (list that can only store variables of one type, more memory-efficient than an array)</span>
-<span class="w">        </span><span class="c1"># declared with PoolStringArray() syntax</span>
-<span class="w">    </span><span class="c1"># vector (dynamic list that can also store variables of multiple types similar to arrays, though arrays offer more functionality)</span>
-<span class="w">        </span><span class="c1"># Vector2() specifies a 2D-vector</span>
-<span class="w">        </span><span class="c1"># Vector3() specifies a 3D-vector</span>
-<span class="w">        </span><span class="c1"># commonly used to represent positions of game entities on a 2D or 3D plane</span>
-<span class="w">    </span><span class="c1"># dictionary (hash map that stores key-value pairs, similar to dictionaries in Python or tables in Lua)</span>
+<pre class="codehilite"><code class="language-gd"># ---------- DATA STRUCTURE ----------
+    # array (dynamic list that can store variables of multiple types, similar to Python lists)
+    # pool array (list that can only store variables of one type, more memory-efficient than an array)
+        # declared with PoolStringArray() syntax
+    # vector (dynamic list that can also store variables of multiple types similar to arrays, though arrays offer more functionality)
+        # Vector2() specifies a 2D-vector
+        # Vector3() specifies a 3D-vector
+        # commonly used to represent positions of game entities on a 2D or 3D plane
+    # dictionary (hash map that stores key-value pairs, similar to dictionaries in Python or tables in Lua)
 
-<span class="k">var</span><span class="w"> </span><span class="n">an_array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="bp">false</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;i can hold values of multiple types&quot;</span><span class="p">]</span>
-<span class="k">var</span><span class="w"> </span><span class="n">a_pool_array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PoolStringArray</span><span class="p">([</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;there&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;brother&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;in&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Christ&quot;</span><span class="p">])</span>
-<span class="k">var</span><span class="w"> </span><span class="n">a_2d_vector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb nb-Type">Vector2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="k">var</span><span class="w"> </span><span class="n">a_3d_vector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb nb-Type">Vector3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-<span class="k">var</span><span class="w"> </span><span class="n">a_dictionary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="s2">&quot;key&quot;</span><span class="p">:</span><span class="s2">&quot;value&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="mi">42</span><span class="p">:</span><span class="w"> </span><span class="bp">true</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;i work how you&#39;d expect as well&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
-<span class="p">}</span>
-</code></pre></div>
+var an_array = [1, false, &quot;i can hold values of multiple types&quot;]
+var a_pool_array = PoolStringArray([&quot;Hello&quot;, &quot;there&quot;, &quot;brother&quot;, &quot;in&quot;, &quot;Christ&quot;])
+var a_2d_vector = Vector2(1,2)
+var a_3d_vector = Vector3(1,2,3)
+var a_dictionary = {
+    &quot;key&quot;:&quot;value&quot;,
+    42: true,
+    &quot;i work how you'd expect as well&quot;: 4
+}
+</code></pre>
 
 <h2>Functions</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- FUNCTION ----------</span>
-<span class="w">    </span><span class="c1"># func declares a function block</span>
-<span class="w">    </span><span class="c1"># pass</span>
-<span class="w">    </span><span class="c1"># return</span>
-<span class="w">    </span><span class="c1"># functions can benefit from static typing too for argument and return values</span>
+<pre class="codehilite"><code class="language-gd"># ---------- FUNCTION ----------
+    # func declares a function block
+    # pass
+    # return
+    # functions can benefit from static typing too for argument and return values
 
-<span class="k">func</span><span class="w"> </span><span class="n">foo</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span><span class="w"> </span><span class="c1"># void functions return nothing</span>
-<span class="w">    </span><span class="k">pass</span><span class="w"> </span><span class="c1"># works the same as in Python</span>
+func foo() -&gt; void: # void functions return nothing
+    pass # works the same as in Python
 
-<span class="k">func</span><span class="w"> </span><span class="n">add</span><span class="p">(</span><span class="n">first</span><span class="p">:</span><span class="nb nb-Type">int</span><span class="p">,</span><span class="w"> </span><span class="n">second</span><span class="p">:</span><span class="nb nb-Type">int</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">int</span><span class="p">:</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">second</span>
-</code></pre></div>
+func add(first:int, second:int) -&gt; int:
+    return first + second
+</code></pre>
 
 <h2>Operators</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- OPERATOR ----------</span>
+<pre class="codehilite"><code class="language-gd"># ---------- OPERATOR ----------
 
-<span class="c1"># ARITHMETIC OPERATOR</span>
+# ARITHMETIC OPERATOR
 
-<span class="w">    </span><span class="c1"># + for addition</span>
-<span class="w">    </span><span class="c1"># - for subtraction</span>
-<span class="w">    </span><span class="c1"># * for multiplication</span>
-<span class="w">    </span><span class="c1"># / for division</span>
-<span class="w">    </span><span class="c1"># % for modulo</span>
-<span class="w">    </span><span class="c1"># += for increment</span>
-<span class="w">    </span><span class="c1"># -= for decrement</span>
-<span class="w">    </span><span class="c1"># *= for multiplication and reassignment</span>
-<span class="w">    </span><span class="c1"># /= for division and reassignment</span>
-<span class="w">    </span><span class="c1"># %= for modulo and reassignment</span>
-<span class="w">    </span><span class="c1"># pow() for exponentiation</span>
-<span class="w">    </span><span class="c1"># sqrt() for squareroot of a value</span>
+    # + for addition
+    # - for subtraction
+    # * for multiplication
+    # / for division
+    # % for modulo
+    # += for increment
+    # -= for decrement
+    # *= for multiplication and reassignment
+    # /= for division and reassignment
+    # %= for modulo and reassignment
+    # pow() for exponentiation
+    # sqrt() for squareroot of a value
 
-<span class="k">var</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span>
-<span class="k">var</span><span class="w"> </span><span class="n">second</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span>
-<span class="n">first</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">second</span><span class="w"> </span><span class="c1"># evaluates to 12</span>
-<span class="n">first</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">second</span><span class="w"> </span><span class="c1"># evaluates to 4</span>
-<span class="n">first</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">second</span><span class="w"> </span><span class="c1"># evaluates to 32</span>
-<span class="n">first</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">second</span><span class="w"> </span><span class="c1"># evaluates to 2</span>
-<span class="n">first</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">second</span><span class="w"> </span><span class="c1"># evaluates to 0</span>
-<span class="n">first</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="c1"># evaluates to 16</span>
-<span class="n">first</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="c1"># evaluates to 0</span>
-<span class="n">first</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="c1"># evaluates to 64</span>
-<span class="n">first</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="c1"># evaluates to 1</span>
-<span class="n">first</span><span class="w"> </span><span class="o">%=</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="c1"># evaluates to 0</span>
-<span class="nb">pow</span><span class="p">(</span><span class="n">first</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="c1"># evaluates to 64</span>
-<span class="nb">sqrt</span><span class="p">(</span><span class="n">second</span><span class="p">)</span><span class="w"> </span><span class="c1"># evaluats to 2</span>
+var first = 8
+var second = 4
+first + second # evaluates to 12
+first - second # evaluates to 4
+first * second # evaluates to 32
+first / second # evaluates to 2
+first % second # evaluates to 0
+first += first # evaluates to 16
+first -= first # evaluates to 0
+first *= first # evaluates to 64
+first /= first # evaluates to 1
+first %= first # evaluates to 0
+pow(first, 2) # evaluates to 64
+sqrt(second) # evaluats to 2
 
-<span class="c1"># LOGICAL OPERATOR</span>
-<span class="w">    </span><span class="c1"># and</span>
-<span class="w">    </span><span class="c1"># or</span>
-<span class="w">    </span><span class="c1"># not</span>
+# LOGICAL OPERATOR
+    # and
+    # or
+    # not
 
-<span class="bp">true</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="bp">false</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="bp">false</span><span class="w"> </span><span class="c1"># evaluates to true</span>
-</code></pre></div>
+true and false or not false # evaluates to true
+</code></pre>
 
 <h2>Control structures</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- CONTROL FLOW ----------</span>
-<span class="w">    </span><span class="c1"># if elif else</span>
-<span class="w">    </span><span class="c1"># for loop</span>
-<span class="w">    </span><span class="c1"># while loop</span>
-<span class="w">        </span><span class="c1"># continue</span>
-<span class="w">        </span><span class="c1"># break</span>
-<span class="w">    </span><span class="c1"># match case statement</span>
+<pre class="codehilite"><code class="language-gd"># ---------- CONTROL FLOW ----------
+    # if elif else
+    # for loop
+    # while loop
+        # continue
+        # break
+    # match case statement
 
-<span class="c1"># CONDITIONAL CHECK</span>
+# CONDITIONAL CHECK
 
-<span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span>
-<span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span>
-<span class="k">if</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">y</span><span class="p">:</span>
-<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is smaller than y&quot;</span><span class="p">)</span>
-<span class="k">elif</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">y</span><span class="p">:</span>
-<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is bigger than y&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is equals to y&quot;</span><span class="p">)</span>
+x = 8
+y = 2
+if x &lt; y:
+    print(&quot;x is smaller than y&quot;)
+elif x &gt; y:
+    print(&quot;x is bigger than y&quot;)
+else:
+    print(&quot;x is equals to y&quot;)
 
-<span class="c1">## LOOP</span>
+## LOOP
 
-<span class="k">for</span><span class="w"> </span><span class="n">el</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;two&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">]:</span>
-<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">el</span><span class="p">)</span>
+for el in [&quot;two&quot;, 3, 1.0]:
+    print(el)
 
-<span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span>
-<span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span>
-<span class="k">while</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">y</span><span class="p">:</span>
-<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span>
+x = 2
+y = 10
+while x &lt; y:
+    x += 1
 
-<span class="c1">## MATCH CASE</span>
-<span class="w">    </span><span class="c1"># syntax similar to Rust&#39;s pattern matching</span>
-<span class="w">    </span><span class="c1"># break statements are unnecessary after each case, continue is used to fallthrough to the next case</span>
-<span class="w">    </span><span class="c1"># _ for default case</span>
+## MATCH CASE
+    # syntax similar to Rust's pattern matching
+    # break statements are unnecessary after each case, continue is used to fallthrough to the next case
+    # _ for default case
 
-<span class="k">match</span><span class="w"> </span><span class="n">x</span><span class="p">:</span>
-<span class="w">    </span><span class="mi">1</span><span class="p">:</span><span class="w"> </span>
-<span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is equals to 1&quot;</span><span class="p">)</span>
-<span class="w">    </span><span class="mi">2</span><span class="p">:</span><span class="w"> </span>
-<span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is equals to 2&quot;</span><span class="p">)</span>
-<span class="w">    </span><span class="mi">3</span><span class="p">:</span>
-<span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is equals to 3&quot;</span><span class="p">)</span>
-<span class="w">    </span><span class="n">_</span><span class="p">:</span><span class="w"> </span>
-<span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;this is the default case&quot;</span><span class="p">)</span>
-</code></pre></div>
+match x:
+    1: 
+        print(&quot;x is equals to 1&quot;)
+    2: 
+        print(&quot;x is equals to 2&quot;)
+    3:
+        print(&quot;x is equals to 3&quot;)
+    _: 
+        print(&quot;this is the default case&quot;)
+</code></pre>
 
 <h2>Useful tips</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- TIP ----------</span>
-<span class="w">    </span><span class="c1"># range() exists and operates similarly as in Python</span>
-<span class="w">        </span><span class="c1"># you can also iterate over a number directly as an implicit range</span>
+<pre class="codehilite"><code class="language-gd"># ---------- TIP ----------
+    # range() exists and operates similarly as in Python
+        # you can also iterate over a number directly as an implicit range
 
-<span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span><span class="w"> </span><span class="c1"># this is valid, printing 0 to 19</span>
-<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+for i in range(20): # this is valid, printing 0 to 19
+    print(i)
 
-<span class="k">for</span><span class="w"> </span><span class="n">q</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="mi">20</span><span class="p">:</span><span class="w"> </span><span class="c1"># this does the exact same thing as the range() above, printing 0 to 19</span>
-<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
-</code></pre></div>
+for q in 20: # this does the exact same thing as the range() above, printing 0 to 19
+    print(q)
+</code></pre>
 
 <h2>OOP</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ---------- OBJECT ORIENTED PROGRAMMING ----------</span>
-<span class="w">    </span><span class="c1"># override</span>
-<span class="w">    </span><span class="c1"># self specifies the variable is an object attribute unique to the specific object</span>
-<span class="w">    </span><span class="c1"># extends allows for a child class to inherit a parent class&#39; attributes and methods</span>
-<span class="w">    </span><span class="c1"># .new() instantiates a new instance object off the class</span>
-<span class="w">    </span><span class="c1"># func _init()</span>
-<span class="w">    </span><span class="c1"># func _ready()</span>
-<span class="w">    </span><span class="c1"># func _process(delta)</span>
-<span class="w">    </span><span class="c1"># func _physics_process(delta)</span>
-<span class="w">    </span><span class="c1"># signal system</span>
+<pre class="codehilite"><code class="language-gd"># ---------- OBJECT ORIENTED PROGRAMMING ----------
+    # override
+    # self specifies the variable is an object attribute unique to the specific object
+    # extends allows for a child class to inherit a parent class' attributes and methods
+    # .new() instantiates a new instance object off the class
+    # func _init()
+    # func _ready()
+    # func _process(delta)
+    # func _physics_process(delta)
+    # signal system
 
-<span class="c1"># OVERRIDE </span>
-<span class="w">    </span><span class="c1"># built-in overridable functions are specified by starting with _ an underscore by convention</span>
-<span class="w">    </span><span class="c1"># technically any function is overridable</span>
+# OVERRIDE 
+    # built-in overridable functions are specified by starting with _ an underscore by convention
+    # technically any function is overridable
 
-<span class="c1"># IMPORTANT FUNCTIONS</span>
+# IMPORTANT FUNCTIONS
 
-<span class="k">func</span><span class="w"> </span><span class="n">_init</span><span class="p">():</span><span class="w"> </span><span class="c1"># object constructor, specifies contents to be called when object is instantiated, similar to Python</span>
-<span class="w">    </span><span class="k">pass</span>
+func _init(): # object constructor, specifies contents to be called when object is instantiated, similar to Python
+    pass
 
-<span class="k">func</span><span class="w"> </span><span class="n">_ready</span><span class="p">():</span><span class="w"> </span><span class="c1"># called when script&#39;s node and children nodes have entered scene tree</span>
-<span class="w">    </span><span class="k">pass</span>
+func _ready(): # called when script's node and children nodes have entered scene tree
+    pass
 
-<span class="k">func</span><span class="w"> </span><span class="n">_process</span><span class="p">(</span><span class="n">delta</span><span class="p">);</span><span class="w"> </span><span class="c1"># function called every single frame, delta is the number of seconds passed between the last frame and the current one, similar to love.update(dt) in Lua</span>
-<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;dt equals:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">delta</span><span class="p">)</span>
+func _process(delta); # function called every single frame, delta is the number of seconds passed between the last frame and the current one, similar to love.update(dt) in Lua
+    print(&quot;dt equals:&quot;, delta)
 
-<span class="k">func</span><span class="w"> </span><span class="n">_physics_process</span><span class="p">(</span><span class="n">delta</span><span class="p">):</span><span class="w"> </span><span class="c1"># function called on every physics frame, delta should be constant</span>
-<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">direction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb nb-Type">Vector2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">speed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100.0</span>
-<span class="w">    </span><span class="bp">self</span><span class="o">.</span><span class="n">global_position</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">direction</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">speed</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">delta</span>
+func _physics_process(delta): # function called on every physics frame, delta should be constant
+    var direction = Vector2(1,0)
+    var speed = 100.0
+    self.global_position += direction * speed * delta
 
-<span class="c1"># SIGNAL</span>
-<span class="w">    </span><span class="c1"># the signal system is godot&#39;s equivalent of the observer programming pattern</span>
-<span class="w">    </span><span class="c1"># signal defines a signal with its name, () included in case of arguments to be accepted</span>
-<span class="w">    </span><span class="c1"># emit_signal() used to call the specified signal with its arguments</span>
-<span class="w">    </span><span class="c1"># .connect() connects a signal to a function </span>
+# SIGNAL
+    # the signal system is godot's equivalent of the observer programming pattern
+    # signal defines a signal with its name, () included in case of arguments to be accepted
+    # emit_signal() used to call the specified signal with its arguments
+    # .connect() connects a signal to a function 
 
-<span class="k">class_name</span><span class="w"> </span><span class="n">Player</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="n">Node2D</span>
+class_name Player extends Node2D
 
-<span class="k">var</span><span class="w"> </span><span class="n">hp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span>
+var hp = 10
 
-<span class="k">signal</span><span class="w"> </span><span class="n">died</span><span class="p">()</span><span class="w"> </span><span class="c1"># defines the signal died with 0 arguments</span>
-<span class="k">signal</span><span class="w"> </span><span class="n">hurt</span><span class="p">(</span><span class="n">hp_old</span><span class="p">,</span><span class="w"> </span><span class="n">hp_new</span><span class="p">)</span><span class="w"> </span><span class="c1"># defines the signal died with 2 arguments</span>
+signal died() # defines the signal died with 0 arguments
+signal hurt(hp_old, hp_new) # defines the signal died with 2 arguments
 
-<span class="k">func</span><span class="w"> </span><span class="n">apply_damage</span><span class="p">(</span><span class="n">dmg</span><span class="p">):</span>
-<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">hp_old</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hp</span>
-<span class="w">    </span><span class="n">hp</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">dmg</span>
-<span class="w">    </span><span class="n">emit_signal</span><span class="p">(</span><span class="s2">&quot;hurt&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">hp_old</span><span class="p">,</span><span class="w"> </span><span class="n">hp</span><span class="p">)</span><span class="w"> </span><span class="c1"># emits the predefined signal with its arguments</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">hp</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span>
-<span class="w">        </span><span class="n">emit_signal</span><span class="p">(</span><span class="s2">&quot;died&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1"># emits the predefined signal</span>
+func apply_damage(dmg):
+    var hp_old = hp
+    hp -= dmg
+    emit_signal(&quot;hurt&quot;, hp_old, hp) # emits the predefined signal with its arguments
+    if hp &lt;= 0:
+        emit_signal(&quot;died&quot;) # emits the predefined signal
 
-<span class="n">function</span><span class="w"> </span><span class="n">_ready</span><span class="p">():</span>
-<span class="w">    </span><span class="bp">self</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;died&quot;</span><span class="p">),</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;_on_death&quot;</span><span class="p">)</span>
+function _ready():
+    self.connect(&quot;died&quot;), self, &quot;_on_death&quot;)
 
-<span class="n">function</span><span class="w"> </span><span class="n">_on_death</span><span class="p">():</span><span class="w"> </span><span class="c1"># signal died() is called when the _on_death() function occurs</span>
-<span class="w">    </span><span class="bp">self</span><span class="o">.</span><span class="n">queue_free</span><span class="p">()</span><span class="w"> </span><span class="c1"># destroys player on death by removing them from the queue</span>
-</code></pre></div>
+function _on_death(): # signal died() is called when the _on_death() function occurs
+    self.queue_free() # destroys player on death by removing them from the queue
+</code></pre>
 
 <h2>More on</h2>
 <ul>

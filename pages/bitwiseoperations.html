@@ -33,7 +33,7 @@
 
         <dl>
           <dt>File size</dt>
-          <dd>31.8KB</dd>
+          <dd>12.5KB</dd>
 
           <dt>Lines of code</dt>
           <dd>365</dd>
@@ -51,80 +51,80 @@
 <li>NOTE that a SIGNED binary to decimal conversion causes the Most Significant Bit to have a negative value while every other Bit retains its positive value</li>
 </ul>
 <h3>Converting binary to decimal</h3>
-<div class="codehilite"><pre><span></span><code><span class="c1">// --- worked examples --- </span>
+<pre class="codehilite"><code class="language-go">// --- worked examples --- 
 
-<span class="c1">// q1</span>
-<span class="w">    </span><span class="c1">// 10110</span>
-<span class="w">    </span><span class="c1">// = (1 * math.Pow(2,4)) + (0 * math.Pow(2,3)) + (1 * math.Pow(2,2)) + (1 * math.Pow(2,1)) + (0 * math.Pow(2,0)) </span>
-<span class="w">    </span><span class="c1">// = 16 + 0 + 4 + 2 + 0</span>
-<span class="w">    </span><span class="c1">// = 22</span>
+// q1
+    // 10110
+    // = (1 * math.Pow(2,4)) + (0 * math.Pow(2,3)) + (1 * math.Pow(2,2)) + (1 * math.Pow(2,1)) + (0 * math.Pow(2,0)) 
+    // = 16 + 0 + 4 + 2 + 0
+    // = 22
 
-<span class="c1">// q2</span>
-<span class="w">    </span><span class="c1">// 1011 </span>
-<span class="w">    </span><span class="c1">// = (1 * math.Pow(2,3)) + (0 * math.Pow(2,2)) + (1 * math.Pow(2,1)) + (1 * math.Pow(2,0))</span>
-<span class="w">    </span><span class="c1">// = 8 + 0 + 2 + 1</span>
-<span class="w">    </span><span class="c1">// = 11</span>
+// q2
+    // 1011 
+    // = (1 * math.Pow(2,3)) + (0 * math.Pow(2,2)) + (1 * math.Pow(2,1)) + (1 * math.Pow(2,0))
+    // = 8 + 0 + 2 + 1
+    // = 11
 
-<span class="c1">// q3</span>
-<span class="w">    </span><span class="c1">// 11011 </span>
-<span class="w">    </span><span class="c1">// = (1 * math.Pow(2,4)) + (1 * math.Pow(2,3)) + (0 * math.Pow(2,2)) + (1 * math.Pow(2,1)) + (1 * math.Pow(2,0))</span>
-<span class="w">    </span><span class="c1">// = 16 + 8 + 0 + 2 + 1</span>
-<span class="w">    </span><span class="c1">// = 27</span>
+// q3
+    // 11011 
+    // = (1 * math.Pow(2,4)) + (1 * math.Pow(2,3)) + (0 * math.Pow(2,2)) + (1 * math.Pow(2,1)) + (1 * math.Pow(2,0))
+    // = 16 + 8 + 0 + 2 + 1
+    // = 27
 
-<span class="c1">// --- go function implementation ---</span>
+// --- go function implementation ---
 
-<span class="kd">func</span><span class="w"> </span><span class="nx">binaryToDecimal</span><span class="p">(</span><span class="nx">binaryStr</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">decimal</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span>
-<span class="w">    </span><span class="nx">power</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="c1">// represents math.Pow(2,0) = 1</span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="nx">binaryStr</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">--</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">char</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">binaryStr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nx">char</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;1&#39;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// if char == &#39;1&#39; then multiply it against correspondin g power of 2</span>
-<span class="w">            </span><span class="nx">decimal</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">power</span>
-<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="c1">// if char == &#39;0&#39; then do nothing</span>
-<span class="w">        </span><span class="nx">power</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">2</span><span class="w">  </span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">decimal</span>
-<span class="p">}</span>
-</code></pre></div>
+func binaryToDecimal(binaryStr string) (int) {
+    decimal := 0
+    power := 1 // represents math.Pow(2,0) = 1
+    for i := len(binaryStr) - 1; i &gt;= 0; i-- {
+        char := binaryStr[i]
+        if char == '1' { // if char == '1' then multiply it against correspondin g power of 2
+            decimal += power
+        } else {} // if char == '0' then do nothing
+        power *= 2  
+    }
+    return decimal
+}
+</code></pre>
 
 <h3>Converting decimal to binary</h3>
-<div class="codehilite"><pre><span></span><code><span class="c1">// --- worked examples --- </span>
+<pre class="codehilite"><code class="language-go">// --- worked examples --- 
 
-<span class="c1">// q1</span>
-<span class="w">    </span><span class="c1">// 26</span>
-<span class="w">    </span><span class="c1">// = (1 * 16) + (1 * 8) + (0 * 4) + (1 * 2) + (0 * 1)</span>
-<span class="w">    </span><span class="c1">// = 11010</span>
+// q1
+    // 26
+    // = (1 * 16) + (1 * 8) + (0 * 4) + (1 * 2) + (0 * 1)
+    // = 11010
 
 
-<span class="c1">// q2</span>
-<span class="w">    </span><span class="c1">// 14</span>
-<span class="w">    </span><span class="c1">// = (1 * 8) + (1 * 4) + (1 * 2) + (0 * 1)</span>
-<span class="w">    </span><span class="c1">// = 1110</span>
+// q2
+    // 14
+    // = (1 * 8) + (1 * 4) + (1 * 2) + (0 * 1)
+    // = 1110
 
-<span class="c1">// q3</span>
-<span class="w">    </span><span class="c1">// 35</span>
-<span class="w">    </span><span class="c1">// = (1 * 32) + (0 * 16) + (0 * 8) + (0 * 4) + (1 * 2) + (1 * 1)</span>
-<span class="w">    </span><span class="c1">// = 100011</span>
+// q3
+    // 35
+    // = (1 * 32) + (0 * 16) + (0 * 8) + (0 * 4) + (1 * 2) + (1 * 1)
+    // = 100011
 
-<span class="c1">// --- go function implementation --- </span>
+// --- go function implementation --- 
 
-<span class="kd">func</span><span class="w"> </span><span class="nx">decimalToBinary</span><span class="p">(</span><span class="nx">decimal</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">decimal</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;0&quot;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="nx">binaryStr</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&quot;&quot;</span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">decimal</span><span class="w"> </span><span class="p">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">remainder</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">decimal</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span>
-<span class="w">        </span><span class="nx">digit</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nx">remainder</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nx">digit</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="sc">&#39;1&#39;</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">        </span><span class="nx">binaryStr</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">string</span><span class="p">(</span><span class="nx">digit</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">binaryStr</span><span class="w"> </span>
-<span class="w">        </span><span class="nx">decimal</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">2</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">binaryStr</span>
-<span class="p">}</span>
-</code></pre></div>
+func decimalToBinary(decimal int) string {
+    if decimal == 0 {
+        return &quot;0&quot;
+    }
+    binaryStr := &quot;&quot;
+    for decimal &gt; 0 {
+        remainder := decimal % 2
+        digit := '0'
+        if remainder == 1 {
+            digit = '1'
+        }
+        binaryStr = string(digit) + binaryStr 
+        decimal /= 2
+    }
+    return binaryStr
+}
+</code></pre>
 
 <h2>Hexadecimal Binary two-way conversion</h2>
 <ul>
@@ -134,83 +134,83 @@
 <li>NOTE that a SIGNED binary to hexadecimal conversion DOES NOT affect how it is calculated, since the number being SIGNED only causes the Most Significant Bit to have a negative value while every other Bit retains its positive value, which is within Decimal to Binary conversion</li>
 </ul>
 <h3>Converting binary to hexadecimal</h3>
-<div class="codehilite"><pre><span></span><code><span class="c1">// --- worked examples --- </span>
+<pre class="codehilite"><code class="language-go">// --- worked examples --- 
 
-<span class="c1">// q1</span>
-<span class="w">    </span><span class="c1">// 0000 0001 </span>
-<span class="w">    </span><span class="c1">// = 0 1</span>
-<span class="w">    </span><span class="c1">// = 0X01</span>
+// q1
+    // 0000 0001 
+    // = 0 1
+    // = 0X01
 
-<span class="c1">// q2</span>
-<span class="w">    </span><span class="c1">// 1111 1100</span>
-<span class="w">    </span><span class="c1">// = 15 12 </span>
-<span class="w">    </span><span class="c1">// = 0XFC</span>
+// q2
+    // 1111 1100
+    // = 15 12 
+    // = 0XFC
 
-<span class="c1">// q3</span>
-<span class="w">    </span><span class="c1">// 1111 1111</span>
-<span class="w">    </span><span class="c1">// = 15 15</span>
-<span class="w">    </span><span class="c1">// = 0XFF</span>
+// q3
+    // 1111 1111
+    // = 15 15
+    // = 0XFF
 
-<span class="c1">// --- go function implementation --- </span>
+// --- go function implementation --- 
 
-<span class="kd">func</span><span class="w"> </span><span class="nx">binaryToHex</span><span class="p">(</span><span class="nx">binary</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="nx">binary</span><span class="p">)</span><span class="o">%</span><span class="mi">4</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">binary</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">binary</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">hex</span><span class="w"> </span><span class="kt">string</span>
-<span class="w">    </span><span class="nx">binToHexMap</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span><span class="p">{</span>
-<span class="w">        </span><span class="s">&quot;0000&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;0001&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;0010&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;0011&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="s">&quot;0100&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;4&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;0101&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;5&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;0110&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;6&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;0111&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;7&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="s">&quot;1000&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;8&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;1001&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;9&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;1010&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;A&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;1011&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;B&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="s">&quot;1100&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;1101&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;D&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;1110&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;E&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;1111&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;F&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="nx">binary</span><span class="p">);</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">fourBits</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">binary</span><span class="p">[</span><span class="nx">i</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nx">i</span><span class="o">+</span><span class="mi">4</span><span class="p">]</span>
-<span class="w">        </span><span class="nx">hex</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">binToHexMap</span><span class="p">[</span><span class="nx">fourBits</span><span class="p">]</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">strings</span><span class="p">.</span><span class="nx">ToUpper</span><span class="p">(</span><span class="nx">hex</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+func binaryToHex(binary string) string {
+    for len(binary)%4 != 0 {
+        binary = &quot;0&quot; + binary
+    }
+    var hex string
+    binToHexMap := map[string]string{
+        &quot;0000&quot;: &quot;0&quot;, &quot;0001&quot;: &quot;1&quot;, &quot;0010&quot;: &quot;2&quot;, &quot;0011&quot;: &quot;3&quot;,
+        &quot;0100&quot;: &quot;4&quot;, &quot;0101&quot;: &quot;5&quot;, &quot;0110&quot;: &quot;6&quot;, &quot;0111&quot;: &quot;7&quot;,
+        &quot;1000&quot;: &quot;8&quot;, &quot;1001&quot;: &quot;9&quot;, &quot;1010&quot;: &quot;A&quot;, &quot;1011&quot;: &quot;B&quot;,
+        &quot;1100&quot;: &quot;C&quot;, &quot;1101&quot;: &quot;D&quot;, &quot;1110&quot;: &quot;E&quot;, &quot;1111&quot;: &quot;F&quot;,
+    }
+    for i := 0; i &lt; len(binary); i += 4 {
+        fourBits := binary[i : i+4]
+        hex += binToHexMap[fourBits]
+    }
+    return strings.ToUpper(hex)
+}
+</code></pre>
 
 <h3>Converting hexadecimal to binary</h3>
-<div class="codehilite"><pre><span></span><code><span class="c1">// --- worked examples --- </span>
+<pre class="codehilite"><code class="language-go">// --- worked examples --- 
 
-<span class="c1">// q1</span>
-<span class="w">    </span><span class="c1">// 0X00</span>
-<span class="w">    </span><span class="c1">// = 0 0 </span>
-<span class="w">    </span><span class="c1">// = 0000 0000</span>
+// q1
+    // 0X00
+    // = 0 0 
+    // = 0000 0000
 
-<span class="c1">// q2</span>
-<span class="w">    </span><span class="c1">// 0XF3</span>
-<span class="w">    </span><span class="c1">// = 15 3</span>
-<span class="w">    </span><span class="c1">// = 1111 0011</span>
+// q2
+    // 0XF3
+    // = 15 3
+    // = 1111 0011
 
-<span class="c1">// q3</span>
-<span class="w">    </span><span class="c1">// 0XDE</span>
-<span class="w">    </span><span class="c1">// = 13 14</span>
-<span class="w">    </span><span class="c1">// = 1101 1110</span>
+// q3
+    // 0XDE
+    // = 13 14
+    // = 1101 1110
 
-<span class="c1">// --- go function implementation --- </span>
+// --- go function implementation --- 
 
-<span class="kd">func</span><span class="w"> </span><span class="nx">hexToBinary</span><span class="p">(</span><span class="nx">hex</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">hexDigits</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&quot;0123456789ABCDEF&quot;</span>
-<span class="w">    </span><span class="nx">binaryDigits</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&quot;0000&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;0001&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;0010&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;0011&quot;</span><span class="w"> </span><span class="o">+</span>
-<span class="w">        </span><span class="s">&quot;0100&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;0101&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;0110&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;0111&quot;</span><span class="w"> </span><span class="o">+</span>
-<span class="w">        </span><span class="s">&quot;1000&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;1001&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;1010&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;1011&quot;</span><span class="w"> </span><span class="o">+</span>
-<span class="w">        </span><span class="s">&quot;1100&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;1101&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;1110&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;1111&quot;</span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">binary</span><span class="w"> </span><span class="kt">string</span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="nx">hex</span><span class="p">);</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">hexDigit</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">hex</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="nx">j</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="nx">j</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="nx">hexDigits</span><span class="p">);</span><span class="w"> </span><span class="nx">j</span><span class="o">++</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="nx">hexDigits</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">hexDigit</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nx">binary</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">binaryDigits</span><span class="p">[</span><span class="nx">j</span><span class="o">*</span><span class="mi">4</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nx">j</span><span class="o">*</span><span class="mi">4</span><span class="o">+</span><span class="mi">4</span><span class="p">]</span>
-<span class="w">                </span><span class="k">break</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">binary</span>
-<span class="p">}</span>
-</code></pre></div>
+func hexToBinary(hex string) string {
+    hexDigits := &quot;0123456789ABCDEF&quot;
+    binaryDigits := &quot;0000&quot; + &quot;0001&quot; + &quot;0010&quot; + &quot;0011&quot; +
+        &quot;0100&quot; + &quot;0101&quot; + &quot;0110&quot; + &quot;0111&quot; +
+        &quot;1000&quot; + &quot;1001&quot; + &quot;1010&quot; + &quot;1011&quot; +
+        &quot;1100&quot; + &quot;1101&quot; + &quot;1110&quot; + &quot;1111&quot;
+    var binary string
+    for i := 0; i &lt; len(hex); i++ {
+        hexDigit := hex[i]
+        for j := 0; j &lt; len(hexDigits); j++ {
+            if hexDigits[j] == hexDigit {
+                binary += binaryDigits[j*4 : j*4+4]
+                break
+            }
+        }
+    }
+    return binary
+}
+</code></pre>
 
 <h2>Bits</h2>
 <ul>
@@ -305,41 +305,41 @@
 </tbody>
 </table>
 <h2>Application</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// --- PRESETS ---</span>
-<span class="w">    </span><span class="c1">// below implementation is in go</span>
+<pre class="codehilite"><code class="language-go">// --- PRESETS ---
+    // below implementation is in go
 
-<span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">z</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span>
+var x int 
+var y int 
+var z int 
 
-<span class="nx">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="c1">// decimal 6 in binary =&gt; 00000110</span>
-<span class="nx">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="c1">// decimal 12 in binary =&gt; 00001100</span>
+x = 6 // decimal 6 in binary =&gt; 00000110
+y = 12 // decimal 12 in binary =&gt; 00001100
 
-<span class="c1">// --- BITWISE AND ---</span>
+// --- BITWISE AND ---
 
-<span class="nx">z</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="c1">// Bitwise AND results in 00000100</span>
-<span class="nx">z</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="c1">// binary 00000100 in decimal =&gt; 4</span>
+z = x &amp; y // Bitwise AND results in 00000100
+z = 4 // binary 00000100 in decimal =&gt; 4
 
-<span class="c1">// --- BITWISE OR ---</span>
+// --- BITWISE OR ---
 
-<span class="nx">z</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="c1">// Bitwise OR results in 00001110</span>
-<span class="nx">z</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">14</span><span class="w"> </span><span class="c1">// binary 00001110 in decimal =&gt; 14</span>
+z = x | y // Bitwise OR results in 00001110
+z = 14 // binary 00001110 in decimal =&gt; 14
 
-<span class="c1">// --- BITWISE XOR --- </span>
+// --- BITWISE XOR --- 
 
-<span class="nx">z</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="p">^</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="c1">// Bitwise XOR results in 00001010</span>
-<span class="nx">z</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="c1">// binary 00001010 in decimal =&gt; 10</span>
+z = x ^ y // Bitwise XOR results in 00001010
+z = 10 // binary 00001010 in decimal =&gt; 10
 
-<span class="c1">// --- LEFT SHIFT ---</span>
+// --- LEFT SHIFT ---
 
-<span class="nx">z</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="c1">// Left shift results in 00001100</span>
-<span class="nx">z</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="c1">// binary 00001100 in decimal =&gt; 12</span>
+z = x &lt;&lt; 1 // Left shift results in 00001100
+z = 12 // binary 00001100 in decimal =&gt; 12
 
-<span class="c1">// --- RIGHT SHIFT ---</span>
+// --- RIGHT SHIFT ---
 
-<span class="nx">z</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="c1">// Right shift results in 00000011 applying arithmetic right shift since most significant Bit is 0 in 00001100</span>
-<span class="nx">z</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="c1">// binary 00000011 in decimal =&gt; 3</span>
-</code></pre></div>
+z = y &gt;&gt; 2 // Right shift results in 00000011 applying arithmetic right shift since most significant Bit is 0 in 00001100
+z = 3 // binary 00000011 in decimal =&gt; 3
+</code></pre>
 
 <h2>More on</h2>
 <ul>

@@ -33,7 +33,7 @@
 
         <dl>
           <dt>File size</dt>
-          <dd>23.7KB</dd>
+          <dd>9.4KB</dd>
 
           <dt>Lines of code</dt>
           <dd>253</dd>
@@ -44,185 +44,185 @@
         <h1><code>Scheme</code></h1>
 <p>Baby's first Lisp dialect.</p>
 <h2>Comments</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">; ----- COMMENT -----</span>
+<pre class="codehilite"><code class="language-scm">; ----- COMMENT -----
 
-<span class="c1">; this is a single-line comment</span>
+; this is a single-line comment
 
-<span class="cm">#|</span>
-<span class="cm">this is a </span>
-<span class="cm">multi-line </span>
-<span class="cm">comment a.k.a </span>
-<span class="cm">a block comment</span>
-<span class="cm">|#</span>
-</code></pre></div>
+#|
+this is a 
+multi-line 
+comment a.k.a 
+a block comment
+|#
+</code></pre>
 
 <h2>Printing</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">; ----- PRINT -----</span>
-<span class="w">    </span><span class="c1">; (display) =&gt; receives a string argument which is then displayed to the stdout, this does not include a newline by default</span>
-<span class="w">    </span><span class="c1">; (write) =&gt; receives a string argument which is then displayed to the stdout and includes the quotation marks around the string</span>
-<span class="w">    </span><span class="c1">; (newline) =&gt; displays a newline to the stdout</span>
+<pre class="codehilite"><code class="language-scm">; ----- PRINT -----
+    ; (display) =&gt; receives a string argument which is then displayed to the stdout, this does not include a newline by default
+    ; (write) =&gt; receives a string argument which is then displayed to the stdout and includes the quotation marks around the string
+    ; (newline) =&gt; displays a newline to the stdout
 
-<span class="p">(</span><span class="nb">display</span><span class="w"> </span><span class="s">&quot;this does not have a newline and if required must have its inclusion explicitly specified like here</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
-<span class="p">(</span><span class="nb">write</span><span class="w"> </span><span class="s">&quot;when this is printed, it will show the two double quotation marks surrounding this string&quot;</span><span class="p">)</span>
-<span class="p">(</span><span class="nb">newline</span><span class="p">)</span>
-</code></pre></div>
+(display &quot;this does not have a newline and if required must have its inclusion explicitly specified like here\n&quot;)
+(write &quot;when this is printed, it will show the two double quotation marks surrounding this string&quot;)
+(newline)
+</code></pre>
 
 <h2>Quickstart</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">; ----- QUICKSTART -----</span>
-<span class="w">    </span><span class="c1">; minimalist, lexically scoped Lisp dialect with small core of powerful features</span>
-<span class="w">    </span><span class="c1">; functional language with first-class procedures and support for recursive algorithms</span>
-<span class="w">    </span><span class="c1">; emphasizes simple and consistent syntax with a focus on expressions rather than statements</span>
-<span class="w">    </span><span class="c1">; commonly used for educational purposes, language research, and writing interpreters and compilers</span>
-<span class="w">    </span><span class="c1">; define =&gt; creates variable bindings and used in function defintions</span>
+<pre class="codehilite"><code class="language-scm">; ----- QUICKSTART -----
+    ; minimalist, lexically scoped Lisp dialect with small core of powerful features
+    ; functional language with first-class procedures and support for recursive algorithms
+    ; emphasizes simple and consistent syntax with a focus on expressions rather than statements
+    ; commonly used for educational purposes, language research, and writing interpreters and compilers
+    ; define =&gt; creates variable bindings and used in function defintions
 
-<span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="c1">; creates the variable binding assigning the number value 10 to the variable x</span>
+(define x 10) ; creates the variable binding assigning the number value 10 to the variable x
 
-<span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="nf">square</span><span class="w"> </span><span class="nv">x</span><span class="p">)</span><span class="w"> </span><span class="c1">; defines the named function square that receives a single number argument and multiplies it against itself</span>
-<span class="w">    </span><span class="p">(</span><span class="nb">*</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="nv">x</span><span class="p">))</span>
-</code></pre></div>
+(define (square x) ; defines the named function square that receives a single number argument and multiplies it against itself
+    (* x x))
+</code></pre>
 
 <h2>Types</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">; ----- TYPE -----</span>
-<span class="w">    </span><span class="c1">; Number =&gt; covers the following number types</span>
-<span class="w">        </span><span class="c1">; integer</span>
-<span class="w">        </span><span class="c1">; rational number</span>
-<span class="w">        </span><span class="c1">; real number (floating-point number)</span>
-<span class="w">        </span><span class="c1">; complex number</span>
-<span class="w">    </span><span class="c1">; Boolean =&gt; #t, #f</span>
-<span class="w">    </span><span class="c1">; Character =&gt; declared with #\ to prefix the character</span>
-<span class="w">    </span><span class="c1">; String =&gt; declared within &quot;&quot; double quotation marks</span>
-<span class="w">    </span><span class="c1">; Symbol =&gt; declared with &#39; </span>
+<pre class="codehilite"><code class="language-scm">; ----- TYPE -----
+    ; Number =&gt; covers the following number types
+        ; integer
+        ; rational number
+        ; real number (floating-point number)
+        ; complex number
+    ; Boolean =&gt; #t, #f
+    ; Character =&gt; declared with #\ to prefix the character
+    ; String =&gt; declared within &quot;&quot; double quotation marks
+    ; Symbol =&gt; declared with ' 
 
-<span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="nv">int</span><span class="w"> </span><span class="mi">42</span><span class="p">)</span>
-<span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="nv">rational</span><span class="w"> </span><span class="mi">3/4</span><span class="p">)</span>
-<span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="nv">real</span><span class="w"> </span><span class="mf">3.14</span><span class="p">)</span>
-<span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="nv">complex</span><span class="w"> </span><span class="mi">3+4i</span><span class="p">)</span>
-<span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="nv">truthy</span><span class="w"> </span><span class="no">#t</span><span class="p">)</span>
-<span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="nv">falsey</span><span class="w"> </span><span class="no">#f</span><span class="p">)</span>
-<span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="nv">char</span><span class="w"> </span><span class="sc">#\a</span><span class="p">)</span>
-<span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="nv">newlineCharacter</span><span class="w"> </span><span class="sc">#\newline</span><span class="p">)</span>
-<span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="nv">str</span><span class="w"> </span><span class="s">&quot;hello, world!&quot;</span><span class="p">)</span>
-<span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="nv">sym</span><span class="w"> </span><span class="ss">&#39;foo</span><span class="p">)</span>
-</code></pre></div>
+(define int 42)
+(define rational 3/4)
+(define real 3.14)
+(define complex 3+4i)
+(define truthy #t)
+(define falsey #f)
+(define char #\a)
+(define newlineCharacter #\newline)
+(define str &quot;hello, world!&quot;)
+(define sym 'foo)
+</code></pre>
 
 <h2>Operators</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">; ----- OPERATOR-----</span>
+<pre class="codehilite"><code class="language-scm">; ----- OPERATOR-----
 
-<span class="c1">; --- ARITHMETIC OPERATORS ----</span>
+; --- ARITHMETIC OPERATORS ----
 
-<span class="p">(</span><span class="nb">+</span><span class="p">)</span><span class="w"> </span><span class="c1">; addition</span>
-<span class="p">(</span><span class="nb">-</span><span class="p">)</span><span class="w"> </span><span class="c1">; subtraction</span>
-<span class="p">(</span><span class="nb">*</span><span class="p">)</span><span class="w"> </span><span class="c1">; multiplication</span>
-<span class="p">(</span><span class="nb">/</span><span class="p">)</span><span class="w"> </span><span class="c1">; division</span>
-<span class="p">(</span><span class="nb">modulo</span><span class="p">)</span><span class="w"> </span><span class="c1">; modulo operator</span>
+(+) ; addition
+(-) ; subtraction
+(*) ; multiplication
+(/) ; division
+(modulo) ; modulo operator
 
-<span class="c1">; --- COMPARISON OPERATORS ----</span>
+; --- COMPARISON OPERATORS ----
 
-<span class="p">(</span><span class="nb">=</span><span class="p">)</span><span class="w"> </span><span class="c1">; equality operator</span>
-<span class="p">(</span><span class="nb">&gt;</span><span class="p">)</span><span class="w"> </span><span class="c1">; comparison operator</span>
-<span class="p">(</span><span class="nb">&lt;</span><span class="p">)</span><span class="w"> </span><span class="c1">; comparison operator</span>
-<span class="p">(</span><span class="nb">&gt;=</span><span class="p">)</span><span class="w"> </span><span class="c1">; comparison operator</span>
-<span class="p">(</span><span class="nb">&lt;=</span><span class="p">)</span><span class="w"> </span><span class="c1">; comparison operator</span>
+(=) ; equality operator
+(&gt;) ; comparison operator
+(&lt;) ; comparison operator
+(&gt;=) ; comparison operator
+(&lt;=) ; comparison operator
 
-<span class="c1">; --- LOGICAL OPERATORS ---</span>
+; --- LOGICAL OPERATORS ---
 
-<span class="p">(</span><span class="k">and</span><span class="p">)</span><span class="w"> </span><span class="c1">; Logical AND</span>
-<span class="p">(</span><span class="k">or</span><span class="p">)</span><span class="w"> </span><span class="c1">; Logical OR</span>
-<span class="p">(</span><span class="nb">not</span><span class="p">)</span><span class="w"> </span><span class="c1">; Logical NOT</span>
-</code></pre></div>
+(and) ; Logical AND
+(or) ; Logical OR
+(not) ; Logical NOT
+</code></pre>
 
 <h2>Control structures</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">; ----- CONTROL STRUCTURE -----</span>
+<pre class="codehilite"><code class="language-scm">; ----- CONTROL STRUCTURE -----
 
-<span class="c1">; --- CONDITIONALS ---</span>
+; --- CONDITIONALS ---
 
-<span class="c1">; IF </span>
-<span class="w">    </span><span class="c1">; the equivalent of a if else conditional constructs in other programming languages</span>
+; IF 
+    ; the equivalent of a if else conditional constructs in other programming languages
 
-<span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">&gt;</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
-<span class="w">    </span><span class="p">(</span><span class="nb">display</span><span class="w"> </span><span class="s">&quot;True branch&quot;</span><span class="p">)</span>
-<span class="w">    </span><span class="p">(</span><span class="nb">display</span><span class="w"> </span><span class="s">&quot;False branch&quot;</span><span class="p">))</span>
+(if (&gt; 5 3)
+    (display &quot;True branch&quot;)
+    (display &quot;False branch&quot;))
 
-<span class="c1">; COND</span>
-<span class="w">    </span><span class="c1">; the equivalent of if else if else conditional constructs in other programming languages</span>
-<span class="w">    </span><span class="c1">; affords more than the two conditions allowed within the basic IF predicate construct covered above</span>
-<span class="w">    </span><span class="c1">; else =&gt; specifies the final else case that runs if none of the other specified predicate conditions are met</span>
+; COND
+    ; the equivalent of if else if else conditional constructs in other programming languages
+    ; affords more than the two conditions allowed within the basic IF predicate construct covered above
+    ; else =&gt; specifies the final else case that runs if none of the other specified predicate conditions are met
 
-<span class="p">(</span><span class="k">cond</span>
-<span class="w">    </span><span class="p">((</span><span class="nb">=</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">display</span><span class="w"> </span><span class="s">&quot;x is 1&quot;</span><span class="p">))</span>
-<span class="w">    </span><span class="p">((</span><span class="nb">=</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">display</span><span class="w"> </span><span class="s">&quot;x is 2&quot;</span><span class="p">))</span>
-<span class="w">    </span><span class="p">(</span><span class="k">else</span><span class="w"> </span><span class="p">(</span><span class="nb">display</span><span class="w"> </span><span class="s">&quot;x is something else&quot;</span><span class="p">)))</span>
+(cond
+    ((= x 1) (display &quot;x is 1&quot;))
+    ((= x 2) (display &quot;x is 2&quot;))
+    (else (display &quot;x is something else&quot;)))
 
-<span class="c1">; CASE </span>
-<span class="w">    </span><span class="c1">; the equivalent of match case statements in most other programming languages</span>
-<span class="w">    </span><span class="c1">; provides a degree of pattern-matching within Scheme, similar to Rust </span>
-<span class="w">    </span><span class="c1">; else =&gt; specifies the fall-through case that executes when all other predicate case conditions fail to be met, similar to _ in Rust and other functional languages</span>
+; CASE 
+    ; the equivalent of match case statements in most other programming languages
+    ; provides a degree of pattern-matching within Scheme, similar to Rust 
+    ; else =&gt; specifies the fall-through case that executes when all other predicate case conditions fail to be met, similar to _ in Rust and other functional languages
 
-<span class="p">(</span><span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
-<span class="w">    </span><span class="p">((</span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">display</span><span class="w"> </span><span class="s">&quot;2 or 3&quot;</span><span class="p">))</span>
-<span class="w">    </span><span class="p">((</span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">display</span><span class="w"> </span><span class="s">&quot;4, 5, or 6&quot;</span><span class="p">))</span>
-<span class="w">    </span><span class="p">(</span><span class="k">else</span><span class="w"> </span><span class="p">(</span><span class="nb">display</span><span class="w"> </span><span class="s">&quot;something else&quot;</span><span class="p">)))</span>
+(case (+ 2 2)
+    ((2 3) (display &quot;2 or 3&quot;))
+    ((4 5 6) (display &quot;4, 5, or 6&quot;))
+    (else (display &quot;something else&quot;)))
 
-<span class="c1">; --- LOOPS ---</span>
-<span class="w">    </span><span class="c1">; Scheme does not feature conventional for or while loop constructs as in most other programming languages</span>
-<span class="w">    </span><span class="c1">; this inherits from hallmarks of the functional programming paradigm</span>
+; --- LOOPS ---
+    ; Scheme does not feature conventional for or while loop constructs as in most other programming languages
+    ; this inherits from hallmarks of the functional programming paradigm
 
-<span class="c1">; RECURSION</span>
-<span class="w">    </span><span class="c1">; instead, recursion allows for the equivalent iteration and traversal over iterable data structures</span>
-<span class="w">    </span><span class="c1">; below is the definition of a recursive function</span>
+; RECURSION
+    ; instead, recursion allows for the equivalent iteration and traversal over iterable data structures
+    ; below is the definition of a recursive function
 
-<span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="nf">factorial</span><span class="w"> </span><span class="nv">n</span><span class="p">)</span><span class="w"> </span><span class="c1">; recursive function definition</span>
-<span class="w">    </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="nv">n</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
-<span class="w">        </span><span class="mi">1</span>
-<span class="w">        </span><span class="p">(</span><span class="nb">*</span><span class="w"> </span><span class="nv">n</span><span class="w"> </span><span class="p">(</span><span class="nf">factorial</span><span class="w"> </span><span class="p">(</span><span class="nb">-</span><span class="w"> </span><span class="nv">n</span><span class="w"> </span><span class="mi">1</span><span class="p">)))))</span>
+(define (factorial n) ; recursive function definition
+    (if (= n 0)
+        1
+        (* n (factorial (- n 1)))))
 
-<span class="p">(</span><span class="nf">factorial</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="c1">; this returns 120</span>
-</code></pre></div>
+(factorial 5) ; this returns 120
+</code></pre>
 
 <h2>Data structures</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">; ----- DATA STRUCTURE -----</span>
-<span class="w">    </span><span class="c1">; List =&gt; ordered collection of elements, typically of the same type, but can contain elements of different types, note that lists are linked and mutable, commonly used in functional programming</span>
-<span class="w">    </span><span class="c1">; Pair =&gt; fundamental building block of lists, representing a cons cell with two elements: `car` (first) and `cdr` (rest), note that pairs are mutable</span>
-<span class="w">    </span><span class="c1">; Vector =&gt; mutable, fixed-size indexed collection of elements, offering efficient random access, note that elements can be of different types</span>
-<span class="w">    </span><span class="c1">; Hashtable =&gt; collection of key-value pairs with unique keys, providing efficient lookup, insertion, and deletion operations, note that keys and values can be of any type</span>
-<span class="w">    </span><span class="c1">; Record =&gt; custom data structure with named fields, similar to structs in other languages, allowing the grouping of related data under a single identifier</span>
+<pre class="codehilite"><code class="language-scm">; ----- DATA STRUCTURE -----
+    ; List =&gt; ordered collection of elements, typically of the same type, but can contain elements of different types, note that lists are linked and mutable, commonly used in functional programming
+    ; Pair =&gt; fundamental building block of lists, representing a cons cell with two elements: `car` (first) and `cdr` (rest), note that pairs are mutable
+    ; Vector =&gt; mutable, fixed-size indexed collection of elements, offering efficient random access, note that elements can be of different types
+    ; Hashtable =&gt; collection of key-value pairs with unique keys, providing efficient lookup, insertion, and deletion operations, note that keys and values can be of any type
+    ; Record =&gt; custom data structure with named fields, similar to structs in other languages, allowing the grouping of related data under a single identifier
 
-<span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="nv">exampleList</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="p">))</span>
-<span class="p">(</span><span class="nb">car</span><span class="w"> </span><span class="nv">exampleList</span><span class="p">)</span>
-<span class="p">(</span><span class="nb">cdr</span><span class="w"> </span><span class="nv">exampleList</span><span class="p">)</span><span class="w"> </span>
-<span class="p">(</span><span class="nb">cons</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="nv">exampleList</span><span class="p">)</span><span class="w"> </span>
+(define exampleList '(1 2 3 4 5))
+(car exampleList)
+(cdr exampleList) 
+(cons 0 exampleList) 
 
-<span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="nv">examplePair</span><span class="w"> </span><span class="p">(</span><span class="nb">cons</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span>
-<span class="p">(</span><span class="nb">car</span><span class="w"> </span><span class="nv">examplePair</span><span class="p">)</span><span class="w"> </span>
-<span class="p">(</span><span class="nb">cdr</span><span class="w"> </span><span class="nv">examplePair</span><span class="p">)</span><span class="w"> </span>
+(define examplePair (cons 1 2))
+(car examplePair) 
+(cdr examplePair) 
 
-<span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="nv">exampleVec</span><span class="w"> </span><span class="p">(</span><span class="nb">vector</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="p">))</span>
-<span class="p">(</span><span class="nb">vector-ref</span><span class="w"> </span><span class="nv">exampleVec</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+(define exampleVec (vector 1 2 3 4))
+(vector-ref exampleVec 2)
 
-<span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="nv">exampleHashtable</span><span class="w"> </span><span class="p">(</span><span class="nf">make-hashtable</span><span class="p">))</span>
+(define exampleHashtable (make-hashtable))
 
-<span class="p">(</span><span class="k">define-record-type</span><span class="w"> </span><span class="nv">point</span>
-<span class="w">    </span><span class="p">(</span><span class="nf">make-point</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="nv">y</span><span class="p">)</span>
-<span class="w">    </span><span class="nv">point?</span>
-<span class="w">    </span><span class="p">(</span><span class="nf">x</span><span class="w"> </span><span class="nv">point-x</span><span class="p">)</span>
-<span class="w">    </span><span class="p">(</span><span class="nf">y</span><span class="w"> </span><span class="nv">point-y</span><span class="p">))</span>
-</code></pre></div>
+(define-record-type point
+    (make-point x y)
+    point?
+    (x point-x)
+    (y point-y))
+</code></pre>
 
 <h2>Functions</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">; ----- FUNCTION -----</span>
-<span class="w">    </span><span class="c1">; (define (&lt;function_name&gt; &lt;function_parameter(s)&gt;) &lt;function_body&gt;) =&gt; defines a named function</span>
-<span class="w">    </span><span class="c1">; (lambda (&lt;function_parameter(s)&gt;) &lt;function_body&gt;) =&gt; defines an anonymous function, which can be passed around or assigned to a variable</span>
+<pre class="codehilite"><code class="language-scm">; ----- FUNCTION -----
+    ; (define (&lt;function_name&gt; &lt;function_parameter(s)&gt;) &lt;function_body&gt;) =&gt; defines a named function
+    ; (lambda (&lt;function_parameter(s)&gt;) &lt;function_body&gt;) =&gt; defines an anonymous function, which can be passed around or assigned to a variable
 
-<span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="nf">square</span><span class="w"> </span><span class="nv">x</span><span class="p">)</span><span class="w"> </span><span class="c1">; named function definition</span>
-<span class="w">  </span><span class="p">(</span><span class="nb">*</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="nv">x</span><span class="p">))</span>
+(define (square x) ; named function definition
+  (* x x))
 
-<span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="nb">map</span><span class="w"> </span><span class="nv">f</span><span class="w"> </span><span class="nv">lst</span><span class="p">)</span><span class="w"> </span><span class="c1">; we can also define higher-order functions common in other functional languages</span>
-<span class="w">  </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">null?</span><span class="w"> </span><span class="nv">lst</span><span class="p">)</span>
-<span class="w">      </span><span class="o">&#39;</span><span class="p">()</span>
-<span class="w">      </span><span class="p">(</span><span class="nb">cons</span><span class="w"> </span><span class="p">(</span><span class="nf">f</span><span class="w"> </span><span class="p">(</span><span class="nb">car</span><span class="w"> </span><span class="nv">lst</span><span class="p">))</span><span class="w"> </span><span class="p">(</span><span class="nb">map</span><span class="w"> </span><span class="nv">f</span><span class="w"> </span><span class="p">(</span><span class="nb">cdr</span><span class="w"> </span><span class="nv">lst</span><span class="p">)))))</span>
+(define (map f lst) ; we can also define higher-order functions common in other functional languages
+  (if (null? lst)
+      '()
+      (cons (f (car lst)) (map f (cdr lst)))))
 
-<span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">(</span><span class="nf">x</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">*</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="nv">x</span><span class="p">))</span><span class="w"> </span><span class="c1">; anonymous function definition</span>
-</code></pre></div>
+(lambda (x) (* x x)) ; anonymous function definition
+</code></pre>
 
 <h2>More on</h2>
 <ul>

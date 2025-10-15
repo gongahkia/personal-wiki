@@ -33,7 +33,7 @@
 
         <dl>
           <dt>File size</dt>
-          <dd>6.2KB</dd>
+          <dd>3.8KB</dd>
 
           <dt>Lines of code</dt>
           <dd>107</dd>
@@ -54,34 +54,34 @@
 </ul>
 <h2>Quickstart</h2>
 <p>A basic Vite project has the following structure.</p>
-<div class="codehilite"><pre><span></span><code><span class="nx">my</span><span class="o">-</span><span class="nx">watermelon</span><span class="o">-</span><span class="k">and</span><span class="o">-</span><span class="nx">vite</span><span class="o">-</span><span class="nx">powered</span><span class="o">-</span><span class="nx">app</span><span class="o">/</span>
-<span class="err">├──</span><span class="w"> </span><span class="nx">index</span><span class="p">.</span><span class="nx">html</span>
-<span class="err">├──</span><span class="w"> </span><span class="nx">src</span><span class="o">/</span>
-<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="nx">main</span><span class="p">.</span><span class="nx">js</span>
-<span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="nx">App</span><span class="p">.</span><span class="nx">vue</span>
-<span class="err">├──</span><span class="w"> </span><span class="kn">package</span><span class="p">.</span><span class="nx">json</span>
-<span class="err">└──</span><span class="w"> </span><span class="nx">vite</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">js</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-txt">my-watermelon-and-vite-powered-app/
+├── index.html
+├── src/
+│   ├── main.js
+│   └── App.vue
+├── package.json
+└── vite.config.js
+</code></pre>
 
 <ul>
 <li><code>vite.config.js</code>: Vite configuration file that specifies project behavior and defines custom functionality <em>(plugins, build rollup options, server configuration, import aliases, environment variables, library integration)</em></li>
 <li><code>main.js</code>: entry point of a Vite project that bootstraps your application by importing necessary modules and mounting root components to DOM elements, allowing the app to be rendered in the browser</li>
 </ul>
 <h3>an example <code>vite.config.js</code></h3>
-<div class="codehilite"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">defineConfig</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;vite&#39;</span>
-<span class="k">import</span><span class="w"> </span><span class="nx">vue</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@vitejs/plugin-vue&#39;</span>
+<pre class="codehilite"><code class="language-js">import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
 
-<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">defineConfig</span><span class="p">({</span>
-<span class="w">    </span><span class="nx">plugins</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">vue</span><span class="p">()]</span>
-<span class="p">})</span>
-</code></pre></div>
+export default defineConfig({
+    plugins: [vue()]
+})
+</code></pre>
 
 <h3>an example <code>main.js</code></h3>
-<div class="codehilite"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">createApp</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;vue&#39;</span>
-<span class="k">import</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./App.vue&#39;</span>
+<pre class="codehilite"><code class="language-js">import { createApp } from 'vue'
+import App from './App.vue'
 
-<span class="nx">createApp</span><span class="p">(</span><span class="nx">App</span><span class="p">).</span><span class="nx">mount</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">)</span>
-</code></pre></div>
+createApp(App).mount('#app')
+</code></pre>
 
 <h2>More on</h2>
 <ul>

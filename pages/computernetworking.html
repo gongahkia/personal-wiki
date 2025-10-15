@@ -33,7 +33,7 @@
 
         <dl>
           <dt>File size</dt>
-          <dd>68.2KB</dd>
+          <dd>14.3KB</dd>
 
           <dt>Lines of code</dt>
           <dd>377</dd>
@@ -52,303 +52,303 @@
 <li>Enables resource sharing, data exchange, and collaborative computing</li>
 </ul>
 <h2>Network Models</h2>
-<div class="codehilite"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="o">-----</span><span class="w"> </span><span class="nx">OSI</span><span class="w"> </span><span class="nx">MODEL</span><span class="w"> </span><span class="p">(</span><span class="mi">7</span><span class="w"> </span><span class="nx">LAYERS</span><span class="p">)</span><span class="w"> </span><span class="o">-----</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Conceptual</span><span class="w"> </span><span class="nx">framework</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">understanding</span><span class="w"> </span><span class="nx">network</span><span class="w"> </span><span class="nx">communication</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Each</span><span class="w"> </span><span class="nx">layer</span><span class="w"> </span><span class="nx">provides</span><span class="w"> </span><span class="nx">services</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">layer</span><span class="w"> </span><span class="nx">above</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Abstraction</span><span class="w"> </span><span class="nx">allows</span><span class="w"> </span><span class="nx">independent</span><span class="w"> </span><span class="nx">development</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">layer</span><span class="w"> </span><span class="nx">technologies</span>
+<pre class="codehilite"><code># ----- OSI MODEL (7 LAYERS) -----
+    # Conceptual framework for understanding network communication
+    # Each layer provides services to the layer above
+    # Abstraction allows independent development of layer technologies
 
-<span class="err">#</span><span class="w"> </span><span class="nx">LAYER</span><span class="w"> </span><span class="mi">7</span><span class="p">:</span><span class="w"> </span><span class="nx">APPLICATION</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">User</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">network</span><span class="w"> </span><span class="nx">services</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">HTTP</span><span class="p">,</span><span class="w"> </span><span class="nx">HTTPS</span><span class="p">,</span><span class="w"> </span><span class="nx">FTP</span><span class="p">,</span><span class="w"> </span><span class="nx">SMTP</span><span class="p">,</span><span class="w"> </span><span class="nx">DNS</span><span class="p">,</span><span class="w"> </span><span class="nx">SSH</span><span class="w"> </span><span class="nx">protocols</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Web</span><span class="w"> </span><span class="nx">browsers</span><span class="p">,</span><span class="w"> </span><span class="nx">email</span><span class="w"> </span><span class="nx">clients</span><span class="p">,</span><span class="w"> </span><span class="nx">file</span><span class="w"> </span><span class="nx">transfer</span><span class="w"> </span><span class="nx">applications</span>
+# LAYER 7: APPLICATION
+    # User interface to network services
+    # HTTP, HTTPS, FTP, SMTP, DNS, SSH protocols
+    # Web browsers, email clients, file transfer applications
 
-<span class="err">#</span><span class="w"> </span><span class="nx">LAYER</span><span class="w"> </span><span class="mi">6</span><span class="p">:</span><span class="w"> </span><span class="nx">PRESENTATION</span><span class="w">  </span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Data</span><span class="w"> </span><span class="nx">formatting</span><span class="p">,</span><span class="w"> </span><span class="nx">encryption</span><span class="p">,</span><span class="w"> </span><span class="nx">compression</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">SSL</span><span class="o">/</span><span class="nx">TLS</span><span class="w"> </span><span class="nx">encryption</span><span class="p">,</span><span class="w"> </span><span class="nx">JPEG</span><span class="p">,</span><span class="w"> </span><span class="nx">PNG</span><span class="p">,</span><span class="w"> </span><span class="nx">ASCII</span><span class="w"> </span><span class="nx">encoding</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Character</span><span class="w"> </span><span class="nx">sets</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="nx">representation</span>
+# LAYER 6: PRESENTATION  
+    # Data formatting, encryption, compression
+    # SSL/TLS encryption, JPEG, PNG, ASCII encoding
+    # Character sets, data representation
 
-<span class="err">#</span><span class="w"> </span><span class="nx">LAYER</span><span class="w"> </span><span class="mi">5</span><span class="p">:</span><span class="w"> </span><span class="nx">SESSION</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Establishes</span><span class="p">,</span><span class="w"> </span><span class="nx">manages</span><span class="p">,</span><span class="w"> </span><span class="nx">terminates</span><span class="w"> </span><span class="nx">connections</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Session</span><span class="w"> </span><span class="nx">management</span><span class="p">,</span><span class="w"> </span><span class="nx">authentication</span><span class="p">,</span><span class="w"> </span><span class="nx">authorization</span><span class="w">  </span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">NetBIOS</span><span class="p">,</span><span class="w"> </span><span class="nx">RPC</span><span class="p">,</span><span class="w"> </span><span class="nx">SQL</span><span class="w"> </span><span class="nx">sessions</span>
+# LAYER 5: SESSION
+    # Establishes, manages, terminates connections
+    # Session management, authentication, authorization  
+    # NetBIOS, RPC, SQL sessions
 
-<span class="err">#</span><span class="w"> </span><span class="nx">LAYER</span><span class="w"> </span><span class="mi">4</span><span class="p">:</span><span class="w"> </span><span class="nx">TRANSPORT</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">End</span><span class="o">-</span><span class="nx">to</span><span class="o">-</span><span class="nx">end</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="nx">delivery</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">error</span><span class="w"> </span><span class="nx">recovery</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">TCP</span><span class="w"> </span><span class="p">(</span><span class="nx">reliable</span><span class="p">)</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">UDP</span><span class="w"> </span><span class="p">(</span><span class="nx">unreliable</span><span class="p">)</span><span class="w"> </span><span class="nx">protocols</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Port</span><span class="w"> </span><span class="nx">numbers</span><span class="p">,</span><span class="w"> </span><span class="nx">flow</span><span class="w"> </span><span class="nx">control</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="w"> </span><span class="nx">detection</span>
+# LAYER 4: TRANSPORT
+    # End-to-end data delivery and error recovery
+    # TCP (reliable) and UDP (unreliable) protocols
+    # Port numbers, flow control, error detection
 
-<span class="err">#</span><span class="w"> </span><span class="nx">LAYER</span><span class="w"> </span><span class="mi">3</span><span class="p">:</span><span class="w"> </span><span class="nx">NETWORK</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Routing</span><span class="w"> </span><span class="nx">between</span><span class="w"> </span><span class="nx">different</span><span class="w"> </span><span class="nx">networks</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">IP</span><span class="w"> </span><span class="nx">addressing</span><span class="p">,</span><span class="w"> </span><span class="nx">packet</span><span class="w"> </span><span class="nx">forwarding</span><span class="p">,</span><span class="w"> </span><span class="nx">path</span><span class="w"> </span><span class="nx">determination</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">IPv4</span><span class="p">,</span><span class="w"> </span><span class="nx">IPv6</span><span class="p">,</span><span class="w"> </span><span class="nx">ICMP</span><span class="p">,</span><span class="w"> </span><span class="nx">routing</span><span class="w"> </span><span class="nx">protocols</span><span class="w"> </span><span class="p">(</span><span class="nx">OSPF</span><span class="p">,</span><span class="w"> </span><span class="nx">BGP</span><span class="p">)</span>
+# LAYER 3: NETWORK
+    # Routing between different networks
+    # IP addressing, packet forwarding, path determination
+    # IPv4, IPv6, ICMP, routing protocols (OSPF, BGP)
 
-<span class="err">#</span><span class="w"> </span><span class="nx">LAYER</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span><span class="w"> </span><span class="nx">DATA</span><span class="w"> </span><span class="nx">LINK</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Node</span><span class="o">-</span><span class="nx">to</span><span class="o">-</span><span class="nx">node</span><span class="w"> </span><span class="nx">delivery</span><span class="w"> </span><span class="nx">within</span><span class="w"> </span><span class="nx">same</span><span class="w"> </span><span class="nx">network</span><span class="w"> </span><span class="nx">segment</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Frame</span><span class="w"> </span><span class="nx">formatting</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="w"> </span><span class="nx">detection</span><span class="p">,</span><span class="w"> </span><span class="nx">MAC</span><span class="w"> </span><span class="nx">addressing</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Ethernet</span><span class="p">,</span><span class="w"> </span><span class="nx">Wi</span><span class="o">-</span><span class="nx">Fi</span><span class="p">,</span><span class="w"> </span><span class="nx">switches</span><span class="p">,</span><span class="w"> </span><span class="nx">bridges</span>
+# LAYER 2: DATA LINK
+    # Node-to-node delivery within same network segment
+    # Frame formatting, error detection, MAC addressing
+    # Ethernet, Wi-Fi, switches, bridges
 
-<span class="err">#</span><span class="w"> </span><span class="nx">LAYER</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="w"> </span><span class="nx">PHYSICAL</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Transmission</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">raw</span><span class="w"> </span><span class="nx">bits</span><span class="w"> </span><span class="nx">over</span><span class="w"> </span><span class="nx">physical</span><span class="w"> </span><span class="nx">medium</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Cables</span><span class="p">,</span><span class="w"> </span><span class="nx">wireless</span><span class="w"> </span><span class="nx">signals</span><span class="p">,</span><span class="w"> </span><span class="nx">voltage</span><span class="w"> </span><span class="nx">levels</span><span class="p">,</span><span class="w"> </span><span class="nx">timing</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Hubs</span><span class="p">,</span><span class="w"> </span><span class="nx">repeaters</span><span class="p">,</span><span class="w"> </span><span class="nx">network</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="nx">cards</span>
+# LAYER 1: PHYSICAL
+    # Transmission of raw bits over physical medium
+    # Cables, wireless signals, voltage levels, timing
+    # Hubs, repeaters, network interface cards
 
-<span class="err">#</span><span class="w"> </span><span class="o">-----</span><span class="w"> </span><span class="nx">TCP</span><span class="o">/</span><span class="nx">IP</span><span class="w"> </span><span class="nx">MODEL</span><span class="w"> </span><span class="p">(</span><span class="mi">4</span><span class="w"> </span><span class="nx">LAYERS</span><span class="p">)</span><span class="w"> </span><span class="o">-----</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Practical</span><span class="w"> </span><span class="nx">model</span><span class="w"> </span><span class="nx">used</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">internet</span><span class="w"> </span><span class="nx">implementation</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Application</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="nx">combines</span><span class="w"> </span><span class="nx">OSI</span><span class="w"> </span><span class="nx">layers</span><span class="w"> </span><span class="mi">5</span><span class="o">-</span><span class="mi">7</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Transport</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="nx">corresponds</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">OSI</span><span class="w"> </span><span class="nx">layer</span><span class="w"> </span><span class="mi">4</span><span class="w">  </span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Internet</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="nx">corresponds</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">OSI</span><span class="w"> </span><span class="nx">layer</span><span class="w"> </span><span class="mi">3</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Network</span><span class="w"> </span><span class="nx">Access</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="nx">combines</span><span class="w"> </span><span class="nx">OSI</span><span class="w"> </span><span class="nx">layers</span><span class="w"> </span><span class="mi">1</span><span class="o">-</span><span class="mi">2</span>
-</code></pre></div>
+# ----- TCP/IP MODEL (4 LAYERS) -----
+    # Practical model used in internet implementation
+    # Application =&gt; combines OSI layers 5-7
+    # Transport =&gt; corresponds to OSI layer 4  
+    # Internet =&gt; corresponds to OSI layer 3
+    # Network Access =&gt; combines OSI layers 1-2
+</code></pre>
 
 <h2>Internet Protocol Suite</h2>
-<div class="codehilite"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="o">-----</span><span class="w"> </span><span class="nx">IP</span><span class="w"> </span><span class="nx">ADDRESSING</span><span class="w"> </span><span class="o">-----</span>
+<pre class="codehilite"><code># ----- IP ADDRESSING -----
 
-<span class="err">#</span><span class="w"> </span><span class="nx">IPv4</span><span class="w"> </span><span class="p">(</span><span class="mi">32</span><span class="o">-</span><span class="nx">BIT</span><span class="w"> </span><span class="nx">ADDRESSES</span><span class="p">)</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Dotted</span><span class="w"> </span><span class="nx">decimal</span><span class="w"> </span><span class="nx">notation</span><span class="p">:</span><span class="w"> </span><span class="m m-Double">192.168.1.1</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="o">~</span><span class="m m-Double">4.3</span><span class="w"> </span><span class="nx">billion</span><span class="w"> </span><span class="nx">unique</span><span class="w"> </span><span class="nx">addresses</span><span class="w"> </span><span class="p">(</span><span class="nx">exhausted</span><span class="p">)</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Classes</span><span class="p">:</span><span class="w"> </span><span class="nx">A</span><span class="w"> </span><span class="p">(</span><span class="m m-Double">0.0.0.0</span><span class="o">-</span><span class="m m-Double">127.255.255.255</span><span class="p">),</span><span class="w"> </span><span class="nx">B</span><span class="p">,</span><span class="w"> </span><span class="nx">C</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Private</span><span class="w"> </span><span class="nx">ranges</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">.</span><span class="nx">x</span><span class="p">.</span><span class="nx">x</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="m m-Double">172.16</span><span class="o">-</span><span class="mi">31</span><span class="p">.</span><span class="nx">x</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="m m-Double">192.168</span><span class="p">.</span><span class="nx">x</span><span class="p">.</span><span class="nx">x</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">CIDR</span><span class="w"> </span><span class="nx">notation</span><span class="p">:</span><span class="w"> </span><span class="m m-Double">192.168.1.0</span><span class="o">/</span><span class="mi">24</span><span class="w"> </span><span class="p">(</span><span class="nx">subnet</span><span class="w"> </span><span class="nx">mask</span><span class="p">)</span>
+# IPv4 (32-BIT ADDRESSES)
+    # Dotted decimal notation: 192.168.1.1
+    # ~4.3 billion unique addresses (exhausted)
+    # Classes: A (0.0.0.0-127.255.255.255), B, C
+    # Private ranges: 10.x.x.x, 172.16-31.x.x, 192.168.x.x
+    # CIDR notation: 192.168.1.0/24 (subnet mask)
 
-<span class="err">#</span><span class="w"> </span><span class="nx">IPv6</span><span class="w"> </span><span class="p">(</span><span class="mi">128</span><span class="o">-</span><span class="nx">BIT</span><span class="w"> </span><span class="nx">ADDRESSES</span><span class="p">)</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Hexadecimal</span><span class="w"> </span><span class="nx">notation</span><span class="p">:</span><span class="w"> </span><span class="mi">2001</span><span class="p">:</span><span class="mi">0</span><span class="nx">db8</span><span class="p">:</span><span class="mi">85</span><span class="nx">a3</span><span class="p">:</span><span class="mi">0000</span><span class="p">:</span><span class="mi">0000</span><span class="p">:</span><span class="mi">8</span><span class="nx">a2e</span><span class="p">:</span><span class="mi">0370</span><span class="p">:</span><span class="mi">7334</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="o">~</span><span class="mi">340</span><span class="w"> </span><span class="nx">undecillion</span><span class="w"> </span><span class="nx">addresses</span><span class="w"> </span><span class="p">(</span><span class="nx">virtually</span><span class="w"> </span><span class="nx">unlimited</span><span class="p">)</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Link</span><span class="o">-</span><span class="nx">local</span><span class="p">,</span><span class="w"> </span><span class="nx">unique</span><span class="w"> </span><span class="nx">local</span><span class="p">,</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">global</span><span class="w"> </span><span class="nx">unicast</span><span class="w"> </span><span class="nx">scopes</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Auto</span><span class="o">-</span><span class="nx">configuration</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">improved</span><span class="w"> </span><span class="nx">security</span><span class="w"> </span><span class="nx">features</span>
+# IPv6 (128-BIT ADDRESSES)
+    # Hexadecimal notation: 2001:0db8:85a3:0000:0000:8a2e:0370:7334
+    # ~340 undecillion addresses (virtually unlimited)
+    # Link-local, unique local, and global unicast scopes
+    # Auto-configuration and improved security features
 
-<span class="err">#</span><span class="w"> </span><span class="o">-----</span><span class="w"> </span><span class="nx">TRANSPORT</span><span class="w"> </span><span class="nx">PROTOCOLS</span><span class="w"> </span><span class="o">-----</span>
+# ----- TRANSPORT PROTOCOLS -----
 
-<span class="err">#</span><span class="w"> </span><span class="nx">TCP</span><span class="w"> </span><span class="p">(</span><span class="nx">TRANSMISSION</span><span class="w"> </span><span class="nx">CONTROL</span><span class="w"> </span><span class="nx">PROTOCOL</span><span class="p">)</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Connection</span><span class="o">-</span><span class="nx">oriented</span><span class="p">,</span><span class="w"> </span><span class="nx">reliable</span><span class="w"> </span><span class="nx">delivery</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Three</span><span class="o">-</span><span class="nx">way</span><span class="w"> </span><span class="nx">handshake</span><span class="p">:</span><span class="w"> </span><span class="nx">SYN</span><span class="p">,</span><span class="w"> </span><span class="nx">SYN</span><span class="o">-</span><span class="nx">ACK</span><span class="p">,</span><span class="w"> </span><span class="nx">ACK</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Flow</span><span class="w"> </span><span class="nx">control</span><span class="p">,</span><span class="w"> </span><span class="nx">congestion</span><span class="w"> </span><span class="nx">control</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="w"> </span><span class="nx">recovery</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Sequence</span><span class="w"> </span><span class="nx">numbers</span><span class="w"> </span><span class="nx">ensure</span><span class="w"> </span><span class="nx">ordered</span><span class="w"> </span><span class="nx">delivery</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Used</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">HTTP</span><span class="p">,</span><span class="w"> </span><span class="nx">HTTPS</span><span class="p">,</span><span class="w"> </span><span class="nx">FTP</span><span class="p">,</span><span class="w"> </span><span class="nx">SSH</span><span class="p">,</span><span class="w"> </span><span class="nx">email</span><span class="w"> </span><span class="nx">protocols</span>
+# TCP (TRANSMISSION CONTROL PROTOCOL)
+    # Connection-oriented, reliable delivery
+    # Three-way handshake: SYN, SYN-ACK, ACK
+    # Flow control, congestion control, error recovery
+    # Sequence numbers ensure ordered delivery
+    # Used by HTTP, HTTPS, FTP, SSH, email protocols
 
-<span class="err">#</span><span class="w"> </span><span class="nx">UDP</span><span class="w"> </span><span class="p">(</span><span class="nx">USER</span><span class="w"> </span><span class="nx">DATAGRAM</span><span class="w"> </span><span class="nx">PROTOCOL</span><span class="p">)</span><span class="w">  </span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Connectionless</span><span class="p">,</span><span class="w"> </span><span class="nx">unreliable</span><span class="w"> </span><span class="nx">delivery</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Lower</span><span class="w"> </span><span class="nx">overhead</span><span class="p">,</span><span class="w"> </span><span class="nx">faster</span><span class="w"> </span><span class="nx">transmission</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">No</span><span class="w"> </span><span class="nx">error</span><span class="w"> </span><span class="nx">recovery</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="nx">flow</span><span class="w"> </span><span class="nx">control</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Best</span><span class="o">-</span><span class="nx">effort</span><span class="w"> </span><span class="nx">delivery</span><span class="w"> </span><span class="nx">with</span><span class="w"> </span><span class="nx">possible</span><span class="w"> </span><span class="nx">packet</span><span class="w"> </span><span class="nx">loss</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Used</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">DNS</span><span class="p">,</span><span class="w"> </span><span class="nx">DHCP</span><span class="p">,</span><span class="w"> </span><span class="nx">streaming</span><span class="w"> </span><span class="nx">media</span><span class="p">,</span><span class="w"> </span><span class="nx">gaming</span>
+# UDP (USER DATAGRAM PROTOCOL)  
+    # Connectionless, unreliable delivery
+    # Lower overhead, faster transmission
+    # No error recovery or flow control
+    # Best-effort delivery with possible packet loss
+    # Used by DNS, DHCP, streaming media, gaming
 
-<span class="err">#</span><span class="w"> </span><span class="o">-----</span><span class="w"> </span><span class="nx">APPLICATION</span><span class="w"> </span><span class="nx">PROTOCOLS</span><span class="w"> </span><span class="o">-----</span>
+# ----- APPLICATION PROTOCOLS -----
 
-<span class="err">#</span><span class="w"> </span><span class="nx">HTTP</span><span class="o">/</span><span class="nx">HTTPS</span><span class="w"> </span><span class="p">(</span><span class="nx">WEB</span><span class="w"> </span><span class="nx">TRAFFIC</span><span class="p">)</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">HTTP</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="nx">Hypertext</span><span class="w"> </span><span class="nx">Transfer</span><span class="w"> </span><span class="nx">Protocol</span><span class="w"> </span><span class="p">(</span><span class="nx">port</span><span class="w"> </span><span class="mi">80</span><span class="p">)</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">HTTPS</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="nx">HTTP</span><span class="w"> </span><span class="nx">over</span><span class="w"> </span><span class="nx">SSL</span><span class="o">/</span><span class="nx">TLS</span><span class="w"> </span><span class="p">(</span><span class="nx">port</span><span class="w"> </span><span class="mi">443</span><span class="p">)</span><span class="w">  </span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Request</span><span class="o">-</span><span class="nx">response</span><span class="w"> </span><span class="nx">model</span><span class="p">:</span><span class="w"> </span><span class="nx">GET</span><span class="p">,</span><span class="w"> </span><span class="nx">POST</span><span class="p">,</span><span class="w"> </span><span class="nx">PUT</span><span class="p">,</span><span class="w"> </span><span class="nx">DELETE</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Status</span><span class="w"> </span><span class="nx">codes</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="nx">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">404</span><span class="w"> </span><span class="nx">Not</span><span class="w"> </span><span class="nx">Found</span><span class="p">,</span><span class="w"> </span><span class="mi">500</span><span class="w"> </span><span class="nx">Server</span><span class="w"> </span><span class="nx">Error</span>
+# HTTP/HTTPS (WEB TRAFFIC)
+    # HTTP =&gt; Hypertext Transfer Protocol (port 80)
+    # HTTPS =&gt; HTTP over SSL/TLS (port 443)  
+    # Request-response model: GET, POST, PUT, DELETE
+    # Status codes: 200 OK, 404 Not Found, 500 Server Error
 
-<span class="err">#</span><span class="w"> </span><span class="nx">DNS</span><span class="w"> </span><span class="p">(</span><span class="nx">DOMAIN</span><span class="w"> </span><span class="nx">NAME</span><span class="w"> </span><span class="nx">SYSTEM</span><span class="p">)</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Translates</span><span class="w"> </span><span class="nx">domain</span><span class="w"> </span><span class="nx">names</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">IP</span><span class="w"> </span><span class="nx">addresses</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Hierarchical</span><span class="w"> </span><span class="nx">distributed</span><span class="w"> </span><span class="nx">database</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Root</span><span class="w"> </span><span class="nx">servers</span><span class="p">,</span><span class="w"> </span><span class="nx">TLD</span><span class="w"> </span><span class="nx">servers</span><span class="p">,</span><span class="w"> </span><span class="nx">authoritative</span><span class="w"> </span><span class="nx">servers</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Query</span><span class="w"> </span><span class="nx">types</span><span class="p">:</span><span class="w"> </span><span class="nx">A</span><span class="w"> </span><span class="p">(</span><span class="nx">IPv4</span><span class="p">),</span><span class="w"> </span><span class="nx">AAAA</span><span class="w"> </span><span class="p">(</span><span class="nx">IPv6</span><span class="p">),</span><span class="w"> </span><span class="nx">MX</span><span class="w"> </span><span class="p">(</span><span class="nx">mail</span><span class="p">),</span><span class="w"> </span><span class="nx">CNAME</span><span class="w"> </span><span class="p">(</span><span class="kd">alias</span><span class="p">)</span>
+# DNS (DOMAIN NAME SYSTEM)
+    # Translates domain names to IP addresses
+    # Hierarchical distributed database
+    # Root servers, TLD servers, authoritative servers
+    # Query types: A (IPv4), AAAA (IPv6), MX (mail), CNAME (alias)
 
-<span class="err">#</span><span class="w"> </span><span class="nx">FTP</span><span class="w"> </span><span class="p">(</span><span class="nx">FILE</span><span class="w"> </span><span class="nx">TRANSFER</span><span class="w"> </span><span class="nx">PROTOCOL</span><span class="p">)</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Transfers</span><span class="w"> </span><span class="nx">files</span><span class="w"> </span><span class="nx">between</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">server</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Control</span><span class="w"> </span><span class="nx">connection</span><span class="w"> </span><span class="p">(</span><span class="nx">port</span><span class="w"> </span><span class="mi">21</span><span class="p">)</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="nx">connection</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Active</span><span class="w"> </span><span class="nx">vs</span><span class="w"> </span><span class="nx">passive</span><span class="w"> </span><span class="nx">modes</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="nx">transfer</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">SFTP</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">FTPS</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">secure</span><span class="w"> </span><span class="nx">file</span><span class="w"> </span><span class="nx">transfer</span>
-</code></pre></div>
+# FTP (FILE TRANSFER PROTOCOL)
+    # Transfers files between client and server
+    # Control connection (port 21) and data connection
+    # Active vs passive modes for data transfer
+    # SFTP and FTPS for secure file transfer
+</code></pre>
 
 <h2>Network Infrastructure</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ----- NETWORK DEVICES -----</span>
+<pre class="codehilite"><code># ----- NETWORK DEVICES -----
 
-<span class="c1"># HUB (PHYSICAL LAYER)</span>
-<span class="w">    </span><span class="c1"># Broadcasts data to all connected devices</span>
-<span class="w">    </span><span class="c1"># Single collision domain (half-duplex communication)</span>
-<span class="w">    </span><span class="c1"># Largely replaced by switches</span>
-<span class="w">    </span><span class="c1"># Creates security and performance issues</span>
+# HUB (PHYSICAL LAYER)
+    # Broadcasts data to all connected devices
+    # Single collision domain (half-duplex communication)
+    # Largely replaced by switches
+    # Creates security and performance issues
 
-<span class="c1"># SWITCH (DATA LINK LAYER)</span>
-<span class="w">    </span><span class="c1"># Learns MAC addresses and forwards frames intelligently</span>
-<span class="w">    </span><span class="c1"># Each port is separate collision domain (full-duplex)</span>
-<span class="w">    </span><span class="c1"># VLAN support for network segmentation</span>
-<span class="w">    </span><span class="c1"># Spanning Tree Protocol prevents loops</span>
+# SWITCH (DATA LINK LAYER)
+    # Learns MAC addresses and forwards frames intelligently
+    # Each port is separate collision domain (full-duplex)
+    # VLAN support for network segmentation
+    # Spanning Tree Protocol prevents loops
 
-<span class="c1"># ROUTER (NETWORK LAYER)</span>
-<span class="w">    </span><span class="c1"># Forwards packets between different networks</span>
-<span class="w">    </span><span class="c1"># Maintains routing tables with path information</span>
-<span class="w">    </span><span class="c1"># NAT (Network Address Translation) for private networks</span>
-<span class="w">    </span><span class="c1"># Firewall capabilities and access control</span>
+# ROUTER (NETWORK LAYER)
+    # Forwards packets between different networks
+    # Maintains routing tables with path information
+    # NAT (Network Address Translation) for private networks
+    # Firewall capabilities and access control
 
-<span class="c1"># ----- WIRELESS NETWORKING -----</span>
+# ----- WIRELESS NETWORKING -----
 
-<span class="c1"># Wi-Fi STANDARDS</span>
-<span class="w">    </span><span class="c1"># 802.11n =&gt; up to 600 Mbps, 2.4/5 GHz bands</span>
-<span class="w">    </span><span class="c1"># 802.11ac =&gt; up to 6.9 Gbps, 5 GHz band, MU-MIMO</span>
-<span class="w">    </span><span class="c1"># 802.11ax (Wi-Fi 6) =&gt; up to 9.6 Gbps, OFDMA, better efficiency</span>
-<span class="w">    </span><span class="c1"># WPA3 security protocol replaces WPA2</span>
+# Wi-Fi STANDARDS
+    # 802.11n =&gt; up to 600 Mbps, 2.4/5 GHz bands
+    # 802.11ac =&gt; up to 6.9 Gbps, 5 GHz band, MU-MIMO
+    # 802.11ax (Wi-Fi 6) =&gt; up to 9.6 Gbps, OFDMA, better efficiency
+    # WPA3 security protocol replaces WPA2
 
-<span class="c1"># CELLULAR NETWORKS</span>
-<span class="w">    </span><span class="c1"># 4G LTE =&gt; up to 1 Gbps download speeds</span>
-<span class="w">    </span><span class="c1"># 5G =&gt; up to 20 Gbps, ultra-low latency</span>
-<span class="w">    </span><span class="c1"># Network slicing for different service requirements</span>
-<span class="w">    </span><span class="c1"># Edge computing integration</span>
+# CELLULAR NETWORKS
+    # 4G LTE =&gt; up to 1 Gbps download speeds
+    # 5G =&gt; up to 20 Gbps, ultra-low latency
+    # Network slicing for different service requirements
+    # Edge computing integration
 
-<span class="c1"># ----- NETWORK TOPOLOGIES -----</span>
-<span class="w">    </span><span class="c1"># Star =&gt; central hub connects all devices</span>
-<span class="w">    </span><span class="c1"># Mesh =&gt; every device connects to every other device</span>
-<span class="w">    </span><span class="c1"># Ring =&gt; devices connected in circular fashion</span>
-<span class="w">    </span><span class="c1"># Tree =&gt; hierarchical structure with root node</span>
-<span class="w">    </span><span class="c1"># Hybrid =&gt; combination of different topologies</span>
-</code></pre></div>
+# ----- NETWORK TOPOLOGIES -----
+    # Star =&gt; central hub connects all devices
+    # Mesh =&gt; every device connects to every other device
+    # Ring =&gt; devices connected in circular fashion
+    # Tree =&gt; hierarchical structure with root node
+    # Hybrid =&gt; combination of different topologies
+</code></pre>
 
 <h2>Network Security</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1"># ----- FIREWALL TYPES -----</span>
+<pre class="codehilite"><code># ----- FIREWALL TYPES -----
 
-<span class="c1"># PACKET FILTERING FIREWALLS</span>
-<span class="w">    </span><span class="c1"># Examine packets at network layer (Layer 3)</span>
-<span class="w">    </span><span class="c1"># Allow/deny based on IP addresses, ports, protocols</span>
-<span class="w">    </span><span class="c1"># Stateless: each packet evaluated independently</span>
-<span class="w">    </span><span class="c1"># Fast but limited inspection capabilities</span>
+# PACKET FILTERING FIREWALLS
+    # Examine packets at network layer (Layer 3)
+    # Allow/deny based on IP addresses, ports, protocols
+    # Stateless: each packet evaluated independently
+    # Fast but limited inspection capabilities
 
-<span class="c1"># STATEFUL FIREWALLS</span>
-<span class="w">    </span><span class="c1"># Track connection state (TCP handshake status)</span>
-<span class="w">    </span><span class="c1"># Make decisions based on connection context</span>
-<span class="w">    </span><span class="c1"># More secure than packet filtering</span>
-<span class="w">    </span><span class="c1"># Can detect connection hijacking attempts</span>
+# STATEFUL FIREWALLS
+    # Track connection state (TCP handshake status)
+    # Make decisions based on connection context
+    # More secure than packet filtering
+    # Can detect connection hijacking attempts
 
-<span class="c1"># APPLICATION LAYER FIREWALLS</span>
-<span class="w">    </span><span class="c1"># Deep packet inspection at application layer</span>
-<span class="w">    </span><span class="c1"># Understand application protocols (HTTP, FTP, DNS)</span>
-<span class="w">    </span><span class="c1"># Can block specific content or application features</span>
-<span class="w">    </span><span class="c1"># Higher CPU overhead but better security</span>
+# APPLICATION LAYER FIREWALLS
+    # Deep packet inspection at application layer
+    # Understand application protocols (HTTP, FTP, DNS)
+    # Can block specific content or application features
+    # Higher CPU overhead but better security
 
-<span class="c1"># ----- NETWORK ATTACKS -----</span>
+# ----- NETWORK ATTACKS -----
 
-<span class="c1"># MAN-IN-THE-MIDDLE (MITM)</span>
-<span class="w">    </span><span class="c1"># Attacker intercepts communication between parties</span>
-<span class="w">    </span><span class="c1"># ARP poisoning, DNS spoofing, rogue Wi-Fi hotspots</span>
-<span class="w">    </span><span class="c1"># Prevention: encryption, certificate validation</span>
+# MAN-IN-THE-MIDDLE (MITM)
+    # Attacker intercepts communication between parties
+    # ARP poisoning, DNS spoofing, rogue Wi-Fi hotspots
+    # Prevention: encryption, certificate validation
 
-<span class="c1"># DDoS (DISTRIBUTED DENIAL OF SERVICE)</span>
-<span class="w">    </span><span class="c1"># Overwhelming target with traffic from multiple sources</span>
-<span class="w">    </span><span class="c1"># Volume attacks (UDP floods), protocol attacks (SYN flood)</span>
-<span class="w">    </span><span class="c1"># Application layer attacks (HTTP floods)</span>
-<span class="w">    </span><span class="c1"># Mitigation: rate limiting, traffic filtering, CDNs</span>
+# DDoS (DISTRIBUTED DENIAL OF SERVICE)
+    # Overwhelming target with traffic from multiple sources
+    # Volume attacks (UDP floods), protocol attacks (SYN flood)
+    # Application layer attacks (HTTP floods)
+    # Mitigation: rate limiting, traffic filtering, CDNs
 
-<span class="c1"># NETWORK SCANNING</span>
-<span class="w">    </span><span class="c1"># Port scanning to find open services</span>
-<span class="w">    </span><span class="c1"># Network reconnaissance and vulnerability discovery</span>
-<span class="w">    </span><span class="c1"># Nmap tool for network discovery and security auditing</span>
-<span class="w">    </span><span class="c1"># Defense: intrusion detection systems, port filtering</span>
+# NETWORK SCANNING
+    # Port scanning to find open services
+    # Network reconnaissance and vulnerability discovery
+    # Nmap tool for network discovery and security auditing
+    # Defense: intrusion detection systems, port filtering
 
-<span class="c1"># ----- ENCRYPTION AND VPN -----</span>
+# ----- ENCRYPTION AND VPN -----
 
-<span class="c1"># SSL/TLS</span>
-<span class="w">    </span><span class="c1"># Secure communication over insecure networks</span>
-<span class="w">    </span><span class="c1"># Public key cryptography for key exchange</span>
-<span class="w">    </span><span class="c1"># Symmetric encryption for data transfer</span>
-<span class="w">    </span><span class="c1"># Certificate authorities validate server identity</span>
+# SSL/TLS
+    # Secure communication over insecure networks
+    # Public key cryptography for key exchange
+    # Symmetric encryption for data transfer
+    # Certificate authorities validate server identity
 
-<span class="c1"># VPN (VIRTUAL PRIVATE NETWORK)</span>
-<span class="w">    </span><span class="c1"># Secure tunnel over public networks</span>
-<span class="w">    </span><span class="c1"># IPSec =&gt; network layer VPN protocol</span>
-<span class="w">    </span><span class="c1"># OpenVPN =&gt; application layer VPN solution</span>
-<span class="w">    </span><span class="c1"># Site-to-site and remote access VPN configurations</span>
-</code></pre></div>
+# VPN (VIRTUAL PRIVATE NETWORK)
+    # Secure tunnel over public networks
+    # IPSec =&gt; network layer VPN protocol
+    # OpenVPN =&gt; application layer VPN solution
+    # Site-to-site and remote access VPN configurations
+</code></pre>
 
 <h2>Network Performance</h2>
-<div class="codehilite"><pre><span></span><code>#<span class="w"> </span><span class="o">-----</span><span class="w"> </span><span class="nv">PERFORMANCE</span><span class="w"> </span><span class="nv">METRICS</span><span class="w"> </span><span class="o">-----</span>
+<pre class="codehilite"><code># ----- PERFORMANCE METRICS -----
 
-#<span class="w"> </span><span class="nv">BANDWIDTH</span>
-<span class="w">    </span>#<span class="w"> </span><span class="nv">Maximum</span><span class="w"> </span><span class="nv">data</span><span class="w"> </span><span class="nv">transfer</span><span class="w"> </span><span class="nv">rate</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">network</span><span class="w"> </span><span class="nv">link</span>
-<span class="w">    </span>#<span class="w"> </span><span class="nv">Measured</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">bits</span><span class="w"> </span><span class="nv">per</span><span class="w"> </span><span class="nv">second</span><span class="w"> </span><span class="ss">(</span><span class="nv">bps</span>,<span class="w"> </span><span class="nv">Kbps</span>,<span class="w"> </span><span class="nv">Mbps</span>,<span class="w"> </span><span class="nv">Gbps</span><span class="ss">)</span>
-<span class="w">    </span>#<span class="w"> </span><span class="nv">Theoretical</span><span class="w"> </span><span class="nv">vs</span><span class="w"> </span><span class="nv">actual</span><span class="w"> </span><span class="nv">throughput</span><span class="w"> </span><span class="nv">differences</span>
-<span class="w">    </span>#<span class="w"> </span><span class="nv">Shared</span><span class="w"> </span><span class="nv">vs</span><span class="w"> </span><span class="nv">dedicated</span><span class="w"> </span><span class="nv">bandwidth</span><span class="w"> </span><span class="nv">considerations</span>
+# BANDWIDTH
+    # Maximum data transfer rate of network link
+    # Measured in bits per second (bps, Kbps, Mbps, Gbps)
+    # Theoretical vs actual throughput differences
+    # Shared vs dedicated bandwidth considerations
 
-#<span class="w"> </span><span class="nv">LATENCY</span>
-<span class="w">    </span>#<span class="w"> </span><span class="nv">Time</span><span class="w"> </span><span class="nv">delay</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">data</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">travel</span><span class="w"> </span><span class="nv">from</span><span class="w"> </span><span class="nv">source</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">destination</span>
-<span class="w">    </span>#<span class="w"> </span><span class="nv">Round</span><span class="o">-</span><span class="nv">trip</span><span class="w"> </span><span class="nv">time</span><span class="w"> </span><span class="ss">(</span><span class="nv">RTT</span><span class="ss">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">bidirectional</span><span class="w"> </span><span class="nv">communication</span>
-<span class="w">    </span>#<span class="w"> </span><span class="nv">Components</span>:<span class="w"> </span><span class="nv">propagation</span>,<span class="w"> </span><span class="nv">transmission</span>,<span class="w"> </span><span class="nv">processing</span>,<span class="w"> </span><span class="nv">queuing</span><span class="w"> </span><span class="nv">delays</span>
-<span class="w">    </span>#<span class="w"> </span><span class="nv">Critical</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">real</span><span class="o">-</span><span class="nv">time</span><span class="w"> </span><span class="nv">applications</span><span class="w"> </span><span class="ss">(</span><span class="nv">VoIP</span>,<span class="w"> </span><span class="nv">gaming</span>,<span class="w"> </span><span class="nv">video</span><span class="w"> </span><span class="nv">conferencing</span><span class="ss">)</span>
+# LATENCY
+    # Time delay for data to travel from source to destination
+    # Round-trip time (RTT) for bidirectional communication
+    # Components: propagation, transmission, processing, queuing delays
+    # Critical for real-time applications (VoIP, gaming, video conferencing)
 
-#<span class="w"> </span><span class="nv">PACKET</span><span class="w"> </span><span class="nv">LOSS</span>
-<span class="w">    </span>#<span class="w"> </span><span class="nv">Percentage</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">packets</span><span class="w"> </span><span class="nv">that</span><span class="w"> </span><span class="nv">fail</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">reach</span><span class="w"> </span><span class="nv">destination</span>
-<span class="w">    </span>#<span class="w"> </span><span class="nv">Causes</span>:<span class="w"> </span><span class="nv">network</span><span class="w"> </span><span class="nv">congestion</span>,<span class="w"> </span><span class="nv">faulty</span><span class="w"> </span><span class="nv">equipment</span>,<span class="w"> </span><span class="nv">interference</span>
-<span class="w">    </span>#<span class="w"> </span><span class="nv">Impact</span><span class="w"> </span><span class="nv">on</span><span class="w"> </span><span class="nv">TCP</span><span class="w"> </span><span class="ss">(</span><span class="nv">retransmission</span><span class="ss">)</span><span class="w"> </span><span class="nv">vs</span><span class="w"> </span><span class="nv">UDP</span><span class="w"> </span><span class="ss">(</span><span class="nv">lost</span><span class="w"> </span><span class="nv">data</span><span class="ss">)</span>
-<span class="w">    </span>#<span class="w"> </span><span class="nv">Quality</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">Service</span><span class="w"> </span><span class="ss">(</span><span class="nv">QoS</span><span class="ss">)</span><span class="w"> </span><span class="nv">mechanisms</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">minimize</span><span class="w"> </span><span class="nv">loss</span>
+# PACKET LOSS
+    # Percentage of packets that fail to reach destination
+    # Causes: network congestion, faulty equipment, interference
+    # Impact on TCP (retransmission) vs UDP (lost data)
+    # Quality of Service (QoS) mechanisms to minimize loss
 
-#<span class="w"> </span><span class="o">-----</span><span class="w"> </span><span class="nv">QUALITY</span><span class="w"> </span><span class="nv">OF</span><span class="w"> </span><span class="nv">SERVICE</span><span class="w"> </span><span class="ss">(</span><span class="nv">QoS</span><span class="ss">)</span><span class="w"> </span><span class="o">-----</span>
-<span class="w">    </span>#<span class="w"> </span><span class="nv">Traffic</span><span class="w"> </span><span class="nv">prioritization</span><span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="nv">bandwidth</span><span class="w"> </span><span class="nv">allocation</span>
-<span class="w">    </span>#<span class="w"> </span><span class="nv">Differentiated</span><span class="w"> </span><span class="nv">Services</span><span class="w"> </span><span class="ss">(</span><span class="nv">DiffServ</span><span class="ss">)</span><span class="w"> </span><span class="nv">markings</span>
-<span class="w">    </span>#<span class="w"> </span><span class="nv">Traffic</span><span class="w"> </span><span class="nv">shaping</span><span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="nv">policing</span><span class="w"> </span><span class="nv">mechanisms</span>
-<span class="w">    </span>#<span class="w"> </span><span class="nv">Service</span><span class="w"> </span><span class="nv">Level</span><span class="w"> </span><span class="nv">Agreements</span><span class="w"> </span><span class="ss">(</span><span class="nv">SLAs</span><span class="ss">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">performance</span><span class="w"> </span><span class="nv">guarantees</span>
+# ----- QUALITY OF SERVICE (QoS) -----
+    # Traffic prioritization and bandwidth allocation
+    # Differentiated Services (DiffServ) markings
+    # Traffic shaping and policing mechanisms
+    # Service Level Agreements (SLAs) for performance guarantees
 
-#<span class="w"> </span><span class="o">-----</span><span class="w"> </span><span class="nv">NETWORK</span><span class="w"> </span><span class="nv">OPTIMIZATION</span><span class="w"> </span><span class="o">-----</span>
-<span class="w">    </span>#<span class="w"> </span><span class="nv">Content</span><span class="w"> </span><span class="nv">Delivery</span><span class="w"> </span><span class="nv">Networks</span><span class="w"> </span><span class="ss">(</span><span class="nv">CDNs</span><span class="ss">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">geographic</span><span class="w"> </span><span class="nv">distribution</span>
-<span class="w">    </span>#<span class="w"> </span><span class="nv">Caching</span><span class="w"> </span><span class="nv">at</span><span class="w"> </span><span class="nv">multiple</span><span class="w"> </span><span class="nv">network</span><span class="w"> </span><span class="nv">layers</span>
-<span class="w">    </span>#<span class="w"> </span><span class="nv">Load</span><span class="w"> </span><span class="nv">balancing</span><span class="w"> </span><span class="nv">across</span><span class="w"> </span><span class="nv">multiple</span><span class="w"> </span><span class="nv">servers</span><span class="o">/</span><span class="nv">paths</span>
-<span class="w">    </span>#<span class="w"> </span><span class="nv">Traffic</span><span class="w"> </span><span class="nv">engineering</span><span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="nv">route</span><span class="w"> </span><span class="nv">optimization</span>
-<span class="w">    </span>#<span class="w"> </span><span class="nv">Compression</span><span class="w"> </span><span class="nv">and</span><span class="w"> </span><span class="nv">protocol</span><span class="w"> </span><span class="nv">optimization</span><span class="w"> </span><span class="nv">techniques</span>
-</code></pre></div>
+# ----- NETWORK OPTIMIZATION -----
+    # Content Delivery Networks (CDNs) for geographic distribution
+    # Caching at multiple network layers
+    # Load balancing across multiple servers/paths
+    # Traffic engineering and route optimization
+    # Compression and protocol optimization techniques
+</code></pre>
 
 <h2>Network Troubleshooting</h2>
-<div class="codehilite"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="o">-----</span><span class="w"> </span><span class="nx">DIAGNOSTIC</span><span class="w"> </span><span class="nx">TOOLS</span><span class="w"> </span><span class="o">-----</span>
+<pre class="codehilite"><code># ----- DIAGNOSTIC TOOLS -----
 
-<span class="err">#</span><span class="w"> </span><span class="nx">PING</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Tests</span><span class="w"> </span><span class="nx">connectivity</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">measures</span><span class="w"> </span><span class="nx">round</span><span class="o">-</span><span class="nx">trip</span><span class="w"> </span><span class="nx">time</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Uses</span><span class="w"> </span><span class="nx">ICMP</span><span class="w"> </span><span class="nx">Echo</span><span class="w"> </span><span class="nx">Request</span><span class="o">/</span><span class="nx">Reply</span><span class="w"> </span><span class="nx">messages</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Basic</span><span class="w"> </span><span class="nx">connectivity</span><span class="w"> </span><span class="nx">verification</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">latency</span><span class="w"> </span><span class="nx">measurement</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Limitations</span><span class="p">:</span><span class="w"> </span><span class="nx">firewalls</span><span class="w"> </span><span class="nx">may</span><span class="w"> </span><span class="nx">block</span><span class="w"> </span><span class="nx">ICMP</span><span class="w"> </span><span class="nx">traffic</span>
+# PING
+    # Tests connectivity and measures round-trip time
+    # Uses ICMP Echo Request/Reply messages
+    # Basic connectivity verification and latency measurement
+    # Limitations: firewalls may block ICMP traffic
 
-<span class="err">#</span><span class="w"> </span><span class="nx">TRACEROUTE</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Maps</span><span class="w"> </span><span class="nx">network</span><span class="w"> </span><span class="nx">path</span><span class="w"> </span><span class="nx">from</span><span class="w"> </span><span class="nx">source</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">destination</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Shows</span><span class="w"> </span><span class="nx">each</span><span class="w"> </span><span class="nx">hop</span><span class="w"> </span><span class="p">(</span><span class="nx">router</span><span class="p">)</span><span class="w"> </span><span class="nx">along</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">path</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Identifies</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="nx">connectivity</span><span class="w"> </span><span class="nx">issues</span><span class="w"> </span><span class="nx">occur</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">TTL</span><span class="w"> </span><span class="nx">manipulation</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">discover</span><span class="w"> </span><span class="nx">intermediate</span><span class="w"> </span><span class="nx">routers</span>
+# TRACEROUTE
+    # Maps network path from source to destination
+    # Shows each hop (router) along the path
+    # Identifies where connectivity issues occur
+    # TTL manipulation to discover intermediate routers
 
-<span class="err">#</span><span class="w"> </span><span class="nx">NETSTAT</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Displays</span><span class="w"> </span><span class="nx">active</span><span class="w"> </span><span class="nx">network</span><span class="w"> </span><span class="nx">connections</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">listening</span><span class="w"> </span><span class="nx">ports</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Shows</span><span class="w"> </span><span class="nx">routing</span><span class="w"> </span><span class="nx">table</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="nx">statistics</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Useful</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">detecting</span><span class="w"> </span><span class="nx">unauthorized</span><span class="w"> </span><span class="nx">connections</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Cross</span><span class="o">-</span><span class="nx">platform</span><span class="w"> </span><span class="nx">availability</span><span class="w"> </span><span class="nx">with</span><span class="w"> </span><span class="nx">similar</span><span class="w"> </span><span class="nx">functionality</span>
+# NETSTAT
+    # Displays active network connections and listening ports
+    # Shows routing table and interface statistics
+    # Useful for detecting unauthorized connections
+    # Cross-platform availability with similar functionality
 
-<span class="err">#</span><span class="w"> </span><span class="nx">WIRESHARK</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Network</span><span class="w"> </span><span class="nx">protocol</span><span class="w"> </span><span class="nx">analyzer</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">packet</span><span class="w"> </span><span class="nx">capture</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Deep</span><span class="w"> </span><span class="nx">inspection</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">network</span><span class="w"> </span><span class="nx">traffic</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Filters</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">specific</span><span class="w"> </span><span class="nx">protocols</span><span class="p">,</span><span class="w"> </span><span class="nx">addresses</span><span class="p">,</span><span class="w"> </span><span class="nx">ports</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Essential</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">advanced</span><span class="w"> </span><span class="nx">network</span><span class="w"> </span><span class="nx">troubleshooting</span>
+# WIRESHARK
+    # Network protocol analyzer for packet capture
+    # Deep inspection of network traffic
+    # Filters for specific protocols, addresses, ports
+    # Essential for advanced network troubleshooting
 
-<span class="err">#</span><span class="w"> </span><span class="o">-----</span><span class="w"> </span><span class="nx">COMMON</span><span class="w"> </span><span class="nx">ISSUES</span><span class="w"> </span><span class="o">-----</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">IP</span><span class="w"> </span><span class="nx">address</span><span class="w"> </span><span class="nx">conflicts</span><span class="w"> </span><span class="nx">within</span><span class="w"> </span><span class="nx">same</span><span class="w"> </span><span class="nx">network</span><span class="w"> </span><span class="nx">segment</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">DNS</span><span class="w"> </span><span class="nx">resolution</span><span class="w"> </span><span class="nx">failures</span><span class="w"> </span><span class="nx">preventing</span><span class="w"> </span><span class="nx">name</span><span class="o">-</span><span class="nx">to</span><span class="o">-</span><span class="nx">IP</span><span class="w"> </span><span class="nx">translation</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Routing</span><span class="w"> </span><span class="nx">table</span><span class="w"> </span><span class="nx">misconfigurations</span><span class="w"> </span><span class="nx">causing</span><span class="w"> </span><span class="nx">packet</span><span class="w"> </span><span class="nx">loss</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">MTU</span><span class="w"> </span><span class="nx">size</span><span class="w"> </span><span class="nx">mismatches</span><span class="w"> </span><span class="nx">causing</span><span class="w"> </span><span class="nx">fragmentation</span><span class="w"> </span><span class="nx">issues</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Network</span><span class="w"> </span><span class="nx">congestion</span><span class="w"> </span><span class="nx">leading</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">performance</span><span class="w"> </span><span class="nx">degradation</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Hardware</span><span class="w"> </span><span class="nx">failures</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nx">switches</span><span class="p">,</span><span class="w"> </span><span class="nx">routers</span><span class="p">,</span><span class="w"> </span><span class="nx">cables</span>
-</code></pre></div>
+# ----- COMMON ISSUES -----
+    # IP address conflicts within same network segment
+    # DNS resolution failures preventing name-to-IP translation
+    # Routing table misconfigurations causing packet loss
+    # MTU size mismatches causing fragmentation issues
+    # Network congestion leading to performance degradation
+    # Hardware failures in switches, routers, cables
+</code></pre>
 
 <h2>Emerging Technologies</h2>
-<div class="codehilite"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="o">-----</span><span class="w"> </span><span class="nx">SOFTWARE</span><span class="w"> </span><span class="nx">DEFINED</span><span class="w"> </span><span class="nx">NETWORKING</span><span class="w"> </span><span class="p">(</span><span class="nx">SDN</span><span class="p">)</span><span class="w"> </span><span class="o">-----</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Separation</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">control</span><span class="w"> </span><span class="nx">plane</span><span class="w"> </span><span class="nx">from</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="nx">plane</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Centralized</span><span class="w"> </span><span class="nx">network</span><span class="w"> </span><span class="nx">control</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">programmability</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">OpenFlow</span><span class="w"> </span><span class="nx">protocol</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">switch</span><span class="o">-</span><span class="nx">controller</span><span class="w"> </span><span class="nx">communication</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Network</span><span class="w"> </span><span class="nx">Function</span><span class="w"> </span><span class="nx">Virtualization</span><span class="w"> </span><span class="p">(</span><span class="nx">NFV</span><span class="p">)</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Dynamic</span><span class="w"> </span><span class="nx">network</span><span class="w"> </span><span class="nx">configuration</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">automation</span>
+<pre class="codehilite"><code># ----- SOFTWARE DEFINED NETWORKING (SDN) -----
+    # Separation of control plane from data plane
+    # Centralized network control and programmability
+    # OpenFlow protocol for switch-controller communication
+    # Network Function Virtualization (NFV)
+    # Dynamic network configuration and automation
 
-<span class="err">#</span><span class="w"> </span><span class="o">-----</span><span class="w"> </span><span class="nx">EDGE</span><span class="w"> </span><span class="nx">COMPUTING</span><span class="w"> </span><span class="o">-----</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Processing</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="nx">closer</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">source</span><span class="w"> </span><span class="p">(</span><span class="nx">edge</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">network</span><span class="p">)</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Reduced</span><span class="w"> </span><span class="nx">latency</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">time</span><span class="o">-</span><span class="nx">sensitive</span><span class="w"> </span><span class="nx">applications</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Bandwidth</span><span class="w"> </span><span class="nx">optimization</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="nx">local</span><span class="w"> </span><span class="nx">processing</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">IoT</span><span class="w"> </span><span class="nx">device</span><span class="w"> </span><span class="nx">support</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">real</span><span class="o">-</span><span class="nx">time</span><span class="w"> </span><span class="nx">analytics</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="mi">5</span><span class="nx">G</span><span class="w"> </span><span class="nx">network</span><span class="w"> </span><span class="nx">integration</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">ultra</span><span class="o">-</span><span class="nx">low</span><span class="w"> </span><span class="nx">latency</span>
+# ----- EDGE COMPUTING -----
+    # Processing data closer to source (edge of network)
+    # Reduced latency for time-sensitive applications
+    # Bandwidth optimization by local processing
+    # IoT device support and real-time analytics
+    # 5G network integration for ultra-low latency
 
-<span class="err">#</span><span class="w"> </span><span class="o">-----</span><span class="w"> </span><span class="nx">INTENT</span><span class="o">-</span><span class="nx">BASED</span><span class="w"> </span><span class="nx">NETWORKING</span><span class="w"> </span><span class="o">-----</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">High</span><span class="o">-</span><span class="nx">level</span><span class="w"> </span><span class="nx">policy</span><span class="w"> </span><span class="nx">specification</span><span class="w"> </span><span class="nx">instead</span><span class="w"> </span><span class="nx">of</span><span class="w"> </span><span class="nx">device</span><span class="w"> </span><span class="nx">configuration</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">AI</span><span class="o">/</span><span class="nx">ML</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">network</span><span class="w"> </span><span class="nx">optimization</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">anomaly</span><span class="w"> </span><span class="nx">detection</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Automated</span><span class="w"> </span><span class="nx">network</span><span class="w"> </span><span class="nx">provisioning</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">management</span><span class="w">  </span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="k">Self</span><span class="o">-</span><span class="nx">healing</span><span class="w"> </span><span class="nx">networks</span><span class="w"> </span><span class="nx">with</span><span class="w"> </span><span class="nx">automatic</span><span class="w"> </span><span class="nx">issue</span><span class="w"> </span><span class="nx">resolution</span>
+# ----- INTENT-BASED NETWORKING -----
+    # High-level policy specification instead of device configuration
+    # AI/ML for network optimization and anomaly detection
+    # Automated network provisioning and management  
+    # Self-healing networks with automatic issue resolution
 
-<span class="err">#</span><span class="w"> </span><span class="o">-----</span><span class="w"> </span><span class="nx">IPv6</span><span class="w"> </span><span class="nx">TRANSITION</span><span class="w"> </span><span class="o">-----</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Dual</span><span class="o">-</span><span class="nx">stack</span><span class="w"> </span><span class="nx">networks</span><span class="w"> </span><span class="nx">running</span><span class="w"> </span><span class="nx">both</span><span class="w"> </span><span class="nx">IPv4</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">IPv6</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Tunneling</span><span class="w"> </span><span class="nx">mechanisms</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">IPv6</span><span class="w"> </span><span class="nx">over</span><span class="w"> </span><span class="nx">IPv4</span><span class="w"> </span><span class="nx">networks</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Network</span><span class="w"> </span><span class="nx">Address</span><span class="w"> </span><span class="nx">Translation</span><span class="w"> </span><span class="p">(</span><span class="nx">NAT64</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">protocol</span><span class="w"> </span><span class="nx">translation</span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nx">Long</span><span class="o">-</span><span class="nx">term</span><span class="w"> </span><span class="nx">migration</span><span class="w"> </span><span class="nx">strategies</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="nx">considerations</span>
-</code></pre></div>
+# ----- IPv6 TRANSITION -----
+    # Dual-stack networks running both IPv4 and IPv6
+    # Tunneling mechanisms for IPv6 over IPv4 networks
+    # Network Address Translation (NAT64) for protocol translation
+    # Long-term migration strategies and considerations
+</code></pre>
 
 <h2>More on</h2>
 <ul>

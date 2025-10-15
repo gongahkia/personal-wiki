@@ -33,7 +33,7 @@
 
         <dl>
           <dt>File size</dt>
-          <dd>4.4KB</dd>
+          <dd>3.8KB</dd>
 
           <dt>Lines of code</dt>
           <dd>92</dd>
@@ -54,16 +54,16 @@
 <h2>Why use a venv?</h2>
 <p>Create and reproduce isolated Python environments within the local project, allowing for fuss-free management of project-specific dependencies without interfering with system-wide Python installations.</p>
 <h2>How do I use a venv?</h2>
-<div class="codehilite"><pre><span></span><code><span class="gp">$ </span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
-<span class="gp">$ </span>venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate<span class="w"> </span><span class="c1"># for windows systems</span>
-<span class="gp">$ </span><span class="nb">source</span><span class="w"> </span>venv/bin/activate<span class="w"> </span><span class="c1"># for unix/linux systems</span>
-<span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>package_name<span class="w"> </span><span class="c1"># install all your packages </span>
-<span class="gp">$ </span>deactivate<span class="w"> </span><span class="c1"># close the virtual environment</span>
-</code></pre></div>
+<pre class="codehilite"><code class="language-console">$ python3 -m venv venv
+$ venv\Scripts\activate # for windows systems
+$ source venv/bin/activate # for unix/linux systems
+$ pip install package_name # install all your packages 
+$ deactivate # close the virtual environment
+</code></pre>
 
 <p>You can also make your project reproducible with a <code>requirements.txt</code>.</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">$ </span>pip3<span class="w"> </span>freeze<span class="w"> </span>&gt;<span class="w"> </span>requirements.txt
-</code></pre></div>
+<pre class="codehilite"><code class="language-console">$ pip3 freeze &gt; requirements.txt
+</code></pre>
 
 <h2>A common question</h2>
 <h3>Do I commit my venv to git?</h3>

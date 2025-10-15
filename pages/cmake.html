@@ -33,7 +33,7 @@
 
         <dl>
           <dt>File size</dt>
-          <dd>7.3KB</dd>
+          <dd>5.1KB</dd>
 
           <dt>Lines of code</dt>
           <dd>116</dd>
@@ -53,45 +53,45 @@
 <li>used for project configuration, building and testing</li>
 </ul>
 <h2>Quickstart</h2>
-<div class="codehilite"><pre><span></span><code><span class="c"># ----- QUICKSTART -----</span>
-<span class="w">    </span><span class="c"># this is a comment in CMake</span>
+<pre class="codehilite"><code class="language-cmake"># ----- QUICKSTART -----
+    # this is a comment in CMake
 
-<span class="c"># ----- SYNTAX OVERVIEW -----</span>
-<span class="w">    </span><span class="c"># project(&lt;name&gt; [&lt;programmingLanguage(s)&gt;]) =&gt; defines the project name and possible programming languages to be used</span>
-<span class="w">    </span><span class="c"># cmake_minimum_required(VERSION &lt;versionNumber&gt;) =&gt; specifies the minimum required CMake version</span>
-<span class="w">    </span><span class="c"># set(&lt;variableIdentifier&gt; &lt;variableValue&gt;) =&gt; sets a specified value to a given variable</span>
-<span class="w">    </span><span class="c"># option(&lt;variableIdentifier&gt; &quot;&lt;optionalDescription&gt;&quot; &lt;defaultSpecifiedValue&gt;) =&gt; creates an option with a description and a default value</span>
-<span class="w">    </span><span class="c"># add_executable(&lt;executableName&gt; [&lt;sourceFilePath(s)&gt;]) =&gt; adds an executable target under the specified name and source file path</span>
-<span class="w">    </span><span class="c"># add_library(&lt;libraryName&gt; [&lt;STATIC, SHARED, MODULE&gt;] [sourceFilePath(s)]) =&gt; adds library targets at the specified file paths under the given name</span>
-<span class="w">    </span><span class="c"># target_include_directories(&lt;targetName&gt; [SYSTEM] [&lt;AFTER, BEFORE&gt;] &lt;INTERFACE, PUBLIC, PRIVATE&gt; [directoryInternalItem(s)]) =&gt; specifies a given target file path is to be included, effectively highlighting the givne file as a dependancy for building</span>
-<span class="w">    </span><span class="c"># target_link_libraries(&lt;targetName&gt; [&lt;INTERFACE, PUBLIC, PRIVATE&gt;] &lt;libraryName(s)&gt;) =&gt; links all the specified libraries to the provided target</span>
-<span class="w">    </span><span class="c"># find_package(&lt;packageName&gt; [&lt;packageVersion&gt;] [REQUIRED] [COMPONENTS]) =&gt; finds and loads settings for external packages</span>
-<span class="w">    </span><span class="c"># add_custom_command() =&gt; adds the specified custom command to a given target</span>
-<span class="w">    </span><span class="c"># add_custom_target() =&gt; adds the specified custom target that can be built using previously declared custom commands</span>
+# ----- SYNTAX OVERVIEW -----
+    # project(&lt;name&gt; [&lt;programmingLanguage(s)&gt;]) =&gt; defines the project name and possible programming languages to be used
+    # cmake_minimum_required(VERSION &lt;versionNumber&gt;) =&gt; specifies the minimum required CMake version
+    # set(&lt;variableIdentifier&gt; &lt;variableValue&gt;) =&gt; sets a specified value to a given variable
+    # option(&lt;variableIdentifier&gt; &quot;&lt;optionalDescription&gt;&quot; &lt;defaultSpecifiedValue&gt;) =&gt; creates an option with a description and a default value
+    # add_executable(&lt;executableName&gt; [&lt;sourceFilePath(s)&gt;]) =&gt; adds an executable target under the specified name and source file path
+    # add_library(&lt;libraryName&gt; [&lt;STATIC, SHARED, MODULE&gt;] [sourceFilePath(s)]) =&gt; adds library targets at the specified file paths under the given name
+    # target_include_directories(&lt;targetName&gt; [SYSTEM] [&lt;AFTER, BEFORE&gt;] &lt;INTERFACE, PUBLIC, PRIVATE&gt; [directoryInternalItem(s)]) =&gt; specifies a given target file path is to be included, effectively highlighting the givne file as a dependancy for building
+    # target_link_libraries(&lt;targetName&gt; [&lt;INTERFACE, PUBLIC, PRIVATE&gt;] &lt;libraryName(s)&gt;) =&gt; links all the specified libraries to the provided target
+    # find_package(&lt;packageName&gt; [&lt;packageVersion&gt;] [REQUIRED] [COMPONENTS]) =&gt; finds and loads settings for external packages
+    # add_custom_command() =&gt; adds the specified custom command to a given target
+    # add_custom_target() =&gt; adds the specified custom target that can be built using previously declared custom commands
 
-<span class="c"># ----- EXAMPLE CMAKELISTS.TXT FILE -----</span>
-<span class="w">    </span><span class="c"># CMakeLists.txt files generally follow the below structure</span>
+# ----- EXAMPLE CMAKELISTS.TXT FILE -----
+    # CMakeLists.txt files generally follow the below structure
 
-<span class="c"># minimum CMake version required</span>
-<span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span><span class="w"> </span><span class="s">3.10</span><span class="p">)</span>
+# minimum CMake version required
+cmake_minimum_required(VERSION 3.10)
 
-<span class="c"># project name and version</span>
-<span class="nb">project</span><span class="p">(</span><span class="s">HelloWorld</span><span class="w"> </span><span class="s">VERSION</span><span class="w"> </span><span class="s">1.0</span><span class="p">)</span>
+# project name and version
+project(HelloWorld VERSION 1.0)
 
-<span class="c"># specify C++ standard to be used</span>
-<span class="nb">set</span><span class="p">(</span><span class="s">CMAKE_CXX_STANDARD</span><span class="w"> </span><span class="s">11</span><span class="p">)</span>
-<span class="nb">set</span><span class="p">(</span><span class="s">CMAKE_CXX_STANDARD_REQUIRED</span><span class="w"> </span><span class="s">True</span><span class="p">)</span>
+# specify C++ standard to be used
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-<span class="c"># add executables</span>
-<span class="nb">add_executable</span><span class="p">(</span><span class="s">hello_world</span><span class="w"> </span><span class="s">main.cpp</span><span class="p">)</span>
+# add executables
+add_executable(hello_world main.cpp)
 
-<span class="c"># specify directories to be included</span>
-<span class="nb">target_include_directories</span><span class="p">(</span><span class="s">hello_world</span><span class="w"> </span><span class="s">PRIVATE</span><span class="w"> </span><span class="o">${</span><span class="nv">PROJECT_SOURCE_DIR</span><span class="o">}</span><span class="s">/include</span><span class="p">)</span>
+# specify directories to be included
+target_include_directories(hello_world PRIVATE ${PROJECT_SOURCE_DIR}/include)
 
-<span class="c"># find and link external libraries </span>
-<span class="nb">find_package</span><span class="p">(</span><span class="s">Boost</span><span class="w"> </span><span class="s">1.65</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
-<span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">hello_world</span><span class="w"> </span><span class="s">PRIVATE</span><span class="w"> </span><span class="s">Boost::Boost</span><span class="p">)</span>
-</code></pre></div>
+# find and link external libraries 
+find_package(Boost 1.65 REQUIRED)
+target_link_libraries(hello_world PRIVATE Boost::Boost)
+</code></pre>
 
 <h2>More on</h2>
 <ul>

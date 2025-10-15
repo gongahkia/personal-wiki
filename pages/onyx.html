@@ -33,7 +33,7 @@
 
         <dl>
           <dt>File size</dt>
-          <dd>37.2KB</dd>
+          <dd>7.5KB</dd>
 
           <dt>Lines of code</dt>
           <dd>326</dd>
@@ -44,260 +44,260 @@
         <h1><code>Onyx</code></h1>
 <p>Modern systems programming language focused on simplicity and performance.</p>
 <h2>Comments</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- COMMENT ----------</span>
+<pre class="codehilite"><code class="language-onyx">// ---------- COMMENT ----------
 
-<span class="c1">// this is a single-line comment</span>
+// this is a single-line comment
 
-<span class="o">/*</span><span class="w"> </span>
-<span class="n">this</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">a</span>
-<span class="n">multi</span><span class="o">-</span><span class="n">line</span>
-<span class="n">comment</span>
-<span class="o">*/</span>
-</code></pre></div>
+/* 
+this is a
+multi-line
+comment
+*/
+</code></pre>
 
 <h2>Printing</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- PRINT ----------</span>
-<span class="w">    </span><span class="c1">// print() =&gt; prints values to stdout without newline</span>
-<span class="w">    </span><span class="c1">// println() =&gt; prints values to stdout with newline</span>
-<span class="w">    </span><span class="c1">// printf() =&gt; formatted printing similar to C</span>
+<pre class="codehilite"><code class="language-onyx">// ---------- PRINT ----------
+    // print() =&gt; prints values to stdout without newline
+    // println() =&gt; prints values to stdout with newline
+    // printf() =&gt; formatted printing similar to C
 
-<span class="n">println</span><span class="p">(</span><span class="s">&quot;Hello, Onyx!&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s">&quot;No newline here&quot;</span><span class="p">)</span>
-<span class="nb">printf</span><span class="p">(</span><span class="s">&quot;Formatted: %d\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">)</span>
-</code></pre></div>
+println(&quot;Hello, Onyx!&quot;)
+print(&quot;No newline here&quot;)
+printf(&quot;Formatted: %d\n&quot;, 42)
+</code></pre>
 
 <h2>Quickstart</h2>
-<div class="codehilite"><pre><span></span><code><span class="o">//</span><span class="w"> </span><span class="o">----------</span><span class="w"> </span><span class="n">QUICKSTART</span><span class="w"> </span><span class="o">----------</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">Onyx</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">systems</span><span class="w"> </span><span class="n">language</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">modern</span><span class="w"> </span><span class="n">syntax</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">statically</span><span class="w"> </span><span class="n">typed</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="n">inference</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">memory</span><span class="w"> </span><span class="n">safe</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">optional</span><span class="w"> </span><span class="n">manual</span><span class="w"> </span><span class="n">memory</span><span class="w"> </span><span class="n">management</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="n">annotation</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="n">inference</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">assignment</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">assignment</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">existing</span><span class="w"> </span><span class="n">variable</span>
+<pre class="codehilite"><code class="language-onyx">// ---------- QUICKSTART ----------
+    // Onyx is a systems language with modern syntax
+    // statically typed with type inference
+    // memory safe with optional manual memory management
+    // : =&gt; type annotation
+    // := =&gt; type inference and assignment
+    // = =&gt; assignment to existing variable
 
-<span class="n">main</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">message</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello, World!&quot;</span><span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="n">inferred</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">string</span>
-<span class="w">    </span><span class="n">number</span><span class="p">:</span><span class="w"> </span><span class="n">i32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="w">           </span><span class="o">//</span><span class="w"> </span><span class="n">explicit</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="n">annotation</span>
-<span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
+main :: () {
+    message := &quot;Hello, World!&quot;  // type inferred as string
+    number: i32 = 42           // explicit type annotation
+    println(message)
+}
+</code></pre>
 
 <h2>Types</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- TYPE ----------</span>
-<span class="w">    </span><span class="c1">// i8, i16, i32, i64 =&gt; signed integers</span>
-<span class="w">    </span><span class="c1">// u8, u16, u32, u64 =&gt; unsigned integers</span>
-<span class="w">    </span><span class="c1">// f32, f64 =&gt; floating-point numbers</span>
-<span class="w">    </span><span class="c1">// bool =&gt; true, false</span>
-<span class="w">    </span><span class="c1">// char =&gt; Unicode character</span>
-<span class="w">    </span><span class="c1">// str =&gt; string slice</span>
-<span class="w">    </span><span class="c1">// string =&gt; owned string</span>
-<span class="w">    </span><span class="c1">// void =&gt; absence of value</span>
+<pre class="codehilite"><code class="language-onyx">// ---------- TYPE ----------
+    // i8, i16, i32, i64 =&gt; signed integers
+    // u8, u16, u32, u64 =&gt; unsigned integers
+    // f32, f64 =&gt; floating-point numbers
+    // bool =&gt; true, false
+    // char =&gt; Unicode character
+    // str =&gt; string slice
+    // string =&gt; owned string
+    // void =&gt; absence of value
 
-<span class="n">age</span><span class="p">:</span><span class="w"> </span><span class="n">i32</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">25</span>
-<span class="n">height</span><span class="p">:</span><span class="w"> </span><span class="n">f64</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">5.9</span>
-<span class="n">is_active</span><span class="p">:</span><span class="w"> </span><span class="n">bool</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">true</span>
-<span class="n">initial</span><span class="p">:</span><span class="w"> </span><span class="nb">char</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;A&#39;</span>
-<span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Alice&quot;</span>
-<span class="n">owned_name</span><span class="p">:</span><span class="w"> </span><span class="nb">string</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Bob&quot;</span>
-</code></pre></div>
+age: i32 = 25
+height: f64 = 5.9
+is_active: bool = true
+initial: char = 'A'
+name: str = &quot;Alice&quot;
+owned_name: string = &quot;Bob&quot;
+</code></pre>
 
 <h2>Operators</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- OPERATOR ----------</span>
+<pre class="codehilite"><code class="language-onyx">// ---------- OPERATOR ----------
 
-<span class="c1">// ARITHMETIC OPERATORS</span>
-<span class="w">    </span><span class="c1">// + =&gt; addition</span>
-<span class="w">    </span><span class="c1">// - =&gt; subtraction</span>
-<span class="w">    </span><span class="c1">// * =&gt; multiplication</span>
-<span class="w">    </span><span class="c1">// / =&gt; division</span>
-<span class="w">    </span><span class="c1">// % =&gt; modulo</span>
+// ARITHMETIC OPERATORS
+    // + =&gt; addition
+    // - =&gt; subtraction
+    // * =&gt; multiplication
+    // / =&gt; division
+    // % =&gt; modulo
 
-<span class="c1">// COMPARISON OPERATORS</span>
-<span class="w">    </span><span class="c1">// == =&gt; equality</span>
-<span class="w">    </span><span class="c1">// != =&gt; inequality</span>
-<span class="w">    </span><span class="c1">//  = =&gt; comparison operators</span>
+// COMPARISON OPERATORS
+    // == =&gt; equality
+    // != =&gt; inequality
+    //  = =&gt; comparison operators
 
-<span class="c1">// LOGICAL OPERATORS</span>
-<span class="w">    </span><span class="c1">// &amp;&amp; =&gt; logical and</span>
-<span class="w">    </span><span class="c1">// || =&gt; logical or</span>
-<span class="w">    </span><span class="c1">// ! =&gt; logical not</span>
+// LOGICAL OPERATORS
+    // &amp;&amp; =&gt; logical and
+    // || =&gt; logical or
+    // ! =&gt; logical not
 
-<span class="c1">// BITWISE OPERATORS</span>
-<span class="w">    </span><span class="c1">// &amp; =&gt; bitwise and</span>
-<span class="w">    </span><span class="c1">// | =&gt; bitwise or</span>
-<span class="w">    </span><span class="c1">// ^ =&gt; bitwise xor</span>
-<span class="w">    </span><span class="c1">// ~ =&gt; bitwise not</span>
-<span class="w">    </span><span class="c1">// &gt; =&gt; left and right shift</span>
-</code></pre></div>
+// BITWISE OPERATORS
+    // &amp; =&gt; bitwise and
+    // | =&gt; bitwise or
+    // ^ =&gt; bitwise xor
+    // ~ =&gt; bitwise not
+    // &gt; =&gt; left and right shift
+</code></pre>
 
 <h2>Control structures</h2>
-<div class="codehilite"><pre><span></span><code><span class="o">//</span><span class="w"> </span><span class="o">----------</span><span class="w"> </span><span class="n">CONTROL</span><span class="w"> </span><span class="k">STRUCTURE</span><span class="w"> </span><span class="o">----------</span>
+<pre class="codehilite"><code class="language-onyx">// ---------- CONTROL STRUCTURE ----------
 
-<span class="o">//</span><span class="w"> </span><span class="n">CONDITIONALS</span>
+// CONDITIONALS
 
-<span class="o">//</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">ELSE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">ELSE</span>
-<span class="n">x</span><span class="w"> </span><span class="err">:</span><span class="o">=</span><span class="w"> </span><span class="mi">10</span>
-<span class="k">if</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="err">{</span>
-<span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="ss">&quot;greater than 10&quot;</span><span class="p">)</span>
-<span class="err">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="err">{</span>
-<span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="ss">&quot;equals 10&quot;</span><span class="p">)</span>
-<span class="err">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="err">{</span>
-<span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="ss">&quot;less than 10&quot;</span><span class="p">)</span>
-<span class="err">}</span>
+// IF ELSE IF ELSE
+x := 10
+if x &gt; 10 {
+    println(&quot;greater than 10&quot;)
+} else if x == 10 {
+    println(&quot;equals 10&quot;)
+} else {
+    println(&quot;less than 10&quot;)
+}
 
-<span class="o">//</span><span class="w"> </span><span class="n">SWITCH</span><span class="w"> </span><span class="k">CASE</span><span class="w"> </span><span class="k">DEFAULT</span>
-<span class="nf">day</span><span class="w"> </span><span class="err">:</span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;Monday&quot;</span>
-<span class="n">switch</span><span class="w"> </span><span class="nf">day</span><span class="w"> </span><span class="err">{</span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="ss">&quot;Monday&quot;</span><span class="w"> </span><span class="err">{</span>
-<span class="w">        </span><span class="n">println</span><span class="p">(</span><span class="ss">&quot;Start of work week&quot;</span><span class="p">)</span>
-<span class="w">    </span><span class="err">}</span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="ss">&quot;Friday&quot;</span><span class="w"> </span><span class="err">{</span>
-<span class="w">        </span><span class="n">println</span><span class="p">(</span><span class="ss">&quot;TGIF!&quot;</span><span class="p">)</span>
-<span class="w">    </span><span class="err">}</span>
-<span class="w">    </span><span class="k">default</span><span class="w"> </span><span class="err">{</span>
-<span class="w">        </span><span class="n">println</span><span class="p">(</span><span class="ss">&quot;Another day&quot;</span><span class="p">)</span>
-<span class="w">    </span><span class="err">}</span>
-<span class="err">}</span>
+// SWITCH CASE DEFAULT
+day := &quot;Monday&quot;
+switch day {
+    case &quot;Monday&quot; {
+        println(&quot;Start of work week&quot;)
+    }
+    case &quot;Friday&quot; {
+        println(&quot;TGIF!&quot;)
+    }
+    default {
+        println(&quot;Another day&quot;)
+    }
+}
 
-<span class="o">//</span><span class="w"> </span><span class="n">LOOPS</span>
+// LOOPS
 
-<span class="o">//</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="n">LOOPS</span>
-<span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="mf">0..5</span><span class="w"> </span><span class="err">{</span>
-<span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<span class="err">}</span>
+// FOR LOOPS
+for i in 0..5 {
+    println(i)
+}
 
-<span class="k">for</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="ow">in</span><span class="w">  </span><span class="err">{</span><span class="o">[</span><span class="n">3</span><span class="o">][</span><span class="n">4</span><span class="o">][</span><span class="n">1</span><span class="o">][</span><span class="n">2</span><span class="o">]</span>
-<span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-<span class="err">}</span>
+for item in  {[3][4][1][2]
+    println(item)
+}
 
-<span class="o">//</span><span class="w"> </span><span class="k">WHILE</span><span class="w"> </span><span class="n">LOOPS</span>
-<span class="n">counter</span><span class="w"> </span><span class="err">:</span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
-<span class="k">while</span><span class="w"> </span><span class="n">counter</span><span class="w">  </span><span class="n">fixed</span><span class="o">-</span><span class="k">size</span><span class="w"> </span><span class="n">arrays</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="n">elements</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="n">T</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="err">[]</span><span class="n">T</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">dynamic</span><span class="w"> </span><span class="n">arrays</span><span class="w"> </span><span class="p">(</span><span class="n">slices</span><span class="p">)</span>
+// WHILE LOOPS
+counter := 0
+while counter  fixed-size arrays of N elements of type T
+    // []T =&gt; dynamic arrays (slices)
 
-<span class="nl">numbers</span><span class="p">:</span><span class="w"> </span><span class="n">i32</span><span class="w"> </span><span class="o">=[</span><span class="n">5</span><span class="o">][</span><span class="n">4</span><span class="o">][</span><span class="n">9</span><span class="o">][</span><span class="n">1</span><span class="o">][</span><span class="n">2</span><span class="o">][</span><span class="n">3</span><span class="o">]</span>
-<span class="nl">dynamic_numbers</span><span class="p">:</span><span class="w"> </span><span class="err">[]</span><span class="n">i32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make</span><span class="p">(</span><span class="err">[]</span><span class="n">i32</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span>
+numbers: i32 =[5][4][9][1][2][3]
+dynamic_numbers: []i32 = make([]i32, 0, 10)
 
-<span class="o">//</span><span class="w"> </span><span class="n">STRINGS</span>
-<span class="nl">message</span><span class="p">:</span><span class="w"> </span><span class="nf">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;Hello&quot;</span>
-<span class="nl">owned_message</span><span class="p">:</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;World&quot;</span>
+// STRINGS
+message: str = &quot;Hello&quot;
+owned_message: string = &quot;World&quot;
 
-<span class="o">//</span><span class="w"> </span><span class="n">STRUCTS</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">struct</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">custom</span><span class="w"> </span><span class="k">data</span><span class="w"> </span><span class="n">types</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">named</span><span class="w"> </span><span class="n">fields</span>
+// STRUCTS
+    // struct =&gt; custom data types with named fields
 
-<span class="n">Person</span><span class="w"> </span><span class="o">::</span><span class="w"> </span><span class="n">struct</span><span class="w"> </span><span class="err">{</span>
-<span class="w">    </span><span class="nl">name</span><span class="p">:</span><span class="w"> </span><span class="nf">str</span>
-<span class="w">    </span><span class="nl">age</span><span class="p">:</span><span class="w"> </span><span class="n">i32</span>
-<span class="w">    </span><span class="nl">is_active</span><span class="p">:</span><span class="w"> </span><span class="n">bool</span>
-<span class="err">}</span>
+Person :: struct {
+    name: str
+    age: i32
+    is_active: bool
+}
 
-<span class="nl">person</span><span class="p">:</span><span class="w"> </span><span class="n">Person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Person</span><span class="err">{</span>
-<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;Alice&quot;</span>
-<span class="w">    </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span>
-<span class="w">    </span><span class="n">is_active</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span>
-<span class="err">}</span>
+person: Person = Person{
+    name = &quot;Alice&quot;
+    age = 30
+    is_active = true
+}
 
-<span class="o">//</span><span class="w"> </span><span class="n">ENUMS</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">enum</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">enumerated</span><span class="w"> </span><span class="n">types</span>
+// ENUMS
+    // enum =&gt; enumerated types
 
-<span class="n">Status</span><span class="w"> </span><span class="o">::</span><span class="w"> </span><span class="n">enum</span><span class="w"> </span><span class="err">{</span>
-<span class="w">    </span><span class="n">Pending</span>
-<span class="w">    </span><span class="n">Active</span>
-<span class="w">    </span><span class="n">Inactive</span>
-<span class="err">}</span>
+Status :: enum {
+    Pending
+    Active
+    Inactive
+}
 
-<span class="nl">current_status</span><span class="p">:</span><span class="w"> </span><span class="n">Status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Status</span><span class="p">.</span><span class="n">Active</span>
+current_status: Status = Status.Active
 
-<span class="o">//</span><span class="w"> </span><span class="n">UNIONS</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="ow">union</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">tagged</span><span class="w"> </span><span class="n">unions</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">type</span><span class="o">-</span><span class="n">safe</span><span class="w"> </span><span class="n">variants</span>
+// UNIONS
+    // union =&gt; tagged unions for type-safe variants
 
-<span class="k">Result</span><span class="w"> </span><span class="o">::</span><span class="w"> </span><span class="ow">union</span><span class="w"> </span><span class="err">{</span>
-<span class="w">    </span><span class="nl">Success</span><span class="p">:</span><span class="w"> </span><span class="n">i32</span>
-<span class="w">    </span><span class="nl">Error</span><span class="p">:</span><span class="w"> </span><span class="nf">str</span>
-<span class="err">}</span>
+Result :: union {
+    Success: i32
+    Error: str
+}
 
-<span class="k">result</span><span class="err">:</span><span class="w"> </span><span class="k">Result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">Result</span><span class="err">{</span><span class="n">Success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="err">}</span>
+result: Result = Result{Success = 42}
 
-<span class="o">//</span><span class="w"> </span><span class="n">MAPS</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="k">map</span><span class="o">[</span><span class="n">K</span><span class="o">]</span><span class="n">V</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">hash</span><span class="w"> </span><span class="n">maps</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="n">K</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="k">value</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="n">V</span>
+// MAPS
+    // map[K]V =&gt; hash maps with key type K and value type V
 
-<span class="nl">scores</span><span class="p">:</span><span class="w"> </span><span class="k">map</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="n">i32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make</span><span class="p">(</span><span class="k">map</span><span class="o">[</span><span class="n">str</span><span class="o">]</span><span class="n">i32</span><span class="p">)</span>
-<span class="n">scores</span><span class="o">[</span><span class="n">&quot;Alice&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">95</span>
-<span class="n">scores</span><span class="o">[</span><span class="n">&quot;Bob&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">87</span>
+scores: map[str]i32 = make(map[str]i32)
+scores[&quot;Alice&quot;] = 95
+scores[&quot;Bob&quot;] = 87
 
-<span class="o">//</span><span class="w"> </span><span class="n">POINTERS</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="o">^</span><span class="n">T</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">pointer</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="n">T</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">address</span><span class="o">-</span><span class="k">of</span><span class="w"> </span><span class="n">operator</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">dereference</span><span class="w"> </span><span class="n">operator</span>
+// POINTERS
+    // ^T =&gt; pointer to type T
+    // &amp; =&gt; address-of operator
+    // * =&gt; dereference operator
 
-<span class="k">value</span><span class="err">:</span><span class="w"> </span><span class="n">i32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span>
-<span class="nl">ptr</span><span class="p">:</span><span class="w"> </span><span class="o">^</span><span class="n">i32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="k">value</span>
-<span class="nl">dereferenced</span><span class="p">:</span><span class="w"> </span><span class="n">i32</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span>
-</code></pre></div>
+value: i32 = 42
+ptr: ^i32 = &amp;value
+dereferenced: i32 = *ptr
+</code></pre>
 
 <h2>Functions</h2>
-<div class="codehilite"><pre><span></span><code><span class="o">//</span><span class="w"> </span><span class="o">----------</span><span class="w"> </span><span class="n">FUNCTION</span><span class="w"> </span><span class="o">----------</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">function_name</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="p">(</span><span class="n">parameters</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">return_type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">body</span><span class="w"> </span><span class="p">}</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">function</span><span class="w"> </span><span class="n">declaration</span><span class="w"> </span><span class="n">operator</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="n">separator</span>
+<pre class="codehilite"><code class="language-onyx">// ---------- FUNCTION ----------
+    // function_name :: (parameters) -&gt; return_type { body }
+    // :: =&gt; function declaration operator
+    // -&gt; =&gt; return type separator
 
-<span class="o">//</span><span class="w"> </span><span class="n">BASIC</span><span class="w"> </span><span class="n">FUNCTIONS</span>
-<span class="n">add</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="n">i32</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">:</span><span class="w"> </span><span class="n">i32</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">i32</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span>
-<span class="p">}</span>
+// BASIC FUNCTIONS
+add :: (a: i32, b: i32) -&gt; i32 {
+    return a + b
+}
 
-<span class="o">//</span><span class="w"> </span><span class="n">FUNCTIONS</span><span class="w"> </span><span class="n">WITH</span><span class="w"> </span><span class="n">MULTIPLE</span><span class="w"> </span><span class="n">RETURNS</span>
-<span class="n">divide</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="n">i32</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">:</span><span class="w"> </span><span class="n">i32</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">i32</span><span class="p">,</span><span class="w"> </span><span class="nb nb-Type">bool</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="bp">false</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="bp">true</span>
-<span class="p">}</span>
+// FUNCTIONS WITH MULTIPLE RETURNS
+divide :: (a: i32, b: i32) -&gt; (i32, bool) {
+    if b == 0 {
+        return 0, false
+    }
+    return a / b, true
+}
 
-<span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="n">success</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="n">divide</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+result, success := divide(10, 2)
 
-<span class="o">//</span><span class="w"> </span><span class="n">PROCEDURES</span><span class="w"> </span><span class="p">(</span><span class="n">NO</span><span class="w"> </span><span class="n">RETURN</span><span class="w"> </span><span class="n">VALUE</span><span class="p">)</span>
-<span class="n">greet</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="nb">str</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s2">&quot;Hello, </span><span class="si">%s</span><span class="s2">!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">)</span>
-<span class="p">}</span>
+// PROCEDURES (NO RETURN VALUE)
+greet :: (name: str) {
+    printf(&quot;Hello, %s!\n&quot;, name)
+}
 
-<span class="o">//</span><span class="w"> </span><span class="n">FUNCTION</span><span class="w"> </span><span class="n">POINTERS</span>
-<span class="n">operation</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="n">i32</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">:</span><span class="w"> </span><span class="n">i32</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">i32</span>
+// FUNCTION POINTERS
+operation :: (a: i32, b: i32) -&gt; i32
 
-<span class="n">multiply</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="n">i32</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">:</span><span class="w"> </span><span class="n">i32</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">i32</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span>
-<span class="p">}</span>
+multiply :: (a: i32, b: i32) -&gt; i32 {
+    return a * b
+}
 
-<span class="n">operation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">multiply</span>
-<span class="n">result</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="n">operation</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
+operation = multiply
+result := operation(5, 3)
 
-<span class="o">//</span><span class="w"> </span><span class="n">GENERIC</span><span class="w"> </span><span class="n">FUNCTIONS</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="o">$</span><span class="n">T</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">generic</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="n">parameter</span>
+// GENERIC FUNCTIONS
+    // $T =&gt; generic type parameter
 
-<span class="nb">max</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="p">(</span><span class="o">$</span><span class="n">T</span><span class="p">:</span><span class="w"> </span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">:</span><span class="w"> </span><span class="n">T</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">a</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">b</span>
-<span class="p">}</span>
+max :: ($T: type, a: T, b: T) -&gt; T {
+    if a &gt; b {
+        return a
+    }
+    return b
+}
 
-<span class="n">max_int</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="nb">max</span><span class="p">(</span><span class="n">i32</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">)</span>
-<span class="n">max_float</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="nb">max</span><span class="p">(</span><span class="n">f64</span><span class="p">,</span><span class="w"> </span><span class="mf">3.14</span><span class="p">,</span><span class="w"> </span><span class="mf">2.71</span><span class="p">)</span>
+max_int := max(i32, 10, 20)
+max_float := max(f64, 3.14, 2.71)
 
-<span class="o">//</span><span class="w"> </span><span class="n">CLOSURES</span>
-<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">functions</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">capture</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">their</span><span class="w"> </span><span class="n">environment</span>
+// CLOSURES
+    // functions can capture variables from their environment
 
-<span class="n">make_counter</span><span class="w"> </span><span class="p">::</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">i32</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">count</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">i32</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">count</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">count</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
+make_counter :: () -&gt; () -&gt; i32 {
+    count := 0
+    return () -&gt; i32 {
+        count += 1
+        return count
+    }
+}
 
-<span class="n">counter</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="n">make_counter</span><span class="p">()</span>
-<span class="n">println</span><span class="p">(</span><span class="n">counter</span><span class="p">())</span><span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="nb">prints</span><span class="w"> </span><span class="mi">1</span>
-<span class="n">println</span><span class="p">(</span><span class="n">counter</span><span class="p">())</span><span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="nb">prints</span><span class="w"> </span><span class="mi">2</span>
-</code></pre></div>
+counter := make_counter()
+println(counter())  // prints 1
+println(counter())  // prints 2
+</code></pre>
 
 <h2>More on</h2>
 <ul>

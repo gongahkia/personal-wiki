@@ -33,7 +33,7 @@
 
         <dl>
           <dt>File size</dt>
-          <dd>10.9KB</dd>
+          <dd>5.6KB</dd>
 
           <dt>Lines of code</dt>
           <dd>137</dd>
@@ -51,67 +51,67 @@
 <li><a href="https://firebase.google.com/products/app-hosting">Google Cloud app deployment</a>: Full-stack web apps hosted with Google Cloud tools</li>
 </ol>
 <h2>Quickstart</h2>
-<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- QUICKSTART ----------</span>
-<span class="w">    </span><span class="c1">// JS is the main language used to interact with Firebase and its suite of tools</span>
-<span class="w">    </span><span class="c1">// below is a brief skeleton to reference when using Firebase&#39;s authentication and Firestore in any JS project</span>
+<pre class="codehilite"><code class="language-js">// ---------- QUICKSTART ----------
+    // JS is the main language used to interact with Firebase and its suite of tools
+    // below is a brief skeleton to reference when using Firebase's authentication and Firestore in any JS project
 
-<span class="c1">// ----- USER AUTHENTICATION -----</span>
-<span class="w">    </span><span class="c1">// import firebase from &#39;firebase/app&#39; =&gt; calls the firebase module in your JS app and brings it within local scope</span>
-<span class="w">    </span><span class="c1">// import &#39;firebase/auth&#39; =&gt; calls the authentication library firebase provides to your JS app and brings it within local scope</span>
-<span class="w">    </span><span class="c1">// .initializeApp(&lt;yourFirebaseConfiguration&gt;) =&gt; intiializes the firebase app with the provided configuration saved as a JS object</span>
-<span class="w">    </span><span class="c1">// .auth() =&gt; initalizes the authentication object within the firebase app, upon which many authentication methods can be called</span>
-<span class="w">    </span><span class="c1">// .signInWithEmailAndPassword(&lt;userEmail&gt;, &lt;userPassword&gt;) =&gt; handles the authentication process for a login that requires both the user&#39;s email and password, called on the authentication object</span>
+// ----- USER AUTHENTICATION -----
+    // import firebase from 'firebase/app' =&gt; calls the firebase module in your JS app and brings it within local scope
+    // import 'firebase/auth' =&gt; calls the authentication library firebase provides to your JS app and brings it within local scope
+    // .initializeApp(&lt;yourFirebaseConfiguration&gt;) =&gt; intiializes the firebase app with the provided configuration saved as a JS object
+    // .auth() =&gt; initalizes the authentication object within the firebase app, upon which many authentication methods can be called
+    // .signInWithEmailAndPassword(&lt;userEmail&gt;, &lt;userPassword&gt;) =&gt; handles the authentication process for a login that requires both the user's email and password, called on the authentication object
 
-<span class="k">import</span><span class="w"> </span><span class="nx">firebase</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;firebase/app&#39;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="s1">&#39;firebase/auth&#39;</span><span class="p">;</span>
+import firebase from 'firebase/app';
+import 'firebase/auth';
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">firebaseConfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// blah blah</span>
-<span class="w">    </span><span class="c1">// your firebase configuration here</span>
-<span class="w">    </span><span class="c1">// blah blah</span>
-<span class="p">};</span>
+const firebaseConfig = {
+    // blah blah
+    // your firebase configuration here
+    // blah blah
+};
 
-<span class="nx">firebase</span><span class="p">.</span><span class="nx">initializeApp</span><span class="p">(</span><span class="nx">firebaseConfig</span><span class="p">);</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">auth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">firebase</span><span class="p">.</span><span class="nx">auth</span><span class="p">();</span>
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
 
-<span class="nx">auth</span><span class="p">.</span><span class="nx">signInWithEmailAndPassword</span><span class="p">(</span><span class="nx">email</span><span class="p">,</span><span class="w"> </span><span class="nx">password</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">userCredential</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// blah blah</span>
-<span class="w">    </span><span class="c1">// if the user signed in successfully</span>
-<span class="w">    </span><span class="c1">// blah blah</span>
-<span class="p">}).</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// blah blah</span>
-<span class="w">    </span><span class="c1">// handle any errors generated</span>
-<span class="w">    </span><span class="c1">// blah blah</span>
-<span class="p">});</span>
+auth.signInWithEmailAndPassword(email, password).then((userCredential) =&gt; {
+    // blah blah
+    // if the user signed in successfully
+    // blah blah
+}).catch((error) =&gt; {
+    // blah blah
+    // handle any errors generated
+    // blah blah
+});
 
-<span class="c1">// ----- FIRESTORE -----</span>
-<span class="w">    </span><span class="c1">// import { getFireStore } from &#39;firebase/firestore/lite&#39; =&gt; calls the getFirestore() method in your JS app and brings it within local scope</span>
-<span class="w">    </span><span class="c1">// getFireStore(&lt;firebaseAppObject&gt;) =&gt; initialises a firestore instance</span>
-<span class="w">    </span><span class="c1">// .collection(&lt;collectionName&gt;) =&gt; initialises an existing collection in the firestore database into a collection object</span>
-<span class="w">    </span><span class="c1">// .doc(&lt;documentName&gt;) =&gt; initialises existing documents in the firestore database into a document object</span>
-<span class="w">    </span><span class="c1">// .set(&lt;documentValueLiteral&gt;) =&gt; adds the specified document value literal to the current document object within the selected collection</span>
-<span class="w">    </span><span class="c1">// .get().then((&lt;documentObject&gt;)=&gt;{}) =&gt; reads the current document object selected</span>
+// ----- FIRESTORE -----
+    // import { getFireStore } from 'firebase/firestore/lite' =&gt; calls the getFirestore() method in your JS app and brings it within local scope
+    // getFireStore(&lt;firebaseAppObject&gt;) =&gt; initialises a firestore instance
+    // .collection(&lt;collectionName&gt;) =&gt; initialises an existing collection in the firestore database into a collection object
+    // .doc(&lt;documentName&gt;) =&gt; initialises existing documents in the firestore database into a document object
+    // .set(&lt;documentValueLiteral&gt;) =&gt; adds the specified document value literal to the current document object within the selected collection
+    // .get().then((&lt;documentObject&gt;)=&gt;{}) =&gt; reads the current document object selected
 
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">getFirestore</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;firebase/firestore/lite&#39;</span><span class="p">;</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getFirestore</span><span class="p">(</span><span class="nx">firebaseApp</span><span class="p">);</span>
+import { getFirestore } from 'firebase/firestore/lite';
+const db = getFirestore(firebaseApp);
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">colRef</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">db</span><span class="p">.</span><span class="nx">collection</span><span class="p">(</span><span class="s1">&#39;users&#39;</span><span class="p">);</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">docRef</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">colRef</span><span class="p">.</span><span class="nx">doc</span><span class="p">(</span><span class="s1">&#39;uid&#39;</span><span class="p">);</span>
+const colRef = db.collection('users');
+const docRef = colRef.doc('uid');
 
-<span class="nx">docRef</span><span class="p">.</span><span class="nx">set</span><span class="p">({</span>
-<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Bob&#39;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">30</span>
-<span class="p">});</span>
+docRef.set({
+    name: 'Bob',
+    age: 30
+});
 
-<span class="nx">docRef</span><span class="p">.</span><span class="nx">get</span><span class="p">().</span><span class="nx">then</span><span class="p">((</span><span class="nx">doc</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">doc</span><span class="p">.</span><span class="nx">exists</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">doc</span><span class="p">.</span><span class="nx">data</span><span class="p">();</span>
-<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;No such document!&#39;</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">});</span>
-</code></pre></div>
+docRef.get().then((doc) =&gt; {
+    if (doc.exists) {
+        const data = doc.data();
+        console.log(data);
+    } else {
+        console.log('No such document!');
+    }
+});
+</code></pre>
 
 <h2>More on</h2>
 <ul>
