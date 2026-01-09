@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Wiki Note: Carbon - Gabriel Ong">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntl-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntlMono-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
+  <style>
+    .thin-space:after{content:"\2006"}
+    pre {
+      overflow-x: auto;
+      max-width: 100%;
+    }
+  </style>
+  <script src="../script.js" defer></script>
+  <title>GABRIEL ONG</title>
+  <link rel="shortcut icon" href="../asset/blob.ico" type="image/x-icon">
+</head>
+<body>
+  <div id="click-container"></div>
+  <input type="button" id="dark-mode">
+  <label for="dark-mode">
+    <img id="infinityButton" src="../asset/roller.png" height="24" width="24"/>
+  </label>
+
+  <main>
+    <article class="overallArticleTags">
+
+      <section class="note-header">
+        <h2>Carbon</h2>
+
+        <dl>
+          <dt>File size</dt>
+          <dd>4.4KB</dd>
+
+          <dt>Lines of code</dt>
+          <dd>166</dd>
+        </dl>
+      </section>
+
+      <section class="note-content">
+        <h1><code>Carbon</code></h1>
+<p>An experimental successor to C++ by Google.</p>
+<h2>Comments</h2>
+<pre class="codehilite"><code class="language-carbon">// ---------- COMMENT ----------
+
+// this is a single-line comment
+</code></pre>
+
+<h2>Printing</h2>
+<pre class="codehilite"><code class="language-carbon">// ---------- PRINT ----------
+    // Carbon is still experimental and syntax is subject to change.
+    // The `Print` function is used for output.
+
+package Sample api;
+
+fn Main() -&gt; i32 {
+  Print(&quot;Hello, Carbon!&quot;);
+  return 0;
+}
+</code></pre>
+
+<h2>Quickstart</h2>
+<pre class="codehilite"><code class="language-carbon">// ---------- QUICKSTART ----------
+    // Carbon is an experimental language, aiming to be a successor to C++.
+    // It is designed to be interoperable with existing C++ code.
+    // The language is still under development.
+
+package Sample api;
+
+fn Main() -&gt; i32 {
+  return 0;
+}
+</code></pre>
+
+<h2>Variables</h2>
+<pre class="codehilite"><code class="language-carbon">// ---------- VARIABLE ----------
+    // `var` is used to declare mutable variables.
+    // `let` is used to declare immutable variables.
+    // Type is specified after the variable name with a colon.
+
+var x: i32 = 10;
+let y: f64 = 3.14;
+</code></pre>
+
+<h2>Types</h2>
+<pre class="codehilite"><code class="language-carbon">// ---------- TYPE ----------
+    // i32, i64, etc. for integers
+    // f64 for floating-point numbers
+    // bool for booleans
+    // String for strings
+</code></pre>
+
+<h2>Operators</h2>
+<pre class="codehilite"><code class="language-carbon">// ---------- OPERATOR ----------
+    // Carbon aims to have operators that are familiar to C++ developers.
+    // +, -, *, /, %
+    // &amp;&amp;, ||, !
+    // ==, !=, &lt;, &gt;, &lt;=, &gt;=
+</code></pre>
+
+<h2>Control structures</h2>
+<pre class="codehilite"><code class="language-carbon">// ---------- CONTROL STRUCTURE ----------
+
+// IF / ELSE
+
+if (x &gt; 5) {
+  Print(&quot;x is greater than 5&quot;);
+} else {
+  Print(&quot;x is not greater than 5&quot;);
+}
+
+// WHILE
+
+while (x &gt; 0) {
+  x = x - 1;
+}
+
+// FOR
+
+for (var i: i32 in 0..5) {
+  Print(i);
+}
+</code></pre>
+
+<h2>Data structures</h2>
+<pre class="codehilite"><code class="language-carbon">// ---------- DATA STRUCTURE ----------
+    // Carbon will have structs, arrays, and tuples.
+    // The exact syntax is still being finalized.
+
+struct Point {
+  var x: f64;
+  var y: f64;
+}
+</code></pre>
+
+<h2>Functions</h2>
+<pre class="codehilite"><code class="language-carbon">// ---------- FUNCTION ----------
+    // `fn` keyword is used to declare functions.
+    // `-&gt;` is used to specify the return type.
+
+fn Add(a: i32, b: i32) -&gt; i32 {
+  return a + b;
+}
+</code></pre>
+
+<h2>More on</h2>
+<ul>
+<li><a href="https://github.com/carbon-language/carbon-lang">Carbon Language on GitHub</a></li>
+<li><a href="https://github.com/carbon-language/carbon-lang/tree/trunk/docs">Carbon Language Documentation</a></li>
+<li><a href="https://discord.gg/carbon-lang">Carbon Language Discord</a></li>
+</ul>
+      </section>
+
+    </article>
+
+    <footer>
+      <p>© 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <div class="wrapper"></div>
+</body>
+</html>

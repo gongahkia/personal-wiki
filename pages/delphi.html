@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Wiki Note: Delphi - Gabriel Ong">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntl-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntlMono-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
+  <style>
+    .thin-space:after{content:"\2006"}
+    pre {
+      overflow-x: auto;
+      max-width: 100%;
+    }
+  </style>
+  <script src="../script.js" defer></script>
+  <title>GABRIEL ONG</title>
+  <link rel="shortcut icon" href="../asset/blob.ico" type="image/x-icon">
+</head>
+<body>
+  <div id="click-container"></div>
+  <input type="button" id="dark-mode">
+  <label for="dark-mode">
+    <img id="infinityButton" src="../asset/roller.png" height="24" width="24"/>
+  </label>
+
+  <main>
+    <article class="overallArticleTags">
+
+      <section class="note-header">
+        <h2>Delphi</h2>
+
+        <dl>
+          <dt>File size</dt>
+          <dd>5.6KB</dd>
+
+          <dt>Lines of code</dt>
+          <dd>251</dd>
+        </dl>
+      </section>
+
+      <section class="note-content">
+        <h1><code>Delphi</code></h1>
+<p>A powerful, object-oriented programming language and integrated development environment (IDE).</p>
+<h2>Comments</h2>
+<pre class="codehilite"><code class="language-delphi">// ---------- COMMENT ----------
+
+// this is a single-line comment
+
+{
+this is a
+multi-line
+comment
+}
+
+(*
+this is also
+a multi-line
+comment
+*)
+</code></pre>
+
+<h2>Printing</h2>
+<pre class="codehilite"><code class="language-delphi">// ---------- PRINT ----------
+    // ShowMessage =&gt; displays a message in a simple dialog box
+    // WriteLn =&gt; writes a string to the console, followed by a newline
+
+ShowMessage('Hello, Delphi!');
+WriteLn('This will be printed to the console.');
+</code></pre>
+
+<h2>Quickstart</h2>
+<pre class="codehilite"><code class="language-delphi">// ---------- QUICKSTART ----------
+    // Delphi is an object-oriented dialect of Pascal.
+    // It is a strongly-typed, compiled language.
+    // The IDE is a major part of the Delphi experience, providing visual design tools.
+
+program Project1;
+
+{$APPTYPE CONSOLE}
+
+uses
+  System.SysUtils;
+
+begin
+  WriteLn('Hello, World!');
+  ReadLn;
+end.
+</code></pre>
+
+<h2>Variables</h2>
+<pre class="codehilite"><code class="language-delphi">// ---------- VARIABLE ----------
+    // var =&gt; keyword to declare variables
+    // := =&gt; assignment operator
+
+var
+  myInteger: Integer;
+  myString: string;
+begin
+  myInteger := 10;
+  myString := 'Hello';
+end;
+</code></pre>
+
+<h2>Types</h2>
+<pre class="codehilite"><code class="language-delphi">// ---------- TYPE ----------
+    // Integer =&gt; 32-bit signed integer
+    // Real =&gt; floating-point number
+    // string =&gt; sequence of characters
+    // Boolean =&gt; True or False
+    // TDateTime =&gt; for date and time values
+</code></pre>
+
+<h2>Operators</h2>
+<pre class="codehilite"><code class="language-delphi">// ---------- OPERATOR ----------
+
+// ARITHMETIC OPERATORS
+    // + =&gt; addition
+    // - =&gt; subtraction
+    // * =&gt; multiplication
+    // / =&gt; division (floating-point)
+    // div =&gt; integer division
+    // mod =&gt; modulo
+
+// LOGICAL OPERATORS
+    // and =&gt; logical AND
+    // or =&gt; logical OR
+    // not =&gt; logical NOT
+
+// COMPARISON OPERATORS
+    // = =&gt; equality
+    // &lt;&gt; =&gt; inequality
+    // &gt; =&gt; greater than
+    // &lt; =&gt; less than
+    // &gt;= =&gt; greater than or equal to
+    // &lt;= =&gt; less than or equal to
+</code></pre>
+
+<h2>Control structures</h2>
+<pre class="codehilite"><code class="language-delphi">// ---------- CONTROL STRUCTURE ----------
+
+// IF THEN ELSE
+
+if (a &gt; b) then
+  result := a
+else
+  result := b;
+
+// CASE OF
+
+case MyChar of
+  'a'..'z': WriteLn('Lowercase');
+  'A'..'Z': WriteLn('Uppercase');
+  '0'..'9': WriteLn('Number');
+else
+  WriteLn('Other');
+end;
+
+// FOR LOOP
+
+for i := 1 to 10 do
+begin
+  WriteLn(i);
+end;
+
+// WHILE LOOP
+
+while i &lt;= 10 do
+begin
+  WriteLn(i);
+  Inc(i);
+end;
+
+// REPEAT UNTIL
+
+repeat
+  WriteLn(i);
+  Inc(i);
+until i &gt; 10;
+</code></pre>
+
+<h2>Data structures</h2>
+<pre class="codehilite"><code class="language-delphi">// ---------- DATA STRUCTURE ----------
+
+// ARRAY
+
+var
+  myArray: array[0..4] of Integer;
+
+// DYNAMIC ARRAY
+
+var
+  myDynamicArray: TArray&lt;Integer&gt;;
+begin
+  SetLength(myDynamicArray, 5);
+  myDynamicArray[0] := 1;
+end;
+
+// RECORD (similar to a struct)
+
+type
+  TPoint = record
+    X, Y: Integer;
+  end;
+
+// CLASSES (for object-oriented programming)
+
+type
+  TMyClass = class(TObject)
+  private
+    FMyField: Integer;
+  public
+    procedure MyMethod;
+  end;
+</code></pre>
+
+<h2>Functions</h2>
+<pre class="codehilite"><code class="language-delphi">// ---------- FUNCTION ----------
+    // function =&gt; defines a function that returns a value
+    // procedure =&gt; defines a function that does not return a value
+
+function Add(a, b: Integer): Integer;
+begin
+  Result := a + b;
+end;
+
+procedure SayHello(name: string);
+begin
+  WriteLn('Hello, ' + name);
+end;
+</code></pre>
+
+<h2>More on</h2>
+<ul>
+<li><a href="https://docwiki.embarcadero.com/RADStudio/en/Main_Page">Embarcadero Delphi Documentation</a></li>
+<li><a href="https://learndelphi.org/">Learn Delphi</a></li>
+<li><a href="http://www.delphibasics.co.uk/">Delphi Basics</a></li>
+</ul>
+      </section>
+
+    </article>
+
+    <footer>
+      <p>© 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <div class="wrapper"></div>
+</body>
+</html>

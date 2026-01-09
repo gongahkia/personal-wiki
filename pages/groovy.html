@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Wiki Note: Groovy - Gabriel Ong">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntl-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntlMono-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
+  <style>
+    .thin-space:after{content:"\2006"}
+    pre {
+      overflow-x: auto;
+      max-width: 100%;
+    }
+  </style>
+  <script src="../script.js" defer></script>
+  <title>GABRIEL ONG</title>
+  <link rel="shortcut icon" href="../asset/blob.ico" type="image/x-icon">
+</head>
+<body>
+  <div id="click-container"></div>
+  <input type="button" id="dark-mode">
+  <label for="dark-mode">
+    <img id="infinityButton" src="../asset/roller.png" height="24" width="24"/>
+  </label>
+
+  <main>
+    <article class="overallArticleTags">
+
+      <section class="note-header">
+        <h2>Groovy</h2>
+
+        <dl>
+          <dt>File size</dt>
+          <dd>5.2KB</dd>
+
+          <dt>Lines of code</dt>
+          <dd>198</dd>
+        </dl>
+      </section>
+
+      <section class="note-content">
+        <h1><code>Groovy</code></h1>
+<p>A powerful, optionally-typed and dynamic language for the Java platform.</p>
+<h2>Comments</h2>
+<pre class="codehilite"><code class="language-groovy">// ---------- COMMENT ----------
+
+// this is a single-line comment
+
+/*
+this is a
+multi-line
+comment
+*/
+</code></pre>
+
+<h2>Printing</h2>
+<pre class="codehilite"><code class="language-groovy">// ---------- PRINT ----------
+    // println =&gt; prints a string to the console, followed by a newline
+    // print =&gt; prints a string to the console without a newline
+
+println &quot;Hello, Groovy!&quot;
+print &quot;This does not have a newline.&quot;
+</code></pre>
+
+<h2>Quickstart</h2>
+<pre class="codehilite"><code class="language-groovy">// ---------- QUICKSTART ----------
+    // Groovy is a superset of Java, so Java code is valid Groovy code.
+    // It can be used as a scripting language.
+    // Semicolons are optional.
+
+println &quot;Hello from a Groovy script!&quot;
+</code></pre>
+
+<h2>Variables</h2>
+<pre class="codehilite"><code class="language-groovy">// ---------- VARIABLE ----------
+    // def =&gt; defines a variable with dynamic typing
+    // You can also use static typing like in Java.
+
+def myVar = 10 // dynamically typed
+int myInt = 20 // statically typed
+</code></pre>
+
+<h2>Types</h2>
+<pre class="codehilite"><code class="language-groovy">// ---------- TYPE ----------
+    // Groovy supports all Java types.
+    // It also has its own types for convenience.
+    // int, float, boolean, String, etc.
+</code></pre>
+
+<h2>Operators</h2>
+<pre class="codehilite"><code class="language-groovy">// ---------- OPERATOR ----------
+
+// ARITHMETIC OPERATORS
+    // +, -, *, /, % (same as Java)
+    // ** =&gt; power operator
+
+// LOGICAL OPERATORS
+    // &amp;&amp;, ||, ! (same as Java)
+
+// COMPARISON OPERATORS
+    // ==, !=, &gt;, &lt;, &gt;=, &lt;= (same as Java)
+    // &lt;=&gt; =&gt; spaceship operator (returns -1, 0, or 1)
+
+// GROOVY-SPECIFIC OPERATORS
+    // ?. =&gt; safe navigation operator (avoids NullPointerException)
+    // ?: =&gt; Elvis operator (shorthand for ternary)
+    // ==~ =&gt; find operator (for regular expressions)
+    // === =&gt; identity operator (for object reference equality)
+</code></pre>
+
+<h2>Control structures</h2>
+<pre class="codehilite"><code class="language-groovy">// ---------- CONTROL STRUCTURE ----------
+
+// IF / ELSE
+
+def x = 10
+if (x &gt; 5) {
+    println &quot;x is greater than 5&quot;
+} else {
+    println &quot;x is not greater than 5&quot;
+}
+
+// SWITCH
+
+def mySwitch = &quot;test&quot;
+switch (mySwitch) {
+    case &quot;test&quot;:
+        println &quot;it's a test&quot;
+        break
+    case &quot;prod&quot;:
+        println &quot;it's prod&quot;
+        break
+    default:
+        println &quot;default case&quot;
+}
+
+// FOR LOOP
+
+for (i in 0..4) {
+    println i
+}
+
+// EACH (for collections)
+
+def myList = [1, 2, 3]
+myList.each {
+    println it
+}
+</code></pre>
+
+<h2>Data structures</h2>
+<pre class="codehilite"><code class="language-groovy">// ---------- DATA STRUCTURE ----------
+
+// LIST
+
+def myList = [1, 2, 'hello'] // can contain mixed types
+
+// MAP
+
+def myMap = [name: 'John', age: 30]
+
+// RANGE
+
+def myRange = 1..10
+</code></pre>
+
+<h2>Functions</h2>
+<pre class="codehilite"><code class="language-groovy">// ---------- FUNCTION ----------
+    // Functions are defined with the `def` keyword, or with a specific return type.
+    // `return` is optional for the last statement.
+
+def myFunc(name) {
+    &quot;Hello, $name&quot;
+}
+
+println myFunc('Groovy')
+</code></pre>
+
+<h2>More on</h2>
+<ul>
+<li><a href="https://groovy-lang.org/documentation.html">Groovy Documentation</a></li>
+<li><a href="https://www.baeldung.com/groovy-vs-java">Groovy vs. Java</a></li>
+<li><a href="https://www.tutorialspoint.com/groovy/index.htm">Groovy Tutorial</a></li>
+</ul>
+      </section>
+
+    </article>
+
+    <footer>
+      <p>© 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <div class="wrapper"></div>
+</body>
+</html>

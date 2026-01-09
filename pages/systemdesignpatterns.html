@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Wiki Note: System Design Patterns - Gabriel Ong">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntl-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntlMono-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
+  <style>
+    .thin-space:after{content:"\2006"}
+    pre {
+      overflow-x: auto;
+      max-width: 100%;
+    }
+  </style>
+  <script src="../script.js" defer></script>
+  <title>GABRIEL ONG</title>
+  <link rel="shortcut icon" href="../asset/blob.ico" type="image/x-icon">
+</head>
+<body>
+  <div id="click-container"></div>
+  <input type="button" id="dark-mode">
+  <label for="dark-mode">
+    <img id="infinityButton" src="../asset/roller.png" height="24" width="24"/>
+  </label>
+
+  <main>
+    <article class="overallArticleTags">
+
+      <section class="note-header">
+        <h2>System Design Patterns</h2>
+
+        <dl>
+          <dt>File size</dt>
+          <dd>6.9KB</dd>
+
+          <dt>Lines of code</dt>
+          <dd>166</dd>
+        </dl>
+      </section>
+
+      <section class="note-content">
+        <h1><code>System Design Patterns</code></h1>
+<p>An overview of common patterns used in system design interviews and real-world applications.</p>
+<h2>Introduction to System Design</h2>
+<p>System design is the process of defining the architecture, components, modules, interfaces, and data for a system to satisfy specified requirements. It is a crucial skill for software engineers, especially in the context of scalable and reliable applications.</p>
+<h2>Load Balancing</h2>
+<p>Load balancing is the process of distributing network traffic across multiple servers to ensure that no single server becomes overwhelmed. This improves responsiveness and availability of applications.</p>
+<pre class="codehilite"><code class="language-mermaid">graph TD
+    A[Client] --&gt; B{Load Balancer};
+    B --&gt; C[Server 1];
+    B --&gt; D[Server 2];
+    B --&gt; E[Server 3];
+</code></pre>
+
+<h3>Common Load Balancing Algorithms</h3>
+<ul>
+<li><strong>Round Robin:</strong> Distributes requests sequentially across the group of servers.</li>
+<li><strong>Least Connections:</strong> Sends traffic to the server with the fewest active connections.</li>
+<li><strong>IP Hash:</strong> The IP address of the client is used to determine which server receives the request.</li>
+</ul>
+<h2>Caching</h2>
+<p>Caching is a technique used to store copies of files or data in a temporary storage location (cache) so that they can be accessed more quickly.</p>
+<pre class="codehilite"><code class="language-mermaid">graph TD
+    A[Client] --&gt; B{Application};
+    B -- Request data --&gt; C{Cache};
+    C -- Cache hit --&gt; B;
+    C -- Cache miss --&gt; D[Database];
+    D -- Fetches data --&gt; C;
+    C -- Stores data --&gt; B;
+</code></pre>
+
+<h3>Caching Strategies</h3>
+<ul>
+<li><strong>Cache-Aside:</strong> The application is responsible for reading and writing from the cache.</li>
+<li><strong>Read-Through:</strong> The cache is responsible for reading data from the database on a cache miss.</li>
+<li><strong>Write-Through:</strong> Data is written to the cache and the database at the same time.</li>
+<li><strong>Write-Back:</strong> Data is written to the cache, which then asynchronously writes it to the database.</li>
+</ul>
+<h2>Sharding (Partitioning)</h2>
+<p>Sharding is the process of breaking up a large database into smaller, more manageable pieces called shards. Each shard is a separate database, and all shards together make up the original database.</p>
+<pre class="codehilite"><code class="language-mermaid">graph TD
+    A[Application] --&gt; B{Sharding Logic};
+    B -- User 1 --&gt; C[Shard 1 (A-M)];
+    B -- User 2 --&gt; D[Shard 2 (N-Z)];
+</code></pre>
+
+<h3>Sharding Strategies</h3>
+<ul>
+<li><strong>Horizontal Sharding:</strong> Puts different rows into different tables.</li>
+<li><strong>Vertical Sharding:</strong> Divides a table into multiple tables that contain fewer columns.</li>
+<li><strong>Directory-Based Sharding:</strong> A lookup service is used to determine which shard holds the data.</li>
+</ul>
+<h2>Replication and Redundancy</h2>
+<p>Replication is the process of creating and maintaining multiple copies of a database to improve availability and durability. Redundancy is the duplication of critical components of a system with the intention of increasing reliability.</p>
+<pre class="codehilite"><code class="language-mermaid">graph TD
+    A[Client] --&gt; B{Load Balancer};
+    B --&gt; C[Primary Server];
+    C -- Write --&gt; D[Replica 1];
+    C -- Write --&gt; E[Replica 2];
+</code></pre>
+
+<h2>Message Queues</h2>
+<p>Message queues are a form of asynchronous service-to-service communication used in serverless and microservices architectures. Messages are stored on the queue until they are processed and deleted.</p>
+<pre class="codehilite"><code class="language-mermaid">graph TD
+    A[Producer] -- Message --&gt; B{Message Queue};
+    B -- Message --&gt; C[Consumer];
+</code></pre>
+
+<h2>Proxy Servers</h2>
+<p>A proxy server acts as an intermediary for requests from clients seeking resources from other servers.</p>
+<pre class="codehilite"><code class="language-mermaid">graph TD
+    subgraph Forward Proxy
+        A[Client] --&gt; B{Proxy};
+        B --&gt; C[Internet];
+    end
+    subgraph Reverse Proxy
+        D[Internet] --&gt; E{Proxy};
+        E --&gt; F[Server 1];
+        E --&gt; G[Server 2];
+    end
+</code></pre>
+
+<h3>Forward vs. Reverse Proxy</h3>
+<ul>
+<li><strong>Forward Proxy:</strong> Acts on behalf of a client (or a group of clients).</li>
+<li><strong>Reverse Proxy:</strong> Acts on behalf of a server (or a group of servers).</li>
+</ul>
+<h2>CAP Theorem</h2>
+<p>The CAP theorem states that it is impossible for a distributed data store to simultaneously provide more than two out of the following three guarantees: Consistency, Availability, and Partition Tolerance.</p>
+<pre class="codehilite"><code class="language-mermaid">graph TD
+    A((CAP Theorem))
+    A --&gt; B(Consistency)
+    A --&gt; C(Availability)
+    A --&gt; D(Partition Tolerance)
+
+    subgraph CP
+        B --- D
+    end
+    subgraph AP
+        C --- D
+    end
+    subgraph CA
+        B --- C
+    end
+</code></pre>
+
+<h2>More on</h2>
+<ul>
+<li><a href="https://github.com/donnemartin/system-design-primer">System Design Primer on GitHub</a></li>
+<li><a href="https://www.educative.io/collection/5668639273943040/5649050225344512">System Design Interview Questions</a></li>
+<li><a href="https://www.educative.io/courses/grokking-the-system-design-interview">Grokking the System Design Interview</a></li>
+</ul>
+      </section>
+
+    </article>
+
+    <footer>
+      <p>© 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <div class="wrapper"></div>
+</body>
+</html>
