@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/doom", "destination": "/doom/doom.html" },
+    { "source": "/cats", "destination": "/cats/cats.html" }
+  ],
+  "cleanUrls": true,
+ "headers": [
+    {
+      "source": "/data/projects.json",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, stale-while-revalidate=86400"
+        }
+      ]
+    }
+  ]
+}
