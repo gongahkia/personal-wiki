@@ -1,46 +1,27 @@
-# gabrielongzm.com
+# Site, Notes, Blog
 
-Personal website monorepo containing portfolio, blog, and personal wiki.
-
-## Structure
-
-```
-├── index.html          # Main portfolio page
-├── blog/               # Blog posts and book reviews
-├── personal-wiki/      # Technical notes and documentation
-├── archived/           # Previous versions of the site (v1-v10)
-└── .github/workflows/  # Automated workflows
-```
-
-## Quick Start
-
-```bash
-# Create a new blog post
-make blog
-
-# Create a new book review
-make book
-
-# Create a new wiki note
-make wiki
-
-# Build wiki HTML from markdown
-make build-wiki
-
-# See all available commands
-make help
-```
-
-## Workflows
-
-- **fetch-contributions.yml** — Updates GitHub contributions calendar daily
-- **wiki-release.yml** — Creates downloadable ZIP of wiki notes on changes
+Monorepo for my [personal site](./), [personal-wiki](./personal-wiki/) and [blog](./blog/).
 
 ## Wiki Notes
 
-<a href=""><b>Download</b></a> my notes as a ZIP file.
+<a href=""><b>Download</b></a> my [personal-wiki notes](./personal-wiki/) as a ZIP file.
 
-## Technologies
+## Usage
+
+```console
+$ make help
+$ make blog # create blog post
+$ make book # create book review
+$ make wiki # create wiki note
+$ make build-wiki # build html from wiki note
+```
+
+## Automated workflows
+
+* [`fetch-contributions.yml`](./.github/workflows/fetch-contributions.yml): Update GitHub contributions calendar on personal site daily
+* [`wiki-release.yml`](./.github/workflows/wiki-release.yml): ZIPs all markdown wiki notes on changes
+
+## Stack
 
 ![JavaScript](https://img.shields.io/badge/-JavaScript-000?&logo=JavaScript)
 ![HTML](https://img.shields.io/badge/-HTML-000?&logo=html5)
