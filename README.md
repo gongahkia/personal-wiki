@@ -1,10 +1,10 @@
-# Site, Notes, Blog
+# `Site, Notes, Blog`
 
 Monorepo for my [personal site](./), [personal-wiki](./personal-wiki/) and [blog](./blog/).
 
 ## Wiki Notes
 
-<a href=""><b>Download</b></a> my [personal-wiki notes](./personal-wiki/) as a ZIP file.
+<a href="https://github.com/gongahkia/gongahkia.github.io/releases"><b>Download</b></a> my notes as a ZIP file.
 
 ## Usage
 
