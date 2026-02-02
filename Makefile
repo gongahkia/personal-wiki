@@ -23,14 +23,14 @@ help:
 blog:
 	@echo "Creating new blog post..."
 	@current_date=$$(date +%Y-%m-%d); \
-	echo -n "Enter date (default: $$current_date): "; \
+	printf "Enter date (default: $$current_date): "; \
 	read date; \
 	date=$${date:-$$current_date}; \
-	echo -n "Enter blog post title (required): "; \
+	printf "Enter blog post title (required): "; \
 	read title; \
 	while [ -z "$$title" ]; do \
 		echo "Blog post title is required."; \
-		echo -n "Enter blog post title (required): "; \
+		printf "Enter blog post title (required): "; \
 		read title; \
 	done; \
 	filename=$$(echo $$title | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/_/g' | sed 's/__*/_/g').html; \
@@ -47,35 +47,35 @@ blog:
 book:
 	@echo "Creating new book review..."
 	@current_date=$$(date +%Y-%m-%d); \
-	echo -n "Enter date (default: $$current_date): "; \
+	printf "Enter date (default: $$current_date): "; \
 	read date; \
 	date=$${date:-$$current_date}; \
-	echo -n "Enter book name (required): "; \
+	printf "Enter book name (required): "; \
 	read book_name; \
 	while [ -z "$$book_name" ]; do \
 		echo "Book name is required."; \
-		echo -n "Enter book name (required): "; \
+		printf "Enter book name (required): "; \
 		read book_name; \
 	done; \
-	echo -n "Enter author name (required): "; \
+	printf "Enter author name (required): "; \
 	read author_name; \
 	while [ -z "$$author_name" ]; do \
 		echo "Author name is required."; \
-		echo -n "Enter author name (required): "; \
+		printf "Enter author name (required): "; \
 		read author_name; \
 	done; \
-	echo -n "Enter ISBN number (required): "; \
+	printf "Enter ISBN number (required): "; \
 	read isbn; \
 	while [ -z "$$isbn" ]; do \
 		echo "ISBN number is required."; \
-		echo -n "Enter ISBN number (required): "; \
+		printf "Enter ISBN number (required): "; \
 		read isbn; \
 	done; \
-	echo -n "Enter category (F for Fiction, N for Non-Fiction): "; \
+	printf "Enter category (F for Fiction, N for Non-Fiction): "; \
 	read category; \
 	while [ "$$category" != "F" ] && [ "$$category" != "N" ]; do \
 		echo "Category must be F or N."; \
-		echo -n "Enter category (F for Fiction, N for Non-Fiction): "; \
+		printf "Enter category (F for Fiction, N for Non-Fiction): "; \
 		read category; \
 	done; \
 	if [ "$$category" = "F" ]; then \
@@ -83,11 +83,11 @@ book:
 	else \
 		category_text="Non-Fiction"; \
 	fi; \
-	echo -n "Enter rating (0-5, can be decimal): "; \
+	printf "Enter rating (0-5, can be decimal): "; \
 	read rating; \
 	while [ -z "$$rating" ] || ! echo "$$rating" | grep -q "^[0-5]\(\.[0-9]\+\)\?$$"; do \
 		echo "Rating must be a number between 0 and 5 (can be decimal)."; \
-		echo -n "Enter rating (0-5, can be decimal): "; \
+		printf "Enter rating (0-5, can be decimal): "; \
 		read rating; \
 	done; \
 	filename=$$(echo $$book_name | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/_/g' | sed 's/__*/_/g').html; \
