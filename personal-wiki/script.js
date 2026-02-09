@@ -25,6 +25,8 @@ function pressTheButton() {
     }
     const clickTextColor = isDarkMode ? '#CCCCCC' : '#363636';
     document.documentElement.style.setProperty('--click-text-color', clickTextColor);
+    localStorage.setItem('theme_isDarkMode', isDarkMode);
+    localStorage.setItem('theme_bgColor', newColor);
 }
 
 function generateDarkColor() {
@@ -40,6 +42,24 @@ function generateLightColor() {
     const b = Math.floor(Math.random() * 128) + 128;
     return `rgb(${r}, ${g}, ${b})`;
 }
+
+function restoreTheme() { // apply saved theme from localStorage
+    const saved = localStorage.getItem('theme_isDarkMode');
+    if (saved === null) return;
+    isDarkMode = saved === 'true';
+    const bgColor = localStorage.getItem('theme_bgColor');
+    if (bgColor) document.body.style.backgroundColor = bgColor;
+    const articleTag = document.getElementsByClassName("overallArticleTags")[0];
+    const footerTag = document.getElementsByTagName("footer")[0];
+    if (isDarkMode) {
+        if (theButton) theButton.style.filter = "invert(1)";
+        if (articleTag) articleTag.style.filter = "invert(1)";
+        if (footerTag) footerTag.style.filter = "invert(1)";
+    }
+    const clickTextColor = isDarkMode ? '#CCCCCC' : '#363636';
+    document.documentElement.style.setProperty('--click-text-color', clickTextColor);
+}
+restoreTheme();
 
 // ----- execution code for current time -----
 
