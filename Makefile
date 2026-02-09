@@ -182,7 +182,7 @@ clean-wiki:
 # Generate sitemap.xml
 sitemap:
 	@echo "Generating sitemap.xml..."
-	@python3 generate_sitemap.py
+	@python3 scripts/generate_sitemap.py
 	@echo "Sitemap generation complete!"
 
 # Git helpers (retained from original)

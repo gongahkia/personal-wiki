@@ -14,6 +14,7 @@ $ make blog # create blog post
 $ make book # create book review
 $ make wiki # create wiki note
 $ make build-wiki # build html from wiki note
+$ make sitemap # generates sitemap of entire site
 ```
 
 ## Automated workflows

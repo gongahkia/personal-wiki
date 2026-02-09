@@ -5,7 +5,7 @@ import subprocess
 from pathlib import Path
 from datetime import datetime, timezone
 BASE_URL = "https://gabrielongzm.com"
-ROOT = Path(__file__).parent
+ROOT = Path(__file__).parent.parent
 def git_lastmod(filepath):
     """get last modified date from git history"""
     try:
