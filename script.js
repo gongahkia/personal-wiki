@@ -151,7 +151,6 @@ function renderContribCalendar(data) {
             cell.className = 'contrib-day';
             const intensity = d ? intensityLevel(d.count, max) : 0;
             cell.classList.add(`intensity-${intensity}`);
-            if (d) attachTooltip(cell, `${d.count} contributions on ${new Date(d.date).toDateString()}`);
             col.appendChild(cell);
         }
         grid.appendChild(col);
@@ -173,29 +172,6 @@ function intensityLevel(count, max) {
     if (count <= 0) return 0;
     const q = Math.ceil((count / Math.max(max, 1)) * 4);
     return Math.max(1, Math.min(4, q));
-}
-
-function attachTooltip(el, text) {
-    let tip;
-    el.addEventListener('mouseenter', (e) => {
-        tip = document.createElement('div');
-        tip.className = 'contrib-tooltip';
-        tip.textContent = text;
-        document.body.appendChild(tip);
-        positionTooltip(tip, e.clientX, e.clientY);
-    });
-    el.addEventListener('mousemove', (e) => {
-        if (tip) positionTooltip(tip, e.clientX, e.clientY);
-    });
-    el.addEventListener('mouseleave', () => {
-        if (tip) document.body.removeChild(tip);
-        tip = null;
-    });
-}
-
-function positionTooltip(tip, x, y) {
-    tip.style.left = `${x}px`;
-    tip.style.top = `${y}px`;
 }
 
 window.addEventListener('DOMContentLoaded', loadContributions);
