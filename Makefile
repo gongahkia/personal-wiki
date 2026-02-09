@@ -1,4 +1,4 @@
-.PHONY: blog book wiki build-wiki clean-wiki help up history
+.PHONY: blog book wiki build-wiki clean-wiki help up history sitemap
 
 # OS detection for sed compatibility
 UNAME := $(shell uname)
@@ -16,6 +16,7 @@ help:
 	@echo "  make wiki        - Create a new wiki note (interactive)"
 	@echo "  make build-wiki  - Build all wiki HTML from markdown"
 	@echo "  make clean-wiki  - Remove generated wiki HTML files"
+	@echo "  make sitemap     - Generate sitemap.xml"
 	@echo "  make up          - Pull latest changes and show status"
 	@echo "  make history     - Show git log"
 
@@ -177,6 +178,12 @@ clean-wiki:
 	@echo "Cleaning generated wiki files..."
 	@rm -f personal-wiki/*.html
 	@echo "Clean complete!"
+
+# Generate sitemap.xml
+sitemap:
+	@echo "Generating sitemap.xml..."
+	@python3 generate_sitemap.py
+	@echo "Sitemap generation complete!"
 
 # Git helpers (retained from original)
 up:

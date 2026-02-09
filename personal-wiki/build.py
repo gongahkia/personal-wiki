@@ -96,14 +96,25 @@ def generate_index(notes_info, output_path):
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="Personal Wiki - Gabriel Ong">
+  <meta name="description" content="Gabriel Ong's personal wiki - programming notes, language references, and CS topics.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Gabriel Ong">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://gabrielongzm.com/personal-wiki/">
+  <meta property="og:title" content="Personal Wiki | Gabriel Ong">
+  <meta property="og:description" content="Gabriel Ong's personal wiki - programming notes, language references, and CS topics.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gabrielongzm.com/personal-wiki/">
+  <meta property="og:image" content="https://gabrielongzm.com/asset/gong2.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Personal Wiki | Gabriel Ong">
+  <meta name="twitter:description" content="Gabriel Ong's personal wiki - programming notes, language references, and CS topics.">
   <link preload="stylesheet" href="style.css" as="style">
   <link rel="stylesheet" href="style.css">
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntl-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
   <style>.thin-space:after{content:"\\2006"}</style>
   <script src="script.js" defer></script>
-  <title>GABRIEL ONG</title>
+  <title>Personal Wiki | Gabriel Ong</title>
   <link rel="shortcut icon" href="asset/blob.ico" type="image/x-icon">
 </head>
 <body>
