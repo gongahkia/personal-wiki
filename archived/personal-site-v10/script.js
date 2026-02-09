@@ -64,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
                       '<dt>Jan 2025 - Apr 2025</dt><dd>SMU Yong Pung How School of Law - Research Assistant</dd>' +
                       '<dt>Sep 2024 - Dec 2024</dt><dd>Elefant - Backend Development Intern</dd>' +
                       '<dt>Aug 2023 - Oct 2024</dt><dd>SMU Legal Innovation and Technology (LIT) - Tech Development Director</dd>' +
-                      '<dt>Apr 2024 - Aug 2024</dt><dd>The Yap Labs - Co-Founder, Tech Lead</dd>' +
                       '</dl>',
 
         'awards': '<span class="section-title">Awards</span>' +
