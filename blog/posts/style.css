@@ -159,9 +159,10 @@
         --foreground-color: color-mix(in oklab, var(--color-black) 20%, var(--color-white));
         --thin-border-color: color-mix(in oklab, var(--foreground-color), transparent 50%);
     }
-    html {
+    html, body {
         background-color: var(--background-color);
         transition: background-color 0.1s ease;
+        min-height: 100vh;
     }
     * {
         color: var(--foreground-color);
