@@ -193,7 +193,7 @@
 @layer border {
     article {
         border-top: var(--thick-border-width) solid var(--foreground-color);
-        margin-top: calc((var(--unit-size) - var(--thick-border-width)) / 2 + var(--unit-size));
+        margin-top: calc((var(--unit-size) - var(--thick-border-width)) / 2 + var(--unit-size) + var(--unit-size) / 6);
         padding-top: calc((var(--unit-size) - var(--thick-border-width)) / 2);
         border-bottom: var(--thick-border-width) solid var(--foreground-color);
         margin-bottom: calc((var(--unit-size) - var(--thick-border-width)) / 2 + var(--unit-size));
@@ -447,7 +447,7 @@
     input#dark-mode ~ label {
         display: inline-block;
         position: absolute;
-        top: calc((var(--unit-size) - var(--thick-border-width)) / 4 - var(--unit-size) / 2); /* place icon above the article top border */
+        top: calc((var(--unit-size) - var(--thick-border-width)) / 4 - var(--unit-size) / 2 + var(--unit-size) / 6); /* place icon above the article top border with symmetric spacing */
         right: max(calc((100vw - 4 * var(--column-size) - 3 * var(--unit-size) ) / 2), var(--unit-size));
     }
     input#dark-mode ~ label#dark-mode-light {
