@@ -29,5 +29,5 @@
 {% endblock %}
 {% block extra_scripts %}
   <script src="pagefind/pagefind-ui.js"></script>
-  <script>window.addEventListener('DOMContentLoaded', () => { new PagefindUI({ element: "#search", showSubResults: true, showImages: false }); });</script>
+  <script>window.addEventListener('DOMContentLoaded', () => { new PagefindUI({ element: "#search", showSubResults: true, showImages: false, basePath: "pagefind/", processResult: function(result) { result.url = "pages/" + result.url; return result; } }); });</script>
 {% endblock %}
