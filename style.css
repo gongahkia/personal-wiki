@@ -447,7 +447,7 @@
     input#dark-mode ~ label {
         display: inline-block;
         position: absolute;
-        top: calc((var(--unit-size) - var(--thick-border-width)) / 4); /* Put the image in the middle of the article top. */
+        top: calc((var(--unit-size) - var(--thick-border-width)) / 4 - var(--unit-size) / 2); /* place icon above the article top border */
         right: max(calc((100vw - 4 * var(--column-size) - 3 * var(--unit-size) ) / 2), var(--unit-size));
     }
     input#dark-mode ~ label#dark-mode-light {
