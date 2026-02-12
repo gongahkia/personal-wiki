@@ -24,6 +24,13 @@
   
   <style>.thin-space:after{content:"\2006"}</style>
   
+  <link href="pagefind/pagefind-ui.css" rel="stylesheet">
+  <style>
+    #search { width: 100%; margin-bottom: calc(var(--unit-size) / 2); }
+    .pagefind-ui .pagefind-ui__search-input { font-family: inherit; font-size: inherit; border: var(--thick-border-width) solid var(--foreground-color); background: var(--background-color); color: var(--foreground-color); padding: calc(var(--unit-size) / 3); }
+    .pagefind-ui .pagefind-ui__result-link { color: var(--foreground-color); }
+  </style>
+
   <script src="./script.js" defer></script>
   <title>Personal Wiki | Gabriel Ong</title>
   <link rel="shortcut icon" href="./asset/blob.ico" type="image/x-icon">
@@ -40,6 +47,7 @@
       <section class="introductionPortion">
         <h2>Gabriel's Personal Wiki</h2>
         <p><i>My notes from the things I've learnt. Available as a <a href="https://github.com/gongahkia/personal-wiki/releases"><b>ZIP file</b></a>.</i></p>
+        <div id="search"></div>
       </section>
       <section class="booksAndBlog">
         
@@ -247,7 +255,7 @@
         </dl>
         
         <dl>
-          <dt>7.6KB</dt>
+          <dt>7.7KB</dt>
           <dd>
             <a href="pages/curl.html">Curl</a>
           </dd>
@@ -268,7 +276,7 @@
         </dl>
         
         <dl>
-          <dt>34.8KB</dt>
+          <dt>34.9KB</dt>
           <dd>
             <a href="pages/dafny.html">Dafny</a>
           </dd>
@@ -331,7 +339,7 @@
         </dl>
         
         <dl>
-          <dt>8.2KB</dt>
+          <dt>8.3KB</dt>
           <dd>
             <a href="pages/dynamicprogramming.html">Dynamic Programming</a>
           </dd>
@@ -352,7 +360,7 @@
         </dl>
         
         <dl>
-          <dt>22.2KB</dt>
+          <dt>22.3KB</dt>
           <dd>
             <a href="pages/elm.html">Elm</a>
           </dd>
@@ -961,7 +969,7 @@
         </dl>
         
         <dl>
-          <dt>16.2KB</dt>
+          <dt>16.3KB</dt>
           <dd>
             <a href="pages/surrealdb.html">SurrealDB</a>
           </dd>
@@ -1038,7 +1046,7 @@
         </dl>
         
         <dl>
-          <dt>20.8KB</dt>
+          <dt>20.9KB</dt>
           <dd>
             <a href="pages/webassembly.html">Web Assembly</a>
           </dd>
@@ -1052,7 +1060,7 @@
         </dl>
         
         <dl>
-          <dt>10.0KB</dt>
+          <dt>10.1KB</dt>
           <dd>
             <a href="pages/workbetter.html">Work better</a>
           </dd>
@@ -1094,5 +1102,9 @@
     </footer>
   </main>
   <div class="wrapper"></div>
+  
+  <script src="pagefind/pagefind-ui.js"></script>
+  <script>window.addEventListener('DOMContentLoaded', () => { new PagefindUI({ element: "#search", showSubResults: true, showImages: false }); });</script>
+
 </body>
 </html>

@@ -2,10 +2,19 @@
 {% block canonical %}
   <link rel="canonical" href="https://gabrielongzm.com/personal-wiki/">
 {% endblock %}
+{% block extra_styles %}
+  <link href="pagefind/pagefind-ui.css" rel="stylesheet">
+  <style>
+    #search { width: 100%; margin-bottom: calc(var(--unit-size) / 2); }
+    .pagefind-ui .pagefind-ui__search-input { font-family: inherit; font-size: inherit; border: var(--thick-border-width) solid var(--foreground-color); background: var(--background-color); color: var(--foreground-color); padding: calc(var(--unit-size) / 3); }
+    .pagefind-ui .pagefind-ui__result-link { color: var(--foreground-color); }
+  </style>
+{% endblock %}
 {% block content %}
       <section class="introductionPortion">
         <h2>Gabriel's Personal Wiki</h2>
         <p><i>My notes from the things I've learnt. Available as a <a href="https://github.com/gongahkia/personal-wiki/releases"><b>ZIP file</b></a>.</i></p>
+        <div id="search"></div>
       </section>
       <section class="booksAndBlog">
         {% for note in notes %}
@@ -17,4 +26,8 @@
         </dl>
         {% endfor %}
       </section>
+{% endblock %}
+{% block extra_scripts %}
+  <script src="pagefind/pagefind-ui.js"></script>
+  <script>window.addEventListener('DOMContentLoaded', () => { new PagefindUI({ element: "#search", showSubResults: true, showImages: false }); });</script>
 {% endblock %}

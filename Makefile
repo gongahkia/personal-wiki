@@ -1,4 +1,4 @@
-.PHONY: blog book tech-writeup postmortem wiki build build-wiki clean-wiki help up history sitemap
+.PHONY: blog book tech-writeup postmortem wiki build build-wiki clean-wiki help up history sitemap search
 
 # OS detection for sed compatibility
 UNAME := $(shell uname)
@@ -19,13 +19,19 @@ help:
 	@echo "  make wiki           - Create a new wiki note (interactive)"
 	@echo "  make build-wiki     - Build all wiki HTML from markdown"
 	@echo "  make clean-wiki     - Remove generated wiki HTML files"
+	@echo "  make search         - Build Pagefind search index for wiki"
 	@echo "  make sitemap        - Generate sitemap.xml"
 	@echo "  make up             - Pull latest changes and show status"
 	@echo "  make history        - Show git log"
 
-# Unified build: wiki + blog index + sitemap
+# Unified build: wiki + blog index + sitemap + search index
 build:
 	@python3 build.py
+	@npx -y pagefind --site personal-wiki/pages --output-path personal-wiki/pagefind 2>/dev/null || echo "warn: pagefind not available, skipping search index"
+
+# Build Pagefind search index for wiki
+search:
+	@npx -y pagefind --site personal-wiki/pages --output-path personal-wiki/pagefind
 
 # Create a new blog post (markdown with frontmatter)
 blog:
