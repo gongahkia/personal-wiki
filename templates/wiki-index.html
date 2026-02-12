@@ -6,7 +6,8 @@
   <link href="pagefind/pagefind-ui.css" rel="stylesheet">
   <style>
     #search { width: 100%; margin-bottom: calc(var(--unit-size) / 2); }
-    .pagefind-ui .pagefind-ui__search-input { font-family: inherit; font-size: inherit; border: var(--thick-border-width) solid var(--foreground-color); background: var(--background-color); color: var(--foreground-color); padding: calc(var(--unit-size) / 3); }
+    .pagefind-ui .pagefind-ui__search-input { font-family: inherit; font-size: inherit; border: var(--thick-border-width) solid var(--foreground-color); background: var(--background-color); color: var(--foreground-color); padding: calc(var(--unit-size) / 3); outline: none; }
+    .pagefind-ui .pagefind-ui__search-input:focus { outline: none; box-shadow: none; border-color: var(--foreground-color); }
     .pagefind-ui .pagefind-ui__result-link { color: var(--foreground-color); }
   </style>
 {% endblock %}
