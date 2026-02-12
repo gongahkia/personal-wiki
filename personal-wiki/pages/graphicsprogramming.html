@@ -4,18 +4,30 @@
   <meta charset="utf-8">
   <meta name="description" content="Wiki Note: Graphics Programming - Gabriel Ong">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../style.css">
+  <meta name="author" content="Gabriel Ong">
+  <meta name="robots" content="index, follow">
+  
+  <meta property="og:title" content="Graphics Programming | Gabriel Ong Wiki">
+  <meta property="og:description" content="Wiki Note: Graphics Programming - Gabriel Ong">
+  <meta property="og:type" content="article">
+  
+  <meta property="og:image" content="https://gabrielongzm.com/asset/portrait/gong-2.png">
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Graphics Programming | Gabriel Ong Wiki">
+  <meta name="twitter:description" content="Wiki Note: Graphics Programming - Gabriel Ong">
+  
+  <link rel="stylesheet" href="../../style.css">
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntl-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
+  
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntlMono-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
-  <style>
-    .thin-space:after{content:"\2006"}
-    pre {
-      overflow-x: auto;
-      max-width: 100%;
-    }
-  </style>
+
+  <style>.thin-space:after{content:"\2006"}</style>
+  
+  <style>pre { overflow-x: auto; max-width: 100%; }</style>
+
   <script src="../script.js" defer></script>
-  <title>GABRIEL ONG</title>
+  <title>Graphics Programming | Gabriel Ong Wiki</title>
   <link rel="shortcut icon" href="../asset/blob.ico" type="image/x-icon">
 </head>
 <body>
@@ -24,22 +36,18 @@
   <label for="dark-mode">
     <img id="infinityButton" src="../asset/roller.png" height="24" width="24"/>
   </label>
-
   <main>
     <article class="overallArticleTags">
-
+      
       <section class="note-header">
         <h2>Graphics Programming</h2>
-
         <dl>
           <dt>File size</dt>
-          <dd>10.1KB</dd>
-
+          <dd>16.5KB</dd>
           <dt>Lines of code</dt>
-          <dd>186</dd>
+          <dd>192</dd>
         </dl>
       </section>
-
       <section class="note-content">
         <h1><code>Graphics Programming</code></h1>
 <p>An overview of common APIs and languages used for graphics programming.</p>
@@ -65,51 +73,51 @@
 <p>GLSL is a high-level shading language with a syntax based on C. It is used to write shaders for the OpenGL API.</p>
 <h3>Example Vertex Shader</h3>
 <p>This shader takes a vertex position, a normal vector, and texture coordinates as input. It transforms the position using model, view, and projection matrices.</p>
-<pre class="codehilite"><code class="language-glsl">#version 330 core
-layout (location = 0) in vec3 aPos;
-layout (location = 1) in vec3 aNormal;
-layout (location = 2) in vec2 aTexCoord;
+<div class="codehilite"><pre><span></span><code><span class="cp">#version 330 core</span>
+<span class="k">layout</span><span class="w"> </span><span class="p">(</span><span class="n">location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mo">0</span><span class="p">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">vec3</span><span class="w"> </span><span class="n">aPos</span><span class="p">;</span>
+<span class="k">layout</span><span class="w"> </span><span class="p">(</span><span class="n">location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">vec3</span><span class="w"> </span><span class="n">aNormal</span><span class="p">;</span>
+<span class="k">layout</span><span class="w"> </span><span class="p">(</span><span class="n">location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="kt">vec2</span><span class="w"> </span><span class="n">aTexCoord</span><span class="p">;</span>
 
-out vec2 TexCoord;
+<span class="k">out</span><span class="w"> </span><span class="kt">vec2</span><span class="w"> </span><span class="n">TexCoord</span><span class="p">;</span>
 
-uniform mat4 model;
-uniform mat4 view;
-uniform mat4 projection;
+<span class="k">uniform</span><span class="w"> </span><span class="kt">mat4</span><span class="w"> </span><span class="n">model</span><span class="p">;</span>
+<span class="k">uniform</span><span class="w"> </span><span class="kt">mat4</span><span class="w"> </span><span class="n">view</span><span class="p">;</span>
+<span class="k">uniform</span><span class="w"> </span><span class="kt">mat4</span><span class="w"> </span><span class="n">projection</span><span class="p">;</span>
 
-void main()
-{
-    gl_Position = projection * view * model * vec4(aPos, 1.0);
-    TexCoord = aTexCoord;
-}
-</code></pre>
+<span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nb">gl_Position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">projection</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">view</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">model</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kt">vec4</span><span class="p">(</span><span class="n">aPos</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">TexCoord</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">aTexCoord</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <h3>Example Fragment Shader</h3>
 <p>This shader uses the texture coordinates to sample a color from a texture.</p>
-<pre class="codehilite"><code class="language-glsl">#version 330 core
-out vec4 FragColor;
+<div class="codehilite"><pre><span></span><code><span class="cp">#version 330 core</span>
+<span class="k">out</span><span class="w"> </span><span class="kt">vec4</span><span class="w"> </span><span class="n">FragColor</span><span class="p">;</span>
 
-in vec2 TexCoord;
+<span class="k">in</span><span class="w"> </span><span class="kt">vec2</span><span class="w"> </span><span class="n">TexCoord</span><span class="p">;</span>
 
-uniform sampler2D ourTexture;
+<span class="k">uniform</span><span class="w"> </span><span class="kt">sampler2D</span><span class="w"> </span><span class="n">ourTexture</span><span class="p">;</span>
 
-void main()
-{
-    FragColor = texture(ourTexture, TexCoord);
-}
-</code></pre>
+<span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">FragColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">texture</span><span class="p">(</span><span class="n">ourTexture</span><span class="p">,</span><span class="w"> </span><span class="n">TexCoord</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <h2>WebGL (Web Graphics Library)</h2>
 <p>WebGL is a JavaScript API for rendering interactive 2D and 3D graphics within any compatible web browser without plug-ins. It is based on OpenGL ES, a subset of OpenGL for embedded systems.</p>
 <h3>Relationship to the Browser</h3>
 <p>WebGL renders to the HTML <code>&lt;canvas&gt;</code> element. You get a WebGL rendering context from a canvas and then use the WebGL API to draw to it. Popular libraries like <strong>Three.js</strong> and <strong>Babylon.js</strong> provide higher-level abstractions over the verbose WebGL API.</p>
 <h3>Example: Getting a WebGL Context</h3>
-<pre class="codehilite"><code class="language-javascript">const canvas = document.getElementById('myCanvas');
-const gl = canvas.getContext('webgl');
+<div class="codehilite"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">canvas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;myCanvas&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">gl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">canvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="s1">&#39;webgl&#39;</span><span class="p">);</span>
 
-if (!gl) {
-  alert('WebGL not supported!');
-}
-</code></pre>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">gl</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;WebGL not supported!&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <h2>Vulkan</h2>
 <p>Vulkan is a modern, low-overhead, cross-platform 3D graphics and computing API. It provides much more direct control over the GPU than OpenGL, which can lead to better performance but also requires more code.</p>
@@ -131,20 +139,20 @@ if (!gl) {
 <h2>HLSL (High-Level Shading Language)</h2>
 <p>HLSL is the shading language for DirectX. Its syntax is very similar to GLSL and C.</p>
 <h3>Example Pixel Shader (Fragment Shader)</h3>
-<pre class="codehilite"><code class="language-hlsl">Texture2D txDiffuse : register(t0);
-SamplerState samLinear : register(s0);
+<div class="codehilite"><pre><span></span><code><span class="kt">Texture2D</span><span class="w"> </span><span class="n">txDiffuse</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">register</span><span class="p">(</span><span class="n">t0</span><span class="p">);</span>
+<span class="kt">SamplerState</span><span class="w"> </span><span class="n">samLinear</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">register</span><span class="p">(</span><span class="n">s0</span><span class="p">);</span>
 
-struct PS_INPUT
-{
-    float4 pos : SV_POSITION;
-    float2 uv : TEXCOORD0;
-};
+<span class="k">struct</span><span class="w"> </span><span class="n">PS_INPUT</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">float4</span><span class="w"> </span><span class="n">pos</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">SV_POSITION</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">float2</span><span class="w"> </span><span class="n">uv</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">TEXCOORD0</span><span class="p">;</span>
+<span class="p">};</span>
 
-float4 main(PS_INPUT input) : SV_Target
-{
-    return txDiffuse.Sample(samLinear, input.uv);
-}
-</code></pre>
+<span class="kt">float4</span><span class="w"> </span><span class="n">main</span><span class="p">(</span><span class="n">PS_INPUT</span><span class="w"> </span><span class="n">input</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nd">SV_Target</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">txDiffuse</span><span class="p">.</span><span class="n">Sample</span><span class="p">(</span><span class="n">samLinear</span><span class="p">,</span><span class="w"> </span><span class="n">input</span><span class="p">.</span><span class="n">uv</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <h2>Metal</h2>
 <p>Metal is Apple's low-level graphics API for iOS, macOS, and tvOS. It was designed to provide high performance and low overhead, similar to Vulkan and DirectX 12.</p>
@@ -175,12 +183,10 @@ float4 main(PS_INPUT input) : SV_Target
       </section>
 
     </article>
-
     <footer>
-      <p>© 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
+      <p>&copy; 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
     </footer>
   </main>
-
   <div class="wrapper"></div>
 </body>
 </html>

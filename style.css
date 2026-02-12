@@ -493,3 +493,7 @@ footer {
       transform: translateY(-20px);
     }
 }
+
+.author { font-style: italic; }
+.rating { font-weight: bold; }
+.isbn { font-style: italic; }

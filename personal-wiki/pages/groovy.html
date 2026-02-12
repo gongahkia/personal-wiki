@@ -4,18 +4,30 @@
   <meta charset="utf-8">
   <meta name="description" content="Wiki Note: Groovy - Gabriel Ong">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../style.css">
+  <meta name="author" content="Gabriel Ong">
+  <meta name="robots" content="index, follow">
+  
+  <meta property="og:title" content="Groovy | Gabriel Ong Wiki">
+  <meta property="og:description" content="Wiki Note: Groovy - Gabriel Ong">
+  <meta property="og:type" content="article">
+  
+  <meta property="og:image" content="https://gabrielongzm.com/asset/portrait/gong-2.png">
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Groovy | Gabriel Ong Wiki">
+  <meta name="twitter:description" content="Wiki Note: Groovy - Gabriel Ong">
+  
+  <link rel="stylesheet" href="../../style.css">
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntl-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
+  
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntlMono-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
-  <style>
-    .thin-space:after{content:"\2006"}
-    pre {
-      overflow-x: auto;
-      max-width: 100%;
-    }
-  </style>
+
+  <style>.thin-space:after{content:"\2006"}</style>
+  
+  <style>pre { overflow-x: auto; max-width: 100%; }</style>
+
   <script src="../script.js" defer></script>
-  <title>GABRIEL ONG</title>
+  <title>Groovy | Gabriel Ong Wiki</title>
   <link rel="shortcut icon" href="../asset/blob.ico" type="image/x-icon">
 </head>
 <body>
@@ -24,159 +36,155 @@
   <label for="dark-mode">
     <img id="infinityButton" src="../asset/roller.png" height="24" width="24"/>
   </label>
-
   <main>
     <article class="overallArticleTags">
-
+      
       <section class="note-header">
         <h2>Groovy</h2>
-
         <dl>
           <dt>File size</dt>
-          <dd>5.2KB</dd>
-
+          <dd>12.0KB</dd>
           <dt>Lines of code</dt>
-          <dd>198</dd>
+          <dd>204</dd>
         </dl>
       </section>
-
       <section class="note-content">
         <h1><code>Groovy</code></h1>
 <p>A powerful, optionally-typed and dynamic language for the Java platform.</p>
 <h2>Comments</h2>
-<pre class="codehilite"><code class="language-groovy">// ---------- COMMENT ----------
+<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- COMMENT ----------</span>
 
-// this is a single-line comment
+<span class="c1">// this is a single-line comment</span>
 
-/*
-this is a
-multi-line
-comment
-*/
-</code></pre>
+<span class="cm">/*</span>
+<span class="cm">this is a</span>
+<span class="cm">multi-line</span>
+<span class="cm">comment</span>
+<span class="cm">*/</span>
+</code></pre></div>
 
 <h2>Printing</h2>
-<pre class="codehilite"><code class="language-groovy">// ---------- PRINT ----------
-    // println =&gt; prints a string to the console, followed by a newline
-    // print =&gt; prints a string to the console without a newline
+<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- PRINT ----------</span>
+<span class="w">    </span><span class="c1">// println =&gt; prints a string to the console, followed by a newline</span>
+<span class="w">    </span><span class="c1">// print =&gt; prints a string to the console without a newline</span>
 
-println &quot;Hello, Groovy!&quot;
-print &quot;This does not have a newline.&quot;
-</code></pre>
+<span class="n">println</span><span class="w"> </span><span class="s2">&quot;Hello, Groovy!&quot;</span>
+<span class="n">print</span><span class="w"> </span><span class="s2">&quot;This does not have a newline.&quot;</span>
+</code></pre></div>
 
 <h2>Quickstart</h2>
-<pre class="codehilite"><code class="language-groovy">// ---------- QUICKSTART ----------
-    // Groovy is a superset of Java, so Java code is valid Groovy code.
-    // It can be used as a scripting language.
-    // Semicolons are optional.
+<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- QUICKSTART ----------</span>
+<span class="w">    </span><span class="c1">// Groovy is a superset of Java, so Java code is valid Groovy code.</span>
+<span class="w">    </span><span class="c1">// It can be used as a scripting language.</span>
+<span class="w">    </span><span class="c1">// Semicolons are optional.</span>
 
-println &quot;Hello from a Groovy script!&quot;
-</code></pre>
+<span class="n">println</span><span class="w"> </span><span class="s2">&quot;Hello from a Groovy script!&quot;</span>
+</code></pre></div>
 
 <h2>Variables</h2>
-<pre class="codehilite"><code class="language-groovy">// ---------- VARIABLE ----------
-    // def =&gt; defines a variable with dynamic typing
-    // You can also use static typing like in Java.
+<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- VARIABLE ----------</span>
+<span class="w">    </span><span class="c1">// def =&gt; defines a variable with dynamic typing</span>
+<span class="w">    </span><span class="c1">// You can also use static typing like in Java.</span>
 
-def myVar = 10 // dynamically typed
-int myInt = 20 // statically typed
-</code></pre>
+<span class="kt">def</span><span class="w"> </span><span class="n">myVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="c1">// dynamically typed</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">myInt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="c1">// statically typed</span>
+</code></pre></div>
 
 <h2>Types</h2>
-<pre class="codehilite"><code class="language-groovy">// ---------- TYPE ----------
-    // Groovy supports all Java types.
-    // It also has its own types for convenience.
-    // int, float, boolean, String, etc.
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- TYPE ----------</span>
+<span class="w">    </span><span class="c1">// Groovy supports all Java types.</span>
+<span class="w">    </span><span class="c1">// It also has its own types for convenience.</span>
+<span class="w">    </span><span class="c1">// int, float, boolean, String, etc.</span>
+</code></pre></div>
 
 <h2>Operators</h2>
-<pre class="codehilite"><code class="language-groovy">// ---------- OPERATOR ----------
+<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- OPERATOR ----------</span>
 
-// ARITHMETIC OPERATORS
-    // +, -, *, /, % (same as Java)
-    // ** =&gt; power operator
+<span class="c1">// ARITHMETIC OPERATORS</span>
+<span class="w">    </span><span class="c1">// +, -, *, /, % (same as Java)</span>
+<span class="w">    </span><span class="c1">// ** =&gt; power operator</span>
 
-// LOGICAL OPERATORS
-    // &amp;&amp;, ||, ! (same as Java)
+<span class="c1">// LOGICAL OPERATORS</span>
+<span class="w">    </span><span class="c1">// &amp;&amp;, ||, ! (same as Java)</span>
 
-// COMPARISON OPERATORS
-    // ==, !=, &gt;, &lt;, &gt;=, &lt;= (same as Java)
-    // &lt;=&gt; =&gt; spaceship operator (returns -1, 0, or 1)
+<span class="c1">// COMPARISON OPERATORS</span>
+<span class="w">    </span><span class="c1">// ==, !=, &gt;, &lt;, &gt;=, &lt;= (same as Java)</span>
+<span class="w">    </span><span class="c1">// &lt;=&gt; =&gt; spaceship operator (returns -1, 0, or 1)</span>
 
-// GROOVY-SPECIFIC OPERATORS
-    // ?. =&gt; safe navigation operator (avoids NullPointerException)
-    // ?: =&gt; Elvis operator (shorthand for ternary)
-    // ==~ =&gt; find operator (for regular expressions)
-    // === =&gt; identity operator (for object reference equality)
-</code></pre>
+<span class="c1">// GROOVY-SPECIFIC OPERATORS</span>
+<span class="w">    </span><span class="c1">// ?. =&gt; safe navigation operator (avoids NullPointerException)</span>
+<span class="w">    </span><span class="c1">// ?: =&gt; Elvis operator (shorthand for ternary)</span>
+<span class="w">    </span><span class="c1">// ==~ =&gt; find operator (for regular expressions)</span>
+<span class="w">    </span><span class="c1">// === =&gt; identity operator (for object reference equality)</span>
+</code></pre></div>
 
 <h2>Control structures</h2>
-<pre class="codehilite"><code class="language-groovy">// ---------- CONTROL STRUCTURE ----------
+<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- CONTROL STRUCTURE ----------</span>
 
-// IF / ELSE
+<span class="c1">// IF / ELSE</span>
 
-def x = 10
-if (x &gt; 5) {
-    println &quot;x is greater than 5&quot;
-} else {
-    println &quot;x is not greater than 5&quot;
-}
+<span class="kt">def</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span>
+<span class="k">if</span><span class="w"> </span><span class="o">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">println</span><span class="w"> </span><span class="s2">&quot;x is greater than 5&quot;</span>
+<span class="o">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">println</span><span class="w"> </span><span class="s2">&quot;x is not greater than 5&quot;</span>
+<span class="o">}</span>
 
-// SWITCH
+<span class="c1">// SWITCH</span>
 
-def mySwitch = &quot;test&quot;
-switch (mySwitch) {
-    case &quot;test&quot;:
-        println &quot;it's a test&quot;
-        break
-    case &quot;prod&quot;:
-        println &quot;it's prod&quot;
-        break
-    default:
-        println &quot;default case&quot;
-}
+<span class="kt">def</span><span class="w"> </span><span class="n">mySwitch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;test&quot;</span>
+<span class="k">switch</span><span class="w"> </span><span class="o">(</span><span class="n">mySwitch</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;test&quot;</span><span class="o">:</span>
+<span class="w">        </span><span class="n">println</span><span class="w"> </span><span class="s2">&quot;it&#39;s a test&quot;</span>
+<span class="w">        </span><span class="k">break</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;prod&quot;</span><span class="o">:</span>
+<span class="w">        </span><span class="n">println</span><span class="w"> </span><span class="s2">&quot;it&#39;s prod&quot;</span>
+<span class="w">        </span><span class="k">break</span>
+<span class="w">    </span><span class="k">default</span><span class="o">:</span>
+<span class="w">        </span><span class="n">println</span><span class="w"> </span><span class="s2">&quot;default case&quot;</span>
+<span class="o">}</span>
 
-// FOR LOOP
+<span class="c1">// FOR LOOP</span>
 
-for (i in 0..4) {
-    println i
-}
+<span class="k">for</span><span class="w"> </span><span class="o">(</span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">0</span><span class="o">..</span><span class="mi">4</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">println</span><span class="w"> </span><span class="n">i</span>
+<span class="o">}</span>
 
-// EACH (for collections)
+<span class="c1">// EACH (for collections)</span>
 
-def myList = [1, 2, 3]
-myList.each {
-    println it
-}
-</code></pre>
+<span class="kt">def</span><span class="w"> </span><span class="n">myList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="o">,</span><span class="w"> </span><span class="mi">2</span><span class="o">,</span><span class="w"> </span><span class="mi">3</span><span class="o">]</span>
+<span class="n">myList</span><span class="o">.</span><span class="na">each</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">println</span><span class="w"> </span><span class="n">it</span>
+<span class="o">}</span>
+</code></pre></div>
 
 <h2>Data structures</h2>
-<pre class="codehilite"><code class="language-groovy">// ---------- DATA STRUCTURE ----------
+<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- DATA STRUCTURE ----------</span>
 
-// LIST
+<span class="c1">// LIST</span>
 
-def myList = [1, 2, 'hello'] // can contain mixed types
+<span class="kt">def</span><span class="w"> </span><span class="n">myList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="mi">1</span><span class="o">,</span><span class="w"> </span><span class="mi">2</span><span class="o">,</span><span class="w"> </span><span class="s1">&#39;hello&#39;</span><span class="o">]</span><span class="w"> </span><span class="c1">// can contain mixed types</span>
 
-// MAP
+<span class="c1">// MAP</span>
 
-def myMap = [name: 'John', age: 30]
+<span class="kt">def</span><span class="w"> </span><span class="n">myMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="nl">name:</span><span class="w"> </span><span class="s1">&#39;John&#39;</span><span class="o">,</span><span class="w"> </span><span class="nl">age:</span><span class="w"> </span><span class="mi">30</span><span class="o">]</span>
 
-// RANGE
+<span class="c1">// RANGE</span>
 
-def myRange = 1..10
-</code></pre>
+<span class="kt">def</span><span class="w"> </span><span class="n">myRange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">..</span><span class="mi">10</span>
+</code></pre></div>
 
 <h2>Functions</h2>
-<pre class="codehilite"><code class="language-groovy">// ---------- FUNCTION ----------
-    // Functions are defined with the `def` keyword, or with a specific return type.
-    // `return` is optional for the last statement.
+<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- FUNCTION ----------</span>
+<span class="w">    </span><span class="c1">// Functions are defined with the `def` keyword, or with a specific return type.</span>
+<span class="w">    </span><span class="c1">// `return` is optional for the last statement.</span>
 
-def myFunc(name) {
-    &quot;Hello, $name&quot;
-}
+<span class="kt">def</span><span class="w"> </span><span class="nf">myFunc</span><span class="o">(</span><span class="n">name</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="s2">&quot;Hello, $name&quot;</span>
+<span class="o">}</span>
 
-println myFunc('Groovy')
-</code></pre>
+<span class="n">println</span><span class="w"> </span><span class="nf">myFunc</span><span class="o">(</span><span class="s1">&#39;Groovy&#39;</span><span class="o">)</span>
+</code></pre></div>
 
 <h2>More on</h2>
 <ul>
@@ -187,12 +195,10 @@ println myFunc('Groovy')
       </section>
 
     </article>
-
     <footer>
-      <p>© 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
+      <p>&copy; 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
     </footer>
   </main>
-
   <div class="wrapper"></div>
 </body>
 </html>

@@ -4,18 +4,30 @@
   <meta charset="utf-8">
   <meta name="description" content="Wiki Note: Nix - Gabriel Ong">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../style.css">
+  <meta name="author" content="Gabriel Ong">
+  <meta name="robots" content="index, follow">
+  
+  <meta property="og:title" content="Nix | Gabriel Ong Wiki">
+  <meta property="og:description" content="Wiki Note: Nix - Gabriel Ong">
+  <meta property="og:type" content="article">
+  
+  <meta property="og:image" content="https://gabrielongzm.com/asset/portrait/gong-2.png">
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Nix | Gabriel Ong Wiki">
+  <meta name="twitter:description" content="Wiki Note: Nix - Gabriel Ong">
+  
+  <link rel="stylesheet" href="../../style.css">
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntl-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
+  
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntlMono-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
-  <style>
-    .thin-space:after{content:"\2006"}
-    pre {
-      overflow-x: auto;
-      max-width: 100%;
-    }
-  </style>
+
+  <style>.thin-space:after{content:"\2006"}</style>
+  
+  <style>pre { overflow-x: auto; max-width: 100%; }</style>
+
   <script src="../script.js" defer></script>
-  <title>GABRIEL ONG</title>
+  <title>Nix | Gabriel Ong Wiki</title>
   <link rel="shortcut icon" href="../asset/blob.ico" type="image/x-icon">
 </head>
 <body>
@@ -24,194 +36,190 @@
   <label for="dark-mode">
     <img id="infinityButton" src="../asset/roller.png" height="24" width="24"/>
   </label>
-
   <main>
     <article class="overallArticleTags">
-
+      
       <section class="note-header">
         <h2>Nix</h2>
-
         <dl>
           <dt>File size</dt>
-          <dd>7.7KB</dd>
-
+          <dd>14.6KB</dd>
           <dt>Lines of code</dt>
-          <dd>236</dd>
+          <dd>242</dd>
         </dl>
       </section>
-
       <section class="note-content">
         <h1><code>Nix</code></h1>
 <p>Powerful Linux and Unix package manager for reliable, reproducible configurations.</p>
 <h2>Comments</h2>
-<pre class="codehilite"><code class="language-nix"># ----- COMMENT -----
+<div class="codehilite"><pre><span></span><code><span class="c1"># ----- COMMENT -----</span>
 
-# this is a single-line comment
+<span class="c1"># this is a single-line comment</span>
 
-/*
-this is a
-multi-line
-comment
-*/
-</code></pre>
+<span class="cm">/*</span>
+<span class="cm">this is a</span>
+<span class="cm">multi-line</span>
+<span class="cm">comment</span>
+<span class="cm">*/</span>
+</code></pre></div>
 
 <h2>Printing</h2>
-<pre class="codehilite"><code class="language-nix"># ----- PRINTING -----
-    # builtins.trace =&gt; receives a string argument and a second optional argument that is then printed to the stdout and includes a newline depending on the arguments provided
+<div class="codehilite"><pre><span></span><code><span class="c1"># ----- PRINTING -----</span>
+    <span class="c1"># builtins.trace =&gt; receives a string argument and a second optional argument that is then printed to the stdout and includes a newline depending on the arguments provided</span>
 
-builtins.trace &quot;this does not have a newline&quot; &quot;&quot;; # specifying an empty string as the second argument will omit the newline 
-builtins.trace &quot;this has a newline but only because we explicitly specified it\n&quot;;
-</code></pre>
+<span class="nb">builtins</span><span class="o">.</span>trace <span class="s2">&quot;this does not have a newline&quot;</span> <span class="s2">&quot;&quot;</span><span class="p">;</span> <span class="c1"># specifying an empty string as the second argument will omit the newline </span>
+<span class="nb">builtins</span><span class="o">.</span>trace <span class="s2">&quot;this has a newline but only because we explicitly specified it</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+</code></pre></div>
 
 <h2>Quickstart</h2>
-<pre class="codehilite"><code class="language-nix"># ----- QUICKSTART -----
-    # pure functional language, where everything is an expression and every expression must evaluate to a single value
-    # all values in Nix are immutable by default
-    # powerful, expressive syntax used for configuration management, package deployment, and software reproducibility within NixOS
-    # semicolon-delimited language
-    # let =&gt; provides variable binding of an immutable value to the specified named variable identifier
+<div class="codehilite"><pre><span></span><code><span class="c1"># ----- QUICKSTART -----</span>
+    <span class="c1"># pure functional language, where everything is an expression and every expression must evaluate to a single value</span>
+    <span class="c1"># all values in Nix are immutable by default</span>
+    <span class="c1"># powerful, expressive syntax used for configuration management, package deployment, and software reproducibility within NixOS</span>
+    <span class="c1"># semicolon-delimited language</span>
+    <span class="c1"># let =&gt; provides variable binding of an immutable value to the specified named variable identifier</span>
 
-# --- EXAMPLE NIX PACKAGE ---
-    # below is an example of a nix package definition
+<span class="c1"># --- EXAMPLE NIX PACKAGE ---</span>
+    <span class="c1"># below is an example of a nix package definition</span>
 
-{ stdenv, fetchurl }:
-stdenv.mkDerivation {
-    name = &quot;hello-2.10&quot;;
-    src = fetchurl {
-        url = &quot;http://ftp.gnu.org/gnu/hello/hello-2.10.tar.gz&quot;;
-        sha256 = &quot;0ssi1wpaf7plaswqqjwigppsg5fyh99vdlb9kzl7c9lng89nd3fi&quot;;
-    };
-    buildInputs = [ ];
-    meta = {
-        description = &quot;A program that produces a familiar, friendly greeting&quot;;
-        license = stdenv.lib.licenses.gpl3;
-    };
-}
-</code></pre>
+<span class="p">{</span> stdenv<span class="p">,</span> fetchurl <span class="p">}:</span>
+stdenv<span class="o">.</span>mkDerivation <span class="p">{</span>
+    <span class="ss">name</span> <span class="o">=</span> <span class="s2">&quot;hello-2.10&quot;</span><span class="p">;</span>
+    <span class="ss">src</span> <span class="o">=</span> fetchurl <span class="p">{</span>
+        <span class="ss">url</span> <span class="o">=</span> <span class="s2">&quot;http://ftp.gnu.org/gnu/hello/hello-2.10.tar.gz&quot;</span><span class="p">;</span>
+        <span class="ss">sha256</span> <span class="o">=</span> <span class="s2">&quot;0ssi1wpaf7plaswqqjwigppsg5fyh99vdlb9kzl7c9lng89nd3fi&quot;</span><span class="p">;</span>
+    <span class="p">};</span>
+    <span class="ss">buildInputs</span> <span class="o">=</span> <span class="p">[</span> <span class="p">];</span>
+    <span class="ss">meta</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="ss">description</span> <span class="o">=</span> <span class="s2">&quot;A program that produces a familiar, friendly greeting&quot;</span><span class="p">;</span>
+        <span class="ss">license</span> <span class="o">=</span> stdenv<span class="o">.</span>lib<span class="o">.</span>licenses<span class="o">.</span>gpl3<span class="p">;</span>
+    <span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <h2>Types</h2>
-<pre class="codehilite"><code class="language-nix"># ----- TYPE -----
-    # Integer =&gt; stores an integer number value
-    # Float =&gt; stores a floating-point number value
-    # String =&gt; stores a string value declared within &quot;&quot; double quotation marks, note that characters are handled as single-character long strings
-    # Boolean =&gt; true, false
-    # null =&gt; represents the absence of a value, the equivalent of void in other programming languages
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="c1"># ----- TYPE -----</span>
+    <span class="c1"># Integer =&gt; stores an integer number value</span>
+    <span class="c1"># Float =&gt; stores a floating-point number value</span>
+    <span class="c1"># String =&gt; stores a string value declared within &quot;&quot; double quotation marks, note that characters are handled as single-character long strings</span>
+    <span class="c1"># Boolean =&gt; true, false</span>
+    <span class="c1"># null =&gt; represents the absence of a value, the equivalent of void in other programming languages</span>
+</code></pre></div>
 
 <h2>Operators</h2>
-<pre class="codehilite"><code class="language-nix"># ----- OPERATOR -----
+<div class="codehilite"><pre><span></span><code><span class="c1"># ----- OPERATOR -----</span>
 
-# ----- ARITHMETIC OPERATORS ----- 
+<span class="c1"># ----- ARITHMETIC OPERATORS ----- </span>
 
-+ # addition
-- # subtraction
-* # multiplication
-/ # division
-% # modulo
+<span class="o">+</span> <span class="c1"># addition</span>
+<span class="o">-</span> <span class="c1"># subtraction</span>
+<span class="o">*</span> <span class="c1"># multiplication</span>
+<span class="o">/</span> <span class="c1"># division</span>
+<span class="err">%</span> <span class="c1"># modulo</span>
 
-# ----- COMPARISON OPERATORS -----
+<span class="c1"># ----- COMPARISON OPERATORS -----</span>
 
-== # complete equality check for both value and type
-!= # complete inequality check for both value and type
-&gt; # comparison operator
-&lt; # comparison operator
-&gt;= # comparison operator
-&lt;= # comparison operator
+<span class="o">==</span> <span class="c1"># complete equality check for both value and type</span>
+<span class="o">!=</span> <span class="c1"># complete inequality check for both value and type</span>
+<span class="o">&gt;</span> <span class="c1"># comparison operator</span>
+<span class="o">&lt;</span> <span class="c1"># comparison operator</span>
+<span class="o">&gt;=</span> <span class="c1"># comparison operator</span>
+<span class="o">&lt;=</span> <span class="c1"># comparison operator</span>
 
-# ----- LOGICAL OPERATORS -----
+<span class="c1"># ----- LOGICAL OPERATORS -----</span>
 
-&amp;&amp; # logical and
-|| # logical or
-! # logical not
-</code></pre>
+<span class="o">&amp;&amp;</span> <span class="c1"># logical and</span>
+<span class="o">||</span> <span class="c1"># logical or</span>
+<span class="o">!</span> <span class="c1"># logical not</span>
+</code></pre></div>
 
 <h2>Control structures</h2>
-<pre class="codehilite"><code class="language-nix"># ----- CONTROL STRUCTURE -----
+<div class="codehilite"><pre><span></span><code><span class="c1"># ----- CONTROL STRUCTURE -----</span>
 
-# --- CONDITIONALS ---
+<span class="c1"># --- CONDITIONALS ---</span>
 
 IF ELSE IF ELSE
 
-let
-    age = 25;
-in
-    if age &lt; 13 then
-        &quot;Child&quot;
-    else if age &lt; 20 then
-        &quot;Teenager&quot;
-    else if age &lt; 65 then
-        &quot;Adult&quot;
-    else
-        &quot;Senior&quot;
+<span class="k">let</span>
+    <span class="ss">age</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span>
+<span class="k">in</span>
+    <span class="k">if</span> age <span class="o">&lt;</span> <span class="mi">13</span> <span class="k">then</span>
+        <span class="s2">&quot;Child&quot;</span>
+    <span class="k">else</span> <span class="k">if</span> age <span class="o">&lt;</span> <span class="mi">20</span> <span class="k">then</span>
+        <span class="s2">&quot;Teenager&quot;</span>
+    <span class="k">else</span> <span class="k">if</span> age <span class="o">&lt;</span> <span class="mi">65</span> <span class="k">then</span>
+        <span class="s2">&quot;Adult&quot;</span>
+    <span class="k">else</span>
+        <span class="s2">&quot;Senior&quot;</span>
 
-# --- LOOPS ---
-    # there are no traditional loop constructs in Nix as in other programming languages
-    # instead, Nix relies on recursion and other higher-order functions to handle iteration and traversal of iterable data structures
+<span class="c1"># --- LOOPS ---</span>
+    <span class="c1"># there are no traditional loop constructs in Nix as in other programming languages</span>
+    <span class="c1"># instead, Nix relies on recursion and other higher-order functions to handle iteration and traversal of iterable data structures</span>
 
-# RECURSION
+<span class="c1"># RECURSION</span>
 
-let
-    factorial = n: if n == 0 then 1 else n * factorial (n - 1);
-in
-    factorial 5
+<span class="k">let</span>
+    <span class="ss">factorial</span> <span class="o">=</span> n<span class="p">:</span> <span class="k">if</span> <span class="ss">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">then</span> <span class="mi">1</span> <span class="k">else</span> n <span class="o">*</span> factorial <span class="p">(</span>n <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+<span class="k">in</span>
+    factorial <span class="mi">5</span>
 
-# HIGHER-ORDER FUNCTIONS
-    # below are examples of some higher-order functions in Nix such as 
-        # map =&gt; applies a specified function to each element of the iterable data structure
-        # filter =&gt; selects elements of a list that satisfy the specified predicate condition
-        # fold =&gt; reduces a list to a single value using a specified binary function, the equivalent of reduce in other programming languages
+<span class="c1"># HIGHER-ORDER FUNCTIONS</span>
+    <span class="c1"># below are examples of some higher-order functions in Nix such as </span>
+        <span class="c1"># map =&gt; applies a specified function to each element of the iterable data structure</span>
+        <span class="c1"># filter =&gt; selects elements of a list that satisfy the specified predicate condition</span>
+        <span class="c1"># fold =&gt; reduces a list to a single value using a specified binary function, the equivalent of reduce in other programming languages</span>
 
-let
-    myList = [1 2 3 4 5];
-    square = x: x * x;
-    squaredList = map square myList;
-in
+<span class="k">let</span>
+    <span class="ss">myList</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">];</span>
+    <span class="ss">square</span> <span class="o">=</span> x<span class="p">:</span> x <span class="o">*</span> x<span class="p">;</span>
+    <span class="ss">squaredList</span> <span class="o">=</span> <span class="nb">map</span> square myList<span class="p">;</span>
+<span class="k">in</span>
     squaredList 
 
-let
-    myList = [1 2 3 4 5];
-    isEven = x: x % 2 == 0;
-    evenList = filter isEven myList;
-in
+<span class="k">let</span>
+    <span class="ss">myList</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">];</span>
+    <span class="ss">isEven</span> <span class="o">=</span> x<span class="p">:</span> x <span class="err">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="ss">evenList</span> <span class="o">=</span> filter isEven myList<span class="p">;</span>
+<span class="k">in</span>
     evenList
 
-let
-    myList = [1 2 3 4 5];
-    sum = foldl (acc: x: acc + x) 0 myList;
-in
+<span class="k">let</span>
+    <span class="ss">myList</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">];</span>
+    <span class="ss">sum</span> <span class="o">=</span> foldl <span class="p">(</span>acc<span class="p">:</span> x<span class="p">:</span> acc <span class="o">+</span> x<span class="p">)</span> <span class="mi">0</span> myList<span class="p">;</span>
+<span class="k">in</span>
     sum 
-</code></pre>
+</code></pre></div>
 
 <h2>Data structures</h2>
-<pre class="codehilite"><code class="language-nix"># ----- DATA STRUCTURE -----
-    # list =&gt; fixed-size immutable ordered collection of elements of multiple datatypes, declared within [] square brackets, featuring lazy evaluation
-    # attribute set =&gt; fixed-size immutable unordered collection of key-value pairs with string keys and values of multiple datatypes, the equivalent of dictionaries in Python and maps in other programming langauges, declared within {} curly braces
+<div class="codehilite"><pre><span></span><code><span class="c1"># ----- DATA STRUCTURE -----</span>
+    <span class="c1"># list =&gt; fixed-size immutable ordered collection of elements of multiple datatypes, declared within [] square brackets, featuring lazy evaluation</span>
+    <span class="c1"># attribute set =&gt; fixed-size immutable unordered collection of key-value pairs with string keys and values of multiple datatypes, the equivalent of dictionaries in Python and maps in other programming langauges, declared within {} curly braces</span>
 
-let
-    anExampleAttributeSet = {
-        name = &quot;example&quot;;
-        version = &quot;1.0&quot;;
-    };
-in
-    anExampleAttributeSet.name # evaluates to &quot;example&quot; string literal
+<span class="k">let</span>
+    <span class="ss">anExampleAttributeSet</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="ss">name</span> <span class="o">=</span> <span class="s2">&quot;example&quot;</span><span class="p">;</span>
+        <span class="ss">version</span> <span class="o">=</span> <span class="s2">&quot;1.0&quot;</span><span class="p">;</span>
+    <span class="p">};</span>
+<span class="k">in</span>
+    anExampleAttributeSet<span class="o">.</span>name <span class="c1"># evaluates to &quot;example&quot; string literal</span>
 
-let
-    anExampleList = [1 2 3];
-in
-    anExampleList # evaluates to [1 2 3] list literal
-</code></pre>
+<span class="k">let</span>
+    <span class="ss">anExampleList</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">];</span>
+<span class="k">in</span>
+    anExampleList <span class="c1"># evaluates to [1 2 3] list literal</span>
+</code></pre></div>
 
 <h2>Functions</h2>
-<pre class="codehilite"><code class="language-nix"># ----- FUNCTION -----
-    # &lt;functionName&gt; = &lt;functionParameter1Name : functionParameter2Name : etc...&gt; : &lt;functionDefinitionBody&gt; =&gt; definition and declaration of a named function
-    # as a functional language, Nix features implicit return of the last expression within a function body
+<div class="codehilite"><pre><span></span><code><span class="c1"># ----- FUNCTION -----</span>
+    <span class="c1"># &lt;functionName&gt; = &lt;functionParameter1Name : functionParameter2Name : etc...&gt; : &lt;functionDefinitionBody&gt; =&gt; definition and declaration of a named function</span>
+    <span class="c1"># as a functional language, Nix features implicit return of the last expression within a function body</span>
 
-myFunction = x: x + 1; # named function with a single argument
-myFunction 5 # evaluates to 6
+<span class="ss">myFunction</span> <span class="o">=</span> x<span class="p">:</span> x <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="c1"># named function with a single argument</span>
+myFunction <span class="mi">5</span> <span class="c1"># evaluates to 6</span>
 
-myAdd = a: b: a + b; # named function with multiple arguments
-myAdd 2 3 # evaluates to 5
-</code></pre>
+<span class="ss">myAdd</span> <span class="o">=</span> a<span class="p">:</span> b<span class="p">:</span> a <span class="o">+</span> b<span class="p">;</span> <span class="c1"># named function with multiple arguments</span>
+myAdd <span class="mi">2</span> <span class="mi">3</span> <span class="c1"># evaluates to 5</span>
+</code></pre></div>
 
 <h2>More on</h2>
 <ul>
@@ -225,12 +233,10 @@ myAdd 2 3 # evaluates to 5
       </section>
 
     </article>
-
     <footer>
-      <p>© 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
+      <p>&copy; 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
     </footer>
   </main>
-
   <div class="wrapper"></div>
 </body>
 </html>

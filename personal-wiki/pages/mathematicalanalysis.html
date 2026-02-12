@@ -4,18 +4,30 @@
   <meta charset="utf-8">
   <meta name="description" content="Wiki Note: Mathematical analysis - Gabriel Ong">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../style.css">
+  <meta name="author" content="Gabriel Ong">
+  <meta name="robots" content="index, follow">
+  
+  <meta property="og:title" content="Mathematical analysis | Gabriel Ong Wiki">
+  <meta property="og:description" content="Wiki Note: Mathematical analysis - Gabriel Ong">
+  <meta property="og:type" content="article">
+  
+  <meta property="og:image" content="https://gabrielongzm.com/asset/portrait/gong-2.png">
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Mathematical analysis | Gabriel Ong Wiki">
+  <meta name="twitter:description" content="Wiki Note: Mathematical analysis - Gabriel Ong">
+  
+  <link rel="stylesheet" href="../../style.css">
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntl-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
+  
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntlMono-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
-  <style>
-    .thin-space:after{content:"\2006"}
-    pre {
-      overflow-x: auto;
-      max-width: 100%;
-    }
-  </style>
+
+  <style>.thin-space:after{content:"\2006"}</style>
+  
+  <style>pre { overflow-x: auto; max-width: 100%; }</style>
+
   <script src="../script.js" defer></script>
-  <title>GABRIEL ONG</title>
+  <title>Mathematical analysis | Gabriel Ong Wiki</title>
   <link rel="shortcut icon" href="../asset/blob.ico" type="image/x-icon">
 </head>
 <body>
@@ -24,22 +36,18 @@
   <label for="dark-mode">
     <img id="infinityButton" src="../asset/roller.png" height="24" width="24"/>
   </label>
-
   <main>
     <article class="overallArticleTags">
-
+      
       <section class="note-header">
         <h2>Mathematical analysis</h2>
-
         <dl>
           <dt>File size</dt>
-          <dd>10.2KB</dd>
-
+          <dd>41.4KB</dd>
           <dt>Lines of code</dt>
-          <dd>338</dd>
+          <dd>344</dd>
         </dl>
       </section>
-
       <section class="note-content">
         <h1><code>Mathematical analysis</code></h1>
 <p>Code snippets in Python.</p>
@@ -48,43 +56,43 @@
 <li>Describes the value a function approaches as its input approaches a specified value</li>
 <li>Useful for understanding continuity and differentiability</li>
 </ul>
-<pre class="codehilite"><code class="language-py">import math
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 
-def limit(f, x, x_val):
-    delta = 0.001
-    while True:
-        x_low = x_val - delta
-        x_high = x_val + delta
-        if f(x_low) == f(x_high):
-            break
-        delta *= 0.5
-    return f(x_val)
+<span class="k">def</span><span class="w"> </span><span class="nf">limit</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">x_val</span><span class="p">):</span>
+    <span class="n">delta</span> <span class="o">=</span> <span class="mf">0.001</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">x_low</span> <span class="o">=</span> <span class="n">x_val</span> <span class="o">-</span> <span class="n">delta</span>
+        <span class="n">x_high</span> <span class="o">=</span> <span class="n">x_val</span> <span class="o">+</span> <span class="n">delta</span>
+        <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">x_low</span><span class="p">)</span> <span class="o">==</span> <span class="n">f</span><span class="p">(</span><span class="n">x_high</span><span class="p">):</span>
+            <span class="k">break</span>
+        <span class="n">delta</span> <span class="o">*=</span> <span class="mf">0.5</span>
+    <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">x_val</span><span class="p">)</span>
 
-f = lambda x: (x**2 - 1)/(x - 1)
-x_val = 1
-result = limit(f, 0.9999, x_val)
-print(f&quot;the limit of f(x) as x approaches {x_val} is {result}&quot;)
-</code></pre>
+<span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">x_val</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">limit</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mf">0.9999</span><span class="p">,</span> <span class="n">x_val</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;the limit of f(x) as x approaches </span><span class="si">{</span><span class="n">x_val</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
 
 <h2>Continuity</h2>
 <ul>
 <li>Functions are continuous if there are no breaks or holes in the function range</li>
 <li>Useful for differentiation</li>
 </ul>
-<pre class="codehilite"><code class="language-py">def is_continuous(f, x, x_val, delta=1e-6):
-    x_low = x_val - delta
-    x_high = x_val + delta
-    limit_exists = True
-    try:
-        lim = limit(f, x, x_val)
-    except:
-        limit_exists = False
-    return limit_exists and (f(x_low) - lim)**2 &lt; delta and (f(x_high) - lim)**2 &lt; delta
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">is_continuous</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">x_val</span><span class="p">,</span> <span class="n">delta</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">):</span>
+    <span class="n">x_low</span> <span class="o">=</span> <span class="n">x_val</span> <span class="o">-</span> <span class="n">delta</span>
+    <span class="n">x_high</span> <span class="o">=</span> <span class="n">x_val</span> <span class="o">+</span> <span class="n">delta</span>
+    <span class="n">limit_exists</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">lim</span> <span class="o">=</span> <span class="n">limit</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">x_val</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="n">limit_exists</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="n">limit_exists</span> <span class="ow">and</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x_low</span><span class="p">)</span> <span class="o">-</span> <span class="n">lim</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="n">delta</span> <span class="ow">and</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x_high</span><span class="p">)</span> <span class="o">-</span> <span class="n">lim</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="n">delta</span>
 
-f = lambda x: x**2
-x_val = 2
-print(is_continuous(f, lambda x: x, x_val))
-</code></pre>
+<span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">x_val</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">is_continuous</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="n">x_val</span><span class="p">))</span>
+</code></pre></div>
 
 <h2>Differentiation</h2>
 <ul>
@@ -92,29 +100,29 @@ print(is_continuous(f, lambda x: x, x_val))
 <li>Measures a function's rate of change</li>
 <li>Useful for optimization, physics and other areas of applied mathematics</li>
 </ul>
-<pre class="codehilite"><code class="language-py">def derivative(f, x, h=1e-5):
-    return (f(x+h) - f(x))/h
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">derivative</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="n">h</span>
 
-f = lambda x: x**3
-x = 2
-print(f&quot;derivative of f(x)=x^3 at x={x} is {derivative(f, x)}&quot;)
-</code></pre>
+<span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;derivative of f(x)=x^3 at x=</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">derivative</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
 
 <h2>Derivatives of Polynomials</h2>
 <ul>
 <li>Applying the <a href="https://youtu.be/9Yz-RCdS2Tg?si=AXuFQ7r5kNW6cQzQ">power rule</a></li>
 </ul>
-<pre class="codehilite"><code class="language-py">from math import factorial
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">factorial</span>
 
-def poly_deriv(coeffs):
-    derived_coeffs = []
-    for i, c in enumerate(coeffs[1:]):
-        derived_coeffs.append(c * (len(coeffs) - i - 1))
-    return derived_coeffs
+<span class="k">def</span><span class="w"> </span><span class="nf">poly_deriv</span><span class="p">(</span><span class="n">coeffs</span><span class="p">):</span>
+    <span class="n">derived_coeffs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">coeffs</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
+        <span class="n">derived_coeffs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">coeffs</span><span class="p">)</span> <span class="o">-</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">derived_coeffs</span>
 
-f = [1, 2, 1, 3, 4] # 1 + 2x + x^2 + 3x^3 + 4x^4
-print(f&quot;f'(x) coefficients are {poly_deriv(f)}&quot;)
-</code></pre>
+<span class="n">f</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span> <span class="c1"># 1 + 2x + x^2 + 3x^3 + 4x^4</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;f&#39;(x) coefficients are </span><span class="si">{</span><span class="n">poly_deriv</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
 
 <h2>Integration</h2>
 <ul>
@@ -122,200 +130,200 @@ print(f&quot;f'(x) coefficients are {poly_deriv(f)}&quot;)
 <li>Inverse of <a href="#differentiation">differentiation</a></li>
 <li>Measures the accumulated change of a function over a specified interval</li>
 </ul>
-<pre class="codehilite"><code class="language-py">import numpy as np
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-def riemann_sum(f, a, b, n=100):
-    x = np.linspace(a, b, n+1)
-    dx = (b - a) / n
-    area = 0
-    for i in range(n):
-        area += f(x[i]) * dx
-    return area
+<span class="k">def</span><span class="w"> </span><span class="nf">riemann_sum</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span>
+    <span class="n">area</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">area</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">*</span> <span class="n">dx</span>
+    <span class="k">return</span> <span class="n">area</span>
 
-f = lambda x: x**2
-a = 0
-b = 2
-print(f&quot;integral of f(x)=x^2 from {a} to {b} is {riemann_sum(f, a, b)}&quot;)
-</code></pre>
+<span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;integral of f(x)=x^2 from </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">riemann_sum</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
 
 <h2>Numerical Integration Error</h2>
 <ul>
 <li><a href="https://www.sfu.ca/math-coursenotes/Math%20158%20Course%20Notes/sec_riemann.html">Riemann sum</a> suffers from errors as the value of n decreases</li>
 <li>Higher n yields a lower error</li>
 </ul>
-<pre class="codehilite"><code class="language-py">actual_int = 4/3  # Integral of x^2 from 0 to 2
-n_values = [10, 100, 1000, 10000]
+<div class="codehilite"><pre><span></span><code><span class="n">actual_int</span> <span class="o">=</span> <span class="mi">4</span><span class="o">/</span><span class="mi">3</span>  <span class="c1"># Integral of x^2 from 0 to 2</span>
+<span class="n">n_values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">]</span>
 
-for n in n_values:
-    approx = riemann_sum(lambda x: x**2, 0, 2, n)
-    error = abs(actual_int - approx)
-    print(f&quot;for n={n}, approx={approx:.6f}, error={error:.6f}&quot;)
-</code></pre>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">n_values</span><span class="p">:</span>
+    <span class="n">approx</span> <span class="o">=</span> <span class="n">riemann_sum</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="n">error</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">actual_int</span> <span class="o">-</span> <span class="n">approx</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;for n=</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">, approx=</span><span class="si">{</span><span class="n">approx</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">, error=</span><span class="si">{</span><span class="n">error</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
 
 <h2>Sequences</h2>
 <ul>
 <li>Ordered list of elements of finite or infinite length</li>
 <li>Sequence limits are useful for mathematical analysis</li>
 </ul>
-<pre class="codehilite"><code class="language-py">def seq_limit(seq, n):
-    if n &gt;= len(seq):
-        return None
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">seq_limit</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">seq</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">None</span>
 
-    s = seq[n]
-    for i in range(n+1, len(seq)):
-        if abs(seq[i] - s) &gt; 1e-6:
-            return None
+    <span class="n">s</span> <span class="o">=</span> <span class="n">seq</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">seq</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">seq</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">s</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">1e-6</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
 
-    return s
+    <span class="k">return</span> <span class="n">s</span>
 
-seq = [1/n for n in range(1, 21)]
-n = 5
-limit = seq_limit(seq, n)
-print(f&quot;the limit of the sequence 1/n as n-&gt;inf is {limit}&quot;)
-</code></pre>
+<span class="n">seq</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">)]</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">limit</span> <span class="o">=</span> <span class="n">seq_limit</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;the limit of the sequence 1/n as n-&gt;inf is </span><span class="si">{</span><span class="n">limit</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
 
 <h2>Infinite Series</h2>
 <ul>
 <li>Sums the terms of an infinite sequence</li>
 <li>Convergence is determined by the limits of a sequence of partial sums</li>
 </ul>
-<pre class="codehilite"><code class="language-py">def sum_series(seq, n):
-    total = 0
-    for i in range(n):
-        total += seq[i]
-    return total
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">sum_series</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">total</span> <span class="o">+=</span> <span class="n">seq</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">total</span>
 
-def series_conv(seq, abs_tol=1e-6, max_terms=100):
-    prev_sum = 0
-    for n in range(1, max_terms+1):
-        curr_sum = sum_series(seq, n)
-        if abs(curr_sum - prev_sum) &lt; abs_tol:
-            return curr_sum
-        prev_sum = curr_sum
-    return None
+<span class="k">def</span><span class="w"> </span><span class="nf">series_conv</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">abs_tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">max_terms</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">prev_sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_terms</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">curr_sum</span> <span class="o">=</span> <span class="n">sum_series</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">curr_sum</span> <span class="o">-</span> <span class="n">prev_sum</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">abs_tol</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">curr_sum</span>
+        <span class="n">prev_sum</span> <span class="o">=</span> <span class="n">curr_sum</span>
+    <span class="k">return</span> <span class="kc">None</span>
 
-harmonic = [1/n for n in range(1, 51)]
-print(f&quot;sum of harmonic series is {series_conv(harmonic)}&quot;)
-</code></pre>
+<span class="n">harmonic</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">51</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;sum of harmonic series is </span><span class="si">{</span><span class="n">series_conv</span><span class="p">(</span><span class="n">harmonic</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
 
 <h2>Power Series</h2>
 <ul>
 <li>Series representation of a function as an infinite sum of terms calculated from the derivatives at a single point</li>
 </ul>
-<pre class="codehilite"><code class="language-py">from math import factorial
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">factorial</span>
 
-def power_series(f, a, n):
-    coeffs = []
-    for i in range(n+1):
-        coeffs.append(derivative(f, a, i)/factorial(i))
-    return coeffs
+<span class="k">def</span><span class="w"> </span><span class="nf">power_series</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">coeffs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">coeffs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">derivative</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span><span class="o">/</span><span class="n">factorial</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">coeffs</span>
 
-f = lambda x: 1 / (1 - x)
-a = 0
-print(f&quot;power series of f(x)=1/(1-x) around x={a} is {power_series(f, a, 5)}&quot;)
-</code></pre>
+<span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;power series of f(x)=1/(1-x) around x=</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">power_series</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
 
 <h2>Taylor Series</h2>
 <ul>
 <li>Representation of a function as an infinite sum of terms calculated from its derivatives at a single point</li>
 </ul>
-<pre class="codehilite"><code class="language-py">from math import factorial, exp
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">factorial</span><span class="p">,</span> <span class="n">exp</span>
 
-def factorial(n):
-    if n == 0:
-        return 1
-    else:
-        return n * factorial(n-1)
+<span class="k">def</span><span class="w"> </span><span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
-def exp_taylor(x, n):
-    approx = 0
-    for i in range(n+1):
-        approx += x**i / factorial(i)
-    return approx
+<span class="k">def</span><span class="w"> </span><span class="nf">exp_taylor</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">approx</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">approx</span> <span class="o">+=</span> <span class="n">x</span><span class="o">**</span><span class="n">i</span> <span class="o">/</span> <span class="n">factorial</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">approx</span>
 
-x = 1
-n = 10
-print(f&quot;e^(x) approximated by the Taylor series expansion to {n} terms is {exp_taylor(x, n)}&quot;)
-</code></pre>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;e^(x) approximated by the Taylor series expansion to </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> terms is </span><span class="si">{</span><span class="n">exp_taylor</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
 
 <h2>Taylor Polynomial Error</h2>
 <ul>
 <li>Taylor Polynomial approximates a function by truncating its Taylor Series</li>
 <li>Approximation error depends on the value of n and the function's smoothness</li>
 </ul>
-<pre class="codehilite"><code class="language-py">import sympy as sp
-import numpy as np
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-def taylor_error(f, x0, n, interval):
-    f_symb = sp.lambdify(f.args[0], f, 'numpy')
-    exact_vals = f_symb(interval)
-    taylor_vals = sp.lambdify(f.args[0], sp.series(f, x0, n).removeO(), 'numpy')(interval)
-    max_err = 0
-    for x_val, exact_val, taylor_val in zip(interval, exact_vals, taylor_vals):
-        err = abs(exact_val - taylor_val)
-        if err &gt; max_err:
-            max_err = err
-    return max_err
+<span class="k">def</span><span class="w"> </span><span class="nf">taylor_error</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">interval</span><span class="p">):</span>
+    <span class="n">f_symb</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">f</span><span class="p">,</span> <span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
+    <span class="n">exact_vals</span> <span class="o">=</span> <span class="n">f_symb</span><span class="p">(</span><span class="n">interval</span><span class="p">)</span>
+    <span class="n">taylor_vals</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sp</span><span class="o">.</span><span class="n">series</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">removeO</span><span class="p">(),</span> <span class="s1">&#39;numpy&#39;</span><span class="p">)(</span><span class="n">interval</span><span class="p">)</span>
+    <span class="n">max_err</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">x_val</span><span class="p">,</span> <span class="n">exact_val</span><span class="p">,</span> <span class="n">taylor_val</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">interval</span><span class="p">,</span> <span class="n">exact_vals</span><span class="p">,</span> <span class="n">taylor_vals</span><span class="p">):</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">exact_val</span> <span class="o">-</span> <span class="n">taylor_val</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">err</span> <span class="o">&gt;</span> <span class="n">max_err</span><span class="p">:</span>
+            <span class="n">max_err</span> <span class="o">=</span> <span class="n">err</span>
+    <span class="k">return</span> <span class="n">max_err</span>
 
-f = sp.exp(sp.Symbol('x'))
-x0 = 0
-n = 10
-interval = np.linspace(-1, 1, 101)
-max_err = taylor_error(f, x0, n, interval)
-print(f&quot;maximum error in approximating exp(x) by a degree {n} Taylor polynomial around x={x0} on [-1, 1] is {max_err:.6f}&quot;)
-</code></pre>
+<span class="n">f</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">))</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">interval</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
+<span class="n">max_err</span> <span class="o">=</span> <span class="n">taylor_error</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">interval</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;maximum error in approximating exp(x) by a degree </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> Taylor polynomial around x=</span><span class="si">{</span><span class="n">x0</span><span class="si">}</span><span class="s2"> on [-1, 1] is </span><span class="si">{</span><span class="n">max_err</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
 
 <h2>Fourier Series</h2>
 <ul>
 <li>Represents a periodic function as an infinite sum of sines and cosines</li>
 <li>Useful for analysing functions as superpositions of simple waves</li>
 </ul>
-<pre class="codehilite"><code class="language-py">import numpy as np
-from scipy import integrate
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">integrate</span>
 
-def fourier_series(f, L, n):
-    coeffs = {}
-    for k in range(-n, n+1):
-        if k == 0:
-            coeffs[k] = 1/L * scipy.integrate.quad(f, 0, L)[0]
-        else:
-            def int_func(x):
-                return f(x) * np.cos(2*np.pi*k*x/L)
-            coeffs[k] = 2/L * scipy.integrate.quad(int_func, 0, L)[0]
-    return coeffs
+<span class="k">def</span><span class="w"> </span><span class="nf">fourier_series</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">coeffs</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">coeffs</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">L</span> <span class="o">*</span> <span class="n">scipy</span><span class="o">.</span><span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">L</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">def</span><span class="w"> </span><span class="nf">int_func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span>
+            <span class="n">coeffs</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">/</span><span class="n">L</span> <span class="o">*</span> <span class="n">scipy</span><span class="o">.</span><span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="n">int_func</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">L</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">coeffs</span>
 
-def square_wave(x):
-    return 1 if x &lt; 0.5 else -1
+<span class="k">def</span><span class="w"> </span><span class="nf">square_wave</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>
 
-L = 1
-n = 10
-coeffs = fourier_series(square_wave, L, n)
-print(f&quot;first {2*n+1} Fourier coefficients of square wave {coeffs}&quot;)
-</code></pre>
+<span class="n">L</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">coeffs</span> <span class="o">=</span> <span class="n">fourier_series</span><span class="p">(</span><span class="n">square_wave</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;first </span><span class="si">{</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> Fourier coefficients of square wave </span><span class="si">{</span><span class="n">coeffs</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
 
 <h2>Convergence of Fourier Series</h2>
 <ul>
 <li>Converges pointwise to the periodic function for well-behaved functions</li>
 <li>Fourier Series might still diverge at certain points of discontinuity</li>
 </ul>
-<pre class="codehilite"><code class="language-py">import matplotlib.pyplot as plt
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
-def plot_fourier_approx(f, L, coeffs, x_vals):
-    approx = np.zeros(len(x_vals))
-    for k, ak in coeffs.items():
-        if k == 0:
-            approx += ak
-        else:
-            approx += ak * np.cos(2*np.pi*k/L * x_vals)
-    return approx
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_fourier_approx</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">coeffs</span><span class="p">,</span> <span class="n">x_vals</span><span class="p">):</span>
+    <span class="n">approx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x_vals</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">ak</span> <span class="ow">in</span> <span class="n">coeffs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">approx</span> <span class="o">+=</span> <span class="n">ak</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">approx</span> <span class="o">+=</span> <span class="n">ak</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">k</span><span class="o">/</span><span class="n">L</span> <span class="o">*</span> <span class="n">x_vals</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">approx</span>
 
-x_vals = np.linspace(0, 2*L, 1000)
-approx = plot_fourier_approx(square_wave, L, coeffs, x_vals)
-plt.plot(x_vals, [square_wave(x) for x in x_vals], label='Actual')
-plt.plot(x_vals, approx, '--', label=f'Fourier Approx (n={n})')
-plt.legend()
-plt.show()
-</code></pre>
+<span class="n">x_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">L</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">approx</span> <span class="o">=</span> <span class="n">plot_fourier_approx</span><span class="p">(</span><span class="n">square_wave</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">coeffs</span><span class="p">,</span> <span class="n">x_vals</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> <span class="p">[</span><span class="n">square_wave</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x_vals</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Actual&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> <span class="n">approx</span><span class="p">,</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Fourier Approx (n=</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
 
 <h2>More on</h2>
 <ul>
@@ -327,12 +335,10 @@ plt.show()
       </section>
 
     </article>
-
     <footer>
-      <p>© 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
+      <p>&copy; 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
     </footer>
   </main>
-
   <div class="wrapper"></div>
 </body>
 </html>

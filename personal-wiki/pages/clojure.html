@@ -4,18 +4,30 @@
   <meta charset="utf-8">
   <meta name="description" content="Wiki Note: Clojure - Gabriel Ong">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../style.css">
+  <meta name="author" content="Gabriel Ong">
+  <meta name="robots" content="index, follow">
+  
+  <meta property="og:title" content="Clojure | Gabriel Ong Wiki">
+  <meta property="og:description" content="Wiki Note: Clojure - Gabriel Ong">
+  <meta property="og:type" content="article">
+  
+  <meta property="og:image" content="https://gabrielongzm.com/asset/portrait/gong-2.png">
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Clojure | Gabriel Ong Wiki">
+  <meta name="twitter:description" content="Wiki Note: Clojure - Gabriel Ong">
+  
+  <link rel="stylesheet" href="../../style.css">
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntl-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
+  
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntlMono-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
-  <style>
-    .thin-space:after{content:"\2006"}
-    pre {
-      overflow-x: auto;
-      max-width: 100%;
-    }
-  </style>
+
+  <style>.thin-space:after{content:"\2006"}</style>
+  
+  <style>pre { overflow-x: auto; max-width: 100%; }</style>
+
   <script src="../script.js" defer></script>
-  <title>GABRIEL ONG</title>
+  <title>Clojure | Gabriel Ong Wiki</title>
   <link rel="shortcut icon" href="../asset/blob.ico" type="image/x-icon">
 </head>
 <body>
@@ -24,335 +36,331 @@
   <label for="dark-mode">
     <img id="infinityButton" src="../asset/roller.png" height="24" width="24"/>
   </label>
-
   <main>
     <article class="overallArticleTags">
-
+      
       <section class="note-header">
         <h2>Clojure</h2>
-
         <dl>
           <dt>File size</dt>
-          <dd>19.1KB</dd>
-
+          <dd>50.0KB</dd>
           <dt>Lines of code</dt>
-          <dd>381</dd>
+          <dd>387</dd>
         </dl>
       </section>
-
       <section class="note-content">
         <h1><code>Clojure</code></h1>
 <p>A Lisp dialect with a stronger emphasis on functional programming than Common Lisp.</p>
 <h2>Comments</h2>
-<pre class="codehilite"><code class="language-clj">; ---------- COMMENT -----------
-    ; single-line comments begin with a semicolon
-    ; there is no built-in implementation for multi-line comments
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="c1">; ---------- COMMENT -----------</span>
+<span class="w">    </span><span class="c1">; single-line comments begin with a semicolon</span>
+<span class="w">    </span><span class="c1">; there is no built-in implementation for multi-line comments</span>
+</code></pre></div>
 
 <h2>Printing</h2>
-<pre class="codehilite"><code class="language-clj">; ---------- PRINT ----------
-    ; println =&gt; prints strings to stdout and appends a newline to the output
-    ; prn =&gt; prints a more readable representation of data structures to the stdout and appends a newline to the output
+<div class="codehilite"><pre><span></span><code><span class="c1">; ---------- PRINT ----------</span>
+<span class="w">    </span><span class="c1">; println =&gt; prints strings to stdout and appends a newline to the output</span>
+<span class="w">    </span><span class="c1">; prn =&gt; prints a more readable representation of data structures to the stdout and appends a newline to the output</span>
 
-(println &quot;Hello world!&quot;) ; prints &quot;Hello world!&quot; to the console with a newline
-(prn {:cereal-chicken 2.50 :thai-fish 3.00 :egg 1.25}) ; prints the array map in a human-readable format to the console with a newline
-</code></pre>
+<span class="p">(</span><span class="nb">println </span><span class="s">&quot;Hello world!&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; prints &quot;Hello world!&quot; to the console with a newline</span>
+<span class="p">(</span><span class="nb">prn </span><span class="p">{</span><span class="ss">:cereal-chicken</span><span class="w"> </span><span class="mf">2.50</span><span class="w"> </span><span class="ss">:thai-fish</span><span class="w"> </span><span class="mf">3.00</span><span class="w"> </span><span class="ss">:egg</span><span class="w"> </span><span class="mf">1.25</span><span class="p">})</span><span class="w"> </span><span class="c1">; prints the array map in a human-readable format to the console with a newline</span>
+</code></pre></div>
 
 <h2>Quickstart</h2>
-<pre class="codehilite"><code class="language-clj">; ----------- QUICKSTART -----------
-    ; clojure is comprised of forms (list of whitespace delimited things surrounded by () parantheses, similar to expressions)
-    ; clojure assumes the first thing is a function or macro call, and the remaining things are arguments
-    ; clojure types are immutable, so remember to reassign returned values (functional programming!)
-    ; ns =&gt; first call in a clojure file to set the namespace
+<div class="codehilite"><pre><span></span><code><span class="c1">; ----------- QUICKSTART -----------</span>
+<span class="w">    </span><span class="c1">; clojure is comprised of forms (list of whitespace delimited things surrounded by () parantheses, similar to expressions)</span>
+<span class="w">    </span><span class="c1">; clojure assumes the first thing is a function or macro call, and the remaining things are arguments</span>
+<span class="w">    </span><span class="c1">; clojure types are immutable, so remember to reassign returned values (functional programming!)</span>
+<span class="w">    </span><span class="c1">; ns =&gt; first call in a clojure file to set the namespace</span>
 
-(ns parklane-cai-fan) ; sets everything in the file to be within the parklane-cai-fan namespace
-</code></pre>
+<span class="p">(</span><span class="kd">ns </span><span class="nv">parklane-cai-fan</span><span class="p">)</span><span class="w"> </span><span class="c1">; sets everything in the file to be within the parklane-cai-fan namespace</span>
+</code></pre></div>
 
 <h2>Variables</h2>
-<pre class="codehilite"><code class="language-clj">; --------- VARIABLE ----------
-    ; def =&gt; creates a global variable and assigns a corresponding value
-    ; let =&gt; creates a local variable lexically scoped to the current scope of () brackets and assigns a corresponding value, and has an implicit return of the last expression
+<div class="codehilite"><pre><span></span><code><span class="c1">; --------- VARIABLE ----------</span>
+<span class="w">    </span><span class="c1">; def =&gt; creates a global variable and assigns a corresponding value</span>
+<span class="w">    </span><span class="c1">; let =&gt; creates a local variable lexically scoped to the current scope of () brackets and assigns a corresponding value, and has an implicit return of the last expression</span>
 
-(def an-int 1) ; global-binding of a variable (global variable)
-(def a-float 2.2) ; global-binding of a variable (global variable)
-(def a-string &quot;cereal chicken&quot;) ; global-binding of a variable (global variable)
-(def a-bool true) ; global-binding of a variable (global variable)
+<span class="p">(</span><span class="k">def </span><span class="nv">an-int</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="c1">; global-binding of a variable (global variable)</span>
+<span class="p">(</span><span class="k">def </span><span class="nv">a-float</span><span class="w"> </span><span class="mf">2.2</span><span class="p">)</span><span class="w"> </span><span class="c1">; global-binding of a variable (global variable)</span>
+<span class="p">(</span><span class="k">def </span><span class="nv">a-string</span><span class="w"> </span><span class="s">&quot;cereal chicken&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; global-binding of a variable (global variable)</span>
+<span class="p">(</span><span class="k">def </span><span class="nv">a-bool</span><span class="w"> </span><span class="nv">true</span><span class="p">)</span><span class="w"> </span><span class="c1">; global-binding of a variable (global variable)</span>
 
-(let [a 1 b 2]
-  (&gt; a b)) ; this creates local bindings, then evaluates to false from the last expression
-</code></pre>
+<span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">a</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span>
+<span class="w">  </span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="p">))</span><span class="w"> </span><span class="c1">; this creates local bindings, then evaluates to false from the last expression</span>
+</code></pre></div>
 
 <h2>Types</h2>
-<pre class="codehilite"><code class="language-clj">; ---------- TYPE -----------
-    ; integer 
-    ; float =&gt; floating point numbers
-    ; string =&gt; double quotation marks
-    ; boolean =&gt; true, false
-    ; nil =&gt; special value to represent the absence of data
-    ; keyword =&gt; strings with efficiency bonuses, declared with : colon in front of keyword
+<div class="codehilite"><pre><span></span><code><span class="c1">; ---------- TYPE -----------</span>
+<span class="w">    </span><span class="c1">; integer </span>
+<span class="w">    </span><span class="c1">; float =&gt; floating point numbers</span>
+<span class="w">    </span><span class="c1">; string =&gt; double quotation marks</span>
+<span class="w">    </span><span class="c1">; boolean =&gt; true, false</span>
+<span class="w">    </span><span class="c1">; nil =&gt; special value to represent the absence of data</span>
+<span class="w">    </span><span class="c1">; keyword =&gt; strings with efficiency bonuses, declared with : colon in front of keyword</span>
 
-1 ; integer
-1.23 ; float
-&quot;watermelon&quot; ; string
-false ; boolean
-nil ; special value nil
-:a ; keyword
+<span class="mi">1</span><span class="w"> </span><span class="c1">; integer</span>
+<span class="mf">1.23</span><span class="w"> </span><span class="c1">; float</span>
+<span class="s">&quot;watermelon&quot;</span><span class="w"> </span><span class="c1">; string</span>
+<span class="nv">false</span><span class="w"> </span><span class="c1">; boolean</span>
+<span class="nv">nil</span><span class="w"> </span><span class="c1">; special value nil</span>
+<span class="ss">:a</span><span class="w"> </span><span class="c1">; keyword</span>
 
-; USEFUL TYPE FUNCTIONS
-    ; quote =&gt; prevents literal data from being evaluated, has a shorthand '
-    ; ' =&gt; prevents literal data from being evaluated, the shorthand for quote
-    ; eval =&gt; evaluates a literal list
+<span class="c1">; USEFUL TYPE FUNCTIONS</span>
+<span class="w">    </span><span class="c1">; quote =&gt; prevents literal data from being evaluated, has a shorthand &#39;</span>
+<span class="w">    </span><span class="c1">; &#39; =&gt; prevents literal data from being evaluated, the shorthand for quote</span>
+<span class="w">    </span><span class="c1">; eval =&gt; evaluates a literal list</span>
 
-(quote (+ 1 2)) ; this literal list of data won't be evaluated and will evaluate to value of (+ 1 2)
-'(+ 1 2) ; this literal list of data won't be evaluated, evaluates to value of (+ 1 2)
-(eval '(+ 3 4)) ; this forces an evaluation on a quoted list, thus evaluating this to the value of 7
-</code></pre>
+<span class="p">(</span><span class="k">quote </span><span class="p">(</span><span class="nb">+ </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="c1">; this literal list of data won&#39;t be evaluated and will evaluate to value of (+ 1 2)</span>
+<span class="o">&#39;</span><span class="p">(</span><span class="nb">+ </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="c1">; this literal list of data won&#39;t be evaluated, evaluates to value of (+ 1 2)</span>
+<span class="p">(</span><span class="nb">eval </span><span class="o">&#39;</span><span class="p">(</span><span class="nb">+ </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="p">))</span><span class="w"> </span><span class="c1">; this forces an evaluation on a quoted list, thus evaluating this to the value of 7</span>
+</code></pre></div>
 
 <h2>Operators</h2>
-<pre class="codehilite"><code class="language-clj">; ---------- OPERATOR ----------
+<div class="codehilite"><pre><span></span><code><span class="c1">; ---------- OPERATOR ----------</span>
 
-; ARITHMETIC OPERATORS
-    ; + =&gt; addition
-    ; - =&gt; subtraction
-    ; * =&gt; multiplication
-    ; / =&gt; division
-    ; mod =&gt; modulo
+<span class="c1">; ARITHMETIC OPERATORS</span>
+<span class="w">    </span><span class="c1">; + =&gt; addition</span>
+<span class="w">    </span><span class="c1">; - =&gt; subtraction</span>
+<span class="w">    </span><span class="c1">; * =&gt; multiplication</span>
+<span class="w">    </span><span class="c1">; / =&gt; division</span>
+<span class="w">    </span><span class="c1">; mod =&gt; modulo</span>
 
-; LOGICAL OPERATORS
-    ; and
-    ; or
-    ; not
+<span class="c1">; LOGICAL OPERATORS</span>
+<span class="w">    </span><span class="c1">; and</span>
+<span class="w">    </span><span class="c1">; or</span>
+<span class="w">    </span><span class="c1">; not</span>
 
-; COMPARISON OPERATORS
-    ; = =&gt; partial equality check for value
-    ; not= =&gt; partial inequality check for value
-    ; == =&gt; complete equality check for type and value
-    ; not== =&gt; complete inequality check for type and value
-    ; &lt; &gt; &lt;= &gt;= for other comparison checks
+<span class="c1">; COMPARISON OPERATORS</span>
+<span class="w">    </span><span class="c1">; = =&gt; partial equality check for value</span>
+<span class="w">    </span><span class="c1">; not= =&gt; partial inequality check for value</span>
+<span class="w">    </span><span class="c1">; == =&gt; complete equality check for type and value</span>
+<span class="w">    </span><span class="c1">; not== =&gt; complete inequality check for type and value</span>
+<span class="w">    </span><span class="c1">; &lt; &gt; &lt;= &gt;= for other comparison checks</span>
 
-(+ 1 1) ; evaluates to 2
-(- 2 1) ; evaluates to 1
-(* 1 2) ; evaluates to 2
-(/ 2 1) ; evaluates to 2
-(mod 5 2) ; evaluates to 1
+<span class="p">(</span><span class="nb">+ </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="c1">; evaluates to 2</span>
+<span class="p">(</span><span class="nb">- </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="c1">; evaluates to 1</span>
+<span class="p">(</span><span class="nb">* </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="c1">; evaluates to 2</span>
+<span class="p">(</span><span class="nb">/ </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="c1">; evaluates to 2</span>
+<span class="p">(</span><span class="nf">mod</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="c1">; evaluates to 1</span>
 
-(not true) ; evaluates to false
-(false and true) ; evaluates to false
-(false or true) ; evaluates to true
+<span class="p">(</span><span class="nb">not </span><span class="nv">true</span><span class="p">)</span><span class="w"> </span><span class="c1">; evaluates to false</span>
+<span class="p">(</span><span class="nf">false</span><span class="w"> </span><span class="nb">and </span><span class="nv">true</span><span class="p">)</span><span class="w"> </span><span class="c1">; evaluates to false</span>
+<span class="p">(</span><span class="nf">false</span><span class="w"> </span><span class="nb">or </span><span class="nv">true</span><span class="p">)</span><span class="w"> </span><span class="c1">; evaluates to true</span>
 
-(= 1 1) ; evaluates to true
-(= 2 1) ; evaluates to false
-(= 1 &quot;1&quot;) ; evaluates to true
-(== 1 &quot;1&quot;) ; evaluates to false
-</code></pre>
+<span class="p">(</span><span class="nb">= </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="c1">; evaluates to true</span>
+<span class="p">(</span><span class="nb">= </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="c1">; evaluates to false</span>
+<span class="p">(</span><span class="nb">= </span><span class="mi">1</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; evaluates to true</span>
+<span class="p">(</span><span class="nb">== </span><span class="mi">1</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; evaluates to false</span>
+</code></pre></div>
 
 <h2>Control structures</h2>
-<pre class="codehilite"><code class="language-clj">; ---------- CONTROL STRUCTURE ----------
+<div class="codehilite"><pre><span></span><code><span class="c1">; ---------- CONTROL STRUCTURE ----------</span>
 
-; CONDITIONAL CHECKS
-    ; if =&gt; operates as you'd expect, called as a function like everything else in clojure
-        ; general syntax is (if {CONDITIONAL CHECK} {THEN EXPRESSION} {ELSE EXPRESSION})
-    ; cond =&gt; evaluates each specified predicate in order and evaluates to the value of the first true condition, equivalent to an if elseif else chain in other languages
-        ; :else =&gt; added as the final else case in a cond chain
-    ; case =&gt; equivalent to match-case chain in other languages
-        ; :else =&gt; added as the final default case in a case chain
+<span class="c1">; CONDITIONAL CHECKS</span>
+<span class="w">    </span><span class="c1">; if =&gt; operates as you&#39;d expect, called as a function like everything else in clojure</span>
+<span class="w">        </span><span class="c1">; general syntax is (if {CONDITIONAL CHECK} {THEN EXPRESSION} {ELSE EXPRESSION})</span>
+<span class="w">    </span><span class="c1">; cond =&gt; evaluates each specified predicate in order and evaluates to the value of the first true condition, equivalent to an if elseif else chain in other languages</span>
+<span class="w">        </span><span class="c1">; :else =&gt; added as the final else case in a cond chain</span>
+<span class="w">    </span><span class="c1">; case =&gt; equivalent to match-case chain in other languages</span>
+<span class="w">        </span><span class="c1">; :else =&gt; added as the final default case in a case chain</span>
 
-(def x 10)
-(if (&gt; x 5)
-  &quot;Greater than 5&quot;
-  &quot;Less than or equal to 5&quot;) ; this evaluates to &quot;Greater than 5&quot;
+<span class="p">(</span><span class="k">def </span><span class="nv">x</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span>
+<span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">x</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
+<span class="w">  </span><span class="s">&quot;Greater than 5&quot;</span>
+<span class="w">  </span><span class="s">&quot;Less than or equal to 5&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; this evaluates to &quot;Greater than 5&quot;</span>
 
-(def y 10)
-(cond
-  (&gt; y 15) &quot;Greater than 15&quot;
-  (&gt; y 10) &quot;Greater than 10&quot;
-  :else &quot;10 or less&quot;) ; this evaluates to &quot;10 or less&quot;
+<span class="p">(</span><span class="k">def </span><span class="nv">y</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">cond</span>
+<span class="w">  </span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">y</span><span class="w"> </span><span class="mi">15</span><span class="p">)</span><span class="w"> </span><span class="s">&quot;Greater than 15&quot;</span>
+<span class="w">  </span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">y</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="s">&quot;Greater than 10&quot;</span>
+<span class="w">  </span><span class="ss">:else</span><span class="w"> </span><span class="s">&quot;10 or less&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; this evaluates to &quot;10 or less&quot;</span>
 
-(def day-of-week 3)
-(case day-of-week
-  1 &quot;Sunday&quot;
-  2 &quot;Monday&quot;
-  3 &quot;Tuesday&quot;
-  :else &quot;Unknown day&quot;) ; this evaluates to &quot;Tuesday&quot;
+<span class="p">(</span><span class="k">def </span><span class="nv">day-of-week</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">case</span><span class="w"> </span><span class="nv">day-of-week</span>
+<span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="s">&quot;Sunday&quot;</span>
+<span class="w">  </span><span class="mi">2</span><span class="w"> </span><span class="s">&quot;Monday&quot;</span>
+<span class="w">  </span><span class="mi">3</span><span class="w"> </span><span class="s">&quot;Tuesday&quot;</span>
+<span class="w">  </span><span class="ss">:else</span><span class="w"> </span><span class="s">&quot;Unknown day&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; this evaluates to &quot;Tuesday&quot;</span>
 
-; LOOPS
-    ; for most iterative solutions, clojure's functional programming constructs are encouraged instead of loops (map, reduce, filter)
-    ; loop =&gt; creates and defines the lexical scope of a loop, used alongside recur
-    ; recur =&gt; indicates to initiate another iteration of the current loop with recursion
-    ; doseq =&gt; creates a loop that iterates over a specified structure, achieved without explicit recursion
+<span class="c1">; LOOPS</span>
+<span class="w">    </span><span class="c1">; for most iterative solutions, clojure&#39;s functional programming constructs are encouraged instead of loops (map, reduce, filter)</span>
+<span class="w">    </span><span class="c1">; loop =&gt; creates and defines the lexical scope of a loop, used alongside recur</span>
+<span class="w">    </span><span class="c1">; recur =&gt; indicates to initiate another iteration of the current loop with recursion</span>
+<span class="w">    </span><span class="c1">; doseq =&gt; creates a loop that iterates over a specified structure, achieved without explicit recursion</span>
 
-(defn countdown-recur [n]
-  (loop [i n]
-    (if (&lt;= i 0)
-      &quot;Blast off!&quot;
-      (do
-        (println i)
-        (recur (dec i)))))) ; function definition for a function that contains a recursive loop which counts down from n to 0, then prints blast off, here recur is used to decrement i by 1 and initiate another iteration of the loop
+<span class="p">(</span><span class="kd">defn </span><span class="nv">countdown-recur</span><span class="w"> </span><span class="p">[</span><span class="nv">n</span><span class="p">]</span>
+<span class="w">  </span><span class="p">(</span><span class="k">loop </span><span class="p">[</span><span class="nv">i</span><span class="w"> </span><span class="nv">n</span><span class="p">]</span>
+<span class="w">    </span><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">&lt;= </span><span class="nv">i</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">      </span><span class="s">&quot;Blast off!&quot;</span>
+<span class="w">      </span><span class="p">(</span><span class="nf">do</span>
+<span class="w">        </span><span class="p">(</span><span class="nb">println </span><span class="nv">i</span><span class="p">)</span>
+<span class="w">        </span><span class="p">(</span><span class="nf">recur</span><span class="w"> </span><span class="p">(</span><span class="nb">dec </span><span class="nv">i</span><span class="p">))))))</span><span class="w"> </span><span class="c1">; function definition for a function that contains a recursive loop which counts down from n to 0, then prints blast off, here recur is used to decrement i by 1 and initiate another iteration of the loop</span>
 
-(defn countdown-iter [n]
-  (doseq [i (range n 0 -1)]
-    (println i))
-  (println &quot;Blast off!&quot;)) ; function defintion for a function that achieves the same thing as the above function, but does it using doseq to create a loop that does not rely on explicit recursion but instead iterates over a vector created using the range function
-</code></pre>
+<span class="p">(</span><span class="kd">defn </span><span class="nv">countdown-iter</span><span class="w"> </span><span class="p">[</span><span class="nv">n</span><span class="p">]</span>
+<span class="w">  </span><span class="p">(</span><span class="nb">doseq </span><span class="p">[</span><span class="nv">i</span><span class="w"> </span><span class="p">(</span><span class="nb">range </span><span class="nv">n</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">-1</span><span class="p">)]</span>
+<span class="w">    </span><span class="p">(</span><span class="nb">println </span><span class="nv">i</span><span class="p">))</span>
+<span class="w">  </span><span class="p">(</span><span class="nb">println </span><span class="s">&quot;Blast off!&quot;</span><span class="p">))</span><span class="w"> </span><span class="c1">; function defintion for a function that achieves the same thing as the above function, but does it using doseq to create a loop that does not rely on explicit recursion but instead iterates over a vector created using the range function</span>
+</code></pre></div>
 
 <h2>Data structures</h2>
-<pre class="codehilite"><code class="language-clj">; ---------- DATA STRUCTURE -----------
-    ; collection =&gt; groups of data (lists, vectors)
-    ; sequence =&gt; abstract descriptions of lists of data (lists)
+<div class="codehilite"><pre><span></span><code><span class="c1">; ---------- DATA STRUCTURE -----------</span>
+<span class="w">    </span><span class="c1">; collection =&gt; groups of data (lists, vectors)</span>
+<span class="w">    </span><span class="c1">; sequence =&gt; abstract descriptions of lists of data (lists)</span>
 
-; LIST
-    ; linked-list data structure
-    ; declared with () brackets, must be quoted as a literal with ' to prevent clojure from thinking its a function
-    ; list =&gt; creates a list literal, an alternative to declaring a list literal with '
-    ; range =&gt; creates a list of range 0 to a specified length, no specification results in an infinite series
-    ; take =&gt; retrieve a slice of a list based on length from the front
-    ; cons =&gt; insert an item to the start of a list
-    ; conj =&gt; inserts an item to the start of a list (the most efficient method of insertion for a list)
-    ; concat =&gt; concatenates collections (both lists and vectors) together and returns them as a list
-    ; map =&gt; apply a specified function on every item within the list
-    ; filter =&gt; apply a specified function on every item within the list and keep those that meet the specified function predicate
-    ; reduce =&gt; aggregate multiple items within a list to a single result by applying the specified function to each item and accumulating the result, can take an initial argument value also
+<span class="c1">; LIST</span>
+<span class="w">    </span><span class="c1">; linked-list data structure</span>
+<span class="w">    </span><span class="c1">; declared with () brackets, must be quoted as a literal with &#39; to prevent clojure from thinking its a function</span>
+<span class="w">    </span><span class="c1">; list =&gt; creates a list literal, an alternative to declaring a list literal with &#39;</span>
+<span class="w">    </span><span class="c1">; range =&gt; creates a list of range 0 to a specified length, no specification results in an infinite series</span>
+<span class="w">    </span><span class="c1">; take =&gt; retrieve a slice of a list based on length from the front</span>
+<span class="w">    </span><span class="c1">; cons =&gt; insert an item to the start of a list</span>
+<span class="w">    </span><span class="c1">; conj =&gt; inserts an item to the start of a list (the most efficient method of insertion for a list)</span>
+<span class="w">    </span><span class="c1">; concat =&gt; concatenates collections (both lists and vectors) together and returns them as a list</span>
+<span class="w">    </span><span class="c1">; map =&gt; apply a specified function on every item within the list</span>
+<span class="w">    </span><span class="c1">; filter =&gt; apply a specified function on every item within the list and keep those that meet the specified function predicate</span>
+<span class="w">    </span><span class="c1">; reduce =&gt; aggregate multiple items within a list to a single result by applying the specified function to each item and accumulating the result, can take an initial argument value also</span>
 
-(list 1 2 3) ; creates a list literal of value (1 2 3), the equivalent of '(1 2 3)
-(range) ; creates an infinite series of value (0 1 2 3 4 ...)
-(range 4) ; creates a list of value (0 1 2 3) with length 4
-(take 4 (range)) ; retrieves a slice of length 4 from an infinite list, evaluating to (0 1 2 3)
-(cons 4 '(1 2 3)) ; this evaluates to (4 1 2 3)
-(conj '(1 2 3) 4) ; this evaluates to (4 1 2 3) also by inserting the element at the start of the list
-(concat '(1 2) '(3 4)) ; this evaluates to (1 2 3 4)
-(concat [1 2] '(3 4)) ; this also evaluates to (1 2 3 4)
-(map inc '(1 2 3)) ; this evaluates to (2 3 4)
-(filter even? '(1 2 3)) ; this evaluates to (2)
-(reduce + '(1 2 3 4)) ; this evaluates to 10
-(reduce conj [] '(3 2 1)) ; this evaluates to [3 2 1]
+<span class="p">(</span><span class="nb">list </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="c1">; creates a list literal of value (1 2 3), the equivalent of &#39;(1 2 3)</span>
+<span class="p">(</span><span class="nf">range</span><span class="p">)</span><span class="w"> </span><span class="c1">; creates an infinite series of value (0 1 2 3 4 ...)</span>
+<span class="p">(</span><span class="nb">range </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="c1">; creates a list of value (0 1 2 3) with length 4</span>
+<span class="p">(</span><span class="nb">take </span><span class="mi">4</span><span class="w"> </span><span class="p">(</span><span class="nf">range</span><span class="p">))</span><span class="w"> </span><span class="c1">; retrieves a slice of length 4 from an infinite list, evaluating to (0 1 2 3)</span>
+<span class="p">(</span><span class="nb">cons </span><span class="mi">4</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">))</span><span class="w"> </span><span class="c1">; this evaluates to (4 1 2 3)</span>
+<span class="p">(</span><span class="nb">conj </span><span class="o">&#39;</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="c1">; this evaluates to (4 1 2 3) also by inserting the element at the start of the list</span>
+<span class="p">(</span><span class="nb">concat </span><span class="o">&#39;</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="p">))</span><span class="w"> </span><span class="c1">; this evaluates to (1 2 3 4)</span>
+<span class="p">(</span><span class="nb">concat </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="p">))</span><span class="w"> </span><span class="c1">; this also evaluates to (1 2 3 4)</span>
+<span class="p">(</span><span class="nb">map inc </span><span class="o">&#39;</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">))</span><span class="w"> </span><span class="c1">; this evaluates to (2 3 4)</span>
+<span class="p">(</span><span class="nb">filter </span><span class="nv">even?</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">))</span><span class="w"> </span><span class="c1">; this evaluates to (2)</span>
+<span class="p">(</span><span class="nb">reduce + </span><span class="o">&#39;</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="p">))</span><span class="w"> </span><span class="c1">; this evaluates to 10</span>
+<span class="p">(</span><span class="nb">reduce conj </span><span class="p">[]</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="mi">3</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="c1">; this evaluates to [3 2 1]</span>
 
-; VECTOR
-    ; array-backed vector
-    ; declared with [] square brackets
-    ; cons =&gt; insert an item to the start of a vector
-    ; conj =&gt; appends an item to the end of a vector (the most efficient method of insertion for a vector)
-    ; concat =&gt; concatenates collections (both lists and vectors) together and returns them as a list
-    ; map =&gt; apply a specified function on every item within the vector
-    ; filter =&gt; apply a specified function on every item within the vector and keep those that meet the specified function predicate
-    ; reduce =&gt; aggregate multiple items within a vector to a single result by applying the specified function to each item and accumulating the result, can take an initial argument value also
+<span class="c1">; VECTOR</span>
+<span class="w">    </span><span class="c1">; array-backed vector</span>
+<span class="w">    </span><span class="c1">; declared with [] square brackets</span>
+<span class="w">    </span><span class="c1">; cons =&gt; insert an item to the start of a vector</span>
+<span class="w">    </span><span class="c1">; conj =&gt; appends an item to the end of a vector (the most efficient method of insertion for a vector)</span>
+<span class="w">    </span><span class="c1">; concat =&gt; concatenates collections (both lists and vectors) together and returns them as a list</span>
+<span class="w">    </span><span class="c1">; map =&gt; apply a specified function on every item within the vector</span>
+<span class="w">    </span><span class="c1">; filter =&gt; apply a specified function on every item within the vector and keep those that meet the specified function predicate</span>
+<span class="w">    </span><span class="c1">; reduce =&gt; aggregate multiple items within a vector to a single result by applying the specified function to each item and accumulating the result, can take an initial argument value also</span>
 
-[1 2 3] ; creates a vector literal of value [1 2 3]
-(cons 4 [1 2 3]) ; this evaluates to (4 1 2 3)
-(conj [1 2 3] 4) ; this evaluates to [1 2 3 4] by appending the element to the end of the vector
-(concat [1 2] [3 4]) ; this evaluates to (1 2 3 4)
-(concat [1 2] '(3 4)) ; this also evaluates to (1 2 3 4)
-(map inc [1 2 3]) ; this evaluates to (2 3 4)
-(filter even? [1 2 3]) ; this evaluates to (2)
-(reduce + [1 2 3 4]) ; this evaluates to 10
-(reduce conj [] [3 2 1]) ; this evaluates to [3 2 1]
+<span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="c1">; creates a vector literal of value [1 2 3]</span>
+<span class="p">(</span><span class="nb">cons </span><span class="mi">4</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">])</span><span class="w"> </span><span class="c1">; this evaluates to (4 1 2 3)</span>
+<span class="p">(</span><span class="nb">conj </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="c1">; this evaluates to [1 2 3 4] by appending the element to the end of the vector</span>
+<span class="p">(</span><span class="nb">concat </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="p">])</span><span class="w"> </span><span class="c1">; this evaluates to (1 2 3 4)</span>
+<span class="p">(</span><span class="nb">concat </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="p">))</span><span class="w"> </span><span class="c1">; this also evaluates to (1 2 3 4)</span>
+<span class="p">(</span><span class="nb">map inc </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">])</span><span class="w"> </span><span class="c1">; this evaluates to (2 3 4)</span>
+<span class="p">(</span><span class="nb">filter </span><span class="nv">even?</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">])</span><span class="w"> </span><span class="c1">; this evaluates to (2)</span>
+<span class="p">(</span><span class="nb">reduce + </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="p">])</span><span class="w"> </span><span class="c1">; this evaluates to 10</span>
+<span class="p">(</span><span class="nb">reduce conj </span><span class="p">[]</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="p">])</span><span class="w"> </span><span class="c1">; this evaluates to [3 2 1]</span>
 
-; ARRAY MAP
-    ; declared with {} curly braces
-    ; assoc =&gt; adds new key-value pairs to an array map and returns the new array map
-    ; dissoc =&gt; removes key-value pairs from an array map and returns the new array map
-    ; retains key-value pair order, slower lookups than hash maps
-    ; keys can be any hashable type, but keywords are used as keys by convention
-    ; array maps are automatically converted to hash maps when their size gets big enough
-    ; retrieve a value from its key by calling the array map as a function, retrieving an absent key returns nil
+<span class="c1">; ARRAY MAP</span>
+<span class="w">    </span><span class="c1">; declared with {} curly braces</span>
+<span class="w">    </span><span class="c1">; assoc =&gt; adds new key-value pairs to an array map and returns the new array map</span>
+<span class="w">    </span><span class="c1">; dissoc =&gt; removes key-value pairs from an array map and returns the new array map</span>
+<span class="w">    </span><span class="c1">; retains key-value pair order, slower lookups than hash maps</span>
+<span class="w">    </span><span class="c1">; keys can be any hashable type, but keywords are used as keys by convention</span>
+<span class="w">    </span><span class="c1">; array maps are automatically converted to hash maps when their size gets big enough</span>
+<span class="w">    </span><span class="c1">; retrieve a value from its key by calling the array map as a function, retrieving an absent key returns nil</span>
 
-{:a 1 :b 2 :c 3} ; an array map literal
-(def watermelon-array-map {&quot;a&quot; 4 &quot;cd&quot; 10 &quot;ef&quot; 100}) ; creates an array map and assigns it to a variable
-(watermelon-array-map &quot;cd&quot;) ; evaluates to the integer value 10
-(def new-watermelon-array-map (assoc watermelon-array-map &quot;watermelon-pie&quot; 2000)) ; adds a new key-value pair to watermelon-array-map, then assigns the new array map value to the variable new-watermelon-array-map since clojure types are immutable
-(def edited-watermelon-array-map (dissoc new-watermelon-array-map &quot;a&quot; &quot;cd&quot;)) ; removes the key-value pairs of key &quot;a&quot; and &quot;cd&quot; from the new-watermelon-array-map and returns the new array map, then assigns that value to the variable edited-watermelon-array-map since clojure types are immutable
+<span class="p">{</span><span class="ss">:a</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="ss">:b</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="ss">:c</span><span class="w"> </span><span class="mi">3</span><span class="p">}</span><span class="w"> </span><span class="c1">; an array map literal</span>
+<span class="p">(</span><span class="k">def </span><span class="nv">watermelon-array-map</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;a&quot;</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="s">&quot;cd&quot;</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="s">&quot;ef&quot;</span><span class="w"> </span><span class="mi">100</span><span class="p">})</span><span class="w"> </span><span class="c1">; creates an array map and assigns it to a variable</span>
+<span class="p">(</span><span class="nf">watermelon-array-map</span><span class="w"> </span><span class="s">&quot;cd&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; evaluates to the integer value 10</span>
+<span class="p">(</span><span class="k">def </span><span class="nv">new-watermelon-array-map</span><span class="w"> </span><span class="p">(</span><span class="nb">assoc </span><span class="nv">watermelon-array-map</span><span class="w"> </span><span class="s">&quot;watermelon-pie&quot;</span><span class="w"> </span><span class="mi">2000</span><span class="p">))</span><span class="w"> </span><span class="c1">; adds a new key-value pair to watermelon-array-map, then assigns the new array map value to the variable new-watermelon-array-map since clojure types are immutable</span>
+<span class="p">(</span><span class="k">def </span><span class="nv">edited-watermelon-array-map</span><span class="w"> </span><span class="p">(</span><span class="nb">dissoc </span><span class="nv">new-watermelon-array-map</span><span class="w"> </span><span class="s">&quot;a&quot;</span><span class="w"> </span><span class="s">&quot;cd&quot;</span><span class="p">))</span><span class="w"> </span><span class="c1">; removes the key-value pairs of key &quot;a&quot; and &quot;cd&quot; from the new-watermelon-array-map and returns the new array map, then assigns that value to the variable edited-watermelon-array-map since clojure types are immutable</span>
 
-; HASH MAP
-    ; hash-map =&gt; creates a hash map literal
-    ; assoc =&gt; adds new key-value pairs to a hash map and returns the new hash map
-    ; dissoc =&gt; removes key-value pairs from a hash map and returns the new hash map
-    ; does not retain key-value pair order, faster lookups than array maps
-    ; keys can be any hashable type, but keywords are used as keys by convention
-    ; retrieve a value from its key by calling the hash map as a function, retrieving an absent key returns nil
+<span class="c1">; HASH MAP</span>
+<span class="w">    </span><span class="c1">; hash-map =&gt; creates a hash map literal</span>
+<span class="w">    </span><span class="c1">; assoc =&gt; adds new key-value pairs to a hash map and returns the new hash map</span>
+<span class="w">    </span><span class="c1">; dissoc =&gt; removes key-value pairs from a hash map and returns the new hash map</span>
+<span class="w">    </span><span class="c1">; does not retain key-value pair order, faster lookups than array maps</span>
+<span class="w">    </span><span class="c1">; keys can be any hashable type, but keywords are used as keys by convention</span>
+<span class="w">    </span><span class="c1">; retrieve a value from its key by calling the hash map as a function, retrieving an absent key returns nil</span>
 
-(hash-map :a 1 :b 2 :c 4) ; a hash map literal
-(def apple-hash-map (hash-map :z 100.00 :in 6 :kl 2)) ; creates a hash map and assigns it to a variable
-(apple-hash-map :z) ; evaluates to the float value of 100.00
-(def new-apple-hash-map (assoc apple-hash-map :apple-pie 10)) ; adds a new key-value pair to apple-hash-map, then assigns the new hash map value to the variable new-apple-hash-map since clojure types are immutable
-(def edited-apple-hash-map (dissoc new-apple-hash-map :z :kl)) ; removes the key-value pairs of key :z and :kl from new-apple-hash-map and returns the new hash map, then assigns that value to the variable edited-apple-hash-map since clojure types are immutable
+<span class="p">(</span><span class="nb">hash-map </span><span class="ss">:a</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="ss">:b</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="ss">:c</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="c1">; a hash map literal</span>
+<span class="p">(</span><span class="k">def </span><span class="nv">apple-hash-map</span><span class="w"> </span><span class="p">(</span><span class="nb">hash-map </span><span class="ss">:z</span><span class="w"> </span><span class="mf">100.00</span><span class="w"> </span><span class="ss">:in</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="ss">:kl</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="c1">; creates a hash map and assigns it to a variable</span>
+<span class="p">(</span><span class="nf">apple-hash-map</span><span class="w"> </span><span class="ss">:z</span><span class="p">)</span><span class="w"> </span><span class="c1">; evaluates to the float value of 100.00</span>
+<span class="p">(</span><span class="k">def </span><span class="nv">new-apple-hash-map</span><span class="w"> </span><span class="p">(</span><span class="nb">assoc </span><span class="nv">apple-hash-map</span><span class="w"> </span><span class="ss">:apple-pie</span><span class="w"> </span><span class="mi">10</span><span class="p">))</span><span class="w"> </span><span class="c1">; adds a new key-value pair to apple-hash-map, then assigns the new hash map value to the variable new-apple-hash-map since clojure types are immutable</span>
+<span class="p">(</span><span class="k">def </span><span class="nv">edited-apple-hash-map</span><span class="w"> </span><span class="p">(</span><span class="nb">dissoc </span><span class="nv">new-apple-hash-map</span><span class="w"> </span><span class="ss">:z</span><span class="w"> </span><span class="ss">:kl</span><span class="p">))</span><span class="w"> </span><span class="c1">; removes the key-value pairs of key :z and :kl from new-apple-hash-map and returns the new hash map, then assigns that value to the variable edited-apple-hash-map since clojure types are immutable</span>
 
-; SET
-    ; declared with #{} 
-    ; set =&gt; creates a set, alongside [] square brackets
-    ; conj =&gt; appends a specified member to the set
-    ; disj =&gt; removes a member from a set by value
-    ; test for set members by calling the set as a function
-    ; similar to sets in other languages, with a range of functions for operation (see clojure.sets namespace)
+<span class="c1">; SET</span>
+<span class="w">    </span><span class="c1">; declared with #{} </span>
+<span class="w">    </span><span class="c1">; set =&gt; creates a set, alongside [] square brackets</span>
+<span class="w">    </span><span class="c1">; conj =&gt; appends a specified member to the set</span>
+<span class="w">    </span><span class="c1">; disj =&gt; removes a member from a set by value</span>
+<span class="w">    </span><span class="c1">; test for set members by calling the set as a function</span>
+<span class="w">    </span><span class="c1">; similar to sets in other languages, with a range of functions for operation (see clojure.sets namespace)</span>
 
-#{1 2 3} ; creates a set literal
-(set [1 2 3 4]) ; also creates a set literal which evaluates to the value #{1 2 3 4}
-(conj #{1 2 3} 4) ; this evaluates to #{1 2 3 4}
-(disj #{1 2 3} 1) ; this evaluates to #{2 3}
-(#{1 2 3} 1) ; this evaluates to 1, which evaluates to boolean true
-(#{1 2 3} 4) ; this evaluates to nil, which evaluates to boolean false
-</code></pre>
+<span class="o">#</span><span class="p">{</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">}</span><span class="w"> </span><span class="c1">; creates a set literal</span>
+<span class="p">(</span><span class="nb">set </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="p">])</span><span class="w"> </span><span class="c1">; also creates a set literal which evaluates to the value #{1 2 3 4}</span>
+<span class="p">(</span><span class="nb">conj </span><span class="o">#</span><span class="p">{</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">}</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="c1">; this evaluates to #{1 2 3 4}</span>
+<span class="p">(</span><span class="nb">disj </span><span class="o">#</span><span class="p">{</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">}</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="c1">; this evaluates to #{2 3}</span>
+<span class="p">(</span><span class="o">#</span><span class="p">{</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">}</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="c1">; this evaluates to 1, which evaluates to boolean true</span>
+<span class="p">(</span><span class="o">#</span><span class="p">{</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">}</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="c1">; this evaluates to nil, which evaluates to boolean false</span>
+</code></pre></div>
 
 <h2>Functions</h2>
-<pre class="codehilite"><code class="language-clj">; ---------- FUNCTION -----------
-    ; functions have implicit return on their last statement
-    ; functions can take multiple kinds of arguments and evaluate differently, just specify them with separate [] square brackets and () brackets
-    ; fn =&gt; creates a new anonymous function, where [] square brackets list function arguments
-        ; anonymous functions are called with (()) double brackets
-    ; def =&gt; assigns an anonymous function to a variable to create a named function
-    ; defn =&gt; creates a named function, where [] square brackets list function arguments
-    ; &amp; =&gt; recieves extra arguments and packs them in a list, can be mixed with normal arguments
+<div class="codehilite"><pre><span></span><code><span class="c1">; ---------- FUNCTION -----------</span>
+<span class="w">    </span><span class="c1">; functions have implicit return on their last statement</span>
+<span class="w">    </span><span class="c1">; functions can take multiple kinds of arguments and evaluate differently, just specify them with separate [] square brackets and () brackets</span>
+<span class="w">    </span><span class="c1">; fn =&gt; creates a new anonymous function, where [] square brackets list function arguments</span>
+<span class="w">        </span><span class="c1">; anonymous functions are called with (()) double brackets</span>
+<span class="w">    </span><span class="c1">; def =&gt; assigns an anonymous function to a variable to create a named function</span>
+<span class="w">    </span><span class="c1">; defn =&gt; creates a named function, where [] square brackets list function arguments</span>
+<span class="w">    </span><span class="c1">; &amp; =&gt; recieves extra arguments and packs them in a list, can be mixed with normal arguments</span>
 
-; ANONYMOUS FUNCTIONS
+<span class="c1">; ANONYMOUS FUNCTIONS</span>
 
-(fn [] &quot;Hello World&quot;) ; evaluates to fn 
-((fn [] &quot;Shit ass&quot;)) ; calls the anonymous function, evaluating to the string &quot;Shit ass&quot;
-(def hello-world-ass (fn [] &quot;Hello World Ass&quot;)) ; creates the anonymous function which returns the string &quot;Hello World Ass&quot; then assigns it to the variable hello-world-ass to make it a named function
-(hello-world-ass) ; this calls the named function, evaluating to the string &quot;Hello World Ass&quot;
+<span class="p">(</span><span class="k">fn </span><span class="p">[]</span><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; evaluates to fn </span>
+<span class="p">((</span><span class="k">fn </span><span class="p">[]</span><span class="w"> </span><span class="s">&quot;Shit ass&quot;</span><span class="p">))</span><span class="w"> </span><span class="c1">; calls the anonymous function, evaluating to the string &quot;Shit ass&quot;</span>
+<span class="p">(</span><span class="k">def </span><span class="nv">hello-world-ass</span><span class="w"> </span><span class="p">(</span><span class="k">fn </span><span class="p">[]</span><span class="w"> </span><span class="s">&quot;Hello World Ass&quot;</span><span class="p">))</span><span class="w"> </span><span class="c1">; creates the anonymous function which returns the string &quot;Hello World Ass&quot; then assigns it to the variable hello-world-ass to make it a named function</span>
+<span class="p">(</span><span class="nf">hello-world-ass</span><span class="p">)</span><span class="w"> </span><span class="c1">; this calls the named function, evaluating to the string &quot;Hello World Ass&quot;</span>
 
-; NAMED FUNCTIONS
+<span class="c1">; NAMED FUNCTIONS</span>
 
-(defn watermelon [] &quot;watermelon&quot;) ; creates a named function watermelon which evaluates to the string value &quot;watermelon&quot;
-(watermelon) ; calls the specified function, evaluating to the string value &quot;watermelon&quot;
+<span class="p">(</span><span class="kd">defn </span><span class="nv">watermelon</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="s">&quot;watermelon&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; creates a named function watermelon which evaluates to the string value &quot;watermelon&quot;</span>
+<span class="p">(</span><span class="nf">watermelon</span><span class="p">)</span><span class="w"> </span><span class="c1">; calls the specified function, evaluating to the string value &quot;watermelon&quot;</span>
 
-(defn hello [name]
-  (str &quot;Hello &quot; name)) ; another function definition
-(hello &quot;Steve&quot;) ; calls the specified function, evaluating to string value &quot;Hello Steve&quot;
+<span class="p">(</span><span class="kd">defn </span><span class="nv">hello</span><span class="w"> </span><span class="p">[</span><span class="nv">name</span><span class="p">]</span>
+<span class="w">  </span><span class="p">(</span><span class="nb">str </span><span class="s">&quot;Hello &quot;</span><span class="w"> </span><span class="nv">name</span><span class="p">))</span><span class="w"> </span><span class="c1">; another function definition</span>
+<span class="p">(</span><span class="nf">hello</span><span class="w"> </span><span class="s">&quot;Steve&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; calls the specified function, evaluating to string value &quot;Hello Steve&quot;</span>
 
-; MULTI-VARIADIC FUNCTIONS
+<span class="c1">; MULTI-VARIADIC FUNCTIONS</span>
 
-(defn hello-flexible
-  ([] &quot;Hello World&quot;)
-  ([name] (str &quot;Hello &quot; name))) ; a multi-variadic function definition that can take different arguments and evaluates differently based on arguments provided
-(hello-flexible &quot;Jake&quot;) ; this will evaluate to &quot;Hello Jake&quot;
-(hello-flexible) ; this will evaluate &quot;Hello World&quot;
+<span class="p">(</span><span class="kd">defn </span><span class="nv">hello-flexible</span>
+<span class="w">  </span><span class="p">([]</span><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">([</span><span class="nv">name</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="nb">str </span><span class="s">&quot;Hello &quot;</span><span class="w"> </span><span class="nv">name</span><span class="p">)))</span><span class="w"> </span><span class="c1">; a multi-variadic function definition that can take different arguments and evaluates differently based on arguments provided</span>
+<span class="p">(</span><span class="nf">hello-flexible</span><span class="w"> </span><span class="s">&quot;Jake&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; this will evaluate to &quot;Hello Jake&quot;</span>
+<span class="p">(</span><span class="nf">hello-flexible</span><span class="p">)</span><span class="w"> </span><span class="c1">; this will evaluate &quot;Hello World&quot;</span>
 
-; VARIABLE NUMBER OF FUNCTION ARGUMENTS
+<span class="c1">; VARIABLE NUMBER OF FUNCTION ARGUMENTS</span>
 
-(defn count-args [&amp; achoo]
-  (str &quot;You passed &quot; (count achoo) &quot; arguments: &quot; achoo)) ; function definition for a function that accepts multiple arguments under the argument name achoo
-(count-args 1 2 3) ; this evaluates to the string value of &quot;You passed 3 args: (1 2 3)&quot;
+<span class="p">(</span><span class="kd">defn </span><span class="nv">count-args</span><span class="w"> </span><span class="p">[</span><span class="o">&amp;</span><span class="w"> </span><span class="nv">achoo</span><span class="p">]</span>
+<span class="w">  </span><span class="p">(</span><span class="nb">str </span><span class="s">&quot;You passed &quot;</span><span class="w"> </span><span class="p">(</span><span class="nb">count </span><span class="nv">achoo</span><span class="p">)</span><span class="w"> </span><span class="s">&quot; arguments: &quot;</span><span class="w"> </span><span class="nv">achoo</span><span class="p">))</span><span class="w"> </span><span class="c1">; function definition for a function that accepts multiple arguments under the argument name achoo</span>
+<span class="p">(</span><span class="nf">count-args</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="c1">; this evaluates to the string value of &quot;You passed 3 args: (1 2 3)&quot;</span>
 
-(defn hello-count [name &amp; orange]
-  (str &quot;Hello &quot; name &quot;, you passed &quot; (count orange) &quot; extra arguments&quot;)) ; function definition for a function that mixes a variable number of arguments with other named arguments
-(hello-count &quot;Finn&quot; 1 2 3) ; this evaluates to the string value of &quot;Hello Finn, you passed 3 extra args&quot;
-</code></pre>
+<span class="p">(</span><span class="kd">defn </span><span class="nv">hello-count</span><span class="w"> </span><span class="p">[</span><span class="nb">name </span><span class="o">&amp;</span><span class="w"> </span><span class="nv">orange</span><span class="p">]</span>
+<span class="w">  </span><span class="p">(</span><span class="nb">str </span><span class="s">&quot;Hello &quot;</span><span class="w"> </span><span class="nb">name </span><span class="s">&quot;, you passed &quot;</span><span class="w"> </span><span class="p">(</span><span class="nb">count </span><span class="nv">orange</span><span class="p">)</span><span class="w"> </span><span class="s">&quot; extra arguments&quot;</span><span class="p">))</span><span class="w"> </span><span class="c1">; function definition for a function that mixes a variable number of arguments with other named arguments</span>
+<span class="p">(</span><span class="nf">hello-count</span><span class="w"> </span><span class="s">&quot;Finn&quot;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="c1">; this evaluates to the string value of &quot;Hello Finn, you passed 3 extra args&quot;</span>
+</code></pre></div>
 
 <h2>Modules</h2>
-<pre class="codehilite"><code class="language-clj">; ----------- MODULE -----------
-    ; use =&gt; brings all functions from the specified module into the current global scope, does not requires namespace qualification
-    ; require =&gt; imports a module and its functions but requires namespace qualification when calling module functions
-    ; ns =&gt; namespaces can be used to require a module as well, doing so means we don't need to quote the module 
+<div class="codehilite"><pre><span></span><code><span class="c1">; ----------- MODULE -----------</span>
+<span class="w">    </span><span class="c1">; use =&gt; brings all functions from the specified module into the current global scope, does not requires namespace qualification</span>
+<span class="w">    </span><span class="c1">; require =&gt; imports a module and its functions but requires namespace qualification when calling module functions</span>
+<span class="w">    </span><span class="c1">; ns =&gt; namespaces can be used to require a module as well, doing so means we don&#39;t need to quote the module </span>
 
-(use 'clojure.set) ; brings all set functions within the global scope
-(intersection #{1 2 3} #{2 3 4}) ; we can now call set functions, this evaluates to #{2 3}
+<span class="p">(</span><span class="nf">use</span><span class="w"> </span><span class="ss">&#39;clojure.set</span><span class="p">)</span><span class="w"> </span><span class="c1">; brings all set functions within the global scope</span>
+<span class="p">(</span><span class="nb">intersection </span><span class="o">#</span><span class="p">{</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">}</span><span class="w"> </span><span class="o">#</span><span class="p">{</span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="p">})</span><span class="w"> </span><span class="c1">; we can now call set functions, this evaluates to #{2 3}</span>
 
-(require 'clojure.string) ; imports the clojure string module within the global scope but namespace qualfiication required when calling string functions
-(clojure.string/blank? &quot;&quot;) ; we can now call string functions but must reference the clojure.string namespace, this evaluates to true
+<span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="ss">&#39;clojure.string</span><span class="p">)</span><span class="w"> </span><span class="c1">; imports the clojure string module within the global scope but namespace qualfiication required when calling string functions</span>
+<span class="p">(</span><span class="nf">clojure.string/blank?</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; we can now call string functions but must reference the clojure.string namespace, this evaluates to true</span>
 
-(ns test
-  (:require
-    [clojure.string :as str]
-    [clojure.set :as set])) ; this has the same effect as above and gives the modules shorter names, note there is no need to quote ' the module here
-</code></pre>
+<span class="p">(</span><span class="kd">ns </span><span class="nv">test</span>
+<span class="w">  </span><span class="p">(</span><span class="ss">:require</span>
+<span class="w">    </span><span class="p">[</span><span class="nv">clojure.string</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">str</span><span class="p">]</span>
+<span class="w">    </span><span class="p">[</span><span class="nv">clojure.set</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">set</span><span class="p">]))</span><span class="w"> </span><span class="c1">; this has the same effect as above and gives the modules shorter names, note there is no need to quote &#39; the module here</span>
+</code></pre></div>
 
 <h2>More on</h2>
 <ul>
@@ -370,12 +378,10 @@ nil ; special value nil
       </section>
 
     </article>
-
     <footer>
-      <p>© 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
+      <p>&copy; 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
     </footer>
   </main>
-
   <div class="wrapper"></div>
 </body>
 </html>

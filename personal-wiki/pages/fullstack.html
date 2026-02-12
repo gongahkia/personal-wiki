@@ -4,18 +4,30 @@
   <meta charset="utf-8">
   <meta name="description" content="Wiki Note: Full-stack - Gabriel Ong">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../style.css">
+  <meta name="author" content="Gabriel Ong">
+  <meta name="robots" content="index, follow">
+  
+  <meta property="og:title" content="Full-stack | Gabriel Ong Wiki">
+  <meta property="og:description" content="Wiki Note: Full-stack - Gabriel Ong">
+  <meta property="og:type" content="article">
+  
+  <meta property="og:image" content="https://gabrielongzm.com/asset/portrait/gong-2.png">
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Full-stack | Gabriel Ong Wiki">
+  <meta name="twitter:description" content="Wiki Note: Full-stack - Gabriel Ong">
+  
+  <link rel="stylesheet" href="../../style.css">
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntl-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
+  
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntlMono-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
-  <style>
-    .thin-space:after{content:"\2006"}
-    pre {
-      overflow-x: auto;
-      max-width: 100%;
-    }
-  </style>
+
+  <style>.thin-space:after{content:"\2006"}</style>
+  
+  <style>pre { overflow-x: auto; max-width: 100%; }</style>
+
   <script src="../script.js" defer></script>
-  <title>GABRIEL ONG</title>
+  <title>Full-stack | Gabriel Ong Wiki</title>
   <link rel="shortcut icon" href="../asset/blob.ico" type="image/x-icon">
 </head>
 <body>
@@ -24,22 +36,18 @@
   <label for="dark-mode">
     <img id="infinityButton" src="../asset/roller.png" height="24" width="24"/>
   </label>
-
   <main>
     <article class="overallArticleTags">
-
+      
       <section class="note-header">
         <h2>Full-stack</h2>
-
         <dl>
           <dt>File size</dt>
-          <dd>11.5KB</dd>
-
+          <dd>13.9KB</dd>
           <dt>Lines of code</dt>
-          <dd>254</dd>
+          <dd>260</dd>
         </dl>
       </section>
-
       <section class="note-content">
         <h1><code>Full-stack</code></h1>
 <p>To know anything, <a href="https://www.newyorker.com/magazine/1966/04/09/you-must-know-everything">you must know everything</a>.  </p>
@@ -155,15 +163,15 @@
 </ul>
 <h2>Overview</h2>
 <p>Full-stack architecture diagram.</p>
-<pre class="codehilite"><code class="language-txt">+----------------------+                 +---------------------+                          +----------------------+
-|                      |                 |                     |                          |                      |
-|      [Frontend]      | -- API call --&gt; |      [Backend]      | --- database query ---&gt;  |      [Database]      |
-|                      |                 |                     |                          |                      |
-|      UI and UX       |                 |   Execute business  |                          |    Database CRUD     |
-|       display        | &lt;-- response -- |        logic        | &lt;--- database return --- |      operations      |
-|                      |                 |                     |                          |                      |
-+----------------------+                 +---------------------+                          +----------------------+
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="o">+</span><span class="c1">----------------------+                 +---------------------+                          +----------------------+</span>
+<span class="o">|</span><span class="w">                      </span><span class="o">|</span><span class="w">                 </span><span class="o">|</span><span class="w">                     </span><span class="o">|</span><span class="w">                          </span><span class="o">|</span><span class="w">                      </span><span class="o">|</span>
+<span class="o">|</span><span class="w">      </span><span class="o">[</span><span class="n">Frontend</span><span class="o">]</span><span class="w">      </span><span class="o">|</span><span class="w"> </span><span class="c1">-- API call --&gt; |      [Backend]      | --- database query ---&gt;  |      [Database]      |</span>
+<span class="o">|</span><span class="w">                      </span><span class="o">|</span><span class="w">                 </span><span class="o">|</span><span class="w">                     </span><span class="o">|</span><span class="w">                          </span><span class="o">|</span><span class="w">                      </span><span class="o">|</span>
+<span class="o">|</span><span class="w">      </span><span class="n">UI</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">UX</span><span class="w">       </span><span class="o">|</span><span class="w">                 </span><span class="o">|</span><span class="w">   </span><span class="k">Execute</span><span class="w"> </span><span class="n">business</span><span class="w">  </span><span class="o">|</span><span class="w">                          </span><span class="o">|</span><span class="w">    </span><span class="k">Database</span><span class="w"> </span><span class="n">CRUD</span><span class="w">     </span><span class="o">|</span>
+<span class="o">|</span><span class="w">       </span><span class="n">display</span><span class="w">        </span><span class="o">|</span><span class="w"> </span><span class="o">&lt;</span><span class="c1">-- response -- |        logic        | &lt;--- database return --- |      operations      |</span>
+<span class="o">|</span><span class="w">                      </span><span class="o">|</span><span class="w">                 </span><span class="o">|</span><span class="w">                     </span><span class="o">|</span><span class="w">                          </span><span class="o">|</span><span class="w">                      </span><span class="o">|</span>
+<span class="o">+</span><span class="c1">----------------------+                 +---------------------+                          +----------------------+</span>
+</code></pre></div>
 
 <h2>More on</h2>
 <ul>
@@ -243,12 +251,10 @@
       </section>
 
     </article>
-
     <footer>
-      <p>© 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
+      <p>&copy; 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
     </footer>
   </main>
-
   <div class="wrapper"></div>
 </body>
 </html>

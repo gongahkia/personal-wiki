@@ -4,18 +4,30 @@
   <meta charset="utf-8">
   <meta name="description" content="Wiki Note: Idris - Gabriel Ong">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../style.css">
+  <meta name="author" content="Gabriel Ong">
+  <meta name="robots" content="index, follow">
+  
+  <meta property="og:title" content="Idris | Gabriel Ong Wiki">
+  <meta property="og:description" content="Wiki Note: Idris - Gabriel Ong">
+  <meta property="og:type" content="article">
+  
+  <meta property="og:image" content="https://gabrielongzm.com/asset/portrait/gong-2.png">
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Idris | Gabriel Ong Wiki">
+  <meta name="twitter:description" content="Wiki Note: Idris - Gabriel Ong">
+  
+  <link rel="stylesheet" href="../../style.css">
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntl-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
+  
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntlMono-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
-  <style>
-    .thin-space:after{content:"\2006"}
-    pre {
-      overflow-x: auto;
-      max-width: 100%;
-    }
-  </style>
+
+  <style>.thin-space:after{content:"\2006"}</style>
+  
+  <style>pre { overflow-x: auto; max-width: 100%; }</style>
+
   <script src="../script.js" defer></script>
-  <title>GABRIEL ONG</title>
+  <title>Idris | Gabriel Ong Wiki</title>
   <link rel="shortcut icon" href="../asset/blob.ico" type="image/x-icon">
 </head>
 <body>
@@ -24,283 +36,279 @@
   <label for="dark-mode">
     <img id="infinityButton" src="../asset/roller.png" height="24" width="24"/>
   </label>
-
   <main>
     <article class="overallArticleTags">
-
+      
       <section class="note-header">
         <h2>Idris</h2>
-
         <dl>
           <dt>File size</dt>
-          <dd>8.3KB</dd>
-
+          <dd>29.8KB</dd>
           <dt>Lines of code</dt>
-          <dd>330</dd>
+          <dd>336</dd>
         </dl>
       </section>
-
       <section class="note-content">
         <h1><code>Idris</code></h1>
 <p>Dependently typed functional programming language with theorem proving capabilities.</p>
 <h2>Comments</h2>
-<pre class="codehilite"><code class="language-idris">-- ---------- COMMENT ----------
+<div class="codehilite"><pre><span></span><code><span class="c1">-- ---------- COMMENT ----------</span>
 
--- this is a single-line comment
+<span class="c1">-- this is a single-line comment</span>
 
-{- this is a
-   multi-line
-   comment -}
-</code></pre>
+<span class="cm">{- this is a</span>
+<span class="cm">   multi-line</span>
+<span class="cm">   comment -}</span>
+</code></pre></div>
 
 <h2>Printing</h2>
-<pre class="codehilite"><code class="language-idris">-- ---------- PRINT ----------
-    -- putStrLn =&gt; prints a string to stdout with newline
-    -- putStr =&gt; prints a string to stdout without newline
-    -- print =&gt; prints any showable value
-    -- printLn =&gt; prints any showable value with newline
+<div class="codehilite"><pre><span></span><code><span class="c1">-- ---------- PRINT ----------</span>
+<span class="w">    </span><span class="c1">-- putStrLn =&gt; prints a string to stdout with newline</span>
+<span class="w">    </span><span class="c1">-- putStr =&gt; prints a string to stdout without newline</span>
+<span class="w">    </span><span class="c1">-- print =&gt; prints any showable value</span>
+<span class="w">    </span><span class="c1">-- printLn =&gt; prints any showable value with newline</span>
 
-putStrLn &quot;Hello, Idris!&quot;
-putStr &quot;No newline here&quot;
-print 42
-printLn[1][2][3]
-</code></pre>
+putStrLn<span class="w"> </span><span class="s">&quot;Hello, Idris!&quot;</span>
+putStr<span class="w"> </span><span class="s">&quot;No newline here&quot;</span>
+print<span class="w"> </span><span class="mi">42</span>
+printLn<span class="ow">[</span><span class="mi">1</span><span class="ow">][</span><span class="mi">2</span><span class="ow">][</span><span class="mi">3</span><span class="ow">]</span>
+</code></pre></div>
 
 <h2>Quickstart</h2>
-<pre class="codehilite"><code class="language-idris">-- ---------- QUICKSTART ----------
-    -- Idris is a purely functional language with dependent types
-    -- types can depend on values, enabling very precise specifications
-    -- : =&gt; type annotation operator
-    -- = =&gt; definition operator
-    -- totality checking ensures all functions terminate
-    -- pattern matching and type inference are core features
+<div class="codehilite"><pre><span></span><code><span class="c1">-- ---------- QUICKSTART ----------</span>
+<span class="w">    </span><span class="c1">-- Idris is a purely functional language with dependent types</span>
+<span class="w">    </span><span class="c1">-- types can depend on values, enabling very precise specifications</span>
+<span class="w">    </span><span class="c1">-- : =&gt; type annotation operator</span>
+<span class="w">    </span><span class="c1">-- = =&gt; definition operator</span>
+<span class="w">    </span><span class="c1">-- totality checking ensures all functions terminate</span>
+<span class="w">    </span><span class="c1">-- pattern matching and type inference are core features</span>
 
-module Main
+<span class="kr">module</span><span class="w"> </span><span class="nn">Main</span>
 
--- Function with dependent type
-vect : (n : Nat) -&gt; Type
-vect n = Vect n Int
+<span class="c1">-- Function with dependent type</span>
+<span class="nf">vect</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="ow">(</span>n<span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">Nat</span><span class="ow">)</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="kt">Type</span>
+vect<span class="w"> </span>n<span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kt">Vect</span><span class="w"> </span>n<span class="w"> </span><span class="kt">Int</span>
 
--- Simple function definition
-double : Int -&gt; Int
-double x = x * 2
+<span class="c1">-- Simple function definition</span>
+<span class="nf">double</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">Int</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="kt">Int</span>
+double<span class="w"> </span>x<span class="w"> </span><span class="ow">=</span><span class="w"> </span>x<span class="w"> </span><span class="ow">*</span><span class="w"> </span><span class="mi">2</span>
 
-main : IO ()
-main = putStrLn &quot;Hello, World!&quot;
-</code></pre>
+<span class="nf">main</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">IO</span><span class="w"> </span><span class="ow">()</span>
+main<span class="w"> </span><span class="ow">=</span><span class="w"> </span>putStrLn<span class="w"> </span><span class="s">&quot;Hello, World!&quot;</span>
+</code></pre></div>
 
 <h2>Types</h2>
-<pre class="codehilite"><code class="language-idris">-- ---------- TYPE ----------
-    -- Int =&gt; fixed-precision integers
-    -- Integer =&gt; arbitrary-precision integers  
-    -- Double =&gt; double-precision floating point
-    -- Char =&gt; Unicode characters, enclosed in single quotes
-    -- String =&gt; strings, enclosed in double quotes
-    -- Bool =&gt; True, False
-    -- Unit =&gt; () the unit type
-    -- Nat =&gt; natural numbers (0, 1, 2, ...)
-    -- Type =&gt; type of types
-    -- Vect n a =&gt; vectors of length n containing elements of type a
+<div class="codehilite"><pre><span></span><code><span class="c1">-- ---------- TYPE ----------</span>
+<span class="w">    </span><span class="c1">-- Int =&gt; fixed-precision integers</span>
+<span class="w">    </span><span class="c1">-- Integer =&gt; arbitrary-precision integers  </span>
+<span class="w">    </span><span class="c1">-- Double =&gt; double-precision floating point</span>
+<span class="w">    </span><span class="c1">-- Char =&gt; Unicode characters, enclosed in single quotes</span>
+<span class="w">    </span><span class="c1">-- String =&gt; strings, enclosed in double quotes</span>
+<span class="w">    </span><span class="c1">-- Bool =&gt; True, False</span>
+<span class="w">    </span><span class="c1">-- Unit =&gt; () the unit type</span>
+<span class="w">    </span><span class="c1">-- Nat =&gt; natural numbers (0, 1, 2, ...)</span>
+<span class="w">    </span><span class="c1">-- Type =&gt; type of types</span>
+<span class="w">    </span><span class="c1">-- Vect n a =&gt; vectors of length n containing elements of type a</span>
 
-age : Int
-age = 25
+<span class="nf">age</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">Int</span>
+age<span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="mi">25</span>
 
-name : String  
-name = &quot;Alice&quot;
+<span class="nf">name</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">String</span><span class="w">  </span>
+name<span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;Alice&quot;</span>
 
-flag : Bool
-flag = True
+<span class="nf">flag</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">Bool</span>
+flag<span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kt">True</span>
 
-letter : Char
-letter = 'x'
+<span class="nf">letter</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">Char</span>
+letter<span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="sc">&#39;x&#39;</span>
 
-nothing : Unit
-nothing = ()
+<span class="nf">nothing</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">Unit</span>
+nothing<span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="ow">()</span>
 
-count : Nat
-count = 3
+<span class="nf">count</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">Nat</span>
+count<span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="mi">3</span>
 
-numbers : Vect 3 Int
-numbers =[2][3][1]
-</code></pre>
+<span class="nf">numbers</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">Vect</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="kt">Int</span>
+numbers<span class="w"> </span><span class="ow">=[</span><span class="mi">2</span><span class="ow">][</span><span class="mi">3</span><span class="ow">][</span><span class="mi">1</span><span class="ow">]</span>
+</code></pre></div>
 
 <h2>Operators</h2>
-<pre class="codehilite"><code class="language-idris">-- ---------- OPERATOR ----------
+<div class="codehilite"><pre><span></span><code><span class="c1">-- ---------- OPERATOR ----------</span>
 
--- ARITHMETIC OPERATORS
-    -- + =&gt; addition
-    -- - =&gt; subtraction
-    -- * =&gt; multiplication
-    -- / =&gt; division (for Double)
-    -- div =&gt; integer division
-    -- mod =&gt; modulo
+<span class="c1">-- ARITHMETIC OPERATORS</span>
+<span class="w">    </span><span class="c1">-- + =&gt; addition</span>
+<span class="w">    </span><span class="c1">-- - =&gt; subtraction</span>
+<span class="w">    </span><span class="c1">-- * =&gt; multiplication</span>
+<span class="w">    </span><span class="c1">-- / =&gt; division (for Double)</span>
+<span class="w">    </span><span class="c1">-- div =&gt; integer division</span>
+<span class="w">    </span><span class="c1">-- mod =&gt; modulo</span>
 
--- COMPARISON OPERATORS
-    -- == =&gt; equality
-    -- /= =&gt; inequality  
-    --  = =&gt; comparison operators
+<span class="c1">-- COMPARISON OPERATORS</span>
+<span class="w">    </span><span class="c1">-- == =&gt; equality</span>
+<span class="w">    </span><span class="c1">-- /= =&gt; inequality  </span>
+<span class="w">    </span><span class="c1">--  = =&gt; comparison operators</span>
 
--- LOGICAL OPERATORS
-    -- &amp;&amp; =&gt; logical and
-    -- || =&gt; logical or
-    -- not =&gt; logical negation
+<span class="c1">-- LOGICAL OPERATORS</span>
+<span class="w">    </span><span class="c1">-- &amp;&amp; =&gt; logical and</span>
+<span class="w">    </span><span class="c1">-- || =&gt; logical or</span>
+<span class="w">    </span><span class="c1">-- not =&gt; logical negation</span>
 
--- LIST OPERATORS
-    -- :: =&gt; cons (prepend to list)
-    -- ++ =&gt; list concatenation
-</code></pre>
+<span class="c1">-- LIST OPERATORS</span>
+<span class="w">    </span><span class="c1">-- :: =&gt; cons (prepend to list)</span>
+<span class="w">    </span><span class="c1">-- ++ =&gt; list concatenation</span>
+</code></pre></div>
 
 <h2>Control structures</h2>
-<pre class="codehilite"><code class="language-idris">-- ---------- CONTROL STRUCTURE ----------
+<div class="codehilite"><pre><span></span><code><span class="c1">-- ---------- CONTROL STRUCTURE ----------</span>
 
--- CONDITIONALS
+<span class="c1">-- CONDITIONALS</span>
 
--- IF THEN ELSE
-result : Int
-result = if 5 &gt; 3 then 1 else 0
+<span class="c1">-- IF THEN ELSE</span>
+<span class="nf">result</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">Int</span>
+result<span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="ow">&gt;</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="kr">else</span><span class="w"> </span><span class="mi">0</span>
 
--- PATTERN MATCHING
-    -- pattern matching on constructors and values
-    -- case expressions for multi-way branching
+<span class="c1">-- PATTERN MATCHING</span>
+<span class="w">    </span><span class="c1">-- pattern matching on constructors and values</span>
+<span class="w">    </span><span class="c1">-- case expressions for multi-way branching</span>
 
-listLength : List a -&gt; Nat
-listLength [] = 0
-listLength (x :: xs) = 1 + listLength xs
+<span class="nf">listLength</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">List</span><span class="w"> </span>a<span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="kt">Nat</span>
+listLength<span class="w"> </span><span class="ow">[]</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="mi">0</span>
+listLength<span class="w"> </span><span class="ow">(</span>x<span class="w"> </span><span class="ow">::</span><span class="w"> </span>xs<span class="ow">)</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="ow">+</span><span class="w"> </span>listLength<span class="w"> </span>xs
 
-describe : Int -&gt; String
-describe x = case x of
-    0 =&gt; &quot;zero&quot;
-    1 =&gt; &quot;one&quot;  
-    n =&gt; &quot;many: &quot; ++ show n
+<span class="nf">describe</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">Int</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="kt">String</span>
+describe<span class="w"> </span>x<span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kr">case</span><span class="w"> </span>x<span class="w"> </span><span class="kr">of</span>
+<span class="w">    </span><span class="mi">0</span><span class="w"> </span><span class="ow">=&gt;</span><span class="w"> </span><span class="s">&quot;zero&quot;</span>
+<span class="w">    </span><span class="mi">1</span><span class="w"> </span><span class="ow">=&gt;</span><span class="w"> </span><span class="s">&quot;one&quot;</span><span class="w">  </span>
+<span class="w">    </span>n<span class="w"> </span><span class="ow">=&gt;</span><span class="w"> </span><span class="s">&quot;many: &quot;</span><span class="w"> </span><span class="ow">++</span><span class="w"> </span>show<span class="w"> </span>n
 
--- GUARDS
-    -- | =&gt; guard syntax for conditional patterns
+<span class="c1">-- GUARDS</span>
+<span class="w">    </span><span class="c1">-- | =&gt; guard syntax for conditional patterns</span>
 
-classify : Int -&gt; String
-classify n | n  0 = &quot;positive&quot;
+<span class="nf">classify</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">Int</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="kt">String</span>
+classify<span class="w"> </span>n<span class="w"> </span><span class="ow">|</span><span class="w"> </span>n<span class="w">  </span><span class="mi">0</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="s">&quot;positive&quot;</span>
 
--- LOOPS
-    -- functional programming uses recursion instead of loops
-    -- higher-order functions like map, filter, fold
+<span class="c1">-- LOOPS</span>
+<span class="w">    </span><span class="c1">-- functional programming uses recursion instead of loops</span>
+<span class="w">    </span><span class="c1">-- higher-order functions like map, filter, fold</span>
 
--- RECURSION
-factorial : Nat -&gt; Nat
-factorial Z = 1
-factorial (S k) = (S k) * factorial k
+<span class="c1">-- RECURSION</span>
+<span class="nf">factorial</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">Nat</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="kt">Nat</span>
+factorial<span class="w"> </span><span class="kt">Z</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="mi">1</span>
+factorial<span class="w"> </span><span class="ow">(</span><span class="kt">S</span><span class="w"> </span>k<span class="ow">)</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="ow">(</span><span class="kt">S</span><span class="w"> </span>k<span class="ow">)</span><span class="w"> </span><span class="ow">*</span><span class="w"> </span>factorial<span class="w"> </span>k
 
--- MAP FILTER FOLD
-doubled : List Int
-doubled = map (*2)[3][4][1][2]
+<span class="c1">-- MAP FILTER FOLD</span>
+<span class="nf">doubled</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">List</span><span class="w"> </span><span class="kt">Int</span>
+doubled<span class="w"> </span><span class="ow">=</span><span class="w"> </span>map<span class="w"> </span><span class="ow">(*</span><span class="mi">2</span><span class="ow">)[</span><span class="mi">3</span><span class="ow">][</span><span class="mi">4</span><span class="ow">][</span><span class="mi">1</span><span class="ow">][</span><span class="mi">2</span><span class="ow">]</span>
 
-evens : List Int  
-evens = filter even[4][5][6][1][2][3]
+<span class="nf">evens</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">List</span><span class="w"> </span><span class="kt">Int</span><span class="w">  </span>
+evens<span class="w"> </span><span class="ow">=</span><span class="w"> </span>filter<span class="w"> </span>even<span class="ow">[</span><span class="mi">4</span><span class="ow">][</span><span class="mi">5</span><span class="ow">][</span><span class="mi">6</span><span class="ow">][</span><span class="mi">1</span><span class="ow">][</span><span class="mi">2</span><span class="ow">][</span><span class="mi">3</span><span class="ow">]</span>
 
-sum : List Int -&gt; Int
-sum = foldl (+) 0
-</code></pre>
+<span class="nf">sum</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">List</span><span class="w"> </span><span class="kt">Int</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="kt">Int</span>
+sum<span class="w"> </span><span class="ow">=</span><span class="w"> </span>foldl<span class="w"> </span><span class="ow">(+)</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div>
 
 <h2>Data structures</h2>
-<pre class="codehilite"><code class="language-idris">-- ---------- DATA STRUCTURE ----------
+<div class="codehilite"><pre><span></span><code><span class="c1">-- ---------- DATA STRUCTURE ----------</span>
 
--- LISTS
-    -- List a =&gt; homogeneous lists
-    -- [] =&gt; empty list
-    -- :: =&gt; cons operator
+<span class="c1">-- LISTS</span>
+<span class="w">    </span><span class="c1">-- List a =&gt; homogeneous lists</span>
+<span class="w">    </span><span class="c1">-- [] =&gt; empty list</span>
+<span class="w">    </span><span class="c1">-- :: =&gt; cons operator</span>
 
-myList : List Int
-myList = [1, 2, 3,4]
+<span class="nf">myList</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">List</span><span class="w"> </span><span class="kt">Int</span>
+myList<span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="ow">[</span><span class="mi">1</span>,<span class="w"> </span><span class="mi">2</span>,<span class="w"> </span><span class="mi">3</span>,4]
 
--- VECTORS
-    -- Vect n a =&gt; length-indexed vectors
-    -- statically track length in type
+<span class="c1">-- VECTORS</span>
+<span class="w">    </span><span class="c1">-- Vect n a =&gt; length-indexed vectors</span>
+<span class="w">    </span><span class="c1">-- statically track length in type</span>
 
-myVector : Vect 3 String
-myVector = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]
+<span class="nf">myVector</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">Vect</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="kt">String</span>
+myVector<span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="ow">[</span><span class="s">&quot;a&quot;</span>,<span class="w"> </span><span class="s">&quot;b&quot;</span>,<span class="w"> </span><span class="s">&quot;c&quot;</span><span class="ow">]</span>
 
--- MAYBE
-    -- Maybe a =&gt; optional values
-    -- Nothing or Just a
+<span class="c1">-- MAYBE</span>
+<span class="w">    </span><span class="c1">-- Maybe a =&gt; optional values</span>
+<span class="w">    </span><span class="c1">-- Nothing or Just a</span>
 
-safeDivide : Double -&gt; Double -&gt; Maybe Double
-safeDivide x 0 = Nothing
-safeDivide x y = Just (x / y)
+<span class="nf">safeDivide</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">Double</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="kt">Double</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="kt">Maybe</span><span class="w"> </span><span class="kt">Double</span>
+safeDivide<span class="w"> </span>x<span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kt">Nothing</span>
+safeDivide<span class="w"> </span>x<span class="w"> </span>y<span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kt">Just</span><span class="w"> </span><span class="ow">(</span>x<span class="w"> </span><span class="ow">/</span><span class="w"> </span>y<span class="ow">)</span>
 
--- EITHER  
-    -- Either a b =&gt; sum type for error handling
-    -- Left a or Right b
+<span class="c1">-- EITHER  </span>
+<span class="w">    </span><span class="c1">-- Either a b =&gt; sum type for error handling</span>
+<span class="w">    </span><span class="c1">-- Left a or Right b</span>
 
-parseNumber : String -&gt; Either String Int
-parseNumber s = case cast s of
-    Nothing =&gt; Left &quot;Not a number&quot;
-    Just n =&gt; Right n
+<span class="nf">parseNumber</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="kt">Either</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="kt">Int</span>
+parseNumber<span class="w"> </span>s<span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kr">case</span><span class="w"> </span>cast<span class="w"> </span>s<span class="w"> </span><span class="kr">of</span>
+<span class="w">    </span><span class="kt">Nothing</span><span class="w"> </span><span class="ow">=&gt;</span><span class="w"> </span><span class="kt">Left</span><span class="w"> </span><span class="s">&quot;Not a number&quot;</span>
+<span class="w">    </span><span class="kt">Just</span><span class="w"> </span>n<span class="w"> </span><span class="ow">=&gt;</span><span class="w"> </span><span class="kt">Right</span><span class="w"> </span>n
 
--- PAIRS
-    -- (a, b) =&gt; product types
+<span class="c1">-- PAIRS</span>
+<span class="w">    </span><span class="c1">-- (a, b) =&gt; product types</span>
 
-point : (Int, Int)
-point = (10, 20)
+<span class="nf">point</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="ow">(</span><span class="kt">Int</span>,<span class="w"> </span><span class="kt">Int</span><span class="ow">)</span>
+point<span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="ow">(</span><span class="mi">10</span>,<span class="w"> </span><span class="mi">20</span><span class="ow">)</span>
 
--- RECORDS
-    -- record syntax for product types with named fields
+<span class="c1">-- RECORDS</span>
+<span class="w">    </span><span class="c1">-- record syntax for product types with named fields</span>
 
-record Person where
-    constructor MkPerson
-    name : String
-    age : Nat
+<span class="kr">record</span><span class="w"> </span><span class="kt">Person</span><span class="w"> </span><span class="kr">where</span>
+<span class="w">    </span><span class="kr">constructor</span><span class="w"> </span><span class="kt">MkPerson</span>
+<span class="w">    </span><span class="nf">name</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">String</span>
+<span class="w">    </span><span class="nf">age</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">Nat</span>
 
-alice : Person
-alice = MkPerson &quot;Alice&quot; 30
+<span class="nf">alice</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">Person</span>
+alice<span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kt">MkPerson</span><span class="w"> </span><span class="s">&quot;Alice&quot;</span><span class="w"> </span><span class="mi">30</span>
 
--- CUSTOM DATA TYPES
-    -- data =&gt; defines algebraic data types
+<span class="c1">-- CUSTOM DATA TYPES</span>
+<span class="w">    </span><span class="c1">-- data =&gt; defines algebraic data types</span>
 
-data Tree a = Leaf a | Node (Tree a) (Tree a)
+<span class="kr">data</span><span class="w"> </span><span class="kt">Tree</span><span class="w"> </span>a<span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kt">Leaf</span><span class="w"> </span>a<span class="w"> </span><span class="ow">|</span><span class="w"> </span><span class="kt">Node</span><span class="w"> </span><span class="ow">(</span><span class="kt">Tree</span><span class="w"> </span>a<span class="ow">)</span><span class="w"> </span><span class="ow">(</span><span class="kt">Tree</span><span class="w"> </span>a<span class="ow">)</span>
 
-exampleTree : Tree Int
-exampleTree = Node (Leaf 1) (Leaf 2)
-</code></pre>
+<span class="nf">exampleTree</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">Tree</span><span class="w"> </span><span class="kt">Int</span>
+exampleTree<span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kt">Node</span><span class="w"> </span><span class="ow">(</span><span class="kt">Leaf</span><span class="w"> </span><span class="mi">1</span><span class="ow">)</span><span class="w"> </span><span class="ow">(</span><span class="kt">Leaf</span><span class="w"> </span><span class="mi">2</span><span class="ow">)</span>
+</code></pre></div>
 
 <h2>Functions</h2>
-<pre class="codehilite"><code class="language-idris">-- ---------- FUNCTION ----------
-    -- function_name : Type -&gt; Type -&gt; ... -&gt; ReturnType
-    -- function_name arg1 arg2 ... = expression
-    -- functions are curried by default
-    -- partial application is natural
+<div class="codehilite"><pre><span></span><code><span class="c1">-- ---------- FUNCTION ----------</span>
+<span class="w">    </span><span class="c1">-- function_name : Type -&gt; Type -&gt; ... -&gt; ReturnType</span>
+<span class="w">    </span><span class="c1">-- function_name arg1 arg2 ... = expression</span>
+<span class="w">    </span><span class="c1">-- functions are curried by default</span>
+<span class="w">    </span><span class="c1">-- partial application is natural</span>
 
--- SIMPLE FUNCTIONS
-add : Int -&gt; Int -&gt; Int
-add x y = x + y
+<span class="c1">-- SIMPLE FUNCTIONS</span>
+<span class="nf">add</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">Int</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="kt">Int</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="kt">Int</span>
+add<span class="w"> </span>x<span class="w"> </span>y<span class="w"> </span><span class="ow">=</span><span class="w"> </span>x<span class="w"> </span><span class="ow">+</span><span class="w"> </span>y
 
-square : Int -&gt; Int
-square x = x * x
+<span class="nf">square</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">Int</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="kt">Int</span>
+square<span class="w"> </span>x<span class="w"> </span><span class="ow">=</span><span class="w"> </span>x<span class="w"> </span><span class="ow">*</span><span class="w"> </span>x
 
--- HIGHER-ORDER FUNCTIONS
-apply : (a -&gt; b) -&gt; a -&gt; b
-apply f x = f x
+<span class="c1">-- HIGHER-ORDER FUNCTIONS</span>
+<span class="nf">apply</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="ow">(</span>a<span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span>b<span class="ow">)</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span>a<span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span>b
+apply<span class="w"> </span>f<span class="w"> </span>x<span class="w"> </span><span class="ow">=</span><span class="w"> </span>f<span class="w"> </span>x
 
-compose : (b -&gt; c) -&gt; (a -&gt; b) -&gt; (a -&gt; c)
-compose f g x = f (g x)
+<span class="nf">compose</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="ow">(</span>b<span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span>c<span class="ow">)</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="ow">(</span>a<span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span>b<span class="ow">)</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="ow">(</span>a<span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span>c<span class="ow">)</span>
+compose<span class="w"> </span>f<span class="w"> </span>g<span class="w"> </span>x<span class="w"> </span><span class="ow">=</span><span class="w"> </span>f<span class="w"> </span><span class="ow">(</span>g<span class="w"> </span>x<span class="ow">)</span>
 
--- LAMBDA FUNCTIONS
-    -- \arg =&gt; expression
+<span class="c1">-- LAMBDA FUNCTIONS</span>
+<span class="w">    </span><span class="c1">-- \arg =&gt; expression</span>
 
-increment : Int -&gt; Int
-increment = \x =&gt; x + 1
+<span class="nf">increment</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">Int</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="kt">Int</span>
+increment<span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="ow">\</span>x<span class="w"> </span><span class="ow">=&gt;</span><span class="w"> </span>x<span class="w"> </span><span class="ow">+</span><span class="w"> </span><span class="mi">1</span>
 
--- DEPENDENT FUNCTIONS
-    -- functions where types depend on values
+<span class="c1">-- DEPENDENT FUNCTIONS</span>
+<span class="w">    </span><span class="c1">-- functions where types depend on values</span>
 
-replicate : (n : Nat) -&gt; a -&gt; Vect n a
-replicate Z x = []
-replicate (S k) x = x :: replicate k x
+<span class="nf">replicate</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="ow">(</span>n<span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">Nat</span><span class="ow">)</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span>a<span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="kt">Vect</span><span class="w"> </span>n<span class="w"> </span>a
+replicate<span class="w"> </span><span class="kt">Z</span><span class="w"> </span>x<span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="ow">[]</span>
+replicate<span class="w"> </span><span class="ow">(</span><span class="kt">S</span><span class="w"> </span>k<span class="ow">)</span><span class="w"> </span>x<span class="w"> </span><span class="ow">=</span><span class="w"> </span>x<span class="w"> </span><span class="ow">::</span><span class="w"> </span>replicate<span class="w"> </span>k<span class="w"> </span>x
 
--- PROOFS AS FUNCTIONS
-    -- types as propositions, functions as proofs
+<span class="c1">-- PROOFS AS FUNCTIONS</span>
+<span class="w">    </span><span class="c1">-- types as propositions, functions as proofs</span>
 
-plusCommutes : (n : Nat) -&gt; (m : Nat) -&gt; n + m = m + n
-plusCommutes Z m = Refl
-plusCommutes (S k) m = rewrite plusCommutes k m in Refl
-</code></pre>
+<span class="nf">plusCommutes</span><span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="ow">(</span>n<span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">Nat</span><span class="ow">)</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span><span class="ow">(</span>m<span class="w"> </span><span class="ow">:</span><span class="w"> </span><span class="kt">Nat</span><span class="ow">)</span><span class="w"> </span><span class="ow">-&gt;</span><span class="w"> </span>n<span class="w"> </span><span class="ow">+</span><span class="w"> </span>m<span class="w"> </span><span class="ow">=</span><span class="w"> </span>m<span class="w"> </span><span class="ow">+</span><span class="w"> </span>n
+plusCommutes<span class="w"> </span><span class="kt">Z</span><span class="w"> </span>m<span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kt">Refl</span>
+plusCommutes<span class="w"> </span><span class="ow">(</span><span class="kt">S</span><span class="w"> </span>k<span class="ow">)</span><span class="w"> </span>m<span class="w"> </span><span class="ow">=</span><span class="w"> </span><span class="kr">rewrite</span><span class="w"> </span>plusCommutes<span class="w"> </span>k<span class="w"> </span>m<span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="kt">Refl</span>
+</code></pre></div>
 
 <h2>More on</h2>
 <ul>
@@ -319,12 +327,10 @@ plusCommutes (S k) m = rewrite plusCommutes k m in Refl
       </section>
 
     </article>
-
     <footer>
-      <p>© 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
+      <p>&copy; 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
     </footer>
   </main>
-
   <div class="wrapper"></div>
 </body>
 </html>

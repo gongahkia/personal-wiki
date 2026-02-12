@@ -4,18 +4,30 @@
   <meta charset="utf-8">
   <meta name="description" content="Wiki Note: Dart - Gabriel Ong">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../style.css">
+  <meta name="author" content="Gabriel Ong">
+  <meta name="robots" content="index, follow">
+  
+  <meta property="og:title" content="Dart | Gabriel Ong Wiki">
+  <meta property="og:description" content="Wiki Note: Dart - Gabriel Ong">
+  <meta property="og:type" content="article">
+  
+  <meta property="og:image" content="https://gabrielongzm.com/asset/portrait/gong-2.png">
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Dart | Gabriel Ong Wiki">
+  <meta name="twitter:description" content="Wiki Note: Dart - Gabriel Ong">
+  
+  <link rel="stylesheet" href="../../style.css">
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntl-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
+  
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntlMono-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
-  <style>
-    .thin-space:after{content:"\2006"}
-    pre {
-      overflow-x: auto;
-      max-width: 100%;
-    }
-  </style>
+
+  <style>.thin-space:after{content:"\2006"}</style>
+  
+  <style>pre { overflow-x: auto; max-width: 100%; }</style>
+
   <script src="../script.js" defer></script>
-  <title>GABRIEL ONG</title>
+  <title>Dart | Gabriel Ong Wiki</title>
   <link rel="shortcut icon" href="../asset/blob.ico" type="image/x-icon">
 </head>
 <body>
@@ -24,331 +36,327 @@
   <label for="dark-mode">
     <img id="infinityButton" src="../asset/roller.png" height="24" width="24"/>
   </label>
-
   <main>
     <article class="overallArticleTags">
-
+      
       <section class="note-header">
         <h2>Dart</h2>
-
         <dl>
           <dt>File size</dt>
-          <dd>12.2KB</dd>
-
+          <dd>32.5KB</dd>
           <dt>Lines of code</dt>
-          <dd>380</dd>
+          <dd>386</dd>
         </dl>
       </section>
-
       <section class="note-content">
         <h1><code>Dart</code></h1>
 <p>Single-threaded language that supports web and app development for multiple platforms.</p>
 <h2>Quickstart</h2>
-<pre class="codehilite"><code class="language-dart">// ---------- COMPILE TIME VS RUNTIME ----------
-    // compile time
-        // when program is compiling to byte code or machine code
-        // syntax errors, typechecking errors, compiler crashes occur at this stage
-        // code compiles to assembly, object code or executable file that can be run
-    // runtime
-        // when executable file is run
-        // logical errors, memory errors, file path errros, URL errors etc occur at this stage
-        // executable file will output what was intended in the program if successful
+<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- COMPILE TIME VS RUNTIME ----------</span>
+<span class="w">    </span><span class="c1">// compile time</span>
+<span class="w">        </span><span class="c1">// when program is compiling to byte code or machine code</span>
+<span class="w">        </span><span class="c1">// syntax errors, typechecking errors, compiler crashes occur at this stage</span>
+<span class="w">        </span><span class="c1">// code compiles to assembly, object code or executable file that can be run</span>
+<span class="w">    </span><span class="c1">// runtime</span>
+<span class="w">        </span><span class="c1">// when executable file is run</span>
+<span class="w">        </span><span class="c1">// logical errors, memory errors, file path errros, URL errors etc occur at this stage</span>
+<span class="w">        </span><span class="c1">// executable file will output what was intended in the program if successful</span>
 
-// ---------- QUICKSTART -----------
-    // dart is used in the Fluttr framework for cross-platform application and web development
-    // all dart code runs within the void main() function
-    // dart is dynamically typed but types can be statically specified
+<span class="c1">// ---------- QUICKSTART -----------</span>
+<span class="w">    </span><span class="c1">// dart is used in the Fluttr framework for cross-platform application and web development</span>
+<span class="w">    </span><span class="c1">// all dart code runs within the void main() function</span>
+<span class="w">    </span><span class="c1">// dart is dynamically typed but types can be statically specified</span>
 
-void main() {
-    // add your code here
-}
-</code></pre>
+<span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// add your code here</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <h2>Printing</h2>
-<pre class="codehilite"><code class="language-dart">// ---------- PRINT ----------
-    // print() =&gt; prints a string to the stdout and appends a newline to the end of the output
-    // ${} =&gt; allows for string interpolation to create a formatted string
+<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- PRINT ----------</span>
+<span class="w">    </span><span class="c1">// print() =&gt; prints a string to the stdout and appends a newline to the end of the output</span>
+<span class="w">    </span><span class="c1">// ${} =&gt; allows for string interpolation to create a formatted string</span>
 
-const int numWatermelon = 10;
-print(&quot;You have ${numWatermelon} watermelons.&quot;); // prints &quot;You have 10 watermelons.&quot; to the stdout
-</code></pre>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">numWatermelon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">;</span>
+<span class="n">print</span><span class="p">(</span><span class="s2">&quot;You have </span><span class="si">${</span><span class="n">numWatermelon</span><span class="si">}</span><span class="s2"> watermelons.&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// prints &quot;You have 10 watermelons.&quot; to the stdout</span>
+</code></pre></div>
 
 <h2>Comments</h2>
-<pre class="codehilite"><code class="language-dart">// ---------- COMMENT ----------
+<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- COMMENT ----------</span>
 
-// this is a single-line comment
+<span class="c1">// this is a single-line comment</span>
 
-/* 
-this is 
-a multi-line
-comment in 
-dart 
-*/
-</code></pre>
+<span class="cm">/* </span>
+<span class="cm">this is </span>
+<span class="cm">a multi-line</span>
+<span class="cm">comment in </span>
+<span class="cm">dart </span>
+<span class="cm">*/</span>
+</code></pre></div>
 
 <h2>Variables, Final and Constants</h2>
-<pre class="codehilite"><code class="language-dart">// ---------- VARIABLE ----------
-    // variable data types are immutable after variable assignment
-    // default value of an unassigned variable is null
-    // var =&gt; declares and creates a variable
-    // dynamic =&gt; specifies a variable can change its data type after initial assignment
+<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- VARIABLE ----------</span>
+<span class="w">    </span><span class="c1">// variable data types are immutable after variable assignment</span>
+<span class="w">    </span><span class="c1">// default value of an unassigned variable is null</span>
+<span class="w">    </span><span class="c1">// var =&gt; declares and creates a variable</span>
+<span class="w">    </span><span class="c1">// dynamic =&gt; specifies a variable can change its data type after initial assignment</span>
 
-var String songLyric = &quot;watermelon sugar&quot;
+<span class="kd">var</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">songLyric</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;watermelon sugar&quot;</span>
 
-// ---------- FINAL -----------
-    // final =&gt; declares and creates a constant (immutable value after assignment) whose value is assigned and initialised at runtime when executable file is run
-    // used when a costant value is unknown at compile-time and will be assigned later (user input, requesting API data)
+<span class="c1">// ---------- FINAL -----------</span>
+<span class="w">    </span><span class="c1">// final =&gt; declares and creates a constant (immutable value after assignment) whose value is assigned and initialised at runtime when executable file is run</span>
+<span class="w">    </span><span class="c1">// used when a costant value is unknown at compile-time and will be assigned later (user input, requesting API data)</span>
 
-final String userInput = stdin.readLineSync()!;
+<span class="kd">final</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">userInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stdin</span><span class="p">.</span><span class="n">readLineSync</span><span class="p">()</span><span class="o">!</span><span class="p">;</span>
 
-// ---------- CONSTANT -----------
-    // const =&gt; declares and creates a constant (immutable value after assignment) whose value is already assigned and initialised at compile-time when dart script is written
-    // used when a constant value is known by the programmer at compile-time and can be assigned definitively without need for reassignment during runtime
+<span class="c1">// ---------- CONSTANT -----------</span>
+<span class="w">    </span><span class="c1">// const =&gt; declares and creates a constant (immutable value after assignment) whose value is already assigned and initialised at compile-time when dart script is written</span>
+<span class="w">    </span><span class="c1">// used when a constant value is known by the programmer at compile-time and can be assigned definitively without need for reassignment during runtime</span>
 
-const double pi = 3.14;
-</code></pre>
+<span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">pi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3.14</span><span class="p">;</span>
+</code></pre></div>
 
 <h2>Types</h2>
-<pre class="codehilite"><code class="language-dart">// ---------- TYPE ----------
-    // int =&gt; integer number
-    // double =&gt; long floating point number
-    // String =&gt; double quotation marks
-    // bool =&gt; true, false 
-    // dynamic =&gt; allows for type inference of a given value's type
-    // List&lt;DATA_TYPE&gt; =&gt; an ordered sequence of elements
-    // Map&lt;KEY_DATA_TYPE, VALUE_DATA_TYPE&gt; =&gt; a collection of key-value pairs
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- TYPE ----------</span>
+<span class="w">    </span><span class="c1">// int =&gt; integer number</span>
+<span class="w">    </span><span class="c1">// double =&gt; long floating point number</span>
+<span class="w">    </span><span class="c1">// String =&gt; double quotation marks</span>
+<span class="w">    </span><span class="c1">// bool =&gt; true, false </span>
+<span class="w">    </span><span class="c1">// dynamic =&gt; allows for type inference of a given value&#39;s type</span>
+<span class="w">    </span><span class="c1">// List&lt;DATA_TYPE&gt; =&gt; an ordered sequence of elements</span>
+<span class="w">    </span><span class="c1">// Map&lt;KEY_DATA_TYPE, VALUE_DATA_TYPE&gt; =&gt; a collection of key-value pairs</span>
+</code></pre></div>
 
 <h2>Operators</h2>
-<pre class="codehilite"><code class="language-dart">// ---------- OPERATOR ----------
+<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- OPERATOR ----------</span>
 
-// ARITHMETIC OPERATORS
-    // + =&gt; addition
-    // - =&gt; subtraction
-    // * =&gt; multiplication
-    // / =&gt; divison
-    // ~/ =&gt; floor divison
-    // % =&gt; modulo
-    // ++ =&gt; increment by 1
-    // -- =&gt; decrement by 1
+<span class="c1">// ARITHMETIC OPERATORS</span>
+<span class="w">    </span><span class="c1">// + =&gt; addition</span>
+<span class="w">    </span><span class="c1">// - =&gt; subtraction</span>
+<span class="w">    </span><span class="c1">// * =&gt; multiplication</span>
+<span class="w">    </span><span class="c1">// / =&gt; divison</span>
+<span class="w">    </span><span class="c1">// ~/ =&gt; floor divison</span>
+<span class="w">    </span><span class="c1">// % =&gt; modulo</span>
+<span class="w">    </span><span class="c1">// ++ =&gt; increment by 1</span>
+<span class="w">    </span><span class="c1">// -- =&gt; decrement by 1</span>
 
-// LOGICAL OPERATORS
-    // &amp;&amp; =&gt; logical and
-    // || =&gt; logical or
-    // ! =&gt; logical not
+<span class="c1">// LOGICAL OPERATORS</span>
+<span class="w">    </span><span class="c1">// &amp;&amp; =&gt; logical and</span>
+<span class="w">    </span><span class="c1">// || =&gt; logical or</span>
+<span class="w">    </span><span class="c1">// ! =&gt; logical not</span>
 
-// COMPARISON OPERATORS
-    // == =&gt; complete equality check for value and type
-    // != =&gt; complete inequality check for value and type
-    // is =&gt; mostly used to check if object is of a specific type
-    // !is =&gt; mostly used to check if object is not of a specific type
-    // &gt;, &lt;, &gt;=, &lt;= are comparison operators and operate as you'd expect
+<span class="c1">// COMPARISON OPERATORS</span>
+<span class="w">    </span><span class="c1">// == =&gt; complete equality check for value and type</span>
+<span class="w">    </span><span class="c1">// != =&gt; complete inequality check for value and type</span>
+<span class="w">    </span><span class="c1">// is =&gt; mostly used to check if object is of a specific type</span>
+<span class="w">    </span><span class="c1">// !is =&gt; mostly used to check if object is not of a specific type</span>
+<span class="w">    </span><span class="c1">// &gt;, &lt;, &gt;=, &lt;= are comparison operators and operate as you&#39;d expect</span>
 
-// ASSIGNMENT OPERATORS
-    // = =&gt; simple assignment
-    // ??= =&gt; assigns value only if variable is null
-    // += =&gt; increment by specified value and reassign
-    // -= =&gt; decrement by specified value and reassign
-    // *= =&gt; multiply by specified value and reassign
-    // /= =&gt; divide by specified value and reassign
-</code></pre>
+<span class="c1">// ASSIGNMENT OPERATORS</span>
+<span class="w">    </span><span class="c1">// = =&gt; simple assignment</span>
+<span class="w">    </span><span class="c1">// ??= =&gt; assigns value only if variable is null</span>
+<span class="w">    </span><span class="c1">// += =&gt; increment by specified value and reassign</span>
+<span class="w">    </span><span class="c1">// -= =&gt; decrement by specified value and reassign</span>
+<span class="w">    </span><span class="c1">// *= =&gt; multiply by specified value and reassign</span>
+<span class="w">    </span><span class="c1">// /= =&gt; divide by specified value and reassign</span>
+</code></pre></div>
 
 <h2>Control structures</h2>
-<pre class="codehilite"><code class="language-dart">// ---------- CONTROL STRUCTURE ----------
+<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- CONTROL STRUCTURE ----------</span>
 
-// CONDITIONAL CHECKS
-    // if 
-    // else if
-    // else
+<span class="c1">// CONDITIONAL CHECKS</span>
+<span class="w">    </span><span class="c1">// if </span>
+<span class="w">    </span><span class="c1">// else if</span>
+<span class="w">    </span><span class="c1">// else</span>
 
-if (booleanExpression0) {
-    // do something
-} else if (booleanExpression1) {
-    // do something else
-} else {
-    // do another thing
-}
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">booleanExpression0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// do something</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">booleanExpression1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// do something else</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// do another thing</span>
+<span class="p">}</span>
 
-// SWITCH CASE DEFAULT
-    // break =&gt; included at the end of each case statement to prevent logic from dropping through
+<span class="c1">// SWITCH CASE DEFAULT</span>
+<span class="w">    </span><span class="c1">// break =&gt; included at the end of each case statement to prevent logic from dropping through</span>
 
-switch (variableExpression) {
-    case constantExpression1: {
-        // do something
-    }
-    break;
-    case constantExpression2: {
-        // do something else
-    }
-    break;
-    default: {
-        // do another thing
-    }
-    break;
-}
+<span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">variableExpression</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nl">constantExpression1:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// do something</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nl">constantExpression2:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// do something else</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// do another thing</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
 
-// LOOPS
-    // for loop
-    // while loop
+<span class="c1">// LOOPS</span>
+<span class="w">    </span><span class="c1">// for loop</span>
+<span class="w">    </span><span class="c1">// while loop</span>
 
-for (var i=0; i&lt;3; i++){
-    print(&quot;Loop:${i}&quot;);
-}
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="m">3</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+<span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;Loop:</span><span class="si">${</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">);</span>
+<span class="p">}</span>
 
-var num = 3;
-while (num &gt;= 1){
-    print(&quot;New count:${num}&quot;);
-    num--;
-}
-</code></pre>
+<span class="kd">var</span><span class="w"> </span><span class="kt">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">;</span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="kt">num</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">1</span><span class="p">){</span>
+<span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;New count:</span><span class="si">${</span><span class="kt">num</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">num</span><span class="o">--</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 
 <h2>Data structures</h2>
-<pre class="codehilite"><code class="language-dart">// ---------- DATA STRUCTURE ----------
+<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- DATA STRUCTURE ----------</span>
 
-// LIST
-    // declared with [] square brackets, a comma-delimited ordered sequence of elements of variable length 
+<span class="c1">// LIST</span>
+<span class="w">    </span><span class="c1">// declared with [] square brackets, a comma-delimited ordered sequence of elements of variable length </span>
 
-List&lt;int&gt; listOfIntegers = [1,2,3,4,5,6,7,8,9,10];
+<span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">listOfIntegers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">9</span><span class="p">,</span><span class="m">10</span><span class="p">];</span>
 
-// MAP
-    // declared with {} curly braces, a comma-delimited collection of key-value pairs similar to a Javascript object
+<span class="c1">// MAP</span>
+<span class="w">    </span><span class="c1">// declared with {} curly braces, a comma-delimited collection of key-value pairs similar to a Javascript object</span>
 
-Map&lt;String, String&gt; userDetails = {
-    &quot;Username&quot;: &quot;cheers&quot;, 
-    &quot;Password&quot;: &quot;Password123&quot;
-};
-</code></pre>
+<span class="n">Map</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">userDetails</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;Username&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;cheers&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="s2">&quot;Password&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Password123&quot;</span>
+<span class="p">};</span>
+</code></pre></div>
 
 <h2>Functions</h2>
-<pre class="codehilite"><code class="language-dart">// ---------- FUNCTION ----------
-    // specify return value and parameter data type in function declaration
-    // void =&gt; used to prefix functions that don't return any value
-    // return =&gt; used to specify the return value of the function
+<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- FUNCTION ----------</span>
+<span class="w">    </span><span class="c1">// specify return value and parameter data type in function declaration</span>
+<span class="w">    </span><span class="c1">// void =&gt; used to prefix functions that don&#39;t return any value</span>
+<span class="w">    </span><span class="c1">// return =&gt; used to specify the return value of the function</span>
 
-// NAMED FUNCTIONS
+<span class="c1">// NAMED FUNCTIONS</span>
 
-int addSum (int a, int b) {
-    return a + b;
-};
+<span class="kt">int</span><span class="w"> </span><span class="n">addSum</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="p">};</span>
 
-double calculateGST (double itemCost) {
-    return itemCost/100 * 108;
-};
+<span class="kt">double</span><span class="w"> </span><span class="n">calculateGST</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">itemCost</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">itemCost</span><span class="o">/</span><span class="m">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">108</span><span class="p">;</span>
+<span class="p">};</span>
 
-String aString () {
-    return &quot;here's a default string&quot;;
-};
+<span class="kt">String</span><span class="w"> </span><span class="n">aString</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;here&#39;s a default string&quot;</span><span class="p">;</span>
+<span class="p">};</span>
 
-bool twoBooleans (bool a, bool b) {
-    return a &amp;&amp; b;
-};
+<span class="kt">bool</span><span class="w"> </span><span class="n">twoBooleans</span><span class="w"> </span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="p">};</span>
 
-// ANONYMOUS FUNCTIONS
-    // written as a single line by convention 
-    // both below syntax are valid
-        // with the syntax {RETURN TYPE} {FUNCTION NAME} ({PARAMETERS}) =&gt; FUNCTION EXPRESSION 
-        // {RETURN TYPE} {FUNCTION NAME} ({PARAMETERS}) {{FUNCTION EXPRESSION}}
+<span class="c1">// ANONYMOUS FUNCTIONS</span>
+<span class="w">    </span><span class="c1">// written as a single line by convention </span>
+<span class="w">    </span><span class="c1">// both below syntax are valid</span>
+<span class="w">        </span><span class="c1">// with the syntax {RETURN TYPE} {FUNCTION NAME} ({PARAMETERS}) =&gt; FUNCTION EXPRESSION </span>
+<span class="w">        </span><span class="c1">// {RETURN TYPE} {FUNCTION NAME} ({PARAMETERS}) {{FUNCTION EXPRESSION}}</span>
 
-int test() =&gt; 123;
-String anotherTest () {return &quot;apple juice is delicious&quot;;};
-</code></pre>
+<span class="kt">int</span><span class="w"> </span><span class="n">test</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="m">123</span><span class="p">;</span>
+<span class="kt">String</span><span class="w"> </span><span class="n">anotherTest</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;apple juice is delicious&quot;</span><span class="p">;};</span>
+</code></pre></div>
 
 <h2>OOP</h2>
-<pre class="codehilite"><code class="language-dart">// ---------- OOP ----------
+<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- OOP ----------</span>
 
-// ---------- CONSTRUCTOR ----------
+<span class="c1">// ---------- CONSTRUCTOR ----------</span>
 
-// DEFAULT CONSTRUCTOR
+<span class="c1">// DEFAULT CONSTRUCTOR</span>
 
-class Cat {
-    DateTime birthday; // default constructor is here even if not explicitely mentioned
-}
+<span class="kd">class</span><span class="w"> </span><span class="nc">Cat</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">DateTime</span><span class="w"> </span><span class="n">birthday</span><span class="p">;</span><span class="w"> </span><span class="c1">// default constructor is here even if not explicitely mentioned</span>
+<span class="p">}</span>
 
-// NAMED CONSTRUCTOR
+<span class="c1">// NAMED CONSTRUCTOR</span>
 
-class Cat {
-    DateTime birthday; // named constructor
-    Cat.baby() {
-        birthday = DateTime.now();
-    }
-}
+<span class="kd">class</span><span class="w"> </span><span class="nc">Cat</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">DateTime</span><span class="w"> </span><span class="n">birthday</span><span class="p">;</span><span class="w"> </span><span class="c1">// named constructor</span>
+<span class="w">    </span><span class="n">Cat</span><span class="p">.</span><span class="n">baby</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">birthday</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">now</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-// REDIRECTING CALL TO MAIN CONSTRUCTOR
+<span class="c1">// REDIRECTING CALL TO MAIN CONSTRUCTOR</span>
 
-class Cat {
-    DateTime birthday;
-    Cat(this.birthda); // main constructor
-    Cat.withBirthday(DateTime Birthday): this(birthday); // delegating call to main constructor
-}
+<span class="kd">class</span><span class="w"> </span><span class="nc">Cat</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">DateTime</span><span class="w"> </span><span class="n">birthday</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Cat</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">birthda</span><span class="p">);</span><span class="w"> </span><span class="c1">// main constructor</span>
+<span class="w">    </span><span class="n">Cat</span><span class="p">.</span><span class="n">withBirthday</span><span class="p">(</span><span class="n">DateTime</span><span class="w"> </span><span class="n">Birthday</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="p">(</span><span class="n">birthday</span><span class="p">);</span><span class="w"> </span><span class="c1">// delegating call to main constructor</span>
+<span class="p">}</span>
 
-// ---------- OBJECT ----------
+<span class="c1">// ---------- OBJECT ----------</span>
 
-// CREATING AN IMMUTABLE OBJECT
+<span class="c1">// CREATING AN IMMUTABLE OBJECT</span>
 
-class CatTreat {
-    final num quantity;
-    constant CatTreat(this.quantity)
-}
+<span class="kd">class</span><span class="w"> </span><span class="nc">CatTreat</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="kt">num</span><span class="w"> </span><span class="n">quantity</span><span class="p">;</span>
+<span class="w">    </span><span class="n">constant</span><span class="w"> </span><span class="n">CatTreat</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">quantity</span><span class="p">)</span>
+<span class="p">}</span>
 
-// ---------- GENERATOR ----------
-    // lazily produces a sequence of values
+<span class="c1">// ---------- GENERATOR ----------</span>
+<span class="w">    </span><span class="c1">// lazily produces a sequence of values</span>
 
-// SYNCHRONOUS GENERATOR 
-    // returns an iterable object
+<span class="c1">// SYNCHRONOUS GENERATOR </span>
+<span class="w">    </span><span class="c1">// returns an iterable object</span>
 
-Iterable&lt;Cat&gt; kittens(int toSpawn) sync* {
-    int kittenIndex = 0;
-    while (kittenIndex &lt; n) {
-        kittenIndex++;
-        yield Cat.baby();
-    }
-}
+<span class="n">Iterable</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span><span class="w"> </span><span class="n">kittens</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">toSpawn</span><span class="p">)</span><span class="w"> </span><span class="kd">sync</span><span class="o">*</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">kittenIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">kittenIndex</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">kittenIndex</span><span class="o">++</span><span class="p">;</span>
+<span class="w">        </span><span class="kd">yield</span><span class="w"> </span><span class="n">Cat</span><span class="p">.</span><span class="n">baby</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-// ASYNCHRONOUS GENERATOR
-    // returns a stream object
+<span class="c1">// ASYNCHRONOUS GENERATOR</span>
+<span class="w">    </span><span class="c1">// returns a stream object</span>
 
-Stream&lt;Cat&gt; kittens(int toSpawn) async* {
-    int kittenIndex = 0;
-    while (kittenIndex &lt; n) {
-        kittenIndex++;
-        yield Cat.baby();
-    }
-}
+<span class="n">Stream</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span><span class="w"> </span><span class="n">kittens</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">toSpawn</span><span class="p">)</span><span class="w"> </span><span class="kd">async</span><span class="o">*</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">kittenIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">kittenIndex</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">kittenIndex</span><span class="o">++</span><span class="p">;</span>
+<span class="w">        </span><span class="kd">yield</span><span class="w"> </span><span class="n">Cat</span><span class="p">.</span><span class="n">baby</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 
-// ---------- ENCAPSULATION ----------
-    // encapsulation occurs at a library level and not class level
-    // dart has no access-modifier keywords like public, protected or private
-    // _ =&gt; specifies a variable, constant or final is private to its library
+<span class="c1">// ---------- ENCAPSULATION ----------</span>
+<span class="w">    </span><span class="c1">// encapsulation occurs at a library level and not class level</span>
+<span class="w">    </span><span class="c1">// dart has no access-modifier keywords like public, protected or private</span>
+<span class="w">    </span><span class="c1">// _ =&gt; specifies a variable, constant or final is private to its library</span>
 
-// ---------- INTERFACE ----------
-    // implements =&gt; allows interfaces to be implemented for a specific class, comma delimited if more than one
+<span class="c1">// ---------- INTERFACE ----------</span>
+<span class="w">    </span><span class="c1">// implements =&gt; allows interfaces to be implemented for a specific class, comma delimited if more than one</span>
 
-class identifier implements interface-1, interface-2, interface-3
-</code></pre>
+<span class="kd">class</span><span class="w"> </span><span class="nc">identifier</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">interface</span><span class="o">-</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">interface</span><span class="o">-</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">interface</span><span class="o">-</span><span class="m">3</span>
+</code></pre></div>
 
 <h2>Null-safety</h2>
-<pre class="codehilite"><code class="language-dart">// ----------- NULL-SAFETY ----------
-    // variable values are non-nullable by default, null has to be explicitly allowed and stated
-    // ? =&gt; used alongside a value's type declaration to indicate that variable, final or constant can have a null value
-    // ! =&gt; appended to a value to indicate a variable will never store the value null
+<div class="codehilite"><pre><span></span><code><span class="c1">// ----------- NULL-SAFETY ----------</span>
+<span class="w">    </span><span class="c1">// variable values are non-nullable by default, null has to be explicitly allowed and stated</span>
+<span class="w">    </span><span class="c1">// ? =&gt; used alongside a value&#39;s type declaration to indicate that variable, final or constant can have a null value</span>
+<span class="w">    </span><span class="c1">// ! =&gt; appended to a value to indicate a variable will never store the value null</span>
 
-int? thisIntMightBeNull = null; // no error will be thrown at compile time
-String? country = &quot;USA&quot;; // variable country might store a null value
-String myCountry = country!; // throws an error as myCountry is non-nullable by definition, but country might store a null value
+<span class="kt">int</span><span class="o">?</span><span class="w"> </span><span class="n">thisIntMightBeNull</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"> </span><span class="c1">// no error will be thrown at compile time</span>
+<span class="kt">String</span><span class="o">?</span><span class="w"> </span><span class="n">country</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;USA&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// variable country might store a null value</span>
+<span class="kt">String</span><span class="w"> </span><span class="n">myCountry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">country</span><span class="o">!</span><span class="p">;</span><span class="w"> </span><span class="c1">// throws an error as myCountry is non-nullable by definition, but country might store a null value</span>
 
-// LATE
-    // late =&gt; specifies a value will be initialised later upon access, despite not being initialised upon declaration
-    // late final =&gt; a value that will be initialised later upon access but can only be assigned once
+<span class="c1">// LATE</span>
+<span class="w">    </span><span class="c1">// late =&gt; specifies a value will be initialised later upon access, despite not being initialised upon declaration</span>
+<span class="w">    </span><span class="c1">// late final =&gt; a value that will be initialised later upon access but can only be assigned once</span>
 
-late String country; // late variable that is by default non-nullable
-print(value); // this throws a runtime error if you try to run it
-country = &quot;USA&quot;; // subsequent assignment of country late variable
+<span class="kd">late</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">country</span><span class="p">;</span><span class="w"> </span><span class="c1">// late variable that is by default non-nullable</span>
+<span class="n">print</span><span class="p">(</span><span class="n">value</span><span class="p">);</span><span class="w"> </span><span class="c1">// this throws a runtime error if you try to run it</span>
+<span class="n">country</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;USA&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// subsequent assignment of country late variable</span>
 
-late final String anotherCountry; // a late final variable that is by default non-nullable but can only have a value assigned once
-anotherCountry = &quot;USA&quot;;
-print(anotherCountry); // this is working since value assigned already, no error is thrown
-anotherCountry = &quot;India&quot;; // an error is thrown since the final local variable cannot be reassigned 
-</code></pre>
+<span class="kd">late</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="n">anotherCountry</span><span class="p">;</span><span class="w"> </span><span class="c1">// a late final variable that is by default non-nullable but can only have a value assigned once</span>
+<span class="n">anotherCountry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;USA&quot;</span><span class="p">;</span>
+<span class="n">print</span><span class="p">(</span><span class="n">anotherCountry</span><span class="p">);</span><span class="w"> </span><span class="c1">// this is working since value assigned already, no error is thrown</span>
+<span class="n">anotherCountry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;India&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// an error is thrown since the final local variable cannot be reassigned </span>
+</code></pre></div>
 
 <h2>More on</h2>
 <ul>
@@ -369,12 +377,10 @@ anotherCountry = &quot;India&quot;; // an error is thrown since the final local 
       </section>
 
     </article>
-
     <footer>
-      <p>© 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
+      <p>&copy; 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
     </footer>
   </main>
-
   <div class="wrapper"></div>
 </body>
 </html>

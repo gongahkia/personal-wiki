@@ -1,4 +1,4 @@
-.PHONY: blog book wiki build-wiki clean-wiki help up history sitemap
+.PHONY: blog book tech-writeup postmortem wiki build build-wiki clean-wiki help up history sitemap
 
 # OS detection for sed compatibility
 UNAME := $(shell uname)
@@ -11,16 +11,23 @@ endif
 # Default target
 help:
 	@echo "Available commands:"
-	@echo "  make blog        - Create a new blog post (interactive)"
-	@echo "  make book        - Create a new book review (interactive)"
-	@echo "  make wiki        - Create a new wiki note (interactive)"
-	@echo "  make build-wiki  - Build all wiki HTML from markdown"
-	@echo "  make clean-wiki  - Remove generated wiki HTML files"
-	@echo "  make sitemap     - Generate sitemap.xml"
-	@echo "  make up          - Pull latest changes and show status"
-	@echo "  make history     - Show git log"
+	@echo "  make build          - Build all (wiki + blog index + sitemap)"
+	@echo "  make blog           - Create a new blog post (interactive)"
+	@echo "  make book           - Create a new book review (interactive)"
+	@echo "  make tech-writeup   - Create a new tech writeup (interactive)"
+	@echo "  make postmortem     - Create a new project postmortem (interactive)"
+	@echo "  make wiki           - Create a new wiki note (interactive)"
+	@echo "  make build-wiki     - Build all wiki HTML from markdown"
+	@echo "  make clean-wiki     - Remove generated wiki HTML files"
+	@echo "  make sitemap        - Generate sitemap.xml"
+	@echo "  make up             - Pull latest changes and show status"
+	@echo "  make history        - Show git log"
 
-# Create a new blog post
+# Unified build: wiki + blog index + sitemap
+build:
+	@python3 build.py
+
+# Create a new blog post (markdown with frontmatter)
 blog:
 	@echo "Creating new blog post..."
 	@current_date=$$(date +%Y-%m-%d); \
@@ -34,17 +41,12 @@ blog:
 		printf "Enter blog post title (required): "; \
 		read title; \
 	done; \
-	filename=$$(echo $$title | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/_/g' | sed 's/__*/_/g').html; \
-	cp blog/template/blog-post.html blog/posts/$$filename; \
-	$(SED_CMD) 's/\[BLOG POST TITLE\]/'"$$title"'/g' blog/posts/$$filename; \
-	$(SED_CMD) 's/<h2>Blog Post Title<\/h2>/<h2>'"$$title"'<\/h2>/g' blog/posts/$$filename; \
-	$(SED_CMD) 's/<dd>Date Written<\/dd>/<dd>'"$$date"'<\/dd>/g' blog/posts/$$filename; \
-	blog_entry="        <dl>\n          <dt>$$date</dt>\n          <dd>\n            <a href=\"posts/$$filename\">$$title</a>\n          </dd>\n        </dl>"; \
-	$(SED_CMD) "/<section class=\"booksAndBlog\">/a\\$$blog_entry" blog/index.html; \
-	echo "Created blog post: blog/posts/$$filename"; \
-	echo "Updated blog/index.html with new blog entry"
+	filename=$$(echo $$title | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/_/g' | sed 's/__*/_/g').md; \
+	printf -- "---\ntitle: \"$$title\"\ndate: $$date\ntype: blog\n---\n\nAdd post content here.\n" > blog/posts/$$filename; \
+	echo "Created blog/posts/$$filename"; \
+	echo "Run 'make build' after editing to rebuild index"
 
-# Create a new book review
+# Create a new book review (markdown with frontmatter)
 book:
 	@echo "Creating new book review..."
 	@current_date=$$(date +%Y-%m-%d); \
@@ -91,20 +93,70 @@ book:
 		printf "Enter rating (0-5, can be decimal): "; \
 		read rating; \
 	done; \
-	filename=$$(echo $$book_name | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/_/g' | sed 's/__*/_/g').html; \
-	cp blog/template/book-post.html blog/posts/$$filename; \
-	$(SED_CMD) 's/\[BOOK TITLE\]/'"$$book_name"'/g' blog/posts/$$filename; \
-	$(SED_CMD) 's/\[AUTHOR\]/'"$$author_name"'/g' blog/posts/$$filename; \
-	$(SED_CMD) 's/<h2>Book Title<\/h2>/<h2>'"$$book_name"'<\/h2>/g' blog/posts/$$filename; \
-	$(SED_CMD) 's/<dd>Author Name<\/dd>/<dd>'"$$author_name"'<\/dd>/g' blog/posts/$$filename; \
-	$(SED_CMD) 's/<dd>ISBN Number<\/dd>/<dd>'"$$isbn"'<\/dd>/g' blog/posts/$$filename; \
-	$(SED_CMD) 's/<dd>Fiction\/Non-Fiction<\/dd>/<dd>'"$$category_text"'<\/dd>/g' blog/posts/$$filename; \
-	$(SED_CMD) 's/<dd>\*\/5<\/dd>/<dd>'"$$rating"'\/5<\/dd>/g' blog/posts/$$filename; \
-	$(SED_CMD) 's/<dd>Day Month Year<\/dd>/<dd>'"$$date"'<\/dd>/g' blog/posts/$$filename; \
-	book_entry="        <dl>\n          <dt>$$date</dt>\n          <dd>\n            <a href=\"posts/$$filename\">$$book_name</a>\n            <br>\n            <span class=\"author\">$$author_name</span>\n            <br>\n            <span class=\"isbn\">ISBN: $$isbn</span>\n            <br>\n            <span class=\"rating\">$$rating/5</span>, $$category_text\n          </dd>\n        </dl>"; \
-	$(SED_CMD) "/<section class=\"booksAndBlog\">/a\\$$book_entry" blog/index.html; \
-	echo "Created book review: blog/posts/$$filename"; \
-	echo "Updated blog/index.html with new book entry"
+	filename=$$(echo $$book_name | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/_/g' | sed 's/__*/_/g').md; \
+	printf -- "---\ntitle: \"$$book_name\"\nauthor: \"$$author_name\"\nisbn: \"$$isbn\"\ncategory: $$category_text\nrating: $$rating\ndate: $$date\ntype: book\n---\n\nAdd book review content here.\n" > blog/posts/$$filename; \
+	echo "Created blog/posts/$$filename"; \
+	echo "Run 'make build' after editing to rebuild index"
+
+# Create a new tech writeup (markdown with frontmatter)
+tech-writeup:
+	@echo "Creating new tech writeup..."
+	@current_date=$$(date +%Y-%m-%d); \
+	printf "Enter date (default: $$current_date): "; \
+	read date; \
+	date=$${date:-$$current_date}; \
+	printf "Enter title (required): "; \
+	read title; \
+	while [ -z "$$title" ]; do \
+		echo "Title is required."; \
+		printf "Enter title (required): "; \
+		read title; \
+	done; \
+	printf "Enter tech stack (comma-separated): "; \
+	read tech_stack; \
+	printf "Enter duration/timeline: "; \
+	read duration; \
+	printf "Enter status (Active/Archived/Deprecated): "; \
+	read status; \
+	printf "Enter GitHub URL (optional): "; \
+	read github; \
+	printf "Enter demo URL (optional): "; \
+	read demo; \
+	filename=$$(echo $$title | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/_/g' | sed 's/__*/_/g').md; \
+	printf -- "---\ntitle: \"$$title\"\ndate: $$date\ntype: tech-writeup\ntech_stack: \"$$tech_stack\"\nduration: \"$$duration\"\nstatus: \"$$status\"\ngithub: \"$$github\"\ndemo: \"$$demo\"\n---\n\nAdd writeup content here.\n" > blog/posts/$$filename; \
+	echo "Created blog/posts/$$filename"; \
+	echo "Run 'make build' after editing to rebuild index"
+
+# Create a new project postmortem (markdown with frontmatter)
+postmortem:
+	@echo "Creating new project postmortem..."
+	@current_date=$$(date +%Y-%m-%d); \
+	printf "Enter date (default: $$current_date): "; \
+	read date; \
+	date=$${date:-$$current_date}; \
+	printf "Enter title (required): "; \
+	read title; \
+	while [ -z "$$title" ]; do \
+		echo "Title is required."; \
+		printf "Enter title (required): "; \
+		read title; \
+	done; \
+	printf "Enter project name: "; \
+	read project; \
+	printf "Enter date range (e.g. Jan-Mar 2025): "; \
+	read date_range; \
+	printf "Enter your role: "; \
+	read role; \
+	printf "Enter team size: "; \
+	read team_size; \
+	printf "Enter outcome (Success/Failure/Learning): "; \
+	read outcome; \
+	printf "Enter tech stack (comma-separated): "; \
+	read tech_stack; \
+	filename=$$(echo $$title | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/_/g' | sed 's/__*/_/g').md; \
+	printf -- "---\ntitle: \"$$title\"\ndate: $$date\ntype: postmortem\nproject: \"$$project\"\ndate_range: \"$$date_range\"\nrole: \"$$role\"\nteam_size: \"$$team_size\"\noutcome: \"$$outcome\"\ntech_stack: \"$$tech_stack\"\n---\n\nAdd postmortem content here.\n" > blog/posts/$$filename; \
+	echo "Created blog/posts/$$filename"; \
+	echo "Run 'make build' after editing to rebuild index"
 
 # Create a new wiki note
 wiki:
@@ -167,25 +219,25 @@ wiki:
 	echo "" >> personal-wiki/notes/"$$title".md; \
 	echo "Created wiki note: personal-wiki/notes/$$title.md"
 
-# Build wiki HTML from markdown
+# Build wiki HTML from markdown (legacy target, calls unified build)
 build-wiki:
 	@echo "Building wiki pages..."
-	@cd personal-wiki && python3 build.py
+	@python3 build.py
 	@echo "Wiki build complete!"
 
 # Clean generated wiki HTML files
 clean-wiki:
 	@echo "Cleaning generated wiki files..."
-	@rm -f personal-wiki/*.html
+	@rm -f personal-wiki/pages/*.html
 	@echo "Clean complete!"
 
-# Generate sitemap.xml
+# Generate sitemap.xml (legacy target, calls unified build)
 sitemap:
 	@echo "Generating sitemap.xml..."
-	@python3 scripts/generate_sitemap.py
+	@python3 build.py
 	@echo "Sitemap generation complete!"
 
-# Git helpers (retained from original)
+# Git helpers
 up:
 	@git pull
 	@git status

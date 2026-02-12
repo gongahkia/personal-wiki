@@ -4,18 +4,30 @@
   <meta charset="utf-8">
   <meta name="description" content="Wiki Note: Pascal - Gabriel Ong">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../style.css">
+  <meta name="author" content="Gabriel Ong">
+  <meta name="robots" content="index, follow">
+  
+  <meta property="og:title" content="Pascal | Gabriel Ong Wiki">
+  <meta property="og:description" content="Wiki Note: Pascal - Gabriel Ong">
+  <meta property="og:type" content="article">
+  
+  <meta property="og:image" content="https://gabrielongzm.com/asset/portrait/gong-2.png">
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Pascal | Gabriel Ong Wiki">
+  <meta name="twitter:description" content="Wiki Note: Pascal - Gabriel Ong">
+  
+  <link rel="stylesheet" href="../../style.css">
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntl-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
+  
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntlMono-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
-  <style>
-    .thin-space:after{content:"\2006"}
-    pre {
-      overflow-x: auto;
-      max-width: 100%;
-    }
-  </style>
+
+  <style>.thin-space:after{content:"\2006"}</style>
+  
+  <style>pre { overflow-x: auto; max-width: 100%; }</style>
+
   <script src="../script.js" defer></script>
-  <title>GABRIEL ONG</title>
+  <title>Pascal | Gabriel Ong Wiki</title>
   <link rel="shortcut icon" href="../asset/blob.ico" type="image/x-icon">
 </head>
 <body>
@@ -24,256 +36,252 @@
   <label for="dark-mode">
     <img id="infinityButton" src="../asset/roller.png" height="24" width="24"/>
   </label>
-
   <main>
     <article class="overallArticleTags">
-
+      
       <section class="note-header">
         <h2>Pascal</h2>
-
         <dl>
           <dt>File size</dt>
-          <dd>10.5KB</dd>
-
+          <dd>25.4KB</dd>
           <dt>Lines of code</dt>
-          <dd>299</dd>
+          <dd>305</dd>
         </dl>
       </section>
-
       <section class="note-content">
         <h1><code>Pascal</code></h1>
 <p>Small language encouraging structured programming and data structuring.</p>
 <h2>Comments</h2>
-<pre class="codehilite"><code class="language-pas">// ---------- COMMENT ----------
+<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- COMMENT ----------</span>
 
-// this is a single-line comment
+<span class="c1">// this is a single-line comment</span>
 
-{
-this is a 
-multi-line
-comment
-}
-</code></pre>
+<span class="cm">{</span>
+<span class="cm">this is a </span>
+<span class="cm">multi-line</span>
+<span class="cm">comment</span>
+<span class="cm">}</span>
+</code></pre></div>
 
 <h2>Printing</h2>
-<pre class="codehilite"><code class="language-pas">// ---------- PRINT ----------
-    // Write =&gt; prints a string and does not include a newline in the output
-    // WriteLn =&gt; prints a string and appends a newline to the output
+<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- PRINT ----------</span>
+<span class="w">    </span><span class="c1">// Write =&gt; prints a string and does not include a newline in the output</span>
+<span class="w">    </span><span class="c1">// WriteLn =&gt; prints a string and appends a newline to the output</span>
 
-Write('this does not include a newline by default and we must explicitl specify it\n');
-WriteLn('this includes a newline automatically');
-</code></pre>
+<span class="nb">Write</span><span class="p">(</span><span class="s">&#39;this does not include a newline by default and we must explicitl specify it\n&#39;</span><span class="p">)</span><span class="o">;</span>
+<span class="nb">WriteLn</span><span class="p">(</span><span class="s">&#39;this includes a newline automatically&#39;</span><span class="p">)</span><span class="o">;</span>
+</code></pre></div>
 
 <h2>Quickstart</h2>
-<pre class="codehilite"><code class="language-pas">// ---------- QUICKSTART ----------
-    // executable program code is written within the main program block, an indented block of code that is the equivalent of the main function in other languages
-    // program =&gt; declares a pascal program name, included at the start of a pascal source file
-    // begin =&gt; specifies the beginning of the main program block
-    // end. =&gt; specifies the end of the main program block and must end in a period
+<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- QUICKSTART ----------</span>
+<span class="w">    </span><span class="c1">// executable program code is written within the main program block, an indented block of code that is the equivalent of the main function in other languages</span>
+<span class="w">    </span><span class="c1">// program =&gt; declares a pascal program name, included at the start of a pascal source file</span>
+<span class="w">    </span><span class="c1">// begin =&gt; specifies the beginning of the main program block</span>
+<span class="w">    </span><span class="c1">// end. =&gt; specifies the end of the main program block and must end in a period</span>
 
-program learning_pascal;
-begin 
-    // add your code here within the main program block
-end.
-</code></pre>
+<span class="k">program</span><span class="w"> </span><span class="n">learning_pascal</span><span class="o">;</span>
+<span class="k">begin</span><span class="w"> </span>
+<span class="w">    </span><span class="c1">// add your code here within the main program block</span>
+<span class="k">end</span><span class="o">.</span>
+</code></pre></div>
 
 <h2>Variables and Constants</h2>
-<pre class="codehilite"><code class="language-pas">// ---------- VARIABLE ----------
-    // conventionally variables and their types are declared before the main program, and have values assigned to them within the main program
-    // var =&gt; declares and creates a variable or a variable block, where a variable's value can be reassigned after initial assignment and at runtime
-    // : =&gt; used to specify a variable's data type
-    // := =&gt; assignment operator, to assign a value to a previously declared variable, normally used within the main program
+<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- VARIABLE ----------</span>
+<span class="w">    </span><span class="c1">// conventionally variables and their types are declared before the main program, and have values assigned to them within the main program</span>
+<span class="w">    </span><span class="c1">// var =&gt; declares and creates a variable or a variable block, where a variable&#39;s value can be reassigned after initial assignment and at runtime</span>
+<span class="w">    </span><span class="c1">// : =&gt; used to specify a variable&#39;s data type</span>
+<span class="w">    </span><span class="c1">// := =&gt; assignment operator, to assign a value to a previously declared variable, normally used within the main program</span>
 
-var a:integer;
-var b:integer; // this is valid pascal code to declare a variable by itself
+<span class="k">var</span><span class="w"> </span><span class="n">a</span><span class="o">:</span><span class="kt">integer</span><span class="o">;</span>
+<span class="k">var</span><span class="w"> </span><span class="n">b</span><span class="o">:</span><span class="kt">integer</span><span class="o">;</span><span class="w"> </span><span class="c1">// this is valid pascal code to declare a variable by itself</span>
 
-var 
-    c:string;
-    d:string; // this is also valid pascal code by declaring variables within a variable block
+<span class="k">var</span><span class="w"> </span>
+<span class="w">    </span><span class="n">c</span><span class="o">:</span><span class="k">string</span><span class="o">;</span>
+<span class="w">    </span><span class="n">d</span><span class="o">:</span><span class="k">string</span><span class="o">;</span><span class="w"> </span><span class="c1">// this is also valid pascal code by declaring variables within a variable block</span>
 
-var e,f:boolean; // this is also valid pascal code to declare mutliple variables of the same type together
+<span class="k">var</span><span class="w"> </span><span class="n">e</span><span class="o">,</span><span class="n">f</span><span class="o">:</span><span class="kt">boolean</span><span class="o">;</span><span class="w"> </span><span class="c1">// this is also valid pascal code to declare mutliple variables of the same type together</span>
 
-begin 
-    a := 1;
-    b := 255;
-    c := 'watermelon';
-    d := 'ok thanks';
-    e := true;
-    f := false;
-end. // variable declaration occurs outside the main program block within the variable block, and variable assignment occurs within the main program block
+<span class="k">begin</span><span class="w"> </span>
+<span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">1</span><span class="o">;</span>
+<span class="w">    </span><span class="n">b</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">255</span><span class="o">;</span>
+<span class="w">    </span><span class="n">c</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&#39;watermelon&#39;</span><span class="o">;</span>
+<span class="w">    </span><span class="n">d</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&#39;ok thanks&#39;</span><span class="o">;</span>
+<span class="w">    </span><span class="n">e</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">true</span><span class="o">;</span>
+<span class="w">    </span><span class="n">f</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">false</span><span class="o">;</span>
+<span class="k">end</span><span class="o">.</span><span class="w"> </span><span class="c1">// variable declaration occurs outside the main program block within the variable block, and variable assignment occurs within the main program block</span>
 
-// ---------- CONSTANT ----------
-    // const =&gt; declares and creates a constant or a constant block, whose value cannot be reassigned after initial assignment or at runtime
-    // constant names are uppercase by convention
+<span class="c1">// ---------- CONSTANT ----------</span>
+<span class="w">    </span><span class="c1">// const =&gt; declares and creates a constant or a constant block, whose value cannot be reassigned after initial assignment or at runtime</span>
+<span class="w">    </span><span class="c1">// constant names are uppercase by convention</span>
 
-const 
-    PI = 3.141519252654;
-    HARRY = 'watermelon sugar low';
-</code></pre>
+<span class="k">const</span><span class="w"> </span>
+<span class="w">    </span><span class="nb">PI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.141519252654</span><span class="o">;</span>
+<span class="w">    </span><span class="n">HARRY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;watermelon sugar low&#39;</span><span class="o">;</span>
+</code></pre></div>
 
 <h2>Types</h2>
-<pre class="codehilite"><code class="language-pas">// ---------- TYPE ----------
-    // integer =&gt; 16-bit integer number limited within the range -32,768 to 32,767
-        // byte =&gt; integer number limited within the range 0 to 255
-        // shortint =&gt; integer number limited within the range -128 to 127
-        // smallint =&gt; integer number that is the standard int when the integer type is assigned
-        // word =&gt; integer number limited within the range 0 to 65,535
-        // longint =&gt; integer number limited within the range -2,147,483,648 to 2,147,483,647
-        // longword =&gt; integer number limited within the range 0 to 4,294,967,295
-        // cardinal =&gt; longword
-        // int64 =&gt; integer number limited within the range -9223372036854775808 to 9223372036854775807
-        // qword =&gt; integer number limited within the range 0 to 18,446,744,073,709,551,615
-    // real =&gt; real number limited within the range 3.4E-38 to 3.4E38
-        // single =&gt; real number limited within the range 1.5E-45 to 3.4E38
-        // double =&gt; real number limited within the range 5.0E-324 to 1.7E308
-        // extended =&gt; real number limited within the range 1.9E-4932 to 1.1E4932
-        // comp =&gt; real number limited within the range -2E64+1 to 2E63-1
-    // boolean =&gt; true, false
-    // char =&gt; 8-bit char, declared using '' single quotation marks
-    // string =&gt; char array with a default length of 255
-        // [] =&gt; specifies the maximum length of the string by the maximum number of char allocated for the string, minimizing memory usage overall
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- TYPE ----------</span>
+<span class="w">    </span><span class="c1">// integer =&gt; 16-bit integer number limited within the range -32,768 to 32,767</span>
+<span class="w">        </span><span class="c1">// byte =&gt; integer number limited within the range 0 to 255</span>
+<span class="w">        </span><span class="c1">// shortint =&gt; integer number limited within the range -128 to 127</span>
+<span class="w">        </span><span class="c1">// smallint =&gt; integer number that is the standard int when the integer type is assigned</span>
+<span class="w">        </span><span class="c1">// word =&gt; integer number limited within the range 0 to 65,535</span>
+<span class="w">        </span><span class="c1">// longint =&gt; integer number limited within the range -2,147,483,648 to 2,147,483,647</span>
+<span class="w">        </span><span class="c1">// longword =&gt; integer number limited within the range 0 to 4,294,967,295</span>
+<span class="w">        </span><span class="c1">// cardinal =&gt; longword</span>
+<span class="w">        </span><span class="c1">// int64 =&gt; integer number limited within the range -9223372036854775808 to 9223372036854775807</span>
+<span class="w">        </span><span class="c1">// qword =&gt; integer number limited within the range 0 to 18,446,744,073,709,551,615</span>
+<span class="w">    </span><span class="c1">// real =&gt; real number limited within the range 3.4E-38 to 3.4E38</span>
+<span class="w">        </span><span class="c1">// single =&gt; real number limited within the range 1.5E-45 to 3.4E38</span>
+<span class="w">        </span><span class="c1">// double =&gt; real number limited within the range 5.0E-324 to 1.7E308</span>
+<span class="w">        </span><span class="c1">// extended =&gt; real number limited within the range 1.9E-4932 to 1.1E4932</span>
+<span class="w">        </span><span class="c1">// comp =&gt; real number limited within the range -2E64+1 to 2E63-1</span>
+<span class="w">    </span><span class="c1">// boolean =&gt; true, false</span>
+<span class="w">    </span><span class="c1">// char =&gt; 8-bit char, declared using &#39;&#39; single quotation marks</span>
+<span class="w">    </span><span class="c1">// string =&gt; char array with a default length of 255</span>
+<span class="w">        </span><span class="c1">// [] =&gt; specifies the maximum length of the string by the maximum number of char allocated for the string, minimizing memory usage overall</span>
+</code></pre></div>
 
 <h2>Operators</h2>
-<pre class="codehilite"><code class="language-pas">// ---------- OPERATOR ----------
+<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- OPERATOR ----------</span>
 
-// ARITHMETIC OPERATORS
-    // + =&gt; addition
-    // - =&gt; subtraction
-    // * =&gt; multiplication
-    // / =&gt; division
-    // div =&gt; floor division
-    // mod =&gt; modulo operator
+<span class="c1">// ARITHMETIC OPERATORS</span>
+<span class="w">    </span><span class="c1">// + =&gt; addition</span>
+<span class="w">    </span><span class="c1">// - =&gt; subtraction</span>
+<span class="w">    </span><span class="c1">// * =&gt; multiplication</span>
+<span class="w">    </span><span class="c1">// / =&gt; division</span>
+<span class="w">    </span><span class="c1">// div =&gt; floor division</span>
+<span class="w">    </span><span class="c1">// mod =&gt; modulo operator</span>
 
-// LOGICAL OPERATORS
-    // and =&gt; logical and
-    // or =&gt; logical or
-    // not =&gt; logical not
+<span class="c1">// LOGICAL OPERATORS</span>
+<span class="w">    </span><span class="c1">// and =&gt; logical and</span>
+<span class="w">    </span><span class="c1">// or =&gt; logical or</span>
+<span class="w">    </span><span class="c1">// not =&gt; logical not</span>
 
-// COMPARISON OPERATORS
-    // = =&gt; complete equality check for value and type
-    // &lt;&gt; =&gt; complete inequality check for value and type
-    // &lt; &gt; &lt;= &gt;= are also comparison operators
-</code></pre>
+<span class="c1">// COMPARISON OPERATORS</span>
+<span class="w">    </span><span class="c1">// = =&gt; complete equality check for value and type</span>
+<span class="w">    </span><span class="c1">// &lt;&gt; =&gt; complete inequality check for value and type</span>
+<span class="w">    </span><span class="c1">// &lt; &gt; &lt;= &gt;= are also comparison operators</span>
+</code></pre></div>
 
 <h2>Control structures</h2>
-<pre class="codehilite"><code class="language-pas">// ---------- CONTROL STRUCTURE ----------
+<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- CONTROL STRUCTURE ----------</span>
 
-// ---------- CONDITIONALS ----------
+<span class="c1">// ---------- CONDITIONALS ----------</span>
 
-// IF ELSE IF ELSE
+<span class="c1">// IF ELSE IF ELSE</span>
 
-var 
-    age:Integer;
+<span class="k">var</span><span class="w"> </span>
+<span class="w">    </span><span class="n">age</span><span class="o">:</span><span class="kt">Integer</span><span class="o">;</span>
 
-begin
+<span class="k">begin</span>
 
-    age := 20;
-    if age &lt; 20 then
-        WriteLn('age is smaller than 20');
-    else if age &gt; 20 then
-        WriteLn('age is larger than 20');
-    else
-        WriteLn('age is equals to 20');
+<span class="w">    </span><span class="n">age</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">20</span><span class="o">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="nb">WriteLn</span><span class="p">(</span><span class="s">&#39;age is smaller than 20&#39;</span><span class="p">)</span><span class="o">;</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="nb">WriteLn</span><span class="p">(</span><span class="s">&#39;age is larger than 20&#39;</span><span class="p">)</span><span class="o">;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="nb">WriteLn</span><span class="p">(</span><span class="s">&#39;age is equals to 20&#39;</span><span class="p">)</span><span class="o">;</span>
 
-// CASE OF ELSE END
-    // case of =&gt; declares a case block, pascal's equivalent to match case statements in other languages, with of beginning the case statements block
-    // else =&gt; used to specify the default case if logic falls through all other cases
-    // end =&gt; specifies the end of the case block
+<span class="c1">// CASE OF ELSE END</span>
+<span class="w">    </span><span class="c1">// case of =&gt; declares a case block, pascal&#39;s equivalent to match case statements in other languages, with of beginning the case statements block</span>
+<span class="w">    </span><span class="c1">// else =&gt; used to specify the default case if logic falls through all other cases</span>
+<span class="w">    </span><span class="c1">// end =&gt; specifies the end of the case block</span>
 
-    case age of
-        1: WriteLn('Monday');
-        2: WriteLn('Tuesday');
-        3: WriteLn('Wednesday');
-        4: WriteLn('Thursday');
-        5: WriteLn('Friday');
-        6: WriteLn('Saturday');
-        7: WriteLn('Sunday');
-    else
-        WriteLn('Invalid day');
-    end;
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="k">of</span>
+<span class="w">        </span><span class="mi">1</span><span class="o">:</span><span class="w"> </span><span class="nb">WriteLn</span><span class="p">(</span><span class="s">&#39;Monday&#39;</span><span class="p">)</span><span class="o">;</span>
+<span class="w">        </span><span class="mi">2</span><span class="o">:</span><span class="w"> </span><span class="nb">WriteLn</span><span class="p">(</span><span class="s">&#39;Tuesday&#39;</span><span class="p">)</span><span class="o">;</span>
+<span class="w">        </span><span class="mi">3</span><span class="o">:</span><span class="w"> </span><span class="nb">WriteLn</span><span class="p">(</span><span class="s">&#39;Wednesday&#39;</span><span class="p">)</span><span class="o">;</span>
+<span class="w">        </span><span class="mi">4</span><span class="o">:</span><span class="w"> </span><span class="nb">WriteLn</span><span class="p">(</span><span class="s">&#39;Thursday&#39;</span><span class="p">)</span><span class="o">;</span>
+<span class="w">        </span><span class="mi">5</span><span class="o">:</span><span class="w"> </span><span class="nb">WriteLn</span><span class="p">(</span><span class="s">&#39;Friday&#39;</span><span class="p">)</span><span class="o">;</span>
+<span class="w">        </span><span class="mi">6</span><span class="o">:</span><span class="w"> </span><span class="nb">WriteLn</span><span class="p">(</span><span class="s">&#39;Saturday&#39;</span><span class="p">)</span><span class="o">;</span>
+<span class="w">        </span><span class="mi">7</span><span class="o">:</span><span class="w"> </span><span class="nb">WriteLn</span><span class="p">(</span><span class="s">&#39;Sunday&#39;</span><span class="p">)</span><span class="o">;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="nb">WriteLn</span><span class="p">(</span><span class="s">&#39;Invalid day&#39;</span><span class="p">)</span><span class="o">;</span>
+<span class="w">    </span><span class="k">end</span><span class="o">;</span>
 
-end.
+<span class="k">end</span><span class="o">.</span>
 
-// ---------- LOOPS ----------
+<span class="c1">// ---------- LOOPS ----------</span>
 
-// FOR LOOP
-    // for =&gt; creates a for loop that iterates over a specified range of values
-    // to =&gt; specifies the loop range and seperates the starting and ending value 
-    // do =&gt; specifies the logic within each iteration of the loop
+<span class="c1">// FOR LOOP</span>
+<span class="w">    </span><span class="c1">// for =&gt; creates a for loop that iterates over a specified range of values</span>
+<span class="w">    </span><span class="c1">// to =&gt; specifies the loop range and seperates the starting and ending value </span>
+<span class="w">    </span><span class="c1">// do =&gt; specifies the logic within each iteration of the loop</span>
 
-for age := 1 to 5 do
-    Write(age); // prints out 12345 to the stdout
+<span class="k">for</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="nb">Write</span><span class="p">(</span><span class="n">age</span><span class="p">)</span><span class="o">;</span><span class="w"> </span><span class="c1">// prints out 12345 to the stdout</span>
 
-// WHILE LOOP
-    // while =&gt; specifies the while loop condition
-    // do =&gt; specifies the logic within each iteration of the while loop
-    // begin, end =&gt; used to mark the beginning and end of the while loop block
+<span class="c1">// WHILE LOOP</span>
+<span class="w">    </span><span class="c1">// while =&gt; specifies the while loop condition</span>
+<span class="w">    </span><span class="c1">// do =&gt; specifies the logic within each iteration of the while loop</span>
+<span class="w">    </span><span class="c1">// begin, end =&gt; used to mark the beginning and end of the while loop block</span>
 
-age := 1;
-while age &lt;= 5 do
-begin
-    write(age);
-    Inc(age); // increments the value of the integer variable age by one
-end; // prints out 12345 to the stdout
+<span class="n">age</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">1</span><span class="o">;</span>
+<span class="k">while</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="k">do</span>
+<span class="k">begin</span>
+<span class="w">    </span><span class="nb">write</span><span class="p">(</span><span class="n">age</span><span class="p">)</span><span class="o">;</span>
+<span class="w">    </span><span class="nb">Inc</span><span class="p">(</span><span class="n">age</span><span class="p">)</span><span class="o">;</span><span class="w"> </span><span class="c1">// increments the value of the integer variable age by one</span>
+<span class="k">end</span><span class="o">;</span><span class="w"> </span><span class="c1">// prints out 12345 to the stdout</span>
 
-// REPEAT UNTIL LOOP
-    // pascal's equivalent of a do while loop in other languages
-    // repeat =&gt; marks the beginning of a repeat until loop block
-    // until =&gt; specifies the repeat until loop condition and marks the end of a repeat until loop block
+<span class="c1">// REPEAT UNTIL LOOP</span>
+<span class="w">    </span><span class="c1">// pascal&#39;s equivalent of a do while loop in other languages</span>
+<span class="w">    </span><span class="c1">// repeat =&gt; marks the beginning of a repeat until loop block</span>
+<span class="w">    </span><span class="c1">// until =&gt; specifies the repeat until loop condition and marks the end of a repeat until loop block</span>
 
-age := 1;
-repeat
-    write(age);
-    Inc(age); // increments the value of the integer variable age by one
-until age &gt; 5; // prints out 12345 to the stdout
-</code></pre>
+<span class="n">age</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">1</span><span class="o">;</span>
+<span class="k">repeat</span>
+<span class="w">    </span><span class="nb">write</span><span class="p">(</span><span class="n">age</span><span class="p">)</span><span class="o">;</span>
+<span class="w">    </span><span class="nb">Inc</span><span class="p">(</span><span class="n">age</span><span class="p">)</span><span class="o">;</span><span class="w"> </span><span class="c1">// increments the value of the integer variable age by one</span>
+<span class="k">until</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span><span class="o">;</span><span class="w"> </span><span class="c1">// prints out 12345 to the stdout</span>
+</code></pre></div>
 
 <h2>Data structures</h2>
-<pre class="codehilite"><code class="language-pas">// ---------- DATA STRUCTURE ----------
+<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- DATA STRUCTURE ----------</span>
 
-// ARRAY
-    // ordered sequence of elements of the same type
-    // array =&gt; declares and creates an array of a specified range and element type
+<span class="c1">// ARRAY</span>
+<span class="w">    </span><span class="c1">// ordered sequence of elements of the same type</span>
+<span class="w">    </span><span class="c1">// array =&gt; declares and creates an array of a specified range and element type</span>
 
-var
-    numbers: array[1..5] of integer;
+<span class="k">var</span>
+<span class="w">    </span><span class="n">numbers</span><span class="o">:</span><span class="w"> </span><span class="k">array</span><span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">5</span><span class="p">]</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="kt">integer</span><span class="o">;</span>
 
-// SET
-    // collection of unique elements of the same type
-    // set =&gt; declares and creates a set and specifies all possible values that can be found within the set
+<span class="c1">// SET</span>
+<span class="w">    </span><span class="c1">// collection of unique elements of the same type</span>
+<span class="w">    </span><span class="c1">// set =&gt; declares and creates a set and specifies all possible values that can be found within the set</span>
 
-var
-    colors: set of (Red, Green, Blue);
+<span class="k">var</span>
+<span class="w">    </span><span class="n">colors</span><span class="o">:</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="p">(</span><span class="n">Red</span><span class="o">,</span><span class="w"> </span><span class="n">Green</span><span class="o">,</span><span class="w"> </span><span class="n">Blue</span><span class="p">)</span><span class="o">;</span>
 
-// RECORD
-    // user-defined collection of elements of different types under a specified name
-    // record =&gt; declares and creates a record within which all its fields and their respective types are specified
+<span class="c1">// RECORD</span>
+<span class="w">    </span><span class="c1">// user-defined collection of elements of different types under a specified name</span>
+<span class="w">    </span><span class="c1">// record =&gt; declares and creates a record within which all its fields and their respective types are specified</span>
 
-type
-    Person = record
-        FirstName: String;
-        LastName: String;
-        Age: Integer;
-    end;
-</code></pre>
+<span class="k">type</span>
+<span class="w">    </span><span class="n">Person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">record</span>
+<span class="w">        </span><span class="n">FirstName</span><span class="o">:</span><span class="w"> </span><span class="k">String</span><span class="o">;</span>
+<span class="w">        </span><span class="n">LastName</span><span class="o">:</span><span class="w"> </span><span class="k">String</span><span class="o">;</span>
+<span class="w">        </span><span class="n">Age</span><span class="o">:</span><span class="w"> </span><span class="kt">Integer</span><span class="o">;</span>
+<span class="w">    </span><span class="k">end</span><span class="o">;</span>
+</code></pre></div>
 
 <h2>Functions</h2>
-<pre class="codehilite"><code class="language-pas">// ---------- FUNCTION ----------
-    // pascal functions do not have implicit return, instead the function name is the variable name to be returned within the function
-    // function =&gt; declares and creates a function block where the parameter and return types are specified
-    // begin, end =&gt; used to mark the beginning and end of a function block
+<div class="codehilite"><pre><span></span><code><span class="c1">// ---------- FUNCTION ----------</span>
+<span class="w">    </span><span class="c1">// pascal functions do not have implicit return, instead the function name is the variable name to be returned within the function</span>
+<span class="w">    </span><span class="c1">// function =&gt; declares and creates a function block where the parameter and return types are specified</span>
+<span class="w">    </span><span class="c1">// begin, end =&gt; used to mark the beginning and end of a function block</span>
 
-function Square(x:integer):integer;
-begin
-    Square := x * x; // here, Square is the variable to be returned given the function name is also specified to be Square
-end;
+<span class="k">function</span><span class="w"> </span><span class="nf">Square</span><span class="p">(</span><span class="n">x</span><span class="o">:</span><span class="kt">integer</span><span class="p">)</span><span class="o">:</span><span class="kt">integer</span><span class="o">;</span>
+<span class="k">begin</span>
+<span class="w">    </span><span class="n">Square</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="o">;</span><span class="w"> </span><span class="c1">// here, Square is the variable to be returned given the function name is also specified to be Square</span>
+<span class="k">end</span><span class="o">;</span>
 
-function Add(x,y:integer):integer;
-begin
-    Add := x + y; // here, Add is the variable to be returned and that is specified in the function name
-end;
-</code></pre>
+<span class="k">function</span><span class="w"> </span><span class="nf">Add</span><span class="p">(</span><span class="n">x</span><span class="o">,</span><span class="n">y</span><span class="o">:</span><span class="kt">integer</span><span class="p">)</span><span class="o">:</span><span class="kt">integer</span><span class="o">;</span>
+<span class="k">begin</span>
+<span class="w">    </span><span class="n">Add</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="o">;</span><span class="w"> </span><span class="c1">// here, Add is the variable to be returned and that is specified in the function name</span>
+<span class="k">end</span><span class="o">;</span>
+</code></pre></div>
 
 <h2>More on</h2>
 <ul>
@@ -288,12 +296,10 @@ end;
       </section>
 
     </article>
-
     <footer>
-      <p>© 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
+      <p>&copy; 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
     </footer>
   </main>
-
   <div class="wrapper"></div>
 </body>
 </html>

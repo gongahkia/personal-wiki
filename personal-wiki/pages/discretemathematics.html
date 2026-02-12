@@ -4,18 +4,30 @@
   <meta charset="utf-8">
   <meta name="description" content="Wiki Note: Discrete mathematics - Gabriel Ong">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../style.css">
+  <meta name="author" content="Gabriel Ong">
+  <meta name="robots" content="index, follow">
+  
+  <meta property="og:title" content="Discrete mathematics | Gabriel Ong Wiki">
+  <meta property="og:description" content="Wiki Note: Discrete mathematics - Gabriel Ong">
+  <meta property="og:type" content="article">
+  
+  <meta property="og:image" content="https://gabrielongzm.com/asset/portrait/gong-2.png">
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Discrete mathematics | Gabriel Ong Wiki">
+  <meta name="twitter:description" content="Wiki Note: Discrete mathematics - Gabriel Ong">
+  
+  <link rel="stylesheet" href="../../style.css">
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntl-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
+  
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntlMono-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
-  <style>
-    .thin-space:after{content:"\2006"}
-    pre {
-      overflow-x: auto;
-      max-width: 100%;
-    }
-  </style>
+
+  <style>.thin-space:after{content:"\2006"}</style>
+  
+  <style>pre { overflow-x: auto; max-width: 100%; }</style>
+
   <script src="../script.js" defer></script>
-  <title>GABRIEL ONG</title>
+  <title>Discrete mathematics | Gabriel Ong Wiki</title>
   <link rel="shortcut icon" href="../asset/blob.ico" type="image/x-icon">
 </head>
 <body>
@@ -24,22 +36,18 @@
   <label for="dark-mode">
     <img id="infinityButton" src="../asset/roller.png" height="24" width="24"/>
   </label>
-
   <main>
     <article class="overallArticleTags">
-
+      
       <section class="note-header">
         <h2>Discrete mathematics</h2>
-
         <dl>
           <dt>File size</dt>
-          <dd>68.4KB</dd>
-
+          <dd>77.9KB</dd>
           <dt>Lines of code</dt>
-          <dd>1539</dd>
+          <dd>1545</dd>
         </dl>
       </section>
-
       <section class="note-content">
         <h1><code>Discrete mathematics</code></h1>
 <p><strong>Read</strong> and <strong>write</strong> mathematical proofs and apply them in Computer Science.</p>
@@ -1275,14 +1283,14 @@ Moving forward, $V$ represents a set of all nodes and $E$ represents a set of al
 </ul>
 </li>
 </ol>
-<pre class="codehilite"><code class="language-mermaid">graph LR
-    A((A)) &lt;--&quot;Edge&quot;--&gt; B((B))
-    A &lt;--&quot;Multiple edge A&quot;--&gt; C((C))
-    A &lt;--&quot;Multiple edge B&quot;--&gt; C((C))
-    B &lt;--&quot;Edge&quot;--&gt; C((C))
-    C &lt;--&quot;Edge&quot;--&gt; D((D))
-    D &lt;--&quot;Loop edge&quot;--&gt; D
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nf">graph</span><span class="w"> </span><span class="n">LR</span>
+<span class="w">    </span><span class="n">A</span><span class="p">((</span><span class="n">A</span><span class="p">))</span><span class="w"> </span><span class="o">&lt;--</span><span class="s">&quot;Edge&quot;</span><span class="o">--&gt;</span><span class="w"> </span><span class="n">B</span><span class="p">((</span><span class="n">B</span><span class="p">))</span>
+<span class="w">    </span><span class="n">A</span><span class="w"> </span><span class="o">&lt;--</span><span class="s">&quot;Multiple edge A&quot;</span><span class="o">--&gt;</span><span class="w"> </span><span class="n">C</span><span class="p">((</span><span class="n">C</span><span class="p">))</span>
+<span class="w">    </span><span class="n">A</span><span class="w"> </span><span class="o">&lt;--</span><span class="s">&quot;Multiple edge B&quot;</span><span class="o">--&gt;</span><span class="w"> </span><span class="n">C</span><span class="p">((</span><span class="n">C</span><span class="p">))</span>
+<span class="w">    </span><span class="n">B</span><span class="w"> </span><span class="o">&lt;--</span><span class="s">&quot;Edge&quot;</span><span class="o">--&gt;</span><span class="w"> </span><span class="n">C</span><span class="p">((</span><span class="n">C</span><span class="p">))</span>
+<span class="w">    </span><span class="n">C</span><span class="w"> </span><span class="o">&lt;--</span><span class="s">&quot;Edge&quot;</span><span class="o">--&gt;</span><span class="w"> </span><span class="n">D</span><span class="p">((</span><span class="n">D</span><span class="p">))</span>
+<span class="w">    </span><span class="n">D</span><span class="w"> </span><span class="o">&lt;--</span><span class="s">&quot;Loop edge&quot;</span><span class="o">--&gt;</span><span class="w"> </span><span class="n">D</span>
+</code></pre></div>
 
 <blockquote>
 <p>[!WARNING]<br />
@@ -1298,18 +1306,18 @@ The above is <em>not</em> a simple graph since it contains both multiple edges a
 </ul>
 </li>
 </ol>
-<pre class="codehilite"><code class="language-mermaid">graph LR
-    A((A)) &lt;--&gt; B((B))
-    A((A)) &lt;--&gt; E((E))
-    B &lt;--&gt; B
-    B &lt;--&gt; E
-    B &lt;--&gt; C((C))
-    B &lt;--&gt; F((F))
-    C &lt;--&gt; E
-    C &lt;--&gt; F
-    E &lt;--&gt; F
-    D((D))
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nf">graph</span><span class="w"> </span><span class="n">LR</span>
+<span class="w">    </span><span class="n">A</span><span class="p">((</span><span class="n">A</span><span class="p">))</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">B</span><span class="p">((</span><span class="n">B</span><span class="p">))</span>
+<span class="w">    </span><span class="n">A</span><span class="p">((</span><span class="n">A</span><span class="p">))</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">E</span><span class="p">((</span><span class="n">E</span><span class="p">))</span>
+<span class="w">    </span><span class="n">B</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">B</span>
+<span class="w">    </span><span class="n">B</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">E</span>
+<span class="w">    </span><span class="n">B</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">C</span><span class="p">((</span><span class="n">C</span><span class="p">))</span>
+<span class="w">    </span><span class="n">B</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">F</span><span class="p">((</span><span class="n">F</span><span class="p">))</span>
+<span class="w">    </span><span class="n">C</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">E</span>
+<span class="w">    </span><span class="n">C</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">F</span>
+<span class="w">    </span><span class="n">E</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">F</span>
+<span class="w">    </span><span class="n">D</span><span class="p">((</span><span class="n">D</span><span class="p">))</span>
+</code></pre></div>
 
 <ol>
 <li>Handshaking theorem: $\sum_{v \in V} deg(v) = 2|E|$ where $v$ is an individual node </li>
@@ -1318,18 +1326,18 @@ The above is <em>not</em> a simple graph since it contains both multiple edges a
 </ul>
 </li>
 </ol>
-<pre class="codehilite"><code class="language-mermaid">graph TD
-    A((A)) &lt;--&gt; B((B))
-    A &lt;--&gt; C((C))
-    A &lt;--&gt; D((D))
-    A &lt;--&gt; E((E))
-    B &lt;--&gt; C
-    B &lt;--&gt; D
-    B &lt;--&gt; E
-    C &lt;--&gt; D
-    C &lt;--&gt; E
-    D &lt;--&gt; E
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nf">graph</span><span class="w"> </span><span class="n">TD</span>
+<span class="w">    </span><span class="n">A</span><span class="p">((</span><span class="n">A</span><span class="p">))</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">B</span><span class="p">((</span><span class="n">B</span><span class="p">))</span>
+<span class="w">    </span><span class="n">A</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">C</span><span class="p">((</span><span class="n">C</span><span class="p">))</span>
+<span class="w">    </span><span class="n">A</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">D</span><span class="p">((</span><span class="n">D</span><span class="p">))</span>
+<span class="w">    </span><span class="n">A</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">E</span><span class="p">((</span><span class="n">E</span><span class="p">))</span>
+<span class="w">    </span><span class="n">B</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">C</span>
+<span class="w">    </span><span class="n">B</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">D</span>
+<span class="w">    </span><span class="n">B</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">E</span>
+<span class="w">    </span><span class="n">C</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">D</span>
+<span class="w">    </span><span class="n">C</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">E</span>
+<span class="w">    </span><span class="n">D</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">E</span>
+</code></pre></div>
 
 <ol>
 <li>Cycle graph: graph where <em>every node</em> has exactly 2 neighbours, forming a <strong>closed loop</strong><ul>
@@ -1369,16 +1377,16 @@ The above is <em>not</em> a simple graph since it contains both multiple edges a
 </ul>
 </li>
 </ol>
-<pre class="codehilite"><code class="language-mermaid">graph TD
-    A((A)) &lt;--&gt; B((B))
-    A &lt;--&gt; C((C))
-    C &lt;--&gt; E((E))
-    C &lt;--&gt; F((F))
-    C &lt;--&gt; D((D))
-    D &lt;--&gt; F
-    E &lt;--&gt; F
-    B &lt;--&gt; F
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nf">graph</span><span class="w"> </span><span class="n">TD</span>
+<span class="w">    </span><span class="n">A</span><span class="p">((</span><span class="n">A</span><span class="p">))</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">B</span><span class="p">((</span><span class="n">B</span><span class="p">))</span>
+<span class="w">    </span><span class="n">A</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">C</span><span class="p">((</span><span class="n">C</span><span class="p">))</span>
+<span class="w">    </span><span class="n">C</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">E</span><span class="p">((</span><span class="n">E</span><span class="p">))</span>
+<span class="w">    </span><span class="n">C</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">F</span><span class="p">((</span><span class="n">F</span><span class="p">))</span>
+<span class="w">    </span><span class="n">C</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">D</span><span class="p">((</span><span class="n">D</span><span class="p">))</span>
+<span class="w">    </span><span class="n">D</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">F</span>
+<span class="w">    </span><span class="n">E</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">F</span>
+<span class="w">    </span><span class="n">B</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">F</span>
+</code></pre></div>
 
 <ol>
 <li>Bipartite: graph of $(V,E)$ where $V$ can be split into two non-overlapping subsets $V_1$ and $V_2$ such that <em>every edge</em> of the graph connects an element of $V_1$ with $V_2$, and <em>no edge</em> connects two nodes from the same part of the division<ul>
@@ -1386,20 +1394,20 @@ The above is <em>not</em> a simple graph since it contains both multiple edges a
 </ul>
 </li>
 </ol>
-<pre class="codehilite"><code class="language-mermaid">graph TD
-    A((G)) &lt;--&gt; B((R))
-    A &lt;--&gt; C((R))
-    B &lt;--&gt; D((G))
-    C &lt;--&gt; D
-    A &lt;--&gt; E((R))
-    B &lt;--&gt; F((G))
-    C &lt;--&gt; G((G))
-    D &lt;--&gt; H((R))
-    E &lt;--&gt; F
-    F &lt;--&gt; H
-    E &lt;--&gt; G
-    G &lt;--&gt; H
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="nf">graph</span><span class="w"> </span><span class="n">TD</span>
+<span class="w">    </span><span class="n">A</span><span class="p">((</span><span class="n">G</span><span class="p">))</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">B</span><span class="p">((</span><span class="n">R</span><span class="p">))</span>
+<span class="w">    </span><span class="n">A</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">C</span><span class="p">((</span><span class="n">R</span><span class="p">))</span>
+<span class="w">    </span><span class="n">B</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">D</span><span class="p">((</span><span class="n">G</span><span class="p">))</span>
+<span class="w">    </span><span class="n">C</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">D</span>
+<span class="w">    </span><span class="n">A</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">E</span><span class="p">((</span><span class="n">R</span><span class="p">))</span>
+<span class="w">    </span><span class="n">B</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">F</span><span class="p">((</span><span class="n">G</span><span class="p">))</span>
+<span class="w">    </span><span class="n">C</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">G</span><span class="p">((</span><span class="n">G</span><span class="p">))</span>
+<span class="w">    </span><span class="n">D</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">H</span><span class="p">((</span><span class="n">R</span><span class="p">))</span>
+<span class="w">    </span><span class="n">E</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">F</span>
+<span class="w">    </span><span class="n">F</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">H</span>
+<span class="w">    </span><span class="n">E</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">G</span>
+<span class="w">    </span><span class="n">G</span><span class="w"> </span><span class="o">&lt;--&gt;</span><span class="w"> </span><span class="n">H</span>
+</code></pre></div>
 
 <h2>Chapter 10: 2-way Bounding</h2>
 <h3>Definitions</h3>
@@ -1528,12 +1536,10 @@ The above is <em>not</em> a simple graph since it contains both multiple edges a
       </section>
 
     </article>
-
     <footer>
-      <p>© 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
+      <p>&copy; 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
     </footer>
   </main>
-
   <div class="wrapper"></div>
 </body>
 </html>

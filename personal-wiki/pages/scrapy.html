@@ -4,18 +4,30 @@
   <meta charset="utf-8">
   <meta name="description" content="Wiki Note: Scrapy - Gabriel Ong">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../style.css">
+  <meta name="author" content="Gabriel Ong">
+  <meta name="robots" content="index, follow">
+  
+  <meta property="og:title" content="Scrapy | Gabriel Ong Wiki">
+  <meta property="og:description" content="Wiki Note: Scrapy - Gabriel Ong">
+  <meta property="og:type" content="article">
+  
+  <meta property="og:image" content="https://gabrielongzm.com/asset/portrait/gong-2.png">
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Scrapy | Gabriel Ong Wiki">
+  <meta name="twitter:description" content="Wiki Note: Scrapy - Gabriel Ong">
+  
+  <link rel="stylesheet" href="../../style.css">
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntl-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
+  
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntlMono-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
-  <style>
-    .thin-space:after{content:"\2006"}
-    pre {
-      overflow-x: auto;
-      max-width: 100%;
-    }
-  </style>
+
+  <style>.thin-space:after{content:"\2006"}</style>
+  
+  <style>pre { overflow-x: auto; max-width: 100%; }</style>
+
   <script src="../script.js" defer></script>
-  <title>GABRIEL ONG</title>
+  <title>Scrapy | Gabriel Ong Wiki</title>
   <link rel="shortcut icon" href="../asset/blob.ico" type="image/x-icon">
 </head>
 <body>
@@ -24,22 +36,18 @@
   <label for="dark-mode">
     <img id="infinityButton" src="../asset/roller.png" height="24" width="24"/>
   </label>
-
   <main>
     <article class="overallArticleTags">
-
+      
       <section class="note-header">
         <h2>Scrapy</h2>
-
         <dl>
           <dt>File size</dt>
-          <dd>6.0KB</dd>
-
+          <dd>9.2KB</dd>
           <dt>Lines of code</dt>
-          <dd>126</dd>
+          <dd>132</dd>
         </dl>
       </section>
-
       <section class="note-content">
         <h1><code>Scrapy</code></h1>
 <p>Complete webscraping toolkit.</p>
@@ -61,40 +69,40 @@
 </li>
 </ul>
 <h2>Installation</h2>
-<pre class="codehilite"><code class="language-console">$ pip install scrapy
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>scrapy
+</code></pre></div>
 
 <h2>Quickstart</h2>
 <p>Create a new scrapy project with the below command.</p>
-<pre class="codehilite"><code class="language-console">$ scrapy startproject myproject # creates a new Scrapy project in the current directory
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="gp">$ </span>scrapy<span class="w"> </span>startproject<span class="w"> </span>myproject<span class="w"> </span><span class="c1"># creates a new Scrapy project in the current directory</span>
+</code></pre></div>
 
 <p>A spider is a class that defines how to follow links through a website and extract data from its webpages. </p>
 <p>The below sample code creates a simple spider that scrapes quotes from the website <a href="http://quotes.toscrape.com/"><em>Quotes to Scrape</em></a>.</p>
-<pre class="codehilite"><code class="language-py">import scrapy
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">scrapy</span>
 
-class QuotesSpider(scrapy.Spider):
-    name = &quot;quotes&quot;
-    start_urls = [
-        'http://quotes.toscrape.com/',
-    ]
+<span class="k">class</span><span class="w"> </span><span class="nc">QuotesSpider</span><span class="p">(</span><span class="n">scrapy</span><span class="o">.</span><span class="n">Spider</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;quotes&quot;</span>
+    <span class="n">start_urls</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;http://quotes.toscrape.com/&#39;</span><span class="p">,</span>
+    <span class="p">]</span>
 
-    def parse(self, response):
-        for quote in response.css('div.quote'):
-            yield {
-                'text': quote.css('span.text::text').get(),
-                'author': quote.css('small.author::text').get(),
-                'tags': quote.css('div.tags a.tag::text').getall(),
-            }
+    <span class="k">def</span><span class="w"> </span><span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">quote</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;div.quote&#39;</span><span class="p">):</span>
+            <span class="k">yield</span> <span class="p">{</span>
+                <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="n">quote</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;span.text::text&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span>
+                <span class="s1">&#39;author&#39;</span><span class="p">:</span> <span class="n">quote</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;small.author::text&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span>
+                <span class="s1">&#39;tags&#39;</span><span class="p">:</span> <span class="n">quote</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;div.tags a.tag::text&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">getall</span><span class="p">(),</span>
+            <span class="p">}</span>
 
-        next_page = response.css('li.next a::attr(href)').get()
-        if next_page is not None:
-            yield response.follow(next_page, self.parse)
-</code></pre>
+        <span class="n">next_page</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;li.next a::attr(href)&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">next_page</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">response</span><span class="o">.</span><span class="n">follow</span><span class="p">(</span><span class="n">next_page</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">parse</span><span class="p">)</span>
+</code></pre></div>
 
 <p>You can then run your spider with the below command.</p>
-<pre class="codehilite"><code class="language-console">$ scrapy crawl quotes -o quotes.json # runs the spider and outputs the scraped data to a quotes.json file
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="gp">$ </span>scrapy<span class="w"> </span>crawl<span class="w"> </span>quotes<span class="w"> </span>-o<span class="w"> </span>quotes.json<span class="w"> </span><span class="c1"># runs the spider and outputs the scraped data to a quotes.json file</span>
+</code></pre></div>
 
 <p>You can further customize your spider within the <code>settings.py</code> file. </p>
 <h2>More on</h2>
@@ -115,12 +123,10 @@ class QuotesSpider(scrapy.Spider):
       </section>
 
     </article>
-
     <footer>
-      <p>© 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
+      <p>&copy; 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
     </footer>
   </main>
-
   <div class="wrapper"></div>
 </body>
 </html>

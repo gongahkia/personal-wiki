@@ -4,18 +4,30 @@
   <meta charset="utf-8">
   <meta name="description" content="Wiki Note: Reason - Gabriel Ong">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../style.css">
+  <meta name="author" content="Gabriel Ong">
+  <meta name="robots" content="index, follow">
+  
+  <meta property="og:title" content="Reason | Gabriel Ong Wiki">
+  <meta property="og:description" content="Wiki Note: Reason - Gabriel Ong">
+  <meta property="og:type" content="article">
+  
+  <meta property="og:image" content="https://gabrielongzm.com/asset/portrait/gong-2.png">
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Reason | Gabriel Ong Wiki">
+  <meta name="twitter:description" content="Wiki Note: Reason - Gabriel Ong">
+  
+  <link rel="stylesheet" href="../../style.css">
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntl-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
+  
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntlMono-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
-  <style>
-    .thin-space:after{content:"\2006"}
-    pre {
-      overflow-x: auto;
-      max-width: 100%;
-    }
-  </style>
+
+  <style>.thin-space:after{content:"\2006"}</style>
+  
+  <style>pre { overflow-x: auto; max-width: 100%; }</style>
+
   <script src="../script.js" defer></script>
-  <title>GABRIEL ONG</title>
+  <title>Reason | Gabriel Ong Wiki</title>
   <link rel="shortcut icon" href="../asset/blob.ico" type="image/x-icon">
 </head>
 <body>
@@ -24,209 +36,205 @@
   <label for="dark-mode">
     <img id="infinityButton" src="../asset/roller.png" height="24" width="24"/>
   </label>
-
   <main>
     <article class="overallArticleTags">
-
+      
       <section class="note-header">
         <h2>Reason</h2>
-
         <dl>
           <dt>File size</dt>
-          <dd>9.6KB</dd>
-
+          <dd>49.5KB</dd>
           <dt>Lines of code</dt>
-          <dd>249</dd>
+          <dd>255</dd>
         </dl>
       </section>
-
       <section class="note-content">
         <h1><code>Reason</code></h1>
 <p>Syntax and tooling extension on top of OCaml for reliable, maintainable software development with seamless JavaScript interoperability.</p>
 <h2>Comments</h2>
-<pre class="codehilite"><code class="language-re">// ----- COMMENT -----
+<div class="codehilite"><pre><span></span><code><span class="c1">// ----- COMMENT -----</span>
 
-// this is a single-line comment
+<span class="c1">// this is a single-line comment</span>
 
-/* this is a 
-multi-line 
-comment */
-</code></pre>
+<span class="o">/*</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">a</span><span class="w"> </span>
+<span class="n">multi</span><span class="o">-</span><span class="n">line</span><span class="w"> </span>
+<span class="n">comment</span><span class="w"> </span><span class="o">*/</span>
+</code></pre></div>
 
 <h2>Printing</h2>
-<pre class="codehilite"><code class="language-re">// ----- PRINTING -----
-    // Js.log() =&gt; receives a string argument that is then printed to the stdout and includes a newline automatically
-    // note that there is no built-in implementation to display a string to the stdout without including a newline
+<div class="codehilite"><pre><span></span><code><span class="c1">// ----- PRINTING -----</span>
+<span class="w">    </span><span class="c1">// Js.log() =&gt; receives a string argument that is then printed to the stdout and includes a newline automatically</span>
+<span class="w">    </span><span class="c1">// note that there is no built-in implementation to display a string to the stdout without including a newline</span>
 
-Js.log(&quot;this includes a newline by default&quot;); 
-</code></pre>
+<span class="nx">Js</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s">&quot;this includes a newline by default&quot;</span><span class="p">);</span><span class="w"> </span>
+</code></pre></div>
 
 <h2>Quickstart</h2>
-<pre class="codehilite"><code class="language-re">// ----- QUICKSTART -----
-    // semicolon-delimited functional language
-    // strongly, statically-typed with type inference for convenience
-    // high performance optimisation with strict type safety
-    // compiles to native bytecode or transpiles to JavaScript
-    // let =&gt; declares an immutable variable binding, note that Reason variables are immutable by default similar to Rust
-    // : =&gt; specifies the datatype of a given variable, providing type annotations for safety and expressiveness
-    // := =&gt; reassigns a new value to an existing mutable reference variable created with ref()
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="o">//</span><span class="w"> </span><span class="o">-----</span><span class="w"> </span><span class="n">QUICKSTART</span><span class="w"> </span><span class="o">-----</span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">semicolon</span><span class="o">-</span><span class="n">delimited</span><span class="w"> </span><span class="n">functional</span><span class="w"> </span><span class="n">language</span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">strongly</span><span class="p">,</span><span class="w"> </span><span class="n">statically</span><span class="o">-</span><span class="n">typed</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="n">inference</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">convenience</span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">high</span><span class="w"> </span><span class="n">performance</span><span class="w"> </span><span class="n">optimisation</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">strict</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="n">safety</span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">compiles</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">native</span><span class="w"> </span><span class="n">bytecode</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">transpiles</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">JavaScript</span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">let</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">declares</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">immutable</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="n">binding</span><span class="p">,</span><span class="w"> </span><span class="n">note</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">Reason</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">immutable</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">default</span><span class="w"> </span><span class="n">similar</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">Rust</span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">specifies</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">datatype</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">given</span><span class="w"> </span><span class="n">variable</span><span class="p">,</span><span class="w"> </span><span class="n">providing</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="n">annotations</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">safety</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">expressiveness</span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">reassigns</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">existing</span><span class="w"> </span><span class="n">mutable</span><span class="w"> </span><span class="n">reference</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="n">created</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">ref</span><span class="p">()</span>
+</code></pre></div>
 
 <h2>Types</h2>
-<pre class="codehilite"><code class="language-re">// ----- TYPE -----
-    // int =&gt; stores an integer number value
-    // float =&gt; stores a floating-point number value
-    // string =&gt; stores a string value declared within &quot;&quot; double quotation marks, note that characters are handled as single-character long strings
-    // bool =&gt; true, false
-    // Option =&gt; specifies that a given value could either be of the specified datatype (and thereby Some) or the special value None
-    // Some =&gt; represents the presence of a value
-    // None =&gt; represents the absence of a value, the equivalent of void and null in other programming languages
-    // ref() =&gt; creates a mutable reference variable whose datatype is also specified within the () round brackets, and whose value can then be reassigned with :=
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="o">//</span><span class="w"> </span><span class="o">-----</span><span class="w"> </span><span class="n">TYPE</span><span class="w"> </span><span class="o">-----</span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="nb nb-Type">int</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">stores</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">integer</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="n">value</span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">stores</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">floating</span><span class="o">-</span><span class="n">point</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="n">value</span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">stores</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="n">declared</span><span class="w"> </span><span class="n">within</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="n">double</span><span class="w"> </span><span class="n">quotation</span><span class="w"> </span><span class="n">marks</span><span class="p">,</span><span class="w"> </span><span class="n">note</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">characters</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">handled</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">single</span><span class="o">-</span><span class="n">character</span><span class="w"> </span><span class="n">long</span><span class="w"> </span><span class="n">strings</span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="nb nb-Type">bool</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="bp">true</span><span class="p">,</span><span class="w"> </span><span class="bp">false</span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">Option</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">specifies</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">given</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="n">could</span><span class="w"> </span><span class="n">either</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">specified</span><span class="w"> </span><span class="n">datatype</span><span class="w"> </span><span class="p">(</span><span class="ow">and</span><span class="w"> </span><span class="n">thereby</span><span class="w"> </span><span class="n">Some</span><span class="p">)</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">special</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="n">None</span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">Some</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">represents</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">presence</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">value</span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">None</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">represents</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">absence</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">equivalent</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nb nb-Type">null</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">other</span><span class="w"> </span><span class="n">programming</span><span class="w"> </span><span class="n">languages</span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">ref</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">creates</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">mutable</span><span class="w"> </span><span class="n">reference</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="n">whose</span><span class="w"> </span><span class="n">datatype</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">also</span><span class="w"> </span><span class="n">specified</span><span class="w"> </span><span class="n">within</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="nb">round</span><span class="w"> </span><span class="n">brackets</span><span class="p">,</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">whose</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">then</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">reassigned</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="p">:</span><span class="o">=</span>
+</code></pre></div>
 
 <h2>Operators</h2>
-<pre class="codehilite"><code class="language-re">// ----- OPERATOR -----
+<div class="codehilite"><pre><span></span><code><span class="c1">// ----- OPERATOR -----</span>
 
-// --- ARITHMETIC OPERATORS ---
+<span class="c1">// --- ARITHMETIC OPERATORS ---</span>
 
-+ // addition
-- // subtraction
-* // multiplication
-/ // division
-mod // modulo
+<span class="o">+</span><span class="w"> </span><span class="c1">// addition</span>
+<span class="o">-</span><span class="w"> </span><span class="c1">// subtraction</span>
+<span class="o">*</span><span class="w"> </span><span class="c1">// multiplication</span>
+<span class="o">/</span><span class="w"> </span><span class="c1">// division</span>
+<span class="nx">mod</span><span class="w"> </span><span class="c1">// modulo</span>
 
-// --- COMPARISON OPERATORS ---
+<span class="c1">// --- COMPARISON OPERATORS ---</span>
 
-== // thorough physical equality check for whether two objects have the same memory address
-= // partial equality check for value but not type or memory address
-!= // partial inequality check for value but not type or memory address
-&gt; // comparison operator
-&lt; // comparison operator
-&gt;= // comparison operator
-&lt;= // comparison operator
+<span class="o">==</span><span class="w"> </span><span class="c1">// thorough physical equality check for whether two objects have the same memory address</span>
+<span class="p">=</span><span class="w"> </span><span class="c1">// partial equality check for value but not type or memory address</span>
+<span class="o">!=</span><span class="w"> </span><span class="c1">// partial inequality check for value but not type or memory address</span>
+<span class="p">&gt;</span><span class="w"> </span><span class="c1">// comparison operator</span>
+<span class="p">&lt;</span><span class="w"> </span><span class="c1">// comparison operator</span>
+<span class="o">&gt;=</span><span class="w"> </span><span class="c1">// comparison operator</span>
+<span class="o">&lt;=</span><span class="w"> </span><span class="c1">// comparison operator</span>
 
-// --- LOGICAL OPERATORS ---
+<span class="c1">// --- LOGICAL OPERATORS ---</span>
 
-&amp;&amp; // logical and
-|| // logical or
-not() // logical not
-</code></pre>
+<span class="o">&amp;&amp;</span><span class="w"> </span><span class="c1">// logical and</span>
+<span class="o">||</span><span class="w"> </span><span class="c1">// logical or</span>
+<span class="k">not</span><span class="p">()</span><span class="w"> </span><span class="c1">// logical not</span>
+</code></pre></div>
 
 <h2>Control structures</h2>
-<pre class="codehilite"><code class="language-re">// ----- CONTROL STRUCTURE -----
+<div class="codehilite"><pre><span></span><code><span class="o">//</span><span class="w"> </span><span class="o">-----</span><span class="w"> </span><span class="n">CONTROL</span><span class="w"> </span><span class="n">STRUCTURE</span><span class="w"> </span><span class="o">-----</span>
 
-// --- CONDITIONALS ---
+<span class="o">//</span><span class="w"> </span><span class="o">---</span><span class="w"> </span><span class="n">CONDITIONALS</span><span class="w"> </span><span class="o">---</span>
 
-// IF ELSE IF ELSE
-    // observe that as a functional language, the results of a conditional construct as below can be direcly assigned to a variable
+<span class="o">//</span><span class="w"> </span><span class="n">IF</span><span class="w"> </span><span class="n">ELSE</span><span class="w"> </span><span class="n">IF</span><span class="w"> </span><span class="n">ELSE</span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">observe</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">functional</span><span class="w"> </span><span class="n">language</span><span class="p">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">results</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">conditional</span><span class="w"> </span><span class="n">construct</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">below</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">direcly</span><span class="w"> </span><span class="n">assigned</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">variable</span>
 
-let categorizeNumber = (n) =&gt; {
-    if (n &lt; 0) {
-        &quot;negative&quot;;
-    } else if (n == 0) {
-        &quot;zero&quot;;
-    } else if (n &gt; 0 &amp;&amp; n &lt; 10) {
-        &quot;positive and less than 10&quot;;
-    } else {
-        &quot;positive and 10 or greater&quot;;
-    }
-};
+<span class="n">let</span><span class="w"> </span><span class="n">categorizeNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">&quot;negative&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">&quot;zero&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">&quot;positive and less than 10&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">&quot;positive and 10 or greater&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
 
-// SWITCH | =&gt; _
-    // provides an advanced degree of pattern-matching, the equivalent of match case in Rust and select case in many other programming languages
-    // | =&gt; delimits each specified case and their corresponding execution code from the other cases
-    // _ =&gt; specifies the default fall-through case which executes if all other predicate case conditions fail to be met
-    // note that =&gt; specifies the relationship between a given predicate case condition and the execution code to be run if that case is met
+<span class="o">//</span><span class="w"> </span><span class="n">SWITCH</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_</span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">provides</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">advanced</span><span class="w"> </span><span class="n">degree</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">pattern</span><span class="o">-</span><span class="n">matching</span><span class="p">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">equivalent</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">case</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">Rust</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">select</span><span class="w"> </span><span class="n">case</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">many</span><span class="w"> </span><span class="n">other</span><span class="w"> </span><span class="n">programming</span><span class="w"> </span><span class="n">languages</span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">delimits</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="n">specified</span><span class="w"> </span><span class="n">case</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">their</span><span class="w"> </span><span class="n">corresponding</span><span class="w"> </span><span class="n">execution</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">other</span><span class="w"> </span><span class="n">cases</span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">_</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">specifies</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">default</span><span class="w"> </span><span class="n">fall</span><span class="o">-</span><span class="n">through</span><span class="w"> </span><span class="n">case</span><span class="w"> </span><span class="n">which</span><span class="w"> </span><span class="n">executes</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">all</span><span class="w"> </span><span class="n">other</span><span class="w"> </span><span class="n">predicate</span><span class="w"> </span><span class="n">case</span><span class="w"> </span><span class="n">conditions</span><span class="w"> </span><span class="n">fail</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">met</span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">note</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">specifies</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">relationship</span><span class="w"> </span><span class="n">between</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">given</span><span class="w"> </span><span class="n">predicate</span><span class="w"> </span><span class="n">case</span><span class="w"> </span><span class="n">condition</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">execution</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">run</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">case</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">met</span>
 
-let describeNumber = (x) =&gt; {
-    switch (x) {
-        | 0 =&gt; &quot;zero&quot;
-        | 1 =&gt; &quot;one&quot;
-        | _ =&gt; &quot;many&quot;
-    }
-};
+<span class="n">let</span><span class="w"> </span><span class="n">describeNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">switch</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="o">|</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s2">&quot;zero&quot;</span>
+<span class="w">        </span><span class="o">|</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s2">&quot;one&quot;</span>
+<span class="w">        </span><span class="o">|</span><span class="w"> </span><span class="n">_</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s2">&quot;many&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
 
-// --- LOOPS ---
+<span class="o">//</span><span class="w"> </span><span class="o">---</span><span class="w"> </span><span class="n">LOOPS</span><span class="w"> </span><span class="o">---</span>
 
-// WHILE 
-    // operates similarly to while loops in most other programming languages
+<span class="o">//</span><span class="w"> </span><span class="n">WHILE</span><span class="w"> </span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">operates</span><span class="w"> </span><span class="n">similarly</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="n">loops</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">most</span><span class="w"> </span><span class="n">other</span><span class="w"> </span><span class="n">programming</span><span class="w"> </span><span class="n">languages</span>
 
-let total = ref(0); 
-let i = ref(1); 
-while (!=(!i, 11)) { 
-    total := !total + !i; 
-    i := !i + 1;
-    Js.log(total);
-};
+<span class="n">let</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ref</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"> </span>
+<span class="n">let</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ref</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"> </span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!=</span><span class="p">(</span><span class="o">!</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="n">total</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="n">total</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">!</span><span class="n">i</span><span class="p">;</span><span class="w"> </span>
+<span class="w">    </span><span class="n">i</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Js</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">total</span><span class="p">);</span>
+<span class="p">};</span>
 
-// FOR IN
-    // allows for iteration and traversal over an iterable data structure
-    // operates similarly to for in loops in Python and foreach loops in PHP
+<span class="o">//</span><span class="w"> </span><span class="n">FOR</span><span class="w"> </span><span class="n">IN</span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">allows</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">iteration</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">traversal</span><span class="w"> </span><span class="n">over</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">iterable</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="n">structure</span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">operates</span><span class="w"> </span><span class="n">similarly</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">loops</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">Python</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">foreach</span><span class="w"> </span><span class="n">loops</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">PHP</span>
 
-for (i in 0 to 5) {
-    Js.log(i);
-};
-</code></pre>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Js</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div>
 
 <h2>Data structures</h2>
-<pre class="codehilite"><code class="language-re">// ----- DATA STRUCTURE -----
-    // list =&gt; fixed-size immutable singly-linked list traversed via recursion and enabling pattern-matching, declared within [] square brackets
-    // array =&gt; fixed-size mutable ordered collection of elements of the same datatype, the equivalent of lists in Python
-    // tuple =&gt; fixed-size immutable ordered collection of elements of multiple datatypes that affords powerful tuple destructuring, the equivalent of tuples in Python
-    // record =&gt; immutable user-defined collection of specified named fields and their corresponding datatypes, the equivalent of structs in Rust and Typescript, affording the modelling of representative data via type aliases
-    // variant =&gt; enumerated sun type that could be one of several user-defined types affording powerful pattern-matching, the equivalent of enums in Rust and Typescript
+<div class="codehilite"><pre><span></span><code><span class="o">//</span><span class="w"> </span><span class="o">-----</span><span class="w"> </span><span class="n">DATA</span><span class="w"> </span><span class="n">STRUCTURE</span><span class="w"> </span><span class="o">-----</span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">fixed</span><span class="o">-</span><span class="n">size</span><span class="w"> </span><span class="n">immutable</span><span class="w"> </span><span class="n">singly</span><span class="o">-</span><span class="n">linked</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="n">traversed</span><span class="w"> </span><span class="n">via</span><span class="w"> </span><span class="n">recursion</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">enabling</span><span class="w"> </span><span class="n">pattern</span><span class="o">-</span><span class="n">matching</span><span class="p">,</span><span class="w"> </span><span class="n">declared</span><span class="w"> </span><span class="n">within</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="n">square</span><span class="w"> </span><span class="n">brackets</span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">array</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">fixed</span><span class="o">-</span><span class="n">size</span><span class="w"> </span><span class="n">mutable</span><span class="w"> </span><span class="n">ordered</span><span class="w"> </span><span class="n">collection</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">elements</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">same</span><span class="w"> </span><span class="n">datatype</span><span class="p">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">equivalent</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">lists</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">Python</span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">tuple</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">fixed</span><span class="o">-</span><span class="n">size</span><span class="w"> </span><span class="n">immutable</span><span class="w"> </span><span class="n">ordered</span><span class="w"> </span><span class="n">collection</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">elements</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">multiple</span><span class="w"> </span><span class="n">datatypes</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">affords</span><span class="w"> </span><span class="n">powerful</span><span class="w"> </span><span class="n">tuple</span><span class="w"> </span><span class="n">destructuring</span><span class="p">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">equivalent</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">tuples</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">Python</span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">record</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">immutable</span><span class="w"> </span><span class="n">user</span><span class="o">-</span><span class="n">defined</span><span class="w"> </span><span class="n">collection</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">specified</span><span class="w"> </span><span class="n">named</span><span class="w"> </span><span class="n">fields</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">their</span><span class="w"> </span><span class="n">corresponding</span><span class="w"> </span><span class="n">datatypes</span><span class="p">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">equivalent</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">structs</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">Rust</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">Typescript</span><span class="p">,</span><span class="w"> </span><span class="n">affording</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">modelling</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">representative</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="n">via</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="n">aliases</span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">variant</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">enumerated</span><span class="w"> </span><span class="n">sun</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">could</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">one</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">several</span><span class="w"> </span><span class="n">user</span><span class="o">-</span><span class="n">defined</span><span class="w"> </span><span class="n">types</span><span class="w"> </span><span class="n">affording</span><span class="w"> </span><span class="n">powerful</span><span class="w"> </span><span class="n">pattern</span><span class="o">-</span><span class="n">matching</span><span class="p">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">equivalent</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">enums</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">Rust</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">Typescript</span>
 
-let anExampleList = [1, 2, 3, 4];
+<span class="n">let</span><span class="w"> </span><span class="n">anExampleList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">];</span>
 
-let anExampleArray = [|1, 2, 3, 4|];
+<span class="n">let</span><span class="w"> </span><span class="n">anExampleArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="o">|</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="o">|</span><span class="p">];</span>
 
-let anExampleTuple = (1, &quot;Hello&quot;, true);
-let (x, y, z) = anExampleTuple; // tuple destructuring
+<span class="n">let</span><span class="w"> </span><span class="n">anExampleTuple</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="bp">true</span><span class="p">);</span>
+<span class="n">let</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">anExampleTuple</span><span class="p">;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">tuple</span><span class="w"> </span><span class="n">destructuring</span>
 
-type anExampleRecordOfAPerson = {
-    name: string,
-    age: int,
-};
+<span class="n">type</span><span class="w"> </span><span class="n">anExampleRecordOfAPerson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">string</span><span class="p">,</span>
+<span class="w">    </span><span class="n">age</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">int</span><span class="p">,</span>
+<span class="p">};</span>
 
-type threeDimensionalCoordinate = {
-    X: int,
-    Y: int,
-    Z: int,
-};
+<span class="n">type</span><span class="w"> </span><span class="n">threeDimensionalCoordinate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">X</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">int</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Y</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">int</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Z</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">int</span><span class="p">,</span>
+<span class="p">};</span>
 
-type anExampleVariant =
-    | Circle(float)
-    | Rectangle(float, float);
+<span class="n">type</span><span class="w"> </span><span class="n">anExampleVariant</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">Circle</span><span class="p">(</span><span class="nb nb-Type">float</span><span class="p">)</span>
+<span class="w">    </span><span class="o">|</span><span class="w"> </span><span class="n">Rectangle</span><span class="p">(</span><span class="nb nb-Type">float</span><span class="p">,</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="p">);</span>
 
-let area = (s) =&gt; {
-    switch (s) {
-        | Circle(radius) =&gt; 3.14 *. radius *. radius
-        | Rectangle(width, height) =&gt; width *. height
-    }
-};
-</code></pre>
+<span class="n">let</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">switch</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="o">|</span><span class="w"> </span><span class="n">Circle</span><span class="p">(</span><span class="n">radius</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mf">3.14</span><span class="w"> </span><span class="o">*.</span><span class="w"> </span><span class="n">radius</span><span class="w"> </span><span class="o">*.</span><span class="w"> </span><span class="n">radius</span>
+<span class="w">        </span><span class="o">|</span><span class="w"> </span><span class="n">Rectangle</span><span class="p">(</span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">*.</span><span class="w"> </span><span class="n">height</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
 
 <h2>Functions</h2>
-<pre class="codehilite"><code class="language-re">// ----- FUNCTION -----
-    // functions are first-class citizens, allowing for the creation of user-defined higher-order functions
-    // while the syntax for creation of named and anonymous functions appear to be exactly the same as below, their use cases distinguish them from each other
-    // note that Reason inherits from functional programming paradigms, featuring implicit return of the last expression within the function
-    // let &lt;functionName&gt; = (&lt;functionParameter(s)&gt;) =&gt; &lt;functionDefinitionBody&gt; =&gt; definition and declaration of a named function, which are then called by their function name
-    // let &lt;anonymousFunctionVariableIdentifier&gt; = (&lt;functionParameter(s)&gt;) =&gt; &lt;functionDefinitionBody&gt; =&gt; definition of an anonymous function, which is then assigned to a named variable identifier
-        // also observe that anonymous functions can also be called directly in the same line as their definition
+<div class="codehilite"><pre><span></span><code><span class="c1">// ----- FUNCTION -----</span>
+<span class="w">    </span><span class="c1">// functions are first-class citizens, allowing for the creation of user-defined higher-order functions</span>
+<span class="w">    </span><span class="c1">// while the syntax for creation of named and anonymous functions appear to be exactly the same as below, their use cases distinguish them from each other</span>
+<span class="w">    </span><span class="c1">// note that Reason inherits from functional programming paradigms, featuring implicit return of the last expression within the function</span>
+<span class="w">    </span><span class="c1">// let &lt;functionName&gt; = (&lt;functionParameter(s)&gt;) =&gt; &lt;functionDefinitionBody&gt; =&gt; definition and declaration of a named function, which are then called by their function name</span>
+<span class="w">    </span><span class="c1">// let &lt;anonymousFunctionVariableIdentifier&gt; = (&lt;functionParameter(s)&gt;) =&gt; &lt;functionDefinitionBody&gt; =&gt; definition of an anonymous function, which is then assigned to a named variable identifier</span>
+<span class="w">        </span><span class="c1">// also observe that anonymous functions can also be called directly in the same line as their definition</span>
 
-let add = (x, y) =&gt; x + y; // definition of a named function
-let result1 = add(2, 3); // calling a named function
-let result2 = add(3, 4); // calling a named function again
-let result3 = add(4, 5); // calling a named function the last time
+<span class="kd">let</span><span class="w"> </span><span class="nx">add</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">y</span><span class="p">;</span><span class="w"> </span><span class="c1">// definition of a named function</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">result1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"> </span><span class="c1">// calling a named function</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">result2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">add</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"> </span><span class="c1">// calling a named function again</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">result3</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">add</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span><span class="w"> </span><span class="c1">// calling a named function the last time</span>
 
-let subtract = (x, y) =&gt; x - y; // definition of an anonymous function
-let result4 = subtract(5, 3); // calling an anonymous function
-let resultDirect = ((x, y) =&gt; x * y)(4, 5); // anonymous function is declared and called in the same line
+<span class="kd">let</span><span class="w"> </span><span class="nx">subtract</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">y</span><span class="p">;</span><span class="w"> </span><span class="c1">// definition of an anonymous function</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">result4</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">subtract</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"> </span><span class="c1">// calling an anonymous function</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">resultDirect</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">((</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">y</span><span class="p">)(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span><span class="w"> </span><span class="c1">// anonymous function is declared and called in the same line</span>
 
-let applyFunction = (f, x) =&gt; f(x); // definition of a higher-order function
-applyFunction((x) =&gt; x * x, 5); // calling a higher-order function
-</code></pre>
+<span class="kd">let</span><span class="w"> </span><span class="nx">applyFunction</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="nx">f</span><span class="p">,</span><span class="w"> </span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="nx">f</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span><span class="w"> </span><span class="c1">// definition of a higher-order function</span>
+<span class="nx">applyFunction</span><span class="p">((</span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span><span class="w"> </span><span class="c1">// calling a higher-order function</span>
+</code></pre></div>
 
 <h2>More on</h2>
 <ul>
@@ -238,12 +246,10 @@ applyFunction((x) =&gt; x * x, 5); // calling a higher-order function
       </section>
 
     </article>
-
     <footer>
-      <p>© 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
+      <p>&copy; 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
     </footer>
   </main>
-
   <div class="wrapper"></div>
 </body>
 </html>

@@ -4,18 +4,30 @@
   <meta charset="utf-8">
   <meta name="description" content="Wiki Note: Tailwind CSS - Gabriel Ong">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../style.css">
+  <meta name="author" content="Gabriel Ong">
+  <meta name="robots" content="index, follow">
+  
+  <meta property="og:title" content="Tailwind CSS | Gabriel Ong Wiki">
+  <meta property="og:description" content="Wiki Note: Tailwind CSS - Gabriel Ong">
+  <meta property="og:type" content="article">
+  
+  <meta property="og:image" content="https://gabrielongzm.com/asset/portrait/gong-2.png">
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Tailwind CSS | Gabriel Ong Wiki">
+  <meta name="twitter:description" content="Wiki Note: Tailwind CSS - Gabriel Ong">
+  
+  <link rel="stylesheet" href="../../style.css">
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntl-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
+  
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntlMono-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
-  <style>
-    .thin-space:after{content:"\2006"}
-    pre {
-      overflow-x: auto;
-      max-width: 100%;
-    }
-  </style>
+
+  <style>.thin-space:after{content:"\2006"}</style>
+  
+  <style>pre { overflow-x: auto; max-width: 100%; }</style>
+
   <script src="../script.js" defer></script>
-  <title>GABRIEL ONG</title>
+  <title>Tailwind CSS | Gabriel Ong Wiki</title>
   <link rel="shortcut icon" href="../asset/blob.ico" type="image/x-icon">
 </head>
 <body>
@@ -24,22 +36,18 @@
   <label for="dark-mode">
     <img id="infinityButton" src="../asset/roller.png" height="24" width="24"/>
   </label>
-
   <main>
     <article class="overallArticleTags">
-
+      
       <section class="note-header">
         <h2>Tailwind CSS</h2>
-
         <dl>
           <dt>File size</dt>
-          <dd>7.4KB</dd>
-
+          <dd>10.9KB</dd>
           <dt>Lines of code</dt>
-          <dd>174</dd>
+          <dd>180</dd>
         </dl>
       </section>
-
       <section class="note-content">
         <h1><code>Tailwind CSS</code></h1>
 <p>Powerful inline styling with CSS classes.</p>
@@ -52,67 +60,67 @@
 <li>stay within your HTML file throughout production</li>
 </ul>
 <h2>Example</h2>
-<pre class="codehilite"><code class="language-html">&lt;!-- --- EXAMPLE --- --&gt;
-  &lt;!-- each use of inline Tailwind CSS has annotations underneath --&gt;
+<div class="codehilite"><pre><span></span><code><span class="cm">&lt;!-- --- EXAMPLE --- --&gt;</span>
+  <span class="cm">&lt;!-- each use of inline Tailwind CSS has annotations underneath --&gt;</span>
 
-&lt;!doctype html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;UTF-8&quot;&gt;
-  &lt;title&gt;watermelon Tailwind CSS pineapple&lt;/title&gt;
-  &lt;script src=&quot;https://cdn.tailwindcss.com&quot;&gt;&lt;/script&gt; &lt;!-- include Tailwind CSS play CDN for quick development, not for final production --&gt;
-&lt;/head&gt;
+<span class="cp">&lt;!doctype html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>watermelon Tailwind CSS pineapple<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.tailwindcss.com&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span> <span class="cm">&lt;!-- include Tailwind CSS play CDN for quick development, not for final production --&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 
-&lt;body class=&quot;bg-gray-100&quot;&gt; 
-&lt;!-- bg-gray-100 =&gt; sets the background color of the body to a light gray --&gt;
+<span class="p">&lt;</span><span class="nt">body</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;bg-gray-100&quot;</span><span class="p">&gt;</span> 
+<span class="cm">&lt;!-- bg-gray-100 =&gt; sets the background color of the body to a light gray --&gt;</span>
 
-  &lt;header class=&quot;bg-blue-500 text-white p-4&quot;&gt;
-  &lt;!-- bg-blue-500 =&gt; sets the background color of the header to a medium blue --&gt;
-  &lt;!-- text-white =&gt; sets the text color to white --&gt;
-  &lt;!-- p-4 =&gt; adds padding of 1rem on all sides --&gt;
+  <span class="p">&lt;</span><span class="nt">header</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;bg-blue-500 text-white p-4&quot;</span><span class="p">&gt;</span>
+  <span class="cm">&lt;!-- bg-blue-500 =&gt; sets the background color of the header to a medium blue --&gt;</span>
+  <span class="cm">&lt;!-- text-white =&gt; sets the text color to white --&gt;</span>
+  <span class="cm">&lt;!-- p-4 =&gt; adds padding of 1rem on all sides --&gt;</span>
 
-    &lt;h1 class=&quot;text-3xl font-bold&quot;&gt;Welcome to Tailwind CSS&lt;/h1&gt;
-    &lt;!-- text-3xl =&gt; sets the font size to 1.875rem --&gt;
-    &lt;!-- font-bold =&gt; sets the font weight to bold --&gt;
+    <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-3xl font-bold&quot;</span><span class="p">&gt;</span>Welcome to Tailwind CSS<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="cm">&lt;!-- text-3xl =&gt; sets the font size to 1.875rem --&gt;</span>
+    <span class="cm">&lt;!-- font-bold =&gt; sets the font weight to bold --&gt;</span>
 
-  &lt;/header&gt;
+  <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
 
-  &lt;div class=&quot;grid grid-cols-1 md:grid-cols-2 gap-4&quot;&gt;
-  &lt;!-- grid =&gt; creates a CSS grid container --&gt;
-  &lt;!-- grid-cols-1 =&gt; specifies the creation of one column for mobile devices --&gt;
-  &lt;!-- md:grid-cols-2 =&gt; specifies the creation of two columns for medium-sized screens and up --&gt;
-  &lt;!-- gap-4 =&gt; adds a gap of 1rem between grid items --&gt;
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;grid grid-cols-1 md:grid-cols-2 gap-4&quot;</span><span class="p">&gt;</span>
+  <span class="cm">&lt;!-- grid =&gt; creates a CSS grid container --&gt;</span>
+  <span class="cm">&lt;!-- grid-cols-1 =&gt; specifies the creation of one column for mobile devices --&gt;</span>
+  <span class="cm">&lt;!-- md:grid-cols-2 =&gt; specifies the creation of two columns for medium-sized screens and up --&gt;</span>
+  <span class="cm">&lt;!-- gap-4 =&gt; adds a gap of 1rem between grid items --&gt;</span>
 
-    &lt;div class=&quot;bg-green-200 p-4 rounded&quot;&gt;
-    &lt;!-- bg-green-200 =&gt; sets a light green background color --&gt;
-    &lt;!-- p-4 =&gt; adds padding of 1rem on all sides --&gt;
-    &lt;!-- rounded =&gt; applies a small border radius to the HTML element --&gt;
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;bg-green-200 p-4 rounded&quot;</span><span class="p">&gt;</span>
+    <span class="cm">&lt;!-- bg-green-200 =&gt; sets a light green background color --&gt;</span>
+    <span class="cm">&lt;!-- p-4 =&gt; adds padding of 1rem on all sides --&gt;</span>
+    <span class="cm">&lt;!-- rounded =&gt; applies a small border radius to the HTML element --&gt;</span>
 
-      &lt;p class=&quot;text-green-800 font-medium&quot;&gt;Easy to learn&lt;/p&gt;
-      &lt;!-- text-green-800 =&gt; sets the text color to a dark green --&gt;
-      &lt;!-- font-medium =&gt; sets the font weight to medium --&gt;
+      <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-green-800 font-medium&quot;</span><span class="p">&gt;</span>Easy to learn<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="cm">&lt;!-- text-green-800 =&gt; sets the text color to a dark green --&gt;</span>
+      <span class="cm">&lt;!-- font-medium =&gt; sets the font weight to medium --&gt;</span>
 
-    &lt;/div&gt;
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 
-  &lt;/div&gt;
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 
-  &lt;button class=&quot;mt-6 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300&quot;&gt;
-  &lt;!-- mt-6 =&gt; adds a top margin of 1.5rem --&gt;
-  &lt;!-- bg-blue-500 =&gt; sets the background color to medium blue --&gt;
-  &lt;!-- hover:bg-blue-600 =&gt; changes the background color to a darker blue on hover --&gt;
-  &lt;!-- text-white =&gt; sets the text color to white --&gt;
-  &lt;!-- font-bold =&gt; sets the font weight to bold --&gt;
-  &lt;!-- py-2 =&gt; adds vertical padding of 0.5rem --&gt;
-  &lt;!-- px-4 =&gt; adds horizontal padding of 1rem --&gt;
-  &lt;!-- rounded =&gt; applies a small border radius --&gt;
-  &lt;!-- transition duration-300 =&gt; adds a smooth transition effect over 300ms --&gt;
+  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mt-6 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300&quot;</span><span class="p">&gt;</span>
+  <span class="cm">&lt;!-- mt-6 =&gt; adds a top margin of 1.5rem --&gt;</span>
+  <span class="cm">&lt;!-- bg-blue-500 =&gt; sets the background color to medium blue --&gt;</span>
+  <span class="cm">&lt;!-- hover:bg-blue-600 =&gt; changes the background color to a darker blue on hover --&gt;</span>
+  <span class="cm">&lt;!-- text-white =&gt; sets the text color to white --&gt;</span>
+  <span class="cm">&lt;!-- font-bold =&gt; sets the font weight to bold --&gt;</span>
+  <span class="cm">&lt;!-- py-2 =&gt; adds vertical padding of 0.5rem --&gt;</span>
+  <span class="cm">&lt;!-- px-4 =&gt; adds horizontal padding of 1rem --&gt;</span>
+  <span class="cm">&lt;!-- rounded =&gt; applies a small border radius --&gt;</span>
+  <span class="cm">&lt;!-- transition duration-300 =&gt; adds a smooth transition effect over 300ms --&gt;</span>
 
     Learn More
-  &lt;/button&gt;
+  <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
 
 <h2>More on</h2>
 <ul>
@@ -163,12 +171,10 @@
       </section>
 
     </article>
-
     <footer>
-      <p>© 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
+      <p>&copy; 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
     </footer>
   </main>
-
   <div class="wrapper"></div>
 </body>
 </html>

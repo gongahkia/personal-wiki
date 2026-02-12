@@ -4,18 +4,30 @@
   <meta charset="utf-8">
   <meta name="description" content="Wiki Note: Markdown - Gabriel Ong">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../style.css">
+  <meta name="author" content="Gabriel Ong">
+  <meta name="robots" content="index, follow">
+  
+  <meta property="og:title" content="Markdown | Gabriel Ong Wiki">
+  <meta property="og:description" content="Wiki Note: Markdown - Gabriel Ong">
+  <meta property="og:type" content="article">
+  
+  <meta property="og:image" content="https://gabrielongzm.com/asset/portrait/gong-2.png">
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Markdown | Gabriel Ong Wiki">
+  <meta name="twitter:description" content="Wiki Note: Markdown - Gabriel Ong">
+  
+  <link rel="stylesheet" href="../../style.css">
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntl-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
+  
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntlMono-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
-  <style>
-    .thin-space:after{content:"\2006"}
-    pre {
-      overflow-x: auto;
-      max-width: 100%;
-    }
-  </style>
+
+  <style>.thin-space:after{content:"\2006"}</style>
+  
+  <style>pre { overflow-x: auto; max-width: 100%; }</style>
+
   <script src="../script.js" defer></script>
-  <title>GABRIEL ONG</title>
+  <title>Markdown | Gabriel Ong Wiki</title>
   <link rel="shortcut icon" href="../asset/blob.ico" type="image/x-icon">
 </head>
 <body>
@@ -24,46 +36,42 @@
   <label for="dark-mode">
     <img id="infinityButton" src="../asset/roller.png" height="24" width="24"/>
   </label>
-
   <main>
     <article class="overallArticleTags">
-
+      
       <section class="note-header">
         <h2>Markdown</h2>
-
         <dl>
           <dt>File size</dt>
-          <dd>6.9KB</dd>
-
+          <dd>9.6KB</dd>
           <dt>Lines of code</dt>
-          <dd>224</dd>
+          <dd>230</dd>
         </dl>
       </section>
-
       <section class="note-content">
         <h1><code>Markdown</code></h1>
 <p>Markdown is an easy-to-read markup format with various downstream targets available for transpilation.</p>
 <h2>Quickstart</h2>
 <p>Different markdown flavours will have their own unique syntax quirks. </p>
 <p>The below is the <strong>shared syntax</strong> that most flavours support.</p>
-<pre class="codehilite"><code class="language-md">----- HEADER -----
+<div class="codehilite"><pre><span></span><code>----- HEADER -----
 
-# this is a header equivalent to &lt;h1&gt;
-## this is a header equivalent to &lt;h2&gt;
-### this is a header equivalent to &lt;h3&gt;
-#### this is a header equivalent to &lt;h4&gt;
-##### this is a header equivalent to &lt;h5&gt;
-###### this is a header equivalent to &lt;h6&gt;
+<span class="gh"># this is a header equivalent to &lt;h1&gt;</span>
+<span class="gu">## this is a header equivalent to &lt;h2&gt;</span>
+<span class="gu">### this is a header equivalent to &lt;h3&gt;</span>
+<span class="gu">#### this is a header equivalent to &lt;h4&gt;</span>
+<span class="gu">##### this is a header equivalent to &lt;h5&gt;</span>
+<span class="gu">###### this is a header equivalent to &lt;h6&gt;</span>
 
 ----- ITALIC -----
 
-*this is italicised text*
-_this is also italicised text_
+<span class="ge">*this is italicised text*</span>
+<span class="ge">_this is also italicised text_</span>
 
 ----- BOLD -----
 
-**this is bolded text**
-__this is also bolded text__
+<span class="gs">**this is bolded text**</span>
+<span class="gs">__this is also bolded text__</span>
 
 ----- ITALIC AND BOLD -----
 
@@ -72,7 +80,7 @@ ___this is also italicised and bolded text___
 
 ----- BLOCK QUOTE -----
 
-&gt; This is a block quote.
+<span class="k">&gt; </span><span class="ge">This is a block quote.</span>
 &gt;&gt; This is an indented block quote.
 
 ----- PARAGRAPH -----
@@ -83,48 +91,48 @@ Markdown paragraphs are just adjacent lines of text seperated by one or more bla
 
 --- UNORDERED LIST ---
 
-* this is an unordered list item
-* this is also an unordered list item
-* this is a final unordered list item
+<span class="k">*</span><span class="w"> </span>this is an unordered list item
+<span class="k">*</span><span class="w"> </span>this is also an unordered list item
+<span class="k">*</span><span class="w"> </span>this is a final unordered list item
 
 + this synatx works too
 + look at me!
 + wow!
 
-- as does this syntax
-- with these dashes
-- to create an unordered list
+<span class="k">-</span><span class="w"> </span>as does this syntax
+<span class="k">-</span><span class="w"> </span>with these dashes
+<span class="k">-</span><span class="w"> </span>to create an unordered list
 
 --- ORDERED LIST ---
 
-1. there is only one way to 
-2. create an
-3. ordered list
-4. however
-5. and its with numbers like this
-6. note that 
-    * sublists like this are 
-    * also valid
+<span class="k">1.</span> there is only one way to 
+<span class="k">2.</span> create an
+<span class="k">3.</span> ordered list
+<span class="k">4.</span> however
+<span class="k">5.</span> and its with numbers like this
+<span class="k">6.</span> note that 
+<span class="w">    </span><span class="k">*</span><span class="w"> </span>sublists like this are 
+<span class="w">    </span><span class="k">*</span><span class="w"> </span>also valid
 
 --- TASK LIST ---
 
-- [ ] task lists are also
-- [ ] created as shown here
-- [x] this checkbox is ticked
-- [ ] and all checkboxes will render as HTML checkboxes
-- [ ] in your markdown document
+<span class="k">- [ ]</span> task lists are also
+<span class="k">- [ ]</span> created as shown here
+<span class="k">- [x]</span> this checkbox is ticked
+<span class="k">- [ ]</span> and all checkboxes will render as HTML checkboxes
+<span class="k">- [ ]</span> in your markdown document
 
 ----- CODE BLOCK ----- 
 
-`Smaller code blocks` can be integrated in plain text with a single backtick ` `.
+<span class="sb">`Smaller code blocks`</span> can be integrated in plain text with a single backtick <span class="sb">` `</span>.
 
 Larger code blocks can also be defined as shown with triple backticks ``` ``` to provide syntax-specific highlighting for the code block.
 
-```ruby
-def foobar
-  puts &quot;as below&quot;
-end
-```
+<span class="sb">```ruby</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">foobar</span>
+<span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;as below&quot;</span>
+<span class="k">end</span>
+<span class="sb">```</span>
 
 ----- HORIZONTAL RULE ----- 
 
@@ -132,59 +140,59 @@ Create a &lt;hr/&gt; element with ---.
 
 ----- LINK -----
 
-[This is the text associated with the link.](http://heresTheLink.com)
-[As well as supporting relative paths.](README.md)
-[Alongside supporting reference style links.](link1)
-[And finally header links within the same file.](#quickstart)
+[<span class="nt">This is the text associated with the link.</span>](<span class="na">http://heresTheLink.com</span>)
+[<span class="nt">As well as supporting relative paths.</span>](<span class="na">README.md</span>)
+[<span class="nt">Alongside supporting reference style links.</span>](<span class="na">link1</span>)
+[<span class="nt">And finally header links within the same file.</span>](<span class="na">#quickstart</span>)
 
-[link1]: http://heresAReferenceStyleLink.com
+[<span class="nl">link1</span>]: <span class="na">http://heresAReferenceStyleLink.com</span>
 
 ----- IMAGE -----
 
-![This is an image](http://heresTheImageUrl.com)
-![Images can also be relative paths](asset/hypotheticalImage.jpg)
-</code></pre>
+![<span class="nt">This is an image</span>](<span class="na">http://heresTheImageUrl.com</span>)
+![<span class="nt">Images can also be relative paths</span>](<span class="na">asset/hypotheticalImage.jpg</span>)
+</code></pre></div>
 
 <h2>Github flavoured markdown</h2>
 <p>The below two features have been implemented in <a href="https://github.github.com/gfm/">GFM</a>.</p>
 <h3>Mathematical expressions</h3>
 <p>Github flavoured markdown supports <a href="https://en.wikibooks.org/wiki/LaTeX/Mathematics">LaTeX formatted mathematical expressions</a>.</p>
-<pre class="codehilite"><code class="language-md">--- MATHEMATICAL EXPRESSION ---
+<div class="codehilite"><pre><span></span><code>--- MATHEMATICAL EXPRESSION ---
 
-Mathematical expressions are rendered inline with `$` characters.
+Mathematical expressions are rendered inline with <span class="sb">`$`</span> characters.
 
 $\sqrt{3x-1}+(1+x)^2$
 
-Block mathematical expressions (automatically centralised) are rendered with `$$` characters.
+Block mathematical expressions (automatically centralised) are rendered with <span class="sb">`$$`</span> characters.
 
-$$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$
+$$\left( \sum_{k=1}^n a<span class="ge">_k b_</span>k \right)^2 \leq \left( \sum_{k=1}^n a<span class="ge">_k^2 \right) \left( \sum_</span>{k=1}^n b_k^2 \right)$$
 
-Block mathematical expressions can also be rendered with `math` as a code block (the below will render the same as the above).
+Block mathematical expressions can also be rendered with <span class="sb">`math`</span> as a code block (the below will render the same as the above).
 
-```math
-\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
-```
-</code></pre>
+<span class="sb">```math</span>
+<span class="s">\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)</span>
+<span class="sb">```</span>
+</code></pre></div>
 
 <h3>Alerts</h3>
 <p>Github flavoured markdown also supports alerts to signpost significant content.</p>
-<pre class="codehilite"><code class="language-md">----- ALERT -----
+<div class="codehilite"><pre><span></span><code>----- ALERT -----
 
-&gt; [!NOTE]
-&gt; blue circle containing exclamation mark
+<span class="k">&gt; </span><span class="ge">[!NOTE]</span>
+<span class="k">&gt; </span><span class="ge">blue circle containing exclamation mark</span>
 
-&gt; [!TIP]
-&gt; green lightbulb
+<span class="k">&gt; </span><span class="ge">[!TIP]</span>
+<span class="k">&gt; </span><span class="ge">green lightbulb</span>
 
-&gt; [!IMPORTANT]
-&gt; purple speech bubble containing exclamation mark
+<span class="k">&gt; </span><span class="ge">[!IMPORTANT]</span>
+<span class="k">&gt; </span><span class="ge">purple speech bubble containing exclamation mark</span>
 
-&gt; [!WARNING]
-&gt; yellow triangle containing exclamation mark
+<span class="k">&gt; </span><span class="ge">[!WARNING]</span>
+<span class="k">&gt; </span><span class="ge">yellow triangle containing exclamation mark</span>
 
-&gt; [!CAUTION]
-&gt; red octagon containing exclamation mark
-</code></pre>
+<span class="k">&gt; </span><span class="ge">[!CAUTION]</span>
+<span class="k">&gt; </span><span class="ge">red octagon containing exclamation mark</span>
+</code></pre></div>
 
 <p>Rendered, they look like this.</p>
 <blockquote>
@@ -213,12 +221,10 @@ red octagon containing exclamation mark</p>
       </section>
 
     </article>
-
     <footer>
-      <p>© 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
+      <p>&copy; 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
     </footer>
   </main>
-
   <div class="wrapper"></div>
 </body>
 </html>

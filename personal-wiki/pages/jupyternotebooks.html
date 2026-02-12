@@ -4,18 +4,30 @@
   <meta charset="utf-8">
   <meta name="description" content="Wiki Note: Jupyter notebooks - Gabriel Ong">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../style.css">
+  <meta name="author" content="Gabriel Ong">
+  <meta name="robots" content="index, follow">
+  
+  <meta property="og:title" content="Jupyter notebooks | Gabriel Ong Wiki">
+  <meta property="og:description" content="Wiki Note: Jupyter notebooks - Gabriel Ong">
+  <meta property="og:type" content="article">
+  
+  <meta property="og:image" content="https://gabrielongzm.com/asset/portrait/gong-2.png">
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Jupyter notebooks | Gabriel Ong Wiki">
+  <meta name="twitter:description" content="Wiki Note: Jupyter notebooks - Gabriel Ong">
+  
+  <link rel="stylesheet" href="../../style.css">
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntl-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
+  
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntlMono-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
-  <style>
-    .thin-space:after{content:"\2006"}
-    pre {
-      overflow-x: auto;
-      max-width: 100%;
-    }
-  </style>
+
+  <style>.thin-space:after{content:"\2006"}</style>
+  
+  <style>pre { overflow-x: auto; max-width: 100%; }</style>
+
   <script src="../script.js" defer></script>
-  <title>GABRIEL ONG</title>
+  <title>Jupyter notebooks | Gabriel Ong Wiki</title>
   <link rel="shortcut icon" href="../asset/blob.ico" type="image/x-icon">
 </head>
 <body>
@@ -24,22 +36,18 @@
   <label for="dark-mode">
     <img id="infinityButton" src="../asset/roller.png" height="24" width="24"/>
   </label>
-
   <main>
     <article class="overallArticleTags">
-
+      
       <section class="note-header">
         <h2>Jupyter notebooks</h2>
-
         <dl>
           <dt>File size</dt>
-          <dd>3.6KB</dd>
-
+          <dd>6.7KB</dd>
           <dt>Lines of code</dt>
-          <dd>106</dd>
+          <dd>112</dd>
         </dl>
       </section>
-
       <section class="note-content">
         <h1><code>Jupyter notebooks</code></h1>
 <p>Learn and run Python anywhere.</p>
@@ -52,36 +60,36 @@
 <li>Jupyter also supports other programming languages through various kernels</li>
 </ul>
 <h2>Installation</h2>
-<pre class="codehilite"><code class="language-console">$ pip install notebook # installs Jupyter notebook 
-$ jupyter notebook # starts the notebook server locally
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>notebook<span class="w"> </span><span class="c1"># installs Jupyter notebook </span>
+<span class="gp">$ </span>jupyter<span class="w"> </span>notebook<span class="w"> </span><span class="c1"># starts the notebook server locally</span>
+</code></pre></div>
 
 <h2>Quickstart</h2>
 <p>Jupyter notebooks can run simple Python code snippets</p>
-<pre class="codehilite"><code class="language-py">x = 10
-y = 20
-example_equation = x + y
-example_name = &quot;keshi&quot;
+<div class="codehilite"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">example_equation</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="n">example_name</span> <span class="o">=</span> <span class="s2">&quot;keshi&quot;</span>
 
-print(&quot;testing out my Jupyter notebook!&quot;)
-print(f&quot;my name is {example_name} and i calculate the total sum of x and y to be {example_equation}&quot;)
-</code></pre>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;testing out my Jupyter notebook!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;my name is </span><span class="si">{</span><span class="n">example_name</span><span class="si">}</span><span class="s2"> and i calculate the total sum of x and y to be </span><span class="si">{</span><span class="n">example_equation</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
 
 <p>and more complex Python scripts for data science and visualisation.</p>
-<pre class="codehilite"><code class="language-py">import matplotlib.pyplot as plt
-import numpy as np
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-# generate some data
-x = np.linspace(0, 10, 100)
-y = np.sin(x)
+<span class="c1"># generate some data</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-# plot the data
-plt.plot(x, y)
-plt.title(&quot;Sine Wave&quot;)
-plt.xlabel(&quot;X-axis&quot;)
-plt.ylabel(&quot;Y-axis&quot;)
-plt.show()
-</code></pre>
+<span class="c1"># plot the data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Sine Wave&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;X-axis&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Y-axis&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
 
 <h2>More on</h2>
 <ul>
@@ -95,12 +103,10 @@ plt.show()
       </section>
 
     </article>
-
     <footer>
-      <p>© 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
+      <p>&copy; 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
     </footer>
   </main>
-
   <div class="wrapper"></div>
 </body>
 </html>

@@ -4,18 +4,30 @@
   <meta charset="utf-8">
   <meta name="description" content="Wiki Note: Regular expressions - Gabriel Ong">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../style.css">
+  <meta name="author" content="Gabriel Ong">
+  <meta name="robots" content="index, follow">
+  
+  <meta property="og:title" content="Regular expressions | Gabriel Ong Wiki">
+  <meta property="og:description" content="Wiki Note: Regular expressions - Gabriel Ong">
+  <meta property="og:type" content="article">
+  
+  <meta property="og:image" content="https://gabrielongzm.com/asset/portrait/gong-2.png">
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Regular expressions | Gabriel Ong Wiki">
+  <meta name="twitter:description" content="Wiki Note: Regular expressions - Gabriel Ong">
+  
+  <link rel="stylesheet" href="../../style.css">
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntl-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
+  
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntlMono-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
-  <style>
-    .thin-space:after{content:"\2006"}
-    pre {
-      overflow-x: auto;
-      max-width: 100%;
-    }
-  </style>
+
+  <style>.thin-space:after{content:"\2006"}</style>
+  
+  <style>pre { overflow-x: auto; max-width: 100%; }</style>
+
   <script src="../script.js" defer></script>
-  <title>GABRIEL ONG</title>
+  <title>Regular expressions | Gabriel Ong Wiki</title>
   <link rel="shortcut icon" href="../asset/blob.ico" type="image/x-icon">
 </head>
 <body>
@@ -24,22 +36,18 @@
   <label for="dark-mode">
     <img id="infinityButton" src="../asset/roller.png" height="24" width="24"/>
   </label>
-
   <main>
     <article class="overallArticleTags">
-
+      
       <section class="note-header">
         <h2>Regular expressions</h2>
-
         <dl>
           <dt>File size</dt>
-          <dd>7.4KB</dd>
-
+          <dd>14.9KB</dd>
           <dt>Lines of code</dt>
-          <dd>140</dd>
+          <dd>146</dd>
         </dl>
       </section>
-
       <section class="note-content">
         <h1><code>Regular expressions</code></h1>
 <p>The bane of every programmer's existence.</p>
@@ -93,30 +101,30 @@
 <li><code>(?&lt;!</code>: asserts that a group of characters cannot be matched to the left of the current position <em>(negative lookbehind)</em></li>
 </ul>
 <h2>Worked example</h2>
-<pre class="codehilite"><code class="language-regex"># ----- WORKED EXAMPLE -----
+<div class="codehilite"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="c1">----- WORKED EXAMPLE -----</span>
 
-hello         # this matches the exact string &quot;hello&quot;
+<span class="n">hello</span><span class="w">         </span><span class="err">#</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">exact</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="ss">&quot;hello&quot;</span>
 
-h.llo         # this matches &quot;hello&quot;, &quot;hallo&quot;, &quot;hxllo&quot;, etc.
+<span class="n">h</span><span class="p">.</span><span class="n">llo</span><span class="w">         </span><span class="err">#</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="ss">&quot;hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;hallo&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;hxllo&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">etc</span><span class="p">.</span>
 
-^hello        # this matches &quot;hello&quot; only if it's at the start of a line
-world$        # this matches &quot;world&quot; only if it's at the end of a line
+<span class="o">^</span><span class="n">hello</span><span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="ss">&quot;hello&quot;</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">it</span><span class="s1">&#39;s at the start of a line</span>
+<span class="s1">world$        # this matches &quot;world&quot; only if it&#39;</span><span class="n">s</span><span class="w"> </span><span class="k">at</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">line</span>
 
-a*            # this matches &quot;a&quot;, &quot;aa&quot;, &quot;aaa&quot;, etc., including an empty string
-a+            # this matches &quot;a&quot;, &quot;aa&quot;, &quot;aaa&quot;, etc., but not an empty string
-a?            # this matches &quot;a&quot; or an empty string
-a{3}          # this matches exactly &quot;aaa&quot;
-a{2,4}        # this matches &quot;aa&quot;, &quot;aaa&quot;, or &quot;aaaa&quot;
+<span class="n">a</span><span class="o">*</span><span class="w">            </span><span class="err">#</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="ss">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;aa&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;aaa&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">etc</span><span class="p">.,</span><span class="w"> </span><span class="n">including</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">empty</span><span class="w"> </span><span class="n">string</span>
+<span class="n">a</span><span class="o">+</span><span class="w">            </span><span class="err">#</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="ss">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;aa&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;aaa&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">etc</span><span class="p">.,</span><span class="w"> </span><span class="n">but</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">empty</span><span class="w"> </span><span class="n">string</span>
+<span class="n">a</span><span class="vm">?</span><span class="w">            </span><span class="err">#</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="ss">&quot;a&quot;</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">empty</span><span class="w"> </span><span class="n">string</span>
+<span class="n">a</span><span class="err">{</span><span class="mi">3</span><span class="err">}</span><span class="w">          </span><span class="err">#</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="n">exactly</span><span class="w"> </span><span class="ss">&quot;aaa&quot;</span>
+<span class="n">a</span><span class="err">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="err">}</span><span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="ss">&quot;aa&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;aaa&quot;</span><span class="p">,</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="ss">&quot;aaaa&quot;</span>
 
-[abc]         # this matches &quot;a&quot;, &quot;b&quot;, or &quot;c&quot;
-[^abc]        # this matches any character except &quot;a&quot;, &quot;b&quot;, or &quot;c&quot;
-[a-z]         # this matches any lowercase letter
-[A-Z]         # this matches any uppercase letter
-[0-9]         # this matches any digit
+<span class="o">[</span><span class="n">abc</span><span class="o">]</span><span class="w">         </span><span class="err">#</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="ss">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="ss">&quot;c&quot;</span>
+<span class="o">[</span><span class="n">^abc</span><span class="o">]</span><span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="ow">any</span><span class="w"> </span><span class="k">character</span><span class="w"> </span><span class="ow">except</span><span class="w"> </span><span class="ss">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="ss">&quot;c&quot;</span>
+<span class="o">[</span><span class="n">a-z</span><span class="o">]</span><span class="w">         </span><span class="err">#</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="ow">any</span><span class="w"> </span><span class="n">lowercase</span><span class="w"> </span><span class="n">letter</span>
+<span class="o">[</span><span class="n">A-Z</span><span class="o">]</span><span class="w">         </span><span class="err">#</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="ow">any</span><span class="w"> </span><span class="n">uppercase</span><span class="w"> </span><span class="n">letter</span>
+<span class="o">[</span><span class="n">0-9</span><span class="o">]</span><span class="w">         </span><span class="err">#</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="ow">any</span><span class="w"> </span><span class="n">digit</span>
 
-(ab|cd)       # this matches &quot;ab&quot; or &quot;cd&quot;
-(grape|apple)s # this matches &quot;grapes&quot; or &quot;apples&quot;
-</code></pre>
+<span class="p">(</span><span class="n">ab</span><span class="o">|</span><span class="n">cd</span><span class="p">)</span><span class="w">       </span><span class="err">#</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="ss">&quot;ab&quot;</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="ss">&quot;cd&quot;</span>
+<span class="p">(</span><span class="n">grape</span><span class="o">|</span><span class="n">apple</span><span class="p">)</span><span class="n">s</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">matches</span><span class="w"> </span><span class="ss">&quot;grapes&quot;</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="ss">&quot;apples&quot;</span>
+</code></pre></div>
 
 <h2>More on</h2>
 <ul>
@@ -129,12 +137,10 @@ a{2,4}        # this matches &quot;aa&quot;, &quot;aaa&quot;, or &quot;aaaa&quot
       </section>
 
     </article>
-
     <footer>
-      <p>© 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
+      <p>&copy; 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
     </footer>
   </main>
-
   <div class="wrapper"></div>
 </body>
 </html>

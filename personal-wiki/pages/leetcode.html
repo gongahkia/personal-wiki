@@ -4,18 +4,30 @@
   <meta charset="utf-8">
   <meta name="description" content="Wiki Note: LeetCode - Gabriel Ong">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../style.css">
+  <meta name="author" content="Gabriel Ong">
+  <meta name="robots" content="index, follow">
+  
+  <meta property="og:title" content="LeetCode | Gabriel Ong Wiki">
+  <meta property="og:description" content="Wiki Note: LeetCode - Gabriel Ong">
+  <meta property="og:type" content="article">
+  
+  <meta property="og:image" content="https://gabrielongzm.com/asset/portrait/gong-2.png">
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="LeetCode | Gabriel Ong Wiki">
+  <meta name="twitter:description" content="Wiki Note: LeetCode - Gabriel Ong">
+  
+  <link rel="stylesheet" href="../../style.css">
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntl-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
+  
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntlMono-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
-  <style>
-    .thin-space:after{content:"\2006"}
-    pre {
-      overflow-x: auto;
-      max-width: 100%;
-    }
-  </style>
+
+  <style>.thin-space:after{content:"\2006"}</style>
+  
+  <style>pre { overflow-x: auto; max-width: 100%; }</style>
+
   <script src="../script.js" defer></script>
-  <title>GABRIEL ONG</title>
+  <title>LeetCode | Gabriel Ong Wiki</title>
   <link rel="shortcut icon" href="../asset/blob.ico" type="image/x-icon">
 </head>
 <body>
@@ -24,22 +36,18 @@
   <label for="dark-mode">
     <img id="infinityButton" src="../asset/roller.png" height="24" width="24"/>
   </label>
-
   <main>
     <article class="overallArticleTags">
-
+      
       <section class="note-header">
         <h2>LeetCode</h2>
-
         <dl>
           <dt>File size</dt>
-          <dd>18.2KB</dd>
-
+          <dd>45.6KB</dd>
           <dt>Lines of code</dt>
-          <dd>574</dd>
+          <dd>580</dd>
         </dl>
       </section>
-
       <section class="note-content">
         <h1><code>LeetCode</code></h1>
 <p>Ace the coding interview.</p>
@@ -52,11 +60,11 @@
 <p>Query sum of elements in a subarray</p>
 </li>
 </ol>
-<pre class="codehilite"><code class="language-py">def create_prefix_sum(inp_array):
-    for i in range(1, len(inp_array)):
-        inp_array[i] += inp_array[i-1]
-    return inp_array
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">create_prefix_sum</span><span class="p">(</span><span class="n">inp_array</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">inp_array</span><span class="p">)):</span>
+        <span class="n">inp_array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">inp_array</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">inp_array</span>
+</code></pre></div>
 
 <ul>
 <li>
@@ -75,17 +83,17 @@
 </li>
 <li>Move them towards or away from each other when a certain predicate is fulfilled</li>
 </ul>
-<pre class="codehilite"><code class="language-py">def is_palindrome(inp_string):
-    start = 0 # pointer 1
-    end = len(inp_string) - 1 # pointer 2
-    while start &lt; end:
-        if inp_string[start] != inp_string[end]:
-            return False
-        else:
-            start += 1
-            end -= 1
-    return True
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">is_palindrome</span><span class="p">(</span><span class="n">inp_string</span><span class="p">):</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># pointer 1</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">inp_string</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="c1"># pointer 2</span>
+    <span class="k">while</span> <span class="n">start</span> <span class="o">&lt;</span> <span class="n">end</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">inp_string</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">!=</span> <span class="n">inp_string</span><span class="p">[</span><span class="n">end</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">start</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">end</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</code></pre></div>
 
 <ul>
 <li>
@@ -103,18 +111,18 @@
 <p>Find subarrays and substrings of a specified size</p>
 </li>
 </ul>
-<pre class="codehilite"><code class="language-py">def max_subarray_sum_sliding_window(inp_array, k):
-    n = len(inp_array)
-    window_sum = sum(inp_array[:k])
-    max_sum = window_sum
-    max_start_index = 0
-    for i in range(n-k):
-        window_sum = window_sum - inp_array[i] + inp_array[i+k]
-        if window_sum &gt; max_sum:
-            max_sum = window_sum
-            max_start_index = i + 1
-    return inp_array[max_start_index:max_start_index+k], max_sum
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">max_subarray_sum_sliding_window</span><span class="p">(</span><span class="n">inp_array</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">inp_array</span><span class="p">)</span>
+    <span class="n">window_sum</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">inp_array</span><span class="p">[:</span><span class="n">k</span><span class="p">])</span>
+    <span class="n">max_sum</span> <span class="o">=</span> <span class="n">window_sum</span>
+    <span class="n">max_start_index</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">k</span><span class="p">):</span>
+        <span class="n">window_sum</span> <span class="o">=</span> <span class="n">window_sum</span> <span class="o">-</span> <span class="n">inp_array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">inp_array</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">k</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">window_sum</span> <span class="o">&gt;</span> <span class="n">max_sum</span><span class="p">:</span>
+            <span class="n">max_sum</span> <span class="o">=</span> <span class="n">window_sum</span>
+            <span class="n">max_start_index</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">inp_array</span><span class="p">[</span><span class="n">max_start_index</span><span class="p">:</span><span class="n">max_start_index</span><span class="o">+</span><span class="n">k</span><span class="p">],</span> <span class="n">max_sum</span>
+</code></pre></div>
 
 <ul>
 <li>
@@ -134,16 +142,16 @@
 <li>Find a looping <em>(cycling)</em> node </li>
 <li>Move two pointers at different speeds</li>
 </ul>
-<pre class="codehilite"><code class="language-py">def find_cycling_node(head_node):
-    slow = head_node # slow pointer
-    fast = head_node # fast pointer
-    while fast and fast.next:
-        slow = slow.next
-        fast = fast.next.next
-        if slow == fast:
-            return True
-    return False
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">find_cycling_node</span><span class="p">(</span><span class="n">head_node</span><span class="p">):</span>
+    <span class="n">slow</span> <span class="o">=</span> <span class="n">head_node</span> <span class="c1"># slow pointer</span>
+    <span class="n">fast</span> <span class="o">=</span> <span class="n">head_node</span> <span class="c1"># fast pointer</span>
+    <span class="k">while</span> <span class="n">fast</span> <span class="ow">and</span> <span class="n">fast</span><span class="o">.</span><span class="n">next</span><span class="p">:</span>
+        <span class="n">slow</span> <span class="o">=</span> <span class="n">slow</span><span class="o">.</span><span class="n">next</span>
+        <span class="n">fast</span> <span class="o">=</span> <span class="n">fast</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span>
+        <span class="k">if</span> <span class="n">slow</span> <span class="o">==</span> <span class="n">fast</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
 
 <ul>
 <li>
@@ -162,16 +170,16 @@
 </li>
 <li>Space complexity of $O(1)$</li>
 </ul>
-<pre class="codehilite"><code class="language-py">def reverse_linked_list(head_node):
-    prev = None
-    current = head_node
-    while current is not None:
-        next = current.next
-        current.next = prev
-        prev = current
-        current = next
-    return prev
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">reverse_linked_list</span><span class="p">(</span><span class="n">head_node</span><span class="p">):</span>
+    <span class="n">prev</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">current</span> <span class="o">=</span> <span class="n">head_node</span>
+    <span class="k">while</span> <span class="n">current</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">next</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">next</span>
+        <span class="n">current</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">prev</span>
+        <span class="n">prev</span> <span class="o">=</span> <span class="n">current</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="nb">next</span>
+    <span class="k">return</span> <span class="n">prev</span>
+</code></pre></div>
 
 <ul>
 <li>
@@ -191,16 +199,16 @@
 <li>Uses a stack </li>
 <li>Execute stack operations when a specified predicate is fulfilled</li>
 </ul>
-<pre class="codehilite"><code class="language-py">def next_greater_element(inp_array):
-    n = len(inp_array)
-    stack = []
-    result = [-1] * n
-    for i in range(n):
-        while stack and inp_array[i] &gt; inp_array[stack[-1]]:
-            result[stack.pop()] = inp_array[i]
-        stack.append(i)
-    return result
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">next_greater_element</span><span class="p">(</span><span class="n">inp_array</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">inp_array</span><span class="p">)</span>
+    <span class="n">stack</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">n</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">while</span> <span class="n">stack</span> <span class="ow">and</span> <span class="n">inp_array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">inp_array</span><span class="p">[</span><span class="n">stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]:</span>
+            <span class="n">result</span><span class="p">[</span><span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()]</span> <span class="o">=</span> <span class="n">inp_array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+</code></pre></div>
 
 <ul>
 <li>
@@ -219,31 +227,31 @@
 </li>
 <li>Uses a heap <em>(min-heap or max-heap)</em></li>
 </ul>
-<pre class="codehilite"><code class="language-py">def build_min_heap(arr, k):
-    for i in range(k//2 - 1, -1, -1):
-        heapify(arr, k, i)
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">build_min_heap</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="o">//</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">heapify</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
 
-def heapify(arr, n, i):
-    smallest = i
-    left = 2 * i + 1
-    right = 2 * i + 2
-    if left &lt; n and arr[left] &lt; arr[smallest]:
-        smallest = left
-    if right &lt; n and arr[right] &lt; arr[smallest]:
-        smallest = right
-    if smallest != i:
-        arr[i], arr[smallest] = arr[smallest], arr[i]
-        heapify(arr, n, smallest)
+<span class="k">def</span><span class="w"> </span><span class="nf">heapify</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+    <span class="n">smallest</span> <span class="o">=</span> <span class="n">i</span>
+    <span class="n">left</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">right</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span>
+    <span class="k">if</span> <span class="n">left</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="ow">and</span> <span class="n">arr</span><span class="p">[</span><span class="n">left</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">smallest</span><span class="p">]:</span>
+        <span class="n">smallest</span> <span class="o">=</span> <span class="n">left</span>
+    <span class="k">if</span> <span class="n">right</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="ow">and</span> <span class="n">arr</span><span class="p">[</span><span class="n">right</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">smallest</span><span class="p">]:</span>
+        <span class="n">smallest</span> <span class="o">=</span> <span class="n">right</span>
+    <span class="k">if</span> <span class="n">smallest</span> <span class="o">!=</span> <span class="n">i</span><span class="p">:</span>
+        <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">smallest</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">smallest</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">heapify</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">smallest</span><span class="p">)</span>
 
-def find_Kth_Largest(nums, k):
-    heap = nums[:k]
-    build_min_heap(heap, k)
-    for i in range(k, len(nums)):
-        if nums[i] &gt; heap[0]:
-            heap[0] = nums[i]
-            heapify(heap, k, 0)
-    return heap[0]
-</code></pre>
+<span class="k">def</span><span class="w"> </span><span class="nf">find_Kth_Largest</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="n">heap</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[:</span><span class="n">k</span><span class="p">]</span>
+    <span class="n">build_min_heap</span><span class="p">(</span><span class="n">heap</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">heap</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="n">heap</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">heapify</span><span class="p">(</span><span class="n">heap</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">heap</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div>
 
 <ul>
 <li>
@@ -261,16 +269,16 @@ def find_Kth_Largest(nums, k):
 <p>Used for overlapping intervals or ranges</p>
 </li>
 </ul>
-<pre class="codehilite"><code class="language-py">def merge(intervals):
-    intervals.sort(key=lambda x: x[0])
-    merged = []
-    for interval in intervals:
-        if not merged or merged[-1][1] &lt; interval[0]:
-            merged.append(interval)
-        else:
-            merged[-1][1] = max(merged[-1][1], interval[1])
-    return merged
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">merge</span><span class="p">(</span><span class="n">intervals</span><span class="p">):</span>
+    <span class="n">intervals</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">merged</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">interval</span> <span class="ow">in</span> <span class="n">intervals</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">merged</span> <span class="ow">or</span> <span class="n">merged</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">interval</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="n">merged</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">interval</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">merged</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">merged</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">interval</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">merged</span>
+</code></pre></div>
 
 <ul>
 <li>
@@ -289,24 +297,24 @@ def find_Kth_Largest(nums, k):
 </li>
 <li>Applied to arrays that are nearly sorted, rotated sorted, of unknown length etc.</li>
 </ul>
-<pre class="codehilite"><code class="language-py">def modified_binary_search(nums, target):
-    left, right = 0, len(nums) - 1
-    while left &lt;= right:
-        mid = (left + right) // 2
-        if nums[mid] == target:
-            return mid
-        if nums[left] &lt;= nums[mid]:
-            if nums[left] &lt;= target &lt; nums[mid]:
-                right = mid - 1
-            else:
-                left = mid + 1
-        else:
-            if nums[mid] &lt; target &lt;= nums[right]:
-                left = mid + 1
-            else:
-                right = mid - 1
-    return -1
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">modified_binary_search</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+    <span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">left</span> <span class="o">&lt;=</span> <span class="n">right</span><span class="p">:</span>
+        <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">left</span> <span class="o">+</span> <span class="n">right</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+        <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">mid</span>
+        <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">left</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">left</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">target</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">]:</span>
+                <span class="n">right</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">left</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">target</span> <span class="o">&lt;=</span> <span class="n">nums</span><span class="p">[</span><span class="n">right</span><span class="p">]:</span>
+                <span class="n">left</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">right</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+</code></pre></div>
 
 <ul>
 <li>
@@ -328,48 +336,48 @@ def find_Kth_Largest(nums, k):
 <li>Post-order: recursive, iterative <em>(stack)</em></li>
 <li>Level-order: recursive, iterative <em>(queue)</em></li>
 </ul>
-<pre class="codehilite"><code class="language-py">def preorder_traversal(root):
-    if root:
-        print(root.val)
-        preorder_traversal(root.left)
-        preorder_traversal(root.right)
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">preorder_traversal</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">root</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+        <span class="n">preorder_traversal</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+        <span class="n">preorder_traversal</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
 
-def inorder_traversal(root):
-    if root:
-        inorder_traversal(root.left)
-        print(root.val)
-        inorder_traversal(root.right)
+<span class="k">def</span><span class="w"> </span><span class="nf">inorder_traversal</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">root</span><span class="p">:</span>
+        <span class="n">inorder_traversal</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+        <span class="n">inorder_traversal</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
 
-def postorder_traversal(root):
-    if root:
-        postorder_traversal(root.left)
-        postorder_traversal(root.right)
-        print(root.val)
+<span class="k">def</span><span class="w"> </span><span class="nf">postorder_traversal</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">root</span><span class="p">:</span>
+        <span class="n">postorder_traversal</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+        <span class="n">postorder_traversal</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
 
-def level_order_traversal(root): 
-    &quot;&quot;&quot;
-    note the iterative approach is more 
-    common for level order traversal of 
-    a binary tree
+<span class="k">def</span><span class="w"> </span><span class="nf">level_order_traversal</span><span class="p">(</span><span class="n">root</span><span class="p">):</span> 
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    note the iterative approach is more </span>
+<span class="sd">    common for level order traversal of </span>
+<span class="sd">    a binary tree</span>
 
-    this recursive approach is less 
-    commonly seen
-    &quot;&quot;&quot;
-    def traverse_level(node, level):
-        if node:
-            if level == 1:
-                print(node.val)
-            elif level &gt; 1:
-                traverse_level(node.left, level - 1)
-                traverse_level(node.right, level - 1)
-    def height(node):
-        if not node:
-            return 0
-        return 1 + max(height(node.left), height(node.right))
-    h = height(root)
-    for i in range(1, h + 1):
-        traverse_level(root, i)
-</code></pre>
+<span class="sd">    this recursive approach is less </span>
+<span class="sd">    commonly seen</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">traverse_level</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">node</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">level</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">level</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">traverse_level</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">level</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="n">traverse_level</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">level</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">height</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">node</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="nb">max</span><span class="p">(</span><span class="n">height</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">),</span> <span class="n">height</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">))</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">height</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">h</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">traverse_level</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+</code></pre></div>
 
 <ul>
 <li>
@@ -389,15 +397,15 @@ def level_order_traversal(root):
 </li>
 <li>Recursive, iterative <em>(stack)</em></li>
 </ul>
-<pre class="codehilite"><code class="language-py">def dfs(graph, node, visited=None):
-    if visited is None:
-        visited = set()
-    visited.add(node)
-    print(node)
-    for neighbor in graph[node]:
-        if neighbor not in visited:
-            dfs(graph, neighbor, visited)
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">dfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">visited</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">visited</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">node</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">neighbor</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+            <span class="n">dfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">neighbor</span><span class="p">,</span> <span class="n">visited</span><span class="p">)</span>
+</code></pre></div>
 
 <ul>
 <li>
@@ -416,30 +424,30 @@ def level_order_traversal(root):
 </li>
 <li>Recursive, iterative <em>(queue)</em></li>
 </ul>
-<pre class="codehilite"><code class="language-py">def bfs_recursive(graph, queue, visited):
-    &quot;&quot;&quot;
-    note the iterative approach is more 
-    common for bfs of a binary tree using
-    a queue
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">bfs_recursive</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">queue</span><span class="p">,</span> <span class="n">visited</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    note the iterative approach is more </span>
+<span class="sd">    common for bfs of a binary tree using</span>
+<span class="sd">    a queue</span>
 
-    this recursive approach is less 
-    commonly seen
-    &quot;&quot;&quot;
-    if not queue:
-        return
-    node = queue.pop(0)
-    print(node)
-    for neighbor in graph[node]:
-        if neighbor not in visited:
-            visited.add(neighbor)
-            queue.append(neighbor)
-    bfs_recursive(graph, queue, visited)
+<span class="sd">    this recursive approach is less </span>
+<span class="sd">    commonly seen</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">queue</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="n">node</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">node</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">neighbor</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+            <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>
+            <span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>
+    <span class="n">bfs_recursive</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">queue</span><span class="p">,</span> <span class="n">visited</span><span class="p">)</span>
 
-def start_bfs(graph, start_node):
-    visited = set([start_node])
-    queue = [start_node]
-    bfs_recursive(graph, queue, visited)
-</code></pre>
+<span class="k">def</span><span class="w"> </span><span class="nf">start_bfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start_node</span><span class="p">):</span>
+    <span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">start_node</span><span class="p">])</span>
+    <span class="n">queue</span> <span class="o">=</span> <span class="p">[</span><span class="n">start_node</span><span class="p">]</span>
+    <span class="n">bfs_recursive</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">queue</span><span class="p">,</span> <span class="n">visited</span><span class="p">)</span>
+</code></pre></div>
 
 <ul>
 <li>
@@ -458,24 +466,24 @@ def start_bfs(graph, start_node):
 </li>
 <li>Allows us to apply graph algorithms <em>(DFS, BFS)</em> as we please</li>
 </ul>
-<pre class="codehilite"><code class="language-py">def floodFill(image, sr, sc, newColor):
-    originalColor = image[sr][sc]
-    if originalColor == newColor:
-        return image
-    def fill(r, c):
-        if image[r][c] == originalColor:
-            image[r][c] = newColor
-            if r &gt; 0:
-                fill(r - 1, c)
-            if r &lt; len(image) - 1:
-                fill(r + 1, c)
-            if c &gt; 0:
-                fill(r, c - 1)
-            if c &lt; len(image[0]) - 1:
-                fill(r, c + 1)
-    fill(sr, sc)
-    return image
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">floodFill</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">sr</span><span class="p">,</span> <span class="n">sc</span><span class="p">,</span> <span class="n">newColor</span><span class="p">):</span>
+    <span class="n">originalColor</span> <span class="o">=</span> <span class="n">image</span><span class="p">[</span><span class="n">sr</span><span class="p">][</span><span class="n">sc</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">originalColor</span> <span class="o">==</span> <span class="n">newColor</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">image</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">fill</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">image</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="o">==</span> <span class="n">originalColor</span><span class="p">:</span>
+            <span class="n">image</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">newColor</span>
+            <span class="k">if</span> <span class="n">r</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">fill</span><span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">image</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">fill</span><span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">c</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">fill</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">fill</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">fill</span><span class="p">(</span><span class="n">sr</span><span class="p">,</span> <span class="n">sc</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">image</span>
+</code></pre></div>
 
 <ul>
 <li>
@@ -493,18 +501,18 @@ def start_bfs(graph, start_node):
 <p>Used for exploring all potential solution paths and backtracking paths that don't lead to a valid solution</p>
 </li>
 </ul>
-<pre class="codehilite"><code class="language-py">def permute(nums):
-    result = []
-    def backtrack(path):
-        if len(path) == len(nums):
-            result.append(path)
-            return
-        for num in nums:
-            if num not in path:
-                backtrack(path + [num])
-    backtrack([])
-    return result
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">permute</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">backtrack</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">num</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">path</span><span class="p">:</span>
+                <span class="n">backtrack</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="p">[</span><span class="n">num</span><span class="p">])</span>
+    <span class="n">backtrack</span><span class="p">([])</span>
+    <span class="k">return</span> <span class="n">result</span>
+</code></pre></div>
 
 <ul>
 <li>
@@ -563,12 +571,10 @@ def start_bfs(graph, start_node):
       </section>
 
     </article>
-
     <footer>
-      <p>© 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
+      <p>&copy; 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
     </footer>
   </main>
-
   <div class="wrapper"></div>
 </body>
 </html>

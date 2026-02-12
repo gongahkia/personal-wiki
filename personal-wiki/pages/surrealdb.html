@@ -4,18 +4,30 @@
   <meta charset="utf-8">
   <meta name="description" content="Wiki Note: SurrealDB - Gabriel Ong">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../style.css">
+  <meta name="author" content="Gabriel Ong">
+  <meta name="robots" content="index, follow">
+  
+  <meta property="og:title" content="SurrealDB | Gabriel Ong Wiki">
+  <meta property="og:description" content="Wiki Note: SurrealDB - Gabriel Ong">
+  <meta property="og:type" content="article">
+  
+  <meta property="og:image" content="https://gabrielongzm.com/asset/portrait/gong-2.png">
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="SurrealDB | Gabriel Ong Wiki">
+  <meta name="twitter:description" content="Wiki Note: SurrealDB - Gabriel Ong">
+  
+  <link rel="stylesheet" href="../../style.css">
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntl-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
+  
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntlMono-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
-  <style>
-    .thin-space:after{content:"\2006"}
-    pre {
-      overflow-x: auto;
-      max-width: 100%;
-    }
-  </style>
+
+  <style>.thin-space:after{content:"\2006"}</style>
+  
+  <style>pre { overflow-x: auto; max-width: 100%; }</style>
+
   <script src="../script.js" defer></script>
-  <title>GABRIEL ONG</title>
+  <title>SurrealDB | Gabriel Ong Wiki</title>
   <link rel="shortcut icon" href="../asset/blob.ico" type="image/x-icon">
 </head>
 <body>
@@ -24,22 +36,18 @@
   <label for="dark-mode">
     <img id="infinityButton" src="../asset/roller.png" height="24" width="24"/>
   </label>
-
   <main>
     <article class="overallArticleTags">
-
+      
       <section class="note-header">
         <h2>SurrealDB</h2>
-
         <dl>
           <dt>File size</dt>
-          <dd>6.4KB</dd>
-
+          <dd>16.2KB</dd>
           <dt>Lines of code</dt>
-          <dd>161</dd>
+          <dd>167</dd>
         </dl>
       </section>
-
       <section class="note-content">
         <h1><code>SurrealDB</code></h1>
 <p>Schrödinger's multi-model database.</p>
@@ -63,75 +71,75 @@
 </li>
 </ul>
 <h2>Quickstart</h2>
-<pre class="codehilite"><code class="language-sql">-- ----- QUICKSTART -----
-    -- there isn't a syntax overview here since SurrealDB extends upon existing SQL syntax which most developers are familiar with
-    -- recall that SurrealDB allows developers to leverage on both the default schemaless (NoSQL) modelling, and the more structured schemafull (conventional SQL) modelling as desired
-    -- however, note that there are no JOIN constructs in SurrealDB, and it instead handles relational database modelling via record links and graph connections
+<div class="codehilite"><pre><span></span><code><span class="c1">-- ----- QUICKSTART -----</span>
+<span class="w">    </span><span class="c1">-- there isn&#39;t a syntax overview here since SurrealDB extends upon existing SQL syntax which most developers are familiar with</span>
+<span class="w">    </span><span class="c1">-- recall that SurrealDB allows developers to leverage on both the default schemaless (NoSQL) modelling, and the more structured schemafull (conventional SQL) modelling as desired</span>
+<span class="w">    </span><span class="c1">-- however, note that there are no JOIN constructs in SurrealDB, and it instead handles relational database modelling via record links and graph connections</span>
 
--- --- SCHEMAFULL MODELLING ---
-    -- below is an example of SurrealDB handling conventional SQL queries with structured data 
-    -- this should be nothing new for developers well-acquainted with SQL's syntax
+<span class="c1">-- --- SCHEMAFULL MODELLING ---</span>
+<span class="w">    </span><span class="c1">-- below is an example of SurrealDB handling conventional SQL queries with structured data </span>
+<span class="w">    </span><span class="c1">-- this should be nothing new for developers well-acquainted with SQL&#39;s syntax</span>
 
-CONNECT TO surrealdb://localhost:8000; -- connects to the local database
-CREATE DATABASE my_database; -- creates a new database
-USE my_database; -- select the created database
+<span class="k">CONNECT</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">surrealdb</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">8000</span><span class="p">;</span><span class="w"> </span><span class="c1">-- connects to the local database</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">my_database</span><span class="p">;</span><span class="w"> </span><span class="c1">-- creates a new database</span>
+<span class="n">USE</span><span class="w"> </span><span class="n">my_database</span><span class="p">;</span><span class="w"> </span><span class="c1">-- select the created database</span>
 
-CREATE TABLE users (
-    id STRING PRIMARY KEY,
-    name STRING,
-    email STRING,
-    age INT,
-    address OBJECT
-); -- create a new table with a defined schema and structure
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="n">STRING</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="n">STRING</span><span class="p">,</span>
+<span class="w">    </span><span class="n">email</span><span class="w"> </span><span class="n">STRING</span><span class="p">,</span>
+<span class="w">    </span><span class="n">age</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">address</span><span class="w"> </span><span class="k">OBJECT</span>
+<span class="p">);</span><span class="w"> </span><span class="c1">-- create a new table with a defined schema and structure</span>
 
-INSERT INTO users (id, name, email, age, address) VALUES (
-    'user1',
-    'John Doe',
-    'john@example.com',
-    30,
-    { street: '123 Main St', city: 'Anytown', zip: '12345' }
-); -- insert data into the table
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="n">address</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="s1">&#39;user1&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="s1">&#39;John Doe&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="s1">&#39;john@example.com&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="mi">30</span><span class="p">,</span>
+<span class="w">    </span><span class="err">{</span><span class="w"> </span><span class="n">street</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;123 Main St&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">city</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Anytown&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">zip</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;12345&#39;</span><span class="w"> </span><span class="err">}</span>
+<span class="p">);</span><span class="w"> </span><span class="c1">-- insert data into the table</span>
 
-SELECT * FROM users WHERE age &gt; 25; -- querying data
-UPDATE users SET email = 'john.doe@example.com', age = 31 WHERE id = 'user1'; -- updating data
-DELETE FROM users WHERE id = 'user1'; -- deleting data
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">25</span><span class="p">;</span><span class="w"> </span><span class="c1">-- querying data</span>
+<span class="k">UPDATE</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;john.doe@example.com&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">31</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;user1&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">-- updating data</span>
+<span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;user1&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">-- deleting data</span>
 
--- --- SCHEMALESS MODELLING ---
-    -- below is an example of SurrealDB then handling unstructured data in the same database as above
+<span class="c1">-- --- SCHEMALESS MODELLING ---</span>
+<span class="w">    </span><span class="c1">-- below is an example of SurrealDB then handling unstructured data in the same database as above</span>
 
-CREATE TABLE documents; -- create a new table without a predefined schema, thereby leveraging on NoSQL capabilities
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">documents</span><span class="p">;</span><span class="w"> </span><span class="c1">-- create a new table without a predefined schema, thereby leveraging on NoSQL capabilities</span>
 
-INSERT INTO documents (id, content) VALUES (
-    'doc1',
-    {
-        &quot;title&quot;: &quot;SurrealDB Overview&quot;,
-        &quot;body&quot;: &quot;SurrealDB is a scalable, distributed database...&quot;,
-        &quot;tags&quot;: [&quot;database&quot;, &quot;scalable&quot;, &quot;distributed&quot;],
-        &quot;metadata&quot;: {
-            &quot;author&quot;: &quot;John Doe&quot;,
-            &quot;created_at&quot;: &quot;2024-07-03&quot;,
-            &quot;revisions&quot;: 3
-        }
-    }
-); -- insert first instance of unstructured data into the table
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">documents</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">content</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="s1">&#39;doc1&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="err">{</span>
+<span class="w">        </span><span class="ss">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;SurrealDB Overview&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="ss">&quot;body&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;SurrealDB is a scalable, distributed database...&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="ss">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="ss">&quot;database&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;scalable&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;distributed&quot;</span><span class="p">],</span>
+<span class="w">        </span><span class="ss">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span>
+<span class="w">            </span><span class="ss">&quot;author&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;John Doe&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="ss">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;2024-07-03&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="ss">&quot;revisions&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span>
+<span class="w">        </span><span class="err">}</span>
+<span class="w">    </span><span class="err">}</span>
+<span class="p">);</span><span class="w"> </span><span class="c1">-- insert first instance of unstructured data into the table</span>
 
-INSERT INTO documents (id, content) VALUES (
-    'doc2',
-    {
-        &quot;title&quot;: &quot;Getting Started with SurrealDB&quot;,
-        &quot;content&quot;: &quot;This guide will help you get started with SurrealDB...&quot;,
-        &quot;tags&quot;: [&quot;guide&quot;, &quot;tutorial&quot;],
-        &quot;metadata&quot;: {
-            &quot;author&quot;: &quot;Jane Smith&quot;,
-            &quot;created_at&quot;: &quot;2024-07-03&quot;
-        },
-        &quot;related_documents&quot;: [&quot;doc1&quot;]
-    }
-); -- insert another document instance with a different structure into the table, SurrealDB handles this just fine
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">documents</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">content</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="s1">&#39;doc2&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="err">{</span>
+<span class="w">        </span><span class="ss">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;Getting Started with SurrealDB&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="ss">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;This guide will help you get started with SurrealDB...&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="ss">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="ss">&quot;guide&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;tutorial&quot;</span><span class="p">],</span>
+<span class="w">        </span><span class="ss">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">{</span>
+<span class="w">            </span><span class="ss">&quot;author&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;Jane Smith&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="ss">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;2024-07-03&quot;</span>
+<span class="w">        </span><span class="err">}</span><span class="p">,</span>
+<span class="w">        </span><span class="ss">&quot;related_documents&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="ss">&quot;doc1&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="err">}</span>
+<span class="p">);</span><span class="w"> </span><span class="c1">-- insert another document instance with a different structure into the table, SurrealDB handles this just fine</span>
 
-SELECT * FROM documents WHERE content-&gt;'metadata'-&gt;&gt;'author' = 'John Doe'; -- querying data
-SELECT * FROM documents WHERE 'database' IN content-&gt;'tags'; -- querying data with tags
-</code></pre>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">documents</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">content</span><span class="o">-&gt;</span><span class="s1">&#39;metadata&#39;</span><span class="o">-&gt;&gt;</span><span class="s1">&#39;author&#39;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;John Doe&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">-- querying data</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">documents</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="s1">&#39;database&#39;</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="n">content</span><span class="o">-&gt;</span><span class="s1">&#39;tags&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">-- querying data with tags</span>
+</code></pre></div>
 
 <h2>More on</h2>
 <ul>
@@ -150,12 +158,10 @@ SELECT * FROM documents WHERE 'database' IN content-&gt;'tags'; -- querying data
       </section>
 
     </article>
-
     <footer>
-      <p>© 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
+      <p>&copy; 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
     </footer>
   </main>
-
   <div class="wrapper"></div>
 </body>
 </html>

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block canonical %}
+  <link rel="canonical" href="https://gabrielongzm.com/blog/">
+{% endblock %}
+{% block content %}
+      <section class="introductionPortion">
+        <h2>Gabriel's Blog</h2>
+        <p><i>My thoughts on books mostly, and other media sometimes.</i></p>
+      </section>
+      <section class="booksAndBlog">
+        {% for post in posts %}
+        <dl>
+          <dt>{{ post.date }}</dt>
+          <dd>
+            <a href="posts/{{ post.filename }}">{{ post.title }}</a>
+            {% if post.author %}
+            <br>
+            <span class="author">{{ post.author }}</span>
+            <br>
+            <span class="isbn">ISBN: {{ post.isbn }}</span>
+            <br>
+            <span class="rating">{{ post.rating }}/5</span>, {{ post.category }}
+            {% endif %}
+          </dd>
+        </dl>
+        {% endfor %}
+      </section>
+{% endblock %}

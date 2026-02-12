@@ -4,18 +4,30 @@
   <meta charset="utf-8">
   <meta name="description" content="Wiki Note: Cogent - Gabriel Ong">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../style.css">
+  <meta name="author" content="Gabriel Ong">
+  <meta name="robots" content="index, follow">
+  
+  <meta property="og:title" content="Cogent | Gabriel Ong Wiki">
+  <meta property="og:description" content="Wiki Note: Cogent - Gabriel Ong">
+  <meta property="og:type" content="article">
+  
+  <meta property="og:image" content="https://gabrielongzm.com/asset/portrait/gong-2.png">
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Cogent | Gabriel Ong Wiki">
+  <meta name="twitter:description" content="Wiki Note: Cogent - Gabriel Ong">
+  
+  <link rel="stylesheet" href="../../style.css">
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntl-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
+  
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntlMono-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
-  <style>
-    .thin-space:after{content:"\2006"}
-    pre {
-      overflow-x: auto;
-      max-width: 100%;
-    }
-  </style>
+
+  <style>.thin-space:after{content:"\2006"}</style>
+  
+  <style>pre { overflow-x: auto; max-width: 100%; }</style>
+
   <script src="../script.js" defer></script>
-  <title>GABRIEL ONG</title>
+  <title>Cogent | Gabriel Ong Wiki</title>
   <link rel="shortcut icon" href="../asset/blob.ico" type="image/x-icon">
 </head>
 <body>
@@ -24,22 +36,18 @@
   <label for="dark-mode">
     <img id="infinityButton" src="../asset/roller.png" height="24" width="24"/>
   </label>
-
   <main>
     <article class="overallArticleTags">
-
+      
       <section class="note-header">
         <h2>Cogent</h2>
-
         <dl>
           <dt>File size</dt>
-          <dd>6.2KB</dd>
-
+          <dd>23.8KB</dd>
           <dt>Lines of code</dt>
-          <dd>188</dd>
+          <dd>194</dd>
         </dl>
       </section>
-
       <section class="note-content">
         <h1><code>Cogent</code></h1>
 <p>Language for hardware and software verification and co-design.</p>
@@ -58,103 +66,103 @@
 </li>
 </ol>
 <h3>Specifying the model</h3>
-<pre class="codehilite"><code class="language-cog">// ----- SPECIFYING THE MODEL -----
+<div class="codehilite"><pre><span></span><code><span class="c1">// ----- SPECIFYING THE MODEL -----</span>
 
-// --- EXAMPLE 1: BASIC FUNCTIONAL PROGRAMMING ---
+<span class="c1">// --- EXAMPLE 1: BASIC FUNCTIONAL PROGRAMMING ---</span>
 
-module ExampleFunctional {
+<span class="nx">module</span><span class="w"> </span><span class="nx">ExampleFunctional</span><span class="w"> </span><span class="p">{</span>
 
-    data List a = Nil | Cons a (List a)
+<span class="w">    </span><span class="nx">data</span><span class="w"> </span><span class="nx">List</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">Nil</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Cons</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="p">(</span><span class="nx">List</span><span class="w"> </span><span class="nx">a</span><span class="p">)</span>
 
-    append : List a -&gt; List a -&gt; List a
-    append Nil ys = ys
-    append (Cons x xs) ys = Cons x (append xs ys)
+<span class="w">    </span><span class="nx">append</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nx">List</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nx">List</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nx">List</span><span class="w"> </span><span class="nx">a</span>
+<span class="w">    </span><span class="nx">append</span><span class="w"> </span><span class="nx">Nil</span><span class="w"> </span><span class="nx">ys</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">ys</span>
+<span class="w">    </span><span class="nx">append</span><span class="w"> </span><span class="p">(</span><span class="nx">Cons</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="nx">xs</span><span class="p">)</span><span class="w"> </span><span class="nx">ys</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">Cons</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="p">(</span><span class="nx">append</span><span class="w"> </span><span class="nx">xs</span><span class="w"> </span><span class="nx">ys</span><span class="p">)</span>
 
-    reverse : List a -&gt; List a
-    reverse xs = rev xs Nil where
-        rev : List a -&gt; List a -&gt; List a
-        rev Nil ys = ys
-        rev (Cons x xs) ys = rev xs (Cons x ys)
+<span class="w">    </span><span class="nx">reverse</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nx">List</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nx">List</span><span class="w"> </span><span class="nx">a</span>
+<span class="w">    </span><span class="nx">reverse</span><span class="w"> </span><span class="nx">xs</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">rev</span><span class="w"> </span><span class="nx">xs</span><span class="w"> </span><span class="nx">Nil</span><span class="w"> </span><span class="k">where</span>
+<span class="w">        </span><span class="nx">rev</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nx">List</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nx">List</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nx">List</span><span class="w"> </span><span class="nx">a</span>
+<span class="w">        </span><span class="nx">rev</span><span class="w"> </span><span class="nx">Nil</span><span class="w"> </span><span class="nx">ys</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">ys</span>
+<span class="w">        </span><span class="nx">rev</span><span class="w"> </span><span class="p">(</span><span class="nx">Cons</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="nx">xs</span><span class="p">)</span><span class="w"> </span><span class="nx">ys</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">rev</span><span class="w"> </span><span class="nx">xs</span><span class="w"> </span><span class="p">(</span><span class="nx">Cons</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="nx">ys</span><span class="p">)</span>
 
-    // mapping over a list
-    map : (a -&gt; b) -&gt; List a -&gt; List b
-    map _ Nil = Nil
-    map f (Cons x xs) = Cons (f x) (map f xs)
+<span class="w">    </span><span class="c1">// mapping over a list</span>
+<span class="w">    </span><span class="nx">map</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nx">List</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nx">List</span><span class="w"> </span><span class="nx">b</span>
+<span class="w">    </span><span class="nx">map</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="nx">Nil</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">Nil</span>
+<span class="w">    </span><span class="nx">map</span><span class="w"> </span><span class="nx">f</span><span class="w"> </span><span class="p">(</span><span class="nx">Cons</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="nx">xs</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">Cons</span><span class="w"> </span><span class="p">(</span><span class="nx">f</span><span class="w"> </span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nx">map</span><span class="w"> </span><span class="nx">f</span><span class="w"> </span><span class="nx">xs</span><span class="p">)</span>
 
-}
+<span class="p">}</span>
 
-// --- EXAMPLE 2: HARDWARE DESCRIPTION ---
+<span class="c1">// --- EXAMPLE 2: HARDWARE DESCRIPTION ---</span>
 
-module ExampleHardware {
+<span class="nx">module</span><span class="w"> </span><span class="nx">ExampleHardware</span><span class="w"> </span><span class="p">{</span>
 
-    data Signal = Low | High
+<span class="w">    </span><span class="nx">data</span><span class="w"> </span><span class="nx">Signal</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">Low</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">High</span>
 
-    xorGate : Signal -&gt; Signal -&gt; Signal
-    xorGate Low Low = Low
-    xorGate High High = Low
-    xorGate Low High = High
-    xorGate High Low = High
+<span class="w">    </span><span class="nx">xorGate</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nx">Signal</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nx">Signal</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nx">Signal</span>
+<span class="w">    </span><span class="nx">xorGate</span><span class="w"> </span><span class="nx">Low</span><span class="w"> </span><span class="nx">Low</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">Low</span>
+<span class="w">    </span><span class="nx">xorGate</span><span class="w"> </span><span class="nx">High</span><span class="w"> </span><span class="nx">High</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">Low</span>
+<span class="w">    </span><span class="nx">xorGate</span><span class="w"> </span><span class="nx">Low</span><span class="w"> </span><span class="nx">High</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">High</span>
+<span class="w">    </span><span class="nx">xorGate</span><span class="w"> </span><span class="nx">High</span><span class="w"> </span><span class="nx">Low</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">High</span>
 
-    // represents a small multiplexer
-    data Bit = Zero | One
-    data MultiplexerOutput = MuxOutput1 Bit | MuxOutput2 Bit
-    multiplexer : Signal -&gt; Signal -&gt; Bit -&gt; MultiplexerOutput
-    multiplexer Low Low Zero = MuxOutput1 Zero
-    multiplexer Low High Zero = MuxOutput1 Zero
-    multiplexer High Low Zero = MuxOutput1 One
-    multiplexer High High Zero = MuxOutput2 Zero
-    multiplexer _ _ One = MuxOutput2 One
+<span class="w">    </span><span class="c1">// represents a small multiplexer</span>
+<span class="w">    </span><span class="nx">data</span><span class="w"> </span><span class="nx">Bit</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">Zero</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">One</span>
+<span class="w">    </span><span class="nx">data</span><span class="w"> </span><span class="nx">MultiplexerOutput</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">MuxOutput1</span><span class="w"> </span><span class="nx">Bit</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">MuxOutput2</span><span class="w"> </span><span class="nx">Bit</span>
+<span class="w">    </span><span class="nx">multiplexer</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nx">Signal</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nx">Signal</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nx">Bit</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nx">MultiplexerOutput</span>
+<span class="w">    </span><span class="nx">multiplexer</span><span class="w"> </span><span class="nx">Low</span><span class="w"> </span><span class="nx">Low</span><span class="w"> </span><span class="nx">Zero</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">MuxOutput1</span><span class="w"> </span><span class="nx">Zero</span>
+<span class="w">    </span><span class="nx">multiplexer</span><span class="w"> </span><span class="nx">Low</span><span class="w"> </span><span class="nx">High</span><span class="w"> </span><span class="nx">Zero</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">MuxOutput1</span><span class="w"> </span><span class="nx">Zero</span>
+<span class="w">    </span><span class="nx">multiplexer</span><span class="w"> </span><span class="nx">High</span><span class="w"> </span><span class="nx">Low</span><span class="w"> </span><span class="nx">Zero</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">MuxOutput1</span><span class="w"> </span><span class="nx">One</span>
+<span class="w">    </span><span class="nx">multiplexer</span><span class="w"> </span><span class="nx">High</span><span class="w"> </span><span class="nx">High</span><span class="w"> </span><span class="nx">Zero</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">MuxOutput2</span><span class="w"> </span><span class="nx">Zero</span>
+<span class="w">    </span><span class="nx">multiplexer</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="nx">One</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">MuxOutput2</span><span class="w"> </span><span class="nx">One</span>
 
-    // represents a simple state machine
-    data State = Idle | Active
-    data Event = Start | Stop
-    nextState : State -&gt; Event -&gt; State
-    nextState Idle Start = Active
-    nextState Active Stop = Idle
-    nextState s _ = s  // this specifies to remain in the same state for other events
+<span class="w">    </span><span class="c1">// represents a simple state machine</span>
+<span class="w">    </span><span class="nx">data</span><span class="w"> </span><span class="nx">State</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">Idle</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Active</span>
+<span class="w">    </span><span class="nx">data</span><span class="w"> </span><span class="nx">Event</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">Start</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Stop</span>
+<span class="w">    </span><span class="nx">nextState</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nx">State</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nx">Event</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nx">State</span>
+<span class="w">    </span><span class="nx">nextState</span><span class="w"> </span><span class="nx">Idle</span><span class="w"> </span><span class="nx">Start</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">Active</span>
+<span class="w">    </span><span class="nx">nextState</span><span class="w"> </span><span class="nx">Active</span><span class="w"> </span><span class="nx">Stop</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">Idle</span>
+<span class="w">    </span><span class="nx">nextState</span><span class="w"> </span><span class="nx">s</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">s</span><span class="w">  </span><span class="c1">// this specifies to remain in the same state for other events</span>
 
-}
+<span class="p">}</span>
 
-// --- EXAMPLE 3: SOFTWARE SYSTEM ---
+<span class="c1">// --- EXAMPLE 3: SOFTWARE SYSTEM ---</span>
 
-module ExampleSoftware {
+<span class="nx">module</span><span class="w"> </span><span class="nx">ExampleSoftware</span><span class="w"> </span><span class="p">{</span>
 
-    // data structure that represents a person
-    data Person = Person {
-        name : String,
-        age : Int,
-        address : String
-    }
+<span class="w">    </span><span class="c1">// data structure that represents a person</span>
+<span class="w">    </span><span class="nx">data</span><span class="w"> </span><span class="nx">Person</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">Person</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">name</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nx">String</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">age</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nx">Int</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">address</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nx">String</span>
+<span class="w">    </span><span class="p">}</span>
 
-    // function that updates a person's address
-    updateAddress : Person -&gt; String -&gt; Person
-    updateAddress person newAddress = person{ address = newAddress }
+<span class="w">    </span><span class="c1">// function that updates a person&#39;s address</span>
+<span class="w">    </span><span class="nx">updateAddress</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nx">Person</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nx">String</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nx">Person</span>
+<span class="w">    </span><span class="nx">updateAddress</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="nx">newAddress</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">person</span><span class="p">{</span><span class="w"> </span><span class="nx">address</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">newAddress</span><span class="w"> </span><span class="p">}</span>
 
-    // function that calculates the age of a person in dog years
-    dogYears : Person -&gt; Int
-    dogYears person = person.age * 7
+<span class="w">    </span><span class="c1">// function that calculates the age of a person in dog years</span>
+<span class="w">    </span><span class="nx">dogYears</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nx">Person</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nx">Int</span>
+<span class="w">    </span><span class="nx">dogYears</span><span class="w"> </span><span class="nx">person</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">person</span><span class="p">.</span><span class="nx">age</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">7</span>
 
-}
+<span class="p">}</span>
 
-// --- EXAMPLE 4: COMPLEX SYSTEM INTEGRATION ---
-    // below is an example of how to integrate functional programming, hardware description, and software systems
-    // this uses the above multiplexer from example 2 and the software from example 3 to switch between different software components based on hardware signals
+<span class="c1">// --- EXAMPLE 4: COMPLEX SYSTEM INTEGRATION ---</span>
+<span class="w">    </span><span class="c1">// below is an example of how to integrate functional programming, hardware description, and software systems</span>
+<span class="w">    </span><span class="c1">// this uses the above multiplexer from example 2 and the software from example 3 to switch between different software components based on hardware signals</span>
 
-module ExampleIntegration {
+<span class="nx">module</span><span class="w"> </span><span class="nx">ExampleIntegration</span><span class="w"> </span><span class="p">{</span>
 
-    import ExampleFunctional
-    import ExampleHardware
-    import ExampleSoftware
+<span class="w">    </span><span class="kn">import</span><span class="w"> </span><span class="nx">ExampleFunctional</span>
+<span class="w">    </span><span class="kn">import</span><span class="w"> </span><span class="nx">ExampleHardware</span>
+<span class="w">    </span><span class="kn">import</span><span class="w"> </span><span class="nx">ExampleSoftware</span>
 
-    data SystemState = FuncState (List Int) | HardState (Signal, State)
+<span class="w">    </span><span class="nx">data</span><span class="w"> </span><span class="nx">SystemState</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">FuncState</span><span class="w"> </span><span class="p">(</span><span class="nx">List</span><span class="w"> </span><span class="nx">Int</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">HardState</span><span class="w"> </span><span class="p">(</span><span class="nx">Signal</span><span class="p">,</span><span class="w"> </span><span class="nx">State</span><span class="p">)</span>
 
-    systemIntegration : Signal -&gt; State -&gt; SystemState -&gt; SystemState
-    systemIntegration Low _ (FuncState ints) = HardState (Low, Idle)
-    systemIntegration High Active (HardState (High, Active)) = FuncState (map dogYears (Cons (Person &quot;Alice&quot; 35 &quot;123 Main St&quot;) Nil))
-    systemIntegration _ _ s = s  // this specifies to remain in the current system state for other cases
+<span class="w">    </span><span class="nx">systemIntegration</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nx">Signal</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nx">State</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nx">SystemState</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nx">SystemState</span>
+<span class="w">    </span><span class="nx">systemIntegration</span><span class="w"> </span><span class="nx">Low</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="p">(</span><span class="nx">FuncState</span><span class="w"> </span><span class="nx">ints</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">HardState</span><span class="w"> </span><span class="p">(</span><span class="nx">Low</span><span class="p">,</span><span class="w"> </span><span class="nx">Idle</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">systemIntegration</span><span class="w"> </span><span class="nx">High</span><span class="w"> </span><span class="nx">Active</span><span class="w"> </span><span class="p">(</span><span class="nx">HardState</span><span class="w"> </span><span class="p">(</span><span class="nx">High</span><span class="p">,</span><span class="w"> </span><span class="nx">Active</span><span class="p">))</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">FuncState</span><span class="w"> </span><span class="p">(</span><span class="nx">map</span><span class="w"> </span><span class="nx">dogYears</span><span class="w"> </span><span class="p">(</span><span class="nx">Cons</span><span class="w"> </span><span class="p">(</span><span class="nx">Person</span><span class="w"> </span><span class="s">&quot;Alice&quot;</span><span class="w"> </span><span class="mi">35</span><span class="w"> </span><span class="s">&quot;123 Main St&quot;</span><span class="p">)</span><span class="w"> </span><span class="nx">Nil</span><span class="p">))</span>
+<span class="w">    </span><span class="nx">systemIntegration</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="nx">s</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">s</span><span class="w">  </span><span class="c1">// this specifies to remain in the current system state for other cases</span>
 
-}
-</code></pre>
+<span class="p">}</span>
+</code></pre></div>
 
 <h2>Cogent compiler</h2>
 <h3>Compiling and verification</h3>
@@ -177,12 +185,10 @@ module ExampleIntegration {
       </section>
 
     </article>
-
     <footer>
-      <p>© 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
+      <p>&copy; 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
     </footer>
   </main>
-
   <div class="wrapper"></div>
 </body>
 </html>

@@ -4,18 +4,30 @@
   <meta charset="utf-8">
   <meta name="description" content="Wiki Note: Cybersecurity Overview - Gabriel Ong">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../style.css">
+  <meta name="author" content="Gabriel Ong">
+  <meta name="robots" content="index, follow">
+  
+  <meta property="og:title" content="Cybersecurity Overview | Gabriel Ong Wiki">
+  <meta property="og:description" content="Wiki Note: Cybersecurity Overview - Gabriel Ong">
+  <meta property="og:type" content="article">
+  
+  <meta property="og:image" content="https://gabrielongzm.com/asset/portrait/gong-2.png">
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Cybersecurity Overview | Gabriel Ong Wiki">
+  <meta name="twitter:description" content="Wiki Note: Cybersecurity Overview - Gabriel Ong">
+  
+  <link rel="stylesheet" href="../../style.css">
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntl-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
+  
   <link rel="preload" href="https://res.hajimehoshi.com/fonts/SuisseIntlMono-Regular-WebXL.woff2" as="font" crossorigin="anonymous">
-  <style>
-    .thin-space:after{content:"\2006"}
-    pre {
-      overflow-x: auto;
-      max-width: 100%;
-    }
-  </style>
+
+  <style>.thin-space:after{content:"\2006"}</style>
+  
+  <style>pre { overflow-x: auto; max-width: 100%; }</style>
+
   <script src="../script.js" defer></script>
-  <title>GABRIEL ONG</title>
+  <title>Cybersecurity Overview | Gabriel Ong Wiki</title>
   <link rel="shortcut icon" href="../asset/blob.ico" type="image/x-icon">
 </head>
 <body>
@@ -24,22 +36,18 @@
   <label for="dark-mode">
     <img id="infinityButton" src="../asset/roller.png" height="24" width="24"/>
   </label>
-
   <main>
     <article class="overallArticleTags">
-
+      
       <section class="note-header">
         <h2>Cybersecurity Overview</h2>
-
         <dl>
           <dt>File size</dt>
-          <dd>17.1KB</dd>
-
+          <dd>40.4KB</dd>
           <dt>Lines of code</dt>
-          <dd>564</dd>
+          <dd>570</dd>
         </dl>
       </section>
-
       <section class="note-content">
         <h1><code>Cybersecurity Overview</code></h1>
 <h2>Definitions</h2>
@@ -65,33 +73,33 @@
 <li><a href="#man-in-the-middle-attacks-">MitM attacks</a></li>
 <li><a href="#supply-chain-attacks-">Supply chain attacks</a></li>
 </ol>
-<pre class="codehilite"><code class="language-mermaid">flowchart TD;
-    A[Cyber Attacks] --&gt; B[Phishing Attacks 🎣]
-    A --&gt; C[Malware Attacks 💻]
-    A --&gt; D[Denial of Service Attacks ⛔]
-    A --&gt; E[Identity-Based Attacks 🧟]
-    A --&gt; F[Code Injection Attacks 💉]
-    A --&gt; G[Man-in-the-Middle Attacks 🖕]
-    A --&gt; H[Supply Chain Attacks 🚚]
-    B --&gt; J[Spear Phishing]
-    B --&gt; K[Whaling]
-    B --&gt; L[Vishing]
-    B --&gt; M[Smishing]
-    C --&gt; N[Viruses]
-    C --&gt; O[Worms]
-    C --&gt; P[Trojan Horses]
-    C --&gt; Q[Ransomware]
-    D --&gt; R[DoS]
-    D --&gt; S[DDoS]
-    D --&gt; T[Application Layer Attacks]
-    E --&gt; U[Credential Harvesting]
-    E --&gt; V[Business Email Compromise]
-    F --&gt; W[SQL Injection]
-    F --&gt; X[Cross-Site Scripting]
-    G --&gt; Y[Rogue Access Points]
-    G --&gt; Z[Eavesdropping]
-    H
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="n">flowchart</span><span class="w"> </span><span class="n">TD</span><span class="p">;</span>
+<span class="w">    </span><span class="n">A</span><span class="p">[</span><span class="n">Cyber</span><span class="w"> </span><span class="n">Attacks</span><span class="p">]</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">B</span><span class="p">[</span><span class="n">Phishing</span><span class="w"> </span><span class="n">Attacks</span><span class="w"> </span><span class="err">🎣</span><span class="p">]</span>
+<span class="w">    </span><span class="n">A</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">C</span><span class="p">[</span><span class="n">Malware</span><span class="w"> </span><span class="n">Attacks</span><span class="w"> </span><span class="err">💻</span><span class="p">]</span>
+<span class="w">    </span><span class="n">A</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">D</span><span class="p">[</span><span class="n">Denial</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">Service</span><span class="w"> </span><span class="n">Attacks</span><span class="w"> </span><span class="err">⛔</span><span class="p">]</span>
+<span class="w">    </span><span class="n">A</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">E</span><span class="p">[</span><span class="n">Identity</span><span class="o">-</span><span class="n">Based</span><span class="w"> </span><span class="n">Attacks</span><span class="w"> </span><span class="err">🧟</span><span class="p">]</span>
+<span class="w">    </span><span class="n">A</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">F</span><span class="p">[</span><span class="n">Code</span><span class="w"> </span><span class="n">Injection</span><span class="w"> </span><span class="n">Attacks</span><span class="w"> </span><span class="err">💉</span><span class="p">]</span>
+<span class="w">    </span><span class="n">A</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">G</span><span class="p">[</span><span class="n">Man</span><span class="o">-</span><span class="k">in</span><span class="o">-</span><span class="n">the</span><span class="o">-</span><span class="n">Middle</span><span class="w"> </span><span class="n">Attacks</span><span class="w"> </span><span class="err">🖕</span><span class="p">]</span>
+<span class="w">    </span><span class="n">A</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">H</span><span class="p">[</span><span class="n">Supply</span><span class="w"> </span><span class="n">Chain</span><span class="w"> </span><span class="n">Attacks</span><span class="w"> </span><span class="err">🚚</span><span class="p">]</span>
+<span class="w">    </span><span class="n">B</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">J</span><span class="p">[</span><span class="n">Spear</span><span class="w"> </span><span class="n">Phishing</span><span class="p">]</span>
+<span class="w">    </span><span class="n">B</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">K</span><span class="p">[</span><span class="n">Whaling</span><span class="p">]</span>
+<span class="w">    </span><span class="n">B</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">L</span><span class="p">[</span><span class="n">Vishing</span><span class="p">]</span>
+<span class="w">    </span><span class="n">B</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">M</span><span class="p">[</span><span class="n">Smishing</span><span class="p">]</span>
+<span class="w">    </span><span class="n">C</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">N</span><span class="p">[</span><span class="n">Viruses</span><span class="p">]</span>
+<span class="w">    </span><span class="n">C</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">O</span><span class="p">[</span><span class="n">Worms</span><span class="p">]</span>
+<span class="w">    </span><span class="n">C</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">P</span><span class="p">[</span><span class="n">Trojan</span><span class="w"> </span><span class="n">Horses</span><span class="p">]</span>
+<span class="w">    </span><span class="n">C</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">Q</span><span class="p">[</span><span class="n">Ransomware</span><span class="p">]</span>
+<span class="w">    </span><span class="n">D</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">R</span><span class="p">[</span><span class="n">DoS</span><span class="p">]</span>
+<span class="w">    </span><span class="n">D</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">S</span><span class="p">[</span><span class="n">DDoS</span><span class="p">]</span>
+<span class="w">    </span><span class="n">D</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">T</span><span class="p">[</span><span class="n">Application</span><span class="w"> </span><span class="n">Layer</span><span class="w"> </span><span class="n">Attacks</span><span class="p">]</span>
+<span class="w">    </span><span class="n">E</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">U</span><span class="p">[</span><span class="n">Credential</span><span class="w"> </span><span class="n">Harvesting</span><span class="p">]</span>
+<span class="w">    </span><span class="n">E</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">V</span><span class="p">[</span><span class="n">Business</span><span class="w"> </span><span class="n">Email</span><span class="w"> </span><span class="n">Compromise</span><span class="p">]</span>
+<span class="w">    </span><span class="n">F</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">W</span><span class="p">[</span><span class="n">SQL</span><span class="w"> </span><span class="n">Injection</span><span class="p">]</span>
+<span class="w">    </span><span class="n">F</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">X</span><span class="p">[</span><span class="n">Cross</span><span class="o">-</span><span class="n">Site</span><span class="w"> </span><span class="n">Scripting</span><span class="p">]</span>
+<span class="w">    </span><span class="n">G</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">Y</span><span class="p">[</span><span class="n">Rogue</span><span class="w"> </span><span class="n">Access</span><span class="w"> </span><span class="n">Points</span><span class="p">]</span>
+<span class="w">    </span><span class="n">G</span><span class="w"> </span><span class="o">--&gt;</span><span class="w"> </span><span class="n">Z</span><span class="p">[</span><span class="n">Eavesdropping</span><span class="p">]</span>
+<span class="w">    </span><span class="n">H</span>
+</code></pre></div>
 
 <h3>Phishing 🎣</h3>
 <p>Malicious actors trick individuals into revealing SENSITIVE information by impersonating as a trustworthy entity.</p>
@@ -178,18 +186,18 @@ Remember to run <code>pip install pycryptodome</code> to run the worked examples
 <li>Used to protect data from being read by unwanted actors</li>
 <li>REVERSIBLE since encryption is a TWO-WAY process</li>
 </ul>
-<pre class="codehilite"><code class="language-mermaid">sequenceDiagram
-    participant Sender
-    participant Receiver
-    participant Key Generator
+<div class="codehilite"><pre><span></span><code><span class="n">sequenceDiagram</span>
+<span class="w">    </span><span class="n">participant</span><span class="w"> </span><span class="n">Sender</span>
+<span class="w">    </span><span class="n">participant</span><span class="w"> </span><span class="n">Receiver</span>
+<span class="w">    </span><span class="n">participant</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="n">Generator</span>
 
-    Sender-&gt;&gt;Key Generator: Generate shared secret key
-    Key Generator--&gt;&gt;Sender: Provide key
-    Key Generator--&gt;&gt;Receiver: Provide key
-    Sender-&gt;&gt;Sender: Encrypt data using key
-    Sender-&gt;&gt;Receiver: Send encrypted data
-    Receiver-&gt;&gt;Receiver: Decrypt data using key
-</code></pre>
+<span class="w">    </span><span class="n">Sender</span><span class="o">-&gt;&gt;</span><span class="n">Key</span><span class="w"> </span><span class="n">Generator</span><span class="o">:</span><span class="w"> </span><span class="n">Generate</span><span class="w"> </span><span class="kr">shared</span><span class="w"> </span><span class="n">secret</span><span class="w"> </span><span class="n">key</span>
+<span class="w">    </span><span class="n">Key</span><span class="w"> </span><span class="n">Generator</span><span class="o">--&gt;&gt;</span><span class="n">Sender</span><span class="o">:</span><span class="w"> </span><span class="n">Provide</span><span class="w"> </span><span class="n">key</span>
+<span class="w">    </span><span class="n">Key</span><span class="w"> </span><span class="n">Generator</span><span class="o">--&gt;&gt;</span><span class="n">Receiver</span><span class="o">:</span><span class="w"> </span><span class="n">Provide</span><span class="w"> </span><span class="n">key</span>
+<span class="w">    </span><span class="n">Sender</span><span class="o">-&gt;&gt;</span><span class="n">Sender</span><span class="o">:</span><span class="w"> </span><span class="kr">Encrypt</span><span class="w"> </span><span class="kt">data</span><span class="w"> </span><span class="n">using</span><span class="w"> </span><span class="n">key</span>
+<span class="w">    </span><span class="n">Sender</span><span class="o">-&gt;&gt;</span><span class="n">Receiver</span><span class="o">:</span><span class="w"> </span><span class="n">Send</span><span class="w"> </span><span class="n">encrypted</span><span class="w"> </span><span class="kt">data</span>
+<span class="w">    </span><span class="n">Receiver</span><span class="o">-&gt;&gt;</span><span class="n">Receiver</span><span class="o">:</span><span class="w"> </span><span class="n">Decrypt</span><span class="w"> </span><span class="kt">data</span><span class="w"> </span><span class="n">using</span><span class="w"> </span><span class="n">key</span>
+</code></pre></div>
 
 <table>
 <tr>
@@ -205,13 +213,13 @@ Remember to run <code>pip install pycryptodome</code> to run the worked examples
 <td>
 
 
-<pre class="codehilite"><code class="language-py">from Crypto.Cipher import AES
-from Crypto.Util.Padding import pad, unpad
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">Crypto.Cipher</span><span class="w"> </span><span class="kn">import</span> <span class="n">AES</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">Crypto.Util.Padding</span><span class="w"> </span><span class="kn">import</span> <span class="n">pad</span><span class="p">,</span> <span class="n">unpad</span>
 
-key = b'Sixteen byte key'
-cipher = AES.new(key, AES.MODE_CBC)
-ct_bytes = cipher.encrypt(pad(data, AES.block_size))
-</code></pre>
+<span class="n">key</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;Sixteen byte key&#39;</span>
+<span class="n">cipher</span> <span class="o">=</span> <span class="n">AES</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">AES</span><span class="o">.</span><span class="n">MODE_CBC</span><span class="p">)</span>
+<span class="n">ct_bytes</span> <span class="o">=</span> <span class="n">cipher</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span><span class="n">pad</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">AES</span><span class="o">.</span><span class="n">block_size</span><span class="p">))</span>
+</code></pre></div>
 
 
 
@@ -224,13 +232,13 @@ ct_bytes = cipher.encrypt(pad(data, AES.block_size))
 <td>
 
 
-<pre class="codehilite"><code class="language-py">from Crypto.Cipher import DES
-from Crypto.Util.Padding import pad, unpad
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">Crypto.Cipher</span><span class="w"> </span><span class="kn">import</span> <span class="n">DES</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">Crypto.Util.Padding</span><span class="w"> </span><span class="kn">import</span> <span class="n">pad</span><span class="p">,</span> <span class="n">unpad</span>
 
-key = b'8bytekey'
-cipher = DES.new(key, DES.MODE_CBC)
-cipher.encrypt(pad(data, DES.block_size))
-</code></pre>
+<span class="n">key</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;8bytekey&#39;</span>
+<span class="n">cipher</span> <span class="o">=</span> <span class="n">DES</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">DES</span><span class="o">.</span><span class="n">MODE_CBC</span><span class="p">)</span>
+<span class="n">cipher</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span><span class="n">pad</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">DES</span><span class="o">.</span><span class="n">block_size</span><span class="p">))</span>
+</code></pre></div>
 
 
 
@@ -243,13 +251,13 @@ cipher.encrypt(pad(data, DES.block_size))
 <td>
 
 
-<pre class="codehilite"><code class="language-py">from Crypto.Cipher import DES3
-from Crypto.Util.Padding import pad, unpad
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">Crypto.Cipher</span><span class="w"> </span><span class="kn">import</span> <span class="n">DES3</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">Crypto.Util.Padding</span><span class="w"> </span><span class="kn">import</span> <span class="n">pad</span><span class="p">,</span> <span class="n">unpad</span>
 
-key = b'16bytekey12345'
-cipher = DES3.new(key, DES3.MODE_CBC)
-ct_bytes = cipher.encrypt(pad(data, DES3.block_size))
-</code></pre>
+<span class="n">key</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;16bytekey12345&#39;</span>
+<span class="n">cipher</span> <span class="o">=</span> <span class="n">DES3</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">DES3</span><span class="o">.</span><span class="n">MODE_CBC</span><span class="p">)</span>
+<span class="n">ct_bytes</span> <span class="o">=</span> <span class="n">cipher</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span><span class="n">pad</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">DES3</span><span class="o">.</span><span class="n">block_size</span><span class="p">))</span>
+</code></pre></div>
 
 
 
@@ -262,12 +270,12 @@ ct_bytes = cipher.encrypt(pad(data, DES3.block_size))
 <td>
 
 
-<pre class="codehilite"><code class="language-py">from Crypto.Cipher import ARC4
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">Crypto.Cipher</span><span class="w"> </span><span class="kn">import</span> <span class="n">ARC4</span>
 
-key = b'SecretKey'
-cipher = ARC4.new(key)
-ct_bytes = cipher.encrypt(data)
-</code></pre>
+<span class="n">key</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;SecretKey&#39;</span>
+<span class="n">cipher</span> <span class="o">=</span> <span class="n">ARC4</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="n">ct_bytes</span> <span class="o">=</span> <span class="n">cipher</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div>
 
 
 
@@ -299,22 +307,22 @@ ct_bytes = cipher.encrypt(data)
 <li>Used to protect data from being read by unwanted actors</li>
 <li>REVERSIBLE since encryption is a TWO-WAY process</li>
 </ul>
-<pre class="codehilite"><code class="language-mermaid">sequenceDiagram
-    participant Sender
-    participant Receiver
-    participant Sender Key Generator
-    participant Receiver Key Generator
+<div class="codehilite"><pre><span></span><code><span class="n">sequenceDiagram</span>
+<span class="w">    </span><span class="n">participant</span><span class="w"> </span><span class="n">Sender</span>
+<span class="w">    </span><span class="n">participant</span><span class="w"> </span><span class="n">Receiver</span>
+<span class="w">    </span><span class="n">participant</span><span class="w"> </span><span class="n">Sender</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="n">Generator</span>
+<span class="w">    </span><span class="n">participant</span><span class="w"> </span><span class="n">Receiver</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="n">Generator</span>
 
-    Sender-&gt;&gt;Sender Key Generator: Generate public and private key
-    Sender Key Generator--&gt;&gt;Sender: Provide keys
-    Receiver-&gt;&gt;Receiver Key Generator: Generate public and private key
-    Receiver Key Generator--&gt;&gt;Receiver: Provide keys
-    Receiver-&gt;&gt;Sender: Send public key
-    Sender-&gt;&gt;Receiver: Send public key
-    Sender-&gt;&gt;Sender: Encrypt data using recepient's public key
-    Sender-&gt;&gt;Receiver: Send encrypted data
-    Receiver-&gt;&gt;Receiver: Decrypt data using their own private key
-</code></pre>
+<span class="w">    </span><span class="n">Sender</span><span class="o">-&gt;&gt;</span><span class="n">Sender</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="n">Generator</span><span class="o">:</span><span class="w"> </span><span class="n">Generate</span><span class="w"> </span><span class="n">public</span><span class="w"> </span><span class="kr">and</span><span class="w"> </span><span class="n">private</span><span class="w"> </span><span class="n">key</span>
+<span class="w">    </span><span class="n">Sender</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="n">Generator</span><span class="o">--&gt;&gt;</span><span class="n">Sender</span><span class="o">:</span><span class="w"> </span><span class="n">Provide</span><span class="w"> </span><span class="n">keys</span>
+<span class="w">    </span><span class="n">Receiver</span><span class="o">-&gt;&gt;</span><span class="n">Receiver</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="n">Generator</span><span class="o">:</span><span class="w"> </span><span class="n">Generate</span><span class="w"> </span><span class="n">public</span><span class="w"> </span><span class="kr">and</span><span class="w"> </span><span class="n">private</span><span class="w"> </span><span class="n">key</span>
+<span class="w">    </span><span class="n">Receiver</span><span class="w"> </span><span class="n">Key</span><span class="w"> </span><span class="n">Generator</span><span class="o">--&gt;&gt;</span><span class="n">Receiver</span><span class="o">:</span><span class="w"> </span><span class="n">Provide</span><span class="w"> </span><span class="n">keys</span>
+<span class="w">    </span><span class="n">Receiver</span><span class="o">-&gt;&gt;</span><span class="n">Sender</span><span class="o">:</span><span class="w"> </span><span class="n">Send</span><span class="w"> </span><span class="n">public</span><span class="w"> </span><span class="n">key</span>
+<span class="w">    </span><span class="n">Sender</span><span class="o">-&gt;&gt;</span><span class="n">Receiver</span><span class="o">:</span><span class="w"> </span><span class="n">Send</span><span class="w"> </span><span class="n">public</span><span class="w"> </span><span class="n">key</span>
+<span class="w">    </span><span class="n">Sender</span><span class="o">-&gt;&gt;</span><span class="n">Sender</span><span class="o">:</span><span class="w"> </span><span class="kr">Encrypt</span><span class="w"> </span><span class="kt">data</span><span class="w"> </span><span class="n">using</span><span class="w"> </span><span class="n">recepient</span><span class="s">&#39;s public key</span>
+<span class="s">    Sender-&gt;&gt;Receiver: Send encrypted data</span>
+<span class="s">    Receiver-&gt;&gt;Receiver: Decrypt data using their own private key</span>
+</code></pre></div>
 
 <table>
 <tr>
@@ -330,12 +338,12 @@ ct_bytes = cipher.encrypt(data)
 <td>
 
 
-<pre class="codehilite"><code class="language-py">from Crypto.PublicKey import RSA
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">Crypto.PublicKey</span><span class="w"> </span><span class="kn">import</span> <span class="n">RSA</span>
 
-key = RSA.generate(2048)
-private_key = key.export_key()
-public_key = key.publickey().export_key()
-</code></pre>
+<span class="n">key</span> <span class="o">=</span> <span class="n">RSA</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="mi">2048</span><span class="p">)</span>
+<span class="n">private_key</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">export_key</span><span class="p">()</span>
+<span class="n">public_key</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">publickey</span><span class="p">()</span><span class="o">.</span><span class="n">export_key</span><span class="p">()</span>
+</code></pre></div>
 
 
 
@@ -348,12 +356,12 @@ public_key = key.publickey().export_key()
 <td>
 
 
-<pre class="codehilite"><code class="language-py">from Crypto.PublicKey import ECC
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">Crypto.PublicKey</span><span class="w"> </span><span class="kn">import</span> <span class="n">ECC</span>
 
-key = ECC.generate(curve='P-256')
-private_key = key.export_key(format='PEM')
-public_key = key.public_key().export_key(format='PEM')
-</code></pre>
+<span class="n">key</span> <span class="o">=</span> <span class="n">ECC</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">curve</span><span class="o">=</span><span class="s1">&#39;P-256&#39;</span><span class="p">)</span>
+<span class="n">private_key</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">export_key</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s1">&#39;PEM&#39;</span><span class="p">)</span>
+<span class="n">public_key</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">public_key</span><span class="p">()</span><span class="o">.</span><span class="n">export_key</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s1">&#39;PEM&#39;</span><span class="p">)</span>
+</code></pre></div>
 
 
 
@@ -366,12 +374,12 @@ public_key = key.public_key().export_key(format='PEM')
 <td>
 
 
-<pre class="codehilite"><code class="language-py">from Crypto.PublicKey import DSA
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">Crypto.PublicKey</span><span class="w"> </span><span class="kn">import</span> <span class="n">DSA</span>
 
-key = DSA.generate(2048)
-private_key = key.export_key()
-public_key = key.publickey().export_key()
-</code></pre>
+<span class="n">key</span> <span class="o">=</span> <span class="n">DSA</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="mi">2048</span><span class="p">)</span>
+<span class="n">private_key</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">export_key</span><span class="p">()</span>
+<span class="n">public_key</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">publickey</span><span class="p">()</span><span class="o">.</span><span class="n">export_key</span><span class="p">()</span>
+</code></pre></div>
 
 
 
@@ -389,18 +397,18 @@ public_key = key.publickey().export_key()
 <li>Used to verify if data has been altered during transit</li>
 <li>IRREVERSIBLE since hashing is a ONE-WAY function</li>
 </ul>
-<pre class="codehilite"><code class="language-mermaid">sequenceDiagram
-    participant Sender
-    participant Receiver
-    participant Hash Function
+<div class="codehilite"><pre><span></span><code><span class="n">sequenceDiagram</span>
+<span class="w">    </span><span class="n">participant</span><span class="w"> </span><span class="n">Sender</span>
+<span class="w">    </span><span class="n">participant</span><span class="w"> </span><span class="n">Receiver</span>
+<span class="w">    </span><span class="n">participant</span><span class="w"> </span><span class="nf">Hash</span><span class="w"> </span><span class="kr">Function</span>
 
-    Sender-&gt;&gt;Hash Function: Input data
-    Hash Function--&gt;&gt;Sender: Generate hash value 
-    Sender-&gt;&gt;Receiver: Send input data and hash value
-    Receiver-&gt;&gt;Hash Function: Input data
-    Hash Function--&gt;&gt;Receiver: Generate hash value
-    Receiver-&gt;&gt;Receiver: Compare received hash with generated hash
-</code></pre>
+<span class="w">    </span><span class="n">Sender</span><span class="o">-&gt;&gt;</span><span class="nf">Hash</span><span class="w"> </span><span class="kr">Function</span><span class="o">:</span><span class="w"> </span><span class="n">Input</span><span class="w"> </span><span class="kt">data</span>
+<span class="w">    </span><span class="nf">Hash</span><span class="w"> </span><span class="kr">Function</span><span class="o">--&gt;&gt;</span><span class="n">Sender</span><span class="o">:</span><span class="w"> </span><span class="n">Generate</span><span class="w"> </span><span class="nf">hash</span><span class="w"> </span><span class="n">value</span><span class="w"> </span>
+<span class="w">    </span><span class="n">Sender</span><span class="o">-&gt;&gt;</span><span class="n">Receiver</span><span class="o">:</span><span class="w"> </span><span class="n">Send</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="kt">data</span><span class="w"> </span><span class="kr">and</span><span class="w"> </span><span class="nf">hash</span><span class="w"> </span><span class="n">value</span>
+<span class="w">    </span><span class="n">Receiver</span><span class="o">-&gt;&gt;</span><span class="nf">Hash</span><span class="w"> </span><span class="kr">Function</span><span class="o">:</span><span class="w"> </span><span class="n">Input</span><span class="w"> </span><span class="kt">data</span>
+<span class="w">    </span><span class="nf">Hash</span><span class="w"> </span><span class="kr">Function</span><span class="o">--&gt;&gt;</span><span class="n">Receiver</span><span class="o">:</span><span class="w"> </span><span class="n">Generate</span><span class="w"> </span><span class="nf">hash</span><span class="w"> </span><span class="n">value</span>
+<span class="w">    </span><span class="n">Receiver</span><span class="o">-&gt;&gt;</span><span class="n">Receiver</span><span class="o">:</span><span class="w"> </span><span class="n">Compare</span><span class="w"> </span><span class="n">received</span><span class="w"> </span><span class="nf">hash</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">generated</span><span class="w"> </span><span class="nf">hash</span>
+</code></pre></div>
 
 <table>
 <tr>
@@ -416,10 +424,10 @@ public_key = key.publickey().export_key()
 <td>
 
 
-<pre class="codehilite"><code class="language-py">import hashlib
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">hashlib</span>
 
-hash = hashlib.md5(data.encode()).hexdigest()
-</code></pre>
+<span class="nb">hash</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+</code></pre></div>
 
 
 
@@ -432,10 +440,10 @@ hash = hashlib.md5(data.encode()).hexdigest()
 <td>
 
 
-<pre class="codehilite"><code class="language-py">import hashlib
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">hashlib</span>
 
-hash = hashlib.sha1(data.encode()).hexdigest()
-</code></pre>
+<span class="nb">hash</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha1</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+</code></pre></div>
 
 
 
@@ -447,10 +455,10 @@ hash = hashlib.sha1(data.encode()).hexdigest()
 <td>
 
 
-<pre class="codehilite"><code class="language-py">import hashlib
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">hashlib</span>
 
-hash = hashlib.sha256(data.encode()).hexdigest()
-</code></pre>
+<span class="nb">hash</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+</code></pre></div>
 
 
 
@@ -463,10 +471,10 @@ hash = hashlib.sha256(data.encode()).hexdigest()
 <td>
 
 
-<pre class="codehilite"><code class="language-py">import hashlib
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">hashlib</span>
 
-hash = hashlib.blake2b(data.encode()).hexdigest()
-</code></pre>
+<span class="nb">hash</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">blake2b</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+</code></pre></div>
 
 
 
@@ -479,10 +487,10 @@ hash = hashlib.blake2b(data.encode()).hexdigest()
 <td>
 
 
-<pre class="codehilite"><code class="language-py">import hashlib
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">hashlib</span>
 
-hash = hashlib.new('ripemd160', data.encode()).hexdigest()
-</code></pre>
+<span class="nb">hash</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">&#39;ripemd160&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+</code></pre></div>
 
 
 
@@ -495,10 +503,10 @@ hash = hashlib.new('ripemd160', data.encode()).hexdigest()
 <td>
 
 
-<pre class="codehilite"><code class="language-py">from passlib.hash import scrypt
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">passlib.hash</span><span class="w"> </span><span class="kn">import</span> <span class="n">scrypt</span>
 
-hash = scrypt.using(salt=b'salt').hash(data)
-</code></pre>
+<span class="nb">hash</span> <span class="o">=</span> <span class="n">scrypt</span><span class="o">.</span><span class="n">using</span><span class="p">(</span><span class="n">salt</span><span class="o">=</span><span class="sa">b</span><span class="s1">&#39;salt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div>
 
 
 
@@ -511,10 +519,10 @@ hash = scrypt.using(salt=b'salt').hash(data)
 <td>
 
 
-<pre class="codehilite"><code class="language-py">from passlib.hash import bcrypt
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">passlib.hash</span><span class="w"> </span><span class="kn">import</span> <span class="n">bcrypt</span>
 
-hash = bcrypt.hash(data)
-</code></pre>
+<span class="nb">hash</span> <span class="o">=</span> <span class="n">bcrypt</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div>
 
 
 
@@ -527,11 +535,11 @@ hash = bcrypt.hash(data)
 <td>
 
 
-<pre class="codehilite"><code class="language-py">from argon2 import PasswordHasher
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">argon2</span><span class="w"> </span><span class="kn">import</span> <span class="n">PasswordHasher</span>
 
-ph = PasswordHasher()
-hash = ph.hash(data)
-</code></pre>
+<span class="n">ph</span> <span class="o">=</span> <span class="n">PasswordHasher</span><span class="p">()</span>
+<span class="nb">hash</span> <span class="o">=</span> <span class="n">ph</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div>
 
 
 
@@ -553,12 +561,10 @@ hash = ph.hash(data)
       </section>
 
     </article>
-
     <footer>
-      <p>© 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
+      <p>&copy; 2023-<span id="current-year"></span> Gabriel Ong. All rights reserved.</p>
     </footer>
   </main>
-
   <div class="wrapper"></div>
 </body>
 </html>
